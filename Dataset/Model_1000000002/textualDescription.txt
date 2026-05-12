@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'Skill' has the following attributes: 'skillName' of type str; 'description' of type str; 'skillId' of type int; 'category' of type str; 'estimatedDuration' of type int; 'skillLevel' of type TechSkillLevel.
+The class 'User' has the following attributes: 'userId' of type int; 'userName' of type str; 'emailId' of type str.
+The class 'Session' has the following attributes: 'sessionDate' of type date; 'sessionId' of type int; 'sessionType' of type SessionType; 'duration' of type int.
+The class 'SkillMatch' has the following attributes: 'status' of type SkillMatchStatus; 'startDate' of type date; 'createdDate' of type date; 'matchId' of type int.
+The class 'Review' has the following attributes: 'comments' of type str; 'rating' of type int; 'reviewId' of type int.
+The class 'SkillRequest' has the following attributes: 'deadlineDate' of type date; 'requestId' of type int; 'createdDate' of type date; 'status' of type SkillRequestStatus.
+The class 'UserSkill' has the following attributes: 'yearsOfExperience' of type int; 'skillLevel' of type UserSkillLevel; 'certification' of type bool; 'skillId' of type int.
+The enumeration 'SkillMatchStatus' has the following literals: 'PENDING', 'ACTIVE', 'COMPLETED', 'REJECTED'.
+The enumeration 'TechSkillLevel' has the following literals: 'ADVANCED', 'INTERMEDIATE', 'EXPERT', 'BEGINNER', 'MASTERCLASS'.
+The enumeration 'SkillRequestStatus' has the following literals: 'CANCELLED', 'COMPLETED', 'MATCHED', 'OPEN'.
+The enumeration 'UserSkillLevel' has the following literals: 'COMPETENT', 'EXPERT', 'AUTHORITY', 'NOVICE', 'PROFICIENT'.
+The enumeration 'SessionType' has the following literals: 'OFFLINE', 'HYBRID', 'ONLINE'.
+'SkillRequest' (role 'skillmatch_2', cardinality 0..*) is associated with 'SkillMatch' (role 'skillrequest_1', cardinality 0..*).
+'User' (role 'userskill', cardinality 0..*) is associated with 'UserSkill' (role 'user', cardinality 0..*).
+'SkillRequest' (role 'skill_1', cardinality 0..*) is associated with 'Skill' (role 'skillrequest_2', cardinality 0..*).
+'Skill' (role 'userskill_1', cardinality 0..*) is associated with 'UserSkill' (role 'skill', cardinality 0..*).
+'SkillRequest' (role 'user_1', cardinality 0..*) is associated with 'User' (role 'skillrequest', cardinality 0..*).
+'Session' (role 'skillmatch_1', cardinality 0..*) is associated with 'SkillMatch' (role 'session', cardinality 0..*).
+'Session' (role 'review', cardinality 0..*) is associated with 'Review' (role 'session_1', cardinality 0..*).

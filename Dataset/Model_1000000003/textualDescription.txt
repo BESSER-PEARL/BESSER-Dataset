@@ -1,0 +1,58 @@
+The model has 18 class(es).
+The class 'Measure' has the following attributes: 'error' of type str; 'uncertainty' of type float; 'unit' of type str; 'value' of type str.
+The class 'Dataset' has the following attributes: 'licensing' of type LicensingType; 'source' of type str; 'dataset_type' of type DatasetType; 'version' of type str.
+The class 'Direct' has no attributes.
+The class 'Metric' has no attributes.
+The class 'AISystem' has the following attributes: 'version' of type str; 'source' of type str; 'licensing' of type LicensingType; 'settings' of type str; 'data' of type str.
+The class 'Observation' has the following attributes: 'whenObserved' of type datetime; 'observer' of type str.
+The class 'Tool' has the following attributes: 'branch' of type str; 'sector' of type TagsSector; 'target_legal_requirements' of type str; 'version' of type str; 'project' of type str; 'scientific_reference' of type str; 'verification_type' of type VerificationType; 'licensing' of type LicensingType; 'provider' of type str; 'project_maturity' of type str; 'verification_targets' of type TagsVerificationTarget; 'target_system' of type TagsTargetSystem.
+The class 'Evaluation' has the following attributes: 'status' of type EvaluationStatus.
+The class 'Feature' has the following attributes: 'feature_type' of type str; 'min_value' of type float; 'max_value' of type float.
+The class 'Derived' has the following attributes: 'expression' of type str.
+The class 'MetricCategory' has no attributes.
+The class 'Element' has no attributes.
+The class 'Configuration' has no attributes.
+The class 'ConfParam' has the following attributes: 'param_type' of type str; 'value' of type str.
+The class 'Project' has the following attributes: 'status' of type ProjectStatus; 'name' of type str.
+The class 'Datashape' has the following attributes: 'accepted_target_values' of type str.
+The class 'AssessmentElement' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'LegalRequirement' has the following attributes: 'standard' of type str; 'principle' of type str; 'legal_ref' of type str.
+The enumeration 'TagsSector' has the following literals: 'Environment', 'Trade', 'Agriculture', 'Education', 'Health', 'Inclusive_development', 'Economz', 'Defence', 'Competition', 'Innovation', 'Investment'.
+The enumeration 'LicensingType' has the following literals: 'Proprietary', 'Open_Source'.
+The enumeration 'ProjectStatus' has the following literals: 'Closed', 'Ready', 'Created', 'Archived', 'Pending'.
+The enumeration 'EvaluationStatus' has the following literals: 'Done', 'Custom', 'Processing', 'Archived', 'Pending'.
+The enumeration 'DatasetType' has the following literals: 'Test', 'Validation', 'Training'.
+The enumeration 'VerificationType' has the following literals: 'Case_3', 'Case_2', 'Case_1'.
+The enumeration 'TagsTargetSystem' has the following literals: 'Computer_Vision', 'Recommendation_and_Personalization', 'Multimodal', 'Audio', 'Decision_and_Optimization', 'AI_Safety_and_Governance', 'Agents_and_Agentic_Systems', 'Emerging_Other', 'Knowledge_and_Retrival', 'Reinforcement_Learning_and_Control', 'Natural_Language_Processing', 'Predictive_and_Analytical_AI', 'Tabular_and_Structured_Data'.
+The enumeration 'TagsVerificationTarget' has the following literals: 'Human_Agency_and_Oversight', 'Diversity_Nondiscrimination_and_Fairness', 'Technical_Robustness__and_Saftey', 'Accountability', 'Privacy_and_Data_Governance', 'Transparency', 'Societal_and_enviornmanetal_wellbeing', 'Risk_management'.
+'Derived' is a specialization of 'Metric'.
+'Direct' is a specialization of 'Metric'.
+'Metric' is a specialization of 'AssessmentElement'.
+'Tool' is a specialization of 'AssessmentElement'.
+'MetricCategory' is a specialization of 'AssessmentElement'.
+'Element' is a specialization of 'AssessmentElement'.
+'AISystem' is a specialization of 'Element'.
+'ConfParam' is a specialization of 'AssessmentElement'.
+'Configuration' is a specialization of 'AssessmentElement'.
+'Dataset' is a specialization of 'Element'.
+'Feature' is a specialization of 'Element'.
+'Observation' is a specialization of 'AssessmentElement'.
+'Measure' (role 'observation', cardinality 0..*) is associated with 'Observation' (role 'measures', cardinality 0..*).
+'Metric' (role 'category', cardinality 0..*) is associated with 'MetricCategory' (role 'metrics', cardinality 0..*).
+'Element' (role 'evalu', cardinality 0..*) is associated with 'Evaluation' (role 'evaluates', cardinality 0..*).
+'Evaluation' (role 'config', cardinality 0..*) is associated with 'Configuration' (role 'eval', cardinality 0..*).
+'Derived' (role 'baseMetric', cardinality 0..*) is associated with 'Metric' (role 'derivedBy', cardinality 0..*).
+'Feature' (role 'date', cardinality 0..*) is associated with 'Datashape' (role 'f_date', cardinality 0..*).
+'Observation' (role 'eval', cardinality 0..*) is associated with 'Evaluation' (role 'observations', cardinality 0..*).
+'Measure' (role 'metric', cardinality 0..*) is associated with 'Metric' (role 'measures', cardinality 0..*).
+'Project' (role 'involves', cardinality 0..*) is associated with 'Element' (role 'project', cardinality 0..*).
+'Tool' (role 'observation_1', cardinality 0..*) is associated with 'Observation' (role 'tool', cardinality 0..*).
+'Evaluation' (role 'project', cardinality 0..*) is associated with 'Project' (role 'eval', cardinality 0..*).
+'ConfParam' (role 'conf', cardinality 0..*) is associated with 'Configuration' (role 'params', cardinality 0..*).
+'Element' (role 'measure', cardinality 0..*) is associated with 'Measure' (role 'measurand', cardinality 0..*).
+'Dataset' (role 'observation_2', cardinality 0..*) is associated with 'Observation' (role 'dataset', cardinality 0..*).
+'Dataset' (role 'models', cardinality 0..*) is associated with 'AISystem' (role 'dataset', cardinality 0..*).
+'Feature' (role 'features', cardinality 0..*) is associated with 'Datashape' (role 'f_features', cardinality 0..*).
+'LegalRequirement' (role 'project_1', cardinality 0..*) is associated with 'Project' (role 'legal_requirements', cardinality 0..*).
+'Dataset' (role 'datashape', cardinality 0..*) is associated with 'Datashape' (role 'dataset_1', cardinality 0..*).
+'Element' (role 'eval', cardinality 0..*) is associated with 'Evaluation' (role 'ref', cardinality 0..*).

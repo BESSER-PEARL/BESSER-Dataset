@@ -1,0 +1,38 @@
+The model has 11 class(es).
+The class 'Tag' has the following attributes: 'id' of type int; 'color' of type str; 'name' of type str.
+The class 'Interaction' has the following attributes: 'type' of type InteractionType; 'content' of type str; 'occurred_at' of type datetime; 'created_at' of type datetime; 'id' of type int; 'subject' of type str; 'direction' of type InteractionDirection.
+The class 'Opportunity' has the following attributes: 'id' of type int; 'stage' of type OpportunityStage; 'probability' of type int; 'updated_at' of type datetime; 'expected_close_date' of type date; 'description' of type str; 'created_at' of type datetime; 'title' of type str; 'value' of type float; 'closed_at' of type datetime.
+The class 'Company' has the following attributes: 'linkedin_url' of type str; 'city' of type str; 'website' of type str; 'description' of type str; 'industry' of type Industry; 'phone' of type str; 'updated_at' of type datetime; 'id' of type int; 'address' of type str; 'name' of type str; 'country' of type str; 'created_at' of type datetime; 'size' of type CompanySize.
+The class 'ScoreHistory' has the following attributes: 'new_score' of type int; 'old_score' of type int; 'id' of type int; 'calculated_at' of type datetime; 'reason' of type str.
+The class 'EnrichmentLog' has the following attributes: 'linkedin_url' of type str; 'enriched_at' of type datetime; 'id' of type int; 'error_message' of type str; 'is_successful' of type bool.
+The class 'User' has the following attributes: 'created_at' of type datetime; 'first_name' of type str; 'id' of type int; 'password_hash' of type str; 'role' of type UserRole; 'last_login' of type datetime; 'email' of type str; 'last_name' of type str; 'is_active' of type bool.
+The class 'GeneratedEmail' has the following attributes: 'body' of type str; 'subject' of type str; 'created_at' of type datetime; 'id' of type int; 'sent_at' of type datetime; 'is_sent' of type bool.
+The class 'EmailTemplate' has the following attributes: 'body_template' of type str; 'subject_template' of type str; 'id' of type int; 'name' of type str; 'created_at' of type datetime; 'category' of type str.
+The class 'Task' has the following attributes: 'due_date' of type datetime; 'created_at' of type datetime; 'title' of type str; 'id' of type int; 'completed_at' of type datetime; 'description' of type str; 'is_completed' of type bool.
+The class 'Contact' has the following attributes: 'is_enriched' of type bool; 'updated_at' of type datetime; 'last_name' of type str; 'phone' of type str; 'profile_picture_url' of type str; 'lead_score_level' of type LeadScoreLevel; 'notes' of type str; 'first_name' of type str; 'job_title' of type str; 'email' of type str; 'created_at' of type datetime; 'id' of type int; 'lead_score' of type int; 'linkedin_url' of type str.
+The enumeration 'InteractionDirection' has the following literals: 'OUTBOUND', 'INBOUND'.
+The enumeration 'CompanySize' has the following literals: 'STARTUP', 'MEDIUM', 'ENTERPRISE', 'SMALL', 'LARGE'.
+The enumeration 'InteractionType' has the following literals: 'NOTE', 'CALL', 'MEETING', 'EMAIL'.
+The enumeration 'OpportunityStage' has the following literals: 'NEGOTIATION', 'CLOSED_LOST', 'PROPOSAL', 'PROSPECTING', 'QUALIFICATION', 'CLOSED_WON'.
+The enumeration 'Industry' has the following literals: 'RETAIL', 'TECHNOLOGY', 'MANUFACTURING', 'HEALTHCARE', 'FINANCE', 'SERVICES', 'OTHER'.
+The enumeration 'UserRole' has the following literals: 'ADMIN', 'SALES_REP', 'SALES_MANAGER'.
+The enumeration 'LeadScoreLevel' has the following literals: 'COLD', 'WARM', 'HOT'.
+'EmailTemplate' (role 'generated_emails', cardinality 0..*) is associated with 'GeneratedEmail' (role 'template', cardinality 0..*).
+'Contact' (role 'created_by', cardinality 0..*) is associated with 'User' (role 'created_contacts', cardinality 0..*).
+'User' (role 'interactions', cardinality 0..*) is associated with 'Interaction' (role 'performed_by', cardinality 0..*).
+'Interaction' (role 'contact', cardinality 0..*) is associated with 'Contact' (role 'interactions', cardinality 0..*).
+'Contact' (role 'generated_emails', cardinality 0..*) is associated with 'GeneratedEmail' (role 'contact', cardinality 0..*).
+'User' (role 'owned_opportunities', cardinality 0..*) is associated with 'Opportunity' (role 'owner', cardinality 0..*).
+'User' (role 'email_templates', cardinality 0..*) is associated with 'EmailTemplate' (role 'created_by', cardinality 0..*).
+'User' (role 'tasks', cardinality 0..*) is associated with 'Task' (role 'assigned_to', cardinality 0..*).
+'Opportunity' (role 'company', cardinality 0..*) is associated with 'Company' (role 'opportunities', cardinality 0..*).
+'Task' (role 'contact', cardinality 0..*) is associated with 'Contact' (role 'tasks', cardinality 0..*).
+'Contact' (role 'tags', cardinality 0..*) is associated with 'Tag' (role 'tagged_contacts', cardinality 0..*).
+'Contact' (role 'company', cardinality 0..*) is associated with 'Company' (role 'contacts', cardinality 0..*).
+'EnrichmentLog' (role 'contact', cardinality 0..*) is associated with 'Contact' (role 'enrichment_logs', cardinality 0..*).
+'Company' (role 'tags', cardinality 0..*) is associated with 'Tag' (role 'tagged_companies', cardinality 0..*).
+'User' (role 'created_companies', cardinality 0..*) is associated with 'Company' (role 'created_by', cardinality 0..*).
+'Opportunity' (role 'contacts', cardinality 0..*) is associated with 'Contact' (role 'opportunities', cardinality 0..*).
+'Opportunity' (role 'tasks', cardinality 0..*) is associated with 'Task' (role 'opportunity', cardinality 0..*).
+'GeneratedEmail' (role 'created_by', cardinality 0..*) is associated with 'User' (role 'generated_emails', cardinality 0..*).
+'Contact' (role 'score_history', cardinality 0..*) is associated with 'ScoreHistory' (role 'contact', cardinality 0..*).
