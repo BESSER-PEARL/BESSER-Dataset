@@ -1,0 +1,6 @@
+The model has 4 class(es).
+The class 'Admin' has the following attributes: 'password' of type str; 'email' of type str.
+The class 'ShoppingCart' has the following attributes: 'productID' of type int; 'dateAdded' of type str; 'cartID' of type int; 'quantity' of type int.
+The class 'Customer' has the following attributes: 'sem' of type str; 'password' of type str; 'branch' of type str; 'email' of type str; 'phone' of type int; 'name' of type str.
+The class 'Login' has the following attributes: 'email' of type str; 'password' of type str.
+'ShoppingCart' (role 'Customer_ShoppingCart_11', cardinality 0..*) is associated with 'Customer' (role 'Customer_ShoppingCart_00', cardinality 0..*).

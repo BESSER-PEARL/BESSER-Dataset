@@ -1,0 +1,22 @@
+The model has 18 class(es).
+The class 'Queen' has no attributes.
+The class 'Rook' has no attributes.
+The class 'BoardValidatorInterface_Interface' has no attributes.
+The class 'Bishop' has no attributes.
+The class 'Square' has the following attributes: 'position' of type Position; 'piece' of type Piece.
+The class 'ChessGame' has no attributes.
+The class 'Piece' has the following attributes: 'attribute' of type str.
+The class 'BoardView' has no attributes.
+The class 'ChessGameController' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'ChessBoardInterface_Interface' has no attributes.
+The class 'ChessBoard' has no attributes.
+The class 'Knigh' has no attributes.
+The class 'King' has no attributes.
+The class 'Pawn' has no attributes.
+The class 'BoardValidator' has no attributes.
+The class 'Position' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'BoardViewInterface_Interface' has no attributes.
+The class 'Player' has no attributes.
+The enumeration 'color' does not specify any literals.
+The enumeration 'PieceType' does not specify any literals.
+'ChessBoard' (role 'piece0', cardinality 0..*) is associated with 'Piece' (role 'chessBoard1', cardinality 0..*).

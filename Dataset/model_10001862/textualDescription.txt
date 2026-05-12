@@ -1,0 +1,10 @@
+The model has 9 class(es).
+The class 'Card' has no attributes.
+The class 'JFrame' has no attributes.
+The class 'Comparable_Interface' has no attributes.
+The class 'poker_Game' has the following attributes: 'hand_size' of type int; 'tryagain' of type int.
+The class 'player_Player' has no attributes.
+The class 'player_Deck' has the following attributes: 'remainofDeck' of type int; 'hand_size' of type int; 'deck_size' of type int; 'numberofShuffles' of type int.
+The class 'Board' has the following attributes: 'playAagain' of type str; 'cardArea' of type str.
+The class 'poker_GameRun' has no attributes.
+The class 'card_Card' has the following attributes: 'suit' of type int; 'rank' of type int.

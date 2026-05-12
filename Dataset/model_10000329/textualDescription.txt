@@ -1,0 +1,22 @@
+The model has 12 class(es).
+The class 'Waiter' has no attributes.
+The class 'Online_Customer' has no attributes.
+The class 'Reservation' has the following attributes: 'ReservationID' of type str; 'Date' of type Date; 'Time' of type str.
+The class 'Bill' has the following attributes: 'Tax' of type int; 'Tip' of type int; 'TotalAmount' of type int.
+The class 'Payment' has no attributes.
+The class 'Staff' has the following attributes: 'Staff_ID' of type str; 'Name' of type str; 'JobType' of type str; 'Phone' of type str.
+The class 'Guest' has the following attributes: 'Name' of type str; 'Phone' of type str; 'Guest_ID' of type str.
+The class 'Party' has the following attributes: 'Number_Of_Adults' of type int; 'Number_of_Guests' of type int; 'Number_Of_Children' of type int.
+The class 'Table' has the following attributes: 'TableID' of type str; 'Capacity' of type int.
+The class 'Kitchen' has no attributes.
+The class 'Host' has no attributes.
+The class 'Order' has no attributes.
+The enumeration 'ReservationType2' does not specify any literals.
+The enumeration 'ReservationType' does not specify any literals.
+The enumeration 'Date' does not specify any literals.
+'Bill' (role 'waiter7', cardinality 0..*) is associated with 'Waiter' (role 'bill6', cardinality 0..*).
+'Table' (role 'reservation11', cardinality 0..*) is associated with 'Reservation' (role 'table10', cardinality 0..*).
+'Host' (role 'reservation0', cardinality 0..*) is associated with 'Reservation' (role 'host1', cardinality 0..*).
+'Waiter' (role 'order2', cardinality 0..*) is associated with 'Order' (role 'waiter3', cardinality 0..*).
+'Order' (role 'kitchen5', cardinality 0..*) is associated with 'Kitchen' (role 'order4', cardinality 0..*).
+'Waiter' (role 'table8', cardinality 0..*) is associated with 'Table' (role 'waiter9', cardinality 0..*).

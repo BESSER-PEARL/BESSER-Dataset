@@ -1,0 +1,17 @@
+The model has 10 class(es).
+The class 'Customer_Actor' has no attributes.
+The class 'chefTicket' has no attributes.
+The class 'viewOrder' has no attributes.
+The class 'Online_Order_and_CC_Processing' has the following attributes: 'order' of type str; 'payment' of type str; 'paymentApproved' of type bool.
+The class 'deleteOrder' has no attributes.
+The class 'createOrder' has the following attributes: 'orderedItems' of type str.
+The class 'Online_Order_and_CC_processing_Actor' has no attributes.
+The class 'Customer' has the following attributes: 'location' of type str; 'name' of type str.
+The class 'updatePayment' has the following attributes: 'paymentInformation' of type str.
+The class 'Store_POS_System' has the following attributes: 'print' of type str.
+'chefTicket' (role 'store_POS_System8', cardinality 0..*) is associated with 'Store_POS_System' (role 'chefTicket29', cardinality 0..*).
+'deleteOrder' (role 'customer7', cardinality 0..*) is associated with 'Customer' (role 'deleteOrder26', cardinality 0..*).
+'Customer' (role 'createOrder22', cardinality 0..*) is associated with 'createOrder' (role 'customer3', cardinality 0..*).
+'Customer' (role 'updatePayment24', cardinality 0..*) is associated with 'updatePayment' (role 'customer5', cardinality 0..*).
+'Online_Order_and_CC_Processing' (role 'chefTicket210', cardinality 0..*) is associated with 'chefTicket' (role 'online_Order_and_CC_Processing11', cardinality 0..*).
+'Online_Order_and_CC_Processing' (role 'customer1', cardinality 0..*) is associated with 'Customer' (role 'Online_Order_and_CC_Processing0', cardinality 0..*).

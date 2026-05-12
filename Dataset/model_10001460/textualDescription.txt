@@ -1,0 +1,17 @@
+The model has 10 class(es).
+The class 'Player' has the following attributes: 'role' of type str; 'night_target' of type Player; 'vote_for' of type Player; 'votes' of type int; 'isAlive' of type bool.
+The class 'Room' has no attributes.
+The class 'Villager' has no attributes.
+The class 'ChatMessage' has no attributes.
+The class 'Guardian' has no attributes.
+The class 'Game' has the following attributes: 'turn_state' of type State.
+The class 'Wolf' has no attributes.
+The class 'BaseRole' has the following attributes: 'night_action' of type NightAction; 'appear_as' of type Role; 'wins_with' of type Role; 'role' of type Role.
+The class 'SysMessage' has no attributes.
+The class 'Seer' has no attributes.
+The enumeration 'Enumeration2' does not specify any literals.
+The enumeration 'NightAction' does not specify any literals.
+The enumeration 'State' does not specify any literals.
+The enumeration 'Role' does not specify any literals.
+The enumeration 'Enumeration' does not specify any literals.
+'Player' (role 'game1', cardinality 0..*) is associated with 'Game' (role 'player0', cardinality 0..*).

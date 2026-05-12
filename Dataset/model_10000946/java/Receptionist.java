@@ -1,0 +1,40 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Receptionist  {
+
+    private int id;
+    private String attribute2;
+
+
+
+    public Receptionist(
+        int id,        String attribute2    ) {
+        this.id = id;
+        this.attribute2 = attribute2;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getAttribute2() {
+        return attribute2;
+    }
+
+    public void setAttribute2(String attribute2) {
+        this.attribute2 = attribute2;
+    }
+
+
+}

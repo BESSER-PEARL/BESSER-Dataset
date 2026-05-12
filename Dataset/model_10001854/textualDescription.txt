@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'Login' has the following attributes: 'securityQuestion' of type str; 'lastLoginTime' of type date; 'securityAnswer' of type str; 'password' of type str; 'username' of type str.
+The class 'TransferTransaction' has the following attributes: 'sourceAccount' of type Account; 'targetAccount' of type Account.
+The class 'Transaction' has the following attributes: 'type' of type TransactionType; 'transactionTime' of type date; 'amount' of type float; 'id' of type int.
+The class 'SavingsAccount' has the following attributes: 'interestRate' of type float.
+The class 'CertificatesOfDepositAccount' has the following attributes: 'interestRate' of type float; 'timePeriod' of type int.
+The class 'Customer' has the following attributes: 'name' of type str; 'emailAddress' of type str; 'dateOfBirth' of type date; 'address' of type str; 'phoneNumber' of type str.
+The class 'Account' has the following attributes: 'type' of type AccountType; 'accountNo' of type str; 'balance' of type float.
+The enumeration 'AccountType' does not specify any literals.
+The enumeration 'TransactionType' does not specify any literals.
+'Account' (role 'transactions2', cardinality 0..*) is associated with 'Transaction' (role 'account3', cardinality 0..*).
+'Account' (role 'c0', cardinality 0..*) is associated with 'Customer' (role 'a1', cardinality 0..*).
+'Customer' (role 'login4', cardinality 0..*) is associated with 'Login' (role 'customer5', cardinality 0..*).

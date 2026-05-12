@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'WebUser' has the following attributes: 'password' of type str; 'state' of type UserState; 'login' of type str.
+The class 'Order' has the following attributes: 'shipTo' of type str; 'ordered' of type date; 'total' of type float; 'status' of type OrderStatus; 'number' of type int; 'shipped' of type bool.
+The class 'Customer' has the following attributes: 'email' of type str; 'address' of type str; 'phone' of type str.
+The class 'ShoppinCart' has the following attributes: 'creationDate' of type date.
+The class 'LineItem' has the following attributes: 'quantity' of type int; 'price' of type float.
+The class 'MyClass' has the following attributes: 'attribute3' of type str; 'attribute5' of type str; 'attribute' of type str; 'attribute4' of type str; 'attribute6' of type str; 'attribute7' of type str; 'attribute2' of type str.
+The class 'Payment' has the following attributes: 'paidDate' of type date; 'total' of type float; 'details' of type str.
+The class 'Product' has the following attributes: 'description' of type str; 'attribute2' of type str; 'attribute5' of type str; 'attribute7' of type str; 'attribute8' of type str; 'name' of type str; 'attribute' of type str; 'attribute6' of type str; 'attribute4' of type str; 'attribute3' of type str.
+The class 'Account' has the following attributes: 'isClosed' of type bool; 'billingAddress' of type str; 'open' of type date; 'closed' of type date.
+The enumeration 'UserState' does not specify any literals.
+The enumeration 'OrderStatus' does not specify any literals.
+'Payment' (role 'account1', cardinality 0..*) is associated with 'Account' (role 'payment0', cardinality 0..*).
+'Account' (role 'order4', cardinality 0..*) is associated with 'Order' (role 'account5', cardinality 0..*).
+'ShoppinCart' (role 'account17', cardinality 0..*) is associated with 'Account' (role 'cart16', cardinality 0..*).
+'Product' (role 'item12', cardinality 0..*) is associated with 'LineItem' (role 'product13', cardinality 0..*).
+'ShoppinCart' (role 'items18', cardinality 0..*) is associated with 'LineItem' (role 'sc19', cardinality 0..*).
+'Customer' (role 'webuser7', cardinality 0..*) is associated with 'WebUser' (role 'customer6', cardinality 0..*).
+'Order' (role 'order3', cardinality 0..*) is associated with 'Payment' (role 'order2', cardinality 0..*).
+'ShoppinCart' (role 'webuser8', cardinality 0..*) is associated with 'WebUser' (role 'shoppincart9', cardinality 0..*).
+'Account' (role 'customer11', cardinality 0..*) is associated with 'Customer' (role 'acc10', cardinality 0..*).
+'LineItem' (role 'lineitem15', cardinality 0..*) is associated with 'Order' (role 'items14', cardinality 0..*).

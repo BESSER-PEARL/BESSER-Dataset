@@ -1,0 +1,18 @@
+The model has 13 class(es).
+The class 'Elevator_Controller_2' has the following attributes: 'attribute' of type str; 'Floor_ID' of type int; 'Position' of type int; 'Direction' of type bool.
+The class 'Elevator_button' has the following attributes: 'Floor_num' of type int.
+The class 'Button' has the following attributes: 'illuminate' of type str.
+The class 'Floor' has the following attributes: 'Id' of type int.
+The class '_unnamed' has no attributes.
+The class 'Bridge' has no attributes.
+The class 'Elevator1' has the following attributes: 'id' of type int.
+The class 'Elevator_Controller' has the following attributes: 'attribute' of type str; 'Direction' of type bool; 'Floor_ID' of type int; 'Position' of type int.
+The class 'Door' has the following attributes: 'Close' of type str.
+The class 'Floor_button' has the following attributes: 'Floor_num' of type int; 'Direction' of type bool.
+The class 'Elevator_Request' has no attributes.
+The class 'Elevator' has the following attributes: 'Current_Floor' of type int; 'Direction' of type bool; 'attribute3' of type str.
+The class '_unnamed1' has no attributes.
+'Door' (role 'elevator_Controller3', cardinality 0..*) is associated with 'Elevator_Controller' (role 'N2', cardinality 0..*).
+'Elevator_Controller' (role 'elevator1', cardinality 0..*) is associated with 'Elevator' (role 'elevator_Controller0', cardinality 0..*).
+'Elevator_Controller' (role 'n5', cardinality 0..*) is associated with 'Elevator' (role '_14', cardinality 0..*).
+'Elevator_Controller' (role '_16', cardinality 0..*) is associated with 'Button' (role 'm7', cardinality 0..*).

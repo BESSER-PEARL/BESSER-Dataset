@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'staff' has the following attributes: 'name' of type str; 'staffID' of type int; 'jobtype' of type str.
+The class 'restaurant' has the following attributes: 'Menuid' of type str; 'tableid' of type int.
+The class 'payment' has the following attributes: 'tableno' of type int; 'name' of type str.
+The class 'bill' has the following attributes: 'tableno' of type int; 'orderid' of type int; 'menuid' of type str.
+The class 'waiter' has the following attributes: 'Staffid' of type int; 'name' of type str.
+The class 'menu' has the following attributes: 'Price' of type int; 'Menuname' of type str; 'Menuid' of type str.
+The class 'customer' has the following attributes: 'Tableno' of type int; 'Name' of type str; 'Order' of type str.
+The class 'chef' has the following attributes: 'Name' of type str; 'Staffid' of type int.
+The class 'order' has the following attributes: 'orderid' of type int; 'orderdate' of type str; 'price' of type int.
+The enumeration 'Print_Receipt' does not specify any literals.
+'staff' (role 'menu13', cardinality 0..*) is associated with 'menu' (role 'staff12', cardinality 0..*).
+'menu' (role 'order4', cardinality 0..*) is associated with 'order' (role 'menu5', cardinality 0..*).
+'waiter' (role 'menu6', cardinality 0..*) is associated with 'menu' (role 'waiter7', cardinality 0..*).
+'customer' (role 'payment_customer_111', cardinality 0..*) is associated with 'payment' (role 'customer10', cardinality 0..*).
+'menu' (role 'browse_menu3', cardinality 0..*) is associated with 'customer' (role 'menu2', cardinality 0..*).
+'payment' (role 'order1', cardinality 0..*) is associated with 'order' (role 'payment0', cardinality 0..*).
+'customer' (role 'restaurant17', cardinality 0..*) is associated with 'restaurant' (role 'customer16', cardinality 0..*).
+'chef' (role 'waiter9', cardinality 0..*) is associated with 'waiter' (role 'chef8', cardinality 0..*).
+'restaurant' (role 'staff18', cardinality 0..*) is associated with 'staff' (role 'restaurant19', cardinality 0..*).
+'staff' (role 'waiter15', cardinality 0..*) is associated with 'waiter' (role 'staff14', cardinality 0..*).

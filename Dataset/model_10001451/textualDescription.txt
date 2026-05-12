@@ -1,0 +1,6 @@
+The model has 5 class(es).
+The class 'JFrame' has no attributes.
+The class 'Figura' has the following attributes: 'estado' of type bool; 'valor' of type int.
+The class 'Ventana' has the following attributes: 'l2' of type int; 'fig' of type Figura; 'c3' of type Cuadrado; 'c1' of type Cuadrado; 'etiqueta' of type str; 'l1' of type int; 'c2' of type Cuadrado.
+The class 'Cuadrado' has the following attributes: 'img' of type str; 'v2' of type int; 'v1' of type int.
+The class 'Canvas' has no attributes.

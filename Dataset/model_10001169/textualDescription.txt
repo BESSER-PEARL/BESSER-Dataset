@@ -1,0 +1,40 @@
+The model has 24 class(es).
+The class 'Admin1' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Society' has no attributes.
+The class 'Guest1' has no attributes.
+The class 'Guest' has no attributes.
+The class 'Post1' has the following attributes: 'files' of type str; 'body' of type str; 'title' of type str; 'author' of type str; 'date' of type str.
+The class 'Event1' has the following attributes: 'isOpen' of type bool; 'location' of type Location; 'name' of type str; 'size' of type int; 'rating' of type int; 'joined' of type str; 'date' of type str; 'invites' of type str; 'eventOwner' of type User1.
+The class 'Comment1' has the following attributes: 'date' of type str; 'body' of type str; 'author' of type str.
+The class 'Comment' has no attributes.
+The class 'Student' has no attributes.
+The class 'Event' has no attributes.
+The class 'User1' has the following attributes: 'campus' of type str; 'email' of type str; 'attribute' of type str; 'username' of type str; 'name' of type str; 'isStaff' of type bool.
+The class 'Student1' has the following attributes: 'yearOfStudy' of type int; 'school' of type str; 'course' of type str.
+The class 'Lecturer1' has the following attributes: 'school' of type str.
+The class 'Post' has no attributes.
+The class 'Admin' has no attributes.
+The class 'Society1' has the following attributes: 'yearEstablished' of type int.
+The class 'Location' has no attributes.
+The class 'Location1' has the following attributes: 'address' of type str; 'capacity' of type int; 'name' of type str.
+The class 'VirtualTour' has no attributes.
+The class 'User' has no attributes.
+The class 'VirtualTour1' has the following attributes: 'URL' of type str.
+The class 'test_UseCase' has no attributes.
+The class 'Lecturer' has no attributes.
+'Post1' (role 'user19', cardinality 0..*) is associated with 'User1' (role 'post18', cardinality 0..*).
+'Post' (role 'user3', cardinality 0..*) is associated with 'User' (role 'post2', cardinality 0..*).
+'VirtualTour' (role 'myClass1', cardinality 0..*) is associated with 'Guest' (role 'myClass20', cardinality 0..*).
+'User' (role 'virtualTour12', cardinality 0..*) is associated with 'VirtualTour' (role 'user13', cardinality 0..*).
+'Location1' (role 'event28', cardinality 0..*) is associated with 'Event1' (role 'location229', cardinality 0..*).
+'Guest1' (role 'myClass214', cardinality 0..*) is associated with 'VirtualTour1' (role 'myClass15', cardinality 0..*).
+'Event' (role 'user5', cardinality 0..*) is associated with 'User' (role 'event4', cardinality 0..*).
+'Comment' (role 'user10', cardinality 0..*) is associated with 'User' (role 'comment11', cardinality 0..*).
+'User1' (role 'comment21', cardinality 0..*) is associated with 'Comment1' (role 'user20', cardinality 0..*).
+'Post1' (role 'event27', cardinality 0..*) is associated with 'Event1' (role 'post26', cardinality 0..*).
+'User1' (role 'event22', cardinality 0..*) is associated with 'Event1' (role 'user23', cardinality 0..*).
+'User1' (role 'virtualTour16', cardinality 0..*) is associated with 'VirtualTour1' (role 'user17', cardinality 0..*).
+'Comment1' (role 'post25', cardinality 0..*) is associated with 'Post1' (role 'comment24', cardinality 0..*).
+'Event' (role 'location7', cardinality 0..*) is associated with 'Location' (role 'event6', cardinality 0..*).
+'Comment' (role 'post8', cardinality 0..*) is associated with 'Post' (role 'comment9', cardinality 0..*).

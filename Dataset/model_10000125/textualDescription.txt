@@ -1,0 +1,20 @@
+The model has 10 class(es).
+The class 'Lecturer' has no attributes.
+The class 'Admin' has no attributes.
+The class 'Student' has the following attributes: 'ID' of type str; 'Name' of type str.
+The class 'Access_Information' has no attributes.
+The class 'Authentication' has no attributes.
+The class 'HOD' has no attributes.
+The class 'Attendance' has no attributes.
+The class 'Department' has the following attributes: 'lecturer__' of type Lecturer; 'course' of type Course; 'hod' of type HOD; 'students__' of type Student.
+The class 'Course' has the following attributes: 'subjects__' of type Subject; 'duration' of type str.
+The class 'Subject' has the following attributes: 'name' of type str.
+'Student' (role 'admin9', cardinality 0..*) is associated with 'Admin' (role 'student8', cardinality 0..*).
+'Course' (role 'department1', cardinality 0..*) is associated with 'Department' (role 'course0', cardinality 0..*).
+'Student' (role 'Having_Attendance6', cardinality 0..*) is associated with 'Access_Information' (role 'student7', cardinality 0..*).
+'Subject' (role 'course3', cardinality 0..*) is associated with 'Course' (role 'subject2', cardinality 0..*).
+'Department' (role 'lecturer17', cardinality 0..*) is associated with 'Lecturer' (role 'department16', cardinality 0..*).
+'Attendance' (role 'access_Information11', cardinality 0..*) is associated with 'Access_Information' (role 'attendance10', cardinality 0..*).
+'HOD' (role 'department14', cardinality 0..*) is associated with 'Department' (role 'hOD15', cardinality 0..*).
+'Department' (role 'Department_Student_04', cardinality 0..*) is associated with 'Student' (role 'department5', cardinality 0..*).
+'Access_Information' (role 'department12', cardinality 0..*) is associated with 'Department' (role 'access_Information13', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'WIS_Tier' has the following attributes: 'eigeneAngaben' of type str; 'transponderNummer' of type str; 'geburtsdatum' of type str; 'istAktiv' of type bool; 'BTV8' of type str; 'BTV4' of type str; 'letzteKalbung' of type str; 'istWeiblich' of type bool; 'name' of type str; 'UDNummer' of type str; 'LOM' of type int.
+The class 'WIS_Weidegang' has the following attributes: 'tierLOM' of type str; 'istAusgefallen' of type bool; 'weideSchlagnummer' of type str; 'tierName' of type str; 'ausfallgrund' of type str; 'herdeName' of type str; 'weideFACTCode' of type str; 'weideName' of type str; 'herdeFarbe' of type str; 'datum' of type str.
+The class 'Actor_Actor' has no attributes.
+The class 'WIS_Weide' has the following attributes: 'farbe' of type str; 'name' of type str; 'istAktiv' of type bool; 'istBetriebsfremdeFlaeche' of type bool; 'bemerkung' of type str; 'FACTCode' of type int; 'groesse' of type int; 'LPRVertrag' of type str; 'schlagnummer' of type int.
+The class 'WIS_Herde' has the following attributes: 'name' of type str.
+The class 'Benutzer' has the following attributes: 'passwortHash' of type str; 'name' of type str.
+The class 'UseCase_UseCase' has no attributes.
+The class 'WIS_WeideBemerkung' has the following attributes: 'weideSchlagnummer' of type str; 'bemerkung' of type str; 'weideName' of type str; 'datum' of type str; 'weideFACTCode' of type str.
+The class 'WIS_Weidefl_che' has the following attributes: 'name' of type str; 'farbe' of type str; 'schlagnummer' of type str; 'groesse' of type int.
+The class 'WIS_HiTierImport' has the following attributes: 'datum' of type str.
+The class 'Weidegang2' has the following attributes: 'weideName' of type str; 'istAusgefallen' of type bool; 'herdeFarbe' of type str; 'datum' of type str; 'herdeName' of type str; 'tierName' of type str; 'weideSchlagnummer' of type str; 'ausfallgrund' of type str; 'weideFACTCode' of type str.
+'WIS_Tier' (role 'hiTierImport20', cardinality 0..*) is associated with 'WIS_HiTierImport' (role 'tier21', cardinality 0..*).
+'WIS_HiTierImport' (role 'benutzer18', cardinality 0..*) is associated with 'Benutzer' (role 'hiTierImport19', cardinality 0..*).
+'WIS_Weide' (role 'benutzer16', cardinality 0..*) is associated with 'Benutzer' (role 'weide17', cardinality 0..*).
+'WIS_Weidegang' (role 'herde6', cardinality 0..*) is associated with 'WIS_Herde' (role 'weidegang7', cardinality 0..*).
+'WIS_Weidefl_che' (role 'weide3', cardinality 0..*) is associated with 'WIS_Weide' (role 'teilflaeche2', cardinality 0..*).
+'WIS_Weidegang' (role 'tier10', cardinality 0..*) is associated with 'WIS_Tier' (role 'weidegang11', cardinality 0..*).
+'Benutzer' (role 'herde13', cardinality 0..*) is associated with 'WIS_Herde' (role 'benutzer12', cardinality 0..*).
+'WIS_Weidegang' (role 'benutzer14', cardinality 0..*) is associated with 'Benutzer' (role 'weidegang15', cardinality 0..*).
+'WIS_Weide' (role 'weidegang5', cardinality 0..*) is associated with 'WIS_Weidegang' (role 'weide4', cardinality 0..*).
+'WIS_Tier' (role 'herde8', cardinality 0..*) is associated with 'WIS_Herde' (role 'tier9', cardinality 0..*).
+'Benutzer' (role 'tier1', cardinality 0..*) is associated with 'WIS_Tier' (role 'benutzer0', cardinality 0..*).

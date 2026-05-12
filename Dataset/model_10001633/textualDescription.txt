@@ -1,0 +1,130 @@
+The model has 75 class(es).
+The class 'Package_EPF' has the following attributes: 'precentage' of type int; 'effectve_date' of type Package_UserUpdates; 'id' of type int.
+The class 'Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase' has no attributes.
+The class 'Interface_Interface' has no attributes.
+The class 'Package2_Event' has no attributes.
+The class 'Package_Allowance' has the following attributes: 'emp_id' of type str; 'id' of type int; 'Effectivedate' of type str.
+The class 'Package2_Users' has the following attributes: 'lastname' of type int; 'password' of type int; 'id' of type int; 'email' of type int; 'firstname' of type int.
+The class 'Package2_EmployeeSalary' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase' has no attributes.
+The class 'Package2_Attendance' has the following attributes: 'empid' of type int; 'timein' of type str; 'timeout' of type str; 'id' of type int.
+The class 'Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_Approve_Employee_Pay_sheets_UseCase' has no attributes.
+The class 'Package_Attendance' has the following attributes: 'timeout' of type str; 'id' of type int; 'timein' of type str; 'empid' of type int.
+The class 'Package_Departments' has the following attributes: 'id' of type int.
+The class 'Package_Messages' has no attributes.
+The class 'Package_ETF' has no attributes.
+The class 'Package2_UserUpdates' has no attributes.
+The class 'Package_Advances' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_View_leave_Rquest_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_View_Employee_profiles_UseCase' has no attributes.
+The class 'Package2_Posts' has the following attributes: 'attribute2' of type str; 'id' of type int.
+The class 'Package_EmployeeParoll' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_Add_New_department_UseCase' has no attributes.
+The class 'Clark_Actor' has no attributes.
+The class 'Package_OT_Requests' has the following attributes: 'EmpID' of type int; 'OTType' of type int; 'id' of type int; 'OtDay' of type date.
+The class 'Package2_Leave_Taken' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'Package_Employee' has the following attributes: 'post' of type str; 'empid' of type str; 'id' of type str; 'leavegroup' of type int; 'usergroup' of type int; 'depid' of type int; 'shift' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_Generate_Paysheet_UseCase' has no attributes.
+The class 'Package_DeuctionTypes' has no attributes.
+The class 'Package_User_Permissions' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'Presentation_StaffUI' has no attributes.
+The class 'Package2_Allowance' has the following attributes: 'emp_id' of type str; 'Effectivedate' of type str; 'id' of type int.
+The class 'Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase' has no attributes.
+The class 'Package2_Deductions' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase1' has no attributes.
+The class 'Package_EmployeeSalary' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'Package_Users' has the following attributes: 'password' of type int; 'email' of type int; 'id' of type int; 'lastname' of type int; 'firstname' of type int.
+The class 'Package2_OT_Requests' has the following attributes: 'OtDay' of type date; 'id' of type int; 'EmpID' of type int; 'OTType' of type int.
+The class 'Employee_Actor' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_Add_Employee_Time_Records_UseCase' has no attributes.
+The class 'Package2_Shifts' has the following attributes: 'endtime' of type str; 'shiftaname' of type str; 'starttime' of type str; 'id' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase' has no attributes.
+The class 'Package_UserUpdates' has no attributes.
+The class 'Package2_AllowanceTypes' has no attributes.
+The class 'Package2_LeaveProfiles' has the following attributes: 'id' of type int; 'anual' of type int; 'casual' of type int; 'name' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_Update_Leave_Balance_UseCase' has no attributes.
+The class 'Package_Leave_Taken' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'Package_AllowanceTypes' has no attributes.
+The class 'Package2_User_groups' has the following attributes: 'attribute' of type str; 'attribute3' of type str; 'attribute2' of type str.
+The class 'Package2_EmployeeParoll' has the following attributes: 'epf' of type int; 'etf' of type str; 'otamount' of type int; 'empid' of type int; 'id' of type int; 'doyamount' of type int; 'basicslaray' of type int; 'empid3' of type int.
+The class 'Package2_Advances' has no attributes.
+The class 'Package_Shifts' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'Package2_DeuctionTypes' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_Issue_and_Check_Appraislas_UseCase' has no attributes.
+The class 'Package2_Messages' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_Accept_Leave_UseCase' has no attributes.
+The class 'Package2_Departments' has the following attributes: 'id' of type int; 'depname' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_Add_Employee_profile_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_View_Employee_Time_Records_UseCase' has no attributes.
+The class 'Package_Deductions' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'Package2_User_Permissions' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_Reject_Leave_UseCase' has no attributes.
+The class 'Package2_Employee' has the following attributes: 'id' of type str; 'shift' of type str; 'post' of type str; 'usergroup' of type int; 'leavegroup' of type int; 'depid' of type int; 'empid' of type str.
+The class 'Package2_ETF' has no attributes.
+The class 'Use_Case_Diagram_for_Proposed_System_Add_new_company_Events_UseCase' has no attributes.
+The class 'Package_LeaveProfiles' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'Use_Case_Diagram_for_Proposed_System_View_Pay_Sheet_History_UseCase' has no attributes.
+The class 'Package_Event' has no attributes.
+The class 'Package_User_groups' has the following attributes: 'attribute3' of type str; 'attribute' of type str; 'attribute2' of type str.
+The class 'Package_Posts' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'Package2_EPF' has the following attributes: 'id' of type int; 'effectve_date' of type Package2_UserUpdates; 'precentage' of type int.
+The enumeration 'ot_Type' does not specify any literals.
+The enumeration 'date' does not specify any literals.
+'Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase' (role 'actor7', cardinality 0..*) is associated with 'Employee_Actor' (role 'View_Personal_Salary_history6', cardinality 0..*).
+'Package2_Employee' (role 'Employee_Leave_Taken_082', cardinality 0..*) is associated with 'Package2_Leave_Taken' (role 'Employee_Leave_Taken_183', cardinality 0..*).
+'Package_OT_Requests' (role 'Employee_OT_Requests_149', cardinality 0..*) is associated with 'Package_Employee' (role 'Employee_OT_Requests_048', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase1' (role 'clark35', cardinality 0..*) is associated with 'Clark_Actor' (role 'view_Reports34', cardinality 0..*).
+'Package2_Employee' (role 'Employee_Shifts_080', cardinality 0..*) is associated with 'Package2_Shifts' (role 'Employee_Shifts_181', cardinality 0..*).
+'Package2_User_groups' (role 'User_groups_User_Permissions_0100', cardinality 0..*) is associated with 'Package2_User_Permissions' (role 'User_groups_User_Permissions_1101', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase' (role 'actor0', cardinality 0..*) is associated with 'Employee_Actor' (role 'view_personal_detais1', cardinality 0..*).
+'Package_Employee' (role 'Employee_Leave_Taken_052', cardinality 0..*) is associated with 'Package_Leave_Taken' (role 'Employee_Leave_Taken_153', cardinality 0..*).
+'Package2_Employee' (role 'advances102', cardinality 0..*) is associated with 'Package2_Advances' (role 'Employee_Advances_1103', cardinality 0..*).
+'Admin_Actor' (role 'view_leave_Rquest18', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_View_leave_Rquest_UseCase' (role 'admin19', cardinality 0..*).
+'Package_Employee' (role 'Allowance_Employee_157', cardinality 0..*) is associated with 'Package_Allowance' (role 'Allowance_Employee_056', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase' (role 'actor9', cardinality 0..*) is associated with 'Employee_Actor' (role 'useCase28', cardinality 0..*).
+'Package2_EmployeeSalary' (role 'Employee_EmployeeSalary_185', cardinality 0..*) is associated with 'Package2_Employee' (role 'Employee_EmployeeSalary_084', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase' (role 'actor15', cardinality 0..*) is associated with 'Employee_Actor' (role 'useCase514', cardinality 0..*).
+'Employee_Actor' (role 'useCase310', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase' (role 'actor11', cardinality 0..*).
+'Package2_Employee' (role 'Employee_Messages_088', cardinality 0..*) is associated with 'Package2_Messages' (role 'Employee_Messages_189', cardinality 0..*).
+'Package_Posts' (role 'Employee_Posts_163', cardinality 0..*) is associated with 'Package_Employee' (role 'Employee_Posts_062', cardinality 0..*).
+'Package2_Employee' (role 'Employee_LeaveProfiles_090', cardinality 0..*) is associated with 'Package2_LeaveProfiles' (role 'Employee_LeaveProfiles_191', cardinality 0..*).
+'Package_Employee' (role 'Employee_LeaveProfiles_060', cardinality 0..*) is associated with 'Package_LeaveProfiles' (role 'Employee_LeaveProfiles_161', cardinality 0..*).
+'Admin_Actor' (role 'issue_and_Check_Appraislas22', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_Issue_and_Check_Appraislas_UseCase' (role 'admin23', cardinality 0..*).
+'Package_Employee' (role 'Employee_Messages_058', cardinality 0..*) is associated with 'Package_Messages' (role 'Employee_Messages_159', cardinality 0..*).
+'Package2_Departments' (role 'Departments_Employee_094', cardinality 0..*) is associated with 'Package2_Employee' (role 'Departments_Employee_195', cardinality 0..*).
+'Package_Attendance' (role 'Attendance_Employee_046', cardinality 0..*) is associated with 'Package_Employee' (role 'Attendance_Employee_147', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase' (role 'actor2', cardinality 0..*) is associated with 'Employee_Actor' (role 'request_Loan_and_advances3', cardinality 0..*).
+'Package2_Users' (role 'Users_Employee_074', cardinality 0..*) is associated with 'Package2_Employee' (role 'Users_Employee_175', cardinality 0..*).
+'Package_Employee' (role 'Users_Employee_145', cardinality 0..*) is associated with 'Package_Users' (role 'Users_Employee_044', cardinality 0..*).
+'Package2_Employee' (role 'Employee_Posts_092', cardinality 0..*) is associated with 'Package2_Posts' (role 'Employee_Posts_193', cardinality 0..*).
+'Clark_Actor' (role 'add_New_department32', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_Add_New_department_UseCase' (role 'clark33', cardinality 0..*).
+'Package_Employee' (role 'Employee_Shifts_050', cardinality 0..*) is associated with 'Package_Shifts' (role 'Employee_Shifts_151', cardinality 0..*).
+'Package_Departments' (role 'Departments_Employee_064', cardinality 0..*) is associated with 'Package_Employee' (role 'Departments_Employee_165', cardinality 0..*).
+'Package_Employee' (role 'Employee_EmployeeSalary_054', cardinality 0..*) is associated with 'Package_EmployeeSalary' (role 'Employee_EmployeeSalary_155', cardinality 0..*).
+'Package2_Attendance' (role 'Attendance_Employee_076', cardinality 0..*) is associated with 'Package2_Employee' (role 'Attendance_Employee_177', cardinality 0..*).
+'Admin_Actor' (role 'view_Employee_Time_Records20', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_View_Employee_Time_Records_UseCase' (role 'admin21', cardinality 0..*).
+'Admin_Actor' (role 'set_Leave_status28', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase' (role 'admin29', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_Generate_Paysheet_UseCase' (role 'clark41', cardinality 0..*) is associated with 'Clark_Actor' (role 'generate_Paysheet40', cardinality 0..*).
+'Admin_Actor' (role 'set_advances_status16', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase' (role 'admin17', cardinality 0..*).
+'Package2_Allowance' (role 'Allowance_Employee_086', cardinality 0..*) is associated with 'Package2_Employee' (role 'Allowance_Employee_187', cardinality 0..*).
+'Package_Advances' (role 'Employee_Advances_173', cardinality 0..*) is associated with 'Package_Employee' (role 'advances72', cardinality 0..*).
+'Package2_User_groups' (role 'Employee_User_groups_199', cardinality 0..*) is associated with 'Package2_Employee' (role 'Employee_User_groups_098', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_Add_Employee_Time_Records_UseCase' (role 'clark43', cardinality 0..*) is associated with 'Clark_Actor' (role 'add_Employee_Time_Records42', cardinality 0..*).
+'Package2_Employee' (role 'Employee_OT_Requests_078', cardinality 0..*) is associated with 'Package2_OT_Requests' (role 'Employee_OT_Requests_179', cardinality 0..*).
+'Package_User_Permissions' (role 'User_groups_User_Permissions_171', cardinality 0..*) is associated with 'Package_User_groups' (role 'User_groups_User_Permissions_070', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase' (role 'admin4', cardinality 0..*) is associated with 'Admin_Actor' (role 'view_Reports5', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_Add_Employee_profile_UseCase' (role 'clark31', cardinality 0..*) is associated with 'Clark_Actor' (role 'add_Employee_profile30', cardinality 0..*).
+'Clark_Actor' (role 'view_Employee_profiles36', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_View_Employee_profiles_UseCase' (role 'clark37', cardinality 0..*).
+'Package_EmployeeParoll' (role 'Employee_EmployeeParoll_167', cardinality 0..*) is associated with 'Package_Employee' (role 'Employee_EmployeeParoll_066', cardinality 0..*).
+'Package_Employee' (role 'Employee_User_groups_068', cardinality 0..*) is associated with 'Package_User_groups' (role 'Employee_User_groups_169', cardinality 0..*).
+'Admin_Actor' (role 'view_Pay_Sheet_History24', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Proposed_System_View_Pay_Sheet_History_UseCase' (role 'admin25', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_Approve_Employee_Pay_sheets_UseCase' (role 'admin27', cardinality 0..*) is associated with 'Admin_Actor' (role 'approve_Employee_Pay_sheets26', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_Add_new_company_Events_UseCase' (role 'clark39', cardinality 0..*) is associated with 'Clark_Actor' (role 'add_new_company_Events38', cardinality 0..*).
+'Package2_Employee' (role 'Employee_EmployeeParoll_096', cardinality 0..*) is associated with 'Package2_EmployeeParoll' (role 'Employee_EmployeeParoll_197', cardinality 0..*).
+'Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase' (role 'actor13', cardinality 0..*) is associated with 'Employee_Actor' (role 'useCase412', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 10 class(es).
+The class 'ILogin_Interface' has no attributes.
+The class 'Person' has the following attributes: 'id' of type str; 'phNum' of type str; 'PersonFName' of type str.
+The class 'Admin' has the following attributes: 'AdminFileName' of type str.
+The class 'Finance' has the following attributes: 'coast' of type str; 'Cname' of type str.
+The class 'Student' has the following attributes: 's_age' of type int; 'grade' of type str; 'studentfname' of type str.
+The class 'Email' has the following attributes: 'Email' of type str.
+The class 'Insturctor' has the following attributes: 'INfilename' of type str.
+The class 'Exam' has the following attributes: 'EID' of type str; 'EName' of type str; 'MaxGrade' of type str; 'Exam_File_Name' of type str; 'ETIME' of type str.
+The class 'Course' has the following attributes: 'Course_File_Name' of type str; 'Course_REG' of type str; 'Cprice' of type str; 'CTutor' of type str; 'Cid' of type str; 'Cname' of type str.
+The class 'FileBinary' has no attributes.
+'Exam' (role 'course0', cardinality 0..*) is associated with 'Course' (role 'exam1', cardinality 0..*).
+'FileBinary' (role 'email7', cardinality 0..*) is associated with 'Email' (role 'fileBinary6', cardinality 0..*).
+'Insturctor' (role 'fileBinary8', cardinality 0..*) is associated with 'FileBinary' (role 'insturctor9', cardinality 0..*).
+'Student' (role 'fileBinary10', cardinality 0..*) is associated with 'FileBinary' (role 'student11', cardinality 0..*).
+'FileBinary' (role 'exam3', cardinality 0..*) is associated with 'Exam' (role 'fileBinary2', cardinality 0..*).
+'Course' (role 'fileBinary4', cardinality 0..*) is associated with 'FileBinary' (role 'course5', cardinality 0..*).

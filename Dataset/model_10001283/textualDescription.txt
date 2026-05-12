@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'Patient' has the following attributes: 'MedicalTest' of type str; 'Height' of type float; 'Surgeries' of type str; 'Medicine' of type str; 'weight' of type float; 'DiagnosisList' of type str; 'Allergies' of type str.
+The class 'Symptoms' has the following attributes: 'ID' of type int; 'name' of type str.
+The class 'Medicine' has the following attributes: 'ActiveIngredient' of type str; 'ID' of type int; 'name' of type str; 'Price' of type str; 'Type' of type str.
+The class 'Person' has the following attributes: 'ID' of type int; 'InsuranceNumber' of type str; 'Email' of type str; 'Balance' of type str; 'Image' of type str; 'Ssn' of type str; 'Last_Seen' of type str; 'Name' of type str; 'Gender' of type int; 'Password' of type str; 'PhoneNumeber' of type str; 'Long' of type str; 'Lat' of type str.
+The class 'Medical_test' has the following attributes: 'Date' of type str; 'Image' of type str; 'Lab' of type str; 'name' of type str; 'ID' of type int.
+The class 'Diagnosis' has the following attributes: 'LIst_of_Instructions' of type str; 'Patient_Id' of type int; 'ID' of type int; 'LIst_of_Medical_Test' of type str; 'Doctor_Id' of type int; 'Date' of type str; 'LIst_of_Diagnosis' of type str; 'LIst_of_Medicine' of type str; 'Condition' of type str; 'LIst_of_Symptoms' of type str.
+The class 'Instructions' has the following attributes: 'name' of type str; 'descriptions' of type str; 'ID' of type int.
+The class 'Signs' has the following attributes: 'name' of type str; 'ID' of type int.
+'Symptoms' (role 'diagnosis3', cardinality 0..*) is associated with 'Diagnosis' (role 'symptoms2', cardinality 0..*).
+'Patient' (role 'diagnosis10', cardinality 0..*) is associated with 'Diagnosis' (role 'patient11', cardinality 0..*).
+'Diagnosis' (role 'instructions6', cardinality 0..*) is associated with 'Instructions' (role 'diagnosis7', cardinality 0..*).
+'Diagnosis' (role 'signs4', cardinality 0..*) is associated with 'Signs' (role 'diagnosis5', cardinality 0..*).
+'Medicine' (role 'diagnosis1', cardinality 0..*) is associated with 'Diagnosis' (role 'medicine0', cardinality 0..*).
+'Medical_test' (role 'diagnosis9', cardinality 0..*) is associated with 'Diagnosis' (role 'medical_test8', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 9 class(es).
+The class 'User_Actor' has no attributes.
+The class 'SetExpressCheckoutAdapter' has no attributes.
+The class 'SetExpressCheckoutProcessor' has no attributes.
+The class 'IAppProcessor_Interface' has no attributes.
+The class 'AppProcessor' has no attributes.
+The class 'GetExpressCheckoutDetailsProcessor' has no attributes.
+The class 'DoExpressCheckoutDetailsProcessor' has no attributes.
+The class 'DoExpressCheckoutDetailsAdapter' has no attributes.
+The class 'GetExpressCheckoutDetailsAdapter' has no attributes.

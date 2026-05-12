@@ -1,0 +1,69 @@
+The model has 39 class(es).
+The class 'Compa_ia' has the following attributes: 'codigo' of type str; 'zona' of type str.
+The class 'Departamento_de_inventarios_y_Suminsitros_Component' has no attributes.
+The class 'venta' has the following attributes: 'Setcodigo' of type str; 'setFecha' of type str.
+The class 'Registrar_proveedores_external' has no attributes.
+The class 'Elementos' has the following attributes: 'Referencia' of type str; 'Clasificacion' of type str.
+The class 'Presupuesto' has no attributes.
+The class 'Comerciales' has the following attributes: 'Zona' of type str; 'Nombre' of type str; 'Id' of type str.
+The class 'Millenium_Component' has no attributes.
+The class 'JavaApplication2' has no attributes.
+The class 'Natural_Actor' has no attributes.
+The class 'Pedidos' has the following attributes: 'Codigo' of type str; 'Fecha' of type str.
+The class 'Empresa' has the following attributes: 'nombre' of type str; 'ubicacion' of type str; 'codigo' of type str.
+The class 'Clasificar_Producto_external' has no attributes.
+The class 'Pedidos1' has the following attributes: 'codigo' of type str; 'fecha' of type str.
+The class 'producto' has the following attributes: 'setCantidad' of type int; 'setNombre' of type str; 'setCodigo' of type str; 'setPrecio' of type float.
+The class 'Entregar_Productos_external' has no attributes.
+The class 'impuesto' has the following attributes: 'setPorcentaje' of type float.
+The class 'Recibir_productos_o_pedidos_external' has no attributes.
+The class 'Proveedores_Actor' has no attributes.
+The class 'Ordenes_Perdidos' has the following attributes: 'Codigo' of type str; 'Fecha' of type str.
+The class 'Facturas' has the following attributes: 'nif' of type str; 'codigo' of type str; 'direccionPostal' of type str; 'nombre' of type str.
+The class 'Dependencia' has the following attributes: 'Codigo' of type str; 'Nombre' of type str; 'Responsable' of type str.
+The class 'CuentaBanco' has the following attributes: 'tipoCuenta' of type str; 'nombreBanco' of type str; 'numeroCuenta' of type str.
+The class 'Juridico_Actor' has no attributes.
+The class 'Dependencias_Actor' has no attributes.
+The class 'TransferenciaCompa_ia' has the following attributes: 'numerodecuenta' of type str.
+The class 'Cliente_Actor' has no attributes.
+The class '_Actor' has no attributes.
+The class 'Resivir_ordenes_de_suministros_external' has no attributes.
+The class 'Proveedores' has the following attributes: 'Nit' of type str; 'Telefono' of type str; 'RazonSocial' of type str; 'Direccion' of type str.
+The class 'Pago' has the following attributes: 'Codigo' of type str; 'Fecha' of type str.
+The class 'Brindar_consultoria_external' has no attributes.
+The class 'Imformes' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'Cacular' has no attributes.
+The class 'Sistema_Web_Movil___Receccion_de_pedidos_Component' has no attributes.
+The class 'ventas' has the following attributes: 'valordeventa' of type str; 'fechadeventas' of type str.
+The class 'Servidor_Intel_Node' has no attributes.
+The class 'Solicitud_suministro' has the following attributes: 'Codigo' of type str; 'Fecha' of type str.
+'Pedidos1' (role 'compa_ia51', cardinality 0..*) is associated with 'Compa_ia' (role 'pedidos50', cardinality 0..*).
+'Dependencias_Actor' (role 'entregar_Productos11', cardinality 0..*) is associated with 'Entregar_Productos_external' (role 'dependencias10', cardinality 0..*).
+'Ordenes_Perdidos' (role 'proveedores15', cardinality 0..*) is associated with 'Proveedores' (role 'ordenes_Perdidos14', cardinality 0..*).
+'Solicitud_suministro' (role 'elementos20', cardinality 0..*) is associated with 'Elementos' (role 'solicitud_suministro21', cardinality 0..*).
+'Clasificar_Producto_external' (role 'actor212', cardinality 0..*) is associated with '_Actor' (role 'useCase13', cardinality 0..*).
+'Comerciales' (role 'facturas34', cardinality 0..*) is associated with 'Facturas' (role 'comerciales35', cardinality 0..*).
+'Empresa' (role 'facturas39', cardinality 0..*) is associated with 'Facturas' (role 'empresa38', cardinality 0..*).
+'Pedidos1' (role 'empresa48', cardinality 0..*) is associated with 'Empresa' (role 'pedidos49', cardinality 0..*).
+'Compa_ia' (role 'facturas47', cardinality 0..*) is associated with 'Facturas' (role 'compa_ia46', cardinality 0..*).
+'Brindar_consultoria_external' (role 'cliente0', cardinality 0..*) is associated with 'Cliente_Actor' (role 'brindar_consultoria1', cardinality 0..*).
+'Solicitud_suministro' (role 'ordenes_Perdidos22', cardinality 0..*) is associated with 'Ordenes_Perdidos' (role 'solicitud_suministro23', cardinality 0..*).
+'Cacular' (role 'JavaApplication253', cardinality 0..*) is associated with 'JavaApplication2' (role 'cacular52', cardinality 0..*).
+'Pedidos' (role 'proveedores17', cardinality 0..*) is associated with 'Proveedores' (role 'pedidos16', cardinality 0..*).
+'Proveedores_Actor' (role 'registrar_proveedores5', cardinality 0..*) is associated with 'Registrar_proveedores_external' (role 'proveedores4', cardinality 0..*).
+'Resivir_ordenes_de_suministros_external' (role 'dependencias8', cardinality 0..*) is associated with 'Dependencias_Actor' (role 'resivir_ordenes_de_suministros9', cardinality 0..*).
+'Comerciales' (role 'compa_ia41', cardinality 0..*) is associated with 'Compa_ia' (role 'comerciales40', cardinality 0..*).
+'Pago' (role 'facturas45', cardinality 0..*) is associated with 'Facturas' (role 'cancela44', cardinality 0..*).
+'Comerciales' (role 'ventas43', cardinality 0..*) is associated with 'ventas' (role 'comerciales42', cardinality 0..*).
+'impuesto' (role 'producto56', cardinality 0..*) is associated with 'producto' (role 'impuesto57', cardinality 0..*).
+'Recibir_productos_o_pedidos_external' (role 'actor3', cardinality 0..*) is associated with 'Actor_Actor' (role 'recibir_productos_o_pedidos2', cardinality 0..*).
+'Factura' (role 'elementos29', cardinality 0..*) is associated with 'Elementos' (role 'factura28', cardinality 0..*).
+'Proveedores' (role 'factura27', cardinality 0..*) is associated with 'Factura' (role 'proveedores26', cardinality 0..*).
+'Comerciales' (role 'ingresos37', cardinality 0..*) is associated with 'Imformes' (role 'comerciales36', cardinality 0..*).
+'Dependencia' (role 'solicitud_suministro24', cardinality 0..*) is associated with 'Solicitud_suministro' (role 'dependencia25', cardinality 0..*).
+'Proveedores_Actor' (role 'recibir_productos_o_pedidos7', cardinality 0..*) is associated with 'Recibir_productos_o_pedidos_external' (role 'proveedores6', cardinality 0..*).
+'venta' (role 'producto55', cardinality 0..*) is associated with 'producto' (role 'venta54', cardinality 0..*).
+'Presupuesto' (role 'empresa32', cardinality 0..*) is associated with 'Empresa' (role 'gastos33', cardinality 0..*).
+'Ordenes_Perdidos' (role 'elementos18', cardinality 0..*) is associated with 'Elementos' (role 'ordenes_Perdidos19', cardinality 0..*).
+'Comerciales' (role 'gastos31', cardinality 0..*) is associated with 'Presupuesto' (role 'comerciales30', cardinality 0..*).

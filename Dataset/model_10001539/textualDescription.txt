@@ -1,0 +1,28 @@
+The model has 17 class(es).
+The class 'R' has no attributes.
+The class 'A2' has no attributes.
+The class 'C3' has no attributes.
+The class 'dz_aklm' has no attributes.
+The class 'A4' has no attributes.
+The class 'C' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'C2' has no attributes.
+The class 'B1' has no attributes.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'Y' has the following attributes: 'attY' of type str.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'A5' has no attributes.
+The class 'A1' has the following attributes: 'd' of type int; 'b' of type bool.
+The class 'B2' has no attributes.
+The class 'Z' has no attributes.
+The class 'A3' has no attributes.
+The class 'cxw' has no attributes.
+'C' (role 'b7', cardinality 0..*) is associated with 'B' (role 'c6', cardinality 0..*).
+'A' (role 'r5', cardinality 0..*) is associated with 'R' (role 'aR4', cardinality 0..*).
+'C2' (role 'c0', cardinality 0..*) is associated with 'C' (role 'c21', cardinality 0..*).
+'A1' (role 'c8', cardinality 0..*) is associated with 'B1' (role 'c9', cardinality 0..*).
+'A3' (role 'a313', cardinality 0..*) is associated with 'A3' (role 'a312', cardinality 0..*).
+'A3' (role 'a317', cardinality 0..*) is associated with 'A3' (role 'a316', cardinality 0..*).
+'A1' (role 'a11', cardinality 0..*) is associated with 'A1' (role 'a10', cardinality 0..*).
+'A3' (role 'a319', cardinality 0..*) is associated with 'A3' (role 'a318', cardinality 0..*).
+'B' (role 'a3', cardinality 0..*) is associated with 'A' (role 'b2', cardinality 0..*).
+'A3' (role 'a14', cardinality 0..*) is associated with 'A1' (role 'a315', cardinality 0..*).

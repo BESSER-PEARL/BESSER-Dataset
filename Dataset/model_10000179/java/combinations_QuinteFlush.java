@@ -1,0 +1,31 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class combinations_QuinteFlush  {
+
+    private None start;
+
+
+
+    public combinations_QuinteFlush(
+        None start    ) {
+        this.start = start;
+    }
+
+
+    public None getStart() {
+        return start;
+    }
+
+    public void setStart(None start) {
+        this.start = start;
+    }
+
+
+}

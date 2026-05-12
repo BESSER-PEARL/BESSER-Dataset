@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'StudyField' has the following attributes: 'name' of type str; 'subjects' of type Subjects__; 'id' of type int; 'subjectsCount' of type int; 'currentId' of type int.
+The class 'Teacher' has no attributes.
+The class 'Student' has no attributes.
+The class 'School' has the following attributes: 'teachersCount' of type int; 'fields' of type StudyField__; 'name' of type int; 'teachers' of type Teacher__; 'studentsCount' of type int; 'fieldsCount' of type int; 'students' of type Student__; 'headmaster' of type Headmaster.
+The class 'Subject' has the following attributes: 'credits' of type int; 'id' of type int; 'name' of type str; 'currentId' of type int.
+The class 'Exam' has the following attributes: 'id' of type str; 'subject' of type Subject; 'points' of type int; 'name' of type str; 'currentId' of type int.
+The class 'Headmaster' has no attributes.
+The enumeration 'Teacher__' does not specify any literals.
+The enumeration 'Student__' does not specify any literals.
+The enumeration 'Subjects__' does not specify any literals.
+The enumeration 'StudyField__' does not specify any literals.

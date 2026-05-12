@@ -1,0 +1,27 @@
+The model has 15 class(es).
+The class 'ADMINISTRATOR_Actor' has no attributes.
+The class 'SUPPORT_AND_FEEDBACK_UseCase' has no attributes.
+The class 'Transaction' has the following attributes: 'cashondelivery' of type int; 'debitcard' of type int; 'creditcard' of type int.
+The class 'Customer' has the following attributes: 'address' of type str; 'name' of type str; 'phoneno' of type int; 'mailid' of type str; 'id' of type int.
+The class 'Warehouse' has the following attributes: 'location' of type str; 'database' of type str.
+The class 'ADDS_ITEMS_SERVICE_TO_CART_UseCase' has no attributes.
+The class 'MAINTAINS_THE_PRODUCTS_SERVICES_UseCase' has no attributes.
+The class 'CUSTOMER_Actor' has no attributes.
+The class 'Order' has the following attributes: 'list' of type str; 'quantity' of type int; 'attribute' of type str; 'item' of type str.
+The class 'Product' has the following attributes: 'type' of type str; 'id' of type int; 'name' of type str.
+The class 'PAYS_THE_BILL_UseCase' has no attributes.
+The class 'DELIVERS_THE_PRODUCT_UseCase' has no attributes.
+The class 'VISITS_ECOMMERCE_TAB_UseCase' has no attributes.
+The class 'SELECTS_THE_ITEMS_SERVICE_UseCase' has no attributes.
+The class 'SELECTS_THE_MODE_OF_PAYMENT_UseCase' has no attributes.
+'PAYS_THE_BILL_UseCase' (role 'aDMINISTRATOR14', cardinality 0..*) is associated with 'ADMINISTRATOR_Actor' (role 'pAYS_THE_BILL15', cardinality 0..*).
+'SELECTS_THE_ITEMS_SERVICE_UseCase' (role 'cUSTOMER3', cardinality 0..*) is associated with 'CUSTOMER_Actor' (role 'sELECTS_THE_ITEMS_SERVICE2', cardinality 0..*).
+'PAYS_THE_BILL_UseCase' (role 'cUSTOMER9', cardinality 0..*) is associated with 'CUSTOMER_Actor' (role 'pAYS_THE_BILL8', cardinality 0..*).
+'MAINTAINS_THE_PRODUCTS_SERVICES_UseCase' (role 'aDMINISTRATOR18', cardinality 0..*) is associated with 'ADMINISTRATOR_Actor' (role 'mAINTAINS_THE_PRODUCTS_SERVICES19', cardinality 0..*).
+'ADMINISTRATOR_Actor' (role 'dELIVERS_THE_PRODUCT17', cardinality 0..*) is associated with 'DELIVERS_THE_PRODUCT_UseCase' (role 'aDMINISTRATOR16', cardinality 0..*).
+'CUSTOMER_Actor' (role 'sUPPORT_AND_FEEDBACK10', cardinality 0..*) is associated with 'SUPPORT_AND_FEEDBACK_UseCase' (role 'cUSTOMER11', cardinality 0..*).
+'CUSTOMER_Actor' (role 'sELECTS_THE_MODE_OF_PAYMENT6', cardinality 0..*) is associated with 'SELECTS_THE_MODE_OF_PAYMENT_UseCase' (role 'cUSTOMER7', cardinality 0..*).
+'ADMINISTRATOR_Actor' (role 'sUPPORT_AND_FEEDBACK21', cardinality 0..*) is associated with 'SUPPORT_AND_FEEDBACK_UseCase' (role 'aDMINISTRATOR20', cardinality 0..*).
+'ADMINISTRATOR_Actor' (role 'sELECTS_THE_MODE_OF_PAYMENT13', cardinality 0..*) is associated with 'SELECTS_THE_MODE_OF_PAYMENT_UseCase' (role 'aDMINISTRATOR12', cardinality 0..*).
+'CUSTOMER_Actor' (role 'aDDS_ITEMS_SERVICE_TO_CART4', cardinality 0..*) is associated with 'ADDS_ITEMS_SERVICE_TO_CART_UseCase' (role 'cUSTOMER5', cardinality 0..*).
+'CUSTOMER_Actor' (role 'vISITS_THE_WEBSITE0', cardinality 0..*) is associated with 'VISITS_ECOMMERCE_TAB_UseCase' (role 'cUSTOMER1', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 17 class(es).
+The class 'Calcular_el_numero_de_ejemplares_por_raza__UseCase' has no attributes.
+The class 'void' has no attributes.
+The class 'Empresa' has the following attributes: 'ejemplaresCaninos' of type str.
+The class 'String_pNombre__String_pRaza_int_pEdad_int_pPeso__int_pAltura_String_pObservaciones2' has no attributes.
+The class 'Buscar_un_ejemplar_por_su_nombre__UseCase' has no attributes.
+The class 'Visualizar_hoja_de_vida_de_cada_perrito__UseCase' has no attributes.
+The class 'Avanzar_hacia_el_siguiendo_ejemplar__UseCase' has no attributes.
+The class 'String_pNombre__String_pRaza_int_pEdad_int_pPeso__int_pAltura_String_pObservaciones' has no attributes.
+The class 'Desplazarse_hasta_el_ultimo_ejemplar__UseCase' has no attributes.
+The class 'Int2' has no attributes.
+The class 'Canino' has the following attributes: 'edad' of type Int; 'peso' of type Int; 'altura' of type Int; 'raza' of type str; 'nombre' of type str; 'observaciones' of type str.
+The class 'Int' has no attributes.
+The class 'Calcular_el_promedio_de_edad_de_todos_los_caninos__UseCase' has no attributes.
+The class 'Desplazarse_hasta_el_primer_ejemplar_UseCase' has no attributes.
+The class 'double' has no attributes.
+The class 'Usuario_Actor' has no attributes.
+The class 'Regresar_hacia_el_anterior_ejemplar__UseCase' has no attributes.
+'Calcular_el_numero_de_ejemplares_por_raza__UseCase' (role 'usuario13', cardinality 0..*) is associated with 'Usuario_Actor' (role 'useCase12', cardinality 0..*).
+'Usuario_Actor' (role 'useCase34', cardinality 0..*) is associated with 'Regresar_hacia_el_anterior_ejemplar__UseCase' (role 'usuario5', cardinality 0..*).
+'Avanzar_hacia_el_siguiendo_ejemplar__UseCase' (role 'usuario3', cardinality 0..*) is associated with 'Usuario_Actor' (role 'useCase22', cardinality 0..*).
+'Desplazarse_hasta_el_primer_ejemplar_UseCase' (role 'usuario7', cardinality 0..*) is associated with 'Usuario_Actor' (role 'useCase46', cardinality 0..*).
+'Usuario_Actor' (role 'useCase58', cardinality 0..*) is associated with 'Desplazarse_hasta_el_ultimo_ejemplar__UseCase' (role 'usuario9', cardinality 0..*).
+'Buscar_un_ejemplar_por_su_nombre__UseCase' (role 'usuario11', cardinality 0..*) is associated with 'Usuario_Actor' (role 'useCase610', cardinality 0..*).
+'Calcular_el_promedio_de_edad_de_todos_los_caninos__UseCase' (role 'usuario15', cardinality 0..*) is associated with 'Usuario_Actor' (role 'useCase214', cardinality 0..*).
+'Visualizar_hoja_de_vida_de_cada_perrito__UseCase' (role 'usuario1', cardinality 0..*) is associated with 'Usuario_Actor' (role 'Usuario_UseCase_00', cardinality 0..*).

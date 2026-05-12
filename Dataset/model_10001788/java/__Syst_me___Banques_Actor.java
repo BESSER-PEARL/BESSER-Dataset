@@ -1,0 +1,22 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class __Syst_me___Banques_Actor  {
+
+
+
+
+    public __Syst_me___Banques_Actor(
+    ) {
+    }
+
+
+
+
+}

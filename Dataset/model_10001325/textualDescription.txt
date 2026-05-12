@@ -1,0 +1,36 @@
+The model has 32 class(es).
+The class 'bytecode_FalseBranchByteCode' has the following attributes: 'lineNO' of type int; 'theArg' of type str; 'byteCode' of type str.
+The class 'bytecode_WriteByteCode' has the following attributes: 'byteCode' of type str.
+The class 'genmymodelreverse_C12' has no attributes.
+The class 'interpreter_Interpreter' has no attributes.
+The class 'bytecode_GoToByteCode' has the following attributes: 'theArg' of type str; 'lineNO' of type int; 'byteCode' of type str.
+The class 'genmymodelreverse_C2' has no attributes.
+The class 'bytecode_CallByteCode' has the following attributes: 'lineNO' of type int; 'theArg' of type str; 'byteCode' of type str.
+The class 'interpreter_Program' has the following attributes: 'byteCodeVector' of type str; 'programMap' of type str.
+The class 'genmymodelreverse_java_io_IOException' has no attributes.
+The class 'interpreter_RunTimeStack' has the following attributes: 'runStack' of type str; 'framePointers' of type int.
+The class 'genmymodelreverse_java_util_Scanner' has no attributes.
+The class 'bytecode_BopByteCode' has the following attributes: 'theOperator' of type str; 'byteCode' of type str.
+The class 'bytecode_LabelByteCode' has the following attributes: 'theArg' of type str; 'lineNO' of type int; 'byteCode' of type str.
+The class 'bytecode_ArgsByteCode' has the following attributes: 'argCount' of type int; 'byteCode' of type str.
+The class 'genmymodelreverse_java_util_Vector' has no attributes.
+The class 'genmymodelreverse_java_util_Map_Interface' has no attributes.
+The class 'bytecode_ReturnByteCode' has the following attributes: 'byteCode' of type str.
+The class 'bytecode_ByteCode' has no attributes.
+The class 'genmymodelreverse_C11' has no attributes.
+The class 'interpreter_CodeTable' has the following attributes: 'codeMap' of type str; 'byteCodesTXT' of type str.
+The class 'bytecode_LoadByteCode' has the following attributes: 'byteCode' of type str; 'loadOffset' of type int; 'loadID' of type str.
+The class 'bytecode_HaltByteCode' has the following attributes: 'byteCode' of type str.
+The class 'interpreter_ByteCodeLoader' has the following attributes: 'programMap' of type str; 'input' of type genmymodelreverse_java_util_Scanner; 'lineCount' of type int.
+The class 'bytecode_LitByteCode' has the following attributes: 'byteCode' of type str; 'litValue' of type int; 'litID' of type str.
+The class 'genmymodelreverse_C21' has no attributes.
+The class 'bytecode_ReadByteCode' has the following attributes: 'byteCode' of type str.
+The class 'genmymodelreverse_C1' has no attributes.
+The class 'genmymodelreverse_java_util_HashMap' has no attributes.
+The class 'bytecode_PopByteCode' has the following attributes: 'theArg' of type str; 'byteCode' of type str; 'count' of type int.
+The class 'interpreter_VirtualMachine' has the following attributes: 'dumpState' of type bool; 'isRunning' of type bool; 'returnAddrs' of type int; 'pc' of type int.
+The class 'bytecode_DumpByteCode' has the following attributes: 'theArg' of type str; 'byteCode' of type str.
+The class 'bytecode_StoreByteCode' has the following attributes: 'storeID' of type str; 'theArg' of type str; 'storeValue' of type int; 'byteCode' of type str.
+'interpreter_Program' (role 'virtualmachine2', cardinality 0..*) is associated with 'interpreter_VirtualMachine' (role 'newProgram3', cardinality 0..*).
+'interpreter_RunTimeStack' (role 'virtualmachine4', cardinality 0..*) is associated with 'interpreter_VirtualMachine' (role 'newRunStack5', cardinality 0..*).
+'interpreter_ByteCodeLoader' (role 'interpreter0', cardinality 0..*) is associated with 'interpreter_Interpreter' (role 'bcl1', cardinality 0..*).

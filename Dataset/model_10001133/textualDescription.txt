@@ -1,0 +1,17 @@
+The model has 10 class(es).
+The class 'MatchingGame' has the following attributes: 'matches' of type int.
+The class 'TrickGame' has the following attributes: 'trickRules' of type str.
+The class 'Deck' has the following attributes: 'deck' of type str; 'size' of type int.
+The class 'int_Interface' has no attributes.
+The class 'CardGame' has the following attributes: 'players' of type str; 'round' of type int; 'winner' of type Player.
+The class 'GameBoard' has the following attributes: 'score' of type str; 'selectCard' of type str; 'board' of type str; 'drawCard' of type str; 'startGame' of type str.
+The class 'GameController' has the following attributes: 'gameView' of type GameBoard; 'cardGame' of type CardGame.
+The class 'Card' has the following attributes: 'suit' of type str; 'face' of type int.
+The class 'Player' has the following attributes: 'score' of type int; 'hand' of type str.
+The class 'SheddingGame' has no attributes.
+'Deck' (role 'game7', cardinality 0..*) is associated with 'CardGame' (role 'deck6', cardinality 0..*).
+'CardGame' (role 'controller8', cardinality 0..*) is associated with 'GameController' (role 'game9', cardinality 0..*).
+'GameController' (role 'gameBoard10', cardinality 0..*) is associated with 'GameBoard' (role 'controller11', cardinality 0..*).
+'Player' (role 'game5', cardinality 0..*) is associated with 'CardGame' (role 'player4', cardinality 0..*).
+'Card' (role 'deck1', cardinality 0..*) is associated with 'Deck' (role 'card0', cardinality 0..*).
+'Player' (role 'card3', cardinality 0..*) is associated with 'Card' (role 'player2', cardinality 0..*).

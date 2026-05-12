@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'Friend' has the following attributes: 'acceptornot' of type bool; 'friend____' of type str.
+The class 'Student' has the following attributes: '_F' of type Friend; '__M' of type Message; 'Report' of type Message.
+The class 'Admin' has no attributes.
+The class 'Account' has the following attributes: 'email' of type str; 'Branch' of type str; 'Department' of type str; 'class' of type str; 'name' of type str; 'password' of type str.
+The class 'HomePage' has the following attributes: '__friendpost' of type HomePage.
+The class 'Message' has the following attributes: 'reciver' of type str; 'sender' of type str; 'message' of type str.
+The class 'Alumni' has the following attributes: '__M' of type Message; 'Report' of type Message; '_F' of type Friend.
+'Student' (role 'admin12', cardinality 0..*) is associated with 'Admin' (role 'student13', cardinality 0..*).
+'Alumni' (role 'account11', cardinality 0..*) is associated with 'Account' (role 'alumni10', cardinality 0..*).
+'Admin' (role 'account15', cardinality 0..*) is associated with 'Account' (role 'admin14', cardinality 0..*).
+'Alumni' (role 'admin16', cardinality 0..*) is associated with 'Admin' (role 'alumni17', cardinality 0..*).
+'Message' (role 'user5', cardinality 0..*) is associated with 'Student' (role 'message4', cardinality 0..*).
+'Message' (role 'admin20', cardinality 0..*) is associated with 'Admin' (role 'message21', cardinality 0..*).
+'Alumni' (role 'homePage6', cardinality 0..*) is associated with 'HomePage' (role 'alumni7', cardinality 0..*).
+'Admin' (role 'homePage19', cardinality 0..*) is associated with 'HomePage' (role 'admin18', cardinality 0..*).
+'HomePage' (role 'user3', cardinality 0..*) is associated with 'Student' (role 'homePage2', cardinality 0..*).
+'Friend' (role 'user1', cardinality 0..*) is associated with 'Student' (role 'friend0', cardinality 0..*).
+'Message' (role 'alumni9', cardinality 0..*) is associated with 'Alumni' (role 'message8', cardinality 0..*).

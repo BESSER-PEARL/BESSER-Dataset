@@ -1,0 +1,8 @@
+The model has 7 class(es).
+The class 'WeaponAttack' has the following attributes: 'weapon' of type Weapon; 'execute__' of type str.
+The class 'Weapon' has no attributes.
+The class 'Action' has the following attributes: 'execute__' of type str.
+The class 'Dash2' has the following attributes: 'execute__' of type str.
+The class 'Dash' has the following attributes: 'execute__' of type str.
+The class 'CastSpell' has the following attributes: 'execute__' of type str; 'spell' of type Spell.
+The class 'Spell' has no attributes.

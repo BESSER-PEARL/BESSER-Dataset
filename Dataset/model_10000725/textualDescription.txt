@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Login' has the following attributes: 'login' of type Faculty; 'Username' of type str; 'Password' of type str.
+The class 'Database' has the following attributes: 'Category' of type str; 'Attendance' of type str.
+The class 'Monitor' has the following attributes: 'Date' of type date; 'Time' of type int; 'Location' of type str.
+The class 'Student' has the following attributes: 'First_Name' of type str; 'Username' of type str; 'ID' of type str; 'Password' of type str; 'Last_Name' of type str.
+The class 'Attendance' has the following attributes: 'ID' of type str; 'Date' of type str.
+The class 'Faculty' has the following attributes: 'ID' of type str; 'Username' of type str; 'Password' of type str.
+'Student' (role 'login0', cardinality 0..*) is associated with 'Attendance' (role 'user1', cardinality 0..*).
+'Student' (role 'Student_Login_010', cardinality 0..*) is associated with 'Login' (role 'Student_Login_111', cardinality 0..*).
+'Faculty' (role 'Faculty_Login_04', cardinality 0..*) is associated with 'Login' (role 'Faculty_Login_15', cardinality 0..*).
+'Faculty' (role 'Faculty_Attendance_06', cardinality 0..*) is associated with 'Attendance' (role 'Faculty_Attendance_17', cardinality 0..*).
+'Database' (role 'Attendance_Database_19', cardinality 0..*) is associated with 'Attendance' (role 'Attendance_Database_08', cardinality 0..*).
+'Student' (role 'message2', cardinality 0..*) is associated with 'Monitor' (role 'user3', cardinality 0..*).

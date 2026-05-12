@@ -1,0 +1,6 @@
+The model has 4 class(es).
+The class 'SavingsAccount' has the following attributes: 'noticeGiven' of type bool; 'interestRate' of type float.
+The class 'FixedAccount' has the following attributes: 'chequeBookNo' of type str.
+The class 'BankAccount' has the following attributes: 'accountHolder' of type str; 'balance' of type float; 'accountNumber' of type int.
+The class 'Bank' has the following attributes: 'name' of type str.
+'Bank' (role 'bankAccount0', cardinality 0..*) is associated with 'BankAccount' (role 'bank1', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'Empleado' has the following attributes: 'phone' of type str; 'email' of type str; 'address' of type str.
+The class 'Consulta' has the following attributes: 'mail' of type int; 'telefono' of type int; 'Administrador' of type int; 'nombre' of type str.
+The class 'provvedor' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'venta' has the following attributes: 'quantity' of type int; 'price' of type float.
+The class 'lugar' has the following attributes: 'nombre' of type int; 'Id_lugar' of type int; 'attribute' of type str.
+The class 'producto' has the following attributes: 'status' of type str; 'shipTo' of type str; 'shipped' of type bool; 'ordered' of type date; 'total' of type float; 'number' of type int.
+The class 'cliente' has the following attributes: 'details' of type str; 'total' of type float; 'paidDate' of type date.
+The enumeration 'UserState' does not specify any literals.
+'venta' (role 'order5', cardinality 0..*) is associated with 'producto' (role 'items4', cardinality 0..*).
+'lugar' (role 'items2', cardinality 0..*) is associated with 'venta' (role 'sc3', cardinality 0..*).
+'lugar' (role 'webUser1', cardinality 0..*) is associated with 'Consulta' (role 'shoppingCart0', cardinality 0..*).
+'producto' (role 'payment7', cardinality 0..*) is associated with 'cliente' (role 'order6', cardinality 0..*).

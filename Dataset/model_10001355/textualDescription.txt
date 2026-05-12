@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'venda' has no attributes.
+The class 'VendaAVista' has no attributes.
+The class 'VendaParcelada' has no attributes.

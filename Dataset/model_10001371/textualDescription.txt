@@ -1,0 +1,22 @@
+The model has 13 class(es).
+The class 'Deck' has the following attributes: 'cards' of type Card.
+The class 'Strategy' has the following attributes: 'game' of type BlackjackGame.
+The class 'Gambler' has the following attributes: 'hand' of type HandDeck; 'profile' of type str; 'money' of type int.
+The class 'JButton' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Player' has no attributes.
+The class 'BJPlayer' has the following attributes: 'isBusted' of type bool.
+The class 'Card' has the following attributes: 'rank' of type str; 'Count' of type int; 'valueSoft' of type str; 'avatar' of type str; 'suit' of type str; 'valueHard' of type str; 'name' of type str.
+The class 'Dealer' has the following attributes: 'hand' of type HandDeck; 'cardTotalLimit' of type int.
+The class 'BlackjackGame' has the following attributes: 'bet' of type int; 'player' of type Gambler; 'dealer' of type Dealer; 'deck' of type Deck.
+The class 'JLabel' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'HandDeck' has the following attributes: 'total' of type int; 'cards' of type Card.
+'HandDeck' (role 'card12', cardinality 0..*) is associated with 'Card' (role 'hand13', cardinality 0..*).
+'BlackjackGame' (role 'dealer5', cardinality 0..*) is associated with 'Dealer' (role 'blackjack4', cardinality 0..*).
+'Card' (role 'deck15', cardinality 0..*) is associated with 'Deck' (role 'card14', cardinality 0..*).
+'Strategy' (role 'blackjack1', cardinality 0..*) is associated with 'BlackjackGame' (role 'strategy0', cardinality 0..*).
+'Dealer' (role 'hand8', cardinality 0..*) is associated with 'HandDeck' (role 'dealer9', cardinality 0..*).
+'BlackjackGame' (role 'player3', cardinality 0..*) is associated with 'Gambler' (role 'blackjack2', cardinality 0..*).
+'HandDeck' (role 'player11', cardinality 0..*) is associated with 'Gambler' (role 'hand10', cardinality 0..*).
+'Deck' (role 'blackjack7', cardinality 0..*) is associated with 'BlackjackGame' (role 'deck26', cardinality 0..*).

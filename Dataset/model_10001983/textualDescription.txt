@@ -1,0 +1,23 @@
+The model has 12 class(es).
+The class 'BackgroundStopLoader' has the following attributes: 'stops' of type str.
+The class 'CarCallBox' has the following attributes: 'buttons' of type str.
+The class 'Test_Report' has no attributes.
+The class 'FloorCallBox' has the following attributes: 'LOCATION' of type int; 'BUTTONS' of type array_enum_.
+The class 'Sim' has the following attributes: 'people' of type str; 'elevator' of type Controller.
+The class 'Controller' has the following attributes: 'cars' of type str; 'floors' of type str; 'callQueue' of type str; 'callAdmin' of type BackgroundCallListener.
+The class 'array_enum_' has no attributes.
+The class 'Car' has the following attributes: 'destination' of type Floor; 'direction' of type str; 'stopLoader' of type BackgroundStopLoader; 'weightLoad' of type int; 'destQueue' of type str; 'stopQueue' of type str; 'box' of type CarCallBox; 'location' of type int; 'WEIGHT_LIMIT' of type int; 'floorNum' of type int.
+The class 'Call' has the following attributes: 'direction' of type str; 'created' of type str; 'location' of type Floor.
+The class 'Floor' has the following attributes: 'TOP' of type int; 'number' of type int; 'box' of type FloorCallBox; 'LOCATION' of type int; 'BOTTOM' of type int.
+The class 'Passenger' has the following attributes: 'DEST' of type int; 'waiting' of type bool; 'START_FLOOR' of type int; 'traveling' of type bool; 'readyToDie' of type bool; 'WEIGHT' of type int; 'carNum' of type int.
+The class 'BackgroundCallListener' has no attributes.
+'Sim' (role 'passenger16', cardinality 0..*) is associated with 'Passenger' (role 'sim17', cardinality 0..*).
+'Controller' (role 'car12', cardinality 0..*) is associated with 'Car' (role 'director13', cardinality 0..*).
+'Car' (role 'backgroundStopLoader0', cardinality 0..*) is associated with 'BackgroundStopLoader' (role 'car1', cardinality 0..*).
+'BackgroundCallListener' (role 'director5', cardinality 0..*) is associated with 'Controller' (role 'backgroundCallListener4', cardinality 0..*).
+'Controller' (role 'floor18', cardinality 0..*) is associated with 'Floor' (role 'director19', cardinality 0..*).
+'CarCallBox' (role 'car3', cardinality 0..*) is associated with 'Car' (role 'carCallBox2', cardinality 0..*).
+'Call' (role 'director7', cardinality 0..*) is associated with 'Controller' (role 'call6', cardinality 0..*).
+'Call' (role 'car11', cardinality 0..*) is associated with 'Car' (role 'call10', cardinality 0..*).
+'Controller' (role 'sim15', cardinality 0..*) is associated with 'Sim' (role 'director14', cardinality 0..*).
+'FloorCallBox' (role 'floor9', cardinality 0..*) is associated with 'Floor' (role 'floorCallBox8', cardinality 0..*).

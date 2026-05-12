@@ -1,0 +1,31 @@
+The model has 18 class(es).
+The class 'Customer' has the following attributes: 'Address' of type str; 'Contact' of type str; 'Name' of type str.
+The class 'Payment' has the following attributes: 'Amount' of type str.
+The class 'Login_UseCase' has no attributes.
+The class 'Shipping_UseCase' has no attributes.
+The class 'OrderDetails' has the following attributes: 'qty' of type int.
+The class 'cheque_UseCase' has no attributes.
+The class 'Order' has the following attributes: 'Date' of type str.
+The class 'cart_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Payment_UseCase' has no attributes.
+The class 'Order_Status' has the following attributes: 'Create' of type int; 'Deliveried' of type int; 'Paid' of type int.
+The class 'Credit_Card' has the following attributes: 'number' of type int.
+The class 'Order_Details_UseCase' has no attributes.
+The class 'credit_card_UseCase' has no attributes.
+The class 'Registration_UseCase' has no attributes.
+The class 'Password_UseCase' has no attributes.
+The class 'customer_Actor' has no attributes.
+The class 'Cash' has the following attributes: 'cashTendered' of type int.
+'Login_UseCase' (role 'customer2', cardinality 0..*) is associated with 'customer_Actor' (role 'login3', cardinality 0..*).
+'Order_Status' (role 'order18', cardinality 0..*) is associated with 'Order' (role 'order_Status19', cardinality 0..*).
+'Password_UseCase' (role 'admin1', cardinality 0..*) is associated with 'Admin_Actor' (role 'password0', cardinality 0..*).
+'Order' (role 'customer17', cardinality 0..*) is associated with 'Customer' (role 'order16', cardinality 0..*).
+'Payment' (role 'order23', cardinality 0..*) is associated with 'Order' (role 'Payment22', cardinality 0..*).
+'customer_Actor' (role 'shipping14', cardinality 0..*) is associated with 'Shipping_UseCase' (role 'customer15', cardinality 0..*).
+'customer_Actor' (role 'password5', cardinality 0..*) is associated with 'Password_UseCase' (role 'customer4', cardinality 0..*).
+'Order_Details_UseCase' (role 'customer9', cardinality 0..*) is associated with 'customer_Actor' (role 'order_Details8', cardinality 0..*).
+'cart_UseCase' (role 'customer11', cardinality 0..*) is associated with 'customer_Actor' (role 'cart10', cardinality 0..*).
+'customer_Actor' (role 'registration13', cardinality 0..*) is associated with 'Registration_UseCase' (role 'customer12', cardinality 0..*).
+'Order' (role 'orderDetails20', cardinality 0..*) is associated with 'OrderDetails' (role 'order21', cardinality 0..*).
+'Payment_UseCase' (role 'customer6', cardinality 0..*) is associated with 'customer_Actor' (role 'payment7', cardinality 0..*).

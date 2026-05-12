@@ -1,0 +1,34 @@
+The model has 19 class(es).
+The class 'check_out__UseCase' has no attributes.
+The class 'Librarian__Actor' has no attributes.
+The class 'library_management__patron' has the following attributes: 'PayFIne_Dt_date_' of type int.
+The class 'UseCase4_UseCase' has no attributes.
+The class 'patron__Actor' has no attributes.
+The class 'renew_magazine_subscr_UseCase' has no attributes.
+The class 'renew_UseCase' has no attributes.
+The class 'help_people_with_research__UseCase' has no attributes.
+The class 'UseCase3_UseCase' has no attributes.
+The class 'reserve_UseCase' has no attributes.
+The class 'retire_books_UseCase' has no attributes.
+The class 'Order_new_books_UseCase' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'replace_books_with_updated_info_UseCase' has no attributes.
+The class 'return__UseCase' has no attributes.
+The class 'organize_books_UseCase' has no attributes.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'library_management__librarian' has the following attributes: 'CollectFIne_fine_' of type int.
+The class 'library_management__Library' has the following attributes: 'Videos' of type str; 'Computers' of type str; 'CD' of type str; 'Books' of type str; 'Softwares' of type str.
+'Librarian__Actor' (role 'reserve11', cardinality 0..*) is associated with 'reserve_UseCase' (role 'librarian10', cardinality 0..*).
+'Librarian__Actor' (role 'renew_magazine_subscr24', cardinality 0..*) is associated with 'renew_magazine_subscr_UseCase' (role 'librarian25', cardinality 0..*).
+'Librarian__Actor' (role 'replace_books_with_updated_info22', cardinality 0..*) is associated with 'replace_books_with_updated_info_UseCase' (role 'librarian23', cardinality 0..*).
+'reserve_UseCase' (role 'patron1', cardinality 0..*) is associated with 'patron__Actor' (role 'reserve0', cardinality 0..*).
+'Librarian__Actor' (role 'renew14', cardinality 0..*) is associated with 'renew_UseCase' (role 'librarian15', cardinality 0..*).
+'patron__Actor' (role 'return2', cardinality 0..*) is associated with 'return__UseCase' (role 'patron3', cardinality 0..*).
+'Librarian__Actor' (role 'help_people_with_research18', cardinality 0..*) is associated with 'help_people_with_research__UseCase' (role 'librarian19', cardinality 0..*).
+'patron__Actor' (role 'check_out4', cardinality 0..*) is associated with 'check_out__UseCase' (role 'patron5', cardinality 0..*).
+'renew_UseCase' (role 'patron7', cardinality 0..*) is associated with 'patron__Actor' (role 'renew6', cardinality 0..*).
+'Librarian__Actor' (role 'retire_books20', cardinality 0..*) is associated with 'retire_books_UseCase' (role 'librarian21', cardinality 0..*).
+'Librarian__Actor' (role 'organize_books17', cardinality 0..*) is associated with 'organize_books_UseCase' (role 'librarian16', cardinality 0..*).
+'Librarian__Actor' (role 'order_new_books26', cardinality 0..*) is associated with 'Order_new_books_UseCase' (role 'librarian27', cardinality 0..*).
+'check_out__UseCase' (role 'librarian8', cardinality 0..*) is associated with 'Librarian__Actor' (role 'check_out9', cardinality 0..*).
+'return__UseCase' (role 'librarian12', cardinality 0..*) is associated with 'Librarian__Actor' (role 'return13', cardinality 0..*).

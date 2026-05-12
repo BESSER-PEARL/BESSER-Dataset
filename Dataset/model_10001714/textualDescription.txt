@@ -1,0 +1,9 @@
+The model has 6 class(es).
+The class 'savingAccount' has the following attributes: 'annualGain' of type str; 'extraFee' of type str; 'annualInterestRate' of type str.
+The class 'Transaction' has the following attributes: 'accountNo' of type int; 'transactionId' of type int; 'amount' of type str; 'description' of type str; 'transactionType' of type TransactionType; 'transactionDate' of type str.
+The class 'Account' has the following attributes: 'accountType' of type EnumAccountType; 'PIN' of type int; 'accountNo' of type int; 'openedDate' of type str; 'availableBalance' of type str.
+The class 'Customer' has the following attributes: 'lastName' of type str; 'custId' of type int; 'firstName' of type str; 'address' of type str; 'accountNo' of type int.
+The class 'checkingAccount' has the following attributes: 'accountNo' of type int; 'noOfTransactions' of type int.
+The class 'IcalculateExtraFee_Interface' has no attributes.
+The enumeration 'EnumAccountType' does not specify any literals.
+The enumeration 'TransactionType' does not specify any literals.

@@ -1,0 +1,45 @@
+The model has 32 class(es).
+The class 'Student' has the following attributes: 'courseId' of type int; 'courseName' of type str.
+The class 'Courses' has the following attributes: 'credithour' of type int; 'coursecode' of type int; '_attr' of type str; 'courseName' of type str; 'courseId' of type int.
+The class 'Teacher' has the following attributes: 'courseName' of type str; 'courseId' of type int.
+The class 'Student3' has the following attributes: 'courseName' of type str; 'courseId' of type int.
+The class 'timetable' has the following attributes: 'lectime' of type int; 'courseName' of type str; 'date' of type int; 'credithour' of type int; 'courseId' of type int; 'day' of type str; '_attr' of type str; 'teacher' of type str; 'coursecode' of type int.
+The class 'Quiz' has the following attributes: 'quiztitle' of type str; 'department' of type str; 'quizfile' of type str; 'date' of type int; '_attr' of type str; 'subject' of type str; 'timeduration' of type int; 'scale' of type int.
+The class 'publishCalender___UseCase' has no attributes.
+The class 'chatbox' has the following attributes: 'messagetitle' of type str; 'messagedcription' of type int; '_attr' of type str; 'messagetype' of type int; 'class' of type str.
+The class 'registerCourse_UseCase' has no attributes.
+The class 'add_UseCase' has no attributes.
+The class 'modifyCalender4_UseCase' has no attributes.
+The class 'organisation_Actor' has no attributes.
+The class 'viewCourse_UseCase' has no attributes.
+The class 'student_Actor' has no attributes.
+The class 'courseCalendar_Actor' has no attributes.
+The class 'Student2' has the following attributes: 'courseName' of type str; 'courseId' of type int.
+The class 'user_Actor' has no attributes.
+The class 'teacher' has no attributes.
+The class 'course_Actor' has no attributes.
+The class 'student' has the following attributes: 'e' of type str; '_attr1' of type str; 'result' of type str; 'attribute' of type str; 'managestudent' of type str; '_attr' of type str.
+The class 'attendance' has the following attributes: 'day' of type str; 'absent' of type str; 'present' of type str; 'attribute' of type str; 'lecture' of type int; '_attr' of type str; 'class' of type str; 'date' of type int; 'class1' of type str; 'leave' of type str.
+The class 'result' has the following attributes: 'subject' of type str; 'totalmarks' of type int; 'class' of type str; 'class1' of type str; 'midmarks' of type int; 'finalmarks' of type int; 'sessional' of type int; 'obtainedmarks' of type int; 'attribute' of type str; '_attr' of type str; 'practical' of type int.
+The class 'User' has the following attributes: 'name' of type str; 'email' of type str; 'id' of type int; 'phnNo' of type int; 'address' of type str.
+The class 'dropbox' has the following attributes: 'date' of type int; 'session' of type int; 'program' of type str; 'file' of type str; 'section' of type str; 'class' of type int; 'department' of type str; 'filetype' of type str; '_attr' of type str; '_attr1' of type int.
+The class 'Events' has the following attributes: '_attr' of type str; 'eventdescription' of type int; 'Evantname' of type str; 'eventId' of type int; 'eventtitle' of type int.
+The class 'CourseCalendar' has the following attributes: 'endTime' of type int; 'startTime' of type int.
+The class 'admin_Actor' has no attributes.
+The class 'searchCourse_UseCase' has no attributes.
+The class 'Student4' has the following attributes: 'courseName' of type str; 'courseId' of type int.
+The class 'delete_UseCase' has no attributes.
+The class 'Assignment' has the following attributes: 'duedate' of type int; 'session' of type int; 'section' of type str; 'program' of type str; 'department' of type str; 'assignmentfile' of type str; '_attr' of type str; 'assignmenttitle' of type str; 'class' of type int; '_attr1' of type int.
+The class 'providedCourse___UseCase' has no attributes.
+'student' (role 'quiz11', cardinality 0..*) is associated with 'Quiz' (role 'student10', cardinality 0..*).
+'Courses' (role 'student2', cardinality 0..*) is associated with 'Student' (role 'courses3', cardinality 0..*).
+'teacher' (role 'teacher_Courses_06', cardinality 0..*) is associated with 'Courses' (role 'teacher7', cardinality 0..*).
+'CourseCalendar' (role 'courses5', cardinality 0..*) is associated with 'Courses' (role 'courseCalendar4', cardinality 0..*).
+'chatbox' (role 'teacher21', cardinality 0..*) is associated with 'student' (role 'chatbox20', cardinality 0..*).
+'timetable' (role 'student8', cardinality 0..*) is associated with 'student' (role 'timetable9', cardinality 0..*).
+'student' (role 'assignment12', cardinality 0..*) is associated with 'Assignment' (role 'student13', cardinality 0..*).
+'result' (role 'teacher19', cardinality 0..*) is associated with 'student' (role 'result18', cardinality 0..*).
+'student' (role 'attendance16', cardinality 0..*) is associated with 'attendance' (role 'Teacher_attendance_117', cardinality 0..*).
+'student' (role 'dropbox22', cardinality 0..*) is associated with 'dropbox' (role 'student23', cardinality 0..*).
+'Events' (role 'student15', cardinality 0..*) is associated with 'student' (role 'events14', cardinality 0..*).
+'Courses' (role 'student1', cardinality 0..*) is associated with 'student' (role 'courses0', cardinality 0..*).

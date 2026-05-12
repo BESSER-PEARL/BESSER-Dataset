@@ -1,0 +1,12 @@
+The model has 9 class(es).
+The class 'Page' has no attributes.
+The class 'Post' has no attributes.
+The class 'Hashtag' has no attributes.
+The class 'Group' has no attributes.
+The class 'Message' has no attributes.
+The class 'User' has no attributes.
+The class 'Inbox' has no attributes.
+The class 'Share' has no attributes.
+The class 'Comment' has no attributes.
+'User' (role 'post1', cardinality 0..*) is associated with 'Post' (role 'user0', cardinality 0..*).
+'User' (role 'message2', cardinality 0..*) is associated with 'Message' (role 'user3', cardinality 0..*).

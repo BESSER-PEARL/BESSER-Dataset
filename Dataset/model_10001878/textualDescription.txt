@@ -1,0 +1,31 @@
+The model has 18 class(es).
+The class 'Manage_Reference_Materials_external' has no attributes.
+The class 'Student' has no attributes.
+The class 'Patron_Actor' has no attributes.
+The class 'Faculty_Actor' has no attributes.
+The class 'Library_Staff_Actor' has no attributes.
+The class 'Request_Book_external' has no attributes.
+The class 'Organize_Books_external' has no attributes.
+The class 'Reserve_Book_For_Semester_external' has no attributes.
+The class 'Check_In_Item_external' has no attributes.
+The class 'Check_Out_Item_external' has no attributes.
+The class 'Student_Actor' has no attributes.
+The class 'Library_Management_Component' has no attributes.
+The class 'Extended_Checkout_external' has no attributes.
+The class 'Manage_Computer_Terminals_external' has no attributes.
+The class 'Patron' has the following attributes: 'isMember' of type bool.
+The class 'Order_New_Resources_external' has no attributes.
+The class 'Faculty' has no attributes.
+The class 'Renew_Magazine_Subscriptions_external' has no attributes.
+'Organize_Books_external' (role 'library_Staff13', cardinality 0..*) is associated with 'Library_Staff_Actor' (role 'organize_Books12', cardinality 0..*).
+'Extended_Checkout_external' (role 'student19', cardinality 0..*) is associated with 'Student_Actor' (role 'extended_Checkout18', cardinality 0..*).
+'Check_Out_Item_external' (role 'patron5', cardinality 0..*) is associated with 'Patron_Actor' (role 'check_Out_Books4', cardinality 0..*).
+'Library_Staff_Actor' (role 'manage_Computer_Terminals22', cardinality 0..*) is associated with 'Manage_Computer_Terminals_external' (role 'library_Staff23', cardinality 0..*).
+'Reserve_Book_For_Semester_external' (role 'library_Staff7', cardinality 0..*) is associated with 'Library_Staff_Actor' (role 'reserve_Book_For_Semester6', cardinality 0..*).
+'Extended_Checkout_external' (role 'faculty21', cardinality 0..*) is associated with 'Faculty_Actor' (role 'extended_Checkout20', cardinality 0..*).
+'Manage_Reference_Materials_external' (role 'library_Staff11', cardinality 0..*) is associated with 'Library_Staff_Actor' (role 'manage_Reference_Materirals10', cardinality 0..*).
+'Library_Staff_Actor' (role 'renew_Magazine_Subscriptions14', cardinality 0..*) is associated with 'Renew_Magazine_Subscriptions_external' (role 'library_Staff15', cardinality 0..*).
+'Patron_Actor' (role 'check_In_Books0', cardinality 0..*) is associated with 'Check_In_Item_external' (role 'patron1', cardinality 0..*).
+'Request_Book_external' (role 'patron3', cardinality 0..*) is associated with 'Patron_Actor' (role 'request_Book2', cardinality 0..*).
+'Reserve_Book_For_Semester_external' (role 'faculty9', cardinality 0..*) is associated with 'Faculty_Actor' (role 'reserve_Book_For_Semester8', cardinality 0..*).
+'Library_Staff_Actor' (role 'order_New_Resources16', cardinality 0..*) is associated with 'Order_New_Resources_external' (role 'library_Staff17', cardinality 0..*).

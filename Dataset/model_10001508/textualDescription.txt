@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'Event__' has no attributes.
+The class 'Ticket' has the following attributes: 'event' of type Event; 'id' of type str.
+The class 'Date' has no attributes.
+The class 'User' has the following attributes: 'tickets' of type str; 'id' of type str; 'birthdate' of type Date; 'gender' of type str; 'events' of type Event__; 'password' of type str; 'friends' of type str; 'company' of type str; 'selfDescription' of type str; 'name' of type str; 'userImage' of type str.
+The class 'Event' has the following attributes: 'time' of type str; 'about' of type str; 'participants' of type str; 'placeName' of type str; 'id' of type String; 'participantCount' of type int; 'type' of type str; 'location' of type str; 'image' of type str; 'organizator' of type User; 'discussion' of type str.
+The class 'User__4' has no attributes.
+The enumeration 'String' does not specify any literals.
+'Event' (role 'ticket1', cardinality 0..*) is associated with 'Ticket' (role 'event20', cardinality 0..*).
+'Event' (role 'user4', cardinality 0..*) is associated with 'User' (role 'event5', cardinality 0..*).
+'Ticket' (role 'user2', cardinality 0..*) is associated with 'User' (role 'ticket3', cardinality 0..*).

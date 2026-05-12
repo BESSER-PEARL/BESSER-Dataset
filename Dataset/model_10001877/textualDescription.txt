@@ -1,0 +1,36 @@
+The model has 17 class(es).
+The class 'Book_Actor' has no attributes.
+The class 'Checked_Out_UseCase' has no attributes.
+The class 'Library' has the following attributes: 'librarian_id' of type int; 'id' of type int.
+The class 'Librarian' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'Check_In_Book_UseCase' has no attributes.
+The class 'Retired_UseCase' has no attributes.
+The class 'Patron_Actor' has no attributes.
+The class 'Retirement_of_Books_UseCase' has no attributes.
+The class 'Checked_In_UseCase' has no attributes.
+The class 'Check_Out_Book_UseCase' has no attributes.
+The class 'Mail_2_Week_Reminders_UseCase' has no attributes.
+The class 'Librarian_Actor' has no attributes.
+The class 'Patron' has the following attributes: 'status' of type str; 'id' of type int; 'num_books_checked_out' of type int; 'address' of type str; 'name' of type str.
+The class 'Acquisition_of_Books_UseCase' has no attributes.
+The class 'Reserve_Book_UseCase' has no attributes.
+The class 'Book' has the following attributes: 'title' of type str; 'id' of type int; 'creation_date' of type str; 'status' of type str; 'author' of type str.
+The class 'Acquired_UseCase' has no attributes.
+'Librarian_Actor' (role 'retirement_of_Books17', cardinality 0..*) is associated with 'Retirement_of_Books_UseCase' (role 'librarian16', cardinality 0..*).
+'Check_Out_Book_UseCase' (role 'librarian6', cardinality 0..*) is associated with 'Librarian_Actor' (role 'check_Out_Book7', cardinality 0..*).
+'Checked_Out_UseCase' (role 'book35', cardinality 0..*) is associated with 'Book_Actor' (role 'check_Out34', cardinality 0..*).
+'Patron' (role 'library27', cardinality 0..*) is associated with 'Library' (role 'patron26', cardinality 0..*).
+'Acquired_UseCase' (role 'book31', cardinality 0..*) is associated with 'Book_Actor' (role 'acquired30', cardinality 0..*).
+'Patron_Actor' (role 'check_In_Book3', cardinality 0..*) is associated with 'Check_In_Book_UseCase' (role 'patron2', cardinality 0..*).
+'Book_Actor' (role 'check_In32', cardinality 0..*) is associated with 'Checked_In_UseCase' (role 'book33', cardinality 0..*).
+'Acquisition_of_Books_UseCase' (role 'librarian14', cardinality 0..*) is associated with 'Librarian_Actor' (role 'acquisition_of_Books15', cardinality 0..*).
+'Reserve_Book_UseCase' (role 'patron4', cardinality 0..*) is associated with 'Patron_Actor' (role 'reserve_Book5', cardinality 0..*).
+'Book_Actor' (role 'retired28', cardinality 0..*) is associated with 'Retired_UseCase' (role 'book29', cardinality 0..*).
+'Reserve_Book_UseCase' (role 'librarian10', cardinality 0..*) is associated with 'Librarian_Actor' (role 'reserve_Book11', cardinality 0..*).
+'Patron_Actor' (role 'check_Out_Book0', cardinality 0..*) is associated with 'Check_Out_Book_UseCase' (role 'patron1', cardinality 0..*).
+'Mail_2_Week_Reminders_UseCase' (role 'librarian12', cardinality 0..*) is associated with 'Librarian_Actor' (role 'mail_2_Week_Reminders13', cardinality 0..*).
+'Check_In_Book_UseCase' (role 'librarian8', cardinality 0..*) is associated with 'Librarian_Actor' (role 'check_In_Book9', cardinality 0..*).
+'Librarian' (role 'book22', cardinality 0..*) is associated with 'Book' (role 'librarian23', cardinality 0..*).
+'Librarian' (role 'library21', cardinality 0..*) is associated with 'Library' (role 'librarian20', cardinality 0..*).
+'Patron' (role 'librarian24', cardinality 0..*) is associated with 'Librarian' (role 'patron25', cardinality 0..*).
+'Patron' (role 'book18', cardinality 0..*) is associated with 'Book' (role 'patron19', cardinality 0..*).

@@ -1,0 +1,36 @@
+The model has 19 class(es).
+The class 'Cancel_Membership_UseCase' has no attributes.
+The class 'Withdraw_Books_UseCase' has no attributes.
+The class 'Issue_Book_UseCase' has no attributes.
+The class 'Library_Members' has the following attributes: 'Name' of type str.
+The class 'Make_Reservation_UseCase' has no attributes.
+The class 'Collect_Fine_UseCase' has no attributes.
+The class 'Head_Librarian_Actor' has no attributes.
+The class 'Return_Item_UseCase' has no attributes.
+The class 'Checkout_Librarian_Actor' has no attributes.
+The class 'Reservations' has no attributes.
+The class 'Amend_Membership_details_UseCase' has no attributes.
+The class 'Chief_Librarian_Actor' has no attributes.
+The class 'Charge_fine_for_Late_Book_UseCase' has no attributes.
+The class 'Purchase_Books_UseCase' has no attributes.
+The class 'Create_New_Member_UseCase' has no attributes.
+The class 'Books' has the following attributes: 'Title' of type str.
+The class 'Inform_Memeber_when_Item_Available_UseCase' has no attributes.
+The class 'Suspend_Membership_UseCase' has no attributes.
+The class 'Carry_Out_Stock_Check_UseCase' has no attributes.
+'Create_New_Member_UseCase' (role 'head_Librarian9', cardinality 0..*) is associated with 'Head_Librarian_Actor' (role 'create_New_Member8', cardinality 0..*).
+'Inform_Memeber_when_Item_Available_UseCase' (role 'checkout_Librarian7', cardinality 0..*) is associated with 'Checkout_Librarian_Actor' (role 'inform_Memeber_when_Item_Available6', cardinality 0..*).
+'Head_Librarian_Actor' (role 'carry_Out_Stock_Check30', cardinality 0..*) is associated with 'Carry_Out_Stock_Check_UseCase' (role 'head_Librarian31', cardinality 0..*).
+'Charge_fine_for_Late_Book_UseCase' (role 'chief_Librarian17', cardinality 0..*) is associated with 'Chief_Librarian_Actor' (role 'charge_fine_for_Late_Book16', cardinality 0..*).
+'Return_Item_UseCase' (role 'checkout_Librarian3', cardinality 0..*) is associated with 'Checkout_Librarian_Actor' (role 'return_Item2', cardinality 0..*).
+'Chief_Librarian_Actor' (role 'carry_Out_Stock_Check28', cardinality 0..*) is associated with 'Carry_Out_Stock_Check_UseCase' (role 'chief_Librarian29', cardinality 0..*).
+'Head_Librarian_Actor' (role 'suspend_Membership12', cardinality 0..*) is associated with 'Suspend_Membership_UseCase' (role 'head_Librarian13', cardinality 0..*).
+'Cancel_Membership_UseCase' (role 'head_Librarian11', cardinality 0..*) is associated with 'Head_Librarian_Actor' (role 'cancel_Membership10', cardinality 0..*).
+'Make_Reservation_UseCase' (role 'checkout_Librarian5', cardinality 0..*) is associated with 'Checkout_Librarian_Actor' (role 'make_Reservation4', cardinality 0..*).
+'Purchase_Books_UseCase' (role 'chief_Librarian21', cardinality 0..*) is associated with 'Chief_Librarian_Actor' (role 'purchase_Books20', cardinality 0..*).
+'Head_Librarian_Actor' (role 'purchase_Books22', cardinality 0..*) is associated with 'Purchase_Books_UseCase' (role 'head_Librarian23', cardinality 0..*).
+'Amend_Membership_details_UseCase' (role 'head_Librarian15', cardinality 0..*) is associated with 'Head_Librarian_Actor' (role 'amend_Membership_details14', cardinality 0..*).
+'Withdraw_Books_UseCase' (role 'chief_Librarian25', cardinality 0..*) is associated with 'Chief_Librarian_Actor' (role 'withdraw_Books24', cardinality 0..*).
+'Head_Librarian_Actor' (role 'withdraw_Books26', cardinality 0..*) is associated with 'Withdraw_Books_UseCase' (role 'head_Librarian27', cardinality 0..*).
+'Checkout_Librarian_Actor' (role 'issue_Book0', cardinality 0..*) is associated with 'Issue_Book_UseCase' (role 'checkout_Librarian1', cardinality 0..*).
+'Chief_Librarian_Actor' (role 'collect_Fine18', cardinality 0..*) is associated with 'Collect_Fine_UseCase' (role 'chief_Librarian19', cardinality 0..*).

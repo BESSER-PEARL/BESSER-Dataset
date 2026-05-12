@@ -1,0 +1,11 @@
+The model has 7 class(es).
+The class 'Techinal_Staff' has the following attributes: 'Technician' of type str; 'Technologist' of type str.
+The class 'Administrative_Staff' has the following attributes: 'ReceptionistName' of type str; 'FrontDeskStaffName' of type str.
+The class 'Staff' has the following attributes: 'Languages' of type str; 'Joined' of type str; 'Education' of type str; 'Certification' of type str.
+The class 'Patient' has the following attributes: 'Birthdate' of type str; 'Age' of type int; 'Name' of type str; 'Gender' of type str; 'DateOfEntry' of type str; 'PatientId' of type int; 'Sickness' of type str.
+The class 'Hospital' has the following attributes: 'Address' of type str; 'Name' of type str; 'HospitalId' of type int; 'Phone' of type int.
+The class 'Person' has the following attributes: 'Address' of type str; 'Gender' of type str; 'Phone' of type int; 'PersonHospitalId' of type int; 'BirthDate' of type str; 'FirstName' of type str; 'PersonPatientId' of type int; 'Title' of type str; 'LastName' of type str; 'MiddleName' of type str.
+The class 'Operation_Staff' has the following attributes: 'DoctorSpeciality' of type str; 'NurseName' of type str; 'DoctorLocation' of type str.
+'Hospital' (role 'staff3', cardinality 0..*) is associated with 'Staff' (role 'hospital2', cardinality 0..*).
+'Patient' (role 'operation_Staff5', cardinality 0..*) is associated with 'Operation_Staff' (role 'patient4', cardinality 0..*).
+'Person' (role 'hospital0', cardinality 0..*) is associated with 'Hospital' (role 'person1', cardinality 0..*).

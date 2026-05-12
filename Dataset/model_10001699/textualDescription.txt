@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'domain_Voiture' has the following attributes: 'nbPlaces' of type int; 'categorie' of type str; 'id' of type int; 'model' of type str; 'marque' of type str; 'confort' of type str.
+The class 'domain_Trajet' has the following attributes: 'id' of type int; 'destination' of type domain_Ville; 'prix' of type int; 'depart' of type domain_Ville; 'date' of type date.
+The class 'domain_Authentification' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'domain_Reservation' has the following attributes: 'id' of type int; 'dateReservation' of type date; 'id2' of type int.
+The class 'domain_Profil' has the following attributes: 'mail' of type str; 'nom' of type str; 'tel' of type str; 'id' of type int; 'role' of type domain_Role; 'prenom' of type str.
+The class 'domain_Avis' has the following attributes: 'commentaire' of type str; 'id' of type int; 'note' of type int.
+The class 'domain_Ville' has the following attributes: 'nom' of type str; 'cp' of type int; 'id' of type int.
+The enumeration 'domain_Role' does not specify any literals.
+'domain_Profil' (role 'reservation13', cardinality 0..*) is associated with 'domain_Reservation' (role 'profil12', cardinality 0..*).
+'domain_Trajet' (role 'avis7', cardinality 0..*) is associated with 'domain_Avis' (role 'evenement6', cardinality 0..*).
+'domain_Trajet' (role 'reservation15', cardinality 0..*) is associated with 'domain_Reservation' (role 'trajet14', cardinality 0..*).
+'domain_Trajet' (role 'ville10', cardinality 0..*) is associated with 'domain_Ville' (role 'trajet11', cardinality 0..*).
+'domain_Avis' (role 'personne4', cardinality 0..*) is associated with 'domain_Profil' (role 'avis5', cardinality 0..*).
+'domain_Authentification' (role 'personne1', cardinality 0..*) is associated with 'domain_Profil' (role 'Cr_e0', cardinality 0..*).
+'domain_Profil' (role 'adresse8', cardinality 0..*) is associated with 'domain_Ville' (role 'personnes9', cardinality 0..*).
+'domain_Voiture' (role 'Profil17', cardinality 0..*) is associated with 'domain_Profil' (role 'voiture16', cardinality 0..*).
+'domain_Trajet' (role 'participants3', cardinality 0..*) is associated with 'domain_Profil' (role 'events2', cardinality 0..*).

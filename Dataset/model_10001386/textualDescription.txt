@@ -1,0 +1,34 @@
+The model has 18 class(es).
+The class 'Input_data_barang_masuk_UseCase' has no attributes.
+The class 'Input_data_sortir_UseCase' has no attributes.
+The class 'Direktur_pemasaran_Actor' has no attributes.
+The class 'Laporan_data_sortir_UseCase' has no attributes.
+The class 'Laporan_data_barang_masuk_UseCase' has no attributes.
+The class 'Work_order_UseCase' has no attributes.
+The class 'Direktur_utama_Actor' has no attributes.
+The class 'Input_data_barang_keluar_UseCase' has no attributes.
+The class 'Laporan_ready_stock_UseCase' has no attributes.
+The class 'Cek_ketersediaan_barang_UseCase' has no attributes.
+The class 'Laporan_work_order_UseCase' has no attributes.
+The class 'Laporan_data_Pembelian_UseCase' has no attributes.
+The class 'Admin_Gudang_Actor' has no attributes.
+The class 'Laporan_data_barang_keluar_UseCase' has no attributes.
+The class 'Barang' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'Input_data_pembeli_UseCase' has no attributes.
+The class 'Input_data_supplier_UseCase' has no attributes.
+The class 'Laporan_data_supplier_UseCase' has no attributes.
+'Laporan_data_supplier_UseCase' (role 'direktur_utama2', cardinality 0..*) is associated with 'Direktur_utama_Actor' (role 'laporan_data_supplier3', cardinality 0..*).
+'Laporan_ready_stock_UseCase' (role 'direktur_utama0', cardinality 0..*) is associated with 'Direktur_utama_Actor' (role 'laporan_ready_stock1', cardinality 0..*).
+'Admin_Gudang_Actor' (role 'input_data_barang_masuk15', cardinality 0..*) is associated with 'Input_data_barang_masuk_UseCase' (role 'admin_Gudang14', cardinality 0..*).
+'Admin_Gudang_Actor' (role 'input_data_pembeli21', cardinality 0..*) is associated with 'Input_data_pembeli_UseCase' (role 'admin_Gudang20', cardinality 0..*).
+'Laporan_work_order_UseCase' (role 'admin_Gudang29', cardinality 0..*) is associated with 'Admin_Gudang_Actor' (role 'laporan_work_order28', cardinality 0..*).
+'Laporan_data_barang_keluar_UseCase' (role 'direktur_utama8', cardinality 0..*) is associated with 'Direktur_utama_Actor' (role 'laporan_data_barang_keluar9', cardinality 0..*).
+'Direktur_utama_Actor' (role 'laporan_data_Pembelian5', cardinality 0..*) is associated with 'Laporan_data_Pembelian_UseCase' (role 'direktur_utama4', cardinality 0..*).
+'Direktur_utama_Actor' (role 'laporan_data_sortir11', cardinality 0..*) is associated with 'Laporan_data_sortir_UseCase' (role 'direktur_utama10', cardinality 0..*).
+'Laporan_data_barang_masuk_UseCase' (role 'direktur_utama6', cardinality 0..*) is associated with 'Direktur_utama_Actor' (role 'laporan_data_barang_masuk7', cardinality 0..*).
+'Admin_Gudang_Actor' (role 'input_data_barang_keluar17', cardinality 0..*) is associated with 'Input_data_barang_keluar_UseCase' (role 'admin_Gudang16', cardinality 0..*).
+'Input_data_supplier_UseCase' (role 'admin_Gudang18', cardinality 0..*) is associated with 'Admin_Gudang_Actor' (role 'input_data_supplier19', cardinality 0..*).
+'Direktur_utama_Actor' (role 'work_order24', cardinality 0..*) is associated with 'Work_order_UseCase' (role 'direktur_utama25', cardinality 0..*).
+'Cek_ketersediaan_barang_UseCase' (role 'direktur_pemasaran27', cardinality 0..*) is associated with 'Direktur_pemasaran_Actor' (role 'cek_ketersediaan_barang26', cardinality 0..*).
+'Direktur_utama_Actor' (role 'laporan_work_order13', cardinality 0..*) is associated with 'Laporan_work_order_UseCase' (role 'direktur_utama12', cardinality 0..*).
+'Admin_Gudang_Actor' (role 'input_data_sortir23', cardinality 0..*) is associated with 'Input_data_sortir_UseCase' (role 'admin_Gudang22', cardinality 0..*).

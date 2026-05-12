@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'Deck' has no attributes.
+The class 'Dealer' has the following attributes: 'name' of type str; 'cards' of type Cards.
+The class 'Player' has the following attributes: 'name' of type str.
+The class 'HandValue' has no attributes.
+The class 'Cards' has the following attributes: 'title' of type CardTitle; 'value' of type int; 'suit' of type CardSuit.
+The class 'Game' has the following attributes: 'winner' of type Player.
+The class 'Hand' has the following attributes: 'value' of type HandValue.
+The enumeration 'CardTitle' does not specify any literals.
+The enumeration 'CardSuit' does not specify any literals.
+'HandValue' (role 'hand8', cardinality 0..*) is associated with 'Hand' (role 'handValue9', cardinality 0..*).
+'Player' (role 'game0', cardinality 0..*) is associated with 'Game' (role 'player1', cardinality 0..*).
+'Dealer' (role 'deck10', cardinality 0..*) is associated with 'Deck' (role 'dealer11', cardinality 0..*).
+'Hand' (role 'cards12', cardinality 0..*) is associated with 'Cards' (role 'hand13', cardinality 0..*).
+'Deck' (role 'cards4', cardinality 0..*) is associated with 'Cards' (role 'deck5', cardinality 0..*).
+'Dealer' (role 'game3', cardinality 0..*) is associated with 'Game' (role 'dealer2', cardinality 0..*).
+'Player' (role 'hand7', cardinality 0..*) is associated with 'Hand' (role 'player6', cardinality 0..*).

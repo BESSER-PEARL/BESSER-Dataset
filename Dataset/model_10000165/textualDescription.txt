@@ -1,0 +1,26 @@
+The model has 17 class(es).
+The class 'Pitch' has no attributes.
+The class 'Home' has no attributes.
+The class 'Deck' has the following attributes: 'cardsDealt' of type str; 'deck' of type str.
+The class 'Game' has the following attributes: 'dealerCards' of type str; 'playerCards' of type str.
+The class 'Card1' has the following attributes: 'Rank' of type Rank; 'total_card' of type str; 'cardsRemianing' of type int; 'suit' of type Suit.
+The class 'Deck1' has the following attributes: 'Totalcards' of type int.
+The class 'PitchDealer' has the following attributes: 'SelectDealer' of type Dealer_Interface; 'displaycard' of type Card1; 'Randomcards' of type Card1.
+The class 'Player' has the following attributes: 'ID' of type str; 'bet' of type int.
+The class 'Card' has the following attributes: 'rank' of type Rank; 'suit' of type Suit.
+The class 'List_Card__external' has no attributes.
+The class 'cardType' has the following attributes: 'Heart' of type cardType; 'Diamond' of type cardType; 'Spades' of type cardType; 'club' of type cardType.
+The class 'Dealer_Interface' has no attributes.
+The class 'Al_player' has the following attributes: 'points' of type int; 'bet' of type int.
+The class 'Pitch1' has the following attributes: 'TotalDealer' of type Dealer_Type_Interface.
+The class 'Dealer_Type_Interface' has no attributes.
+The class 'Player1' has the following attributes: 'id' of type str; 'bet' of type int; 'points' of type int.
+The class 'Rank1' has the following attributes: 'intCard_value' of type int.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'Rank' does not specify any literals.
+'Card' (role 'deck0', cardinality 0..*) is associated with 'Deck' (role 'card1', cardinality 0..*).
+'Pitch' (role 'game9', cardinality 0..*) is associated with 'Game' (role 'blackJackMain8', cardinality 0..*).
+'Game' (role 'deck7', cardinality 0..*) is associated with 'Deck' (role 'game6', cardinality 0..*).
+'Pitch' (role 'player11', cardinality 0..*) is associated with 'Player' (role 'blackJackMain10', cardinality 0..*).
+'Deck' (role 'player3', cardinality 0..*) is associated with 'Player' (role 'deck2', cardinality 0..*).
+'List_Card__external' (role 'deck4', cardinality 0..*) is associated with 'Deck' (role 'list_Card_5', cardinality 0..*).

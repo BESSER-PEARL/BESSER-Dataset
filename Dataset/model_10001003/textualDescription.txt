@@ -1,0 +1,6 @@
+The model has 5 class(es).
+The class 'GameMap' has the following attributes: 'walls' of type str; 'transitions' of type str; 'poerups' of type str.
+The class 'BomberMan' has the following attributes: 'lives' of type int; 'points' of type int; 'location' of type str.
+The class 'Game' has the following attributes: 'Timer' of type int.
+The class 'PowerUps' has the following attributes: 'speciliaty' of type str; 'points' of type int; 'locations' of type str.
+The class 'Monster' has the following attributes: 'lives' of type int; 'location' of type str; 'specilization' of type str; 'type' of type str.

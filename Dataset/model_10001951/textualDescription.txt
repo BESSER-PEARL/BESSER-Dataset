@@ -1,0 +1,41 @@
+The model has 24 class(es).
+The class 'Responsable_inventario_Actor' has no attributes.
+The class 'Juridica_Actor' has no attributes.
+The class 'Proveedores_Actor' has no attributes.
+The class 'Millenium_Component' has no attributes.
+The class 'Factura' has the following attributes: 'fecha' of type str; 'codigo' of type str.
+The class 'Recibir_ordenes_de_suministros_external' has no attributes.
+The class 'Sistema_Web_Movil___Reccepci_n_de_pedidos_Component' has no attributes.
+The class 'Cliente_Actor' has no attributes.
+The class 'Revisi_n_de_factura_external' has no attributes.
+The class 'Dependencias_Actor' has no attributes.
+The class 'Elementos' has the following attributes: 'referencia' of type str; 'clasificacion' of type str.
+The class 'Recibir_productos_o_pedidos_external' has no attributes.
+The class 'Pedidos' has the following attributes: 'codigo' of type str; 'fecha' of type str.
+The class 'SolicitudSuministros' has the following attributes: 'fecha' of type str; 'codigo' of type str.
+The class 'Proveedor' has the following attributes: 'telefono' of type str; 'nombre' of type str; 'direccion' of type str; 'nit' of type str.
+The class 'Brindar_Consultorias_external' has no attributes.
+The class 'Entregar_productos_external' has no attributes.
+The class 'dependencia' has the following attributes: 'codigo' of type str; 'responsable' of type str; 'nombre' of type str.
+The class 'OrdenesPedidos' has the following attributes: 'codigo' of type str; 'fecha' of type str.
+The class 'Registrar_proveedores_external' has no attributes.
+The class 'Contabilidad_y_tesoreria_Actor' has no attributes.
+The class 'Clasificar_producto_external' has no attributes.
+The class 'Natural_Actor' has no attributes.
+The class 'Departamento_de_Inventarios_y_Suministros_Dis_Component' has no attributes.
+'Factura' (role 'proveedor28', cardinality 0..*) is associated with 'Proveedor' (role 'factura29', cardinality 0..*).
+'Dependencias_Actor' (role 'entregar_productos11', cardinality 0..*) is associated with 'Entregar_productos_external' (role 'dependencias10', cardinality 0..*).
+'Recibir_productos_o_pedidos_external' (role 'actor3', cardinality 0..*) is associated with 'Contabilidad_y_tesoreria_Actor' (role 'recibir_productos_o_pedidos2', cardinality 0..*).
+'Proveedores_Actor' (role 'registrar_proveedores5', cardinality 0..*) is associated with 'Registrar_proveedores_external' (role 'proveedores4', cardinality 0..*).
+'Factura' (role 'elementos30', cardinality 0..*) is associated with 'Elementos' (role 'factura31', cardinality 0..*).
+'Revisi_n_de_factura_external' (role 'responsable_inventario14', cardinality 0..*) is associated with 'Responsable_inventario_Actor' (role 'revisi_n_de_factura15', cardinality 0..*).
+'OrdenesPedidos' (role 'elementos20', cardinality 0..*) is associated with 'Elementos' (role 'ordenesPedidos21', cardinality 0..*).
+'OrdenesPedidos' (role 'proveedor17', cardinality 0..*) is associated with 'Proveedor' (role 'ordenesPedidos16', cardinality 0..*).
+'Brindar_Consultorias_external' (role 'cliente0', cardinality 0..*) is associated with 'Cliente_Actor' (role 'brindar_Consultorias1', cardinality 0..*).
+'SolicitudSuministros' (role 'ordenesPedidos24', cardinality 0..*) is associated with 'OrdenesPedidos' (role 'solicitudSuministros25', cardinality 0..*).
+'Recibir_ordenes_de_suministros_external' (role 'dependencias8', cardinality 0..*) is associated with 'Dependencias_Actor' (role 'recibir_ordenes_de_suministros9', cardinality 0..*).
+'Recibir_productos_o_pedidos_external' (role 'proveedores6', cardinality 0..*) is associated with 'Proveedores_Actor' (role 'recibir_productos_o_pedidos7', cardinality 0..*).
+'SolicitudSuministros' (role 'dependencia27', cardinality 0..*) is associated with 'dependencia' (role 'solicitudSuministros26', cardinality 0..*).
+'Responsable_inventario_Actor' (role 'clasificar_roducto13', cardinality 0..*) is associated with 'Clasificar_producto_external' (role 'responsable_inventario12', cardinality 0..*).
+'Elementos' (role 'solicitudSuministros23', cardinality 0..*) is associated with 'SolicitudSuministros' (role 'elementos22', cardinality 0..*).
+'Pedidos' (role 'proveedor18', cardinality 0..*) is associated with 'Proveedor' (role 'pedidos19', cardinality 0..*).

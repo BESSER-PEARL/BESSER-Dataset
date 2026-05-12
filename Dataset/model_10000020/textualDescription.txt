@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'Team' has the following attributes: 'score' of type int; 'p2' of type Player; 'p1' of type Player.
+The class 'StartGame' has the following attributes: 'p4' of type Player; 'turn' of type int; 'p3' of type Player; 'trick' of type Trick; 't2' of type Team; 'deck' of type Deck; 'bidNumber' of type int; 'playerOrder' of type str; 'lead' of type int; 'p1' of type Player; 'p2' of type Player; 't1' of type Team.
+The class 'Deck' has no attributes.
+The class 'Trick' has the following attributes: 'suitLead' of type int.
+The class 'int_Interface' has no attributes.
+The class 'Hand' has no attributes.
+The class 'Group' has the following attributes: 'contents' of type str.
+The class 'Player' has the following attributes: 'name' of type str; 'score' of type int; 'hand' of type Hand; 'number' of type int.
+The class 'HandSorter' has no attributes.
+The class 'Card' has the following attributes: 'isDouble' of type bool; 'suit' of type int; 'rank' of type int; 'points' of type int.
+'Hand' (role 'player5', cardinality 0..*) is associated with 'Player' (role 'hand4', cardinality 0..*).
+'StartGame' (role 'trick12', cardinality 0..*) is associated with 'Trick' (role 'startGame13', cardinality 0..*).
+'StartGame' (role 'team8', cardinality 0..*) is associated with 'Team' (role 'startGame9', cardinality 0..*).
+'Player' (role 'team3', cardinality 0..*) is associated with 'Team' (role 'player2', cardinality 0..*).
+'Player' (role 'startGame7', cardinality 0..*) is associated with 'StartGame' (role 'player6', cardinality 0..*).
+'Group' (role 'card1', cardinality 0..*) is associated with 'Card' (role 'group0', cardinality 0..*).
+'StartGame' (role 'deck10', cardinality 0..*) is associated with 'Deck' (role 'startGame11', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 8 class(es).
+The class 'Question_T__Interface' has no attributes.
+The class 'Ranking' has the following attributes: 'multians' of type bool; 'c1__c2__c3__c4' of type str; 'answer' of type str; 'question' of type str.
+The class 'Essay' has the following attributes: 'answer' of type str; 'multians' of type bool; 'question' of type str; 'c1__c2__c3__c4' of type str.
+The class 'Matching' has the following attributes: 'answer' of type str; 'col1__col2' of type str; 'question' of type str; 'c1__c2__c3__c4' of type str; 'multians' of type bool.
+The class 'TF' has the following attributes: 'answer' of type str; 'question' of type str; 'c1__c2__c3__c4' of type str; 'multians' of type bool.
+The class 'MachingQuestion_Interface' has no attributes.
+The class 'ShortAnswer' has the following attributes: 'multians' of type bool; 'c1__c2__c3__c4' of type str; 'question' of type str; 'answer' of type str.
+The class 'MC' has the following attributes: 'question' of type str; 'answer' of type str; 'c1__c2__c3__c4' of type str; 'multians' of type bool.

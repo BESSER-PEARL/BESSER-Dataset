@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Agent' has the following attributes: 'Agent_ID' of type str; 'Ime' of type str; 'BrojAgenta' of type int; 'Prezime' of type str; 'JMBG' of type int.
+The class 'Aran_man' has the following attributes: 'Cena' of type str; 'SlobMesto' of type bool; 'DatumPovratka' of type str; 'Aranzman_ID' of type str; 'DatumPolaska' of type str; 'NazivAran_' of type str.
+The class 'Kupac' has the following attributes: 'Mobilni' of type int; 'Grad' of type str; 'BrojPasosa' of type int; 'Prezime' of type str; 'JMBG' of type int; 'Ime' of type str; 'Kupac_ID' of type str.
+The class 'Osiguranje' has the following attributes: 'Osiguranje_ID' of type str; 'PaketPokri_a' of type str; 'BrojPolise' of type int; 'Cena' of type str; 'OsigKuca' of type str.
+The class 'Transakcija' has the following attributes: 'suma' of type str; 'Trans_ID' of type str; 'tip' of type str; 'datum_trans' of type str.
+'Agent' (role 'Agent_Aran_man_08', cardinality 0..*) is associated with 'Aran_man' (role 'Agent_Aran_man_19', cardinality 0..*).
+'Transakcija' (role 'Transakcija_Kupac_04', cardinality 0..*) is associated with 'Kupac' (role 'Transakcija_Kupac_15', cardinality 0..*).
+'Kupac' (role 'Agent_Kupac_17', cardinality 0..*) is associated with 'Agent' (role 'Agent_Kupac_06', cardinality 0..*).
+'Kupac' (role 'Osiguranje_Putnik_11', cardinality 0..*) is associated with 'Osiguranje' (role 'Osiguranje_Putnik_00', cardinality 0..*).
+'Kupac' (role 'Putnik_Rezervisanje_02', cardinality 0..*) is associated with 'Aran_man' (role 'Putnik_Rezervisanje_13', cardinality 0..*).

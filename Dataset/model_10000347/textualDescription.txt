@@ -1,0 +1,21 @@
+The model has 11 class(es).
+The class 'Card' has the following attributes: 'val' of type str; 'name' of type str; 'img' of type str; 'suit' of type str.
+The class 'RecordBook' has the following attributes: 'recordList' of type str.
+The class 'Poker' has the following attributes: 'player2' of type Player; 'dealer' of type Dealer; 'player1' of type Player.
+The class 'Deck' has the following attributes: 'cards' of type str.
+The class 'Hand' has the following attributes: 'handCollection' of type str.
+The class 'HandStrength' has the following attributes: 'STRAIGHT_FLUSH' of type int.
+The class 'Human' has no attributes.
+The class 'Computer' has no attributes.
+The class 'Dealer' has the following attributes: 'deck' of type Deck; 'analyzeHand' of type HandStrength.
+The class 'Bank' has the following attributes: 'total' of type str.
+The class 'Player' has the following attributes: 'hand' of type Hand; 'name' of type str; 'bank' of type Bank.
+'RecordBook' (role 'texasHoldEm3', cardinality 0..*) is associated with 'Poker' (role 'recordBook2', cardinality 0..*).
+'Dealer' (role 'handStrength15', cardinality 0..*) is associated with 'HandStrength' (role 'dealer14', cardinality 0..*).
+'Card' (role 'hand11', cardinality 0..*) is associated with 'Hand' (role 'card10', cardinality 0..*).
+'Poker' (role 'player7', cardinality 0..*) is associated with 'Player' (role 'texasHoldEm6', cardinality 0..*).
+'Hand' (role 'player9', cardinality 0..*) is associated with 'Player' (role 'hand28', cardinality 0..*).
+'Deck' (role 'card1', cardinality 0..*) is associated with 'Card' (role 'deck0', cardinality 0..*).
+'Deck' (role 'dealer13', cardinality 0..*) is associated with 'Dealer' (role 'deck212', cardinality 0..*).
+'Poker' (role 'dealer25', cardinality 0..*) is associated with 'Dealer' (role 'texasHoldEm4', cardinality 0..*).
+'Bank' (role 'player16', cardinality 0..*) is associated with 'Player' (role 'bank217', cardinality 0..*).

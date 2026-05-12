@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'Group' has the following attributes: 'ID' of type int; 'name' of type str.
+The class 'Card' has the following attributes: 'ID' of type str; 'theme' of type Theme.
+The class 'Theme1' has the following attributes: 'name' of type str; 'year' of type int.
+The class 'Deck' has no attributes.
+The class 'Game' has the following attributes: 'name' of type str.
+The class 'Player' has the following attributes: 'name' of type str.
+The class 'Score' has no attributes.
+The class 'Avatar' has no attributes.
+The enumeration 'TankProperties' does not specify any literals.
+The enumeration 'CarProperties' does not specify any literals.
+The enumeration 'Theme' does not specify any literals.
+'Avatar' (role 'players1', cardinality 0..*) is associated with 'Player' (role 'avatar0', cardinality 0..*).
+'Deck' (role 'theme7', cardinality 0..*) is associated with 'Theme1' (role 'deck6', cardinality 0..*).
+'Player' (role 'score10', cardinality 0..*) is associated with 'Score' (role 'player11', cardinality 0..*).
+'Card' (role 'group9', cardinality 0..*) is associated with 'Group' (role 'card8', cardinality 0..*).
+'Theme1' (role 'game12', cardinality 0..*) is associated with 'Game' (role 'theme13', cardinality 0..*).
+'Group' (role 'deck5', cardinality 0..*) is associated with 'Deck' (role 'group4', cardinality 0..*).
+'Game' (role 'players2', cardinality 0..*) is associated with 'Player' (role 'games3', cardinality 0..*).

@@ -1,0 +1,44 @@
+The model has 29 class(es).
+The class 'Receive_Burglar_Alarm_Call_and_Handle_external' has no attributes.
+The class 'Detect_Water_external' has no attributes.
+The class 'Detect_Movement_external' has no attributes.
+The class 'Police_Station_Actor' has no attributes.
+The class 'Receive_Fire_Alarm_Call_and_Handle_external' has no attributes.
+The class 'Water_Sensors_Actor' has no attributes.
+The class 'Smoke_Alarm_Activated' has no attributes.
+The class 'Monitor_Door_external' has no attributes.
+The class 'Door_Sensors_Actor' has no attributes.
+The class 'mypackage_MyClass2' has no attributes.
+The class 'Change_Settings_external' has no attributes.
+The class 'Window_Sensors_Actor' has no attributes.
+The class 'Fire_Brigades_Actor' has no attributes.
+The class 'Movement_Sensors_Actor' has no attributes.
+The class 'Home_Safety_and_Security_System_Component' has no attributes.
+The class 'Heat_Sensors_Actor' has no attributes.
+The class 'Fire_Alarm_Activated' has no attributes.
+The class 'Reset_Alarm_s__external' has no attributes.
+The class 'Send_Sensor_Type_Code_external' has no attributes.
+The class 'Smart_Sensor_Actor' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Idle' has no attributes.
+The class 'Smoke_Sensors_Actor' has no attributes.
+The class 'mypackage_MyClass' has no attributes.
+The class 'Monitor_Window_external' has no attributes.
+The class 'Stop_the_Alarm_external' has no attributes.
+The class 'Detect_Excess_Heat_external' has no attributes.
+The class 'Enable_Disable_the_Burglar_Sensor_s__external' has no attributes.
+The class 'Detect_Smoke_external' has no attributes.
+'Stop_the_Alarm_external' (role 'user13', cardinality 0..*) is associated with 'User_Actor' (role 'stop_the_Alarm12', cardinality 0..*).
+'User_Actor' (role 'enable_Disable_the_Sensor_s_16', cardinality 0..*) is associated with 'Enable_Disable_the_Burglar_Sensor_s__external' (role 'user17', cardinality 0..*).
+'User_Actor' (role 'reset_Burglar_Alarm18', cardinality 0..*) is associated with 'Reset_Alarm_s__external' (role 'user19', cardinality 0..*).
+'Receive_Burglar_Alarm_Call_and_Handle_external' (role 'police_Station22', cardinality 0..*) is associated with 'Police_Station_Actor' (role 'receive_Burglar_Call23', cardinality 0..*).
+'Door_Sensors_Actor' (role 'monitor_Door4', cardinality 0..*) is associated with 'Monitor_Door_external' (role 'door_Sensors5', cardinality 0..*).
+'Detect_Movement_external' (role 'movement_Sensors9', cardinality 0..*) is associated with 'Movement_Sensors_Actor' (role 'detect_Movement8', cardinality 0..*).
+'Detect_Smoke_external' (role 'smoke_Sensors1', cardinality 0..*) is associated with 'Smoke_Sensors_Actor' (role 'detect_Smoke0', cardinality 0..*).
+'User_Actor' (role 'change_Settings14', cardinality 0..*) is associated with 'Change_Settings_external' (role 'user15', cardinality 0..*).
+'Fire_Brigades_Actor' (role 'receive_Fire_Alarm21', cardinality 0..*) is associated with 'Receive_Fire_Alarm_Call_and_Handle_external' (role 'fire_Brigades20', cardinality 0..*).
+'Monitor_Window_external' (role 'window_Sensors7', cardinality 0..*) is associated with 'Window_Sensors_Actor' (role 'monitor_Window6', cardinality 0..*).
+'Heat_Sensors_Actor' (role 'detect_Excess_Heat2', cardinality 0..*) is associated with 'Detect_Excess_Heat_external' (role 'heat_Sensors3', cardinality 0..*).
+'Water_Sensors_Actor' (role 'detect_Water10', cardinality 0..*) is associated with 'Detect_Water_external' (role 'water_Sensors11', cardinality 0..*).
+'mypackage_MyClass' (role 'myClass226', cardinality 0..*) is associated with 'mypackage_MyClass2' (role 'myClass27', cardinality 0..*).
+'Send_Sensor_Type_Code_external' (role 'smart_Sensor25', cardinality 0..*) is associated with 'Smart_Sensor_Actor' (role 'send_Sensor_Type_Code24', cardinality 0..*).

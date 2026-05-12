@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'Post' has the following attributes: 'type' of type str.
+The class 'Registration' has the following attributes: 'userName' of type str; 'password' of type str; 'name' of type str; 'username' of type str.
+The class 'Profile' has the following attributes: 'username' of type str.
+The class 'Search' has no attributes.
+The class 'Comment' has no attributes.
+The class 'User' has the following attributes: 'name' of type str.
+The class 'Hashtag' has the following attributes: 'name' of type str.
+The class 'Item' has no attributes.
+The class 'Login' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'Class' has no attributes.
+'Search' (role 'item15', cardinality 0..*) is associated with 'Item' (role 'search14', cardinality 0..*).
+'Hashtag' (role '_113', cardinality 0..*) is associated with 'Item' (role 'Item_Hashtag_012', cardinality 0..*).
+'Post' (role 'user3', cardinality 0..*) is associated with 'User' (role 'post2', cardinality 0..*).
+'Item' (role 'user11', cardinality 0..*) is associated with 'User' (role 'pages10', cardinality 0..*).
+'Registration' (role 'user7', cardinality 0..*) is associated with 'User' (role 'registeration6', cardinality 0..*).
+'User' (role 'login4', cardinality 0..*) is associated with 'Login' (role 'user5', cardinality 0..*).
+'Item' (role 'friends8', cardinality 0..*) is associated with 'Comment' (role 'user9', cardinality 0..*).
+'User' (role 'myprofile0', cardinality 0..*) is associated with 'Profile' (role 'user1', cardinality 0..*).

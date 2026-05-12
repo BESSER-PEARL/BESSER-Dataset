@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'Food' has the following attributes: 'foodID' of type int; 'name' of type str.
+The class 'Rooms' has the following attributes: 'type' of type str; 'roomNo' of type int.
+The class 'Receptionist' has the following attributes: 'name' of type str; 'rID' of type int; 'branch' of type str; 'phoneNo' of type int.
+The class 'Manager' has the following attributes: 'managerID' of type int; 'phoneNo' of type int; 'name' of type str; 'branch' of type str.
+The class 'Housekeeping' has the following attributes: 'hkID' of type int; 'branch' of type str; 'name' of type str.
+The class 'Bill' has the following attributes: 'billNo' of type int; 'guestID' of type int.
+The class 'Chef' has the following attributes: 'name' of type str; 'chefID' of type int; 'branch' of type str.
+The class 'Guest' has the following attributes: 'address' of type str; 'guestID' of type int; 'name' of type str; 'roomNo' of type int; 'phoneNo' of type int.
+The class 'Inventory' has the following attributes: 'type' of type str; 'status' of type str.
+'Rooms' (role 'guest9', cardinality 0..*) is associated with 'Guest' (role 'rooms8', cardinality 0..*).
+'Guest' (role 'bill10', cardinality 0..*) is associated with 'Bill' (role 'guest11', cardinality 0..*).
+'Housekeeping' (role 'rooms13', cardinality 0..*) is associated with 'Rooms' (role 'housekeeping12', cardinality 0..*).
+'Rooms' (role 'receptionist16', cardinality 0..*) is associated with 'Receptionist' (role 'rooms17', cardinality 0..*).
+'Inventory' (role 'manager1', cardinality 0..*) is associated with 'Manager' (role 'inventory0', cardinality 0..*).
+'Food' (role 'chef5', cardinality 0..*) is associated with 'Chef' (role 'food4', cardinality 0..*).
+'Manager' (role 'guest2', cardinality 0..*) is associated with 'Guest' (role 'manager3', cardinality 0..*).
+'Guest' (role 'food7', cardinality 0..*) is associated with 'Food' (role 'guest6', cardinality 0..*).
+'Receptionist' (role 'bill14', cardinality 0..*) is associated with 'Bill' (role 'receptionist15', cardinality 0..*).

@@ -1,0 +1,20 @@
+The model has 10 class(es).
+The class 'AgendaPartage' has no attributes.
+The class 'Compte' has the following attributes: 'login' of type str; 'password' of type str; 'typeCompte' of type str.
+The class 'Personne' has the following attributes: 'prenom' of type str; 'nom' of type str; 'adresse' of type str; 'dateNaissance' of type str; 'telPrive' of type str; 'email' of type str.
+The class 'EmployeAdministratif' has the following attributes: 'formation' of type str.
+The class 'Test' has the following attributes: 'Prenom' of type str.
+The class 'Medecin' has the following attributes: 'specialisation' of type str.
+The class 'Agenda' has the following attributes: 'annee' of type str.
+The class 'RDV' has the following attributes: 'heure' of type str; 'duree' of type int; 'date' of type str.
+The class 'Employe' has the following attributes: 'dateFin' of type str; 'dateDebut' of type str; 'joursVacance' of type int; 'salaire' of type int.
+The class 'Patient' has the following attributes: 'allergies' of type str; 'antecedent' of type str; 'traitement' of type str.
+'Compte' (role 'employe5', cardinality 0..*) is associated with 'Employe' (role 'compte4', cardinality 0..*).
+'RDV' (role 'agenda1', cardinality 0..*) is associated with 'Agenda' (role 'rDV0', cardinality 0..*).
+'Patient' (role 'rDV13', cardinality 0..*) is associated with 'RDV' (role 'patient12', cardinality 0..*).
+'Patient' (role 'medecin15', cardinality 0..*) is associated with 'Medecin' (role 'patient14', cardinality 0..*).
+'EmployeAdministratif' (role 'rDV16', cardinality 0..*) is associated with 'RDV' (role 'employeAdministratif17', cardinality 0..*).
+'Patient' (role 'compte10', cardinality 0..*) is associated with 'Compte' (role 'patient11', cardinality 0..*).
+'AgendaPartage' (role 'employeAdministratif9', cardinality 0..*) is associated with 'EmployeAdministratif' (role 'agendaPartage8', cardinality 0..*).
+'Medecin' (role 'agenda6', cardinality 0..*) is associated with 'Agenda' (role 'medecin7', cardinality 0..*).
+'Agenda' (role 'agendaPartage3', cardinality 0..*) is associated with 'AgendaPartage' (role 'agenda2', cardinality 0..*).

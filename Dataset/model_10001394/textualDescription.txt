@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'Hospital_Patients' has the following attributes: 'Patient_s_Name' of type str; 'NIC_Number' of type int; 'Phone_Number' of type int; 'Sickness' of type str.
+The class 'Hospital__Receptionist' has the following attributes: 'Employee_ID' of type int; 'Name' of type str.
+The class 'Hospital' has the following attributes: 'Cardiology' of type str; 'Cancer_Center' of type str; 'Operation_Theater' of type str; 'HR' of type str.
+The class 'Hospital_Doctor' has the following attributes: 'Name' of type str; 'Rank' of type str; 'Salary' of type int; 'Specialization' of type str; 'ID' of type int.
+'Hospital__Receptionist' (role 'patients3', cardinality 0..*) is associated with 'Hospital_Patients' (role 'Receptionist2', cardinality 0..*).
+'Hospital_Doctor' (role 'patient0', cardinality 0..*) is associated with 'Hospital_Patients' (role 'doctor1', cardinality 0..*).

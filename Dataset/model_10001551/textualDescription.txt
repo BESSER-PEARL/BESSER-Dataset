@@ -1,0 +1,36 @@
+The model has 18 class(es).
+The class 'Client_Register_UseCase' has no attributes.
+The class 'Authentication_Actor' has no attributes.
+The class 'Product' has the following attributes: 'Product_Name' of type str; 'id' of type int; 'Price' of type int.
+The class 'Web_User' has the following attributes: 'Username' of type str; 'Password' of type int.
+The class 'Order' has the following attributes: 'Total' of type int; 'id' of type str.
+The class 'Bill' has the following attributes: 'Billing_address' of type Account; 'Customer_name' of type Customer; 'Total_Price' of type Order.
+The class 'New_customer_Actor' has no attributes.
+The class 'Make_Purchase_UseCase' has no attributes.
+The class 'Account' has the following attributes: 'id' of type int; 'billing_address' of type Customer.
+The class 'Customer' has the following attributes: 'Username' of type str; 'Name' of type str; 'Contact' of type str; 'Password' of type str; 'Address' of type str.
+The class 'Registered_Customer_Actor' has no attributes.
+The class 'Suppliers' has the following attributes: 'Name' of type str; 'id' of type int.
+The class 'Web_Customer_Actor' has no attributes.
+The class 'Checkout_UseCase' has no attributes.
+The class 'Cash_on_Delivery_Actor' has no attributes.
+The class 'View_items_UseCase' has no attributes.
+The class 'Shopping_cart' has the following attributes: 'Quantity' of type int; 'Cart_id' of type int; 'Customer_id' of type Customer; 'Product_Name' of type Product.
+The class 'Class' has no attributes.
+'View_items_UseCase' (role 'new_customer5', cardinality 0..*) is associated with 'New_customer_Actor' (role 'view_items4', cardinality 0..*).
+'Registered_Customer_Actor' (role 'view_items0', cardinality 0..*) is associated with 'View_items_UseCase' (role 'registered_Customer1', cardinality 0..*).
+'Customer' (role 'web_User17', cardinality 0..*) is associated with 'Web_User' (role 'customer16', cardinality 0..*).
+'Authentication_Actor' (role 'client_Register10', cardinality 0..*) is associated with 'Client_Register_UseCase' (role 'authentication11', cardinality 0..*).
+'Checkout_UseCase' (role 'authentication13', cardinality 0..*) is associated with 'Authentication_Actor' (role 'checkout12', cardinality 0..*).
+'Product' (role 'suppliers21', cardinality 0..*) is associated with 'Suppliers' (role 'product20', cardinality 0..*).
+'Bill' (role 'account32', cardinality 0..*) is associated with 'Account' (role 'bill33', cardinality 0..*).
+'Order' (role 'account29', cardinality 0..*) is associated with 'Account' (role 'order28', cardinality 0..*).
+'Account' (role 'shopping_cart24', cardinality 0..*) is associated with 'Shopping_cart' (role 'account25', cardinality 0..*).
+'Client_Register_UseCase' (role 'new_customer7', cardinality 0..*) is associated with 'New_customer_Actor' (role 'client_Register6', cardinality 0..*).
+'Customer' (role 'account26', cardinality 0..*) is associated with 'Account' (role 'customer27', cardinality 0..*).
+'View_items_UseCase' (role 'authentication9', cardinality 0..*) is associated with 'Authentication_Actor' (role 'view_items8', cardinality 0..*).
+'Registered_Customer_Actor' (role 'make_Purchase2', cardinality 0..*) is associated with 'Make_Purchase_UseCase' (role 'registered_Customer3', cardinality 0..*).
+'Cash_on_Delivery_Actor' (role 'checkout15', cardinality 0..*) is associated with 'Checkout_UseCase' (role 'cash_on_Delivery14', cardinality 0..*).
+'Customer' (role 'bill18', cardinality 0..*) is associated with 'Bill' (role 'customer19', cardinality 0..*).
+'Order' (role 'bill30', cardinality 0..*) is associated with 'Bill' (role 'order31', cardinality 0..*).
+'Shopping_cart' (role 'product23', cardinality 0..*) is associated with 'Product' (role 'shopping_cart22', cardinality 0..*).

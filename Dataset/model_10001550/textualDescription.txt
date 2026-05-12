@@ -1,0 +1,16 @@
+The model has 13 class(es).
+The class 'MyClass2' has no attributes.
+The class 'MyClass9' has the following attributes: 'h' of type int.
+The class 'MyClass13' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MonoBehaviour' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'MyClass6' has no attributes.
+The class 'MyClass7' has no attributes.
+The class 'MyClass4' has no attributes.
+The class 'MyClass19' has no attributes.
+The class 'MyClass18' has no attributes.
+The class 'MyClass12' has no attributes.
+The class 'StopButton' has no attributes.
+'MyClass9' (role 'myClass190', cardinality 0..*) is associated with 'MyClass19' (role 'myClass91', cardinality 0..*).
+'MyClass13' (role 'myClass193', cardinality 0..*) is associated with 'MyClass19' (role 'myClass132', cardinality 0..*).

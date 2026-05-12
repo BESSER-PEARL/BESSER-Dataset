@@ -1,0 +1,111 @@
+The model has 82 class(es).
+The class 'SearchRequest' has no attributes.
+The class 'PaymentByAccaunt' has no attributes.
+The class '_______________UseCase' has no attributes.
+The class 'SystemUser_Interface' has no attributes.
+The class 'Catalog' has no attributes.
+The class 'Admin' has no attributes.
+The class 'DatabaseAPI' has no attributes.
+The class 'PaymentByCard1' has no attributes.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ShortReview' has no attributes.
+The class 'DetailDescription' has no attributes.
+The class '__________________UseCase' has no attributes.
+The class 'BankAccount' has the following attributes: 'balance' of type float; 'ownerName' of type str.
+The class 'MenuScreen' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'Payment_Interface' has no attributes.
+The class 'Stats' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'Review_Interface' has no attributes.
+The class 'ClassN' has no attributes.
+The class 'ClientRewiev' has the following attributes: 'text' of type str; 'mark' of type int.
+The class 'ClassC' has the following attributes: 'protectedAttribute' of type str; 'publicAttribute' of type float; 'packageAttribute' of type str; 'privateAttribute' of type int.
+The class 'ClassS' has no attributes.
+The class 'Inventory1' has no attributes.
+The class 'OriginalReview' has the following attributes: 'texr' of type str.
+The class 'BookStorage_Interface' has no attributes.
+The class 'OwnBookStorage' has no attributes.
+The class 'PlayerActor' has no attributes.
+The class 'Map' has no attributes.
+The class 'Brave' has no attributes.
+The class 'StateService' has no attributes.
+The class 'MazeGenerator' has no attributes.
+The class 'LevelMap' has no attributes.
+The class '______________UseCase' has no attributes.
+The class 'Inventory' has no attributes.
+The class 'ClassG' has no attributes.
+The class 'NotMyBusiness' has no attributes.
+The class '__________Component' has no attributes.
+The class 'ClassA' has the following attributes: 'packageAttribute' of type str; 'publicAttribute' of type float; 'protectedAttribute' of type str; 'privateAttribute' of type int.
+The class 'ClassJ' has no attributes.
+The class 'ClassM' has no attributes.
+The class 'Screen_Interface' has no attributes.
+The class '_________________________Component' has no attributes.
+The class 'ShopAPI' has no attributes.
+The class 'Knife' has no attributes.
+The class '________________________Component' has no attributes.
+The class 'Client_hoice_Interface' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'GameScreen' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'ClientDatabase' has no attributes.
+The class 'Point' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'MapGenerator' has no attributes.
+The class 'ClassE' has no attributes.
+The class 'Hero' has no attributes.
+The class 'ClassV' has no attributes.
+The class 'Actor' has no attributes.
+The class 'ClassL' has no attributes.
+The class 'ClassQ' has no attributes.
+The class '______Actor' has no attributes.
+The class 'ClassK' has no attributes.
+The class 'ClassF' has no attributes.
+The class 'Client' has the following attributes: 'addres' of type str; 'name' of type str; 'card' of type str.
+The class 'InnerBookStorage' has no attributes.
+The class 'ClassD' has no attributes.
+The class 'EnemyStrategy_Interface' has no attributes.
+The class 'Order' has no attributes.
+The class '___________________________Component' has no attributes.
+The class '______________________Component' has no attributes.
+The class '______________________________Component' has no attributes.
+The class '________________Component' has no attributes.
+The class 'PaymentByCard' has no attributes.
+The class 'Wishlist' has no attributes.
+The class 'Basket' has no attributes.
+The class 'ClassH' has no attributes.
+The class 'Armor' has no attributes.
+The class 'book' has the following attributes: 'rate' of type float; 'catygory' of type str; 'keywords' of type str; 'author' of type str; 'title' of type str.
+The class 'Items' has no attributes.
+The class 'WallActor' has no attributes.
+The class 'Coward' has no attributes.
+The class '___________________________UseCase' has no attributes.
+'______Actor' (role '______________6', cardinality 0..*) is associated with '_______________UseCase' (role '_____7', cardinality 0..*).
+'______Actor' (role '_________________8', cardinality 0..*) is associated with '__________________UseCase' (role '_____9', cardinality 0..*).
+'______Actor' (role '_____________10', cardinality 0..*) is associated with '______________UseCase' (role '_____11', cardinality 0..*).
+'ClassJ' (role 'classF5', cardinality 0..*) is associated with 'ClassH' (role 'classG4', cardinality 0..*).
+'Payment_Interface' (role 'order43', cardinality 0..*) is associated with 'Order' (role 'payment42', cardinality 0..*).
+'DetailDescription' (role 'clientRewiev22', cardinality 0..*) is associated with 'ClientRewiev' (role 'detailDescription23', cardinality 0..*).
+'Payment_Interface' (role 'client45', cardinality 0..*) is associated with 'Client' (role 'payment44', cardinality 0..*).
+'Wishlist' (role 'client55', cardinality 0..*) is associated with 'Client' (role 'wishlist54', cardinality 0..*).
+'Order' (role 'basket16', cardinality 0..*) is associated with 'Basket' (role 'order17', cardinality 0..*).
+'Client' (role 'order36', cardinality 0..*) is associated with 'Order' (role 'client37', cardinality 0..*).
+'ClassE' (role 'classD1', cardinality 0..*) is associated with 'ClassD' (role 'classE0', cardinality 0..*).
+'Review_Interface' (role 'book19', cardinality 0..*) is associated with 'book' (role 'review18', cardinality 0..*).
+'SearchRequest' (role 'book38', cardinality 0..*) is associated with 'book' (role 'searchRequest39', cardinality 0..*).
+'Catalog' (role 'ownBookStorage32', cardinality 0..*) is associated with 'OwnBookStorage' (role 'catalog33', cardinality 0..*).
+'Wishlist' (role 'book48', cardinality 0..*) is associated with 'book' (role 'wishlist49', cardinality 0..*).
+'ClassF' (role 'classG2', cardinality 0..*) is associated with 'ClassG' (role 'classF3', cardinality 0..*).
+'book' (role 'order53', cardinality 0..*) is associated with 'Order' (role 'book52', cardinality 0..*).
+'book' (role 'detailDescription20', cardinality 0..*) is associated with 'DetailDescription' (role 'book21', cardinality 0..*).
+'ShortReview' (role 'book27', cardinality 0..*) is associated with 'book' (role 'shortReview26', cardinality 0..*).
+'Catalog' (role 'searchRequest41', cardinality 0..*) is associated with 'SearchRequest' (role 'catalog40', cardinality 0..*).
+'Catalog' (role 'innerBookStorage34', cardinality 0..*) is associated with 'InnerBookStorage' (role 'catalog35', cardinality 0..*).
+'___________________________UseCase' (role '______________13', cardinality 0..*) is associated with '_______________UseCase' (role '__________________________12', cardinality 0..*).
+'Catalog' (role 'book28', cardinality 0..*) is associated with 'book' (role 'catalog29', cardinality 0..*).
+'book' (role 'basket51', cardinality 0..*) is associated with 'Basket' (role 'book50', cardinality 0..*).
+'__________________UseCase' (role '__________________________14', cardinality 0..*) is associated with '___________________________UseCase' (role '_________________15', cardinality 0..*).
+'Client' (role 'basket46', cardinality 0..*) is associated with 'Basket' (role 'client47', cardinality 0..*).
+'OriginalReview' (role 'detailDescription25', cardinality 0..*) is associated with 'DetailDescription' (role 'originalReview24', cardinality 0..*).
+'ClientDatabase' (role 'client31', cardinality 0..*) is associated with 'Client' (role 'clientDatabase30', cardinality 0..*).

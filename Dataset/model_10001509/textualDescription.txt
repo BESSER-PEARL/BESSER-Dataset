@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'floor_s_buttons' has the following attributes: 'number' of type bool.
+The class 'door' has the following attributes: 'close' of type bool.
+The class 'elevator_s_buttons' has the following attributes: 'number' of type int.
+The class 'button' has the following attributes: 'number' of type int.
+The class 'elevator' has the following attributes: 'floor' of type int.
+'elevator' (role 'button2', cardinality 0..*) is associated with 'button' (role 'elevator3', cardinality 0..*).
+'door' (role 'elevator1', cardinality 0..*) is associated with 'elevator' (role 'door0', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 11 class(es).
+The class 'Take_Appointment_external' has no attributes.
+The class 'Admin_Office_Component' has no attributes.
+The class 'Doctor' has the following attributes: 'Specialization' of type str; 'Dept' of type str; 'Doctor_id' of type int.
+The class 'prescription' has no attributes.
+The class 'Show_to_Doctor_external' has no attributes.
+The class 'Patient' has the following attributes: 'Admit_date' of type str; 'Patient_id' of type int; 'Sickness' of type str.
+The class 'Doctor_Actor' has no attributes.
+The class 'Patient_Actor' has no attributes.
+The class 'Check_Patient_external' has no attributes.
+The class 'Person' has the following attributes: 'Name1' of type str; 'Phone_no' of type str; 'Age' of type int; 'Birth_date' of type str; 'Name' of type str; 'Gender' of type str; 'Id' of type str.
+The class 'Give_Prescription_external' has no attributes.
+'Patient_Actor' (role 'show_to_Doctor0', cardinality 0..*) is associated with 'Show_to_Doctor_external' (role 'patient1', cardinality 0..*).
+'Doctor_Actor' (role 'give_Prescription4', cardinality 0..*) is associated with 'Give_Prescription_external' (role 'doctor5', cardinality 0..*).
+'Doctor_Actor' (role 'check_Patient6', cardinality 0..*) is associated with 'Check_Patient_external' (role 'doctor7', cardinality 0..*).
+'Patient_Actor' (role 'take_Appointment2', cardinality 0..*) is associated with 'Take_Appointment_external' (role 'patient3', cardinality 0..*).

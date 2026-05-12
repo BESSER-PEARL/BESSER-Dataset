@@ -1,0 +1,17 @@
+The model has 11 class(es).
+The class 'WmMediaPager_Mini_App_DepositTransaction' has no attributes.
+The class 'Native_App_SavingsAccount' has the following attributes: 'interestRate' of type float.
+The class 'WmMediaPager_Mini_App_WithdrawTransaction' has no attributes.
+The class 'Customer' has the following attributes: 'name' of type str; 'dateOfBirth' of type date; 'address' of type str; 'emailAddress' of type str; 'phoneNumber' of type str.
+The class 'Native_App_Activity___ViewController___WmMediaPagerEvents' has the following attributes: 'balance' of type float; 'accountNo' of type str; 'type' of type Native_App_AccountType.
+The class 'Native_App_CertificatesOfDepositAccount' has the following attributes: 'timePeriod' of type int; 'interestRate' of type float.
+The class 'WmMediaPager_Mini_App_WmMediaPagerEvents' has the following attributes: 'transactionTime' of type date; 'id' of type int; 'amount' of type float; 'type' of type WmMediaPager_Mini_App_TransactionType.
+The class 'Login' has the following attributes: 'securityAnswer' of type str; 'username' of type str; 'securityQuestion' of type str; 'password' of type str; 'lastLoginTime' of type date.
+The class 'WmMediaPager_Mini_App_TransferTransaction' has the following attributes: 'sourceAccount' of type Native_App_Activity___ViewController___WmMediaPagerEvents; 'targetAccount' of type Native_App_Activity___ViewController___WmMediaPagerEvents.
+The class 'WmMediaPager_Mini_App_WmMediaPager' has the following attributes: 'transactionTime' of type date; 'id' of type int; 'type' of type WmMediaPager_Mini_App_TransactionType; 'amount' of type float.
+The class 'Native_App_CheckingAccount' has the following attributes: 'name' of type str.
+The enumeration 'WmMediaPager_Mini_App_TransactionType' does not specify any literals.
+The enumeration 'Native_App_AccountType' does not specify any literals.
+'Login' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'login4', cardinality 0..*).
+'Native_App_Activity___ViewController___WmMediaPagerEvents' (role 'transactions2', cardinality 0..*) is associated with 'WmMediaPager_Mini_App_WmMediaPager' (role 'account3', cardinality 0..*).
+'Native_App_Activity___ViewController___WmMediaPagerEvents' (role 'customer0', cardinality 0..*) is associated with 'Customer' (role 'a1', cardinality 0..*).

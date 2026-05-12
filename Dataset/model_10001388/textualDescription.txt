@@ -1,0 +1,11 @@
+The model has 8 class(es).
+The class 'Admin' has the following attributes: 'password' of type int; 'adminEmail' of type str.
+The class 'payslip' has the following attributes: 'emp_name' of type str; 'emp_id' of type int.
+The class 'Loan' has the following attributes: 'emp_name' of type str; 'loan_type' of type str; 'emp_id' of type int; 'amount' of type str; 'loan_interst' of type int; 'loan_purpose' of type str.
+The class 'Login' has the following attributes: 'password' of type int; 'username' of type str.
+The class 'Salary' has the following attributes: 'basic_salary' of type str; 'emp_id' of type int; 'emp_name' of type str.
+The class 'Employee' has the following attributes: 'emp_email' of type str; 'emp_name' of type str; 'emp_id' of type int.
+The class 'EmployeeRequest' has no attributes.
+The class 'Attendence' has the following attributes: 'emp_id' of type int; 'Basic_salary' of type int; 'emp_name' of type str.
+'Employee' (role 'attendence1', cardinality 0..*) is associated with 'Attendence' (role 'employee0', cardinality 0..*).
+'Employee' (role 'salary2', cardinality 0..*) is associated with 'Salary' (role 'employee3', cardinality 0..*).

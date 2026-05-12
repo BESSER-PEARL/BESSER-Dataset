@@ -1,0 +1,14 @@
+The model has 12 class(es).
+The class 'TimeCreditForEducationalSemester' has the following attributes: 'totalHours' of type int; 'subjectCode' of type int; 'groupNumber' of type int; 'id' of type int; 'activityTypeCode' of type int.
+The class 'Group' has the following attributes: 'id' of type int; 'groupNumber' of type int; 'educationalYear' of type int; 'specialtyCode' of type int.
+The class 'ActivityType' has the following attributes: 'subjectCode' of type int; 'id' of type int; 'activityTypeName' of type str; 'activityTypeCode' of type int.
+The class 'Users' has the following attributes: 'universityStructureUnit' of type str; 'residentPassword' of type str; 'residentSurname' of type str; 'residentPosition' of type str; 'residentBirthday' of type str; 'individuadIdentificationCode' of type int; 'residentName' of type str; 'residentEmail' of type str; 'registrationCertificateCode' of type int; 'residentDepartment' of type str; 'residentPatronymic' of type str; 'id' of type int; 'residentUserType' of type str.
+The class 'SubjectSheduleController' has the following attributes: 'dateService' of type str; 'activityTypeCodeService' of type int; 'groupNumberService' of type int; 'subjectCodeService' of type str; 'auditoriumNumberService' of type int; 'individualIdentificationCodeService' of type int.
+The class 'EducationalPlan' has the following attributes: 'individualIdentificationCode' of type int; 'id' of type int; 'subjectCode' of type int.
+The class 'Subject' has the following attributes: 'id' of type int; 'subjectName' of type str; 'subjectCode' of type int.
+The class 'Auditorium' has the following attributes: 'is_busy' of type bool; 'educationalBuilding' of type str; 'auditoriumNumber' of type int; 'id' of type int.
+The class 'DocumentStorage' has the following attributes: 'id' of type int; 'documentPath' of type str; 'is_exist' of type bool; 'documentCode' of type int.
+The class 'Specialty' has the following attributes: 'specialtyName' of type str; 'subjectCode' of type int; 'specialtyCode' of type int; 'id' of type int.
+The class 'SubjectShedule' has the following attributes: 'date' of type str; 'auditoriumNumber' of type int; 'subjectCode' of type int; 'id' of type int; 'groupNumber' of type int; 'activityTypeCode' of type int; 'individualIdentificationCode' of type int.
+The class 'TimeInterval' has the following attributes: 'date' of type str; 'weekIdentifier' of type int; 'id' of type int; 'classOrder' of type int; 'weekday' of type int.
+'Subject' (role 'assoc_00', cardinality 0..*) is associated with 'ActivityType' (role 'assoc_11', cardinality 0..*).

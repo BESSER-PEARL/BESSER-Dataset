@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Deck' has the following attributes: 'sektion' of type str; 'fahrtWunsch' of type bool.
+The class 'TurboliftSchacht' has the following attributes: 'vertikal' of type bool.
+The class 'Antrieb' has the following attributes: 'aNTRIEBSART' of type str.
+The class 'TurboliftSystem' has the following attributes: 'alarmStufe' of type int.
+The class 'Steuerung' has no attributes.
+The class 'Kabine' has the following attributes: 'tuerZustand' of type bool.
+The class 'BenannteEinrichtung' has the following attributes: 'name' of type str.
+'Steuerung' (role 'toDelete11', cardinality 0..*) is associated with 'TurboliftSystem' (role 'steuerung10', cardinality 0..*).
+'Antrieb' (role 'toDelete13', cardinality 0..*) is associated with 'TurboliftSchacht' (role 'antrieb12', cardinality 0..*).
+'Steuerung' (role 'turboliftSchaechte0', cardinality 0..*) is associated with 'TurboliftSchacht' (role 'toDelete1', cardinality 0..*).
+'Deck' (role 'toDelete3', cardinality 0..*) is associated with 'Kabine' (role 'position2', cardinality 0..*).
+'Deck' (role 'toDelete5', cardinality 0..*) is associated with 'Kabine' (role 'fahrtziele4', cardinality 0..*).
+'TurboliftSchacht' (role 'kabine14', cardinality 0..*) is associated with 'Kabine' (role 'toDelete15', cardinality 0..*).
+'TurboliftSystem' (role 'turboliftSchaechte8', cardinality 0..*) is associated with 'TurboliftSchacht' (role 'toDelete9', cardinality 0..*).
+'TurboliftSchacht' (role 'decks6', cardinality 0..*) is associated with 'Deck' (role 'toDelete7', cardinality 0..*).

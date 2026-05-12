@@ -1,0 +1,21 @@
+The model has 14 class(es).
+The class 'inte' has no attributes.
+The class 'Guest' has the following attributes: 'Name' of type str; 'Address' of type str.
+The class 'Receptionist_Actor' has no attributes.
+The class 'Check_in_Guest_UseCase' has no attributes.
+The class 'Reservation' has the following attributes: 'Start' of type str; 'Reservation_id' of type int; 'End' of type str.
+The class 'View_Month_s_Statistics_UseCase' has no attributes.
+The class 'Guest_Actor' has no attributes.
+The class 'Register_as_new_customer_UseCase' has no attributes.
+The class 'Hotel_Manager_Actor' has no attributes.
+The class 'Check_out_Guest_UseCase' has no attributes.
+The class 'Hotel_System_Component' has no attributes.
+The class 'Make__Reservation_external' has no attributes.
+The class 'Look_up_Reservation_UseCase' has no attributes.
+The class 'Room' has the following attributes: 'Guests' of type int; 'Number' of type int.
+'Make__Reservation_external' (role 'guest1', cardinality 0..*) is associated with 'Guest_Actor' (role 'make__Reservation0', cardinality 0..*).
+'Check_in_Guest_UseCase' (role 'receptionist3', cardinality 0..*) is associated with 'Receptionist_Actor' (role 'check_in_Guest2', cardinality 0..*).
+'Reservation' (role 'room10', cardinality 0..*) is associated with 'Room' (role 'reservation11', cardinality 0..*).
+'Hotel_Manager_Actor' (role 'view_Month_s_Statistics6', cardinality 0..*) is associated with 'View_Month_s_Statistics_UseCase' (role 'hotel_Manager7', cardinality 0..*).
+'Check_out_Guest_UseCase' (role 'receptionist5', cardinality 0..*) is associated with 'Receptionist_Actor' (role 'check_out_Guest4', cardinality 0..*).
+'Reservation' (role 'guest9', cardinality 0..*) is associated with 'Guest' (role 'reservation8', cardinality 0..*).

@@ -1,0 +1,31 @@
+The model has 17 class(es).
+The class 'driver_Driver' has the following attributes: 'dispatcher' of type driver_Dispatcher; 'threads' of type str; 'cpus' of type cpu_CPU; 'cacheSize' of type int; 'scheduler' of type driver_Scheduler; 'loader' of type driver_Loader; 'disk' of type memory_Memory; 'ramSize' of type int; 'executeTimes' of type int; 'registerSize' of type int; 'idleTimes' of type int; 'taskManager' of type pcb_TaskManager.
+The class 'cpu_DMAChannel' has the following attributes: 'mmu' of type str.
+The class 'cpu_ArithmeticExecutableInstruction' has the following attributes: 'd' of type int; 's2' of type int; 's1' of type int.
+The class 'pcb_TaskManager' has the following attributes: 'processes' of type pcb_PCB.
+The class 'cpu_CPU' has the following attributes: 'cpuids' of type int; 'pcb' of type pcb_PCB; 'log' of type str; 'cache' of type memory_Memory; 'numProcesses' of type int; 'previousInstruction' of type cpu_ExecutableInstruction; 'idleTime' of type int; 'executeTime' of type int; 'cpuid' of type int; 'shutdown' of type bool; 'register' of type memory_Memory; 'dmaChannel' of type str.
+The class 'pcb_PCB' has the following attributes: 'programCounter' of type int; 'startDiskOutputBufferAddress' of type int; 'startDiskInputBufferAddress' of type int; 'inputBufferLength' of type int; 'priority' of type int; 'cpuid' of type int; 'outputBufferLength' of type int; 'pid' of type int; 'instructionLength' of type int; 'startDiskTempBufferAddress' of type int; 'numIO' of type int; 'elapsedRunTime' of type int; 'tempBufferLength' of type int; 'elapsedWaitTime' of type int; 'executionCount' of type int; 'clock' of type int; 'startDiskInstructionAddress' of type int.
+The class 'memory_Memory' has the following attributes: 'storage' of type memory_Word.
+The class 'cpu_IOExecutableInstruction' has the following attributes: 'reg1' of type int; 'address' of type int; 'reg2' of type int.
+The class 'cpu_UnconditionalJumpExecutableInstruction' has the following attributes: 'cpu' of type cpu_CPU; 'address' of type int.
+The class 'cpu_ExecutableInstruction' has the following attributes: 'registers' of type memory_Memory; 'type' of type cpu_InstructionSet.
+The class 'driver_Dispatcher' has the following attributes: 'cpus' of type cpu_CPU; 'mmu' of type memory_MMU; 'taskManager' of type pcb_TaskManager.
+The class 'memory_Word' has the following attributes: 'data' of type int.
+The class 'driver_Loader' has the following attributes: 'endTempBufferAddress' of type int; 'startOutputBufferAddress' of type int; 'outputBuffSize' of type int; 'priority' of type int; 'currAddress' of type int; 'endInputBufferAddres' of type int; 'startInstructionAddress' of type int; 'disk' of type memory_Memory; 'tempBuffSize' of type int; 'endOutputBufferAddress' of type int; 'startInputBufferAddress' of type int; 'startTempBufferAddress' of type int; 'programFile' of type str; 'instructionsLength' of type int; 'processList' of type pcb_TaskManager; 'endInstructionAddress' of type int; 'pid' of type int; 'inputBuffSize' of type int.
+The class 'java_lang_Runnable_Interface' has no attributes.
+The class 'memory_MMU' has the following attributes: 'RAM' of type memory_Memory.
+The class 'cpu_ConditionalExecutableInstruction' has the following attributes: 'data' of type int; 'cache' of type memory_Memory; 'cpu' of type cpu_CPU; 'dReg' of type int; 'bReg' of type int.
+The class 'driver_Scheduler' has the following attributes: 'disk' of type memory_Memory; 'mmu' of type memory_MMU; 'taskManager' of type pcb_TaskManager; 'schedulingMethod' of type driver_CPUSchedulingPolicy.
+The enumeration 'pcb_PCB_Status' does not specify any literals.
+The enumeration 'Byte' does not specify any literals.
+The enumeration 'driver_CPUSchedulingPolicy' does not specify any literals.
+The enumeration 'cpu_InstructionSet' does not specify any literals.
+'cpu_CPU' (role 'driver11', cardinality 0..*) is associated with 'driver_Driver' (role 'cpu10', cardinality 0..*).
+'memory_Memory' (role 'mmu3', cardinality 0..*) is associated with 'memory_MMU' (role 'memory2', cardinality 0..*).
+'driver_Driver' (role 'taskManager7', cardinality 0..*) is associated with 'pcb_TaskManager' (role 'driver6', cardinality 0..*).
+'pcb_TaskManager' (role 'pcb5', cardinality 0..*) is associated with 'pcb_PCB' (role 'taskManager4', cardinality 0..*).
+'memory_Word' (role 'memory1', cardinality 0..*) is associated with 'memory_Memory' (role 'word0', cardinality 0..*).
+'driver_Dispatcher' (role 'driver17', cardinality 0..*) is associated with 'driver_Driver' (role 'dispatcher16', cardinality 0..*).
+'driver_Loader' (role 'driver15', cardinality 0..*) is associated with 'driver_Driver' (role 'loader14', cardinality 0..*).
+'cpu_DMAChannel' (role 'cpu9', cardinality 0..*) is associated with 'cpu_CPU' (role 'dmaChannel8', cardinality 0..*).
+'driver_Scheduler' (role 'driver13', cardinality 0..*) is associated with 'driver_Driver' (role 'scheduler12', cardinality 0..*).

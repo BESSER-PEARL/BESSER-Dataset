@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'Card' has the following attributes: 'value' of type int.
+The class 'Game' has the following attributes: 'mainDeck' of type Deck; 'cardsOnTable' of type Card; 'completedCards' of type Deck.
+The class 'Deck' has the following attributes: 'cards' of type Card.

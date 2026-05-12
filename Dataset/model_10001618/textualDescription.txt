@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Receptionist' has the following attributes: 'Name' of type str; 'ID' of type int.
+The class 'Patient' has the following attributes: 'PatID' of type int; 'Age' of type int; 'RoomNo' of type int; 'Address' of type str; 'Gender' of type str; 'TelNo' of type int; 'Name' of type str.
+The class 'Doctor' has the following attributes: 'Department' of type str; 'Phone' of type int; 'Name' of type str; 'DocID' of type int; 'Specialization' of type str; 'Address' of type str.
+The class 'Hospital_Management_System' has the following attributes: 'Address' of type str; 'Name' of type str; 'Code' of type str.
+'Patient' (role 'doctor1', cardinality 0..*) is associated with 'Doctor' (role 'patient0', cardinality 0..*).
+'Receptionist' (role 'doctor4', cardinality 0..*) is associated with 'Doctor' (role 'receptionist5', cardinality 0..*).
+'Receptionist' (role 'patient2', cardinality 0..*) is associated with 'Patient' (role 'receptionist3', cardinality 0..*).

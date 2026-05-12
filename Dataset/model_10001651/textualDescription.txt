@@ -1,0 +1,37 @@
+The model has 25 class(es).
+The class 'model_Dealer' has no attributes.
+The class 'model_Card' has no attributes.
+The class 'view_IView_Interface' has no attributes.
+The class 'model_Game' has no attributes.
+The class 'rules_Soft17HitStrategy' has no attributes.
+The class 'rules_RulesFactory' has no attributes.
+The class 'genmymodelreverse_java_lang_Iterable_Interface' has no attributes.
+The class 'view_SwedishView' has no attributes.
+The class 'rules_DealerWinCondition' has no attributes.
+The class 'model_Player' has no attributes.
+The class 'view_SimpleView' has no attributes.
+The class 'rules_IHitStrategy_Interface' has no attributes.
+The class 'genmymodelreverse_java_util_Scanner' has no attributes.
+The class 'model_Deck' has no attributes.
+The class 'rules_InternationalNewGameStrategy' has no attributes.
+The class 'genmymodelreverse_java_util_Observable' has no attributes.
+The class 'rules_IWinCondition_Interface' has no attributes.
+The class 'model_Observer_Interface' has no attributes.
+The class 'rules_BasicHitStrategy' has no attributes.
+The class 'BlackJack_Program' has no attributes.
+The class 'controller_PlayGame' has no attributes.
+The class 'genmymodelreverse_C1' has no attributes.
+The class 'rules_AmericanNewGameStrategy' has no attributes.
+The class 'rules_PlayerWinCondition' has no attributes.
+The class 'rules_INewGameStrategy_Interface' has no attributes.
+The enumeration 'model_Color' does not specify any literals.
+The enumeration 'model_Value' does not specify any literals.
+'model_Dealer' (role 'm_winRule3', cardinality 0..*) is associated with 'rules_IWinCondition_Interface' (role 'dealer2', cardinality 0..*).
+'model_Deck' (role 'dealer10', cardinality 0..*) is associated with 'model_Dealer' (role 'm_deck11', cardinality 0..*).
+'model_Player' (role 'observer5', cardinality 0..*) is associated with 'model_Observer_Interface' (role 'player4', cardinality 0..*).
+'model_Deck' (role 'm_cards1', cardinality 0..*) is associated with 'model_Card' (role 'deck0', cardinality 0..*).
+'model_Dealer' (role 'game16', cardinality 0..*) is associated with 'model_Game' (role 'm_dealer17', cardinality 0..*).
+'model_Dealer' (role 'm_newGameRule9', cardinality 0..*) is associated with 'rules_INewGameStrategy_Interface' (role 'dealer8', cardinality 0..*).
+'model_Game' (role 'm_player13', cardinality 0..*) is associated with 'model_Player' (role 'game12', cardinality 0..*).
+'rules_IHitStrategy_Interface' (role 'dealer14', cardinality 0..*) is associated with 'model_Dealer' (role 'm_hitRule15', cardinality 0..*).
+'model_Card' (role 'player6', cardinality 0..*) is associated with 'model_Player' (role 'm_hand7', cardinality 0..*).

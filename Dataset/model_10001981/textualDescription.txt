@@ -1,0 +1,38 @@
+The model has 33 class(es).
+The class 'ProductShow2' has the following attributes: 'sex' of type int; 'brand' of type str; 'productId' of type str; 'category' of type str; 'productName' of type str; 'priceCost' of type float.
+The class 'ClassC' has the following attributes: 'packageAttribute' of type str; 'publicAttribute' of type float; 'privateAttribute' of type int; 'protectedAttribute' of type str.
+The class 'ClassM' has no attributes.
+The class 'ClassF' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'Customer' has the following attributes: 'phonenumber' of type str; 'creditCardInfo' of type str; 'attribute' of type str; 'address' of type str.
+The class 'ProductDetail' has the following attributes: 'sex' of type int; 'productId' of type str; 'priceCost' of type float; 'brand' of type str; 'category' of type str; 'productName' of type str.
+The class 'DBController' has the following attributes: 'CustomerLogin' of type User_abstract_.
+The class 'ClassS' has no attributes.
+The class 'ClassA' has the following attributes: 'publicAttribute' of type float; 'packageAttribute' of type str; 'privateAttribute' of type int; 'protectedAttribute' of type str.
+The class 'ClassL' has no attributes.
+The class 'ClassN' has no attributes.
+The class '_unnamed' has no attributes.
+The class 'Class' has no attributes.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'ClassH' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'ClassD' has no attributes.
+The class 'ClassE' has no attributes.
+The class 'Shoe' has the following attributes: 'color' of type str; 'productId' of type str; 'size' of type int; 'brand2' of type str; 'priceCost' of type float; 'brand' of type str; 'sex' of type int; 'description' of type str; 'productName' of type str; 'category' of type str.
+The class 'BankAccount' has the following attributes: 'balance' of type float; 'ownerName' of type str.
+The class 'User_abstract_' has the following attributes: 'name' of type str; 'email' of type str; 'password' of type str; 'userId' of type str.
+The class 'ClassK' has no attributes.
+The class 'Database' has the following attributes: 'instance' of type Database; 'url' of type str; 'username' of type str; 'password' of type str.
+The class 'ClassJ' has no attributes.
+The class 'Admin' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'ClassG' has no attributes.
+The class 'ProductShow' has the following attributes: 'sex' of type int; 'productId' of type str; 'productName' of type str; 'brand' of type str; 'image' of type str; 'category' of type str; 'priceSale' of type float.
+The class 'ClassV' has no attributes.
+The class 'ClassQ' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.
+'ClassF' (role 'classG2', cardinality 0..*) is associated with 'ClassG' (role 'classF3', cardinality 0..*).
+'ClassD' (role 'classE0', cardinality 0..*) is associated with 'ClassE' (role 'classD1', cardinality 0..*).
+'ClassJ' (role 'classF5', cardinality 0..*) is associated with 'ClassH' (role 'classG4', cardinality 0..*).

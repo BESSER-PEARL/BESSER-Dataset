@@ -1,0 +1,34 @@
+The model has 14 class(es).
+The class 'War_UseCase' has no attributes.
+The class 'Player2_Actor' has no attributes.
+The class 'playerTwo_external' has no attributes.
+The class 'Players' has the following attributes: 'Player2' of type Card_Interface; 'Player1' of type Card_Interface.
+The class 'Deck' has the following attributes: 'shuffle__' of type str; 'deck__' of type Deck; 'draw__' of type str; 'isEmpty__' of type bool; 'topcard' of type int.
+The class 'War_UseCase1' has no attributes.
+The class 'WAR' has no attributes.
+The class 'Card_Interface' has no attributes.
+The class 'Play_UseCase1' has no attributes.
+The class 'Winner_UseCase' has no attributes.
+The class 'Play' has the following attributes: 'removedCard' of type int; 'Score' of type int.
+The class 'Play_UseCase' has no attributes.
+The class 'Player1_Actor' has no attributes.
+The class 'playerOne_external' has no attributes.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'en2' does not specify any literals.
+The enumeration 'en' does not specify any literals.
+The enumeration 'Rank' does not specify any literals.
+'Card_Interface' (role 'deck3', cardinality 0..*) is associated with 'Deck' (role 'card2', cardinality 0..*).
+'Play' (role 'card14', cardinality 0..*) is associated with 'Card_Interface' (role 'play15', cardinality 0..*).
+'Play' (role 'playerTwo10', cardinality 0..*) is associated with 'playerTwo_external' (role 'play11', cardinality 0..*).
+'Deck' (role 'play16', cardinality 0..*) is associated with 'Play' (role 'deck17', cardinality 0..*).
+'Winner_UseCase' (role 'winner25', cardinality 0..*) is associated with 'War_UseCase1' (role 'play24', cardinality 0..*).
+'WAR' (role 'players4', cardinality 0..*) is associated with 'Players' (role 'wAR5', cardinality 0..*).
+'WAR' (role 'deck1', cardinality 0..*) is associated with 'Deck' (role 'wAR0', cardinality 0..*).
+'Player2_Actor' (role 'play18', cardinality 0..*) is associated with 'Play_UseCase' (role 'player219', cardinality 0..*).
+'War_UseCase1' (role 'play27', cardinality 0..*) is associated with 'War_UseCase' (role 'winner26', cardinality 0..*).
+'Play_UseCase1' (role 'winner28', cardinality 0..*) is associated with 'Winner_UseCase' (role 'play29', cardinality 0..*).
+'Play' (role 'playerOne12', cardinality 0..*) is associated with 'playerOne_external' (role 'play13', cardinality 0..*).
+'WAR' (role 'players7', cardinality 0..*) is associated with 'Players' (role 'wAR6', cardinality 0..*).
+'Play_UseCase' (role 'player121', cardinality 0..*) is associated with 'Player1_Actor' (role 'play20', cardinality 0..*).
+'War_UseCase' (role 'play23', cardinality 0..*) is associated with 'Play_UseCase' (role 'winner22', cardinality 0..*).
+'Play' (role 'players28', cardinality 0..*) is associated with 'Players' (role 'play9', cardinality 0..*).

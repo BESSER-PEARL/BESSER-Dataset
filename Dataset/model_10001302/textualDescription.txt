@@ -1,0 +1,19 @@
+The model has 12 class(es).
+The class 'Table' has the following attributes: 'table_id' of type str; 'quantity' of type int; 'numSeats' of type int.
+The class 'CustomerUI' has no attributes.
+The class 'Reservation_status' has the following attributes: 'report_id' of type str; 'reservation' of type List_reservation_.
+The class 'List_re_' has no attributes.
+The class 'Restaurant_owner' has the following attributes: 'user_id' of type str; 'username' of type str; 'email' of type str.
+The class 'Staff' has the following attributes: 'user_id' of type str; 'name' of type str; 'type' of type str.
+The class 'List__' has no attributes.
+The class 'Booking' has the following attributes: 'startTime' of type str; 'Restaurant_id' of type str; 'date' of type date; 'reservedTables' of type str; 'booking_id' of type int; 'customer_id' of type str; 'endTime' of type str; 'person' of type int.
+The class 'List_reservation_' has no attributes.
+The class 'Management_UI' has no attributes.
+The class 'Administrator' has the following attributes: 'email' of type str; 'user_id' of type int; 'user_name' of type str.
+The class 'Restaurant_Reservation_System' has the following attributes: 'Menu' of type str; 'bookings' of type str.
+'Management_UI' (role 'accesses1', cardinality 0..*) is associated with 'Staff' (role 'Staff_StaffUI_00', cardinality 0..*).
+'Staff' (role 'reservationManagementSystem2', cardinality 0..*) is associated with 'Restaurant_Reservation_System' (role 'interacts3', cardinality 0..*).
+'CustomerUI' (role 'CustomerUI_ReservationManagementSystem_04', cardinality 0..*) is associated with 'Restaurant_Reservation_System' (role 'interacts5', cardinality 0..*).
+'Booking' (role 'ReservationManagementSystem_Booking_17', cardinality 0..*) is associated with 'Restaurant_Reservation_System' (role 'booking6', cardinality 0..*).
+'Reservation_status' (role 'reservationManagementSystem9', cardinality 0..*) is associated with 'Restaurant_Reservation_System' (role 'generates8', cardinality 0..*).
+'Booking' (role 'reservedBy11', cardinality 0..*) is associated with 'Table' (role 'Table_Booking_010', cardinality 0..*).

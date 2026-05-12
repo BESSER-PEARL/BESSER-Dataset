@@ -1,0 +1,11 @@
+The model has 10 class(es).
+The class 'GUI_Interface' has no attributes.
+The class 'Player_Players' has no attributes.
+The class 'Comparable_Interface' has no attributes.
+The class 'Game_Ranking' has the following attributes: 'card' of type str.
+The class 'Card_Cards' has the following attributes: 'rank' of type int; 'suit' of type int.
+The class 'Game_Display' has the following attributes: 'card' of type str; 'money' of type str.
+The class 'Card_Deck' has the following attributes: 'random' of type str; 'remainder' of type int; 'decksize' of type int; 'deck' of type str; 'handsize' of type int; 'shuffletimes' of type int.
+The class 'Money_PlayerMoney' has the following attributes: 'numofplayers' of type str; 'totalmoney' of type str.
+The class 'Game_EvaluateHand' has the following attributes: 'card' of type str.
+The class 'Main_StartGame' has the following attributes: 'hand' of type str; 'deck' of type str; 'scanner' of type str; 'player' of type str; 'handsize' of type int.

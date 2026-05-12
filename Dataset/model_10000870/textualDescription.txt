@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'Flight' has the following attributes: 'FlightNumber' of type str; 'Date' of type str.
+The class 'Routes' has the following attributes: 'OriginAirport' of type str; 'DestinationAirport' of type str; 'RouteID' of type str.
+The class 'Seats' has the following attributes: 'SeatNumber' of type int; 'Availability' of type bool.
+The class 'Reservation' has no attributes.
+The class 'Ticket' has the following attributes: 'DateTime' of type str; 'TicketType' of type str; 'Price' of type str; 'Gate' of type str; 'TicketID' of type str.
+The class 'Customers' has the following attributes: 'Email' of type str; 'Password' of type str; 'NameCustomer' of type str; 'IdCustomer' of type str.
+The class 'Airport' has the following attributes: 'AirportID' of type str; 'AirportName' of type str; 'Address' of type str.
+The class 'Plane' has the following attributes: 'Capacity' of type int; 'PlaneId' of type str; 'PlaneName' of type str.
+The enumeration 'Enumeration' does not specify any literals.
+'Flight' (role 'ticket10', cardinality 0..*) is associated with 'Ticket' (role 'flight11', cardinality 0..*).
+'Flight' (role 'reservation2', cardinality 0..*) is associated with 'Reservation' (role 'flight3', cardinality 0..*).
+'Plane' (role 'flight4', cardinality 0..*) is associated with 'Flight' (role 'plane5', cardinality 0..*).
+'Reservation' (role 'customers1', cardinality 0..*) is associated with 'Customers' (role 'reservation0', cardinality 0..*).
+'Seats' (role 'plane12', cardinality 0..*) is associated with 'Plane' (role 'seats13', cardinality 0..*).
+'Flight' (role 'routes8', cardinality 0..*) is associated with 'Routes' (role 'flight9', cardinality 0..*).
+'Airport' (role 'routes7', cardinality 0..*) is associated with 'Routes' (role 'airport6', cardinality 0..*).

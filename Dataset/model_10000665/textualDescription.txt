@@ -1,0 +1,18 @@
+The model has 16 class(es).
+The class 'Dog' has no attributes.
+The class 'ClassC' has the following attributes: 'publicAttribute' of type float; 'privateAttribute' of type int; 'protectedAttribute' of type str; 'packageAttribute' of type str.
+The class 'ClassU' has no attributes.
+The class 'ClassM' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'ClassN' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'ClassV' has no attributes.
+The class 'BankAccount' has the following attributes: 'balance' of type float; 'ownerName' of type str.
+The class 'ClassQ' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'ClassS' has no attributes.
+The class 'ClassA' has the following attributes: 'publicAttribute' of type float; 'privateAttribute' of type int; 'protectedAttribute' of type str; 'packageAttribute' of type str.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'Owner' has no attributes.
+'Dog' (role 'owner1', cardinality 0..*) is associated with 'Owner' (role 'dog0', cardinality 0..*).

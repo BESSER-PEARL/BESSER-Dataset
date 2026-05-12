@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'GameManager' has no attributes.
+The class 'Program' has no attributes.
+The class 'Deck' has the following attributes: 'List_card_' of type Card.
+The class 'Player' has the following attributes: 'CardsInHand' of type Card; 'isSoft' of type bool.
+The class 'Dealer' has the following attributes: 'cardDeck' of type Deck.
+The class 'Card' has the following attributes: '_CardValue' of type int; '_Suit' of type int; '_CardNumber' of type int.
+The enumeration 'CardNumber' does not specify any literals.
+The enumeration 'Suit1' does not specify any literals.
+The enumeration 'Suit' does not specify any literals.

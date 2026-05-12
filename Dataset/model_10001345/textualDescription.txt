@@ -1,0 +1,22 @@
+The model has 15 class(es).
+The class 'exo6_Triangle' has no attributes.
+The class 'model2_A' has the following attributes: 'attA' of type str.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'model2_C1' has no attributes.
+The class 'model2_C2' has no attributes.
+The class 'model2_Y' has the following attributes: 'attY' of type str.
+The class 'model2_R' has no attributes.
+The class 'C' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'model2_C' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'model2_B' has the following attributes: 'attB' of type int.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'exo6_Point' has the following attributes: 'abcisse' of type C; 'ordonnee' of type C.
+The class 'Class' has no attributes.
+The class 'exo6_Polygone' has the following attributes: 'sommets' of type model2_C.
+The class 'model2_Z' has no attributes.
+'model2_B' (role 'c4', cardinality 0..*) is associated with 'model2_C' (role 'b5', cardinality 0..*).
+'model2_A' (role 'b9', cardinality 0..*) is associated with 'model2_B' (role 'a8', cardinality 0..*).
+'exo6_Polygone' (role 'point10', cardinality 0..*) is associated with 'exo6_Point' (role 'polygone11', cardinality 0..*).
+'model2_R' (role 'aR7', cardinality 0..*) is associated with 'model2_A' (role 'r6', cardinality 0..*).
+'A' (role 'b0', cardinality 0..*) is associated with 'B' (role 'a1', cardinality 0..*).
+'C' (role 'b3', cardinality 0..*) is associated with 'B' (role 'c2', cardinality 0..*).

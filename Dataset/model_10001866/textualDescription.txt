@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'Cirurgiao' has the following attributes: 'Nome' of type str; 'Especialidade' of type str; 'CirurgiaoId' of type int.
+The class 'Cl_nica_Component' has no attributes.
+The class 'Cancelar_Consulta_external' has no attributes.
+The class 'Cliente_Actor' has no attributes.
+The class 'Cliente' has the following attributes: 'Telefone' of type str; 'Cpf' of type str; 'ClienteId' of type int; 'Nome' of type str; 'Email' of type str.
+The class 'Ver_consultas_external' has no attributes.
+The class 'Cirurgi_o_Actor' has no attributes.
+The class 'Marcar_consulta_external' has no attributes.
+The class 'Consulta' has the following attributes: 'Observacoes' of type str; 'Cirurgiao' of type Cirurgiao; 'DataHora' of type str; 'ConsultaId' of type int; 'Situacao' of type str; 'Cliente' of type Cliente.
+The class 'Confirmar_Consulta_external' has no attributes.
+'Consulta' (role 'cirurgiao3', cardinality 0..*) is associated with 'Cirurgiao' (role 'consulta2', cardinality 0..*).
+'Cirurgi_o_Actor' (role 'confirmar_Consulta14', cardinality 0..*) is associated with 'Confirmar_Consulta_external' (role 'cirurgi_o15', cardinality 0..*).
+'Ver_consultas_external' (role 'cirurgi_o11', cardinality 0..*) is associated with 'Cirurgi_o_Actor' (role 'ver_consultas10', cardinality 0..*).
+'Cliente_Actor' (role 'cancelar_Consulta7', cardinality 0..*) is associated with 'Cancelar_Consulta_external' (role 'cliente6', cardinality 0..*).
+'Cliente_Actor' (role 'marcar_consulta12', cardinality 0..*) is associated with 'Marcar_consulta_external' (role 'cliente13', cardinality 0..*).
+'Ver_consultas_external' (role 'cliente9', cardinality 0..*) is associated with 'Cliente_Actor' (role 'ver_consultas8', cardinality 0..*).
+'Cancelar_Consulta_external' (role 'cirurgi_o4', cardinality 0..*) is associated with 'Cirurgi_o_Actor' (role 'cancelar_Consulta5', cardinality 0..*).
+'Consulta' (role 'cliente0', cardinality 0..*) is associated with 'Cliente' (role 'consulta1', cardinality 0..*).

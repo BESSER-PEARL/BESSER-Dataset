@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'Player' has the following attributes: 'name' of type str; 'points' of type str.
+The class 'Deck' has the following attributes: 'deck_position' of type int; 'deck_of_cards' of type str.
+The class 'Card' has the following attributes: 'front' of type str; 'suit' of type str; 'value' of type str.
+'Deck' (role 'card1', cardinality 0..*) is associated with 'Card' (role 'deck0', cardinality 0..*).

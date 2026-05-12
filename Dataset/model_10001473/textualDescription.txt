@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'Invitation' has no attributes.
+The class 'Message' has no attributes.
+The class 'Rol' has the following attributes: 'nombre' of type str.
+The class 'Vote' has the following attributes: 'tipo' of type bool.
+The class 'CommentTopic' has no attributes.
+The class 'Comment' has the following attributes: 'date' of type str; 'comment' of type str; 'userName' of type str.
+The class 'Post' has the following attributes: 'userName' of type str; 'Date' of type str; 'content' of type str.
+The class 'User' has the following attributes: 'email' of type str; 'userName' of type str; 'password' of type str.
+The class 'Group' has no attributes.
+The class 'Topic' has no attributes.
+The class 'Tag' has no attributes.
+'Vote' (role 'comment7', cardinality 0..*) is associated with 'Comment' (role 'vote6', cardinality 0..*).
+'User' (role 'group11', cardinality 0..*) is associated with 'Group' (role 'user10', cardinality 0..*).
+'User' (role 'rol1', cardinality 0..*) is associated with 'Rol' (role 'user0', cardinality 0..*).
+'Post' (role 'comment14', cardinality 0..*) is associated with 'Comment' (role 'post15', cardinality 0..*).
+'User' (role 'friends21', cardinality 0..*) is associated with 'User' (role 'user20', cardinality 0..*).
+'Post' (role 'user3', cardinality 0..*) is associated with 'User' (role 'post2', cardinality 0..*).
+'CommentTopic' (role 'topic17', cardinality 0..*) is associated with 'Topic' (role 'comment16', cardinality 0..*).
+'Vote' (role 'post5', cardinality 0..*) is associated with 'Post' (role 'vote4', cardinality 0..*).
+'Topic' (role 'tag18', cardinality 0..*) is associated with 'Tag' (role 'topic19', cardinality 0..*).
+'Vote' (role 'topic13', cardinality 0..*) is associated with 'Topic' (role 'vote12', cardinality 0..*).
+'User' (role 'invitation22', cardinality 0..*) is associated with 'Invitation' (role 'user23', cardinality 0..*).
+'Message' (role 'user9', cardinality 0..*) is associated with 'User' (role 'message8', cardinality 0..*).

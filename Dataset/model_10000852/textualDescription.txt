@@ -1,0 +1,10 @@
+The model has 9 class(es).
+The class 'FileBinary' has no attributes.
+The class 'Course' has the following attributes: 'CTutor' of type str; 'Cname' of type str; 'Cprice' of type str; 'Course_REG' of type str; 'Course_File_Name' of type str; 'Cid' of type str.
+The class 'Exam' has the following attributes: 'Exam_File_Name' of type str; 'MaxGrade' of type str; 'ETIME' of type str; 'EName' of type str; 'EID' of type str.
+The class 'Exceptions' has no attributes.
+The class 'ILogin_Interface' has no attributes.
+The class 'Finance' has the following attributes: 'coast' of type str; 'Cname' of type str.
+The class 'Insturctor' has the following attributes: 'INfilename' of type str.
+The class 'Admin' has the following attributes: 'AdminFileName' of type str.
+The class 'Email' has the following attributes: 'Email' of type str.

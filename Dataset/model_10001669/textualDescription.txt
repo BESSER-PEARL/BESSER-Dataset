@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'Aeroport' has the following attributes: 'altitude' of type int; 'nomAeroport' of type str.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'C' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'Vol' has the following attributes: 'dateHeureDepart' of type str; 'numeroVol' of type str; 'dateHeureArrivee' of type str; 'etatVol' of type Enumeration.
+The enumeration 'Enumeration' does not specify any literals.
+'A' (role 'b0', cardinality 0..*) is associated with 'B' (role 'a1', cardinality 0..*).

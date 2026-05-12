@@ -1,0 +1,15 @@
+The model has 10 class(es).
+The class 'RVBAppdelegate' has no attributes.
+The class 'Appdelegate' has no attributes.
+The class 'Appdelegate_Actor' has no attributes.
+The class 'RVBHomeScreenViewController' has no attributes.
+The class 'ShoppingCartExample_Order' has the following attributes: 'id' of type int.
+The class 'ShoppingCartExample_Account' has the following attributes: 'id' of type int.
+The class 'ShoppingCartExample_ShoppingCart' has the following attributes: 'creationDate' of type date.
+The class 'Class' has no attributes.
+The class 'ShoppingCartExample_Customer' has no attributes.
+The class 'ShoppingCartExample_LineItem' has the following attributes: 'quantity' of type int; 'price' of type int.
+'ShoppingCartExample_Order' (role 'items0', cardinality 0..*) is associated with 'ShoppingCartExample_LineItem' (role 'order1', cardinality 0..*).
+'ShoppingCartExample_Account' (role 'customer6', cardinality 0..*) is associated with 'ShoppingCartExample_Customer' (role 'account7', cardinality 0..*).
+'ShoppingCartExample_Account' (role 'cart4', cardinality 0..*) is associated with 'ShoppingCartExample_ShoppingCart' (role 'account5', cardinality 0..*).
+'ShoppingCartExample_ShoppingCart' (role 'order2', cardinality 0..*) is associated with 'ShoppingCartExample_Order' (role 'c3', cardinality 0..*).

@@ -1,0 +1,20 @@
+The model has 19 class(es).
+The class 'MyClass12' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'MyClass11' has no attributes.
+The class 'MyClass10' has no attributes.
+The class 'MyClass9' has no attributes.
+The class 'MyClass6' has no attributes.
+The class 'MyClass16' has no attributes.
+The class 'MyClass14' has no attributes.
+The class 'MyClass7' has no attributes.
+The class 'MyClass13' has no attributes.
+The class 'MyClass8' has no attributes.
+The class 'MyClass17' has no attributes.
+The class 'MyClass4' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'MyClass5' has no attributes.
+The class 'MyInterface_Interface' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MyClass15' has no attributes.
+The class 'MyClass18' has no attributes.

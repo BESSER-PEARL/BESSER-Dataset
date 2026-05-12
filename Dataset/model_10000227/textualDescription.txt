@@ -1,0 +1,25 @@
+The model has 14 class(es).
+The class 'Return_book_external' has no attributes.
+The class 'Search_books_external' has no attributes.
+The class 'Request_book_external' has no attributes.
+The class 'Maintain_book_in_records_external' has no attributes.
+The class 'Member_Actor' has no attributes.
+The class 'Issue_member_card_external' has no attributes.
+The class 'Librarian_Actor' has no attributes.
+The class 'Issue_book_external' has no attributes.
+The class 'UserProperties' has the following attributes: 'roles' of type str; 'Roles' of type str.
+The class 'Library_Management_Component' has no attributes.
+The class 'Cancel_membership_external' has no attributes.
+The class 'Request_book_return_external' has no attributes.
+The class 'Update_member_profile_external' has no attributes.
+The class 'Inquiry_for_membership_external' has no attributes.
+'Issue_member_card_external' (role 'librarian9', cardinality 0..*) is associated with 'Librarian_Actor' (role 'issue_member_card8', cardinality 0..*).
+'Request_book_return_external' (role 'member5', cardinality 0..*) is associated with 'Member_Actor' (role 'request_book_return4', cardinality 0..*).
+'Inquiry_for_membership_external' (role 'member1', cardinality 0..*) is associated with 'Member_Actor' (role 'inquiry_for_membership0', cardinality 0..*).
+'Request_book_external' (role 'member3', cardinality 0..*) is associated with 'Member_Actor' (role 'request_book2', cardinality 0..*).
+'Issue_book_external' (role 'librarian11', cardinality 0..*) is associated with 'Librarian_Actor' (role 'issue_book10', cardinality 0..*).
+'Librarian_Actor' (role 'maintain_book_in_records16', cardinality 0..*) is associated with 'Maintain_book_in_records_external' (role 'librarian17', cardinality 0..*).
+'Librarian_Actor' (role 'update_member_profile14', cardinality 0..*) is associated with 'Update_member_profile_external' (role 'librarian15', cardinality 0..*).
+'Librarian_Actor' (role 'return_book12', cardinality 0..*) is associated with 'Return_book_external' (role 'librarian13', cardinality 0..*).
+'Member_Actor' (role 'search_books6', cardinality 0..*) is associated with 'Search_books_external' (role 'member7', cardinality 0..*).
+'Member_Actor' (role 'cancel_membership18', cardinality 0..*) is associated with 'Cancel_membership_external' (role 'member19', cardinality 0..*).

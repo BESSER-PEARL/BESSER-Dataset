@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Especialidade' has the following attributes: 'descricao' of type str.
+The class 'Paciente' has the following attributes: 'endere_o' of type str; 'celular' of type str; 'nome' of type str.
+The class 'Medico' has the following attributes: 'nome' of type str; 'endereco' of type str; 'crm' of type str; 'foto' of type str.
+The class 'Consulta' has the following attributes: 'data' of type str; 'pre_o' of type str.
+'Medico' (role 'consulta3', cardinality 0..*) is associated with 'Consulta' (role 'medico2', cardinality 0..*).
+'Medico' (role 'especialidade0', cardinality 0..*) is associated with 'Especialidade' (role 'medico1', cardinality 0..*).
+'Consulta' (role 'paciente5', cardinality 0..*) is associated with 'Paciente' (role 'consulta4', cardinality 0..*).

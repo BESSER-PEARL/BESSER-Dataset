@@ -1,0 +1,32 @@
+The model has 17 class(es).
+The class 'Home_Security_System' has the following attributes: 'UserID' of type int.
+The class 'Fans' has the following attributes: 'FANID' of type int.
+The class 'Doors' has the following attributes: 'DoorID' of type int.
+The class 'Security_Guard_Police' has the following attributes: 'sgpID' of type int.
+The class 'Windows' has the following attributes: 'WinID' of type int.
+The class 'Sensor' has the following attributes: 'SensorID' of type int; 'SensorType' of type int.
+The class 'MoistureSensor' has no attributes.
+The class 'IoT_based_Smart_Resort_System' has the following attributes: 'Status' of type bool; 'Update' of type float.
+The class 'HomeAppliances' has the following attributes: 'HAID' of type int.
+The class 'Entry_Points' has the following attributes: 'DoorID' of type int.
+The class 'User_Home_Owner' has the following attributes: 'UserID' of type int.
+The class 'Lights' has the following attributes: 'LightID' of type str.
+The class 'Air_Conditioners' has the following attributes: 'ACID' of type int.
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+The class 'Motion_Sensor' has no attributes.
+The class 'SolarPanel' has the following attributes: 'SPID' of type int.
+The class 'Gardening' has the following attributes: 'GID' of type int.
+'User_Home_Owner' (role 'User_Home_Owner_Alert_014', cardinality 0..*) is associated with 'Alert' (role 'User_Home_Owner_Alert_115', cardinality 0..*).
+'IoT_based_Smart_Resort_System' (role 'IoT_based_Smart_Resort_System_Home_Security_System_020', cardinality 0..*) is associated with 'Home_Security_System' (role 'IoT_based_Smart_Resort_System_Home_Security_System_121', cardinality 0..*).
+'IoT_based_Smart_Resort_System' (role 'sensor7', cardinality 0..*) is associated with 'Sensor' (role 'system6', cardinality 0..*).
+'SolarPanel' (role 'IoT_based_Smart_Resort_System_SolarPanel_119', cardinality 0..*) is associated with 'IoT_based_Smart_Resort_System' (role 'IoT_based_Smart_Resort_System_SolarPanel_018', cardinality 0..*).
+'Home_Security_System' (role 'alert4', cardinality 0..*) is associated with 'Alert' (role 'home_Security_System5', cardinality 0..*).
+'IoT_based_Smart_Resort_System' (role 'IoT_based_Smart_Resort_System_Entry_Points_024', cardinality 0..*) is associated with 'Entry_Points' (role 'IoT_based_Smart_Resort_System_Entry_Points_125', cardinality 0..*).
+'IoT_based_Smart_Resort_System' (role 'homeTheatre9', cardinality 0..*) is associated with 'HomeAppliances' (role 'system8', cardinality 0..*).
+'Air_Conditioners' (role 'HomeAppliances_Air_Conditioner_123', cardinality 0..*) is associated with 'HomeAppliances' (role 'HomeAppliances_Air_Conditioner_022', cardinality 0..*).
+'Security_Guard_Police' (role 'Security_Guard_Police_Alert_016', cardinality 0..*) is associated with 'Alert' (role 'Security_Guard_Police_Alert_117', cardinality 0..*).
+'HomeAppliances' (role 'HomeAppliances_Light_010', cardinality 0..*) is associated with 'Lights' (role 'HomeAppliances_Light_111', cardinality 0..*).
+'Fans' (role 'homeTheatre1', cardinality 0..*) is associated with 'HomeAppliances' (role 'speakers0', cardinality 0..*).
+'Entry_Points' (role 'HomeAppliances_Door_012', cardinality 0..*) is associated with 'Doors' (role 'HomeAppliances_Door_113', cardinality 0..*).
+'Gardening' (role 'system2', cardinality 0..*) is associated with 'IoT_based_Smart_Resort_System' (role 'microPhone3', cardinality 0..*).
+'Windows' (role 'Entry_Points_Windows_127', cardinality 0..*) is associated with 'Entry_Points' (role 'Entry_Points_Windows_026', cardinality 0..*).

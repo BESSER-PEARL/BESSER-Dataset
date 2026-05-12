@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'SalariedEmployee' has the following attributes: 'salary' of type float.
+The class 'Invoice' has the following attributes: 'num' of type str; 'amount' of type float; 'product' of type str; 'quantity' of type int.
+The class 'Employee' has the following attributes: 'firstname' of type str; 'lastname' of type str; 'ssn' of type str.
+The class 'Payable_Interface' has no attributes.

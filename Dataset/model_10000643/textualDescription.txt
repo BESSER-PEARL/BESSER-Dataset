@@ -1,0 +1,58 @@
+The model has 27 class(es).
+The class 'Class1' has no attributes.
+The class 'Score_Roll_external' has no attributes.
+The class 'Roll_First_external' has no attributes.
+The class 'Yahtzee_Players1' has the following attributes: 'compScore' of type str; 'playerScore' of type str.
+The class 'Players' has no attributes.
+The class 'Get_Player_Name_external' has no attributes.
+The class 'Player_Actor' has no attributes.
+The class 'Announce_Winner_external' has no attributes.
+The class 'Yahtzee_Display1' has the following attributes: 'JScrollPanel' of type Yahtzee_Display1; 'Jpanel' of type Yahtzee_Display; 'Computer' of type Yahtzee_Players; 'JImageIcon' of type Yahtzee_Display; 'Temp' of type int; 'JRadioButton' of type Yahtzee_Display; 'JTextField' of type Yahtzee_Display; 'Jlabel' of type Yahtzee_Display; 'Player' of type Yahtzee_Players; 'Temp1' of type int; 'JButton' of type Yahtzee_Display; 'JFrame' of type Yahtzee_Display.
+The class 'Next_Turn_external' has no attributes.
+The class 'Yahtzee_Component' has no attributes.
+The class 'Class' has no attributes.
+The class 'Display' has no attributes.
+The class 'Yahtzee_Display' has the following attributes: 'PanelGameName' of type str; 'PanelPrimary' of type str; 'PanelNames' of type str; 'PanelScorecard' of type str; 'PanelChoices' of type str.
+The class 'Yahtzee_Players' has the following attributes: 'Name' of type str; 'Score' of type str.
+The class 'Yahtzee_Game' has the following attributes: 'Again' of type bool; 'CompPlayer' of type Class1; 'First' of type int; 'Player' of type Class.
+The class 'Yahtzee_Scoring' has no attributes.
+The class 'Yahtzee_Turn1' has the following attributes: 'Dice' of type str.
+The class 'Roll_Dice_external' has no attributes.
+The class 'Turn' has no attributes.
+The class 'Computer_Turn_external' has no attributes.
+The class 'Get_Instructions_external' has no attributes.
+The class 'Game_Start_external' has no attributes.
+The class 'Scoring' has no attributes.
+The class 'Play_Again_external' has no attributes.
+The class 'Yahtzee_Turn' has no attributes.
+The class 'Yahtzee_Scoring1' has the following attributes: 'Temp' of type str.
+'Yahtzee_Turn' (role 'scoring1', cardinality 0..*) is associated with 'Yahtzee_Scoring' (role 'turn0', cardinality 0..*).
+'Player_Actor' (role 'play_Again46', cardinality 0..*) is associated with 'Play_Again_external' (role 'player47', cardinality 0..*).
+'Yahtzee_Scoring' (role 'players8', cardinality 0..*) is associated with 'Yahtzee_Players' (role 'scoring9', cardinality 0..*).
+'Computer_Turn_external' (role 'next_Turn26', cardinality 0..*) is associated with 'Next_Turn_external' (role 'computer_Turn27', cardinality 0..*).
+'Player_Actor' (role 'game_Start42', cardinality 0..*) is associated with 'Game_Start_external' (role 'player43', cardinality 0..*).
+'Yahtzee_Players1' (role 'display51', cardinality 0..*) is associated with 'Yahtzee_Display1' (role 'players50', cardinality 0..*).
+'Next_Turn_external' (role 'roll_Dice29', cardinality 0..*) is associated with 'Roll_Dice_external' (role 'next_Turn28', cardinality 0..*).
+'Yahtzee_Players' (role 'turn5', cardinality 0..*) is associated with 'Yahtzee_Turn' (role 'players4', cardinality 0..*).
+'Announce_Winner_external' (role 'next_Turn31', cardinality 0..*) is associated with 'Next_Turn_external' (role 'announce_Winner30', cardinality 0..*).
+'Roll_First_external' (role 'get_Player_Name17', cardinality 0..*) is associated with 'Get_Player_Name_external' (role 'roll_First16', cardinality 0..*).
+'Roll_First_external' (role 'game_Start18', cardinality 0..*) is associated with 'Game_Start_external' (role 'roll_First19', cardinality 0..*).
+'Player_Actor' (role 'get_Player_Name38', cardinality 0..*) is associated with 'Get_Player_Name_external' (role 'player39', cardinality 0..*).
+'Roll_Dice_external' (role 'score_Roll24', cardinality 0..*) is associated with 'Score_Roll_external' (role 'roll_Dice25', cardinality 0..*).
+'Yahtzee_Turn1' (role 'scoring57', cardinality 0..*) is associated with 'Yahtzee_Scoring1' (role 'turn56', cardinality 0..*).
+'Roll_First_external' (role 'play_Again34', cardinality 0..*) is associated with 'Play_Again_external' (role 'roll_First35', cardinality 0..*).
+'Game_Start_external' (role 'computer_Turn20', cardinality 0..*) is associated with 'Computer_Turn_external' (role 'game_Start21', cardinality 0..*).
+'Display' (role 'scoring59', cardinality 0..*) is associated with 'Scoring' (role 'display58', cardinality 0..*).
+'Get_Instructions_external' (role 'get_Player_Name14', cardinality 0..*) is associated with 'Get_Player_Name_external' (role 'get_Instructions15', cardinality 0..*).
+'Roll_Dice_external' (role 'game_Start23', cardinality 0..*) is associated with 'Game_Start_external' (role 'useCase22', cardinality 0..*).
+'Yahtzee_Scoring1' (role 'display55', cardinality 0..*) is associated with 'Yahtzee_Display1' (role 'scoring54', cardinality 0..*).
+'Announce_Winner_external' (role 'play_Again32', cardinality 0..*) is associated with 'Play_Again_external' (role 'announce_Winner33', cardinality 0..*).
+'Scoring' (role 'turn11', cardinality 0..*) is associated with 'Turn' (role 'scoring10', cardinality 0..*).
+'Player_Actor' (role 'roll_Dice44', cardinality 0..*) is associated with 'Roll_Dice_external' (role 'player45', cardinality 0..*).
+'Get_Instructions_external' (role 'player37', cardinality 0..*) is associated with 'Player_Actor' (role 'get_Instructions36', cardinality 0..*).
+'Yahtzee_Game' (role 'players6', cardinality 0..*) is associated with 'Yahtzee_Players' (role 'game7', cardinality 0..*).
+'Yahtzee_Display1' (role 'turn52', cardinality 0..*) is associated with 'Yahtzee_Turn1' (role 'display53', cardinality 0..*).
+'Players' (role 'scoring13', cardinality 0..*) is associated with 'Scoring' (role 'players12', cardinality 0..*).
+'Yahtzee_Turn' (role 'game2', cardinality 0..*) is associated with 'Yahtzee_Game' (role 'turn3', cardinality 0..*).
+'Player_Actor' (role 'score_Roll48', cardinality 0..*) is associated with 'Score_Roll_external' (role 'player49', cardinality 0..*).
+'Roll_First_external' (role 'player41', cardinality 0..*) is associated with 'Player_Actor' (role 'roll_First40', cardinality 0..*).

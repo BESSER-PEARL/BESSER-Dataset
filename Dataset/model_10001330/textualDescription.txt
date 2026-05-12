@@ -1,0 +1,20 @@
+The model has 19 class(es).
+The class 'CompanyAddItem' has the following attributes: 'Description' of type str; 'Name' of type str; 'Price' of type str; 'Category' of type str.
+The class 'OrderHistory' has the following attributes: 'OrderDate_Time' of type str; 'OrderStatus' of type str; 'OrderRider' of type str; 'OrderReview' of type str.
+The class 'CartItems' has the following attributes: 'Price' of type str; 'Name' of type str.
+The class 'phon' has no attributes.
+The class 'Store' has the following attributes: 'Name' of type str.
+The class 'PlaceOrder' has the following attributes: 'Price' of type str; 'Name' of type str.
+The class 'void_Interface' has no attributes.
+The class 'ConfirmOrder' has the following attributes: 'OrderName' of type str; 'StoreName' of type str; 'Quantity' of type str; 'OrderPrice' of type str.
+The class 'CompanyAssignRider' has the following attributes: 'OrderDate_Time' of type str; 'OrderRider' of type str; 'CustomerName' of type str.
+The class 'CompanyOrderHistory' has the following attributes: 'OrderDate_Time' of type str; 'OrderRider' of type str; 'CustomerName' of type str; 'OrderReview' of type str.
+The class 'Login' has the following attributes: 'Password' of type str; 'Email' of type str.
+The class 'CompanyTrackOrder' has the following attributes: 'OrderRider' of type str; 'OrderDate_Time' of type str; 'OrderStatus' of type str; 'CustomerName' of type str.
+The class 'TrackOrder' has the following attributes: 'OrderTime_Date' of type str; 'OrderTrack' of type str.
+The class 'ReviewOrder' has the following attributes: 'Review' of type str; 'RiderName' of type str; 'OrderTime_Date' of type str.
+The class 'UserRegisteration' has the following attributes: 'Email' of type str; 'Address' of type str; 'UserName' of type str; 'FirstName' of type str; 'LastName' of type str; 'Password' of type str; 'Phone' of type str.
+The class 'Categories' has the following attributes: 'Categories' of type str.
+The class 'Order' has the following attributes: 'OrderReview' of type str; 'OrderStatus' of type str; 'OrderPrice' of type str; 'OrderTime_Date' of type str; 'OrderRider' of type str.
+The class 'CompanyAddRider' has the following attributes: 'Email' of type str; 'Name' of type str; 'Address' of type str; 'UserName' of type str; 'Phone' of type str; 'Password' of type str; 'CNIC' of type int.
+The class 'RiderStatusUpdate' has the following attributes: 'CustomerName' of type str; 'OrderDate_Time' of type str; 'ItemList' of type str.

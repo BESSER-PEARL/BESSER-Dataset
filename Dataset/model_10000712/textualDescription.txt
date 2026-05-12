@@ -1,0 +1,43 @@
+The model has 24 class(es).
+The class 'ExternalAccount' has the following attributes: 'routingNum' of type str; 'associatedAccount' of type str; 'accountNum' of type str.
+The class 'transaction_Payee' has the following attributes: 'address1' of type str; 'name' of type str; 'country' of type str; 'zipcode' of type str; 'email' of type str; 'state' of type str; 'userID' of type str; 'address2' of type str; 'phoneNum' of type str; 'accountNum' of type str; 'city' of type str.
+The class 'Account2' has the following attributes: 'userID' of type str; 'pin' of type str; 'accountNum' of type str; 'type' of type account_AccountType; 'balance' of type float.
+The class 'transaction_ExternalAccount' has the following attributes: 'associatedAccount' of type str; 'accountNum' of type str; 'routingNum' of type str.
+The class 'TransferTransaction' has no attributes.
+The class 'transaction_PaybillsTransaction' has no attributes.
+The class 'Account1' has the following attributes: 'balance' of type float; 'type' of type account_AccountType; 'accountNum' of type str; 'pin' of type str; 'userID' of type str.
+The class 'Transaction' has the following attributes: 'transactionID' of type str; 'sourceAccountNum' of type str; 'comment' of type str; 'description' of type str; 'amount' of type float; 'time' of type str; 'type' of type transaction_TransactionType; 'destinationAccountNum' of type str.
+The class 'User' has the following attributes: 'userID' of type str; 'username' of type str; 'lastLoginTime' of type str; 'password' of type str.
+The class 'account_SavingsAccount' has the following attributes: 'interestRate' of type float.
+The class 'Transaction3' has the following attributes: 'time' of type str; 'comment' of type str; 'sourceAccountNum' of type str; 'amount' of type float; 'type' of type transaction_TransactionType; 'description' of type str; 'transactionID' of type str; 'destinationAccountNum' of type str.
+The class 'Profile' has the following attributes: 'email' of type str; 'state' of type str; 'IDType' of type int; 'country' of type str; 'phoneNumber' of type str; 'firstname' of type str; 'address2' of type str; 'address1' of type str; 'userID' of type str; 'lastname' of type str; 'IDNum' of type str; 'zipcode' of type str; 'dateOfBirth' of type date; 'city' of type str.
+The class 'transaction_Transaction' has the following attributes: 'transactionID' of type str; 'description' of type str; 'time' of type str; 'destinationAccountNum' of type str; 'comment' of type str; 'amount' of type float; 'sourceAccountNum' of type str; 'type' of type transaction_TransactionType.
+The class 'Transaction2' has the following attributes: 'description' of type str; 'transactionID' of type str; 'comment' of type str; 'time' of type str; 'destinationAccountNum' of type str; 'amount' of type float; 'sourceAccountNum' of type str; 'type' of type transaction_TransactionType.
+The class 'account_Account' has the following attributes: 'pin' of type str; 'accountNum' of type str; 'balance' of type float; 'type' of type account_AccountType; 'userID' of type str.
+The class 'loan_LoanApplicationFile' has the following attributes: 'applicationID' of type str; 'fileID' of type str.
+The class 'Account' has the following attributes: 'pin' of type str; 'userID' of type str; 'accountNum' of type str; 'balance' of type float; 'type' of type account_AccountType.
+The class 'transaction_TransferTransaction' has no attributes.
+The class 'loan_LoanApplication' has the following attributes: 'applicationID' of type str; 'userID' of type str; 'type' of type loan_LoanType; 'submissionTime' of type str; 'term' of type int; 'interestRate' of type float; 'status' of type loan_ApplicationStatus; 'amount' of type float.
+The class 'transaction_LoanPayment' has the following attributes: 'principal' of type float; 'loanID' of type str; 'interest' of type float.
+The class 'String' has no attributes.
+The class 'loan_Loan' has the following attributes: 'status' of type loan_ApplicationStatus; 'type' of type loan_LoanStatus; 'submissionTime' of type str; 'loanID' of type str; 'amount' of type float; 'term' of type int; 'interestRate' of type float; 'userID' of type str.
+The class 'transaction_DepositTransaction' has no attributes.
+The class 'Transaction1' has the following attributes: 'sourceAccountNum' of type str; 'description' of type str; 'comment' of type str; 'amount' of type float; 'type' of type transaction_TransactionType; 'time' of type str; 'destinationAccountNum' of type str; 'transactionID' of type str.
+The enumeration 'loan_ApplicationStatus' does not specify any literals.
+The enumeration 'loan_LoanStatus' does not specify any literals.
+The enumeration 'transaction_TransactionType' does not specify any literals.
+The enumeration 'account_AccountType' does not specify any literals.
+The enumeration 'loan_LoanType' does not specify any literals.
+The enumeration 'TransactionType' does not specify any literals.
+'Transaction1' (role 'account16', cardinality 0..*) is associated with 'Account1' (role 'transaction17', cardinality 0..*).
+'Account2' (role 'externalAccount23', cardinality 0..*) is associated with 'ExternalAccount' (role 'account22', cardinality 0..*).
+'TransferTransaction' (role 'externalAccount21', cardinality 0..*) is associated with 'ExternalAccount' (role 'transferTransaction20', cardinality 0..*).
+'loan_LoanApplication' (role 'loan12', cardinality 0..*) is associated with 'loan_Loan' (role 'loanApplication13', cardinality 0..*).
+'account_Account' (role 'profile9', cardinality 0..*) is associated with 'Profile' (role 'account8', cardinality 0..*).
+'loan_LoanApplication' (role 'loanApplicationFile10', cardinality 0..*) is associated with 'loan_LoanApplicationFile' (role 'loanApplication11', cardinality 0..*).
+'Profile' (role 'loanApplication14', cardinality 0..*) is associated with 'loan_LoanApplication' (role 'profile15', cardinality 0..*).
+'transaction_PaybillsTransaction' (role 'payee4', cardinality 0..*) is associated with 'transaction_Payee' (role 'paybillsTransaction5', cardinality 0..*).
+'User' (role 'profile7', cardinality 0..*) is associated with 'Profile' (role 'user6', cardinality 0..*).
+'Account2' (role 'transaction19', cardinality 0..*) is associated with 'Transaction3' (role 'account18', cardinality 0..*).
+'transaction_TransferTransaction' (role 'externalAccount2', cardinality 0..*) is associated with 'transaction_ExternalAccount' (role 'transferTransaction3', cardinality 0..*).
+'transaction_Transaction' (role 'account0', cardinality 0..*) is associated with 'account_Account' (role 'transaction1', cardinality 0..*).

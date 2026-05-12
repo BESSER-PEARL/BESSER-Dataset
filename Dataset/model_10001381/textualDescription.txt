@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'User2_Interface' has no attributes.
+The class 'HashTags' has the following attributes: 'allHashTags' of type str.
+The class 'User' has the following attributes: 'phone' of type str; 'pages' of type str; 'team' of type str; 'password' of type str; 'name' of type str; 'username' of type str; 'gender' of type str.
+The class 'User__' has no attributes.
+The class 'Page' has the following attributes: 'fans' of type User__; 'posts' of type str; 'description' of type str; 'name' of type str; 'admin' of type User; 'nFans' of type int.
+The class 'Team' has the following attributes: 'nMembers' of type int; 'members' of type User__; 'posts' of type str; 'name' of type str; 'description' of type str; 'admins' of type User__.
+The class 'Post' has the following attributes: 'owner' of type User; 'nShares' of type int; 'nLikes' of type int; 'privateMode' of type bool; 'nComments' of type int.
+'Post' (role 'user5', cardinality 0..*) is associated with 'User' (role 'post4', cardinality 0..*).
+'Post' (role 'group6', cardinality 0..*) is associated with 'Team' (role 'post7', cardinality 0..*).
+'Post' (role 'page10', cardinality 0..*) is associated with 'Page' (role 'post11', cardinality 0..*).
+'User' (role 'group0', cardinality 0..*) is associated with 'Team' (role 'user1', cardinality 0..*).
+'Post' (role 'hashTags8', cardinality 0..*) is associated with 'HashTags' (role 'post9', cardinality 0..*).
+'Page' (role 'user3', cardinality 0..*) is associated with 'User' (role 'page2', cardinality 0..*).

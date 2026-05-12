@@ -1,0 +1,34 @@
+The model has 18 class(es).
+The class 'Sensor' has the following attributes: 'SensorType' of type int; 'SensorID' of type int.
+The class 'System___mirror' has the following attributes: 'Display_feed' of type Newsfeed; 'Update' of type float; 'PhoneConnect' of type bool; 'security' of type Home_Security_System; 'Status' of type bool.
+The class 'TV' has the following attributes: 'TVID' of type int.
+The class 'HomeTheatre' has the following attributes: 'HTID' of type str.
+The class 'Door_Sensor' has no attributes.
+The class 'FireAlarm_Sensor' has the following attributes: 'SmokeAlarm' of type bool.
+The class 'Home_Security_System' has the following attributes: 'UserID' of type int.
+The class 'Camera' has the following attributes: 'CameraID' of type int.
+The class 'Evening' has the following attributes: 'Night' of type int.
+The class 'Entertainment' has the following attributes: 'DeviceID' of type int.
+The class 'MyHome' has the following attributes: 'Alarm' of type str; 'WashingMachine' of type str; 'TimeID' of type str; 'Coffee' of type str; 'DishWasher' of type str.
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+The class 'Motion_Sensor' has no attributes.
+The class 'Newsfeed' has the following attributes: 'News' of type str; 'weather' of type str; 'Calendar' of type str; 'TimeID' of type str; 'Email' of type str.
+The class 'Door' has the following attributes: 'DoorID' of type int.
+The class 'Radio' has the following attributes: 'RadioID' of type int.
+The class 'Morning' has the following attributes: 'Morn' of type int.
+The class 'Light' has the following attributes: 'LightID' of type str.
+'Entertainment' (role 'tV23', cardinality 0..*) is associated with 'TV' (role 'entertainment22', cardinality 0..*).
+'Sensor' (role 'system14', cardinality 0..*) is associated with 'System___mirror' (role 'sensor15', cardinality 0..*).
+'HomeTheatre' (role 'system18', cardinality 0..*) is associated with 'System___mirror' (role 'homeTheatre19', cardinality 0..*).
+'Morning' (role 'houseHolds9', cardinality 0..*) is associated with 'MyHome' (role 'start_Of_Day8', cardinality 0..*).
+'HomeTheatre' (role 'entertainment26', cardinality 0..*) is associated with 'Entertainment' (role 'homeTheatre27', cardinality 0..*).
+'MyHome' (role 'system17', cardinality 0..*) is associated with 'System___mirror' (role 'houseHolds16', cardinality 0..*).
+'MyHome' (role 'end_Of_Day10', cardinality 0..*) is associated with 'Evening' (role 'houseHolds11', cardinality 0..*).
+'Alert' (role 'home_Security_System13', cardinality 0..*) is associated with 'Home_Security_System' (role 'alert12', cardinality 0..*).
+'HomeTheatre' (role 'speakers6', cardinality 0..*) is associated with 'Radio' (role 'homeTheatre7', cardinality 0..*).
+'Entertainment' (role 'speakers25', cardinality 0..*) is associated with 'Radio' (role 'entertainment24', cardinality 0..*).
+'Door' (role 'sensor1', cardinality 0..*) is associated with 'Sensor' (role 'door0', cardinality 0..*).
+'Newsfeed' (role 'system___mirror29', cardinality 0..*) is associated with 'System___mirror' (role 'newsfeed28', cardinality 0..*).
+'System___mirror' (role 'home_Security_System21', cardinality 0..*) is associated with 'Home_Security_System' (role 'system20', cardinality 0..*).
+'Door' (role 'camera2', cardinality 0..*) is associated with 'Camera' (role 'door3', cardinality 0..*).
+'HomeTheatre' (role 'tV4', cardinality 0..*) is associated with 'TV' (role 'homeTheatre5', cardinality 0..*).

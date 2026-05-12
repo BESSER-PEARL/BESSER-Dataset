@@ -1,0 +1,30 @@
+The model has 18 class(es).
+The class 'List_Product_' has no attributes.
+The class 'Seller' has the following attributes: 'sellerId' of type str; 'rating' of type str; 'name' of type str.
+The class 'Guest' has no attributes.
+The class 'Ornaments' has the following attributes: 'Name' of type str.
+The class 'ProductListHelper' has no attributes.
+The class 'ShippingInfo' has the following attributes: 'shippingCharges' of type int; 'estimatedDeliveryDate' of type str; 'deliveryAddress' of type str; 'deliveryType' of type str.
+The class 'CreditCardPayment' has no attributes.
+The class 'DebitCardPayment' has no attributes.
+The class 'Customer' has the following attributes: 'user_name' of type str; 'firstName' of type str; 'phoneNo' of type int; 'lastName' of type str; 'address' of type str.
+The class 'Appliances' has no attributes.
+The class 'Electronics' has no attributes.
+The class 'Cart' has no attributes.
+The class 'Payment_Interface' has no attributes.
+The class 'User' has the following attributes: 'userId' of type int.
+The class 'Order' has the following attributes: 'status' of type str; 'orderTotalAmount' of type int; 'deliveryDate' of type int; 'orderedOn' of type str; 'shippingId' of type int; 'noOfItem' of type int; 'items' of type List_Product_; 'orderId' of type int.
+The class 'WishList' has no attributes.
+The class 'Product' has the following attributes: 'rating' of type int; 'description' of type str; 'productName' of type str; 'productId' of type int; 'price' of type int; 'image' of type str; 'sellerInfo' of type Seller.
+The class 'PaymentFactory' has no attributes.
+'ShippingInfo' (role 'order3', cardinality 0..*) is associated with 'Order' (role 'shippingInfo2', cardinality 0..*).
+'ProductListHelper' (role 'cart15', cardinality 0..*) is associated with 'Cart' (role 'productListHelper14', cardinality 0..*).
+'User' (role 'product4', cardinality 0..*) is associated with 'Product' (role 'user5', cardinality 0..*).
+'WishList' (role 'customer13', cardinality 0..*) is associated with 'Customer' (role 'wishList12', cardinality 0..*).
+'Product' (role 'order8', cardinality 0..*) is associated with 'Order' (role 'product9', cardinality 0..*).
+'Product' (role 'seller6', cardinality 0..*) is associated with 'Seller' (role 'product7', cardinality 0..*).
+'Product' (role 'cart20', cardinality 0..*) is associated with 'Cart' (role 'product21', cardinality 0..*).
+'Customer' (role 'cart10', cardinality 0..*) is associated with 'Cart' (role 'customer11', cardinality 0..*).
+'Customer' (role 'order0', cardinality 0..*) is associated with 'Order' (role 'customer1', cardinality 0..*).
+'WishList' (role 'product19', cardinality 0..*) is associated with 'Product' (role 'wishList18', cardinality 0..*).
+'WishList' (role 'productListHelper16', cardinality 0..*) is associated with 'ProductListHelper' (role 'wishList17', cardinality 0..*).

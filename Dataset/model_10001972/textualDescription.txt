@@ -1,0 +1,11 @@
+The model has 9 class(es).
+The class 'FileImporter' has the following attributes: 'INITIAL_DATAFILE' of type str.
+The class 'Match' has the following attributes: 'date' of type str; 'winner' of type Result; 'players' of type str; 'name' of type str.
+The class 'Game' has the following attributes: 'number' of type int; 'score' of type int.
+The class 'Attempt' has the following attributes: 'points' of type int; 'number' of type int.
+The class 'Result' has the following attributes: 'score' of type int; 'player' of type str.
+The class 'InitialData' has the following attributes: 'points' of type str; 'playerName' of type str.
+The class 'Player' has the following attributes: 'totalScore' of type int; 'name' of type str; 'games' of type Game.
+The class 'Importer_Interface' has no attributes.
+The class 'BowlingGame' has the following attributes: 'attempts' of type str; 'nextGames' of type str; 'previousGame' of type Game; 'scoreType' of type ScoreType.
+The enumeration 'ScoreType' does not specify any literals.

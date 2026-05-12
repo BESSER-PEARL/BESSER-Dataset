@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'Dice' has the following attributes: 'value' of type int.
+The class 'Pawn' has the following attributes: 'color' of type Color; 'position' of type int.
+The class 'Card' has the following attributes: 'card' of type CardType.
+The class 'Board' has no attributes.
+The class 'Player' has the following attributes: 'name' of type str.
+The enumeration 'CardType' does not specify any literals.
+The enumeration 'Color' does not specify any literals.
+'Board' (role 'card4', cardinality 0..*) is associated with 'Card' (role 'board5', cardinality 0..*).
+'Dice' (role 'player3', cardinality 0..*) is associated with 'Player' (role 'dice2', cardinality 0..*).
+'Player' (role 'board7', cardinality 0..*) is associated with 'Board' (role 'player6', cardinality 0..*).
+'Player' (role 'pawn0', cardinality 0..*) is associated with 'Pawn' (role 'player1', cardinality 0..*).

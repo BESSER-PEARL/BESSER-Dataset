@@ -1,0 +1,9 @@
+The model has 8 class(es).
+The class 'spot' has the following attributes: 'id' of type str; 'size' of type int; 'parkedVehicle' of type Vehicle_Interface.
+The class 'Vehicle_Interface' has no attributes.
+The class 'large' has no attributes.
+The class 'XL' has no attributes.
+The class 'Ticket' has the following attributes: 'id' of type str.
+The class 'ValleyParking' has no attributes.
+The class 'small' has no attributes.
+The class 'medium' has no attributes.

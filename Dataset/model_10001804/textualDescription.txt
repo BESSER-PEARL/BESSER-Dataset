@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'Class' has no attributes.
+The class 'Deck' has the following attributes: 'Cards' of type Cards.
+The class 'Cards' has the following attributes: 'Character' of type str; 'Suit' of type str.
+The class 'Player' has the following attributes: 'wins' of type int; 'winRate' of type str; 'losses' of type int.
+The class 'Elevens' has the following attributes: 'Deck' of type Deck; 'Player' of type Player.
+'Cards' (role 'deck5', cardinality 0..*) is associated with 'Deck' (role 'cards4', cardinality 0..*).
+'Deck' (role 'elevens3', cardinality 0..*) is associated with 'Elevens' (role 'deck2', cardinality 0..*).
+'Player' (role 'elevens1', cardinality 0..*) is associated with 'Elevens' (role 'player0', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Librarian' has the following attributes: 'id' of type int; 'attribute' of type str; 'password' of type str.
+The class 'log' has no attributes.
+The class 'Guest' has no attributes.
+The class 'Book' has the following attributes: 'name' of type str; 'author' of type str.
+The class 'Admin' has the following attributes: 'password' of type str; 'username' of type str; 'id' of type int.
+The class 'Member' has the following attributes: 'id' of type int; 'password' of type str; 'name' of type str; 'username' of type str.
+'Book' (role 'guest5', cardinality 0..*) is associated with 'Guest' (role 'book4', cardinality 0..*).
+'Member' (role 'log9', cardinality 0..*) is associated with 'log' (role 'member8', cardinality 0..*).
+'Admin' (role 'book6', cardinality 0..*) is associated with 'Book' (role 'admin7', cardinality 0..*).
+'Admin' (role 'log1', cardinality 0..*) is associated with 'log' (role 'admin0', cardinality 0..*).
+'log' (role 'librarian2', cardinality 0..*) is associated with 'Librarian' (role 'log3', cardinality 0..*).
+'Book' (role 'member10', cardinality 0..*) is associated with 'Member' (role 'book11', cardinality 0..*).

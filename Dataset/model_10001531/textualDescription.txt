@@ -1,0 +1,45 @@
+The model has 25 class(es).
+The class 'View_Texture_Interface' has no attributes.
+The class 'AbstractProperty' has no attributes.
+The class 'View_Renderer_Interface' has no attributes.
+The class 'Controller_Controller' has the following attributes: 'attribute' of type str; 'worldAccess' of type Model_World; 'inputController' of type Controller_InputController_Interface; 'viewAccess' of type View_View; 'eventManager' of type Controller_EventManager.
+The class 'Table1' has the following attributes: 'table1ID' of type str; 'ID' of type str; 'table3ID' of type str.
+The class 'Controller_Parser' has no attributes.
+The class 'Controller_Event_union_' has the following attributes: 'EventMouseButton' of type str; 'EventMouseWheel' of type str; 'eventType' of type str; 'EventEmpty' of type str; 'EventMouseMotion' of type str; 'EvenkKeyboard' of type str; 'EventQuit' of type str.
+The class 'View_SDLCamera' has no attributes.
+The class 'Entity' has the following attributes: 'properties' of type AbstractProperty; 'behaviors' of type AbstractBehavior.
+The class 'Model_Tile' has the following attributes: 'position' of type str; 'type' of type int; 'mod' of type int; 'id' of type int.
+The class 'Model_World' has no attributes.
+The class 'Controller_InputController_Interface' has no attributes.
+The class 'View_Interface_Interface' has no attributes.
+The class 'AbstractBehavior' has no attributes.
+The class 'Model_WorldGenerator' has no attributes.
+The class 'Controller_EventManager' has the following attributes: 'queueLock' of type bool; 'eventQueue' of type str.
+The class 'Table2' has the following attributes: 'ID' of type str.
+The class 'Table3' has the following attributes: 'ID' of type str.
+The class 'View_SDLRenderer' has the following attributes: 'renderer' of type str; 'viewPointer' of type View_View; 'camera' of type View_SDLCamera; 'window' of type str; 'tileset' of type View_SDLTexture.
+The class 'Model_Chunk' has no attributes.
+The class 'View_View' has the following attributes: 'worldAccess' of type Model_World; 'renderer' of type View_Renderer_Interface.
+The class 'View_Camera_Interface' has no attributes.
+The class 'View_SDLTexture' has no attributes.
+The class 'Controller_SDLInputController' has the following attributes: 'controllerPointer' of type Controller_Controller; 'eventList' of type str.
+The class 'trans_Table' has the following attributes: 'table2ID' of type str; 'table1ID' of type str.
+'View_View' (role 'controller25', cardinality 0..*) is associated with 'Controller_Controller' (role 'view24', cardinality 0..*).
+'Model_World' (role 'controller31', cardinality 0..*) is associated with 'Controller_Controller' (role 'world30', cardinality 0..*).
+'Controller_Controller' (role 'eventManager27', cardinality 0..*) is associated with 'Controller_EventManager' (role 'controller26', cardinality 0..*).
+'Controller_InputController_Interface' (role 'controller22', cardinality 0..*) is associated with 'Controller_Controller' (role 'inputController23', cardinality 0..*).
+'View_SDLCamera' (role 'sDLRenderer21', cardinality 0..*) is associated with 'View_SDLRenderer' (role 'sDLCamera20', cardinality 0..*).
+'View_View' (role 'camera19', cardinality 0..*) is associated with 'View_SDLCamera' (role 'view18', cardinality 0..*).
+'Model_Chunk' (role 'world1', cardinality 0..*) is associated with 'Model_World' (role 'chunk0', cardinality 0..*).
+'View_Texture_Interface' (role 'renderer13', cardinality 0..*) is associated with 'View_Renderer_Interface' (role 'texture12', cardinality 0..*).
+'Entity' (role 'abstractProperty34', cardinality 0..*) is associated with 'AbstractProperty' (role 'entity35', cardinality 0..*).
+'View_View' (role 'renderer10', cardinality 0..*) is associated with 'View_Renderer_Interface' (role 'view11', cardinality 0..*).
+'View_SDLTexture' (role 'sDLRenderer17', cardinality 0..*) is associated with 'View_SDLRenderer' (role 'sDLTexture16', cardinality 0..*).
+'Model_Chunk' (role 'tile2', cardinality 0..*) is associated with 'Model_Tile' (role 'chunk3', cardinality 0..*).
+'Entity' (role 'abstractBehavior36', cardinality 0..*) is associated with 'AbstractBehavior' (role 'entity37', cardinality 0..*).
+'View_Renderer_Interface' (role 'sDLRenderer14', cardinality 0..*) is associated with 'View_SDLRenderer' (role 'renderer15', cardinality 0..*).
+'Model_WorldGenerator' (role 'world8', cardinality 0..*) is associated with 'Model_World' (role 'worldGenertor9', cardinality 0..*).
+'Model_World' (role 'chunk4', cardinality 0..*) is associated with 'Model_Chunk' (role 'world5', cardinality 0..*).
+'Model_World' (role 'renderer6', cardinality 0..*) is associated with 'View_View' (role 'world7', cardinality 0..*).
+'Controller_EventManager' (role 'event_union_28', cardinality 0..*) is associated with 'Controller_Event_union_' (role 'eventManager29', cardinality 0..*).
+'Table1' (role 'table133', cardinality 0..*) is associated with 'Table1' (role 'table132', cardinality 0..*).

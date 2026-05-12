@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'T' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'UseCase_UseCase' has no attributes.

@@ -1,0 +1,29 @@
+The model has 16 class(es).
+The class 'Salary_Management_UseCase' has no attributes.
+The class 'Salary' has the following attributes: 'OverTime' of type str; 'Sly_Decrement' of type float; 'Emp_Id' of type int; 'Sly_Netgross' of type float; 'Sly_Basic' of type float; 'Sly_Increment' of type float.
+The class 'Driving_Staff' has the following attributes: 'Pilot_ContactNo' of type str; 'Password' of type str; 'PilotName' of type str; 'Authendication_Mood' of type str.
+The class 'Staff' has the following attributes: 'Authendication_Mood' of type str; 'Password' of type str; 'UserName' of type str.
+The class 'Employee_Actor' has no attributes.
+The class 'Login_external' has no attributes.
+The class 'Administrator' has the following attributes: 'Admin_Id' of type int; 'Admin_NIC' of type str; 'Emp_Date_Of_Joint' of type date; 'Emp_Position' of type str; 'Admin_ContactNo' of type str; 'Emp_DOB' of type date; 'Admin_Name' of type str; 'Emp_Department' of type str; 'Admin_Email' of type str.
+The class 'Administrator_Actor' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Manager' has the following attributes: 'Emp_Date_Of_Joint' of type date; 'Emp_Department' of type str; 'Emp_Position' of type str; 'Mng_Salary' of type float; 'Mng_Id' of type int; 'Mng_Email' of type str; 'Mng_ContactNo' of type str; 'Emp_DOB' of type date; 'Emp_NIC' of type str; 'Emp_Address' of type str; 'Mng_Name' of type str.
+The class 'Authentication_UseCase' has no attributes.
+The class 'Tuning_Staff' has the following attributes: 'Authendication_Mood' of type str; 'UserName' of type str; 'Address' of type str.
+The class 'Login' has the following attributes: 'Password' of type str; 'UserName' of type str.
+The class 'Attendance' has the following attributes: 'Attend_date' of type date; 'AttendTime' of type str; 'Leaving_Time' of type str; 'Emp_id' of type str.
+The class 'Leave_Status' has the following attributes: 'Leave_Title' of type str; 'Leave_ApplyDate' of type date; 'Leave_NoOfDays' of type int; 'Leave_StartDate' of type date; 'leave_id' of type int; 'Leave_EndDate' of type date; 'Leave_Status' of type str; 'Emp_Id' of type int; 'Leave_detail' of type str.
+The class 'Employee_Management_System_Component' has no attributes.
+'Employee_Actor' (role 'login6', cardinality 0..*) is associated with 'Login_external' (role 'employee7', cardinality 0..*).
+'Attendance' (role 'employee3', cardinality 0..*) is associated with 'Manager' (role 'attendance2', cardinality 0..*).
+'Manager' (role 'salary4', cardinality 0..*) is associated with 'Salary' (role 'employee5', cardinality 0..*).
+'Driving_Staff' (role 'staff21', cardinality 0..*) is associated with 'Staff' (role 'driving_Staff20', cardinality 0..*).
+'Staff' (role 'tuning_Staff22', cardinality 0..*) is associated with 'Tuning_Staff' (role 'staff23', cardinality 0..*).
+'Leave_Status' (role 'staff11', cardinality 0..*) is associated with 'Staff' (role 'leave_Status10', cardinality 0..*).
+'Login' (role 'manager18', cardinality 0..*) is associated with 'Manager' (role 'login19', cardinality 0..*).
+'Manager' (role 'administrator13', cardinality 0..*) is associated with 'Administrator' (role 'manager12', cardinality 0..*).
+'Login' (role 'administrator14', cardinality 0..*) is associated with 'Administrator' (role 'login15', cardinality 0..*).
+'Logout_external' (role 'employee9', cardinality 0..*) is associated with 'Employee_Actor' (role 'logout8', cardinality 0..*).
+'Administrator' (role 'login16', cardinality 0..*) is associated with 'Login' (role 'administrator17', cardinality 0..*).
+'Leave_Status' (role 'employee1', cardinality 0..*) is associated with 'Manager' (role 'leave0', cardinality 0..*).

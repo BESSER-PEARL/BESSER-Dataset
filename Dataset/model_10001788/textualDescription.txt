@@ -1,0 +1,143 @@
+The model has 74 class(es).
+The class 'Co_t_de_fonctionnement_external' has no attributes.
+The class 'T' has no attributes.
+The class '__Syst_me___GPS_API_Actor2' has no attributes.
+The class 'System_Component5' has no attributes.
+The class 'G_rant_Actor1' has no attributes.
+The class 'Caissier_Actor3' has no attributes.
+The class 'Achats_Gestion_des_achats_Component' has no attributes.
+The class 'Caissier_Actor' has no attributes.
+The class 'Information_livraison_external' has no attributes.
+The class 'Client_Actor1' has no attributes.
+The class 'Livreur_Actor3' has no attributes.
+The class 'Point_de_retrait_external' has no attributes.
+The class '__Syst_me___GPS_API_Actor' has no attributes.
+The class 'Livreur_Actor2' has no attributes.
+The class 'Pr_parer_une_livraison_UseCase1' has no attributes.
+The class '__Syst_me___GPS_API_Actor3' has no attributes.
+The class 'Comptable_Actor2' has no attributes.
+The class 'Encaisser_une_commande_external' has no attributes.
+The class 'Caissier_Actor4' has no attributes.
+The class 'Pizza_olo_Actor' has no attributes.
+The class '__Syst_me___Banques_Actor4' has no attributes.
+The class 'G_rant_Actor4' has no attributes.
+The class 'Livreur_Actor1' has no attributes.
+The class 'Caissier_Actor1' has no attributes.
+The class 'T11' has no attributes.
+The class 'Comptable_Actor1' has no attributes.
+The class 'Caissier_Actor2' has no attributes.
+The class 'Effectuer_un_achat_external' has no attributes.
+The class '__Syst_me___Banques_Actor2' has no attributes.
+The class '__Syst_me___GPS_Actor' has no attributes.
+The class 'Comptable_Actor3' has no attributes.
+The class 'Modification_Lecture_du_catalogue_des_pizzas_external' has no attributes.
+The class 'Chiffre_d_affaires_external' has no attributes.
+The class 'T1' has no attributes.
+The class 'G_rer_le_stock_external' has no attributes.
+The class '__Syst_me___Banques_Actor' has no attributes.
+The class 'G_rant_Actor' has no attributes.
+The class 'Pizza_olo_Actor2' has no attributes.
+The class '__Syst_me___GPS_API_Actor1' has no attributes.
+The class '__Syst_me___Banques_Actor1' has no attributes.
+The class 'Administratif_Gestion_administrative_Component' has no attributes.
+The class 'R_glement_UseCase' has no attributes.
+The class 'System_Component' has no attributes.
+The class 'Pizza_olo_Actor1' has no attributes.
+The class 'G_rant_Actor2' has no attributes.
+The class 'Pr_parer_une_livraison_UseCase' has no attributes.
+The class 'Pizza_olo_Actor3' has no attributes.
+The class 'System_Component3' has no attributes.
+The class 'Pr_parer_une_livraison_UseCase2' has no attributes.
+The class 'System_Component4' has no attributes.
+The class 'Pr_parer_une_livraison_UseCase3' has no attributes.
+The class 'Client_Actor3' has no attributes.
+The class 'Logistique_Actor1' has no attributes.
+The class 'T2' has no attributes.
+The class 'Client_Actor2' has no attributes.
+The class '_3_external' has no attributes.
+The class 'R_glement_UseCase1' has no attributes.
+The class 'Logistique_Actor3' has no attributes.
+The class 'Consulter_le_catalogue_des_pizzas_external' has no attributes.
+The class 'Comptable_Actor' has no attributes.
+The class 'Analyse_commande_external' has no attributes.
+The class 'Pr_parer_une_commande_external' has no attributes.
+The class 'System_Component2' has no attributes.
+The class 'Logistique_Actor4' has no attributes.
+The class '_2_external' has no attributes.
+The class 'R_glement_en_ligne_external' has no attributes.
+The class 'Logistique_Actor' has no attributes.
+The class 'Logistique_Actor2' has no attributes.
+The class 'G_rant_Actor3' has no attributes.
+The class 'Client_Actor' has no attributes.
+The class 'Livreur_Actor4' has no attributes.
+The class 'System_Component1' has no attributes.
+The class 'Livreur_Actor' has no attributes.
+The class '__Syst_me___Banques_Actor3' has no attributes.
+'Comptable_Actor' (role 'system2', cardinality 0..*) is associated with 'System_Component' (role 'comptable3', cardinality 0..*).
+'Achats_Gestion_des_achats_Component' (role 'caissier35', cardinality 0..*) is associated with 'Caissier_Actor2' (role 'system34', cardinality 0..*).
+'_3_external' (role 'encaisser_une_commande83', cardinality 0..*) is associated with 'Encaisser_une_commande_external' (role '__Syst_me___Banques82', cardinality 0..*).
+'Achats_Gestion_des_achats_Component' (role '__Syst_me___GPS_API47', cardinality 0..*) is associated with '__Syst_me___GPS_API_Actor1' (role 'system46', cardinality 0..*).
+'Achats_Gestion_des_achats_Component' (role 'livreur49', cardinality 0..*) is associated with 'Livreur_Actor2' (role 'system48', cardinality 0..*).
+'G_rant_Actor4' (role 'co_t_de_fonctionnement132', cardinality 0..*) is associated with 'Co_t_de_fonctionnement_external' (role 'g_rant133', cardinality 0..*).
+'__Syst_me___Banques_Actor' (role 'system8', cardinality 0..*) is associated with 'System_Component' (role 'banques9', cardinality 0..*).
+'Consulter_le_catalogue_des_pizzas_external' (role 'pizza_olo75', cardinality 0..*) is associated with 'Pizza_olo_Actor2' (role 'consulter_le_catalogue_des_pizzas74', cardinality 0..*).
+'Logistique_Actor' (role 'system6', cardinality 0..*) is associated with 'System_Component' (role 'logistique7', cardinality 0..*).
+'Comptable_Actor2' (role 'system40', cardinality 0..*) is associated with 'Administratif_Gestion_administrative_Component' (role 'comptable41', cardinality 0..*).
+'__Syst_me___Banques_Actor4' (role 'r_glement105', cardinality 0..*) is associated with 'R_glement_UseCase' (role '__Syst_me___Banques104', cardinality 0..*).
+'Co_t_de_fonctionnement_external' (role 'comptable93', cardinality 0..*) is associated with 'Comptable_Actor3' (role 'co_t_de_fonctionnement92', cardinality 0..*).
+'__Syst_me___Banques_Actor3' (role 'pr_parer_une_livraison59', cardinality 0..*) is associated with 'Pr_parer_une_livraison_UseCase' (role '__Syst_me___Banques58', cardinality 0..*).
+'Co_t_de_fonctionnement_external' (role 'g_rant95', cardinality 0..*) is associated with 'G_rant_Actor3' (role 'co_t_de_fonctionnement94', cardinality 0..*).
+'Encaisser_une_commande_external' (role 'caissier77', cardinality 0..*) is associated with 'Caissier_Actor3' (role 'encaisser_une_commande76', cardinality 0..*).
+'G_rer_le_stock_external' (role 'logistique117', cardinality 0..*) is associated with 'Logistique_Actor4' (role 'g_rer_le_stock116', cardinality 0..*).
+'System_Component' (role 'logistique27', cardinality 0..*) is associated with 'Logistique_Actor1' (role 'system26', cardinality 0..*).
+'Achats_Gestion_des_achats_Component' (role '__Syst_me___Banques42', cardinality 0..*) is associated with '__Syst_me___Banques_Actor2' (role 'system43', cardinality 0..*).
+'__Syst_me___Banques_Actor3' (role 'effectuer_un_achat51', cardinality 0..*) is associated with 'Effectuer_un_achat_external' (role '__Syst_me___Banques50', cardinality 0..*).
+'Client_Actor2' (role 'point_de_retrait70', cardinality 0..*) is associated with 'Point_de_retrait_external' (role 'client71', cardinality 0..*).
+'R_glement_UseCase1' (role '__Syst_me___Banques100', cardinality 0..*) is associated with '__Syst_me___Banques_Actor4' (role 'encaisser_une_commande101', cardinality 0..*).
+'Livreur_Actor4' (role 'pr_parer_une_livraison112', cardinality 0..*) is associated with 'Pr_parer_une_livraison_UseCase2' (role 'livreur113', cardinality 0..*).
+'Caissier_Actor1' (role 'system24', cardinality 0..*) is associated with 'System_Component' (role 'caissier25', cardinality 0..*).
+'__Syst_me___Banques_Actor3' (role 'consulter_le_catalogue_de_pizza62', cardinality 0..*) is associated with 'Consulter_le_catalogue_des_pizzas_external' (role '__Syst_me___Banques63', cardinality 0..*).
+'G_rant_Actor' (role 'system0', cardinality 0..*) is associated with 'System_Component' (role 'g_rant1', cardinality 0..*).
+'Point_de_retrait_external' (role '__Syst_me___GPS_API52', cardinality 0..*) is associated with '__Syst_me___GPS_API_Actor2' (role 'point_de_retrait53', cardinality 0..*).
+'Logistique_Actor3' (role 'g_rer_le_stock66', cardinality 0..*) is associated with 'G_rer_le_stock_external' (role 'logistique67', cardinality 0..*).
+'G_rant_Actor4' (role 'commandes129', cardinality 0..*) is associated with 'Analyse_commande_external' (role 'g_rant128', cardinality 0..*).
+'Effectuer_un_achat_external' (role '__Syst_me___Banques96', cardinality 0..*) is associated with '__Syst_me___Banques_Actor4' (role 'effectuer_un_achat97', cardinality 0..*).
+'System_Component' (role 'pizza_olo17', cardinality 0..*) is associated with 'Pizza_olo_Actor' (role 'system16', cardinality 0..*).
+'Livreur_Actor' (role 'system4', cardinality 0..*) is associated with 'System_Component' (role 'livreur5', cardinality 0..*).
+'Achats_Gestion_des_achats_Component' (role 'pizza_olo37', cardinality 0..*) is associated with 'Pizza_olo_Actor1' (role 'system36', cardinality 0..*).
+'System_Component' (role 'gPS11', cardinality 0..*) is associated with '__Syst_me___GPS_Actor' (role 'system10', cardinality 0..*).
+'__Syst_me___Banques_Actor3' (role 'encaisser_une_commande55', cardinality 0..*) is associated with 'Encaisser_une_commande_external' (role '__Syst_me___Banques54', cardinality 0..*).
+'_2_external' (role 'point_de_retrait125', cardinality 0..*) is associated with 'Point_de_retrait_external' (role '__Syst_me___GPS_API124', cardinality 0..*).
+'_3_external' (role 'effectuer_un_achat123', cardinality 0..*) is associated with 'Chiffre_d_affaires_external' (role '__Syst_me___Banques122', cardinality 0..*).
+'Consulter_le_catalogue_des_pizzas_external' (role 'client61', cardinality 0..*) is associated with 'Client_Actor2' (role 'consulter_le_catalogue_de_pizza60', cardinality 0..*).
+'Chiffre_d_affaires_external' (role 'g_rant131', cardinality 0..*) is associated with 'G_rant_Actor4' (role 'chiffres_d_affaire130', cardinality 0..*).
+'Analyse_commande_external' (role 'g_rant84', cardinality 0..*) is associated with 'G_rant_Actor3' (role 'commandes85', cardinality 0..*).
+'System_Component' (role 'caissier13', cardinality 0..*) is associated with 'Caissier_Actor' (role 'system12', cardinality 0..*).
+'Modification_Lecture_du_catalogue_des_pizzas_external' (role 'g_rant87', cardinality 0..*) is associated with 'G_rant_Actor3' (role 'modification_Lecture_du_catalogue_des_pizzas86', cardinality 0..*).
+'Achats_Gestion_des_achats_Component' (role 'logistique39', cardinality 0..*) is associated with 'Logistique_Actor2' (role 'system38', cardinality 0..*).
+'Livreur_Actor3' (role 'pr_parer_une_livraison64', cardinality 0..*) is associated with 'Pr_parer_une_livraison_UseCase' (role 'livreur65', cardinality 0..*).
+'Modification_Lecture_du_catalogue_des_pizzas_external' (role 'g_rant135', cardinality 0..*) is associated with 'G_rant_Actor4' (role 'modification_Lecture_du_catalogue_des_pizzas134', cardinality 0..*).
+'Client_Actor3' (role 'effectuer_un_achat108', cardinality 0..*) is associated with 'Effectuer_un_achat_external' (role 'client109', cardinality 0..*).
+'Pizza_olo_Actor2' (role 'pr_parer_une_commande72', cardinality 0..*) is associated with 'Pr_parer_une_commande_external' (role 'pizza_olo73', cardinality 0..*).
+'System_Component' (role 'client15', cardinality 0..*) is associated with 'Client_Actor' (role 'system14', cardinality 0..*).
+'Point_de_retrait_external' (role 'client111', cardinality 0..*) is associated with 'Client_Actor3' (role 'point_de_retrait110', cardinality 0..*).
+'System_Component' (role 'comptable21', cardinality 0..*) is associated with 'Comptable_Actor1' (role 'system20', cardinality 0..*).
+'Livreur_Actor1' (role 'system22', cardinality 0..*) is associated with 'System_Component' (role 'livreur23', cardinality 0..*).
+'Chiffre_d_affaires_external' (role 'comptable91', cardinality 0..*) is associated with 'Comptable_Actor3' (role 'chiffres_d_affaire90', cardinality 0..*).
+'Information_livraison_external' (role '__Syst_me___GPS_API121', cardinality 0..*) is associated with '__Syst_me___GPS_API_Actor3' (role 'effectuer_un_achat120', cardinality 0..*).
+'Chiffre_d_affaires_external' (role '__Syst_me___Banques78', cardinality 0..*) is associated with '_3_external' (role 'effectuer_un_achat79', cardinality 0..*).
+'Effectuer_un_achat_external' (role 'client69', cardinality 0..*) is associated with 'Client_Actor2' (role 'effectuer_un_achat68', cardinality 0..*).
+'Pr_parer_une_commande_external' (role 'pizza_olo107', cardinality 0..*) is associated with 'Pizza_olo_Actor3' (role 'pr_parer_une_commande106', cardinality 0..*).
+'__Syst_me___Banques_Actor1' (role 'system29', cardinality 0..*) is associated with 'System_Component' (role '__Syst_me___Banques28', cardinality 0..*).
+'__Syst_me___GPS_API_Actor3' (role 'point_de_retrait99', cardinality 0..*) is associated with 'Point_de_retrait_external' (role '__Syst_me___GPS_API98', cardinality 0..*).
+'System_Component' (role '__Syst_me___GPS_API31', cardinality 0..*) is associated with '__Syst_me___GPS_API_Actor' (role 'system30', cardinality 0..*).
+'Client_Actor1' (role 'system44', cardinality 0..*) is associated with 'Achats_Gestion_des_achats_Component' (role 'client45', cardinality 0..*).
+'R_glement_en_ligne_external' (role '__Syst_me___Banques102', cardinality 0..*) is associated with '__Syst_me___Banques_Actor4' (role 'r_glement103', cardinality 0..*).
+'Effectuer_un_achat_external' (role '__Syst_me___GPS_API56', cardinality 0..*) is associated with '__Syst_me___GPS_API_Actor2' (role 'effectuer_un_achat57', cardinality 0..*).
+'Client_Actor3' (role 'consulter_le_catalogue_de_pizza118', cardinality 0..*) is associated with 'Consulter_le_catalogue_des_pizzas_external' (role 'client119', cardinality 0..*).
+'Chiffre_d_affaires_external' (role 'g_rant89', cardinality 0..*) is associated with 'G_rant_Actor3' (role 'chiffres_d_affaire88', cardinality 0..*).
+'_2_external' (role 'point_de_retrait81', cardinality 0..*) is associated with 'Point_de_retrait_external' (role '__Syst_me___GPS_API80', cardinality 0..*).
+'_3_external' (role 'encaisser_une_commande127', cardinality 0..*) is associated with 'Encaisser_une_commande_external' (role '__Syst_me___Banques126', cardinality 0..*).
+'System_Component' (role 'g_rant19', cardinality 0..*) is associated with 'G_rant_Actor1' (role 'system18', cardinality 0..*).
+'G_rant_Actor2' (role 'system32', cardinality 0..*) is associated with 'Administratif_Gestion_administrative_Component' (role 'g_rant33', cardinality 0..*).
+'Encaisser_une_commande_external' (role 'caissier115', cardinality 0..*) is associated with 'Caissier_Actor4' (role 'encaisser_une_commande114', cardinality 0..*).

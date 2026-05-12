@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Subject' has no attributes.
+The class 'Note' has no attributes.
+The class 'Student' has the following attributes: 'surname' of type str; 'email' of type str; 'phone' of type str; 'name' of type str.
+The class 'Schedule' has no attributes.
+The class 'Grade' has the following attributes: 'name' of type str.
+The class 'Teacher' has the following attributes: 'name' of type str; 'email' of type str; 'phone' of type str; 'surname' of type str.
+'Student' (role 'schedule9', cardinality 0..*) is associated with 'Schedule' (role 'student8', cardinality 0..*).
+'Grade' (role 'teacher0', cardinality 0..*) is associated with 'Teacher' (role 'grades1', cardinality 0..*).
+'Subject' (role 'notes7', cardinality 0..*) is associated with 'Note' (role 'subject6', cardinality 0..*).
+'Subject' (role 'student5', cardinality 0..*) is associated with 'Student' (role 'subjects4', cardinality 0..*).
+'Student' (role 'grade2', cardinality 0..*) is associated with 'Grade' (role 'students3', cardinality 0..*).

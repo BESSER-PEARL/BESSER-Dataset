@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'User' has the following attributes: 'UserName' of type str; 'Password' of type str; 'UserID' of type int.
+The class 'Shopping_cart' has the following attributes: 'Products' of type str.
+The class 'Product' has the following attributes: 'description' of type str; 'price' of type int; 'name' of type str; 'quantity' of type int; 'ProductID' of type int.
+The class 'Person' has the following attributes: 'Address' of type str; 'Name' of type str; 'Surname' of type str; 'Email' of type str.
+The class 'Order' has the following attributes: 'OrderID' of type int; 'items' of type Shopping_cart; 'Date' of type str; 'Customer' of type Person.
+The class 'Stock' has the following attributes: 'Items' of type str.
+'Person' (role 'user9', cardinality 0..*) is associated with 'User' (role 'person8', cardinality 0..*).
+'Shopping_cart' (role 'product6', cardinality 0..*) is associated with 'Product' (role 'shopping_cart7', cardinality 0..*).
+'Stock' (role 'product4', cardinality 0..*) is associated with 'Product' (role 'stock5', cardinality 0..*).
+'Shopping_cart' (role 'order3', cardinality 0..*) is associated with 'Order' (role 'shopping_cart2', cardinality 0..*).
+'Person' (role 'order1', cardinality 0..*) is associated with 'Order' (role 'person0', cardinality 0..*).

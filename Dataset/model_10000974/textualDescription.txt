@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'Receptionist' has the following attributes: 'PhoneNumber' of type str; 'Email' of type str; 'RId' of type str; 'DateOfBirth' of type str; 'UserId' of type int; 'ReceptionistName' of type str; 'ReceptionistId' of type int.
+The class 'Users' has the following attributes: 'Id' of type int; 'TwoFactorEnabled' of type str; 'SecurityStamp' of type str; 'EmailConfirmed' of type str; 'Email' of type str; 'PhoneNumber' of type str; 'PhoneNumberConfirmed' of type str; 'LockoutEndDateUtc' of type str; 'AccessFailedCount' of type int; 'PasswordHash' of type str; 'UserName' of type str; 'LockoutEnabled' of type str.
+The class 'Doctor' has the following attributes: 'Email' of type str; 'DoctorName' of type str; 'Speciality' of type str; 'DateOfBirth' of type str; 'DId' of type str; 'DoctorId' of type int; 'UserId' of type int; 'PhoneNumber' of type str.
+The class 'Appointment' has the following attributes: 'Did' of type int; 'AppointmentDate' of type str; 'PatientName' of type str; 'Aid' of type str; 'PatientId' of type int; 'Reason' of type str; 'ServiceId' of type int; 'AppointmentId' of type int; 'AppointmentStatus' of type str; 'DoctorName' of type str; 'AppointmentTime' of type str.
+The class 'UserwithRole' has the following attributes: 'RoleId' of type int; 'UserId' of type int.
+The class 'Patient' has the following attributes: 'PhoneNumber' of type str; 'City' of type str; 'DateOfBirth' of type str; 'PId' of type str; 'IsPhoneNumberConfirmed' of type str; 'FirstName' of type str; 'activationcode' of type str; 'State' of type str; 'Email' of type str; 'ZipCode' of type str; 'IsEmailConfirmed' of type str; 'LastName' of type str; 'UserId' of type int; 'PatientId' of type int; 'StreetAddress' of type str.
+The class 'Bill' has the following attributes: 'BillDate' of type str; 'BId' of type str; 'BillId' of type int; 'PatientName' of type str; 'DoctorName' of type str; 'TotalAmount' of type int; 'Did' of type int; 'PId' of type int.
+The class 'DoctorSchedule' has the following attributes: 'AvailableTime' of type str; 'DSid' of type int; 'DoctorId' of type str; 'AvailableDate' of type str.
+The class 'DoctorServices' has the following attributes: 'ServiceId' of type int; 'ServiceDetails' of type str; 'SId' of type str; 'ServicePrice' of type str; 'ServiceName' of type str.
+The class 'UserRoles' has the following attributes: 'Name' of type str; 'Id' of type int.
+'Users' (role 'userwithRole12', cardinality 0..*) is associated with 'UserwithRole' (role 'users13', cardinality 0..*).
+'Doctor' (role 'doctorSchedule2', cardinality 0..*) is associated with 'DoctorSchedule' (role 'doctor3', cardinality 0..*).
+'UserwithRole' (role 'userRoles15', cardinality 0..*) is associated with 'UserRoles' (role 'userwithRole14', cardinality 0..*).
+'Bill' (role 'patient7', cardinality 0..*) is associated with 'Patient' (role 'bill6', cardinality 0..*).
+'Doctor' (role 'appointment1', cardinality 0..*) is associated with 'Appointment' (role 'doctor0', cardinality 0..*).
+'Bill' (role 'doctor5', cardinality 0..*) is associated with 'Doctor' (role 'bill4', cardinality 0..*).
+'Appointment' (role 'doctorServices11', cardinality 0..*) is associated with 'DoctorServices' (role 'appointment10', cardinality 0..*).
+'Appointment' (role 'patient9', cardinality 0..*) is associated with 'Patient' (role 'appointment8', cardinality 0..*).

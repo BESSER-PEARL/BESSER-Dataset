@@ -1,0 +1,6 @@
+The model has 5 class(es).
+The class 'I_Interface' has no attributes.
+The class 'S' has the following attributes: 'v1' of type str.
+The class 'C1' has the following attributes: 'b' of type str.
+The class 'C3' has the following attributes: 'K' of type int.
+The class 'C2' has no attributes.

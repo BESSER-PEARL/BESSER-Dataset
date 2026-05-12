@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'Cashier' has no attributes.
+The class 'SYSTEM' has no attributes.
+The class 'VOTER' has no attributes.
+The class 'People' has the following attributes: 'name' of type str.
+The class 'ADMIN' has no attributes.
+The class 'Worker' has no attributes.

@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class '_LoginCredential' has the following attributes: '_loginid' of type str; '_password' of type str.
+The class 'Farmer' has the following attributes: '_address' of type str; '_phone' of type int; '_username' of type str; '_usertypeid' of type int; '_email' of type str; '_logincredentialsid' of type int.
+The class '_Shipment' has the following attributes: 'orderId' of type int; 'shipmentNumber' of type int.
+The class '_ProductType' has the following attributes: '_type' of type str.
+The class '_PaymentInfo' has the following attributes: '_userid' of type int; 'paymentId' of type int; '_cardno' of type int; '_cvv' of type int; '_cardname' of type str; '_expirydate' of type date.
+The class '_OrderDetail' has the following attributes: '_totalamount' of type int; '_quantity' of type int; 'OrderId' of type int; '_productid' of type int; 'paymentInfoId' of type int; '_userid' of type int; '_orderdate' of type date.
+The class '_Product' has the following attributes: '_producttypeid' of type int; '_name' of type str; '_price' of type int; '_description' of type str; '_stock' of type int.
+'_ProductType' (role 'farmer13', cardinality 0..*) is associated with 'Farmer' (role '_Add_Product_Type12', cardinality 0..*).
+'_Product' (role '_is_in6', cardinality 0..*) is associated with '_OrderDetail' (role '_contains7', cardinality 0..*).
+'_ProductType' (role '_has_products4', cardinality 0..*) is associated with '_Product' (role '_type_of5', cardinality 0..*).
+'_OrderDetail' (role '_PaymentInfo11', cardinality 0..*) is associated with '_PaymentInfo' (role '_OrderDetail10', cardinality 0..*).
+'Farmer' (role '_logs_in_with1', cardinality 0..*) is associated with '_LoginCredential' (role '_for0', cardinality 0..*).
+'Farmer' (role '_ships3', cardinality 0..*) is associated with '_Shipment' (role '_Delivers2', cardinality 0..*).
+'_OrderDetail' (role 'receives9', cardinality 0..*) is associated with 'Farmer' (role '_orders8', cardinality 0..*).

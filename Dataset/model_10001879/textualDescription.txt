@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'C2' has no attributes.
+The class 'C3' has the following attributes: 'long_m' of type str; 'Integer_k' of type int.
+The class 'S1' has the following attributes: 'static_int_v1' of type str; 'double_v2' of type str.
+The class 'C1' has no attributes.

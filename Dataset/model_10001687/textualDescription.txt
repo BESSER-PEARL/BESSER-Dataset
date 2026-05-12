@@ -1,0 +1,35 @@
+The model has 12 class(es).
+The class 'Service' has the following attributes: 'Info' of type str; 'Terms' of type str.
+The class 'Customer_Data' has the following attributes: 'Name' of type str; 'Contact' of type str.
+The class 'Product' has the following attributes: 'Company' of type str.
+The class 'Order' has the following attributes: 'Product' of type str; 'Service' of type str.
+The class 'Terminal' has the following attributes: 'Current_Employee' of type str.
+The class 'Manager' has no attributes.
+The class 'Store' has no attributes.
+The class 'Employee' has no attributes.
+The class 'Inventory' has the following attributes: 'Products' of type str; 'Services' of type str.
+The class 'Online_Portal' has the following attributes: 'StoreLocation' of type str.
+The class 'Customer' has no attributes.
+The class 'Transactions' has the following attributes: 'Customer' of type str; 'Order' of type str.
+'Transactions' (role 'store9', cardinality 0..*) is associated with 'Store' (role 'transactions8', cardinality 0..*).
+'Customer_Data' (role 'store11', cardinality 0..*) is associated with 'Store' (role 'customer_Data10', cardinality 0..*).
+'Customer' (role 'manager30', cardinality 0..*) is associated with 'Manager' (role 'customer31', cardinality 0..*).
+'Store' (role 'product40', cardinality 0..*) is associated with 'Product' (role 'store41', cardinality 0..*).
+'Terminal' (role 'transactions20', cardinality 0..*) is associated with 'Transactions' (role 'terminal21', cardinality 0..*).
+'Terminal' (role 'manager27', cardinality 0..*) is associated with 'Manager' (role 'terminal26', cardinality 0..*).
+'Store' (role 'manager0', cardinality 0..*) is associated with 'Manager' (role 'store1', cardinality 0..*).
+'Customer_Data' (role 'order14', cardinality 0..*) is associated with 'Order' (role 'customer_Data15', cardinality 0..*).
+'Store' (role 'employee2', cardinality 0..*) is associated with 'Employee' (role 'store3', cardinality 0..*).
+'Inventory' (role 'online_Portal33', cardinality 0..*) is associated with 'Online_Portal' (role 'inventory32', cardinality 0..*).
+'Customer_Data' (role 'customer13', cardinality 0..*) is associated with 'Customer' (role 'customer_Data12', cardinality 0..*).
+'Terminal' (role 'employee25', cardinality 0..*) is associated with 'Employee' (role 'terminal24', cardinality 0..*).
+'Online_Portal' (role 'customer39', cardinality 0..*) is associated with 'Customer' (role 'online_Portal38', cardinality 0..*).
+'Transactions' (role 'online_Portal35', cardinality 0..*) is associated with 'Online_Portal' (role 'transactions34', cardinality 0..*).
+'Store' (role 'inventory6', cardinality 0..*) is associated with 'Inventory' (role 'store7', cardinality 0..*).
+'Customer' (role 'employee28', cardinality 0..*) is associated with 'Employee' (role 'customer29', cardinality 0..*).
+'Online_Portal' (role 'customer_Data36', cardinality 0..*) is associated with 'Customer_Data' (role 'online_Portal37', cardinality 0..*).
+'Terminal' (role 'customer_Data22', cardinality 0..*) is associated with 'Customer_Data' (role 'terminal23', cardinality 0..*).
+'Terminal' (role 'inventory18', cardinality 0..*) is associated with 'Inventory' (role 'terminal19', cardinality 0..*).
+'Store' (role 'customer4', cardinality 0..*) is associated with 'Customer' (role 'store5', cardinality 0..*).
+'Transactions' (role 'order16', cardinality 0..*) is associated with 'Order' (role 'transactions17', cardinality 0..*).
+'Service' (role 'store43', cardinality 0..*) is associated with 'Store' (role 'service42', cardinality 0..*).

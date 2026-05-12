@@ -1,0 +1,854 @@
+import inspect
+import pytest
+from hypothesis import given, assume, settings
+import hypothesis.strategies as st
+import copy
+from datetime import date
+
+from python_code import (
+    ClassG,
+    ClassF,
+    ClassE,
+    ClassD,
+    ClassC,
+    ClassB,
+    ClassA,
+    UserBean,
+    ClassV,
+    ClassU,
+    ClassT,
+    ClassS,
+    ClassR,
+    ClassQ,
+    InterfaceO_Interface,
+    ClassP,
+    ClassN,
+    ClassM,
+    ClassL,
+    ClassK,
+    ClassH,
+    ClassJ,
+)
+
+# =============================================================================
+# SECTION 1 — STRUCTURAL TESTS
+# =============================================================================
+
+
+
+def test_classg_is_not_abstract():
+    assert not inspect.isabstract(ClassG)
+
+
+def test_classg_constructor_exists():
+    assert callable(ClassG.__init__)
+
+
+def test_classg_constructor_args():
+    sig = inspect.signature(ClassG.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classf_is_not_abstract():
+    assert not inspect.isabstract(ClassF)
+
+
+def test_classf_constructor_exists():
+    assert callable(ClassF.__init__)
+
+
+def test_classf_constructor_args():
+    sig = inspect.signature(ClassF.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classe_is_not_abstract():
+    assert not inspect.isabstract(ClassE)
+
+
+def test_classe_constructor_exists():
+    assert callable(ClassE.__init__)
+
+
+def test_classe_constructor_args():
+    sig = inspect.signature(ClassE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classd_is_not_abstract():
+    assert not inspect.isabstract(ClassD)
+
+
+def test_classd_constructor_exists():
+    assert callable(ClassD.__init__)
+
+
+def test_classd_constructor_args():
+    sig = inspect.signature(ClassD.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classc_is_not_abstract():
+    assert not inspect.isabstract(ClassC)
+
+
+def test_classc_constructor_exists():
+    assert callable(ClassC.__init__)
+
+
+def test_classc_constructor_args():
+    sig = inspect.signature(ClassC.__init__)
+    params = list(sig.parameters.keys())
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
+    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
+
+def test_classc_has_protectedAttribute():
+    assert hasattr(ClassC, "protectedAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_privateAttribute():
+    assert hasattr(ClassC, "privateAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_publicAttribute():
+    assert hasattr(ClassC, "publicAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "publicAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["publicAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_packageAttribute():
+    assert hasattr(ClassC, "packageAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "packageAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["packageAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classb_is_not_abstract():
+    assert not inspect.isabstract(ClassB)
+
+
+def test_classb_constructor_exists():
+    assert callable(ClassB.__init__)
+
+
+def test_classb_constructor_args():
+    sig = inspect.signature(ClassB.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classa_is_not_abstract():
+    assert not inspect.isabstract(ClassA)
+
+
+def test_classa_constructor_exists():
+    assert callable(ClassA.__init__)
+
+
+def test_classa_constructor_args():
+    sig = inspect.signature(ClassA.__init__)
+    params = list(sig.parameters.keys())
+    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
+    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
+
+def test_classa_has_packageAttribute():
+    assert hasattr(ClassA, "packageAttribute")
+    descriptor = None
+    for klass in ClassA.__mro__:
+        if "packageAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["packageAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classa_has_publicAttribute():
+    assert hasattr(ClassA, "publicAttribute")
+    descriptor = None
+    for klass in ClassA.__mro__:
+        if "publicAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["publicAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classa_has_privateAttribute():
+    assert hasattr(ClassA, "privateAttribute")
+    descriptor = None
+    for klass in ClassA.__mro__:
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classa_has_protectedAttribute():
+    assert hasattr(ClassA, "protectedAttribute")
+    descriptor = None
+    for klass in ClassA.__mro__:
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_userbean_is_not_abstract():
+    assert not inspect.isabstract(UserBean)
+
+
+def test_userbean_constructor_exists():
+    assert callable(UserBean.__init__)
+
+
+def test_userbean_constructor_args():
+    sig = inspect.signature(UserBean.__init__)
+    params = list(sig.parameters.keys())
+    assert "valid" in params, "Missing parameter 'valid'"
+    assert "registration_date" in params, "Missing parameter 'registration_date'"
+    assert "username" in params, "Missing parameter 'username'"
+    assert "company" in params, "Missing parameter 'company'"
+    assert "pass" in params, "Missing parameter 'pass'"
+    assert "email" in params, "Missing parameter 'email'"
+
+def test_userbean_has_valid():
+    assert hasattr(UserBean, "valid")
+    descriptor = None
+    for klass in UserBean.__mro__:
+        if "valid" in klass.__dict__:
+            descriptor = klass.__dict__["valid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_userbean_has_registration_date():
+    assert hasattr(UserBean, "registration_date")
+    descriptor = None
+    for klass in UserBean.__mro__:
+        if "registration_date" in klass.__dict__:
+            descriptor = klass.__dict__["registration_date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_userbean_has_username():
+    assert hasattr(UserBean, "username")
+    descriptor = None
+    for klass in UserBean.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_userbean_has_company():
+    assert hasattr(UserBean, "company")
+    descriptor = None
+    for klass in UserBean.__mro__:
+        if "company" in klass.__dict__:
+            descriptor = klass.__dict__["company"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_userbean_has_pass():
+    assert hasattr(UserBean, "pass")
+    descriptor = None
+    for klass in UserBean.__mro__:
+        if "pass" in klass.__dict__:
+            descriptor = klass.__dict__["pass"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_userbean_has_email():
+    assert hasattr(UserBean, "email")
+    descriptor = None
+    for klass in UserBean.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classv_is_not_abstract():
+    assert not inspect.isabstract(ClassV)
+
+
+def test_classv_constructor_exists():
+    assert callable(ClassV.__init__)
+
+
+def test_classv_constructor_args():
+    sig = inspect.signature(ClassV.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classu_is_not_abstract():
+    assert not inspect.isabstract(ClassU)
+
+
+def test_classu_constructor_exists():
+    assert callable(ClassU.__init__)
+
+
+def test_classu_constructor_args():
+    sig = inspect.signature(ClassU.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classt_is_not_abstract():
+    assert not inspect.isabstract(ClassT)
+
+
+def test_classt_constructor_exists():
+    assert callable(ClassT.__init__)
+
+
+def test_classt_constructor_args():
+    sig = inspect.signature(ClassT.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classs_is_not_abstract():
+    assert not inspect.isabstract(ClassS)
+
+
+def test_classs_constructor_exists():
+    assert callable(ClassS.__init__)
+
+
+def test_classs_constructor_args():
+    sig = inspect.signature(ClassS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classr_is_not_abstract():
+    assert not inspect.isabstract(ClassR)
+
+
+def test_classr_constructor_exists():
+    assert callable(ClassR.__init__)
+
+
+def test_classr_constructor_args():
+    sig = inspect.signature(ClassR.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classq_is_not_abstract():
+    assert not inspect.isabstract(ClassQ)
+
+
+def test_classq_constructor_exists():
+    assert callable(ClassQ.__init__)
+
+
+def test_classq_constructor_args():
+    sig = inspect.signature(ClassQ.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interfaceo_interface_is_not_abstract():
+    assert not inspect.isabstract(InterfaceO_Interface)
+
+
+def test_interfaceo_interface_constructor_exists():
+    assert callable(InterfaceO_Interface.__init__)
+
+
+def test_interfaceo_interface_constructor_args():
+    sig = inspect.signature(InterfaceO_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classp_is_not_abstract():
+    assert not inspect.isabstract(ClassP)
+
+
+def test_classp_constructor_exists():
+    assert callable(ClassP.__init__)
+
+
+def test_classp_constructor_args():
+    sig = inspect.signature(ClassP.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classn_is_not_abstract():
+    assert not inspect.isabstract(ClassN)
+
+
+def test_classn_constructor_exists():
+    assert callable(ClassN.__init__)
+
+
+def test_classn_constructor_args():
+    sig = inspect.signature(ClassN.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classm_is_not_abstract():
+    assert not inspect.isabstract(ClassM)
+
+
+def test_classm_constructor_exists():
+    assert callable(ClassM.__init__)
+
+
+def test_classm_constructor_args():
+    sig = inspect.signature(ClassM.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classl_is_not_abstract():
+    assert not inspect.isabstract(ClassL)
+
+
+def test_classl_constructor_exists():
+    assert callable(ClassL.__init__)
+
+
+def test_classl_constructor_args():
+    sig = inspect.signature(ClassL.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classk_is_not_abstract():
+    assert not inspect.isabstract(ClassK)
+
+
+def test_classk_constructor_exists():
+    assert callable(ClassK.__init__)
+
+
+def test_classk_constructor_args():
+    sig = inspect.signature(ClassK.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classh_is_not_abstract():
+    assert not inspect.isabstract(ClassH)
+
+
+def test_classh_constructor_exists():
+    assert callable(ClassH.__init__)
+
+
+def test_classh_constructor_args():
+    sig = inspect.signature(ClassH.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classj_is_not_abstract():
+    assert not inspect.isabstract(ClassJ)
+
+
+def test_classj_constructor_exists():
+    assert callable(ClassJ.__init__)
+
+
+def test_classj_constructor_args():
+    sig = inspect.signature(ClassJ.__init__)
+    params = list(sig.parameters.keys())
+
+
+# =============================================================================
+# HYPOTHESIS STRATEGIES
+# =============================================================================
+
+safe_text = st.text(
+    alphabet=st.characters(
+        whitelist_categories=("Ll", "Lu", "Nd"),
+        whitelist_characters="_",
+    ),
+    min_size=1,
+).filter(lambda s: s[0].isalpha())
+ClassG_strategy = st.builds(
+    ClassG,
+)
+ClassF_strategy = st.builds(
+    ClassF,
+)
+ClassE_strategy = st.builds(
+    ClassE,
+)
+ClassD_strategy = st.builds(
+    ClassD,
+)
+ClassC_strategy = st.builds(
+    ClassC,
+    protectedAttribute=
+        safe_text,
+    privateAttribute=
+        st.integers(),
+    publicAttribute=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    packageAttribute=
+        safe_text
+)
+ClassB_strategy = st.builds(
+    ClassB,
+)
+ClassA_strategy = st.builds(
+    ClassA,
+    packageAttribute=
+        safe_text,
+    publicAttribute=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    privateAttribute=
+        st.integers(),
+    protectedAttribute=
+        safe_text
+)
+UserBean_strategy = st.builds(
+    UserBean,
+    valid=
+        st.booleans(),
+    registration_date=
+        safe_text,
+    username=
+        safe_text,
+    company=
+        safe_text,
+    pass=
+        safe_text,
+    email=
+        safe_text
+)
+ClassV_strategy = st.builds(
+    ClassV,
+)
+ClassU_strategy = st.builds(
+    ClassU,
+)
+ClassT_strategy = st.builds(
+    ClassT,
+)
+ClassS_strategy = st.builds(
+    ClassS,
+)
+ClassR_strategy = st.builds(
+    ClassR,
+)
+ClassQ_strategy = st.builds(
+    ClassQ,
+)
+InterfaceO_Interface_strategy = st.builds(
+    InterfaceO_Interface,
+)
+ClassP_strategy = st.builds(
+    ClassP,
+)
+ClassN_strategy = st.builds(
+    ClassN,
+)
+ClassM_strategy = st.builds(
+    ClassM,
+)
+ClassL_strategy = st.builds(
+    ClassL,
+)
+ClassK_strategy = st.builds(
+    ClassK,
+)
+ClassH_strategy = st.builds(
+    ClassH,
+)
+ClassJ_strategy = st.builds(
+    ClassJ,
+)
+
+@given(instance=ClassG_strategy)
+@settings(max_examples=50)
+def test_classg_instantiation(instance):
+    assert isinstance(instance, ClassG)
+
+@given(instance=ClassF_strategy)
+@settings(max_examples=50)
+def test_classf_instantiation(instance):
+    assert isinstance(instance, ClassF)
+
+@given(instance=ClassE_strategy)
+@settings(max_examples=50)
+def test_classe_instantiation(instance):
+    assert isinstance(instance, ClassE)
+
+@given(instance=ClassD_strategy)
+@settings(max_examples=50)
+def test_classd_instantiation(instance):
+    assert isinstance(instance, ClassD)
+
+@given(instance=ClassC_strategy)
+@settings(max_examples=50)
+def test_classc_instantiation(instance):
+    assert isinstance(instance, ClassC)
+
+@given(instance=ClassC_strategy)
+def test_classc_protectedAttribute_type(instance):
+    assert isinstance(instance.protectedAttribute, str)
+
+
+@given(instance=ClassC_strategy)
+def test_classc_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
+
+@given(instance=ClassC_strategy)
+def test_classc_privateAttribute_type(instance):
+    assert isinstance(instance.privateAttribute, int)
+
+
+@given(instance=ClassC_strategy)
+def test_classc_privateAttribute_setter(instance):
+    original = instance.privateAttribute
+    instance.privateAttribute = original
+    assert instance.privateAttribute == original
+
+@given(instance=ClassC_strategy)
+def test_classc_publicAttribute_type(instance):
+    assert isinstance(instance.publicAttribute, float)
+
+
+@given(instance=ClassC_strategy)
+def test_classc_publicAttribute_setter(instance):
+    original = instance.publicAttribute
+    instance.publicAttribute = original
+    assert instance.publicAttribute == original
+
+@given(instance=ClassC_strategy)
+def test_classc_packageAttribute_type(instance):
+    assert isinstance(instance.packageAttribute, str)
+
+
+@given(instance=ClassC_strategy)
+def test_classc_packageAttribute_setter(instance):
+    original = instance.packageAttribute
+    instance.packageAttribute = original
+    assert instance.packageAttribute == original
+
+@given(instance=ClassB_strategy)
+@settings(max_examples=50)
+def test_classb_instantiation(instance):
+    assert isinstance(instance, ClassB)
+
+@given(instance=ClassA_strategy)
+@settings(max_examples=50)
+def test_classa_instantiation(instance):
+    assert isinstance(instance, ClassA)
+
+@given(instance=ClassA_strategy)
+def test_classa_packageAttribute_type(instance):
+    assert isinstance(instance.packageAttribute, str)
+
+
+@given(instance=ClassA_strategy)
+def test_classa_packageAttribute_setter(instance):
+    original = instance.packageAttribute
+    instance.packageAttribute = original
+    assert instance.packageAttribute == original
+
+@given(instance=ClassA_strategy)
+def test_classa_publicAttribute_type(instance):
+    assert isinstance(instance.publicAttribute, float)
+
+
+@given(instance=ClassA_strategy)
+def test_classa_publicAttribute_setter(instance):
+    original = instance.publicAttribute
+    instance.publicAttribute = original
+    assert instance.publicAttribute == original
+
+@given(instance=ClassA_strategy)
+def test_classa_privateAttribute_type(instance):
+    assert isinstance(instance.privateAttribute, int)
+
+
+@given(instance=ClassA_strategy)
+def test_classa_privateAttribute_setter(instance):
+    original = instance.privateAttribute
+    instance.privateAttribute = original
+    assert instance.privateAttribute == original
+
+@given(instance=ClassA_strategy)
+def test_classa_protectedAttribute_type(instance):
+    assert isinstance(instance.protectedAttribute, str)
+
+
+@given(instance=ClassA_strategy)
+def test_classa_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
+
+@given(instance=UserBean_strategy)
+@settings(max_examples=50)
+def test_userbean_instantiation(instance):
+    assert isinstance(instance, UserBean)
+
+@given(instance=UserBean_strategy)
+def test_userbean_valid_type(instance):
+    assert isinstance(instance.valid, bool)
+
+
+@given(instance=UserBean_strategy)
+def test_userbean_valid_setter(instance):
+    original = instance.valid
+    instance.valid = original
+    assert instance.valid == original
+
+@given(instance=UserBean_strategy)
+def test_userbean_registration_date_type(instance):
+    assert isinstance(instance.registration_date, str)
+
+
+@given(instance=UserBean_strategy)
+def test_userbean_registration_date_setter(instance):
+    original = instance.registration_date
+    instance.registration_date = original
+    assert instance.registration_date == original
+
+@given(instance=UserBean_strategy)
+def test_userbean_username_type(instance):
+    assert isinstance(instance.username, str)
+
+
+@given(instance=UserBean_strategy)
+def test_userbean_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
+@given(instance=UserBean_strategy)
+def test_userbean_company_type(instance):
+    assert isinstance(instance.company, str)
+
+
+@given(instance=UserBean_strategy)
+def test_userbean_company_setter(instance):
+    original = instance.company
+    instance.company = original
+    assert instance.company == original
+
+@given(instance=UserBean_strategy)
+def test_userbean_pass_type(instance):
+    assert isinstance(instance.pass, str)
+
+
+@given(instance=UserBean_strategy)
+def test_userbean_pass_setter(instance):
+    original = instance.pass
+    instance.pass = original
+    assert instance.pass == original
+
+@given(instance=UserBean_strategy)
+def test_userbean_email_type(instance):
+    assert isinstance(instance.email, str)
+
+
+@given(instance=UserBean_strategy)
+def test_userbean_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+@given(instance=ClassV_strategy)
+@settings(max_examples=50)
+def test_classv_instantiation(instance):
+    assert isinstance(instance, ClassV)
+
+@given(instance=ClassU_strategy)
+@settings(max_examples=50)
+def test_classu_instantiation(instance):
+    assert isinstance(instance, ClassU)
+
+@given(instance=ClassT_strategy)
+@settings(max_examples=50)
+def test_classt_instantiation(instance):
+    assert isinstance(instance, ClassT)
+
+@given(instance=ClassS_strategy)
+@settings(max_examples=50)
+def test_classs_instantiation(instance):
+    assert isinstance(instance, ClassS)
+
+@given(instance=ClassR_strategy)
+@settings(max_examples=50)
+def test_classr_instantiation(instance):
+    assert isinstance(instance, ClassR)
+
+@given(instance=ClassQ_strategy)
+@settings(max_examples=50)
+def test_classq_instantiation(instance):
+    assert isinstance(instance, ClassQ)
+
+@given(instance=InterfaceO_Interface_strategy)
+@settings(max_examples=50)
+def test_interfaceo_interface_instantiation(instance):
+    assert isinstance(instance, InterfaceO_Interface)
+
+@given(instance=ClassP_strategy)
+@settings(max_examples=50)
+def test_classp_instantiation(instance):
+    assert isinstance(instance, ClassP)
+
+@given(instance=ClassN_strategy)
+@settings(max_examples=50)
+def test_classn_instantiation(instance):
+    assert isinstance(instance, ClassN)
+
+@given(instance=ClassM_strategy)
+@settings(max_examples=50)
+def test_classm_instantiation(instance):
+    assert isinstance(instance, ClassM)
+
+@given(instance=ClassL_strategy)
+@settings(max_examples=50)
+def test_classl_instantiation(instance):
+    assert isinstance(instance, ClassL)
+
+@given(instance=ClassK_strategy)
+@settings(max_examples=50)
+def test_classk_instantiation(instance):
+    assert isinstance(instance, ClassK)
+
+@given(instance=ClassH_strategy)
+@settings(max_examples=50)
+def test_classh_instantiation(instance):
+    assert isinstance(instance, ClassH)
+
+@given(instance=ClassJ_strategy)
+@settings(max_examples=50)
+def test_classj_instantiation(instance):
+    assert isinstance(instance, ClassJ)

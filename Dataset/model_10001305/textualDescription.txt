@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'UserName' has the following attributes: 'FirstName' of type str; 'LastName' of type str.
+The class 'OrderProcess' has the following attributes: 'UserID' of type int; 'OrderPickUp' of type int; 'Total' of type str; 'OrderID' of type int; 'MemberShipPayment' of type int; 'PromoCode' of type str; 'IsMember' of type int.
+The class 'User_Account' has the following attributes: 'FullName' of type str; 'RegDate' of type str; 'UserAddress' of type str; 'UserID' of type str; 'Email' of type str; 'DateOfBirth' of type str.
+The class 'Premium_Members' has the following attributes: 'MembershipEndDate' of type str; 'MembershipStartDate' of type str; 'PromoCode' of type str.
+The class 'Regular_Members' has the following attributes: 'TriedPremium' of type int; 'TrialStartDate' of type str.
+The class 'Product' has the following attributes: 'VendorID' of type int; 'InventoryMinQuantity' of type int; 'Description' of type str; 'InventoryQuantity' of type int; 'ProductID' of type int.
+The class 'Promos' has the following attributes: 'PromoCode' of type str; 'Name' of type str; 'StartDate' of type str; 'Discount' of type str; 'EndDate' of type str.
+The class 'UserAddress' has the following attributes: 'StreetName' of type str; 'StreetNum' of type int; 'PostCode' of type str; 'City' of type str.
+The class 'ShoppingCart' has the following attributes: 'Promo' of type Promos; 'ShoppingCartID' of type int; 'Quantity' of type int; 'OrderID' of type int; 'UserID' of type str; 'Total' of type str; 'ProductID' of type int.
+The class 'Vendor' has the following attributes: 'Contact_Number' of type int; 'VendorID' of type int; 'Name' of type str; 'Email' of type str; 'Address' of type str.
+'Premium_Members' (role 'Premium_Members_Promos_012', cardinality 0..*) is associated with 'Promos' (role 'Premium_Members_Promos_113', cardinality 0..*).
+'User_Account' (role 'orderProcess6', cardinality 0..*) is associated with 'OrderProcess' (role 'user_Account7', cardinality 0..*).
+'UserName' (role 'Customer_ShoppingCart_11', cardinality 0..*) is associated with 'User_Account' (role 'Customer_ShoppingCart_00', cardinality 0..*).
+'ShoppingCart' (role 'promos9', cardinality 0..*) is associated with 'Promos' (role 'shoppingCart8', cardinality 0..*).
+'Product' (role 'Product_Vendor_014', cardinality 0..*) is associated with 'Vendor' (role 'Product_Vendor_115', cardinality 0..*).
+'OrderProcess' (role 'ShoppingCart_Order_13', cardinality 0..*) is associated with 'ShoppingCart' (role 'ShoppingCart_Order_02', cardinality 0..*).
+'User_Account' (role 'userAddress10', cardinality 0..*) is associated with 'UserAddress' (role 'user_Account11', cardinality 0..*).
+'ShoppingCart' (role 'Order_Regular_Members_04', cardinality 0..*) is associated with 'User_Account' (role 'Order_Regular_Members_15', cardinality 0..*).

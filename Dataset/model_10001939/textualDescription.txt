@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'Mensaje_Interface' has no attributes.
+The class 'RoomService' has the following attributes: 'itemsCollection' of type str; 'idiomas' of type str; 'niveles' of type str; 'roomsCollection' of type str.
+The class 'Comment' has the following attributes: 'Content' of type str; 'Created' of type str; 'CommentID' of type int; 'Project' of type str; 'User' of type str.
+The class 'Activity' has the following attributes: 'ActivityType' of type int; 'User' of type str; 'Seen' of type bool; 'ActivitySubType' of type int; 'PrevValue' of type str; 'NewValue' of type str; 'Project' of type str; 'ActivityID' of type int.
+The class 'Usuario_Interface' has no attributes.
+The class 'ChatService' has the following attributes: 'itemsCollection' of type str; 'salasCollection' of type str; 'attribute' of type str; 'attribute2' of type str; 'attribute3' of type str; 'usuario' of type Usuario_Interface.
+The class 'AuthenticationService' has the following attributes: 'user' of type str; 'attribute4' of type str; 'attribute' of type str; 'attribute3' of type str; 'role' of type String; 'attribute2' of type str; 'authState' of type str.
+The class 'Room_Interface' has no attributes.
+The class 'Attachment' has the following attributes: 'Project' of type str; 'Path' of type str; 'Created' of type str; 'Size' of type str; 'User' of type str; 'AttachmentID' of type int; 'Name' of type str; 'Extension' of type str.
+The class 'Role' has the following attributes: 'descripcion' of type str; 'nombre' of type String; 'Name' of type String.
+The class 'SpeechRecognitionService' has the following attributes: '_attr' of type str; 'grabando' of type bool; 'speechRecognition' of type str.
+The enumeration 'String' does not specify any literals.
+'Usuario_Interface' (role 'room2', cardinality 0..*) is associated with 'Room_Interface' (role 'usuario3', cardinality 0..*).
+'ChatService' (role 'mensaje7', cardinality 0..*) is associated with 'Mensaje_Interface' (role 'chatService6', cardinality 0..*).
+'Mensaje_Interface' (role 'speechRecognitionService12', cardinality 0..*) is associated with 'SpeechRecognitionService' (role 'mensaje13', cardinality 0..*).
+'Room_Interface' (role 'chatService9', cardinality 0..*) is associated with 'ChatService' (role 'room8', cardinality 0..*).
+'Mensaje_Interface' (role 'usuario1', cardinality 0..*) is associated with 'Usuario_Interface' (role 'mensaje0', cardinality 0..*).
+'Usuario_Interface' (role 'authenticationService16', cardinality 0..*) is associated with 'AuthenticationService' (role 'usuario17', cardinality 0..*).
+'ChatService' (role 'speechRecognitionService14', cardinality 0..*) is associated with 'SpeechRecognitionService' (role 'chatService15', cardinality 0..*).
+'AuthenticationService' (role 'authenticationService19', cardinality 0..*) is associated with 'AuthenticationService' (role 'authenticationService18', cardinality 0..*).
+'Usuario_Interface' (role 'role4', cardinality 0..*) is associated with 'Role' (role 'usuario5', cardinality 0..*).
+'Room_Interface' (role 'roomService10', cardinality 0..*) is associated with 'RoomService' (role 'room11', cardinality 0..*).

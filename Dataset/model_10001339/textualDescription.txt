@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'C2' has the following attributes: 'b1' of type bool.
+The class 'C3' has the following attributes: 'i3' of type int.
+The class 'C1' has the following attributes: 'i3' of type int.
+'C2' (role 'c11', cardinality 0..*) is associated with 'C1' (role 'c20', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'Admin' has no attributes.
+The class 'Profesor' has the following attributes: 'Assigned_Courses' of type str.
+The class 'Database' has the following attributes: 'Schedules' of type Database; 'Materials' of type Database; 'Grades' of type Database; 'Accounts' of type Database.
+The class 'Interface_Interface' has no attributes.
+The class 'Login' has no attributes.
+The class 'Student' has the following attributes: 'Year' of type str.
+The class 'Curso' has the following attributes: 'CourseNumber' of type str; 'Course_Teacher' of type Profesor; 'CourseName' of type str.
+The class 'Usuario' has the following attributes: 'Last_Name' of type str; 'Password' of type str; 'ID_Number' of type int; 'First_Name' of type str.
+'Database' (role 'teacher15', cardinality 0..*) is associated with 'Profesor' (role 'upload_to_database14', cardinality 0..*).
+'Usuario' (role 'has_user2', cardinality 0..*) is associated with 'Database' (role 'User_Database_13', cardinality 0..*).
+'Curso' (role 'teacher11', cardinality 0..*) is associated with 'Profesor' (role 'Teaches10', cardinality 0..*).
+'Login' (role 'user13', cardinality 0..*) is associated with 'Usuario' (role 'login12', cardinality 0..*).
+'Student' (role 'course1', cardinality 0..*) is associated with 'Curso' (role 'takes_course0', cardinality 0..*).
+'Student' (role 'database8', cardinality 0..*) is associated with 'Database' (role 'Student_Database_19', cardinality 0..*).
+'Database' (role 'login5', cardinality 0..*) is associated with 'Login' (role 'verify_account4', cardinality 0..*).
+'Database' (role 'admin6', cardinality 0..*) is associated with 'Admin' (role 'Database_Admin_17', cardinality 0..*).

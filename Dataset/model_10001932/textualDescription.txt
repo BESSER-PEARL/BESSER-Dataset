@@ -1,0 +1,29 @@
+The model has 18 class(es).
+The class 'Reserved_or_reference_books_external' has no attributes.
+The class 'Staff_Actor' has no attributes.
+The class 'Aid_Patrons_external' has no attributes.
+The class 'Patron_Actor' has no attributes.
+The class 'Patron' has no attributes.
+The class 'Books_external' has no attributes.
+The class 'Fees_for_overdue_books_external' has no attributes.
+The class 'Computers_external' has no attributes.
+The class 'Acquiring_Retiring_Books_external' has no attributes.
+The class 'Staff_Actor1' has no attributes.
+The class 'MultiMedia' has no attributes.
+The class 'Periodicals_external' has no attributes.
+The class 'Resources_Component' has no attributes.
+The class 'StaffMember' has no attributes.
+The class 'Student_Actor' has no attributes.
+The class 'Faculty_Actor' has no attributes.
+The class 'Multimedia_external' has no attributes.
+The class 'Books' has the following attributes: 'title' of type str.
+'Staff_Actor1' (role 'aid_Patrons18', cardinality 0..*) is associated with 'Aid_Patrons_external' (role 'staff19', cardinality 0..*).
+'Reserved_or_reference_books_external' (role 'aid_Patrons3', cardinality 0..*) is associated with 'Aid_Patrons_external' (role 'reserved_or_reference_books2', cardinality 0..*).
+'Patron_Actor' (role 'multimedia6', cardinality 0..*) is associated with 'Multimedia_external' (role 'patron7', cardinality 0..*).
+'Patron_Actor' (role 'fees_for_overdue_books16', cardinality 0..*) is associated with 'Fees_for_overdue_books_external' (role 'patron17', cardinality 0..*).
+'Computers_external' (role 'aid_Patrons1', cardinality 0..*) is associated with 'Aid_Patrons_external' (role 'computers0', cardinality 0..*).
+'Patron_Actor' (role 'reserved_or_reference_books8', cardinality 0..*) is associated with 'Reserved_or_reference_books_external' (role 'patron9', cardinality 0..*).
+'Books_external' (role 'patron5', cardinality 0..*) is associated with 'Patron_Actor' (role 'books4', cardinality 0..*).
+'Periodicals_external' (role 'patron11', cardinality 0..*) is associated with 'Patron_Actor' (role 'periodicals10', cardinality 0..*).
+'Patron_Actor' (role 'computers12', cardinality 0..*) is associated with 'Computers_external' (role 'patron13', cardinality 0..*).
+'Acquiring_Retiring_Books_external' (role 'staff15', cardinality 0..*) is associated with 'Staff_Actor1' (role 'acquiring_Retiring14', cardinality 0..*).

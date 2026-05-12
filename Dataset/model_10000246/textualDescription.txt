@@ -1,0 +1,21 @@
+The model has 13 class(es).
+The class 'Parking_Space' has the following attributes: 'Space_Number' of type int; 'Space_Type' of type Parking_Space_Type; 'Floor_Number' of type Parking_Level.
+The class 'Parking_Structure' has the following attributes: 'Address' of type str; 'Type' of type Structure_Type; 'City' of type str.
+The class 'Convertible' has no attributes.
+The class 'Boolean_external' has no attributes.
+The class 'Regular_Space' has no attributes.
+The class 'Parking_Level' has the following attributes: 'Fl_Number' of type int.
+The class 'Truck' has no attributes.
+The class 'Car' has no attributes.
+The class 'Electric' has no attributes.
+The class 'Class' has no attributes.
+The class 'Vehicle_Interface' has no attributes.
+The class 'Motorbike' has no attributes.
+The class 'Handicapped_Space' has no attributes.
+The enumeration 'Enumeration2' does not specify any literals.
+The enumeration 'Structure_Type' does not specify any literals.
+The enumeration 'Enumeration' does not specify any literals.
+The enumeration 'Parking_Space_Type' does not specify any literals.
+'Parking_Space' (role 'vehicle2', cardinality 0..*) is associated with 'Vehicle_Interface' (role 'has3', cardinality 0..*).
+'Parking_Level' (role 'Composed_Of0', cardinality 0..*) is associated with 'Boolean_external' (role 'floor1', cardinality 0..*).
+'Parking_Structure' (role 'parking_Level4', cardinality 0..*) is associated with 'Parking_Level' (role 'has5', cardinality 0..*).

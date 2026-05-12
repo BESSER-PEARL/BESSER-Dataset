@@ -1,0 +1,14 @@
+The model has 10 class(es).
+The class 'HandDeck' has the following attributes: 'naturalBlackJack' of type bool; 'pair' of type bool; 'stand' of type bool; 'bust' of type bool.
+The class 'Deck' has no attributes.
+The class 'Gambler_Interface' has no attributes.
+The class 'StandardCard' has the following attributes: 'standardCard' of type bool; 'suit' of type str; 'cardName' of type CardName.
+The class 'Player' has the following attributes: 'name' of type str; 'pocket' of type int.
+The class 'JokerCard' has the following attributes: 'jokerCard' of type bool; 'red' of type bool.
+The class 'BJPlayer' has the following attributes: 'hands' of type str; 'bet' of type int.
+The class 'StandCard' has no attributes.
+The class 'Dealer_Interface' has no attributes.
+The class 'PlayingCard' has the following attributes: 'faceUp' of type bool; 'jokerCard' of type bool; 'standardCard' of type bool.
+The enumeration 'CardName1' does not specify any literals.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'CardName' does not specify any literals.

@@ -1,0 +1,578 @@
+import inspect
+import pytest
+from hypothesis import given, assume, settings
+import hypothesis.strategies as st
+import copy
+from datetime import date
+
+from python_code import (
+    PACS,
+    Mariage,
+    union,
+    Personne,
+    C3,
+    C2,
+    CC,
+    Z,
+    BB,
+    AA,
+    R,
+    Y,
+    C,
+    B,
+    A,
+)
+
+# =============================================================================
+# SECTION 1 — STRUCTURAL TESTS
+# =============================================================================
+
+
+
+def test_pacs_is_not_abstract():
+    assert not inspect.isabstract(PACS)
+
+
+def test_pacs_constructor_exists():
+    assert callable(PACS.__init__)
+
+
+def test_pacs_constructor_args():
+    sig = inspect.signature(PACS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mariage_is_not_abstract():
+    assert not inspect.isabstract(Mariage)
+
+
+def test_mariage_constructor_exists():
+    assert callable(Mariage.__init__)
+
+
+def test_mariage_constructor_args():
+    sig = inspect.signature(Mariage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_union_is_not_abstract():
+    assert not inspect.isabstract(union)
+
+
+def test_union_constructor_exists():
+    assert callable(union.__init__)
+
+
+def test_union_constructor_args():
+    sig = inspect.signature(union.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_personne_is_not_abstract():
+    assert not inspect.isabstract(Personne)
+
+
+def test_personne_constructor_exists():
+    assert callable(Personne.__init__)
+
+
+def test_personne_constructor_args():
+    sig = inspect.signature(Personne.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_c3_is_not_abstract():
+    assert not inspect.isabstract(C3)
+
+
+def test_c3_constructor_exists():
+    assert callable(C3.__init__)
+
+
+def test_c3_constructor_args():
+    sig = inspect.signature(C3.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_c2_is_not_abstract():
+    assert not inspect.isabstract(C2)
+
+
+def test_c2_constructor_exists():
+    assert callable(C2.__init__)
+
+
+def test_c2_constructor_args():
+    sig = inspect.signature(C2.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cc_is_not_abstract():
+    assert not inspect.isabstract(CC)
+
+
+def test_cc_constructor_exists():
+    assert callable(CC.__init__)
+
+
+def test_cc_constructor_args():
+    sig = inspect.signature(CC.__init__)
+    params = list(sig.parameters.keys())
+    assert "attC2" in params, "Missing parameter 'attC2'"
+    assert "attC1" in params, "Missing parameter 'attC1'"
+
+def test_cc_has_attC2():
+    assert hasattr(CC, "attC2")
+    descriptor = None
+    for klass in CC.__mro__:
+        if "attC2" in klass.__dict__:
+            descriptor = klass.__dict__["attC2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cc_has_attC1():
+    assert hasattr(CC, "attC1")
+    descriptor = None
+    for klass in CC.__mro__:
+        if "attC1" in klass.__dict__:
+            descriptor = klass.__dict__["attC1"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_z_is_not_abstract():
+    assert not inspect.isabstract(Z)
+
+
+def test_z_constructor_exists():
+    assert callable(Z.__init__)
+
+
+def test_z_constructor_args():
+    sig = inspect.signature(Z.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bb_is_not_abstract():
+    assert not inspect.isabstract(BB)
+
+
+def test_bb_constructor_exists():
+    assert callable(BB.__init__)
+
+
+def test_bb_constructor_args():
+    sig = inspect.signature(BB.__init__)
+    params = list(sig.parameters.keys())
+    assert "attB" in params, "Missing parameter 'attB'"
+
+def test_bb_has_attB():
+    assert hasattr(BB, "attB")
+    descriptor = None
+    for klass in BB.__mro__:
+        if "attB" in klass.__dict__:
+            descriptor = klass.__dict__["attB"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aa_is_not_abstract():
+    assert not inspect.isabstract(AA)
+
+
+def test_aa_constructor_exists():
+    assert callable(AA.__init__)
+
+
+def test_aa_constructor_args():
+    sig = inspect.signature(AA.__init__)
+    params = list(sig.parameters.keys())
+    assert "attA" in params, "Missing parameter 'attA'"
+
+def test_aa_has_attA():
+    assert hasattr(AA, "attA")
+    descriptor = None
+    for klass in AA.__mro__:
+        if "attA" in klass.__dict__:
+            descriptor = klass.__dict__["attA"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_r_is_not_abstract():
+    assert not inspect.isabstract(R)
+
+
+def test_r_constructor_exists():
+    assert callable(R.__init__)
+
+
+def test_r_constructor_args():
+    sig = inspect.signature(R.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_y_is_not_abstract():
+    assert not inspect.isabstract(Y)
+
+
+def test_y_constructor_exists():
+    assert callable(Y.__init__)
+
+
+def test_y_constructor_args():
+    sig = inspect.signature(Y.__init__)
+    params = list(sig.parameters.keys())
+    assert "attY" in params, "Missing parameter 'attY'"
+
+def test_y_has_attY():
+    assert hasattr(Y, "attY")
+    descriptor = None
+    for klass in Y.__mro__:
+        if "attY" in klass.__dict__:
+            descriptor = klass.__dict__["attY"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_c_is_not_abstract():
+    assert not inspect.isabstract(C)
+
+
+def test_c_constructor_exists():
+    assert callable(C.__init__)
+
+
+def test_c_constructor_args():
+    sig = inspect.signature(C.__init__)
+    params = list(sig.parameters.keys())
+    assert "attC2" in params, "Missing parameter 'attC2'"
+    assert "attC1" in params, "Missing parameter 'attC1'"
+
+def test_c_has_attC2():
+    assert hasattr(C, "attC2")
+    descriptor = None
+    for klass in C.__mro__:
+        if "attC2" in klass.__dict__:
+            descriptor = klass.__dict__["attC2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_c_has_attC1():
+    assert hasattr(C, "attC1")
+    descriptor = None
+    for klass in C.__mro__:
+        if "attC1" in klass.__dict__:
+            descriptor = klass.__dict__["attC1"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_b_is_not_abstract():
+    assert not inspect.isabstract(B)
+
+
+def test_b_constructor_exists():
+    assert callable(B.__init__)
+
+
+def test_b_constructor_args():
+    sig = inspect.signature(B.__init__)
+    params = list(sig.parameters.keys())
+    assert "attB" in params, "Missing parameter 'attB'"
+
+def test_b_has_attB():
+    assert hasattr(B, "attB")
+    descriptor = None
+    for klass in B.__mro__:
+        if "attB" in klass.__dict__:
+            descriptor = klass.__dict__["attB"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_a_is_not_abstract():
+    assert not inspect.isabstract(A)
+
+
+def test_a_constructor_exists():
+    assert callable(A.__init__)
+
+
+def test_a_constructor_args():
+    sig = inspect.signature(A.__init__)
+    params = list(sig.parameters.keys())
+    assert "attA" in params, "Missing parameter 'attA'"
+
+def test_a_has_attA():
+    assert hasattr(A, "attA")
+    descriptor = None
+    for klass in A.__mro__:
+        if "attA" in klass.__dict__:
+            descriptor = klass.__dict__["attA"]
+            break
+    assert isinstance(descriptor, property)
+
+
+# =============================================================================
+# HYPOTHESIS STRATEGIES
+# =============================================================================
+
+safe_text = st.text(
+    alphabet=st.characters(
+        whitelist_categories=("Ll", "Lu", "Nd"),
+        whitelist_characters="_",
+    ),
+    min_size=1,
+).filter(lambda s: s[0].isalpha())
+PACS_strategy = st.builds(
+    PACS,
+)
+Mariage_strategy = st.builds(
+    Mariage,
+)
+union_strategy = st.builds(
+    union,
+)
+Personne_strategy = st.builds(
+    Personne,
+)
+C3_strategy = st.builds(
+    C3,
+)
+C2_strategy = st.builds(
+    C2,
+)
+CC_strategy = st.builds(
+    CC,
+    attC2=
+        st.booleans(),
+    attC1=
+        st.integers()
+)
+Z_strategy = st.builds(
+    Z,
+)
+BB_strategy = st.builds(
+    BB,
+    attB=
+        st.integers()
+)
+AA_strategy = st.builds(
+    AA,
+    attA=
+        safe_text
+)
+R_strategy = st.builds(
+    R,
+)
+Y_strategy = st.builds(
+    Y,
+    attY=
+        safe_text
+)
+C_strategy = st.builds(
+    C,
+    attC2=
+        st.booleans(),
+    attC1=
+        st.integers()
+)
+B_strategy = st.builds(
+    B,
+    attB=
+        st.integers()
+)
+A_strategy = st.builds(
+    A,
+    attA=
+        safe_text
+)
+
+@given(instance=PACS_strategy)
+@settings(max_examples=50)
+def test_pacs_instantiation(instance):
+    assert isinstance(instance, PACS)
+
+@given(instance=Mariage_strategy)
+@settings(max_examples=50)
+def test_mariage_instantiation(instance):
+    assert isinstance(instance, Mariage)
+
+@given(instance=union_strategy)
+@settings(max_examples=50)
+def test_union_instantiation(instance):
+    assert isinstance(instance, union)
+
+@given(instance=Personne_strategy)
+@settings(max_examples=50)
+def test_personne_instantiation(instance):
+    assert isinstance(instance, Personne)
+
+@given(instance=C3_strategy)
+@settings(max_examples=50)
+def test_c3_instantiation(instance):
+    assert isinstance(instance, C3)
+
+@given(instance=C2_strategy)
+@settings(max_examples=50)
+def test_c2_instantiation(instance):
+    assert isinstance(instance, C2)
+
+@given(instance=CC_strategy)
+@settings(max_examples=50)
+def test_cc_instantiation(instance):
+    assert isinstance(instance, CC)
+
+@given(instance=CC_strategy)
+def test_cc_attC2_type(instance):
+    assert isinstance(instance.attC2, bool)
+
+
+@given(instance=CC_strategy)
+def test_cc_attC2_setter(instance):
+    original = instance.attC2
+    instance.attC2 = original
+    assert instance.attC2 == original
+
+@given(instance=CC_strategy)
+def test_cc_attC1_type(instance):
+    assert isinstance(instance.attC1, int)
+
+
+@given(instance=CC_strategy)
+def test_cc_attC1_setter(instance):
+    original = instance.attC1
+    instance.attC1 = original
+    assert instance.attC1 == original
+
+@given(instance=Z_strategy)
+@settings(max_examples=50)
+def test_z_instantiation(instance):
+    assert isinstance(instance, Z)
+
+@given(instance=BB_strategy)
+@settings(max_examples=50)
+def test_bb_instantiation(instance):
+    assert isinstance(instance, BB)
+
+@given(instance=BB_strategy)
+def test_bb_attB_type(instance):
+    assert isinstance(instance.attB, int)
+
+
+@given(instance=BB_strategy)
+def test_bb_attB_setter(instance):
+    original = instance.attB
+    instance.attB = original
+    assert instance.attB == original
+
+@given(instance=AA_strategy)
+@settings(max_examples=50)
+def test_aa_instantiation(instance):
+    assert isinstance(instance, AA)
+
+@given(instance=AA_strategy)
+def test_aa_attA_type(instance):
+    assert isinstance(instance.attA, str)
+
+
+@given(instance=AA_strategy)
+def test_aa_attA_setter(instance):
+    original = instance.attA
+    instance.attA = original
+    assert instance.attA == original
+
+@given(instance=R_strategy)
+@settings(max_examples=50)
+def test_r_instantiation(instance):
+    assert isinstance(instance, R)
+
+@given(instance=Y_strategy)
+@settings(max_examples=50)
+def test_y_instantiation(instance):
+    assert isinstance(instance, Y)
+
+@given(instance=Y_strategy)
+def test_y_attY_type(instance):
+    assert isinstance(instance.attY, str)
+
+
+@given(instance=Y_strategy)
+def test_y_attY_setter(instance):
+    original = instance.attY
+    instance.attY = original
+    assert instance.attY == original
+
+@given(instance=C_strategy)
+@settings(max_examples=50)
+def test_c_instantiation(instance):
+    assert isinstance(instance, C)
+
+@given(instance=C_strategy)
+def test_c_attC2_type(instance):
+    assert isinstance(instance.attC2, bool)
+
+
+@given(instance=C_strategy)
+def test_c_attC2_setter(instance):
+    original = instance.attC2
+    instance.attC2 = original
+    assert instance.attC2 == original
+
+@given(instance=C_strategy)
+def test_c_attC1_type(instance):
+    assert isinstance(instance.attC1, int)
+
+
+@given(instance=C_strategy)
+def test_c_attC1_setter(instance):
+    original = instance.attC1
+    instance.attC1 = original
+    assert instance.attC1 == original
+
+@given(instance=B_strategy)
+@settings(max_examples=50)
+def test_b_instantiation(instance):
+    assert isinstance(instance, B)
+
+@given(instance=B_strategy)
+def test_b_attB_type(instance):
+    assert isinstance(instance.attB, int)
+
+
+@given(instance=B_strategy)
+def test_b_attB_setter(instance):
+    original = instance.attB
+    instance.attB = original
+    assert instance.attB == original
+
+@given(instance=A_strategy)
+@settings(max_examples=50)
+def test_a_instantiation(instance):
+    assert isinstance(instance, A)
+
+@given(instance=A_strategy)
+def test_a_attA_type(instance):
+    assert isinstance(instance.attA, str)
+
+
+@given(instance=A_strategy)
+def test_a_attA_setter(instance):
+    original = instance.attA
+    instance.attA = original
+    assert instance.attA == original

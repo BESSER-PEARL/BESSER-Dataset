@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'cardFace' has the following attributes: 'Club' of type cardFace; 'has_a' of type cardValue.
+The class 'Player' has the following attributes: 'has_a' of type card.
+The class 'Deck' has the following attributes: 'creates_and_shuffles' of type card.
+The class 'ElevensGame' has the following attributes: 'creates_Play_and_Deck' of type Deck.
+The class 'card' has the following attributes: 'has_a' of type cardFace; 'has_a1' of type cardValue.
+The class 'cardValue' has the following attributes: 'Jack' of type cardValue; 'King' of type cardValue; 'Ace' of type cardValue; 'Queen' of type cardValue.

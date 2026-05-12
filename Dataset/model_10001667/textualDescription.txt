@@ -1,0 +1,32 @@
+The model has 20 class(es).
+The class 'Users' has the following attributes: 'HTID' of type str.
+The class 'Motion_Sensor' has no attributes.
+The class 'End_Of_Day' has the following attributes: 'EOT' of type int.
+The class 'Hub_Device' has the following attributes: 'Update' of type float; 'Status' of type bool.
+The class 'Door' has the following attributes: 'DoorID' of type int.
+The class 'Start_Of_Day' has the following attributes: 'SOT' of type int.
+The class 'Home_Security_System' has the following attributes: 'UserID' of type int.
+The class 'int' has no attributes.
+The class 'Admin' has the following attributes: 'AdminID' of type int.
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+The class 'Light' has the following attributes: 'LightID' of type str.
+The class 'UDP_Controller' has the following attributes: 'ip_session' of type str.
+The class 'Camera' has the following attributes: 'CameraID' of type int.
+The class 'RFID_Sensor' has no attributes.
+The class 'PressureSensor' has no attributes.
+The class 'Display' has the following attributes: 'Coffee' of type str; 'TimeID' of type str; 'DishWasher' of type str; 'Alarm' of type str; 'WashingMachine' of type str.
+The class 'Manager' has the following attributes: 'MangagerID' of type int.
+The class 'UDP_Socket' has the following attributes: 'socket' of type int.
+The class 'Sensor' has the following attributes: 'SensorType' of type int; 'SensorID' of type int.
+The class 'Employee' has the following attributes: 'EmployeeID' of type int.
+'Alert' (role 'home_Security_System13', cardinality 0..*) is associated with 'Home_Security_System' (role 'alert12', cardinality 0..*).
+'Hub_Device' (role 'sensor15', cardinality 0..*) is associated with 'Sensor' (role 'system14', cardinality 0..*).
+'Door' (role 'sensor1', cardinality 0..*) is associated with 'Sensor' (role 'door0', cardinality 0..*).
+'Hub_Device' (role 'houseHolds16', cardinality 0..*) is associated with 'Display' (role 'system17', cardinality 0..*).
+'Manager' (role 'homeTheatre7', cardinality 0..*) is associated with 'Users' (role 'speakers6', cardinality 0..*).
+'End_Of_Day' (role 'houseHolds11', cardinality 0..*) is associated with 'Display' (role 'end_Of_Day10', cardinality 0..*).
+'Admin' (role 'homeTheatre5', cardinality 0..*) is associated with 'Users' (role 'tV4', cardinality 0..*).
+'Home_Security_System' (role 'system20', cardinality 0..*) is associated with 'Hub_Device' (role 'home_Security_System21', cardinality 0..*).
+'Start_Of_Day' (role 'houseHolds9', cardinality 0..*) is associated with 'Display' (role 'start_Of_Day8', cardinality 0..*).
+'Door' (role 'camera2', cardinality 0..*) is associated with 'Camera' (role 'door3', cardinality 0..*).
+'Users' (role 'system18', cardinality 0..*) is associated with 'Hub_Device' (role 'homeTheatre19', cardinality 0..*).

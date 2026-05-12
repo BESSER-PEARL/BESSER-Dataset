@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'Ward' has the following attributes: 'capacity' of type int; 'name' of type str.
+The class 'Patient' has the following attributes: 'id' of type int; 'sickness' of type str; 'prescriptions' of type str; 'specialReqs' of type str; 'allergies' of type str.
+The class 'Team' has the following attributes: 'name' of type str.
+The class 'Hospital' has the following attributes: 'address' of type str; 'phone' of type str; 'name' of type str.
+The class 'Person' has the following attributes: 'gender' of type Gender; 'age' of type int; 'address' of type str; 'phone' of type str.
+The class 'Doctor' has the following attributes: 'locations' of type str; 'specialty' of type str.
+The class 'ConsultantDoctor' has no attributes.
+The class 'JuniorDoctor' has no attributes.
+The enumeration 'Gender' does not specify any literals.
+'Team' (role 'hospital3', cardinality 0..*) is associated with 'Hospital' (role 'team2', cardinality 0..*).
+'Team' (role 'consultantDoctor9', cardinality 0..*) is associated with 'ConsultantDoctor' (role 'team8', cardinality 0..*).
+'Patient' (role 'consultantDoctor13', cardinality 0..*) is associated with 'ConsultantDoctor' (role 'patient12', cardinality 0..*).
+'Hospital' (role 'ward0', cardinality 0..*) is associated with 'Ward' (role 'hospital1', cardinality 0..*).
+'Patient' (role 'doctor11', cardinality 0..*) is associated with 'Doctor' (role 'patient10', cardinality 0..*).
+'Doctor' (role 'team5', cardinality 0..*) is associated with 'Team' (role 'doctor4', cardinality 0..*).
+'ConsultantDoctor' (role 'juniorDoctor14', cardinality 0..*) is associated with 'JuniorDoctor' (role 'consultantDoctor15', cardinality 0..*).
+'Patient' (role 'ward6', cardinality 0..*) is associated with 'Ward' (role 'patient7', cardinality 0..*).

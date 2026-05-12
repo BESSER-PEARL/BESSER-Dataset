@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'User' has the following attributes: 'Password' of type str; 'loginStatus' of type str; 'User_Id' of type str.
+The class 'Customer' has the following attributes: 'email' of type str; 'credit_card_info' of type str; 'shipping_info' of type str; 'customer' of type str; 'address' of type str.
+The class 'Order_Details' has the following attributes: 'orderId' of type int; 'productName' of type str; 'subtotal' of type int; 'productId' of type int; 'quantity' of type int; 'unitcost' of type int.
+The class 'Administrator' has the following attributes: 'email' of type str; 'adminName' of type str.
+The class 'Item' has the following attributes: 'pieceAvailable' of type int; 'unitcost' of type int; 'name' of type str.
+The class 'Shipping_Info' has the following attributes: 'Shipping_Id' of type int; 'Shipping_Cost' of type int; 'Shipping_Type' of type str; 'ShippingRegionId' of type int.
+The class 'Orders' has the following attributes: 'dateCreated' of type str; 'Date' of type str; 'CustomerId' of type str; 'status' of type str; 'OrderId' of type int; 'ShippingId' of type str; 'customerName' of type str.
+The class 'Products' has the following attributes: 'totral' of type int; 'racknumber' of type int.
+The class 'Shopping_Cart' has the following attributes: 'productId' of type int; 'dateAdded' of type int; 'Quantity' of type int; 'CartId' of type int.
+'User' (role 'administrator14', cardinality 0..*) is associated with 'Administrator' (role 'user15', cardinality 0..*).
+'Customer' (role 'user0', cardinality 0..*) is associated with 'User' (role 'customer1', cardinality 0..*).
+'Item' (role 'products11', cardinality 0..*) is associated with 'Products' (role 'item10', cardinality 0..*).
+'Customer' (role 'orders4', cardinality 0..*) is associated with 'Orders' (role 'customer5', cardinality 0..*).
+'Shopping_Cart' (role 'customer3', cardinality 0..*) is associated with 'Customer' (role 'shopping_Cart2', cardinality 0..*).
+'Products' (role 'Administrator_Products_113', cardinality 0..*) is associated with 'Administrator' (role 'products12', cardinality 0..*).
+'Orders' (role 'order_Details8', cardinality 0..*) is associated with 'Order_Details' (role 'orders9', cardinality 0..*).
+'Shipping_Info' (role 'orders7', cardinality 0..*) is associated with 'Orders' (role 'shipping_Info6', cardinality 0..*).

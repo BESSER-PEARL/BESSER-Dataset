@@ -1,0 +1,23 @@
+The model has 18 class(es).
+The class 'ContaBancaria' has the following attributes: 'NumeroConta' of type int; 'NomeConta' of type str; 'Saldo' of type float.
+The class 'Conta_Conjunta' has the following attributes: 'id' of type int.
+The class 'FixedAccount' has the following attributes: 'chequeBookNo' of type str.
+The class 'Autenticavel' has the following attributes: 'Autenticar' of type str; 'Senha' of type str.
+The class 'SistemaInterno' has the following attributes: 'Entrar' of type IAutenticavel; '_attr1' of type str; '_attr' of type IAutenticavel.
+The class 'CRUD' has the following attributes: 'Adicionar_Conta' of type str; 'Remover_Conta' of type str.
+The class 'Remover_Conta' has no attributes.
+The class 'Conta_Corrente' has the following attributes: 'CPF' of type int; 'Nome' of type str; 'Senha' of type float; 'Taxa_de_Movimenta__o' of type float.
+The class 'Banco' has the following attributes: 'NomeBanco' of type str.
+The class 'Transferencia' has the following attributes: 'Valor' of type float; 'Nome' of type str.
+The class 'Conta_Normal' has the following attributes: 'id' of type int.
+The class 'IAutenticavel' has the following attributes: 'Autenticar' of type str.
+The class 'Conta_Poupan_a' has the following attributes: 'Senha' of type float; 'Nome' of type str; 'CPF' of type int.
+The class 'SalvarConta' has the following attributes: 'noticeGiven' of type bool; 'interestRate' of type float.
+The class 'Cofre' has the following attributes: 'Dinheiro_Armazenado' of type float; 'Emprestimo_Total' of type float.
+The class 'Deposito' has the following attributes: 'Nome' of type str; 'Valor' of type float.
+The class 'Emprestimo' has the following attributes: 'Valor' of type float.
+The class 'Class' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.
+'Autenticavel' (role 'contaBancaria4', cardinality 0..*) is associated with 'ContaBancaria' (role 'autenticavel5', cardinality 0..*).
+'IAutenticavel' (role 'i3', cardinality 0..*) is associated with 'IAutenticavel' (role 'i2', cardinality 0..*).
+'ContaBancaria' (role 'bank1', cardinality 0..*) is associated with 'Banco' (role 'bankAccount0', cardinality 0..*).

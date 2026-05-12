@@ -1,0 +1,46 @@
+The model has 36 class(es).
+The class 'fsdf' has the following attributes: 'fdasf' of type int.
+The class 'Warehouse_department_Actor' has no attributes.
+The class 'Supper_System_Confirm_payment_UseCase' has no attributes.
+The class 'Supper_System_Pay_Shipping_Fees_UseCase' has no attributes.
+The class 'Customer1_Actor1' has no attributes.
+The class 'Supper_System_Collect_package_UseCase' has no attributes.
+The class 'delivery_man_Actor' has no attributes.
+The class 'Supper_System_Checkout_UseCase' has no attributes.
+The class 'Supper_System_Create_account_UseCase' has no attributes.
+The class 'Warehouse_man_Actor' has no attributes.
+The class 'Credit_Card_company_Actor' has no attributes.
+The class 'Supper_System_Sign_delivery_notice_UseCase' has no attributes.
+The class 'Supper_System_Verify_Customer_information_UseCase' has no attributes.
+The class 'Supper_System_Deliver_Package_UseCase' has no attributes.
+The class 'Supper_System_Return_defective_items_UseCase' has no attributes.
+The class 'Supper_System_Search_product_UseCase' has no attributes.
+The class 'Supper_System_Add_product_UseCase' has no attributes.
+The class 'Customer1_Actor' has no attributes.
+The class 'Supper_System_View_Product_UseCase' has no attributes.
+The class 'Supper_System_Start_Shopping_UseCase' has no attributes.
+The class 'prepare_package_UseCase' has no attributes.
+The class 'Supper_System_Print_invoice_UseCase' has no attributes.
+The class 'Supper_System_Check_item_availability_UseCase' has no attributes.
+The class 'Supper_System_Update_order_list_UseCase' has no attributes.
+The class 'Supper_System_Create_order_list_UseCase' has no attributes.
+The class 'Supper_System_prepare_package_UseCase' has no attributes.
+The class 'Supper_System_Save_invoice_UseCase' has no attributes.
+The class 'Supper_System_schedule_for_delivery_UseCase' has no attributes.
+The class 'Supper_System_Receive_package_UseCase' has no attributes.
+The class 'djkd' has no attributes.
+The class 'Supper_System_Login_UseCase' has no attributes.
+The class 'Supper_System_Return_items_UseCase' has no attributes.
+The class 'Supper_System_View_invoice_on_screen_UseCase' has no attributes.
+The class 'Class' has no attributes.
+The class 'Supper_System_Update_unit_number_UseCase' has no attributes.
+The class 'Supper_System_Email_reminder_UseCase' has no attributes.
+'Customer1_Actor1' (role 'email_reminder5', cardinality 0..*) is associated with 'Supper_System_Email_reminder_UseCase' (role 'customer14', cardinality 0..*).
+'Supper_System_Login_UseCase' (role 'customer115', cardinality 0..*) is associated with 'Customer1_Actor' (role 'create_account14', cardinality 0..*).
+'delivery_man_Actor' (role 'schedule_for_delivery7', cardinality 0..*) is associated with 'Supper_System_Deliver_Package_UseCase' (role 'delivery_man6', cardinality 0..*).
+'Supper_System_Sign_delivery_notice_UseCase' (role 'delivery_man8', cardinality 0..*) is associated with 'delivery_man_Actor' (role 'sign_delivery_notice9', cardinality 0..*).
+'Supper_System_Checkout_UseCase' (role 'warehouse_department2', cardinality 0..*) is associated with 'Warehouse_department_Actor' (role 'create_order_list3', cardinality 0..*).
+'Supper_System_Receive_package_UseCase' (role 'customer117', cardinality 0..*) is associated with 'Customer1_Actor1' (role 'receive_package16', cardinality 0..*).
+'Supper_System_prepare_package_UseCase' (role 'warehouse_man13', cardinality 0..*) is associated with 'Warehouse_man_Actor' (role 'prepare_package12', cardinality 0..*).
+'Customer1_Actor' (role 'create_account11', cardinality 0..*) is associated with 'Supper_System_Create_account_UseCase' (role 'customer110', cardinality 0..*).
+'Credit_Card_company_Actor' (role 'verify_Customer_information1', cardinality 0..*) is associated with 'Supper_System_Verify_Customer_information_UseCase' (role 'credit_Card_company0', cardinality 0..*).

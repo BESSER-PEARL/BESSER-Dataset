@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'Admin' has the following attributes: 'AminName' of type str; 'AdminID' of type int; 'UserLogin' of type int.
+The class 'Voter' has the following attributes: 'Name' of type str; 'Address' of type str; 'Eligibilty' of type bool; 'student_faculty_ID' of type int; 'Age' of type int.
+The class 'Post' has the following attributes: 'PostDesc' of type str; 'PostId' of type int; 'PostElectionId' of type int.
+The class 'BallotInformation' has the following attributes: 'BallotPropBallotID' of type int; 'BallotPropResults' of type int; 'BallotElectionID' of type int; 'BallotID' of type int; 'BallotPropID' of type int; 'BallotVotersID' of type int.
+The class 'Election' has the following attributes: 'ElectionID' of type int; 'ElectionDate' of type str; 'ElectionName' of type str; 'ElectionCriteria' of type str.
+The class 'Candidate' has the following attributes: 'Candidate_PostID' of type int; 'Candidate_Name' of type str; 'candidate_ID' of type int; 'CandidatePartyName' of type str.
+'Admin' (role 'ballotInformation18', cardinality 0..*) is associated with 'BallotInformation' (role 'admin19', cardinality 0..*).
+'Voter' (role 'election4', cardinality 0..*) is associated with 'Election' (role 'voter5', cardinality 0..*).
+'BallotInformation' (role 'election3', cardinality 0..*) is associated with 'Election' (role 'ballotInformation2', cardinality 0..*).
+'Election' (role 'candidate11', cardinality 0..*) is associated with 'Candidate' (role 'election10', cardinality 0..*).
+'Admin' (role 'candidate14', cardinality 0..*) is associated with 'Candidate' (role 'admin15', cardinality 0..*).
+'Election' (role 'admin17', cardinality 0..*) is associated with 'Admin' (role 'election16', cardinality 0..*).
+'Admin' (role 'voter13', cardinality 0..*) is associated with 'Voter' (role 'admin12', cardinality 0..*).
+'Candidate' (role 'ballotInformation0', cardinality 0..*) is associated with 'BallotInformation' (role 'candidate1', cardinality 0..*).
+'Voter' (role 'post6', cardinality 0..*) is associated with 'Post' (role 'voter7', cardinality 0..*).
+'BallotInformation' (role 'post9', cardinality 0..*) is associated with 'Post' (role 'ballotInformation8', cardinality 0..*).

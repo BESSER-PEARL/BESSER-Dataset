@@ -1,0 +1,63 @@
+The model has 46 class(es).
+The class 'account_management_UseCase1' has no attributes.
+The class 'accoutUser' has the following attributes: 'passwordUser' of type str; 'emailUser' of type str; 'dateRegister' of type str; 'idUser' of type int; 'codeConfirm' of type str; 'idCompany' of type int.
+The class 'Login_UseCase1' has no attributes.
+The class 'account_management_UseCase' has no attributes.
+The class 'mapCarExchange' has the following attributes: 'timeExchange' of type str; 'mapOnCar' of type str; 'idCar' of type int; 'idMap' of type int; 'mapBelowCar' of type str.
+The class 'Manager_Actor4' has no attributes.
+The class 'customer_management_UseCase' has no attributes.
+The class 'View_customers_information_UseCase' has no attributes.
+The class 'confirm_information_UseCase' has no attributes.
+The class 'search_UseCase' has no attributes.
+The class 'Update_vehicles_information_UseCase' has no attributes.
+The class 'Search_the_route_UseCase' has no attributes.
+The class 'Manager_Actor1' has no attributes.
+The class 'Manager_Actor' has no attributes.
+The class 'book_ticket_UseCase' has no attributes.
+The class 'infoCompany' has the following attributes: 'addressCompany' of type str; 'nameCompany' of type str; 'showSafe' of type str; 'phoneCompany' of type str; 'describeCompany' of type str; 'dateUpdate' of type str; 'idCompany' of type int; 'dateEstablish' of type str; 'dateRegister' of type str.
+The class 'search_customers_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'choose_vehicle_UseCase' has no attributes.
+The class 'customer_management_UseCase1' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'Delete_vehicles_UseCase' has no attributes.
+The class 'Ticket' has the following attributes: 'idCustomer' of type int; 'positionSeat' of type str; 'idTicket' of type int; 'statusSeat' of type int; 'timeExchange' of type str; 'positionSeatBelow' of type str; 'numberSeat' of type int; 'code' of type str; 'idCar' of type int.
+The class 'call_for_customers_UseCase' has no attributes.
+The class 'vehicle_management_UseCase1' has no attributes.
+The class 'vehicle_management_UseCase' has no attributes.
+The class 'Manager_Actor2' has no attributes.
+The class 'Login_UseCase2' has no attributes.
+The class 'make_payment_UseCase' has no attributes.
+The class 'View_vehicles_information_UseCase' has no attributes.
+The class 'statistical_reporting_UseCase1' has no attributes.
+The class 'View_account_information_UseCase' has no attributes.
+The class 'Car' has the following attributes: 'fareCar' of type str; 'statusCar' of type int; 'mapOnCar' of type str; 'numberPlatesCar' of type str; 'imageLinkCar' of type str; 'phoneCar' of type str; 'nameCar' of type str; 'positionEndCar' of type str; 'timeStartCar' of type str; 'mapBelowCar' of type str; 'idUser' of type int; 'classifyCar' of type int; 'idCar' of type int; 'positionStartCar' of type str.
+The class 'statistical_reporting_UseCase' has no attributes.
+The class 'Login_UseCase3' has no attributes.
+The class 'Customer_Actor1' has no attributes.
+The class 'Account_settings_UseCase' has no attributes.
+The class 'confirm_booking_UseCase' has no attributes.
+The class 'Customer' has the following attributes: 'nameCustomer' of type str; 'phoneCustomer' of type str; 'emailCustomer' of type str; 'idCustomer' of type int.
+The class 'Use_Actor' has no attributes.
+The class 'Book_ticket_UseCase' has no attributes.
+The class 'choose_seats_UseCase' has no attributes.
+The class 'Report_by_revenue_UseCase' has no attributes.
+The class 'Manager_Actor3' has no attributes.
+The class 'Report_by_ticket_amount_UseCase' has no attributes.
+The class 'cancel_booking_UseCase' has no attributes.
+'Customer_Actor' (role 'search0', cardinality 0..*) is associated with 'Search_the_route_UseCase' (role 'use1', cardinality 0..*).
+'Manager_Actor' (role 'vehicle_management8', cardinality 0..*) is associated with 'vehicle_management_UseCase' (role 'manager9', cardinality 0..*).
+'Manager_Actor1' (role 'account_management14', cardinality 0..*) is associated with 'account_management_UseCase1' (role 'manager15', cardinality 0..*).
+'Ticket' (role 'Customer_Customer_028', cardinality 0..*) is associated with 'Customer' (role 'Customer_Customer_129', cardinality 0..*).
+'Manager_Actor' (role 'customer_management4', cardinality 0..*) is associated with 'customer_management_UseCase' (role 'manager5', cardinality 0..*).
+'Car' (role 'accoutUser_accoutUser_024', cardinality 0..*) is associated with 'accoutUser' (role 'accoutUser_accoutUser_125', cardinality 0..*).
+'Manager_Actor2' (role 'customer_management16', cardinality 0..*) is associated with 'customer_management_UseCase1' (role 'manager17', cardinality 0..*).
+'Car' (role 'Car_Car2_127', cardinality 0..*) is associated with 'Ticket' (role 'Car_Car2_026', cardinality 0..*).
+'Manager_Actor' (role 'account_management6', cardinality 0..*) is associated with 'account_management_UseCase' (role 'manager7', cardinality 0..*).
+'vehicle_management_UseCase1' (role 'manager19', cardinality 0..*) is associated with 'Manager_Actor3' (role 'vehicle_management18', cardinality 0..*).
+'Manager_Actor' (role 'statistical_reporting10', cardinality 0..*) is associated with 'statistical_reporting_UseCase' (role 'manager11', cardinality 0..*).
+'book_ticket_UseCase' (role 'customer13', cardinality 0..*) is associated with 'Customer_Actor1' (role 'booking_tickets12', cardinality 0..*).
+'Car' (role 'Car_Car_123', cardinality 0..*) is associated with 'mapCarExchange' (role 'Car_Car_022', cardinality 0..*).
+'Book_ticket_UseCase' (role 'use3', cardinality 0..*) is associated with 'Customer_Actor' (role 'useCase2', cardinality 0..*).
+'infoCompany' (role 'infoCompany_infoCompany_131', cardinality 0..*) is associated with 'accoutUser' (role 'infoCompany_infoCompany_030', cardinality 0..*).
+'Manager_Actor4' (role 'statistical_reporting20', cardinality 0..*) is associated with 'statistical_reporting_UseCase1' (role 'manager21', cardinality 0..*).

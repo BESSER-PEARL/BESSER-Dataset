@@ -1,0 +1,13 @@
+The model has 9 class(es).
+The class 'Patient' has the following attributes: 'room' of type int; 'duration' of type int; 'hasroom' of type bool; 'disease' of type str; 'hasdoc' of type bool.
+The class 'doctor' has the following attributes: 'patient' of type str; 'weekappointment' of type str.
+The class 'Room' has the following attributes: '_nurs' of type nurse; 'room_type' of type str; 'capasittity' of type int; 'patients' of type str; 'available' of type bool; 'num' of type int.
+The class 'It' has the following attributes: 'password' of type str; 'name' of type str.
+The class 'MainWindow' has the following attributes: '_logininit' of type It; 'nursess' of type str; 'roomss' of type str; '_Loginnurs' of type employee; 'itss' of type str; 'doctorss' of type str; '_logicdoc' of type doctor; 'UI' of type str; 'patientss' of type str.
+The class 'nurse' has the following attributes: '_rom' of type Room.
+The class 'Person' has the following attributes: 'name' of type str; 'age' of type int.
+The class 'employee' has the following attributes: 'password' of type str; 'department' of type str.
+The class 'appointment' has the following attributes: 'title' of type str; 'day' of type int; 'minute' of type int; 'duration' of type int; 'hour' of type int.
+'Patient' (role 'doctor4', cardinality 0..*) is associated with 'doctor' (role 'patient_25', cardinality 0..*).
+'Patient' (role 'room1', cardinality 0..*) is associated with 'Room' (role 'patient0', cardinality 0..*).
+'Room' (role 'nurse3', cardinality 0..*) is associated with 'nurse' (role 'room2', cardinality 0..*).

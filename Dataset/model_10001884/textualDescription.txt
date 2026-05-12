@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Player' has the following attributes: 'game' of type Game; 'name' of type str; 'id' of type int; 'hand' of type Hand; 'cards' of type str.
+The class 'Hand' has the following attributes: 'player' of type Player; 'id' of type int; 'cards' of type str; 'game' of type Game.
+The class 'Game' has the following attributes: 'status' of type str; 'name' of type str; 'id' of type str; 'deck' of type Deck; 'players' of type str.
+The class 'Deck' has the following attributes: 'players' of type str; 'id' of type int; 'attribute' of type str; 'attribute2' of type str; 'cards' of type str.
+The class 'Card' has the following attributes: 'name' of type str; 'strength' of type str; 'id' of type int.
+'Hand' (role 'player3', cardinality 0..*) is associated with 'Player' (role 'hand2', cardinality 0..*).
+'Deck' (role 'card4', cardinality 0..*) is associated with 'Card' (role 'deck5', cardinality 0..*).
+'Player' (role 'game1', cardinality 0..*) is associated with 'Game' (role 'player0', cardinality 0..*).
+'Deck' (role 'hand7', cardinality 0..*) is associated with 'Hand' (role 'deck6', cardinality 0..*).
+'Deck' (role 'game9', cardinality 0..*) is associated with 'Game' (role 'deck28', cardinality 0..*).

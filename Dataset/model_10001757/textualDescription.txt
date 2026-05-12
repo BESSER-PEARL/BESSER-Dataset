@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'Directorio' has the following attributes: 'Introducir' of type str.
+The class 'Direccion' has the following attributes: 'Ciudad' of type str; 'Nombre' of type str; 'Codigo_Postal' of type int; 'Pais' of type str.
+The class 'Foto_de_perfil' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Contacto' has the following attributes: 'Nombre' of type str; 'Correo' of type str.
+The class 'Telefono' has the following attributes: 'Prefijo' of type int; 'Codigo_de_Area' of type int; 'Numero' of type int.
+'Contacto' (role 'direccion4', cardinality 0..*) is associated with 'Direccion' (role 'contacto5', cardinality 0..*).
+'Contacto' (role 'directorio1', cardinality 0..*) is associated with 'Directorio' (role 'contacto0', cardinality 0..*).
+'Contacto' (role 'direccion_Principal2', cardinality 0..*) is associated with 'Direccion' (role 'contacto3', cardinality 0..*).

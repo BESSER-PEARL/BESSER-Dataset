@@ -1,0 +1,49 @@
+The model has 37 class(es).
+The class 'TAvanzar1' has no attributes.
+The class 'TPagarBanco1' has the following attributes: 'monto' of type int.
+The class 'CasillaTarjeta' has no attributes.
+The class 'TSalirCarcel' has no attributes.
+The class 'Monopoly1' has the following attributes: 'attribute' of type str.
+The class 'TCobrarJugadores' has no attributes.
+The class 'Monopoly' has no attributes.
+The class 'TPagarJugadores' has no attributes.
+The class 'Propiedad' has no attributes.
+The class 'TAvanzarPagarDoble1' has no attributes.
+The class 'TPagarPorEdificios' has no attributes.
+The class 'Jugador' has no attributes.
+The class 'TituloServicio' has no attributes.
+The class 'IrACarcel' has no attributes.
+The class 'Ferrocarril' has no attributes.
+The class 'TCobrarBanco' has no attributes.
+The class 'Casilla' has no attributes.
+The class 'TAvanzarPagarDoble' has no attributes.
+The class 'Dados' has no attributes.
+The class 'Impuestos' has no attributes.
+The class 'TCobrarBanco1' has no attributes.
+The class 'TIrACarcel1' has no attributes.
+The class 'ParqueoLibre' has no attributes.
+The class 'Salida' has no attributes.
+The class 'Carcel' has no attributes.
+The class 'TituloFerrocarril' has no attributes.
+The class 'TCobrarJugadores1' has the following attributes: 'monto' of type int.
+The class 'TAvanzar' has no attributes.
+The class 'TPagarPorEdificios1' has no attributes.
+The class 'Tarjeta1' has the following attributes: 'descripcion' of type str; 'tipoDeCarta' of type str.
+The class 'TIrACarcel' has no attributes.
+The class 'Servicio' has no attributes.
+The class 'TPagarJugadores1' has the following attributes: 'monto' of type int.
+The class 'Tarjeta' has no attributes.
+The class 'TPagarBanco' has no attributes.
+The class 'TituloPropiedad' has no attributes.
+The class 'Titulo' has no attributes.
+'Propiedad' (role 'Propiedad_TituloPropiedad_010', cardinality 0..*) is associated with 'TituloPropiedad' (role 'Propiedad_TituloPropiedad_111', cardinality 0..*).
+'Monopoly' (role '_actual20', cardinality 0..*) is associated with 'Jugador' (role 'Monopoly_Jugador2_121', cardinality 0..*).
+'Servicio' (role 'Servicio_TituloServicio_06', cardinality 0..*) is associated with 'TituloServicio' (role 'Servicio_TituloServicio_17', cardinality 0..*).
+'TSalirCarcel' (role 'Jugador_TSalirCarcel_115', cardinality 0..*) is associated with 'Jugador' (role 'Jugador_TSalirCarcel_014', cardinality 0..*).
+'Jugador' (role 'Monopoly_Jugador_119', cardinality 0..*) is associated with 'Monopoly' (role 'Monopoly_Jugador_018', cardinality 0..*).
+'Dados' (role 'Monopoly_Dados_15', cardinality 0..*) is associated with 'Monopoly' (role 'Monopoly_Dados_04', cardinality 0..*).
+'Monopoly' (role '_tablero16', cardinality 0..*) is associated with 'Casilla' (role 'Monopoly_Casilla_117', cardinality 0..*).
+'Ferrocarril' (role 'Ferrocarril_TituloFerrocarril_08', cardinality 0..*) is associated with 'TituloFerrocarril' (role 'Ferrocarril_TituloFerrocarril_19', cardinality 0..*).
+'Jugador' (role 'Jugador_Titulo_012', cardinality 0..*) is associated with 'Titulo' (role 'Jugador_Titulo_113', cardinality 0..*).
+'Monopoly' (role '_arcaComunal2', cardinality 0..*) is associated with 'Tarjeta' (role 'monopoly3', cardinality 0..*).
+'Monopoly' (role '_fortuna0', cardinality 0..*) is associated with 'Tarjeta' (role 'Monopoly_Tarjeta_11', cardinality 0..*).

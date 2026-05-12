@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'Deck' has no attributes.
+The class 'Card' has the following attributes: 'rank' of type str; 'pointValue' of type int; 'suit' of type str.
+The class 'CardTester' has no attributes.
+The enumeration 'Suit' does not specify any literals.

@@ -1,0 +1,14 @@
+The model has 9 class(es).
+The class 'Management_ManagerTest' has no attributes.
+The class 'techStaff_Developer' has no attributes.
+The class 'techStaff_DatabaseAdmin' has no attributes.
+The class 'Management_Manager' has the following attributes: 'deptName' of type str.
+The class 'Staff_Employee' has the following attributes: 'nationalInsurance' of type str; 'name' of type str; 'salary' of type float.
+The class 'techStaff_DeveloperTest' has no attributes.
+The class 'Management_Director' has the following attributes: 'budget' of type float.
+The class 'Management_DirectorTest' has no attributes.
+The class 'techStaff_DatabaseAdminTest' has no attributes.
+'Management_Director' (role 'directortest6', cardinality 0..*) is associated with 'Management_DirectorTest' (role 'director7', cardinality 0..*).
+'techStaff_Developer' (role 'developertest2', cardinality 0..*) is associated with 'techStaff_DeveloperTest' (role 'developer3', cardinality 0..*).
+'Management_Manager' (role 'managertest4', cardinality 0..*) is associated with 'Management_ManagerTest' (role 'manager5', cardinality 0..*).
+'techStaff_DatabaseAdmin' (role 'databaseadmintest0', cardinality 0..*) is associated with 'techStaff_DatabaseAdminTest' (role 'databaseAdmin1', cardinality 0..*).

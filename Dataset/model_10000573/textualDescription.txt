@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'login' has the following attributes: 'logoutapp' of type str; 'password' of type str; 'loginattempt' of type int; 'lockout' of type int; 'username' of type str; 'loginapp' of type str.
+The class 'ClassJ' has no attributes.
+The class 'fire_alarm_system' has the following attributes: 'fire_alarm_system_on' of type bool.
+The class 'timelog' has the following attributes: 'seconds' of type int; 'year' of type int; 'month' of type int; 'hour' of type int; 'minutes' of type int; 'day' of type int.
+The class 'door_alarm_system' has the following attributes: 'door_alarm_system' of type bool.
+The class 'eventlog' has the following attributes: 'event_id' of type int; 'event_time' of type int; 'event_info' of type str.
+The class 'smoke_sensor' has the following attributes: 'smoke_sensor_id' of type int; 'smoke_sensor_status' of type bool; 'smoke_sensor_location' of type str; 'smoke_level_breach' of type bool.
+The class 'camera_records' has the following attributes: 'camera_location' of type str; 'camera_status_on' of type bool; 'camera_id' of type int.
+The class 'owner_details' has the following attributes: 'ownerName' of type str.
+The class 'flood_alarm_system' has the following attributes: 'flood_alarm_system' of type bool.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'Notification_System' has the following attributes: 'PublicSafetyPage' of type int; 'OwnerEmail' of type str; 'OwnerNum__Integer' of type str; 'PublicSafetyNumber' of type int.
+The class 'temp_sensor' has the following attributes: 'temp_sensor_id' of type int; 'temp_sensor_location' of type str; 'temp_level_breach' of type bool; 'temp_sensor_status' of type bool.
+The class 'door_sensor' has the following attributes: 'door_location' of type str; 'door_sensor_id' of type int; 'door_open_status' of type bool.
+The class 'flood_sensor' has the following attributes: 'flood_sensor_loaction' of type str; 'waterlevel_breach_status' of type bool; 'flood_sensor_id' of type int; 'flood_sensor_status' of type bool.
+The class 'control_panel' has the following attributes: 'system_on' of type bool.
+'Notification_System' (role 'timelog23', cardinality 0..*) is associated with 'timelog' (role 'notification_System22', cardinality 0..*).
+'fire_alarm_system' (role 'fire_alarm_system25', cardinality 0..*) is associated with 'fire_alarm_system' (role 'fire_alarm_system24', cardinality 0..*).
+'fire_alarm_system' (role 'smoke_sensor4', cardinality 0..*) is associated with 'smoke_sensor' (role 'fire_alarm_system5', cardinality 0..*).
+'eventlog' (role 'fire_alarm_system12', cardinality 0..*) is associated with 'fire_alarm_system' (role 'eventlog13', cardinality 0..*).
+'door_alarm_system' (role 'control_panel30', cardinality 0..*) is associated with 'control_panel' (role 'door_alarm_system31', cardinality 0..*).
+'timelog' (role 'eventlog21', cardinality 0..*) is associated with 'eventlog' (role 'timelog20', cardinality 0..*).
+'owner_details' (role 'owner_details_login_00', cardinality 0..*) is associated with 'login' (role 'owner_details_login_11', cardinality 0..*).
+'flood_alarm_system' (role 'eventlog15', cardinality 0..*) is associated with 'eventlog' (role 'flood_alarm_system14', cardinality 0..*).
+'eventlog' (role 'assoc_02', cardinality 0..*) is associated with 'login' (role 'assoc_13', cardinality 0..*).
+'fire_alarm_system' (role 'temp_sensor6', cardinality 0..*) is associated with 'temp_sensor' (role 'fire_alarm_system7', cardinality 0..*).
+'door_sensor' (role 'door_alarm_system11', cardinality 0..*) is associated with 'door_alarm_system' (role 'door_sensor10', cardinality 0..*).
+'eventlog' (role 'door_alarm_system17', cardinality 0..*) is associated with 'door_alarm_system' (role 'eventlog16', cardinality 0..*).
+'fire_alarm_system' (role 'control_panel26', cardinality 0..*) is associated with 'control_panel' (role 'fire_alarm_system27', cardinality 0..*).
+'control_panel' (role 'flood_alarm_system29', cardinality 0..*) is associated with 'flood_alarm_system' (role 'control_panel28', cardinality 0..*).
+'control_panel' (role 'camera_records33', cardinality 0..*) is associated with 'camera_records' (role 'control_panel32', cardinality 0..*).
+'flood_alarm_system' (role 'flood_sensor8', cardinality 0..*) is associated with 'flood_sensor' (role 'flood_alarm_system9', cardinality 0..*).
+'Notification_System' (role 'control_panel18', cardinality 0..*) is associated with 'control_panel' (role 'notification_System19', cardinality 0..*).

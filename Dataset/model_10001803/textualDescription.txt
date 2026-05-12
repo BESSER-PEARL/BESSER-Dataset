@@ -1,0 +1,9 @@
+The model has 6 class(es).
+The class 'Exame' has the following attributes: 'Especialista' of type str; 'Medico' of type str; 'TipoExame' of type str; 'Sede' of type str.
+The class 'Agendamento' has the following attributes: 'Dia_e_Horario' of type str; 'Sede' of type str; 'TipoAgendamento' of type str; 'Especialista' of type str; 'Medico' of type str.
+The class 'Consulta' has the following attributes: 'Especialista' of type str; 'TipoConsulta' of type str; 'Medico' of type str; 'Sede' of type str.
+The class 'Paciente' has the following attributes: 'Endereco' of type str; 'Sexo' of type str; 'Nacionalidade' of type str; 'CPF' of type Paciente; 'Email' of type str; 'CPF1' of type int; 'Telefone' of type int; 'Celular' of type int; 'RG' of type int; 'Sobrenome' of type str; 'CEP' of type int; 'Cidade' of type str; 'EstadoCivil' of type str; 'Estado' of type str; 'DataNascimento' of type str; 'ConvenioMedico' of type str; 'Nome' of type str.
+The class 'Funcion_rio' has the following attributes: 'Senha' of type str; 'Usuario' of type str.
+The class 'M_dico' has the following attributes: 'Especialidade' of type str; 'CPF' of type int; 'Nome' of type str.
+'Agendamento' (role 'consulta2', cardinality 0..*) is associated with 'Consulta' (role 'agendamento3', cardinality 0..*).
+'Agendamento' (role 'exame0', cardinality 0..*) is associated with 'Exame' (role 'agendamento1', cardinality 0..*).

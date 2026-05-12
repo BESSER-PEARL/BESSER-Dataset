@@ -1,0 +1,32 @@
+The model has 14 class(es).
+The class 'Actor_Actor' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Registration_UseCase' has no attributes.
+The class 'Logout_UseCase' has no attributes.
+The class 'Send_Mail_UseCase' has no attributes.
+The class 'Employer_Actor' has no attributes.
+The class 'Post_Job_UseCase' has no attributes.
+The class 'Job_Seeker_Actor' has no attributes.
+The class 'Delete_Profile_UseCase' has no attributes.
+The class 'Update_Profile_UseCase' has no attributes.
+The class 'Manage_Accounts_UseCase' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'Apply_for_Job_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+'Job_Seeker_Actor' (role 'delete_Profile28', cardinality 0..*) is associated with 'Delete_Profile_UseCase' (role 'job_Seeker29', cardinality 0..*).
+'Admin_Actor' (role 'post_Job5', cardinality 0..*) is associated with 'Post_Job_UseCase' (role 'admin4', cardinality 0..*).
+'Update_Profile_UseCase' (role 'job_Seeker16', cardinality 0..*) is associated with 'Job_Seeker_Actor' (role 'update_Profile17', cardinality 0..*).
+'Update_Profile_UseCase' (role 'employer27', cardinality 0..*) is associated with 'Employer_Actor' (role 'update_Profile26', cardinality 0..*).
+'Registration_UseCase' (role 'job_Seeker1', cardinality 0..*) is associated with 'Job_Seeker_Actor' (role 'registration0', cardinality 0..*).
+'Logout_UseCase' (role 'job_Seeker32', cardinality 0..*) is associated with 'Job_Seeker_Actor' (role 'logout33', cardinality 0..*).
+'Employer_Actor' (role 'login18', cardinality 0..*) is associated with 'Login_UseCase' (role 'employer19', cardinality 0..*).
+'Employer_Actor' (role 'send_Mail14', cardinality 0..*) is associated with 'Send_Mail_UseCase' (role 'employer15', cardinality 0..*).
+'Employer_Actor' (role 'post_Job22', cardinality 0..*) is associated with 'Post_Job_UseCase' (role 'employer23', cardinality 0..*).
+'Registration_UseCase' (role 'employer21', cardinality 0..*) is associated with 'Employer_Actor' (role 'registration20', cardinality 0..*).
+'Login_UseCase' (role 'admin30', cardinality 0..*) is associated with 'Admin_Actor' (role 'login31', cardinality 0..*).
+'Employer_Actor' (role 'logout9', cardinality 0..*) is associated with 'Logout_UseCase' (role 'employer8', cardinality 0..*).
+'Job_Seeker_Actor' (role 'apply_for_Job25', cardinality 0..*) is associated with 'Apply_for_Job_UseCase' (role 'job_Seeker24', cardinality 0..*).
+'Admin_Actor' (role 'send_Mail7', cardinality 0..*) is associated with 'Send_Mail_UseCase' (role 'admin6', cardinality 0..*).
+'Manage_Accounts_UseCase' (role 'admin13', cardinality 0..*) is associated with 'Admin_Actor' (role 'manage_Accounts12', cardinality 0..*).
+'Job_Seeker_Actor' (role 'login2', cardinality 0..*) is associated with 'Login_UseCase' (role 'job_Seeker3', cardinality 0..*).
+'Admin_Actor' (role 'logout11', cardinality 0..*) is associated with 'Logout_UseCase' (role 'admin10', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'Chips_Pot' has no attributes.
+The class 'Chips_Chip' has the following attributes: 'value' of type int.
+The class 'Player_Player' has the following attributes: 'status' of type Player_PlayerStatus; 'chips' of type Chips_ChipStash.
+The class 'DiscardableArray_DealableArray' has no attributes.
+The class 'Gameplay_Game' has the following attributes: 'pot' of type Chips_Pot; 'round' of type int; 'deck' of type str; 'players' of type Player_Player.
+The class 'DiscardableArray_DiscardableArray_Interface' has no attributes.
+The class 'Ranker_Rank' has no attributes.
+The class 'Chips_ChipStash' has no attributes.
+The class 'Gameplay_GameInitializer' has no attributes.
+The class 'Cards_Card' has the following attributes: 'suit' of type Cards_Suit; 'rank' of type Cards_CardRank.
+The enumeration 'Cards_CardRank' does not specify any literals.
+The enumeration 'Chips_ChipDeductResult' does not specify any literals.
+The enumeration 'Player_PlayerStatus' does not specify any literals.
+The enumeration 'Ranker_Ranking' does not specify any literals.
+The enumeration 'Cards_Suit' does not specify any literals.
+'Cards_Card' (role 'player0', cardinality 0..*) is associated with 'Player_Player' (role 'card1', cardinality 0..*).
+'Chips_ChipStash' (role 'chip3', cardinality 0..*) is associated with 'Chips_Chip' (role 'chipStash2', cardinality 0..*).

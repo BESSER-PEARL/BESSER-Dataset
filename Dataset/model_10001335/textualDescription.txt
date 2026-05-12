@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'student' has the following attributes: 'details' of type str.
+The class 'books_database' has the following attributes: 'author' of type str; 'book_id' of type str; 'book_title' of type str.
+The class 'library' has the following attributes: 'location' of type str.
+The class 'librarian' has the following attributes: 'name' of type str.
+The class 'student_record' has the following attributes: 'name' of type str; 'fines' of type str; 'phone_number' of type str; 'address' of type str.
+The class 'vendor' has the following attributes: 'attribute' of type str; 'book_details' of type str.
+'books_database' (role 'library3', cardinality 0..*) is associated with 'library' (role 'books_database2', cardinality 0..*).
+'books_database' (role 'customer4', cardinality 0..*) is associated with 'student' (role 'books_database5', cardinality 0..*).
+'student_record' (role 'customer7', cardinality 0..*) is associated with 'student' (role 'student_record6', cardinality 0..*).
+'librarian' (role 'library1', cardinality 0..*) is associated with 'library' (role 'librarian0', cardinality 0..*).

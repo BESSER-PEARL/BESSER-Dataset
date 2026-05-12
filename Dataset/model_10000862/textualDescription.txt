@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'Online_Shopping_System_Product' has the following attributes: 'ID' of type str; 'Supplier' of type str; 'Name' of type str.
+The class 'Online_Shopping_System_Web_User' has the following attributes: 'passwd' of type str; 'login_id' of type str.
+The class 'Online_Shopping_System_Payment' has the following attributes: 'Total' of type str; 'ID' of type str; 'Paid' of type str; 'Details' of type str.
+The class 'Online_Shopping_System_Shopping_Cart' has the following attributes: 'created' of type str.
+The class 'Online_Shopping_System_Order' has the following attributes: 'Number' of type str; 'shipped' of type str; 'total' of type str; 'Ship_to' of type str; 'ordered' of type str; 'status' of type str.
+The class 'Online_Shopping_System_Account' has the following attributes: 'billing_address' of type str; 'Open' of type str; 'is_closed' of type bool; 'ID' of type str; 'Closed' of type str.
+The class 'Online_Shopping_System_Line_item' has the following attributes: 'price' of type str; 'quantity' of type int.
+The class 'Online_Shopping_System_Customer' has the following attributes: 'ID' of type str; 'Email' of type str; 'Address' of type str; 'Phone' of type str.
+'Online_Shopping_System_Line_item' (role 'product14', cardinality 0..*) is associated with 'Online_Shopping_System_Product' (role 'line_item15', cardinality 0..*).
+'Online_Shopping_System_Line_item' (role '_order__unique_13', cardinality 0..*) is associated with 'Online_Shopping_System_Order' (role 'line_item12', cardinality 0..*).
+'Online_Shopping_System_Shopping_Cart' (role 'web_User7', cardinality 0..*) is associated with 'Online_Shopping_System_Web_User' (role 'shopping_Cart6', cardinality 0..*).
+'Online_Shopping_System_Account' (role 'customer3', cardinality 0..*) is associated with 'Online_Shopping_System_Customer' (role 'account2', cardinality 0..*).
+'Online_Shopping_System_Account' (role 'order8', cardinality 0..*) is associated with 'Online_Shopping_System_Order' (role 'account9', cardinality 0..*).
+'Online_Shopping_System_Account' (role 'payment5', cardinality 0..*) is associated with 'Online_Shopping_System_Payment' (role 'account4', cardinality 0..*).
+'Online_Shopping_System_Web_User' (role 'customer0', cardinality 0..*) is associated with 'Online_Shopping_System_Customer' (role 'web_User1', cardinality 0..*).
+'Online_Shopping_System_Shopping_Cart' (role 'ordered__unique10', cardinality 0..*) is associated with 'Online_Shopping_System_Line_item' (role 'shopping_Cart11', cardinality 0..*).

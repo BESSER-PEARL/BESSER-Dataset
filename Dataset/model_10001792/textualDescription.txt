@@ -1,0 +1,7 @@
+The model has 5 class(es).
+The class 'C1' has no attributes.
+The class 'C' has the following attributes: 'attC2' of type bool; 'attC1' of type int.
+The class 'C2' has no attributes.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'B' has the following attributes: 'attB' of type int.
+'A' (role 'b0', cardinality 0..*) is associated with 'B' (role 'a1', cardinality 0..*).

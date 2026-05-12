@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'Test' has no attributes.
+The class 'Tennis' has the following attributes: 'color' of type str; 'engine' of type Engine; 'manufacturer' of type str.
+The class 'M6' has the following attributes: 'engine' of type Engine; 'color' of type str; 'manufacturer' of type str.
+The class 'Car' has no attributes.
+The class 'TestStand' has the following attributes: 'carToBeTested' of type Car.
+The class 'Engine' has the following attributes: 'type' of type str; 'engineSpeed' of type int; 'efficiencyCoefficient' of type int.

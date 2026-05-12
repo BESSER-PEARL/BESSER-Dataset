@@ -1,0 +1,13 @@
+The model has 12 class(es).
+The class 'Funcionario' has the following attributes: 'cracha' of type int.
+The class 'Component_Component' has no attributes.
+The class 'Actor5_Actor' has no attributes.
+The class 'Component2_Component' has no attributes.
+The class 'Actor3_Actor' has no attributes.
+The class 'Actor7_Actor' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'Actor6_Actor' has no attributes.
+The class 'Actor2_Actor' has no attributes.
+The class 'Pessoa' has the following attributes: 'Nome' of type str; 'id' of type int; 'idade' of type int.
+The class 'Actor4_Actor' has no attributes.
+The class 'Component3_Component' has no attributes.

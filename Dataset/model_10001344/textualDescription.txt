@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Controller' has no attributes.
+The class 'Algorithm' has the following attributes: 'TimeBetweenFloors' of type str.
+The class 'Building' has the following attributes: 'ElevatorBays' of type str; 'Controller' of type Controller.
+The class 'object' has no attributes.
+The class 'FloorButton' has the following attributes: 'Elevator' of type Elevator.
+The class 'Elevator' has the following attributes: 'CurrentMovement' of type str; 'FloorButtons' of type str; 'CurrentFloor' of type int; 'ElevatorBayNumber' of type int; 'ElevatorNumber' of type int; 'ArrivedAtFloor' of type str.
+The class 'ElevatorBay' has the following attributes: 'Elevators' of type str; 'UpDownButtons' of type str; 'BayNumber' of type int.
+The class 'UpDownButton' has the following attributes: 'Direction' of type Direction; 'ElevatorBay' of type ElevatorBay.
+The class 'Button' has the following attributes: 'IsOn' of type bool; 'Clicked' of type str; 'FloorNumber' of type int.
+The enumeration 'Direction' does not specify any literals.
+'Button' (role 'elevator9', cardinality 0..*) is associated with 'Elevator' (role 'button8', cardinality 0..*).
+'ElevatorBay' (role 'building7', cardinality 0..*) is associated with 'Building' (role 'elevatorBay6', cardinality 0..*).
+'ElevatorBay' (role 'upDownButton4', cardinality 0..*) is associated with 'UpDownButton' (role 'elevatorBay5', cardinality 0..*).
+'Building' (role 'controller10', cardinality 0..*) is associated with 'Controller' (role 'building11', cardinality 0..*).
+'Elevator' (role 'elevatorBay3', cardinality 0..*) is associated with 'ElevatorBay' (role 'elevator2', cardinality 0..*).
+'FloorButton' (role 'elevator1', cardinality 0..*) is associated with 'Elevator' (role 'floorButton0', cardinality 0..*).

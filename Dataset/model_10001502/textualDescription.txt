@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'Actor_Actor' has no attributes.
+The class 'Class' has no attributes.
+The class 'Interface_Interface' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.

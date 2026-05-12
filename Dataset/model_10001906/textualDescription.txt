@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Card' has the following attributes: 'suit' of type int; 'value' of type int; 'color' of type bool.
+The class 'Deck' has the following attributes: 'deck' of type str.
+'Card' (role 'deck1', cardinality 0..*) is associated with 'Deck' (role 'card0', cardinality 0..*).

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'A' has the following attributes: 'attA' of type int.
+'A' (role 'A_B_00', cardinality 0..*) is associated with 'B' (role 'g_re1', cardinality 0..*).

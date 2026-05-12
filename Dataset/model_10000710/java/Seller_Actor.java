@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Seller_Actor  {
+
+
+
+
+
+
+    private Customer_Actor customer_actor;
+
+
+    public Seller_Actor(
+    ) {
+    }
+
+
+
+    public Customer_Actor getCustomer_actor() {
+        return customer_actor;
+    }
+
+    public void setCustomer_actor(Customer_Actor customer_actor) {
+        this.customer_actor = customer_actor;
+    }
+
+}

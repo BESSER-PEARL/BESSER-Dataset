@@ -1,0 +1,44 @@
+The model has 31 class(es).
+The class 'ClassS' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'ClassG' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'ClassJ' has no attributes.
+The class 'Document' has the following attributes: 'id_document' of type int; 'cours' of type bool; 'descriptif' of type str; 'label' of type str; 'url' of type str.
+The class 'ClassD' has no attributes.
+The class 'ClassC' has the following attributes: 'protectedAttribute' of type str; 'packageAttribute' of type str; 'privateAttribute' of type int; 'publicAttribute' of type float.
+The class 'ClassH' has no attributes.
+The class 'ClassK' has no attributes.
+The class 'Session' has the following attributes: 'date_fin' of type date; 'adresse' of type str; 'date_debut' of type date; 'id_session' of type int; 'label' of type str.
+The class 'ClassR' has no attributes.
+The class 'Administrateur' has the following attributes: 'actif' of type bool; 'id_administrateur' of type int.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'ClassQ' has no attributes.
+The class 'BankAccount' has the following attributes: 'ownerName' of type str; 'balance' of type float.
+The class 'Direction' has the following attributes: 'actif' of type bool; 'id_direction' of type int.
+The class 'Personne' has the following attributes: 'photo' of type str; 'telephone' of type str; 'naissance' of type date; 'prenom' of type str; 'mail' of type str; 'nom' of type str; 'id' of type int.
+The class 'Formateur' has the following attributes: 'actif' of type bool; 'id_formateur' of type int.
+The class 'ClassN' has no attributes.
+The class 'Formation' has the following attributes: 'id_formation' of type int; 'label' of type str; 'descriptif' of type str.
+The class 'ClassV' has no attributes.
+The class 'ClassM' has no attributes.
+The class 'CCP' has the following attributes: 'id_ccp' of type int; 'label' of type str; 'description' of type str.
+The class 'ClassL' has no attributes.
+The class 'Etudiant' has the following attributes: 'list_notes' of type float; 'actif' of type bool; 'cv' of type str; 'list_commentaire' of type str; 'id_etudiant' of type int.
+The class 'ClassE' has no attributes.
+The class 'ClassA' has the following attributes: 'publicAttribute' of type float; 'protectedAttribute' of type str; 'packageAttribute' of type str; 'privateAttribute' of type int.
+The class 'ClassP' has no attributes.
+The class 'ClassF' has no attributes.
+'ClassF' (role 'classG2', cardinality 0..*) is associated with 'ClassG' (role 'classF3', cardinality 0..*).
+'ClassH' (role 'classG4', cardinality 0..*) is associated with 'ClassJ' (role 'classF5', cardinality 0..*).
+'Administrateur' (role 'personne13', cardinality 0..*) is associated with 'Personne' (role 'administrateur12', cardinality 0..*).
+'Etudiant' (role 'personne7', cardinality 0..*) is associated with 'Personne' (role 'etudiant6', cardinality 0..*).
+'Formateur' (role 'session15', cardinality 0..*) is associated with 'Session' (role 'formateur14', cardinality 0..*).
+'Personne' (role 'direction10', cardinality 0..*) is associated with 'Direction' (role 'personne11', cardinality 0..*).
+'Session' (role 'etudiant23', cardinality 0..*) is associated with 'Etudiant' (role 'session22', cardinality 0..*).
+'Personne' (role 'formateur8', cardinality 0..*) is associated with 'Formateur' (role 'personne9', cardinality 0..*).
+'Document' (role 'session20', cardinality 0..*) is associated with 'Session' (role 'document21', cardinality 0..*).
+'ClassE' (role 'classD1', cardinality 0..*) is associated with 'ClassD' (role 'classE0', cardinality 0..*).
+'Formation' (role 'cCP18', cardinality 0..*) is associated with 'CCP' (role 'formation19', cardinality 0..*).
+'Formation' (role 'session16', cardinality 0..*) is associated with 'Session' (role 'formation17', cardinality 0..*).

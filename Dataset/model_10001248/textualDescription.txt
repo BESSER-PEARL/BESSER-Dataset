@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'CommunityCards' has the following attributes: 'cards' of type str.
+The class 'Card' has the following attributes: 'value' of type int; 'suit' of type str.
+The class 'AI' has no attributes.
+The class 'Game' has the following attributes: 'pot' of type int; 'bigBlindValue' of type int; 'players' of type str; 'currentDeck' of type Deck; 'currentCommunityCards' of type CommunityCards; 'currentBigBlind' of type int.
+The class 'makeNewPlayer' has no attributes.
+The class 'Deck' has the following attributes: 'cards' of type str; 'positionInDeck' of type int.
+The class 'Player' has the following attributes: 'isAI' of type bool; 'isAllIn' of type bool; 'chips' of type int; 'isBigBlind' of type bool; 'playerNumber' of type int; 'isSmallBlind' of type bool; 'isFolded' of type bool; 'name' of type str; 'handValue' of type int; 'hand' of type str.
+'Player' (role 'game2', cardinality 0..*) is associated with 'Game' (role 'player3', cardinality 0..*).
+'makeNewPlayer' (role 'game13', cardinality 0..*) is associated with 'Game' (role 'makeNewPlayer12', cardinality 0..*).
+'Card' (role 'communityCards7', cardinality 0..*) is associated with 'CommunityCards' (role 'card6', cardinality 0..*).
+'Game' (role 'deckOfCards5', cardinality 0..*) is associated with 'Deck' (role 'game4', cardinality 0..*).
+'Game' (role 'communityCards8', cardinality 0..*) is associated with 'CommunityCards' (role 'game9', cardinality 0..*).
+'Deck' (role 'card0', cardinality 0..*) is associated with 'Card' (role 'DeckOfCards1', cardinality 0..*).
+'Player' (role 'card10', cardinality 0..*) is associated with 'Card' (role 'player11', cardinality 0..*).

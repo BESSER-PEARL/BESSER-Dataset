@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'GameBoard' has the following attributes: 'garbagePile' of type str; 'discardPile' of type str; 'shelf' of type str.
+The class 'Deck' has no attributes.
+The class 'GUI' has no attributes.
+The class 'Card' has the following attributes: 'value' of type int; 'suit' of type int.
+The class 'Player' has the following attributes: 'hand' of type Deck; 'points' of type int.
+'Deck' (role 'card0', cardinality 0..*) is associated with 'Card' (role 'deck1', cardinality 0..*).
+'Deck' (role 'player5', cardinality 0..*) is associated with 'Player' (role 'deck4', cardinality 0..*).
+'Deck' (role 'gameBoard3', cardinality 0..*) is associated with 'GameBoard' (role 'deck2', cardinality 0..*).
+'GameBoard' (role 'gUI6', cardinality 0..*) is associated with 'GUI' (role 'gameBoard7', cardinality 0..*).
+'Player' (role 'gameBoard8', cardinality 0..*) is associated with 'GameBoard' (role 'player9', cardinality 0..*).

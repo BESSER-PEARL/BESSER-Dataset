@@ -1,0 +1,10 @@
+The model has 9 class(es).
+The class 'Deck' has the following attributes: 'deck' of type str.
+The class 'Player' has the following attributes: 'name' of type str; 'hand' of type str.
+The class 'Rules' has the following attributes: 'currentRules' of type bool; 'attribute' of type str.
+The class 'b' has no attributes.
+The class 'Game' has no attributes.
+The class 'Computer' has no attributes.
+The class 'Card' has the following attributes: 'color' of type str; 'number' of type int; 'suit' of type str.
+The class 'Class' has no attributes.
+The class 'GoFish' has no attributes.

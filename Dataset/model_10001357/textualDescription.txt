@@ -1,0 +1,18 @@
+The model has 11 class(es).
+The class 'Hakemuksen_k_sittely_UseCase' has no attributes.
+The class 'Ker_t__n_tiedot_UseCase' has no attributes.
+The class 'Kirjautuminen_UseCase' has no attributes.
+The class 'Vakuutusyhti__Actor' has no attributes.
+The class 'Vakuutusselvitys_UseCase' has no attributes.
+The class 'Korvauksen_Hakeminen_UseCase' has no attributes.
+The class 'Asiakas' has the following attributes: 'Asiakas__id_' of type int.
+The class 'K_ytt_j__Actor' has no attributes.
+The class 'Vakuutus' has no attributes.
+The class 'Vakuutusyhti_' has no attributes.
+The class 'Korvauksen_maksaminen_UseCase' has no attributes.
+'K_ytt_j__Actor' (role 'korvauksen_Hakeminen0', cardinality 0..*) is associated with 'Korvauksen_Hakeminen_UseCase' (role 'k_ytt_j_1', cardinality 0..*).
+'Hakemuksen_k_sittely_UseCase' (role 'vakuutusyhti_4', cardinality 0..*) is associated with 'Vakuutusyhti__Actor' (role 'hakemuksen_k_sittely5', cardinality 0..*).
+'Vakuutusyhti__Actor' (role 'korvauksen_Hakeminen3', cardinality 0..*) is associated with 'Korvauksen_Hakeminen_UseCase' (role 'vakuutusyhti_2', cardinality 0..*).
+'Ker_t__n_tiedot_UseCase' (role 'vakuutusyhti_11', cardinality 0..*) is associated with 'Vakuutusyhti__Actor' (role 'ker_t__n_tiedot10', cardinality 0..*).
+'Korvauksen_maksaminen_UseCase' (role 'vakuutusyhti_6', cardinality 0..*) is associated with 'Vakuutusyhti__Actor' (role 'korvauksen_maksaminen7', cardinality 0..*).
+'Korvauksen_maksaminen_UseCase' (role 'k_ytt_j_8', cardinality 0..*) is associated with 'K_ytt_j__Actor' (role 'korvauksen_maksaminen9', cardinality 0..*).

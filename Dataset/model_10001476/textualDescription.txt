@@ -1,0 +1,18 @@
+The model has 11 class(es).
+The class 'User' has the following attributes: 'fname' of type str; 'username' of type str; 'lname' of type str; 'password' of type str.
+The class 'Event' has the following attributes: 'eventhead' of type Eventhead; 'eventname' of type str; 'eventype' of type str; 'eventid' of type int; 'date' of type int; 'amount' of type int.
+The class 'Admin' has the following attributes: 'username' of type str; 'password' of type str.
+The class 'Payment' has the following attributes: 'amout' of type int; 'paytype' of type str; 'status' of type str.
+The class 'Birthday_Parties' has no attributes.
+The class 'Weddings' has no attributes.
+The class 'Volunteer' has the following attributes: 'id' of type int.
+The class 'Eventhead' has the following attributes: 'id' of type int.
+The class 'Refreshment' has no attributes.
+The class 'Commercial_Events' has no attributes.
+The class 'Client' has the following attributes: 'id' of type int.
+'Payment' (role 'client1', cardinality 0..*) is associated with 'Client' (role 'payment20', cardinality 0..*).
+'Event' (role 'eventhead26', cardinality 0..*) is associated with 'Eventhead' (role 'event7', cardinality 0..*).
+'Event' (role 'volunteer5', cardinality 0..*) is associated with 'Volunteer' (role 'event4', cardinality 0..*).
+'Event' (role 'client3', cardinality 0..*) is associated with 'Client' (role 'event2', cardinality 0..*).
+'Event' (role 'refreshment8', cardinality 0..*) is associated with 'Refreshment' (role 'event9', cardinality 0..*).
+'Admin' (role 'event10', cardinality 0..*) is associated with 'Event' (role 'admin11', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 11 class(es).
+The class 'Store' has the following attributes: 'photoPath' of type str; 'name' of type str; 'id' of type int.
+The class 'Category' has the following attributes: 'name' of type str; 'photoPath' of type str; 'id' of type int.
+The class 'Address' has the following attributes: 'id' of type int; 'street' of type str; 'city' of type str; 'zipCode' of type str; 'country' of type str.
+The class 'Product' has the following attributes: 'name' of type str; 'description' of type str; 'id' of type int; 'price' of type int; 'photoPath' of type str.
+The class 'Order' has the following attributes: 'id' of type int; 'createdAt' of type str; 'amount' of type int.
+The class 'Buyer' has the following attributes: 'email' of type str.
+The class 'Position' has the following attributes: 'id' of type int; 'latitude' of type str; 'longitude' of type str; 'createdAt' of type str.
+The class 'Seller' has the following attributes: 'registerNumber' of type str.
+The class 'Offer' has the following attributes: 'discount' of type int; 'beginDate' of type str; 'endDate' of type str; 'id' of type int.
+The class 'Basket' has the following attributes: 'id' of type int; 'updatedAt' of type str.
+The class 'User' has the following attributes: 'password' of type str; 'lastname' of type str; 'username' of type str; 'id' of type str; 'attribute' of type str; 'firstname' of type str.
+'Buyer' (role 'order10', cardinality 0..*) is associated with 'Order' (role 'buyer11', cardinality 0..*).
+'Product' (role 'store17', cardinality 0..*) is associated with 'Store' (role 'product16', cardinality 0..*).
+'Address' (role 'store7', cardinality 0..*) is associated with 'Store' (role 'address6', cardinality 0..*).
+'Address' (role 'position4', cardinality 0..*) is associated with 'Position' (role 'address5', cardinality 0..*).
+'Category' (role 'product14', cardinality 0..*) is associated with 'Product' (role 'category15', cardinality 0..*).
+'Buyer' (role 'basket0', cardinality 0..*) is associated with 'Basket' (role 'buyer1', cardinality 0..*).
+'Offer' (role 'product13', cardinality 0..*) is associated with 'Product' (role 'offer12', cardinality 0..*).
+'Store' (role 'seller9', cardinality 0..*) is associated with 'Seller' (role 'store8', cardinality 0..*).
+'Buyer' (role 'position2', cardinality 0..*) is associated with 'Position' (role 'buyer3', cardinality 0..*).

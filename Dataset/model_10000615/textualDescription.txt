@@ -1,0 +1,92 @@
+The model has 59 class(es).
+The class 'Add_Property_external' has no attributes.
+The class 'Recieve_s_Lead_external' has no attributes.
+The class 'Demand_Component' has no attributes.
+The class 'Buyer_Component' has no attributes.
+The class 'Clent_Realtionship_Team_Demand_Lead_Mgmt__Component' has no attributes.
+The class 'Look_For_Tenants_external' has no attributes.
+The class 'Add_Property_Deatilas_external' has no attributes.
+The class 'Assign_Transaction_Type_external' has no attributes.
+The class 'Presales_team' has the following attributes: 'password' of type str; 'usename' of type str.
+The class 'Rent' has the following attributes: 'rent_id' of type str.
+The class 'Supplier_Component' has no attributes.
+The class 'Client_Relationship_Team' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'Select_Homzhub_Service_external' has no attributes.
+The class 'HH_Service_Selected_external' has no attributes.
+The class 'State_UseCase' has no attributes.
+The class 'Visit_Scheduled_external' has no attributes.
+The class 'Create_Property_Mgmt_Lead_external' has no attributes.
+The class 'Reacives_Lead_external' has no attributes.
+The class 'Register_external' has no attributes.
+The class 'Liked_Property_UseCase' has no attributes.
+The class 'Buyer' has the following attributes: 'buyer_id' of type str.
+The class 'IndependentHouse' has the following attributes: 'Bathroom' of type str; 'Price' of type str; 'Bedroom' of type str; 'Size' of type str; 'YardSpace' of type str.
+The class 'Reg_User' has the following attributes: 'username' of type str; 'password' of type str; 'Address' of type str.
+The class 'Price_UseCase' has no attributes.
+The class 'Assign_Lead_to_Client_Relationship_Team_external' has no attributes.
+The class 'Search_Property_external' has no attributes.
+The class 'Client_Relationship_Team_Actor' has no attributes.
+The class 'Supply_Lead_Management_Client_Relationship_Team__Component' has no attributes.
+The class 'Seller' has the following attributes: 'property_id' of type str; 'seller_id' of type str.
+The class 'Meeting_With_the_Clent_UseCase' has no attributes.
+The class 'Like_A_Property_external' has no attributes.
+The class 'Search_Property_UseCase' has no attributes.
+The class 'Registration_UseCase' has no attributes.
+The class 'Property1' has the following attributes: 'location' of type str; 'property_id' of type str; 'address' of type str; 'property_type' of type str.
+The class 'Tenants_Buyer_Actor' has no attributes.
+The class 'User1' has the following attributes: 'email' of type str; 'password' of type str.
+The class 'Property_Onboarding___Readiness_external' has no attributes.
+The class 'Log_In_Interest_external' has no attributes.
+The class 'Owner' has the following attributes: 'name' of type str; 'Address' of type str.
+The class 'Landlord_Actor' has no attributes.
+The class 'Login_external' has no attributes.
+The class 'Cient_Relationship_Team_Actor' has no attributes.
+The class 'Buyer_Actor' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Property_Onbording__Component' has no attributes.
+The class 'View_the_Buyers_List_UseCase' has no attributes.
+The class 'Clent_Relationship_Team_Actor' has no attributes.
+The class 'Property' has the following attributes: 'property_id' of type str; 'address' of type str; 'property_type' of type str; 'location' of type str.
+The class 'Forgot_Password_UseCase' has no attributes.
+The class 'Look_For_Supply_external' has no attributes.
+The class 'City_UseCase' has no attributes.
+The class 'Unreg_User' has no attributes.
+The class 'Client_Relationship_Team_Actor1' has no attributes.
+The class 'Add_property_to_whishlist_UseCase' has no attributes.
+The class 'User' has the following attributes: 'email' of type str; 'location' of type str.
+The class 'Broker_Actor' has no attributes.
+The class 'Sales_Team_Actor' has no attributes.
+The class 'Username__Password_UseCase' has no attributes.
+The class 'ResidentialApartment' has the following attributes: 'Price' of type str; 'BEDROOMS' of type str; 'PARKING' of type str; 'Size' of type str; 'MAINTAINENCE' of type str.
+'Client_Relationship_Team_Actor' (role 'reacives_Lead48', cardinality 0..*) is associated with 'Reacives_Lead_external' (role 'client_Relationship_Team49', cardinality 0..*).
+'Search_Property_UseCase' (role 'buyer7', cardinality 0..*) is associated with 'Buyer_Actor' (role 'search_Property6', cardinality 0..*).
+'HH_Service_Selected_external' (role 'client_Relationship_Team51', cardinality 0..*) is associated with 'Client_Relationship_Team_Actor' (role 'hH_Service_Selected50', cardinality 0..*).
+'Look_For_Supply_external' (role 'clent_Relationship_Team45', cardinality 0..*) is associated with 'Clent_Relationship_Team_Actor' (role 'look_For_Supply44', cardinality 0..*).
+'IndependentHouse' (role 'property63', cardinality 0..*) is associated with 'Property' (role 'Property_IndependentHouse_062', cardinality 0..*).
+'HH_Service_Selected_external' (role 'property_Onboarding___Readiness46', cardinality 0..*) is associated with 'Property_Onboarding___Readiness_external' (role 'hH_Service_Selected47', cardinality 0..*).
+'Login_external' (role 'tenants_Buyer31', cardinality 0..*) is associated with 'Tenants_Buyer_Actor' (role 'login30', cardinality 0..*).
+'Clent_Relationship_Team_Actor' (role 'clent_Realtionship_Team_Demand_Lead_Mgmt_40', cardinality 0..*) is associated with 'Recieve_s_Lead_external' (role 'clent_Relationship_Team41', cardinality 0..*).
+'Broker_Actor' (role 'landlord21', cardinality 0..*) is associated with 'Landlord_Actor' (role 'broker20', cardinality 0..*).
+'Visit_Scheduled_external' (role 'clent_Relationship_Team43', cardinality 0..*) is associated with 'Clent_Relationship_Team_Actor' (role 'visit_Scheduled42', cardinality 0..*).
+'Cient_Relationship_Team_Actor' (role 'assign_Lead_to_Client_Relationship_Team34', cardinality 0..*) is associated with 'Assign_Lead_to_Client_Relationship_Team_external' (role 'cient_Relationship_Team35', cardinality 0..*).
+'Assign_Transaction_Type_external' (role 'cient_Relationship_Team37', cardinality 0..*) is associated with 'Cient_Relationship_Team_Actor' (role 'assign_Transaction_Type36', cardinality 0..*).
+'Client_Relationship_Team' (role 'property59', cardinality 0..*) is associated with 'Property' (role 'client_Relationship_Team58', cardinality 0..*).
+'Cient_Relationship_Team_Actor' (role 'create_Property_Mgmt_Lead38', cardinality 0..*) is associated with 'Create_Property_Mgmt_Lead_external' (role 'cient_Relationship_Team39', cardinality 0..*).
+'Sales_Team_Actor' (role 'login8', cardinality 0..*) is associated with 'Login_UseCase' (role 'sales_Team9', cardinality 0..*).
+'Client_Relationship_Team_Actor1' (role 'add_Property_Deatilas56', cardinality 0..*) is associated with 'Add_Property_Deatilas_external' (role 'client_Relationship_Team57', cardinality 0..*).
+'Client_Relationship_Team_Actor' (role 'look_For_Tenants52', cardinality 0..*) is associated with 'Look_For_Tenants_external' (role 'client_Relationship_Team53', cardinality 0..*).
+'Landlord_Actor' (role 'register16', cardinality 0..*) is associated with 'Register_external' (role 'landlord17', cardinality 0..*).
+'Buyer_Actor' (role 'login4', cardinality 0..*) is associated with 'Login_UseCase' (role 'buyer5', cardinality 0..*).
+'Meeting_With_the_Clent_UseCase' (role 'sales_Team13', cardinality 0..*) is associated with 'Sales_Team_Actor' (role 'meeting_With_the_Clent12', cardinality 0..*).
+'Landlord_Actor' (role 'Supplier14', cardinality 0..*) is associated with 'Login_external' (role 'landlord15', cardinality 0..*).
+'Like_A_Property_external' (role 'tenants_Buyer29', cardinality 0..*) is associated with 'Tenants_Buyer_Actor' (role 'like_A_Property28', cardinality 0..*).
+'Add_Property_external' (role 'landlord19', cardinality 0..*) is associated with 'Landlord_Actor' (role 'add_Property18', cardinality 0..*).
+'Property' (role 'owner0', cardinality 0..*) is associated with 'Seller' (role 'property1', cardinality 0..*).
+'Property' (role 'user2', cardinality 0..*) is associated with 'Buyer' (role 'property3', cardinality 0..*).
+'Tenants_Buyer_Actor' (role 'log_In_Interest26', cardinality 0..*) is associated with 'Log_In_Interest_external' (role 'tenants_Buyer27', cardinality 0..*).
+'Tenants_Buyer_Actor' (role 'register32', cardinality 0..*) is associated with 'Register_external' (role 'tenants_Buyer33', cardinality 0..*).
+'View_the_Buyers_List_UseCase' (role 'sales_Team11', cardinality 0..*) is associated with 'Sales_Team_Actor' (role 'view_the_Buyers_List10', cardinality 0..*).
+'Select_Homzhub_Service_external' (role 'broker25', cardinality 0..*) is associated with 'Broker_Actor' (role 'select_Homzhub_Service24', cardinality 0..*).
+'Owner' (role 'property61', cardinality 0..*) is associated with 'Property' (role 'owner60', cardinality 0..*).
+'Landlord_Actor' (role 'assign_Transaction_Type22', cardinality 0..*) is associated with 'Assign_Transaction_Type_external' (role 'landlord23', cardinality 0..*).
+'Tenants_Buyer_Actor' (role 'search_Property54', cardinality 0..*) is associated with 'Search_Property_external' (role 'tenants_Buyer55', cardinality 0..*).

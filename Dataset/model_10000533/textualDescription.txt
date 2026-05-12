@@ -1,0 +1,49 @@
+The model has 31 class(es).
+The class 'Client_Actor' has no attributes.
+The class 'Booking_UseCase' has no attributes.
+The class 'Administrator' has no attributes.
+The class 'Delivery_Boy' has no attributes.
+The class 'Name_UseCase' has no attributes.
+The class 'Delivering_Management' has the following attributes: 'client_name' of type str; 'client_key' of type str; 'deliver_boy_id' of type str.
+The class 'Cleaner' has no attributes.
+The class 'Services_UseCase' has no attributes.
+The class 'Details_in_Database_UseCase' has no attributes.
+The class 'Time_UseCase' has no attributes.
+The class 'User' has no attributes.
+The class 'Money_Dispenser' has no attributes.
+The class 'Date_UseCase' has no attributes.
+The class 'Address_UseCase' has no attributes.
+The class 'Cleaning_Management' has the following attributes: 'water' of type str; 'brushing' of type str; 'powderized_wash' of type str.
+The class 'Packeges_UseCase' has no attributes.
+The class 'Deliver_Actor' has no attributes.
+The class 'Reciept____Balance_UseCase' has no attributes.
+The class 'Booking_Form_UseCase' has no attributes.
+The class 'Home_UseCase' has no attributes.
+The class 'Owner_Actor' has no attributes.
+The class 'Email__UseCase' has no attributes.
+The class 'Payment' has the following attributes: 'Type_of_payment' of type str.
+The class 'Primary_Info' has the following attributes: 'Type_of_wash' of type str; 'Type_of_car' of type str.
+The class 'About_us_UseCase' has no attributes.
+The class 'Phone_Number_UseCase' has no attributes.
+The class 'Team_UseCase' has no attributes.
+The class 'Cleaner_Actor' has no attributes.
+The class 'Payment_UseCase' has no attributes.
+The class 'Info_UseCase' has no attributes.
+The class 'Type_of_Payment_UseCase' has no attributes.
+'Delivery_Boy' (role 'delivering_Management19', cardinality 0..*) is associated with 'Delivering_Management' (role 'delivery_Boy18', cardinality 0..*).
+'Cleaning_Management' (role 'delivering_Management4', cardinality 0..*) is associated with 'Delivering_Management' (role 'cleaning_Management5', cardinality 0..*).
+'Delivering_Management' (role 'user13', cardinality 0..*) is associated with 'User' (role 'delivering_Management12', cardinality 0..*).
+'Payment' (role 'user9', cardinality 0..*) is associated with 'User' (role 'payment8', cardinality 0..*).
+'Primary_Info' (role 'payment0', cardinality 0..*) is associated with 'Payment' (role 'primary_Info1', cardinality 0..*).
+'Deliver_Actor' (role 'delivery_Management29', cardinality 0..*) is associated with 'Address_UseCase' (role 'deliver28', cardinality 0..*).
+'User' (role 'primary_Info6', cardinality 0..*) is associated with 'Primary_Info' (role 'user7', cardinality 0..*).
+'Address_UseCase' (role 'cleaning_Management27', cardinality 0..*) is associated with 'Booking_UseCase' (role 'delivery_Management26', cardinality 0..*).
+'Booking_UseCase' (role 'info23', cardinality 0..*) is associated with 'Info_UseCase' (role 'cleaning_Management22', cardinality 0..*).
+'Details_in_Database_UseCase' (role 'booking31', cardinality 0..*) is associated with 'Booking_UseCase' (role 'details_in_Database30', cardinality 0..*).
+'Owner_Actor' (role 'details_in_Database33', cardinality 0..*) is associated with 'Details_in_Database_UseCase' (role 'owner32', cardinality 0..*).
+'Date_UseCase' (role 'deliver25', cardinality 0..*) is associated with 'Deliver_Actor' (role 'delivery_Boy_Id24', cardinality 0..*).
+'Payment' (role 'money_Dispenser16', cardinality 0..*) is associated with 'Money_Dispenser' (role 'payment17', cardinality 0..*).
+'Info_UseCase' (role 'client21', cardinality 0..*) is associated with 'Client_Actor' (role 'info20', cardinality 0..*).
+'User' (role 'cleaning_Management10', cardinality 0..*) is associated with 'Cleaning_Management' (role 'user11', cardinality 0..*).
+'Cleaning_Management' (role 'payment3', cardinality 0..*) is associated with 'Payment' (role 'cleaning_Management2', cardinality 0..*).
+'Cleaner' (role 'cleaning_Management15', cardinality 0..*) is associated with 'Cleaning_Management' (role 'cleaner14', cardinality 0..*).

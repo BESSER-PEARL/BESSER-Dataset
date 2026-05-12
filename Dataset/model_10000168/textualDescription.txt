@@ -1,0 +1,38 @@
+The model has 21 class(es).
+The class 'UseCase_UseCase' has no attributes.
+The class 'reserve_seats_UseCase' has no attributes.
+The class 'Common_fuctions' has no attributes.
+The class 'round_trip_or_one_way_UseCase' has no attributes.
+The class 'Agent' has the following attributes: 'name' of type str.
+The class 'Ticket' has the following attributes: 'source' of type str; 'destination' of type str; 'flight_name' of type str; 'flight_No' of type str; 'time' of type int; 'dateofjourney' of type date.
+The class 'enter_date_UseCase' has no attributes.
+The class 'Reservation_System_Actor' has no attributes.
+The class 'make_payment_UseCase' has no attributes.
+The class 'Customer' has the following attributes: 'name' of type str; 'ph_no' of type int; 'address' of type str.
+The class 'select_flight_UseCase' has no attributes.
+The class 'enter_airport_UseCase1' has no attributes.
+The class 'round_trip_or_one_way__UseCase' has no attributes.
+The class 'Reservation_System_Actor1' has no attributes.
+The class 'confirm_purchase_UseCase' has no attributes.
+The class 'Booking_counter' has no attributes.
+The class 'print_ticket_UseCase' has no attributes.
+The class 'customer_Actor' has no attributes.
+The class 'enter_airport_UseCase' has no attributes.
+The class 'enter_no__of_tickets_UseCase' has no attributes.
+The class 'search_flights_UseCase' has no attributes.
+'customer_Actor' (role 'search_flights14', cardinality 0..*) is associated with 'search_flights_UseCase' (role 'customer15', cardinality 0..*).
+'select_flight_UseCase' (role 'customer17', cardinality 0..*) is associated with 'customer_Actor' (role 'select_flight16', cardinality 0..*).
+'make_payment_UseCase' (role 'customer21', cardinality 0..*) is associated with 'customer_Actor' (role 'make_payment20', cardinality 0..*).
+'Ticket' (role 'customer27', cardinality 0..*) is associated with 'Customer' (role 'ticket26', cardinality 0..*).
+'reserve_seats_UseCase' (role 'reservation_System5', cardinality 0..*) is associated with 'Reservation_System_Actor1' (role 'reserve_seats4', cardinality 0..*).
+'Reservation_System_Actor1' (role 'make_payment2', cardinality 0..*) is associated with 'make_payment_UseCase' (role 'reservation_System3', cardinality 0..*).
+'round_trip_or_one_way__UseCase' (role 'customer7', cardinality 0..*) is associated with 'customer_Actor' (role 'round_trip_or_one_way6', cardinality 0..*).
+'confirm_purchase_UseCase' (role 'customer19', cardinality 0..*) is associated with 'customer_Actor' (role 'confirm_purchase18', cardinality 0..*).
+'print_ticket_UseCase' (role 'customer23', cardinality 0..*) is associated with 'customer_Actor' (role 'print_ticket22', cardinality 0..*).
+'enter_date_UseCase' (role 'customer11', cardinality 0..*) is associated with 'customer_Actor' (role 'enter_date10', cardinality 0..*).
+'customer_Actor' (role 'enter_airport8', cardinality 0..*) is associated with 'enter_airport_UseCase1' (role 'customer9', cardinality 0..*).
+'Booking_counter' (role 'ticket29', cardinality 0..*) is associated with 'Ticket' (role 'booking_counter28', cardinality 0..*).
+'search_flights_UseCase' (role 'reservation_System1', cardinality 0..*) is associated with 'Reservation_System_Actor1' (role 'search_flights0', cardinality 0..*).
+'Ticket' (role 'agent30', cardinality 0..*) is associated with 'Agent' (role 'ticket31', cardinality 0..*).
+'customer_Actor' (role 'enter_no__of_tickets12', cardinality 0..*) is associated with 'enter_no__of_tickets_UseCase' (role 'customer13', cardinality 0..*).
+'Booking_counter' (role 'customer25', cardinality 0..*) is associated with 'Customer' (role 'booking_counter24', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 8 class(es).
+The class 'Card' has the following attributes: 'suit' of type int; 'face' of type int.
+The class 'blackjackCard' has no attributes.
+The class 'Hand' has no attributes.
+The class 'Deck' has the following attributes: 'deck' of type str.
+The class 'Blackjack' has no attributes.
+The class 'blackjackHand' has no attributes.
+The class 'Class' has no attributes.
+The class 'Class2' has no attributes.

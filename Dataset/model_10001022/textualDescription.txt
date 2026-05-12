@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'HomePage' has the following attributes: 'likeorunlike' of type bool; '__status' of type str; '__friendStatus' of type str.
+The class 'Account' has the following attributes: 'name' of type str; 'entity' of type str; 'email' of type str; 'password' of type str.
+The class 'User' has the following attributes: '__M' of type Message; '_P' of type Photos; '_F' of type Friend.
+The class 'Friend' has the following attributes: 'acceptornot' of type bool; 'friend____' of type str.
+The class 'Message' has the following attributes: 'sender' of type str; 'message' of type str; 'reciver' of type str.
+The class 'Photos' has the following attributes: '__photos' of type str.
+'Message' (role 'user5', cardinality 0..*) is associated with 'User' (role 'message4', cardinality 0..*).
+'HomePage' (role 'user3', cardinality 0..*) is associated with 'User' (role 'homePage2', cardinality 0..*).
+'User' (role 'photos6', cardinality 0..*) is associated with 'Photos' (role 'user7', cardinality 0..*).
+'User' (role 'friend0', cardinality 0..*) is associated with 'Friend' (role 'user1', cardinality 0..*).

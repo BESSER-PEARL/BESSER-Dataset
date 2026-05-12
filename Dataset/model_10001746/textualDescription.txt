@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'Double_Interface' has no attributes.
+The class 'ClientAccount' has the following attributes: 'Password' of type str.
+The class 'User' has the following attributes: 'Surname' of type str; 'Age' of type int; 'Name' of type str; 'HomeAddress' of type str; 'Email' of type str.
+The class 'Shopping_Cart' has the following attributes: 'ProductPurchased' of type str.
+The class 'Product' has the following attributes: 'ProductID' of type int; 'ProductImage' of type str; 'ProductType' of type str; 'ProductDescription' of type str; 'ProductName' of type str; 'ProductPrice' of type float.
+The class 'Order' has the following attributes: 'PaymentMethod' of type str; 'Date' of type str; 'HomeAddress' of type User; 'CustomerName' of type User; 'OrderNumber' of type int; 'Products' of type Shopping_Cart.
+'Shopping_Cart' (role 'ClientAccount_Shopping_Cart_11', cardinality 0..*) is associated with 'ClientAccount' (role 'ClientAccount_Shopping_Cart_00', cardinality 0..*).
+'Order' (role 'clientAccount2', cardinality 0..*) is associated with 'ClientAccount' (role 'order3', cardinality 0..*).
+'Shopping_Cart' (role 'product4', cardinality 0..*) is associated with 'Product' (role 'shopping_Cart5', cardinality 0..*).
+'Order' (role 'shopping_Cart6', cardinality 0..*) is associated with 'Shopping_Cart' (role 'order7', cardinality 0..*).

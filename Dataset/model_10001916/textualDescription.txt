@@ -1,0 +1,55 @@
+The model has 27 class(es).
+The class 'income_manager' has the following attributes: 'manager_id' of type int_Interface; 'manager_name' of type str; 'duty_hours' of type int_Interface.
+The class 'duties_manager' has the following attributes: 'make_attendence' of type bool.
+The class 'Register' has the following attributes: 'professer_id' of type Professor; 'student_name' of type student; 'professor_name' of type Professor; 'course_id' of type str; 'course_name' of type str; 'student_id' of type student.
+The class 'clinical' has the following attributes: 'salary' of type int_Interface; 'name' of type str; 'id' of type int_Interface.
+The class 'Groups' has the following attributes: 'id' of type Passenger; 'names' of type str; 'passenger_amount' of type int_Interface.
+The class 'course' has the following attributes: 'placed_on' of type str; 'teached_by' of type str; 'course_name' of type str; 'course_id' of type int_Interface.
+The class 'bank' has the following attributes: 'bank_name' of type str.
+The class 'Parents' has no attributes.
+The class 'doctor' has the following attributes: 'salary' of type int_Interface; 'doctor_name' of type str; 'attendance' of type bool; 'doctor_id' of type int_Interface.
+The class 'Owner' has the following attributes: 'email' of type str; 'items' of type str.
+The class 'customer' has the following attributes: 'customer_name' of type str; '_attr' of type str; 'customer_Id' of type int_Interface.
+The class 'kiosk1' has the following attributes: 'check_in' of type Passenger.
+The class 'kiosk' has the following attributes: 'discount' of type int_Interface; 'saving' of type int_Interface; 'newsletters' of type str.
+The class 'students' has the following attributes: 'student_name' of type str; 'student_id_' of type int_Interface.
+The class 'student' has the following attributes: 'student_id' of type int_Interface; 'no_of_courses' of type int_Interface; 'student_name' of type str.
+The class 'Billing_system' has the following attributes: 'course_status' of type str; 'course_fees' of type int_Interface.
+The class 'attendance_manager' has the following attributes: 'student_names' of type str; 'identify_students' of type str; 'Excuse_of_Absenties' of type str.
+The class 'individual' has the following attributes: 'pass' of type Passenger.
+The class 'int_Interface' has no attributes.
+The class 'patient' has the following attributes: 'disease' of type str; 'patient_name' of type str; 'patient_id' of type int_Interface.
+The class 'teacher' has no attributes.
+The class 'Passenger' has the following attributes: 'check_in' of type bool; 'baggage' of type int_Interface; 'pass' of type str; 'id' of type int_Interface.
+The class 'pharmacy' has the following attributes: 'price' of type int_Interface; 'medicines' of type str.
+The class 'booking_clerk' has no attributes.
+The class 'School_administrator' has no attributes.
+The class 'compuer' has no attributes.
+The class 'Professor' has the following attributes: 'course_name' of type str; 'professor_id' of type int_Interface; 'course_id' of type int_Interface; 'professor_name' of type str.
+The enumeration 'bo' does not specify any literals.
+'Passenger' (role 'individual35', cardinality 0..*) is associated with 'individual' (role 'passenger34', cardinality 0..*).
+'Groups' (role 'booking_clerk38', cardinality 0..*) is associated with 'booking_clerk' (role 'groups39', cardinality 0..*).
+'bank' (role 'income_manager3', cardinality 0..*) is associated with 'income_manager' (role 'bank2', cardinality 0..*).
+'patient' (role 'pharmacy4', cardinality 0..*) is associated with 'pharmacy' (role 'patient5', cardinality 0..*).
+'student' (role 'professor44', cardinality 0..*) is associated with 'Professor' (role 'student45', cardinality 0..*).
+'duties_manager' (role 'clinical9', cardinality 0..*) is associated with 'clinical' (role 'duties_manager8', cardinality 0..*).
+'doctor' (role 'patient_class1', cardinality 0..*) is associated with 'patient' (role 'doctor0', cardinality 0..*).
+'Groups' (role 'passenger33', cardinality 0..*) is associated with 'Passenger' (role 'groups32', cardinality 0..*).
+'compuer' (role 'kiosk12', cardinality 0..*) is associated with 'kiosk' (role 'compuer13', cardinality 0..*).
+'student' (role 'billing_system50', cardinality 0..*) is associated with 'Billing_system' (role 'student51', cardinality 0..*).
+'kiosk' (role 'customer15', cardinality 0..*) is associated with 'customer' (role 'kiosk14', cardinality 0..*).
+'doctor' (role 'duties_manager6', cardinality 0..*) is associated with 'duties_manager' (role 'doctor7', cardinality 0..*).
+'attendance_manager' (role 'teacher20', cardinality 0..*) is associated with 'teacher' (role 'attendance_manager21', cardinality 0..*).
+'attendance_manager' (role 'school_administrator29', cardinality 0..*) is associated with 'School_administrator' (role 'attendance_manager28', cardinality 0..*).
+'booking_clerk' (role 'individual37', cardinality 0..*) is associated with 'individual' (role 'booking_clerk36', cardinality 0..*).
+'students' (role 'school_administrator22', cardinality 0..*) is associated with 'School_administrator' (role 'students23', cardinality 0..*).
+'student' (role 'course42', cardinality 0..*) is associated with 'course' (role 'student43', cardinality 0..*).
+'Owner' (role 'kiosk16', cardinality 0..*) is associated with 'kiosk' (role 'owner17', cardinality 0..*).
+'Parents' (role 'school_administrator27', cardinality 0..*) is associated with 'School_administrator' (role 'parents26', cardinality 0..*).
+'Register' (role 'professor49', cardinality 0..*) is associated with 'Professor' (role 'register48', cardinality 0..*).
+'kiosk1' (role 'passenger40', cardinality 0..*) is associated with 'Passenger' (role 'kiosk41', cardinality 0..*).
+'Register' (role 'student47', cardinality 0..*) is associated with 'student' (role 'register46', cardinality 0..*).
+'attendance_manager' (role 'students19', cardinality 0..*) is associated with 'students' (role 'attendance_manager18', cardinality 0..*).
+'customer' (role 'compuer10', cardinality 0..*) is associated with 'compuer' (role 'customer11', cardinality 0..*).
+'booking_clerk' (role 'passenger31', cardinality 0..*) is associated with 'Passenger' (role 'booking_clerk30', cardinality 0..*).
+'Parents' (role 'attendance_manager24', cardinality 0..*) is associated with 'attendance_manager' (role 'parents25', cardinality 0..*).

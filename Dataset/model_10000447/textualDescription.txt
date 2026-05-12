@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Items' has no attributes.
+The class 'Food' has the following attributes: 'prepared' of type bool; 'name' of type str; 'food_id' of type str; 'served' of type bool; 'price' of type float.
+The class 'robotWaiter' has no attributes.
+The class 'Customer' has the following attributes: 'numberPeople' of type int; 'name' of type str.
+The class 'Chef' has no attributes.
+The class 'Host' has the following attributes: 'shift' of type str; 'ID' of type str.
+The class 'Table' has the following attributes: 'seats' of type int; 'tableNumber' of type int.
+The class 'app' has no attributes.
+The class 'cost' has no attributes.
+'Customer' (role 'robotWaiter5', cardinality 0..*) is associated with 'robotWaiter' (role 'customer4', cardinality 0..*).
+'Items' (role 'food11', cardinality 0..*) is associated with 'Food' (role 'items10', cardinality 0..*).
+'cost' (role 'items9', cardinality 0..*) is associated with 'Items' (role 'bill8', cardinality 0..*).
+'Customer' (role 'table3', cardinality 0..*) is associated with 'Table' (role 'customer2', cardinality 0..*).
+'Host' (role 'customer0', cardinality 0..*) is associated with 'Customer' (role 'host1', cardinality 0..*).
+'Food' (role 'app13', cardinality 0..*) is associated with 'app' (role 'food12', cardinality 0..*).
+'app' (role 'table7', cardinality 0..*) is associated with 'Table' (role 'app6', cardinality 0..*).

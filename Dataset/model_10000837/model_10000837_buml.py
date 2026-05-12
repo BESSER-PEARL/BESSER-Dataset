@@ -1,0 +1,89 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Classes
+Customer = Class(name="Customer")
+Hotel = Class(name="Hotel")
+Room = Class(name="Room")
+Service = Class(name="Service")
+
+# Customer class attributes and methods
+Customer_name: Property = Property(name="name", type=StringType)
+Customer_surname: Property = Property(name="surname", type=StringType)
+Customer_phoneNumber: Property = Property(name="phoneNumber", type=IntegerType)
+Customer_ident: Property = Property(name="ident", type=StringType)
+Customer_email: Property = Property(name="email", type=StringType)
+Customer.attributes={Customer_surname, Customer_phoneNumber, Customer_email, Customer_name, Customer_ident}
+
+# Hotel class attributes and methods
+Hotel_street: Property = Property(name="street", type=StringType)
+Hotel_city: Property = Property(name="city", type=StringType)
+Hotel_zip: Property = Property(name="zip", type=IntegerType)
+Hotel_coordinates: Property = Property(name="coordinates", type=IntegerType)
+Hotel_name: Property = Property(name="name", type=StringType)
+Hotel_phoneNumber: Property = Property(name="phoneNumber", type=IntegerType)
+Hotel_website: Property = Property(name="website", type=StringType)
+Hotel.attributes={Hotel_coordinates, Hotel_zip, Hotel_street, Hotel_website, Hotel_phoneNumber, Hotel_city, Hotel_name}
+
+# Room class attributes and methods
+Room_floor: Property = Property(name="floor", type=IntegerType)
+Room_door: Property = Property(name="door", type=IntegerType)
+Room_capacity: Property = Property(name="capacity", type=StringType)
+Room_price: Property = Property(name="price", type=FloatType)
+Room.attributes={Room_door, Room_price, Room_floor, Room_capacity}
+
+# Service class attributes and methods
+Service_name: Property = Property(name="name", type=StringType)
+Service_description: Property = Property(name="description", type=StringType)
+Service_basePrice: Property = Property(name="basePrice", type=StringType)
+Service.attributes={Service_description, Service_basePrice, Service_name}
+
+# Relationships
+Service_Hotel: BinaryAssociation = BinaryAssociation(
+    name="Service_Hotel",
+    ends={
+        Property(name="hotel2", type=Hotel, multiplicity=Multiplicity(0, 1)),
+        Property(name="service3", type=Service, multiplicity=Multiplicity(0, 9999))
+    }
+)
+Customer_Room: BinaryAssociation = BinaryAssociation(
+    name="Customer_Room",
+    ends={
+        Property(name="room4", type=Room, multiplicity=Multiplicity(0, 1)),
+        Property(name="customer5", type=Customer, multiplicity=Multiplicity(1, 9999))
+    }
+)
+Hotel_Room: BinaryAssociation = BinaryAssociation(
+    name="Hotel_Room",
+    ends={
+        Property(name="room0", type=Room, multiplicity=Multiplicity(1, 9999)),
+        Property(name="hotel1", type=Hotel, multiplicity=Multiplicity(0, 1))
+    }
+)
+
+# Domain Model
+domain_model = DomainModel(
+    name="_66c03380_032a_402c_9c82_2cfd0b714b4f",
+    types={Customer, Hotel, Room, Service},
+    associations={Service_Hotel, Customer_Room, Hotel_Room},
+    generalizations={},
+    metadata=None
+)
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

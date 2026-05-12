@@ -1,0 +1,13 @@
+The model has 8 class(es).
+The class 'PatientDAO' has no attributes.
+The class 'StateDAO' has no attributes.
+The class 'StateDAO1' has no attributes.
+The class 'Class' has no attributes.
+The class 'PatientTO' has the following attributes: 'first_name' of type str; 'last_name' of type str; 'password' of type str; 'plan_id' of type int; 'state_id' of type int; 'email' of type str; 'date_of_birth' of type date; 'contact_no' of type int; 'patient_id' of type int.
+The class 'PlanDAO' has no attributes.
+The class 'EnrollPatient_Controller' has no attributes.
+The class 'PatientBO' has no attributes.
+'PlanDAO' (role 'patientDAO7', cardinality 0..*) is associated with 'PatientDAO' (role 'planDAO6', cardinality 0..*).
+'PatientBO' (role 'enrollPatient_Controller1', cardinality 0..*) is associated with 'EnrollPatient_Controller' (role 'patientBO0', cardinality 0..*).
+'PatientBO' (role 'patientDAO4', cardinality 0..*) is associated with 'PatientDAO' (role 'patientBO5', cardinality 0..*).
+'StateDAO1' (role 'patientDAO3', cardinality 0..*) is associated with 'PatientDAO' (role 'stateDAO2', cardinality 0..*).

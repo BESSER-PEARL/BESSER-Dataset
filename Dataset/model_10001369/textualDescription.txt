@@ -1,0 +1,39 @@
+The model has 17 class(es).
+The class 'admin_Actor' has no attributes.
+The class 'logout_external' has no attributes.
+The class 'send_attendance_alert_external' has no attributes.
+The class 'STUDENT' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'modify_list_of_students_external' has no attributes.
+The class 'student_Actor' has no attributes.
+The class 'parent_Actor' has no attributes.
+The class 'generate_class_wise_attendance_report_external' has no attributes.
+The class 'ADMIN' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'view_cumiliative_attendance_external' has no attributes.
+The class '_Component' has no attributes.
+The class 'login_external' has no attributes.
+The class 'FACULTY' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'PARENT' has the following attributes: 'phoneNumber' of type int; 'id' of type str; 'password' of type str.
+The class 'faculty_Actor' has no attributes.
+The class 'view_subject_wise_attendance_external' has no attributes.
+The class 'Mark_Attendance_external' has no attributes.
+'PARENT' (role 'aDMIN40', cardinality 0..*) is associated with 'ADMIN' (role 'pARENT41', cardinality 0..*).
+'view_subject_wise_attendance_external' (role 'parent21', cardinality 0..*) is associated with 'parent_Actor' (role 'view_subject_wise_attendance20', cardinality 0..*).
+'faculty_Actor' (role 'logout14', cardinality 0..*) is associated with 'logout_external' (role 'faculty15', cardinality 0..*).
+'login_external' (role 'parent29', cardinality 0..*) is associated with 'parent_Actor' (role 'login28', cardinality 0..*).
+'logout_external' (role 'parent31', cardinality 0..*) is associated with 'parent_Actor' (role 'logout30', cardinality 0..*).
+'view_cumiliative_attendance_external' (role 'faculty25', cardinality 0..*) is associated with 'faculty_Actor' (role 'view_cumiliative_attendance24', cardinality 0..*).
+'logout_external' (role 'student11', cardinality 0..*) is associated with 'student_Actor' (role 'logout10', cardinality 0..*).
+'ADMIN' (role 'sTUDENT39', cardinality 0..*) is associated with 'STUDENT' (role 'aDMIN38', cardinality 0..*).
+'modify_list_of_students_external' (role 'admin33', cardinality 0..*) is associated with 'admin_Actor' (role 'modify_list_of_students32', cardinality 0..*).
+'STUDENT' (role 'fACULTY35', cardinality 0..*) is associated with 'FACULTY' (role 'sTUDENT34', cardinality 0..*).
+'login_external' (role 'admin17', cardinality 0..*) is associated with 'admin_Actor' (role 'login16', cardinality 0..*).
+'login_external' (role 'faculty13', cardinality 0..*) is associated with 'faculty_Actor' (role 'login12', cardinality 0..*).
+'ADMIN' (role 'fACULTY37', cardinality 0..*) is associated with 'FACULTY' (role 'aDMIN36', cardinality 0..*).
+'view_cumiliative_attendance_external' (role 'student7', cardinality 0..*) is associated with 'student_Actor' (role 'view_cumiliative_attendance6', cardinality 0..*).
+'view_subject_wise_attendance_external' (role 'student5', cardinality 0..*) is associated with 'student_Actor' (role 'view_subject_wise_attendance4', cardinality 0..*).
+'Mark_Attendance_external' (role 'faculty3', cardinality 0..*) is associated with 'faculty_Actor' (role 'post_attendance2', cardinality 0..*).
+'faculty_Actor' (role 'generate_class_wise_attendance_report0', cardinality 0..*) is associated with 'generate_class_wise_attendance_report_external' (role 'faculty1', cardinality 0..*).
+'login_external' (role 'student9', cardinality 0..*) is associated with 'student_Actor' (role 'login8', cardinality 0..*).
+'parent_Actor' (role 'view_cumiliative_attendance26', cardinality 0..*) is associated with 'view_cumiliative_attendance_external' (role 'parent27', cardinality 0..*).
+'faculty_Actor' (role 'send_attendance_sms22', cardinality 0..*) is associated with 'send_attendance_alert_external' (role 'faculty23', cardinality 0..*).
+'admin_Actor' (role 'logout18', cardinality 0..*) is associated with 'logout_external' (role 'admin19', cardinality 0..*).

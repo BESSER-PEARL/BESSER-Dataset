@@ -1,0 +1,30 @@
+The model has 14 class(es).
+The class 'Register_UseCase' has no attributes.
+The class 'Top_UP_via_card_voucher_UseCase' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Digitalk_Actor' has no attributes.
+The class 'View_Dashboard_UseCase' has no attributes.
+The class 'ShoppingCartExample_LineItem' has the following attributes: 'price' of type int; 'quantity' of type int.
+The class 'Payment_express_Actor' has no attributes.
+The class 'ShoppingCartExample_Customer' has no attributes.
+The class 'View_Static_Content_UseCase' has no attributes.
+The class 'Purchase_Credit_UseCase' has no attributes.
+The class 'ShoppingCartExample_Order' has the following attributes: 'id' of type int.
+The class 'ShoppingCartExample_ShoppingCart' has the following attributes: 'creationDate' of type date.
+The class 'ShoppingCartExample_Account' has the following attributes: 'id' of type int.
+'ShoppingCartExample_Order' (role 'items0', cardinality 0..*) is associated with 'ShoppingCartExample_LineItem' (role 'order1', cardinality 0..*).
+'ShoppingCartExample_Customer' (role 'account7', cardinality 0..*) is associated with 'ShoppingCartExample_Account' (role 'customer6', cardinality 0..*).
+'ShoppingCartExample_ShoppingCart' (role 'order2', cardinality 0..*) is associated with 'ShoppingCartExample_Order' (role 'c3', cardinality 0..*).
+'Login_UseCase' (role 'customer19', cardinality 0..*) is associated with 'Customer_Actor' (role 'login18', cardinality 0..*).
+'ShoppingCartExample_Account' (role 'cart4', cardinality 0..*) is associated with 'ShoppingCartExample_ShoppingCart' (role 'account5', cardinality 0..*).
+'Customer_Actor' (role 'view_Dashboard22', cardinality 0..*) is associated with 'View_Dashboard_UseCase' (role 'customer23', cardinality 0..*).
+'Register_UseCase' (role 'customer_CSR9', cardinality 0..*) is associated with 'Customer_Actor' (role 'register8', cardinality 0..*).
+'View_Dashboard_UseCase' (role 'digitalk26', cardinality 0..*) is associated with 'Digitalk_Actor' (role 'view_Dashboard27', cardinality 0..*).
+'Purchase_Credit_UseCase' (role 'customer25', cardinality 0..*) is associated with 'Customer_Actor' (role 'purchase_Credit24', cardinality 0..*).
+'Digitalk_Actor' (role 'top_UP_via_card_voucher13', cardinality 0..*) is associated with 'Top_UP_via_card_voucher_UseCase' (role 'digitalk12', cardinality 0..*).
+'Purchase_Credit_UseCase' (role 'digitalk14', cardinality 0..*) is associated with 'Digitalk_Actor' (role 'purchase_Credit15', cardinality 0..*).
+'Top_UP_via_card_voucher_UseCase' (role 'customer21', cardinality 0..*) is associated with 'Customer_Actor' (role 'top_UP_via_card_voucher20', cardinality 0..*).
+'Purchase_Credit_UseCase' (role 'payment_express11', cardinality 0..*) is associated with 'Payment_express_Actor' (role 'purchase_Credit10', cardinality 0..*).
+'Digitalk_Actor' (role 'register29', cardinality 0..*) is associated with 'Register_UseCase' (role 'digitalk28', cardinality 0..*).
+'Customer_Actor' (role 'view_Static_Content16', cardinality 0..*) is associated with 'View_Static_Content_UseCase' (role 'customer17', cardinality 0..*).

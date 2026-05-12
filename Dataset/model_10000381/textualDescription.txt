@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'Trapezoidal' has the following attributes: 'D' of type float; 'E' of type float.
+The class 'Triangular' has the following attributes: 'C' of type float.
+The class 'Membership_Function' has the following attributes: 'B' of type float; 'HasUID' of type float; 'A' of type float; 'HasName' of type str.
+The class 'Right_Shoulder' has no attributes.
+The class 'Linear' has no attributes.
+The class 'Left_Shoulder' has no attributes.

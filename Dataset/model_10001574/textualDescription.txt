@@ -1,0 +1,37 @@
+The model has 26 class(es).
+The class 'PayPal_UseCase' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Registered_User_Actor' has no attributes.
+The class 'non_Registered_Actor' has no attributes.
+The class 'mobile_pinCode_UseCase' has no attributes.
+The class 'login_for_SavedInfo_UseCase' has no attributes.
+The class 'Voucher_Loyalty_Code_UseCase' has no attributes.
+The class 'Checkout_UseCase' has no attributes.
+The class 'Delivery_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'address_info_deliverypage_UseCase' has no attributes.
+The class 'Terms_policies_UseCase' has no attributes.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'Register_Login_UseCase' has no attributes.
+The class 'Class' has the following attributes: 'attribute' of type str.
+The class 'User_Information_UseCase' has no attributes.
+The class 'card_UseCase' has no attributes.
+The class 'Select_Items_UseCase' has no attributes.
+The class 'Edit_cart__address_info_UseCase' has no attributes.
+The class 'UseCase3_UseCase' has no attributes.
+The class 'Order_Online_UseCase' has no attributes.
+The class 'cash_UseCase' has no attributes.
+The class 'payment_UseCase' has no attributes.
+The class 'Collection_UseCase' has no attributes.
+The class 'Menu_UseCase' has no attributes.
+'Registered_User_Actor' (role 'register_Login15', cardinality 0..*) is associated with 'Register_Login_UseCase' (role 'registered_User14', cardinality 0..*).
+'Registered_User_Actor' (role 'order_Online9', cardinality 0..*) is associated with 'Order_Online_UseCase' (role 'registered_User8', cardinality 0..*).
+'Order_Online_UseCase' (role 'non_user4', cardinality 0..*) is associated with 'non_Registered_Actor' (role 'order_Online5', cardinality 0..*).
+'Register_Login_UseCase' (role 'non_user2', cardinality 0..*) is associated with 'non_Registered_Actor' (role 'register3', cardinality 0..*).
+'Registered_User_Actor' (role 'login1', cardinality 0..*) is associated with 'Login_UseCase' (role 'actor0', cardinality 0..*).
+'Registered_User_Actor' (role 'collection19', cardinality 0..*) is associated with 'Collection_UseCase' (role 'registered_User18', cardinality 0..*).
+'Registered_User_Actor' (role 'order_Online11', cardinality 0..*) is associated with 'Order_Online_UseCase' (role 'registered_User10', cardinality 0..*).
+'address_info_deliverypage_UseCase' (role 'delivery12', cardinality 0..*) is associated with 'Delivery_UseCase' (role 'address_info_deliverypage13', cardinality 0..*).
+'Order_Online_UseCase' (role 'login_for_SavedInfo7', cardinality 0..*) is associated with 'login_for_SavedInfo_UseCase' (role 'order_Online6', cardinality 0..*).
+'Delivery_UseCase' (role 'registered_User16', cardinality 0..*) is associated with 'Registered_User_Actor' (role 'delivery17', cardinality 0..*).

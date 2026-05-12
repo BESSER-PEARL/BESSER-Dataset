@@ -1,0 +1,10 @@
+The model has 9 class(es).
+The class 'outputgenerator' has no attributes.
+The class 'activity_manager' has no attributes.
+The class 'class_manager' has no attributes.
+The class 'faculty_manager' has no attributes.
+The class 'time_manager' has no attributes.
+The class 'room_manager' has no attributes.
+The class 'ATTGS' has no attributes.
+The class 'data_manager' has no attributes.
+The class 'subject_manager' has no attributes.

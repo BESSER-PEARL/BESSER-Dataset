@@ -1,0 +1,24 @@
+The model has 15 class(es).
+The class 'Ordonance' has the following attributes: 'date' of type str; 'id' of type int.
+The class 'Produit' has the following attributes: 'posologie' of type str; 'dose' of type str; 'id' of type int; 'nom' of type str.
+The class 'Contact' has the following attributes: 'id' of type int; 'telephone' of type int; 'mail' of type str.
+The class 'Personne' has the following attributes: 'nom' of type str; 'numero' of type str; 'prenom' of type str; 'numeroMedecin' of type int; 'attribute' of type str; 'id' of type int.
+The class 'CentreHospitalier' has the following attributes: 'nomCentre' of type str; 'descriptionCentre' of type str; 'numeroCentre' of type int.
+The class 'Patient' has the following attributes: 'nomPatient' of type str; 'profession' of type str; 'lieuResidence' of type str; 'prenomPatien' of type str; 'agePatient' of type int; 'numeroPatien' of type int.
+The class 'Rendez_vous' has the following attributes: 'numero' of type str; 'id' of type int; 'date' of type str.
+The class 'ResultatExamen' has the following attributes: 'infoResultat' of type str; 'numeroResultat' of type int.
+The class 'Programme' has the following attributes: 'date' of type str; 'numeroProgramme' of type str; 'heure' of type str.
+The class 'Rendez_vous_Laboratoire_Patient_external' has no attributes.
+The class 'Rendez_vous_Medecin_Patient_external' has no attributes.
+The class 'Laboratoire' has the following attributes: 'numero' of type str; 'id' of type int; 'nom' of type str.
+The class 'Examen' has the following attributes: 'dateProvisoir' of type str; 'motif' of type str; 'numeroExamen' of type int; 'heure' of type str.
+The class 'Service' has the following attributes: 'numeroService' of type int; 'nomService' of type str; 'descriptionService' of type str.
+The class 'Medecin' has the following attributes: 'prenomMedecin' of type str; 'dateNaissance' of type str; 'nomMedecin' of type str; 'specialite' of type str.
+'Ordonance' (role 'produit15', cardinality 0..*) is associated with 'Produit' (role 'ordonance14', cardinality 0..*).
+'Examen' (role 'rendez_vous_Laboratoire_Patient6', cardinality 0..*) is associated with 'Rendez_vous_Laboratoire_Patient_external' (role 'examen7', cardinality 0..*).
+'Contact' (role 'personne4', cardinality 0..*) is associated with 'Personne' (role 'contact5', cardinality 0..*).
+'Rendez_vous_Medecin_Patient_external' (role 'ordonance11', cardinality 0..*) is associated with 'Ordonance' (role 'rendez_vous_Medecin_Patient10', cardinality 0..*).
+'Service' (role 'centreHospitalier2', cardinality 0..*) is associated with 'CentreHospitalier' (role 'service3', cardinality 0..*).
+'Service' (role 'medecin1', cardinality 0..*) is associated with 'Medecin' (role 'service0', cardinality 0..*).
+'Programme' (role 'examen13', cardinality 0..*) is associated with 'Examen' (role 'programme12', cardinality 0..*).
+'ResultatExamen' (role 'examen8', cardinality 0..*) is associated with 'Examen' (role 'resultatExamen9', cardinality 0..*).

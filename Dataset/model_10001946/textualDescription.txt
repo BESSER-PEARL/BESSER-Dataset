@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'SudokuBoard' has no attributes.
+The class 'User' has no attributes.

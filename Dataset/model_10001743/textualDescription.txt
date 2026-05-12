@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'Library_Management_System_Component' has no attributes.
+The class 'Library_Staff_Actor' has no attributes.
+The class 'Search_for_Books_external' has no attributes.
+The class 'Send_Book_external' has no attributes.
+The class 'Return_Book_external' has no attributes.
+The class 'Checkout_Book_external' has no attributes.
+The class 'Patron_Actor' has no attributes.
+The class 'librarymanagementsystem_Library' has the following attributes: 'CDs' of type str; 'fine' of type str; 'software' of type str; 'videos' of type str; 'computers' of type int; 'books' of type str; 'maxFine' of type str.
+The class 'Database_external' has no attributes.
+'Library_Staff_Actor' (role 'database5', cardinality 0..*) is associated with 'Database_external' (role 'library_Staff4', cardinality 0..*).
+'Patron_Actor' (role 'search_for_Books10', cardinality 0..*) is associated with 'Search_for_Books_external' (role 'patron11', cardinality 0..*).
+'Library_Staff_Actor' (role 'return_Book3', cardinality 0..*) is associated with 'Return_Book_external' (role 'library_Staff2', cardinality 0..*).
+'Patron_Actor' (role 'checkout_Book6', cardinality 0..*) is associated with 'Checkout_Book_external' (role 'patron7', cardinality 0..*).
+'Library_Staff_Actor' (role 'send_Book1', cardinality 0..*) is associated with 'Send_Book_external' (role 'library_Staff0', cardinality 0..*).
+'Return_Book_external' (role 'patron9', cardinality 0..*) is associated with 'Patron_Actor' (role 'return_Book8', cardinality 0..*).

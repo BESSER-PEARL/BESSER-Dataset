@@ -1,0 +1,34 @@
+The model has 20 class(es).
+The class 'Administrator' has no attributes.
+The class 'Brosser_la_voiture_UseCase' has no attributes.
+The class 'Payment' has the following attributes: 'Type_of_payment' of type str.
+The class 'Rincer_la_voiture__UseCase' has no attributes.
+The class 'Primary_Info' has the following attributes: 'Type_of_wash' of type str; 'Type_of_car' of type str.
+The class 'Metre_de_la_mousse_UseCase' has no attributes.
+The class 'Money_Dispenser' has no attributes.
+The class 'Prendre_le_re_u_UseCase' has no attributes.
+The class 'Delivery_Boy' has no attributes.
+The class 'choisir_le_type_de_payement_UseCase' has no attributes.
+The class 'Cleaner' has no attributes.
+The class 'D_finir_le_type_de_voiture_UseCase' has no attributes.
+The class 'Payer_UseCase' has no attributes.
+The class 'Delivering_Management' has the following attributes: 'client_key' of type str; 'deliver_boy_id' of type str; 'client_name' of type str.
+The class 'Cleaning_Management' has the following attributes: 'brushing' of type str; 'water' of type str; 'powderized_wash' of type str.
+The class 'choisir_le_type_de_lavage_UseCase' has no attributes.
+The class 'User' has no attributes.
+The class 'donner_des_informayions_UseCase' has no attributes.
+The class 'Lavage_de_la_voiture__UseCase' has no attributes.
+The class 'Client_Actor' has no attributes.
+'donner_des_informayions_UseCase' (role 'client21', cardinality 0..*) is associated with 'Client_Actor' (role 'info20', cardinality 0..*).
+'User' (role 'primary_Info6', cardinality 0..*) is associated with 'Primary_Info' (role 'user7', cardinality 0..*).
+'Primary_Info' (role 'payment0', cardinality 0..*) is associated with 'Payment' (role 'primary_Info1', cardinality 0..*).
+'Payment' (role 'user9', cardinality 0..*) is associated with 'User' (role 'payment8', cardinality 0..*).
+'Lavage_de_la_voiture__UseCase' (role 'info25', cardinality 0..*) is associated with 'donner_des_informayions_UseCase' (role 'cleaning_Management24', cardinality 0..*).
+'Payment' (role 'money_Dispenser16', cardinality 0..*) is associated with 'Money_Dispenser' (role 'payment17', cardinality 0..*).
+'User' (role 'cleaning_Management10', cardinality 0..*) is associated with 'Cleaning_Management' (role 'user11', cardinality 0..*).
+'Cleaner' (role 'cleaning_Management15', cardinality 0..*) is associated with 'Cleaning_Management' (role 'cleaner14', cardinality 0..*).
+'Cleaning_Management' (role 'delivering_Management4', cardinality 0..*) is associated with 'Delivering_Management' (role 'cleaning_Management5', cardinality 0..*).
+'Cleaning_Management' (role 'payment3', cardinality 0..*) is associated with 'Payment' (role 'cleaning_Management2', cardinality 0..*).
+'Delivery_Boy' (role 'delivering_Management19', cardinality 0..*) is associated with 'Delivering_Management' (role 'delivery_Boy18', cardinality 0..*).
+'Delivering_Management' (role 'user13', cardinality 0..*) is associated with 'User' (role 'delivering_Management12', cardinality 0..*).
+'donner_des_informayions_UseCase' (role 'payment22', cardinality 0..*) is associated with 'Payer_UseCase' (role 'info23', cardinality 0..*).

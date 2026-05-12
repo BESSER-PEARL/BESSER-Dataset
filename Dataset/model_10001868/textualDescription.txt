@@ -1,0 +1,19 @@
+The model has 14 class(es).
+The class 'Person' has the following attributes: 'birthDate' of type str; 'givenName' of type str; 'homeAddress' of type str; 'phone' of type str; 'middleName' of type str; 'gender' of type str; 'title' of type str; 'name' of type str; 'familyName' of type str.
+The class 'Front_Desk_Staff' has no attributes.
+The class 'Technician' has no attributes.
+The class 'Technologist' has no attributes.
+The class 'Doctor' has the following attributes: 'specialty' of type str; 'locations' of type str.
+The class 'Staff' has the following attributes: 'joined' of type str; 'languages' of type str; 'certification' of type str; 'education' of type str.
+The class 'Operations_Staff' has no attributes.
+The class 'Technical_Staff' has no attributes.
+The class 'Department' has no attributes.
+The class 'Receptionist' has no attributes.
+The class 'Administrative_Staff' has no attributes.
+The class 'Nurse' has no attributes.
+The class 'Patient' has the following attributes: 'name' of type str; 'age' of type int; 'accepted' of type str; 'prescriptions' of type str; 'sickness' of type str; 'allergies' of type str; 'id' of type str; 'specialReqs' of type str; 'gender' of type str; 'birthDate' of type str.
+The class 'Hospital' has the following attributes: 'phone' of type str; 'address' of type str; 'name' of type str.
+'Person' (role 'hospital0', cardinality 0..*) is associated with 'Hospital' (role 'person1', cardinality 0..*).
+'Patient' (role 'operations_Staff6', cardinality 0..*) is associated with 'Operations_Staff' (role 'patient7', cardinality 0..*).
+'Department' (role 'staff4', cardinality 0..*) is associated with 'Staff' (role 'department5', cardinality 0..*).
+'Department' (role 'hospital3', cardinality 0..*) is associated with 'Hospital' (role 'department2', cardinality 0..*).

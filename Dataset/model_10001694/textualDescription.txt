@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'Players_Person' has the following attributes: 'name' of type str; 'personNumber' of type str.
+The class 'Players_Wallet' has the following attributes: 'balance' of type int.
+The class 'Cards_CardImpl' has the following attributes: 'isMarked' of type bool; 'Cardinality' of type Cards_Cardinality; 'Suit' of type str.
+The class 'Cards_Card_Interface' has no attributes.
+The class 'Game_GUI' has no attributes.
+The class 'Game_Ranker' has the following attributes: 'hand' of type Players_PokerHand.
+The class 'Main_MainGame' has the following attributes: 'HighestBid' of type int; 'screen' of type Game_GUI; 'SmallBlind' of type int; 'Bigblind' of type int; 'Dealer' of type int; 'Players' of type str.
+The class 'Players_PokerHand' has the following attributes: 'highCard' of type Cards_Cardinality; 'value' of type int; 'Cards' of type Card___Interface.
+The class 'Players_Player' has the following attributes: 'Hand' of type Players_PokerHand; 'chips' of type Players_Wallet; 'isSmallBlind' of type bool; 'hasFolded' of type bool; 'isDealer' of type bool; 'isBigBlind' of type bool.
+The class 'Card___Interface' has no attributes.
+The class 'Cards_Deck' has the following attributes: 'burnt' of type Cards_Card_Interface; 'list' of type str.
+The enumeration 'Cards_Cardinality' does not specify any literals.
+'Players_Player' (role 'owner11', cardinality 0..*) is associated with 'Players_Wallet' (role 'player10', cardinality 0..*).
+'Cards_Deck' (role 'card0', cardinality 0..*) is associated with 'Cards_Card_Interface' (role 'deck1', cardinality 0..*).
+'Cards_Card_Interface' (role 'pokerHand7', cardinality 0..*) is associated with 'Players_PokerHand' (role 'card6', cardinality 0..*).
+'Players_PokerHand' (role 'Holder9', cardinality 0..*) is associated with 'Players_Player' (role 'pokerHand8', cardinality 0..*).
+'Game_GUI' (role 'Owner2', cardinality 0..*) is associated with 'Main_MainGame' (role 'gUI3', cardinality 0..*).
+'Players_Player' (role 'deck4', cardinality 0..*) is associated with 'Cards_Deck' (role 'player5', cardinality 0..*).

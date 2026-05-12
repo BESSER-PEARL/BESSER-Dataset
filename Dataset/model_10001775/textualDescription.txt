@@ -1,0 +1,18 @@
+The model has 17 class(es).
+The class 'Interpreter_ByteCode_Read' has no attributes.
+The class 'Interpreter_ByteCode_FalseBranch' has the following attributes: 'label' of type str; 'address' of type int.
+The class 'Interpreter_ByteCode_GoTo' has the following attributes: 'label' of type str; 'address' of type int.
+The class 'Interpreter_ByteCode_Halt' has no attributes.
+The class 'Interpreter_ByteCode_Return' has the following attributes: 'funcname' of type str.
+The class 'Interpreter_ByteCode_ByteCode' has no attributes.
+The class 'Interpreter_ByteCode_Load' has the following attributes: 'id' of type str; 'offset' of type int.
+The class 'Interpreter_ByteCode_Store' has the following attributes: 'id' of type str; 'offset' of type int; 'value' of type int.
+The class 'Interpreter_ByteCode_Args' has the following attributes: 'nArgs' of type int.
+The class 'Interpreter_ByteCode_Label' has the following attributes: 'label' of type str.
+The class 'Interpreter_ByteCode_Lit' has the following attributes: 'value' of type int; 'var' of type str.
+The class 'Interpreter_ByteCode_Call' has the following attributes: 'funcname' of type str; 'address' of type int.
+The class 'Interpreter_ByteCode_Dump' has the following attributes: 'stats' of type str.
+The class 'Interpreter_ByteCode_Write' has no attributes.
+The class 'Interpreter_ByteCode_Pop' has the following attributes: 'count' of type int.
+The class 'Interpreter_ByteCode_BOP' has the following attributes: 'binaryOp' of type str.
+The class 'Interpreter_ByteCodeLoader' has the following attributes: 'byteSource' of type str; 'byteCodeList' of type str; 'program' of type str.

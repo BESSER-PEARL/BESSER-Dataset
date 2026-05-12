@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Discription' has the following attributes: 'Discription' of type str; 'Email' of type str.
+The class 'Delivery' has the following attributes: 'Type' of type str; 'Date' of type str; 'Name' of type str.
+The class 'Payment' has the following attributes: 'Date_off' of type str; 'Amount' of type int.
+The class 'User' has the following attributes: 'Email' of type str; 'Phone_num' of type int; 'Address' of type str; 'Name' of type str.
+The class 'Order' has the following attributes: 'Type' of type str; 'Quantity' of type int; 'Size' of type int; 'ID' of type int.
+'User' (role 'delivery2', cardinality 0..*) is associated with 'Delivery' (role 'User_Delivery_13', cardinality 0..*).
+'Payment' (role 'order5', cardinality 0..*) is associated with 'Order' (role 'payment4', cardinality 0..*).
+'Discription' (role 'order7', cardinality 0..*) is associated with 'Order' (role 'discription6', cardinality 0..*).
+'User' (role 'order9', cardinality 0..*) is associated with 'Order' (role 'user8', cardinality 0..*).
+'Delivery' (role 'order1', cardinality 0..*) is associated with 'Order' (role 'delivery0', cardinality 0..*).

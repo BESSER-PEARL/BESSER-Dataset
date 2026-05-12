@@ -1,0 +1,23 @@
+The model has 17 class(es).
+The class 'Integer_Interface' has no attributes.
+The class 'game_GameController' has no attributes.
+The class 'account_UserAccount' has the following attributes: 'createdAt' of type str; 'gamesWon' of type str; 'alias' of type str; 'password' of type str; 'email' of type str; 'id' of type str; 'gamesPlayed' of type str.
+The class 'CrudRepository_Interface' has no attributes.
+The class 'profile_UserProfile' has the following attributes: 'name' of type str; 'credits' of type str; 'id' of type str; 'attribute' of type str; 'uid' of type str.
+The class 'UserAccount' has no attributes.
+The class 'game_Card' has the following attributes: 'name' of type str; 'suit' of type str.
+The class 'game_Ace' has no attributes.
+The class 'account_UserAccountPublicInfo' has the following attributes: 'gamesPlayed' of type str; 'alias' of type str; 'gamesWon' of type str; 'id' of type str.
+The class 'game_Pack' has no attributes.
+The class 'account_UserAccountRepository_Interface' has no attributes.
+The class 'account_UserAccountPasswordChange' has the following attributes: 'oldPassword' of type str; 'newPassword' of type str; 'email' of type str.
+The class 'game_Deck' has the following attributes: 'cards' of type str.
+The class 'profile_UserProfileController' has the following attributes: 'attribute' of type str; 'userProfileRepository' of type profile_UserProfileRepository_Interface; 'URL' of type str; 'userAccountRepository' of type account_UserAccountRepository_Interface.
+The class 'account_UserAccountController' has the following attributes: 'userAccountRepository' of type account_UserAccountRepository_Interface; 'URL' of type str.
+The class 'UserProfileRequestCreate' has no attributes.
+The class 'profile_UserProfileRepository_Interface' has no attributes.
+The enumeration 'Int' does not specify any literals.
+'account_UserAccountController' (role 'userAccountPublicInfo5', cardinality 0..*) is associated with 'account_UserAccountPublicInfo' (role 'userAccountController4', cardinality 0..*).
+'game_Deck' (role 'card1', cardinality 0..*) is associated with 'game_Card' (role 'deck0', cardinality 0..*).
+'account_UserAccountController' (role 'userAccount7', cardinality 0..*) is associated with 'account_UserAccount' (role 'userAccountController6', cardinality 0..*).
+'account_UserAccountRepository_Interface' (role 'userAccountController2', cardinality 0..*) is associated with 'account_UserAccountController' (role 'userAccountRepository23', cardinality 0..*).

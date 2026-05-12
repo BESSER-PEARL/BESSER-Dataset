@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Intervention_UseCase  {
+
+
+
+
+
+
+    private Plane_Actor plane_actor;
+
+
+    public Intervention_UseCase(
+    ) {
+    }
+
+
+
+    public Plane_Actor getPlane_actor() {
+        return plane_actor;
+    }
+
+    public void setPlane_actor(Plane_Actor plane_actor) {
+        this.plane_actor = plane_actor;
+    }
+
+}

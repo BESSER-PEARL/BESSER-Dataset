@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'public' has the following attributes: 'name' of type str.
+The class 'Profile' has the following attributes: 'photo' of type str; 'password' of type str; 'username' of type str.
+The class 'Message' has the following attributes: 'maxChars' of type str.
+The class 'Post' has the following attributes: 'likes' of type int; 'info' of type str.
+The class 'secret' has the following attributes: 'name' of type str.
+The class 'Registration' has the following attributes: 'name' of type str; 'email' of type str; 'password' of type secret.
+The class 'Friend' has no attributes.
+The class 'User' has the following attributes: 'name' of type str.
+The class 'Login' has the following attributes: 'password' of type str; 'email' of type str.
+'User' (role 'registeration6', cardinality 0..*) is associated with 'Registration' (role 'user7', cardinality 0..*).
+'Login' (role 'user5', cardinality 0..*) is associated with 'User' (role 'login4', cardinality 0..*).
+'User' (role 'message8', cardinality 0..*) is associated with 'Message' (role 'user9', cardinality 0..*).
+'Friend' (role 'user11', cardinality 0..*) is associated with 'User' (role 'friends10', cardinality 0..*).
+'User' (role 'post2', cardinality 0..*) is associated with 'Post' (role 'user3', cardinality 0..*).
+'Profile' (role 'user1', cardinality 0..*) is associated with 'User' (role 'myprofile0', cardinality 0..*).

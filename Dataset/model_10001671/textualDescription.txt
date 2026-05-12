@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'MyClass' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MyClass2' has no attributes.
+'MyClass2' (role 'myClass35', cardinality 0..*) is associated with 'MyClass3' (role 'myClass24', cardinality 0..*).
+'MyClass2' (role 'myClass37', cardinality 0..*) is associated with 'MyClass3' (role 'myClass26', cardinality 0..*).
+'MyClass3' (role 'myClass12', cardinality 0..*) is associated with 'MyClass' (role 'myClass313', cardinality 0..*).
+'MyClass2' (role 'myClass11', cardinality 0..*) is associated with 'MyClass' (role 'myClass210', cardinality 0..*).
+'MyClass3' (role 'myClass3', cardinality 0..*) is associated with 'MyClass' (role 'myClass32', cardinality 0..*).
+'MyClass2' (role 'myClass1', cardinality 0..*) is associated with 'MyClass' (role 'myClass20', cardinality 0..*).
+'MyClass2' (role 'myClass39', cardinality 0..*) is associated with 'MyClass3' (role 'myClass28', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'T' has no attributes.
+The class 'Library_Management_Component' has no attributes.
+The class 'choose_scissor_external' has no attributes.
+The class 'PLAYER_Actor' has no attributes.
+The class 'choose_paper_external' has no attributes.
+The class 'choose_rock_external' has no attributes.
+The class 'COMPUTER_Actor' has no attributes.
+'COMPUTER_Actor' (role 'search_books6', cardinality 0..*) is associated with 'choose_paper_external' (role 'member7', cardinality 0..*).
+'PLAYER_Actor' (role 'return_book12', cardinality 0..*) is associated with 'choose_scissor_external' (role 'librarian13', cardinality 0..*).
+'COMPUTER_Actor' (role 'request_book2', cardinality 0..*) is associated with 'choose_rock_external' (role 'member3', cardinality 0..*).
+'choose_rock_external' (role 'member5', cardinality 0..*) is associated with 'COMPUTER_Actor' (role 'request_book_return4', cardinality 0..*).
+'PLAYER_Actor' (role 'issue_member_card8', cardinality 0..*) is associated with 'choose_scissor_external' (role 'librarian9', cardinality 0..*).
+'PLAYER_Actor' (role 'update_member_profile14', cardinality 0..*) is associated with 'choose_paper_external' (role 'librarian15', cardinality 0..*).
+'COMPUTER_Actor' (role 'inquiry_for_membership0', cardinality 0..*) is associated with 'choose_paper_external' (role 'member1', cardinality 0..*).
+'choose_paper_external' (role 'librarian11', cardinality 0..*) is associated with 'PLAYER_Actor' (role 'issue_book10', cardinality 0..*).

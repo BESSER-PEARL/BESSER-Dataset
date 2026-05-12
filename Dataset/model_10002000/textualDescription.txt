@@ -1,0 +1,22 @@
+The model has 21 class(es).
+The class 'Color' has no attributes.
+The class 'Wild4' has no attributes.
+The class 'Draw2' has no attributes.
+The class 'Skip' has no attributes.
+The class 'GameElements_Interface' has no attributes.
+The class 'Game' has the following attributes: 'Game__1' of type str; 'PlayGame__' of type str; 'getPlayers__' of type str; 'Game__' of type str.
+The class 'WildCard' has the following attributes: 'WildCard_String_' of type str; 'WildCard__' of type str.
+The class 'Players' has the following attributes: 'Player__' of type str; 'playCard_Card_' of type str; 'hasCard_Card_' of type str; 'Players__' of type str; 'drawCard_Card_' of type str; 'Player_String_' of type str; 'getName' of type str.
+The class 'ActionCard' has the following attributes: 'ActionCard_Color_String_' of type str; '_attr' of type str; 'ActionCard__' of type str.
+The class 'Dealer' has the following attributes: 'shuffle__' of type str; 'Dealer__' of type str; 'Dealer__1' of type str; 'distribute_Player___' of type str.
+The class 'GameElements' has the following attributes: 'WildActions' of type str; 'CardNumber' of type str; 'Actions' of type str; 'CardColors' of type str; 'CardsTotal' of type str; 'Action' of type str; 'Numbers' of type int___1; 'WildCardCol' of type str; 'OpeningHand' of type str; 'Wild' of type str.
+The class 'GameSession' has the following attributes: 'GameSession_Game_' of type str; 'setPlayers__' of type str; 'GameSession_Game__Card_' of type str.
+The class 'Card' has the following attributes: 'Card_Color__int__String_' of type str; 'setValue' of type str; 'Card__' of type str; 'setColor_Color_' of type str; 'getColor__' of type Color; 'Card__1' of type str.
+The class 'Reverse' has no attributes.
+The class 'Wild' has no attributes.
+The class 'NumberCard' has the following attributes: 'NumberCard_Color__String_' of type str; 'attribute2' of type str; 'attribute' of type str; 'NumberCard__' of type str.
+The class 'Main' has the following attributes: 'Main__' of type str; 'main_String____' of type str.
+The class 'CardElements_Interface' has no attributes.
+The class 'DrawPile' has the following attributes: 'DrawPile__1' of type str; 'DrawPile__' of type str; 'removeCard_Card_' of type str.
+The class 'DiscardPile' has the following attributes: 'showTop__' of type str; 'DiscardPile__' of type str; 'DiscardPile__1' of type str.
+The class 'int___1' has no attributes.

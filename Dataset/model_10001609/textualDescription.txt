@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'BlackjackGame' has the following attributes: 'dealer' of type Dealer; 'bet' of type int; 'player' of type Player; 'deck' of type Deck.
+The class 'UseCase_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'BasePlayer' has the following attributes: 'isBusted' of type bool.
+The class 'Hand' has the following attributes: 'total' of type int; 'cards' of type Card.
+The class 'Card' has the following attributes: 'name' of type str; 'valueHard' of type str; 'valueSoft' of type str; 'rank' of type str; 'Count' of type int; 'suit' of type str; 'avatar' of type str.
+The class 'JLabel' has no attributes.
+The class 'Dealer' has the following attributes: 'hand' of type Hand; 'cardTotalLimit' of type int.
+The class 'JButton' has no attributes.
+The class 'Player' has the following attributes: 'hand' of type Hand; 'profile' of type str; 'money' of type int.
+The class 'Deck' has the following attributes: 'cards' of type Card.
+'Hand' (role 'dealer7', cardinality 0..*) is associated with 'Dealer' (role 'hand6', cardinality 0..*).
+'Deck' (role 'blackjack5', cardinality 0..*) is associated with 'BlackjackGame' (role 'deck24', cardinality 0..*).
+'Hand' (role 'card10', cardinality 0..*) is associated with 'Card' (role 'hand11', cardinality 0..*).
+'Player' (role 'blackjack0', cardinality 0..*) is associated with 'BlackjackGame' (role 'player1', cardinality 0..*).
+'BlackjackGame' (role 'dealer3', cardinality 0..*) is associated with 'Dealer' (role 'blackjack2', cardinality 0..*).
+'Hand' (role 'player9', cardinality 0..*) is associated with 'Player' (role 'hand8', cardinality 0..*).
+'Deck' (role 'card12', cardinality 0..*) is associated with 'Card' (role 'deck13', cardinality 0..*).

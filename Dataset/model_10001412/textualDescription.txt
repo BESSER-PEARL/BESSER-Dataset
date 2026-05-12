@@ -1,0 +1,9 @@
+The model has 7 class(es).
+The class 'Account' has the following attributes: 'int' of type str; 'string' of type str; 'int1' of type str.
+The class 'Cards' has the following attributes: 'int' of type str; 'bool' of type str; 'int1' of type str; 'string' of type str.
+The class 'InputValidation' has no attributes.
+The class 'Deck' has the following attributes: 'int' of type str.
+The class 'Player' has the following attributes: 'int' of type str; 'Card' of type str; 'Deck' of type str; 'int1' of type str.
+The class 'Blackjack' has no attributes.
+The class 'Main' has no attributes.
+'Cards' (role 'deck1', cardinality 0..*) is associated with 'Deck' (role 'cards0', cardinality 0..*).

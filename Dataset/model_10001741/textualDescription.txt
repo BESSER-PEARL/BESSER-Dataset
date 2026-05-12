@@ -1,0 +1,8 @@
+The model has 7 class(es).
+The class 'model_T' has no attributes.
+The class 'model_Operator' has no attributes.
+The class 'genmymodelreverse_java_util_logging_Logger' has no attributes.
+The class 'model_Director' has no attributes.
+The class 'model_Call' has the following attributes: 'MIN' of type int; 'MAX' of type int; 'LOGGER' of type genmymodelreverse_java_util_logging_Logger; 'number' of type int.
+The class 'model_Supervisor' has no attributes.
+The class 'model_CallCenterEmployee' has the following attributes: 'callsAnswered' of type int; 'name' of type str; 'LOGGER' of type genmymodelreverse_java_util_logging_Logger; 'employeeType' of type str.

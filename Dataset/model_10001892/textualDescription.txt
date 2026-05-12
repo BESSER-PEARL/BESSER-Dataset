@@ -1,0 +1,48 @@
+The model has 26 class(es).
+The class 'Register_UseCase' has no attributes.
+The class 'View_AttackHistory_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'View_AttackHistory_UseCase1' has no attributes.
+The class 'View_AttackNews_UseCase' has no attributes.
+The class 'View_Home_UseCase1' has no attributes.
+The class 'StartParam' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'ExecuteAttack_UseCase' has no attributes.
+The class 'Edit_Profile_UseCase1' has no attributes.
+The class 'User' has the following attributes: 'fName' of type str; 'phoneNumber' of type int; 'lName' of type str; 'cin' of type str; 'email' of type str; 'birthDate' of type int.
+The class 'Result' has the following attributes: 'value' of type str.
+The class 'View_AttackNews_UseCase1' has no attributes.
+The class 'View_Profile_UseCase1' has no attributes.
+The class 'Role' has the following attributes: 'type' of type str.
+The class 'Attack' has the following attributes: 'requiredTokens' of type int; 'name' of type str.
+The class 'Edit_Profile_UseCase' has no attributes.
+The class 'Account' has the following attributes: 'login' of type str; 'password' of type int; 'creationDate' of type int.
+The class 'Location' has the following attributes: 'city' of type str; 'postalCode' of type int; 'streetAddress' of type str; 'stateProvince' of type str.
+The class 'Country' has the following attributes: 'countryName' of type str.
+The class 'View_Home_UseCase' has no attributes.
+The class 'View_Profile_UseCase' has no attributes.
+The class 'Authenticate_UseCase1' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Authenticate_UseCase' has no attributes.
+The class 'AttackHistory' has the following attributes: 'auto' of type bool; 'date' of type int; 'target' of type str.
+The class 'Balance' has the following attributes: 'tokens' of type int.
+'Admin_Actor' (role 'view_Profile36', cardinality 0..*) is associated with 'View_Profile_UseCase1' (role 'user37', cardinality 0..*).
+'User' (role 'location2', cardinality 0..*) is associated with 'Location' (role 'user3', cardinality 0..*).
+'Location' (role 'country8', cardinality 0..*) is associated with 'Country' (role 'location9', cardinality 0..*).
+'Admin_Actor' (role 'view_AttackNews40', cardinality 0..*) is associated with 'View_AttackNews_UseCase1' (role 'user41', cardinality 0..*).
+'StartParam' (role 'attackHistory12', cardinality 0..*) is associated with 'AttackHistory' (role 'startParam13', cardinality 0..*).
+'User_Actor' (role 'view_AttackHistory24', cardinality 0..*) is associated with 'View_AttackHistory_UseCase' (role 'user25', cardinality 0..*).
+'Edit_Profile_UseCase' (role 'user21', cardinality 0..*) is associated with 'User_Actor' (role 'edit_Profile20', cardinality 0..*).
+'User_Actor' (role 'view_AttackNews30', cardinality 0..*) is associated with 'View_AttackNews_UseCase' (role 'user31', cardinality 0..*).
+'Account' (role 'balance6', cardinality 0..*) is associated with 'Balance' (role 'account7', cardinality 0..*).
+'View_Home_UseCase1' (role 'user33', cardinality 0..*) is associated with 'Admin_Actor' (role 'view_Home32', cardinality 0..*).
+'User' (role 'role0', cardinality 0..*) is associated with 'Role' (role 'user1', cardinality 0..*).
+'Result' (role 'attackHistory14', cardinality 0..*) is associated with 'AttackHistory' (role 'result15', cardinality 0..*).
+'User_Actor' (role 'register28', cardinality 0..*) is associated with 'Register_UseCase' (role 'user29', cardinality 0..*).
+'ExecuteAttack_UseCase' (role 'user27', cardinality 0..*) is associated with 'User_Actor' (role 'executeAttack26', cardinality 0..*).
+'User' (role 'account4', cardinality 0..*) is associated with 'Account' (role 'user5', cardinality 0..*).
+'View_Profile_UseCase' (role 'user23', cardinality 0..*) is associated with 'User_Actor' (role 'view_Profile22', cardinality 0..*).
+'User_Actor' (role 'view_Home18', cardinality 0..*) is associated with 'View_Home_UseCase' (role 'user19', cardinality 0..*).
+'Attack' (role 'attackHistory10', cardinality 0..*) is associated with 'AttackHistory' (role 'attack11', cardinality 0..*).
+'Admin_Actor' (role 'view_AttackHistory34', cardinality 0..*) is associated with 'View_AttackHistory_UseCase1' (role 'user35', cardinality 0..*).
+'User' (role 'attackHistory16', cardinality 0..*) is associated with 'AttackHistory' (role 'user17', cardinality 0..*).
+'Edit_Profile_UseCase1' (role 'user39', cardinality 0..*) is associated with 'Admin_Actor' (role 'edit_Profile38', cardinality 0..*).

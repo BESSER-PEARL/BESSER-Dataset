@@ -1,0 +1,20 @@
+The model has 11 class(es).
+The class 'Cart' has the following attributes: 'date' of type str; 'ProductID' of type str; 'Quantity' of type int; 'cartID' of type int.
+The class 'Payment' has the following attributes: 'paymentID' of type str; 'paymentDate' of type str; 'paymentAmount' of type str; 'PaymentType' of type str; 'PaymentStatus' of type str.
+The class 'Customer' has the following attributes: 'CutsomerAddress' of type str; 'Email' of type str; 'CustomerName' of type str; 'PhoneNumber' of type int.
+The class 'Meals' has the following attributes: 'MealType' of type str; 'unitPrice' of type str; 'supplier' of type str; 'MealID' of type str; 'Portion' of type str; 'MealName' of type str.
+The class 'Admin' has no attributes.
+The class 'User' has the following attributes: 'userID' of type str; 'loginStatus' of type str; 'Password' of type str.
+The class 'OrderDetails' has the following attributes: 'OrderID' of type int; 'MealID' of type str; 'quantity' of type int; 'orderTime' of type str; 'status' of type str; 'totPrice' of type str.
+The class 'Employee' has the following attributes: 'EmpName' of type str; 'EmpPassword' of type str; 'EmployeeID' of type str.
+The class 'Orders' has the following attributes: 'dateOrdered' of type str; 'status' of type str; 'dateFinished' of type str; 'OrderID' of type int.
+The class 'Transport' has the following attributes: 'transportCost' of type str; 'TransportID' of type int; 'location' of type str.
+The class 'Guest' has the following attributes: 'guestID' of type str.
+'Employee' (role 'orders4', cardinality 0..*) is associated with 'Orders' (role 'employee5', cardinality 0..*).
+'Orders' (role 'orderDetails6', cardinality 0..*) is associated with 'OrderDetails' (role 'orders7', cardinality 0..*).
+'Cart' (role 'customer9', cardinality 0..*) is associated with 'Customer' (role 'cart8', cardinality 0..*).
+'OrderDetails' (role 'cart10', cardinality 0..*) is associated with 'Cart' (role 'orderDetails11', cardinality 0..*).
+'Transport' (role 'orders13', cardinality 0..*) is associated with 'Orders' (role 'transport12', cardinality 0..*).
+'Orders' (role 'customer3', cardinality 0..*) is associated with 'Customer' (role 'orders2', cardinality 0..*).
+'Orders' (role 'payment14', cardinality 0..*) is associated with 'Payment' (role 'orders15', cardinality 0..*).
+'Payment' (role 'customer1', cardinality 0..*) is associated with 'Customer' (role 'payment0', cardinality 0..*).

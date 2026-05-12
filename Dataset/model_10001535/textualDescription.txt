@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'Portal' has no attributes.
+The class 'Administrator' has the following attributes: 'name' of type str; 'administratorID' of type int.
+The class 'FacultyInfo' has the following attributes: 'facultyName' of type str; 'department' of type Department; 'facultyID' of type str.
+The class 'Student' has the following attributes: 'branch' of type Department; 'semester' of type int; 'name' of type str; 'scholarNo' of type int.
+The class 'AcademicRecords' has the following attributes: 'dues' of type int; 'attendance' of type str; 'result' of type AcademicResult; 'student' of type Student.
+The class 'Department' has the following attributes: 'name' of type str; 'course' of type Course.
+The class 'Course' has the following attributes: 'courseName' of type str; 'subjectCode' of type str.
+The class 'AcademicResult' has the following attributes: 'semester' of type int.
+'Student' (role 'academicRecords5', cardinality 0..*) is associated with 'AcademicRecords' (role 'student24', cardinality 0..*).
+'Course' (role 'department11', cardinality 0..*) is associated with 'Department' (role 'course10', cardinality 0..*).
+'AcademicRecords' (role 'administrator2', cardinality 0..*) is associated with 'Administrator' (role 'academicRecords3', cardinality 0..*).
+'AcademicRecords' (role 'academicResult6', cardinality 0..*) is associated with 'AcademicResult' (role 'academicRecords7', cardinality 0..*).
+'Student' (role 'department13', cardinality 0..*) is associated with 'Department' (role 'student12', cardinality 0..*).
+'Portal' (role 'academicRecords0', cardinality 0..*) is associated with 'AcademicRecords' (role 'portal1', cardinality 0..*).
+'Department' (role 'facultyInfo9', cardinality 0..*) is associated with 'FacultyInfo' (role 'department28', cardinality 0..*).

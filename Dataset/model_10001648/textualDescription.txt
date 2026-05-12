@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Card' has the following attributes: 'cardFace' of type int; 'cardSuit' of type str.
+The class 'CardDeck' has the following attributes: 'suits' of type str; 'cards' of type str.
+'CardDeck' (role 'CardDeck_Card_00', cardinality 0..*) is associated with 'Card' (role 'Has1', cardinality 0..*).

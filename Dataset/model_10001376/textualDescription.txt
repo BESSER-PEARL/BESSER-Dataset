@@ -1,0 +1,16 @@
+The model has 12 class(es).
+The class 'Person' has the following attributes: 'name' of type str; 'Birth_date' of type str; 'father_s_name' of type str; 'Age' of type int; 'Gender' of type str.
+The class 'Surgeon' has no attributes.
+The class 'Receptionist' has no attributes.
+The class 'Staff' has the following attributes: 'Certification' of type str; 'Languages' of type str; 'Education' of type str.
+The class 'Nurse' has no attributes.
+The class 'Administrative_Staff' has no attributes.
+The class 'Patient' has the following attributes: 'name' of type str; 'Prescription' of type str; 'Allergy' of type str; 'Sickness' of type str.
+The class 'Hospital' has the following attributes: 'Address' of type str; 'name' of type str; 'phone_no' of type str.
+The class 'Department' has no attributes.
+The class 'Doctor' has the following attributes: 'Location' of type str; 'Speciality' of type str.
+The class 'Operation_Staff' has no attributes.
+The class 'Technical_Staff' has no attributes.
+'Staff' (role 'department3', cardinality 0..*) is associated with 'Department' (role 'staff2', cardinality 0..*).
+'Person' (role 'hospital4', cardinality 0..*) is associated with 'Hospital' (role 'person5', cardinality 0..*).
+'Department' (role 'hospital1', cardinality 0..*) is associated with 'Hospital' (role 'department0', cardinality 0..*).

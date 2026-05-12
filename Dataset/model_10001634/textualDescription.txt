@@ -1,0 +1,39 @@
+The model has 15 class(es).
+The class 'common_Subject_Interface' has no attributes.
+The class 'common_Observer_Interface' has no attributes.
+The class 'player_Players' has the following attributes: 'MaxAmountOfPlayers' of type int; 'AmountOfPlayers' of type int; 'goodToGo' of type bool; 'wealth' of type float.
+The class 'player_Player' has the following attributes: 'state' of type common_States; 'wealth' of type float; 'bigB' of type float; 'observerIDTracker' of type int; 'observerID' of type int; 'name' of type str; 'dealer' of type bool.
+The class 'server_MultiServer' has no attributes.
+The class 'table_Deck' has the following attributes: 'suit' of type table_Suit; 'rank' of type table_Rank; 'randomNumbers' of type int; 'numCardsInDeck' of type int.
+The class 'table_Card' has the following attributes: 'suit' of type table_Suit; 'rank' of type table_Rank.
+The class 'common_Hand' has the following attributes: 'rank' of type common_Ranks.
+The class 'table_Table' has the following attributes: 'amountOfCards' of type int; 'upcomingCards' of type table_UpcomingCards; 'turnedCards' of type str.
+The class 'genmymodelreverse_java_io_PrintWriter' has no attributes.
+The class 'genmymodelreverse_java_io_IOException' has no attributes.
+The class 'calculations_PokerRules' has the following attributes: 'tableCardRank' of type common_Ranks; 'numberOfPlayers' of type int; 'arrayWithHands' of type str; 'highestCardStraight' of type str; 'cardsOnTable' of type str.
+The class 'genmymodelreverse_java_io_BufferedReader' has no attributes.
+The class 'managers_LoginManager' has the following attributes: 'in' of type genmymodelreverse_java_io_BufferedReader; 'out' of type genmymodelreverse_java_io_PrintWriter; 'inputLine' of type str.
+The class 'managers_GameManager' has the following attributes: 'initialSmallID' of type int; 'playerHands' of type str; 'playerNames' of type str; 'playerTurn' of type int; 'minimumState' of type common_States; 'playerBets' of type str; 'playerIDs' of type str; 'stateOfPlayersArr' of type str; 'tableCards' of type str; 'initialBigID' of type int; 'raise' of type float; 'playersLeftInTheGame' of type int; 'newRound' of type bool; 'dealer' of type int; 'smallblind' of type float.
+The enumeration 'table_Rank' does not specify any literals.
+The enumeration 'table_UpcomingCards' does not specify any literals.
+The enumeration 'table_Suit' does not specify any literals.
+The enumeration 'common_States' does not specify any literals.
+The enumeration 'common_Ranks' does not specify any literals.
+'player_Player' (role 'hand7', cardinality 0..*) is associated with 'common_Hand' (role 'player6', cardinality 0..*).
+'player_Players' (role 'loginmanager16', cardinality 0..*) is associated with 'managers_LoginManager' (role 'players17', cardinality 0..*).
+'player_Player' (role 'loginmanager18', cardinality 0..*) is associated with 'managers_LoginManager' (role 'player19', cardinality 0..*).
+'player_Player' (role 'gameManager15', cardinality 0..*) is associated with 'managers_GameManager' (role 'player14', cardinality 0..*).
+'managers_GameManager' (role 'players21', cardinality 0..*) is associated with 'common_Observer_Interface' (role 'gamemanager20', cardinality 0..*).
+'table_Table' (role 'players9', cardinality 0..*) is associated with 'player_Players' (role 'table8', cardinality 0..*).
+'table_Deck' (role 'topCard25', cardinality 0..*) is associated with 'table_Card' (role 'deck24', cardinality 0..*).
+'common_Hand' (role 'card213', cardinality 0..*) is associated with 'table_Card' (role 'hand12', cardinality 0..*).
+'table_Card' (role 'card28', cardinality 0..*) is associated with 'table_Card' (role 'reference29', cardinality 0..*).
+'managers_GameManager' (role 'playersObj33', cardinality 0..*) is associated with 'player_Players' (role 'gamemanager32', cardinality 0..*).
+'player_Players' (role 'players35', cardinality 0..*) is associated with 'common_Observer_Interface' (role 'players34', cardinality 0..*).
+'table_Card' (role 'hand4', cardinality 0..*) is associated with 'common_Hand' (role 'card15', cardinality 0..*).
+'table_Deck' (role 'table0', cardinality 0..*) is associated with 'table_Table' (role 'deck1', cardinality 0..*).
+'table_Table' (role 'burnedCard31', cardinality 0..*) is associated with 'table_Card' (role 'table30', cardinality 0..*).
+'table_Card' (role 'deck10', cardinality 0..*) is associated with 'table_Deck' (role 'cardBelow11', cardinality 0..*).
+'managers_GameManager' (role 'table27', cardinality 0..*) is associated with 'table_Table' (role 'gamemanager26', cardinality 0..*).
+'managers_GameManager' (role 'players22', cardinality 0..*) is associated with 'player_Players' (role 'gameManager23', cardinality 0..*).
+'managers_GameManager' (role 'pokerRules3', cardinality 0..*) is associated with 'calculations_PokerRules' (role 'gamemanager2', cardinality 0..*).

@@ -1,0 +1,15 @@
+The model has 9 class(es).
+The class 'Reg_User' has the following attributes: 'password' of type str; 'Address' of type str; 'username' of type str.
+The class 'Buyer' has the following attributes: 'buyer_id' of type str.
+The class 'User' has the following attributes: 'email' of type str; 'location' of type str.
+The class 'Request' has the following attributes: 'request_id' of type int; 'request_details' of type str; 'requser_id' of type str; 'request_type' of type str.
+The class 'Requirement' has the following attributes: 'requirement_type' of type str; 'req_description' of type str; 'user_id' of type str; 'requirement_location' of type str.
+The class 'Property' has the following attributes: 'property_type' of type str; 'address' of type str; 'location' of type str; 'property_id' of type str.
+The class 'Unreg_User' has no attributes.
+The class 'Seller' has the following attributes: 'seller_id' of type str; 'property_id' of type str.
+The class 'Administrator' has the following attributes: 'password' of type str; 'admin_name' of type str.
+'Administrator' (role 'employee1', cardinality 0..*) is associated with 'User' (role 'administrator0', cardinality 0..*).
+'Property' (role 'owner2', cardinality 0..*) is associated with 'Seller' (role 'property3', cardinality 0..*).
+'Property' (role 'user6', cardinality 0..*) is associated with 'Buyer' (role 'property7', cardinality 0..*).
+'Request' (role 'user5', cardinality 0..*) is associated with 'User' (role 'request4', cardinality 0..*).
+'Reg_User' (role 'requirement8', cardinality 0..*) is associated with 'Requirement' (role 'user9', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'Registered_Customer' has the following attributes: 'password' of type str; 'Email' of type str.
+The class 'New_Customer' has the following attributes: 'address' of type str; 'Name' of type str; 'password' of type str; 'email' of type str; 'phone' of type str.
+The class 'Order' has the following attributes: 'number' of type str; 'shipped' of type date; 'ship_to' of type str; 'ordered' of type date.
+The class '__enumeration___OderStatus' has the following attributes: 'new' of type str; 'return' of type str; 'delivery' of type str; 'hold' of type str; 'shipped' of type str; 'closed' of type str.
+The class '__enumeration___UserState' has the following attributes: 'banned' of type str; 'active' of type str; 'blocked' of type str; 'new' of type str.
+The class 'Product' has the following attributes: 'name' of type str; 'id' of type str; 'supplier' of type str.
+The class 'Content' has the following attributes: 'price' of type float; 'quantity' of type int.
+The class 'Payment' has the following attributes: 'id' of type str; 'paid' of type date; 'total' of type float; 'details' of type str.
+The class 'Shopping_Cart' has the following attributes: 'total' of type float; 'id' of type str; 'number' of type str.
+The class 'Customer' has the following attributes: 'name' of type str; 'phone' of type str; 'address' of type str; 'email' of type str.
+'Shopping_Cart' (role 'payment12', cardinality 0..*) is associated with 'Payment' (role 'shopping_Cart13', cardinality 0..*).
+'Customer' (role 'content6', cardinality 0..*) is associated with 'Content' (role 'customer7', cardinality 0..*).
+'Registered_Customer' (role 'customer2', cardinality 0..*) is associated with 'Customer' (role 'registered_Customer3', cardinality 0..*).
+'Shopping_Cart' (role 'order8', cardinality 0..*) is associated with 'Order' (role 'shopping_Cart9', cardinality 0..*).
+'Order' (role 'customer11', cardinality 0..*) is associated with 'Customer' (role 'order10', cardinality 0..*).
+'Product' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'product4', cardinality 0..*).
+'New_Customer' (role 'customer0', cardinality 0..*) is associated with 'Customer' (role 'new_Customer1', cardinality 0..*).

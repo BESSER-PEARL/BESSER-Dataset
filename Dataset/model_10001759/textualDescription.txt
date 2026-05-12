@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'conducteur' has the following attributes: 'informations_conducteur' of type str.
+The class 'paiement' has the following attributes: 'm_thode_de_paiement' of type str.
+The class 'administrateur' has no attributes.
+The class 'voiture' has the following attributes: 'nombre_de_si_ges' of type int; 'type_de_voiture' of type str.
+The class 'trajet' has the following attributes: 'prix_du_trajet' of type float; 'la_date' of type str; 'l_heure_de_d_part' of type float; 'lieu_de_d_part' of type str.
+The class 'reservation' has the following attributes: 'nombre_de_passager' of type int.
+The class 'inscription' has the following attributes: 'informations_conducteur' of type str; 'informations_passager' of type str.
+The class 'compte' has the following attributes: 'informations_passager' of type str; 'informations_conducteur' of type str.
+The class 'passager' has the following attributes: 'informations_passager' of type str.
+'administrateur' (role 'trajet19', cardinality 0..*) is associated with 'trajet' (role 'administrateur18', cardinality 0..*).
+'inscription' (role 'conducteur17', cardinality 0..*) is associated with 'conducteur' (role 'inscription16', cardinality 0..*).
+'administrateur' (role 'paiement9', cardinality 0..*) is associated with 'paiement' (role 'administrateur8', cardinality 0..*).
+'passager' (role 'trajet14', cardinality 0..*) is associated with 'trajet' (role 'passager15', cardinality 0..*).
+'inscription' (role 'administrateur12', cardinality 0..*) is associated with 'administrateur' (role 'inscription13', cardinality 0..*).
+'passager' (role 'paiement5', cardinality 0..*) is associated with 'paiement' (role 'passager4', cardinality 0..*).
+'administrateur' (role 'passager11', cardinality 0..*) is associated with 'passager' (role 'administrateur10', cardinality 0..*).
+'inscription' (role 'passager1', cardinality 0..*) is associated with 'passager' (role 'inscription0', cardinality 0..*).
+'reservation' (role 'administrateur6', cardinality 0..*) is associated with 'administrateur' (role 'reservation7', cardinality 0..*).
+'compte' (role 'passager3', cardinality 0..*) is associated with 'passager' (role 'compte2', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'Thick_Client_Users' has the following attributes: 'View_User' of type User_Admin_Module; 'Database_Access' of type System_User.
+The class 'User_Admin_Module' has the following attributes: 'View_User' of type End_User; 'Delete_User' of type System_User; 'Generate_User' of type System_User.
+The class 'End_User' has the following attributes: 'login' of type str; 'password' of type str; 'userType' of type str.
+The class 'Internet_Users' has the following attributes: 'Database_Access' of type System_User.
+The class 'System_User' has the following attributes: 'password' of type str; 'login' of type str.
+'Internet_Users' (role 'Internet_Users0', cardinality 0..*) is associated with 'End_User' (role 'webUser1', cardinality 0..*).
+'Thick_Client_Users' (role 'endUser3', cardinality 0..*) is associated with 'End_User' (role 'Thick_Client_Users2', cardinality 0..*).
+'User_Admin_Module' (role 'Account4', cardinality 0..*) is associated with 'System_User' (role 'Admin5', cardinality 0..*).

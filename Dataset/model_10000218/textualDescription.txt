@@ -1,0 +1,11 @@
+The model has 7 class(es).
+The class 'UserAdmin' has the following attributes: 'adminID' of type int; 'password' of type str.
+The class 'DataBase' has the following attributes: 'obj4' of type Candidate; 'obj2' of type UserAdmin; 'obj1' of type SuperAdmin; 'obj3' of type Voter.
+The class 'SuperAdmin' has the following attributes: 'password' of type str; 'adminID' of type int.
+The class 'Integer_AdminID_String_Password_Interface' has no attributes.
+The class 'Candidate' has no attributes.
+The class 'Integer_AdminID_String_Password2_Interface' has no attributes.
+The class 'Voter' has the following attributes: 'serialNum' of type int; 'password' of type str.
+'DataBase' (role 'superAdmin2', cardinality 0..*) is associated with 'SuperAdmin' (role 'dataBase3', cardinality 0..*).
+'Voter' (role 'dataBase1', cardinality 0..*) is associated with 'DataBase' (role 'voter0', cardinality 0..*).
+'DataBase' (role 'userAdmin4', cardinality 0..*) is associated with 'UserAdmin' (role 'dataBase5', cardinality 0..*).

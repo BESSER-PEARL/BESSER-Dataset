@@ -1,0 +1,31 @@
+The model has 19 class(es).
+The class 'Memory_Interface' has no attributes.
+The class 'Vendor1Sound' has no attributes.
+The class 'GenericSound' has no attributes.
+The class 'Cache' has the following attributes: 'chunck' of type str.
+The class 'Processor' has no attributes.
+The class 'CPU' has no attributes.
+The class 'Sound' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'Vendor2Adapter' has no attributes.
+The class 'DeviceCard' has no attributes.
+The class 'Machine' has no attributes.
+The class 'FastCard' has no attributes.
+The class 'Card' has no attributes.
+The class 'Vendor1Adapter' has no attributes.
+The class 'Vendor2Sound' has no attributes.
+The class 'Program' has the following attributes: 'name' of type str.
+The class 'AcceleratorCard' has no attributes.
+The class 'ExtensionBoard' has no attributes.
+The class 'RAM' has no attributes.
+'Cache' (role 'ramProxy10', cardinality 0..*) is associated with 'RAM' (role 'cache11', cardinality 0..*).
+'Vendor1Adapter' (role 'vendor1Sound15', cardinality 0..*) is associated with 'Vendor1Sound' (role 'vendor1Adapter14', cardinality 0..*).
+'Memory_Interface' (role 'machine0', cardinality 0..*) is associated with 'Machine' (role 'memory1', cardinality 0..*).
+'Program' (role 'instructions5', cardinality 0..*) is associated with 'Instruction' (role 'program4', cardinality 0..*).
+'Machine' (role 'processor7', cardinality 0..*) is associated with 'Processor' (role 'machine6', cardinality 0..*).
+'Program' (role 'processor8', cardinality 0..*) is associated with 'Processor' (role 'program9', cardinality 0..*).
+'ExtensionBoard' (role 'cards13', cardinality 0..*) is associated with 'Card' (role 'extensionBoard12', cardinality 0..*).
+'Vendor2Sound' (role 'vendor2Adapter16', cardinality 0..*) is associated with 'Vendor2Adapter' (role 'vendor2Sound17', cardinality 0..*).
+'Machine' (role 'cards19', cardinality 0..*) is associated with 'Card' (role 'machine18', cardinality 0..*).
+'Memory_Interface' (role 'processor2', cardinality 0..*) is associated with 'Processor' (role 'memory3', cardinality 0..*).
+'CPU' (role 'acceleratorCard21', cardinality 0..*) is associated with 'AcceleratorCard' (role 'decoratedCPU20', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'Profile' has no attributes.
+The class 'ListaEncadeada' has the following attributes: 'attribute' of type str.
+The class 'Group' has no attributes.
+The class 'Login' has no attributes.
+The class 'Message' has no attributes.
+The class 'Post' has no attributes.
+The class 'Friend' has no attributes.
+'Login' (role 'user5', cardinality 0..*) is associated with 'ListaEncadeada' (role 'login4', cardinality 0..*).
+'Message' (role 'user9', cardinality 0..*) is associated with 'ListaEncadeada' (role 'message8', cardinality 0..*).
+'ListaEncadeada' (role 'group6', cardinality 0..*) is associated with 'Group' (role 'user7', cardinality 0..*).
+'ListaEncadeada' (role 'post2', cardinality 0..*) is associated with 'Post' (role 'user3', cardinality 0..*).
+'Profile' (role 'user1', cardinality 0..*) is associated with 'ListaEncadeada' (role 'myprofile0', cardinality 0..*).

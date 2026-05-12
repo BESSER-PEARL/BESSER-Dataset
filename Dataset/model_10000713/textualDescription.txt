@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'Signs' has the following attributes: 'name' of type str; 'ID' of type int.
+The class 'Symptoms' has the following attributes: 'ID' of type int; 'name' of type str.
+The class 'Person' has the following attributes: 'Lat' of type str; 'Email' of type str; 'Long' of type str; 'ID' of type int; 'Gender' of type int; 'PhoneNumeber' of type str; 'Ssn' of type str; 'Password' of type str; 'InsuranceNumber' of type str; 'Last_Seen' of type str; 'Balance' of type str; 'Image' of type str; 'Name' of type str.
+The class 'Medicine' has the following attributes: 'Price' of type str; 'ActiveIngredient' of type str; 'Type' of type str; 'name' of type str; 'ID' of type int.
+The class 'Medical_test' has the following attributes: 'Image' of type str; 'Date' of type str; 'Lab' of type str; 'name' of type str; 'ID' of type int.
+The class 'Patient' has the following attributes: 'weight' of type float; 'Surgeries' of type str; 'Height' of type float; 'MedicalTest' of type str; 'Medicine' of type str; 'DiagnosisList' of type str; 'Allergies' of type str.
+The class 'Instructions' has the following attributes: 'ID' of type int; 'descriptions' of type str; 'name' of type str.
+The class 'Diagnosis' has the following attributes: 'LIst_of_Medicine' of type str; 'Patient_Id' of type int; 'LIst_of_Medical_Test' of type str; 'LIst_of_Instructions' of type str; 'Date' of type str; 'LIst_of_Diagnosis' of type str; 'ID' of type int; 'Condition' of type str; 'LIst_of_Symptoms' of type str; 'Doctor_Id' of type int.
+'Diagnosis' (role 'medical_test8', cardinality 0..*) is associated with 'Medical_test' (role 'diagnosis9', cardinality 0..*).
+'Diagnosis' (role 'instructions6', cardinality 0..*) is associated with 'Instructions' (role 'diagnosis7', cardinality 0..*).
+'Signs' (role 'diagnosis5', cardinality 0..*) is associated with 'Diagnosis' (role 'signs4', cardinality 0..*).
+'Patient' (role 'diagnosis10', cardinality 0..*) is associated with 'Diagnosis' (role 'patient11', cardinality 0..*).
+'Symptoms' (role 'diagnosis3', cardinality 0..*) is associated with 'Diagnosis' (role 'symptoms2', cardinality 0..*).
+'Diagnosis' (role 'medicine0', cardinality 0..*) is associated with 'Medicine' (role 'diagnosis1', cardinality 0..*).

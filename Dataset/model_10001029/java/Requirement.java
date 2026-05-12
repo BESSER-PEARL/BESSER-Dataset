@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Requirement  {
+
+    private String user_id;
+    private String req_description;
+    private String requirement_location;
+    private String requirement_type;
+
+
+
+    public Requirement(
+        String user_id,        String req_description,        String requirement_location,        String requirement_type    ) {
+        this.user_id = user_id;
+        this.req_description = req_description;
+        this.requirement_location = requirement_location;
+        this.requirement_type = requirement_type;
+    }
+
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+    public String getReq_description() {
+        return req_description;
+    }
+
+    public void setReq_description(String req_description) {
+        this.req_description = req_description;
+    }
+    public String getRequirement_location() {
+        return requirement_location;
+    }
+
+    public void setRequirement_location(String requirement_location) {
+        this.requirement_location = requirement_location;
+    }
+    public String getRequirement_type() {
+        return requirement_type;
+    }
+
+    public void setRequirement_type(String requirement_type) {
+        this.requirement_type = requirement_type;
+    }
+
+
+}

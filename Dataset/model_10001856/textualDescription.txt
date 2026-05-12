@@ -1,0 +1,9 @@
+The model has 8 class(es).
+The class 'teacher' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'Student' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'Task' has no attributes.
+The class 'Quiz' has the following attributes: 'questions__' of type str; 'title' of type str; 'moduleName' of type str.
+The class 'news' has the following attributes: 'dlnews' of type str; 'author' of type str.
+The class 'Department' has the following attributes: 'modules__' of type str; 'teachers__' of type int; 'name' of type str; 'id' of type int.
+The class 'user' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'Mark' has the following attributes: 'id' of type Student; 'Mark' of type int.

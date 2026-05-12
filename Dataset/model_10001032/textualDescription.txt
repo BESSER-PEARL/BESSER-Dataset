@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'student_login_external' has no attributes.
+The class '_Component' has no attributes.
+The class 'add_student_external' has no attributes.
+The class 'STUDENT' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'ADMIN' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'student_Actor' has no attributes.
+The class 'view_student_external' has no attributes.
+The class 'FACULTY' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'admin_Actor' has no attributes.
+The class 'logout_external' has no attributes.
+The class 'PARENT' has the following attributes: 'id' of type str; 'phoneNumber' of type int; 'password' of type str.
+The class 'check_attendance_external' has no attributes.
+'student_Actor' (role 'logout8', cardinality 0..*) is associated with 'logout_external' (role 'student9', cardinality 0..*).
+'ADMIN' (role 'sTUDENT19', cardinality 0..*) is associated with 'STUDENT' (role 'aDMIN18', cardinality 0..*).
+'logout_external' (role 'admin13', cardinality 0..*) is associated with 'admin_Actor' (role 'logout12', cardinality 0..*).
+'student_Actor' (role 'view_cumiliative_attendance4', cardinality 0..*) is associated with 'add_student_external' (role 'student5', cardinality 0..*).
+'check_attendance_external' (role 'admin11', cardinality 0..*) is associated with 'admin_Actor' (role 'login10', cardinality 0..*).
+'STUDENT' (role 'fACULTY15', cardinality 0..*) is associated with 'FACULTY' (role 'sTUDENT14', cardinality 0..*).
+'FACULTY' (role 'aDMIN16', cardinality 0..*) is associated with 'ADMIN' (role 'fACULTY17', cardinality 0..*).
+'student_Actor' (role 'answer_attendance_call0', cardinality 0..*) is associated with 'student_login_external' (role 'student1', cardinality 0..*).
+'ADMIN' (role 'pARENT21', cardinality 0..*) is associated with 'PARENT' (role 'aDMIN20', cardinality 0..*).
+'student_Actor' (role 'login6', cardinality 0..*) is associated with 'check_attendance_external' (role 'student7', cardinality 0..*).
+'student_Actor' (role 'view_subject_wise_attendance2', cardinality 0..*) is associated with 'view_student_external' (role 'student3', cardinality 0..*).

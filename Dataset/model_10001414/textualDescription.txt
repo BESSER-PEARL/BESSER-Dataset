@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'user_Actor' has no attributes.
+The class 'Actor1_Actor' has no attributes.
+The class 'Search' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'club' has no attributes.
+The class 'post' has no attributes.

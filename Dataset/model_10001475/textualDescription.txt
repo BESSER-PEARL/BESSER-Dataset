@@ -1,0 +1,64 @@
+The model has 39 class(es).
+The class 'Add_items_to_shopping_cart_UseCase' has no attributes.
+The class 'Credit_payment_service_Actor' has no attributes.
+The class 'Online_Shopping_Paypal_Payment' has the following attributes: 'Password' of type str; 'Username' of type str.
+The class 'Login_UseCase' has no attributes.
+The class 'User_authentication_cookie__UseCase' has no attributes.
+The class 'Customer_authentication_UseCase' has no attributes.
+The class 'View_Items_UseCase' has no attributes.
+The class 'Bank_Actor' has no attributes.
+The class 'Online_Shopping_Points___Special_Offers' has the following attributes: 'Discount' of type int.
+The class 'View_Items_UseCase1' has no attributes.
+The class 'Save_items_for_later_UseCase' has no attributes.
+The class 'Checkout_UseCase1' has no attributes.
+The class 'Search_for_items_UseCase' has no attributes.
+The class 'Online_Shopping_Item' has the following attributes: 'Price' of type int; 'Name' of type str; 'Description' of type str; 'Product_ID' of type str.
+The class 'Points_and_Special_Offers_UseCase' has no attributes.
+The class 'Payment_UseCase1' has no attributes.
+The class 'Online_Shopping_Shopping_Cart_Item' has the following attributes: 'Price' of type int; 'Quantity' of type str.
+The class 'Customer_Actor2' has no attributes.
+The class 'Online_Shopping_Shopping_Cart' has the following attributes: 'Is_Empty' of type bool; 'Contents' of type Online_Shopping_Shopping_Cart_Item.
+The class 'Customer_Actor' has no attributes.
+The class 'Online_Shopping_Order' has the following attributes: 'Contents' of type Online_Shopping_Order_Item; 'Placed_Date' of type str.
+The class 'Online_Shopping_Card_Payment' has the following attributes: 'Valid_Date' of type str; 'Card_Holder_Name' of type str; 'CVS_Number' of type int; 'Card_Number' of type int.
+The class 'Move_items_into_basket_UseCase' has no attributes.
+The class 'str' has no attributes.
+The class 'login_or_sign_in_page_UseCase' has no attributes.
+The class 'PayPal_Mastercard_etc_UseCase' has no attributes.
+The class 'Browse_catalogue_UseCase' has no attributes.
+The class 'Online_Shopping_Checkout' has the following attributes: 'Phone_Number' of type int; 'Billing_Address' of type str; 'Email_Address' of type str; 'Delivery_Address' of type str.
+The class 'Authentication_UseCase' has no attributes.
+The class 'Online_Shopping_Customer_Account' has the following attributes: 'Password' of type str; 'Username' of type str.
+The class 'Payment_UseCase' has no attributes.
+The class 'Register_UseCase' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'View_recommended_items_UseCase' has no attributes.
+The class 'Credit__shop_credit_card_or_PayPal_payments_UseCase' has no attributes.
+The class 'Online_Shopping_Order_Item' has the following attributes: 'Product_ID' of type str; 'SubTotal' of type str; 'Quantity' of type int.
+The class 'Authentication_Service_or_identity_provider_Actor' has no attributes.
+The class 'Checkout_UseCase' has no attributes.
+The class 'Customer_Actor1' has no attributes.
+'Online_Shopping_Card_Payment' (role 'checkout39', cardinality 0..*) is associated with 'Online_Shopping_Checkout' (role 'card_Payment38', cardinality 0..*).
+'Authentication_Service_or_identity_provider_Actor' (role 'login_or_sign_in_page15', cardinality 0..*) is associated with 'login_or_sign_in_page_UseCase' (role 'Authentication_Service_or_identity_provider14', cardinality 0..*).
+'Online_Shopping_Shopping_Cart' (role 'item33', cardinality 0..*) is associated with 'Online_Shopping_Item' (role 'shopping_Cart32', cardinality 0..*).
+'Checkout_UseCase' (role 'payment10', cardinality 0..*) is associated with 'Payment_UseCase' (role 'checkout11', cardinality 0..*).
+'Online_Shopping_Customer_Account' (role 'item30', cardinality 0..*) is associated with 'Online_Shopping_Item' (role 'customer_Account31', cardinality 0..*).
+'Points_and_Special_Offers_UseCase' (role 'checkout8', cardinality 0..*) is associated with 'Checkout_UseCase' (role 'points_and_Special_Offers9', cardinality 0..*).
+'Online_Shopping_Checkout' (role 'shopping_Cart37', cardinality 0..*) is associated with 'Online_Shopping_Shopping_Cart' (role 'checkout36', cardinality 0..*).
+'Online_Shopping_Shopping_Cart_Item' (role 'shopping_Cart35', cardinality 0..*) is associated with 'Online_Shopping_Shopping_Cart' (role 'shopping_Cart_Item34', cardinality 0..*).
+'View_Items_UseCase' (role 'move_items_into_basket5', cardinality 0..*) is associated with 'Move_items_into_basket_UseCase' (role 'view_Items4', cardinality 0..*).
+'Online_Shopping_Customer_Account' (role 'points___Special_Offers28', cardinality 0..*) is associated with 'Online_Shopping_Points___Special_Offers' (role 'customer_Account29', cardinality 0..*).
+'Save_items_for_later_UseCase' (role 'customer24', cardinality 0..*) is associated with 'Customer_Actor2' (role 'save_items_for_later25', cardinality 0..*).
+'Customer_Actor' (role 'registered0', cardinality 0..*) is associated with 'Register_UseCase' (role 'customer1', cardinality 0..*).
+'Authentication_Service_or_identity_provider_Actor' (role 'user_authentication_cookie17', cardinality 0..*) is associated with 'User_authentication_cookie__UseCase' (role 'Authentication_Service_or_identity_provider16', cardinality 0..*).
+'Checkout_UseCase1' (role 'customer23', cardinality 0..*) is associated with 'Customer_Actor1' (role 'checkout22', cardinality 0..*).
+'Credit_payment_service_Actor' (role 'payment13', cardinality 0..*) is associated with 'Payment_UseCase' (role 'credit_payment_service12', cardinality 0..*).
+'Credit__shop_credit_card_or_PayPal_payments_UseCase' (role 'bank18', cardinality 0..*) is associated with 'Bank_Actor' (role 'credit__shop_credit_card_or_PayPal_payments19', cardinality 0..*).
+'Online_Shopping_Card_Payment' (role 'order42', cardinality 0..*) is associated with 'Online_Shopping_Order' (role 'card_Payment43', cardinality 0..*).
+'Checkout_UseCase' (role 'move_items_into_basket7', cardinality 0..*) is associated with 'Move_items_into_basket_UseCase' (role 'checkout6', cardinality 0..*).
+'Online_Shopping_Checkout' (role 'paypal_Payment40', cardinality 0..*) is associated with 'Online_Shopping_Paypal_Payment' (role 'checkout41', cardinality 0..*).
+'Online_Shopping_Order' (role 'order_Item46', cardinality 0..*) is associated with 'Online_Shopping_Order_Item' (role 'Order47', cardinality 0..*).
+'Customer_Actor2' (role 'add_items_to_shopping_cart27', cardinality 0..*) is associated with 'Add_items_to_shopping_cart_UseCase' (role 'customer26', cardinality 0..*).
+'Online_Shopping_Paypal_Payment' (role 'order44', cardinality 0..*) is associated with 'Online_Shopping_Order' (role 'paypal_Payment45', cardinality 0..*).
+'Customer_authentication_UseCase' (role 'customer20', cardinality 0..*) is associated with 'Customer_Actor1' (role 'customer_authentication21', cardinality 0..*).
+'Customer_Actor' (role 'login2', cardinality 0..*) is associated with 'Login_UseCase' (role 'customer3', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 15 class(es).
+The class 'Course' has the following attributes: 'duration' of type str; 'subjects__' of type Subject.
+The class 'Employee_Interface' has no attributes.
+The class 'HOD' has no attributes.
+The class 'Admin' has no attributes.
+The class 'department' has the following attributes: 'id' of type str; 'director' of type str; 'name' of type str; 'address' of type str.
+The class 'Access_Information' has no attributes.
+The class 'Authentication' has no attributes.
+The class 'Department' has the following attributes: 'students__' of type Student; 'teachers__' of type Teacher; 'hod' of type HOD; 'course' of type Course.
+The class 'administrator' has no attributes.
+The class 'Teacher' has no attributes.
+The class 'Student' has the following attributes: 'Name' of type str; 'ID' of type str.
+The class 'students' has the following attributes: 'address' of type str; 'birthdate' of type date; 'gender' of type str; 'name' of type str; 'id' of type str.
+The class 'subject' has the following attributes: 'subjectid' of type str; 'subjectName' of type str.
+The class 'Subject' has the following attributes: 'name' of type str.
+The class 'Attendance' has no attributes.
+'Student' (role 'admin13', cardinality 0..*) is associated with 'Admin' (role 'student12', cardinality 0..*).
+'Attendance' (role 'access_Information17', cardinality 0..*) is associated with 'Access_Information' (role 'attendance16', cardinality 0..*).
+'Access_Information' (role 'employee11', cardinality 0..*) is associated with 'Employee_Interface' (role 'access_Information10', cardinality 0..*).
+'Access_Information' (role 'department18', cardinality 0..*) is associated with 'Department' (role 'access_Information19', cardinality 0..*).
+'Employee_Interface' (role 'department7', cardinality 0..*) is associated with 'Department' (role 'employee6', cardinality 0..*).
+'Subject' (role 'course3', cardinality 0..*) is associated with 'Course' (role 'subject2', cardinality 0..*).
+'Admin' (role 'employee14', cardinality 0..*) is associated with 'Employee_Interface' (role 'admin15', cardinality 0..*).
+'Course' (role 'department1', cardinality 0..*) is associated with 'Department' (role 'course0', cardinality 0..*).
+'Student' (role 'department5', cardinality 0..*) is associated with 'Department' (role 'student4', cardinality 0..*).
+'Student' (role 'Having_Attendance8', cardinality 0..*) is associated with 'Access_Information' (role 'student9', cardinality 0..*).

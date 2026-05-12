@@ -1,0 +1,7 @@
+The model has 5 class(es).
+The class 'Event' has the following attributes: 'edition' of type int; 'acronym' of type str; 'name' of type str; 'id' of type int; 'attribute' of type str.
+The class 'Room' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'Session' has the following attributes: 'end' of type str; 'start' of type str; 'type' of type SessionType; 'room' of type Room; 'id' of type int; 'name' of type str; 'Events' of type Event.
+The class 'Serie' has the following attributes: 'Events' of type Event.
+The class 'SessionType' has the following attributes: 'color' of type str; 'id' of type int; 'name' of type str.
+The enumeration 'Enumeration' does not specify any literals.

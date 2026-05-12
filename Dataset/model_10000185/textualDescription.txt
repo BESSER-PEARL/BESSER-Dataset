@@ -1,0 +1,6 @@
+The model has 5 class(es).
+The class 'Order' has the following attributes: 'Type_' of type str; 'Size_' of type int; 'ID_' of type int; 'Quantity' of type int.
+The class 'Payment' has the following attributes: 'Date_off' of type str; 'Amount' of type int.
+The class 'Discription' has the following attributes: 'Discription' of type str; 'Emil' of type str.
+The class 'Delivery' has the following attributes: 'Date' of type str; 'Name' of type str; 'Type' of type str.
+The class 'User' has the following attributes: 'Phone_number' of type int; 'Name_' of type str; 'Address_' of type str; 'Phone_number1' of type int; 'Email_' of type str.

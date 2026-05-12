@@ -1,0 +1,52 @@
+The model has 34 class(es).
+The class 'Rezept' has the following attributes: 'rezeptname' of type String_; 'basis' of type PlaetzchenForm_; 'basismenge' of type int; 'attribute2' of type str; 'attribute' of type str.
+The class 'ComboBox' has no attributes.
+The class 'PL_Groesse_' has no attributes.
+The class 'List_TeigRezept___' has no attributes.
+The class 'KeyPressEventArgs_' has no attributes.
+The class 'GUI' has the following attributes: 'gussList' of type List_DekorRezept___; 'groesse' of type ComboBox; 'dekorList' of type List_DekorRezept___; 'plaetzchenname' of type str; 'deko' of type ComboBox; 'zutatenList' of type List_Zutat___; 'dateiname' of type str; 'teigsorte' of type ComboBox; 'stueckzahl' of type str; 'plaetzchen' of type Plaetzchen_; 'teigList' of type List_TeigRezept___; 'guss' of type ComboBox; 'attribute' of type str; 'plformList' of type List_PlaetzchenForm___; 'datei' of type KonfigDatei_; 'form' of type ComboBox.
+The class 'Array_Zutat___' has no attributes.
+The class 'TeigRezept' has the following attributes: 'zutaten' of type List_Zutat___; 'backtemp' of type int; 'backzeit' of type int; 'basis' of type PlaetzchenForm_; 'basismenge' of type int.
+The class 'Plaetzchen_' has no attributes.
+The class 'Zutat_' has no attributes.
+The class 'App' has no attributes.
+The class 'Groesse' has the following attributes: 'laenge' of type int; 'name1' of type PL_Groesse_; 'breite' of type int; 'name' of type str.
+The class 'Zutat' has the following attributes: 'einheit' of type String_; 'menge' of type int; 'name' of type String_.
+The class 'PlaetzchenForm' has the following attributes: 'pl_form' of type PL_Form_; 'faktor' of type str; 'pl_groesse' of type Groesse_.
+The class 'GUIKeksform' has the following attributes: 'name' of type str; 'breite' of type int; 'laenge' of type int; 'pl__f' of type PL_Form_.
+The class 'Plaetzchen' has the following attributes: 'deko' of type Zutat_; 'name' of type String_; 'menge' of type int; 'rezeptDeko' of type str; 'form' of type PlaetzchenForm_; 'teig' of type List_Zutat___; 'rezeptTeig' of type TeigRezept_; 'guss' of type Zutat_; 'rezeptGuss' of type str.
+The class 'Font_' has no attributes.
+The class 'Font_2' has no attributes.
+The class 'GussRezept' has the following attributes: 'basis' of type PlaetzchenForm_; 'zutat' of type Zutat; 'basismenge' of type int.
+The class 'List_DekorRezept___' has no attributes.
+The class 'String_' has no attributes.
+The class 'myException' has no attributes.
+The class 'List_Zutat___' has no attributes.
+The class 'List_PlaetzchenForm___' has no attributes.
+The class 'PlaetzchenForm_' has no attributes.
+The class 'PL_Form_' has no attributes.
+The class 'KonfigDatei' has the following attributes: 'menge1' of type int; 'attribute' of type str; 'name' of type String_; 'plaetzchen' of type Plaetzchen_; 'backtemp' of type int; 'attribute2' of type str; 'backzeit' of type int; 'menge' of type int.
+The class 'KonfigDatei_' has no attributes.
+The class 'Groesse_' has no attributes.
+The class 'GUIRezept' has the following attributes: 'name' of type str.
+The class 'ThreadExceptionEventArgs_' has no attributes.
+The class 'DekorRezept' has the following attributes: 'basismenge' of type int; 'dekor' of type Zutat_; 'zutaten' of type List_Zutat___; 'basis' of type PlaetzchenForm_.
+The class 'TeigRezept_' has no attributes.
+The class 'Object_' has no attributes.
+The enumeration 'PL_Groesse' does not specify any literals.
+The enumeration 'PL_Form' does not specify any literals.
+'GUI' (role 'zutat29', cardinality 0..*) is associated with 'Zutat' (role 'gUI28', cardinality 0..*).
+'GUI' (role 'gUIRezept16', cardinality 0..*) is associated with 'GUIRezept' (role 'gUI17', cardinality 0..*).
+'PlaetzchenForm' (role 'gUI6', cardinality 0..*) is associated with 'GUI' (role 'plaetzchenForm7', cardinality 0..*).
+'Zutat' (role 'teigRezept4', cardinality 0..*) is associated with 'TeigRezept' (role 'zutat5', cardinality 0..*).
+'GUI' (role 'myException26', cardinality 0..*) is associated with 'myException' (role 'gUI27', cardinality 0..*).
+'Zutat' (role 'dekorRezept23', cardinality 0..*) is associated with 'DekorRezept' (role 'zutat22', cardinality 0..*).
+'TeigRezept' (role 'gUIRezept19', cardinality 0..*) is associated with 'GUIRezept' (role 'teigRezept18', cardinality 0..*).
+'GUI' (role 'teigRezept13', cardinality 0..*) is associated with 'TeigRezept' (role 'gUI12', cardinality 0..*).
+'Plaetzchen' (role 'plaetzchenForm3', cardinality 0..*) is associated with 'PlaetzchenForm' (role 'plaetzchen2', cardinality 0..*).
+'DekorRezept' (role 'gUI24', cardinality 0..*) is associated with 'GUI' (role 'dekorRezept25', cardinality 0..*).
+'GUI' (role 'gUIPlaetzchen10', cardinality 0..*) is associated with 'GUIKeksform' (role 'gUI11', cardinality 0..*).
+'GUIKeksform' (role 'plaetzchenForm21', cardinality 0..*) is associated with 'PlaetzchenForm' (role 'gUIKeksform20', cardinality 0..*).
+'KonfigDatei' (role 'gUI15', cardinality 0..*) is associated with 'GUI' (role 'konfigDatei14', cardinality 0..*).
+'PlaetzchenForm' (role 'teigRezept8', cardinality 0..*) is associated with 'Rezept' (role 'plaetzchenForm9', cardinality 0..*).
+'Groesse' (role 'plaetzchenForm0', cardinality 0..*) is associated with 'PlaetzchenForm' (role 'groesse21', cardinality 0..*).

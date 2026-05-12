@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'Bidder' has no attributes.
+The class 'Admin' has no attributes.
+The class 'HasilBidding' has no attributes.
+The class 'User' has the following attributes: 'loginStatus' of type str; 'nama' of type str; 'password' of type str; 'userName' of type str.
+The class 'Biddee' has the following attributes: 'statusBiddee' of type str.
+The class 'Bidding' has the following attributes: 'bidder' of type str; 'jabatan' of type str; 'berkas' of type str; 'catatanBidder' of type str; 'notulensi' of type str; 'biddee' of type str; 'nilai' of type int; 'statusBidding' of type str.
+'User' (role 'hasilBidding12', cardinality 0..*) is associated with 'HasilBidding' (role 'melihat13', cardinality 0..*).
+'Bidding' (role 'hasilBidding1', cardinality 0..*) is associated with 'HasilBidding' (role 'bidding0', cardinality 0..*).
+'Bidding' (role 'Bidder_Bidding2_111', cardinality 0..*) is associated with 'Bidder' (role 'edit_nilai10', cardinality 0..*).
+'Admin' (role 'biddee6', cardinality 0..*) is associated with 'Biddee' (role 'ubah_status7', cardinality 0..*).
+'Bidding' (role 'CRUD_bidding3', cardinality 0..*) is associated with 'Admin' (role 'bidding2', cardinality 0..*).
+'Bidder' (role 'buat_catatan8', cardinality 0..*) is associated with 'Bidding' (role 'bidder29', cardinality 0..*).
+'Bidding' (role 'daftar4', cardinality 0..*) is associated with 'Biddee' (role 'bidding5', cardinality 0..*).

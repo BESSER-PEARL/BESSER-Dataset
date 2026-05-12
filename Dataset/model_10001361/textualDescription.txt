@@ -1,0 +1,78 @@
+The model has 55 class(es).
+The class 'Browse_based_age_UseCase' has no attributes.
+The class 'change_the_organization_information__UseCase' has no attributes.
+The class 'print_employee_information_UseCase' has no attributes.
+The class 'Honor_member' has the following attributes: 'Member_start_date' of type str; 'Amount_of_partnership' of type int.
+The class 'Log_out_UseCase' has no attributes.
+The class 'change_his_password_UseCase' has no attributes.
+The class 'add_honor_member_UseCase' has no attributes.
+The class 'Vacation' has the following attributes: 'Employee_ID' of type int; 'Expiry_date' of type str; 'Beginning_date' of type str.
+The class 'Administrator__Actor' has no attributes.
+The class 'add_new_data_entry_account_UseCase' has no attributes.
+The class 'print_volunteer_data_UseCase' has no attributes.
+The class 'display_all_UseCase' has no attributes.
+The class 'display_data_entry_UseCase' has no attributes.
+The class 'modify_honor_member_information__UseCase' has no attributes.
+The class 'Care' has the following attributes: 'Profession_of_the_guardian' of type str; 'Relation_of_the_guardian' of type str; 'Monthly_income' of type int; 'Family_members__The_number' of type int; 'Housing_description' of type str; 'Adopting_degree' of type str; 'Civil_Registry' of type str; 'Children_health_status' of type str; 'Care_sort' of type str; 'Street' of type str; 'Workplace' of type str; 'Interaction_degree' of type str; 'Health_status' of type str; 'Income_sources' of type str; 'Workplace_the_guardian' of type str; 'Housing_kind' of type str; 'Family_bonding' of type str; 'Number_of_children' of type str; 'Income_amount' of type str; 'Guardian' of type str.
+The class 'display_organization_information_UseCase' has no attributes.
+The class 'Amount' has the following attributes: 'Subvention_date' of type str; 'Month' of type int; 'Amount' of type int.
+The class 'add_employee_UseCase' has no attributes.
+The class '_20Data_20entry_external' has no attributes.
+The class 'delete_data_entry_account__UseCase' has no attributes.
+The class 'Volunteer' has the following attributes: 'Age' of type int; 'Preparing_event' of type str; 'Public_relations' of type str; 'Time_of_volunteering' of type str; 'Decor__and_aesthetic_touches' of type str; 'Professional_status' of type str; 'Volunteer_ID' of type int; 'Organization' of type str; 'Design_and_montag' of type str.
+The class 'Browse_based_care_type_UseCase' has no attributes.
+The class 'modify_volunteer_data_UseCase' has no attributes.
+The class 'change_his_password__UseCase' has no attributes.
+The class 'delete_beneficiary__UseCase' has no attributes.
+The class 'display_beneficiaries_list_UseCase' has no attributes.
+The class 'Data_entry' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'Employee' has the following attributes: 'Mobile_number' of type int; 'Remaining_days' of type int; 'First_name' of type str; 'ID' of type int; 'Functional_number' of type int; 'Email_address' of type str; 'Last_name' of type str.
+The class 'Browse_based_name_UseCase' has no attributes.
+The class 'Origination' has the following attributes: 'Logo' of type str; 'Executive_manager' of type str; 'Full_name' of type str; 'General_supervisor' of type str.
+The class 'delete_honor_member_UseCase' has no attributes.
+The class 'print_beneficiary_information_UseCase' has no attributes.
+The class 'delete_volunteer_UseCase' has no attributes.
+The class 'account_statement__UseCase' has no attributes.
+The class 'display_honor_member_UseCase' has no attributes.
+The class 'display_employee_information_UseCase' has no attributes.
+The class 'print_beneficiaries_list_UseCase' has no attributes.
+The class 'modify_beneficiary_information_UseCase' has no attributes.
+The class 'add_new_volunteer_UseCase' has no attributes.
+The class 'delete_employee_UseCase' has no attributes.
+The class 'Browse_based_Housing_kind_UseCase' has no attributes.
+The class 'Beneficiary' has the following attributes: 'Marital_status' of type str; 'Job' of type str; 'Beneficiary__ID' of type int; 'House_number' of type int; 'L_name' of type str; 'Date_of_birth' of type str; 'Address' of type str; 'Phone' of type int; 'F_name' of type str; 'Scientific_qualification' of type str; 'District' of type str.
+The class 'print_honor_member_information__UseCase' has no attributes.
+The class 'Browse_based_number_of_children_UseCase' has no attributes.
+The class 'Data_entry_employee__Actor' has no attributes.
+The class 'The_20member_external' has no attributes.
+The class 'Member' has the following attributes: 'Mobile_number' of type int; 'Email_address' of type str; 'L_name' of type str; 'Scientific_qualifications' of type str; 'F_name' of type str; 'Vacation_type' of type str; 'Job' of type str.
+The class 'modify_employee_data_UseCase' has no attributes.
+The class 'Browse_based_Scientific_qualification_UseCase' has no attributes.
+The class 'display_volunteer_list_UseCase' has no attributes.
+The class 'Log_in__UseCase' has no attributes.
+The class 'add_new_beneficiary_UseCase' has no attributes.
+The class 'Marriage_Demand' has the following attributes: 'Educational_status' of type str; 'Salary' of type str; 'Relation_with_proposal' of type str; 'Legitimate_vision' of type str; 'Nationality_of_the_mother' of type str; 'Tribe' of type str; 'Other_district' of type str; 'Nationality' of type str; 'Marital_status_of_the_proposer' of type str; 'Accept_multi_marriage' of type str.
+The class 'Admin' has the following attributes: 'User_name' of type str; 'Password' of type int; 'ID' of type int.
+The class 'manage_holiday_UseCase' has no attributes.
+'Admin' (role 'Admin_The_origination_032', cardinality 0..*) is associated with 'Origination' (role 'Admin_The_origination_133', cardinality 0..*).
+'display_employee_information_UseCase' (role 'administrator13', cardinality 0..*) is associated with 'Administrator__Actor' (role 'display_employee_information12', cardinality 0..*).
+'Administrator__Actor' (role 'log_out22', cardinality 0..*) is associated with 'Log_out_UseCase' (role 'administrator23', cardinality 0..*).
+'Administrator__Actor' (role 'manage_holiday18', cardinality 0..*) is associated with 'manage_holiday_UseCase' (role 'administrator19', cardinality 0..*).
+'Administrator__Actor' (role 'delete_data_entry_account8', cardinality 0..*) is associated with 'delete_data_entry_account__UseCase' (role 'administrator9', cardinality 0..*).
+'Administrator__Actor' (role 'display_organization_information2', cardinality 0..*) is associated with 'display_organization_information_UseCase' (role 'administrator3', cardinality 0..*).
+'The_20member_external' (role 'Data_entry40', cardinality 0..*) is associated with 'Data_entry' (role 'the_member41', cardinality 0..*).
+'Employee' (role 'vacation39', cardinality 0..*) is associated with 'Vacation' (role 'employee38', cardinality 0..*).
+'Administrator__Actor' (role 'display_data_entry10', cardinality 0..*) is associated with 'display_data_entry_UseCase' (role 'administrator11', cardinality 0..*).
+'print_employee_information_UseCase' (role 'administrator21', cardinality 0..*) is associated with 'Administrator__Actor' (role 'print_employee_information20', cardinality 0..*).
+'change_the_organization_information__UseCase' (role 'administrator5', cardinality 0..*) is associated with 'Administrator__Actor' (role 'change_the_organization_information4', cardinality 0..*).
+'Amount' (role 'care36', cardinality 0..*) is associated with 'Care' (role 'the_amount37', cardinality 0..*).
+'Administrator__Actor' (role 'add_employee30', cardinality 0..*) is associated with 'add_employee_UseCase' (role 'administrator31', cardinality 0..*).
+'Log_in__UseCase' (role 'administrator25', cardinality 0..*) is associated with 'Administrator__Actor' (role 'log_in24', cardinality 0..*).
+'Beneficiary' (role 'Data_entry35', cardinality 0..*) is associated with '_20Data_20entry_external' (role 'Beneficiary34', cardinality 0..*).
+'Log_out_UseCase' (role 'data_entry_employee29', cardinality 0..*) is associated with 'Data_entry_employee__Actor' (role 'log_out28', cardinality 0..*).
+'add_new_data_entry_account_UseCase' (role 'administrator7', cardinality 0..*) is associated with 'Administrator__Actor' (role 'add_new_data_entry_account6', cardinality 0..*).
+'Administrator__Actor' (role 'modify_employee_data14', cardinality 0..*) is associated with 'modify_employee_data_UseCase' (role 'administrator15', cardinality 0..*).
+'Administrator__Actor' (role 'delete_employee16', cardinality 0..*) is associated with 'delete_employee_UseCase' (role 'administrator17', cardinality 0..*).
+'Log_in__UseCase' (role 'data_entry_employee27', cardinality 0..*) is associated with 'Data_entry_employee__Actor' (role 'log_in26', cardinality 0..*).
+'Admin' (role 'employee43', cardinality 0..*) is associated with 'Employee' (role 'admin42', cardinality 0..*).
+'change_his_password_UseCase' (role 'administrator1', cardinality 0..*) is associated with 'Administrator__Actor' (role 'change_his_password0', cardinality 0..*).

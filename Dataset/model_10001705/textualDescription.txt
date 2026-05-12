@@ -1,0 +1,19 @@
+The model has 13 class(es).
+The class 'transacao_transacao' has the following attributes: 'type' of type str; 'id' of type int; 'amount' of type float.
+The class 'transacao_transferencia' has the following attributes: 'contaAlvo' of type conta_Conta; 'contaOrigem' of type conta_Conta.
+The class 'Login' has the following attributes: 'username' of type str; 'lastLoginTime' of type date; 'password' of type str.
+The class 'conta_Poupan_a' has the following attributes: 'tempo' of type int; 'juros' of type float.
+The class 'cliente_Customer' has the following attributes: 'nome' of type str; 'email' of type str; 'dataNascimento' of type date; 'numeroTel' of type str; 'endere_o' of type str.
+The class 'transacao_saque' has the following attributes: 'valor' of type str.
+The class 'conta_CheckingAccount' has no attributes.
+The class 'transacao_deposito' has the following attributes: 'valor' of type str.
+The class 'conta_Conta' has the following attributes: 'tipo' of type conta_AccountType; 'saldo' of type float.
+The class 'conta_investimento' has the following attributes: 'taxaDeJuros' of type float.
+The class 'conta' has the following attributes: '_attr' of type str.
+The class 'transacao_Class' has no attributes.
+The class 'NewClass' has no attributes.
+The enumeration 'transacao_TransactionType' does not specify any literals.
+The enumeration 'conta_AccountType' does not specify any literals.
+'cliente_Customer' (role 'conta1', cardinality 0..*) is associated with 'conta_Conta' (role 'cliente0', cardinality 0..*).
+'cliente_Customer' (role 'login2', cardinality 0..*) is associated with 'Login' (role 'cliente3', cardinality 0..*).
+'conta_Conta' (role 'transacao4', cardinality 0..*) is associated with 'transacao_transacao' (role 'conta5', cardinality 0..*).

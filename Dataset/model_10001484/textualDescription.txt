@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'Class4' has the following attributes: 'attribute' of type str.
+The class 'vvvv' has the following attributes: 'zsxc' of type int.
+The class 'aaa' has the following attributes: 'qwe' of type aaa; 'attribute' of type bool.
+The class 'Class' has no attributes.
+The class 'vcx' has the following attributes: 'attribute' of type bool; 'attribute2' of type str.
+The class 'cgv_Classqwe' has the following attributes: 'qw' of type aaa.
+The class 'ccc' has the following attributes: 'qwe' of type str.
+'Class4' (role 'class23', cardinality 0..*) is associated with 'vcx' (role 'class42', cardinality 0..*).
+'aaa' (role 'c31', cardinality 0..*) is associated with 'ccc' (role 'c20', cardinality 0..*).
+'cgv_Classqwe' (role 'class27', cardinality 0..*) is associated with 'vcx' (role 'classqwe6', cardinality 0..*).
+'vvvv' (role 'class25', cardinality 0..*) is associated with 'vcx' (role 'vvvv4', cardinality 0..*).

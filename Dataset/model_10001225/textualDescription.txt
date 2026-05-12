@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'meal' has the following attributes: 'price' of type float; 'served' of type bool; 'meal_id' of type str; 'name' of type str; 'prepared' of type bool.
+The class 'system' has the following attributes: 'user_id' of type str; 'name' of type str.
+The class 'app' has the following attributes: 'user_id' of type str; 'name' of type str.
+The class 'manger' has no attributes.
+The class 'customer' has no attributes.
+The class 'Chef' has no attributes.
+The class 'Order' has the following attributes: 'foodList' of type str; 'order_id' of type str.
+The class 'Waiter' has no attributes.
+The class 'Table' has the following attributes: 'avaliable' of type bool; 'table_id' of type str; 'numSeats' of type int.
+'meal' (role 'has1', cardinality 0..*) is associated with 'Order' (role 'orde0', cardinality 0..*).
+'Order' (role 'customer15', cardinality 0..*) is associated with 'customer' (role 'order14', cardinality 0..*).
+'app' (role 'table5', cardinality 0..*) is associated with 'Table' (role 'app4', cardinality 0..*).
+'manger' (role 'system12', cardinality 0..*) is associated with 'system' (role 'manger13', cardinality 0..*).
+'Chef' (role 'system10', cardinality 0..*) is associated with 'system' (role 'chef11', cardinality 0..*).
+'app' (role 'waiter17', cardinality 0..*) is associated with 'Waiter' (role 'app16', cardinality 0..*).
+'Order' (role 'app7', cardinality 0..*) is associated with 'app' (role 'order6', cardinality 0..*).
+'system' (role 'app8', cardinality 0..*) is associated with 'app' (role 'system9', cardinality 0..*).
+'Waiter' (role 'table2', cardinality 0..*) is associated with 'Table' (role 'waiter3', cardinality 0..*).

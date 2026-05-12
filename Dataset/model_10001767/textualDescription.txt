@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'coustomer' has the following attributes: 'email' of type str; 'phoneno' of type int; 'address' of type str; 'name' of type str; 'shippinginfo' of type str; 'customerId' of type int.
+The class 'shippinginfo' has the following attributes: 'shippingId' of type int; 'shippingcost' of type int.
+The class 'order' has the following attributes: 'orderId' of type int; 'shippingid' of type str; 'customerid' of type int; 'name' of type str; 'datecreated' of type str.
+The class 'orderDetail' has the following attributes: 'unitcost' of type float; 'productname' of type str; 'quantity' of type int; 'subtotall' of type float; 'productid' of type int; 'orderId' of type int.
+The class 'product' has the following attributes: 'productId' of type int; 'image' of type str; 'price' of type int; 'name' of type str; 'description' of type str.
+The class 'ShoppingCart' has the following attributes: 'dateAdded' of type int; 'cartId' of type int; 'productId' of type int; 'quantity' of type int.
+The class 'cartitem' has the following attributes: 'subtotal' of type float; 'unitcost' of type float; 'quantity' of type int; 'productId' of type int.
+The class 'user' has the following attributes: 'email' of type str; 'loginstatus' of type str; 'password' of type str; 'UserId' of type int.
+'orderDetail' (role 'orderDetail_ProLocal_06', cardinality 0..*) is associated with 'product' (role 'orderDetail_ProLocal_17', cardinality 0..*).
+'cartitem' (role 'ShoppingCart_cartitem_13', cardinality 0..*) is associated with 'ShoppingCart' (role 'ShoppingCart_cartitem_02', cardinality 0..*).
+'shippinginfo' (role 'order_shippinginfo_113', cardinality 0..*) is associated with 'order' (role 'order_shippinginfo_012', cardinality 0..*).
+'orderDetail' (role 'order_orderDetail_111', cardinality 0..*) is associated with 'order' (role 'order_orderDetail_010', cardinality 0..*).
+'coustomer' (role 'coustomer_order_08', cardinality 0..*) is associated with 'order' (role 'coustomer_order_19', cardinality 0..*).
+'product' (role 'cartitem_ProLocal_15', cardinality 0..*) is associated with 'cartitem' (role 'cartitem_ProLocal_04', cardinality 0..*).
+'coustomer' (role 'ShoppingCart_coustomer_11', cardinality 0..*) is associated with 'ShoppingCart' (role 'ShoppingCart_coustomer_00', cardinality 0..*).

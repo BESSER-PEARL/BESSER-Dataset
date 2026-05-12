@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'library_data_base' has the following attributes: 'record_patron_borrowing_book' of type int; 'members_information' of type str; 'list_of_books' of type str.
+The class 'patron' has the following attributes: 'Name' of type str; 'Contact_number' of type int; 'Address' of type str.
+The class 'Book' has the following attributes: 'Book_ISBN' of type int; 'book_name' of type str; 'Book_Author' of type int.
+The class 'librarian' has the following attributes: 'username' of type int; 'name' of type str.

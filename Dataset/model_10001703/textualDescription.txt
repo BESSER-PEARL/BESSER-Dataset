@@ -1,0 +1,9 @@
+The model has 8 class(es).
+The class 'marketing_Review' has the following attributes: 'description' of type str; 'user' of type user_User; 'product' of type marketing_Product; 'rating' of type str; 'id' of type str.
+The class 'user_Business' has the following attributes: 'website' of type str; 'name' of type str; 'staffUsers' of type user_User; 'adminUser' of type user_User; 'category' of type str; 'products' of type marketing_Product; 'address' of type user_Address; 'id' of type str; 'avgRatings' of type str; 'tags' of type user_Tags; 'phone' of type str; 'email' of type str.
+The class 'system_Category' has the following attributes: 'icon' of type str; 'name' of type str; 'parent' of type system_Category; 'section' of type str; 'id' of type str.
+The class 'user_User' has the following attributes: 'address' of type user_Address; 'interests' of type system_Category; 'fiirstName' of type str; 'wishlist' of type marketing_Product; 'purchaseHistory' of type marketing_Product; 'phone' of type str; 'email' of type str; 'reviews' of type marketing_Review; 'photoURL' of type str; 'displayName' of type str; 'provider' of type user_Provider; 'lastName' of type str; 'business' of type user_Business; 'id' of type str.
+The class 'marketing_Product' has the following attributes: 'id' of type str; 'ccategory' of type system_Category; 'reviews' of type marketing_Review; 'created' of type date; 'active' of type bool; 'price' of type float; 'busId' of type user_Business; 'name' of type str; 'expires' of type date.
+The class 'user_Address' has the following attributes: 'street' of type str; 'country' of type str; 'postcode' of type str; 'state' of type str; 'suburb' of type str.
+The class 'user_Provider' has the following attributes: 'displayName' of type str; 'email' of type str; 'photoURL' of type str; 'providerId' of type str; 'uid' of type str.
+The class 'user_Tags' has the following attributes: 'id' of type str; 'name' of type str.

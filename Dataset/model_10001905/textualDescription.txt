@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'Cetak_SPK_UseCase' has no attributes.
+The class 'Input_data_mekanik_UseCase' has no attributes.
+The class 'laporan_service_UseCase' has no attributes.
+The class 'Class' has no attributes.
+The class 'Input_data_kerusakan_UseCase' has no attributes.
+The class 'Login_admin_UseCase' has no attributes.
+The class 'Input_data_pengemudi_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Input_data_kendaraan_UseCase' has no attributes.
+The class 'Mekanik_UseCase' has no attributes.
+The class 'Input_data_service_UseCase' has no attributes.
+'Cetak_SPK_UseCase' (role 'input_data_pengemudi2711', cardinality 0..*) is associated with 'Input_data_kerusakan_UseCase' (role 'input_data_pengemudi2610', cardinality 0..*).
+'Login_admin_UseCase' (role 'input_data_service17', cardinality 0..*) is associated with 'Input_data_service_UseCase' (role 'login_admin16', cardinality 0..*).
+'Input_data_service_UseCase' (role 'input_data_pengemudi2414', cardinality 0..*) is associated with 'laporan_service_UseCase' (role 'input_data_pengemudi2315', cardinality 0..*).
+'Cetak_SPK_UseCase' (role 'input_data_pengemudi2512', cardinality 0..*) is associated with 'Mekanik_UseCase' (role 'input_data_pengemudi2613', cardinality 0..*).
+'Input_data_kerusakan_UseCase' (role 'login_admin18', cardinality 0..*) is associated with 'Login_admin_UseCase' (role 'input_data_kerusakan19', cardinality 0..*).
+'Input_data_kendaraan_UseCase' (role 'admin3', cardinality 0..*) is associated with 'Admin_Actor' (role 'input_data_pengemudi22', cardinality 0..*).
+'Input_data_kendaraan_UseCase' (role 'login_admin22', cardinality 0..*) is associated with 'Login_admin_UseCase' (role 'input_data_kendaraan23', cardinality 0..*).
+'Admin_Actor' (role 'input_data_pengemudi224', cardinality 0..*) is associated with 'Input_data_mekanik_UseCase' (role 'admin5', cardinality 0..*).
+'Input_data_pengemudi_UseCase' (role 'login_admin24', cardinality 0..*) is associated with 'Login_admin_UseCase' (role 'input_data_pengemudi25', cardinality 0..*).
+'Login_admin_UseCase' (role 'input_data_mekanik21', cardinality 0..*) is associated with 'Input_data_mekanik_UseCase' (role 'login_admin20', cardinality 0..*).
+'Admin_Actor' (role 'input_data_pengemudi0', cardinality 0..*) is associated with 'Input_data_pengemudi_UseCase' (role 'admin1', cardinality 0..*).
+'Admin_Actor' (role 'input_data_pengemudi238', cardinality 0..*) is associated with 'Input_data_service_UseCase' (role 'admin9', cardinality 0..*).
+'Admin_Actor' (role 'input_data_pengemudi276', cardinality 0..*) is associated with 'Input_data_kerusakan_UseCase' (role 'admin7', cardinality 0..*).

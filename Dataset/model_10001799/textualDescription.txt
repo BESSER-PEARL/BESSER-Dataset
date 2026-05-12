@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'LoadGameWidget' has no attributes.
+The class 'felhaszn_l__Actor' has no attributes.
+The class 'Persistence' has no attributes.
+The class 'SaveGameWidget' has the following attributes: 'okButton' of type str; '_listWidget' of type str; 'cancelButton' of type str.
+The class 'Class' has no attributes.
+The class 'Model' has the following attributes: 'gameTable' of type str; 'pl2points' of type str; 'selected' of type str; 'pl2' of type str; 'gameOver' of type bool; 'pl1points' of type str; 'playerNr' of type str; 'steps' of type str; 'goodselected' of type bool; 'gameSize' of type str; 'pl1' of type str.
+'Class' (role 'loadGameWidget0', cardinality 0..*) is associated with 'LoadGameWidget' (role 'class1', cardinality 0..*).
+'Model' (role 'class3', cardinality 0..*) is associated with 'Class' (role 'model2', cardinality 0..*).
+'Persistence' (role 'model7', cardinality 0..*) is associated with 'Model' (role '_dataAccess6', cardinality 0..*).
+'Class' (role 'saveGameWidget4', cardinality 0..*) is associated with 'SaveGameWidget' (role 'class5', cardinality 0..*).

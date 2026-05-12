@@ -1,0 +1,15 @@
+The model has 9 class(es).
+The class 'Admin' has no attributes.
+The class 'System_order' has the following attributes: 'Date' of type int; 'Customer_ID' of type int; 'Customer_Name' of type str; 'Delivery_Charges' of type int; 'Order_ID' of type int; 'Total' of type int; 'Time' of type int; 'Payment_Option' of type str.
+The class 'Customer' has no attributes.
+The class 'Food_Items' has the following attributes: 'Items_ID' of type int; 'item_photo' of type str; 'Item_Name' of type str; 'Items_Manage' of type Admin; 'Items_Price' of type int; 'Items_Detail' of type str.
+The class 'User' has the following attributes: 'User_Password' of type str; 'User_ID' of type int; 'User_Name' of type str; 'User_Type' of type str.
+The class 'Payment' has the following attributes: 'Amount' of type int; 'Payment_Option' of type str.
+The class 'Bank' has the following attributes: 'Account_no' of type int; 'Online_payment_ID_and_password' of type str; 'Account_type' of type str.
+The class 'Cash_on_delievery' has the following attributes: 'Amount' of type str; 'Address' of type str; 'Customer_Name' of type str; 'Phone_number' of type int.
+The class 'Category' has the following attributes: 'Type' of type str; 'ID' of type int.
+'Category' (role 'Food_Items_Category_15', cardinality 0..*) is associated with 'Food_Items' (role 'Food_Items_Category_04', cardinality 0..*).
+'Food_Items' (role 'Admin_Food_Items_17', cardinality 0..*) is associated with 'Admin' (role 'Admin_Food_Items_06', cardinality 0..*).
+'Food_Items' (role 'customer9', cardinality 0..*) is associated with 'Customer' (role 'food_Items8', cardinality 0..*).
+'Customer' (role 'System_order_Customer_13', cardinality 0..*) is associated with 'System_order' (role 'System_order_Customer_02', cardinality 0..*).
+'System_order' (role 'System_order_Payment_00', cardinality 0..*) is associated with 'Payment' (role 'System_order_Payment_11', cardinality 0..*).

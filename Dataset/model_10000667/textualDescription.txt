@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Employee' has the following attributes: 'EmployeeID' of type int; 'Role' of type str; 'StoreID' of type int; 'Salary' of type float.
+The class 'PurchaseOrder' has the following attributes: 'Date' of type date; 'PurchaseOrderID' of type int; 'Quantity' of type float; 'ItemID' of type int; 'Price' of type float; 'VendorID' of type int.
+The class 'Customer' has the following attributes: 'CustNumber' of type int.
+The class 'Inventory' has the following attributes: 'StoreID' of type int; 'Quantity' of type float; 'ItemID' of type int.
+The class 'Order' has the following attributes: 'MenuItem' of type int; 'OrderID' of type int; 'OrderDate' of type date; 'ItemName' of type str; 'CustNumber' of type int.
+The class 'Store' has the following attributes: 'Address' of type str; 'StoreID' of type int; 'Name' of type str.
+The class 'Vendor' has the following attributes: 'ItemID' of type int; 'VendorID' of type int; 'Address' of type str.
+The class 'Items' has the following attributes: 'ItemID' of type int; 'Name' of type str.
+The class 'Menu' has the following attributes: 'MenuItem' of type str.
+'Order' (role 'menu1', cardinality 0..*) is associated with 'Menu' (role 'order0', cardinality 0..*).
+'Customer' (role 'order14', cardinality 0..*) is associated with 'Order' (role 'customer15', cardinality 0..*).
+'Store' (role 'employee10', cardinality 0..*) is associated with 'Employee' (role 'store11', cardinality 0..*).
+'Menu' (role 'items6', cardinality 0..*) is associated with 'Items' (role 'menu7', cardinality 0..*).
+'Items' (role 'inventory9', cardinality 0..*) is associated with 'Inventory' (role 'items8', cardinality 0..*).
+'Vendor' (role 'purchaseOrder4', cardinality 0..*) is associated with 'PurchaseOrder' (role 'vendor5', cardinality 0..*).
+'Items' (role 'purchaseOrder13', cardinality 0..*) is associated with 'PurchaseOrder' (role 'items12', cardinality 0..*).
+'Store' (role 'inventory3', cardinality 0..*) is associated with 'Inventory' (role 'store2', cardinality 0..*).

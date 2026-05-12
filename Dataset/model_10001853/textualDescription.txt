@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'Chat' has the following attributes: 'commands' of type str; 'username' of type str.
+The class 'Position' has the following attributes: 'x' of type int; 'y' of type int; 'has_flag' of type bool; 'is_hidden' of type bool.
+The class 'MineField' has the following attributes: 'grid' of type str; 'width' of type int; 'height' of type int.
+The class 'Game' has the following attributes: 'mine_field' of type MineField; 'time_keeper' of type Timer; 'score' of type int.
+The class 'Class' has no attributes.
+The class 'Timer' has the following attributes: 'start' of type int; 'ticks' of type int.
+'Timer' (role 'game1', cardinality 0..*) is associated with 'Game' (role 'timer0', cardinality 0..*).
+'Position' (role 'mineField5', cardinality 0..*) is associated with 'MineField' (role 'position4', cardinality 0..*).
+'MineField' (role 'game3', cardinality 0..*) is associated with 'Game' (role 'mineField2', cardinality 0..*).

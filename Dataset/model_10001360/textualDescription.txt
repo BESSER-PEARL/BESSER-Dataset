@@ -1,0 +1,23 @@
+The model has 15 class(es).
+The class 'Personne' has no attributes.
+The class 'Union' has the following attributes: 'dateUnion' of type Union.
+The class 'R' has no attributes.
+The class 'F' has the following attributes: 'attF' of type str.
+The class 'E' has the following attributes: 'attE' of type str.
+The class 'G' has no attributes.
+The class 'Y' has the following attributes: 'attY' of type str.
+The class 'C3' has no attributes.
+The class 'Mariage' has no attributes.
+The class 'C2' has no attributes.
+The class 'Z' has no attributes.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'C' has the following attributes: 'attc1' of type int; 'attc2' of type bool.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'PACS' has no attributes.
+'G' (role 'e12', cardinality 0..*) is associated with 'E' (role 'g13', cardinality 0..*).
+'R' (role 'aR4', cardinality 0..*) is associated with 'A' (role 'r5', cardinality 0..*).
+'Personne' (role 'unionActuelle9', cardinality 0..*) is associated with 'Union' (role 'personnes8', cardinality 0..*).
+'Personne' (role 'union6', cardinality 0..*) is associated with 'Union' (role 'pers7', cardinality 0..*).
+'C' (role 'b1', cardinality 0..*) is associated with 'B' (role 'c0', cardinality 0..*).
+'Personne' (role 'enfant11', cardinality 0..*) is associated with 'Personne' (role 'parents10', cardinality 0..*).
+'A' (role 'b2', cardinality 0..*) is associated with 'B' (role 'a3', cardinality 0..*).

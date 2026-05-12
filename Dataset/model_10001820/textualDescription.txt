@@ -1,0 +1,28 @@
+The model has 20 class(es).
+The class 'Utilisateur_Inscrit1' has the following attributes: 'noCarte' of type str.
+The class 'Club_de_lecture_Faire_proposition_UseCase' has no attributes.
+The class 'Club_de_lecture_Emprunter_livres_UseCase' has no attributes.
+The class 'Livre' has no attributes.
+The class 'Club_de_lecture_Utilisateur_inscrit_Actor' has no attributes.
+The class 'Utilisateur_Inscrit' has no attributes.
+The class 'Animal' has the following attributes: 'Age' of type str.
+The class 'Club_de_lecture_Emprunter_UseCase' has no attributes.
+The class 'Habitant' has no attributes.
+The class 'Club_de_lecture_S_inscrire_UseCase' has no attributes.
+The class 'Etudiant' has no attributes.
+The class 'Responsable_CL' has no attributes.
+The class 'Club_de_lecture_Habitant_Actor' has no attributes.
+The class 'Club_de_lecture_Consulter_p_riodiques___livres_UseCase' has no attributes.
+The class 'Club_de_lecture_Emprunter_livre_num_rique_UseCase' has no attributes.
+The class 'Livre_num_rique' has no attributes.
+The class 'Club_de_lecture_Emprunter_DVD_UseCase' has no attributes.
+The class 'CD' has no attributes.
+The class 'Informations' has no attributes.
+The class 'Media_physique' has no attributes.
+'Livre_num_rique' (role 'utilisateur_Inscrit13', cardinality 0..*) is associated with 'Utilisateur_Inscrit1' (role 'livre_num_rique12', cardinality 0..*).
+'Club_de_lecture_Utilisateur_inscrit_Actor' (role 'emprunter4', cardinality 0..*) is associated with 'Club_de_lecture_Emprunter_UseCase' (role 'utilisateur_inscrit5', cardinality 0..*).
+'Club_de_lecture_Consulter_p_riodiques___livres_UseCase' (role 'habtitant3', cardinality 0..*) is associated with 'Club_de_lecture_Habitant_Actor' (role 'consulter_p_riodiques___livres2', cardinality 0..*).
+'Utilisateur_Inscrit1' (role 'cD10', cardinality 0..*) is associated with 'CD' (role 'utilisateur_Inscrit11', cardinality 0..*).
+'Utilisateur_Inscrit1' (role 'empruntLivre8', cardinality 0..*) is associated with 'Livre' (role 'emprunter_9', cardinality 0..*).
+'Club_de_lecture_Utilisateur_inscrit_Actor' (role 'faire_proposition6', cardinality 0..*) is associated with 'Club_de_lecture_Faire_proposition_UseCase' (role 'utilisateur_inscrit7', cardinality 0..*).
+'Club_de_lecture_Habitant_Actor' (role 's_inscrire0', cardinality 0..*) is associated with 'Club_de_lecture_S_inscrire_UseCase' (role 'habtitant1', cardinality 0..*).

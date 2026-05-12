@@ -1,0 +1,21 @@
+The model has 20 class(es).
+The class 'mypackage_MyClass19' has no attributes.
+The class 'mypackage_MyClass3' has no attributes.
+The class 'mypackage_MyClass4' has no attributes.
+The class 'mypackage_MyClass7' has no attributes.
+The class 'mypackage_MyClass2' has no attributes.
+The class 'mypackage_MyClass14' has no attributes.
+The class 'mypackage_MyClass18' has no attributes.
+The class 'mypackage_MyClass10' has no attributes.
+The class 'mypackage_MyClass12' has no attributes.
+The class 'mypackage_MyClass8' has no attributes.
+The class 'mypackage_MyClass13' has no attributes.
+The class 'mypackage_MyClass6' has no attributes.
+The class 'mypackage_MyClass11' has no attributes.
+The class 'mypackage_MyClass20' has no attributes.
+The class 'mypackage_MyClass9' has no attributes.
+The class 'mypackage_MyClass16' has no attributes.
+The class 'mypackage_MyClass5' has no attributes.
+The class 'mypackage_MyClass15' has no attributes.
+The class 'mypackage_MyClass' has the following attributes: 'haarfarbe' of type str.
+The class 'mypackage_MyClass17' has no attributes.

@@ -1,0 +1,14 @@
+The model has 13 class(es).
+The class 'T1' has no attributes.
+The class 'Card' has the following attributes: 'suit' of type str; 'value' of type int.
+The class 'Deck' has the following attributes: 'cards' of type str.
+The class 'T3' has no attributes.
+The class 'T2' has no attributes.
+The class 'CasinoManager' has the following attributes: 'table' of type Table; 'waitList' of type str.
+The class 'Player' has no attributes.
+The class 'Table' has the following attributes: 'currPlayers' of type str; 'deck' of type Deck.
+The class 'T' has no attributes.
+The class 'Queue' has no attributes.
+The class 'Tuple' has no attributes.
+The class 'Executive' has no attributes.
+The class 'Stack' has no attributes.

@@ -1,0 +1,32 @@
+The model has 17 class(es).
+The class 'Move_a_Card_two_Spaces_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Deck' has the following attributes: 'card' of type Card; 'deck___' of type str.
+The class 'Game' has the following attributes: 'deck' of type Deck; 'board' of type Board; 'scan' of type str.
+The class 'Print_Cards_text_form__UseCase' has no attributes.
+The class 'Game_Component' has no attributes.
+The class 'Deal_A_Card_external' has no attributes.
+The class 'CardTable' has the following attributes: 'done' of type bool; 'stage' of type str; 'cards' of type Card.
+The class 'Move_a_Card_one_Space_external' has no attributes.
+The class 'Display_Rulebook_UseCase' has no attributes.
+The class 'Automatic_play_UseCase' has no attributes.
+The class 'Display_leaderboard_UseCase' has no attributes.
+The class 'Card' has the following attributes: 'cardNames' of type str; 'name' of type str; 'suit' of type CardSuits.
+The class 'Rules' has no attributes.
+The class 'Board' has the following attributes: 'scores' of type Card; 'board' of type Card; 'boardGui' of type Card.
+The class 'Amalgamate_Middle_Cards_UseCase' has no attributes.
+The class 'Shuffle_Deck_external' has no attributes.
+The enumeration 'CardSuits' does not specify any literals.
+'Display_Rulebook_UseCase' (role 'user17', cardinality 0..*) is associated with 'User_Actor' (role 'display_Rulebook16', cardinality 0..*).
+'Shuffle_Deck_external' (role 'user3', cardinality 0..*) is associated with 'User_Actor' (role 'shuffle_Deck2', cardinality 0..*).
+'User_Actor' (role 'automatic_play12', cardinality 0..*) is associated with 'Automatic_play_UseCase' (role 'user13', cardinality 0..*).
+'Move_a_Card_one_Space_external' (role 'user5', cardinality 0..*) is associated with 'User_Actor' (role 'move_a_Card_one_Space4', cardinality 0..*).
+'Rules' (role 'game19', cardinality 0..*) is associated with 'Game' (role 'rules18', cardinality 0..*).
+'User_Actor' (role 'move_a_Card_two_Spaces8', cardinality 0..*) is associated with 'Move_a_Card_two_Spaces_UseCase' (role 'user9', cardinality 0..*).
+'Game' (role 'board20', cardinality 0..*) is associated with 'Board' (role 'game21', cardinality 0..*).
+'Deal_A_Card_external' (role 'user1', cardinality 0..*) is associated with 'User_Actor' (role 'deal_A_Card0', cardinality 0..*).
+'User_Actor' (role 'display_leaderboard14', cardinality 0..*) is associated with 'Display_leaderboard_UseCase' (role 'user15', cardinality 0..*).
+'User_Actor' (role 'print_Cards_text_form_10', cardinality 0..*) is associated with 'Print_Cards_text_form__UseCase' (role 'user11', cardinality 0..*).
+'Deck' (role 'game23', cardinality 0..*) is associated with 'Game' (role 'deck22', cardinality 0..*).
+'Card' (role 'deck25', cardinality 0..*) is associated with 'Deck' (role 'card24', cardinality 0..*).
+'User_Actor' (role 'amalgamate_Middle_Cards6', cardinality 0..*) is associated with 'Amalgamate_Middle_Cards_UseCase' (role 'user7', cardinality 0..*).

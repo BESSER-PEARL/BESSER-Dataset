@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'Checking' has the following attributes: 'OVERDRAFT_FEE' of type float; 'OVERDRAFT_LIMIT' of type float; 'isActive' of type bool.
+The class 'Main' has no attributes.
+The class 'Instructor' has the following attributes: 'name' of type str.
+The class 'Savings' has no attributes.
+The class 'BankAccount' has the following attributes: 'TRANSACTION_FEE' of type int; 'minimumBalance' of type float; 'balance' of type float; 'numOfTransactions' of type int; 'FREE_TRANSACTIONS' of type int; 'isActive' of type bool.
+The class 'Student' has the following attributes: 'name' of type str.
+'Instructor' (role 'savings7', cardinality 0..*) is associated with 'Savings' (role 'instructor6', cardinality 0..*).
+'Instructor' (role 'checking5', cardinality 0..*) is associated with 'Checking' (role 'instructor4', cardinality 0..*).
+'Student' (role 'checking1', cardinality 0..*) is associated with 'Checking' (role 'student0', cardinality 0..*).
+'Savings' (role 'student2', cardinality 0..*) is associated with 'Student' (role 'savings3', cardinality 0..*).

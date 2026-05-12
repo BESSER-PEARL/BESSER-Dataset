@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'Fire_Alarm_system' has the following attributes: 'system_On' of type bool; 'system_Off' of type bool.
+The class 'securityAlarm' has the following attributes: 'status' of type bool.
+The class 'Home_Security_System' has the following attributes: 'system_On' of type bool; 'system_Off' of type bool.
+The class 'Appliances' has the following attributes: 'On_status' of type bool; 'Off_status' of type bool.
+The class 'Police' has the following attributes: 'name' of type str.
+The class 'Department' has the following attributes: 'name' of type str.
+The class 'FireAlarm' has the following attributes: 'status' of type bool.
+The class 'system' has the following attributes: 'status' of type bool.
+The class 'Owner' has the following attributes: 'name' of type str.
+The class 'smokeAlarm' has the following attributes: 'status' of type bool.
+The class 'Login' has the following attributes: 'password' of type str; 'name' of type str.
+'system' (role 'login23', cardinality 0..*) is associated with 'Login' (role 'system2', cardinality 0..*).
+'Login' (role 'owner1', cardinality 0..*) is associated with 'Owner' (role 'login0', cardinality 0..*).
+'smokeAlarm' (role 'fire_Alarm_system6', cardinality 0..*) is associated with 'Fire_Alarm_system' (role 'smokeAlarm7', cardinality 0..*).
+'Fire_Alarm_system' (role 'fireAlarm12', cardinality 0..*) is associated with 'FireAlarm' (role 'fire_Alarm_system13', cardinality 0..*).
+'Home_Security_System' (role 'police9', cardinality 0..*) is associated with 'Police' (role 'home_Security_System8', cardinality 0..*).
+'Fire_Alarm_system' (role 'department5', cardinality 0..*) is associated with 'Department' (role 'fire_Alarm_system4', cardinality 0..*).
+'securityAlarm' (role 'home_Security_System10', cardinality 0..*) is associated with 'Home_Security_System' (role 'securityAlarm11', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 8 class(es).
+The class 'genmymodelreverse_javax_swing_JPanel' has no attributes.
+The class 'genmymodelreverse_javax_swing_JFrame' has no attributes.
+The class 'Mines' has the following attributes: 'FRAME_WIDTH' of type int; 'timeBar' of type genmymodelreverse_javax_swing_JLabel; 'FRAME_HEIGHT' of type int; 'hexCell' of type genmymodelreverse_javax_swing_JMenuItem; 'statusbar' of type genmymodelreverse_javax_swing_JLabel.
+The class 'genmymodelreverse_java_awt_event_MouseEvent' has no attributes.
+The class 'genmymodelreverse_java_awt_event_MouseAdapter' has no attributes.
+The class 'genmymodelreverse_javax_swing_JMenuItem' has no attributes.
+The class 'genmymodelreverse_java_awt_Graphics' has no attributes.
+The class 'genmymodelreverse_javax_swing_JLabel' has no attributes.

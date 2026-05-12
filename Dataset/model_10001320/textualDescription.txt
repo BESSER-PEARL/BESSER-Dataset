@@ -1,0 +1,21 @@
+The model has 11 class(es).
+The class 'ConsultaMedicamento' has the following attributes: 'Posologia' of type str; 'MedicamentoId' of type Medicamento.
+The class 'Cid' has the following attributes: 'Codigo' of type str; 'Id' of type int; 'Descricao' of type str.
+The class 'ConsultaCid' has the following attributes: 'ConsultaId' of type int; 'CidId' of type int.
+The class 'Paciente' has the following attributes: 'Id' of type int; 'Nome' of type str; 'NomeMae' of type str; 'CPF' of type str; 'DataNascimento' of type str.
+The class 'Especialidade' has the following attributes: 'Descricao' of type str; 'Id' of type int.
+The class 'ConsultaExame' has the following attributes: 'Entregue' of type bool.
+The class 'Consulta' has the following attributes: 'MedicoId' of type Funcionario; 'DataHora' of type str; 'PacienteId' of type Paciente; 'Queixas' of type str.
+The class 'Funcionario' has the following attributes: 'Login' of type str; 'Id' of type int; 'Senha' of type str; 'Perfil' of type int; 'Nome' of type str.
+The class 'Medicamento' has the following attributes: 'NomeComercial' of type str; 'Id' of type int; 'Fabricante' of type str; 'NomeGenerico' of type str.
+The class 'Exame' has the following attributes: 'Id' of type int; 'Descricao' of type str; 'Codigo' of type str.
+The class 'Agenda' has no attributes.
+'Agenda' (role 'funcionario0', cardinality 0..*) is associated with 'Funcionario' (role 'agenda1', cardinality 0..*).
+'ConsultaMedicamento' (role 'medicamento10', cardinality 0..*) is associated with 'Medicamento' (role 'consultaMedicamento11', cardinality 0..*).
+'Agenda' (role 'especialidade2', cardinality 0..*) is associated with 'Especialidade' (role 'agenda3', cardinality 0..*).
+'Consulta' (role 'consultaCid6', cardinality 0..*) is associated with 'ConsultaCid' (role 'consulta7', cardinality 0..*).
+'Consulta' (role 'consultaExame16', cardinality 0..*) is associated with 'ConsultaExame' (role 'consulta17', cardinality 0..*).
+'Cid' (role 'consultaCid8', cardinality 0..*) is associated with 'ConsultaCid' (role 'cid9', cardinality 0..*).
+'Consulta' (role 'consultaMedicamento13', cardinality 0..*) is associated with 'ConsultaMedicamento' (role 'consulta12', cardinality 0..*).
+'Paciente' (role 'consulta4', cardinality 0..*) is associated with 'Consulta' (role 'paciente5', cardinality 0..*).
+'Exame' (role 'consultaExame14', cardinality 0..*) is associated with 'ConsultaExame' (role 'exame15', cardinality 0..*).

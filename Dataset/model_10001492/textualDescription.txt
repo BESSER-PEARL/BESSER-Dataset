@@ -1,0 +1,41 @@
+The model has 26 class(es).
+The class 'librarian' has the following attributes: 'email' of type str; 'birth_date' of type date; 'name' of type str; 'hire_date' of type date; 'job' of type str; 'address' of type str; 'id' of type int.
+The class 'date' has no attributes.
+The class 'publish_book_UseCase' has no attributes.
+The class 'publisher' has the following attributes: 'id' of type int; 'address' of type str; 'email' of type str; 'name' of type str; 'website' of type str.
+The class 'update_details_UseCase' has no attributes.
+The class 'search_for_book_UseCase' has no attributes.
+The class 'remove_reservation_UseCase' has no attributes.
+The class 'buy_book_from_author_UseCase' has no attributes.
+The class 'issue_book_UseCase' has no attributes.
+The class 'buy_book_from_publisher_UseCase' has no attributes.
+The class 'system_Component' has no attributes.
+The class 'display_details_UseCase' has no attributes.
+The class 'maintenance_database_UseCase' has no attributes.
+The class 'DBA' has the following attributes: 'ID' of type int; 'name' of type str; 'email' of type str.
+The class 'student' has the following attributes: 'student_card' of type int.
+The class 'book' has the following attributes: 'pages' of type int; 'title' of type str; 'ISBN' of type int; 'publisher' of type str; 'author' of type str; 'type' of type str.
+The class 'check_account__UseCase' has no attributes.
+The class 'DBA_Actor' has no attributes.
+The class 'ordinary_user' has no attributes.
+The class 'user' has the following attributes: 'last_name' of type str; 'address' of type str; 'id' of type int; 'phone_number' of type int; 'first_name' of type str; 'card' of type int; 'email' of type str.
+The class 'remove_title_UseCase' has no attributes.
+The class 'loan_book' has the following attributes: 'loan_date' of type date; 'returned_date' of type date; 'cost' of type int; 'due_date' of type date; 'id' of type int.
+The class 'librarian_Actor' has no attributes.
+The class 'add_book_UseCase' has no attributes.
+The class 'publisher_Actor' has no attributes.
+The class 'make_reservation_UseCase' has no attributes.
+'issue_book_UseCase' (role 'librarian4', cardinality 0..*) is associated with 'librarian_Actor' (role 'issue_book5', cardinality 0..*).
+'publish_book_UseCase' (role 'publisher13', cardinality 0..*) is associated with 'publisher_Actor' (role 'publish_book12', cardinality 0..*).
+'user' (role 'loan_book216', cardinality 0..*) is associated with 'loan_book' (role 'user17', cardinality 0..*).
+'loan_book' (role 'book26', cardinality 0..*) is associated with 'book' (role 'loan_book27', cardinality 0..*).
+'publisher' (role 'book25', cardinality 0..*) is associated with 'book' (role 'publisher224', cardinality 0..*).
+'display_details_UseCase' (role 'system8', cardinality 0..*) is associated with 'system_Component' (role 'display_details9', cardinality 0..*).
+'make_reservation_UseCase' (role 'librarian2', cardinality 0..*) is associated with 'librarian_Actor' (role 'make_reservation3', cardinality 0..*).
+'maintenance_database_UseCase' (role 'dBA15', cardinality 0..*) is associated with 'DBA_Actor' (role 'maintenance_database14', cardinality 0..*).
+'librarian_Actor' (role 'search_for_book0', cardinality 0..*) is associated with 'search_for_book_UseCase' (role 'librarian1', cardinality 0..*).
+'publisher_Actor' (role 'buy_book_from_author10', cardinality 0..*) is associated with 'buy_book_from_author_UseCase' (role 'publisher11', cardinality 0..*).
+'DBA' (role 'librarian21', cardinality 0..*) is associated with 'librarian' (role 'dBA20', cardinality 0..*).
+'DBA' (role 'publisher23', cardinality 0..*) is associated with 'publisher' (role 'dBA22', cardinality 0..*).
+'remove_reservation_UseCase' (role 'librarian6', cardinality 0..*) is associated with 'librarian_Actor' (role 'remove_reservation7', cardinality 0..*).
+'user' (role 'librarian18', cardinality 0..*) is associated with 'librarian' (role 'user19', cardinality 0..*).

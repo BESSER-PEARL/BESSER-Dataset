@@ -1,0 +1,14 @@
+The model has 9 class(es).
+The class 'UseCase7_UseCase' has no attributes.
+The class 'UseCase3_UseCase' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'UseCase5_UseCase' has no attributes.
+The class 'Class' has no attributes.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'UseCase6_UseCase' has no attributes.
+The class 'UseCase4_UseCase' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+'Actor_Actor' (role 'useCase0', cardinality 0..*) is associated with 'UseCase_UseCase' (role 'actor1', cardinality 0..*).
+'Actor_Actor' (role 'useCase76', cardinality 0..*) is associated with 'UseCase7_UseCase' (role 'actor7', cardinality 0..*).
+'Actor_Actor' (role 'useCase22', cardinality 0..*) is associated with 'UseCase2_UseCase' (role 'actor3', cardinality 0..*).
+'UseCase6_UseCase' (role 'actor5', cardinality 0..*) is associated with 'Actor_Actor' (role 'useCase64', cardinality 0..*).

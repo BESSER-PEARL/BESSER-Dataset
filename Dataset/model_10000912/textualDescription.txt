@@ -1,0 +1,17 @@
+The model has 16 class(es).
+The class 'datatypes_Documents' has the following attributes: 'file' of type str; 'tab_counter' of type int; 'data' of type datatypes_Json; 'file_name' of type str.
+The class 'datatypes_Json' has the following attributes: 'values' of type datatypes_Value.
+The class 'system_Category' has the following attributes: 'parent' of type system_Category; 'icon' of type str; 'name' of type str; 'id' of type str; 'section' of type str.
+The class 'marketing_Review' has the following attributes: 'product' of type marketing_Product; 'user' of type user_User; 'id' of type str; 'description' of type str; 'rating' of type datatypes_Number.
+The class 'user_User' has the following attributes: 'address' of type user_Address; 'lastName' of type datatypes_String; 'phone' of type datatypes_String; 'wishlist' of type marketing_Product; 'id' of type datatypes_String; 'displayName' of type str; 'interests' of type system_Category; 'business' of type user_Business; 'provider' of type user_Provider; 'purchaseHistory' of type marketing_Product; 'photoURL' of type str; 'reviews' of type marketing_Review; 'fiirstName' of type datatypes_String; 'email' of type str.
+The class 'user_Provider' has the following attributes: 'displayName' of type str; 'email' of type str; 'providerId' of type str; 'uid' of type str; 'photoURL' of type str.
+The class 'user_Business' has the following attributes: 'category' of type str; 'phone' of type str; 'email' of type str; 'website' of type str; 'id' of type datatypes_String; 'products' of type marketing_Product; 'avgRatings' of type datatypes_Number; 'name' of type datatypes_String; 'adminUser' of type user_User; 'staffUsers' of type user_User; 'address' of type user_Address.
+The class 'datatypes_Array' has the following attributes: 'data' of type datatypes_Value.
+The class 'datatypes_Null' has no attributes.
+The class 'datatypes_Number' has the following attributes: 'data' of type int.
+The class 'marketing_Tags' has the following attributes: 'id' of type str; 'name' of type datatypes_String; 'busId_' of type user_Business.
+The class 'marketing_Product' has the following attributes: 'id' of type str; 'reviews' of type marketing_Review; 'busId' of type user_Business; 'active' of type bool; 'expires' of type date; 'ccategory' of type system_Category; 'name' of type str; 'price' of type float; 'created' of type date.
+The class 'datatypes_String' has the following attributes: 'data' of type datatypes_String.
+The class 'datatypes_Value' has the following attributes: 'attribute' of type str.
+The class 'datatypes_Bool' has the following attributes: 'data' of type bool.
+The class 'user_Address' has the following attributes: 'country' of type datatypes_String; 'state' of type str; 'suburb' of type str; 'street' of type str; 'postcode' of type str.

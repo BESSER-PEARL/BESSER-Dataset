@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'OrderDetail' has the following attributes: 'productId' of type int; 'quantity' of type int; 'subtotal' of type float; 'unitCost' of type float; 'ordrId' of type int; 'productName' of type str.
+The class 'Order' has the following attributes: 'creationDate' of type str; 'dateShipped' of type str; 'totalPrice' of type float; 'shippingId' of type int; 'status' of type OrderStatus; 'orderId' of type int; 'customerId' of type int.
+The class 'Product' has the following attributes: 'productName' of type str; 'productId' of type int; 'description' of type str; 'price' of type float; 'stock' of type int; 'imageFileName' of type str.
+The class 'Portal' has the following attributes: 'portalId' of type str; 'name' of type str; 'url' of type str.
+The class 'Customer' has the following attributes: 'email' of type str; 'phone' of type int; 'address' of type str; 'shippingInfo' of type str; 'name' of type str; 'creditCardInfo' of type str.
+The class 'PremiumCustomer' has the following attributes: 'subscriptionExpires' of type str.
+The enumeration 'OrderStatus' does not specify any literals.
+The enumeration 'real' does not specify any literals.
+'Customer' (role 'portal6', cardinality 0..*) is associated with 'Portal' (role 'users7', cardinality 0..*).
+'Order' (role 'orderDetails0', cardinality 0..*) is associated with 'OrderDetail' (role 'order1', cardinality 0..*).
+'Order' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'orders4', cardinality 0..*).
+'OrderDetail' (role 'product3', cardinality 0..*) is associated with 'Product' (role 'orderDetails2', cardinality 0..*).

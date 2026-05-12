@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'SistemaApuesta' has no attributes.
+The class 'Apuesta' has the following attributes: 'valorApuesta' of type str; 'porcentajeGanancia' of type str; 'id' of type str.
+The class 'Usuario' has the following attributes: 'passWord' of type str; 'userName' of type str.
+The class 'Marcador' has the following attributes: 'numeroGolesEquipo1' of type int; 'nombreEquipoGanador' of type str; 'numeroGolesEquipo2' of type int.
+The class 'Partido' has the following attributes: 'idPartido' of type str; 'numeroApuestas' of type str.
+The class 'ApuestaEquipoGanador' has the following attributes: 'nombreEquipoGnador' of type str.
+The class 'Equipo' has the following attributes: 'jugadores' of type str; 'nombre' of type str; 'porcentajeFavoritismo' of type str.
+The class 'Tarjeta' has the following attributes: 'numeroTarje' of type int; 'codigoSeguridad' of type int.
+The class 'Historico' has the following attributes: 'numeroPartidosGanados' of type int; 'porcentajeApuestasEnFavor' of type str; 'numeroPartidosPerdidos' of type int; 'numeroPartidosJugados' of type int.
+The class 'ApuestaMarcadorEspecifico' has the following attributes: 'numeroGolesEquipo2' of type int; 'porcentajeAciertoMarcador' of type str; 'numeroGolesEquipo1' of type int; 'nombreEquipoGanador' of type str.
+'SistemaApuesta' (role 'usuario0', cardinality 0..*) is associated with 'Usuario' (role 'sistemaApuesta1', cardinality 0..*).
+'Partido' (role 'apuesta7', cardinality 0..*) is associated with 'Apuesta' (role 'partido6', cardinality 0..*).
+'Partido' (role 'eq_210', cardinality 0..*) is associated with 'Equipo' (role 'partido11', cardinality 0..*).
+'Historico' (role 'equipo13', cardinality 0..*) is associated with 'Equipo' (role 'historico12', cardinality 0..*).
+'Apuesta' (role 'sistemaApuesta19', cardinality 0..*) is associated with 'SistemaApuesta' (role 'apuesta18', cardinality 0..*).
+'Usuario' (role 'tarjeta2', cardinality 0..*) is associated with 'Tarjeta' (role 'usuario3', cardinality 0..*).
+'Partido' (role 'eq_18', cardinality 0..*) is associated with 'Equipo' (role 'partido9', cardinality 0..*).
+'Partido' (role 'marcador16', cardinality 0..*) is associated with 'Marcador' (role 'partido17', cardinality 0..*).
+'SistemaApuesta' (role 'partido20', cardinality 0..*) is associated with 'Partido' (role 'sistemaApuesta21', cardinality 0..*).
+'Apuesta' (role 'usuario5', cardinality 0..*) is associated with 'Usuario' (role 'apuesta4', cardinality 0..*).
+'Partido' (role 'historico15', cardinality 0..*) is associated with 'Historico' (role 'partido14', cardinality 0..*).

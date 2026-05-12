@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Item' has the following attributes: 'ImagePath2' of type str; 'MinPreviewImagePath' of type str; 'ImagePath3' of type str; 'PreviewImagePath' of type str; 'Name' of type str; 'Brand' of type str; 'Description' of type str; 'Size' of type str; 'Sex' of type int; 'CategoryId' of type str; 'Color' of type str; 'Status' of type int; 'Discount' of type str; 'Price' of type str; 'Amount' of type int; 'ImagePath1' of type str; 'SubCategoryId' of type str.
+The class 'Order' has the following attributes: 'TotalPrice' of type str; 'CodeId' of type str; 'Name' of type str; 'Address' of type str; 'UserId' of type str; 'Comment' of type str; 'Status' of type int; 'PhoneNumber' of type str; 'Email' of type str.
+The class 'FavoriteItem' has the following attributes: 'UserId' of type str; 'ItemId' of type str.
+The class 'BaseEntity' has the following attributes: 'Id' of type str; 'UpdatedDate' of type str; 'CreatedBy' of type str; 'CreatedDate' of type str; 'Active' of type bool; 'UpdatedBy' of type str.
+The class 'OrderItem' has the following attributes: 'OrderId' of type str; 'ItemId' of type str; 'Price' of type str; 'Name' of type str; 'Amount' of type int.
+The class 'CouponCode' has the following attributes: 'Code' of type str; 'ExpiryDate' of type str; 'UserId' of type str; 'Discount' of type int.
+The class 'User' has the following attributes: 'FirstName' of type str; 'PhoneNumber' of type str; 'LastName' of type str; 'Email' of type str; 'Password' of type str; 'Role' of type int; 'Login' of type str.
+The class 'SubCategory' has the following attributes: 'RusName' of type str; 'Name' of type str; 'CategoryId' of type str.
+The class 'Category' has the following attributes: 'Name' of type str; 'RusName' of type str.
+'CouponCode' (role 'order5', cardinality 0..*) is associated with 'Order' (role 'couponCode4', cardinality 0..*).
+'Category' (role 'item14', cardinality 0..*) is associated with 'Item' (role 'category15', cardinality 0..*).
+'Item' (role 'favoriteItem0', cardinality 0..*) is associated with 'FavoriteItem' (role 'item1', cardinality 0..*).
+'Item' (role 'subCategory13', cardinality 0..*) is associated with 'SubCategory' (role 'item12', cardinality 0..*).
+'User' (role 'favoriteItem3', cardinality 0..*) is associated with 'FavoriteItem' (role 'user2', cardinality 0..*).
+'OrderItem' (role 'order8', cardinality 0..*) is associated with 'Order' (role 'orderItem9', cardinality 0..*).
+'User' (role 'couponCode7', cardinality 0..*) is associated with 'CouponCode' (role 'user6', cardinality 0..*).
+'Category' (role 'subCategory11', cardinality 0..*) is associated with 'SubCategory' (role 'category10', cardinality 0..*).

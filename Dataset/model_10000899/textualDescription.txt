@@ -1,0 +1,29 @@
+The model has 15 class(es).
+The class 'Admin_Admin_Actor' has no attributes.
+The class 'Admin_consulter_liste_utilis_UseCase' has no attributes.
+The class 'covoiturage_Ville' has the following attributes: 'id' of type int; 'nom' of type str; 'cp' of type str.
+The class 'Admin_Passager___conducteur_Actor' has no attributes.
+The class 'Admin_s_inscrire_UseCase' has no attributes.
+The class 'Admin_modifier_utilis_UseCase' has no attributes.
+The class 'Admin_consulter_trajets_UseCase' has no attributes.
+The class 'covoiturage_Preferences' has the following attributes: 'valeur' of type str; 'id' of type int; 'nomPref' of type str.
+The class 'Admin_suppr_utils_UseCase' has no attributes.
+The class 'covoiturage_Personne' has the following attributes: 'mail' of type str; 'nom' of type str; 'prenom' of type str; 'tel' of type str; 'id' of type int.
+The class 'covoiturage_Voiture' has the following attributes: 'couleur' of type str; 'model' of type str; 'id' of type int; 'climatiseur' of type bool; 'confort' of type str; 'categorie' of type str; 'tabac' of type bool; 'nbPlaces' of type int; 'marque' of type str.
+The class 'covoiturage_Reservations' has the following attributes: 'id' of type int; 'prix' of type int; 'date' of type date; 'lieuDeDepose' of type str.
+The class 'Admin_add_trajet_UseCase' has no attributes.
+The class 'covoiturage_Avis' has the following attributes: 'note' of type int; 'commentaire' of type str; 'id' of type int.
+The class 'Admin_UseCase5_UseCase' has no attributes.
+'covoiturage_Voiture' (role 'personne1', cardinality 0..*) is associated with 'covoiturage_Personne' (role 'voiture0', cardinality 0..*).
+'covoiturage_Preferences' (role 'personne3', cardinality 0..*) is associated with 'covoiturage_Personne' (role 'preferences2', cardinality 0..*).
+'Admin_modifier_utilis_UseCase' (role 'actor17', cardinality 0..*) is associated with 'Admin_Admin_Actor' (role 'useCase216', cardinality 0..*).
+'Admin_UseCase5_UseCase' (role 'actor23', cardinality 0..*) is associated with 'Admin_Admin_Actor' (role 'useCase522', cardinality 0..*).
+'covoiturage_Avis' (role 'personne8', cardinality 0..*) is associated with 'covoiturage_Personne' (role 'avis9', cardinality 0..*).
+'Admin_s_inscrire_UseCase' (role 'actor224', cardinality 0..*) is associated with 'Admin_Passager___conducteur_Actor' (role 'useCase625', cardinality 0..*).
+'covoiturage_Reservations' (role 'avis11', cardinality 0..*) is associated with 'covoiturage_Avis' (role 'evenement10', cardinality 0..*).
+'covoiturage_Reservations' (role 'villes4', cardinality 0..*) is associated with 'covoiturage_Ville' (role 'evenement5', cardinality 0..*).
+'Admin_consulter_trajets_UseCase' (role 'actor21', cardinality 0..*) is associated with 'Admin_Admin_Actor' (role 'useCase420', cardinality 0..*).
+'Admin_consulter_liste_utilis_UseCase' (role 'actor15', cardinality 0..*) is associated with 'Admin_Admin_Actor' (role 'useCase14', cardinality 0..*).
+'Admin_Admin_Actor' (role 'useCase318', cardinality 0..*) is associated with 'Admin_suppr_utils_UseCase' (role 'actor19', cardinality 0..*).
+'covoiturage_Personne' (role 'adresse12', cardinality 0..*) is associated with 'covoiturage_Ville' (role 'personnes13', cardinality 0..*).
+'covoiturage_Reservations' (role 'participants7', cardinality 0..*) is associated with 'covoiturage_Personne' (role 'events6', cardinality 0..*).

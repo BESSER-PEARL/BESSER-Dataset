@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'ATM_INFO' has the following attributes: 'Location' of type str.
+The class 'Withdraw_Transaction' has the following attributes: 'amount' of type int.
+The class 'Current_Account' has the following attributes: 'Balance' of type str; 'Acc_no' of type str.
+The class 'Account' has the following attributes: 'Type' of type str; 'BranchLocation' of type str; 'Owned_by' of type str.
+The class 'ATM_Transaction' has the following attributes: 'Date' of type str; 'Amount' of type int; 'TransactionId' of type str.
+The class 'Customer' has the following attributes: 'Address' of type str; 'Id' of type str; 'Name' of type str.
+The class 'Debit_Card' has the following attributes: 'Owned_By' of type str; 'Card_No' of type str.
+The class 'Bank' has the following attributes: 'location' of type str; 'BankId' of type str.
+The class 'Savings_Account' has the following attributes: 'Acc_no' of type str; 'Balance' of type str.
+The class 'Transfer_Money' has the following attributes: 'ACC_NO' of type str; 'amount' of type int.
+The class 'CheckBalance' has the following attributes: 'Query' of type str.
+'Debit_Card' (role 'debit_Card9', cardinality 0..*) is associated with 'Debit_Card' (role 'debit_Card8', cardinality 0..*).
+'Customer' (role 'debit_Card3', cardinality 0..*) is associated with 'Debit_Card' (role 'customer2', cardinality 0..*).
+'ATM_Transaction' (role 'aTM_INFO13', cardinality 0..*) is associated with 'ATM_INFO' (role 'aTM_Transaction12', cardinality 0..*).
+'Debit_Card' (role 'account10', cardinality 0..*) is associated with 'Account' (role 'debit_Card11', cardinality 0..*).
+'Bank' (role 'aTM_INFO6', cardinality 0..*) is associated with 'ATM_INFO' (role 'myClass7', cardinality 0..*).
+'Bank' (role 'customer4', cardinality 0..*) is associated with 'Customer' (role 'myClass5', cardinality 0..*).
+'Debit_Card' (role 'myClass0', cardinality 0..*) is associated with 'Bank' (role 'debit_Card1', cardinality 0..*).

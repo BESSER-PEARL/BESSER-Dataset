@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'Engine' has the following attributes: 'power' of type int; 'volume' of type int; 'rpm' of type int; 'weight' of type int; 'manufacturer' of type str.
+The class 'BankAccount' has the following attributes: 'balance' of type str; 'owner' of type str.
+The class 'Manufacturer' has the following attributes: 'location' of type str; 'brand' of type str.
+The class 'Car' has the following attributes: 'engine' of type str; 'width' of type int; 'height' of type int; 'doors' of type int; 'model' of type str; 'length' of type int; 'wheels' of type str.
+The class 'Wheel' has the following attributes: 'width' of type int; 'diameter' of type int; 'manufacturer' of type Manufacturer.
+The class 'Book' has the following attributes: 'realese_date' of type str; 'pages' of type int; 'autor' of type str; 'name' of type str.
+The class 'Car1' has the following attributes: 'doors' of type int; 'length' of type int; 'wheels' of type str; 'model' of type str; 'height' of type int; 'engine' of type str; 'width' of type int.
+'Manufacturer' (role 'engine5', cardinality 0..*) is associated with 'Engine' (role 'manufacturer4', cardinality 0..*).
+'Wheel' (role 'manufacturer6', cardinality 0..*) is associated with 'Manufacturer' (role 'wheel7', cardinality 0..*).
+'Engine' (role 'car1', cardinality 0..*) is associated with 'Car1' (role 'engine0', cardinality 0..*).
+'Wheel' (role 'car3', cardinality 0..*) is associated with 'Car1' (role 'wheel2', cardinality 0..*).

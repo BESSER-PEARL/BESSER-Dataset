@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'Session' has the following attributes: 'cardDeck' of type str; 'players' of type str; 'currentPlayerPointer' of type int; 'humanPointer' of type int; 'humanTurn' of type bool; 'discardPile' of type str; 'gameStatus' of type str; 'gameStatusCode' of type int; 'id' of type int.
+The class 'Player' has the following attributes: 'name' of type str; 'id' of type int; 'hand' of type Card.
+The class 'Card' has the following attributes: 'suit' of type Suit; 'color' of type Color; 'rank' of type Rank.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'Color' does not specify any literals.
+The enumeration 'Rank' does not specify any literals.
+'Player' (role 'session5', cardinality 0..*) is associated with 'Session' (role 'player4', cardinality 0..*).
+'Player' (role 'cards0', cardinality 0..*) is associated with 'Card' (role 'player1', cardinality 0..*).
+'Session' (role 'card2', cardinality 0..*) is associated with 'Card' (role 'session3', cardinality 0..*).

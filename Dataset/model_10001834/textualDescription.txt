@@ -1,0 +1,11 @@
+The model has 10 class(es).
+The class 'ClassA' has the following attributes: 'flag' of type bool.
+The class 'Actor_Actor' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'T' has no attributes.
+The class 'T1' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'MyClass4' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'UseCase_UseCase' has no attributes.

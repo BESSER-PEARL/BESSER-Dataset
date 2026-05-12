@@ -1,0 +1,43 @@
+The model has 24 class(es).
+The class 'Melakukan_reservasi_kamar_UseCase' has no attributes.
+The class 'Melakukan_pembayaran_UseCase' has no attributes.
+The class 'hjb_Interface' has no attributes.
+The class 'Kirim_e_booking_email_UseCase' has no attributes.
+The class 'Denda_UseCase' has no attributes.
+The class 'ReservasiKamar' has the following attributes: 'no_kamar' of type int; 'NIK' of type int; 'tgl_start_booking' of type str; 'tgl_end_booking' of type str; 'ID_admin' of type int; 'ID_pembayaran' of type int; 'ID_Reservasi' of type int.
+The class 'Login_UseCase' has no attributes.
+The class 'Pengunjung_Actor' has no attributes.
+The class 'Mengirim_e_bukti_Bayar_UseCase' has no attributes.
+The class 'Cancel_Pemesanan_UseCase' has no attributes.
+The class 'Admin' has the following attributes: 'insertData' of type str; 'attribute' of type str; 'username' of type str; 'password' of type str; 'ID_admin' of type int.
+The class 'Kamar_Keluarga_UseCase' has no attributes.
+The class 'Denda' has the following attributes: 'jumlah' of type int; 'ID_Denda' of type int; 'keterangan' of type str; 'ID_Reservasi' of type int.
+The class 'Admin_Actor' has no attributes.
+The class 'Check_in_UseCase' has no attributes.
+The class 'Register_UseCase' has no attributes.
+The class 'Kamar' has the following attributes: 'no_kamar' of type int; 'tipe' of type str; '_attr' of type str; 'jumlah_bed' of type int; 'status' of type str.
+The class 'Pemesan_Actor' has no attributes.
+The class 'Melihat_Katalog_Kamar_UseCase' has no attributes.
+The class 'Kamar_Standard_UseCase' has no attributes.
+The class 'Pemesan' has the following attributes: 'username' of type str; 'password' of type str; 'Nama' of type str; 'Alamat' of type str; 'phone_number' of type str; 'Emai' of type str; 'NIK' of type int.
+The class 'Kamar_Deluxe_UseCase' has no attributes.
+The class 'Pembayaran' has the following attributes: 'ID_Pembayaran' of type int; 'status' of type str; 'ID_Reservasi' of type int; 'jumlah' of type int; 'deadline_bayar' of type str.
+The class 'Check_Out_UseCase' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.
+'Pemesan_Actor' (role 'melakukan_reservasi_kamar8', cardinality 0..*) is associated with 'Login_UseCase' (role 'pemesan9', cardinality 0..*).
+'Melihat_Katalog_Kamar_UseCase' (role 'pemesan3', cardinality 0..*) is associated with 'Pemesan_Actor' (role 'useCase22', cardinality 0..*).
+'ReservasiKamar' (role 'admin26', cardinality 0..*) is associated with 'Admin' (role 'reservasiKamar27', cardinality 0..*).
+'Pengunjung_Actor' (role 'Melihat_Katalog_Kamar0', cardinality 0..*) is associated with 'Melihat_Katalog_Kamar_UseCase' (role 'pengunjung1', cardinality 0..*).
+'Admin_Actor' (role 'useCase34', cardinality 0..*) is associated with 'Mengirim_e_bukti_Bayar_UseCase' (role 'admin5', cardinality 0..*).
+'Kirim_e_booking_email_UseCase' (role 'admin15', cardinality 0..*) is associated with 'Admin_Actor' (role 'kirim_e_booking_email14', cardinality 0..*).
+'ReservasiKamar' (role 'denda31', cardinality 0..*) is associated with 'Denda' (role 'reservasiKamar30', cardinality 0..*).
+'Pemesan' (role 'reservasiKamar24', cardinality 0..*) is associated with 'ReservasiKamar' (role 'pemesan25', cardinality 0..*).
+'Melakukan_reservasi_kamar_UseCase' (role 'melakukan_pembayaran10', cardinality 0..*) is associated with 'Melakukan_pembayaran_UseCase' (role 'melakukan_reservasi_kamar11', cardinality 0..*).
+'Check_in_UseCase' (role 'pemesan19', cardinality 0..*) is associated with 'Pemesan_Actor' (role 'check_in18', cardinality 0..*).
+'ReservasiKamar' (role 'pembayaran33', cardinality 0..*) is associated with 'Pembayaran' (role 'reservasiKamar32', cardinality 0..*).
+'Pengunjung_Actor' (role 'memasukkan_data_identitas6', cardinality 0..*) is associated with 'Register_UseCase' (role 'pengunjung7', cardinality 0..*).
+'Pemesan_Actor' (role 'check_Out22', cardinality 0..*) is associated with 'Check_Out_UseCase' (role 'pemesan23', cardinality 0..*).
+'ReservasiKamar' (role 'kamar29', cardinality 0..*) is associated with 'Kamar' (role 'reservasiKamar28', cardinality 0..*).
+'Check_Out_UseCase' (role 'pengunjung17', cardinality 0..*) is associated with 'Pengunjung_Actor' (role 'check_Out16', cardinality 0..*).
+'Melakukan_reservasi_kamar_UseCase' (role 'mengirim_e_bukti_Bayar12', cardinality 0..*) is associated with 'Mengirim_e_bukti_Bayar_UseCase' (role 'melakukan_reservasi_kamar13', cardinality 0..*).
+'Check_in_UseCase' (role 'pengunjung21', cardinality 0..*) is associated with 'Pengunjung_Actor' (role 'check_in20', cardinality 0..*).

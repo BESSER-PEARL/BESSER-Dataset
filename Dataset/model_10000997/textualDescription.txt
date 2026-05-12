@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'User' has no attributes.
+The class 'Comment' has no attributes.
+The class 'Post' has no attributes.
+The class 'Login' has no attributes.
+The class 'Topic' has no attributes.
+The class 'Profile' has no attributes.
+'Login' (role 'user5', cardinality 0..*) is associated with 'User' (role 'login4', cardinality 0..*).
+'Post' (role 'user3', cardinality 0..*) is associated with 'User' (role 'post2', cardinality 0..*).
+'User' (role 'myprofile0', cardinality 0..*) is associated with 'Profile' (role 'user1', cardinality 0..*).
+'Topic' (role 'user7', cardinality 0..*) is associated with 'User' (role 'group6', cardinality 0..*).
+'Comment' (role 'Topic_Message_111', cardinality 0..*) is associated with 'Topic' (role 'Topic_Message_010', cardinality 0..*).
+'User' (role 'message8', cardinality 0..*) is associated with 'Comment' (role 'user9', cardinality 0..*).

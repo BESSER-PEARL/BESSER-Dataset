@@ -1,0 +1,13 @@
+The model has 8 class(es).
+The class 'CheckingAccount' has no attributes.
+The class 'CoDTransaction' has the following attributes: 'interestRate' of type str; 'endDate' of type str; 'startDate' of type str.
+The class 'Account' has the following attributes: 'openDate' of type str; 'MAX_HOLDERS' of type str; 'accId' of type str; 'accNumber' of type str; 'balance' of type str.
+The class 'Bank' has no attributes.
+The class 'CheckTransaction' has the following attributes: 'memo' of type str.
+The class 'Customer' has the following attributes: 'taxId' of type str; 'name' of type str.
+The class 'Transaction' has the following attributes: 'transactionDate' of type str; 'transactionAmount' of type str; 'transactionType' of type str; 'holder' of type Customer.
+The class 'SavingAccount' has no attributes.
+'Bank' (role 'account4', cardinality 0..*) is associated with 'Account' (role 'bank5', cardinality 0..*).
+'Transaction' (role 'account3', cardinality 0..*) is associated with 'Account' (role 'transaction2', cardinality 0..*).
+'Account' (role 'customer7', cardinality 0..*) is associated with 'Customer' (role 'account6', cardinality 0..*).
+'Bank' (role 'customer0', cardinality 0..*) is associated with 'Customer' (role 'bank1', cardinality 0..*).

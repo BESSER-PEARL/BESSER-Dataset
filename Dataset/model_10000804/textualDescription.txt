@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'Order' has the following attributes: 'shipped' of type bool; 'status' of type str; 'number' of type int; 'total' of type float; 'ordered' of type date; 'shipTo' of type str.
+The class 'ShoppingCart' has the following attributes: 'creationDate' of type date.
+The class 'Payment' has the following attributes: 'details' of type str; 'paidDate' of type date; 'total' of type float.
+The class 'Product' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'Customer' has the following attributes: 'phone' of type str; 'address' of type str; 'email' of type str.
+The enumeration 'UserState' does not specify any literals.
+'Payment' (role 'order0', cardinality 0..*) is associated with 'Order' (role 'payment1', cardinality 0..*).

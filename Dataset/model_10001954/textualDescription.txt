@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Post' has the following attributes: 'Privacy' of type str; 'ID_Post' of type int; 'Info' of type str; 'ID_Page' of type int; 'Mail' of type str.
+The class 'Profile' has the following attributes: 'User_Name' of type str; 'ID_Profile' of type str; 'About' of type str; 'Password' of type str.
+The class 'User' has the following attributes: 'ID_User' of type int; 'Name' of type str; 'Mail' of type str; 'Fist_Name' of type str.
+The class 'Page' has the following attributes: 'Name' of type str; 'Description' of type str; 'ID_Page' of type int; 'ID_User' of type int.
+The class 'Message' has the following attributes: 'Max_Chars' of type str; 'ID_Message' of type int; 'ID_User' of type int; 'Mail' of type str.
+The class 'Group' has the following attributes: 'Description' of type str; 'Name' of type str; 'ID_User' of type int; 'ID_Group' of type int.
+'Page' (role 'user3', cardinality 0..*) is associated with 'User' (role 'page2', cardinality 0..*).
+'User' (role 'message4', cardinality 0..*) is associated with 'Message' (role 'user5', cardinality 0..*).
+'Post' (role 'page9', cardinality 0..*) is associated with 'Page' (role 'post8', cardinality 0..*).
+'Group' (role 'user7', cardinality 0..*) is associated with 'User' (role 'group6', cardinality 0..*).
+'Profile' (role 'user0', cardinality 0..*) is associated with 'User' (role 'profile1', cardinality 0..*).

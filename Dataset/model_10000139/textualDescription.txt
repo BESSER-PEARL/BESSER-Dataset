@@ -1,0 +1,26 @@
+The model has 18 class(es).
+The class 'AcceleratorCard' has no attributes.
+The class 'Vendor1Sound' has no attributes.
+The class 'Vendor1Adapter' has no attributes.
+The class 'DeviceCard' has no attributes.
+The class 'Chess' has the following attributes: 'field' of type str.
+The class 'Cache' has the following attributes: 'chunck' of type str.
+The class 'GenericSound' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'Vendor2Sound' has no attributes.
+The class 'RAM' has no attributes.
+The class 'Processor' has no attributes.
+The class 'Card' has no attributes.
+The class 'ExtensionBoard' has no attributes.
+The class 'FastCard' has no attributes.
+The class 'Vendor2Adapter' has no attributes.
+The class 'CPU' has no attributes.
+The class 'Sound' has no attributes.
+The class 'Program' has the following attributes: 'name' of type str.
+'AcceleratorCard' (role 'decoratedCPU12', cardinality 0..*) is associated with 'CPU' (role 'acceleratorCard13', cardinality 0..*).
+'Card' (role 'extensionBoard6', cardinality 0..*) is associated with 'ExtensionBoard' (role 'cards7', cardinality 0..*).
+'RAM' (role 'cache5', cardinality 0..*) is associated with 'Cache' (role 'ramProxy4', cardinality 0..*).
+'Program' (role 'instructions1', cardinality 0..*) is associated with 'Instruction' (role 'program0', cardinality 0..*).
+'Program' (role 'processor2', cardinality 0..*) is associated with 'Processor' (role 'program3', cardinality 0..*).
+'Vendor1Sound' (role 'vendor1Adapter8', cardinality 0..*) is associated with 'Vendor1Adapter' (role 'vendor1Sound9', cardinality 0..*).
+'Vendor2Adapter' (role 'vendor2Sound11', cardinality 0..*) is associated with 'Vendor2Sound' (role 'vendor2Adapter10', cardinality 0..*).

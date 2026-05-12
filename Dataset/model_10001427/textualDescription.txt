@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'ShoppingCart' has the following attributes: 'dateAdded' of type int; 'quantity' of type int; 'productId' of type int; 'cartId' of type int.
+The class 'User' has the following attributes: 'email' of type str; 'User_name' of type str; 'Card_info' of type str; 'shipping_info' of type str; 'address' of type str; 'phone_no' of type int.
+The class 'Login' has the following attributes: 'UserId' of type str; 'login_status' of type str; 'password' of type str.
+The class 'Payment' has the following attributes: 'Payment_method' of type int; 'Payment_type' of type str; 'Payment_id' of type str.
+The class 'shippinginfo' has the following attributes: 'shipping_Address' of type str; 'shipping_cost' of type int; 'shipping_date' of type date; 'shipping_id' of type str; 'shipping_type' of type str.
+The class 'orderDetail' has the following attributes: 'subtotall' of type float; 'quantity' of type int; 'productid' of type int; 'orderId' of type int; 'unitcost' of type float; 'productname' of type str.
+The class 'product' has the following attributes: 'imagefilename' of type str; 'price' of type int; 'productid' of type int; 'productname' of type str.
+The class 'order' has the following attributes: 'status' of type str; 'c_name' of type str; 'shippingid' of type str; 'shipping_date' of type date; 'date_created' of type date; 'order_ID' of type int.
+The class 'cartitem' has the following attributes: 'product' of type int; 'name' of type str; 'quantity' of type int; 'unitcost' of type float; 'subtotal' of type float.
+The enumeration 'login_status' does not specify any literals.
+'ShoppingCart' (role 'ShoppingCart_coustomer_00', cardinality 0..*) is associated with 'User' (role 'ShoppingCart_coustomer_11', cardinality 0..*).
+'ShoppingCart' (role 'ShoppingCart_cartitem_02', cardinality 0..*) is associated with 'cartitem' (role 'ShoppingCart_cartitem_13', cardinality 0..*).
+'shippinginfo' (role 'order_shippinginfo_19', cardinality 0..*) is associated with 'order' (role 'order_shippinginfo_08', cardinality 0..*).
+'Payment' (role 'order11', cardinality 0..*) is associated with 'order' (role 'payment10', cardinality 0..*).
+'order' (role 'coustomer_order_15', cardinality 0..*) is associated with 'User' (role 'coustomer_order_04', cardinality 0..*).
+'order' (role 'order_orderDetail_06', cardinality 0..*) is associated with 'orderDetail' (role 'order_orderDetail_17', cardinality 0..*).
+'product' (role 'cartitem13', cardinality 0..*) is associated with 'cartitem' (role 'product212', cardinality 0..*).

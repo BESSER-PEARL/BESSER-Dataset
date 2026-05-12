@@ -1,0 +1,22 @@
+The model has 11 class(es).
+The class 'Customer' has the following attributes: 'userName' of type str; 'password' of type str; 'id' of type int.
+The class 'Registration' has the following attributes: 'LastName' of type str; 'Address' of type str; 'Phone' of type int; 'UserName' of type str; 'name' of type str; 'Email' of type str; 'DOB' of type str; 'Password' of type str.
+The class 'Order' has the following attributes: 'id' of type int; 'quantity' of type int; 'orderDate' of type str; 'orderStatus' of type str.
+The class 'Admin' has the following attributes: 'id' of type int; 'userName' of type str; 'password' of type str.
+The class 'Person' has the following attributes: 'DOB' of type str; 'Phone' of type int; 'LastName' of type str; 'Name' of type str; 'Email' of type str; 'Address' of type str.
+The class 'Product' has the following attributes: 'expiry' of type str; 'price' of type int; 'manufecturedDate' of type str; 'color' of type str; 'pID' of type str; 'name' of type str; 'manufecturer' of type str.
+The class 'Cart' has the following attributes: 'id' of type int; 'TotalBill' of type int.
+The class 'MediDevices' has the following attributes: 'name' of type str; 'type' of type str; 'id' of type str.
+The class 'Medicine' has the following attributes: 'potency' of type str; 'formula' of type str; 'name' of type str; 'id' of type int.
+The class 'PaymentMethod' has the following attributes: 'cashOnDelievery' of type str; 'paymentType' of type str; 'online' of type str.
+The class 'ExerciseMachine' has the following attributes: 'id' of type int; 'name' of type str; 'type' of type str; 'size' of type int.
+'Person' (role 'product12', cardinality 0..*) is associated with 'Product' (role 'person13', cardinality 0..*).
+'Person' (role 'registration18', cardinality 0..*) is associated with 'Registration' (role 'person19', cardinality 0..*).
+'Registration' (role 'admin11', cardinality 0..*) is associated with 'Admin' (role 'registration10', cardinality 0..*).
+'Cart' (role 'paymentMethod8', cardinality 0..*) is associated with 'PaymentMethod' (role 'cart9', cardinality 0..*).
+'Product' (role 'exerciseMachine4', cardinality 0..*) is associated with 'ExerciseMachine' (role 'product5', cardinality 0..*).
+'Product' (role 'mediDevices2', cardinality 0..*) is associated with 'MediDevices' (role 'product3', cardinality 0..*).
+'Cart' (role 'order7', cardinality 0..*) is associated with 'Order' (role 'cart6', cardinality 0..*).
+'Order' (role 'product17', cardinality 0..*) is associated with 'Product' (role 'order16', cardinality 0..*).
+'Medicine' (role 'product1', cardinality 0..*) is associated with 'Product' (role 'medicine0', cardinality 0..*).
+'Admin' (role 'product14', cardinality 0..*) is associated with 'Product' (role 'admin15', cardinality 0..*).

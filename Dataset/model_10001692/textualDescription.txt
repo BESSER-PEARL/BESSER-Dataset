@@ -1,0 +1,14 @@
+The model has 9 class(es).
+The class 'R' has no attributes.
+The class 'c3' has no attributes.
+The class 'Y' has no attributes.
+The class 'c' has no attributes.
+The class 'A' has no attributes.
+The class 'B' has no attributes.
+The class 'c2' has no attributes.
+The class 'z' has no attributes.
+The class 'MyClass9' has no attributes.
+'R' (role 'a0', cardinality 0..*) is associated with 'A' (role 'r1', cardinality 0..*).
+'z' (role 'c27', cardinality 0..*) is associated with 'c2' (role 'z6', cardinality 0..*).
+'A' (role 'b2', cardinality 0..*) is associated with 'B' (role 'a3', cardinality 0..*).
+'c' (role 'b5', cardinality 0..*) is associated with 'B' (role 'c4', cardinality 0..*).

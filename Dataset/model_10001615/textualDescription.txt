@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'Benutzer' has the following attributes: 'Nachname' of type str; 'Vorname' of type str; 'Info' of type str; 'profilbild' of type str.
+The class 'Privat' has no attributes.
+The class 'Group' has the following attributes: 'name' of type str.
+The class 'Hashtag' has the following attributes: 'name' of type str; 'numOfRepeat' of type int.
+The class 'Registrieren' has the following attributes: 'geschlecht' of type str; 'passwort' of type str; 'vorname' of type str; 'email1' of type str; 'nachname' of type str; 'geburtsdatum' of type str; 'email' of type str.
+The class '_unnamed' has the following attributes: 'maxChars' of type str.
+The class 'Kommentare' has the following attributes: 'text' of type str.
+The class 'Anmelden' has the following attributes: 'email' of type str; 'passwort' of type str.
+The class 'Ver_ffentlich' has no attributes.
+The class 'Freund' has no attributes.
+The class 'Beitrag' has the following attributes: 'privatph_re' of type str; 'foto' of type str; 'video' of type str; 'text' of type str; 'Audio' of type str.
+'Registrieren' (role 'user7', cardinality 0..*) is associated with 'Benutzer' (role 'registeration6', cardinality 0..*).
+'Benutzer' (role 'login2', cardinality 0..*) is associated with 'Anmelden' (role 'user3', cardinality 0..*).
+'Beitrag' (role 'Kommentare_Post_119', cardinality 0..*) is associated with 'Kommentare' (role 'Kommentare_Post_018', cardinality 0..*).
+'Beitrag' (role 'user1', cardinality 0..*) is associated with 'Benutzer' (role 'post0', cardinality 0..*).
+'Benutzer' (role 'hashtag12', cardinality 0..*) is associated with 'Hashtag' (role 'user13', cardinality 0..*).
+'Benutzer' (role 'friends10', cardinality 0..*) is associated with 'Freund' (role 'user11', cardinality 0..*).
+'Beitrag' (role 'Post_public_014', cardinality 0..*) is associated with 'Ver_ffentlich' (role 'Post_public_115', cardinality 0..*).
+'Group' (role 'Group_Beitrag_020', cardinality 0..*) is associated with 'Beitrag' (role 'Group_Beitrag_121', cardinality 0..*).
+'Benutzer' (role 'group4', cardinality 0..*) is associated with 'Group' (role 'user5', cardinality 0..*).
+'Benutzer' (role 'message8', cardinality 0..*) is associated with '_unnamed' (role 'user9', cardinality 0..*).
+'Beitrag' (role 'Post_secret_016', cardinality 0..*) is associated with 'Privat' (role 'Post_secret_117', cardinality 0..*).

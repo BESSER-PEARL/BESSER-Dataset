@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'ElevensGame' has the following attributes: 'Board_9_' of type int; 'win' of type bool.
+The class 'Deck' has the following attributes: 'Deck_ArrayList_' of type int; 'Topcard' of type int.
+The class 'Card_Interface' has no attributes.
+The class 'Player' has no attributes.
+The enumeration 'Board' does not specify any literals.
+'ElevensGame' (role 'player2', cardinality 0..*) is associated with 'Player' (role 'elevensGame3', cardinality 0..*).
+'Card_Interface' (role 'deck4', cardinality 0..*) is associated with 'Deck' (role 'interface5', cardinality 0..*).
+'Deck' (role 'elevensGame1', cardinality 0..*) is associated with 'ElevensGame' (role 'deck0', cardinality 0..*).

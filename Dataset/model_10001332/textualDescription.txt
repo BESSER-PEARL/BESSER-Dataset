@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'CardGame' has the following attributes: 'CardNumber' of type int; 'suit' of type str.
+The class 'Cards' has the following attributes: 'card' of type CardGame; 'attribute3' of type str; 'attribute2' of type int.
+'Cards' (role 'cardGame0', cardinality 0..*) is associated with 'CardGame' (role 'cards1', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 16 class(es).
+The class 'account_CheckingAccount' has the following attributes: 'name' of type str.
+The class 'LoginAuthenticationProcessor' has the following attributes: 'UserPassWord' of type str; 'Authentication_Result' of type bool; 'UserID' of type str.
+The class 'transaction_Transaction' has the following attributes: 'type' of type transaction_TransactionType; 'transactionTime' of type date; 'amount' of type float; 'id' of type int.
+The class 'LOGIN' has the following attributes: 'UserPassWord' of type str; 'UserID' of type str.
+The class 'OPT_AuthenticationProcessor' has the following attributes: 'Authentication_Result' of type bool; 'UserEmail' of type str.
+The class 'transaction_WithdrawTransaction' has no attributes.
+The class 'Customer' has the following attributes: 'dateOfBirth' of type date; 'phoneNumber' of type str; 'address' of type str; 'name' of type str; 'emailAddress' of type str.
+The class 'Authentication' has the following attributes: 'Authentication_Result' of type bool; 'AuthenticationType' of type int; 'UserEmail' of type str; 'UserPassWord' of type str; 'UserPassWord1' of type str; 'UserID' of type str.
+The class 'RequestOTPAuthentication' has the following attributes: 'UserEmail' of type str; 'UserID' of type str.
+The class 'Login' has the following attributes: 'securityAnswer' of type str; 'username' of type str; 'securityQuestion' of type str; 'lastLoginTime' of type date; 'password' of type str.
+The class 'account_CertificatesOfDepositAccount' has the following attributes: 'timePeriod' of type int; 'interestRate' of type float.
+The class 'transaction_TransferTransaction' has the following attributes: 'targetAccount' of type account_Account; 'sourceAccount' of type account_Account.
+The class 'account_Account' has the following attributes: 'balance' of type float; 'accountNo' of type str; 'type' of type account_AccountType.
+The class 'account_SavingsAccount' has the following attributes: 'interestRate' of type float.
+The class 'transaction_DepositTransaction' has no attributes.
+The class 'Database' has no attributes.
+The enumeration 'transaction_TransactionType' does not specify any literals.
+The enumeration 'account_AccountType' does not specify any literals.
+'Login' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'login4', cardinality 0..*).
+'Database' (role 'authentication6', cardinality 0..*) is associated with 'Authentication' (role 'database7', cardinality 0..*).
+'account_Account' (role 'customer0', cardinality 0..*) is associated with 'Customer' (role 'a1', cardinality 0..*).
+'transaction_Transaction' (role 'account3', cardinality 0..*) is associated with 'account_Account' (role 'transactions2', cardinality 0..*).

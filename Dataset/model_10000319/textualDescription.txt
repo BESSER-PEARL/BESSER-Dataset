@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'Account' has the following attributes: 'Name' of type str; 'created' of type date; 'isClosed' of type bool; 'closed' of type date.
+The class 'User' has the following attributes: 'email' of type str; 'Id' of type int; 'Name' of type str.
+The class 'AddPost' has the following attributes: 'creationDate' of type date.
+The class 'post' has the following attributes: 'description' of type str; 'ID' of type int.
+The class 'Post' has the following attributes: 'status' of type post_status; 'ID' of type int; 'Created' of type date; 'Category' of type str; 'User' of type str; 'tags' of type float.
+The class 'WebUser' has the following attributes: 'state' of type UserState; 'login' of type str; 'password' of type str.
+The class 'LineItem' has the following attributes: 'tags' of type float; 'category' of type int.
+The enumeration 'post_status' does not specify any literals.
+The enumeration 'UserState' does not specify any literals.
+'User' (role 'webUser3', cardinality 0..*) is associated with 'WebUser' (role 'customer2', cardinality 0..*).
+'LineItem' (role 'sc9', cardinality 0..*) is associated with 'AddPost' (role 'items8', cardinality 0..*).
+'User' (role 'account4', cardinality 0..*) is associated with 'Account' (role 'customer5', cardinality 0..*).
+'LineItem' (role 'Post11', cardinality 0..*) is associated with 'post' (role 'lineItems10', cardinality 0..*).
+'Post' (role 'additionals12', cardinality 0..*) is associated with 'LineItem' (role 'order13', cardinality 0..*).
+'WebUser' (role 'shoppingCart0', cardinality 0..*) is associated with 'AddPost' (role 'webUser1', cardinality 0..*).
+'Account' (role 'cart6', cardinality 0..*) is associated with 'AddPost' (role 'account7', cardinality 0..*).
+'Post' (role 'account15', cardinality 0..*) is associated with 'Account' (role 'order14', cardinality 0..*).

@@ -1,0 +1,37 @@
+The model has 20 class(es).
+The class 'release_receptionist_Actor' has no attributes.
+The class 'price_quote' has the following attributes: '_bulk_rate_price' of type str.
+The class 'Storage' has the following attributes: 'instruction_ID' of type str.
+The class 'enter_patient_notes_external' has no attributes.
+The class 'patient_Actor' has no attributes.
+The class 'receive_records_external' has no attributes.
+The class 'check_out_external' has no attributes.
+The class 'admission_receptionist_Actor' has no attributes.
+The class 'enter_lab_notes_external' has no attributes.
+The class 'physicians_Actor' has no attributes.
+The class 'hospital_admission_system_Component' has no attributes.
+The class 'student_Actor' has no attributes.
+The class 'receive_patient_records_external' has no attributes.
+The class 'check_in_external' has no attributes.
+The class 'medical_technologist_Actor' has no attributes.
+The class 'Routing_number' has no attributes.
+The class 'Part' has the following attributes: '_part_number' of type str; '_description' of type str.
+The class 'list_of_patients_external' has no attributes.
+The class 'floor_nurse_Actor' has no attributes.
+The class '_supplier' has the following attributes: '_supplier_ID' of type str.
+'price_quote' (role 'part29', cardinality 0..*) is associated with 'Part' (role 'price_quote28', cardinality 0..*).
+'check_in_external' (role 'admission_receptionist5', cardinality 0..*) is associated with 'admission_receptionist_Actor' (role 'check_in4', cardinality 0..*).
+'Storage' (role 'part21', cardinality 0..*) is associated with 'Part' (role 'storage20', cardinality 0..*).
+'Part' (role 'part23', cardinality 0..*) is associated with 'Part' (role 'subpart22', cardinality 0..*).
+'enter_lab_notes_external' (role 'medical_technologist0', cardinality 0..*) is associated with 'medical_technologist_Actor' (role 'enter_lab_notes1', cardinality 0..*).
+'check_out_external' (role 'release_receptionist11', cardinality 0..*) is associated with 'release_receptionist_Actor' (role 'check_out10', cardinality 0..*).
+'patient_Actor' (role 'admission_receptionist7', cardinality 0..*) is associated with 'admission_receptionist_Actor' (role 'patient6', cardinality 0..*).
+'Part' (role '_supplier24', cardinality 0..*) is associated with '_supplier' (role 'part25', cardinality 0..*).
+'medical_technologist_Actor' (role 'receive_patient_records12', cardinality 0..*) is associated with 'receive_patient_records_external' (role 'medical_technologist13', cardinality 0..*).
+'physicians_Actor' (role 'enter_patient_notes3', cardinality 0..*) is associated with 'enter_patient_notes_external' (role 'physicians2', cardinality 0..*).
+'physicians_Actor' (role 'receive_records14', cardinality 0..*) is associated with 'receive_records_external' (role 'physicians15', cardinality 0..*).
+'_supplier' (role 'price_quote27', cardinality 0..*) is associated with 'price_quote' (role '_supplier26', cardinality 0..*).
+'Part' (role 'routing_number31', cardinality 0..*) is associated with 'Routing_number' (role 'part30', cardinality 0..*).
+'release_receptionist_Actor' (role 'patient9', cardinality 0..*) is associated with 'patient_Actor' (role 'release_receptionist8', cardinality 0..*).
+'floor_nurse_Actor' (role 'list_of_patients18', cardinality 0..*) is associated with 'list_of_patients_external' (role 'floor_nurse19', cardinality 0..*).
+'floor_nurse_Actor' (role 'enter_patient_notes16', cardinality 0..*) is associated with 'enter_patient_notes_external' (role 'floor_nurse17', cardinality 0..*).

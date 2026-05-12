@@ -1,0 +1,17 @@
+The model has 13 class(es).
+The class 'MyClass' has no attributes.
+The class 'Cours' has no attributes.
+The class 'ClassJ' has no attributes.
+The class 'Quizz' has the following attributes: 'ownerName' of type str; 'balance' of type float.
+The class 'ClassL' has no attributes.
+The class 'ClassE' has no attributes.
+The class 'ClassD' has no attributes.
+The class 'ClassK' has no attributes.
+The class 'Membres' has the following attributes: 'mdp' of type str; 'email' of type str; 'idM' of type str; 'nom' of type str; 'prenom' of type str; 'telephone' of type int.
+The class 'ClassG' has no attributes.
+The class 'ClassH' has no attributes.
+The class 'ClassF' has no attributes.
+The class 'Commentaires' has the following attributes: 'protectedAttribute' of type str; 'idComm' of type float; 'privateAttribute' of type int; 'packageAttribute' of type str.
+'ClassE' (role 'classD1', cardinality 0..*) is associated with 'ClassD' (role 'classE0', cardinality 0..*).
+'ClassF' (role 'classG2', cardinality 0..*) is associated with 'ClassG' (role 'classF3', cardinality 0..*).
+'ClassJ' (role 'classF5', cardinality 0..*) is associated with 'ClassH' (role 'classG4', cardinality 0..*).

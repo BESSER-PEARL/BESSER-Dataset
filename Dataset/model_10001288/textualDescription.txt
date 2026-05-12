@@ -1,0 +1,26 @@
+The model has 22 class(es).
+The class 'ClassA' has the following attributes: 'protectedAttribute' of type str; 'publicAttribute' of type float; 'packageAttribute' of type str; 'privateAttribute' of type int.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'ClassJ' has no attributes.
+The class 'ClassN' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'ClassQ' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'ClassK' has no attributes.
+The class 'ClassM' has no attributes.
+The class 'ClassE' has no attributes.
+The class 'ClassH' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'GMTPage' has the following attributes: 'scSession_As_Greenway_Session_SessionClient' of type str; 'balance' of type float.
+The class 'ClassD' has no attributes.
+The class 'ClassS' has no attributes.
+The class 'ClassV' has no attributes.
+The class 'ClassC' has the following attributes: 'publicAttribute' of type float; 'protectedAttribute' of type str; 'privateAttribute' of type int; 'packageAttribute' of type str.
+The class 'ClassG' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'ClassF' has no attributes.
+The class 'ClassL' has no attributes.
+'ClassD' (role 'classE0', cardinality 0..*) is associated with 'ClassE' (role 'classD1', cardinality 0..*).
+'ClassG' (role 'classF3', cardinality 0..*) is associated with 'ClassF' (role 'classG2', cardinality 0..*).
+'ClassH' (role 'classG4', cardinality 0..*) is associated with 'ClassJ' (role 'classF5', cardinality 0..*).

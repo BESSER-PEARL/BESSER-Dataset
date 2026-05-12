@@ -1,0 +1,8 @@
+The model has 6 class(es).
+The class 'Staff' has the following attributes: 'Certification' of type str; 'Status' of type str; 'Education' of type str; 'Joined' of type str; 'Languages' of type str.
+The class 'HospitalSystem' has the following attributes: 'admin' of type SystemAdministrator; 'Patients' of type str; 'Doctors' of type str.
+The class 'Doctor' has the following attributes: 'Specialization' of type str; 'Shedule' of type str.
+The class 'Patient' has the following attributes: 'Address' of type str; 'Age' of type int; 'Prescriptions' of type str; 'Phone' of type str; 'DiseaseHistory' of type str.
+The class 'Person' has the following attributes: 'BirthDate' of type str; 'ID' of type int; 'Gender' of type str; 'FullName' of type str; 'AccessLevel' of type str.
+The class 'SystemAdministrator' has the following attributes: 'Doctors' of type str; 'Patients' of type str.
+'HospitalSystem' (role 'systemAdministrator0', cardinality 0..*) is associated with 'SystemAdministrator' (role 'hospitalSystem1', cardinality 0..*).

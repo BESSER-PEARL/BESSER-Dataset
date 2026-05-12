@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'Gato' has the following attributes: 'Color' of type str; 'Nombre' of type str; 'Raza' of type str.

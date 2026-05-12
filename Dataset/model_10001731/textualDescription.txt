@@ -1,0 +1,74 @@
+The model has 51 class(es).
+The class 'User' has the following attributes: 'Mail' of type str; 'attribute' of type str; 'Address' of type str; 'RegistrationDate' of type str; 'Active' of type bool; 'UserCode' of type int; 'Phone' of type int.
+The class 'ID_Authentication_Server_UseCase' has no attributes.
+The class 'Bank_Server_Side_Authentication_UseCase' has no attributes.
+The class 'Bank_Accounting_Actor' has no attributes.
+The class 'PayPal_UseCase1' has no attributes.
+The class 'Payment_Authentecation_System_Actor' has no attributes.
+The class 'Library' has the following attributes: 'LibraryID' of type int; 'Address' of type str.
+The class 'User_Maintenance_UseCase' has no attributes.
+The class 'Debit_Card_UseCase' has no attributes.
+The class 'Enter__Username_UseCase' has no attributes.
+The class 'Book' has the following attributes: 'Price' of type int; 'BookName' of type str; 'PubName' of type str; 'BookID' of type int; 'LibraryID' of type int.
+The class 'Capatcha_UseCase' has no attributes.
+The class 'Guest' has the following attributes: 'GuestID' of type int.
+The class 'Person_Actor' has no attributes.
+The class 'Add_Member_UseCase' has no attributes.
+The class 'Add_to_Borrow_basket_UseCase' has no attributes.
+The class 'Guest_Actor' has no attributes.
+The class 'Log_in_UseCase' has no attributes.
+The class 'Delete_Book_UseCase' has no attributes.
+The class 'Credit_Card_Authentication_Service_Actor' has no attributes.
+The class 'PayPal_UseCase' has no attributes.
+The class 'Librarian_Actor' has no attributes.
+The class 'Suggestion_UseCase' has no attributes.
+The class 'View_Books_UseCase' has no attributes.
+The class 'Enter_Password_UseCase' has no attributes.
+The class 'ID_Authentication_Server_Actor' has no attributes.
+The class 'Borrow_Book_UseCase' has no attributes.
+The class 'Billing_UseCase' has no attributes.
+The class 'Person' has the following attributes: 'LibraryID' of type int; 'PersonID' of type int; 'BirthDay' of type str; 'PersonName' of type str.
+The class 'Add_Book_UseCase' has no attributes.
+The class 'Cash_UseCase' has no attributes.
+The class 'Generating_Membership_Card_UseCase' has no attributes.
+The class 'List_view__UseCase' has no attributes.
+The class 'Remove_Member_UseCase' has no attributes.
+The class 'Credit_Card_UseCase1' has no attributes.
+The class 'Librarian' has the following attributes: 'LibID' of type int; 'Department' of type str.
+The class 'Recieving_Book_UseCase' has no attributes.
+The class 'Book_Maintenance__UseCase' has no attributes.
+The class 'Billing_UseCase1' has no attributes.
+The class 'Payment_System_UseCase' has no attributes.
+The class 'Book_Delivery__UseCase' has no attributes.
+The class 'BookBorrow' has the following attributes: 'UserCode' of type Enter__Username_UseCase; 'InDate' of type str; 'BorrowID' of type int; 'BookID' of type int; 'OutDate' of type str.
+The class 'PayPal_Authentication_Service_Actor' has no attributes.
+The class 'Viewing_Books_UseCase' has no attributes.
+The class 'Searching_UseCase' has no attributes.
+The class 'Credit_Card_UseCase' has no attributes.
+The class 'Payment_UseCase' has no attributes.
+The class 'Registration__UseCase' has no attributes.
+The class '_UseCase' has no attributes.
+The class 'Authentication_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+'View_Books_UseCase' (role 'person39', cardinality 0..*) is associated with 'User_Actor' (role 'view_Books38', cardinality 0..*).
+'PayPal_UseCase1' (role 'payPal_Authentication_Service19', cardinality 0..*) is associated with 'PayPal_Authentication_Service_Actor' (role 'payPal18', cardinality 0..*).
+'Credit_Card_Authentication_Service_Actor' (role 'credit_Card20', cardinality 0..*) is associated with 'Credit_Card_UseCase1' (role 'credit_Card_Authentication_Service21', cardinality 0..*).
+'Librarian_Actor' (role 'delete_Book2', cardinality 0..*) is associated with 'Delete_Book_UseCase' (role 'librarian3', cardinality 0..*).
+'Credit_Card_UseCase1' (role 'payment_Authentecation_System17', cardinality 0..*) is associated with 'Payment_Authentecation_System_Actor' (role 'credit_Card16', cardinality 0..*).
+'Library' (role 'person34', cardinality 0..*) is associated with 'Person' (role 'library35', cardinality 0..*).
+'Library' (role 'book33', cardinality 0..*) is associated with 'Book' (role 'library32', cardinality 0..*).
+'Log_in_UseCase' (role 'registered_User37', cardinality 0..*) is associated with 'Person_Actor' (role 'log_in36', cardinality 0..*).
+'View_Books_UseCase' (role 'guest43', cardinality 0..*) is associated with 'Guest_Actor' (role 'view_Books42', cardinality 0..*).
+'Librarian_Actor' (role 'book_Maintenance24', cardinality 0..*) is associated with 'Book_Maintenance__UseCase' (role 'librarian25', cardinality 0..*).
+'Bank_Accounting_Actor' (role 'bank_Server_Side_Authentication22', cardinality 0..*) is associated with 'Bank_Server_Side_Authentication_UseCase' (role 'bank_Accounting23', cardinality 0..*).
+'ID_Authentication_Server_Actor' (role 'view_Books9', cardinality 0..*) is associated with 'View_Books_UseCase' (role 'authentication_Server8', cardinality 0..*).
+'ID_Authentication_Server_Actor' (role 'borrow_Book7', cardinality 0..*) is associated with 'Borrow_Book_UseCase' (role 'authentication_Server6', cardinality 0..*).
+'PayPal_UseCase1' (role 'payment_Authentecation_System15', cardinality 0..*) is associated with 'Payment_Authentecation_System_Actor' (role 'payPal14', cardinality 0..*).
+'Book' (role 'bookBorrow28', cardinality 0..*) is associated with 'BookBorrow' (role 'book29', cardinality 0..*).
+'BookBorrow' (role 'user30', cardinality 0..*) is associated with 'User' (role 'bookBorrow31', cardinality 0..*).
+'Add_Book_UseCase' (role 'librarian1', cardinality 0..*) is associated with 'Librarian_Actor' (role 'add_Book0', cardinality 0..*).
+'Authentication_UseCase' (role 'iD_Authentication_Server27', cardinality 0..*) is associated with 'ID_Authentication_Server_Actor' (role 'authentication26', cardinality 0..*).
+'User_Actor' (role 'borrow_Book40', cardinality 0..*) is associated with 'Borrow_Book_UseCase' (role 'person41', cardinality 0..*).
+'User_Maintenance_UseCase' (role 'librarian5', cardinality 0..*) is associated with 'Librarian_Actor' (role 'add_User4', cardinality 0..*).
+'ID_Authentication_Server_Actor' (role 'log_in10', cardinality 0..*) is associated with 'Log_in_UseCase' (role 'iD_Authentication_Server11', cardinality 0..*).
+'_UseCase' (role 'payment_System13', cardinality 0..*) is associated with 'Payment_System_UseCase' (role 'payment_Authentecation_System12', cardinality 0..*).

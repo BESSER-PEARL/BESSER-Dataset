@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'User' has no attributes.
+The class 'Cashier' has no attributes.

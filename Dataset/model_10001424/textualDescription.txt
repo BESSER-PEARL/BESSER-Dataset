@@ -1,0 +1,46 @@
+The model has 32 class(es).
+The class 'create_user_UseCase' has no attributes.
+The class 'new_complaint_details_UseCase' has no attributes.
+The class 'Logout' has no attributes.
+The class 'login_technical_UseCase' has no attributes.
+The class 'update_status' has the following attributes: 'supdate' of type str.
+The class 'Login' has no attributes.
+The class 'send_to_admin_UseCase' has no attributes.
+The class 'CheckStatus' has no attributes.
+The class 'administrator_Actor' has no attributes.
+The class 'view_status_UseCase' has no attributes.
+The class 'login' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'UpdateStatus' has no attributes.
+The class 'logout_technician_UseCase' has no attributes.
+The class 'D_B_details' has the following attributes: 'session_out' of type str; 'logged_in' of type str.
+The class 'find_out_fault_UseCase' has no attributes.
+The class 'technical_team_Actor' has no attributes.
+The class 'check_status' has the following attributes: 'complaint' of type str.
+The class 'RegisterComplaint' has no attributes.
+The class 'client_Actor' has no attributes.
+The class 'Customer' has no attributes.
+The class 'register_complaint_UseCase' has no attributes.
+The class 'MonitorComplaint' has no attributes.
+The class 'register_complaint' has the following attributes: 'complaint_type' of type str; 'description' of type str.
+The class 'logout_UseCase' has no attributes.
+The class 'customer' has the following attributes: 'product_id' of type str; 'email_id' of type int; 'name' of type str; 'address' of type str.
+The class 'Administrator' has the following attributes: 'password' of type str.
+The class 'search_user_UseCase' has no attributes.
+The class 'login_UseCase' has no attributes.
+The class 'administrator' has the following attributes: 'username' of type str; 'password' of type str.
+The class 'logout' has the following attributes: 'session_out' of type str.
+The class 'DbDetails' has no attributes.
+The class 'monitor_complaint' has the following attributes: 'date' of type str; 'complaintid' of type int; 'complaint_type' of type str.
+'client_Actor' (role 'login2', cardinality 0..*) is associated with 'login_UseCase' (role 'client3', cardinality 0..*).
+'technical_team_Actor' (role 'find_out_fault20', cardinality 0..*) is associated with 'find_out_fault_UseCase' (role 'technical_team21', cardinality 0..*).
+'send_to_admin_UseCase' (role 'technical_team23', cardinality 0..*) is associated with 'technical_team_Actor' (role 'send_to_admin22', cardinality 0..*).
+'login_UseCase' (role 'administrator9', cardinality 0..*) is associated with 'administrator_Actor' (role 'login8', cardinality 0..*).
+'technical_team_Actor' (role 'new_complaint_details18', cardinality 0..*) is associated with 'new_complaint_details_UseCase' (role 'technical_team19', cardinality 0..*).
+'logout_technician_UseCase' (role 'technical_team25', cardinality 0..*) is associated with 'technical_team_Actor' (role 'logout_technician24', cardinality 0..*).
+'client_Actor' (role 'logout6', cardinality 0..*) is associated with 'logout_UseCase' (role 'client7', cardinality 0..*).
+'logout_UseCase' (role 'administrator11', cardinality 0..*) is associated with 'administrator_Actor' (role 'logout10', cardinality 0..*).
+'view_status_UseCase' (role 'client5', cardinality 0..*) is associated with 'client_Actor' (role 'view_status4', cardinality 0..*).
+'administrator_Actor' (role 'create_user12', cardinality 0..*) is associated with 'create_user_UseCase' (role 'administrator13', cardinality 0..*).
+'administrator_Actor' (role 'search_user14', cardinality 0..*) is associated with 'search_user_UseCase' (role 'administrator15', cardinality 0..*).
+'client_Actor' (role 'register_complaint0', cardinality 0..*) is associated with 'register_complaint_UseCase' (role 'client1', cardinality 0..*).
+'technical_team_Actor' (role 'login_technical16', cardinality 0..*) is associated with 'login_technical_UseCase' (role 'technical_team17', cardinality 0..*).

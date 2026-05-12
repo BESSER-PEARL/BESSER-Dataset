@@ -1,0 +1,27 @@
+The model has 17 class(es).
+The class 'candyCrushPackage_StrippedCandy' has the following attributes: 'isHorizontal' of type bool.
+The class 'candyCrushPackage_JPanel' has no attributes.
+The class 'candyCrushPackage_Candy' has the following attributes: 'row' of type int; 'color' of type int; 'col' of type int.
+The class 'candyCrushPackage_ActionListener_Interface' has no attributes.
+The class 'candyCrushPackage_WrappedCandy' has the following attributes: 'selfCrushRange' of type int.
+The class 'ImageIcon_external' has no attributes.
+The class 'candyCrushPackage_Board' has the following attributes: 'candyWidth' of type int; 'moveDistance' of type int; 'SIZE' of type int; 'movesLeft' of type int; 'cascadeTimer' of type str; 'swapDirection' of type candyCrushPackage_SwapDirection; 'crushTimerCount' of type int; 'secondPressedCandy' of type candyCrushPackage_Candy; 'dropTimer' of type str; 'dropTimerCount' of type int; 'scorePerCandy' of type str; 'selfCrushTimer' of type str; 'delay' of type int; 'movesPerGame' of type int; 'BOARD_HEIGHT' of type int; 'swapTimer' of type str; 'firstPressedCandy' of type candyCrushPackage_Candy; 'gameScore' of type int; 'baseScorePerCandy' of type int; 'BOARD_WIDTH' of type int; 'isFirstPressed' of type bool; 'selfCrushCandy' of type candyCrushPackage_Candy; 'VERTICAL_GAP' of type int; 'candyHeight' of type int; 'HORIZONTAL_GAP' of type int; 'crushTimer' of type str; 'isSwapBack' of type bool; 'selfCrushTimerCount' of type int; 'swapTimerCount' of type int.
+The class 'candyCrushPackage_Visitor_Interface' has no attributes.
+The class 'JButton_external' has no attributes.
+The class 'candyCrushPackage_CandyButton' has the following attributes: 'y' of type int; 'x' of type int; 'image' of type str; 'button' of type str.
+The class 'Color_external' has no attributes.
+The class 'candyCrushPackage_Menu' has the following attributes: 'buttonBGColor' of type str; 'highScoreLabel' of type str; 'menuBGColor' of type str; 'movesLabel' of type str.
+The class 'candyCrushPackage_JFrame' has no attributes.
+The class 'candyCrushPackage_ColorBombCandy' has no attributes.
+The class 'candyCrushPackage_Visited_Interface' has no attributes.
+The class 'candyCrushPackage_RegularCandy' has the following attributes: 'selfCrushRange' of type int; 'selfCrush' of type bool.
+The class 'candyCrushPackage_Game' has the following attributes: 'SOUNDS_PATH' of type str; 'SEP' of type str; 'playerName' of type str; 'score' of type int; 'WINDOW_HEIGHT' of type int; 'WINDOW_WIDTH' of type int; 'IMAGES_PATH' of type str.
+The enumeration 'candyCrushPackage_SwapDirection' does not specify any literals.
+'candyCrushPackage_Menu' (role 'game1', cardinality 0..*) is associated with 'candyCrushPackage_Game' (role 'menu0', cardinality 0..*).
+'candyCrushPackage_CandyButton' (role 'button6', cardinality 0..*) is associated with 'JButton_external' (role 'candyButton7', cardinality 0..*).
+'candyCrushPackage_Menu' (role 'color14', cardinality 0..*) is associated with 'Color_external' (role 'menu15', cardinality 0..*).
+'candyCrushPackage_Board' (role 'candies10', cardinality 0..*) is associated with 'candyCrushPackage_Candy' (role 'board11', cardinality 0..*).
+'candyCrushPackage_CandyButton' (role 'board13', cardinality 0..*) is associated with 'candyCrushPackage_Board' (role 'candiesButtons12', cardinality 0..*).
+'candyCrushPackage_Candy' (role 'board8', cardinality 0..*) is associated with 'candyCrushPackage_Candy' (role 'candy9', cardinality 0..*).
+'candyCrushPackage_CandyButton' (role 'image4', cardinality 0..*) is associated with 'ImageIcon_external' (role 'candyButton5', cardinality 0..*).
+'candyCrushPackage_Board' (role 'game3', cardinality 0..*) is associated with 'candyCrushPackage_Game' (role 'board2', cardinality 0..*).

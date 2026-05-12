@@ -1,0 +1,82 @@
+The model has 46 class(es).
+The class 'Supervisor_Actor' has no attributes.
+The class 'Cliente' has the following attributes: 'Email' of type str; 'Direccion' of type str; 'Nombre' of type str; 'Apellido' of type str.
+The class 'Ver_consultas_sin_responder_UseCase' has no attributes.
+The class 'Instructor' has the following attributes: 'Nombre' of type str.
+The class 'Consulta' has the following attributes: 'Producto' of type str; 'Fecha' of type str.
+The class 'Articulo2' has the following attributes: 'Descripci_n' of type str; 'Precio' of type real; 'Nombre' of type str.
+The class 'usario' has the following attributes: 'nombre' of type str.
+The class 'Cliente_Actor' has no attributes.
+The class 'Instructor_Actor' has no attributes.
+The class 'Articulo1' has no attributes.
+The class 'T' has no attributes.
+The class 'Supervisor' has the following attributes: 'Clave' of type str.
+The class 'Ventas' has the following attributes: 'Cantidad' of type str; 'Monto' of type real; 'Fecha' of type str; 'Producto' of type str.
+The class 'Articulo' has the following attributes: 'Nombre' of type str.
+The class 'Publicar_producto_UseCase' has no attributes.
+The class 'Renovar_inscripci_n_UseCase' has no attributes.
+The class 'Jornada' has the following attributes: 'Dinero_en_caja' of type real; 'Stock' of type str; 'Arqueo' of type real.
+The class 'Vender_producto_UseCase' has no attributes.
+The class 'Registrar_datos_de_la_clase_a_la_que_asistir__el_cliente_UseCase' has no attributes.
+The class 'Vendedor_Actor' has no attributes.
+The class 'Enviar_producto_UseCase' has no attributes.
+The class 'Consultar_asistencia_historica_UseCase' has no attributes.
+The class 'Real' has no attributes.
+The class 'real' has no attributes.
+The class 'Pedido' has the following attributes: 'Numero' of type str; 'Fecha' of type str.
+The class 'Producto' has the following attributes: 'Modo_de_venta' of type str; 'Stock' of type str; 'Precio' of type real.
+The class 'Detalle' has the following attributes: 'Producto' of type str; 'Precio' of type real; 'Cantidad' of type str.
+The class 'Comprador_Actor' has no attributes.
+The class 'Consultar_producto_UseCase' has no attributes.
+The class 'Registrar_venta_UseCase' has no attributes.
+The class 'Envio' has the following attributes: 'Codigo' of type str; 'Fecha' of type str.
+The class 'Realizar_pedido_UseCase' has no attributes.
+The class 'Realizar_consulta_UseCase' has no attributes.
+The class 'Asistencia' has the following attributes: 'Sucursal' of type str; 'Ingreso' of type str.
+The class 'Registrar_datos_de_clientes_UseCase' has no attributes.
+The class 'Registrar_datos_del_producto_UseCase' has no attributes.
+The class 'Listar_stock_UseCase' has no attributes.
+The class 'Cliente1' has the following attributes: 'Telefono' of type str; 'Nombre' of type str; 'DNI' of type str; 'Fecha_de_Nac' of type str; 'Email' of type str; 'Apellido' of type str.
+The class 'Clase' has the following attributes: 'Nombre' of type str; 'Asistencia' of type str.
+The class 'Registrar_cierre_de_caja_UseCase' has no attributes.
+The class 'Consultar_inscripci_n_a_otra_clase_UseCase' has no attributes.
+The class 'Responder_consultas_UseCase' has no attributes.
+The class 'Registrar_inicio_de_caja_UseCase' has no attributes.
+The class 'Vendedor_Actor1' has no attributes.
+The class 'Inscribir_a_una_clase_UseCase' has no attributes.
+The class 'Caja' has the following attributes: 'Fecha' of type str; 'Dinero_Inicio' of type real; 'Arqueo' of type Real.
+The enumeration 'Enumeration' does not specify any literals.
+'Registrar_inicio_de_caja_UseCase' (role 'supervisor24', cardinality 0..*) is associated with 'Supervisor_Actor' (role 'registrar_inicio_de_caja25', cardinality 0..*).
+'Supervisor' (role 'jornada51', cardinality 0..*) is associated with 'Jornada' (role 'supervisor50', cardinality 0..*).
+'Consultar_producto_UseCase' (role 'comprador6', cardinality 0..*) is associated with 'Comprador_Actor' (role 'consultar_producto7', cardinality 0..*).
+'Asistencia' (role 'clase66', cardinality 0..*) is associated with 'Clase' (role 'asistencia67', cardinality 0..*).
+'Registrar_datos_de_la_clase_a_la_que_asistir__el_cliente_UseCase' (role 'instructor14', cardinality 0..*) is associated with 'Instructor_Actor' (role 'registrar_datos_de_la_clase_a_la_que_asistir__el_cliente15', cardinality 0..*).
+'Consulta' (role 'cliente45', cardinality 0..*) is associated with 'Cliente' (role 'consulta44', cardinality 0..*).
+'Vender_producto_UseCase' (role 'vendedor30', cardinality 0..*) is associated with 'Vendedor_Actor1' (role 'vender_producto31', cardinality 0..*).
+'Envio' (role 'articulo61', cardinality 0..*) is associated with 'Articulo2' (role 'envio60', cardinality 0..*).
+'Envio' (role 'cliente33', cardinality 0..*) is associated with 'Cliente' (role 'envio32', cardinality 0..*).
+'Inscribir_a_una_clase_UseCase' (role 'cliente20', cardinality 0..*) is associated with 'Cliente_Actor' (role 'inscribir_a_una_clase21', cardinality 0..*).
+'Supervisor_Actor' (role 'registrar_datos_del_producto23', cardinality 0..*) is associated with 'Registrar_datos_del_producto_UseCase' (role 'supervisor22', cardinality 0..*).
+'Envio' (role 'pedido47', cardinality 0..*) is associated with 'Pedido' (role 'envio46', cardinality 0..*).
+'Jornada' (role 'producto49', cardinality 0..*) is associated with 'Producto' (role 'jornada48', cardinality 0..*).
+'Asistencia' (role 'instructor64', cardinality 0..*) is associated with 'Instructor' (role 'asistencia65', cardinality 0..*).
+'Caja' (role 'jornada59', cardinality 0..*) is associated with 'Jornada' (role 'caja58', cardinality 0..*).
+'Detalle' (role 'pedido43', cardinality 0..*) is associated with 'Pedido' (role 'detalle42', cardinality 0..*).
+'Comprador_Actor' (role 'realizar_pedido11', cardinality 0..*) is associated with 'Realizar_pedido_UseCase' (role 'comprador10', cardinality 0..*).
+'Registrar_cierre_de_caja_UseCase' (role 'supervisor26', cardinality 0..*) is associated with 'Supervisor_Actor' (role 'registrar_cierre_de_caja27', cardinality 0..*).
+'Consultar_asistencia_historica_UseCase' (role 'cliente18', cardinality 0..*) is associated with 'Cliente_Actor' (role 'consultar_asistencia_historica19', cardinality 0..*).
+'Caja' (role 'ventas55', cardinality 0..*) is associated with 'Ventas' (role 'caja54', cardinality 0..*).
+'Pedido' (role 'cliente39', cardinality 0..*) is associated with 'Cliente' (role 'pedido38', cardinality 0..*).
+'Articulo2' (role 'Articulo_Cliente_036', cardinality 0..*) is associated with 'Cliente' (role 'Articulo_Cliente_137', cardinality 0..*).
+'Vendedor_Actor' (role 'publicar_producto2', cardinality 0..*) is associated with 'Publicar_producto_UseCase' (role 'vendedor3', cardinality 0..*).
+'Cliente_Actor' (role 'renovar_inscripci_n17', cardinality 0..*) is associated with 'Renovar_inscripci_n_UseCase' (role 'cliente16', cardinality 0..*).
+'Articulo2' (role 'consulta34', cardinality 0..*) is associated with 'Consulta' (role 'articulo35', cardinality 0..*).
+'Listar_stock_UseCase' (role 'supervisor28', cardinality 0..*) is associated with 'Supervisor_Actor' (role 'listar_stock29', cardinality 0..*).
+'Producto' (role 'ventas56', cardinality 0..*) is associated with 'Ventas' (role 'producto57', cardinality 0..*).
+'Instructor_Actor' (role 'registrar_datos_de_clientes12', cardinality 0..*) is associated with 'Registrar_datos_de_clientes_UseCase' (role 'instructor13', cardinality 0..*).
+'Cliente' (role 'envio40', cardinality 0..*) is associated with 'Envio' (role 'cliente41', cardinality 0..*).
+'Caja' (role 'supervisor53', cardinality 0..*) is associated with 'Supervisor' (role 'caja52', cardinality 0..*).
+'Vendedor_Actor' (role 'enviar_producto4', cardinality 0..*) is associated with 'Enviar_producto_UseCase' (role 'vendedor5', cardinality 0..*).
+'Comprador_Actor' (role 'realizar_consulta9', cardinality 0..*) is associated with 'Realizar_consulta_UseCase' (role 'comprador8', cardinality 0..*).
+'Vendedor_Actor' (role 'responder_consultas0', cardinality 0..*) is associated with 'Responder_consultas_UseCase' (role 'vendedor1', cardinality 0..*).
+'Asistencia' (role 'cliente63', cardinality 0..*) is associated with 'Cliente1' (role 'asistencia62', cardinality 0..*).

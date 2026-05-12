@@ -1,0 +1,49 @@
+The model has 29 class(es).
+The class 'Instructor_Actor' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Modify_Delete_Student_UseCase' has no attributes.
+The class 'Instructor' has no attributes.
+The class 'View_Grades_UseCase' has no attributes.
+The class 'Login_UseCase1' has no attributes.
+The class 'Generate_Report_UseCase' has no attributes.
+The class 'Add_Course_UseCase' has no attributes.
+The class 'Submit_Exam_Assignment_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'School_Admin' has no attributes.
+The class 'Question' has no attributes.
+The class 'Login_UseCase2' has no attributes.
+The class 'Add_Student_UseCase' has no attributes.
+The class 'Modify_Delete_Evalutaions_Assignments_Exams_UseCase' has no attributes.
+The class 'Answer' has no attributes.
+The class 'Logout_UseCase' has no attributes.
+The class 'Student1' has no attributes.
+The class 'ExamResult' has no attributes.
+The class 'Course' has no attributes.
+The class 'Modify_Delete_Courses_UseCase' has no attributes.
+The class 'Exam' has no attributes.
+The class 'Add_Evalutaions_Assignments_Exams_UseCase' has no attributes.
+The class 'Student_Actor' has no attributes.
+The class 'Register_drop_course_UseCase' has no attributes.
+The class 'Student' has no attributes.
+The class 'Modify_Delete_Instructor_UseCase' has no attributes.
+The class 'Add_Instructor_UseCase' has no attributes.
+The class 'Grade_Evalutations_Assignment_Exams_UseCase' has no attributes.
+'Admin_Actor' (role 'login0', cardinality 0..*) is associated with 'Login_UseCase' (role 'admin1', cardinality 0..*).
+'Course' (role 'school_Admin29', cardinality 0..*) is associated with 'School_Admin' (role 'course28', cardinality 0..*).
+'Instructor_Actor' (role 'login8', cardinality 0..*) is associated with 'Login_UseCase1' (role 'instructor9', cardinality 0..*).
+'Login_UseCase' (role 'add_Instructor14', cardinality 0..*) is associated with 'Add_Instructor_UseCase' (role 'login15', cardinality 0..*).
+'View_Grades_UseCase' (role 'login25', cardinality 0..*) is associated with 'Login_UseCase2' (role 'view_Grades24', cardinality 0..*).
+'Course' (role 'exam36', cardinality 0..*) is associated with 'Exam' (role 'course37', cardinality 0..*).
+'Question' (role 'exam33', cardinality 0..*) is associated with 'Exam' (role 'question32', cardinality 0..*).
+'Register_drop_course_UseCase' (role 'login23', cardinality 0..*) is associated with 'Login_UseCase2' (role 'register_drop_course22', cardinality 0..*).
+'Submit_Exam_Assignment_UseCase' (role 'login26', cardinality 0..*) is associated with 'Login_UseCase2' (role 'submit_Exam_Assignment27', cardinality 0..*).
+'Login_UseCase' (role 'add_Course16', cardinality 0..*) is associated with 'Add_Course_UseCase' (role 'login17', cardinality 0..*).
+'Generate_Report_UseCase' (role 'login21', cardinality 0..*) is associated with 'Login_UseCase1' (role 'generate_Report20', cardinality 0..*).
+'Course' (role 'student31', cardinality 0..*) is associated with 'Student1' (role 'course30', cardinality 0..*).
+'Admin_Actor' (role 'logout2', cardinality 0..*) is associated with 'Logout_UseCase' (role 'admin3', cardinality 0..*).
+'Login_UseCase' (role 'add_Student12', cardinality 0..*) is associated with 'Add_Student_UseCase' (role 'login13', cardinality 0..*).
+'Logout_UseCase' (role 'student7', cardinality 0..*) is associated with 'Student_Actor' (role 'logout6', cardinality 0..*).
+'Instructor_Actor' (role 'logout4', cardinality 0..*) is associated with 'Logout_UseCase' (role 'instructor5', cardinality 0..*).
+'Question' (role 'answer34', cardinality 0..*) is associated with 'Answer' (role 'question35', cardinality 0..*).
+'Login_UseCase1' (role 'add_Evalutaions_Assignments_Exams18', cardinality 0..*) is associated with 'Add_Evalutaions_Assignments_Exams_UseCase' (role 'login19', cardinality 0..*).
+'Login_UseCase2' (role 'student10', cardinality 0..*) is associated with 'Student_Actor' (role 'login11', cardinality 0..*).

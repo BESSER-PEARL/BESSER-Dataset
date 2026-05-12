@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Receptionist' has the following attributes: 'name' of type str; 'Id' of type int.
+The class 'Manager' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'Guest' has the following attributes: 'phoneNo' of type int; 'id' of type int; 'Address' of type str; 'credit_card' of type int; 'Room' of type int; 'name' of type str.
+The class 'Bill' has the following attributes: 'GuestName' of type str; 'bill_No' of type int.
+The class 'Database' has the following attributes: 'Details' of type str; 'income' of type int; 'service' of type str.
+The class 'Room' has the following attributes: 'roomNo' of type int; 'RatesofRoom' of type int; 'typeOfRoom' of type str.
+The class 'Inventory' has the following attributes: 'Status' of type str; 'type' of type str.
+'Guest' (role 'room0', cardinality 0..*) is associated with 'Room' (role 'guest1', cardinality 0..*).
+'Receptionist' (role 'database12', cardinality 0..*) is associated with 'Database' (role 'receptionist13', cardinality 0..*).
+'Receptionist' (role 'manager8', cardinality 0..*) is associated with 'Manager' (role 'receptionist9', cardinality 0..*).
+'Inventory' (role 'manager10', cardinality 0..*) is associated with 'Manager' (role 'inventory11', cardinality 0..*).
+'Bill' (role 'guest3', cardinality 0..*) is associated with 'Guest' (role 'bill2', cardinality 0..*).
+'Bill' (role 'receptionist7', cardinality 0..*) is associated with 'Receptionist' (role 'bill6', cardinality 0..*).
+'Room' (role 'receptionist5', cardinality 0..*) is associated with 'Receptionist' (role 'room4', cardinality 0..*).
+'Manager' (role 'database14', cardinality 0..*) is associated with 'Database' (role 'manager15', cardinality 0..*).

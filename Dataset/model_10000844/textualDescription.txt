@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'Deck' has no attributes.
+The class 'Card' has the following attributes: 'kind' of type Kind; 'operation' of type str.
+The class 'Player' has no attributes.
+The enumeration 'Kind' does not specify any literals.
+The enumeration 'Operation' does not specify any literals.
+'Card' (role 'player5', cardinality 0..*) is associated with 'Player' (role 'cards4', cardinality 0..*).
+'Card' (role 'deck1', cardinality 0..*) is associated with 'Deck' (role 'cards0', cardinality 0..*).
+'Deck' (role 'players2', cardinality 0..*) is associated with 'Player' (role 'Decks3', cardinality 0..*).

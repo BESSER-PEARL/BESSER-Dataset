@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'WebUser' has the following attributes: 'state' of type str; 'login' of type str; 'password' of type str.
+The class 'Payment' has the following attributes: 'details' of type str; 'paidDate' of type date; 'total' of type float.
+The class 'Order' has the following attributes: 'shipped' of type bool; 'status' of type OrderStatus; 'shipTo' of type str; 'number' of type int; 'total' of type float; 'ordered' of type date.
+The enumeration 'OrderStatus' does not specify any literals.
+'Order' (role 'payment1', cardinality 0..*) is associated with 'Payment' (role 'order0', cardinality 0..*).

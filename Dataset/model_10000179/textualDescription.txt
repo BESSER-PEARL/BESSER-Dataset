@@ -1,0 +1,17 @@
+The model has 14 class(es).
+The class 'combinations_Combination' has the following attributes: 'value' of type int; 'name' of type str.
+The class 'combinations_Paire' has the following attributes: 'paire' of type classes_Card.
+The class 'classes_Card' has the following attributes: 'value' of type int; 'name' of type str.
+The class 'combinations_Brelan' has the following attributes: 'triplet' of type classes_Card.
+The class 'combinations_Suite' has the following attributes: 'start' of type classes_Card.
+The class 'combinations_QuinteFlush' has the following attributes: 'start' of type classes_Card.
+The class 'int' has no attributes.
+The class 'combinations_Couleur' has no attributes.
+The class 'combinations_Carre' has the following attributes: 'quartet' of type classes_Card.
+The class 'utils_Parser' has no attributes.
+The class 'combinations_Full' has the following attributes: 'triplet' of type classes_Card; 'paire' of type classes_Card.
+The class 'combinations_DoublePaire' has the following attributes: 'strongPaire' of type classes_Card; 'weakPaire' of type classes_Card.
+The class 'classes_Hand' has no attributes.
+The class 'combinations_PlusHauteCarte' has no attributes.
+'classes_Card' (role 'hand3', cardinality 0..*) is associated with 'classes_Hand' (role 'hand2', cardinality 0..*).
+'combinations_Combination' (role 'cards0', cardinality 0..*) is associated with 'classes_Card' (role 'hand1', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 18 class(es).
+The class 'Admin' has no attributes.
+The class 'User' has no attributes.
+The class 'Awards' has no attributes.
+The class 'Sick_Leave' has no attributes.
+The class 'Half_Day' has no attributes.
+The class 'Login' has no attributes.
+The class 'Backup' has no attributes.
+The class 'Permanant' has no attributes.
+The class 'Normal_User' has no attributes.
+The class 'Expenses' has no attributes.
+The class 'Temporary' has no attributes.
+The class 'Salary' has no attributes.
+The class 'Employer' has no attributes.
+The class 'Employee' has no attributes.
+The class 'Attendance' has no attributes.
+The class 'Casual_Leave' has no attributes.
+The class 'Supervisor' has no attributes.
+The class 'Leave' has no attributes.
+'Salary' (role 'employee3', cardinality 0..*) is associated with 'Employee' (role 'salary2', cardinality 0..*).
+'Employer' (role 'login12', cardinality 0..*) is associated with 'Login' (role 'employer13', cardinality 0..*).
+'Employee' (role 'Employee_Login_00', cardinality 0..*) is associated with 'Login' (role 'employee1', cardinality 0..*).
+'Expenses' (role 'salary7', cardinality 0..*) is associated with 'Salary' (role 'expenses6', cardinality 0..*).
+'Employee' (role 'attendance4', cardinality 0..*) is associated with 'Attendance' (role 'employee5', cardinality 0..*).
+'Employee' (role '_0___9', cardinality 0..*) is associated with 'Leave' (role 'employee8', cardinality 0..*).
+'Awards' (role 'employee11', cardinality 0..*) is associated with 'Employee' (role '_0___10', cardinality 0..*).

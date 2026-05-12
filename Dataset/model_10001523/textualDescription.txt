@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Days_Attended' has the following attributes: 'Total_no__of_workingdays' of type int; 'OverTime' of type int; 'Days_attended' of type int; 'EmployeeBasicSalary' of type int; 'EmployeeId' of type str.
+The class 'Leave' has the following attributes: 'Leave_NoOfDays' of type int; 'Leave_Detail' of type str; 'attribute' of type str.
+The class 'Salary' has the following attributes: 'DaysAttended' of type int; 'EmployeeID' of type str; 'NetSalary' of type int; 'Bonus' of type int.
+The class 'Login' has the following attributes: 'Username' of type str; 'Password' of type str.
+The class 'Admin' has the following attributes: 'Name' of type str; 'Email' of type str.
+The class 'Employee' has the following attributes: 'EmplyeeName' of type str; 'EmployeeId' of type str; 'EmployeeEmail' of type str; 'EmployeePhoneNumber' of type int.
+'Admin' (role 'employee8', cardinality 0..*) is associated with 'Employee' (role 'admin9', cardinality 0..*).
+'Login' (role 'employee0', cardinality 0..*) is associated with 'Employee' (role 'login1', cardinality 0..*).
+'Employee' (role 'salary2', cardinality 0..*) is associated with 'Salary' (role 'employee3', cardinality 0..*).
+'Days_Attended' (role 'salary11', cardinality 0..*) is associated with 'Salary' (role 'days_Attended10', cardinality 0..*).
+'Employee' (role 'leave6', cardinality 0..*) is associated with 'Leave' (role 'employee7', cardinality 0..*).
+'Employee' (role 'days_Attended4', cardinality 0..*) is associated with 'Days_Attended' (role 'employee5', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'Buscar_Contactos_UseCase' has no attributes.
+The class 'Usuario_Actor' has no attributes.
+The class 'Contacto' has the following attributes: 'id' of type int; 'Telefono' of type int; 'Nombre' of type str; 'user' of type str; 'Groups' of type str; 'Email' of type str; 'Foto' of type str; 'Apellido' of type str.
+The class 'Ver_Contactos_external' has no attributes.
+The class 'Editar_Contacto_UseCase' has no attributes.
+The class 'Salir_de_la_aplicacion_UseCase' has no attributes.
+The class 'Eliminar_Contacto_UseCase' has no attributes.
+The class 'Ver_detalles_de_contacto_UseCase' has no attributes.
+The class 'Agregar_Contactos_UseCase' has no attributes.
+The class 'Actualizar_Coredata_UseCase' has no attributes.
+The class 'AGENDA_TELEFONICA_Component' has no attributes.
+'Usuario_Actor' (role 'agregar_Contactos2', cardinality 0..*) is associated with 'Agregar_Contactos_UseCase' (role 'usuario3', cardinality 0..*).
+'Usuario_Actor' (role 'eliminar_Contacto6', cardinality 0..*) is associated with 'Eliminar_Contacto_UseCase' (role 'usuario7', cardinality 0..*).
+'Buscar_Contactos_UseCase' (role 'usuario5', cardinality 0..*) is associated with 'Usuario_Actor' (role 'buscar_Contactos4', cardinality 0..*).
+'Usuario_Actor' (role 'editar_Contacto8', cardinality 0..*) is associated with 'Editar_Contacto_UseCase' (role 'usuario9', cardinality 0..*).
+'Salir_de_la_aplicacion_UseCase' (role 'usuario11', cardinality 0..*) is associated with 'Usuario_Actor' (role 'salir_de_la_aplicacion10', cardinality 0..*).
+'Usuario_Actor' (role 'ver_detalles_de_contacto12', cardinality 0..*) is associated with 'Ver_detalles_de_contacto_UseCase' (role 'usuario13', cardinality 0..*).
+'Ver_Contactos_external' (role 'usuario1', cardinality 0..*) is associated with 'Usuario_Actor' (role 'ver_Contactos0', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'Desplazarse_hasta_el_ultimo_UseCase' has no attributes.
+The class 'Calcular_el_numero_de_ejemplares_UseCase' has no attributes.
+The class 'Datos' has the following attributes: 'Edad' of type int; 'peso' of type str; 'altura' of type str; 'nombre' of type str; 'raza' of type str; 'observacion' of type str.
+The class 'Calcular_el_promedio_de_edad_UseCase' has no attributes.
+The class 'Usuario__Actor' has no attributes.
+The class 'Regresar_hacia_el_anterior_UseCase' has no attributes.
+The class 'Veterinario' has no attributes.
+The class 'Buscar_un_ejemplar_por_su_nombre_UseCase' has no attributes.
+The class 'Desplazarse_hasta_el_primer_UseCase' has no attributes.
+The class 'Avanzar_hacia_el_siguiente__UseCase' has no attributes.
+'Usuario__Actor' (role 'buscar_un_ejemplar_por_su_nombre9', cardinality 0..*) is associated with 'Buscar_un_ejemplar_por_su_nombre_UseCase' (role 'usuario8', cardinality 0..*).
+'Usuario__Actor' (role 'regresar_hacia_el_anterior3', cardinality 0..*) is associated with 'Regresar_hacia_el_anterior_UseCase' (role 'usuario2', cardinality 0..*).
+'Calcular_el_promedio_de_edad_UseCase' (role 'usuario12', cardinality 0..*) is associated with 'Usuario__Actor' (role 'calcular_el_promedio_de_edad13', cardinality 0..*).
+'Usuario__Actor' (role 'desplazarse_hasta_el_primer5', cardinality 0..*) is associated with 'Desplazarse_hasta_el_primer_UseCase' (role 'usuario4', cardinality 0..*).
+'Desplazarse_hasta_el_ultimo_UseCase' (role 'usuario6', cardinality 0..*) is associated with 'Usuario__Actor' (role 'desplazarse_hasta_el_ultimo7', cardinality 0..*).
+'Datos' (role 'veterinario15', cardinality 0..*) is associated with 'Veterinario' (role 'Veterinario_Datos_014', cardinality 0..*).
+'Usuario__Actor' (role 'avanzar_hacia_el_siguiente1', cardinality 0..*) is associated with 'Avanzar_hacia_el_siguiente__UseCase' (role 'usuario0', cardinality 0..*).
+'Usuario__Actor' (role 'calcular_el_numero_de_ejemplares11', cardinality 0..*) is associated with 'Calcular_el_numero_de_ejemplares_UseCase' (role 'usuario10', cardinality 0..*).

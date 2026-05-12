@@ -1,0 +1,175 @@
+The model has 95 class(es).
+The class 'melihat_laporan_penyaluran_donasi_UseCase' has no attributes.
+The class 'Package2_mengelola_inf_umum_yayasan_UseCase' has no attributes.
+The class 'registrasi_UseCase1' has no attributes.
+The class 'cek_status_donasi_UseCase1' has no attributes.
+The class 'Package2_melakukan_donasi_UseCase' has no attributes.
+The class 'Package2_mengubah_profil_UseCase' has no attributes.
+The class 'mengelola_program_donasi_UseCase' has no attributes.
+The class 'Package2_mengelola_donasi_UseCase' has no attributes.
+The class 'informasi_donatur_UseCase' has no attributes.
+The class 'cetak_laporan_UseCase' has no attributes.
+The class 'Package2_Pengurus_Yayasan_Actor' has no attributes.
+The class 'Package2_Pengunjung_Actor' has no attributes.
+The class 'Donatur__Actor' has no attributes.
+The class 'Package2_mengelola_donatur_UseCase' has no attributes.
+The class 'Package2_Donatur_Tetap_Actor' has no attributes.
+The class 'melihat_laporan_donasi_UseCase' has no attributes.
+The class 'melakukan_donasi_UseCase1' has no attributes.
+The class 'pengunjung_Actor' has no attributes.
+The class 'mengelola_inf_umum_yayasan_UseCase' has no attributes.
+The class 'Package2_membayar_tagihan_donasi_tetap_UseCase' has no attributes.
+The class 'mengelola_data_donasi_UseCase1' has no attributes.
+The class 'donatur_Actor1' has no attributes.
+The class 'donatur_tidak_tetap_Actor' has no attributes.
+The class 'melakukan_donasi_UseCase2' has no attributes.
+The class 'Package2_melihat_riwayat_donasi_UseCase' has no attributes.
+The class 'Package2_cetak_laporan_UseCase' has no attributes.
+The class 'mengelola_laporan_data_donasi_UseCase' has no attributes.
+The class 'Package2_Donatur_Actor' has no attributes.
+The class 'verifikasi_donasi_UseCase' has no attributes.
+The class 'melihat_program_donasi_UseCase1' has no attributes.
+The class 'lihat_informasi_donatur_UseCase' has no attributes.
+The class 'mengelola_data_donasi_UseCase' has no attributes.
+The class 'tambah_informasi_umum_yayasan_UseCase' has no attributes.
+The class 'mengelola_donasi_UseCase2' has no attributes.
+The class 'mengelola_donasi2_UseCase' has no attributes.
+The class 'mengelola_program_donasi_UseCase3' has no attributes.
+The class 'melihat_inf_umum_yayasan_UseCase' has no attributes.
+The class 'melakukan_registrasi__UseCase' has no attributes.
+The class 'cek_status_donasi_UseCase' has no attributes.
+The class 'konfirmasi_donasi_UseCase' has no attributes.
+The class 'mengelola_donasi_UseCase' has no attributes.
+The class 'login_UseCase1' has no attributes.
+The class 'Component_Component' has no attributes.
+The class 'pengurus_yayasan_Actor' has no attributes.
+The class 'melihat_informasi_umum_yayasan_UseCase' has no attributes.
+The class 'Package2_konfirmasi_donasi_UseCase' has no attributes.
+The class 'melihat_riwayat_donasi_UseCase' has no attributes.
+The class 'mengelola_program_donasi_UseCase5' has no attributes.
+The class 'mengubah_profil_UseCase' has no attributes.
+The class 'melihat_program_donasi_UseCase' has no attributes.
+The class 'melihat_program_donasi2_UseCase' has no attributes.
+The class 'Package2_melakukan_registrasi_UseCase' has no attributes.
+The class 'pemilik_yayasan_Actor' has no attributes.
+The class 'donatur_tetap_Actor' has no attributes.
+The class 'melihat_informasi_umum2_UseCase' has no attributes.
+The class 'mengelola_program_donasi_UseCase1' has no attributes.
+The class 'login_UseCase2' has no attributes.
+The class 'Package2_verifikasi_donasi_UseCase' has no attributes.
+The class 'verifikasi_donasi_UseCase1' has no attributes.
+The class 'mencetak_laporan_UseCase' has no attributes.
+The class 'mengelola_pengurus_UseCase' has no attributes.
+The class 'melakukan_donasi_UseCase3' has no attributes.
+The class 'melakukan_donasi_UseCase' has no attributes.
+The class 'melakukan_registrasi_UseCase' has no attributes.
+The class 'login_UseCase' has no attributes.
+The class 'infomasi_donatur_UseCase' has no attributes.
+The class 'login_UseCase3' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'meilhat_riwayat_donasi_UseCase' has no attributes.
+The class 'mencari_program_donasi_UseCase' has no attributes.
+The class 'manajemen_donasi_UseCase' has no attributes.
+The class 'Package2_login_UseCase' has no attributes.
+The class 'pemilik_yayasan_Actor1' has no attributes.
+The class 'Package2_melihat_laporan_penyaluran_donasi_UseCase' has no attributes.
+The class 'user' has the following attributes: 'email' of type str; 'password' of type str; 'id_user' of type str; 'nama_user' of type str.
+The class 'mengelola_data_donatur_UseCase' has no attributes.
+The class 'Package2_mengelola_program_donasi_UseCase' has no attributes.
+The class 'melihat__informasi_umum_yayasan_UseCase' has no attributes.
+The class 'mengelola_program_donasi_UseCase4' has no attributes.
+The class 'registrasi_UseCase' has no attributes.
+The class 'Package2_mengelola_data_pengurus_UseCase' has no attributes.
+The class 'edit_profil_donatur_UseCase' has no attributes.
+The class 'login_UseCase4' has no attributes.
+The class 'Package2_melihat_inf_umum_yayasan_UseCase' has no attributes.
+The class 'mengelola_donatur_UseCase' has no attributes.
+The class 'melihat__program_donasi_UseCase' has no attributes.
+The class 'Package2_melihat_program_donasi_UseCase' has no attributes.
+The class 'mengelola_data_donatur_UseCase1' has no attributes.
+The class 'Package2_cek_status_donasi_UseCase' has no attributes.
+The class 'donatur_Actor' has no attributes.
+The class 'mengelola_inf__umum_yayasan_UseCase' has no attributes.
+The class 'mengelola_program_donasi_UseCase2' has no attributes.
+The class 'Package2_Pemilik_Yayasan_Actor' has no attributes.
+The class 'Umum_Actor' has no attributes.
+The class 'mengelola_donasi_UseCase1' has no attributes.
+'pengunjung_Actor' (role 'melihat_informasi_umum_yayasan70', cardinality 0..*) is associated with 'melihat_laporan_donasi_UseCase' (role 'donatur_tetap71', cardinality 0..*).
+'melihat__program_donasi_UseCase' (role 'donatur_tidak_tetap74', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'melihat__program_donasi75', cardinality 0..*).
+'meilhat_riwayat_donasi_UseCase' (role 'donatur_tetap83', cardinality 0..*) is associated with 'donatur_tetap_Actor' (role 'meilhat_riwayat_donasi82', cardinality 0..*).
+'pengunjung_Actor' (role 'melakukan_donasi77', cardinality 0..*) is associated with 'melakukan_donasi_UseCase2' (role 'donatur_tidak_tetap76', cardinality 0..*).
+'Package2_mengelola_donatur_UseCase' (role 'pengurus_Yayasan111', cardinality 0..*) is associated with 'Package2_Pengurus_Yayasan_Actor' (role 'mengelola_donatur110', cardinality 0..*).
+'melihat__program_donasi_UseCase' (role 'pengunjung99', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'melihat__program_donasi98', cardinality 0..*).
+'melihat__program_donasi_UseCase' (role 'donatur_tetap58', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'melihat__laporan_donasi59', cardinality 0..*).
+'Package2_mengelola_data_pengurus_UseCase' (role 'pemilik_Yayasan105', cardinality 0..*) is associated with 'Package2_Pemilik_Yayasan_Actor' (role 'mengelola_data_pengurus104', cardinality 0..*).
+'Admin_Actor' (role 'mengelola_program_donasi138', cardinality 0..*) is associated with 'mengelola_program_donasi_UseCase5' (role 'pengurus_Yayasan139', cardinality 0..*).
+'melihat_laporan_penyaluran_donasi_UseCase' (role 'pengunjung151', cardinality 0..*) is associated with 'Umum_Actor' (role 'melihat_laporan_penyaluran_donasi150', cardinality 0..*).
+'Admin_Actor' (role 'konfirmasi_donasi144', cardinality 0..*) is associated with 'verifikasi_donasi_UseCase1' (role 'pengurus_Yayasan145', cardinality 0..*).
+'Donatur__Actor' (role 'melakukan_donasi154', cardinality 0..*) is associated with 'melakukan_donasi_UseCase3' (role 'pengunjung155', cardinality 0..*).
+'Package2_membayar_tagihan_donasi_tetap_UseCase' (role 'donatur_Tetap133', cardinality 0..*) is associated with 'Package2_Donatur_Tetap_Actor' (role 'melihat_tagihan_donasi_tetap132', cardinality 0..*).
+'melihat_laporan_donasi_UseCase' (role 'pengunjung101', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'melihat_data_donasi100', cardinality 0..*).
+'pengunjung_Actor' (role 'registrasi81', cardinality 0..*) is associated with 'registrasi_UseCase1' (role 'donatur_tidak_tetap80', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'mengelola_data_donatur39', cardinality 0..*) is associated with 'mengelola_data_donatur_UseCase1' (role 'pengurus_yayasan38', cardinality 0..*).
+'mengelola_inf_umum_yayasan_UseCase' (role 'pengurus_Yayasan137', cardinality 0..*) is associated with 'Admin_Actor' (role 'mengelola_inf_umum_yayasan136', cardinality 0..*).
+'pengunjung_Actor' (role 'melihat_riwayat_donasi68', cardinality 0..*) is associated with 'edit_profil_donatur_UseCase' (role 'donatur_tetap69', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'pengurus_yayasan35', cardinality 0..*) is associated with 'pengurus_yayasan_Actor' (role 'pengurus_yayasan34', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'login22', cardinality 0..*) is associated with 'login_UseCase' (role 'pengelola_yayasan23', cardinality 0..*).
+'mengelola_pengurus_UseCase' (role 'pemilik_yayasan1', cardinality 0..*) is associated with 'pemilik_yayasan_Actor' (role 'mengelola_data_pengurus0', cardinality 0..*).
+'mengelola_data_donatur_UseCase' (role 'pengelola_yayasan7', cardinality 0..*) is associated with 'pengurus_yayasan_Actor' (role 'mengelola_data_donatur6', cardinality 0..*).
+'Package2_Pengunjung_Actor' (role 'melihat_laporan_penyaluran_donasi126', cardinality 0..*) is associated with 'Package2_melihat_laporan_penyaluran_donasi_UseCase' (role 'pengunjung127', cardinality 0..*).
+'login_UseCase' (role 'pemilik_yayasan20', cardinality 0..*) is associated with 'pemilik_yayasan_Actor' (role 'login21', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'mengelola_laporan_data_donasi9', cardinality 0..*) is associated with 'mengelola_laporan_data_donasi_UseCase' (role 'pengelola_yayasan8', cardinality 0..*).
+'melihat__informasi_umum_yayasan_UseCase' (role 'pengunjung97', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'melihat__informasi_umum_yayasan96', cardinality 0..*).
+'Package2_cetak_laporan_UseCase' (role 'pengurus_Yayasan113', cardinality 0..*) is associated with 'Package2_Pengurus_Yayasan_Actor' (role 'cetak_laporan112', cardinality 0..*).
+'cetak_laporan_UseCase' (role 'pengurus_Yayasan143', cardinality 0..*) is associated with 'Admin_Actor' (role 'cetak_laporan142', cardinality 0..*).
+'donatur_Actor1' (role 'login50', cardinality 0..*) is associated with 'login_UseCase3' (role 'donatur51', cardinality 0..*).
+'pemilik_yayasan_Actor' (role 'mengelola_data_pengurus26', cardinality 0..*) is associated with 'mengelola_pengurus_UseCase' (role 'pemilik_yayasan27', cardinality 0..*).
+'login_UseCase' (role 'donatur_tetap25', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'login24', cardinality 0..*).
+'registrasi_UseCase' (role 'donatur49', cardinality 0..*) is associated with 'donatur_Actor1' (role 'registrasi48', cardinality 0..*).
+'donatur_Actor' (role 'donatur_tidak_tetap13', cardinality 0..*) is associated with 'donatur_tidak_tetap_Actor' (role 'calon_donatur12', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'mengelola_data_donasi36', cardinality 0..*) is associated with 'mengelola_data_donasi_UseCase1' (role 'pengurus_yayasan37', cardinality 0..*).
+'pemilik_yayasan_Actor' (role 'login44', cardinality 0..*) is associated with 'login_UseCase2' (role 'pemilik_yayasan45', cardinality 0..*).
+'melakukan_donasi_UseCase2' (role 'donatur_tetap55', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'melakukan_donasi54', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'mengelola_program_donasi88', cardinality 0..*) is associated with 'mengelola_program_donasi_UseCase3' (role 'pengurus_yayasan89', cardinality 0..*).
+'donatur_tidak_tetap_Actor' (role 'calon_donatur30', cardinality 0..*) is associated with 'donatur_Actor' (role 'donatur_tidak_tetap31', cardinality 0..*).
+'mengelola_data_donatur_UseCase1' (role 'pengurus_yayasan65', cardinality 0..*) is associated with 'pengurus_yayasan_Actor' (role 'mengelola_data_donatur64', cardinality 0..*).
+'pengunjung_Actor' (role 'melihat_data_laporan_donasi4', cardinality 0..*) is associated with 'meilhat_riwayat_donasi_UseCase' (role 'donatur_tetap5', cardinality 0..*).
+'Package2_Pengurus_Yayasan_Actor' (role 'konfirmasi_donasi114', cardinality 0..*) is associated with 'Package2_verifikasi_donasi_UseCase' (role 'pengurus_Yayasan115', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'mengelola_program_donasi42', cardinality 0..*) is associated with 'mengelola_program_donasi_UseCase' (role 'pengurus_yayasan43', cardinality 0..*).
+'Package2_Pengunjung_Actor' (role 'melakukan_donasi134', cardinality 0..*) is associated with 'Package2_melakukan_donasi_UseCase' (role 'pengunjung135', cardinality 0..*).
+'donatur_tidak_tetap_Actor' (role 'calon_donatur3', cardinality 0..*) is associated with 'donatur_Actor' (role 'donatur_tidak_tetap2', cardinality 0..*).
+'pengunjung_Actor' (role 'melihat__informasi_umum_yayasan86', cardinality 0..*) is associated with 'melihat__informasi_umum_yayasan_UseCase' (role 'donatur_tidak_tetap87', cardinality 0..*).
+'Package2_Pengurus_Yayasan_Actor' (role 'mengelola_inf_umum_yayasan106', cardinality 0..*) is associated with 'Package2_mengelola_inf_umum_yayasan_UseCase' (role 'pengurus_Yayasan107', cardinality 0..*).
+'melihat_inf_umum_yayasan_UseCase' (role 'pengunjung149', cardinality 0..*) is associated with 'Umum_Actor' (role 'melihat_inf_umum_yayasan148', cardinality 0..*).
+'meilhat_riwayat_donasi_UseCase' (role 'donatur_tetap56', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'meilhat_riwayat_donasi57', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'melakukan_verifikasi_donasi78', cardinality 0..*) is associated with 'mengelola_program_donasi_UseCase3' (role 'pengurus_yayasan79', cardinality 0..*).
+'donatur_tidak_tetap_Actor' (role 'melihat_informasi_umum14', cardinality 0..*) is associated with 'melakukan_donasi_UseCase1' (role 'donatur_tidak_tetap15', cardinality 0..*).
+'Package2_mengubah_profil_UseCase' (role 'donatur131', cardinality 0..*) is associated with 'Package2_Donatur_Actor' (role 'mengubah_profil130', cardinality 0..*).
+'melihat_program_donasi_UseCase' (role 'donatur_tetap73', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'melihat_program_donasi72', cardinality 0..*).
+'pengunjung_Actor' (role 'melakukan_donasi94', cardinality 0..*) is associated with 'melakukan_donasi_UseCase2' (role 'pengunjung95', cardinality 0..*).
+'mengelola_program_donasi_UseCase' (role 'donatur_tetap18', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'update_profile_donatur19', cardinality 0..*).
+'Package2_Pengurus_Yayasan_Actor' (role 'mengelola_donasi117', cardinality 0..*) is associated with 'Package2_mengelola_donasi_UseCase' (role 'pengurus_Yayasan116', cardinality 0..*).
+'melihat_riwayat_donasi_UseCase' (role 'donatur_Tetap156', cardinality 0..*) is associated with 'Donatur__Actor' (role 'melihat_riwayat_donasi157', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'mengelola_informasi_umum_yayasan262', cardinality 0..*) is associated with 'mengelola_inf__umum_yayasan_UseCase' (role 'pengurus_yayasan63', cardinality 0..*).
+'Package2_mengelola_program_donasi_UseCase' (role 'pengurus_Yayasan109', cardinality 0..*) is associated with 'Package2_Pengurus_Yayasan_Actor' (role 'mengelola_program_donasi108', cardinality 0..*).
+'mengelola_donatur_UseCase' (role 'pengurus_Yayasan141', cardinality 0..*) is associated with 'Admin_Actor' (role 'mengelola_donatur140', cardinality 0..*).
+'pemilik_yayasan_Actor1' (role 'mengelola_data_pengurus60', cardinality 0..*) is associated with 'mengelola_pengurus_UseCase' (role 'pemilik_yayasan61', cardinality 0..*).
+'meilhat_riwayat_donasi_UseCase' (role 'donatur_tidak_tetap11', cardinality 0..*) is associated with 'donatur_tidak_tetap_Actor' (role 'melihat_data_laporan_donasi10', cardinality 0..*).
+'Package2_Donatur_Actor' (role 'login120', cardinality 0..*) is associated with 'Package2_login_UseCase' (role 'donatur121', cardinality 0..*).
+'Package2_melihat_program_donasi_UseCase' (role 'pengunjung129', cardinality 0..*) is associated with 'Package2_Pengunjung_Actor' (role 'melihat_program_donasi128', cardinality 0..*).
+'pengunjung_Actor' (role 'cek_status_donasi92', cardinality 0..*) is associated with 'cek_status_donasi_UseCase' (role 'donatur_tidak_tetap93', cardinality 0..*).
+'edit_profil_donatur_UseCase' (role 'donatur_tetap85', cardinality 0..*) is associated with 'donatur_tetap_Actor' (role 'edit_profil_donatur84', cardinality 0..*).
+'mengelola_donasi_UseCase' (role 'pengurus_yayasan67', cardinality 0..*) is associated with 'pengurus_yayasan_Actor' (role 'mengelola_donasi66', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'login47', cardinality 0..*) is associated with 'login_UseCase2' (role 'pengurus_yayasan46', cardinality 0..*).
+'meilhat_riwayat_donasi_UseCase' (role 'donatur_tetap16', cardinality 0..*) is associated with 'pengunjung_Actor' (role 'melihat_data_laporan_donasi17', cardinality 0..*).
+'mengelola_program_donasi_UseCase4' (role 'pengurus_yayasan103', cardinality 0..*) is associated with 'pengurus_yayasan_Actor' (role 'mengelola_program_donasi102', cardinality 0..*).
+'Package2_login_UseCase' (role 'pengurus_Yayasan119', cardinality 0..*) is associated with 'Package2_Pengurus_Yayasan_Actor' (role 'login118', cardinality 0..*).
+'Umum_Actor' (role 'melihat_program_donasi152', cardinality 0..*) is associated with 'melihat_program_donasi_UseCase1' (role 'pengunjung153', cardinality 0..*).
+'Package2_Donatur_Actor' (role 'melihat_riwayat_transaksi122', cardinality 0..*) is associated with 'Package2_melihat_riwayat_donasi_UseCase' (role 'donatur123', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'verifikasi_donasi90', cardinality 0..*) is associated with 'verifikasi_donasi_UseCase' (role 'pengurus_yayasan91', cardinality 0..*).
+'Package2_melihat_inf_umum_yayasan_UseCase' (role 'pengunjung125', cardinality 0..*) is associated with 'Package2_Pengunjung_Actor' (role 'melihat_inf_umum_yayasan124', cardinality 0..*).
+'donatur_Actor' (role 'melakukan_donasi52', cardinality 0..*) is associated with 'melakukan_donasi_UseCase2' (role 'donatur53', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'mengelola_informasi_umum_yayasan32', cardinality 0..*) is associated with 'login_UseCase1' (role 'pengurus_yayasan33', cardinality 0..*).
+'Admin_Actor' (role 'mengelola_donasi147', cardinality 0..*) is associated with 'mengelola_donasi_UseCase2' (role 'pengurus_Yayasan146', cardinality 0..*).
+'pengurus_yayasan_Actor' (role 'mengelola_program_donasi28', cardinality 0..*) is associated with 'mengelola_program_donasi_UseCase1' (role 'pengelola_yayasan29', cardinality 0..*).
+'mengelola_program_donasi_UseCase2' (role 'pengurus_yayasan40', cardinality 0..*) is associated with 'pengurus_yayasan_Actor' (role 'mengelola_program_donasi41', cardinality 0..*).

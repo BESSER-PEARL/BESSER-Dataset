@@ -1,0 +1,60 @@
+The model has 32 class(es).
+The class 'Manager_Actor' has no attributes.
+The class 'Class' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'Bank_System_Actor' has no attributes.
+The class '_Interface' has no attributes.
+The class 'Class1' has no attributes.
+The class 'Producer' has the following attributes: 'country' of type str; 'name' of type str; 'u_id' of type int.
+The class 'Shopping_System_Search_Product_UseCase' has no attributes.
+The class 'Shopping_System_Manage_Order_UseCase' has no attributes.
+The class 'Shopping_System_Login_UseCase' has no attributes.
+The class 'Shopping_System_Manage_Bills_UseCase' has no attributes.
+The class 'Category' has the following attributes: 'name' of type str; 'sequence_id' of type int; 'u_id' of type int.
+The class 'Employee_Actor' has no attributes.
+The class 'Customer' has the following attributes: 'e_mail' of type str; 'surname' of type str; 'name' of type str; 'address' of type str; 'u_id' of type int.
+The class 'Shopping_System_Manage_Settings_UseCase' has no attributes.
+The class 'Shopping_System_Manage_ShopCart_UseCase' has no attributes.
+The class 'Shopping_System_Registration_UseCase' has no attributes.
+The class 'Statistics' has the following attributes: 'item_id' of type int; 'clicks' of type int; 'click_subCat' of type int; 'click_homeCat' of type int; 'click_homepage' of type int; 'customer_id' of type int.
+The class 'OrderDetails' has the following attributes: 'quantity' of type int; 'order_id' of type int; 'product_id' of type int; 'product_name' of type str.
+The class 'SubCategory' has the following attributes: 'id' of type int; 'cat_id' of type int; 'name' of type str.
+The class 'Shopping_System_Payment_UseCase' has no attributes.
+The class 'User' has the following attributes: 'name' of type str; 'password' of type str; 'u_id' of type int; 'e_mail' of type str; 'phone' of type str.
+The class 'Class2' has no attributes.
+The class 'Shopping_System_Manage_Catalog_UseCase' has no attributes.
+The class 'Orders' has the following attributes: 'dateShipped' of type str; 'u_id' of type int; 'dateCreated' of type str; 'customer_id' of type int; 'status' of type int.
+The class 'Class21' has no attributes.
+The class 'Administrator' has the following attributes: 'username' of type str; 'phone' of type str; 'e_mail' of type str; 'u_id' of type int.
+The class 'Component_Component' has no attributes.
+The class 'inter' has no attributes.
+The class 'ShoppingCart' has the following attributes: 'cart_id' of type int; 'product_id' of type int; 'quantity' of type int.
+The class 'Product' has the following attributes: 'stock' of type int; 'price' of type str; 'u_id' of type int.
+The class 'Checkout_UseCase' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.
+'Shopping_System_Manage_Catalog_UseCase' (role 'manager49', cardinality 0..*) is associated with 'Manager_Actor' (role 'manage_Catalog48', cardinality 0..*).
+'Shopping_System_Registration_UseCase' (role 'actor29', cardinality 0..*) is associated with 'Customer_Actor' (role 'registration28', cardinality 0..*).
+'Customer' (role 'statistics20', cardinality 0..*) is associated with 'Statistics' (role 'customer21', cardinality 0..*).
+'OrderDetails' (role 'product17', cardinality 0..*) is associated with 'Product' (role 'orderDetails16', cardinality 0..*).
+'Customer' (role 'shoppingCart13', cardinality 0..*) is associated with 'ShoppingCart' (role 'customer12', cardinality 0..*).
+'Manager_Actor' (role 'manage_Settings50', cardinality 0..*) is associated with 'Shopping_System_Manage_Settings_UseCase' (role 'manager51', cardinality 0..*).
+'Customer_Actor' (role 'payment36', cardinality 0..*) is associated with 'Shopping_System_Payment_UseCase' (role 'actor37', cardinality 0..*).
+'SubCategory' (role 'subCategory4', cardinality 0..*) is associated with 'SubCategory' (role 'subCategory5', cardinality 0..*).
+'SubCategory' (role 'category6', cardinality 0..*) is associated with 'Category' (role 'subCategory7', cardinality 0..*).
+'ShoppingCart' (role 'customer15', cardinality 0..*) is associated with 'Customer' (role 'shoppingCart14', cardinality 0..*).
+'Bank_System_Actor' (role 'payment25', cardinality 0..*) is associated with 'Shopping_System_Payment_UseCase' (role 'bank_System24', cardinality 0..*).
+'Producer' (role 'product18', cardinality 0..*) is associated with 'Product' (role 'producer19', cardinality 0..*).
+'SubCategory' (role 'category2', cardinality 0..*) is associated with 'Category' (role 'subCategory3', cardinality 0..*).
+'Employee_Actor' (role 'employee38', cardinality 0..*) is associated with 'Employee_Actor' (role 'employee39', cardinality 0..*).
+'Category' (role 'category1', cardinality 0..*) is associated with 'Category' (role 'category0', cardinality 0..*).
+'Shopping_System_Search_Product_UseCase' (role 'actor31', cardinality 0..*) is associated with 'Customer_Actor' (role 'search_Product30', cardinality 0..*).
+'Employee_Actor' (role 'manage_Order42', cardinality 0..*) is associated with 'Shopping_System_Manage_Order_UseCase' (role 'employee43', cardinality 0..*).
+'Category' (role 'category23', cardinality 0..*) is associated with 'Category' (role 'category22', cardinality 0..*).
+'Shopping_System_Login_UseCase' (role 'manager47', cardinality 0..*) is associated with 'Manager_Actor' (role 'login46', cardinality 0..*).
+'Orders' (role 'orderDetails10', cardinality 0..*) is associated with 'OrderDetails' (role 'orders11', cardinality 0..*).
+'Shopping_System_Manage_Bills_UseCase' (role 'employee41', cardinality 0..*) is associated with 'Employee_Actor' (role 'sales_Report40', cardinality 0..*).
+'Employee_Actor' (role 'login44', cardinality 0..*) is associated with 'Shopping_System_Login_UseCase' (role 'employee45', cardinality 0..*).
+'Customer' (role 'orders8', cardinality 0..*) is associated with 'Orders' (role 'customer9', cardinality 0..*).
+'Customer_Actor' (role 'manage_ShopCart32', cardinality 0..*) is associated with 'Shopping_System_Manage_ShopCart_UseCase' (role 'actor33', cardinality 0..*).
+'Shopping_System_Manage_Order_UseCase' (role 'actor35', cardinality 0..*) is associated with 'Customer_Actor' (role 'manage_Order34', cardinality 0..*).
+'Customer_Actor' (role 'login26', cardinality 0..*) is associated with 'Shopping_System_Login_UseCase' (role 'actor27', cardinality 0..*).

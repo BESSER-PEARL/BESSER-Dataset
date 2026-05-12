@@ -1,0 +1,82 @@
+The model has 53 class(es).
+The class 'Banco_Crear_asesor_UseCase' has no attributes.
+The class 'Banco_Editar_cliente_UseCase' has no attributes.
+The class 'Banco_Activar_cliente_UseCase1' has no attributes.
+The class 'Banco_Editar_cliente_UseCase1' has no attributes.
+The class 'Banco_Iniciar_sesi_n_UseCase' has no attributes.
+The class 'Cuenta' has the following attributes: 'tipoCuenta' of type str.
+The class 'Banco_Asociar_cuenta_UseCase1' has no attributes.
+The class 'Asesor' has the following attributes: 'pass' of type str; 'user' of type str; 'id' of type int.
+The class 'Banco_Iniciar_sesi_n_UseCase1' has no attributes.
+The class 'Banco_Valida_saldo_UseCase' has no attributes.
+The class 'TipoCuenta' has the following attributes: 'id' of type int; 'tipo' of type str; 'estado' of type bool.
+The class 'Banco_Consulta_datos_cliente_UseCase1' has no attributes.
+The class 'Banco_Activar_cliente_UseCase' has no attributes.
+The class 'Banco_Consulta_datos_cliente_UseCase' has no attributes.
+The class 'Banco_Crear_cliente_UseCase1' has no attributes.
+The class 'Banco_Realizar_transacci_n_UseCase1' has no attributes.
+The class 'Banco_Activar_asesor_UseCase1' has no attributes.
+The class 'Banco_Retirar_UseCase' has no attributes.
+The class 'Banco_Asociar_cuenta_UseCase' has no attributes.
+The class 'Transacci_n' has the following attributes: 'monto' of type float; 'fecha' of type datetime; 'detalle' of type str; 'id' of type int.
+The class 'Banco_Crear_cliente_UseCase' has no attributes.
+The class 'Banco_Consultar_saldo_UseCase1' has no attributes.
+The class 'Banco_Crear_cuenta_UseCase' has no attributes.
+The class 'Banco_Iniciar_sesi_n_UseCase4' has no attributes.
+The class 'Gerente_Actor' has no attributes.
+The class 'Banco_Crear_cuenta_UseCase1' has no attributes.
+The class 'Cliente_Actor1' has no attributes.
+The class 'Banco_Inactivar_cliente_UseCase1' has no attributes.
+The class 'Gerente' has the following attributes: 'user' of type str; 'pass' of type str; 'id' of type int.
+The class 'Sucursal' has the following attributes: 'id' of type int; 'nombre' of type str.
+The class 'Banco_Iniciar_sesi_n_UseCase2' has no attributes.
+The class 'Banco_Inactivar_asesor_UseCase' has no attributes.
+The class 'Banco_Crear_asesor_UseCase1' has no attributes.
+The class 'Banco_Inactivar_cliente_UseCase' has no attributes.
+The class 'Banco_Depositar_UseCase1' has no attributes.
+The class 'Banco_Inactivar_asesor_UseCase1' has no attributes.
+The class 'Class' has no attributes.
+The class 'Asesor_Actor1' has no attributes.
+The class 'Banco_Valida_saldo_UseCase1' has no attributes.
+The class 'Banco_Iniciar_sesi_n_UseCase3' has no attributes.
+The class 'Cuenta_external' has no attributes.
+The class 'Banco_Iniciar_sesi_n_UseCase5' has no attributes.
+The class 'Banco_Activar_asesor_UseCase' has no attributes.
+The class 'Banco_Realizar_transacci_n_UseCase' has no attributes.
+The class 'Cliente_Actor' has no attributes.
+The class 'Banco_Depositar_UseCase' has no attributes.
+The class 'Cliente' has the following attributes: 'foto' of type str; 'celular' of type int; 'telefono' of type int; 'pass' of type str; 'correo' of type str; 'estado' of type bool; 'user' of type str; 'id' of type int.
+The class 'Gerente_Actor1' has no attributes.
+The class 'Banco_Editar_datos_UseCase1' has no attributes.
+The class 'Banco_Retirar_UseCase1' has no attributes.
+The class 'Asesor_Actor' has no attributes.
+The class 'Banco_Editar_datos_UseCase' has no attributes.
+The class 'Banco_Consultar_saldo_UseCase' has no attributes.
+'Banco_Realizar_transacci_n_UseCase' (role 'iniciar_sesi_n9', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase2' (role 'realizar_transacci_n8', cardinality 0..*).
+'Cuenta_external' (role 'recibe22', cardinality 0..*) is associated with 'Transacci_n' (role 'receptor23', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase1' (role 'asociar_cuenta6', cardinality 0..*) is associated with 'Banco_Crear_cuenta_UseCase' (role 'iniciar_sesi_n7', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase4' (role 'editar_cliente42', cardinality 0..*) is associated with 'Banco_Editar_cliente_UseCase1' (role 'iniciar_sesi_n43', cardinality 0..*).
+'Gerente_Actor' (role 'iniciar_sesi_n14', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase' (role 'gerente15', cardinality 0..*).
+'Asesor_Actor' (role 'iniciar_sesi_n16', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase1' (role 'asesor17', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase3' (role 'gerente39', cardinality 0..*) is associated with 'Gerente_Actor1' (role 'iniciar_sesi_n38', cardinality 0..*).
+'Banco_Realizar_transacci_n_UseCase1' (role 'iniciar_sesi_n51', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase5' (role 'realizar_transacci_n50', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase2' (role 'editar_datos12', cardinality 0..*) is associated with 'Banco_Editar_datos_UseCase' (role 'iniciar_sesi_n13', cardinality 0..*).
+'Transacci_n' (role 'emisor27', cardinality 0..*) is associated with 'Cuenta_external' (role 'realiza26', cardinality 0..*).
+'Banco_Crear_asesor_UseCase' (role 'iniciar_sesi_n1', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase' (role 'crear_asesor0', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase4' (role 'asesor49', cardinality 0..*) is associated with 'Asesor_Actor1' (role 'iniciar_sesi_n48', cardinality 0..*).
+'Sucursal' (role 'tiene34', cardinality 0..*) is associated with 'Gerente' (role 'sucursal35', cardinality 0..*).
+'Asesor' (role 'puede_ser30', cardinality 0..*) is associated with 'Cliente' (role 'asesor31', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase2' (role 'cliente19', cardinality 0..*) is associated with 'Cliente_Actor' (role 'iniciar_sesi_n18', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase3' (role 'crear_asesor36', cardinality 0..*) is associated with 'Banco_Crear_asesor_UseCase1' (role 'iniciar_sesi_n37', cardinality 0..*).
+'Banco_Crear_cliente_UseCase' (role 'iniciar_sesi_n3', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase1' (role 'crear_cliente2', cardinality 0..*).
+'Banco_Crear_cliente_UseCase1' (role 'iniciar_sesi_n41', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase4' (role 'crear_cliente40', cardinality 0..*).
+'Sucursal' (role 'tiene33', cardinality 0..*) is associated with 'Asesor' (role 'sucursal32', cardinality 0..*).
+'Cliente_Actor1' (role 'iniciar_sesi_n54', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase5' (role 'cliente55', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase4' (role 'consulta_datos_cliente46', cardinality 0..*) is associated with 'Banco_Consulta_datos_cliente_UseCase1' (role 'iniciar_sesi_n47', cardinality 0..*).
+'Banco_Crear_cuenta_UseCase1' (role 'iniciar_sesi_n45', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase4' (role 'asociar_cuenta44', cardinality 0..*).
+'Cliente' (role 'tiene24', cardinality 0..*) is associated with 'Cuenta_external' (role 'cliente25', cardinality 0..*).
+'Banco_Editar_datos_UseCase1' (role 'iniciar_sesi_n53', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase5' (role 'editar_datos52', cardinality 0..*).
+'Banco_Editar_cliente_UseCase' (role 'iniciar_sesi_n5', cardinality 0..*) is associated with 'Banco_Iniciar_sesi_n_UseCase1' (role 'editar_cliente4', cardinality 0..*).
+'Cuenta_external' (role 'tipo_de_cuenta20', cardinality 0..*) is associated with 'TipoCuenta' (role 'cuenta21', cardinality 0..*).
+'Gerente' (role 'puede_ser28', cardinality 0..*) is associated with 'Cliente' (role 'gerente29', cardinality 0..*).
+'Banco_Iniciar_sesi_n_UseCase1' (role 'consulta_datos_cliente10', cardinality 0..*) is associated with 'Banco_Consulta_datos_cliente_UseCase' (role 'iniciar_sesi_n11', cardinality 0..*).

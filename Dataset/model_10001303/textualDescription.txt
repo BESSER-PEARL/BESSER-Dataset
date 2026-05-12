@@ -1,0 +1,26 @@
+The model has 15 class(es).
+The class 'BoardGUI' has the following attributes: 'frame' of type JFrame.
+The class 'Board1' has the following attributes: 'boardSize' of type int.
+The class 'AIPlayer' has no attributes.
+The class 'PlayerIcon' has the following attributes: 'icon' of type str.
+The class 'Dice' has the following attributes: 'secondValue' of type int; 'randomNumber' of type Random; 'firstValue' of type int.
+The class 'Jail' has the following attributes: 'jailFine' of type int; 'JailPosition' of type int.
+The class 'Board' has no attributes.
+The class 'Class' has no attributes.
+The class 'FreeParking' has no attributes.
+The class 'Chance' has the following attributes: 'amount' of type Random.
+The class 'IncomeTax' has the following attributes: 'taxRate' of type float.
+The class 'Player' has the following attributes: 'property' of type str; 'inJail' of type bool; 'INITIAL_POSITION' of type int; 'position' of type int; 'PASS_GO_MONEY' of type int; 'money' of type Money; 'rand' of type Random; 'isAI' of type bool; 'isRetire' of type bool; 'name' of type str; 'board' of type Board; 'isBankrupt' of type bool; 'INITIAL_MONEY' of type int.
+The class 'Money' has the following attributes: 'money' of type int.
+The class 'JFrame' has no attributes.
+The class 'Random' has no attributes.
+The enumeration 'Property' does not specify any literals.
+'PlayerIcon' (role 'boardGUI4', cardinality 0..*) is associated with 'BoardGUI' (role 'playerIcon5', cardinality 0..*).
+'Board1' (role 'boardGUI17', cardinality 0..*) is associated with 'BoardGUI' (role 'board16', cardinality 0..*).
+'Money' (role 'player0', cardinality 0..*) is associated with 'Player' (role 'money1', cardinality 0..*).
+'IncomeTax' (role 'board9', cardinality 0..*) is associated with 'Board1' (role 'incomeTax8', cardinality 0..*).
+'FreeParking' (role 'board7', cardinality 0..*) is associated with 'Board1' (role 'freeParking6', cardinality 0..*).
+'Dice' (role 'board11', cardinality 0..*) is associated with 'Board1' (role 'dice10', cardinality 0..*).
+'Chance' (role 'board15', cardinality 0..*) is associated with 'Board1' (role 'chance14', cardinality 0..*).
+'Player' (role 'board3', cardinality 0..*) is associated with 'Board1' (role 'player2', cardinality 0..*).
+'Jail' (role 'board13', cardinality 0..*) is associated with 'Board1' (role 'jail12', cardinality 0..*).

@@ -1,0 +1,46 @@
+The model has 19 class(es).
+The class 'Check_Out_UseCase' has no attributes.
+The class 'Class' has no attributes.
+The class 'Create_Account_UseCase' has no attributes.
+The class 'Delivery_Person_Actor' has no attributes.
+The class 'System_Actor' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Generate_report_UseCase' has no attributes.
+The class 'Make_Payment_UseCase' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'View_Menu_UseCase' has no attributes.
+The class 'Menu' has the following attributes: 'attribute' of type str.
+The class 'Update_Menu_Info_UseCase' has no attributes.
+The class 'Receive_Order_UseCase' has no attributes.
+The class 'Register__UseCase' has no attributes.
+The class 'Void_Order_UseCase' has no attributes.
+The class 'Add_Items_to_Cart_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Confirmation_e_mail_UseCase' has no attributes.
+The class 'Deliver_Order_UseCase' has no attributes.
+'Admin_Actor' (role 'cancel_Order31', cardinality 0..*) is associated with 'Void_Order_UseCase' (role 'admin30', cardinality 0..*).
+'Customer_Actor' (role 'make_Payment10', cardinality 0..*) is associated with 'Make_Payment_UseCase' (role 'customer11', cardinality 0..*).
+'Update_Menu_Info_UseCase' (role 'admin49', cardinality 0..*) is associated with 'Admin_Actor' (role 'update_Menu_Info48', cardinality 0..*).
+'Make_Payment_UseCase' (role 'admin26', cardinality 0..*) is associated with 'Admin_Actor' (role 'make_Payment27', cardinality 0..*).
+'Customer_Actor' (role 'create_Account0', cardinality 0..*) is associated with 'Create_Account_UseCase' (role 'customer1', cardinality 0..*).
+'Customer_Actor' (role 'cancel_Order14', cardinality 0..*) is associated with 'Void_Order_UseCase' (role 'customer15', cardinality 0..*).
+'Deliver_Order_UseCase' (role 'delivery_Person35', cardinality 0..*) is associated with 'Delivery_Person_Actor' (role 'deliver_Order34', cardinality 0..*).
+'Customer_Actor' (role 'login2', cardinality 0..*) is associated with 'Login_UseCase' (role 'customer3', cardinality 0..*).
+'Customer_Actor' (role 'add_Items_to_Cart6', cardinality 0..*) is associated with 'Add_Items_to_Cart_UseCase' (role 'customer7', cardinality 0..*).
+'Generate_report_UseCase' (role 'system46', cardinality 0..*) is associated with 'System_Actor' (role 'generate_report47', cardinality 0..*).
+'Add_Items_to_Cart_UseCase' (role 'admin22', cardinality 0..*) is associated with 'Admin_Actor' (role 'add_Items_to_Cart23', cardinality 0..*).
+'View_Menu_UseCase' (role 'customer5', cardinality 0..*) is associated with 'Customer_Actor' (role 'view_Menu4', cardinality 0..*).
+'Admin_Actor' (role 'confirmation_e_mail29', cardinality 0..*) is associated with 'Confirmation_e_mail_UseCase' (role 'admin28', cardinality 0..*).
+'Update_Menu_Info_UseCase' (role 'system50', cardinality 0..*) is associated with 'System_Actor' (role 'update_Menu_Info51', cardinality 0..*).
+'Admin_Actor' (role 'generate_report44', cardinality 0..*) is associated with 'Generate_report_UseCase' (role 'admin45', cardinality 0..*).
+'Receive_Order_UseCase' (role 'admin41', cardinality 0..*) is associated with 'Admin_Actor' (role 'receive_Order40', cardinality 0..*).
+'Login_UseCase' (role 'admin18', cardinality 0..*) is associated with 'Admin_Actor' (role 'login19', cardinality 0..*).
+'Register__UseCase' (role 'admin39', cardinality 0..*) is associated with 'Admin_Actor' (role 'register38', cardinality 0..*).
+'Admin_Actor' (role 'check_Out25', cardinality 0..*) is associated with 'Check_Out_UseCase' (role 'admin24', cardinality 0..*).
+'Create_Account_UseCase' (role 'admin16', cardinality 0..*) is associated with 'Admin_Actor' (role 'create_Account17', cardinality 0..*).
+'Customer_Actor' (role 'confirmation_e_mail12', cardinality 0..*) is associated with 'Confirmation_e_mail_UseCase' (role 'customer13', cardinality 0..*).
+'Delivery_Person_Actor' (role 'receive_Order32', cardinality 0..*) is associated with 'Receive_Order_UseCase' (role 'delivery_Person33', cardinality 0..*).
+'Register__UseCase' (role 'delivery_Person37', cardinality 0..*) is associated with 'Delivery_Person_Actor' (role 'register36', cardinality 0..*).
+'Customer_Actor' (role 'check_Out8', cardinality 0..*) is associated with 'Check_Out_UseCase' (role 'customer9', cardinality 0..*).
+'Admin_Actor' (role 'view_Menu21', cardinality 0..*) is associated with 'View_Menu_UseCase' (role 'admin20', cardinality 0..*).
+'Admin_Actor' (role 'deliver_Order43', cardinality 0..*) is associated with 'Deliver_Order_UseCase' (role 'admin42', cardinality 0..*).

@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'Perro' has the following attributes: 'fechaCastracion' of type str.
+The class 'Cliente' has the following attributes: 'numeroDeCliente' of type str; 'listaMascotas' of type str; 'nombre' of type str.
+The class 'Animal' has the following attributes: 'identificador' of type str; 'raza' of type str; 'nombre' of type str.
+The class 'CoordenadaGPS' has the following attributes: 'longitud' of type str; 'latitud' of type str.
+The class 'Gato' has the following attributes: 'ultimaDesparasitacion' of type str; 'MESES_ENTRE_DESPARASITACIONES' of type str.
+The class 'ILocalizable_Interface' has no attributes.

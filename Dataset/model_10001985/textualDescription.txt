@@ -1,0 +1,67 @@
+The model has 39 class(es).
+The class 'Natural_Actor' has no attributes.
+The class 'Servidor_BD_Node' has no attributes.
+The class 'Millenium_S_A_Component' has no attributes.
+The class 'Servidor_WEB_Node' has no attributes.
+The class 'Venta' has the following attributes: 'Codigo' of type int; 'Fecha' of type str; 'RealizarVenta' of type str.
+The class 'LogicaPresentacion___Factura_Component' has no attributes.
+The class 'ELementos' has the following attributes: 'REferencia' of type str; 'Clasificacion' of type str.
+The class 'Profesor' has the following attributes: 'ID' of type int; 'Apellido' of type str; 'Area' of type str; 'Nombre' of type str.
+The class 'Horas_de_clase' has the following attributes: 'CreditosMateria' of type str; 'TipoCreditos' of type str.
+The class 'Programa' has the following attributes: 'Codigo' of type int; 'Nombre' of type str.
+The class 'Persistencia___Factura_Component' has no attributes.
+The class 'Dependencias_Actor' has no attributes.
+The class 'Proveedor' has the following attributes: 'Direccion' of type str; 'Nit' of type str; 'Razonsocial' of type str; 'Telefonos' of type str.
+The class 'asignacion_de_creditos' has the following attributes: 'Cod_Materia' of type int.
+The class 'Pedidos' has the following attributes: 'Codigo' of type str; 'Fecha' of type str.
+The class 'Impuesto' has the following attributes: 'CalcularImpuesto' of type float; 'Porcentae' of type float.
+The class 'Brindar_Consultoria_external' has no attributes.
+The class 'Creditos' has the following attributes: 'Numeros' of type int.
+The class 'Pemsum_Universitario' has the following attributes: 'Materias' of type str; 'Programa' of type str.
+The class 'Juridico_Actor' has no attributes.
+The class 'Recivir_ordenes_de_suministro_external' has no attributes.
+The class 'Entregar_los_pedidos_external' has no attributes.
+The class 'Producto' has the following attributes: 'Codigo' of type int; 'Cantidad' of type int; 'CalcularCosto' of type int; 'Nombre' of type str; 'Precio' of type int.
+The class 'Proveedores_Actor' has no attributes.
+The class 'Areas_del_Conocimiento' has the following attributes: 'Departamentos' of type str; 'NombreArea' of type str.
+The class 'Servidor_Intel__Node' has no attributes.
+The class 'Javaaplication' has no attributes.
+The class 'Materias' has the following attributes: 'Nombre' of type str; 'Tipo' of type str; 'Codigo' of type int; 'Creditos' of type int.
+The class 'Departamento_de_inventarios_y_suministros___DIS_Component' has no attributes.
+The class 'Class4' has no attributes.
+The class 'OrdenesPedidos' has the following attributes: 'Codigo' of type str; 'Fecha' of type str.
+The class 'Calcular' has no attributes.
+The class 'Registrar_proveedores_external' has no attributes.
+The class 'Recibir_productos_external' has no attributes.
+The class 'Dependencia' has the following attributes: 'Nombre' of type str; 'Codigo' of type str; 'Responsable' of type str.
+The class 'Component_Component' has no attributes.
+The class 'Clientes_Actor' has no attributes.
+The class 'Departamento' has the following attributes: 'ID_Profesores' of type int.
+The class 'SolicitudSuministro' has the following attributes: 'Codigo' of type str; 'Fecha' of type str.
+'Proveedores_Actor' (role 'registrar_proveedores3', cardinality 0..*) is associated with 'Registrar_proveedores_external' (role 'proveedores2', cardinality 0..*).
+'Impuesto' (role 'venta50', cardinality 0..*) is associated with 'Venta' (role 'impuesto51', cardinality 0..*).
+'Materias' (role 'pemsum_Universitario26', cardinality 0..*) is associated with 'Pemsum_Universitario' (role 'materias27', cardinality 0..*).
+'Departamento' (role 'asignacion_de_creditos41', cardinality 0..*) is associated with 'asignacion_de_creditos' (role 'departamento40', cardinality 0..*).
+'Areas_del_Conocimiento' (role 'pemsum_Universitario37', cardinality 0..*) is associated with 'Pemsum_Universitario' (role 'areas_del_Conocimiento36', cardinality 0..*).
+'Pemsum_Universitario' (role 'programa44', cardinality 0..*) is associated with 'Programa' (role 'pemsum_Universitario45', cardinality 0..*).
+'Proveedores_Actor' (role 'recibir_productos5', cardinality 0..*) is associated with 'Recibir_productos_external' (role 'proveedores4', cardinality 0..*).
+'Producto' (role 'impuesto53', cardinality 0..*) is associated with 'Impuesto' (role 'producto52', cardinality 0..*).
+'Factura' (role 'eLementos24', cardinality 0..*) is associated with 'ELementos' (role 'factura25', cardinality 0..*).
+'Profesor' (role 'materias28', cardinality 0..*) is associated with 'Materias' (role 'profesores29', cardinality 0..*).
+'Creditos' (role 'asignacion_de_creditos42', cardinality 0..*) is associated with 'asignacion_de_creditos' (role 'creditos43', cardinality 0..*).
+'Entregar_los_pedidos_external' (role 'dependencias8', cardinality 0..*) is associated with 'Dependencias_Actor' (role 'entregar_los_pedidos9', cardinality 0..*).
+'OrdenesPedidos' (role 'proveedor11', cardinality 0..*) is associated with 'Proveedor' (role 'ordenesPedidos10', cardinality 0..*).
+'Creditos' (role 'materias30', cardinality 0..*) is associated with 'Materias' (role 'creditos31', cardinality 0..*).
+'Dependencia' (role 'solicitudSuministro20', cardinality 0..*) is associated with 'SolicitudSuministro' (role 'dependencia21', cardinality 0..*).
+'Proveedor' (role 'pedidos13', cardinality 0..*) is associated with 'Pedidos' (role 'proveedor12', cardinality 0..*).
+'Recivir_ordenes_de_suministro_external' (role 'dependencias6', cardinality 0..*) is associated with 'Dependencias_Actor' (role 'recivir_ordenes_de_suministro7', cardinality 0..*).
+'Materias' (role 'horas_de_clase32', cardinality 0..*) is associated with 'Horas_de_clase' (role 'materias33', cardinality 0..*).
+'OrdenesPedidos' (role 'solicitudSuministro19', cardinality 0..*) is associated with 'SolicitudSuministro' (role 'ordenesPedidos18', cardinality 0..*).
+'asignacion_de_creditos' (role 'areas_del_Conocimiento38', cardinality 0..*) is associated with 'Areas_del_Conocimiento' (role 'asignacion_de_creditos39', cardinality 0..*).
+'Venta' (role 'producto49', cardinality 0..*) is associated with 'Producto' (role 'venta48', cardinality 0..*).
+'Departamento' (role 'pemsum_Universitario35', cardinality 0..*) is associated with 'Pemsum_Universitario' (role 'departamento34', cardinality 0..*).
+'Clientes_Actor' (role 'brindar_Consultoria1', cardinality 0..*) is associated with 'Brindar_Consultoria_external' (role 'clientes0', cardinality 0..*).
+'ELementos' (role 'ordenesPedidos15', cardinality 0..*) is associated with 'OrdenesPedidos' (role 'eLementos14', cardinality 0..*).
+'SolicitudSuministro' (role 'eLementos16', cardinality 0..*) is associated with 'ELementos' (role 'solicitudSuministro17', cardinality 0..*).
+'Proveedor' (role 'factura23', cardinality 0..*) is associated with 'Factura' (role 'proveedor22', cardinality 0..*).
+'Calcular' (role 'javaaplication47', cardinality 0..*) is associated with 'Javaaplication' (role 'calcular46', cardinality 0..*).

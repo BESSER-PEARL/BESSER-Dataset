@@ -1,0 +1,16 @@
+The model has 11 class(es).
+The class 'FAN' has the following attributes: 'FAN_ID' of type str.
+The class 'Control_Box' has the following attributes: 'Status' of type bool; 'Update' of type float.
+The class 'FireAlarm_Sensor' has the following attributes: 'DispenseSprinkler' of type bool; 'SmokeAlarm' of type bool.
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+The class 'HouseHolds' has the following attributes: 'TimeID' of type str; 'Alarm' of type str; 'WashingMachine' of type str.
+The class 'MicroPhone' has the following attributes: 'MicID' of type str.
+The class 'Fan_Regulator_Box' has the following attributes: 'FAN_ID' of type str.
+The class 'Sensor' has the following attributes: 'SensorID' of type int; 'SensorType' of type int.
+The class 'Light' has the following attributes: 'LightID' of type str.
+The class 'Home_Security_System' has the following attributes: 'UserID' of type int.
+The class 'System' has the following attributes: 'Update' of type float; 'Status' of type bool.
+'HouseHolds' (role 'system5', cardinality 0..*) is associated with 'System' (role 'houseHolds4', cardinality 0..*).
+'Alert' (role 'home_Security_System3', cardinality 0..*) is associated with 'Home_Security_System' (role 'alert2', cardinality 0..*).
+'System' (role 'home_Security_System7', cardinality 0..*) is associated with 'Home_Security_System' (role 'system6', cardinality 0..*).
+'MicroPhone' (role 'system0', cardinality 0..*) is associated with 'System' (role 'microPhone1', cardinality 0..*).

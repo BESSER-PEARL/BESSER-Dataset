@@ -1,0 +1,108 @@
+The model has 95 class(es).
+The class 'InterfaceO_Interface1' has no attributes.
+The class 'Potnik_Actor' has no attributes.
+The class 'Student' has the following attributes: 'studijskiProgram' of type str; 'datumVpisa' of type LocalDate1; 'vpisnaStevilka' of type str.
+The class 'Elipsa' has no attributes.
+The class 'RazredH' has no attributes.
+The class 'SecurityException' has no attributes.
+The class 'RazredL' has no attributes.
+The class 'PravokotniLik' has the following attributes: 'visina' of type str; 'sirina' of type str.
+The class 'Pravokotnik1' has the following attributes: 'stranicaB' of type str; 'stranicaA' of type str.
+The class 'PravokotnikA' has the following attributes: 'stranicaB' of type str; 'stranicaA' of type str.
+The class 'Oseba3' has no attributes.
+The class 'NiVra_ila_UseCase' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'RazredB2' has no attributes.
+The class 'Soba2' has no attributes.
+The class 'Oddelek1' has no attributes.
+The class 'ClassS' has no attributes.
+The class 'Lik1' has the following attributes: 'barva' of type Color; 'x' of type str; 'x1' of type str; 'visina' of type str; 'sirina' of type str.
+The class 'RazredG' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'BancniRacun' has the following attributes: 'lastnik' of type str; 'aktiven' of type bool; 'stanje' of type float.
+The class 'Oddelek' has no attributes.
+The class 'Prepoznaven_Interface' has no attributes.
+The class 'BancniRacun1' has the following attributes: 'stanje' of type float; 'aktiven' of type bool; 'lastnik' of type str.
+The class 'RazredM1' has no attributes.
+The class 'Vozen_Interface' has no attributes.
+The class 'ClassV' has no attributes.
+The class 'Stanovanje' has no attributes.
+The class 'Oseba4' has no attributes.
+The class 'Lik3' has the following attributes: 'barva' of type Color; 'x' of type str; 'x1' of type str.
+The class 'RazredM' has no attributes.
+The class 'RuntimeException' has no attributes.
+The class 'Soba' has no attributes.
+The class 'Lik' has the following attributes: 'x1' of type str; 'barva' of type Color; 'x' of type str.
+The class 'NakupPosamezneKarte_UseCase' has no attributes.
+The class 'IOException' has no attributes.
+The class 'Kolo1' has no attributes.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'Krog2' has no attributes.
+The class 'Vozen_Interface1' has no attributes.
+The class 'Pravokotnik2' has no attributes.
+The class 'Iterator_Interface' has no attributes.
+The class 'RazredB' has no attributes.
+The class 'Class_N1' has no attributes.
+The class 'RazredA' has the following attributes: 'packageAtribut' of type str; 'privateAtribut' of type int; 'publicAtribut' of type float; 'protectedAtribut' of type str.
+The class 'Color' has no attributes.
+The class 'Zaposlen' has the following attributes: 'urnaPostavka' of type float; 'izobrazba' of type str.
+The class 'Razred' has the following attributes: 'attribute' of type str.
+The class 'RazredD' has no attributes.
+The class 'Avtomobil' has no attributes.
+The class 'Oseba' has the following attributes: 'ime' of type str; 'priimek' of type str; 'spol' of type str; 'datumRojstva' of type LocalDate.
+The class 'Lik3_Interface' has no attributes.
+The class 'RazredA1' has the following attributes: 'stevilo' of type str.
+The class 'NeDeluje_UseCase' has no attributes.
+The class 'Preklic_UseCase' has no attributes.
+The class 'Oddelek2' has no attributes.
+The class 'Throwable' has no attributes.
+The class 'Oseba2' has the following attributes: 'datumRojstva' of type date; 'ime' of type str; 'priimek' of type str.
+The class 'Pravokotnik3' has the following attributes: 'koordinataY' of type str; 'koordinataX' of type str.
+The class 'RazredE' has no attributes.
+The class 'Exception' has no attributes.
+The class 'NakupSkupinskeKarte_UseCase' has no attributes.
+The class 'Pravokotnik' has no attributes.
+The class 'RazredA2' has the following attributes: 'objektB' of type RazredB2.
+The class 'Lik2' has the following attributes: 'x1' of type str; 'visina' of type str; 'x' of type str; 'barva' of type Color; 'sirina' of type str.
+The class 'Kolo' has no attributes.
+The class 'ArithmeticException' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'LocalDate1' has no attributes.
+The class 'FileNotFoundException' has no attributes.
+The class 'Pes' has the following attributes: 'vzdevek' of type str; 'pasma' of type str; 'visina' of type str.
+The class 'Oseba1' has the following attributes: 'emso' of type str; 'ime' of type str; 'priimek' of type str.
+The class 'RazredC' has the following attributes: 'protectedAtribut' of type str; 'packageAtribut' of type str; 'privateAtribut' of type int; 'publicAtribut' of type float.
+The class 'ClassP1' has no attributes.
+The class 'IllegalArgumentException' has no attributes.
+The class 'LocalDate' has no attributes.
+The class 'Interface_Interface' has no attributes.
+The class 'Preklic__UseCase' has no attributes.
+The class 'RazredC1' has the following attributes: 'stevilo' of type str.
+The class 'RazredF' has no attributes.
+The class 'Avtomobil1' has no attributes.
+The class 'Collection_Interface' has no attributes.
+The class 'RazredK' has no attributes.
+The class 'NakupKarte_UseCase' has no attributes.
+The class 'NiVra_ila__UseCase' has no attributes.
+The class 'ClassQ' has no attributes.
+The class 'RazredJ' has no attributes.
+The class 'ZbiranjeDenarja_UseCase' has no attributes.
+The class 'RazredB1' has no attributes.
+The class 'Potnik__Actor' has no attributes.
+The class 'Class' has no attributes.
+The class 'Objekt' has no attributes.
+The class 'Prepoznaven_Interface1' has no attributes.
+The class 'Class_N' has no attributes.
+'NakupKarte_UseCase' (role 'potnik7', cardinality 0..*) is associated with 'Potnik_Actor' (role 'nakupKarte6', cardinality 0..*).
+'RazredH' (role 'classG4', cardinality 0..*) is associated with 'RazredJ' (role 'classF5', cardinality 0..*).
+'NakupSkupinskeKarte_UseCase' (role 'potnik11', cardinality 0..*) is associated with 'Potnik__Actor' (role 'nakupSkupinskeKarte10', cardinality 0..*).
+'Objekt' (role 'classG16', cardinality 0..*) is associated with 'Soba' (role 'classF17', cardinality 0..*).
+'Potnik__Actor' (role 'nakupKarte8', cardinality 0..*) is associated with 'NakupPosamezneKarte_UseCase' (role 'potnik9', cardinality 0..*).
+'RazredA2' (role 'razredB20', cardinality 0..*) is associated with 'RazredB2' (role 'razredA21', cardinality 0..*).
+'RazredB2' (role 'razredA23', cardinality 0..*) is associated with 'RazredA2' (role 'razredB22', cardinality 0..*).
+'RazredE' (role 'classD1', cardinality 0..*) is associated with 'RazredD' (role 'classE0', cardinality 0..*).
+'Soba2' (role 'stanovanje19', cardinality 0..*) is associated with 'Stanovanje' (role 'soba18', cardinality 0..*).
+'Oseba3' (role 'classD13', cardinality 0..*) is associated with 'Oddelek1' (role 'Oseba12', cardinality 0..*).
+'RazredG' (role 'classF3', cardinality 0..*) is associated with 'RazredF' (role 'classG2', cardinality 0..*).
+'Oseba4' (role 'oddelek15', cardinality 0..*) is associated with 'Oddelek2' (role 'zaposlen14', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 13 class(es).
+The class 'C3' has no attributes.
+The class 'C' has the following attributes: 'attC2' of type bool; 'attC1' of type int.
+The class 'B2' has no attributes.
+The class 'R' has no attributes.
+The class 'A3' has no attributes.
+The class 'B1' has no attributes.
+The class 'C2' has no attributes.
+The class 'A2' has no attributes.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'A1' has the following attributes: 'd' of type int; 'b' of type bool.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'Z' has no attributes.
+The class 'Y' has the following attributes: 'attY' of type str.
+'B' (role 'a3', cardinality 0..*) is associated with 'A' (role 'b2', cardinality 0..*).
+'C' (role 'b1', cardinality 0..*) is associated with 'B' (role 'c0', cardinality 0..*).
+'A' (role 'r5', cardinality 0..*) is associated with 'R' (role 'aR4', cardinality 0..*).
+'B1' (role 'a7', cardinality 0..*) is associated with 'A1' (role 'c6', cardinality 0..*).

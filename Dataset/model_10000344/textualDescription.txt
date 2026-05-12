@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'Vendedor' has the following attributes: 'email' of type str; 'address' of type str; 'phone' of type str.
+The class 'Licor' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'Pago' has the following attributes: 'paidDate' of type date; 'details' of type str; 'total' of type float.
+The class 'Cuenta' has the following attributes: 'isClosed' of type bool; 'closed' of type date; 'open' of type date; 'billingAddress' of type str.
+The class 'Login' has the following attributes: 'password' of type str; 'login' of type str; 'state' of type str.
+The class 'Orden' has the following attributes: 'total' of type float; 'number' of type int; 'status' of type str; 'ordered' of type date; 'shipped' of type bool; 'shipTo' of type str.
+The class 'ItemOrden' has the following attributes: 'price' of type float; 'quantity' of type int.
+The class 'Venta' has the following attributes: 'creationDate' of type date.
+'Venta' (role 'UsuarioWeb3', cardinality 0..*) is associated with 'Login' (role 'Venta2', cardinality 0..*).
+'Cuenta' (role 'cart8', cardinality 0..*) is associated with 'Venta' (role 'Cuenta9', cardinality 0..*).
+'Cuenta' (role 'Vendedor7', cardinality 0..*) is associated with 'Vendedor' (role 'Cuenta6', cardinality 0..*).
+'Orden' (role 'Cuenta17', cardinality 0..*) is associated with 'Cuenta' (role 'Orden16', cardinality 0..*).
+'Orden' (role 'items14', cardinality 0..*) is associated with 'ItemOrden' (role 'order15', cardinality 0..*).
+'Login' (role 'Vendedor4', cardinality 0..*) is associated with 'Vendedor' (role 'UsuarioWeb5', cardinality 0..*).
+'ItemOrden' (role 'Producto13', cardinality 0..*) is associated with 'Licor' (role 'lineItems12', cardinality 0..*).
+'Pago' (role 'Orden18', cardinality 0..*) is associated with 'Orden' (role 'payment19', cardinality 0..*).
+'ItemOrden' (role 'sc11', cardinality 0..*) is associated with 'Venta' (role 'items10', cardinality 0..*).
+'Pago' (role 'acc1', cardinality 0..*) is associated with 'Cuenta' (role 'p0', cardinality 0..*).

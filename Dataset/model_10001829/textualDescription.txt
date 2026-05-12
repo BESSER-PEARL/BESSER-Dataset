@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'Estados' has the following attributes: 'id_estados' of type int; 'Nombre_estados' of type str.
+The class 'Servicios' has the following attributes: 'Insumos' of type Insumos; 'Tiempo' of type int; 'id_servicio' of type int; 'Valor' of type int; 'Profesional' of type Profesionales; 'Nombre_servicio' of type str.
+The class 'Guacales' has the following attributes: 'Id_guacal' of type int.
+The class 'Registro' has the following attributes: 'Auxiliar' of type Auxiliar; 'Hora_entrada' of type str; 'Tipo_Mascota' of type Tipo_mascota; 'Hora_salida' of type str; 'Cliente' of type Cliente.
+The class 'Profesionales' has the following attributes: 'Nombre_profesional' of type str; 'id_profesional' of type int.
+The class 'Mascotas' has the following attributes: 'Id_mascota' of type int; 'tipo_mascota' of type Tipo_mascota.
+The class 'Auxiliar' has the following attributes: 'Id_auxiliar' of type str; 'Nombre_auxiliar' of type str.
+The class 'Reporte' has no attributes.
+The class 'Insumos' has the following attributes: 'Id_insumo' of type int; 'Nombre_insumo' of type str.
+The class 'Tipo_mascota' has the following attributes: 'Nombre_Tipo' of type str; 'id_Tipo_Mascota' of type int.
+The class 'Cliente' has the following attributes: 'Tel_fono' of type int; 'C_dula' of type str.
+The enumeration 'int' does not specify any literals.
+'Mascotas' (role 'reporte21', cardinality 0..*) is associated with 'Reporte' (role 'mascotas20', cardinality 0..*).
+'Mascotas' (role 'estados6', cardinality 0..*) is associated with 'Estados' (role 'mascotas7', cardinality 0..*).
+'Mascotas' (role 'registro10', cardinality 0..*) is associated with 'Registro' (role 'mascotas11', cardinality 0..*).
+'Mascotas' (role 'tipo_mascota217', cardinality 0..*) is associated with 'Tipo_mascota' (role 'mascotas16', cardinality 0..*).
+'Mascotas' (role 'servicios1', cardinality 0..*) is associated with 'Servicios' (role 'mascotas0', cardinality 0..*).
+'Cliente' (role 'mascotas14', cardinality 0..*) is associated with 'Mascotas' (role 'cliente15', cardinality 0..*).
+'Registro' (role 'cliente13', cardinality 0..*) is associated with 'Cliente' (role 'registro12', cardinality 0..*).
+'Reporte' (role 'servicios22', cardinality 0..*) is associated with 'Servicios' (role 'reporte23', cardinality 0..*).
+'Profesionales' (role 'servicios5', cardinality 0..*) is associated with 'Servicios' (role 'profesionales4', cardinality 0..*).
+'Auxiliar' (role 'registro18', cardinality 0..*) is associated with 'Registro' (role 'auxiliar19', cardinality 0..*).
+'Servicios' (role 'insumos2', cardinality 0..*) is associated with 'Insumos' (role 'servicios3', cardinality 0..*).
+'Guacales' (role 'mascotas9', cardinality 0..*) is associated with 'Mascotas' (role 'guacales8', cardinality 0..*).

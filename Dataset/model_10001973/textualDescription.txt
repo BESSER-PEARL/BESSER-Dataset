@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'Connect4GUI' has the following attributes: 'undo' of type Button; 'root' of type str.
+The class 'Piece' has the following attributes: 'pieceSize' of type int; 'pieceColor' of type str.
+The class 'GameboardGUI' has the following attributes: 'rows' of type int; 'piecesList' of type str; 'columns' of type int.
+The class 'Connect4' has no attributes.
+The class 'Player_Interface' has no attributes.
+The class 'RandomPlayer' has the following attributes: 'score' of type str; 'name' of type str.
+The class 'AIplayer' has the following attributes: 'score' of type str; 'name' of type str.
+The class 'GameBoard' has the following attributes: 'player1' of type Player_Interface; 'whoPlay' of type str; 'board' of type str; 'player2' of type Player_Interface.
+The class 'ScoreBoardGUI' has the following attributes: 'playersList' of type str.
+The class 'ConsolePlayer' has the following attributes: 'name' of type str; 'score' of type str.
+The class 'Button' has no attributes.
+The class 'MainMenuGUI' has no attributes.
+'Connect4GUI' (role 'mainMenuGUI11', cardinality 0..*) is associated with 'MainMenuGUI' (role 'connect4GUI10', cardinality 0..*).
+'Piece' (role 'gameboardGUI1', cardinality 0..*) is associated with 'GameboardGUI' (role 'piece0', cardinality 0..*).
+'Connect4' (role 'mainMenuGUI8', cardinality 0..*) is associated with 'MainMenuGUI' (role 'connect49', cardinality 0..*).
+'Player_Interface' (role 'ScoreBoardGUI_Player_13', cardinality 0..*) is associated with 'ScoreBoardGUI' (role 'player2', cardinality 0..*).
+'GameBoard' (role 'player7', cardinality 0..*) is associated with 'Player_Interface' (role 'gameBoard6', cardinality 0..*).
+'ScoreBoardGUI' (role 'mainMenuGUI12', cardinality 0..*) is associated with 'MainMenuGUI' (role 'scoreBoardGUI13', cardinality 0..*).
+'Connect4GUI' (role 'gameboardGUI5', cardinality 0..*) is associated with 'GameboardGUI' (role 'connect4GUI4', cardinality 0..*).
+'Connect4GUI' (role 'gameBoard15', cardinality 0..*) is associated with 'GameBoard' (role 'connect4GUI14', cardinality 0..*).

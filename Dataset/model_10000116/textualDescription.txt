@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'HARDWARE' has no attributes.
+The class 'OWNER' has no attributes.
+The class 'POLICE_DEPARTMENT' has no attributes.
+The class 'SYSTEM' has no attributes.
+The class 'HOME_SECURITY' has no attributes.
+'HOME_SECURITY' (role 'cart6', cardinality 0..*) is associated with 'POLICE_DEPARTMENT' (role 'account7', cardinality 0..*).
+'POLICE_DEPARTMENT' (role 'items8', cardinality 0..*) is associated with 'HARDWARE' (role 'sc9', cardinality 0..*).
+'SYSTEM' (role 'check_status4', cardinality 0..*) is associated with 'HOME_SECURITY' (role 'customer5', cardinality 0..*).
+'SYSTEM' (role 'select_values3', cardinality 0..*) is associated with 'OWNER' (role 'select_home_security2', cardinality 0..*).
+'POLICE_DEPARTMENT' (role 'webUser1', cardinality 0..*) is associated with 'OWNER' (role 'shoppingCart0', cardinality 0..*).

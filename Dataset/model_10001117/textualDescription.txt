@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'FoodItem' has the following attributes: 'Food' of type Food.
+The class 'Food' has the following attributes: 'Vegetarian' of type bool; 'Calories' of type int; 'Price' of type int.
+The class 'Order' has the following attributes: 'Customer' of type Customer; 'ItemList' of type MenuItem; 'Restaurant' of type Restaurant.
+The class 'Customer' has the following attributes: 'Cellphone' of type str; 'PostCode' of type int; 'CreditCard' of type str; 'FullName' of type str; 'Address' of type str.
+The class 'OrderController' has the following attributes: 'Order' of type Order.
+The class 'RestaurantController' has the following attributes: 'Restaurant' of type Restaurant.
+The class 'MenuItem' has the following attributes: 'Description' of type str.
+The class 'Restaurant' has the following attributes: 'PostCode' of type int; 'Address' of type str; 'Menu' of type MenuItem; 'Name' of type str.
+The class 'FoodPackage' has the following attributes: 'FoodList' of type Food.
+'Restaurant' (role 'RestaurantManager_Restaurant_117', cardinality 0..*) is associated with 'RestaurantController' (role 'RestaurantManager_Restaurant_016', cardinality 0..*).
+'Customer' (role 'Order_Customer_115', cardinality 0..*) is associated with 'Order' (role 'Order_Customer_014', cardinality 0..*).
+'Food' (role 'FoodItem_Food_15', cardinality 0..*) is associated with 'FoodItem' (role 'FoodItem_Food_04', cardinality 0..*).
+'Restaurant' (role 'Order_Restaurant_113', cardinality 0..*) is associated with 'Order' (role 'Order_Restaurant_012', cardinality 0..*).
+'FoodPackage' (role 'MenuItem_FoodPackage_13', cardinality 0..*) is associated with 'MenuItem' (role 'MenuItem_FoodPackage_02', cardinality 0..*).
+'FoodPackage' (role 'FoodPackage_Food_06', cardinality 0..*) is associated with 'Food' (role 'FoodPackage_Food_17', cardinality 0..*).
+'MenuItem' (role 'Order_MenuItem_111', cardinality 0..*) is associated with 'Order' (role 'Order_MenuItem_010', cardinality 0..*).
+'FoodItem' (role 'MenuItem_FoodItem_11', cardinality 0..*) is associated with 'MenuItem' (role 'MenuItem_FoodItem_00', cardinality 0..*).
+'OrderController' (role 'OrderController_Order_018', cardinality 0..*) is associated with 'Order' (role 'OrderController_Order_119', cardinality 0..*).
+'Restaurant' (role 'Restaurant_MenuItem_08', cardinality 0..*) is associated with 'MenuItem' (role 'Restaurant_MenuItem_19', cardinality 0..*).

@@ -1,0 +1,68 @@
+The model has 45 class(es).
+The class 'Producto' has no attributes.
+The class 'Autores' has the following attributes: 'fechaEliminaci_n' of type str; 'fechamodificaci_n' of type str; 'fechaCreaci_n' of type str.
+The class 'Principal' has no attributes.
+The class 'Registrar_proveedores_external' has no attributes.
+The class 'Brindar_consultoria_external' has no attributes.
+The class 'Ponencias' has the following attributes: 'nombreCongreso' of type str.
+The class 'Elementos' has the following attributes: 'clasificaci_n' of type str; 'referencia' of type str.
+The class 'Calcular' has no attributes.
+The class 'ConcretBuilderBicicletaInfantil' has no attributes.
+The class 'Impuesto' has no attributes.
+The class 'Documentos' has the following attributes: 'editorial' of type str; 'fechaCreaci_n' of type str; 'd_a' of type str; 'mesPublicaci_n' of type str; 'autores' of type str; 'fechaPublicaci_n' of type str; 'ISBN' of type str; 'titulo' of type str.
+The class 'Venta' has no attributes.
+The class 'Cliente_Actor' has no attributes.
+The class 'Jur_dica_Actor' has no attributes.
+The class 'ProyectoNuevo_Actor' has no attributes.
+The class 'ConcretBuilderBicicletaFemenina' has no attributes.
+The class 'Servidor_intel_I8_Node' has no attributes.
+The class 'ConcretBuilderBicicletaDoble' has no attributes.
+The class 'Entegar_productos_external' has no attributes.
+The class 'Revisi_n_de_factura_external' has no attributes.
+The class 'ArticulosCient_ficos' has the following attributes: 'SSN' of type str.
+The class 'Dependencias_Actor' has no attributes.
+The class 'Recibir_productos_o_pedidos_external' has no attributes.
+The class 'Pedidos' has the following attributes: 'codigo' of type str; 'fecha' of type str.
+The class 'Dependencia' has the following attributes: 'codigo' of type str; 'responsable' of type str; 'nombre' of type str.
+The class 'NuevoProyecto' has no attributes.
+The class 'Sistema_WEB_M_vil_Recepci_n_de_pedidos_Component' has no attributes.
+The class 'Responsable_Inventario_Actor' has no attributes.
+The class 'Contabilidad_y_Tesorer_a_Actor' has no attributes.
+The class 'Director' has the following attributes: 'bicicletaBuilder' of type _a__BicicletaBuilder; 'void_construirBicicleta' of type str.
+The class 'Clasificar_producto_external' has no attributes.
+The class 'Departamento_de_Inventarios_y_Suministros_DIS_Component' has no attributes.
+The class 'Factura' has the following attributes: 'codigo' of type str; 'fecha' of type str.
+The class 'Milenium_Component' has no attributes.
+The class 'Proveedor' has the following attributes: 'razonSocial' of type str; 'tel_fonos' of type str; 'nit' of type str; 'direcci_n' of type str.
+The class '_a__BicicletaBuilder' has no attributes.
+The class 'Calcular_Actor' has no attributes.
+The class 'Libros' has the following attributes: 'n_meroP_ginas' of type str.
+The class 'Editoriales' has the following attributes: 'direcci_nEmail' of type str; 'n_meroTel_fono' of type str; 'personaContacto' of type str; 'direcci_nF_sica' of type str.
+The class 'ConcretBuilderBicicletaMasculina' has no attributes.
+The class 'Recibir_ordenes_de_suministro_external' has no attributes.
+The class 'Natural_Actor' has no attributes.
+The class 'Proveedores_Actor' has no attributes.
+The class 'OrdenesPedido' has the following attributes: 'codigo' of type str; 'fecha' of type str.
+The class 'SolicitudSuministro' has the following attributes: 'codigo' of type str; 'fecha' of type str.
+'Proveedor' (role 'ordenesPedido16', cardinality 0..*) is associated with 'OrdenesPedido' (role 'proveedor17', cardinality 0..*).
+'Elementos' (role 'ordenesPedido21', cardinality 0..*) is associated with 'OrdenesPedido' (role 'elementos20', cardinality 0..*).
+'Dependencias_Actor' (role 'entregar_productos9', cardinality 0..*) is associated with 'Entegar_productos_external' (role 'dependencias8', cardinality 0..*).
+'Proveedores_Actor' (role 'registrar_proveedores5', cardinality 0..*) is associated with 'Registrar_proveedores_external' (role 'proveedores4', cardinality 0..*).
+'Dependencias_Actor' (role 'recibir_ordenes_de_suministro7', cardinality 0..*) is associated with 'Recibir_ordenes_de_suministro_external' (role 'dependencias6', cardinality 0..*).
+'SolicitudSuministro' (role 'ordenesPedidos25', cardinality 0..*) is associated with 'OrdenesPedido' (role 'solicitudSuministro24', cardinality 0..*).
+'Calcular' (role 'nuevoProyecto43', cardinality 0..*) is associated with 'NuevoProyecto' (role 'calcular42', cardinality 0..*).
+'Factura' (role 'proveedor29', cardinality 0..*) is associated with 'Proveedor' (role 'factura28', cardinality 0..*).
+'Documentos' (role 'libros34', cardinality 0..*) is associated with 'Libros' (role 'documentos35', cardinality 0..*).
+'Factura' (role 'elementos31', cardinality 0..*) is associated with 'Elementos' (role 'factura30', cardinality 0..*).
+'Documentos' (role 'ponencias40', cardinality 0..*) is associated with 'Ponencias' (role 'documentos41', cardinality 0..*).
+'Proveedor' (role 'pedidos19', cardinality 0..*) is associated with 'Pedidos' (role 'proveedor18', cardinality 0..*).
+'Autores' (role 'documentos33', cardinality 0..*) is associated with 'Documentos' (role 'autores232', cardinality 0..*).
+'Elementos' (role 'solicitudSuministro23', cardinality 0..*) is associated with 'SolicitudSuministro' (role 'elementos22', cardinality 0..*).
+'Responsable_Inventario_Actor' (role 'revisar_factura15', cardinality 0..*) is associated with 'Revisi_n_de_factura_external' (role 'responsable_Inventario14', cardinality 0..*).
+'Documentos' (role 'editoriales38', cardinality 0..*) is associated with 'Editoriales' (role 'documentos39', cardinality 0..*).
+'SolicitudSuministro' (role 'dependencia27', cardinality 0..*) is associated with 'Dependencia' (role 'solicitudSuministro26', cardinality 0..*).
+'Cliente_Actor' (role 'brindar_consultoria1', cardinality 0..*) is associated with 'Brindar_consultoria_external' (role 'cliente0', cardinality 0..*).
+'Responsable_Inventario_Actor' (role 'clasificar_producto13', cardinality 0..*) is associated with 'Clasificar_producto_external' (role 'responsable_Inventario12', cardinality 0..*).
+'Documentos' (role 'articulosCient_ficos36', cardinality 0..*) is associated with 'ArticulosCient_ficos' (role 'documentos37', cardinality 0..*).
+'Proveedores_Actor' (role 'recibir_productos_o_pedidos3', cardinality 0..*) is associated with 'Recibir_productos_o_pedidos_external' (role 'proveedores2', cardinality 0..*).
+'Registrar_proveedores_external' (role 'contabilidad_y_Tesorer_a10', cardinality 0..*) is associated with 'Contabilidad_y_Tesorer_a_Actor' (role 'registrar_proveedores11', cardinality 0..*).

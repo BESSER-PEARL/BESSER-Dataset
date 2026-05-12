@@ -1,0 +1,19 @@
+The model has 17 class(es).
+The class 'MyClass4' has no attributes.
+The class 'mypackage3_MyInterface_Interface' has no attributes.
+The class 'MyClass3' has no attributes.
+The class '_' has no attributes.
+The class 'mypackage3_MyClass2' has no attributes.
+The class 'MyInterface2_Interface' has no attributes.
+The class 'MyInterface_Interface' has no attributes.
+The class 'mypackage2_MyClass' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'mypackage2_MyClass2' has no attributes.
+The class 'MyInterface3_Interface' has no attributes.
+The class 'Test' has no attributes.
+The class 'mypackage3_MyClass' has no attributes.
+The class 'mypackage2_MyInterface2_Interface' has no attributes.
+The class 'mypackage2_MyInterface_Interface' has no attributes.
+The class 'MyClass5' has no attributes.
+The class 'MyClass2' has no attributes.
+'_' (role 'test1', cardinality 0..*) is associated with 'Test' (role '_0', cardinality 0..*).

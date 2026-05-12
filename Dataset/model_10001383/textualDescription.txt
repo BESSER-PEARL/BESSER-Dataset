@@ -1,0 +1,73 @@
+The model has 42 class(es).
+The class 'special_offers_UseCase' has no attributes.
+The class 'Online_Shopping_Orderitem' has the following attributes: 'Quantity' of type int; 'ProductID' of type str; 'Sub_Total' of type str.
+The class 'Online_Shopping_Customer' has the following attributes: 'Age' of type int; 'Password' of type str; 'Address' of type str; 'Username' of type str.
+The class 'Authentication_UseCase' has no attributes.
+The class 'Online_Shopping_Orderstate' has the following attributes: 'attribute' of type str.
+The class 'Online_Shopping_Order' has the following attributes: 'Placed_Date' of type int; 'Contents' of type Online_Shopping_Orderitem; 'State' of type str.
+The class 'Credit_payment_service_Actor' has no attributes.
+The class 'Customer_Actor1' has no attributes.
+The class 'Online_Shopping_Card_payment' has the following attributes: 'CVS_number' of type int; 'Valid_date' of type int; 'payment_type' of type str; 'Cardholder_name' of type str; 'Card_number' of type int.
+The class 'Checkout_UseCase1' has no attributes.
+The class '_unnamed' has no attributes.
+The class 'Online_customer_Actor' has no attributes.
+The class 'Search_for_items_UseCase' has no attributes.
+The class 'View_items_UseCase' has no attributes.
+The class 'Online_Shopping_Item' has the following attributes: 'ProductID' of type str; 'Description' of type str; 'Name' of type str; 'Price' of type int.
+The class 'Online_Shopping_Checkout' has the following attributes: 'Billing_address' of type str; 'Checkout_address' of type str; 'Phone_number' of type int; 'Email_address' of type str.
+The class 'Log_in__sign_in_page_UseCase' has no attributes.
+The class 'credit_card__shop_card__PayPal_UseCase' has no attributes.
+The class 'Customer_authentication__UseCase' has no attributes.
+The class 'payment_UseCase' has no attributes.
+The class 'view_recommended_items_UseCase' has no attributes.
+The class 'Online_Shopping_Basket' has the following attributes: 'IsEmpty' of type bool; 'Contents' of type Online_Shopping_BasketItem; 'attribute' of type str.
+The class 'register_UseCase' has no attributes.
+The class 'Online_Shopping_BasketItem' has the following attributes: 'Quantity' of type int; 'ProductID' of type str.
+The class 'Choose_items_UseCase' has no attributes.
+The class 'make_a_purchase_UseCase' has no attributes.
+The class 'bank__Actor' has no attributes.
+The class 'Online_Shopping_PayPal_payment' has the following attributes: 'Password' of type str; 'Username' of type str; 'attribute' of type str.
+The class 'Online_Shopping_Customer_points' has the following attributes: 'Balance' of type Integer.
+The class 'save_items_for_later_in_wish_list_UseCase' has no attributes.
+The class 'PayPal__Mastercard__etc__UseCase' has no attributes.
+The class 'view_items_UseCase' has no attributes.
+The class 'add_items_to_shopping_cart_UseCase' has no attributes.
+The class 'Payment_UseCase' has no attributes.
+The class 'Authentication_or_service_or_identity_provider_Actor' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'claim_some_points_UseCase' has no attributes.
+The class 'Checkout_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Online_Shopping_Special_offers' has the following attributes: 'Discount' of type int; 'Price' of type str.
+The class 'user_authentication_cookie_UseCase' has no attributes.
+The class 'browse_catalogue_UseCase' has no attributes.
+The enumeration 'Online_Shopping_Or' does not specify any literals.
+The enumeration 'Integer' does not specify any literals.
+'make_a_purchase_UseCase' (role 'choose_items11', cardinality 0..*) is associated with 'Choose_items_UseCase' (role 'make_a_purchase10', cardinality 0..*).
+'user_authentication_cookie_UseCase' (role 'authentication_or_service_or_identity_provider24', cardinality 0..*) is associated with 'Authentication_or_service_or_identity_provider_Actor' (role 'user_authentication_cookie25', cardinality 0..*).
+'Online_Shopping_Customer' (role 'customer_points36', cardinality 0..*) is associated with 'Online_Shopping_Customer_points' (role 'customer37', cardinality 0..*).
+'Online_Shopping_Order' (role 'payPal_payment53', cardinality 0..*) is associated with 'Online_Shopping_PayPal_payment' (role 'orderitem52', cardinality 0..*).
+'Online_Shopping_Basket' (role 'basketItem42', cardinality 0..*) is associated with 'Online_Shopping_BasketItem' (role 'basket43', cardinality 0..*).
+'Online_Shopping_BasketItem' (role 'special_offers35', cardinality 0..*) is associated with 'Online_Shopping_Special_offers' (role 'basketItem34', cardinality 0..*).
+'Online_Shopping_Order' (role 'orderitem55', cardinality 0..*) is associated with 'Online_Shopping_Orderitem' (role 'order54', cardinality 0..*).
+'Customer_Actor1' (role 'add_items_to_shopping_cart30', cardinality 0..*) is associated with 'add_items_to_shopping_cart_UseCase' (role 'customer31', cardinality 0..*).
+'Credit_payment_service_Actor' (role 'payment16', cardinality 0..*) is associated with 'payment_UseCase' (role 'credit_payment_service17', cardinality 0..*).
+'Checkout_UseCase' (role 'make_a_purchase14', cardinality 0..*) is associated with 'make_a_purchase_UseCase' (role 'checkout15', cardinality 0..*).
+'Login_UseCase' (role 'customer3', cardinality 0..*) is associated with 'Customer_Actor' (role 'login2', cardinality 0..*).
+'Online_Shopping_Basket' (role 'item41', cardinality 0..*) is associated with 'Online_Shopping_Item' (role 'basket40', cardinality 0..*).
+'Online_Shopping_PayPal_payment' (role 'checkout47', cardinality 0..*) is associated with 'Online_Shopping_Checkout' (role 'payPal_payment46', cardinality 0..*).
+'Online_Shopping_Basket' (role 'checkout44', cardinality 0..*) is associated with 'Online_Shopping_Checkout' (role 'basket45', cardinality 0..*).
+'special_offers_UseCase' (role 'choose_items6', cardinality 0..*) is associated with 'Choose_items_UseCase' (role 'special_offers7', cardinality 0..*).
+'Online_customer_Actor' (role 'customer_authentication22', cardinality 0..*) is associated with 'Customer_authentication__UseCase' (role 'online_customer23', cardinality 0..*).
+'view_items_UseCase' (role 'choose_items8', cardinality 0..*) is associated with 'Choose_items_UseCase' (role 'view_items9', cardinality 0..*).
+'Checkout_UseCase1' (role 'online_customer20', cardinality 0..*) is associated with 'Online_customer_Actor' (role 'checkout21', cardinality 0..*).
+'Log_in__sign_in_page_UseCase' (role 'authentication_or_service_or_identity_provider26', cardinality 0..*) is associated with 'Authentication_or_service_or_identity_provider_Actor' (role 'log_in__sign_in_page27', cardinality 0..*).
+'Online_Shopping_Order' (role 'card_payment51', cardinality 0..*) is associated with 'Online_Shopping_Card_payment' (role 'orderitem50', cardinality 0..*).
+'Online_Shopping_Checkout' (role 'card_payment48', cardinality 0..*) is associated with 'Online_Shopping_Card_payment' (role 'checkout49', cardinality 0..*).
+'Checkout_UseCase' (role 'choose_items13', cardinality 0..*) is associated with 'Choose_items_UseCase' (role 'checkout12', cardinality 0..*).
+'save_items_for_later_in_wish_list_UseCase' (role 'customer29', cardinality 0..*) is associated with 'Customer_Actor1' (role 'save_items_for_late_in_wish_list28', cardinality 0..*).
+'Login_UseCase' (role 'view_items4', cardinality 0..*) is associated with 'view_items_UseCase' (role 'login5', cardinality 0..*).
+'Online_Shopping_Customer' (role 'special_offers32', cardinality 0..*) is associated with 'Online_Shopping_Special_offers' (role 'customer33', cardinality 0..*).
+'Online_Shopping_Customer' (role 'item38', cardinality 0..*) is associated with 'Online_Shopping_Item' (role 'customer39', cardinality 0..*).
+'credit_card__shop_card__PayPal_UseCase' (role 'bank19', cardinality 0..*) is associated with 'bank__Actor' (role 'credit_card__shop_card__PayPal18', cardinality 0..*).
+'Customer_Actor' (role 'register0', cardinality 0..*) is associated with 'register_UseCase' (role 'customer1', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 19 class(es).
+The class 'Issue' has no attributes.
+The class 'ArrPrint' has no attributes.
+The class 'Value' has the following attributes: 'attribute' of type str.
+The class 'Documents' has the following attributes: 'file_name' of type str; 'file' of type str; 'tab_counter' of type int; 'data' of type Json.
+The class 'Array' has the following attributes: 'data' of type Value.
+The class 'SimpleCard' has no attributes.
+The class 'String' has the following attributes: 'data' of type String.
+The class 'CardGroup' has no attributes.
+The class 'Descripible_Interface' has no attributes.
+The class 'UserStory' has no attributes.
+The class 'Print' has no attributes.
+The class 'Visitor' has no attributes.
+The class 'Null' has no attributes.
+The class 'Card' has no attributes.
+The class 'Bool' has the following attributes: 'data' of type bool.
+The class 'Json' has the following attributes: 'values' of type Value.
+The class 'Sprint' has no attributes.
+The class 'Steppable_Interface' has no attributes.
+The class 'Number' has the following attributes: 'data' of type int.
+The enumeration 'Enumeration' does not specify any literals.
+'CardGroup' (role 'sprints3', cardinality 0..*) is associated with 'Sprint' (role 'groups2', cardinality 0..*).
+'Card' (role 'sprints1', cardinality 0..*) is associated with 'Sprint' (role 'cards0', cardinality 0..*).

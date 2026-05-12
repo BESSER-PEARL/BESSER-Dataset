@@ -1,0 +1,61 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Gestion_de_Limpieza  {
+
+    private String powderized_wash;
+    private String brushing;
+    private String water;
+
+
+
+
+
+    private Usuario usuario;
+
+
+    public Gestion_de_Limpieza(
+        String powderized_wash,        String brushing,        String water    ) {
+        this.powderized_wash = powderized_wash;
+        this.brushing = brushing;
+        this.water = water;
+    }
+
+
+    public String getPowderized_wash() {
+        return powderized_wash;
+    }
+
+    public void setPowderized_wash(String powderized_wash) {
+        this.powderized_wash = powderized_wash;
+    }
+    public String getBrushing() {
+        return brushing;
+    }
+
+    public void setBrushing(String brushing) {
+        this.brushing = brushing;
+    }
+    public String getWater() {
+        return water;
+    }
+
+    public void setWater(String water) {
+        this.water = water;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+}

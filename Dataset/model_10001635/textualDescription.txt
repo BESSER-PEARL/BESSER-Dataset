@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'Order' has the following attributes: 'Order_ID' of type int.
+The class 'Products' has the following attributes: 'Product_ID' of type int.
+The class 'Warehouse' has the following attributes: 'Warehouse_branch' of type str.
+The class 'Payment' has the following attributes: 'Payment_ID' of type int; 'Date' of type int.
+The class 'Items' has the following attributes: 'Description' of type str.
+The class 'Account' has the following attributes: 'Address' of type str.
+The class 'Customer' has the following attributes: 'Name' of type str; 'Customer_ID' of type int.
+The class 'Shopping_Cart' has the following attributes: 'Date' of type int.
+'Order' (role 'payment15', cardinality 0..*) is associated with 'Payment' (role 'order14', cardinality 0..*).
+'Account' (role 'customer11', cardinality 0..*) is associated with 'Customer' (role 'account10', cardinality 0..*).
+'Products' (role 'warehouse13', cardinality 0..*) is associated with 'Warehouse' (role 'products12', cardinality 0..*).
+'Account' (role 'customer8', cardinality 0..*) is associated with 'Customer' (role 'account9', cardinality 0..*).
+'Shopping_Cart' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'shopping_Cart4', cardinality 0..*).
+'Payment' (role 'customer7', cardinality 0..*) is associated with 'Customer' (role 'payment6', cardinality 0..*).
+'Shopping_Cart' (role 'items16', cardinality 0..*) is associated with 'Items' (role 'shopping_Cart17', cardinality 0..*).
+'Customer' (role 'products0', cardinality 0..*) is associated with 'Products' (role 'customer1', cardinality 0..*).
+'Order' (role 'account18', cardinality 0..*) is associated with 'Account' (role 'order19', cardinality 0..*).
+'Account' (role 'order21', cardinality 0..*) is associated with 'Order' (role 'account20', cardinality 0..*).
+'Customer' (role 'order2', cardinality 0..*) is associated with 'Order' (role 'customer3', cardinality 0..*).
+'Account' (role 'order22', cardinality 0..*) is associated with 'Order' (role 'account23', cardinality 0..*).

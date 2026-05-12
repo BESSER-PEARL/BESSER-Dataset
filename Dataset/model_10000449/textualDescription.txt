@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'NeuralNetwork' has no attributes.
+The class 'Backpropagation' has the following attributes: 'BiasesWeigths' of type float; 'output' of type float; 'Weigths' of type float; 'target' of type float.
+The class 'UpdateWeight' has the following attributes: 'Weights' of type float; 'BiasesWeigths' of type float.
+The class 'Forward' has the following attributes: 'BiasesWeigths' of type float; 'Input' of type float; 'Weights' of type float.
+'Backpropagation' (role 'updateWeigths2', cardinality 0..*) is associated with 'UpdateWeight' (role 'backpropagation3', cardinality 0..*).
+'Forward' (role 'backpropagation5', cardinality 0..*) is associated with 'Backpropagation' (role 'forward4', cardinality 0..*).
+'Forward' (role 'neuralNetwork1', cardinality 0..*) is associated with 'NeuralNetwork' (role 'forward0', cardinality 0..*).

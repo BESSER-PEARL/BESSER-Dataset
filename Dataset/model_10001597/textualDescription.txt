@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'C' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'A' has the following attributes: 'attA' of type str.
+'A' (role 'b0', cardinality 0..*) is associated with 'B' (role 'a1', cardinality 0..*).
+'B' (role 'c2', cardinality 0..*) is associated with 'C' (role 'b3', cardinality 0..*).

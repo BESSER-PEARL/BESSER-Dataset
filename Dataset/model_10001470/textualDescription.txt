@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'Double' has no attributes.
+The class 'string' has no attributes.
+The class 'Destinacija' has the following attributes: 'Hotel' of type str; 'Drzava' of type str; 'Grad' of type str; 'DestinacijaID' of type int.
+The class 'Date' has no attributes.
+The class 'Osiguranje' has the following attributes: 'OsigurKuca' of type str; 'OsiguranjeID' of type int.
+The class 'Racun' has the following attributes: 'RacunID' of type int; 'Iznos' of type Double; 'Placeno' of type bool.
+The class 'Putnik' has the following attributes: 'BrojTel' of type str; 'PutnikID' of type int; 'Adresa' of type str; 'ImePutnik' of type str; 'PrezimePutnik' of type str; 'Grad' of type str; 'Email' of type str; 'OsiguranjeID' of type int; 'JMBG' of type str.
+The class 'Rezervacija' has the following attributes: 'AgentID' of type int; 'RacunID' of type int; 'DatumKreiranja' of type Date; 'PutnikID' of type int; 'ReyervacijaID' of type int; 'AranzmanID' of type int.
+The class 'Termin' has the following attributes: 'TerminID' of type int; 'DatumPovratka' of type Date; 'DatumPolaska' of type Date.
+The class 'Aranzman' has the following attributes: 'DestinacijaID' of type int; 'BrojMesta' of type int; 'AranzmanID' of type int; 'Popunjeno' of type bool; 'Cena' of type Double; 'TerminID' of type int; 'NazivAranzmana' of type str.
+The class 'Agent' has the following attributes: 'PrezimeAgent' of type str; 'Username' of type str; 'Email' of type str; 'Password' of type str; 'BrojTele' of type str; 'ImeAgent' of type str; 'AgentID' of type int.
+'Rezervacija' (role 'aranzman7', cardinality 0..*) is associated with 'Aranzman' (role 'rezervacija6', cardinality 0..*).
+'Aranzman' (role 'termin11', cardinality 0..*) is associated with 'Termin' (role 'aranzman10', cardinality 0..*).
+'Racun' (role 'rezervacija12', cardinality 0..*) is associated with 'Rezervacija' (role 'racun13', cardinality 0..*).
+'Agent' (role 'rezervacija5', cardinality 0..*) is associated with 'Rezervacija' (role 'agent4', cardinality 0..*).
+'Putnik' (role 'osiguranje1', cardinality 0..*) is associated with 'Osiguranje' (role 'putnik0', cardinality 0..*).
+'Aranzman' (role 'destinacija8', cardinality 0..*) is associated with 'Destinacija' (role 'aranzman9', cardinality 0..*).
+'Putnik' (role 'rezervacija2', cardinality 0..*) is associated with 'Rezervacija' (role 'putnik3', cardinality 0..*).

@@ -1,0 +1,37 @@
+The model has 15 class(es).
+The class 'Comment' has the following attributes: 'comment_id' of type int; 'creation_date' of type str; 'content' of type int; 'id' of type int; 'post_id' of type int; 'user_id' of type int.
+The class 'Another_Login' has the following attributes: 'facebook_id' of type int; 'id' of type int; 'user_id' of type int.
+The class 'N_Disturb_User' has the following attributes: 'disturb_user_id' of type int; 'user_id' of type int; 'id' of type int.
+The class 'Like' has the following attributes: 'date_sent' of type str; 'id' of type int; 'user_id' of type int; 'post_id' of type int.
+The class 'Cryptostream' has the following attributes: 'id' of type int; 'blocked_user_id' of type int; 'user_id' of type int.
+The class 'Class' has no attributes.
+The class 'Message' has the following attributes: 'date_seen' of type str; 'message' of type str; 'sender_id' of type int; 'creation_date' of type str; 'is_deleted' of type bool; 'receiver_id' of type int; 'id' of type int.
+The class 'Post' has the following attributes: 'creation_date' of type str; 'status' of type str; 'total_like' of type int; 'location_id' of type int; 'text' of type str; 'id' of type int; 'date_update' of type str; 'hashtag_id' of type int.
+The class 'Hashtag' has the following attributes: 'id' of type int; 'tag' of type str.
+The class 'Key' has the following attributes: 'Value' of type str; 'Length' of type str; 'coordinat_y' of type int; 'id' of type int.
+The class 'Principal' has the following attributes: 'id' of type int; 'followers_id' of type int; 'status' of type str; 'creation_date' of type str; 'user_id' of type int.
+The class 'Mention' has the following attributes: 'id' of type int; 'user_id' of type int; 'post_id' of type int.
+The class 'Following_Hashtag' has the following attributes: 'user_id' of type int; 'hashtag_id' of type int; 'id' of type int.
+The class 'Reciever' has the following attributes: 'id' of type int; 'is_private' of type bool; 'user_id' of type int; 'is_admin' of type bool; 'surname' of type str; 'mail' of type str; 'password' of type str; 'username' of type str; 'name' of type str; 'phone' of type str; 'is_active' of type bool.
+The class 'Sender' has the following attributes: 'status' of type str; 'user_id' of type int; 'id' of type int; 'creation_date' of type str; 'following_id' of type int.
+'Another_Login' (role 'user35', cardinality 0..*) is associated with 'Reciever' (role 'another_Login34', cardinality 0..*).
+'Key' (role 'post20', cardinality 0..*) is associated with 'Post' (role 'location21', cardinality 0..*).
+'Post' (role 'like13', cardinality 0..*) is associated with 'Like' (role 'post12', cardinality 0..*).
+'Reciever' (role 'comment30', cardinality 0..*) is associated with 'Comment' (role 'user31', cardinality 0..*).
+'Like' (role 'user29', cardinality 0..*) is associated with 'Reciever' (role 'like28', cardinality 0..*).
+'Message' (role 'user25', cardinality 0..*) is associated with 'Reciever' (role 'message24', cardinality 0..*).
+'Reciever' (role 'principal41', cardinality 0..*) is associated with 'Principal' (role 'reciever40', cardinality 0..*).
+'Reciever' (role 'post9', cardinality 0..*) is associated with 'Post' (role 'user8', cardinality 0..*).
+'N_Disturb_User' (role 'user3', cardinality 0..*) is associated with 'Reciever' (role 'n_Disturb_User2', cardinality 0..*).
+'Reciever' (role 'following6', cardinality 0..*) is associated with 'Sender' (role 'user7', cardinality 0..*).
+'Hashtag' (role 'following_Hashtag18', cardinality 0..*) is associated with 'Following_Hashtag' (role 'hashtag19', cardinality 0..*).
+'Post' (role 'comment15', cardinality 0..*) is associated with 'Comment' (role 'post14', cardinality 0..*).
+'Reciever' (role 'mention10', cardinality 0..*) is associated with 'Mention' (role 'user11', cardinality 0..*).
+'Cryptostream' (role 'user1', cardinality 0..*) is associated with 'Reciever' (role 'blocked_User0', cardinality 0..*).
+'Reciever' (role 'following_Hashtag26', cardinality 0..*) is associated with 'Following_Hashtag' (role 'user27', cardinality 0..*).
+'Hashtag' (role 'post16', cardinality 0..*) is associated with 'Post' (role 'hashtag17', cardinality 0..*).
+'Reciever' (role 'key39', cardinality 0..*) is associated with 'Key' (role 'reciever38', cardinality 0..*).
+'Key' (role 'sender36', cardinality 0..*) is associated with 'Sender' (role 'key37', cardinality 0..*).
+'Mention' (role 'post23', cardinality 0..*) is associated with 'Post' (role 'mention22', cardinality 0..*).
+'Reciever' (role 'followers4', cardinality 0..*) is associated with 'Principal' (role 'user5', cardinality 0..*).
+'Comment' (role 'comment33', cardinality 0..*) is associated with 'Comment' (role 'comment32', cardinality 0..*).

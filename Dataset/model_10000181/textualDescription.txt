@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'Vehicle_Interface' has no attributes.
+The class 'Regular_Space' has no attributes.
+The class 'Parking_Space' has the following attributes: 'Occupied' of type bool; 'Space_Type' of type Parking_Space_Type; 'Space_Number' of type int; 'Floor_Number' of type Parking_Level.
+The class 'Motorbike' has no attributes.
+The class 'Parking_Level' has the following attributes: 'Fl_Number' of type int.
+The class 'Boolean_external' has no attributes.
+The class 'Class' has no attributes.
+The class 'Truck' has no attributes.
+The class 'Car' has no attributes.
+The enumeration 'Enumeration2' does not specify any literals.
+The enumeration 'Enumeration' does not specify any literals.
+The enumeration 'VehicleType' does not specify any literals.
+The enumeration 'Parking_Space_Type' does not specify any literals.
+'Boolean_external' (role 'floor1', cardinality 0..*) is associated with 'Parking_Level' (role 'Composed_Of0', cardinality 0..*).
+'Vehicle_Interface' (role 'has3', cardinality 0..*) is associated with 'Parking_Space' (role 'vehicle2', cardinality 0..*).

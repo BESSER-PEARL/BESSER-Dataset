@@ -1,0 +1,13 @@
+The model has 8 class(es).
+The class 'ConcreteOtherAnswers' has the following attributes: 'isClosed' of type bool; 'open' of type date; 'billingAddress' of type str; 'closed' of type date.
+The class 'Choices' has the following attributes: 'creationDate' of type date.
+The class 'Answers' has the following attributes: 'paidDate' of type date; 'total' of type float; 'details' of type str.
+The class 'ConcreteRightAnswers' has the following attributes: 'phone' of type str; 'address' of type str; 'email' of type str.
+The class 'MultipleChoicesAnswers' has the following attributes: 'total' of type float; 'shipTo' of type str; 'number' of type int; 'ordered' of type date; 'status' of type OtherAnswer; 'shipped' of type bool.
+The class 'NumericAnswers' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'MCRightAnswer' has the following attributes: 'price' of type float; 'quantity' of type int.
+The class 'AnswerdBuilder' has the following attributes: 'state' of type NuRightAnswer; 'login' of type str; 'password' of type str.
+The enumeration 'OtherAnswer' does not specify any literals.
+The enumeration 'NuRightAnswer' does not specify any literals.
+'ConcreteOtherAnswers' (role 'customer3', cardinality 0..*) is associated with 'AnswerdBuilder' (role 'account2', cardinality 0..*).
+'ConcreteRightAnswers' (role 'webUser1', cardinality 0..*) is associated with 'AnswerdBuilder' (role 'customer0', cardinality 0..*).

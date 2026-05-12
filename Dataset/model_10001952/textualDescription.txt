@@ -1,0 +1,22 @@
+The model has 12 class(es).
+The class 'MyClass6' has no attributes.
+The class 'MyClass32' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MyClass23' has no attributes.
+The class 'MyClass33' has no attributes.
+The class 'MyClass5' has no attributes.
+The class 'MyClass4' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'MyClass42' has no attributes.
+The class 'MyClass22' has no attributes.
+The class 'MyClass43' has no attributes.
+'MyClass32' (role 'myClass410', cardinality 0..*) is associated with 'MyClass42' (role 'myClass311', cardinality 0..*).
+'MyClass32' (role 'MyClass2_MyClass32_19', cardinality 0..*) is associated with 'MyClass22' (role 'MyClass2_MyClass32_08', cardinality 0..*).
+'MyClass23' (role 'myClass12', cardinality 0..*) is associated with 'MyClass6' (role 'myClass213', cardinality 0..*).
+'MyClass5' (role 'myClass27', cardinality 0..*) is associated with 'MyClass22' (role 'myClass6', cardinality 0..*).
+'MyClass33' (role 'MyClass2_MyClass33_115', cardinality 0..*) is associated with 'MyClass23' (role 'MyClass2_MyClass33_014', cardinality 0..*).
+'MyClass33' (role 'myClass416', cardinality 0..*) is associated with 'MyClass43' (role 'myClass317', cardinality 0..*).
+'MyClass' (role 'myClass21', cardinality 0..*) is associated with 'MyClass2' (role 'myClass0', cardinality 0..*).
+'MyClass3' (role 'myClass44', cardinality 0..*) is associated with 'MyClass4' (role 'myClass35', cardinality 0..*).
+'MyClass2' (role 'MyClass2_MyClass3_02', cardinality 0..*) is associated with 'MyClass3' (role 'MyClass2_MyClass3_13', cardinality 0..*).

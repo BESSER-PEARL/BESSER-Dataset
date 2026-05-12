@@ -1,0 +1,41 @@
+The model has 22 class(es).
+The class 'Update_Stock_UseCase' has no attributes.
+The class 'Order1' has the following attributes: 'orderId' of type int; 'cust' of type Customer_Actor; 'conformationNo' of type int; 'deliveryDate' of type str; 'orderDate' of type str; 'totalAmount' of type float.
+The class 'Login_UseCase' has no attributes.
+The class 'Register_UseCase' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'SpecialOrder' has the following attributes: 'offerCode' of type int; 'orderRange' of type int.
+The class 'Manager1' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'Customer1' has the following attributes: 'customerId' of type int; 'name' of type str; 'address' of type str; 'phone' of type int.
+The class 'Stock1' has the following attributes: 'items__' of type Item.
+The class 'Place_Order_UseCase' has no attributes.
+The class 'Special_order_UseCase' has no attributes.
+The class 'Update_Order_UseCase' has no attributes.
+The class 'Manager_Actor' has no attributes.
+The class 'Manage_Orders_UseCase' has no attributes.
+The class 'Item1' has the following attributes: 'itemCost' of type float; 'itemCount' of type str; 'itemName' of type str; 'itemCode' of type int.
+The class 'Order' has the following attributes: 'Order_id' of type int; 'Cust_id' of type int.
+The class 'Customer' has the following attributes: 'Customer_id' of type int; 'name' of type str.
+The class 'Manage_customer_accounts_UseCase' has no attributes.
+The class 'Stock' has the following attributes: 'items__' of type Item.
+The class 'Manager' has the following attributes: 'name' of type str.
+The class 'Item' has the following attributes: 'item_code' of type int; 'item_name' of type str.
+The class 'Generate_Reports_UseCase' has no attributes.
+'Order1' (role 'customer27', cardinality 0..*) is associated with 'Customer1' (role 'order26', cardinality 0..*).
+'Stock' (role 'item21', cardinality 0..*) is associated with 'Item' (role 'stock20', cardinality 0..*).
+'Order' (role 'item30', cardinality 0..*) is associated with 'Item' (role 'order31', cardinality 0..*).
+'Order1' (role 'manager34', cardinality 0..*) is associated with 'Manager1' (role 'order35', cardinality 0..*).
+'Stock1' (role 'manager32', cardinality 0..*) is associated with 'Manager1' (role 'stock33', cardinality 0..*).
+'Update_Order_UseCase' (role 'manager16', cardinality 0..*) is associated with 'Manager_Actor' (role 'update_Order17', cardinality 0..*).
+'Order' (role 'Customer_Order_11', cardinality 0..*) is associated with 'Customer' (role 'Customer_Order_00', cardinality 0..*).
+'Item1' (role 'stock28', cardinality 0..*) is associated with 'Stock1' (role 'item29', cardinality 0..*).
+'Manager_Actor' (role 'manage_Stock7', cardinality 0..*) is associated with 'Update_Stock_UseCase' (role 'manager6', cardinality 0..*).
+'Manager' (role 'order22', cardinality 0..*) is associated with 'Order' (role 'manager23', cardinality 0..*).
+'Manage_customer_accounts_UseCase' (role 'manager2', cardinality 0..*) is associated with 'Manager_Actor' (role 'manage_customer_accounts3', cardinality 0..*).
+'Generate_Reports_UseCase' (role 'manager12', cardinality 0..*) is associated with 'Manager_Actor' (role 'generate_Reports13', cardinality 0..*).
+'Customer_Actor' (role 'login18', cardinality 0..*) is associated with 'Register_UseCase' (role 'customer19', cardinality 0..*).
+'Manager_Actor' (role 'manage_Orders11', cardinality 0..*) is associated with 'Manage_Orders_UseCase' (role 'manager10', cardinality 0..*).
+'Login_UseCase' (role 'customer4', cardinality 0..*) is associated with 'Customer_Actor' (role 'register5', cardinality 0..*).
+'Manager' (role 'stock24', cardinality 0..*) is associated with 'Stock' (role 'manager25', cardinality 0..*).
+'Place_Order_UseCase' (role 'customer9', cardinality 0..*) is associated with 'Customer_Actor' (role 'place_Order8', cardinality 0..*).
+'Customer_Actor' (role 'update_Order15', cardinality 0..*) is associated with 'Update_Order_UseCase' (role 'customer14', cardinality 0..*).

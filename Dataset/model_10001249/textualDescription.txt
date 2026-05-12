@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'Smart_mirror' has the following attributes: 'PhoneConnect' of type bool; 'Status' of type bool; 'Display_newsfeed' of type Newsfeed; 'Update' of type float; 'security' of type Home_Security_System.
+The class 'Newsfeed' has the following attributes: 'Calendar' of type str; 'News' of type str; 'Phone' of type str; 'Email' of type str; 'Weather' of type str.
+The class 'Sensor' has the following attributes: 'SensorID' of type int; 'SensorName' of type int.
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+The class 'Door_Sensor' has the following attributes: 'DoorID' of type int.
+The class 'Home_Security_System' has the following attributes: 'UserID' of type int.
+The class 'Light' has the following attributes: 'LightID' of type str.
+The class 'FireAlarm_Sensor' has the following attributes: 'SmokeAlarm' of type bool.
+The class 'HomeAutomation' has the following attributes: 'Lights' of type str; 'Apllicances' of type str.
+The class 'Voice_control' has the following attributes: 'MicID' of type str.
+The class 'Motion_Sensor' has no attributes.
+The class 'Camera' has the following attributes: 'CameraID' of type int.
+'Smart_mirror' (role 'sensor9', cardinality 0..*) is associated with 'Sensor' (role 'system8', cardinality 0..*).
+'Home_Security_System' (role 'alert6', cardinality 0..*) is associated with 'Alert' (role 'home_Security_System7', cardinality 0..*).
+'Smart_mirror' (role 'voice_control214', cardinality 0..*) is associated with 'Newsfeed' (role 'smart_mirror15', cardinality 0..*).
+'Smart_mirror' (role 'home_Security_System13', cardinality 0..*) is associated with 'Home_Security_System' (role 'system12', cardinality 0..*).
+'Voice_control' (role 'system4', cardinality 0..*) is associated with 'Smart_mirror' (role 'microPhone5', cardinality 0..*).
+'Camera' (role 'door3', cardinality 0..*) is associated with 'Door_Sensor' (role 'camera2', cardinality 0..*).
+'Door_Sensor' (role 'sensor1', cardinality 0..*) is associated with 'Sensor' (role 'door0', cardinality 0..*).
+'HomeAutomation' (role 'system10', cardinality 0..*) is associated with 'Smart_mirror' (role 'homeTheatre11', cardinality 0..*).

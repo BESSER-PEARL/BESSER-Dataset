@@ -1,0 +1,104 @@
+
+
+
+
+
+import java.time.LocalDate;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Account  {
+
+    private LocalDate open;
+    private LocalDate closed;
+    private boolean state;
+    private String billingAddress;
+
+
+
+
+
+    private ShoppingCart shoppingcart;
+
+
+
+
+    private Customer customer;
+
+
+
+
+    private List<Payment> payments;
+
+
+    public Account(
+        LocalDate open,        LocalDate closed,        boolean state,        String billingAddress    ) {
+        this.open = open;
+        this.closed = closed;
+        this.state = state;
+        this.billingAddress = billingAddress;
+        this.payments = new ArrayList<>();
+    }
+
+    public Account(
+        LocalDate open,        LocalDate closed,        boolean state,        String billingAddress        ArrayList<Payment> payments    ) {
+        this.open = open;
+        this.closed = closed;
+        this.state = state;
+        this.billingAddress = billingAddress;
+        this.payments = payments;
+    }
+
+    public LocalDate getOpen() {
+        return open;
+    }
+
+    public void setOpen(LocalDate open) {
+        this.open = open;
+    }
+    public LocalDate getClosed() {
+        return closed;
+    }
+
+    public void setClosed(LocalDate closed) {
+        this.closed = closed;
+    }
+    public boolean getState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+    public String getBillingaddress() {
+        return billingAddress;
+    }
+
+    public void setBillingaddress(String billingAddress) {
+        this.billingAddress = billingAddress;
+    }
+
+    public ShoppingCart getShoppingcart() {
+        return shoppingcart;
+    }
+
+    public void setShoppingcart(ShoppingCart shoppingcart) {
+        this.shoppingcart = shoppingcart;
+    }
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+    public List<Payment> getPayments() {
+        return payments;
+    }
+
+    public void addPayment(Payment payment) {
+        this.payments.add(payment);
+    }
+
+}

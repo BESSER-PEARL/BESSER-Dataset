@@ -1,0 +1,11 @@
+The model has 7 class(es).
+The class 'Product' has the following attributes: 'name' of type str; 'description' of type str; 'id' of type int.
+The class 'Payment' has the following attributes: 'comments' of type str; 'total' of type int; 'id' of type int.
+The class 'Account' has the following attributes: 'openDate' of type date; 'id' of type int; 'billingAddress' of type str.
+The class 'ShoppingCart' has the following attributes: 'creationDate' of type date; 'id' of type int.
+The class 'Order' has the following attributes: 'status' of type OrderStatus; 'id' of type int; 'shippingAddress' of type str; 'finalTotal' of type float.
+The class 'Item' has the following attributes: 'price' of type float; 'quantity' of type int; 'id' of type int.
+The class 'Customer' has the following attributes: 'login' of type str; 'emailAddress' of type str; 'lastname' of type str; 'firstname' of type str; 'id' of type int; 'password' of type str; 'isBan' of type bool.
+The enumeration 'OrderStatus' does not specify any literals.
+'Item' (role 'product3', cardinality 0..*) is associated with 'Product' (role 'item2', cardinality 0..*).
+'Customer' (role 'cart1', cardinality 0..*) is associated with 'ShoppingCart' (role 'c0', cardinality 0..*).

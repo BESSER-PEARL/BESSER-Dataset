@@ -1,0 +1,23 @@
+The model has 15 class(es).
+The class 'Banker' has no attributes.
+The class 'Dealer' has the following attributes: 'hand' of type BlackJackHandDeck.
+The class 'JokerCard' has the following attributes: 'isRed' of type bool.
+The class 'TEGambler' has no attributes.
+The class 'Player' has no attributes.
+The class 'TEHandDeck' has the following attributes: 'TE_MAX_SCORE' of type int.
+The class 'StandCard' has no attributes.
+The class 'Gambler' has the following attributes: 'bet' of type int; 'hands' of type str; 'hasSplit' of type bool.
+The class 'HandDeck' has the following attributes: 'owner' of type GameRole.
+The class 'Deck' has no attributes.
+The class 'GameRole' has the following attributes: 'player' of type Player.
+The class 'BlackJackHandDeck' has the following attributes: 'MAX_SCORE' of type int; 'stand' of type bool; 'wager' of type int.
+The class 'StandardCard' has the following attributes: 'suit' of type str; 'cardName' of type CardName.
+The class 'Player1' has the following attributes: 'pocket' of type int; 'name' of type str.
+The class 'PlayingCard' has the following attributes: 'faceUp' of type bool.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'CardName1' does not specify any literals.
+The enumeration 'CardName' does not specify any literals.
+'Player1' (role 'gameRole1', cardinality 0..*) is associated with 'GameRole' (role 'player20', cardinality 0..*).
+'PlayingCard' (role 'deck7', cardinality 0..*) is associated with 'Deck' (role 'playingCard6', cardinality 0..*).
+'BlackJackHandDeck' (role 'gambler5', cardinality 0..*) is associated with 'Gambler' (role 'handDeck4', cardinality 0..*).
+'BlackJackHandDeck' (role 'dealer3', cardinality 0..*) is associated with 'Dealer' (role 'handDeck2', cardinality 0..*).

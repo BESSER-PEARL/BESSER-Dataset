@@ -1,0 +1,9 @@
+The model has 8 class(es).
+The class 'mundo_Tinamues' has the following attributes: 'velocidadTierra' of type str.
+The class 'mundo_Neoaves' has the following attributes: 'longitudPatas' of type str; 'numeroDedosPatas' of type str.
+The class 'mundo_Ave' has the following attributes: 'factorPeso' of type str; 'altura' of type str; 'color' of type str.
+The class 'mundo_Paleognato' has the following attributes: 'numeroHuesosPaladar' of type str.
+The class 'mundo_Galloanserae' has the following attributes: 'tipo' of type str; 'POLIGAMA' of type str; 'MONOGAMA' of type str; 'CAZA' of type str; 'reproduccion' of type str; 'DOMESTICA' of type str.
+The class 'mundo_Neognato' has the following attributes: 'longitudTercerDedo' of type str; 'numeroHuesosPata' of type str.
+The class 'mundo_Neornithe' has the following attributes: 'BAJO' of type str; 'MEDIO' of type str; 'rangoMetabolico' of type str; 'densidadOsea' of type str; 'ALTO' of type str; 'longitudCola' of type str.
+The class 'mundo_Ratite' has the following attributes: 'quilla' of type bool.

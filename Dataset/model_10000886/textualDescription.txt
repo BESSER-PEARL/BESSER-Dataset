@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'Customer' has the following attributes: 'customerID' of type int; 'phoneNumber' of type int; 'customerName' of type str.
+The class 'Toppings' has the following attributes: 'isVegetarian' of type bool; 'name' of type str.
+The class 'Sides' has the following attributes: 'isVegetarian' of type bool; 'name' of type str; 'price' of type float.
+The class 'GPSLocation' has the following attributes: 'GPS' of type str.
+The class 'Order' has the following attributes: 'creditCardDetails' of type str; 'orderID' of type int; 'orderNotes' of type str; 'date' of type str; 'time' of type int.
+The class 'MealDeal' has the following attributes: 'price' of type float; 'description' of type str; 'isVegetarian' of type bool; 'name' of type str.
+The class 'Base' has the following attributes: 'isVegetarian' of type bool; 'name' of type str.
+The class 'Pizza' has the following attributes: 'isVegetarian' of type bool; 'price' of type float.
+The class 'Address' has the following attributes: 'City' of type str; 'Line1' of type str; 'Line_2' of type str; 'County' of type str.
+'Customer' (role 'order9', cardinality 0..*) is associated with 'Order' (role 'customer8', cardinality 0..*).
+'Order' (role 'address20', cardinality 0..*) is associated with 'Address' (role 'order21', cardinality 0..*).
+'Order' (role 'mealDeal18', cardinality 0..*) is associated with 'MealDeal' (role 'order19', cardinality 0..*).
+'Order' (role 'pizza2', cardinality 0..*) is associated with 'Pizza' (role 'order3', cardinality 0..*).
+'Pizza' (role 'toppings6', cardinality 0..*) is associated with 'Toppings' (role 'pizza7', cardinality 0..*).
+'MealDeal' (role 'sides14', cardinality 0..*) is associated with 'Sides' (role 'mealDeal15', cardinality 0..*).
+'Pizza' (role 'base0', cardinality 0..*) is associated with 'Base' (role 'pizza1', cardinality 0..*).
+'Order' (role 'sides10', cardinality 0..*) is associated with 'Sides' (role 'order11', cardinality 0..*).
+'Address' (role 'customer13', cardinality 0..*) is associated with 'Customer' (role 'address12', cardinality 0..*).
+'MealDeal' (role 'pizza16', cardinality 0..*) is associated with 'Pizza' (role 'mealDeal17', cardinality 0..*).
+'GPSLocation' (role 'order5', cardinality 0..*) is associated with 'Order' (role 'GPS_Location4', cardinality 0..*).

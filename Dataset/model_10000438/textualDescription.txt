@@ -1,0 +1,56 @@
+The model has 36 class(es).
+The class 'Client_3_UseCase' has no attributes.
+The class 'customer_Actor' has no attributes.
+The class 'Company_Actor' has no attributes.
+The class 'express_UseCase' has no attributes.
+The class 'CreditCard' has the following attributes: 'CCNumber' of type int.
+The class 'Client_4_UseCase' has no attributes.
+The class 'Client_2_UseCase' has no attributes.
+The class 'Shipment_server_Component' has no attributes.
+The class 'Credit_card_UseCase' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Cancel_UseCase' has no attributes.
+The class 'Costomer' has the following attributes: 'Name' of type str; 'mobileNumber' of type int; 'ID' of type int; 'Address' of type str; 'Email' of type str.
+The class 'Normal_UseCase' has no attributes.
+The class 'Shipmment_UseCase' has no attributes.
+The class 'Set_period_of_ship_UseCase' has no attributes.
+The class 'Pay_UseCase' has no attributes.
+The class 'set_deducted_percent_UseCase' has no attributes.
+The class 'Normal' has no attributes.
+The class 'Item' has the following attributes: 'Quantity' of type int; 'ItemID' of type int; 'price' of type int.
+The class 'Actor_Actor' has no attributes.
+The class 'mysubject_Component' has no attributes.
+The class 'Cash_UseCase' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'Shipping_UseCase' has no attributes.
+The class 'Point_system_UseCase' has no attributes.
+The class 'Order' has the following attributes: 'orderSirealNumber' of type int.
+The class 'Client_1_UseCase' has no attributes.
+The class 'Get_dedcuted_percent_UseCase' has no attributes.
+The class 'Shipment' has the following attributes: 'SippingType' of type str; 'Forbidden_to_ship' of type str; 'pireodofShip' of type int; 'Date' of type date.
+The class 'Cahs' has no attributes.
+The class 'Se_price_UseCase' has no attributes.
+The class 'Payment' has the following attributes: 'Amuant' of type int.
+The class 'Order_server_Component' has no attributes.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'Internet_____________________network_UseCase' has no attributes.
+The class 'Express' has no attributes.
+'Point_system_UseCase' (role 'customer27', cardinality 0..*) is associated with 'customer_Actor' (role 'point_system26', cardinality 0..*).
+'Shipment_server_Component' (role 'internet_network18', cardinality 0..*) is associated with 'Internet_____________________network_UseCase' (role 'shipment_server19', cardinality 0..*).
+'Shipment' (role 'has_shippment3', cardinality 0..*) is associated with 'Costomer' (role 'Costomer_Shipment_02', cardinality 0..*).
+'Order_server_Component' (role 'internet_network16', cardinality 0..*) is associated with 'Internet_____________________network_UseCase' (role 'order_server17', cardinality 0..*).
+'Internet_____________________network_UseCase' (role 'client_415', cardinality 0..*) is associated with 'Client_4_UseCase' (role 'internet_network14', cardinality 0..*).
+'Order' (role 'Item_Order_15', cardinality 0..*) is associated with 'Item' (role 'Item_Order_04', cardinality 0..*).
+'Cancel_UseCase' (role 'customer31', cardinality 0..*) is associated with 'customer_Actor' (role 'cancel30', cardinality 0..*).
+'Client_2_UseCase' (role 'internet_network10', cardinality 0..*) is associated with 'Internet_____________________network_UseCase' (role 'client_211', cardinality 0..*).
+'Se_price_UseCase' (role 'company23', cardinality 0..*) is associated with 'Company_Actor' (role 'se_price22', cardinality 0..*).
+'Costomer' (role 'ship_to1', cardinality 0..*) is associated with 'Order' (role 'Order_Costomer_00', cardinality 0..*).
+'Get_dedcuted_percent_UseCase' (role 'customer33', cardinality 0..*) is associated with 'customer_Actor' (role 'get_dedcuted_percent32', cardinality 0..*).
+'Internet_____________________network_UseCase' (role 'client_313', cardinality 0..*) is associated with 'Client_3_UseCase' (role 'internet_network12', cardinality 0..*).
+'Client_1_UseCase' (role 'internet_network8', cardinality 0..*) is associated with 'Internet_____________________network_UseCase' (role 'client_19', cardinality 0..*).
+'Order' (role 'Order_Payment_06', cardinality 0..*) is associated with 'Payment' (role 'Order_Payment_17', cardinality 0..*).
+'Pay_UseCase' (role 'customer29', cardinality 0..*) is associated with 'customer_Actor' (role 'pay28', cardinality 0..*).
+'Shipping_UseCase' (role 'customer37', cardinality 0..*) is associated with 'customer_Actor' (role 'shipping36', cardinality 0..*).
+'set_deducted_percent_UseCase' (role 'company25', cardinality 0..*) is associated with 'Company_Actor' (role 'set_deducted_percent24', cardinality 0..*).
+'Company_Actor' (role 'shipping34', cardinality 0..*) is associated with 'Shipping_UseCase' (role 'company35', cardinality 0..*).
+'Company_Actor' (role 'set_period_of_ship20', cardinality 0..*) is associated with 'Set_period_of_ship_UseCase' (role 'company21', cardinality 0..*).

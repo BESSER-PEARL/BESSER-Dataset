@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'LineItem' has the following attributes: 'quantity' of type int; 'price' of type float.
+The class 'Produse' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'WebUser' has the following attributes: 'login' of type str; 'state' of type StatusulUtilizatorilor; 'password' of type str.
+The class 'Ordin' has the following attributes: 'status' of type Starea_comenzii; 'total' of type float; 'shipTo' of type str; 'number' of type int; 'shipped' of type bool; 'ordered' of type date.
+The class 'Plata' has the following attributes: 'total' of type float; 'details' of type str; 'paidDate' of type date.
+The class 'client' has the following attributes: 'phone' of type str; 'address' of type str; 'email' of type str.
+The class 'Cosul_de_cumparaturi' has the following attributes: 'creationDate' of type date.
+The class 'cont' has the following attributes: 'open' of type date; 'billingAddress' of type str; 'isClosed' of type bool; 'closed' of type date.
+The enumeration 'Starea_comenzii' does not specify any literals.
+The enumeration 'StatusulUtilizatorilor' does not specify any literals.
+'Cosul_de_cumparaturi' (role 'cont9', cardinality 0..*) is associated with 'cont' (role 'cart8', cardinality 0..*).
+'Cosul_de_cumparaturi' (role 'articole10', cardinality 0..*) is associated with 'LineItem' (role 'sc11', cardinality 0..*).
+'cont' (role 'client7', cardinality 0..*) is associated with 'client' (role 'cont6', cardinality 0..*).
+'LineItem' (role 'order15', cardinality 0..*) is associated with 'Ordin' (role 'articole14', cardinality 0..*).
+'client' (role 'webUser5', cardinality 0..*) is associated with 'WebUser' (role 'client4', cardinality 0..*).
+'Cosul_de_cumparaturi' (role 'webUser3', cardinality 0..*) is associated with 'WebUser' (role 'Cosul_de_cumparaturi2', cardinality 0..*).
+'Produse' (role 'elemente_de_linie12', cardinality 0..*) is associated with 'LineItem' (role 'product13', cardinality 0..*).
+'Ordin' (role 'payment19', cardinality 0..*) is associated with 'Plata' (role 'ordin18', cardinality 0..*).
+'cont' (role 'ordin16', cardinality 0..*) is associated with 'Ordin' (role 'cont17', cardinality 0..*).
+'Plata' (role 'acc1', cardinality 0..*) is associated with 'cont' (role 'p0', cardinality 0..*).

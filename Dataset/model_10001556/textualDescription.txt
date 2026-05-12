@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'Waiter' has the following attributes: 'Personal_Information' of type str; 'Address' of type str; 'ID' of type str; 'Name' of type str; 'Contact' of type int.
+The class 'Manager' has the following attributes: 'Name' of type str; 'Personalnformation' of type str; 'Address' of type str; 'ID' of type int; 'Contact' of type int.
+The class 'Customer' has the following attributes: 'date' of type str; 'Dishes_Ordered' of type str; 'Name' of type str; 'Contact_Number' of type int; 'Reservation' of type bool; 'reservedTables' of type str.
+The class 'Chef' has the following attributes: 'ID' of type int; 'PersonalInformation' of type str; 'Domain' of type str; 'Address' of type str; 'Name' of type str; 'Contact' of type int.
+The class 'Class' has no attributes.
+'Waiter' (role 'customer4', cardinality 0..*) is associated with 'Customer' (role 'waiter5', cardinality 0..*).
+'Manager' (role 'waiter1', cardinality 0..*) is associated with 'Waiter' (role 'manager0', cardinality 0..*).
+'Waiter' (role 'chef2', cardinality 0..*) is associated with 'Chef' (role 'waiter3', cardinality 0..*).
+'Customer' (role 'manager6', cardinality 0..*) is associated with 'Manager' (role 'customer7', cardinality 0..*).

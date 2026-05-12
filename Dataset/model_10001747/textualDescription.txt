@@ -1,0 +1,6 @@
+The model has 4 class(es).
+The class 'Cache' has the following attributes: 'chunck' of type str.
+The class 'RAM' has no attributes.
+The class 'Memory_Interface' has no attributes.
+The class 'Processor' has no attributes.
+'Processor' (role 'memory0', cardinality 0..*) is associated with 'Memory_Interface' (role 'processor1', cardinality 0..*).

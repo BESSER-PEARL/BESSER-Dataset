@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'Member' has the following attributes: 'lname' of type str; 'dob' of type str; 'member_id' of type int; 'cont_no' of type int; 'gender' of type str; 'member_pwd' of type str; 'address' of type str; 'fname' of type str.
+The class 'Class' has no attributes.
+The class 'lecturer' has the following attributes: 'module' of type str.
+The class 'Books' has the following attributes: 'ISBN_no' of type str; 'book_qty' of type int; 'publisher' of type str; 'author_name' of type str; 'book_id' of type int; 'title' of type str.
+The class 'Fine' has the following attributes: 'fine_amount' of type int; 'book_id' of type int; 'member_id' of type int; 'borrowed_date' of type str; 'returned_date' of type str.
+The class 'admin' has the following attributes: 'Experience' of type str.
+The class 'Staff' has the following attributes: 'Staff_ID' of type int; 'position' of type str; 'username' of type str; 'fname' of type str; 'email' of type str; 'lname' of type str; 'password' of type str; 'address' of type str; 'gender' of type str; 'contact' of type int.
+The class 'Librarian' has the following attributes: 'cont_no' of type int; 'dob' of type str; 'fname' of type str; 'address' of type str; 'member_id' of type int; 'member_pwd' of type str; 'lname' of type str; 'gender' of type str.
+The class 'Reserved' has the following attributes: 'reserved_date' of type str.
+The class 'Borrowed' has the following attributes: 'borrowed_date' of type str; 'returned_date' of type str.
+'Fine' (role 'librarian11', cardinality 0..*) is associated with 'Librarian' (role 'fine10', cardinality 0..*).
+'Reserved' (role 'member6', cardinality 0..*) is associated with 'Member' (role 'reserved7', cardinality 0..*).
+'Borrowed' (role 'books1', cardinality 0..*) is associated with 'Books' (role 'borrowed0', cardinality 0..*).
+'Staff' (role 'registar17', cardinality 0..*) is associated with 'admin' (role 'staff16', cardinality 0..*).
+'Librarian' (role 'books8', cardinality 0..*) is associated with 'Books' (role 'librarian9', cardinality 0..*).
+'Member' (role 'borrowed3', cardinality 0..*) is associated with 'Borrowed' (role 'member2', cardinality 0..*).
+'Staff' (role 'professor18', cardinality 0..*) is associated with 'lecturer' (role 'staff19', cardinality 0..*).
+'Member' (role 'librarian14', cardinality 0..*) is associated with 'Librarian' (role 'member15', cardinality 0..*).
+'Reserved' (role 'books5', cardinality 0..*) is associated with 'Books' (role 'reserved4', cardinality 0..*).
+'Member' (role 'fine13', cardinality 0..*) is associated with 'Fine' (role 'member12', cardinality 0..*).

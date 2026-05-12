@@ -1,0 +1,17 @@
+The model has 11 class(es).
+The class 'account_SavingsAccount' has the following attributes: 'interestRate' of type float.
+The class 'transaction_DepositTransaction' has no attributes.
+The class 'transaction_WithdrawTransaction' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'transaction_TransferTransaction' has the following attributes: 'targetAccount' of type Account; 'sourceAccount' of type Account.
+The class 'transaction_Transaction' has the following attributes: 'amount' of type float; 'id' of type int; 'transactionTime' of type date; 'type' of type transaction_TransactionType.
+The class 'Account' has the following attributes: 'accountNo' of type str; 'balance' of type float; 'type' of type account_AccountType.
+The class 'account_CheckingAccount' has no attributes.
+The class 'mypackage_Customer' has the following attributes: 'address' of type str; 'lastname' of type str; 'name' of type str; 'phoneNumber' of type str; 'emailAddress' of type str; 'dateOfBirth' of type date.
+The class 'mypackage_Login' has the following attributes: 'username' of type str; 'securityQuestion' of type str; 'password' of type str; 'lastLoginTime' of type date; 'securityAnswer' of type str.
+The class 'account_CertificatesOfDepositAccount' has the following attributes: 'timePeriod' of type int; 'interestRate' of type float.
+The enumeration 'transaction_TransactionType' does not specify any literals.
+The enumeration 'account_AccountType' does not specify any literals.
+'mypackage_Login' (role 'customer5', cardinality 0..*) is associated with 'mypackage_Customer' (role 'login4', cardinality 0..*).
+'mypackage_Customer' (role 'account1', cardinality 0..*) is associated with 'Account' (role 'customer0', cardinality 0..*).
+'Account' (role 'transactions2', cardinality 0..*) is associated with 'transaction_Transaction' (role 'account3', cardinality 0..*).

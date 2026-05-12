@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'Premium_class' has no attributes.
+The class 'System' has no attributes.
+The class 'Room' has no attributes.
+The class 'Business_class' has no attributes.
+The class 'Normal_class' has no attributes.
+The class 'Hotel' has no attributes.
+The class 'Customer' has no attributes.
+'Hotel' (role 'Have0', cardinality 0..*) is associated with 'Room' (role 'Hotel_Room_11', cardinality 0..*).
+'Room' (role 'Booked_By7', cardinality 0..*) is associated with 'Customer' (role 'Customer_Room2_06', cardinality 0..*).
+'System' (role 'Registered8', cardinality 0..*) is associated with 'Customer' (role 'System_Customer_19', cardinality 0..*).
+'Hotel' (role 'Have11', cardinality 0..*) is associated with 'System' (role 'System_Hotel_010', cardinality 0..*).
+'Customer' (role 'Can_Book4', cardinality 0..*) is associated with 'Room' (role 'Customer_Room_15', cardinality 0..*).
+'Customer' (role 'Give_Discount2', cardinality 0..*) is associated with 'Hotel' (role 'Service_Hotel_13', cardinality 0..*).

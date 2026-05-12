@@ -1,0 +1,110 @@
+The model has 88 class(es).
+The class 'be_jebouquine_entities_Client' has the following attributes: 'telephoneClient' of type str; 'emailClient' of type str; 'motDePasseClient' of type str; 'adresseClient' of type str; 'etatLogin' of type str; 'nomClient' of type str; 'idClient' of type int.
+The class 'be_jebouquine_bo_ILangueBORemote_Interface' has no attributes.
+The class 'be_jebouquine_bo_IEtatCommandeRemote_Interface' has no attributes.
+The class 'be_jebouquine_dao_CategorieDAO' has no attributes.
+The class 'be_jebouquine_dao_LangueDAO' has no attributes.
+The class 'be_jebouquine_bo_IAdministrateurBORemote_Interface' has no attributes.
+The class 'be_jebouquine_bo_IAuteurBORemote_Interface' has no attributes.
+The class 'be_jebouquine_dao_LivreDAO' has no attributes.
+The class 'Collection_Client_' has no attributes.
+The class 'be_jebouquine_bo_ICommentaireBORemote_Interface' has no attributes.
+The class 'Collection_Livre_' has no attributes.
+The class 'navigation_Parcourir_les_livres_UseCase' has no attributes.
+The class 'Administrateur_Actor' has no attributes.
+The class 'be_jebouquine_bo_ICategorieBORemote_Interface' has no attributes.
+The class 'panier_Supprimer_du_panier_UseCase' has no attributes.
+The class 'be_jebouquine_bo_IPanierBORemote_Interface' has no attributes.
+The class 'be_jebouquine_dao_AuteurDAO' has no attributes.
+The class 'information_Consulter_l_aide_UseCase' has no attributes.
+The class 'compte_Ajouter_commentaire_UseCase' has no attributes.
+The class 'be_jebouquine_bo_AuteurBO' has no attributes.
+The class 'compte_Gerer_le_compte_UseCase' has no attributes.
+The class 'be_jebouquine_bo_CommentaireBO' has no attributes.
+The class 'be_jebouquine_dao_EditeurDAO' has no attributes.
+The class 'be_jebouquine_dao_LivraisonInfoDAO' has no attributes.
+The class 'be_jebouquine_bo_ClientBO' has no attributes.
+The class 'be_jebouquine_bo_CategorieBO' has no attributes.
+The class 'panier_Passer_une_commande_UseCase' has no attributes.
+The class 'be_jebouquine_entities_Editeur' has the following attributes: 'adresseEditeur' of type str; 'idEditeur' of type int; 'nomEditeur' of type str.
+The class 'be_jebouquine_bo_LivreBO' has the following attributes: 'idPanier' of type int.
+The class 'Collection_Commentaire_' has no attributes.
+The class 'backoffice_S_authentifier_UseCase' has no attributes.
+The class 'be_jebouquine_bo_LangueBO' has no attributes.
+The class 'be_jebouquine_bo_IClientBORemote_Interface' has no attributes.
+The class 'navigation_Recherche_par_critere_UseCase' has no attributes.
+The class 'commande_Suivre_commande_UseCase' has no attributes.
+The class 'commande_Payer_commande_UseCase' has no attributes.
+The class 'be_jebouquine_bo_ILivreBORemote_Interface' has no attributes.
+The class 'be_jebouquine_bo_LigneCommandeBO' has no attributes.
+The class 'navigation_Afficher_la_liste_des_livres_UseCase' has no attributes.
+The class 'be_jebouquine_entities_LigneCommande' has the following attributes: 'idLivre' of type int; 'idLigneCommande' of type int; 'idCommande' of type int.
+The class 'be_jebouquine_bo_AdministrateurBO' has no attributes.
+The class 'Collection_Commande_' has no attributes.
+The class 'navigation_Rechercher_un_livre_UseCase' has no attributes.
+The class 'be_jebouquine_entities_Administrateur' has the following attributes: 'idAdministrateur' of type int; 'emailAdministrateur' of type str; 'nomAdministrateur' of type str; 'prenomAdministrateur' of type str; 'motDePasseAdministrateur' of type str.
+The class 'panier_Gerer_panier_UseCase' has no attributes.
+The class 'backoffice_Gerer_les_categories_UseCase' has no attributes.
+The class 'be_jebouquine_bo_EditeurBO' has no attributes.
+The class 'backoffice_Gerer_les_produits_UseCase' has no attributes.
+The class 'be_jebouquine_dao_AdministrateurDAO' has no attributes.
+The class 'Collection_Object_' has no attributes.
+The class 'be_jebouquine_entities_Auteur' has the following attributes: 'idAuteur' of type int; 'nomAuteur' of type str.
+The class 'be_jebouquine_bo_EtatCommandeBO' has no attributes.
+The class 'panier_Ajouter_au_panier_UseCase' has no attributes.
+The class 'be_jebouquine_bo_LigneCommandeBORemote_Interface' has no attributes.
+The class 'be_jebouquine_entities_LivraisonType' has the following attributes: 'idLivraison' of type int; 'prixLivraison' of type float; 'typeLivraison' of type str.
+The class 'Client_Actor' has no attributes.
+The class 'panier_Modifier_quantite_livre_UseCase' has no attributes.
+The class 'be_jebouquine_entities_Livre' has the following attributes: 'idLivre' of type int; 'idCategorie' of type int; 'titre' of type str; 'idEditeur' of type int; 'isbn' of type str; 'dateApparition' of type date; 'idLangue' of type int; 'prix' of type float; 'photoLivre' of type str; 'quantiteEnStock' of type int; 'idAuteur' of type int.
+The class 'be_jebouquine_dao_CommentaireDAO' has no attributes.
+The class 'be_jebouquine_entities_Commentaire' has the following attributes: 'idCommentaire' of type int; 'idLivre' of type int; 'idClient' of type int; 'textCommentaire' of type str; 'dateCommentaire' of type date.
+The class 'Systeme_Paiement_Actor' has no attributes.
+The class 'Client' has no attributes.
+The class 'be_jebouquine_entities_EtatCommande' has the following attributes: 'libelleEtat' of type str; 'idEtat' of type int.
+The class 'be_jebouquine_bo_CommandeBO' has no attributes.
+The class 'be_jebouquine_bo_LivraisonTypeBO' has no attributes.
+The class 'be_jebouquine_entities_Categorie' has the following attributes: 'ordreCategorie' of type str; 'idCategorie' of type int.
+The class 'be_jebouquine_bo_ICommandeBORemote_Interface' has no attributes.
+The class 'Object' has no attributes.
+The class 'System_Component' has no attributes.
+The class 'compte_S_authentifier_UseCase' has no attributes.
+The class 'be_jebouquine_bo_IEditeurBORemote_Interface' has no attributes.
+The class 'backoffice_Gerer_les_editeurs_UseCase' has no attributes.
+The class 'Visiteur_Actor' has no attributes.
+The class 'be_jebouquine_entities_Langue' has the following attributes: 'libelleLangue' of type str; 'idLangue' of type int.
+The class 'backoffice_Valider_les_commentaires_UseCase' has no attributes.
+The class 'be_jebouquine_bo_LivraisonTypeBORemote_Interface' has no attributes.
+The class 'be_jebouquine_entities_Commande' has the following attributes: 'idClient' of type int; 'idcommande' of type int; 'idEtat' of type int; 'dateCommande' of type date; 'idLivraisonInfo' of type int.
+The class 'be_jebouquine_dao_ClientDAO' has no attributes.
+The class 'compte_Gerer_Commande_UseCase' has no attributes.
+The class 'be_jebouquine_dao_AbstractFactory' has no attributes.
+The class 'Collection_LigneCommande_' has no attributes.
+The class 'commande_Annuler_commande_UseCase' has no attributes.
+The class 'be_jebouquine_dao_EtatCommandeDAO' has no attributes.
+The class 'backoffice_Gerer_les_auteurs_UseCase' has no attributes.
+The class 'be_jebouquine_dao_LigneCommandeDAO' has no attributes.
+The class 'commande_Creer_commande_UseCase' has no attributes.
+The class 'be_jebouquine_bo_PanierBO' has the following attributes: 'listLivres' of type Collection_Livre_; 'quantity' of type int; 'date' of type date; 'idPanier' of type int.
+The class 'be_jebouquine_dao_CommandeDAO' has no attributes.
+'be_jebouquine_entities_Commentaire' (role 'client23', cardinality 0..*) is associated with 'be_jebouquine_entities_Client' (role 'commentaire22', cardinality 0..*).
+'navigation_Parcourir_les_livres_UseCase' (role 'afficher_la_liste_des_livres38', cardinality 0..*) is associated with 'navigation_Afficher_la_liste_des_livres_UseCase' (role 'parcourir_les_livres39', cardinality 0..*).
+'Visiteur_Actor' (role 'consulter_l_aide10', cardinality 0..*) is associated with 'information_Consulter_l_aide_UseCase' (role 'visiteur11', cardinality 0..*).
+'be_jebouquine_entities_Livre' (role 'editeur16', cardinality 0..*) is associated with 'be_jebouquine_entities_Editeur' (role 'livre17', cardinality 0..*).
+'be_jebouquine_entities_Livre' (role 'ligneCommande15', cardinality 0..*) is associated with 'be_jebouquine_entities_LigneCommande' (role 'livre14', cardinality 0..*).
+'be_jebouquine_entities_Auteur' (role 'livre19', cardinality 0..*) is associated with 'be_jebouquine_entities_Livre' (role 'auteur18', cardinality 0..*).
+'navigation_Rechercher_un_livre_UseCase' (role 'afficher_la_liste_des_livres40', cardinality 0..*) is associated with 'navigation_Afficher_la_liste_des_livres_UseCase' (role 'rechercher_un_livre41', cardinality 0..*).
+'be_jebouquine_entities_LigneCommande' (role 'commande33', cardinality 0..*) is associated with 'be_jebouquine_entities_Commande' (role 'ligneCommande32', cardinality 0..*).
+'be_jebouquine_entities_Livre' (role 'langue27', cardinality 0..*) is associated with 'be_jebouquine_entities_Langue' (role 'livre26', cardinality 0..*).
+'backoffice_S_authentifier_UseCase' (role 'administrateur1', cardinality 0..*) is associated with 'Administrateur_Actor' (role 's_authentifier0', cardinality 0..*).
+'navigation_Rechercher_un_livre_UseCase' (role 'visiteur8', cardinality 0..*) is associated with 'Visiteur_Actor' (role 'rechercher_un_livre9', cardinality 0..*).
+'be_jebouquine_entities_LivraisonType' (role 'commande35', cardinality 0..*) is associated with 'be_jebouquine_entities_Commande' (role 'livraisonInfo34', cardinality 0..*).
+'panier_Gerer_panier_UseCase' (role 'visiteur31', cardinality 0..*) is associated with 'Visiteur_Actor' (role 'gerer_panier30', cardinality 0..*).
+'navigation_Recherche_par_critere_UseCase' (role 'rechercher_un_livre37', cardinality 0..*) is associated with 'navigation_Rechercher_un_livre_UseCase' (role 'recherche_par_critere36', cardinality 0..*).
+'be_jebouquine_entities_Commande' (role 'client13', cardinality 0..*) is associated with 'be_jebouquine_entities_Client' (role 'commande12', cardinality 0..*).
+'be_jebouquine_entities_Categorie' (role 'livre21', cardinality 0..*) is associated with 'be_jebouquine_entities_Livre' (role 'categorie20', cardinality 0..*).
+'Visiteur_Actor' (role 'parcourir_les_livres7', cardinality 0..*) is associated with 'navigation_Parcourir_les_livres_UseCase' (role 'visiteur6', cardinality 0..*).
+'be_jebouquine_entities_Livre' (role 'commentaire28', cardinality 0..*) is associated with 'be_jebouquine_entities_Commentaire' (role 'livre29', cardinality 0..*).
+'Client_Actor' (role 's_authentifier4', cardinality 0..*) is associated with 'compte_S_authentifier_UseCase' (role 'client5', cardinality 0..*).
+'Systeme_Paiement_Actor' (role 'payer_commande2', cardinality 0..*) is associated with 'commande_Payer_commande_UseCase' (role 'systeme_Paiement3', cardinality 0..*).
+'be_jebouquine_entities_EtatCommande' (role 'commande25', cardinality 0..*) is associated with 'be_jebouquine_entities_Commande' (role 'etatCommande24', cardinality 0..*).

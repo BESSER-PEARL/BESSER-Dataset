@@ -1,0 +1,51 @@
+The model has 30 class(es).
+The class 'Sistem_Pembayaran_Biaya_Kuliah_UseCase' has no attributes.
+The class 'Sistem_Pembayaran_Setting_UseCase' has no attributes.
+The class 'Menu_Utama' has no attributes.
+The class 'Setting' has the following attributes: 'email' of type str; 'user_id' of type int; 'no_faximile' of type str; 'id' of type int; 'nama' of type str; 'alamat' of type str; 'logo_kampus' of type str; 'no_telepon' of type str.
+The class 'Sistem_Mahasiswa_Login_UseCase' has no attributes.
+The class 'Sistem_Pembayaran_Mahasiswa_UseCase' has no attributes.
+The class 'Sistem_Mahasiswa_Masukkan_Password_UseCase' has no attributes.
+The class 'Prodis' has the following attributes: 'status' of type int; 'user_id' of type int; 'prodi_name' of type str; 'kapasitas_max' of type int; 'id' of type int.
+The class 'Sistem_Mahasiswa_Melihat_Informasi_UseCase' has no attributes.
+The class 'Sistem_Pembayaran_Masukkan_Username_Email_UseCase' has no attributes.
+The class 'Sistem_Pembayaran_Kategori_Biaya_UseCase' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'Sistem_Mahasiswa_Masukkan_NIM_UseCase' has no attributes.
+The class 'Pembayarans' has the following attributes: 'jumlah' of type int; 'prefix' of type str; 'semester_id' of type int; 'biaya_kuliah_id' of type int; 'keterangan' of type str; 'no_pembayaran' of type str; 'pembayaran_tipe' of type int; 'mahasiswa_id' of type int; 'tanggal_pembayaran' of type str; 'user_id' of type int; 'id' of type int; 'status' of type int.
+The class 'Mahasiswa_Actor' has no attributes.
+The class 'Sistem_Pembayaran_Pembayaran_UseCase' has no attributes.
+The class 'Login' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'masterBiaya' has the following attributes: 'jml_bayar' of type int; 'user_id' of type int; 'jumlah_biaya' of type int; 'status' of type int; 'nama_biaya' of type str; 'id' of type int; 'kategori_id' of type int.
+The class 'Sistem_Pembayaran_Login_UseCase' has no attributes.
+The class 'Mahasiswas' has the following attributes: 'id' of type int.
+The class 'Sistem_Mahasiswa_Ganti_Password_UseCase' has no attributes.
+The class 'Sistem_Pembayaran_Masukkan_Password_UseCase' has no attributes.
+The class 'Sistem_Pembayaran_Prodi_UseCase' has no attributes.
+The class 'Sistem_Mahasiswa_Update_Data_Mahasiswa_UseCase' has no attributes.
+The class 'Sistem_Pembayaran_Add_User_UseCase' has no attributes.
+The class 'masterKategori' has the following attributes: 'user_id' of type int; 'nama_kategori' of type str; 'status' of type int; 'id' of type int.
+The class 'Sistem_Pembayaran_Add_Role_UseCase' has no attributes.
+The class 'Sistem_Pembayaran_Jurusan_UseCase' has no attributes.
+The class 'Tata_Usaha_Actor' has no attributes.
+The class 'Jurusans' has the following attributes: 'id' of type int; 'jurusan_name' of type str; 'prodi_id' of type int.
+'Mahasiswa_Actor' (role 'update_Data_Mahasiswa4', cardinality 0..*) is associated with 'Sistem_Mahasiswa_Update_Data_Mahasiswa_UseCase' (role 'mahasiswa5', cardinality 0..*).
+'Administrator_Actor' (role 'biaya_Kuliah12', cardinality 0..*) is associated with 'Sistem_Pembayaran_Biaya_Kuliah_UseCase' (role 'administrator13', cardinality 0..*).
+'Administrator_Actor' (role 'jurusan18', cardinality 0..*) is associated with 'Sistem_Pembayaran_Jurusan_UseCase' (role 'administrator19', cardinality 0..*).
+'Sistem_Pembayaran_Setting_UseCase' (role 'administrator15', cardinality 0..*) is associated with 'Administrator_Actor' (role 'setting14', cardinality 0..*).
+'Mahasiswa_Actor' (role 'login0', cardinality 0..*) is associated with 'Sistem_Mahasiswa_Login_UseCase' (role 'mahasiswa1', cardinality 0..*).
+'Sistem_Mahasiswa_Melihat_Informasi_UseCase' (role 'mahasiswa3', cardinality 0..*) is associated with 'Mahasiswa_Actor' (role 'melihat_Informasi2', cardinality 0..*).
+'Sistem_Pembayaran_Prodi_UseCase' (role 'tata_Usaha39', cardinality 0..*) is associated with 'Tata_Usaha_Actor' (role 'prodi38', cardinality 0..*).
+'Sistem_Pembayaran_Kategori_Biaya_UseCase' (role 'tata_Usaha35', cardinality 0..*) is associated with 'Tata_Usaha_Actor' (role 'kategori_Biaya34', cardinality 0..*).
+'Tata_Usaha_Actor' (role 'biaya_Kuliah36', cardinality 0..*) is associated with 'Sistem_Pembayaran_Biaya_Kuliah_UseCase' (role 'tata_Usaha37', cardinality 0..*).
+'Sistem_Pembayaran_Add_User_UseCase' (role 'administrator27', cardinality 0..*) is associated with 'Administrator_Actor' (role 'add_User26', cardinality 0..*).
+'Administrator_Actor' (role 'mahasiswa20', cardinality 0..*) is associated with 'Sistem_Pembayaran_Mahasiswa_UseCase' (role 'administrator21', cardinality 0..*).
+'Mahasiswa_Actor' (role 'ganti_Password6', cardinality 0..*) is associated with 'Sistem_Mahasiswa_Ganti_Password_UseCase' (role 'mahasiswa7', cardinality 0..*).
+'Tata_Usaha_Actor' (role 'pembayaran32', cardinality 0..*) is associated with 'Sistem_Pembayaran_Pembayaran_UseCase' (role 'tata_Usaha33', cardinality 0..*).
+'Sistem_Pembayaran_Kategori_Biaya_UseCase' (role 'administrator11', cardinality 0..*) is associated with 'Administrator_Actor' (role 'kategori_Biaya10', cardinality 0..*).
+'Sistem_Pembayaran_Login_UseCase' (role 'tata_Usaha29', cardinality 0..*) is associated with 'Tata_Usaha_Actor' (role 'login28', cardinality 0..*).
+'Administrator_Actor' (role 'prodi16', cardinality 0..*) is associated with 'Sistem_Pembayaran_Prodi_UseCase' (role 'administrator17', cardinality 0..*).
+'Tata_Usaha_Actor' (role 'jurusan30', cardinality 0..*) is associated with 'Sistem_Pembayaran_Jurusan_UseCase' (role 'tata_Usaha31', cardinality 0..*).
+'Administrator_Actor' (role 'add_Role24', cardinality 0..*) is associated with 'Sistem_Pembayaran_Add_Role_UseCase' (role 'administrator25', cardinality 0..*).
+'Administrator_Actor' (role 'login8', cardinality 0..*) is associated with 'Sistem_Pembayaran_Login_UseCase' (role 'administrator9', cardinality 0..*).
+'Sistem_Pembayaran_Pembayaran_UseCase' (role 'administrator23', cardinality 0..*) is associated with 'Administrator_Actor' (role 'pembayaran22', cardinality 0..*).

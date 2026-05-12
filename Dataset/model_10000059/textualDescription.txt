@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'BookingController' has the following attributes: 'Time' of type str; 'CustomerName' of type str; 'Phone' of type str; 'Date' of type str; 'BookingID' of type int; 'TableNo' of type str.
+The class 'Table' has the following attributes: 'Occupied' of type bool; 'TableNo' of type str.
+The class 'AdminController' has the following attributes: 'UserName' of type str; 'UserLevel' of type int; 'UserID' of type int.
+The class 'Membership_Card' has the following attributes: 'Discount' of type int; 'LoyaltyID' of type int.
+The class 'Login' has the following attributes: 'LoyaltyID' of type int; 'Discount' of type int.
+The class 'processQuery' has no attributes.
+The class 'OrderController' has the following attributes: 'Date' of type str; 'UserID' of type int; 'OrderTotal' of type str; 'OrderID' of type int.
+'Table' (role 'processQuery15', cardinality 0..*) is associated with 'processQuery' (role 'table14', cardinality 0..*).
+'BookingController' (role 'is_reserved_by3', cardinality 0..*) is associated with 'Table' (role 'reserved2', cardinality 0..*).
+'OrderController' (role 'processQuery11', cardinality 0..*) is associated with 'processQuery' (role 'order10', cardinality 0..*).
+'AdminController' (role 'processQuery7', cardinality 0..*) is associated with 'processQuery' (role 'adminPanel6', cardinality 0..*).
+'BookingController' (role 'processQuery9', cardinality 0..*) is associated with 'processQuery' (role 'booking8', cardinality 0..*).
+'OrderController' (role 'is_ordered_by0', cardinality 0..*) is associated with 'Table' (role 'has1', cardinality 0..*).
+'Login' (role 'processQuery12', cardinality 0..*) is associated with 'processQuery' (role 'login13', cardinality 0..*).
+'OrderController' (role 'membership_Card4', cardinality 0..*) is associated with 'Membership_Card' (role 'order5', cardinality 0..*).

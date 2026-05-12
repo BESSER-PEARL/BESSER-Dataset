@@ -1,0 +1,23 @@
+The model has 16 class(es).
+The class 'C22' has no attributes.
+The class 'C3' has no attributes.
+The class 'B12' has the following attributes: 'altB1' of type int.
+The class 'C12' has the following attributes: 'altC1' of type int; 'altc2' of type bool.
+The class 'C2' has no attributes.
+The class 'A1' has the following attributes: 'altA' of type str.
+The class 'Y' has the following attributes: 'alty' of type str.
+The class 'A12' has the following attributes: 'altA' of type str.
+The class 'C32' has no attributes.
+The class 'Z2' has no attributes.
+The class 'Z' has no attributes.
+The class 'C1' has the following attributes: 'altC1' of type int; 'altc2' of type bool.
+The class 'Y2' has the following attributes: 'alty' of type str.
+The class 'R' has no attributes.
+The class 'B1' has the following attributes: 'altB1' of type int.
+The class 'R2' has no attributes.
+'A1' (role 'r3', cardinality 0..*) is associated with 'R' (role 'aR2', cardinality 0..*).
+'A12' (role 'r9', cardinality 0..*) is associated with 'R2' (role 'aR8', cardinality 0..*).
+'A12' (role 'b6', cardinality 0..*) is associated with 'B12' (role 'a7', cardinality 0..*).
+'B1' (role 'c4', cardinality 0..*) is associated with 'C1' (role 'b5', cardinality 0..*).
+'B1' (role 'a1', cardinality 0..*) is associated with 'A1' (role 'b0', cardinality 0..*).
+'C12' (role 'b11', cardinality 0..*) is associated with 'B12' (role 'c10', cardinality 0..*).

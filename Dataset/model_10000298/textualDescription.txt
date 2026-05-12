@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'Toma_de_pedido' has the following attributes: 'Despacho' of type date; 'Tipo_de_elemnto' of type str.
+The class 'Order' has the following attributes: 'total' of type float; 'ordered' of type date; 'number' of type int; 'status' of type str.
+The class 'Cliente' has the following attributes: 'Asunto' of type str; 'Ciudad' of type str; 'Nombre' of type str.
+The class 'Lineamiento' has the following attributes: 'Cantidad' of type int; 'Costo' of type float.
+The class 'WebADM' has the following attributes: 'state' of type str; 'password' of type str; 'login' of type str.
+The class 'Entrega_producto' has the following attributes: 'Email_confirmaci_n' of type str; 'Agradecimiento' of type str.
+The class 'ShoppingCart' has the following attributes: 'creationDate' of type date.
+The class 'Pago' has the following attributes: 'PSI' of type float; 'Contra_entrega' of type date.
+'Toma_de_pedido' (role 'p0', cardinality 0..*) is associated with 'Pago' (role 'acc1', cardinality 0..*).
+'Cliente' (role 'webUser5', cardinality 0..*) is associated with 'WebADM' (role 'customer4', cardinality 0..*).
+'Order' (role 'account17', cardinality 0..*) is associated with 'Toma_de_pedido' (role 'order16', cardinality 0..*).
+'Cliente' (role 'account6', cardinality 0..*) is associated with 'Toma_de_pedido' (role 'customer7', cardinality 0..*).
+'ShoppingCart' (role 'webUser3', cardinality 0..*) is associated with 'WebADM' (role 'shoppingCart2', cardinality 0..*).
+'Entrega_producto' (role 'lineItems12', cardinality 0..*) is associated with 'Lineamiento' (role 'product13', cardinality 0..*).
+'ShoppingCart' (role 'items10', cardinality 0..*) is associated with 'Lineamiento' (role 'sc11', cardinality 0..*).
+'Order' (role 'payment19', cardinality 0..*) is associated with 'Pago' (role 'order18', cardinality 0..*).
+'Lineamiento' (role 'order15', cardinality 0..*) is associated with 'Order' (role 'items14', cardinality 0..*).
+'Lineamiento' (role 'account9', cardinality 0..*) is associated with 'Toma_de_pedido' (role 'cart8', cardinality 0..*).

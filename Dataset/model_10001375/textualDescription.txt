@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'Liga' has the following attributes: 'nombre' of type str; 'datos_comienzo' of type str; 'datos_finalizaci_n' of type str.
+The class 'Equipo' has the following attributes: 'nombre' of type str; 'registro' of type str.
+The class 'Jugadores' has the following attributes: 'nombre' of type str; 'posicion' of type int.
+The class 'Entrenador' has the following attributes: 'a_os_de_experiencia' of type int; 'nivel_de_acreditaci_n' of type str.
+The class 'Personas' has the following attributes: 'Direccion' of type str; 'Nombre' of type str.
+The class 'Partido' has the following attributes: 'resultado' of type int; 'localizaci_n' of type str.
+'Equipo' (role 'partido6', cardinality 0..*) is associated with 'Partido' (role 'equipo7', cardinality 0..*).
+'Equipo' (role 'jugadores2', cardinality 0..*) is associated with 'Jugadores' (role 'equipo3', cardinality 0..*).
+'Equipo' (role 'jugadores5', cardinality 0..*) is associated with 'Jugadores' (role 'equipo4', cardinality 0..*).
+'Liga' (role 'equipo0', cardinality 0..*) is associated with 'Equipo' (role 'liga1', cardinality 0..*).

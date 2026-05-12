@@ -1,0 +1,19 @@
+The model has 12 class(es).
+The class 'virtualtour_UploadFloorplan' has no attributes.
+The class 'virtualtour_UploadPicture' has no attributes.
+The class 'Login' has the following attributes: 'lastLoginTime' of type date; 'securityQuestion' of type str; 'securityAnswer' of type str; 'username' of type str; 'password' of type str.
+The class 'client_HomeOwner' has the following attributes: 'name' of type str.
+The class 'virtualtour_Transaction' has the following attributes: 'id' of type int; 'transactionTime' of type date; 'type' of type virtualtour_TransactionType.
+The class 'client_ClientAccount' has the following attributes: 'clientNo' of type str; 'type' of type ClientType.
+The class 'virtualtour_TakePicture' has no attributes.
+The class 'ClientType' has no attributes.
+The class 'virtualtour_ArchiveVirtual' has no attributes.
+The class 'client_Realtor' has the following attributes: 'name' of type str.
+The class 'virtualtour_LinkVirtual' has no attributes.
+The class 'Client' has the following attributes: 'name' of type str; 'emailAddress' of type str; 'address' of type str; 'dateOfBirth' of type date; 'phoneNumber' of type str.
+The enumeration 'virtualtour_TransactionType' does not specify any literals.
+'Client' (role 'a1', cardinality 0..*) is associated with 'client_ClientAccount' (role 'client0', cardinality 0..*).
+'Login' (role 'client5', cardinality 0..*) is associated with 'Client' (role 'login4', cardinality 0..*).
+'client_ClientAccount' (role 'transactions2', cardinality 0..*) is associated with 'virtualtour_Transaction' (role 'account3', cardinality 0..*).
+'virtualtour_LinkVirtual' (role 'transaction6', cardinality 0..*) is associated with 'virtualtour_Transaction' (role 'linkVirtual7', cardinality 0..*).
+'virtualtour_Transaction' (role 'archiveVirtual9', cardinality 0..*) is associated with 'virtualtour_ArchiveVirtual' (role 'transaction8', cardinality 0..*).

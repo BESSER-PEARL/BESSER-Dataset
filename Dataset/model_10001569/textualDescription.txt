@@ -1,0 +1,15 @@
+The model has 12 class(es).
+The class 'publishments' has the following attributes: 'Year' of type int; 'Publisher' of type publisher; 'AuthoredBy' of type author; 'Title' of type str.
+The class 'author' has the following attributes: 'Mail' of type str; 'Phone' of type str; 'FamilyName' of type str; 'GivenName' of type str; 'Address' of type str.
+The class 'conference_paper' has the following attributes: 'Title' of type str; 'ConferenceName' of type str; 'AuthoredBy' of type author; 'Year' of type int; 'Publisher' of type publisher; 'Location' of type str.
+The class 'person' has the following attributes: 'birthday' of type str; 'gender' of type bool; 'belongsTo' of type orgnazition; 'portrait' of type str; 'personID' of type str; 'name' of type str.
+The class 'album' has the following attributes: 'publisher' of type orgnazition; 'genre' of type str; 'title' of type str; 'duration' of type str; 'rightsReserve' of type orgnazition; 'price' of type str; 'publishDate' of type str; 'albumID' of type str; 'cover' of type str; 'artists' of type person.
+The class 'song' has the following attributes: 'artistLyrics' of type person; 'artistCompose' of type person; 'belongsTo' of type album; 'artistVocal' of type person; 'title' of type str; 'year' of type int; 'genre' of type str; 'price' of type str; 'artistPerform' of type person; 'rightsReserve' of type orgnazition; 'trackID' of type int; 'cover' of type str; 'songID' of type str; 'duration' of type str.
+The class 'journal_article' has the following attributes: 'AuthoredBy' of type author; 'Year' of type int; 'Publisher' of type publisher; 'Volume' of type int; 'Pages' of type int; 'Title' of type str; 'JournalName' of type str.
+The class 'document' has no attributes.
+The class 'book_chapters' has no attributes.
+The class 'publisher' has the following attributes: 'OrgContact' of type str; 'OrgName' of type str; 'EstablishedYear' of type int; 'OrgAddress' of type str.
+The class 'book' has the following attributes: 'Region' of type str; 'AuthoredBy' of type author; 'Year' of type int; 'Price' of type float; 'RefTo' of type publishments; 'Title' of type str; 'Publisher' of type publisher.
+The class 'orgnazition' has the following attributes: 'orgID' of type str; 'establishedDate' of type str; 'icon' of type str; 'name' of type str; 'president' of type person.
+'book' (role 'publishments3', cardinality 0..*) is associated with 'publishments' (role 'book2', cardinality 0..*).
+'conference_paper' (role 'publishments0', cardinality 0..*) is associated with 'publishments' (role 'conference_paper1', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Table' has the following attributes: 'table_id' of type str; 'numSeats' of type int; 'avaliable' of type bool.
+The class 'Staff' has the following attributes: 'type' of type str; 'staffId' of type str; 'name' of type str.
+The class 'Report' has the following attributes: 'orders' of type str; 'report_id' of type str.
+The class 'ReservationManagementSystem' has the following attributes: 'bookings' of type str.
+The class 'StaffUI' has no attributes.
+The class 'CustomerUI' has no attributes.
+The class 'Food' has the following attributes: 'food_id' of type str; 'name' of type str; 'price' of type float; 'prepared' of type bool; 'served' of type bool.
+The class 'Order' has the following attributes: 'order_id' of type str; 'foodList' of type str.
+The class 'Booking' has the following attributes: 'date' of type date; 'booking_id' of type int; 'startTime' of type str; 'endTime' of type str; 'reservedTables' of type str; 'contact_no' of type int; 'customer_name' of type str; 'email_id' of type str.
+'Staff' (role 'reservationManagementSystem2', cardinality 0..*) is associated with 'ReservationManagementSystem' (role 'interacts3', cardinality 0..*).
+'Order' (role 'orde14', cardinality 0..*) is associated with 'Food' (role 'has15', cardinality 0..*).
+'Order' (role 'table11', cardinality 0..*) is associated with 'Table' (role 'has10', cardinality 0..*).
+'ReservationManagementSystem' (role 'booking6', cardinality 0..*) is associated with 'Booking' (role 'ReservationManagementSystem_Booking_17', cardinality 0..*).
+'CustomerUI' (role 'CustomerUI_ReservationManagementSystem_04', cardinality 0..*) is associated with 'ReservationManagementSystem' (role 'interacts5', cardinality 0..*).
+'Table' (role 'Table_Booking_012', cardinality 0..*) is associated with 'Booking' (role 'reservedBy13', cardinality 0..*).
+'ReservationManagementSystem' (role 'generates8', cardinality 0..*) is associated with 'Report' (role 'reservationManagementSystem9', cardinality 0..*).
+'Staff' (role 'Staff_StaffUI_00', cardinality 0..*) is associated with 'StaffUI' (role 'accesses1', cardinality 0..*).

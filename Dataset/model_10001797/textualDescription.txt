@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'BankAccount' has the following attributes: 'balance' of type float; 'accountHolderName' of type str.
+The class 'FixedAccount' has no attributes.
+The class 'SavingsAccount' has no attributes.

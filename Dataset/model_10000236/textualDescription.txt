@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'Users' has the following attributes: 'UserID' of type int; 'UserLevel' of type int; 'UserName' of type str.
+The class 'ViewOrder' has the following attributes: 'getUser' of type int.
+The class 'BookedTables' has the following attributes: 'BookingID' of type int; 'TableNo' of type int.
+The class 'Order' has the following attributes: 'Date' of type date; 'OrderID' of type int; 'DicountLvl' of type int; 'UserID' of type int; 'Total' of type float.
+The class 'Bookings' has the following attributes: 'Date' of type date; 'People' of type int; 'CustomerName' of type str; 'BookingID' of type int; 'TableNo' of type int; 'Phone' of type str; 'Time' of type date.
+The class 'Membership_Card' has the following attributes: 'DiscountLVL' of type int; 'ID' of type int.
+The class 'Table' has the following attributes: 'TableNo' of type int; 'Occupied' of type int.
+The class 'OrderItem' has the following attributes: 'ItemName' of type str; 'RemaningTime' of type date; 'Completed' of type int.
+'ViewOrder' (role 'orderItem6', cardinality 0..*) is associated with 'OrderItem' (role 'viewOrder7', cardinality 0..*).
+'Table' (role 'bookedTables13', cardinality 0..*) is associated with 'BookedTables' (role 'table12', cardinality 0..*).
+'Bookings' (role 'table5', cardinality 0..*) is associated with 'BookedTables' (role 'bookings4', cardinality 0..*).
+'OrderItem' (role 'order8', cardinality 0..*) is associated with 'Order' (role 'orderItem9', cardinality 0..*).
+'Users' (role 'order11', cardinality 0..*) is associated with 'Order' (role 'users10', cardinality 0..*).
+'Order' (role 'table2', cardinality 0..*) is associated with 'Table' (role 'order3', cardinality 0..*).
+'Order' (role 'membership_Card1', cardinality 0..*) is associated with 'Membership_Card' (role 'order0', cardinality 0..*).

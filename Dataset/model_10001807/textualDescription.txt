@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Torneo' has the following attributes: 'Nombre' of type str; 'Pais' of type str.
+The class 'Fecha' has the following attributes: 'anio' of type int; 'dia' of type int; 'mes' of type int.
+The class 'Marcador' has the following attributes: 'tiempoSet' of type int; 'equipo1' of type int; 'equipo2' of type int.
+The class 'Equipo' has the following attributes: 'nombre' of type str.
+The class 'Jugador' has the following attributes: 'nombre' of type str; 'nif' of type str; 'telefono' of type int; 'apellidos' of type str.
+The class 'Partido' has the following attributes: 'ronda' of type str; 'id' of type int.
+The class 'Premio' has the following attributes: 'Puntos' of type int; 'Dinero' of type int; 'Puesto' of type int.
+'Marcador' (role 'partido3', cardinality 0..*) is associated with 'Partido' (role 'marcador2', cardinality 0..*).
+'Premio' (role 'torneo1', cardinality 0..*) is associated with 'Torneo' (role 'premio0', cardinality 0..*).
+'Equipo' (role 'jugador6', cardinality 0..*) is associated with 'Jugador' (role 'equipo7', cardinality 0..*).
+'Torneo' (role 'fechaFin12', cardinality 0..*) is associated with 'Fecha' (role 'torneo13', cardinality 0..*).
+'Partido' (role 'equipo4', cardinality 0..*) is associated with 'Equipo' (role 'partido5', cardinality 0..*).
+'Fecha' (role 'torneo11', cardinality 0..*) is associated with 'Torneo' (role 'fechaInicio10', cardinality 0..*).
+'Jugador' (role 'fechaNacimiento8', cardinality 0..*) is associated with 'Fecha' (role 'jugador9', cardinality 0..*).
+'Torneo' (role 'partido14', cardinality 0..*) is associated with 'Partido' (role 'torneo15', cardinality 0..*).

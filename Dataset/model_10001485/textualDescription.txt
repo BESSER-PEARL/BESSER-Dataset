@@ -1,0 +1,47 @@
+The model has 27 class(es).
+The class 'sale_by_instalment' has the following attributes: 'id_card' of type int; 'saled_product' of type str; 'customer_name' of type str.
+The class 'cashier_Actor' has no attributes.
+The class 'add_seller__UseCase' has no attributes.
+The class 'manager_Actor' has no attributes.
+The class 'add_products_to_sections__UseCase' has no attributes.
+The class 'Entering_prices_UseCase' has no attributes.
+The class 'Card_id_registration_UseCase' has no attributes.
+The class 'section' has the following attributes: 'name' of type str; 'number' of type int.
+The class 'online_market' has the following attributes: 'product_type' of type str; 'product_price' of type str; 'register_id_card' of type int; 'customer_address' of type str; 'customer_name' of type str.
+The class 'delete_seller_UseCase' has no attributes.
+The class 'direct_sale_UseCase' has no attributes.
+The class 'seller_registration_UseCase' has no attributes.
+The class 'add_customer_UseCase' has no attributes.
+The class 'customer_name_UseCase' has no attributes.
+The class 'later_payment_sale__UseCase' has no attributes.
+The class 'Calculating_the_check_UseCase' has no attributes.
+The class 'seller__Actor' has no attributes.
+The class 'update_section_UseCase' has no attributes.
+The class 'seller' has the following attributes: 'section_name' of type str; 'number' of type int; 'salary' of type int; 'name' of type str.
+The class 'direct_sale' has the following attributes: 'saled_products' of type str; 'username' of type str; 'attribute' of type str.
+The class 'Add_sold_products_UseCase' has no attributes.
+The class 'the_product' has the following attributes: 'name' of type str; 'type' of type str; 'price' of type int.
+The class 'customer' has the following attributes: 'id_card' of type int; 'name' of type str; 'address' of type str.
+The class 'delete_customer__UseCase' has no attributes.
+The class 'Online_customer_request_UseCase' has no attributes.
+The class 'customer_address__UseCase' has no attributes.
+The class 'Make_comprehensive_reports_UseCase' has no attributes.
+'online_market' (role 'the_product29', cardinality 0..*) is associated with 'the_product' (role 'online_market28', cardinality 0..*).
+'manager_Actor' (role 'useCase326', cardinality 0..*) is associated with 'add_products_to_sections__UseCase' (role 'actor27', cardinality 0..*).
+'manager_Actor' (role 'useCase718', cardinality 0..*) is associated with 'add_customer_UseCase' (role 'actor19', cardinality 0..*).
+'section' (role 'seller37', cardinality 0..*) is associated with 'seller' (role 'section36', cardinality 0..*).
+'customer' (role 'the_product31', cardinality 0..*) is associated with 'the_product' (role 'customer30', cardinality 0..*).
+'seller_registration_UseCase' (role 'actor21', cardinality 0..*) is associated with 'manager_Actor' (role 'useCase420', cardinality 0..*).
+'seller__Actor' (role 'later_payment_sale2', cardinality 0..*) is associated with 'later_payment_sale__UseCase' (role 'seller3', cardinality 0..*).
+'seller__Actor' (role 'online_customer_request4', cardinality 0..*) is associated with 'Online_customer_request_UseCase' (role 'seller5', cardinality 0..*).
+'cashier_Actor' (role 'add_sold_products6', cardinality 0..*) is associated with 'Add_sold_products_UseCase' (role 'cashier7', cardinality 0..*).
+'cashier_Actor' (role 'useCase12', cardinality 0..*) is associated with 'Entering_prices_UseCase' (role 'cashier13', cardinality 0..*).
+'manager_Actor' (role 'useCase216', cardinality 0..*) is associated with 'update_section_UseCase' (role 'actor17', cardinality 0..*).
+'delete_seller_UseCase' (role 'actor23', cardinality 0..*) is associated with 'manager_Actor' (role 'useCase522', cardinality 0..*).
+'Calculating_the_check_UseCase' (role 'cashier9', cardinality 0..*) is associated with 'cashier_Actor' (role 'calculating_the_check8', cardinality 0..*).
+'manager_Actor' (role 'useCase24', cardinality 0..*) is associated with 'delete_customer__UseCase' (role 'actor25', cardinality 0..*).
+'the_product' (role 'sale_by_instalment34', cardinality 0..*) is associated with 'sale_by_instalment' (role 'the_product35', cardinality 0..*).
+'Make_comprehensive_reports_UseCase' (role 'cashier11', cardinality 0..*) is associated with 'cashier_Actor' (role 'make_comprehensive_reports10', cardinality 0..*).
+'direct_sale_UseCase' (role 'seller1', cardinality 0..*) is associated with 'seller__Actor' (role 'direct_sale0', cardinality 0..*).
+'add_seller__UseCase' (role 'actor15', cardinality 0..*) is associated with 'manager_Actor' (role 'useCase614', cardinality 0..*).
+'the_product' (role 'direct_sale32', cardinality 0..*) is associated with 'direct_sale' (role 'the_product33', cardinality 0..*).

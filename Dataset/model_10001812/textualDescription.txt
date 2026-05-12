@@ -1,0 +1,93 @@
+The model has 50 class(es).
+The class 'Order' has the following attributes: 'ShippingAddress' of type str; 'customerId' of type str; 'status' of type str; 'OrderId' of type int; 'dateShipped' of type str; 'dateCreated' of type str; 'Payment' of type str; 'OrderStatus' of type str; 'customerName' of type str; 'Item' of type str; 'BillingAddress' of type str.
+The class 'mobile_Interface' has no attributes.
+The class 'keywordSet' has the following attributes: 'keyword' of type str.
+The class 'Category' has the following attributes: 'description' of type str; 'departmentId' of type int; 'categoryName' of type str; 'categoryID' of type int.
+The class 'notify_Interface' has no attributes.
+The class 'TimeBasedDiscount' has no attributes.
+The class 'Vendor' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'searchFacade' has no attributes.
+The class 'PayLater1' has the following attributes: 'UserID' of type str.
+The class 'Department' has the following attributes: 'description' of type str; 'departmentName' of type str; 'departmentID' of type int.
+The class 'Customer' has the following attributes: 'address' of type str; 'phoneno' of type int; 'email' of type str; 'customerName' of type str; 'shippinginfo' of type str; 'surveys' of type bool; 'creditcardinfo' of type str; 'newsLettersub' of type bool.
+The class 'promotions' has the following attributes: 'promotionCode' of type str; 'startDate' of type int; 'endDate' of type int.
+The class 'Shipping' has the following attributes: 'shippingId' of type int; 'shippingType' of type str; 'shippingAddress' of type str; '_attr' of type int; 'ShippingType' of type str.
+The class 'Notify_Interface' has no attributes.
+The class 'PayLater' has no attributes.
+The class 'OrderDetail' has the following attributes: 'orderId' of type int; 'subTotal' of type str; 'quantity' of type int; 'productId' of type int; 'unitCost' of type str; 'productName' of type str.
+The class 'email_Interface' has no attributes.
+The class 'payment_Interface' has no attributes.
+The class 'customeraddress_Interface' has no attributes.
+The class 'email' has the following attributes: 'EmailAddress' of type str.
+The class 'pickuppoint_Interface' has no attributes.
+The class 'paylater_Interface' has no attributes.
+The class 'Product' has the following attributes: 'attribute5' of type str; 'productId' of type int; 'Price' of type str; 'attribute7' of type str; 'description' of type str; 'Name' of type str; 'SKU' of type str; 'attribute6' of type str; 'reviews' of type str.
+The class 'Payment' has no attributes.
+The class 'Class2' has no attributes.
+The class 'Administrator' has the following attributes: 'adminName' of type str; 'email' of type str.
+The class 'ShoppingCart' has the following attributes: 'quantity' of type int; 'dateAdded' of type int; 'Item' of type str; 'GetTotalPrice' of type str.
+The class 'Class1' has no attributes.
+The class 'Credit_DebitCard1' has no attributes.
+The class 'billdesk_Interface' has no attributes.
+The class 'EmailNotification' has no attributes.
+The class 'User' has the following attributes: 'loginStatus' of type str; 'userId' of type str; 'password' of type str.
+The class 'gpay_Interface' has no attributes.
+The class 'Address' has the following attributes: 'State' of type str; 'City' of type str; 'Type' of type str; 'Street' of type str; 'Country' of type str; 'ZipCode' of type str.
+The class 'shiporder_Interface' has no attributes.
+The class 'Credit_DebitCard' has no attributes.
+The class 'SMS' has the following attributes: 'MobileNo' of type int.
+The class 'Item' has the following attributes: 'Quantity' of type int; 'Name' of type str; 'attribute' of type str.
+The class 'OrderService' has the following attributes: 'attribute' of type str.
+The class 'Gpay' has no attributes.
+The class 'Price' has the following attributes: 'ActualPrice' of type str.
+The class 'ShippingType_Interface' has no attributes.
+The class 'cartItem' has the following attributes: 'productId' of type int; 'unitCost' of type str; 'name' of type str; 'subtotal' of type str; 'quantity' of type int.
+The class 'Class' has no attributes.
+The class 'Offer_Interface' has no attributes.
+The class 'CreditCardPayment' has the following attributes: 'CardType' of type str; 'CardNumber' of type int.
+The class 'ProductDiscount' has no attributes.
+The class 'SessionManager' has the following attributes: 'userid' of type str; 'departmentName' of type str.
+The class 'Payment_Interface' has no attributes.
+The class 'PushNotification' has no attributes.
+'ShippingType_Interface' (role 'shipping73', cardinality 0..*) is associated with 'Shipping' (role 'shippingType272', cardinality 0..*).
+'shiporder_Interface' (role 'pickuppoint30', cardinality 0..*) is associated with 'pickuppoint_Interface' (role 'shiporder31', cardinality 0..*).
+'Payment_Interface' (role 'order69', cardinality 0..*) is associated with 'Order' (role 'payment68', cardinality 0..*).
+'Order' (role 'payment66', cardinality 0..*) is associated with 'Payment' (role 'order67', cardinality 0..*).
+'Shipping' (role 'Order_Shippinginfo_111', cardinality 0..*) is associated with 'Order' (role 'Order_Shippinginfo_010', cardinality 0..*).
+'Order' (role 'customer15', cardinality 0..*) is associated with 'Customer' (role 'order14', cardinality 0..*).
+'Category' (role 'product6', cardinality 0..*) is associated with 'Product' (role 'genre7', cardinality 0..*).
+'Administrator' (role 'order16', cardinality 0..*) is associated with 'Order' (role 'administrator17', cardinality 0..*).
+'Item' (role 'shoppingCart79', cardinality 0..*) is associated with 'ShoppingCart' (role 'item78', cardinality 0..*).
+'Department' (role 'category54', cardinality 0..*) is associated with 'Category' (role 'department55', cardinality 0..*).
+'cartItem' (role 'cart2', cardinality 0..*) is associated with 'cartItem' (role 'cart3', cardinality 0..*).
+'Department' (role 'sessionManager9', cardinality 0..*) is associated with 'SessionManager' (role 'genre8', cardinality 0..*).
+'Shipping' (role 'order75', cardinality 0..*) is associated with 'Order' (role 'shipping74', cardinality 0..*).
+'gpay_Interface' (role 'payment39', cardinality 0..*) is associated with 'payment_Interface' (role 'gpay38', cardinality 0..*).
+'cartItem' (role 'product21', cardinality 0..*) is associated with 'Product' (role 'cartItem20', cardinality 0..*).
+'promotions' (role 'customer35', cardinality 0..*) is associated with 'Customer' (role 'promotions34', cardinality 0..*).
+'Price' (role 'price57', cardinality 0..*) is associated with 'Price' (role 'price56', cardinality 0..*).
+'ShippingType_Interface' (role 'shippingType71', cardinality 0..*) is associated with 'ShippingType_Interface' (role 'shippingType70', cardinality 0..*).
+'Offer_Interface' (role 'product59', cardinality 0..*) is associated with 'Product' (role 'offer58', cardinality 0..*).
+'shiporder_Interface' (role 'customeraddress32', cardinality 0..*) is associated with 'customeraddress_Interface' (role 'shiporder33', cardinality 0..*).
+'Order' (role 'orderService65', cardinality 0..*) is associated with 'OrderService' (role 'order64', cardinality 0..*).
+'payment_Interface' (role 'billdesk37', cardinality 0..*) is associated with 'billdesk_Interface' (role 'payment36', cardinality 0..*).
+'Order' (role 'address80', cardinality 0..*) is associated with 'Address' (role 'order81', cardinality 0..*).
+'Product' (role 'orderDetail18', cardinality 0..*) is associated with 'OrderDetail' (role 'product19', cardinality 0..*).
+'Department' (role 'department53', cardinality 0..*) is associated with 'Department' (role 'department52', cardinality 0..*).
+'User' (role 'sessionManager1', cardinality 0..*) is associated with 'SessionManager' (role 'user0', cardinality 0..*).
+'keywordSet' (role 'searchFacade23', cardinality 0..*) is associated with 'searchFacade' (role 'keywordSet22', cardinality 0..*).
+'Order' (role 'item77', cardinality 0..*) is associated with 'Item' (role 'order76', cardinality 0..*).
+'mobile_Interface' (role 'notify29', cardinality 0..*) is associated with 'notify_Interface' (role 'mobile228', cardinality 0..*).
+'Notify_Interface' (role 'orderService83', cardinality 0..*) is associated with 'OrderService' (role 'notify82', cardinality 0..*).
+'Gpay' (role 'payment48', cardinality 0..*) is associated with 'payment_Interface' (role 'gpay49', cardinality 0..*).
+'Price' (role 'product61', cardinality 0..*) is associated with 'Product' (role 'price60', cardinality 0..*).
+'notify_Interface' (role 'emailNotification43', cardinality 0..*) is associated with 'EmailNotification' (role 'notify42', cardinality 0..*).
+'payment_Interface' (role 'credit_DebitCard47', cardinality 0..*) is associated with 'Credit_DebitCard1' (role 'payment46', cardinality 0..*).
+'OrderDetail' (role 'order13', cardinality 0..*) is associated with 'Order' (role 'orderDetail12', cardinality 0..*).
+'notify_Interface' (role 'pushNotification45', cardinality 0..*) is associated with 'PushNotification' (role 'notify44', cardinality 0..*).
+'email_Interface' (role 'notify27', cardinality 0..*) is associated with 'notify_Interface' (role 'email226', cardinality 0..*).
+'keywordSet' (role 'product24', cardinality 0..*) is associated with 'Product' (role 'keywordSet25', cardinality 0..*).
+'Product' (role 'item63', cardinality 0..*) is associated with 'Item' (role 'product62', cardinality 0..*).
+'Product' (role 'genre5', cardinality 0..*) is associated with 'Department' (role 'genre4', cardinality 0..*).
+'payment_Interface' (role 'paylater40', cardinality 0..*) is associated with 'paylater_Interface' (role 'payment41', cardinality 0..*).
+'PayLater' (role 'payment50', cardinality 0..*) is associated with 'payment_Interface' (role 'payLater51', cardinality 0..*).

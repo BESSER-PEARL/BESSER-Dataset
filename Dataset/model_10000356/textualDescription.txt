@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'Health_Records' has the following attributes: 'healthhistory' of type str.
+The class 'Medicine' has the following attributes: 'price' of type str; 'amount' of type int; 'code' of type int; 'name' of type str.
+The class 'Patient' has the following attributes: 'healthrecords' of type str; 'name' of type str; 'id' of type int.
+The class 'Nurse' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'Staff' has the following attributes: 'job' of type str; 'name' of type str.
+The class 'Doctor' has the following attributes: 'name' of type str; 'id' of type int; 'speciality' of type str.
+The class 'Technician' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'Person' has the following attributes: 'id' of type int; 'email' of type str; 'job' of type str; 'name' of type str.
+The class 'Appointment' has the following attributes: 'date' of type str; 'location' of type str; 'time' of type int.
+The class 'Sickness' has the following attributes: 'recommendations' of type str; 'prescription' of type str; 'symptoms' of type str.
+'Staff' (role 'technician6', cardinality 0..*) is associated with 'Technician' (role 'staff7', cardinality 0..*).
+'Patient' (role 'appointment15', cardinality 0..*) is associated with 'Appointment' (role 'patient14', cardinality 0..*).
+'Patient' (role 'person11', cardinality 0..*) is associated with 'Person' (role 'patient10', cardinality 0..*).
+'Patient' (role 'sickness17', cardinality 0..*) is associated with 'Sickness' (role 'patient16', cardinality 0..*).
+'Patient' (role 'health_Records21', cardinality 0..*) is associated with 'Health_Records' (role 'patient20', cardinality 0..*).
+'Staff' (role 'person1', cardinality 0..*) is associated with 'Person' (role 'staff0', cardinality 0..*).
+'Health_Records' (role 'doctor19', cardinality 0..*) is associated with 'Doctor' (role 'health_Records18', cardinality 0..*).
+'Staff' (role 'nurse2', cardinality 0..*) is associated with 'Nurse' (role 'staff3', cardinality 0..*).
+'Doctor' (role 'staff5', cardinality 0..*) is associated with 'Staff' (role 'doctor4', cardinality 0..*).
+'Doctor' (role 'appointment13', cardinality 0..*) is associated with 'Appointment' (role 'doctor12', cardinality 0..*).
+'Doctor' (role 'medicine8', cardinality 0..*) is associated with 'Medicine' (role 'doctor9', cardinality 0..*).

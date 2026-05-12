@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Account' has the following attributes: 'UserName' of type str; 'Info' of type str.
+The class 'Administrator' has the following attributes: 'Id' of type int.
+The class 'IAcc_Interface' has no attributes.
+The class 'Project' has the following attributes: 'Info' of type str; 'State' of type str; 'Id' of type int; 'Access' of type str; 'Title' of type str.
+The class 'User' has the following attributes: 'Id' of type int.
+The class 'Comment' has the following attributes: 'CreationDate' of type str; 'Title' of type str; 'Body' of type str; 'Id' of type int; 'Creator' of type User.
+'User' (role 'account7', cardinality 0..*) is associated with 'Account' (role 'user6', cardinality 0..*).
+'Administrator' (role 'comment0', cardinality 0..*) is associated with 'Comment' (role 'administrator1', cardinality 0..*).
+'Administrator' (role 'account9', cardinality 0..*) is associated with 'Account' (role 'administrator8', cardinality 0..*).
+'Project' (role 'user5', cardinality 0..*) is associated with 'User' (role 'project4', cardinality 0..*).
+'Comment' (role 'user3', cardinality 0..*) is associated with 'User' (role 'comment2', cardinality 0..*).

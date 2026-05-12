@@ -1,0 +1,14 @@
+The model has 8 class(es).
+The class 'Admin_' has the following attributes: 'ArrayList_member_' of type str; 'ArrayList_worker_' of type str; 'Password' of type str.
+The class 'customers' has the following attributes: 'name' of type str; 'shoppingCost' of type int.
+The class 'Workers' has the following attributes: 'name' of type str; 'Password' of type str; 'Designation' of type str; 'salary' of type int.
+The class 'food' has the following attributes: 'price' of type int; 'name' of type str.
+The class 'Appliacne' has the following attributes: 'name' of type str; 'price' of type int.
+The class 'member' has the following attributes: 'name' of type str; 'memberType' of type str; 'password' of type str.
+The class 'Items' has the following attributes: 'ArrayList_appliance_' of type str; 'ArrayList_furniture_' of type str; 'typeOfItems' of type int; 'ArrayList_food_' of type str.
+The class 'Furniture' has the following attributes: 'price' of type int; 'name' of type str.
+'Items' (role 'appliacne0', cardinality 0..*) is associated with 'Appliacne' (role 'items1', cardinality 0..*).
+'Workers' (role 'admin_9', cardinality 0..*) is associated with 'Admin_' (role 'workers8', cardinality 0..*).
+'member' (role 'admin_7', cardinality 0..*) is associated with 'Admin_' (role 'member6', cardinality 0..*).
+'Furniture' (role 'items3', cardinality 0..*) is associated with 'Items' (role 'furniture2', cardinality 0..*).
+'Items' (role 'food4', cardinality 0..*) is associated with 'food' (role 'items5', cardinality 0..*).

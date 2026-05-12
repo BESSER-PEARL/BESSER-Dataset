@@ -1,0 +1,29 @@
+The model has 17 class(es).
+The class 'Cashier_Actor' has no attributes.
+The class 'Register_order_UseCase' has no attributes.
+The class 'Mark_order_as_prepared_UseCase' has no attributes.
+The class 'Consult_menu_UseCase' has no attributes.
+The class 'View_prepared_orders_UseCase' has no attributes.
+The class 'View_price_of_served_orders_UseCase' has no attributes.
+The class 'Place_order_UseCase' has no attributes.
+The class 'User' has no attributes.
+The class 'Mark_order_as_served_UseCase' has no attributes.
+The class 'Waiter_Actor' has no attributes.
+The class 'Question' has the following attributes: 'title' of type str.
+The class 'Client_Actor' has no attributes.
+The class 'Chef_Actor' has no attributes.
+The class 'Tag' has no attributes.
+The class 'QuestonOrAnswer' has the following attributes: 'body' of type str.
+The class 'Answer' has no attributes.
+The class 'View_current_orders_UseCase' has no attributes.
+'QuestonOrAnswer' (role 'user17', cardinality 0..*) is associated with 'User' (role 'questonOrAnswer16', cardinality 0..*).
+'Register_order_UseCase' (role 'waiter3', cardinality 0..*) is associated with 'Waiter_Actor' (role 'register_order2', cardinality 0..*).
+'Consult_menu_UseCase' (role 'client7', cardinality 0..*) is associated with 'Client_Actor' (role 'consult_menu6', cardinality 0..*).
+'Question' (role 'tags19', cardinality 0..*) is associated with 'Tag' (role 'questions18', cardinality 0..*).
+'Waiter_Actor' (role 'view_prepared_orders4', cardinality 0..*) is associated with 'View_prepared_orders_UseCase' (role 'waiter5', cardinality 0..*).
+'Client_Actor' (role 'waiter0', cardinality 0..*) is associated with 'Waiter_Actor' (role 'user1', cardinality 0..*).
+'Mark_order_as_prepared_UseCase' (role 'chef12', cardinality 0..*) is associated with 'Chef_Actor' (role 'mark_order_as_prepared13', cardinality 0..*).
+'View_price_of_served_orders_UseCase' (role 'cashier14', cardinality 0..*) is associated with 'Cashier_Actor' (role 'view_price_of_served_orders15', cardinality 0..*).
+'Question' (role 'question20', cardinality 0..*) is associated with 'Question' (role 'similar21', cardinality 0..*).
+'Chef_Actor' (role 'view_current_orders10', cardinality 0..*) is associated with 'View_current_orders_UseCase' (role 'chef11', cardinality 0..*).
+'Place_order_UseCase' (role 'client9', cardinality 0..*) is associated with 'Client_Actor' (role 'place_order8', cardinality 0..*).

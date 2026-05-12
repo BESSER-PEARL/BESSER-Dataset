@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'Bill' has the following attributes: 'BillNo' of type str; 'PatientName' of type str; 'Amt' of type str.
+The class 'Rooms' has the following attributes: 'RoomNo' of type int; 'Location' of type str.
+The class 'Patient' has the following attributes: 'Age' of type int; 'Address' of type str; 'PhoneNo' of type int; 'Patientid' of type int; 'PatientName' of type str; 'Sex' of type str; 'RoomNo' of type int.
+The class 'ff' has the following attributes: 'fd' of type int.
+The class 'Doctor' has the following attributes: 'Location' of type str; 'Specialization' of type str; 'Docid' of type int; 'DocName' of type str; 'Phoneno' of type str; 'Dept' of type str.
+The class 'e' has the following attributes: 'ee' of type int.
+The class 'Receptionist' has the following attributes: 'Receptionid' of type int; 'RecName' of type str.
+The class 'Dept' has the following attributes: 'DeptName' of type str; 'id' of type int; 'Docid' of type int.
+'Dept' (role 'Doctor_Dept_17', cardinality 0..*) is associated with 'Doctor' (role 'dept6', cardinality 0..*).
+'ff' (role 'e13', cardinality 0..*) is associated with 'e' (role 'ff12', cardinality 0..*).
+'Receptionist' (role 'patient3', cardinality 0..*) is associated with 'Patient' (role 'receptionist2', cardinality 0..*).
+'Patient' (role 'doctor1', cardinality 0..*) is associated with 'Doctor' (role 'patient0', cardinality 0..*).
+'Rooms' (role 'Patient_Rooms_19', cardinality 0..*) is associated with 'Patient' (role 'rooms8', cardinality 0..*).
+'Receptionist' (role 'bill4', cardinality 0..*) is associated with 'Bill' (role 'receptionist5', cardinality 0..*).
+'Bill' (role 'patient11', cardinality 0..*) is associated with 'Patient' (role 'Patient_Bill_010', cardinality 0..*).

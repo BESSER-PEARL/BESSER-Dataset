@@ -1,0 +1,15 @@
+The model has 9 class(es).
+The class 'Elevator_Elevator' has the following attributes: 'move_direction' of type str; 'name' of type int; 'body' of type TKinter_Canvas; 'Height' of type int; 'floor_list' of type Floor_Floor; 'Velocity' of type int; 'call_queue' of type Floor_Floor; 'people' of type int; 'destination' of type int; 'Width' of type int; 'gate_status' of type str; 'ready' of type bool; 'building' of type TKinter_Canvas.
+The class 'TKinter_Button' has no attributes.
+The class 'TKinter_TK' has no attributes.
+The class 'TKinter_Text' has no attributes.
+The class 'Building' has the following attributes: 'Panel_list' of type Panel_Panel; 'Panel' of type TKinter_Canvas; 'Building' of type TKinter_Canvas; 'Elevator_list' of type Elevator_Elevator.
+The class 'TKinter_Frame' has no attributes.
+The class 'Panel_Panel' has the following attributes: 'canvas' of type TKinter_Canvas; 'button_list' of type TKinter_Button; 'flag_list' of type bool.
+The class 'TKinter_Canvas' has no attributes.
+The class 'Floor_Floor' has the following attributes: 'canvas' of type TKinter_Canvas; 'name' of type int; 'down_status' of type str; 'up_status' of type str.
+'Panel_Panel' (role 'building5', cardinality 0..*) is associated with 'Building' (role 'panel4', cardinality 0..*).
+'Floor_Floor' (role 'building9', cardinality 0..*) is associated with 'Building' (role 'floor8', cardinality 0..*).
+'Panel_Panel' (role 'elevator0', cardinality 0..*) is associated with 'Elevator_Elevator' (role 'panel1', cardinality 0..*).
+'Building' (role 'elevator6', cardinality 0..*) is associated with 'Elevator_Elevator' (role 'building7', cardinality 0..*).
+'Elevator_Elevator' (role 'floor3', cardinality 0..*) is associated with 'Floor_Floor' (role 'elevator2', cardinality 0..*).

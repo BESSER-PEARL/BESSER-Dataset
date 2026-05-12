@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'ADMIN' has the following attributes: 'NAME' of type str; 'PASSWORD' of type str.
+The class 'STUDENT' has the following attributes: 'EMAIL_ID' of type str; 'QUALIFICATION' of type str; 'NAME' of type str; 'COURSE' of type str; 'CONTACT_NO' of type int; 'STUD_ID' of type int.
+The class 'EMPLOYEE' has the following attributes: 'EMP_ID' of type int; 'EMAIL_ID' of type str; 'QULIFICATION' of type str; 'CONTACT_NO' of type int; 'NAME' of type str.
+The class 'VALIDATE' has the following attributes: 'USERNAME' of type str; 'PASSWORD' of type str.
+'EMPLOYEE' (role 'aDMIN3', cardinality 0..*) is associated with 'ADMIN' (role 'eMPLOYEE2', cardinality 0..*).
+'ADMIN' (role 'sTUDENT4', cardinality 0..*) is associated with 'STUDENT' (role 'aDMIN5', cardinality 0..*).
+'EMPLOYEE' (role 'sTUDENT0', cardinality 0..*) is associated with 'STUDENT' (role 'eMPLOYEE1', cardinality 0..*).

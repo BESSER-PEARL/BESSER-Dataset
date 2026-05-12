@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'Cashier' has no attributes.
+The class 'Customer' has no attributes.
+The class 'Cook' has no attributes.
+The class 'Worker' has no attributes.
+The class 'Event' has the following attributes: 'created_at' of type float; 'entity' of type str.
+The class 'Waiter' has no attributes.

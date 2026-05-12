@@ -1,0 +1,62 @@
+The model has 42 class(es).
+The class 'checkers_Help' has the following attributes: 'txt' of type genmymodelreverse_javax_swing_JTextArea; 'hlp' of type genmymodelreverse_javax_swing_JScrollPane.
+The class 'checkers_GameEngine' has the following attributes: 'king' of type int; 'normal' of type int; 'edge' of type int; 'inf' of type int; 'pos' of type int.
+The class 'genmymodelreverse_javax_swing_JButton' has no attributes.
+The class 'genmymodelreverse_java_awt_Point' has no attributes.
+The class 'Checkers_Start_the_Game_GUI_UseCase' has no attributes.
+The class 'genmymodelreverse_java_lang_Exception' has no attributes.
+The class 'genmymodelreverse_javax_swing_JComboBox' has no attributes.
+The class 'checkers_StartPanel' has no attributes.
+The class 'Human_Player_1_Actor' has no attributes.
+The class 'genmymodelreverse_java_util_Vector' has no attributes.
+The class 'genmymodelreverse_java_awt_event_ActionEvent' has no attributes.
+The class 'checkers_CheckerMove' has the following attributes: 'illegalMove' of type int; 'incompleteMove' of type int; 'legalMove' of type int.
+The class 'genmymodelreverse_java_awt_Graphics' has no attributes.
+The class 'Checkers_Close_or_Exit_Game_UseCase' has no attributes.
+The class 'genmymodelreverse_javax_swing_JPanel' has no attributes.
+The class 'Computer_Player_1_Actor' has no attributes.
+The class 'Checkers_Toggle__Sound__UseCase' has no attributes.
+The class 'genmymodelreverse_javax_swing_ImageIcon' has no attributes.
+The class 'Checkers_Start_New_Game_UseCase' has no attributes.
+The class 'genmymodelreverse_javax_swing_JFrame' has no attributes.
+The class 'genmymodelreverse_java_awt_event_MouseListener_Interface' has no attributes.
+The class 'genmymodelreverse_javax_swing_JDialog' has no attributes.
+The class 'checkers_PlaySound' has the following attributes: 'filename' of type str; 'EXTERNAL_BUFFER_SIZE' of type int.
+The class 'Checkers_Move_Game_Pieces_UseCase' has no attributes.
+The class 'Checkers_Select__Player_Mode__UseCase' has no attributes.
+The class 'Human_Player_2_Actor' has no attributes.
+The class 'genmymodelreverse_javax_swing_JRadioButton' has no attributes.
+The class 'checkers_CheckerFrame' has the following attributes: 'startButton' of type str; 'gamePanel' of type str.
+The class 'checkers_Checkers' has the following attributes: 'endY' of type int; 'diff' of type genmymodelreverse_javax_swing_JLabel; 'yellowKing' of type int; 'c2' of type genmymodelreverse_javax_swing_JRadioButton; 'preToMove1' of type int; 'empty' of type int; 'yellowK' of type genmymodelreverse_javax_swing_ImageIcon; 'snp' of type genmymodelreverse_javax_swing_ImageIcon; 'highlight' of type bool; 'snB' of type genmymodelreverse_javax_swing_JButton; 'yellowNormal' of type int; 'redN' of type genmymodelreverse_javax_swing_ImageIcon; 'won' of type int; 'preBoard1' of type str; 'yellowN' of type genmymodelreverse_javax_swing_ImageIcon; 'preToMove2' of type int; 'hlp' of type genmymodelreverse_javax_swing_ImageIcon; 'bp' of type genmymodelreverse_javax_swing_JLabel; 'players' of type genmymodelreverse_javax_swing_ButtonGroup; 'rp' of type genmymodelreverse_javax_swing_JLabel; 'col' of type genmymodelreverse_javax_swing_JLabel; 'mup' of type genmymodelreverse_javax_swing_ImageIcon; 'preBoard3' of type str; 'msg' of type genmymodelreverse_javax_swing_JTextArea; 'colors' of type genmymodelreverse_javax_swing_ButtonGroup; 'bpt' of type genmymodelreverse_javax_swing_JLabel; 'preToMove3' of type int; 'mode' of type genmymodelreverse_javax_swing_JLabel; 'p1' of type genmymodelreverse_javax_swing_JRadioButton; 'difficulty' of type int; 'rkt' of type genmymodelreverse_javax_swing_JLabel; 'level' of type genmymodelreverse_javax_swing_JComboBox; 'selectedColor' of type str; 'undoCount' of type int; 'redKing' of type int; 'hlpB' of type genmymodelreverse_javax_swing_JButton; 'nwB' of type genmymodelreverse_javax_swing_JButton; 'movable' of type bool; 'g' of type genmymodelreverse_java_awt_Graphics; 'silent' of type bool; 'rk' of type genmymodelreverse_javax_swing_JLabel; 'p2' of type genmymodelreverse_javax_swing_JRadioButton; 'bk' of type genmymodelreverse_javax_swing_JLabel; 'incomplete' of type bool; 'currType' of type int; 'winPoint' of type genmymodelreverse_java_awt_Point; 'loser' of type int; 'rpt' of type genmymodelreverse_javax_swing_JLabel; 'unB' of type genmymodelreverse_javax_swing_JButton; 'toMove' of type int; 'selectedMode' of type int; 'board' of type str; 'preBoard2' of type str; 'c1' of type genmymodelreverse_javax_swing_JRadioButton; 'redK' of type genmymodelreverse_javax_swing_ImageIcon; 'bkt' of type genmymodelreverse_javax_swing_JLabel; 'redNormal' of type int.
+The class 'genmymodelreverse_java_awt_event_MouseEvent' has no attributes.
+The class 'genmymodelreverse_javax_swing_JLabel' has no attributes.
+The class 'genmymodelreverse_javax_swing_ButtonGroup' has no attributes.
+The class 'genmymodelreverse_java_awt_event_MouseMotionListener_Interface' has no attributes.
+The class 'genmymodelreverse_java_awt_event_ItemEvent' has no attributes.
+The class 'checkers_IntelliChecker' has no attributes.
+The class 'genmymodelreverse_java_lang_Thread' has no attributes.
+The class 'genmymodelreverse_javax_swing_JTextArea' has no attributes.
+The class 'genmymodelreverse_java_awt_event_ItemListener_Interface' has no attributes.
+The class 'Checkers_Select__Help__UseCase' has no attributes.
+The class 'checkers_GameWin' has the following attributes: 'masseage' of type genmymodelreverse_javax_swing_JLabel; 'p' of type genmymodelreverse_java_awt_Point.
+The class 'Checkers_Select__Difficulty_Level__UseCase' has no attributes.
+The class 'genmymodelreverse_javax_swing_JScrollPane' has no attributes.
+The enumeration 'checkers_Position' does not specify any literals.
+'Checkers_Select__Player_Mode__UseCase' (role 'human_Player_231', cardinality 0..*) is associated with 'Human_Player_2_Actor' (role 'select__Player_Mode_30', cardinality 0..*).
+'Checkers_Select__Player_Mode__UseCase' (role 'human_Player_117', cardinality 0..*) is associated with 'Human_Player_1_Actor' (role 'select__Player_Mode_16', cardinality 0..*).
+'Checkers_Select__Difficulty_Level__UseCase' (role 'human_Player_115', cardinality 0..*) is associated with 'Human_Player_1_Actor' (role 'select__Difficulty_Level_14', cardinality 0..*).
+'Human_Player_2_Actor' (role 'start_the_Game_GUI22', cardinality 0..*) is associated with 'Checkers_Start_the_Game_GUI_UseCase' (role 'human_Player_223', cardinality 0..*).
+'Human_Player_2_Actor' (role 'start_New_Game32', cardinality 0..*) is associated with 'Checkers_Start_New_Game_UseCase' (role 'human_Player_233', cardinality 0..*).
+'Checkers_Close_or_Exit_Game_UseCase' (role 'human_Player_121', cardinality 0..*) is associated with 'Human_Player_1_Actor' (role 'close_or_Exit_Game20', cardinality 0..*).
+'Checkers_Close_or_Exit_Game_UseCase' (role 'human_Player_235', cardinality 0..*) is associated with 'Human_Player_2_Actor' (role 'close_or_Exit_Game34', cardinality 0..*).
+'Checkers_Toggle__Sound__UseCase' (role 'human_Player_227', cardinality 0..*) is associated with 'Human_Player_2_Actor' (role 'toggle__Sound_26', cardinality 0..*).
+'Checkers_Move_Game_Pieces_UseCase' (role 'human_Player_2__Secondary_5', cardinality 0..*) is associated with 'Human_Player_2_Actor' (role 'move_Game_Pieces4', cardinality 0..*).
+'Checkers_Start_the_Game_GUI_UseCase' (role 'human_Player_19', cardinality 0..*) is associated with 'Human_Player_1_Actor' (role 'start_the_Game_GUI8', cardinality 0..*).
+'Human_Player_1_Actor' (role 'select__Help_10', cardinality 0..*) is associated with 'Checkers_Select__Help__UseCase' (role 'human_Player_111', cardinality 0..*).
+'Checkers_Select__Difficulty_Level__UseCase' (role 'human_Player_229', cardinality 0..*) is associated with 'Human_Player_2_Actor' (role 'select__Difficulty_Level_28', cardinality 0..*).
+'checkers_Checkers' (role 'hp1', cardinality 0..*) is associated with 'checkers_Help' (role 'checkers0', cardinality 0..*).
+'Human_Player_2_Actor' (role 'select__Help_24', cardinality 0..*) is associated with 'Checkers_Select__Help__UseCase' (role 'human_Player_225', cardinality 0..*).
+'Human_Player_1_Actor' (role 'start_New_Game18', cardinality 0..*) is associated with 'Checkers_Start_New_Game_UseCase' (role 'human_Player_119', cardinality 0..*).
+'Checkers_Toggle__Sound__UseCase' (role 'human_Player_113', cardinality 0..*) is associated with 'Human_Player_1_Actor' (role 'toggle__Sound_12', cardinality 0..*).
+'Checkers_Move_Game_Pieces_UseCase' (role 'human_Player_1__Primary_7', cardinality 0..*) is associated with 'Human_Player_1_Actor' (role 'move_Game_Pieces6', cardinality 0..*).
+'Checkers_Move_Game_Pieces_UseCase' (role 'computer_Player_13', cardinality 0..*) is associated with 'Computer_Player_1_Actor' (role 'move_Game_Pieces2', cardinality 0..*).

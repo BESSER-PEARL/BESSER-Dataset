@@ -1,0 +1,84 @@
+The model has 44 class(es).
+The class 'Modify_Course_UseCase' has no attributes.
+The class 'CompleteCourse_UseCase' has no attributes.
+The class 'Course' has the following attributes: 'courseName' of type str; 'Description' of type str; 'end_date' of type str; 'courseCode' of type int; 'start_date' of type str.
+The class 'LearningMaterial_UseCase' has no attributes.
+The class 'corprateClient' has the following attributes: 'client_name' of type str; 'phone' of type int; 'companyRate' of type int; 'client_ID' of type int.
+The class 'Remove_Course_UseCase' has no attributes.
+The class 'Class_Course_List_UseCase' has no attributes.
+The class 'class_Student_Registration_Admin' has no attributes.
+The class 'class_Student_Registration' has no attributes.
+The class 'Name_UseCase' has no attributes.
+The class 'Show_Grade_UseCase' has no attributes.
+The class '_UseCase' has no attributes.
+The class 'Teacher' has the following attributes: 'teacher_name' of type str; 'phone' of type int; 'teacher_ID' of type int; 'class_list' of type str.
+The class 'Reports_UseCase' has no attributes.
+The class 'Add_Course_UseCase' has no attributes.
+The class 'TEACHER_Actor' has no attributes.
+The class 'Traning_Admin_Actor' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Teacher_Actor' has no attributes.
+The class 'Drop_Course_UseCase' has no attributes.
+The class 'Grade_Course_UseCase' has no attributes.
+The class 'Student_ID_UseCase' has no attributes.
+The class 'class_Student_Registration_Teacher' has no attributes.
+The class 'Show_Course_UseCase' has no attributes.
+The class 'CORPORATE_CLIENT_Actor' has no attributes.
+The class 'Courses_Component' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Create_Course_UseCase' has no attributes.
+The class 'ADMIN' has no attributes.
+The class 'Admin' has the following attributes: 'Name' of type str; 'registrarList' of type str; 'User_status' of type str; 'courseList' of type str; 'attribute' of type str.
+The class 'Corporate_Client_Actor' has no attributes.
+The class 'class_Student_Registration_Corporate' has no attributes.
+The class 'registeredUser' has the following attributes: 'Status' of type str; 'Id' of type int.
+The class 'courseList' has the following attributes: 'currentCourse' of type Course; 'Class' of type Add_Course_UseCase.
+The class 'Corporate_UseCase' has no attributes.
+The class 'Update_Registar_UseCase' has no attributes.
+The class 'User_Info_UseCase' has no attributes.
+The class 'Address_UseCase' has no attributes.
+The class 'class_Student_Registration_Student' has the following attributes: 'Integer' of type str; 'String2' of type Address_UseCase; 'String' of type Name_UseCase; 'String1' of type Student_ID_UseCase; 'attribute' of type str; 'Function' of type Add_Course_UseCase.
+The class 'Student' has the following attributes: 'studentRate' of type int; 'student_name' of type str; 'phone' of type int; 'student_ID' of type int.
+The class 'Select_Course_List_UseCase' has no attributes.
+The class 'Student_Actor' has no attributes.
+The class 'Registrar' has the following attributes: 'courseList' of type str; 'Status' of type Enumeration; '_attr' of type str.
+The class 'Class' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.
+The enumeration 'Enumeration1' does not specify any literals.
+The enumeration 'Status' does not specify any literals.
+'Course' (role 'courseList71', cardinality 0..*) is associated with 'courseList' (role 'course70', cardinality 0..*).
+'Student' (role 'course65', cardinality 0..*) is associated with 'Course' (role 'student64', cardinality 0..*).
+'Student_Actor' (role 'showCourse12', cardinality 0..*) is associated with 'Show_Course_UseCase' (role 'sTUDENT13', cardinality 0..*).
+'Traning_Admin_Actor' (role 'removeCourse22', cardinality 0..*) is associated with 'Remove_Course_UseCase' (role 'tRAINING_ADMIN23', cardinality 0..*).
+'Traning_Admin_Actor' (role 'createCourse20', cardinality 0..*) is associated with 'Create_Course_UseCase' (role 'tRAINING_ADMIN21', cardinality 0..*).
+'Student_Actor' (role 'login32', cardinality 0..*) is associated with 'Login_UseCase' (role 'student33', cardinality 0..*).
+'Corporate_Client_Actor' (role 'drop_Course53', cardinality 0..*) is associated with 'Drop_Course_UseCase' (role 'corporate_Client52', cardinality 0..*).
+'Teacher_Actor' (role 'select_Class_List41', cardinality 0..*) is associated with 'Select_Course_List_UseCase' (role 'teacher40', cardinality 0..*).
+'Add_Course_UseCase' (role 'sTUDENT1', cardinality 0..*) is associated with 'Student_Actor' (role 'rEGISTER0', cardinality 0..*).
+'Teacher' (role 'classSchedule66', cardinality 0..*) is associated with 'courseList' (role 'teacher67', cardinality 0..*).
+'Show_Course_UseCase' (role 'tRAINING_ADMIN19', cardinality 0..*) is associated with 'Traning_Admin_Actor' (role 'showCourse18', cardinality 0..*).
+'Corporate_Client_Actor' (role 'add_Course51', cardinality 0..*) is associated with 'Add_Course_UseCase' (role 'corporate_Client50', cardinality 0..*).
+'Traning_Admin_Actor' (role 'update_Registar47', cardinality 0..*) is associated with 'Update_Registar_UseCase' (role 'traning_Admin46', cardinality 0..*).
+'Course' (role 'student63', cardinality 0..*) is associated with 'Student' (role 'Course62', cardinality 0..*).
+'Course' (role 'corprateClient68', cardinality 0..*) is associated with 'corprateClient' (role 'course69', cardinality 0..*).
+'Student_Actor' (role 'dropCourse10', cardinality 0..*) is associated with 'Drop_Course_UseCase' (role 'sTUDENT11', cardinality 0..*).
+'Student_Actor' (role 'fIND_CLASS3', cardinality 0..*) is associated with 'CompleteCourse_UseCase' (role 'sTUDENT2', cardinality 0..*).
+'Traning_Admin_Actor' (role 'user_Info44', cardinality 0..*) is associated with 'User_Info_UseCase' (role 'traning_Admin45', cardinality 0..*).
+'Grade_Course_UseCase' (role 'teacher42', cardinality 0..*) is associated with 'Teacher_Actor' (role 'grade_Course43', cardinality 0..*).
+'TEACHER_Actor' (role 'showCourse16', cardinality 0..*) is associated with 'Show_Course_UseCase' (role 'tEACHER17', cardinality 0..*).
+'CORPORATE_CLIENT_Actor' (role 'dropCourse6', cardinality 0..*) is associated with 'Drop_Course_UseCase' (role 'cORPORATE_CLIENT7', cardinality 0..*).
+'Login_UseCase' (role 'corporate_Client49', cardinality 0..*) is associated with 'Corporate_Client_Actor' (role 'login48', cardinality 0..*).
+'CORPORATE_CLIENT_Actor' (role 'addCourse4', cardinality 0..*) is associated with 'Add_Course_UseCase' (role 'cORPORATE_CLIENT5', cardinality 0..*).
+'Student_Actor' (role 'addCourse8', cardinality 0..*) is associated with 'Add_Course_UseCase' (role 'sTUDENT9', cardinality 0..*).
+'Login_UseCase' (role 'traning_Admin29', cardinality 0..*) is associated with 'Traning_Admin_Actor' (role 'login28', cardinality 0..*).
+'Show_Grade_UseCase' (role 'corporate_Client55', cardinality 0..*) is associated with 'Corporate_Client_Actor' (role 'show_Grade54', cardinality 0..*).
+'Show_Course_UseCase' (role 'corporate_Client57', cardinality 0..*) is associated with 'Corporate_Client_Actor' (role 'show_Course56', cardinality 0..*).
+'registeredUser' (role 'admin59', cardinality 0..*) is associated with 'Admin' (role 'registeredUser58', cardinality 0..*).
+'Traning_Admin_Actor' (role 'modifyCourse24', cardinality 0..*) is associated with 'Modify_Course_UseCase' (role 'tRAINING_ADMIN25', cardinality 0..*).
+'Traning_Admin_Actor' (role 'reports27', cardinality 0..*) is associated with 'Reports_UseCase' (role 'tRAINING_ADMIN26', cardinality 0..*).
+'Show_Course_UseCase' (role 'teacher37', cardinality 0..*) is associated with 'Teacher_Actor' (role 'show_Course36', cardinality 0..*).
+'Class_Course_List_UseCase' (role 'traning_Admin39', cardinality 0..*) is associated with 'Traning_Admin_Actor' (role 'class_Course_List38', cardinality 0..*).
+'Student_Actor' (role 'show_Grade34', cardinality 0..*) is associated with 'Show_Grade_UseCase' (role 'student35', cardinality 0..*).
+'Login_UseCase' (role 'teacher31', cardinality 0..*) is associated with 'Teacher_Actor' (role 'login30', cardinality 0..*).
+'Show_Course_UseCase' (role 'cORPORATE_CLIENT15', cardinality 0..*) is associated with 'CORPORATE_CLIENT_Actor' (role 'showCourse14', cardinality 0..*).
+'registeredUser' (role 'admin61', cardinality 0..*) is associated with 'Admin' (role 'registeredUser60', cardinality 0..*).

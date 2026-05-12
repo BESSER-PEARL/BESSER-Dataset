@@ -1,0 +1,12 @@
+The model has 8 class(es).
+The class 'C2' has no attributes.
+The class 'R' has no attributes.
+The class 'C3' has no attributes.
+The class 'Y' has the following attributes: 'attY' of type str.
+The class 'C' has no attributes.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'Z' has no attributes.
+The class 'B' has the following attributes: 'attB' of type int.
+'R' (role 'a0', cardinality 0..*) is associated with 'A' (role 'r1', cardinality 0..*).
+'A' (role 'b2', cardinality 0..*) is associated with 'B' (role 'a3', cardinality 0..*).
+'C' (role 'b5', cardinality 0..*) is associated with 'B' (role 'c4', cardinality 0..*).

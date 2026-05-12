@@ -1,0 +1,32 @@
+The model has 17 class(es).
+The class 'Effectue_un_paiement_UseCase' has no attributes.
+The class 'S_enregistre_UseCase' has no attributes.
+The class 'Choisi_un_voyage_UseCase' has no attributes.
+The class 'Valide_arriv__UseCase' has no attributes.
+The class 'Valide_embarquement_UseCase' has no attributes.
+The class 'Passager__Actor' has no attributes.
+The class 'Enregistre_son_vehicule_UseCase' has no attributes.
+The class 'Proposition_de_voyage_UseCase' has no attributes.
+The class 'Conducteur_Actor' has no attributes.
+The class 'Administrateur_Actor' has no attributes.
+The class 'Utilisateur' has the following attributes: 'Nom' of type str; 'Pr_nom' of type str; 'Login' of type str; 'Telephone' of type str; 'Password' of type str; 'Mail' of type str; 'id_utilisateur' of type int.
+The class 'Reserve_voyage_UseCase' has no attributes.
+The class 'confirme_voyage_UseCase' has no attributes.
+The class 'Date_trajet' has the following attributes: 'id_date' of type int; 'Date___heure__minute' of type str; 'Jour' of type str; 'Type_date' of type str.
+The class 'Utilisateur_anonyme_Actor' has no attributes.
+The class 'S_authentifier_UseCase' has no attributes.
+The class 'Administre_UseCase' has no attributes.
+'Administre_UseCase' (role 'administrateur15', cardinality 0..*) is associated with 'Administrateur_Actor' (role 'administre14', cardinality 0..*).
+'Valide_arriv__UseCase' (role 'passager27', cardinality 0..*) is associated with 'Passager__Actor' (role 'valide_arriv_26', cardinality 0..*).
+'Proposition_de_voyage_UseCase' (role 'conducteur7', cardinality 0..*) is associated with 'Conducteur_Actor' (role 'proposition_de_voyage6', cardinality 0..*).
+'Passager__Actor' (role 'effectue_un_paiement22', cardinality 0..*) is associated with 'Effectue_un_paiement_UseCase' (role 'passager23', cardinality 0..*).
+'S_enregistre_UseCase' (role 'passager2', cardinality 0..*) is associated with 'Passager__Actor' (role 's_enregistre3', cardinality 0..*).
+'Conducteur_Actor' (role 'confirme_voyage18', cardinality 0..*) is associated with 'confirme_voyage_UseCase' (role 'conducteur19', cardinality 0..*).
+'Valide_arriv__UseCase' (role 'conducteur25', cardinality 0..*) is associated with 'Conducteur_Actor' (role 'valide_arriv_24', cardinality 0..*).
+'Enregistre_son_vehicule_UseCase' (role 'conducteur9', cardinality 0..*) is associated with 'Conducteur_Actor' (role 'enregistre_son_vehicule8', cardinality 0..*).
+'Utilisateur_anonyme_Actor' (role 's_enregistre0', cardinality 0..*) is associated with 'S_enregistre_UseCase' (role 'utilisateur1', cardinality 0..*).
+'Utilisateur_anonyme_Actor' (role 's_authentifier10', cardinality 0..*) is associated with 'S_authentifier_UseCase' (role 'utilisateur_anonyme11', cardinality 0..*).
+'Passager__Actor' (role 'choisi_un_voyage12', cardinality 0..*) is associated with 'Choisi_un_voyage_UseCase' (role 'passager13', cardinality 0..*).
+'Conducteur_Actor' (role 'valide_embarquement20', cardinality 0..*) is associated with 'Valide_embarquement_UseCase' (role 'conducteur21', cardinality 0..*).
+'Reserve_voyage_UseCase' (role 'passager17', cardinality 0..*) is associated with 'Passager__Actor' (role 'reserve_voyage16', cardinality 0..*).
+'Conducteur_Actor' (role 's_enregistre5', cardinality 0..*) is associated with 'S_enregistre_UseCase' (role 'conducteur4', cardinality 0..*).

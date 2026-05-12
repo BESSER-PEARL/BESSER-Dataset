@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'Cards_StarndardDeck' has the following attributes: 'rand' of type str; 'cards' of type Cards_Card.
+The class 'Cards_Card' has the following attributes: 'rank' of type Cards_Rank; 'suit' of type Cards_Suit.
+The class 'Cards_Deck_Interface' has no attributes.
+The enumeration 'Cards_Rank' does not specify any literals.
+The enumeration 'Cards_Suit' does not specify any literals.
+'Cards_StarndardDeck' (role 'card0', cardinality 0..*) is associated with 'Cards_Card' (role 'starndardDeck1', cardinality 0..*).

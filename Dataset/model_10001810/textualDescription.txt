@@ -1,0 +1,25 @@
+The model has 13 class(es).
+The class 'Ingr_dient' has the following attributes: 'unit_' of type str; 'poids' of type str; 'nom' of type str; 'id' of type int.
+The class 'Commande' has the following attributes: 'paiement' of type str; '_tat' of type int; 'date' of type int; 'utilisateur_id' of type int; 'id' of type int.
+The class 'Etat' has the following attributes: 'nom' of type str; 'verrouillage' of type bool; 'id' of type int.
+The class 'Utilisateur' has the following attributes: 'pizzeria_id' of type int; 'role_id' of type int; 'civilit_' of type str; 'date_naissance' of type str; 'email' of type str; 'prenom' of type str; 'nom' of type str; 'id' of type int; 'mot_de_passe' of type str.
+The class 'Cat_gorie' has the following attributes: 'nom' of type str; 'id' of type int.
+The class 'Class' has no attributes.
+The class 'Adresse' has the following attributes: 'code_postal' of type int; 't_l_phone' of type str; 'voie' of type str; 'geocode' of type str; 'utilisateur_id' of type int; 'id' of type int; 'ville' of type str; 'num_ro' of type int.
+The class 'Recette' has the following attributes: 'produit_id' of type int; 'id' of type int.
+The class 'R_le' has the following attributes: 'id' of type int; 'type' of type str.
+The class 'Pizzeria' has the following attributes: 'nom' of type str; 'id' of type int; 'adresse_id' of type int.
+The class 'Livraison' has the following attributes: 'commande_id' of type int; 'id' of type int; 'livreur_id' of type int; 'geocode' of type str; 'client_id' of type int.
+The class 'Stock' has the following attributes: 'disponibilit_' of type bool; 'ingredient_id' of type int; 'quantit_' of type int; 'date_modification' of type int.
+The class 'Produit' has the following attributes: 'id' of type int; 'categorie_id' of type int; 'prix' of type str; 'nom' of type str.
+'Utilisateur' (role 'Utilisateur_Pizzeria_016', cardinality 0..*) is associated with 'Pizzeria' (role 'Utilisateur_Pizzeria_117', cardinality 0..*).
+'Commande' (role 'Commande_Utilisateur_06', cardinality 0..*) is associated with 'Utilisateur' (role 'Commande_Utilisateur_17', cardinality 0..*).
+'Livraison' (role 'Livraison_Utilisateur2_020', cardinality 0..*) is associated with 'Utilisateur' (role 'client21', cardinality 0..*).
+'Produit' (role 'Produit_Recette_02', cardinality 0..*) is associated with 'Recette' (role 'Produit_Recette_13', cardinality 0..*).
+'R_le' (role 'Utilisateur_R_le_11', cardinality 0..*) is associated with 'Utilisateur' (role 'Utilisateur_R_le_00', cardinality 0..*).
+'Livraison' (role 'Livraison_Utilisateur_012', cardinality 0..*) is associated with 'Utilisateur' (role 'livreur13', cardinality 0..*).
+'Livraison' (role 'Livraison_Commande_014', cardinality 0..*) is associated with 'Commande' (role 'Livraison_Commande_115', cardinality 0..*).
+'Commande' (role 'Etat_Commande_111', cardinality 0..*) is associated with 'Etat' (role 'Etat_Commande_010', cardinality 0..*).
+'Pizzeria' (role 'Pizzeria_Adresse_018', cardinality 0..*) is associated with 'Adresse' (role 'Pizzeria_Adresse_119', cardinality 0..*).
+'Produit' (role 'Produit_Cat_gorie_04', cardinality 0..*) is associated with 'Cat_gorie' (role 'Produit_Cat_gorie_15', cardinality 0..*).
+'Stock' (role 'Stock_Ingr_dient_08', cardinality 0..*) is associated with 'Ingr_dient' (role 'Stock_Ingr_dient_19', cardinality 0..*).

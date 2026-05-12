@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'Customer' has the following attributes: 'email' of type str; 'phone' of type str; 'address' of type str.

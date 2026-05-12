@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'Piece' has no attributes.
+The class 'Checker' has no attributes.
+The class 'King' has no attributes.
+The class 'Square' has no attributes.
+The class 'Grid' has no attributes.
+The class 'Game' has no attributes.
+The class 'Player' has no attributes.
+The class 'Spectator' has no attributes.
+'Game' (role 'spectator11', cardinality 0..*) is associated with 'Spectator' (role 'game10', cardinality 0..*).
+'Square' (role 'piece6', cardinality 0..*) is associated with 'Piece' (role 'square7', cardinality 0..*).
+'Grid' (role 'square4', cardinality 0..*) is associated with 'Square' (role 'grid5', cardinality 0..*).
+'Player' (role 'game0', cardinality 0..*) is associated with 'Game' (role 'player1', cardinality 0..*).
+'Player' (role 'piece8', cardinality 0..*) is associated with 'Piece' (role 'player9', cardinality 0..*).
+'Game' (role 'grid2', cardinality 0..*) is associated with 'Grid' (role 'game3', cardinality 0..*).

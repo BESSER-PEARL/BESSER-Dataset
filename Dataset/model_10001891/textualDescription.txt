@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'supplier' has the following attributes: 'password' of type int; 'name' of type char.
+The class 'product' has the following attributes: 'id' of type int; 'group' of type char; 'name' of type char; 'subgroub' of type char.
+The class 'gest' has no attributes.
+The class 'customer' has the following attributes: 'password' of type int; 'address' of type char; 'name' of type char; 'phone' of type int; 'email' of type char.
+The class 'Payment' has the following attributes: 'cardNo' of type int; 'cardType' of type char; 'customerName' of type char; 'customerName1' of type char.
+The class 'cart' has the following attributes: 'product2' of type char; 'id' of type int; 'product1' of type char; 'price' of type str; 'NumberOfProduct' of type int; 'total' of type str; 'productn' of type char.
+The class 'delivery' has the following attributes: 'password' of type char; 'name' of type char.
+The class 'admin' has the following attributes: 'user_type' of type int; 'user_name' of type str; 'user_mobile' of type int.
+The class 'char' has no attributes.
+'admin' (role 'product8', cardinality 0..*) is associated with 'product' (role 'admin9', cardinality 0..*).
+'product' (role 'customer5', cardinality 0..*) is associated with 'customer' (role 'product4', cardinality 0..*).
+'gest' (role 'product7', cardinality 0..*) is associated with 'product' (role 'gest6', cardinality 0..*).
+'delivery' (role 'product12', cardinality 0..*) is associated with 'product' (role 'delivery13', cardinality 0..*).
+'supplier' (role 'product10', cardinality 0..*) is associated with 'product' (role 'supplier11', cardinality 0..*).
+'Payment' (role 'delivery15', cardinality 0..*) is associated with 'delivery' (role 'payment14', cardinality 0..*).
+'customer' (role 'payment1', cardinality 0..*) is associated with 'Payment' (role 'customer0', cardinality 0..*).
+'customer' (role 'cart2', cardinality 0..*) is associated with 'cart' (role 'customer3', cardinality 0..*).

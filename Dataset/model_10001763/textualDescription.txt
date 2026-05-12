@@ -1,0 +1,35 @@
+The model has 31 class(es).
+The class 'RecherchePropositions' has the following attributes: 'criteres' of type str.
+The class 'Utilisateur' has no attributes.
+The class 'Membre' has the following attributes: 'nom___salim_talout' of type str.
+The class 'CritereDeRecherche' has the following attributes: 'critere' of type str.
+The class 'Contacter' has the following attributes: 'personne' of type Utilisateur.
+The class 'Systeme' has no attributes.
+The class 'CompteDeLUtilisateur1' has the following attributes: 'peudo' of type str; 'adresseMail' of type str; 'motDePasse' of type str; 'Type' of type str.
+The class 'RechercheAvancee' has the following attributes: 'NbParticipants' of type int; 'Date' of type date; 'Association' of type Association; 'Titre' of type str; 'GenreService' of type Service.
+The class 'RechercheDemandes' has the following attributes: 'criteres' of type str.
+The class 'DemandeDeService1' has no attributes.
+The class 'AffichageAccueil' has no attributes.
+The class 'RechercheDAssociations' has the following attributes: 'criteres' of type str.
+The class 'DemandeDeService' has no attributes.
+The class 'Recherche_Rapide' has the following attributes: 'MotsCles' of type str.
+The class 'Recherche_Avanc_e' has the following attributes: 'NbParticipants' of type int; 'Association' of type Association; 'Date' of type date; 'Titre' of type str; 'Pays' of type str.
+The class 'Acteurs' has no attributes.
+The class 'Association' has the following attributes: 'nom___unicef' of type str.
+The class '__table___T_CompteDeLUtilisateur' has the following attributes: 'type' of type str; 'pseudo' of type str; 'numeroUtilisateur' of type int; 'motDePasse' of type str; 'adresseMail' of type str.
+The class 'Utilisateur1' has no attributes.
+The class '__table___T_Services' has the following attributes: 'description' of type str; 'nbParticipants' of type int; 'titre' of type str; 'numeroUtilisateur' of type int; 'type' of type str; 'date' of type date; 'numeroService' of type int.
+The class 'Service' has the following attributes: 'description' of type str.
+The class 'Resultat' has the following attributes: 'Liste' of type Resultat_Recherche.
+The class 'CompteDeLUtilisateur' has the following attributes: 'peudo' of type str; 'motDePasse' of type str; 'adresseMail' of type str; 'Type' of type str.
+The class 'AffichageDetailleResultat' has no attributes.
+The class 'RechercheRapide' has the following attributes: 'MotsCles' of type str.
+The class 'PropositionDeService1' has no attributes.
+The class 'Resultat_Recherche' has no attributes.
+The class 'AffichageResultats' has no attributes.
+The class 'PropositionDeService' has no attributes.
+The class 'Membre1' has no attributes.
+The class 'SelectionnerUnResultat' has no attributes.
+'Service' (role 'membre4', cardinality 0..*) is associated with 'Membre' (role 'service5', cardinality 0..*).
+'Service' (role 'association2', cardinality 0..*) is associated with 'Association' (role 'service3', cardinality 0..*).
+'Association' (role 'membre0', cardinality 0..*) is associated with 'Membre' (role 'association1', cardinality 0..*).

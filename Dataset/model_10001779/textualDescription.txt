@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'Class4' has no attributes.
+The class 'Class2' has no attributes.
+The class 'c1' has no attributes.
+The class 'Class' has no attributes.
+The class 'Teacher' has the following attributes: 'Name' of type str.
+The class 'Room' has the following attributes: 'Name' of type str.
+The class 'Class3' has no attributes.
+The class 'c' has no attributes.
+'Class4' (role 'c4', cardinality 0..*) is associated with 'c1' (role 'class45', cardinality 0..*).
+'Class3' (role 'class315', cardinality 0..*) is associated with 'Class3' (role 'class314', cardinality 0..*).
+'Class2' (role 'class216', cardinality 0..*) is associated with 'Class2' (role 'class217', cardinality 0..*).
+'Teacher' (role 'room0', cardinality 0..*) is associated with 'Room' (role 'teacher1', cardinality 0..*).
+'Class2' (role 'c11', cardinality 0..*) is associated with 'c' (role 'class210', cardinality 0..*).
+'Class' (role 'c8', cardinality 0..*) is associated with 'c' (role 'class9', cardinality 0..*).
+'c1' (role 'class6', cardinality 0..*) is associated with 'Class' (role 'c7', cardinality 0..*).
+'Room' (role 'class42', cardinality 0..*) is associated with 'Class4' (role 'room3', cardinality 0..*).
+'Class2' (role 'class218', cardinality 0..*) is associated with 'Class2' (role 'class219', cardinality 0..*).
+'Class2' (role 'class313', cardinality 0..*) is associated with 'Class3' (role 'class212', cardinality 0..*).

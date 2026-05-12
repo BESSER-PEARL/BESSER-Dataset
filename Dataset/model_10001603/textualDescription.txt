@@ -1,0 +1,10 @@
+The model has 9 class(es).
+The class 'Food_Category' has the following attributes: 'Category_name' of type str; 'Category_descp' of type str; 'Category_id' of type int; 'sub_id' of type int; 'Category_image' of type str.
+The class 'Material' has the following attributes: 'Material_name' of type str; 'Unit' of type str; 'Stock' of type str; 'Stock1' of type str; 'Material_id' of type int.
+The class 'Food' has the following attributes: 'food_id' of type int; 'food_name' of type str; 'Category_id' of type int.
+The class 'Food_Sub_Category' has the following attributes: 'sub_descp' of type str; 'sub_name' of type str; 'sub_image' of type str; 'sub_id' of type int.
+The class 'Order' has the following attributes: 'Order_num' of type int; 'Order_id' of type int; 'Order_edit' of type str; 'Order_delete' of type str; 'Order_status' of type str.
+The class 'Food_Items' has the following attributes: 'quantity' of type int; 'Items_id' of type int; 'Food_id' of type int; 'Material_id' of type int.
+The class 'Customer' has the following attributes: 'TimeStamp' of type str; 'Customer_id' of type int; 'Status' of type str; 'Customer_name' of type str; 'Table_id' of type int.
+The class 'Chef' has the following attributes: 'Speciality' of type str; 'Chef_name' of type str; 'Chef_id' of type int; 'Status' of type str; 'order_id' of type int.
+The class 'Table' has the following attributes: 'Status' of type str; 'Table_id' of type int; 'Table_num' of type int.

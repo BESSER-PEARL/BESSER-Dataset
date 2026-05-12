@@ -1,0 +1,46 @@
+The model has 26 class(es).
+The class 'Delivering_Management' has the following attributes: 'deliver_boy_id' of type str; 'client_key' of type str; 'client_name' of type str.
+The class 'Cleaner_Actor' has no attributes.
+The class 'Type_of_wash_UseCase' has no attributes.
+The class 'Powderized_Cleaning_UseCase' has no attributes.
+The class 'Client_Id___Name_UseCase' has no attributes.
+The class 'Delivery_Boy_Id_UseCase' has no attributes.
+The class 'Payment_Actor' has no attributes.
+The class 'Delivery_Management_UseCase' has no attributes.
+The class 'Usuario' has no attributes.
+The class 'Cleaning_Management_UseCase' has no attributes.
+The class 'Administrator' has no attributes.
+The class 'Type_of_car_UseCase' has no attributes.
+The class 'Informacion_Primaria' has the following attributes: 'Type_of_wash' of type str; 'Type_of_car' of type str.
+The class 'Info_UseCase' has no attributes.
+The class 'Water_Wash_UseCase' has no attributes.
+The class 'Limpiador' has no attributes.
+The class 'PAGO' has the following attributes: 'Type_of_payment' of type str.
+The class 'Type_of_Payment_UseCase' has no attributes.
+The class 'Dispensador_de_dinero' has no attributes.
+The class 'Reciept____Balance_UseCase' has no attributes.
+The class 'Brushing_UseCase' has no attributes.
+The class 'Payment_UseCase' has no attributes.
+The class 'Deliver_Actor' has no attributes.
+The class 'Delivery_Boy' has no attributes.
+The class 'Client_Actor' has no attributes.
+The class 'Gestion_de_Limpieza' has the following attributes: 'powderized_wash' of type str; 'brushing' of type str; 'water' of type str.
+'PAGO' (role 'cleaning_Management2', cardinality 0..*) is associated with 'Gestion_de_Limpieza' (role 'payment3', cardinality 0..*).
+'Delivering_Management' (role 'cleaning_Management5', cardinality 0..*) is associated with 'Gestion_de_Limpieza' (role 'delivering_Management4', cardinality 0..*).
+'Usuario' (role 'payment8', cardinality 0..*) is associated with 'PAGO' (role 'user9', cardinality 0..*).
+'Delivery_Management_UseCase' (role 'cleaning_Management33', cardinality 0..*) is associated with 'Cleaning_Management_UseCase' (role 'delivery_Management32', cardinality 0..*).
+'Gestion_de_Limpieza' (role 'cleaner14', cardinality 0..*) is associated with 'Limpiador' (role 'cleaning_Management15', cardinality 0..*).
+'Payment_UseCase' (role 'payment24', cardinality 0..*) is associated with 'Payment_Actor' (role 'payment25', cardinality 0..*).
+'Cleaning_Management_UseCase' (role 'cleaner28', cardinality 0..*) is associated with 'Cleaner_Actor' (role 'cleaning_Management29', cardinality 0..*).
+'Info_UseCase' (role 'client21', cardinality 0..*) is associated with 'Client_Actor' (role 'info20', cardinality 0..*).
+'Informacion_Primaria' (role 'payment0', cardinality 0..*) is associated with 'PAGO' (role 'primary_Info1', cardinality 0..*).
+'Delivery_Boy_Id_UseCase' (role 'deliver31', cardinality 0..*) is associated with 'Deliver_Actor' (role 'delivery_Boy_Id30', cardinality 0..*).
+'Info_UseCase' (role 'cleaning_Management26', cardinality 0..*) is associated with 'Cleaning_Management_UseCase' (role 'info27', cardinality 0..*).
+'Deliver_Actor' (role 'delivery_Management35', cardinality 0..*) is associated with 'Delivery_Management_UseCase' (role 'deliver34', cardinality 0..*).
+'Informacion_Primaria' (role 'user7', cardinality 0..*) is associated with 'Usuario' (role 'primary_Info6', cardinality 0..*).
+'PAGO' (role 'money_Dispenser16', cardinality 0..*) is associated with 'Dispensador_de_dinero' (role 'payment17', cardinality 0..*).
+'Delivery_Management_UseCase' (role 'client37', cardinality 0..*) is associated with 'Client_Actor' (role 'delivery_Management36', cardinality 0..*).
+'Gestion_de_Limpieza' (role 'user11', cardinality 0..*) is associated with 'Usuario' (role 'cleaning_Management10', cardinality 0..*).
+'Info_UseCase' (role 'payment22', cardinality 0..*) is associated with 'Payment_UseCase' (role 'info23', cardinality 0..*).
+'Delivery_Boy' (role 'delivering_Management19', cardinality 0..*) is associated with 'Delivering_Management' (role 'delivery_Boy18', cardinality 0..*).
+'Usuario' (role 'delivering_Management12', cardinality 0..*) is associated with 'Delivering_Management' (role 'user13', cardinality 0..*).

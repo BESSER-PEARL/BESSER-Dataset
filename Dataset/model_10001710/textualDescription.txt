@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'catalog' has the following attributes: 'name' of type str; 'category' of type str.
+The class 'Order' has the following attributes: 'shipped' of type str; 'status' of type str; 't' of type str; 'address' of type str; 'ordered' of type str; 'items' of type str.
+The class 'Cart' has the following attributes: 'Id' of type str; 'items' of type int.
+The class 'Customer' has the following attributes: 'id_' of type str; 'email' of type str; 'address' of type str; 'phone' of type int.
+The class 'Payment' has the following attributes: 'total' of type str; 'Details' of type str; 'txn_id' of type str; 'paid' of type str.
+The class 'Payment_Verification' has the following attributes: 'status' of type str; 'txn_id' of type str.
+The class 'Web_Login' has the following attributes: 'login_id' of type str; 'verification' of type Customer; 'password' of type str.
+The class 'Account' has the following attributes: 'open' of type str; 'billing_address' of type str; 'id' of type str.
+The class 'Product' has the following attributes: 'price' of type str; 'name' of type str; 'attribute' of type str; 'Category' of type str.
+'Payment_Verification' (role 'payment13', cardinality 0..*) is associated with 'Payment' (role 'payment_Verification12', cardinality 0..*).
+'Payment_Verification' (role 'account16', cardinality 0..*) is associated with 'Account' (role 'payment_Verification17', cardinality 0..*).
+'Order' (role 'payment10', cardinality 0..*) is associated with 'Payment' (role 'order11', cardinality 0..*).
+'Payment_Verification' (role 'customer20', cardinality 0..*) is associated with 'Customer' (role 'payment_Verification21', cardinality 0..*).
+'Cart' (role 'order18', cardinality 0..*) is associated with 'Order' (role 'cart19', cardinality 0..*).
+'Product' (role 'order8', cardinality 0..*) is associated with 'Order' (role 'product9', cardinality 0..*).
+'Customer' (role 'web_Login1', cardinality 0..*) is associated with 'Web_Login' (role 'customer0', cardinality 0..*).
+'Cart' (role 'web_Login3', cardinality 0..*) is associated with 'Web_Login' (role 'cart2', cardinality 0..*).
+'Account' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'account4', cardinality 0..*).
+'Cart' (role 'product22', cardinality 0..*) is associated with 'Product' (role 'cart23', cardinality 0..*).
+'Account' (role 'order14', cardinality 0..*) is associated with 'Order' (role 'account15', cardinality 0..*).
+'Product' (role 'catalog7', cardinality 0..*) is associated with 'catalog' (role 'product6', cardinality 0..*).

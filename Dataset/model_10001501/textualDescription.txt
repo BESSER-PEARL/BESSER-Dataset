@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'TarotCard___Card' has the following attributes: '_id' of type int; '_fortunes' of type str; '_fileName' of type str.
+The class 'Deck' has the following attributes: '_deck' of type str.
+The class 'Card___Abstract__' has the following attributes: '_id' of type int.
+The class 'FortuneTeller' has the following attributes: '_tarotDeck' of type Deck.
+'FortuneTeller' (role 'deck2', cardinality 0..*) is associated with 'Deck' (role 'fortuneTeller3', cardinality 0..*).
+'Card___Abstract__' (role 'deck0', cardinality 0..*) is associated with 'Deck' (role 'card___Abstract__1', cardinality 0..*).

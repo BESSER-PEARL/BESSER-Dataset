@@ -1,0 +1,923 @@
+import inspect
+import pytest
+from hypothesis import given, assume, settings
+import hypothesis.strategies as st
+import copy
+from datetime import date
+
+from python_code import (
+    Symbol_Meaning,
+    _unnamed,
+    Class,
+    Entertainment,
+    HouseHolds,
+    HomeTheatre,
+    TV,
+    Light,
+    Speakers,
+    Camera,
+    Door,
+    Alert,
+    Home_Security_System,
+    PressureSensor,
+    Motion_Sensor,
+    FireAlarm_Sensor,
+    Sensor,
+    System,
+)
+
+# =============================================================================
+# SECTION 1 — STRUCTURAL TESTS
+# =============================================================================
+
+
+
+def test_symbol_meaning_is_not_abstract():
+    assert not inspect.isabstract(Symbol_Meaning)
+
+
+def test_symbol_meaning_constructor_exists():
+    assert callable(Symbol_Meaning.__init__)
+
+
+def test_symbol_meaning_constructor_args():
+    sig = inspect.signature(Symbol_Meaning.__init__)
+    params = list(sig.parameters.keys())
+    assert "____" in params, "Missing parameter '____'"
+
+def test_symbol_meaning_has_____():
+    assert hasattr(Symbol_Meaning, "____")
+    descriptor = None
+    for klass in Symbol_Meaning.__mro__:
+        if "____" in klass.__dict__:
+            descriptor = klass.__dict__["____"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test__unnamed_is_not_abstract():
+    assert not inspect.isabstract(_unnamed)
+
+
+def test__unnamed_constructor_exists():
+    assert callable(_unnamed.__init__)
+
+
+def test__unnamed_constructor_args():
+    sig = inspect.signature(_unnamed.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_class_is_not_abstract():
+    assert not inspect.isabstract(Class)
+
+
+def test_class_constructor_exists():
+    assert callable(Class.__init__)
+
+
+def test_class_constructor_args():
+    sig = inspect.signature(Class.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_entertainment_is_not_abstract():
+    assert not inspect.isabstract(Entertainment)
+
+
+def test_entertainment_constructor_exists():
+    assert callable(Entertainment.__init__)
+
+
+def test_entertainment_constructor_args():
+    sig = inspect.signature(Entertainment.__init__)
+    params = list(sig.parameters.keys())
+    assert "DeviceID" in params, "Missing parameter 'DeviceID'"
+
+def test_entertainment_has_DeviceID():
+    assert hasattr(Entertainment, "DeviceID")
+    descriptor = None
+    for klass in Entertainment.__mro__:
+        if "DeviceID" in klass.__dict__:
+            descriptor = klass.__dict__["DeviceID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_households_is_not_abstract():
+    assert not inspect.isabstract(HouseHolds)
+
+
+def test_households_constructor_exists():
+    assert callable(HouseHolds.__init__)
+
+
+def test_households_constructor_args():
+    sig = inspect.signature(HouseHolds.__init__)
+    params = list(sig.parameters.keys())
+    assert "Alarm" in params, "Missing parameter 'Alarm'"
+    assert "TimeID" in params, "Missing parameter 'TimeID'"
+    assert "Coffee" in params, "Missing parameter 'Coffee'"
+    assert "DishWasher" in params, "Missing parameter 'DishWasher'"
+    assert "WashingMachine" in params, "Missing parameter 'WashingMachine'"
+
+def test_households_has_Alarm():
+    assert hasattr(HouseHolds, "Alarm")
+    descriptor = None
+    for klass in HouseHolds.__mro__:
+        if "Alarm" in klass.__dict__:
+            descriptor = klass.__dict__["Alarm"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_households_has_TimeID():
+    assert hasattr(HouseHolds, "TimeID")
+    descriptor = None
+    for klass in HouseHolds.__mro__:
+        if "TimeID" in klass.__dict__:
+            descriptor = klass.__dict__["TimeID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_households_has_Coffee():
+    assert hasattr(HouseHolds, "Coffee")
+    descriptor = None
+    for klass in HouseHolds.__mro__:
+        if "Coffee" in klass.__dict__:
+            descriptor = klass.__dict__["Coffee"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_households_has_DishWasher():
+    assert hasattr(HouseHolds, "DishWasher")
+    descriptor = None
+    for klass in HouseHolds.__mro__:
+        if "DishWasher" in klass.__dict__:
+            descriptor = klass.__dict__["DishWasher"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_households_has_WashingMachine():
+    assert hasattr(HouseHolds, "WashingMachine")
+    descriptor = None
+    for klass in HouseHolds.__mro__:
+        if "WashingMachine" in klass.__dict__:
+            descriptor = klass.__dict__["WashingMachine"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_hometheatre_is_not_abstract():
+    assert not inspect.isabstract(HomeTheatre)
+
+
+def test_hometheatre_constructor_exists():
+    assert callable(HomeTheatre.__init__)
+
+
+def test_hometheatre_constructor_args():
+    sig = inspect.signature(HomeTheatre.__init__)
+    params = list(sig.parameters.keys())
+    assert "HTID" in params, "Missing parameter 'HTID'"
+
+def test_hometheatre_has_HTID():
+    assert hasattr(HomeTheatre, "HTID")
+    descriptor = None
+    for klass in HomeTheatre.__mro__:
+        if "HTID" in klass.__dict__:
+            descriptor = klass.__dict__["HTID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tv_is_not_abstract():
+    assert not inspect.isabstract(TV)
+
+
+def test_tv_constructor_exists():
+    assert callable(TV.__init__)
+
+
+def test_tv_constructor_args():
+    sig = inspect.signature(TV.__init__)
+    params = list(sig.parameters.keys())
+    assert "TVID" in params, "Missing parameter 'TVID'"
+
+def test_tv_has_TVID():
+    assert hasattr(TV, "TVID")
+    descriptor = None
+    for klass in TV.__mro__:
+        if "TVID" in klass.__dict__:
+            descriptor = klass.__dict__["TVID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_light_is_not_abstract():
+    assert not inspect.isabstract(Light)
+
+
+def test_light_constructor_exists():
+    assert callable(Light.__init__)
+
+
+def test_light_constructor_args():
+    sig = inspect.signature(Light.__init__)
+    params = list(sig.parameters.keys())
+    assert "LightID" in params, "Missing parameter 'LightID'"
+
+def test_light_has_LightID():
+    assert hasattr(Light, "LightID")
+    descriptor = None
+    for klass in Light.__mro__:
+        if "LightID" in klass.__dict__:
+            descriptor = klass.__dict__["LightID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_speakers_is_not_abstract():
+    assert not inspect.isabstract(Speakers)
+
+
+def test_speakers_constructor_exists():
+    assert callable(Speakers.__init__)
+
+
+def test_speakers_constructor_args():
+    sig = inspect.signature(Speakers.__init__)
+    params = list(sig.parameters.keys())
+    assert "SpeakerID" in params, "Missing parameter 'SpeakerID'"
+
+def test_speakers_has_SpeakerID():
+    assert hasattr(Speakers, "SpeakerID")
+    descriptor = None
+    for klass in Speakers.__mro__:
+        if "SpeakerID" in klass.__dict__:
+            descriptor = klass.__dict__["SpeakerID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camera_is_not_abstract():
+    assert not inspect.isabstract(Camera)
+
+
+def test_camera_constructor_exists():
+    assert callable(Camera.__init__)
+
+
+def test_camera_constructor_args():
+    sig = inspect.signature(Camera.__init__)
+    params = list(sig.parameters.keys())
+    assert "CameraID" in params, "Missing parameter 'CameraID'"
+
+def test_camera_has_CameraID():
+    assert hasattr(Camera, "CameraID")
+    descriptor = None
+    for klass in Camera.__mro__:
+        if "CameraID" in klass.__dict__:
+            descriptor = klass.__dict__["CameraID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_door_is_not_abstract():
+    assert not inspect.isabstract(Door)
+
+
+def test_door_constructor_exists():
+    assert callable(Door.__init__)
+
+
+def test_door_constructor_args():
+    sig = inspect.signature(Door.__init__)
+    params = list(sig.parameters.keys())
+    assert "DoorID" in params, "Missing parameter 'DoorID'"
+
+def test_door_has_DoorID():
+    assert hasattr(Door, "DoorID")
+    descriptor = None
+    for klass in Door.__mro__:
+        if "DoorID" in klass.__dict__:
+            descriptor = klass.__dict__["DoorID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_alert_is_not_abstract():
+    assert not inspect.isabstract(Alert)
+
+
+def test_alert_constructor_exists():
+    assert callable(Alert.__init__)
+
+
+def test_alert_constructor_args():
+    sig = inspect.signature(Alert.__init__)
+    params = list(sig.parameters.keys())
+    assert "AlertID" in params, "Missing parameter 'AlertID'"
+
+def test_alert_has_AlertID():
+    assert hasattr(Alert, "AlertID")
+    descriptor = None
+    for klass in Alert.__mro__:
+        if "AlertID" in klass.__dict__:
+            descriptor = klass.__dict__["AlertID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_home_security_system_is_not_abstract():
+    assert not inspect.isabstract(Home_Security_System)
+
+
+def test_home_security_system_constructor_exists():
+    assert callable(Home_Security_System.__init__)
+
+
+def test_home_security_system_constructor_args():
+    sig = inspect.signature(Home_Security_System.__init__)
+    params = list(sig.parameters.keys())
+    assert "UserID" in params, "Missing parameter 'UserID'"
+
+def test_home_security_system_has_UserID():
+    assert hasattr(Home_Security_System, "UserID")
+    descriptor = None
+    for klass in Home_Security_System.__mro__:
+        if "UserID" in klass.__dict__:
+            descriptor = klass.__dict__["UserID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pressuresensor_is_not_abstract():
+    assert not inspect.isabstract(PressureSensor)
+
+
+def test_pressuresensor_constructor_exists():
+    assert callable(PressureSensor.__init__)
+
+
+def test_pressuresensor_constructor_args():
+    sig = inspect.signature(PressureSensor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_motion_sensor_is_not_abstract():
+    assert not inspect.isabstract(Motion_Sensor)
+
+
+def test_motion_sensor_constructor_exists():
+    assert callable(Motion_Sensor.__init__)
+
+
+def test_motion_sensor_constructor_args():
+    sig = inspect.signature(Motion_Sensor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_firealarm_sensor_is_not_abstract():
+    assert not inspect.isabstract(FireAlarm_Sensor)
+
+
+def test_firealarm_sensor_constructor_exists():
+    assert callable(FireAlarm_Sensor.__init__)
+
+
+def test_firealarm_sensor_constructor_args():
+    sig = inspect.signature(FireAlarm_Sensor.__init__)
+    params = list(sig.parameters.keys())
+    assert "DispenseSprinkler" in params, "Missing parameter 'DispenseSprinkler'"
+    assert "SmokeAlarm" in params, "Missing parameter 'SmokeAlarm'"
+
+def test_firealarm_sensor_has_DispenseSprinkler():
+    assert hasattr(FireAlarm_Sensor, "DispenseSprinkler")
+    descriptor = None
+    for klass in FireAlarm_Sensor.__mro__:
+        if "DispenseSprinkler" in klass.__dict__:
+            descriptor = klass.__dict__["DispenseSprinkler"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_firealarm_sensor_has_SmokeAlarm():
+    assert hasattr(FireAlarm_Sensor, "SmokeAlarm")
+    descriptor = None
+    for klass in FireAlarm_Sensor.__mro__:
+        if "SmokeAlarm" in klass.__dict__:
+            descriptor = klass.__dict__["SmokeAlarm"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sensor_is_not_abstract():
+    assert not inspect.isabstract(Sensor)
+
+
+def test_sensor_constructor_exists():
+    assert callable(Sensor.__init__)
+
+
+def test_sensor_constructor_args():
+    sig = inspect.signature(Sensor.__init__)
+    params = list(sig.parameters.keys())
+    assert "SensorID" in params, "Missing parameter 'SensorID'"
+    assert "SensorType" in params, "Missing parameter 'SensorType'"
+
+def test_sensor_has_SensorID():
+    assert hasattr(Sensor, "SensorID")
+    descriptor = None
+    for klass in Sensor.__mro__:
+        if "SensorID" in klass.__dict__:
+            descriptor = klass.__dict__["SensorID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sensor_has_SensorType():
+    assert hasattr(Sensor, "SensorType")
+    descriptor = None
+    for klass in Sensor.__mro__:
+        if "SensorType" in klass.__dict__:
+            descriptor = klass.__dict__["SensorType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_system_is_not_abstract():
+    assert not inspect.isabstract(System)
+
+
+def test_system_constructor_exists():
+    assert callable(System.__init__)
+
+
+def test_system_constructor_args():
+    sig = inspect.signature(System.__init__)
+    params = list(sig.parameters.keys())
+    assert "Status" in params, "Missing parameter 'Status'"
+    assert "Update" in params, "Missing parameter 'Update'"
+
+def test_system_has_Status():
+    assert hasattr(System, "Status")
+    descriptor = None
+    for klass in System.__mro__:
+        if "Status" in klass.__dict__:
+            descriptor = klass.__dict__["Status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_system_has_Update():
+    assert hasattr(System, "Update")
+    descriptor = None
+    for klass in System.__mro__:
+        if "Update" in klass.__dict__:
+            descriptor = klass.__dict__["Update"]
+            break
+    assert isinstance(descriptor, property)
+
+
+# =============================================================================
+# HYPOTHESIS STRATEGIES
+# =============================================================================
+
+safe_text = st.text(
+    alphabet=st.characters(
+        whitelist_categories=("Ll", "Lu", "Nd"),
+        whitelist_characters="_",
+    ),
+    min_size=1,
+).filter(lambda s: s[0].isalpha())
+Symbol_Meaning_strategy = st.builds(
+    Symbol_Meaning,
+    ____=
+        safe_text
+)
+_unnamed_strategy = st.builds(
+    _unnamed,
+)
+Class_strategy = st.builds(
+    Class,
+)
+Entertainment_strategy = st.builds(
+    Entertainment,
+    DeviceID=
+        st.integers()
+)
+HouseHolds_strategy = st.builds(
+    HouseHolds,
+    Alarm=
+        safe_text,
+    TimeID=
+        safe_text,
+    Coffee=
+        safe_text,
+    DishWasher=
+        safe_text,
+    WashingMachine=
+        safe_text
+)
+HomeTheatre_strategy = st.builds(
+    HomeTheatre,
+    HTID=
+        safe_text
+)
+TV_strategy = st.builds(
+    TV,
+    TVID=
+        st.integers()
+)
+Light_strategy = st.builds(
+    Light,
+    LightID=
+        safe_text
+)
+Speakers_strategy = st.builds(
+    Speakers,
+    SpeakerID=
+        st.integers()
+)
+Camera_strategy = st.builds(
+    Camera,
+    CameraID=
+        st.integers()
+)
+Door_strategy = st.builds(
+    Door,
+    DoorID=
+        st.integers()
+)
+Alert_strategy = st.builds(
+    Alert,
+    AlertID=
+        st.integers()
+)
+Home_Security_System_strategy = st.builds(
+    Home_Security_System,
+    UserID=
+        st.integers()
+)
+PressureSensor_strategy = st.builds(
+    PressureSensor,
+)
+Motion_Sensor_strategy = st.builds(
+    Motion_Sensor,
+)
+FireAlarm_Sensor_strategy = st.builds(
+    FireAlarm_Sensor,
+    DispenseSprinkler=
+        st.booleans(),
+    SmokeAlarm=
+        st.booleans()
+)
+Sensor_strategy = st.builds(
+    Sensor,
+    SensorID=
+        st.integers(),
+    SensorType=
+        st.integers()
+)
+System_strategy = st.builds(
+    System,
+    Status=
+        st.booleans(),
+    Update=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+
+@given(instance=Symbol_Meaning_strategy)
+@settings(max_examples=50)
+def test_symbol_meaning_instantiation(instance):
+    assert isinstance(instance, Symbol_Meaning)
+
+@given(instance=Symbol_Meaning_strategy)
+def test_symbol_meaning______type(instance):
+    assert isinstance(instance.____, str)
+
+
+@given(instance=Symbol_Meaning_strategy)
+def test_symbol_meaning______setter(instance):
+    original = instance.____
+    instance.____ = original
+    assert instance.____ == original
+
+@given(instance=_unnamed_strategy)
+@settings(max_examples=50)
+def test__unnamed_instantiation(instance):
+    assert isinstance(instance, _unnamed)
+
+@given(instance=Class_strategy)
+@settings(max_examples=50)
+def test_class_instantiation(instance):
+    assert isinstance(instance, Class)
+
+@given(instance=Entertainment_strategy)
+@settings(max_examples=50)
+def test_entertainment_instantiation(instance):
+    assert isinstance(instance, Entertainment)
+
+@given(instance=Entertainment_strategy)
+def test_entertainment_DeviceID_type(instance):
+    assert isinstance(instance.DeviceID, int)
+
+
+@given(instance=Entertainment_strategy)
+def test_entertainment_DeviceID_setter(instance):
+    original = instance.DeviceID
+    instance.DeviceID = original
+    assert instance.DeviceID == original
+
+@given(instance=HouseHolds_strategy)
+@settings(max_examples=50)
+def test_households_instantiation(instance):
+    assert isinstance(instance, HouseHolds)
+
+@given(instance=HouseHolds_strategy)
+def test_households_Alarm_type(instance):
+    assert isinstance(instance.Alarm, str)
+
+
+@given(instance=HouseHolds_strategy)
+def test_households_Alarm_setter(instance):
+    original = instance.Alarm
+    instance.Alarm = original
+    assert instance.Alarm == original
+
+@given(instance=HouseHolds_strategy)
+def test_households_TimeID_type(instance):
+    assert isinstance(instance.TimeID, str)
+
+
+@given(instance=HouseHolds_strategy)
+def test_households_TimeID_setter(instance):
+    original = instance.TimeID
+    instance.TimeID = original
+    assert instance.TimeID == original
+
+@given(instance=HouseHolds_strategy)
+def test_households_Coffee_type(instance):
+    assert isinstance(instance.Coffee, str)
+
+
+@given(instance=HouseHolds_strategy)
+def test_households_Coffee_setter(instance):
+    original = instance.Coffee
+    instance.Coffee = original
+    assert instance.Coffee == original
+
+@given(instance=HouseHolds_strategy)
+def test_households_DishWasher_type(instance):
+    assert isinstance(instance.DishWasher, str)
+
+
+@given(instance=HouseHolds_strategy)
+def test_households_DishWasher_setter(instance):
+    original = instance.DishWasher
+    instance.DishWasher = original
+    assert instance.DishWasher == original
+
+@given(instance=HouseHolds_strategy)
+def test_households_WashingMachine_type(instance):
+    assert isinstance(instance.WashingMachine, str)
+
+
+@given(instance=HouseHolds_strategy)
+def test_households_WashingMachine_setter(instance):
+    original = instance.WashingMachine
+    instance.WashingMachine = original
+    assert instance.WashingMachine == original
+
+@given(instance=HomeTheatre_strategy)
+@settings(max_examples=50)
+def test_hometheatre_instantiation(instance):
+    assert isinstance(instance, HomeTheatre)
+
+@given(instance=HomeTheatre_strategy)
+def test_hometheatre_HTID_type(instance):
+    assert isinstance(instance.HTID, str)
+
+
+@given(instance=HomeTheatre_strategy)
+def test_hometheatre_HTID_setter(instance):
+    original = instance.HTID
+    instance.HTID = original
+    assert instance.HTID == original
+
+@given(instance=TV_strategy)
+@settings(max_examples=50)
+def test_tv_instantiation(instance):
+    assert isinstance(instance, TV)
+
+@given(instance=TV_strategy)
+def test_tv_TVID_type(instance):
+    assert isinstance(instance.TVID, int)
+
+
+@given(instance=TV_strategy)
+def test_tv_TVID_setter(instance):
+    original = instance.TVID
+    instance.TVID = original
+    assert instance.TVID == original
+
+@given(instance=Light_strategy)
+@settings(max_examples=50)
+def test_light_instantiation(instance):
+    assert isinstance(instance, Light)
+
+@given(instance=Light_strategy)
+def test_light_LightID_type(instance):
+    assert isinstance(instance.LightID, str)
+
+
+@given(instance=Light_strategy)
+def test_light_LightID_setter(instance):
+    original = instance.LightID
+    instance.LightID = original
+    assert instance.LightID == original
+
+@given(instance=Speakers_strategy)
+@settings(max_examples=50)
+def test_speakers_instantiation(instance):
+    assert isinstance(instance, Speakers)
+
+@given(instance=Speakers_strategy)
+def test_speakers_SpeakerID_type(instance):
+    assert isinstance(instance.SpeakerID, int)
+
+
+@given(instance=Speakers_strategy)
+def test_speakers_SpeakerID_setter(instance):
+    original = instance.SpeakerID
+    instance.SpeakerID = original
+    assert instance.SpeakerID == original
+
+@given(instance=Camera_strategy)
+@settings(max_examples=50)
+def test_camera_instantiation(instance):
+    assert isinstance(instance, Camera)
+
+@given(instance=Camera_strategy)
+def test_camera_CameraID_type(instance):
+    assert isinstance(instance.CameraID, int)
+
+
+@given(instance=Camera_strategy)
+def test_camera_CameraID_setter(instance):
+    original = instance.CameraID
+    instance.CameraID = original
+    assert instance.CameraID == original
+
+@given(instance=Door_strategy)
+@settings(max_examples=50)
+def test_door_instantiation(instance):
+    assert isinstance(instance, Door)
+
+@given(instance=Door_strategy)
+def test_door_DoorID_type(instance):
+    assert isinstance(instance.DoorID, int)
+
+
+@given(instance=Door_strategy)
+def test_door_DoorID_setter(instance):
+    original = instance.DoorID
+    instance.DoorID = original
+    assert instance.DoorID == original
+
+@given(instance=Alert_strategy)
+@settings(max_examples=50)
+def test_alert_instantiation(instance):
+    assert isinstance(instance, Alert)
+
+@given(instance=Alert_strategy)
+def test_alert_AlertID_type(instance):
+    assert isinstance(instance.AlertID, int)
+
+
+@given(instance=Alert_strategy)
+def test_alert_AlertID_setter(instance):
+    original = instance.AlertID
+    instance.AlertID = original
+    assert instance.AlertID == original
+
+@given(instance=Home_Security_System_strategy)
+@settings(max_examples=50)
+def test_home_security_system_instantiation(instance):
+    assert isinstance(instance, Home_Security_System)
+
+@given(instance=Home_Security_System_strategy)
+def test_home_security_system_UserID_type(instance):
+    assert isinstance(instance.UserID, int)
+
+
+@given(instance=Home_Security_System_strategy)
+def test_home_security_system_UserID_setter(instance):
+    original = instance.UserID
+    instance.UserID = original
+    assert instance.UserID == original
+
+@given(instance=PressureSensor_strategy)
+@settings(max_examples=50)
+def test_pressuresensor_instantiation(instance):
+    assert isinstance(instance, PressureSensor)
+
+@given(instance=Motion_Sensor_strategy)
+@settings(max_examples=50)
+def test_motion_sensor_instantiation(instance):
+    assert isinstance(instance, Motion_Sensor)
+
+@given(instance=FireAlarm_Sensor_strategy)
+@settings(max_examples=50)
+def test_firealarm_sensor_instantiation(instance):
+    assert isinstance(instance, FireAlarm_Sensor)
+
+@given(instance=FireAlarm_Sensor_strategy)
+def test_firealarm_sensor_DispenseSprinkler_type(instance):
+    assert isinstance(instance.DispenseSprinkler, bool)
+
+
+@given(instance=FireAlarm_Sensor_strategy)
+def test_firealarm_sensor_DispenseSprinkler_setter(instance):
+    original = instance.DispenseSprinkler
+    instance.DispenseSprinkler = original
+    assert instance.DispenseSprinkler == original
+
+@given(instance=FireAlarm_Sensor_strategy)
+def test_firealarm_sensor_SmokeAlarm_type(instance):
+    assert isinstance(instance.SmokeAlarm, bool)
+
+
+@given(instance=FireAlarm_Sensor_strategy)
+def test_firealarm_sensor_SmokeAlarm_setter(instance):
+    original = instance.SmokeAlarm
+    instance.SmokeAlarm = original
+    assert instance.SmokeAlarm == original
+
+@given(instance=Sensor_strategy)
+@settings(max_examples=50)
+def test_sensor_instantiation(instance):
+    assert isinstance(instance, Sensor)
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorID_type(instance):
+    assert isinstance(instance.SensorID, int)
+
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorID_setter(instance):
+    original = instance.SensorID
+    instance.SensorID = original
+    assert instance.SensorID == original
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorType_type(instance):
+    assert isinstance(instance.SensorType, int)
+
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorType_setter(instance):
+    original = instance.SensorType
+    instance.SensorType = original
+    assert instance.SensorType == original
+
+@given(instance=System_strategy)
+@settings(max_examples=50)
+def test_system_instantiation(instance):
+    assert isinstance(instance, System)
+
+@given(instance=System_strategy)
+def test_system_Status_type(instance):
+    assert isinstance(instance.Status, bool)
+
+
+@given(instance=System_strategy)
+def test_system_Status_setter(instance):
+    original = instance.Status
+    instance.Status = original
+    assert instance.Status == original
+
+@given(instance=System_strategy)
+def test_system_Update_type(instance):
+    assert isinstance(instance.Update, float)
+
+
+@given(instance=System_strategy)
+def test_system_Update_setter(instance):
+    original = instance.Update
+    instance.Update = original
+    assert instance.Update == original

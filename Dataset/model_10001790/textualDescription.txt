@@ -1,0 +1,14 @@
+The model has 9 class(es).
+The class 'Draw_Path' has the following attributes: 'Name' of type str; 'Route' of type str.
+The class 'Give_Weight' has the following attributes: 'Weight' of type int.
+The class 'User' has the following attributes: 'Name' of type str; 'Path_Drawn' of type str; 'Calories_Burnt' of type str; 'Weight' of type int; 'Steps' of type int.
+The class 'Count_Steps_and_Calories' has the following attributes: 'Steps' of type int; 'CaloriesBurnt' of type str; 'Name' of type str.
+The class 'Calculate_caloriesBurnt' has the following attributes: 'CaloriesBurnt' of type str; 'Steps' of type int; 'Name' of type str.
+The class 'Weekly_Chart' has the following attributes: 'Steps' of type int; 'Name' of type str; 'CaloriesBurnt' of type str.
+The class 'Give_Name' has the following attributes: 'Name' of type str.
+The class 'Update_Data' has the following attributes: 'Weight' of type int; 'Name' of type str.
+The class 'Count_Steps' has the following attributes: 'Steps' of type int.
+'Update_Data' (role 'give_Weight6', cardinality 0..*) is associated with 'Give_Weight' (role 'update_Data7', cardinality 0..*).
+'Calculate_caloriesBurnt' (role 'count_Steps_and_Calories3', cardinality 0..*) is associated with 'Count_Steps_and_Calories' (role 'calculate_caloriesBurnt2', cardinality 0..*).
+'Count_Steps_and_Calories' (role 'count_Steps0', cardinality 0..*) is associated with 'Count_Steps' (role 'count_Steps_and_Calories1', cardinality 0..*).
+'Update_Data' (role 'give_Name4', cardinality 0..*) is associated with 'Give_Name' (role 'update_Data5', cardinality 0..*).

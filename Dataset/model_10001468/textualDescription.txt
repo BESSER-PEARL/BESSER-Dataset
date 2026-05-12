@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'TakeCasch_UseCase' has no attributes.
+The class 'Card' has no attributes.

@@ -1,0 +1,15 @@
+The model has 13 class(es).
+The class 'MyClass' has the following attributes: 'attribute3' of type str; 'TenCoSo' of type str; 'attribute' of type str; 'attribute2' of type str.
+The class 'MyClass6' has no attributes.
+The class 'sfbsdf' has no attributes.
+The class 'MyClass32' has no attributes.
+The class 'MyClass35' has no attributes.
+The class 'MyClass36' has no attributes.
+The class 'MyClass33' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MyClass37' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'MyClass34' has no attributes.
+The class 'MyClass5' has no attributes.
+The class 'MyClass4' has no attributes.
+'sfbsdf' (role 'MyClass_sfbsdf_11', cardinality 0..*) is associated with 'MyClass' (role 'MyClass_sfbsdf_00', cardinality 0..*).

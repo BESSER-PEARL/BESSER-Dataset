@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'Destinacija' has the following attributes: 'DestiID' of type int; 'DesDrzava' of type str; 'DesGrad' of type str.
+The class 'Osiguranje' has the following attributes: 'OsigID' of type int; 'KucaOsiguranje' of type str.
+The class 'Putnik' has the following attributes: 'Mobilni' of type int; 'OsigID' of type int; 'Adresa' of type str; 'JMBG' of type str; 'PrezimePut' of type str; 'ImePut' of type str; 'eMail' of type str; 'PutnikID' of type int; 'Grad' of type str.
+The class 'Korisnik_IS' has the following attributes: 'UserName' of type str; 'PrezimeKorisnika' of type str; 'Password' of type str; 'ImeKorisnika' of type str; 'KorisnikID' of type int.
+The class 'Karta' has the following attributes: 'OdlazakKarta' of type str; 'KartaID' of type int; 'VremeOdlaska' of type str; 'VremePovratka' of type str; 'PovratakKarta' of type str; 'RezerID' of type int; 'CenaKarte' of type str.
+The class 'Hotel' has the following attributes: 'UslugaHotela' of type str; 'SobaHotela' of type int; 'DestiID' of type int; 'SpratHotela' of type int; 'DuzinaBoravka' of type int; 'ImeHotela' of type str; 'HotelID' of type int; 'AdresaHotela' of type str; 'CenaSmestaja' of type str.
+The class 'Rezervisanje' has the following attributes: 'Cena' of type str; 'DatumDolaska' of type str; 'DestiID' of type int; 'SlobMesto' of type bool; 'KorisnikID' of type int; 'RezerID' of type int; 'DatumPolaska' of type str; 'PutnikID' of type int.
+'Rezervisanje' (role 'putnik7', cardinality 0..*) is associated with 'Putnik' (role 'rezervisanje6', cardinality 0..*).
+'Hotel' (role 'destinacija1', cardinality 0..*) is associated with 'Destinacija' (role 'hotel0', cardinality 0..*).
+'Korisnik_IS' (role 'rezervisanje9', cardinality 0..*) is associated with 'Rezervisanje' (role 'korisnik_IS8', cardinality 0..*).
+'Rezervisanje' (role 'karta11', cardinality 0..*) is associated with 'Karta' (role 'rezervisanje10', cardinality 0..*).
+'Destinacija' (role 'rezervisanje3', cardinality 0..*) is associated with 'Rezervisanje' (role 'destinacija2', cardinality 0..*).
+'Putnik' (role 'osiguranje5', cardinality 0..*) is associated with 'Osiguranje' (role 'putnik4', cardinality 0..*).

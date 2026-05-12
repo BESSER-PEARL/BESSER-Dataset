@@ -1,0 +1,28 @@
+The model has 13 class(es).
+The class 'Melakukan_Transaksi_UseCase' has no attributes.
+The class 'Mengentry_Data_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Admin' has the following attributes: 'nama' of type str; 'id' of type str; 'alamat' of type str; 'no_tlp' of type int.
+The class 'Cetak_Slip_UseCase' has no attributes.
+The class 'Data_Pembayaran' has the following attributes: 'kode_bayar' of type str; 'kode_kredit' of type str; 'angsuranke' of type int; 'tanggal_bayar' of type str; 'keterangan' of type str; 'angsuran' of type int.
+The class 'Pelanggan' has the following attributes: 'nama' of type str; 'alamat' of type str; 'kode_pelanggan' of type str.
+The class 'Memverivikasi_Data_UseCase' has no attributes.
+The class 'Pelanggan__Actor' has no attributes.
+The class 'Melakukan_Registrasi_UseCase' has no attributes.
+The class 'Melakukan_Login_UseCase' has no attributes.
+The class 'Login_Admin' has the following attributes: 'attribute' of type str; 'User_name' of type str.
+The class 'Memproses_Database_UseCase' has no attributes.
+'Data_Pembayaran' (role 'admin27', cardinality 0..*) is associated with 'Admin' (role 'data_Pembayaran26', cardinality 0..*).
+'Memverivikasi_Data_UseCase' (role 'admin13', cardinality 0..*) is associated with 'Admin_Actor' (role 'memverivikasi_Data12', cardinality 0..*).
+'Memproses_Database_UseCase' (role 'admin16', cardinality 0..*) is associated with 'Admin_Actor' (role 'memproses_Database17', cardinality 0..*).
+'Pelanggan__Actor' (role 'melakukan_Registrasi0', cardinality 0..*) is associated with 'Melakukan_Registrasi_UseCase' (role 'pelanggan1', cardinality 0..*).
+'Data_Pembayaran' (role 'pelanggan25', cardinality 0..*) is associated with 'Pelanggan' (role 'data_Pembayaran24', cardinality 0..*).
+'Admin_Actor' (role 'mengentry_Data10', cardinality 0..*) is associated with 'Mengentry_Data_UseCase' (role 'admin11', cardinality 0..*).
+'Pelanggan' (role 'admin23', cardinality 0..*) is associated with 'Admin' (role 'pelanggan22', cardinality 0..*).
+'Admin' (role 'login_Admin20', cardinality 0..*) is associated with 'Login_Admin' (role 'admin21', cardinality 0..*).
+'Cetak_Slip_UseCase' (role 'admin18', cardinality 0..*) is associated with 'Admin_Actor' (role 'cetak_Slip19', cardinality 0..*).
+'Melakukan_Login_UseCase' (role 'admin7', cardinality 0..*) is associated with 'Admin_Actor' (role 'melakukan_Login6', cardinality 0..*).
+'Pelanggan__Actor' (role 'melakukan_Transaksi4', cardinality 0..*) is associated with 'Melakukan_Transaksi_UseCase' (role 'pelanggan5', cardinality 0..*).
+'Melakukan_Transaksi_UseCase' (role 'admin14', cardinality 0..*) is associated with 'Admin_Actor' (role 'melakukan_Transaksi15', cardinality 0..*).
+'Memverivikasi_Data_UseCase' (role 'pelanggan3', cardinality 0..*) is associated with 'Pelanggan__Actor' (role 'memverivikasi_Data2', cardinality 0..*).
+'Admin_Actor' (role 'melakukan_Registrasi9', cardinality 0..*) is associated with 'Melakukan_Registrasi_UseCase' (role 'admin8', cardinality 0..*).

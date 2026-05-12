@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'Luggage' has the following attributes: 'weight' of type int.
+The class 'CheckStaff' has the following attributes: 'name' of type str.
+The class 'Ticket' has the following attributes: 'no' of type int.
+The class 'Passenger' has the following attributes: 'name' of type str.
+'Passenger' (role 'ticket3', cardinality 0..*) is associated with 'Ticket' (role 'passenger2', cardinality 0..*).
+'CheckStaff' (role 'passenger7', cardinality 0..*) is associated with 'Passenger' (role 'checkStaff6', cardinality 0..*).
+'Ticket' (role 'checkStaff9', cardinality 0..*) is associated with 'CheckStaff' (role 'ticket8', cardinality 0..*).
+'Passenger' (role 'luggage1', cardinality 0..*) is associated with 'Luggage' (role 'passenger0', cardinality 0..*).
+'CheckStaff' (role 'luggage5', cardinality 0..*) is associated with 'Luggage' (role 'checkStaff4', cardinality 0..*).

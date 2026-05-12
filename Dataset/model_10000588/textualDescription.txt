@@ -1,0 +1,11 @@
+The model has 10 class(es).
+The class 'Model_ISO' has no attributes.
+The class 'Model_IDLE' has no attributes.
+The class 'Model_WithdrawTransaction' has the following attributes: 'amount' of type int.
+The class 'Model_Communication' has no attributes.
+The class 'Model_Session' has the following attributes: 'track2' of type str; 'DeviceStatus' of type str; 'pan' of type int.
+The class 'Model_Queue' has the following attributes: 'attribute' of type str.
+The class 'Model_Transaction' has the following attributes: 'attribute' of type str; 'presenter' of type Presenter.
+The class 'Model_Init' has no attributes.
+The class 'Presenter' has the following attributes: 'currentView' of type str; 'session' of type str.
+The class 'Model_BalanceInquiryTransaction' has no attributes.

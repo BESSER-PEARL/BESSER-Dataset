@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'Admin' has the following attributes: 'name' of type str; 'User_Name' of type Admin; 'Password' of type str.
+The class 'Patient' has the following attributes: 'sex' of type str; 'name' of type str; 'age' of type int; 'id' of type int; 'address' of type str; 'telno' of type int.
+The class 'Doctor' has the following attributes: 'department' of type str; 'docid' of type int; 'name' of type str; 'phno' of type int; 'specialization' of type str; 'address' of type str.
+'Doctor' (role 'depmt2', cardinality 0..*) is associated with 'Admin' (role 'doctor3', cardinality 0..*).
+'Patient' (role 'doctors1', cardinality 0..*) is associated with 'Doctor' (role 'patients0', cardinality 0..*).

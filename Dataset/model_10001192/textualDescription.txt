@@ -1,0 +1,29 @@
+The model has 18 class(es).
+The class 'Show_Ticket_History_UseCase' has no attributes.
+The class 'Use_Frequent_Flyer_Miles_UseCase' has no attributes.
+The class 'Enter_flight_search_details_UseCase' has no attributes.
+The class 'Reschedule_Ticket_UseCase' has no attributes.
+The class 'Register_UseCase' has no attributes.
+The class 'Class' has no attributes.
+The class 'Pay_by_Debit_Credit_Card_UseCase' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'Select_flight__seat__meals_UseCase' has no attributes.
+The class 'Pay_by_E_Wallet_UseCase' has no attributes.
+The class 'Book_Airline_Ticket_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Update_Flight_Schedule_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Cancel_Ticket_UseCase' has no attributes.
+The class 'View_Print_Ticket_UseCase' has no attributes.
+The class 'Payment_UseCase' has no attributes.
+The class 'Enter_passenger_details_UseCase' has no attributes.
+'User_Actor' (role 'reschedule_Ticket10', cardinality 0..*) is associated with 'Reschedule_Ticket_UseCase' (role 'user11', cardinality 0..*).
+'Administrator_Actor' (role 'reschedule_Ticket14', cardinality 0..*) is associated with 'Reschedule_Ticket_UseCase' (role 'administrator15', cardinality 0..*).
+'Cancel_Ticket_UseCase' (role 'user9', cardinality 0..*) is associated with 'User_Actor' (role 'cancel_Ticket8', cardinality 0..*).
+'Book_Airline_Ticket_UseCase' (role 'user5', cardinality 0..*) is associated with 'User_Actor' (role 'book_Airline_Ticket4', cardinality 0..*).
+'Login_UseCase' (role 'show_Ticket_History18', cardinality 0..*) is associated with 'Show_Ticket_History_UseCase' (role 'login19', cardinality 0..*).
+'Cancel_Ticket_UseCase' (role 'administrator13', cardinality 0..*) is associated with 'Administrator_Actor' (role 'cancel_Ticket12', cardinality 0..*).
+'Login_UseCase' (role 'user3', cardinality 0..*) is associated with 'User_Actor' (role 'login2', cardinality 0..*).
+'Administrator_Actor' (role 'update_Flight_Schedule16', cardinality 0..*) is associated with 'Update_Flight_Schedule_UseCase' (role 'administrator17', cardinality 0..*).
+'User_Actor' (role 'show_Ticket_History6', cardinality 0..*) is associated with 'Show_Ticket_History_UseCase' (role 'user7', cardinality 0..*).
+'Book_Airline_Ticket_UseCase' (role 'payment0', cardinality 0..*) is associated with 'Payment_UseCase' (role 'book_Airline_Ticket1', cardinality 0..*).

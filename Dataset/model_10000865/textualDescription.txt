@@ -1,0 +1,18 @@
+The model has 12 class(es).
+The class 'Receptionist' has the following attributes: 'Name' of type str; 'id' of type int.
+The class 'Follow_doc_instrn_UseCase' has no attributes.
+The class 'pay_bills_UseCase' has no attributes.
+The class 'Departmnt' has the following attributes: 'name' of type str; 'docid' of type int; 'id' of type int.
+The class 'Staff' has the following attributes: 'Name' of type str; 'id' of type int; 'type' of type str.
+The class 'Takes_Appt_UseCase' has no attributes.
+The class 'Consult_the_doctor_UseCase' has no attributes.
+The class 'Rooms' has the following attributes: 'location' of type str; 'Roomno' of type int.
+The class 'Doctor_Actor' has no attributes.
+The class 'Doctor' has the following attributes: 'phno' of type str; 'Docid' of type int; 'specialization' of type str; 'Department' of type str; 'Name' of type str.
+The class 'Patient' has the following attributes: 'TelNo' of type int; 'Rno' of type int; 'Name' of type int; 'Sex' of type str; 'Address' of type str; 'Age' of type int; 'id' of type int.
+The class 'Patient_Actor' has no attributes.
+'Doctor' (role 'patient0', cardinality 0..*) is associated with 'Patient' (role 'doctor1', cardinality 0..*).
+'Doctor' (role 'staff6', cardinality 0..*) is associated with 'Staff' (role 'rooms7', cardinality 0..*).
+'Departmnt' (role 'doctor5', cardinality 0..*) is associated with 'Doctor' (role 'departmnt4', cardinality 0..*).
+'Patient' (role 'receptionist2', cardinality 0..*) is associated with 'Receptionist' (role 'patient3', cardinality 0..*).
+'Rooms' (role 'patient8', cardinality 0..*) is associated with 'Patient' (role 'rooms9', cardinality 0..*).

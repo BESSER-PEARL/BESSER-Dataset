@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'Nieuwsbericht' has the following attributes: 'tekst' of type str; 'titel' of type str.
+The class 'Contactformulier' has the following attributes: 'tekst' of type str.
+The class 'Hoofdbeheerder' has no attributes.
+The class 'Bestelregel' has the following attributes: 'aantal' of type int.
+The class 'Beheerder' has the following attributes: 'rechten' of type bool.
+The class 'Categorie' has no attributes.
+The class 'Afbeelding' has the following attributes: 'naam' of type str; 'locatie' of type str; 'datum' of type str.
+The class 'Klant' has the following attributes: 'telefoonnummer' of type str; 'geboortedatum' of type str.
+The class 'Adres' has the following attributes: 'postcode' of type str; 'huisnummer' of type int; 'bijvoegsel' of type str; 'stad' of type str; 'straatnaam' of type str.
+The class 'Factuur' has the following attributes: 'btw' of type int; 'status' of type str; 'datum' of type str.
+The class 'Product' has the following attributes: 'prijs' of type int; 'naam' of type str; 'voorraad' of type int; 'actief' of type bool; 'beschrijving' of type str.
+The class 'Persoon' has the following attributes: 'voornaam' of type str; 'wachtwoord' of type str; 'tussenvoegsel' of type str; 'achternaam' of type str; 'e_mail' of type str.
+'Product' (role 'bestelregel5', cardinality 0..*) is associated with 'Bestelregel' (role 'product4', cardinality 0..*).
+'Contactformulier' (role 'beheerder19', cardinality 0..*) is associated with 'Beheerder' (role 'contactformulier18', cardinality 0..*).
+'Nieuwsbericht' (role 'hoofdbeheerder8', cardinality 0..*) is associated with 'Hoofdbeheerder' (role 'post9', cardinality 0..*).
+'Klant' (role 'contactformulier16', cardinality 0..*) is associated with 'Contactformulier' (role 'klant17', cardinality 0..*).
+'Klant' (role 'product0', cardinality 0..*) is associated with 'Product' (role 'klant1', cardinality 0..*).
+'Afbeelding' (role 'nieuwsbericht24', cardinality 0..*) is associated with 'Nieuwsbericht' (role 'afbeelding25', cardinality 0..*).
+'Beheerder' (role 'factuur13', cardinality 0..*) is associated with 'Factuur' (role 'beheerder12', cardinality 0..*).
+'Factuur' (role 'klant23', cardinality 0..*) is associated with 'Klant' (role 'bestelregel22', cardinality 0..*).
+'Bestelregel' (role 'factuur21', cardinality 0..*) is associated with 'Factuur' (role 'bestelregel20', cardinality 0..*).
+'Categorie' (role 'product6', cardinality 0..*) is associated with 'Product' (role 'categorie7', cardinality 0..*).
+'Klant' (role 'adres3', cardinality 0..*) is associated with 'Adres' (role 'klant2', cardinality 0..*).
+'Product' (role 'afbeelding11', cardinality 0..*) is associated with 'Afbeelding' (role 'product10', cardinality 0..*).
+'Beheerder' (role 'product14', cardinality 0..*) is associated with 'Product' (role 'beheerder15', cardinality 0..*).

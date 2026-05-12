@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'UseCase_UseCase' has no attributes.
+The class 'MyClass' has the following attributes: 'Abb' of type bool; 'ABC' of type MyClass.
+The class 'Actor_Actor' has no attributes.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'MyInterface_Interface' has no attributes.
+'MyClass' (role 'myInterface2', cardinality 0..*) is associated with 'MyInterface_Interface' (role 'myClass3', cardinality 0..*).
+'Actor_Actor' (role 'useCase0', cardinality 0..*) is associated with 'UseCase_UseCase' (role 'actor1', cardinality 0..*).

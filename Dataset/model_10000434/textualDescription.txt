@@ -1,0 +1,34 @@
+The model has 19 class(es).
+The class 'Orderdetail' has the following attributes: 'orderid' of type str; 'quantity' of type str; 'productid' of type str; 'cost' of type str; 'total' of type str.
+The class 'orderdetail' has the following attributes: 'barang_id' of type int; 'total' of type str; 'order_id' of type int.
+The class 'Order' has the following attributes: 'datedeliver' of type str; 'shippingid' of type str; 'status' of type str; 'dateorder' of type str; 'orderid' of type str; 'customerid' of type str.
+The class 'role' has the following attributes: 'nama_role' of type str; 'id' of type int; 'deskripsi_role' of type str.
+The class 'Cart' has the following attributes: 'cartid' of type str; 'quantity' of type str; 'date' of type str; 'productid' of type str.
+The class 'vendor' has the following attributes: 'bank' of type str; 'id_role' of type int; 'mail' of type str; 'name' of type str; 'shippinginfo' of type str; 'username' of type str; 'password' of type str; 'id' of type int; 'address' of type str; 'bussinessname' of type str.
+The class 'Admin' has the following attributes: 'name' of type str; 'mail' of type str.
+The class 'Shippinginfo' has the following attributes: 'total' of type str; 'region' of type str; 'shippingid' of type str; 'type' of type str; 'cost' of type str.
+The class 'pembeli' has the following attributes: 'password' of type str; 'name' of type str; 'mail' of type str; 'shippinginfo' of type str; 'username' of type str; 'address' of type str; 'id' of type str.
+The class 'user' has the following attributes: 'id_role' of type int; 'id_order' of type int; 'id_user' of type int.
+The class 'Produk' has the following attributes: 'idkategori' of type str; 'desc' of type str; 'productid' of type str; 'name' of type str; 'price' of type str.
+The class 'barang' has the following attributes: 'id_kategori' of type int; 'deskripsi_barang' of type str; 'nama_barang' of type str; 'harga_barang' of type int; 'id' of type int.
+The class 'User' has the following attributes: 'password' of type str; 'id' of type str.
+The class 'kategori' has the following attributes: 'deskripsi_kategori' of type str; 'nama_kategori' of type str; 'id' of type int.
+The class 'pembeli1' has the following attributes: 'id_role' of type int; 'username' of type str; 'mail' of type str; 'address' of type str; 'name' of type str; 'id' of type int; 'password' of type str.
+The class 'penjual' has the following attributes: 'id' of type str; 'username' of type str; 'bussinessname' of type str; 'address' of type str; 'mail' of type str; 'bank' of type str; 'password' of type str; 'name' of type str; 'shippinginfo' of type str.
+The class 'admin' has the following attributes: 'password' of type str; 'id' of type int; 'username' of type str.
+The class 'order' has the following attributes: 'status' of type str; 'id_user' of type int; 'dateorder' of type str; 'order_id' of type int.
+The class 'Kategori' has the following attributes: 'idkategori' of type str; 'productid' of type str; 'name' of type str; 'desc' of type str.
+'orderdetail' (role 'order23', cardinality 0..*) is associated with 'order' (role 'orderdetail22', cardinality 0..*).
+'pembeli' (role 'cart5', cardinality 0..*) is associated with 'Cart' (role 'customer4', cardinality 0..*).
+'user' (role 'vendor19', cardinality 0..*) is associated with 'vendor' (role 'user18', cardinality 0..*).
+'order' (role 'user20', cardinality 0..*) is associated with 'user' (role 'order21', cardinality 0..*).
+'Produk' (role 'kategori10', cardinality 0..*) is associated with 'Kategori' (role 'produk11', cardinality 0..*).
+'Produk' (role 'orderdetail8', cardinality 0..*) is associated with 'Orderdetail' (role 'produk9', cardinality 0..*).
+'user' (role 'role13', cardinality 0..*) is associated with 'role' (role 'user12', cardinality 0..*).
+'User' (role 'penjual7', cardinality 0..*) is associated with 'penjual' (role 'user6', cardinality 0..*).
+'barang' (role 'kategori24', cardinality 0..*) is associated with 'kategori' (role 'barang25', cardinality 0..*).
+'orderdetail' (role 'barang26', cardinality 0..*) is associated with 'barang' (role 'orderdetail27', cardinality 0..*).
+'pembeli1' (role 'user16', cardinality 0..*) is associated with 'user' (role 'pembeli17', cardinality 0..*).
+'Order' (role 'orderdetail3', cardinality 0..*) is associated with 'Orderdetail' (role 'order2', cardinality 0..*).
+'admin' (role 'user14', cardinality 0..*) is associated with 'user' (role 'admin15', cardinality 0..*).
+'Order' (role 'shippinginfo1', cardinality 0..*) is associated with 'Shippinginfo' (role 'order0', cardinality 0..*).

@@ -1,0 +1,70 @@
+The model has 43 class(es).
+The class 'Class_Diagram_for_Proposed_system_ETF' has the following attributes: 'id' of type str; 'precentage' of type str.
+The class 'Class_Diagram_for_Proposed_system_Department' has the following attributes: 'name' of type str; 'id' of type str; 'empId' of type str.
+The class 'Class_Diagram_for_Proposed_system_Calender' has the following attributes: 'id' of type str; 'depid' of type str; 'eventType' of type str; 'author_id' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Calculate_Overtime_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Access_leave_documents_UseCase' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_Advances' has the following attributes: 'salaryId' of type str; 'amount' of type str; 'issueDate' of type str; 'installments' of type str; 'id' of type str.
+The class 'Class_Diagram_for_Proposed_system_LeaveTaken' has the following attributes: 'id' of type str; 'attribute5' of type str; 'leaveDate' of type str; 'empId' of type str; 'leaveType' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Request_Leave_UseCase' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_Deductions' has the following attributes: 'deducType' of type str; 'deductDate' of type str; 'amount' of type str; 'id' of type str; 'salaryId' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Check_employee_appraisal_forms_UseCase' has no attributes.
+The class 'Clark1_Actor' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_Employee' has the following attributes: 'gender' of type str; 'userId' of type int; 'id' of type int; 'mobile' of type str; 'postID' of type int; 'deptId' of type int; 'address' of type str; 'phone' of type str; 'NIC' of type str; 'shiftId' of type int.
+The class 'Class_Diagram_for_Proposed_system_overtimeRequests' has the following attributes: 'id' of type str; 'start_time' of type str; 'date' of type str; 'nd_time' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Calculate_Monthly_leaves_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Hand_over_form_to_HR_Dept_UseCase' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_Allowances' has the following attributes: 'salaryId' of type str; 'amount' of type str; 'allowanceType' of type str; 'id' of type str; 'issueDate' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Request_Loan_and_advances_UseCase' has no attributes.
+The class 'Clark1_Actor1' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_EPF' has the following attributes: 'precentage' of type str; 'id' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Enter_salary_details_to_spreadsheets_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Register_New_Employee_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Mark_clock_in_time_UseCase' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_WorkingShifts' has the following attributes: 'endingTime' of type str; 'empId' of type str; 'startingTime' of type str; 'id' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Access_time_cards_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Store_times_in_employee_time_cards_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Fill_leave_apply_form_UseCase' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_Events' has the following attributes: 'type' of type str; 'id' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Check_leave_forms_UseCase' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_Post' has the following attributes: 'name' of type str; 'leavesEntitled' of type str; 'attribute' of type str; 'deptId' of type str; 'id' of type str.
+The class 'Class_Diagram_for_Proposed_system_User' has the following attributes: 'roleId' of type int; 'LastName' of type str; 'id' of type str; 'firstNAme' of type str.
+The class 'Class_Diagram_for_Proposed_system_LeavesAllocated' has the following attributes: 'empId' of type str; 'leaveType' of type str; 'id' of type str; 'noOfLeaves' of type str.
+The class 'Class_Diagram_for_Proposed_system_Role' has the following attributes: 'roleName' of type str; 'id' of type str; 'description' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Approve_leave_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Mark_clock_out_time_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Generate_reports_from_excel_UseCase' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_Salary' has the following attributes: 'empId' of type str; 'id' of type str; 'basicPay' of type str; 'advances' of type str; 'EPF' of type str; 'overtimes' of type str; 'payDate' of type str; 'allowances' of type str; 'ETF' of type str; 'deductions' of type str.
+The class 'Use_Case_Diagram_for_Existing_System_Put_company_notices_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Give_message_to_employee_UseCase' has no attributes.
+The class 'Manager_Actor' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Calculate_Late_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Reject_leave_UseCase' has no attributes.
+The class 'Use_Case_Diagram_for_Existing_System_Salary_calculation_UseCase' has no attributes.
+The class 'Class_Diagram_for_Proposed_system_Attendance' has the following attributes: 'id' of type str; 'attribute' of type str; 'clock_out' of type str; 'date' of type str; 'clock_in' of type str; 'empId' of type str.
+'Class_Diagram_for_Proposed_system_LeavesAllocated' (role 'employee39', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Employee' (role 'leavesAllocated38', cardinality 0..*).
+'Clark1_Actor' (role 'request_Loan_and_advances1', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Existing_System_Request_Loan_and_advances_UseCase' (role 'actor0', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Events' (role 'calender49', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Calender' (role 'events48', cardinality 0..*).
+'Clark1_Actor' (role 'useCase58', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Existing_System_Register_New_Employee_UseCase' (role 'actor9', cardinality 0..*).
+'Manager_Actor' (role 'approve_Employee_Pay_sheets10', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Existing_System_Check_leave_forms_UseCase' (role 'admin11', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Employee' (role 'leaveTaken30', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_LeaveTaken' (role 'employee31', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Department' (role 'post32', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Post' (role 'department33', cardinality 0..*).
+'Use_Case_Diagram_for_Existing_System_Mark_clock_out_time_UseCase' (role 'clark17', cardinality 0..*) is associated with 'Clark1_Actor1' (role 'view_Employee_profiles16', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_User' (role 'employee41', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Employee' (role 'user40', cardinality 0..*).
+'Clark1_Actor' (role 'salary_calculation18', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Existing_System_Salary_calculation_UseCase' (role 'clark119', cardinality 0..*).
+'Manager_Actor' (role 'generate_reports_from_excel3', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Existing_System_Generate_reports_from_excel_UseCase' (role 'admin2', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_EPF' (role 'leavesAllocated45', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_LeavesAllocated' (role 'ePF44', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Employee' (role 'department22', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Department' (role 'employee23', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Post' (role 'employee35', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Employee' (role 'post34', cardinality 0..*).
+'Use_Case_Diagram_for_Existing_System_Put_company_notices_UseCase' (role 'manager4', cardinality 0..*) is associated with 'Manager_Actor' (role 'put_company_notices5', cardinality 0..*).
+'Clark1_Actor' (role 'useCase26', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Existing_System_Request_Leave_UseCase' (role 'actor7', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_LeavesAllocated' (role 'eTF46', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_ETF' (role 'leavesAllocated47', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_WorkingShifts' (role 'employee20', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Employee' (role 'workingShifts21', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Salary' (role 'deductions227', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Deductions' (role 'salary26', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Allowances' (role 'salary24', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Salary' (role 'allowances225', cardinality 0..*).
+'Clark1_Actor1' (role 'add_Employee_profile14', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Existing_System_Mark_clock_in_time_UseCase' (role 'clark15', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_User' (role 'role42', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Role' (role 'user43', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Advances' (role 'salary28', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Salary' (role 'advances229', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Employee' (role 'overtimeRequests50', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_overtimeRequests' (role 'employee51', cardinality 0..*).
+'Manager_Actor' (role 'set_Leave_status12', cardinality 0..*) is associated with 'Use_Case_Diagram_for_Existing_System_Check_employee_appraisal_forms_UseCase' (role 'admin13', cardinality 0..*).
+'Class_Diagram_for_Proposed_system_Attendance' (role 'employee36', cardinality 0..*) is associated with 'Class_Diagram_for_Proposed_system_Employee' (role 'attendance37', cardinality 0..*).

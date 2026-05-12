@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'Order_Details' has the following attributes: 'productId' of type int; 'Payment__' of type Order_Details; 'productName' of type str; 'Report_Generation' of type Order_Details; 'unitCost' of type int; 'orderId' of type int; 'subTotal' of type int; 'quantity' of type int.
+The class 'Admin' has the following attributes: 'attribute' of type str; 'Help__' of type Admin; 'Reverse__' of type Admin; 'adminName' of type str; 'Contact_Us__' of type Admin; 'email' of type str.
+The class 'shippingInfo' has the following attributes: 'shippingCost' of type int; 'View_Shipping_Status__' of type shippingInfo; 'shippingType' of type str; 'shippingId' of type int; 'shippingRegionId' of type int.
+The class 'Shopping_cart' has the following attributes: 'date' of type int; 'change_to_cart__' of type Shopping_cart; 'productId' of type int; 'quantity' of type int; 'Checkout__' of type Shopping_cart; 'cartId' of type int; 'Add_items_to_shopping_cart__' of type Shopping_cart; 'Delete_from_Shopping_Cart__' of type Shopping_cart.
+The class 'Customer' has the following attributes: 'creditCardInfo' of type str; 'address' of type str; 'search__' of type Customer; 'registration__' of type Customer; 'shippingInfo' of type str; 'login__' of type Customer; 'customerName' of type str; 'email' of type str.
+The class 'Orders' has the following attributes: 'orderId' of type int; 'status' of type str; 'shippingId' of type str; 'dateCreated' of type str; 'customerId' of type str; 'dateShipped' of type str; 'customerName' of type str.
+The class 'User' has the following attributes: 'View_Account_Purchase_History__' of type User; 'loginStatus' of type str; 'userId' of type str; 'password' of type str; 'Update_Account_Information__' of type User; 'Logout__' of type User.
+'Shopping_cart' (role 'customer1', cardinality 0..*) is associated with 'Customer' (role 'shopping_cart0', cardinality 0..*).
+'Customer' (role 'orders2', cardinality 0..*) is associated with 'Orders' (role 'customer3', cardinality 0..*).
+'Orders' (role 'order_Details6', cardinality 0..*) is associated with 'Order_Details' (role 'orders7', cardinality 0..*).
+'shippingInfo' (role 'orders5', cardinality 0..*) is associated with 'Orders' (role 'shippingInfo4', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 16 class(es).
+The class 'Login_external' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Airline_Reservation_System_Component' has no attributes.
+The class 'Payment_external' has no attributes.
+The class '_Component' has no attributes.
+The class 'Bank_Actor' has no attributes.
+The class '__extends___Component' has no attributes.
+The class '__Uses___Component' has no attributes.
+The class 'Airport' has no attributes.
+The class 'Check_Flight_Status_external' has no attributes.
+The class 'Valid_Card_Deatils_external' has no attributes.
+The class 'Cancel_Ticket_external' has no attributes.
+The class 'Update_Flight_Schedule_external' has no attributes.
+The class 'Book_Ticket_external' has no attributes.
+The class 'Passenger_Actor' has no attributes.
+The class 'Check_For_Availability_external' has no attributes.
+'Update_Flight_Schedule_external' (role 'admin15', cardinality 0..*) is associated with 'Admin_Actor' (role 'update_Flight_Schedule14', cardinality 0..*).
+'Passenger_Actor' (role 'login4', cardinality 0..*) is associated with 'Login_external' (role 'passenger5', cardinality 0..*).
+'Passenger_Actor' (role 'payment6', cardinality 0..*) is associated with 'Payment_external' (role 'passenger7', cardinality 0..*).
+'Passenger_Actor' (role 'cancel_Ticket10', cardinality 0..*) is associated with 'Cancel_Ticket_external' (role 'passenger11', cardinality 0..*).
+'Check_For_Availability_external' (role 'passenger3', cardinality 0..*) is associated with 'Passenger_Actor' (role 'check_For_Availability2', cardinality 0..*).
+'Admin_Actor' (role 'cancel_Ticket16', cardinality 0..*) is associated with 'Cancel_Ticket_external' (role 'admin17', cardinality 0..*).
+'Valid_Card_Deatils_external' (role 'bank0', cardinality 0..*) is associated with 'Bank_Actor' (role 'valid_Card_Deatils1', cardinality 0..*).
+'Check_Flight_Status_external' (role 'passenger13', cardinality 0..*) is associated with 'Passenger_Actor' (role 'check_Flight_Status12', cardinality 0..*).
+'Passenger_Actor' (role 'book_Ticket8', cardinality 0..*) is associated with 'Book_Ticket_external' (role 'passenger9', cardinality 0..*).

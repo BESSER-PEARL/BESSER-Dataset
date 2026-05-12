@@ -1,0 +1,25 @@
+The model has 20 class(es).
+The class 'Y' has the following attributes: 'attY' of type str.
+The class 'C2' has no attributes.
+The class 'R' has no attributes.
+The class 'Z' has no attributes.
+The class 'A_roport' has no attributes.
+The class 'tp2BMOexe3_B2' has no attributes.
+The class 'R_servation' has no attributes.
+The class 'C3' has no attributes.
+The class 'C' has the following attributes: 'attC2' of type bool; 'attC1' of type int.
+The class 'Passagers' has no attributes.
+The class 'tp2BMOexe3_A2' has no attributes.
+The class 'tp2BMOexe3_B' has no attributes.
+The class 'Ville' has no attributes.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'tp2BMOexe3_A3' has no attributes.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'Vol' has no attributes.
+The class 'Escale' has no attributes.
+The class 'Client' has no attributes.
+The class 'tp2BMOexe3_A' has the following attributes: 'd' of type int; 'c' of type tp2BMOexe3_B; 'b' of type bool.
+'B' (role 'c0', cardinality 0..*) is associated with 'C' (role 'b1', cardinality 0..*).
+'B' (role 'a5', cardinality 0..*) is associated with 'A' (role 'b4', cardinality 0..*).
+'R' (role 'aR2', cardinality 0..*) is associated with 'A' (role 'r3', cardinality 0..*).
+'tp2BMOexe3_A' (role 'b7', cardinality 0..*) is associated with 'tp2BMOexe3_B' (role 'a6', cardinality 0..*).

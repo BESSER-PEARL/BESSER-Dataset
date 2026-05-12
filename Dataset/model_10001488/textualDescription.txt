@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Admin' has the following attributes: 'uname' of type str; 'password' of type str.
+The class 'user' has the following attributes: 'password' of type str; 'name' of type str; 'phone_number' of type int; 'email' of type str; 'address' of type str.
+The class 'Insurance' has the following attributes: 'email' of type str; 'password' of type str.
+The class 'UseCase3_UseCase' has no attributes.
+The class 'Doctor' has the following attributes: 'password' of type str; 'email' of type str.
+The class 'Patient' has the following attributes: 'password' of type str; 'email' of type str.
+'user' (role 'insurance11', cardinality 0..*) is associated with 'Insurance' (role 'user10', cardinality 0..*).
+'Doctor' (role 'accepts5', cardinality 0..*) is associated with 'Admin' (role 'Admin_Doctor_04', cardinality 0..*).
+'Doctor' (role 'register1', cardinality 0..*) is associated with 'user' (role 'user_Doctor_00', cardinality 0..*).
+'Patient' (role 'checks3', cardinality 0..*) is associated with 'Doctor' (role 'request_to2', cardinality 0..*).
+'Patient' (role 'accepts7', cardinality 0..*) is associated with 'Admin' (role 'Admin_Patient_06', cardinality 0..*).
+'user' (role 'send_mail9', cardinality 0..*) is associated with 'Admin' (role 'Admin_user_08', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 16 class(es).
+The class 'Controlling_Circuit' has the following attributes: 'MIcro_processor' of type str; 'Software' of type str.
+The class 'Abstract_Component' has the following attributes: 'Type_Of_Component' of type str.
+The class 'Rolling' has the following attributes: 'Minimum_Space' of type str.
+The class 'Swing_out' has the following attributes: 'Space_Clearance' of type str.
+The class 'Rollers_Rails' has the following attributes: 'Good_Quality' of type str.
+The class 'Remote_Controller_Interface' has the following attributes: 'Control_Garade_Door' of type str; 'Bluebooth' of type str.
+The class 'Locks_Handles' has the following attributes: 'Durable' of type str; 'Secure' of type str.
+The class 'Coil_Spring_Cables' has the following attributes: 'Spring_Stiffness' of type str.
+The class 'External_Component' has the following attributes: 'Sensor' of type bool.
+The class 'In_house_Component' has the following attributes: 'Manufacture_Product' of type str; 'Quality' of type str.
+The class 'Motor' has the following attributes: 'Durable' of type str; 'Suitable_Speed' of type str.
+The class 'Break_in' has the following attributes: 'Detect_Froce' of type bool.
+The class 'Door_Status' has the following attributes: 'Door_Open' of type bool; 'Door_Close' of type str.
+The class 'Abstract_Door' has the following attributes: 'Automatic' of type str; 'Materials' of type str; 'Security' of type str.
+The class 'T' has no attributes.
+The class 'Light_Motion' has the following attributes: 'Detects_Obstruction' of type bool.

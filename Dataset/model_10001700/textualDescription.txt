@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'C1' has the following attributes: 'C1ID' of type int.
+The class 'C2' has the following attributes: 'attribute' of type str; 'C2ID' of type int; 'C1ID' of type int.
+The class 'C3' has no attributes.
+'C2' (role 'c11', cardinality 0..*) is associated with 'C1' (role 'c20', cardinality 0..*).
+'C3' (role 'c13', cardinality 0..*) is associated with 'C1' (role 'c32', cardinality 0..*).

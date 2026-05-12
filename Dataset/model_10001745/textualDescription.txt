@@ -1,0 +1,28 @@
+The model has 17 class(es).
+The class 'Sensor' has no attributes.
+The class 'Firebase' has no attributes.
+The class 'CountSensor' has no attributes.
+The class 'Add_new_alarm_external' has no attributes.
+The class 'Building_Owner__Actor' has no attributes.
+The class 'Sensors_Actor' has no attributes.
+The class 'View_sensors_data_external' has no attributes.
+The class 'TemperatureSensor' has no attributes.
+The class 'Arduino' has no attributes.
+The class 'Gas_SmokeSensor' has no attributes.
+The class 'Web' has no attributes.
+The class 'Notify_User_of_fire_external' has no attributes.
+The class 'MobileApp' has no attributes.
+The class 'Fire_Department__Actor' has no attributes.
+The class 'Close_Alarm_external' has no attributes.
+The class 'Sense_and_Update_Data_external' has no attributes.
+The class 'Fire_Alarm_System__Component' has no attributes.
+'Fire_Department__Actor' (role 'notify_User10', cardinality 0..*) is associated with 'Notify_User_of_fire_external' (role 'fire_Department11', cardinality 0..*).
+'Arduino' (role 'Arduino__Firebase_04', cardinality 0..*) is associated with 'Firebase' (role 'Arduino__Firebase_15', cardinality 0..*).
+'Sensor' (role 'system0', cardinality 0..*) is associated with 'Arduino' (role 'sensor1', cardinality 0..*).
+'Building_Owner__Actor' (role 'view_Data18', cardinality 0..*) is associated with 'View_sensors_data_external' (role 'building_Owner19', cardinality 0..*).
+'MobileApp' (role 'Home_Security_System_System_02', cardinality 0..*) is associated with 'Firebase' (role 'Home_Security_System_System_13', cardinality 0..*).
+'Building_Owner__Actor' (role 'sense_and_Update_Data8', cardinality 0..*) is associated with 'Notify_User_of_fire_external' (role 'building_Owner9', cardinality 0..*).
+'Close_Alarm_external' (role 'building_Owner15', cardinality 0..*) is associated with 'Building_Owner__Actor' (role 'close_Alarm14', cardinality 0..*).
+'Sense_and_Update_Data_external' (role 'sensors17', cardinality 0..*) is associated with 'Sensors_Actor' (role 'sense_and_Update_Data16', cardinality 0..*).
+'Web' (role 'Firebase_Web_17', cardinality 0..*) is associated with 'Firebase' (role 'Firebase_Web_06', cardinality 0..*).
+'Add_new_alarm_external' (role 'building_Owner13', cardinality 0..*) is associated with 'Building_Owner__Actor' (role 'add_Alarm12', cardinality 0..*).

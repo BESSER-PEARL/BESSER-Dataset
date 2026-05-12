@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Payment' has no attributes.
+The class 'Delivery' has no attributes.
+The class 'Order' has the following attributes: 'Type_' of type str; 'Quantity' of type int; 'Size_' of type int; 'ID_' of type int.
+The class 'User' has no attributes.
+The class 'Discription' has no attributes.
+'Discription' (role 'order9', cardinality 0..*) is associated with 'Order' (role 'myClass48', cardinality 0..*).
+'Order' (role 'myClass34', cardinality 0..*) is associated with 'Payment' (role 'order5', cardinality 0..*).
+'Delivery' (role 'order1', cardinality 0..*) is associated with 'Order' (role 'myClass0', cardinality 0..*).
+'Order' (role 'myClass22', cardinality 0..*) is associated with 'User' (role 'order3', cardinality 0..*).
+'User' (role 'myClass6', cardinality 0..*) is associated with 'Delivery' (role 'myClass27', cardinality 0..*).

@@ -1,0 +1,34 @@
+The model has 23 class(es).
+The class 'Diagnose' has the following attributes: 'symptomps' of type str; 'diagnoseID' of type int; 'medication' of type str.
+The class 'Remove_appointment_UseCase' has no attributes.
+The class 'New_appointment_UseCase' has no attributes.
+The class 'Doctor' has the following attributes: 'specialization' of type str.
+The class 'Nurse' has the following attributes: 'experience' of type str.
+The class 'Appointment_external' has no attributes.
+The class 'Schedule' has the following attributes: 'startTime' of type str; 'scheduleID' of type int; 'date' of type str; 'available' of type bool; 'endTime' of type str.
+The class 'Create_new_patient_account_UseCase' has no attributes.
+The class 'Diagnose_UseCase' has no attributes.
+The class 'Employee' has the following attributes: 'employeeSurname' of type str; 'employeeName' of type str; 'employeePassword' of type str; 'employeeID' of type int; 'employeeUsername' of type str; 'employeeEmail' of type str; 'employeeMobile' of type str; 'employeeAddress' of type str.
+The class 'Patient_Actor' has no attributes.
+The class 'Billing_UseCase' has no attributes.
+The class 'Appointment_management_UseCase' has no attributes.
+The class 'TreatmentList' has the following attributes: 'treatmentPrice' of type float; 'treatmentID' of type int; 'treatmentName' of type str.
+The class 'Patient' has the following attributes: 'patientSurname' of type str; 'coupon' of type float; 'patientName' of type str; 'patientID' of type int; 'patientEmail' of type str; 'patientAddress' of type str; 'patientMobile' of type str.
+The class 'AppointmentDiagnose_external' has no attributes.
+The class 'Bill' has the following attributes: 'billID' of type str; 'ammount' of type float; 'date' of type str.
+The class 'Nurse_Actor' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'Logging_into_system_UseCase' has no attributes.
+The class 'Logging_as_existing_user_UseCase' has no attributes.
+The class 'Authorization_UseCase' has no attributes.
+The class 'Doctor_Actor' has no attributes.
+'Patient' (role 'appointment9', cardinality 0..*) is associated with 'Appointment_external' (role 'patient8', cardinality 0..*).
+'Patient_Actor' (role 'billing4', cardinality 0..*) is associated with 'Billing_UseCase' (role 'patient5', cardinality 0..*).
+'Appointment_external' (role 'bill13', cardinality 0..*) is associated with 'Bill' (role 'appointment12', cardinality 0..*).
+'Nurse_Actor' (role 'billing19', cardinality 0..*) is associated with 'Billing_UseCase' (role 'nurse18', cardinality 0..*).
+'Bill' (role 'nurse14', cardinality 0..*) is associated with 'Nurse' (role 'bill15', cardinality 0..*).
+'Diagnose_UseCase' (role 'doctor16', cardinality 0..*) is associated with 'Doctor_Actor' (role 'diagnose17', cardinality 0..*).
+'Patient_Actor' (role 'logging_into_system6', cardinality 0..*) is associated with 'Logging_into_system_UseCase' (role 'patient7', cardinality 0..*).
+'AppointmentDiagnose_external' (role 'treatmentList10', cardinality 0..*) is associated with 'TreatmentList' (role 'appointmentDiagnose11', cardinality 0..*).
+'Patient_Actor' (role 'create_appointment2', cardinality 0..*) is associated with 'Appointment_management_UseCase' (role 'patient3', cardinality 0..*).
+'Employee_Actor' (role 'logging_into_system0', cardinality 0..*) is associated with 'Logging_into_system_UseCase' (role 'employee1', cardinality 0..*).

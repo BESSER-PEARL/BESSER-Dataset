@@ -1,0 +1,12 @@
+The model has 11 class(es).
+The class 'Sprite' has the following attributes: 'ID' of type str.
+The class 'MyClass5' has no attributes.
+The class 'MyClass8' has no attributes.
+The class 'MyInterface_Interface' has no attributes.
+The class 'MyClass6' has no attributes.
+The class 'MyInterface2_Interface' has no attributes.
+The class 'MyClass7' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MyClass4' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'MyClass2' has no attributes.

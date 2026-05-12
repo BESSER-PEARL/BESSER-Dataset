@@ -1,0 +1,27 @@
+The model has 14 class(es).
+The class 'Main_Menu_UseCase' has no attributes.
+The class 'T' has no attributes.
+The class 'exit_game__UseCase' has no attributes.
+The class 'view_achievements_UseCase' has no attributes.
+The class 'Game_Play_UseCase' has no attributes.
+The class 'Store_UseCase' has no attributes.
+The class 'splash_anim_controller' has the following attributes: 'attribute' of type str.
+The class 'system__Actor' has no attributes.
+The class 'save_game_state__UseCase' has no attributes.
+The class 'Selection_UseCase' has no attributes.
+The class 'player_Actor' has no attributes.
+The class 'save_achievemnts_UseCase' has no attributes.
+The class 'lock_unlock_UseCase' has no attributes.
+The class 'Splash_UseCase' has no attributes.
+'player_Actor' (role 'store8', cardinality 0..*) is associated with 'Store_UseCase' (role 'player9', cardinality 0..*).
+'Selection_UseCase' (role 'player3', cardinality 0..*) is associated with 'player_Actor' (role 'selection2', cardinality 0..*).
+'Game_Play_UseCase' (role 'player7', cardinality 0..*) is associated with 'player_Actor' (role 'game_Play6', cardinality 0..*).
+'view_achievements_UseCase' (role 'player11', cardinality 0..*) is associated with 'player_Actor' (role 'view_achievements10', cardinality 0..*).
+'system__Actor' (role 'splash12', cardinality 0..*) is associated with 'Splash_UseCase' (role 'system13', cardinality 0..*).
+'lock_unlock_UseCase' (role 'system22', cardinality 0..*) is associated with 'system__Actor' (role 'lock_unlock23', cardinality 0..*).
+'system__Actor' (role 'save_achievemnts20', cardinality 0..*) is associated with 'save_achievemnts_UseCase' (role 'system21', cardinality 0..*).
+'Splash_UseCase' (role 'player1', cardinality 0..*) is associated with 'player_Actor' (role 'splash0', cardinality 0..*).
+'save_game_state__UseCase' (role 'system19', cardinality 0..*) is associated with 'system__Actor' (role 'save_game_state18', cardinality 0..*).
+'system__Actor' (role 'exit_game16', cardinality 0..*) is associated with 'exit_game__UseCase' (role 'system17', cardinality 0..*).
+'Selection_UseCase' (role 'system15', cardinality 0..*) is associated with 'system__Actor' (role 'selection14', cardinality 0..*).
+'Main_Menu_UseCase' (role 'player5', cardinality 0..*) is associated with 'player_Actor' (role 'main_Menu4', cardinality 0..*).

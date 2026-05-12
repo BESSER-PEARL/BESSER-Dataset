@@ -1,0 +1,46 @@
+The model has 24 class(es).
+The class 'Call_for_Last_Bets_UseCase' has no attributes.
+The class 'Joueur' has the following attributes: 'nom' of type str; 'main' of type str; 'playerbank' of type int.
+The class 'Stand_UseCase' has no attributes.
+The class 'Sit_at_Table_UseCase' has no attributes.
+The class 'Reveal_Last_Card_UseCase' has no attributes.
+The class 'Dealer__automated__Actor' has no attributes.
+The class 'Split_Hand_UseCase' has no attributes.
+The class 'Cut_Deck_UseCase' has no attributes.
+The class 'Croupier' has the following attributes: 'main' of type str.
+The class 'Leave_Table_UseCase' has no attributes.
+The class 'Ask_Player_to_Cut_Deck_UseCase' has no attributes.
+The class 'Pay_Chips_UseCase' has no attributes.
+The class 'Main' has the following attributes: 'bet' of type str; 'cartes' of type str; 'value' of type int.
+The class 'Shuffle_Shoe_UseCase' has no attributes.
+The class 'Hit_UseCase1' has no attributes.
+The class 'Double_Down_UseCase' has no attributes.
+The class 'Hit_UseCase' has no attributes.
+The class 'Deal_UseCase' has no attributes.
+The class 'Player_Actor' has no attributes.
+The class 'Card' has the following attributes: 'rank' of type str; 'suit' of type int.
+The class 'Blackjack' has the following attributes: 'croupier' of type Croupier; 'joueurs' of type str.
+The class 'Take_Chips_UseCase' has no attributes.
+The class 'Stand_UseCase1' has no attributes.
+The class 'Place_Bet_UseCase' has no attributes.
+'Player_Actor' (role 'place_Bet0', cardinality 0..*) is associated with 'Place_Bet_UseCase' (role 'player1', cardinality 0..*).
+'Sit_at_Table_UseCase' (role 'player11', cardinality 0..*) is associated with 'Player_Actor' (role 'sit_at_Table10', cardinality 0..*).
+'Dealer__automated__Actor' (role 'deal22', cardinality 0..*) is associated with 'Deal_UseCase' (role 'dealer__automated_23', cardinality 0..*).
+'Joueur' (role 'hand32', cardinality 0..*) is associated with 'Main' (role 'player33', cardinality 0..*).
+'Reveal_Last_Card_UseCase' (role 'dealer__automated_27', cardinality 0..*) is associated with 'Dealer__automated__Actor' (role 'reveal_Last_Card26', cardinality 0..*).
+'Blackjack' (role 'player34', cardinality 0..*) is associated with 'Joueur' (role 'blackjack35', cardinality 0..*).
+'Stand_UseCase' (role 'player7', cardinality 0..*) is associated with 'Player_Actor' (role 'stand6', cardinality 0..*).
+'Player_Actor' (role 'split_Hand2', cardinality 0..*) is associated with 'Split_Hand_UseCase' (role 'player3', cardinality 0..*).
+'Double_Down_UseCase' (role 'player5', cardinality 0..*) is associated with 'Player_Actor' (role 'double_Down4', cardinality 0..*).
+'Hit_UseCase' (role 'player9', cardinality 0..*) is associated with 'Player_Actor' (role 'hit8', cardinality 0..*).
+'Cut_Deck_UseCase' (role 'player13', cardinality 0..*) is associated with 'Player_Actor' (role 'cut_Deck12', cardinality 0..*).
+'Blackjack' (role 'dealer36', cardinality 0..*) is associated with 'Croupier' (role 'blackjack37', cardinality 0..*).
+'Card' (role 'hand40', cardinality 0..*) is associated with 'Main' (role 'card41', cardinality 0..*).
+'Shuffle_Shoe_UseCase' (role 'dealer__automated_21', cardinality 0..*) is associated with 'Dealer__automated__Actor' (role 'shuffle_Shoe20', cardinality 0..*).
+'Dealer__automated__Actor' (role 'hit18', cardinality 0..*) is associated with 'Hit_UseCase1' (role 'dealer__automated_19', cardinality 0..*).
+'Pay_Chips_UseCase' (role 'dealer__automated_15', cardinality 0..*) is associated with 'Dealer__automated__Actor' (role 'pay_Chips14', cardinality 0..*).
+'Stand_UseCase1' (role 'dealer__automated_31', cardinality 0..*) is associated with 'Dealer__automated__Actor' (role 'stand30', cardinality 0..*).
+'Dealer__automated__Actor' (role 'ask_Player_to_Cut_Deck28', cardinality 0..*) is associated with 'Ask_Player_to_Cut_Deck_UseCase' (role 'dealer__automated_29', cardinality 0..*).
+'Main' (role 'dealer39', cardinality 0..*) is associated with 'Croupier' (role 'hand38', cardinality 0..*).
+'Dealer__automated__Actor' (role 'take_Chips16', cardinality 0..*) is associated with 'Take_Chips_UseCase' (role 'dealer__automated_17', cardinality 0..*).
+'Call_for_Last_Bets_UseCase' (role 'dealer__automated_25', cardinality 0..*) is associated with 'Dealer__automated__Actor' (role 'call_for_Last_Bets24', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 13 class(es).
+The class 'Advertiesment' has the following attributes: 'start_date' of type str; 'advertiser_id' of type str; 'advertiesment_id' of type int; 'end_date' of type str.
+The class 'Reg_User' has the following attributes: 'username' of type str; 'Address' of type str; 'password' of type str.
+The class 'Unreg_User' has no attributes.
+The class 'User' has the following attributes: 'email' of type str; 'location' of type str.
+The class 'Request' has the following attributes: 'request_id' of type int; 'request_type' of type str; 'request_details' of type str; 'requser_id' of type str.
+The class 'Buyer' has the following attributes: 'buyer_id' of type str.
+The class 'Administrator' has the following attributes: 'password' of type str; 'admin_name' of type str.
+The class 'Property' has the following attributes: 'address' of type str; 'property_id' of type str; 'property_type' of type str; 'location' of type str.
+The class 'Requirement' has the following attributes: 'requirement_type' of type str; 'user_id' of type str; 'req_description' of type str; 'requirement_location' of type str.
+The class 'Management' has the following attributes: 'specialoffers' of type str; 'suggetions' of type str.
+The class 'Advertiser' has the following attributes: 'advertiesment_id' of type str; 'advertiser_id' of type str.
+The class 'Payment' has the following attributes: 'pay_mode' of type str; 'ex_date' of type str; 'card_no' of type str; 'pay_id' of type int; 'pay_amount' of type str.
+The class 'Seller' has the following attributes: 'property_id' of type str; 'seller_id' of type str.
+'Property' (role 'user8', cardinality 0..*) is associated with 'Buyer' (role 'property9', cardinality 0..*).
+'Request' (role 'user7', cardinality 0..*) is associated with 'User' (role 'request6', cardinality 0..*).
+'Reg_User' (role 'requirement10', cardinality 0..*) is associated with 'Requirement' (role 'user11', cardinality 0..*).
+'Payment' (role 'reg_User14', cardinality 0..*) is associated with 'Reg_User' (role 'payment15', cardinality 0..*).
+'Seller' (role 'property5', cardinality 0..*) is associated with 'Property' (role 'owner4', cardinality 0..*).
+'Property' (role 'payment17', cardinality 0..*) is associated with 'Payment' (role 'property16', cardinality 0..*).
+'User' (role 'administrator0', cardinality 0..*) is associated with 'Administrator' (role 'employee1', cardinality 0..*).
+'Advertiesment' (role 'owner3', cardinality 0..*) is associated with 'Advertiser' (role 'adds2', cardinality 0..*).
+'Property' (role 'management12', cardinality 0..*) is associated with 'Management' (role 'property13', cardinality 0..*).

@@ -1,0 +1,29 @@
+The model has 17 class(es).
+The class 'Items' has the following attributes: 'item_id' of type str; 'unit_of_measure' of type str; 're_order_qty' of type str; 'price_per_unit' of type str; 'description' of type str; 'item_code' of type str.
+The class 'Interface_Interface' has no attributes.
+The class 'Attendance' has the following attributes: 'att_id' of type str; 'OT_hours' of type str; 'work_hours' of type str; 'out_time' of type str; 'date' of type str; 'in_time' of type str.
+The class 'Salary' has the following attributes: 'position' of type str; 'Salary' of type str; 'id' of type int.
+The class 'Daily_production' has the following attributes: 'section' of type int; 'curr_qty' of type int; 'date' of type str; 'item_code' of type str; 'pro_number' of type str; 'item_name' of type str; 'future_Qty' of type int.
+The class 'ETF_EPF' has the following attributes: 'no' of type int; 'type' of type str; 'rate' of type str.
+The class 'Staff' has the following attributes: 'Position' of type str.
+The class 'Worker' has the following attributes: 'team' of type int; 'section' of type str.
+The class 'Section' has the following attributes: 'description' of type str; 'section_id' of type str; 'name' of type str.
+The class 'Administrator' has the following attributes: 'username' of type str; 'password' of type str.
+The class 'Order_Sent' has the following attributes: 'Item_id' of type str; 'sentOrder_id' of type str; 'quantity' of type str; 'order_status' of type str.
+The class 'Orders' has the following attributes: 'status' of type str; 'order_id' of type str; 'price_per_unit' of type str; 'Quantity' of type str; 'total_amount' of type str; 'item_id' of type str; 'recieved_date' of type str; 'order_date' of type str.
+The class 'Bonus' has the following attributes: 'amount' of type str; 'IDnum' of type int; 'id' of type int; 'type' of type str.
+The class 'Employee' has the following attributes: 'email' of type str; 'attendance_count' of type int; 'emp_id' of type str; 'DOB' of type str; 'address' of type str; 'lname' of type str; 'phone' of type int; 'fname' of type str.
+The class 'Leave' has the following attributes: 'leave_type' of type str; 'leave_id' of type str; 'to' of type str; 'date' of type str; 'from' of type str.
+The class 'Supplier' has the following attributes: 'contact_no' of type int; 'email' of type str; 'Supplier_id' of type str; 'address' of type str; 'name' of type str.
+The class 'Stock' has the following attributes: 'quantity' of type str; 'stock_id' of type str; 'item_id' of type str; 'exp_date' of type str.
+'Employee' (role 'leave11', cardinality 0..*) is associated with 'Leave' (role 'employee10', cardinality 0..*).
+'Salary' (role 'eTF_EPF20', cardinality 0..*) is associated with 'ETF_EPF' (role 'salary21', cardinality 0..*).
+'Stock' (role 'items2', cardinality 0..*) is associated with 'Items' (role 'stock3', cardinality 0..*).
+'Items' (role 'orders5', cardinality 0..*) is associated with 'Orders' (role 'items4', cardinality 0..*).
+'Order_Sent' (role 'administrator14', cardinality 0..*) is associated with 'Administrator' (role 'order_Sent15', cardinality 0..*).
+'Employee' (role 'salary16', cardinality 0..*) is associated with 'Salary' (role 'employee17', cardinality 0..*).
+'Orders' (role 'administrator13', cardinality 0..*) is associated with 'Administrator' (role 'orders12', cardinality 0..*).
+'Orders' (role 'supplier1', cardinality 0..*) is associated with 'Supplier' (role 'orders0', cardinality 0..*).
+'Salary' (role 'bonus18', cardinality 0..*) is associated with 'Bonus' (role 'salary19', cardinality 0..*).
+'Attendance' (role 'employee9', cardinality 0..*) is associated with 'Employee' (role 'attendance8', cardinality 0..*).
+'Section' (role 'employee7', cardinality 0..*) is associated with 'Employee' (role 'section6', cardinality 0..*).

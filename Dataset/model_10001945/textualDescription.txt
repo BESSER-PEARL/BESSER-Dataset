@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'Connect4_connect' has the following attributes: 'FRAME_HEIGHT' of type int; 'rowSize' of type int; 'x' of type int; 'label4' of type str; 'panel' of type str; 'FRAME_WIDTH' of type int; 'label1' of type str; 'label5' of type str; 'label3' of type str; 'y' of type int; 'label2' of type str; 'columnSize' of type int.
+The class 'Connect4_Player' has the following attributes: 'name' of type str; 'roundWon' of type bool; 'currentPlayer' of type bool; 'tokenColor' of type str; 'wins' of type int.
+The class 'Connect4_Board' has the following attributes: 'maxRows' of type int; 'maxColumns' of type int; 'gameBoard' of type str.
+The class 'Connect4_Token' has the following attributes: 'yValue' of type int; 'isEmpty' of type bool; 'color' of type str; 'xValue' of type int.
+The class 'Connect4_CirclePanel' has the following attributes: 'color' of type str; 'colorIndex' of type int.
+'Connect4_Board' (role 'token0', cardinality 0..*) is associated with 'Connect4_Token' (role 'board1', cardinality 0..*).
+'Connect4_Player' (role 'board3', cardinality 0..*) is associated with 'Connect4_Board' (role 'player2', cardinality 0..*).
+'Connect4_Board' (role 'connect6', cardinality 0..*) is associated with 'Connect4_connect' (role 'board7', cardinality 0..*).
+'Connect4_connect' (role 'circlePanel5', cardinality 0..*) is associated with 'Connect4_CirclePanel' (role 'connect4', cardinality 0..*).

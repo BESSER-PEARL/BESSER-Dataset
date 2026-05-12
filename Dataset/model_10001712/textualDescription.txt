@@ -1,0 +1,6 @@
+The model has 5 class(es).
+The class 'Train' has the following attributes: 'Cars' of type str; 'Manufacturer' of type str; 'Operator' of type str; 'Power' of type str.
+The class 'CargoTrain' has the following attributes: 'Stops' of type str; 'Origin' of type str; 'Containers' of type str.
+The class 'Coach' has the following attributes: 'seatsFilled' of type int; 'numberOfSeats' of type int.
+The class 'FirstClass' has the following attributes: 'numberOfSeats' of type int; 'seatsFilled' of type int.
+The class 'PassengerTrain' has the following attributes: 'Stops' of type str; 'Origin' of type str; 'numberOfPassengers' of type int.

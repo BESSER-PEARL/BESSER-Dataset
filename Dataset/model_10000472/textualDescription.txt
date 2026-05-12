@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'Group' has no attributes.
+The class 'Message' has no attributes.
+The class 'Profile' has no attributes.
+The class 'Login' has no attributes.
+The class 'Friend' has no attributes.
+The class 'User' has no attributes.
+The class 'Post' has no attributes.
+'Post' (role 'user3', cardinality 0..*) is associated with 'User' (role 'post2', cardinality 0..*).
+'Message' (role 'user9', cardinality 0..*) is associated with 'User' (role 'message8', cardinality 0..*).
+'User' (role 'myprofile0', cardinality 0..*) is associated with 'Profile' (role 'user1', cardinality 0..*).
+'User' (role 'login4', cardinality 0..*) is associated with 'Login' (role 'user5', cardinality 0..*).
+'Group' (role 'user7', cardinality 0..*) is associated with 'User' (role 'group6', cardinality 0..*).

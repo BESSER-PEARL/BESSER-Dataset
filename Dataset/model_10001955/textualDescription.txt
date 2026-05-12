@@ -1,0 +1,6 @@
+The model has 5 class(es).
+The class 'Route' has no attributes.
+The class 'Routing_System_Actor' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Class' has no attributes.
+The class 'Actor_Actor' has no attributes.

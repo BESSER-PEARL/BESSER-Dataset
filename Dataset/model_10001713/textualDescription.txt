@@ -1,0 +1,31 @@
+The model has 15 class(es).
+The class 'Register' has the following attributes: 'attribute' of type str.
+The class 'Sales_Line_Item' has the following attributes: 'Quantity' of type int.
+The class 'Manager' has the following attributes: 'name' of type str; 'password' of type str.
+The class 'Menu' has the following attributes: '_attr' of type str.
+The class 'Payment' has the following attributes: 'amount' of type str.
+The class 'CardReader' has the following attributes: 'attribute' of type str.
+The class 'Product' has the following attributes: 'itemID' of type int; 'description' of type str; 'name' of type str; 'price' of type str.
+The class 'SUID' has the following attributes: 'suFOODBal' of type str; 'studentName' of type str; 'ID' of type int.
+The class 'Card' has the following attributes: 'cardholderName' of type str; 'isCredit' of type bool; 'cardSN' of type int; 'isDebit' of type bool; 'cardNumber' of type int.
+The class 'customerDatabase' has the following attributes: 'creditCardNum' of type int; 'paymentHistory' of type str; 'customerName' of type str; 'SUID' of type int.
+The class 'Store' has the following attributes: 'Name' of type str; 'Address' of type str.
+The class 'Food' has the following attributes: 'name' of type str; 'price' of type str; 'attribute' of type str; 'quantity' of type int.
+The class 'Drink' has the following attributes: 'price' of type str; 'quantity' of type int; 'name' of type str.
+The class 'Sale' has the following attributes: 'Date' of type str; 'Time' of type str; 'isComplete' of type bool.
+The class 'Order' has the following attributes: 'drinkPrice' of type int; 'customer' of type str; 'foodName' of type str; 'foodPrice' of type int; 'drinkName' of type str.
+'Card' (role 'customerDatabase21', cardinality 0..*) is associated with 'customerDatabase' (role 'card20', cardinality 0..*).
+'Store' (role 'menu2', cardinality 0..*) is associated with 'Menu' (role 'store3', cardinality 0..*).
+'Card' (role 'sUID23', cardinality 0..*) is associated with 'SUID' (role 'card22', cardinality 0..*).
+'Manager' (role 'menu28', cardinality 0..*) is associated with 'Menu' (role 'manager29', cardinality 0..*).
+'Sale' (role 'cardReader18', cardinality 0..*) is associated with 'CardReader' (role 'sale19', cardinality 0..*).
+'Menu' (role 'product4', cardinality 0..*) is associated with 'Product' (role 'menu5', cardinality 0..*).
+'Food' (role 'sales_Line_Item15', cardinality 0..*) is associated with 'Sales_Line_Item' (role 'food14', cardinality 0..*).
+'Payment' (role 'sUID25', cardinality 0..*) is associated with 'SUID' (role 'payment24', cardinality 0..*).
+'Payment' (role 'sale9', cardinality 0..*) is associated with 'Sale' (role 'payment8', cardinality 0..*).
+'Payment' (role 'order12', cardinality 0..*) is associated with 'Order' (role 'payment13', cardinality 0..*).
+'Sales_Line_Item' (role 'sale11', cardinality 0..*) is associated with 'Sale' (role 'sales_Line_Item10', cardinality 0..*).
+'Store' (role 'register1', cardinality 0..*) is associated with 'Register' (role 'store0', cardinality 0..*).
+'Drink' (role 'sales_Line_Item17', cardinality 0..*) is associated with 'Sales_Line_Item' (role 'drink16', cardinality 0..*).
+'Sales_Line_Item' (role 'product27', cardinality 0..*) is associated with 'Product' (role 'sales_Line_Item26', cardinality 0..*).
+'Register' (role 'sale6', cardinality 0..*) is associated with 'Sale' (role 'register7', cardinality 0..*).

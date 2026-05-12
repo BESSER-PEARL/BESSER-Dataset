@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'CONTACTO' has the following attributes: 'CORREO' of type str; 'NOMBRE' of type str.
+The class 'TELEFONO' has the following attributes: 'CODIGO_DE__AREA' of type str; 'PREFIJO' of type int; 'NUMBER' of type int.
+The class 'Actor_external' has no attributes.
+The class 'LIBRO_DE__DIRECCIONES' has the following attributes: 'INTRODUCCION' of type str.
+The class 'Actualizar__contacto_external' has no attributes.
+The class 'Libro_de__Direcciones_Component' has no attributes.
+The class 'Buscar_Contactos_external' has no attributes.
+The class 'DIRECCION' has the following attributes: 'ESTADO' of type str; 'CODIGO_POSTAL' of type str; 'NOMBRE' of type str; 'CIUDAD' of type str.
+The class 'Actor_Actor' has no attributes.
+The class 'Eliminar_Contacto_external' has no attributes.
+The class 'Crear_Contacto_external' has no attributes.
+The class 'FOTO' has the following attributes: 'ANCHO' of type int; 'ALTURA' of type int.
+'Actor_external' (role 'eliminar_Contacto14', cardinality 0..*) is associated with 'Eliminar_Contacto_external' (role 'actor15', cardinality 0..*).
+'CONTACTO' (role 'dIRECCION6', cardinality 0..*) is associated with 'DIRECCION' (role 'cONTACTO7', cardinality 0..*).
+'Crear_Contacto_external' (role 'actor11', cardinality 0..*) is associated with 'Actor_external' (role 'Crear_Contacto10', cardinality 0..*).
+'CONTACTO' (role 'LIBRO_DE__DIRECCIONES1', cardinality 0..*) is associated with 'LIBRO_DE__DIRECCIONES' (role 'cONTACTO0', cardinality 0..*).
+'CONTACTO' (role 'tELEFONO2', cardinality 0..*) is associated with 'TELEFONO' (role 'cONTACTO3', cardinality 0..*).
+'CONTACTO' (role 'fOTO4', cardinality 0..*) is associated with 'FOTO' (role 'cONTACTO5', cardinality 0..*).
+'Actor_external' (role 'actualizar__contacto12', cardinality 0..*) is associated with 'Actualizar__contacto_external' (role 'actor13', cardinality 0..*).
+'Buscar_Contactos_external' (role 'actor9', cardinality 0..*) is associated with 'Actor_external' (role 'buscar_Contactos8', cardinality 0..*).

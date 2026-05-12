@@ -1,0 +1,37 @@
+The model has 16 class(es).
+The class 'Customer' has the following attributes: 'CustomerID' of type int; 'email' of type str; 'username' of type str.
+The class 'Logout_UseCase' has no attributes.
+The class 'Add_Book_UseCase' has no attributes.
+The class 'Bank_Mobile_Money_Agent_Actor' has no attributes.
+The class 'Edit_Book_UseCase' has no attributes.
+The class 'Book' has the following attributes: 'bookID' of type int; 'description' of type str; 'title' of type str; 'price' of type int; 'category' of type Customer; 'author' of type str.
+The class 'Customer_Actor' has no attributes.
+The class 'Search_Book_UseCase' has no attributes.
+The class 'Make_Payment_UseCase' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'Category' has the following attributes: 'categoryName' of type str; 'categoryID' of type int.
+The class 'Confirm_Payment_UseCase' has no attributes.
+The class 'Sign_up_UseCase' has no attributes.
+The class 'Add_book__to_cart_UseCase' has no attributes.
+The class 'Log_in_UseCase' has no attributes.
+The class 'Administrator' has the following attributes: 'email' of type str; 'adminID' of type int; 'name' of type str.
+'Book' (role 'administrator23', cardinality 0..*) is associated with 'Administrator' (role 'book22', cardinality 0..*).
+'Log_in_UseCase' (role 'customer7', cardinality 0..*) is associated with 'Customer_Actor' (role 'log_in6', cardinality 0..*).
+'Administrator_Actor' (role 'confirm_Payment18', cardinality 0..*) is associated with 'Confirm_Payment_UseCase' (role 'administrator19', cardinality 0..*).
+'Book' (role 'administrator25', cardinality 0..*) is associated with 'Administrator' (role 'book24', cardinality 0..*).
+'Search_Book_UseCase' (role 'customer13', cardinality 0..*) is associated with 'Customer_Actor' (role 'search_Book12', cardinality 0..*).
+'Administrator' (role 'customer32', cardinality 0..*) is associated with 'Customer' (role 'administrator33', cardinality 0..*).
+'Customer' (role 'customer36', cardinality 0..*) is associated with 'Customer' (role 'customer37', cardinality 0..*).
+'Bank_Mobile_Money_Agent_Actor' (role 'confirm_Payment20', cardinality 0..*) is associated with 'Confirm_Payment_UseCase' (role 'bank_Mobile_Money_Agent21', cardinality 0..*).
+'Book' (role 'customer39', cardinality 0..*) is associated with 'Customer' (role 'book38', cardinality 0..*).
+'Administrator' (role 'administrator30', cardinality 0..*) is associated with 'Administrator' (role 'administrator31', cardinality 0..*).
+'Administrator_Actor' (role 'edit_Book14', cardinality 0..*) is associated with 'Edit_Book_UseCase' (role 'administrator15', cardinality 0..*).
+'Add_Book_UseCase' (role 'administrator17', cardinality 0..*) is associated with 'Administrator_Actor' (role 'add_Book16', cardinality 0..*).
+'Customer_Actor' (role 'make_Payment10', cardinality 0..*) is associated with 'Make_Payment_UseCase' (role 'customer11', cardinality 0..*).
+'Add_book__to_cart_UseCase' (role 'customer9', cardinality 0..*) is associated with 'Customer_Actor' (role 'add_book__to_cart8', cardinality 0..*).
+'Book' (role 'customer35', cardinality 0..*) is associated with 'Customer' (role 'book34', cardinality 0..*).
+'Logout_UseCase' (role 'logout1', cardinality 0..*) is associated with 'Logout_UseCase' (role 'logout0', cardinality 0..*).
+'Category' (role 'book28', cardinality 0..*) is associated with 'Book' (role 'category29', cardinality 0..*).
+'Customer_Actor' (role 'logout2', cardinality 0..*) is associated with 'Logout_UseCase' (role 'customer3', cardinality 0..*).
+'Category' (role 'category26', cardinality 0..*) is associated with 'Category' (role 'category27', cardinality 0..*).
+'Sign_up_UseCase' (role 'customer5', cardinality 0..*) is associated with 'Customer_Actor' (role 'sign_up4', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'PlaetzchenDesignerForm' has the following attributes: 'BLECHBREITE' of type str; 'BLECHLAENGE' of type str; 'neuerAuftrag' of type str; 'plaetzchenGeaendert' of type bool; 'neuesPlaetzchen' of type str; 'datei' of type str.
+The class 'Zutat' has the following attributes: 'menge' of type str; 'name' of type str; 'einheit' of type str.
+The class 'Auftrag' has the following attributes: 'keks' of type str; 'name' of type str; 'anzahl' of type str.
+The class 'Zutaten' has the following attributes: 'zutaten' of type str.
+The class 'DateiEA' has no attributes.
+The class 'ZutatenEingabeForm' has the following attributes: 'neueZutat' of type str.
+The class 'Plaetzchen' has the following attributes: 'teig' of type str; 'belag' of type str; 'laenge' of type str; 'breite' of type str; 'form' of type str; 'temperatur' of type str; 'backzeit' of type str.
+The class 'PlaetzchenAnzeigeForm' has the following attributes: 'form' of type str; 'laenge' of type str; 'breite' of type str.
+'PlaetzchenDesignerForm' (role 'zutatenEingabe15', cardinality 0..*) is associated with 'ZutatenEingabeForm' (role 'plaetzchenDesignerForm14', cardinality 0..*).
+'Plaetzchen' (role 'dateiEA13', cardinality 0..*) is associated with 'DateiEA' (role 'plaetzchen12', cardinality 0..*).
+'PlaetzchenDesignerForm' (role 'plaetzchen10', cardinality 0..*) is associated with 'Plaetzchen' (role 'plaetzchenDesignerForm11', cardinality 0..*).
+'PlaetzchenDesignerForm' (role 'plaetzchenAnzeigeForm8', cardinality 0..*) is associated with 'PlaetzchenAnzeigeForm' (role 'plaetzchenDesignerForm9', cardinality 0..*).
+'Auftrag' (role 'dateiEA19', cardinality 0..*) is associated with 'DateiEA' (role 'auftrag18', cardinality 0..*).
+'Zutaten' (role 'plaetzchen1', cardinality 0..*) is associated with 'Plaetzchen' (role 'teig20', cardinality 0..*).
+'DateiEA' (role 'plaetzchenDesignerForm7', cardinality 0..*) is associated with 'PlaetzchenDesignerForm' (role 'dateiEA6', cardinality 0..*).
+'Zutat' (role 'zutatenEingabe17', cardinality 0..*) is associated with 'ZutatenEingabeForm' (role 'zutat16', cardinality 0..*).
+'Auftrag' (role 'plaetzchenDesignerForm23', cardinality 0..*) is associated with 'PlaetzchenDesignerForm' (role 'auftrag22', cardinality 0..*).
+'Plaetzchen' (role 'zutat2', cardinality 0..*) is associated with 'Zutat' (role 'plaetzchen3', cardinality 0..*).
+'Zutaten' (role 'zutat4', cardinality 0..*) is associated with 'Zutat' (role 'teig5', cardinality 0..*).
+'Plaetzchen' (role 'auftrag20', cardinality 0..*) is associated with 'Auftrag' (role 'plaetzchen221', cardinality 0..*).

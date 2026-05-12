@@ -1,0 +1,16 @@
+The model has 15 class(es).
+The class 'user_User' has the following attributes: 'business' of type user_Business; 'fiirstName' of type datatypes_String; 'wishlist' of type marketing_Product; 'photoURL' of type str; 'reviews' of type marketing_Review; 'displayName' of type str; 'interests' of type system_Category; 'email' of type str; 'provider' of type user_Provider; 'lastName' of type datatypes_String; 'purchaseHistory' of type marketing_Product; 'address' of type Address; 'phone' of type datatypes_String; 'id' of type datatypes_String.
+The class 'datatypes_Number' has the following attributes: 'data' of type int.
+The class 'datatypes_Bool' has the following attributes: 'data' of type bool.
+The class 'Address' has the following attributes: 'suburb' of type str; 'state' of type str; 'postcode' of type str; 'country' of type datatypes_String; 'street' of type str.
+The class 'marketing_Review' has the following attributes: 'rating' of type datatypes_Number; 'user' of type user_User; 'description' of type str; 'id' of type str; 'product' of type marketing_Product.
+The class 'datatypes_Value' has the following attributes: 'attribute' of type str.
+The class 'datatypes_Array' has the following attributes: 'data' of type datatypes_Value.
+The class 'marketing_Product' has the following attributes: 'name' of type str; 'busId' of type user_Business; 'id' of type str; 'reviews' of type marketing_Review; 'ccategory' of type system_Category; 'active' of type bool; 'created' of type date; 'expires' of type date; 'price' of type float.
+The class 'datatypes_Documents' has the following attributes: 'file' of type str; 'file_name' of type str; 'data' of type datatypes_Json; 'tab_counter' of type int.
+The class 'system_Category' has the following attributes: 'icon' of type str; 'id' of type str; 'name' of type str; 'section' of type str; 'parent' of type system_Category.
+The class 'datatypes_Json' has the following attributes: 'values' of type datatypes_Value.
+The class 'datatypes_String' has the following attributes: 'data' of type datatypes_String.
+The class 'user_Tags' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'user_Provider' has the following attributes: 'email' of type str; 'photoURL' of type str; 'uid' of type str; 'providerId' of type str; 'displayName' of type str.
+The class 'user_Business' has the following attributes: 'website' of type str; 'email' of type str; 'id' of type datatypes_String; 'address' of type Address; 'products' of type marketing_Product; 'phone' of type str; 'category' of type str; 'tags' of type user_Tags; 'name' of type datatypes_String; 'adminUser' of type user_User; 'avgRatings' of type datatypes_Number; 'staffUsers' of type user_User.

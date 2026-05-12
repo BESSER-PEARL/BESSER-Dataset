@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Nurse' has the following attributes: 'id' of type int; 'attribute2' of type str.
+The class 'Doctor' has the following attributes: 'docid' of type int; 'specialization' of type str; 'phno' of type int; 'department' of type str; 'name' of type str; 'address' of type str.
+The class 'Patient' has the following attributes: 'id' of type int; 'sex' of type str; 'age' of type int; 'telno' of type int; 'name' of type str; 'address' of type str.
+The class 'System_Admin' has the following attributes: 'adminid' of type int; 'id' of type int; 'name' of type str.
+'Nurse' (role 'p5', cardinality 0..*) is associated with 'Patient' (role 'Nurse4', cardinality 0..*).
+'Patient' (role 'doctors1', cardinality 0..*) is associated with 'Doctor' (role 'patients0', cardinality 0..*).
+'System_Admin' (role 'doctor3', cardinality 0..*) is associated with 'Doctor' (role 'admin2', cardinality 0..*).

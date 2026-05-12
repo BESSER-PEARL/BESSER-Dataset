@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'Theme' has no attributes.
+The class 'Card' has the following attributes: 'suit' of type Suit; 'kind' of type Kind.
+The class 'Game' has the following attributes: 'name' of type str.
+The class 'Player' has the following attributes: 'name' of type str.
+The class 'Avatar' has no attributes.
+The class 'Deck' has no attributes.
+The enumeration 'Kind' does not specify any literals.
+The enumeration 'Suit' does not specify any literals.
+'Deck' (role 'cards0', cardinality 0..*) is associated with 'Card' (role 'deck1', cardinality 0..*).
+'Player' (role 'games7', cardinality 0..*) is associated with 'Game' (role 'players6', cardinality 0..*).
+'Deck' (role 'theme2', cardinality 0..*) is associated with 'Theme' (role 'decks3', cardinality 0..*).
+'Player' (role 'avatar4', cardinality 0..*) is associated with 'Avatar' (role 'players5', cardinality 0..*).
+'Card' (role 'player11', cardinality 0..*) is associated with 'Player' (role 'cards10', cardinality 0..*).
+'Deck' (role 'games9', cardinality 0..*) is associated with 'Game' (role 'decks8', cardinality 0..*).

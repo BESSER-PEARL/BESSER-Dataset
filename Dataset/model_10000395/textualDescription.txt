@@ -1,0 +1,21 @@
+The model has 7 class(es).
+The class 'PlayerOne_external' has no attributes.
+The class 'Card_Interface' has no attributes.
+The class 'Deck' has the following attributes: 'topcard' of type int; 'isEmpty__' of type bool; 'draw__' of type str; 'shuffle__' of type str; 'deck__' of type Deck.
+The class 'WAR' has no attributes.
+The class 'Players' has the following attributes: 'Player1' of type Card_Interface; 'Player2' of type Card_Interface.
+The class 'Function' has the following attributes: 'Score' of type int; 'removedCard' of type int.
+The class 'PlayerTwo_external' has no attributes.
+The enumeration 'Rank' does not specify any literals.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'en' does not specify any literals.
+The enumeration 'en2' does not specify any literals.
+'PlayerTwo_external' (role 'function11', cardinality 0..*) is associated with 'Function' (role 'playerCPU10', cardinality 0..*).
+'Players' (role 'wAR5', cardinality 0..*) is associated with 'WAR' (role 'players4', cardinality 0..*).
+'Card_Interface' (role 'deck3', cardinality 0..*) is associated with 'Deck' (role 'card2', cardinality 0..*).
+'WAR' (role 'players7', cardinality 0..*) is associated with 'Players' (role 'wAR6', cardinality 0..*).
+'Card_Interface' (role 'function15', cardinality 0..*) is associated with 'Function' (role 'card14', cardinality 0..*).
+'Deck' (role 'function16', cardinality 0..*) is associated with 'Function' (role 'deck17', cardinality 0..*).
+'WAR' (role 'deck1', cardinality 0..*) is associated with 'Deck' (role 'wAR0', cardinality 0..*).
+'Players' (role 'function9', cardinality 0..*) is associated with 'Function' (role 'players28', cardinality 0..*).
+'Function' (role 'playerUser12', cardinality 0..*) is associated with 'PlayerOne_external' (role 'function13', cardinality 0..*).

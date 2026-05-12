@@ -1,0 +1,25 @@
+The model has 18 class(es).
+The class 'Management_ManagerTest' has no attributes.
+The class 'Travel' has no attributes.
+The class 'techStaff_DatabaseAdmin' has no attributes.
+The class 'Product' has the following attributes: 'price' of type float; 'title' of type str; 'creationDate' of type date; 'supportDiscount' of type bool.
+The class 'techStaff_DatabaseAdminTest' has no attributes.
+The class 'techStaff_DeveloperTest' has no attributes.
+The class 'Flight' has the following attributes: 'hasConnection' of type bool.
+The class 'Management_Director' has the following attributes: 'budget' of type float.
+The class 'TransportationProduct' has the following attributes: 'distance' of type float; 'source' of type str; 'destination' of type str.
+The class 'Management_Manager' has the following attributes: 'deptName' of type str.
+The class 'Staff_Employee' has the following attributes: 'name' of type str; 'salary' of type float; 'nationalInsurance' of type str.
+The class 'techStaff_Developer' has no attributes.
+The class 'Management_DirectorTest' has no attributes.
+The class 'Ticket' has the following attributes: 'isLastMinute' of type bool; 'eventCountry' of type str; 'eventCity' of type str.
+The class 'Class' has no attributes.
+The class 'Fashion' has the following attributes: 'increaseBy' of type int; 'category' of type str; 'size' of type Size.
+The class 'Taxi' has the following attributes: 'isVip' of type bool.
+The class 'GiftCard' has the following attributes: 'cardType' of type CardType; 'isPresent' of type bool.
+The enumeration 'Size' does not specify any literals.
+The enumeration 'CardType' does not specify any literals.
+'techStaff_DeveloperTest' (role 'developer3', cardinality 0..*) is associated with 'techStaff_Developer' (role 'developertest2', cardinality 0..*).
+'techStaff_DatabaseAdminTest' (role 'databaseAdmin1', cardinality 0..*) is associated with 'techStaff_DatabaseAdmin' (role 'databaseadmintest0', cardinality 0..*).
+'Management_Director' (role 'directortest6', cardinality 0..*) is associated with 'Management_DirectorTest' (role 'director7', cardinality 0..*).
+'Management_ManagerTest' (role 'manager5', cardinality 0..*) is associated with 'Management_Manager' (role 'managertest4', cardinality 0..*).

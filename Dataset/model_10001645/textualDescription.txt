@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'Gato' has the following attributes: 'nombre' of type str; 'raza' of type str; 'color' of type str.
+The class 'Class' has no attributes.
+The class 'CuentaBancaria' has the following attributes: 'saldo' of type int.

@@ -1,0 +1,27 @@
+The model has 11 class(es).
+The class 'Corporate_Order' has the following attributes: 'Date' of type str.
+The class 'Customer' has the following attributes: 'Name' of type str; 'Customer_ID' of type str.
+The class 'Custom_Login' has the following attributes: 'Login' of type str; 'Password' of type str.
+The class 'Products' has the following attributes: 'SKU_Code' of type str; 'Product_Name' of type str.
+The class 'Order' has the following attributes: 'ReceipientName' of type str; 'ReceipientEmail' of type str; 'ReceipientContactNo' of type str; 'Order_ID' of type str; 'ReceipientAddress' of type str; 'GiftMessage' of type str.
+The class 'Shopping_Cart' has the following attributes: 'Date' of type str.
+The class 'Social_Login' has the following attributes: 'password' of type str; 'email' of type str.
+The class 'Account' has the following attributes: 'Address' of type str; 'ContactNo' of type str; 'Email' of type str.
+The class 'Payment' has the following attributes: 'Date' of type int; 'Payment_ID' of type str.
+The class 'Items' has the following attributes: 'Quantity' of type str; 'SKUCode' of type str.
+The class 'Phone_Order' has the following attributes: 'Date' of type str.
+'Shopping_Cart' (role 'Customer_Shopping_Cart_15', cardinality 0..*) is associated with 'Customer' (role 'Customer_Shopping_Cart_04', cardinality 0..*).
+'Account' (role 'Account_Order_020', cardinality 0..*) is associated with 'Order' (role 'Account_Order_121', cardinality 0..*).
+'Account' (role 'customer8', cardinality 0..*) is associated with 'Customer' (role 'account9', cardinality 0..*).
+'Account' (role 'order17', cardinality 0..*) is associated with 'Order' (role 'account16', cardinality 0..*).
+'Payment' (role 'Customer_Payment_17', cardinality 0..*) is associated with 'Customer' (role 'Customer_Payment_06', cardinality 0..*).
+'Account' (role 'order19', cardinality 0..*) is associated with 'Order' (role 'account18', cardinality 0..*).
+'Order' (role 'Customer_Order_13', cardinality 0..*) is associated with 'Customer' (role 'Customer_Order_02', cardinality 0..*).
+'Products' (role 'Customer_Products_11', cardinality 0..*) is associated with 'Customer' (role 'Customer_Products_00', cardinality 0..*).
+'Payment' (role 'Payment__Order_012', cardinality 0..*) is associated with 'Order' (role 'Payment__Order_113', cardinality 0..*).
+'Items' (role 'Shopping_Cart_Items_115', cardinality 0..*) is associated with 'Shopping_Cart' (role 'Shopping_Cart_Items_014', cardinality 0..*).
+'Customer' (role 'Corporate_Order_Customer_129', cardinality 0..*) is associated with 'Corporate_Order' (role 'Corporate_Order_Customer_028', cardinality 0..*).
+'Phone_Order' (role 'Phone_Order_Items_022', cardinality 0..*) is associated with 'Items' (role 'Phone_Order_Items_123', cardinality 0..*).
+'Corporate_Order' (role 'Corporate_Order_Items_024', cardinality 0..*) is associated with 'Items' (role 'Corporate_Order_Items_125', cardinality 0..*).
+'Phone_Order' (role 'Phone_Order_Customer_026', cardinality 0..*) is associated with 'Customer' (role 'Phone_Order_Customer_127', cardinality 0..*).
+'Account' (role 'Customer_Account_111', cardinality 0..*) is associated with 'Customer' (role 'Customer_Account_010', cardinality 0..*).

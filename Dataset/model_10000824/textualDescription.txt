@@ -1,0 +1,42 @@
+The model has 26 class(es).
+The class 'Qaboos_Reservation_System_Cancel_booking_UseCase' has no attributes.
+The class 'Qaboos_Reservation_System_Confirm_booking__UseCase' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'First_Class' has the following attributes: 'First_Seat_ID' of type str; 'First_Seat_Price' of type str.
+The class 'Adult' has the following attributes: 'Adult_Seat_Price' of type str; 'Adult_ID' of type str.
+The class 'Qaboos_Reservation_System_Book_ticket__UseCase' has no attributes.
+The class 'FFP_Members' has the following attributes: 'FFP_Category' of type str; 'FFP_Qmiles' of type str; 'FFP_ID' of type str.
+The class 'Qaboos_Reservation_System_Enter_Passengers_Details_UseCase' has no attributes.
+The class 'Qaboos_Reservation_System_Check_In_Online_UseCase' has no attributes.
+The class 'Qaboos_Reservation_System_Join__Qaboos_FPP_Club_UseCase' has no attributes.
+The class 'Qaboos_Reservation_System_Manage_Booking_UseCase' has no attributes.
+The class 'Infant' has the following attributes: 'Infant_No' of type str; 'Infant_Seat_Price' of type str.
+The class 'Child' has the following attributes: 'Child_Seat_Price' of type str; 'Child_ID' of type str.
+The class 'Seats' has the following attributes: 'Seat_NO' of type str; 'Seat_Catoegry' of type str; 'Seat_ID' of type str.
+The class 'Contact_Center_Agent_Actor' has no attributes.
+The class 'Qaboos_Reservation_System_Make_Payment_UseCase' has no attributes.
+The class 'Offers' has the following attributes: 'Offer_Det' of type str; 'Offer_NO' of type str; 'Offer_Expiry_Date' of type str.
+The class 'Qaboos_Airways' has the following attributes: 'Comp_location' of type str; 'Comp_Commercial_NO' of type str.
+The class 'Qaboos_Reservation_System_Check_Flights_Availability_UseCase' has no attributes.
+The class 'Qaboos_Reservation_System_Choose_Seats_UseCase' has no attributes.
+The class 'Qaboos_Reservation_System_Enter_flight_Details_UseCase' has no attributes.
+The class 'Passengers' has the following attributes: 'passenger_name' of type str; 'Passenger_TKT_No' of type str; 'Passenger_Details' of type str.
+The class 'Qaboos_Reservation_System_Update_Flight_Details_UseCase' has no attributes.
+The class 'Flight' has the following attributes: 'Flgt_Details' of type str; 'Flgt_NO' of type str.
+The class 'Economy_Seats' has the following attributes: 'Eco_Seat_Price' of type str; 'Eco_Seat_ID' of type str.
+The class 'Business_Seats' has the following attributes: 'Buiss_Seat_Price' of type str; 'Buiss_Seat_ID' of type str.
+'Qaboos_Reservation_System_Confirm_booking__UseCase' (role 'customer9', cardinality 0..*) is associated with 'Customer_Actor' (role 'confirm_booking8', cardinality 0..*).
+'Qaboos_Reservation_System_Book_ticket__UseCase' (role 'customer5', cardinality 0..*) is associated with 'Customer_Actor' (role 'book_ticket4', cardinality 0..*).
+'Customer_Actor' (role 'manage_Booking12', cardinality 0..*) is associated with 'Qaboos_Reservation_System_Manage_Booking_UseCase' (role 'customer13', cardinality 0..*).
+'Qaboos_Airways' (role 'passengers20', cardinality 0..*) is associated with 'Passengers' (role 'qaboos_Airways21', cardinality 0..*).
+'Qaboos_Reservation_System_Join__Qaboos_FPP_Club_UseCase' (role 'customer15', cardinality 0..*) is associated with 'Customer_Actor' (role 'join__Qaboos_FPP_Club14', cardinality 0..*).
+'Passengers' (role 'flight22', cardinality 0..*) is associated with 'Flight' (role 'passengers23', cardinality 0..*).
+'Contact_Center_Agent_Actor' (role 'update_Flight_Details16', cardinality 0..*) is associated with 'Qaboos_Reservation_System_Update_Flight_Details_UseCase' (role 'contact_Center_Agent17', cardinality 0..*).
+'Qaboos_Reservation_System_Enter_flight_Details_UseCase' (role 'customer1', cardinality 0..*) is associated with 'Customer_Actor' (role 'enter_flight_Details0', cardinality 0..*).
+'Qaboos_Airways' (role 'flight18', cardinality 0..*) is associated with 'Flight' (role 'qaboos_Airways19', cardinality 0..*).
+'Qaboos_Reservation_System_Enter_Passengers_Details_UseCase' (role 'customer7', cardinality 0..*) is associated with 'Customer_Actor' (role 'enter_Passengers_Details6', cardinality 0..*).
+'Seats' (role 'passengers29', cardinality 0..*) is associated with 'Passengers' (role 'seats28', cardinality 0..*).
+'Passengers' (role 'offers24', cardinality 0..*) is associated with 'Offers' (role 'passengers25', cardinality 0..*).
+'Customer_Actor' (role 'check_Flights_Availability2', cardinality 0..*) is associated with 'Qaboos_Reservation_System_Check_Flights_Availability_UseCase' (role 'customer3', cardinality 0..*).
+'FFP_Members' (role 'passengers27', cardinality 0..*) is associated with 'Passengers' (role 'fFP_Members26', cardinality 0..*).
+'Customer_Actor' (role 'make_Payment10', cardinality 0..*) is associated with 'Qaboos_Reservation_System_Make_Payment_UseCase' (role 'customer11', cardinality 0..*).

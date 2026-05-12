@@ -1,0 +1,31 @@
+The model has 19 class(es).
+The class 'Department' has the following attributes: 'name' of type str; 'course' of type Course.
+The class 'Student_Actor' has no attributes.
+The class 'Portal' has no attributes.
+The class 'Attendance' has the following attributes: 'student' of type Student; 'course' of type Course.
+The class 'StudentPortal' has no attributes.
+The class 'Teacher_Actor' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'Package_getResult_UseCase' has no attributes.
+The class 'Dues' has the following attributes: 'student' of type Student; 'amount' of type int.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'Package_UseCase' has no attributes.
+The class 'Student' has the following attributes: 'name' of type str; 'branch' of type Department; 'scholarNo' of type int; 'semester' of type int.
+The class 'FacultyInfo' has the following attributes: 'facultyID' of type str; 'department' of type Department; 'facultyName' of type str.
+The class 'ELibrary' has no attributes.
+The class 'Administrator' has the following attributes: 'administratorID' of type int; 'name' of type str.
+The class 'Course' has the following attributes: 'courseName' of type str; 'subjectCode' of type str.
+The class 'AcademicResult' has the following attributes: 'semester' of type int.
+The class 'AcademicRecords' has the following attributes: 'result' of type AcademicResult; 'dues' of type int; 'student' of type Student; 'attendance' of type Attendance.
+The class 'UseCase_UseCase' has no attributes.
+'Portal' (role 'dues9', cardinality 0..*) is associated with 'Dues' (role 'portal8', cardinality 0..*).
+'AcademicRecords' (role 'portal3', cardinality 0..*) is associated with 'Portal' (role 'academicRecords2', cardinality 0..*).
+'Student_Actor' (role 'getResult14', cardinality 0..*) is associated with 'Package_getResult_UseCase' (role 'student15', cardinality 0..*).
+'Student' (role 'academicRecords21', cardinality 0..*) is associated with 'AcademicRecords' (role 'student220', cardinality 0..*).
+'AcademicResult' (role 'academicRecords7', cardinality 0..*) is associated with 'AcademicRecords' (role 'academicResult6', cardinality 0..*).
+'FacultyInfo' (role 'department212', cardinality 0..*) is associated with 'Department' (role 'facultyInfo13', cardinality 0..*).
+'Attendance' (role 'academicRecords4', cardinality 0..*) is associated with 'AcademicRecords' (role 'attendance5', cardinality 0..*).
+'Student' (role 'department19', cardinality 0..*) is associated with 'Department' (role 'student18', cardinality 0..*).
+'Administrator' (role 'academicRecords17', cardinality 0..*) is associated with 'AcademicRecords' (role 'administrator16', cardinality 0..*).
+'Department' (role 'course10', cardinality 0..*) is associated with 'Course' (role 'department11', cardinality 0..*).
+'Portal' (role 'studentPortal0', cardinality 0..*) is associated with 'StudentPortal' (role 'portal1', cardinality 0..*).

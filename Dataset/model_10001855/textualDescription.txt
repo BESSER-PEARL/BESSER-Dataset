@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'Card' has the following attributes: 'Clubs' of type str; 'Jack_11' of type int; 'Spades' of type str; 'suit' of type str; 'Ace___14' of type int; 'Hearts' of type str; 'face' of type int; 'King_13' of type int; 'Queen_12' of type int; 'Diamonds' of type str.
+The class 'Class' has no attributes.
+The class 'CardDeckInterface' has the following attributes: 'size' of type int; 'shuffle' of type str; 'draw' of type Card.
+'CardDeckInterface' (role 'card1', cardinality 0..*) is associated with 'Card' (role 'cardDeckInterface0', cardinality 0..*).

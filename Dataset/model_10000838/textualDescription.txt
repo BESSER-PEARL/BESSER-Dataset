@@ -1,0 +1,30 @@
+The model has 14 class(es).
+The class 'Doctor_Actor' has no attributes.
+The class 'Patient_Information_external' has no attributes.
+The class 'Draw_Salary_external' has no attributes.
+The class 'System_Component' has no attributes.
+The class 'Bed_Allotment_external' has no attributes.
+The class 'Generate_Bill_external' has no attributes.
+The class 'Handle_Medical_Reports_UseCase' has no attributes.
+The class 'Receptionist_Actor' has no attributes.
+The class 'Class' has no attributes.
+The class 'Patient_Hospital_Registration_external' has no attributes.
+The class 'Patient_Actor' has no attributes.
+The class 'Accounts_Section_Actor' has no attributes.
+The class 'Schedule_Patient_Appointments_external' has no attributes.
+The class 'Check_for_Appointments_UseCase' has no attributes.
+'Receptionist_Actor' (role 'handle_Medical_Reports22', cardinality 0..*) is associated with 'Handle_Medical_Reports_UseCase' (role 'receptionist23', cardinality 0..*).
+'Check_for_Appointments_UseCase' (role 'patient16', cardinality 0..*) is associated with 'Patient_Actor' (role 'check_for_Appointments17', cardinality 0..*).
+'Doctor_Actor' (role 'handle_Medical_Reports3', cardinality 0..*) is associated with 'Handle_Medical_Reports_UseCase' (role 'doctor2', cardinality 0..*).
+'Receptionist_Actor' (role 'generate_Bill26', cardinality 0..*) is associated with 'Generate_Bill_external' (role 'receptionist27', cardinality 0..*).
+'Patient_Information_external' (role 'doctor0', cardinality 0..*) is associated with 'Doctor_Actor' (role 'patient_Information1', cardinality 0..*).
+'Check_for_Appointments_UseCase' (role 'receptionist25', cardinality 0..*) is associated with 'Receptionist_Actor' (role 'check_for_Appointments24', cardinality 0..*).
+'Patient_Actor' (role 'schedule_Patient_Appointments5', cardinality 0..*) is associated with 'Schedule_Patient_Appointments_external' (role 'patient4', cardinality 0..*).
+'Receptionist_Actor' (role 'patient_Information20', cardinality 0..*) is associated with 'Patient_Information_external' (role 'receptionist21', cardinality 0..*).
+'Patient_Actor' (role 'generate_Bill11', cardinality 0..*) is associated with 'Generate_Bill_external' (role 'patient10', cardinality 0..*).
+'Accounts_Section_Actor' (role 'generate_Bill13', cardinality 0..*) is associated with 'Generate_Bill_external' (role 'accounts_Section12', cardinality 0..*).
+'Draw_Salary_external' (role 'receptionist29', cardinality 0..*) is associated with 'Receptionist_Actor' (role 'draw_Salary28', cardinality 0..*).
+'Schedule_Patient_Appointments_external' (role 'doctor6', cardinality 0..*) is associated with 'Doctor_Actor' (role 'schedule_Patient_Appointments7', cardinality 0..*).
+'Accounts_Section_Actor' (role 'draw_Salary15', cardinality 0..*) is associated with 'Draw_Salary_external' (role 'accounts_Section14', cardinality 0..*).
+'Bed_Allotment_external' (role 'patient8', cardinality 0..*) is associated with 'Patient_Actor' (role 'bed_Allotment9', cardinality 0..*).
+'Receptionist_Actor' (role 'patient_Hospital_Registration18', cardinality 0..*) is associated with 'Patient_Hospital_Registration_external' (role 'receptionist19', cardinality 0..*).

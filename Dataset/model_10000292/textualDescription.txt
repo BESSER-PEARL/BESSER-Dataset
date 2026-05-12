@@ -1,0 +1,22 @@
+The model has 14 class(es).
+The class 'Utilisateur1' has the following attributes: 'nom' of type str; 'adresse' of type str; 'age' of type int.
+The class 'Personne' has no attributes.
+The class 'Avis' has no attributes.
+The class 'Chemin_Interface' has no attributes.
+The class 'Class' has no attributes.
+The class 'Lieu' has no attributes.
+The class 'V_hicule' has the following attributes: 'modele' of type str; 'marque' of type str; 'propri_taire' of type Conducteur; 'imatriculation' of type str.
+The class 'Trajet' has the following attributes: 'prix' of type int; 'description' of type str; 'date' of type str; 'placesRestantes' of type int; 'depart' of type Lieu; 'destination' of type Lieu.
+The class 'Utilisateur' has the following attributes: 'score' of type str; 'photoDeProfil' of type str; 'nbAvis' of type int; 'nom' of type str.
+The class 'Conducteur' has no attributes.
+The class 'Passager' has no attributes.
+The class 'Avis1' has the following attributes: 'note' of type int; 'description' of type str.
+The class 'Voiture' has the following attributes: 'places' of type int.
+The class 'Trajet1' has the following attributes: 'lieuFin' of type Lieu; 'datedebut' of type str; 'lieudebut' of type Lieu; 'dateFin' of type str.
+The enumeration 'Personne2' does not specify any literals.
+'Passager' (role 'trajet3', cardinality 0..*) is associated with 'Trajet1' (role 'passager2', cardinality 0..*).
+'Utilisateur' (role 'trajet8', cardinality 0..*) is associated with 'Trajet' (role 'Utilisateur9', cardinality 0..*).
+'Avis1' (role 'Utilisateur1', cardinality 0..*) is associated with 'Utilisateur' (role 'avis0', cardinality 0..*).
+'Trajet1' (role 'conducteur6', cardinality 0..*) is associated with 'Conducteur' (role 'trajet7', cardinality 0..*).
+'Conducteur' (role 'v_hicule5', cardinality 0..*) is associated with 'V_hicule' (role 'conducteur4', cardinality 0..*).
+'Voiture' (role 'Utilisateur11', cardinality 0..*) is associated with 'Utilisateur' (role 'voiture10', cardinality 0..*).

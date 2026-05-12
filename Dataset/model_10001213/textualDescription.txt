@@ -1,0 +1,23 @@
+The model has 12 class(es).
+The class 'ServiceType_Interface' has no attributes.
+The class 'Engine' has the following attributes: 'horsePower' of type str; 'fuelAvg' of type str.
+The class 'Service' has the following attributes: 'serviceName' of type str; 'serviceId' of type int; 'arrivalDateTime' of type str; 'type' of type ServiceType_Interface; 'departureDateTime' of type str.
+The class 'TrainBuilder_Interface' has no attributes.
+The class 'InterCity' has the following attributes: 'interCityTrain' of type str; 'builder' of type TrainBuilder_Interface.
+The class 'Route' has the following attributes: 'destination' of type str; 'source' of type str; 'routeId' of type int; 'stops' of type str.
+The class 'Train' has the following attributes: 'myEngine' of type str; 'myCoach' of type str.
+The class 'Coach' has the following attributes: 'capacity' of type int; 'totalPassengers' of type int; 'humidity' of type str; 'temprature' of type str; 'coachType' of type str.
+The class 'Sleeper' has the following attributes: 'sleeperTrain' of type str; 'builder' of type TrainBuilder_Interface.
+The class 'TrainStats' has the following attributes: 'passengerCount' of type int; 'trainService' of type str; 'fuelAvg' of type str; 'humidityAvg' of type str; 'tempAvg' of type str.
+The class 'ServiceTypeFactory' has the following attributes: 'type' of type str; 'getServiceType' of type ServiceType_Interface.
+The class 'Commutator' has the following attributes: 'builder' of type TrainBuilder_Interface; 'commutatorTrain' of type str.
+'Service' (role 'serviceTypeFactory0', cardinality 0..*) is associated with 'ServiceTypeFactory' (role 'service1', cardinality 0..*).
+'TrainBuilder_Interface' (role 'sleeper17', cardinality 0..*) is associated with 'Sleeper' (role 'trainBuilder16', cardinality 0..*).
+'Commutator' (role 'trainBuilder18', cardinality 0..*) is associated with 'TrainBuilder_Interface' (role 'commutator19', cardinality 0..*).
+'ServiceType_Interface' (role 'serviceTypeFactory3', cardinality 0..*) is associated with 'ServiceTypeFactory' (role 'serviceType2', cardinality 0..*).
+'TrainBuilder_Interface' (role 'interCity15', cardinality 0..*) is associated with 'InterCity' (role 'trainBuilder14', cardinality 0..*).
+'Service' (role 'route10', cardinality 0..*) is associated with 'Route' (role 'service11', cardinality 0..*).
+'TrainStats' (role 'service12', cardinality 0..*) is associated with 'Service' (role 'trainStats13', cardinality 0..*).
+'TrainBuilder_Interface' (role 'sleeper5', cardinality 0..*) is associated with 'Sleeper' (role 'trainBuilder4', cardinality 0..*).
+'Commutator' (role 'trainBuilder8', cardinality 0..*) is associated with 'TrainBuilder_Interface' (role 'commutator9', cardinality 0..*).
+'TrainBuilder_Interface' (role 'interCity7', cardinality 0..*) is associated with 'InterCity' (role 'trainBuilder6', cardinality 0..*).

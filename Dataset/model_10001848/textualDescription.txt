@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'private' has no attributes.
+The class 'department' has the following attributes: 'depart_id' of type str; 'loacation' of type str.
+The class 'patient' has the following attributes: 'room_no' of type str; 'phone_no' of type str; 'pid' of type str; 'name' of type str; 'age' of type str; 'address' of type str.
+The class 'test' has the following attributes: 'disease_name' of type str.
+The class 'room' has the following attributes: 'room_no' of type str.
+The class 'login' has the following attributes: 'id' of type str; 'pass' of type str; 'name' of type str.
+The class 'general' has no attributes.
+The class 'loan' has the following attributes: 'amount' of type str; 'patient_name' of type str.
+The class 'receptionist' has the following attributes: 'rid' of type str; 'name' of type str.
+The class 'Bill' has the following attributes: 'amount' of type str; 'bill_no' of type str; 'patient_name' of type str.
+The class 'staff' has the following attributes: 'name' of type str.
+The class 'doctor' has the following attributes: 'specilization' of type str; 'did' of type str; 'dept' of type str; 'name' of type str; 'phone_no' of type str.
+'Bill' (role 'receptionist_billing_113', cardinality 0..*) is associated with 'receptionist' (role 'receptionist_billing_012', cardinality 0..*).
+'patient' (role 'patient_billing_08', cardinality 0..*) is associated with 'Bill' (role 'patient_billing_19', cardinality 0..*).
+'test' (role 'doctor_test_13', cardinality 0..*) is associated with 'doctor' (role 'doctor_test_02', cardinality 0..*).
+'doctor' (role 'patient_doctor_17', cardinality 0..*) is associated with 'patient' (role 'patient_doctor_06', cardinality 0..*).
+'room' (role 'patient_room_15', cardinality 0..*) is associated with 'patient' (role 'patient_room_04', cardinality 0..*).
+'Bill' (role 'billing_loan_014', cardinality 0..*) is associated with 'loan' (role 'billing_loan_115', cardinality 0..*).
+'login' (role 'receptionist_login_111', cardinality 0..*) is associated with 'receptionist' (role 'receptionist_login_010', cardinality 0..*).
+'staff' (role 'department_staff_11', cardinality 0..*) is associated with 'department' (role 'department_staff_00', cardinality 0..*).

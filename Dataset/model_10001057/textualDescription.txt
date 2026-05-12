@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'Direccion' has the following attributes: 'codigo' of type int; 'pais' of type str; 'nombre' of type str; 'ciudad' of type str.
+The class 'Foto' has the following attributes: 'alto' of type int; 'ancho' of type int.
+The class 'Telefono' has the following attributes: 'codigo' of type int; 'numero' of type int; 'prefijo' of type int.
+The class 'Contacto' has the following attributes: 'nombre' of type str; 'email' of type str.
+The class 'Agenda' has the following attributes: 'Introduccion' of type str.
+'Agenda' (role 'contacto0', cardinality 0..*) is associated with 'Contacto' (role 'agenda1', cardinality 0..*).
+'Contacto' (role 'telefonoAlternativo9', cardinality 0..*) is associated with 'Telefono' (role 'contacto8', cardinality 0..*).
+'Direccion' (role 'contacto4', cardinality 0..*) is associated with 'Contacto' (role 'direccionAlternativa5', cardinality 0..*).
+'Foto' (role 'contacto10', cardinality 0..*) is associated with 'Contacto' (role 'foto11', cardinality 0..*).
+'Telefono' (role 'contacto6', cardinality 0..*) is associated with 'Contacto' (role 'telefonoPrincipal7', cardinality 0..*).
+'Contacto' (role 'direccionPrincipal3', cardinality 0..*) is associated with 'Direccion' (role 'contacto2', cardinality 0..*).

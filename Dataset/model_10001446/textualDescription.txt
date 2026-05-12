@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'Covoiturage_Voiture' has the following attributes: 'id' of type int; 'confort' of type str; 'categorie' of type str; 'nbPlaces' of type int; 'marque' of type str; 'model' of type str; 'attribute' of type str.
+The class 'Covoiturage_Conducteur' has the following attributes: 'datePermi' of type str.
+The class 'Covoiturage_Message' has the following attributes: 'Id' of type str; 'Value' of type str.
+The class 'Covoiturage_Reservation' has the following attributes: 'etat' of type bool; 'id2' of type int; 'id' of type int; 'dateReservation' of type date.
+The class 'Covoiturage_Passager' has the following attributes: 'nom' of type str; 'id' of type int; 'tel' of type int; 'mail' of type str; 'prenom' of type str.
+The class 'Covoiturage_Authentification' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'Covoiturage_Ville' has the following attributes: 'id' of type int; 'cp' of type int; 'nom' of type str.
+The class 'Covoiturage_Avis' has the following attributes: 'id' of type int; 'commentaire' of type str; 'note' of type int.
+The class 'Covoiturage_Trajet' has the following attributes: 'destination' of type Covoiturage_Ville; 'prix' of type int; 'depart' of type Covoiturage_Ville; 'etat' of type bool; 'date' of type date; 'id' of type int.
+'Covoiturage_Voiture' (role 'Profil17', cardinality 0..*) is associated with 'Covoiturage_Conducteur' (role 'voiture16', cardinality 0..*).
+'Covoiturage_Trajet' (role 'voiture20', cardinality 0..*) is associated with 'Covoiturage_Voiture' (role 'trajet21', cardinality 0..*).
+'Covoiturage_Trajet' (role 'ville10', cardinality 0..*) is associated with 'Covoiturage_Ville' (role 'trajet11', cardinality 0..*).
+'Covoiturage_Avis' (role 'evenement6', cardinality 0..*) is associated with 'Covoiturage_Trajet' (role 'avis7', cardinality 0..*).
+'Covoiturage_Passager' (role 'adresse8', cardinality 0..*) is associated with 'Covoiturage_Ville' (role 'personnes9', cardinality 0..*).
+'Covoiturage_Trajet' (role 'passager23', cardinality 0..*) is associated with 'Covoiturage_Passager' (role 'trajet22', cardinality 0..*).
+'Covoiturage_Message' (role 'passager18', cardinality 0..*) is associated with 'Covoiturage_Passager' (role 'message19', cardinality 0..*).
+'Covoiturage_Reservation' (role 'trajet14', cardinality 0..*) is associated with 'Covoiturage_Trajet' (role 'reservation15', cardinality 0..*).
+'Covoiturage_Authentification' (role 'personne1', cardinality 0..*) is associated with 'Covoiturage_Passager' (role 's_authentifi_0', cardinality 0..*).
+'Covoiturage_Avis' (role 'personne4', cardinality 0..*) is associated with 'Covoiturage_Passager' (role 'avis5', cardinality 0..*).
+'Covoiturage_Passager' (role 'reservation13', cardinality 0..*) is associated with 'Covoiturage_Reservation' (role 'profil12', cardinality 0..*).
+'Covoiturage_Trajet' (role 'participants3', cardinality 0..*) is associated with 'Covoiturage_Conducteur' (role 'trajet2', cardinality 0..*).

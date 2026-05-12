@@ -1,0 +1,38 @@
+The model has 18 class(es).
+The class 'Pay_Salary_external' has no attributes.
+The class '_Component' has no attributes.
+The class 'Class' has no attributes.
+The class 'Add_Employee_external' has no attributes.
+The class 'Request_a_leave_external' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'manage_leave_requests_external' has no attributes.
+The class 'change_password_external' has no attributes.
+The class 'Salary_reports_external' has no attributes.
+The class 'update_leaves_external' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'View_list_of_all_employees_external' has no attributes.
+The class 'delete_employee_external' has no attributes.
+The class 'login_external' has no attributes.
+The class 'logout_external' has no attributes.
+The class 'Edit_profile_external' has no attributes.
+The class 'update_salary_external' has no attributes.
+The class 'Update_Employee_external' has no attributes.
+'Actor_Actor' (role 'view_list_of_all_employees8', cardinality 0..*) is associated with 'View_list_of_all_employees_external' (role 'actor9', cardinality 0..*).
+'Edit_profile_external' (role 'employee19', cardinality 0..*) is associated with 'Employee_Actor' (role 'edit_profile18', cardinality 0..*).
+'Update_Employee_external' (role 'actor13', cardinality 0..*) is associated with 'Actor_Actor' (role 'update_Employee12', cardinality 0..*).
+'Actor_Actor' (role 'login4', cardinality 0..*) is associated with 'login_external' (role 'actor5', cardinality 0..*).
+'Employee_Actor' (role 'login20', cardinality 0..*) is associated with 'login_external' (role 'employee21', cardinality 0..*).
+'Actor_Actor' (role 'add_Employee3', cardinality 0..*) is associated with 'Add_Employee_external' (role 'actor2', cardinality 0..*).
+'Actor_Actor' (role 'logout6', cardinality 0..*) is associated with 'logout_external' (role 'actor7', cardinality 0..*).
+'Pay_Salary_external' (role 'actor33', cardinality 0..*) is associated with 'Actor_Actor' (role 'pay_Salary32', cardinality 0..*).
+'change_password_external' (role 'actor17', cardinality 0..*) is associated with 'Actor_Actor' (role 'change_password16', cardinality 0..*).
+'Actor_Actor' (role 'manage_leave_requests14', cardinality 0..*) is associated with 'manage_leave_requests_external' (role 'actor15', cardinality 0..*).
+'Employee_Actor' (role 'logout22', cardinality 0..*) is associated with 'logout_external' (role 'employee23', cardinality 0..*).
+'Edit_profile_external' (role 'actor0', cardinality 0..*) is associated with 'Actor_Actor' (role 'edit_profile1', cardinality 0..*).
+'Employee_Actor' (role 'change_password26', cardinality 0..*) is associated with 'change_password_external' (role 'employee27', cardinality 0..*).
+'Actor_Actor' (role 'Salary_reports10', cardinality 0..*) is associated with 'Salary_reports_external' (role 'actor11', cardinality 0..*).
+'Salary_reports_external' (role 'employee25', cardinality 0..*) is associated with 'Employee_Actor' (role 'Salary_reports24', cardinality 0..*).
+'Request_a_leave_external' (role 'employee29', cardinality 0..*) is associated with 'Employee_Actor' (role 'request_a_leave28', cardinality 0..*).
+'Actor_Actor' (role 'update_leaves30', cardinality 0..*) is associated with 'update_leaves_external' (role 'actor31', cardinality 0..*).
+'Actor_Actor' (role 'update_salary34', cardinality 0..*) is associated with 'update_salary_external' (role 'actor35', cardinality 0..*).
+'delete_employee_external' (role 'actor37', cardinality 0..*) is associated with 'Actor_Actor' (role 'delete_employee36', cardinality 0..*).

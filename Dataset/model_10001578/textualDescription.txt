@@ -1,0 +1,20 @@
+The model has 11 class(es).
+The class 'caninos1' has the following attributes: 'peso' of type str; 'altura' of type str; 'raza' of type str; 'edad' of type str; 'obsercaciones' of type str; 'nombre' of type str.
+The class 'caninos2' has the following attributes: 'raza' of type str; 'edad' of type str; 'observaciones' of type str; 'nombre' of type str; 'altura' of type str; 'peso' of type str.
+The class 'veterinaria1' has no attributes.
+The class 'caninos3' has the following attributes: 'peso' of type str; 'raza' of type str; 'altura' of type str; 'edad' of type str; 'observaciones' of type str; 'nombre' of type str.
+The class 'veterinaria2' has the following attributes: '_' of type str.
+The class 'veterinaria' has no attributes.
+The class 'Tienda' has the following attributes: 'getProducto3' of type str; 'Tienda' of type str; 'getProducto4' of type str; 'getProducto1' of type str; 'getProducto2' of type str.
+The class 'producto' has the following attributes: 'DROGUERIA' of type str; 'cantidadBodega' of type str; 'IVA_SUPERMERCADO' of type str; 'IVA_PAPELERIA' of type str; 'cantidadVendida' of type str; 'cantidadMinima' of type str; 'IVA_DROGUERIA' of type str; 'tipo' of type str; 'SUPERMERCADO' of type str; 'precioVenta' of type str; 'nombre' of type str; 'PAPELERIA' of type str.
+The class 'veterinaria3' has the following attributes: '_attr' of type str.
+The class 'caninos' has the following attributes: 'altura' of type str; 'raza' of type str; 'observaciones' of type str; 'nombre' of type str; 'peso' of type str; 'edad' of type str.
+The class '_1' has no attributes.
+'producto' (role 'tienda0', cardinality 0..*) is associated with 'Tienda' (role 'producto21', cardinality 0..*).
+'producto' (role 'tienda4', cardinality 0..*) is associated with 'Tienda' (role 'producto15', cardinality 0..*).
+'caninos1' (role 'veterinaria_caninos_111', cardinality 0..*) is associated with 'veterinaria1' (role 'caninos10', cardinality 0..*).
+'veterinaria3' (role 'caninos14', cardinality 0..*) is associated with 'caninos3' (role 'veterinaria_caninos4_115', cardinality 0..*).
+'veterinaria2' (role 'caninos12', cardinality 0..*) is associated with 'caninos2' (role 'veterinaria_caninos3_113', cardinality 0..*).
+'veterinaria' (role 'Caninos8', cardinality 0..*) is associated with 'caninos' (role 'veterinaria_caninos2_19', cardinality 0..*).
+'Tienda' (role 'producto33', cardinality 0..*) is associated with 'producto' (role 'tienda2', cardinality 0..*).
+'producto' (role 'tienda6', cardinality 0..*) is associated with 'Tienda' (role 'producto47', cardinality 0..*).

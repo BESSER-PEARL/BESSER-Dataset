@@ -1,0 +1,28 @@
+The model has 18 class(es).
+The class 'view_IView_Interface' has no attributes.
+The class 'view_SimpleView' has no attributes.
+The class 'model_Game' has no attributes.
+The class 'rules_BasicHitStrategy' has the following attributes: 'g_hitLimit' of type int.
+The class 'genmymodelreverse_java_lang_Iterable_Interface' has no attributes.
+The class 'rules_AmericanNewGameStrategy' has no attributes.
+The class 'rules_InternationalNewGameStrategy' has no attributes.
+The class 'model_Dealer' has no attributes.
+The class 'genmymodelreverse_C1' has no attributes.
+The class 'model_Deck' has no attributes.
+The class 'model_Player' has the following attributes: 'g_maxScore' of type int.
+The class 'controller_PlayGame' has no attributes.
+The class 'BlackJack_Program' has no attributes.
+The class 'rules_INewGameStrategy_Interface' has no attributes.
+The class 'rules_RulesFactory' has no attributes.
+The class 'model_Card' has the following attributes: 'm_value' of type model_Value; 'm_color' of type model_Color; 'm_isHidden' of type bool.
+The class 'view_SwedishView' has no attributes.
+The class 'rules_IHitStrategy_Interface' has no attributes.
+The enumeration 'model_Color' does not specify any literals.
+The enumeration 'model_Value' does not specify any literals.
+'model_Dealer' (role 'game2', cardinality 0..*) is associated with 'model_Game' (role 'm_dealer3', cardinality 0..*).
+'rules_INewGameStrategy_Interface' (role 'dealer12', cardinality 0..*) is associated with 'model_Dealer' (role 'm_newGameRule13', cardinality 0..*).
+'model_Card' (role 'player10', cardinality 0..*) is associated with 'model_Player' (role 'm_hand11', cardinality 0..*).
+'model_Game' (role 'm_player5', cardinality 0..*) is associated with 'model_Player' (role 'game4', cardinality 0..*).
+'model_Card' (role 'deck0', cardinality 0..*) is associated with 'model_Deck' (role 'm_cards1', cardinality 0..*).
+'model_Dealer' (role 'm_deck9', cardinality 0..*) is associated with 'model_Deck' (role 'dealer8', cardinality 0..*).
+'rules_IHitStrategy_Interface' (role 'dealer6', cardinality 0..*) is associated with 'model_Dealer' (role 'm_hitRule7', cardinality 0..*).

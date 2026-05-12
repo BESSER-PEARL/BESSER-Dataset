@@ -1,0 +1,32 @@
+The model has 15 class(es).
+The class 'transaction' has no attributes.
+The class 'status_of_book' has no attributes.
+The class 'Data' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'File' has the following attributes: 'file_type' of type File.
+The class 'book' has no attributes.
+The class 'library' has no attributes.
+The class 'member_profile' has no attributes.
+The class 'cash' has no attributes.
+The class 'librarian' has no attributes.
+The class 'library_member' has no attributes.
+The class 'credit_card' has no attributes.
+The class 'fine' has no attributes.
+The class 'XML' has the following attributes: 'element' of type str; 'attribute' of type str.
+The class 'User' has the following attributes: 'user_id' of type User.
+The class 'CSV' has the following attributes: 'cloumn' of type str; 'row' of type str.
+'User' (role 'parser4', cardinality 0..*) is associated with 'File' (role 'upload5', cardinality 0..*).
+'library' (role 'book8', cardinality 0..*) is associated with 'book' (role 'library9', cardinality 0..*).
+'transaction' (role 'library_card6', cardinality 0..*) is associated with 'library_member' (role 'member7', cardinality 0..*).
+'status_of_book' (role 'book25', cardinality 0..*) is associated with 'book' (role 'status_of_book24', cardinality 0..*).
+'book' (role 'transaction23', cardinality 0..*) is associated with 'transaction' (role 'book22', cardinality 0..*).
+'User' (role 'User_data_00', cardinality 0..*) is associated with 'Data' (role 'modify1', cardinality 0..*).
+'status_of_book' (role 'library_member27', cardinality 0..*) is associated with 'library_member' (role 'status_of_book26', cardinality 0..*).
+'member_profile' (role 'library_member29', cardinality 0..*) is associated with 'library_member' (role 'member_profile28', cardinality 0..*).
+'transaction' (role 'fine14', cardinality 0..*) is associated with 'fine' (role 'transaction15', cardinality 0..*).
+'library_member' (role 'librarian31', cardinality 0..*) is associated with 'librarian' (role 'member_profile30', cardinality 0..*).
+'Data' (role 'parse2', cardinality 0..*) is associated with 'File' (role 'data_File_13', cardinality 0..*).
+'credit_card' (role 'fine19', cardinality 0..*) is associated with 'fine' (role 'credit_card18', cardinality 0..*).
+'librarian' (role 'library11', cardinality 0..*) is associated with 'library' (role 'librarian10', cardinality 0..*).
+'transaction' (role 'library13', cardinality 0..*) is associated with 'library' (role 'transaction12', cardinality 0..*).
+'fine' (role 'class20', cardinality 0..*) is associated with 'cash' (role 'fine21', cardinality 0..*).
+'librarian' (role 'transaction16', cardinality 0..*) is associated with 'transaction' (role 'librarian17', cardinality 0..*).

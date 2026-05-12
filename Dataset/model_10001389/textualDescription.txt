@@ -1,0 +1,19 @@
+The model has 18 class(es).
+The class 'asdfa' has no attributes.
+The class 'c21' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'c2' has no attributes.
+The class 'c' has no attributes.
+The class 'Course' has the following attributes: 'Name' of type str; 'Id' of type int; 'StartDate' of type str.
+The class 'ServiceCourse2' has the following attributes: 'attribute8' of type str; 'attribute7' of type str; 'attribute3' of type str; 'attribute2' of type str; 'attribute4' of type str; 'attribute6' of type str; 'attribute' of type str; 'attribute5' of type str.
+The class 'ServiceCourse3' has the following attributes: 'attribute2' of type str; 'attribute3' of type str; 'attribute8' of type str; 'attribute5' of type str; 'attribute6' of type str; 'attribute4' of type str; 'attribute7' of type str; 'attribute' of type str.
+The class 'asdfa2' has no attributes.
+The class 'Course3' has the following attributes: 'Id' of type int; 'Name' of type str; 'StartDate' of type str.
+The class 'Course2' has the following attributes: 'Id' of type int; 'StartDate' of type str; 'Name' of type str.
+The class 'asdfa3' has no attributes.
+The class 'c3' has no attributes.
+The class 'c31' has no attributes.
+The class 'ServiceCourse' has the following attributes: 'attribute8' of type str; 'attribute' of type str; 'attribute3' of type str; 'attribute6' of type str; 'attribute4' of type str; 'attribute2' of type str; 'attribute7' of type str; 'attribute5' of type str.
+The class 'c1' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'MyClass' has no attributes.

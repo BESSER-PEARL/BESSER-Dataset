@@ -1,0 +1,9 @@
+The model has 7 class(es).
+The class 'Apartment' has the following attributes: 'securityDeposit' of type int; 'monthlyRent' of type int; 'lease' of type int; 'size' of type int.
+The class 'House' has the following attributes: 'numberOfFloors' of type int; 'price' of type int; 'fees' of type int; 'sizeOfProperty' of type int.
+The class 'RegisteredUser' has no attributes.
+The class 'Listing' has the following attributes: 'numberOfBedroms' of type int; 'numberOfBathrooms' of type int; 'image' of type str; 'livingRooom' of type int; 'video' of type str; 'parkingPossibilities' of type int; 'kitchen' of type int; 'address' of type str; 'furnished' of type bool.
+The class 'Administrator' has no attributes.
+The class 'RealEstateAgent' has the following attributes: 'listings' of type str.
+The class 'Actor' has the following attributes: 'username' of type str; 'name' of type str; 'password' of type str.
+'Listing' (role 'actor1', cardinality 0..*) is associated with 'Actor' (role 'listing0', cardinality 0..*).

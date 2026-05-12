@@ -1,0 +1,13 @@
+The model has 11 class(es).
+The class 'players_Person' has the following attributes: 'name' of type str; 'accountNumber' of type str.
+The class 'cards_PokerHand' has the following attributes: 'hand' of type str; 'rank' of type int.
+The class 'cards_Deck' has the following attributes: 'cards' of type str; 'remain' of type int.
+The class 'cards_Card' has the following attributes: 'rank' of type int; 'suit' of type cards_Suit.
+The class 'cards_PokerHandInterface_Interface' has no attributes.
+The class 'players_PlayerVersionGUI' has no attributes.
+The class 'main_Play' has the following attributes: 'players' of type str; 'plv' of type players_PlayerVersionGUI; 'gb' of type game_GameBoardGUI; 'cd' of type cards_CardsGUI.
+The class 'game_GameBoardGUI' has no attributes.
+The class 'players_Player' has the following attributes: 'hand' of type cards_PokerHand; 'hasFolded' of type bool; 'curentChips' of type int.
+The class 'cards_CardsGUI' has no attributes.
+The class 'game_Ranker' has the following attributes: 'highValue' of type int; 'hand' of type cards_PokerHand.
+The enumeration 'cards_Suit' does not specify any literals.

@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'Dealer' has the following attributes: 'handValue' of type int; 'handLimit' of type int.
+The class 'Integer_external' has no attributes.
+The class '_Interface' has no attributes.
+The class 'BlackjackGame' has no attributes.
+The class 'Cards' has the following attributes: 'cardValue' of type int; 'cardName' of type str.
+The class 'Hand' has the following attributes: 'handValue' of type int.
+The class 'Deck' has the following attributes: 'deckArray' of type int; 'size' of type int.
+The class 'Player' has the following attributes: 'name' of type str.
+'BlackjackGame' (role 'dealer4', cardinality 0..*) is associated with 'Dealer' (role 'blackjackGame5', cardinality 0..*).
+'_Interface' (role 'blackjackGame8', cardinality 0..*) is associated with 'BlackjackGame' (role 'association_19', cardinality 0..*).
+'Player' (role 'blackjackGame3', cardinality 0..*) is associated with 'BlackjackGame' (role 'player2', cardinality 0..*).
+'Hand' (role 'player7', cardinality 0..*) is associated with 'Player' (role 'hand6', cardinality 0..*).
+'_Interface' (role 'deck10', cardinality 0..*) is associated with 'Deck' (role 'association2_111', cardinality 0..*).
+'Dealer' (role 'hand1', cardinality 0..*) is associated with 'Integer_external' (role 'dealer0', cardinality 0..*).

@@ -1,0 +1,46 @@
+The model has 19 class(es).
+The class 'dao_ShippingInfoDao_Interface' has no attributes.
+The class 'Controllers_ProductController' has no attributes.
+The class 'Controllers_OrderController' has no attributes.
+The class 'Models_cartItem' has the following attributes: 'quantity' of type int; 'cartId' of type int; 'name' of type str; 'unitcost' of type float; 'subtotal' of type float; 'deleted' of type bool.
+The class 'Models_User' has the following attributes: 'UserId' of type str; 'password' of type str; 'email' of type str.
+The class 'dao_OrderDao_Interface' has no attributes.
+The class 'dao_CustomerDao_Interface' has no attributes.
+The class 'dao_CartItemDao_Interface' has no attributes.
+The class 'dao_ProductDao_Interface' has no attributes.
+The class 'dao_LineItemDao_Interface' has no attributes.
+The class 'Models_LoginLog' has the following attributes: 'lastLoginDate' of type date; 'id' of type int; 'user_id' of type int; 'isLogin' of type bool.
+The class 'Controllers_ShoppingCartController' has no attributes.
+The class 'Models_Product' has the following attributes: 'imagefilename' of type str; 'productid' of type int; 'quantity' of type int; 'productname' of type str; 'price' of type float.
+The class 'Models_Order' has the following attributes: 'shippingInfoId' of type int; 'dateCreated' of type date; 'customerid' of type int; 'dateShipped' of type str; 'orderID' of type int; 'status' of type str.
+The class 'dao_ShoppingCartDao_Interface' has no attributes.
+The class 'Models_Customer' has the following attributes: 'phoneno' of type int; 'creditcardinfo' of type str; 'shippinginfo' of type str; 'address' of type str; 'coustomername' of type str; 'deleted' of type bool.
+The class 'Models_LineItem' has the following attributes: 'productname' of type str; 'orderId' of type int; 'subtotal' of type float; 'quantity' of type int; 'unitcost' of type float; 'productid' of type int.
+The class 'Models_ShoppingCart' has the following attributes: 'status' of type int; 'customerId' of type int; 'dateAdded' of type int; 'deleted' of type bool; 'cartId' of type int.
+The class 'Models_ShippingInfo' has the following attributes: 'shippingtype' of type str; 'shippingcost' of type int; 'shippingid' of type int; 'shippingregionid' of type int.
+The enumeration 'Models_ShippingType' does not specify any literals.
+The enumeration 'Models_ShoppingCartStatus' does not specify any literals.
+The enumeration 'Models_OrderStatus' does not specify any literals.
+'Models_ShippingInfo' (role 'order_shippinginfo_125', cardinality 0..*) is associated with 'Models_Order' (role 'order_shippinginfo_024', cardinality 0..*).
+'Models_Customer' (role 'ShoppingCart_coustomer_111', cardinality 0..*) is associated with 'Models_ShoppingCart' (role 'ShoppingCart_coustomer_010', cardinality 0..*).
+'Controllers_ShoppingCartController' (role 'cartItemDao30', cardinality 0..*) is associated with 'dao_CartItemDao_Interface' (role 'shoppingCartController31', cardinality 0..*).
+'Controllers_ShoppingCartController' (role 'orderDao42', cardinality 0..*) is associated with 'dao_OrderDao_Interface' (role 'shoppingCartController43', cardinality 0..*).
+'Models_Product' (role 'orderDetail_ProLocal_119', cardinality 0..*) is associated with 'Models_LineItem' (role 'orderDetail_ProLocal_018', cardinality 0..*).
+'dao_LineItemDao_Interface' (role 'orderController39', cardinality 0..*) is associated with 'Controllers_OrderController' (role 'lineItemDao38', cardinality 0..*).
+'Models_LineItem' (role 'lineItemDao6', cardinality 0..*) is associated with 'dao_LineItemDao_Interface' (role 'LineItem7', cardinality 0..*).
+'Models_Customer' (role 'customerDao28', cardinality 0..*) is associated with 'dao_CustomerDao_Interface' (role 'customer29', cardinality 0..*).
+'Controllers_ProductController' (role 'shoppingCartDao36', cardinality 0..*) is associated with 'dao_ShoppingCartDao_Interface' (role 'productController37', cardinality 0..*).
+'dao_ShippingInfoDao_Interface' (role 'shippingInfo0', cardinality 0..*) is associated with 'Models_ShippingInfo' (role 'shippingInfo1', cardinality 0..*).
+'dao_CartItemDao_Interface' (role 'cartItem4', cardinality 0..*) is associated with 'Models_cartItem' (role 'cartItemDao5', cardinality 0..*).
+'Models_cartItem' (role 'cartitem_ProLocal_022', cardinality 0..*) is associated with 'Models_Product' (role 'cartitem_ProLocal_123', cardinality 0..*).
+'dao_OrderDao_Interface' (role 'order2', cardinality 0..*) is associated with 'Models_Order' (role 'orderDao3', cardinality 0..*).
+'dao_ProductDao_Interface' (role 'product27', cardinality 0..*) is associated with 'Models_Product' (role 'productDao26', cardinality 0..*).
+'Models_ShoppingCart' (role 'ShoppingCart_cartitem_020', cardinality 0..*) is associated with 'Models_cartItem' (role 'ShoppingCart_cartitem_121', cardinality 0..*).
+'Models_ShoppingCart' (role 'shoppingCartDao8', cardinality 0..*) is associated with 'dao_ShoppingCartDao_Interface' (role 'shoppingCart9', cardinality 0..*).
+'dao_OrderDao_Interface' (role 'orderController33', cardinality 0..*) is associated with 'Controllers_OrderController' (role 'orderDao32', cardinality 0..*).
+'Models_Customer' (role 'coustomer_order_012', cardinality 0..*) is associated with 'Models_Order' (role 'coustomer_order_113', cardinality 0..*).
+'Controllers_ProductController' (role 'productDao34', cardinality 0..*) is associated with 'dao_ProductDao_Interface' (role 'productController35', cardinality 0..*).
+'dao_ShippingInfoDao_Interface' (role 'orderController41', cardinality 0..*) is associated with 'Controllers_OrderController' (role 'shippingInfoDao40', cardinality 0..*).
+'Controllers_ShoppingCartController' (role 'shoppingCartDao44', cardinality 0..*) is associated with 'dao_ShoppingCartDao_Interface' (role 'shoppingCartController45', cardinality 0..*).
+'Models_Order' (role 'order_orderDetail_014', cardinality 0..*) is associated with 'Models_LineItem' (role 'order_orderDetail_115', cardinality 0..*).
+'Models_LoginLog' (role 'user16', cardinality 0..*) is associated with 'Models_User' (role 'loginLog17', cardinality 0..*).

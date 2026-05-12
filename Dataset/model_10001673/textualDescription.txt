@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'Deck' has the following attributes: 'numCards' of type int.
+The class 'Card' has the following attributes: 'Enum' of type Face1.
+The class 'Game' has the following attributes: 'numWins' of type int; 'numLose' of type int; 'numGames' of type int.
+The class 'Player' has the following attributes: 'numMoves' of type int.
+The class 'Rules' has the following attributes: 'card2' of type Face1; 'card3' of type Face1; 'card1' of type Face1.
+The enumeration 'Face1' does not specify any literals.
+The enumeration 'Face' does not specify any literals.
+'Deck' (role 'card0', cardinality 0..*) is associated with 'Card' (role 'deck1', cardinality 0..*).
+'Rules' (role 'game7', cardinality 0..*) is associated with 'Game' (role 'rules6', cardinality 0..*).
+'Player' (role 'game4', cardinality 0..*) is associated with 'Game' (role 'player5', cardinality 0..*).
+'Deck' (role 'player3', cardinality 0..*) is associated with 'Player' (role 'deck2', cardinality 0..*).

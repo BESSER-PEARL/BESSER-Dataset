@@ -1,0 +1,17 @@
+The model has 10 class(es).
+The class 'Personne' has the following attributes: 'dateNaissance' of type str; 'prenom' of type str; 'adresse' of type str; 'telephone' of type str; 'id' of type int; 'lieuNaissance' of type str; 'numeroCIN' of type int; 'nom' of type str; 'email' of type str.
+The class 'cours' has the following attributes: 'heureF' of type str; 'dateCours' of type str; 'id' of type int; 'heureD' of type str.
+The class 'Groupe' has the following attributes: 'id' of type int; 'numeroGroupe' of type int; 'libelle' of type str.
+The class 'CoursCode' has no attributes.
+The class 'Professeur' has the following attributes: 'dateEmbauche' of type str.
+The class 'Candidat' has no attributes.
+The class 'Utilisateur' has the following attributes: 'login' of type str; 'mdp' of type str.
+The class 'Voiture' has the following attributes: 'id' of type int; 'modele' of type str; 'marque' of type str; 'immatriculation' of type str.
+The class 'Examen' has the following attributes: 'id' of type int; 'heureF' of type str; 'typeExamen' of type str; 'heureD' of type str; 'dateExamen' of type str.
+The class 'CoursConduite' has no attributes.
+'Candidat' (role 'appartenir2', cardinality 0..*) is associated with 'Groupe' (role 'candidat3', cardinality 0..*).
+'CoursCode' (role 'groupe9', cardinality 0..*) is associated with 'Groupe' (role 'suivre8', cardinality 0..*).
+'CoursConduite' (role 'professeur7', cardinality 0..*) is associated with 'Professeur' (role 'dispenser6', cardinality 0..*).
+'Voiture' (role 'coursConduite1', cardinality 0..*) is associated with 'CoursConduite' (role 'concerner0', cardinality 0..*).
+'Candidat' (role 'coursConduite11', cardinality 0..*) is associated with 'CoursConduite' (role 'faire10', cardinality 0..*).
+'CoursCode' (role 'professeur5', cardinality 0..*) is associated with 'Professeur' (role 'donner4', cardinality 0..*).

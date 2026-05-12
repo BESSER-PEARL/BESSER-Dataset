@@ -1,0 +1,9 @@
+The model has 6 class(es).
+The class 'Actor2_Actor' has no attributes.
+The class 'Package_Class' has no attributes.
+The class 'Component_Component' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'UseCase_external' has no attributes.
+The class 'Package_Class2' has no attributes.
+'Package_Class' (role 'class22', cardinality 0..*) is associated with 'Package_Class2' (role 'class3', cardinality 0..*).
+'Actor_Actor' (role 'useCase0', cardinality 0..*) is associated with 'UseCase_external' (role 'actor1', cardinality 0..*).

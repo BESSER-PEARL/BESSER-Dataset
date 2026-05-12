@@ -1,0 +1,18 @@
+The model has 11 class(es).
+The class 'rating___review' has the following attributes: 'inventoryID' of type str; 'reviews' of type str; 'rating' of type int; 'name' of type str; 'retailerID' of type str; 'ID' of type int.
+The class 'Products' has the following attributes: 'description' of type str; 'ID' of type int; 'reviews' of type str; 'rating' of type int; 'discount' of type int; 'selling_price' of type float; 'name' of type str; 'farmerID' of type str; 'inventoryID' of type str.
+The class 'Farmer' has the following attributes: 'type' of type str; 'emailId' of type str; 'dateOfBirth' of type date; 'CardInfo' of type str; 'address' of type str; 'accountInfoID' of type int; 'phone' of type int; 'name' of type str; 'userId' of type int.
+The class 'Administrator' has the following attributes: 'userId' of type int; 'name' of type str; 'address' of type str; 'phone' of type int; 'dateOfBirth' of type date; 'adminType' of type str; 'emailId' of type str.
+The class 'Retailer_Cart' has the following attributes: 'quantity___product' of type float; 'product' of type Products; 'userID' of type int.
+The class 'Retailer' has the following attributes: 'dateOfBirth' of type date; 'userId' of type int; 'Photo' of type str; 'emailId' of type str; 'address' of type str; 'name' of type str; 'CardInfo' of type int; 'phone' of type int.
+The class 'User' has the following attributes: 'Id' of type int; 'password' of type str; 'userName' of type str; 'userType' of type str.
+The class 'Farmer_produces' has the following attributes: 'ID' of type int; 'productList' of type str; 'farmerID' of type int.
+The class 'CardInfo' has the following attributes: 'CVV' of type int; 'ID' of type int; 'name' of type str; 'number' of type int; 'expiryDate' of type date; 'billingAddress' of type str.
+The class 'AccountInfo' has the following attributes: 'bankBranch' of type str; 'routingNumber' of type int; 'name' of type str; 'ID' of type int; 'bankName' of type str; 'accountNumber' of type int.
+The class 'Order' has the following attributes: 'cardDetails' of type str; 'transactionID' of type int; 'purchaseDate' of type date; 'productDetails' of type str.
+'Order' (role 'customer5', cardinality 0..*) is associated with 'Retailer' (role 'order4', cardinality 0..*).
+'AccountInfo' (role 'seller7', cardinality 0..*) is associated with 'Farmer' (role 'accountInfo6', cardinality 0..*).
+'CardInfo' (role 'customer3', cardinality 0..*) is associated with 'Retailer' (role 'cardInfo2', cardinality 0..*).
+'Farmer' (role 'order11', cardinality 0..*) is associated with 'Order' (role 'farmer10', cardinality 0..*).
+'Retailer' (role 'shoppingCart0', cardinality 0..*) is associated with 'Retailer_Cart' (role 'customer1', cardinality 0..*).
+'Products' (role 'farmer8', cardinality 0..*) is associated with 'Farmer' (role 'product_Farmer9', cardinality 0..*).

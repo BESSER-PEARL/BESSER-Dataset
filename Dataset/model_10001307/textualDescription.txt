@@ -1,0 +1,34 @@
+The model has 18 class(es).
+The class 'Home_Security_System' has the following attributes: 'UserID' of type int.
+The class 'HomeTheatre' has the following attributes: 'HTID' of type str.
+The class 'Light' has the following attributes: 'LightID' of type str.
+The class 'TV' has the following attributes: 'TVID' of type int.
+The class 'FireAlarm_Sensor' has the following attributes: 'SmokeAlarm' of type bool; 'DispenseSprinkler' of type bool.
+The class 'Entertainment' has the following attributes: 'DeviceID' of type int.
+The class 'End_Of_Day' has the following attributes: 'EOT' of type int.
+The class 'PressureSensor' has no attributes.
+The class 'Start_Of_Day' has the following attributes: 'SOT' of type int.
+The class 'Sensor' has the following attributes: 'SensorID' of type int; 'SensorType' of type int.
+The class 'Door' has the following attributes: 'DoorID' of type int.
+The class 'Camera' has the following attributes: 'CameraID' of type int.
+The class 'Motion_Sensor' has no attributes.
+The class 'MicroPhone' has the following attributes: 'MicID' of type str.
+The class 'HouseHolds' has the following attributes: 'DishWasher' of type str; 'Alarm' of type str; 'WashingMachine' of type str; 'Coffee' of type str; 'TimeID' of type str.
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+The class 'System' has the following attributes: 'Status' of type bool; 'Update' of type float.
+The class 'Speakers' has the following attributes: 'SpeakerID' of type int.
+'Alert' (role 'home_Security_System15', cardinality 0..*) is associated with 'Home_Security_System' (role 'alert14', cardinality 0..*).
+'System' (role 'sensor17', cardinality 0..*) is associated with 'Sensor' (role 'system16', cardinality 0..*).
+'TV' (role 'homeTheatre5', cardinality 0..*) is associated with 'HomeTheatre' (role 'tV4', cardinality 0..*).
+'HomeTheatre' (role 'entertainment28', cardinality 0..*) is associated with 'Entertainment' (role 'homeTheatre29', cardinality 0..*).
+'Entertainment' (role 'speakers27', cardinality 0..*) is associated with 'Speakers' (role 'entertainment26', cardinality 0..*).
+'System' (role 'microPhone13', cardinality 0..*) is associated with 'MicroPhone' (role 'system12', cardinality 0..*).
+'Door' (role 'sensor1', cardinality 0..*) is associated with 'Sensor' (role 'door0', cardinality 0..*).
+'TV' (role 'entertainment24', cardinality 0..*) is associated with 'Entertainment' (role 'tV25', cardinality 0..*).
+'System' (role 'homeTheatre21', cardinality 0..*) is associated with 'HomeTheatre' (role 'system20', cardinality 0..*).
+'Start_Of_Day' (role 'houseHolds9', cardinality 0..*) is associated with 'HouseHolds' (role 'start_Of_Day8', cardinality 0..*).
+'Home_Security_System' (role 'system22', cardinality 0..*) is associated with 'System' (role 'home_Security_System23', cardinality 0..*).
+'HouseHolds' (role 'system19', cardinality 0..*) is associated with 'System' (role 'houseHolds18', cardinality 0..*).
+'End_Of_Day' (role 'houseHolds11', cardinality 0..*) is associated with 'HouseHolds' (role 'end_Of_Day10', cardinality 0..*).
+'Camera' (role 'door3', cardinality 0..*) is associated with 'Door' (role 'camera2', cardinality 0..*).
+'Speakers' (role 'homeTheatre7', cardinality 0..*) is associated with 'HomeTheatre' (role 'speakers6', cardinality 0..*).

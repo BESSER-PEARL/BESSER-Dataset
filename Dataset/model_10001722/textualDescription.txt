@@ -1,0 +1,21 @@
+The model has 20 class(es).
+The class 'mypackage3_MyClass' has no attributes.
+The class 'mypackage3_MyClass2' has no attributes.
+The class 'mypackage_MyClass4' has no attributes.
+The class 'mypackage4_MyClass4' has no attributes.
+The class 'mypackage5_MyClass3' has no attributes.
+The class 'mypackage_MyClass' has no attributes.
+The class 'mypackage_MyClass2' has no attributes.
+The class 'mypackage3_MyClass4' has no attributes.
+The class 'mypackage2_MyClass2' has no attributes.
+The class 'mypackage4_MyClass2' has no attributes.
+The class 'mypackage5_MyClass2' has no attributes.
+The class 'mypackage2_MyClass' has no attributes.
+The class 'mypackage2_MyClass4' has no attributes.
+The class 'mypackage_MyClass3' has no attributes.
+The class 'mypackage5_MyClass' has no attributes.
+The class 'mypackage4_MyClass3' has no attributes.
+The class 'mypackage2_MyClass3' has no attributes.
+The class 'mypackage4_MyClass' has no attributes.
+The class 'mypackage3_MyClass3' has no attributes.
+The class 'mypackage5_MyClass4' has no attributes.

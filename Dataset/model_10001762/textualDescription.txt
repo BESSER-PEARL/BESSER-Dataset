@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'Deck' has the following attributes: 'cards' of type str.
+The class 'Card' has the following attributes: 'suit' of type str; 'rank' of type str.
+The class 'Blackjack' has no attributes.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'Rank' does not specify any literals.

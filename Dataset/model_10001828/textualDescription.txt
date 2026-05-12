@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'Player' has the following attributes: 'losses' of type int; 'wins' of type int; 'winRate' of type str.
+The class 'Elevens' has the following attributes: '_attr' of type Player.
+The class 'Cards' has the following attributes: 'Character' of type str; 'Suit' of type str.
+The class 'Deck' has the following attributes: 'attribute' of type str.
+The enumeration 'Enumeration' does not specify any literals.
+'Cards' (role 'deck5', cardinality 0..*) is associated with 'Deck' (role 'cards4', cardinality 0..*).
+'Player' (role 'elevens1', cardinality 0..*) is associated with 'Elevens' (role 'player0', cardinality 0..*).
+'Elevens' (role 'deck2', cardinality 0..*) is associated with 'Deck' (role 'elevens3', cardinality 0..*).

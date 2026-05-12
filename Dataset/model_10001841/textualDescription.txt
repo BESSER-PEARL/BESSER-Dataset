@@ -1,0 +1,27 @@
+The model has 14 class(es).
+The class 'Other_employees' has the following attributes: 'Position' of type str; 'Name' of type str.
+The class 'Department' has the following attributes: 'CS' of type str; 'CSSE' of type str; 'ITM' of type str; 'JUR' of type str; 'MCM' of type str; 'IS' of type str.
+The class 'Schedule' has the following attributes: 'Teacher' of type Schedule; 'Course' of type Schedule.
+The class 'Library' has the following attributes: 'Materials' of type Library; 'Books' of type Library.
+The class 'Dean' has the following attributes: 'Employees' of type Dean.
+The class 'News_in_Dl' has the following attributes: 'Update_news' of type Moderator; 'Opens_news' of type Moderator; 'Hyperlink' of type str.
+The class 'Students' has the following attributes: 'Name' of type str; 'Course' of type Course; 'ID' of type Students.
+The class 'Team' has the following attributes: 'Ministry' of type str; 'Robotric_teams' of type Students; 'Footballs_teams' of type Students; 'President' of type str.
+The class 'Administrator' has the following attributes: 'Name' of type Administrator; 'Privilege' of type str.
+The class 'Teachers' has the following attributes: 'Department' of type Department; 'ID' of type Teachers; 'Course' of type Course; 'Info' of type Teachers; 'Rank' of type Teachers; 'Name' of type str.
+The class 'Course' has the following attributes: '_4_Course' of type Department; '_2_Course' of type Department; '_3_Course' of type Department; '_1_Course' of type Department.
+The class 'Questionnaire_survey' has the following attributes: 'Teachers' of type str; 'Students' of type str.
+The class 'Moderator' has the following attributes: 'Name' of type Moderator.
+The class 'Training_materials_IITU' has the following attributes: 'Materials' of type str.
+'Course' (role 'department0', cardinality 0..*) is associated with 'Department' (role 'course1', cardinality 0..*).
+'Moderator' (role 'administrator11', cardinality 0..*) is associated with 'Administrator' (role 'moderator10', cardinality 0..*).
+'Teachers' (role 'administrator9', cardinality 0..*) is associated with 'Administrator' (role 'teachers8', cardinality 0..*).
+'Department' (role 'students12', cardinality 0..*) is associated with 'Students' (role 'department13', cardinality 0..*).
+'Students' (role 'teachers17', cardinality 0..*) is associated with 'Teachers' (role 'students16', cardinality 0..*).
+'Dean' (role 'news_in_Dl2', cardinality 0..*) is associated with 'News_in_Dl' (role 'dean3', cardinality 0..*).
+'Students' (role 'team15', cardinality 0..*) is associated with 'Team' (role 'students14', cardinality 0..*).
+'Administrator' (role 'dean4', cardinality 0..*) is associated with 'Dean' (role 'administrator5', cardinality 0..*).
+'Students' (role 'course23', cardinality 0..*) is associated with 'Course' (role 'students22', cardinality 0..*).
+'Course' (role 'teachers21', cardinality 0..*) is associated with 'Teachers' (role 'course20', cardinality 0..*).
+'Administrator' (role 'course6', cardinality 0..*) is associated with 'Course' (role 'administrator7', cardinality 0..*).
+'Schedule' (role 'teachers19', cardinality 0..*) is associated with 'Teachers' (role 'schedule18', cardinality 0..*).

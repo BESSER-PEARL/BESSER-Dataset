@@ -1,0 +1,50 @@
+The model has 20 class(es).
+The class 'Reserve_UseCase' has no attributes.
+The class 'Add_New_Inventory_UseCase' has no attributes.
+The class 'Software_UseCase' has no attributes.
+The class 'Librarian_Actor' has no attributes.
+The class 'Check_In_UseCase' has no attributes.
+The class 'CD_UseCase' has no attributes.
+The class 'Search_UseCase' has no attributes.
+The class 'Video_UseCase' has no attributes.
+The class 'Retire_Old_Inventory_UseCase' has no attributes.
+The class 'Reminder_System_UseCase' has no attributes.
+The class 'Library_Inventory_UseCase' has no attributes.
+The class 'Patron_Actor' has no attributes.
+The class 'Due_Date_UseCase' has no attributes.
+The class 'Fine_Calculation_UseCase' has no attributes.
+The class 'User_Status_UseCase' has no attributes.
+The class 'Book_UseCase' has no attributes.
+The class 'Check_out_UseCase' has no attributes.
+The class 'Renew_UseCase' has no attributes.
+The class 'Magazine_Management__System_UseCase' has no attributes.
+The class 'Patron' has no attributes.
+'Reminder_System_UseCase' (role 'librarian1', cardinality 0..*) is associated with 'Librarian_Actor' (role 'reminder_needs_to_be_mailed0', cardinality 0..*).
+'User_Status_UseCase' (role 'check_In27', cardinality 0..*) is associated with 'Check_In_UseCase' (role 'library_Resource26', cardinality 0..*).
+'Renew_UseCase' (role 'patron46', cardinality 0..*) is associated with 'Patron_Actor' (role 'renew47', cardinality 0..*).
+'Renew_UseCase' (role 'user_Status48', cardinality 0..*) is associated with 'User_Status_UseCase' (role 'renew49', cardinality 0..*).
+'Library_Inventory_UseCase' (role 'search31', cardinality 0..*) is associated with 'Search_UseCase' (role 'library_Inventory30', cardinality 0..*).
+'Search_UseCase' (role 'patron51', cardinality 0..*) is associated with 'Patron_Actor' (role 'search50', cardinality 0..*).
+'CD_UseCase' (role 'library_Resource19', cardinality 0..*) is associated with 'Library_Inventory_UseCase' (role 'cD18', cardinality 0..*).
+'Patron_Actor' (role 'late_reminder3', cardinality 0..*) is associated with 'Reminder_System_UseCase' (role 'patron2', cardinality 0..*).
+'Librarian_Actor' (role 'fine_Calculation11', cardinality 0..*) is associated with 'Due_Date_UseCase' (role 'librarian10', cardinality 0..*).
+'Software_UseCase' (role 'library_Resource21', cardinality 0..*) is associated with 'Library_Inventory_UseCase' (role 'software20', cardinality 0..*).
+'Library_Inventory_UseCase' (role 'retire_Old_Inventory41', cardinality 0..*) is associated with 'Retire_Old_Inventory_UseCase' (role 'library_Inventory40', cardinality 0..*).
+'User_Status_UseCase' (role 'library_Inventory32', cardinality 0..*) is associated with 'Library_Inventory_UseCase' (role 'user_Status33', cardinality 0..*).
+'Check_out_UseCase' (role 'library_Resource24', cardinality 0..*) is associated with 'User_Status_UseCase' (role 'check_out25', cardinality 0..*).
+'Magazine_Management__System_UseCase' (role 'librarian55', cardinality 0..*) is associated with 'Librarian_Actor' (role 'magazine_Management__System54', cardinality 0..*).
+'Librarian_Actor' (role 'fine_Calculation56', cardinality 0..*) is associated with 'Fine_Calculation_UseCase' (role 'librarian57', cardinality 0..*).
+'Librarian_Actor' (role 'add_New_Inventory34', cardinality 0..*) is associated with 'Add_New_Inventory_UseCase' (role 'librarian35', cardinality 0..*).
+'Magazine_Management__System_UseCase' (role 'library_Inventory53', cardinality 0..*) is associated with 'Library_Inventory_UseCase' (role 'magazine_Management52', cardinality 0..*).
+'Patron_Actor' (role 'reserve9', cardinality 0..*) is associated with 'Reserve_UseCase' (role 'patron8', cardinality 0..*).
+'Search_UseCase' (role 'reserve29', cardinality 0..*) is associated with 'Reserve_UseCase' (role 'search28', cardinality 0..*).
+'Librarian_Actor' (role 'retire_Old_Inventory38', cardinality 0..*) is associated with 'Retire_Old_Inventory_UseCase' (role 'librarian39', cardinality 0..*).
+'Library_Inventory_UseCase' (role 'book16', cardinality 0..*) is associated with 'Book_UseCase' (role 'library_Resource17', cardinality 0..*).
+'Due_Date_UseCase' (role 'fine_Calculation44', cardinality 0..*) is associated with 'Fine_Calculation_UseCase' (role 'due_Date45', cardinality 0..*).
+'Check_In_UseCase' (role 'patron4', cardinality 0..*) is associated with 'Patron_Actor' (role 'check_in_book5', cardinality 0..*).
+'Reminder_System_UseCase' (role 'fine_Calculation13', cardinality 0..*) is associated with 'Fine_Calculation_UseCase' (role 'late_reminder12', cardinality 0..*).
+'Library_Inventory_UseCase' (role 'add_New_Inventory37', cardinality 0..*) is associated with 'Add_New_Inventory_UseCase' (role 'library_Inventory36', cardinality 0..*).
+'User_Status_UseCase' (role 'fine_Calculation15', cardinality 0..*) is associated with 'Due_Date_UseCase' (role 'book14', cardinality 0..*).
+'Due_Date_UseCase' (role 'library_Inventory43', cardinality 0..*) is associated with 'Library_Inventory_UseCase' (role 'due_Date42', cardinality 0..*).
+'Check_out_UseCase' (role 'patron6', cardinality 0..*) is associated with 'Patron_Actor' (role 'check_out_book7', cardinality 0..*).
+'Video_UseCase' (role 'library_Resource23', cardinality 0..*) is associated with 'Library_Inventory_UseCase' (role 'video22', cardinality 0..*).

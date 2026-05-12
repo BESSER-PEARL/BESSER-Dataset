@@ -1,0 +1,13 @@
+The model has 11 class(es).
+The class 'Worker' has no attributes.
+The class 'Cook' has no attributes.
+The class 'People' has the following attributes: 'name' of type str.
+The class 'Class3' has no attributes.
+The class 'Class' has the following attributes: 'attribute' of type str.
+The class 'Class2' has no attributes.
+The class 'Cashier' has no attributes.
+The class 'Waiter' has no attributes.
+The class 'Customer' has no attributes.
+The class 'Interface_Interface' has no attributes.
+The class 'Class4' has no attributes.
+'Class2' (role 'class40', cardinality 0..*) is associated with 'Class4' (role 'class21', cardinality 0..*).

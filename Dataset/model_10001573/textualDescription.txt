@@ -1,0 +1,29 @@
+The model has 13 class(es).
+The class 'SalesPerson' has the following attributes: 'password' of type str; 'populate' of type str; 'state' of type CustomerType.
+The class 'CustomerHandler' has the following attributes: 'populate' of type str; 'state' of type CustomerType; 'password' of type str.
+The class 'LZUser2' has the following attributes: 'populate' of type str; 'state' of type CustomerType; 'password' of type str.
+The class 'Payment' has the following attributes: 'paidDate' of type date; 'total' of type float; 'details' of type str.
+The class 'Item' has the following attributes: 'name' of type str; 'price' of type float; 'quantity' of type int.
+The class 'RegularDiscountSlab' has the following attributes: 'RadixClient' of type str; 'attribute' of type str; 'log' of type str; '_attr' of type str; 'attribute2' of type str; 'RegularSlab_list_' of type PurchaseAmountSlab; 'email' of type str; 'RegularSlab_list__' of type PurchaseAmountSlab.
+The class 'RegularCustomer' has the following attributes: 'email' of type str; 'log' of type str; 'RadixClient' of type str.
+The class 'PremiumCustomer' has the following attributes: 'email' of type str; 'log' of type str; 'RadixClient' of type str.
+The class 'PurchaseAmountSlab' has the following attributes: 'from' of type float; 'discount' of type float; 'to' of type float.
+The class 'Order' has the following attributes: 'total' of type float; 'ordered' of type date; 'number' of type int; 'status' of type str; 'shipTo' of type str; 'shipped' of type bool.
+The class 'ShoppingCart' has the following attributes: 'Items_list_' of type Item; '_attr' of type date.
+The class 'Customer' has the following attributes: 'type' of type CustomerType; 'DiscountSlab_list_' of type PurchaseAmountSlab; 'shoppingCart' of type ShoppingCart.
+The class 'PremiumDiscountSlab' has the following attributes: 'email' of type str; 'RadixClient' of type str; 'log' of type str; 'PremiumSlab_list_' of type PurchaseAmountSlab.
+The enumeration 'CustomerType' does not specify any literals.
+The enumeration 'Enumeration' does not specify any literals.
+'Customer' (role 'customer3', cardinality 0..*) is associated with 'PremiumCustomer' (role 'account2', cardinality 0..*).
+'Customer' (role 'shoppingCart219', cardinality 0..*) is associated with 'ShoppingCart' (role 'customer18', cardinality 0..*).
+'Customer' (role 'customer23', cardinality 0..*) is associated with 'Customer' (role 'customer22', cardinality 0..*).
+'Customer' (role 'p0', cardinality 0..*) is associated with 'Payment' (role 'acc1', cardinality 0..*).
+'Payment' (role 'order6', cardinality 0..*) is associated with 'Order' (role 'payment7', cardinality 0..*).
+'RegularDiscountSlab' (role 'purchaseAmountSlab15', cardinality 0..*) is associated with 'PurchaseAmountSlab' (role 'regularDiscountSlab14', cardinality 0..*).
+'PremiumDiscountSlab' (role 'purchaseAmountSlab13', cardinality 0..*) is associated with 'PurchaseAmountSlab' (role 'premiumDiscountSlab12', cardinality 0..*).
+'Order' (role 'account5', cardinality 0..*) is associated with 'Customer' (role 'order4', cardinality 0..*).
+'ShoppingCart' (role 'customer20', cardinality 0..*) is associated with 'Customer' (role 'shoppingCart221', cardinality 0..*).
+'CustomerHandler' (role 'customer17', cardinality 0..*) is associated with 'Customer' (role 'customerHandler16', cardinality 0..*).
+'Item' (role 'item8', cardinality 0..*) is associated with 'Item' (role 'item9', cardinality 0..*).
+'Customer' (role 'purchaseAmountSlab25', cardinality 0..*) is associated with 'PurchaseAmountSlab' (role 'customer24', cardinality 0..*).
+'ShoppingCart' (role 'item11', cardinality 0..*) is associated with 'Item' (role 'shoppingCart10', cardinality 0..*).

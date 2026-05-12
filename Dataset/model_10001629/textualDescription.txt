@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'Avanzar_hacia_el_siguiente_ejemplar__UseCase' has no attributes.
+The class 'Desplazarse_hasta_el__ltimo_ejemplar__UseCase' has no attributes.
+The class 'Calcular_promedio_de_edad_de_todos_los_ejemplares_caninos__UseCase' has no attributes.
+The class 'Usuario_Actor' has no attributes.
+The class 'Desplazarse_hasta_el_primer_ejemplar__UseCase' has no attributes.
+The class 'Caninos' has the following attributes: 'raza' of type str; 'altura' of type str; 'nombre' of type str; 'observaciones' of type str; 'edad' of type str; 'peso' of type str.
+The class 'Buscar_ejemplar_por_su_nombre__UseCase' has no attributes.
+The class 'Calcular_n_mero_de_ejemplares_caninos_por_raza__UseCase' has no attributes.
+The class 'Empresa' has no attributes.
+The class 'Regresar_hacia_el_anterior_ejemplar__UseCase' has no attributes.
+'Empresa' (role 'caninos14', cardinality 0..*) is associated with 'Caninos' (role 'Empresa_Caninos_115', cardinality 0..*).
+'Usuario_Actor' (role 'calcular_n_mero_de_ejemplares_caninos_por_raza_2', cardinality 0..*) is associated with 'Calcular_n_mero_de_ejemplares_caninos_por_raza__UseCase' (role 'usuario3', cardinality 0..*).
+'Regresar_hacia_el_anterior_ejemplar__UseCase' (role 'usuario9', cardinality 0..*) is associated with 'Usuario_Actor' (role 'regresar_hacia_el_anterior_ejemplar_8', cardinality 0..*).
+'Usuario_Actor' (role 'desplazarse_hasta_el_primer_ejemplar_10', cardinality 0..*) is associated with 'Desplazarse_hasta_el_primer_ejemplar__UseCase' (role 'usuario11', cardinality 0..*).
+'Desplazarse_hasta_el__ltimo_ejemplar__UseCase' (role 'usuario13', cardinality 0..*) is associated with 'Usuario_Actor' (role 'desplazarse_hasta_el__ltimo_ejemplar_12', cardinality 0..*).
+'Usuario_Actor' (role 'calcular_promedio_de_edad_de_todos_los_ejemplares_caninos_4', cardinality 0..*) is associated with 'Calcular_promedio_de_edad_de_todos_los_ejemplares_caninos__UseCase' (role 'usuario5', cardinality 0..*).
+'Usuario_Actor' (role 'avanzar_hacia_el_siguiente_ejemplar_6', cardinality 0..*) is associated with 'Avanzar_hacia_el_siguiente_ejemplar__UseCase' (role 'usuario7', cardinality 0..*).
+'Buscar_ejemplar_por_su_nombre__UseCase' (role 'usuario1', cardinality 0..*) is associated with 'Usuario_Actor' (role 'buscar_ejemplar_por_su_nombre_0', cardinality 0..*).

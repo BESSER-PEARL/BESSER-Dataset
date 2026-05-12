@@ -1,0 +1,15 @@
+The model has 12 class(es).
+The class 'T' has no attributes.
+The class 'Spot' has the following attributes: 'x' of type int; 'y' of type int; 'piece' of type Piece.
+The class 'Board' has the following attributes: 'currentPlayer' of type Player; 'spots' of type str; 'isCheck' of type bool; 'isStaleMate' of type bool; 'isCheckMate' of type bool; 'whitePlayer' of type Player; 'blackPlayer' of type Player.
+The class 'Rook' has no attributes.
+The class 'Player' has the following attributes: 'name' of type str; 'pieces' of type List_Pieces_; 'color' of type Color.
+The class 'Queen' has no attributes.
+The class 'King' has no attributes.
+The class 'List' has no attributes.
+The class 'Pawn' has no attributes.
+The class 'Bishop' has no attributes.
+The class 'Piece' has the following attributes: 'y' of type int; 'x' of type int; 'color' of type Color.
+The class 'Knight' has no attributes.
+The enumeration 'Color' does not specify any literals.
+The enumeration 'List_Pieces_' does not specify any literals.

@@ -1,0 +1,18 @@
+The model has 11 class(es).
+The class 'Humidity_Sensor' has the following attributes: 'CurrentValue' of type float.
+The class 'Heater' has the following attributes: 'Status' of type bool.
+The class 'PhoneApplication' has no attributes.
+The class 'SteamGenerator' has the following attributes: 'Status' of type bool.
+The class 'Display' has no attributes.
+The class 'Interior_Container' has the following attributes: 'WorkMode' of type int.
+The class 'Sensor' has the following attributes: 'SensorType' of type int; 'SensorID' of type int.
+The class 'Temperature_Sensor' has the following attributes: 'CurrentValue' of type float.
+The class 'System' has the following attributes: 'Update' of type float; 'Status' of type bool.
+The class 'Cooking_System' has no attributes.
+The class 'Ingredient_Box' has the following attributes: 'WeightValue' of type float; 'BoxID' of type int.
+'Display' (role 'system8', cardinality 0..*) is associated with 'System' (role 'homeTheatre9', cardinality 0..*).
+'System' (role 'Cooking_System11', cardinality 0..*) is associated with 'Cooking_System' (role 'Home_Security_System_System_010', cardinality 0..*).
+'Cooking_System' (role 'alert4', cardinality 0..*) is associated with 'Ingredient_Box' (role 'home_Security_System5', cardinality 0..*).
+'Sensor' (role 'door0', cardinality 0..*) is associated with 'Interior_Container' (role 'sensor1', cardinality 0..*).
+'PhoneApplication' (role 'system2', cardinality 0..*) is associated with 'System' (role 'microPhone3', cardinality 0..*).
+'Sensor' (role 'system6', cardinality 0..*) is associated with 'System' (role 'sensor7', cardinality 0..*).

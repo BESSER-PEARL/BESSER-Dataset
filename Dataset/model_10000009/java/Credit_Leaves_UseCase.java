@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Credit_Leaves_UseCase  {
+
+
+
+
+
+
+    private Employee_Actor1 employee_actor1;
+
+
+    public Credit_Leaves_UseCase(
+    ) {
+    }
+
+
+
+    public Employee_Actor1 getEmployee_actor1() {
+        return employee_actor1;
+    }
+
+    public void setEmployee_actor1(Employee_Actor1 employee_actor1) {
+        this.employee_actor1 = employee_actor1;
+    }
+
+}

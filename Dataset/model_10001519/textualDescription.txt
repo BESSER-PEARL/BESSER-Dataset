@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Receptionist' has no attributes.
+The class 'Patient' has the following attributes: 'WardNo' of type int; 'Name' of type str; 'Gender' of type str; 'Age' of type str; 'Address' of type str; 'PatientID' of type int.
+The class 'Ward' has the following attributes: 'Location' of type str; 'wardNo' of type int.
+The class 'Doctor' has the following attributes: 'Department' of type str; 'PhoneNumber' of type int; 'DocID' of type str; 'Address' of type str; 'Specialization' of type int; 'Name' of type str.
+The class 'Bill' has the following attributes: 'BillNo' of type int; 'patientName' of type str; 'amount' of type int.
+The class 'Department' has the following attributes: 'DocID' of type str; 'deptID' of type str; 'Name' of type str.
+'Patient' (role 'pays_bill8', cardinality 0..*) is associated with 'Bill' (role 'patient9', cardinality 0..*).
+'Doctor' (role 'department2', cardinality 0..*) is associated with 'Department' (role 'belongs_to3', cardinality 0..*).
+'Patient' (role 'doctor1', cardinality 0..*) is associated with 'Doctor' (role 'checks0', cardinality 0..*).
+'Ward' (role 'patient7', cardinality 0..*) is associated with 'Patient' (role 'alloted_to6', cardinality 0..*).
+'Receptionist' (role 'patient5', cardinality 0..*) is associated with 'Patient' (role 'give_appointment4', cardinality 0..*).
+'Bill' (role 'generates_bill11', cardinality 0..*) is associated with 'Receptionist' (role 'bill10', cardinality 0..*).

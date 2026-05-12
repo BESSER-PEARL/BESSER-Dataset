@@ -1,0 +1,6 @@
+The model has 5 class(es).
+The class 'Class' has no attributes.
+The class 'BankAccount' has the following attributes: 'balance' of type float; 'ownerName' of type str.
+The class 'ClassB' has no attributes.
+The class 'ClassC' has the following attributes: 'privateAttribute' of type int; 'publicAttribute' of type float; 'packageAttribute' of type str; 'protectedAttribute' of type str.
+The class 'ClassA' has the following attributes: 'privateAttribute' of type int; 'protectedAttribute' of type str; 'publicAttribute' of type float; 'packageAttribute' of type str.

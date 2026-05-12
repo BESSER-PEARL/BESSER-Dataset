@@ -1,0 +1,23 @@
+The model has 12 class(es).
+The class 'Booking' has the following attributes: 'name' of type str; 'reservedTables' of type str; 'contact' of type str; 'type' of type int; 'date' of type str; 'booking_Id' of type str.
+The class 'Food' has the following attributes: 'served' of type bool; 'name' of type str; 'description' of type str; 'type' of type int; 'prepared' of type bool; 'food_Id' of type str; 'price' of type str.
+The class 'Staff' has the following attributes: 'contact' of type str; 'staff_Id' of type str; 'jobType' of type int; 'name' of type str.
+The class 'Order' has the following attributes: 'foodOrdered' of type Food; 'order_Id' of type str.
+The class 'Customer' has the following attributes: 'numFemale' of type int; 'type' of type CustomerType; 'numMale' of type int.
+The class 'Chef' has the following attributes: 'kitchenStation' of type Kitchen.
+The class 'Class' has no attributes.
+The class 'Report' has the following attributes: 'profit' of type str; 'totalSales' of type str; 'orders' of type str.
+The class 'Table' has the following attributes: 'numSeats' of type int; 'specialRequest' of type str; 'occupied' of type bool; 'customerDetail' of type Customer; 'order' of type str; 'table_Id' of type str.
+The class 'Waiter' has no attributes.
+The class 'RMS' has the following attributes: 'bookings' of type str.
+The class 'Manager' has no attributes.
+The enumeration 'Kitchen' does not specify any literals.
+The enumeration 'CustomerType' does not specify any literals.
+'Table' (role 'accesses13', cardinality 0..*) is associated with 'Staff' (role 'is_accesses_by12', cardinality 0..*).
+'RMS' (role 'is_generated_by11', cardinality 0..*) is associated with 'Report' (role 'generates10', cardinality 0..*).
+'Table' (role 'customer14', cardinality 0..*) is associated with 'Customer' (role 'has15', cardinality 0..*).
+'Order' (role 'is_ordered_by2', cardinality 0..*) is associated with 'Table' (role 'has3', cardinality 0..*).
+'RMS' (role 'accesses9', cardinality 0..*) is associated with 'Staff' (role 'Staff_RMS_08', cardinality 0..*).
+'Food' (role 'is_ordered_by1', cardinality 0..*) is associated with 'Order' (role 'has0', cardinality 0..*).
+'RMS' (role 'has6', cardinality 0..*) is associated with 'Booking' (role 'is_in7', cardinality 0..*).
+'Booking' (role 'is_reserved_by5', cardinality 0..*) is associated with 'Table' (role 'reserved4', cardinality 0..*).

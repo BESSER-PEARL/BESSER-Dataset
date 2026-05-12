@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'Cashier' has no attributes.
+The class 'Cook' has no attributes.
+The class 'Waiter' has no attributes.

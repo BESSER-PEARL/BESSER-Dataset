@@ -1,0 +1,12 @@
+The model has 8 class(es).
+The class 'UseCase3_UseCase' has no attributes.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'Class' has the following attributes: 'attribute' of type str.
+The class 'Interface_Interface' has no attributes.
+The class 'Actor2_Actor' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'mahasiswa' has the following attributes: 'nim' of type str.
+The class 'UseCase_UseCase' has no attributes.
+'Actor_Actor' (role 'useCase33', cardinality 0..*) is associated with 'UseCase3_UseCase' (role 'actor2', cardinality 0..*).
+'UseCase_UseCase' (role 'actor1', cardinality 0..*) is associated with 'Actor_Actor' (role 'useCase0', cardinality 0..*).
+'UseCase2_UseCase' (role 'actor4', cardinality 0..*) is associated with 'Actor_Actor' (role 'useCase25', cardinality 0..*).

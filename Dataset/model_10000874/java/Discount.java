@@ -1,0 +1,43 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Discount  {
+
+    private int discountAmount;
+
+
+
+
+
+    private Bill bill;
+
+
+    public Discount(
+        int discountAmount    ) {
+        this.discountAmount = discountAmount;
+    }
+
+
+    public int getDiscountamount() {
+        return discountAmount;
+    }
+
+    public void setDiscountamount(int discountAmount) {
+        this.discountAmount = discountAmount;
+    }
+
+    public Bill getBill() {
+        return bill;
+    }
+
+    public void setBill(Bill bill) {
+        this.bill = bill;
+    }
+
+}

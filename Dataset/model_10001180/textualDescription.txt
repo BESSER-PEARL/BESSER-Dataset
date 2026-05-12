@@ -1,0 +1,20 @@
+The model has 10 class(es).
+The class 'OrderList' has the following attributes: 'OrderItemID' of type int; 'OrderID' of type int; 'ItemName' of type str; 'RemaningTime' of type date.
+The class 'Menu' has the following attributes: 'Availability' of type int; 'MenuItem' of type str; 'Price' of type float; 'Category' of type str.
+The class 'ViewOrder' has the following attributes: 'getOrderList' of type int.
+The class 'Table' has the following attributes: 'TableNo' of type int; 'Occupied' of type int.
+The class 'Order' has the following attributes: 'Date' of type str; 'UserID' of type int; 'Completed' of type int; 'OrderID' of type int.
+The class 'Membership' has the following attributes: 'discount' of type float; 'loyaltyID' of type int.
+The class 'Users' has the following attributes: 'UserLevel' of type int; 'UserName' of type str; 'UserBday' of type date; 'UserID' of type int.
+The class 'Bookings' has the following attributes: 'Time' of type date; 'Phone' of type str; 'BookingID' of type int; 'CustomerName' of type str; 'People' of type int; 'Date' of type date.
+The class 'Checkout' has the following attributes: 'checkoutID' of type int; 'checkoutAmount' of type float.
+The class 'BookedTables' has the following attributes: 'TableNo' of type int; 'BookingID' of type int.
+'Table' (role 'order1', cardinality 0..*) is associated with 'Order' (role 'table0', cardinality 0..*).
+'Order' (role 'users10', cardinality 0..*) is associated with 'Users' (role 'order11', cardinality 0..*).
+'OrderList' (role 'order8', cardinality 0..*) is associated with 'Order' (role 'orderItem9', cardinality 0..*).
+'OrderList' (role 'menu4', cardinality 0..*) is associated with 'Menu' (role 'orderItem5', cardinality 0..*).
+'ViewOrder' (role 'orderItem6', cardinality 0..*) is associated with 'OrderList' (role 'viewOrder7', cardinality 0..*).
+'Checkout' (role 'membership17', cardinality 0..*) is associated with 'Membership' (role 'checkout16', cardinality 0..*).
+'Checkout' (role 'order15', cardinality 0..*) is associated with 'Order' (role 'checkout14', cardinality 0..*).
+'BookedTables' (role 'table12', cardinality 0..*) is associated with 'Table' (role 'bookedTables13', cardinality 0..*).
+'Bookings' (role 'table3', cardinality 0..*) is associated with 'BookedTables' (role 'bookings2', cardinality 0..*).

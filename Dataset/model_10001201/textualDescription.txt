@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'Booking' has the following attributes: 'date' of type date; 'booking_id' of type int; 'reservedTables' of type str; 'customer_name' of type str; 'startTime' of type str; 'contact_no' of type int; 'email_id' of type str.
+The class 'StaffUI' has no attributes.
+The class 'Staff' has the following attributes: 'type' of type str; 'name' of type str; 'staffId' of type str.
+The class 'CustomerUI' has no attributes.
+The class 'Report' has the following attributes: 'report_id' of type str; 'orders' of type str.
+The class 'ReservationManagementSystem' has the following attributes: 'bookings' of type str.
+The class 'Table' has the following attributes: 'numSeats' of type int; 'table_id' of type str; 'avaliable' of type bool.
+'Staff' (role 'Staff_StaffUI_00', cardinality 0..*) is associated with 'StaffUI' (role 'accesses1', cardinality 0..*).
+'Booking' (role 'ReservationManagementSystem_Booking_17', cardinality 0..*) is associated with 'ReservationManagementSystem' (role 'booking6', cardinality 0..*).
+'ReservationManagementSystem' (role 'generates8', cardinality 0..*) is associated with 'Report' (role 'reservationManagementSystem9', cardinality 0..*).
+'Booking' (role 'reservedBy11', cardinality 0..*) is associated with 'Table' (role 'Table_Booking_010', cardinality 0..*).
+'Staff' (role 'reservationManagementSystem2', cardinality 0..*) is associated with 'ReservationManagementSystem' (role 'interacts3', cardinality 0..*).
+'CustomerUI' (role 'CustomerUI_ReservationManagementSystem_04', cardinality 0..*) is associated with 'ReservationManagementSystem' (role 'interacts5', cardinality 0..*).

@@ -1,0 +1,27 @@
+The model has 17 class(es).
+The class 'Permis' has no attributes.
+The class 'Reservation' has no attributes.
+The class 'Groupe' has the following attributes: 'rang' of type str.
+The class 'Vehicule' has the following attributes: 'standing' of type str; 'rang' of type int.
+The class 'E' has the following attributes: 'attE' of type str.
+The class 'G' has no attributes.
+The class 'A' has the following attributes: 'atta' of type str.
+The class 'B' has the following attributes: 'attb' of type str.
+The class 'Z' has no attributes.
+The class 'C' has the following attributes: 'attc2' of type bool; 'attc1' of type int.
+The class 'Y' has the following attributes: 'atty' of type str.
+The class 'F' has the following attributes: 'attF' of type str.
+The class 'Chauffeur' has the following attributes: 'position' of type str.
+The class 'R' has no attributes.
+The class 'C1' has no attributes.
+The class 'Client' has the following attributes: 'fonction' of type str; 'nom' of type str.
+The class 'C2' has no attributes.
+'A' (role 'r5', cardinality 0..*) is associated with 'R' (role 'aR4', cardinality 0..*).
+'G' (role 'e16', cardinality 0..*) is associated with 'E' (role 'g17', cardinality 0..*).
+'B' (role 'c0', cardinality 0..*) is associated with 'C' (role 'b1', cardinality 0..*).
+'B' (role 'a3', cardinality 0..*) is associated with 'A' (role 'b2', cardinality 0..*).
+'Chauffeur' (role 'permis10', cardinality 0..*) is associated with 'Permis' (role 'chauffeur11', cardinality 0..*).
+'Vehicule' (role 'reservation15', cardinality 0..*) is associated with 'Reservation' (role 'vehicule14', cardinality 0..*).
+'Client' (role 'groupe6', cardinality 0..*) is associated with 'Groupe' (role 'client7', cardinality 0..*).
+'Groupe' (role 'reservation8', cardinality 0..*) is associated with 'Reservation' (role 'groupe9', cardinality 0..*).
+'Vehicule' (role 'chauffeur12', cardinality 0..*) is associated with 'Chauffeur' (role 'vehicule13', cardinality 0..*).

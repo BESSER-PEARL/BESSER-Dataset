@@ -1,0 +1,19 @@
+The model has 16 class(es).
+The class 'EventRegistrationInformation' has the following attributes: 'eventId' of type str; 'isPaid' of type bool; 'passenger' of type User; 'numberOfSeats' of type int; 'uid' of type str; 'paymentMethod' of type int; 'state' of type int.
+The class 'Station' has the following attributes: 'nameAra' of type str; 'nameEng' of type str; 'uid' of type str; 'location' of type LatLng.
+The class 'Trip' has the following attributes: 'isIntercity' of type bool; 'freeSeats' of type int; 'capacity' of type int; 'time' of type str; 'route' of type Route; 'driver' of type Driver; 'uid' of type str; 'seatPrice' of type str; 'isLive' of type bool; 'reservedSeats' of type int.
+The class 'User' has the following attributes: 'username' of type str; 'balance' of type str; 'birthDate' of type str; 'referrer' of type str; 'phoneNumber' of type str; 'id' of type str; 'accountStatus' of type AccountStatus; 'numberOfReferrals' of type int; 'referralCode' of type str; 'gender' of type int; 'avatar' of type str; 'email' of type str.
+The class 'EventPoint' has the following attributes: 'type' of type int; 'location' of type LatLng; 'time' of type str.
+The class 'TimeData' has the following attributes: 'routes' of type str.
+The class 'Class' has no attributes.
+The class 'FollowUpSubscriber' has the following attributes: 'location' of type LatLng; 'user' of type User; 'followUpId' of type str.
+The class 'LatLng' has the following attributes: 'latitude' of type str; 'longitude' of type str.
+The class 'OverviewPolyline' has the following attributes: 'points' of type str.
+The class 'Reservation' has the following attributes: 'reservedSeats' of type int; 'user' of type User; 'uid' of type str; 'route' of type Route; 'paymentMethod' of type int; 'reservationState' of type int; 'inCar' of type bool; 'dueAmout' of type str; 'pickupLocation' of type LatLng; 'reachedDest' of type bool; 'paid' of type bool.
+The class 'RequestCarInfo' has the following attributes: 'from' of type str; 'type' of type int; 'to' of type str; 'time' of type str; 'numberOfDays' of type int; 'comment' of type str; 'uid' of type str; 'numberOfPassengers' of type int; 'state' of type int; 'user' of type User.
+The class 'Route' has the following attributes: 'routeName' of type str; 'stations' of type str; 'waypoints' of type str; 'uid' of type str; 'overviewPolyline' of type OverviewPolyline.
+The class 'FollowUp' has the following attributes: 'stations' of type str; 'to' of type str; 'freePickup' of type bool; 'name' of type str; 'password' of type str; 'type' of type int; 'from' of type str; 'driver' of type Driver; 'key' of type str; 'uid' of type str; 'info' of type str; 'time' of type str.
+The class 'Driver' has the following attributes: 'avatar' of type str; 'username' of type str; 'email' of type str; 'phoneNumber' of type str; 'numberOfRatings' of type int; 'carLicense' of type str; 'averageRating' of type str.
+The class 'Event' has the following attributes: 'bannerUrl' of type str; 'endTime' of type str; 'type' of type int; 'freeSeats' of type int; 'price' of type str; 'eventPoints' of type str; 'uid' of type str; 'time' of type str; 'status' of type str; 'startTime' of type str; 'phoneNumber' of type str; 'name' of type str; 'info' of type str.
+The enumeration 'Enumeration' does not specify any literals.
+The enumeration 'AccountStatus' does not specify any literals.

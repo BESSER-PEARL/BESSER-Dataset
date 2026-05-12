@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'Player_Actor' has no attributes.
+The class 'Quit_UseCase' has no attributes.
+The class 'Match_Pairs_of_Cards_Together_Until_No_Cards_Remain_or_Mismatch_UseCase' has no attributes.
+The class 'Shuffle_Deck__Restart_Game__UseCase' has no attributes.
+The class 'Begin_Game_UseCase' has no attributes.
+The class 'Change_Deck__Image_Changes__UseCase' has no attributes.
+The class 'MemoryGame_Card' has the following attributes: 'position' of type int; 'isShowing' of type bool; 'image' of type str; 'deck' of type MemoryGame_Deck; 'id' of type int.
+The class 'MemoryGame_Deck' has the following attributes: 'id' of type int; 'cards' of type MemoryGame_Card; 'image' of type str.
+'Player_Actor' (role 'quit8', cardinality 0..*) is associated with 'Quit_UseCase' (role 'player9', cardinality 0..*).
+'Change_Deck__Image_Changes__UseCase' (role 'player11', cardinality 0..*) is associated with 'Player_Actor' (role 'change_Deck__Image_Changes_10', cardinality 0..*).
+'Shuffle_Deck__Restart_Game__UseCase' (role 'player7', cardinality 0..*) is associated with 'Player_Actor' (role 'shuffle_Deck__Start_New_Game_6', cardinality 0..*).
+'Match_Pairs_of_Cards_Together_Until_No_Cards_Remain_or_Mismatch_UseCase' (role 'player5', cardinality 0..*) is associated with 'Player_Actor' (role 'match_Pairs_of_Cards_Together_Until_No_Cards_Remain_or_Mismatch4', cardinality 0..*).
+'MemoryGame_Card' (role 'deck1', cardinality 0..*) is associated with 'MemoryGame_Deck' (role 'card0', cardinality 0..*).
+'Player_Actor' (role 'start_New_Game2', cardinality 0..*) is associated with 'Begin_Game_UseCase' (role 'player3', cardinality 0..*).

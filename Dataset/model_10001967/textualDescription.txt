@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'Light_Sensor' has the following attributes: 'Sensor_ID' of type str.
+The class 'Camera_1' has the following attributes: 'Camera_ID' of type str; 'Sensor_ID' of type str.
+The class 'Dispatch_drown' has the following attributes: 'Drown_ID' of type str; 'Camera_ID' of type str.
+The class 'Motion_Sensor' has the following attributes: 'Sensor_ID' of type str.
+The class 'Security_logs' has the following attributes: 'Log_ID' of type str; 'Sensor_ID' of type str; 'Camera_ID' of type str.
+The class 'Temperature_sensor' has the following attributes: 'Temp_ID' of type str.
+The class 'T' has no attributes.
+The class 'Home_Security__Hub_' has the following attributes: 'Camera_ID' of type str; 'Login_ID' of type str; 'Hub_ID' of type str; 'Sensor_ID' of type str.
+The class 'Lock_doors' has the following attributes: 'Door_ID' of type str.
+The class 'Event_Log' has the following attributes: 'Status' of type bool.
+'Temperature_sensor' (role 'home_Security11', cardinality 0..*) is associated with 'Camera_1' (role 'temperature_sensor10', cardinality 0..*).
+'Home_Security__Hub_' (role 'doors8', cardinality 0..*) is associated with 'Lock_doors' (role 'home_Security9', cardinality 0..*).
+'Home_Security__Hub_' (role 'camera2', cardinality 0..*) is associated with 'Camera_1' (role 'home_Security3', cardinality 0..*).
+'Camera_1' (role 'camera_113', cardinality 0..*) is associated with 'Camera_1' (role 'camera_112', cardinality 0..*).
+'Event_Log' (role 'home_Security5', cardinality 0..*) is associated with 'Home_Security__Hub_' (role 'event_Log4', cardinality 0..*).
+'Security_logs' (role 'home_Security1', cardinality 0..*) is associated with 'Home_Security__Hub_' (role 'server0', cardinality 0..*).
+'Light_Sensor' (role 'home_Security7', cardinality 0..*) is associated with 'Camera_1' (role 'light_Sensor6', cardinality 0..*).

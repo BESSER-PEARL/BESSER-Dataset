@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'claas1' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'student' has no attributes.
+The class 'subject' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'user' has the following attributes: 'sex' of type str; 'user_name' of type str; 'pas' of type str.
+The class 'teachers' has no attributes.
+The class 'exam' has no attributes.
+The class 'admin' has no attributes.
+'teachers' (role 'exam12', cardinality 0..*) is associated with 'exam' (role 'teachers13', cardinality 0..*).
+'teachers' (role 'class10', cardinality 0..*) is associated with 'claas1' (role 'teachers1', cardinality 0..*).
+'exam' (role 'student11', cardinality 0..*) is associated with 'student' (role 'exam10', cardinality 0..*).
+'subject' (role 'class17', cardinality 0..*) is associated with 'claas1' (role 'subject6', cardinality 0..*).
+'student' (role 'class19', cardinality 0..*) is associated with 'claas1' (role 'student8', cardinality 0..*).
+'subject' (role 'admin5', cardinality 0..*) is associated with 'admin' (role 'subject4', cardinality 0..*).
+'admin' (role 'teachers2', cardinality 0..*) is associated with 'teachers' (role 'admin3', cardinality 0..*).

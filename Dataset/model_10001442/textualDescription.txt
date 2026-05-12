@@ -1,0 +1,30 @@
+The model has 19 class(es).
+The class 'genmymodelreverse_C11' has no attributes.
+The class 'blackjack_ExampleInstrumentedTest' has no attributes.
+The class 'genmymodelreverse_C1' has no attributes.
+The class 'blackjack_MainActivity' has no attributes.
+The class 'blackjack_BlackjackHand' has no attributes.
+The class 'blackjack_CardSet' has no attributes.
+The class 'genmymodelreverse_android_support_v7_app_AppCompatActivity' has no attributes.
+The class 'blackjack_ExampleUnitTest' has no attributes.
+The class 'genmymodelreverse_C12' has no attributes.
+The class 'blackjack_DealerBot' has no attributes.
+The class 'genmymodelreverse_java_util_Iterator_Interface' has no attributes.
+The class 'blackjack_BlackjackGame' has the following attributes: 'dealersHandTextView' of type str; 'playersHandTextView' of type str; 'stayButton' of type str; 'MAX_HITS' of type int; 'hitButton' of type str; 'MAX_CARDS_PULLED' of type int; 'dealersHandValueTextView' of type str; 'gstate' of type blackjack_GameState; 'playerHandValueTextView' of type str; 'gameResultTextView' of type str.
+The class 'Iterable_Card__Interface' has no attributes.
+The class 'genmymodelreverse_java_lang_Iterable_Interface' has no attributes.
+The class 'blackjack_Deck' has no attributes.
+The class 'blackjack_Card' has the following attributes: 'MAX_VALUE_OF_ACE' of type int; 'BLACKJACK_VALUE' of type int; 'suit' of type blackjack_Suit; 'value' of type blackjack_Value.
+The class 'Comparable_BlackjackHand__Interface' has no attributes.
+The class 'blackjack_DeckShuffledListener_Interface' has no attributes.
+The class 'genmymodelreverse_java_lang_Comparable_Interface' has no attributes.
+The enumeration 'blackjack_GameState' does not specify any literals.
+The enumeration 'blackjack_Value' does not specify any literals.
+The enumeration 'blackjack_Suit' does not specify any literals.
+'blackjack_DealerBot' (role 'deck5', cardinality 0..*) is associated with 'blackjack_Deck' (role 'dealerbot4', cardinality 0..*).
+'blackjack_BlackjackGame' (role 'playerHand3', cardinality 0..*) is associated with 'blackjack_BlackjackHand' (role 'blackjackgame2', cardinality 0..*).
+'blackjack_DealerBot' (role 'blackjackgame12', cardinality 0..*) is associated with 'blackjack_BlackjackGame' (role 'dealerBot13', cardinality 0..*).
+'blackjack_DeckShuffledListener_Interface' (role 'blackjackgame8', cardinality 0..*) is associated with 'blackjack_BlackjackGame' (role 'deckShuffledListener9', cardinality 0..*).
+'blackjack_CardSet' (role 'cards7', cardinality 0..*) is associated with 'blackjack_Card' (role 'cardset6', cardinality 0..*).
+'blackjack_DealerBot' (role 'hand1', cardinality 0..*) is associated with 'blackjack_BlackjackHand' (role 'dealerbot0', cardinality 0..*).
+'blackjack_Deck' (role 'blackjackgame10', cardinality 0..*) is associated with 'blackjack_BlackjackGame' (role 'theDeck11', cardinality 0..*).

@@ -1,0 +1,29 @@
+The model has 17 class(es).
+The class 'Payment' has the following attributes: 'Transaction_id_' of type int; 'Acc_No_' of type int; 'Amount_paid_' of type int.
+The class 'Account' has the following attributes: 'Branch_' of type str; 'Phone_no_' of type int; 'Acc_no_' of type int.
+The class 'View_product_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'order' has the following attributes: 'amount__' of type int; 'no_of_items_' of type int; 'order_status_' of type str.
+The class 'user_name_UseCase' has no attributes.
+The class 'Buy_product_UseCase' has no attributes.
+The class 'Key_generate_UseCase' has no attributes.
+The class 'Customer' has the following attributes: 'Phone_' of type int; 'Address_' of type str; 'login_id_' of type str.
+The class 'Comment_UseCase' has no attributes.
+The class 'Analyzing_UseCase' has no attributes.
+The class 'Cart' has the following attributes: 'Delete_' of type str; 'Buy_' of type int; 'No_of_items_' of type int.
+The class 'User_Actor' has no attributes.
+The class 'Password_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Login' has the following attributes: 'password_' of type str; 'login_id_' of type str.
+The class 'Update_product_UseCase' has no attributes.
+'Key_generate_UseCase' (role 'admin12', cardinality 0..*) is associated with 'Admin_Actor' (role 'key_generate13', cardinality 0..*).
+'Key_generate_UseCase' (role 'user7', cardinality 0..*) is associated with 'User_Actor' (role 'key_generate6', cardinality 0..*).
+'View_product_UseCase' (role 'user3', cardinality 0..*) is associated with 'User_Actor' (role 'view_product2', cardinality 0..*).
+'Cart' (role 'order18', cardinality 0..*) is associated with 'order' (role 'cart19', cardinality 0..*).
+'Login_UseCase' (role 'user1', cardinality 0..*) is associated with 'User_Actor' (role 'login0', cardinality 0..*).
+'Account' (role 'order20', cardinality 0..*) is associated with 'order' (role 'account21', cardinality 0..*).
+'View_product_UseCase' (role 'admin14', cardinality 0..*) is associated with 'Admin_Actor' (role 'view_product15', cardinality 0..*).
+'Update_product_UseCase' (role 'admin10', cardinality 0..*) is associated with 'Admin_Actor' (role 'update_product11', cardinality 0..*).
+'Customer' (role 'login17', cardinality 0..*) is associated with 'Login' (role 'customer16', cardinality 0..*).
+'User_Actor' (role 'buy_product4', cardinality 0..*) is associated with 'Buy_product_UseCase' (role 'user5', cardinality 0..*).
+'Admin_Actor' (role 'login8', cardinality 0..*) is associated with 'Login_UseCase' (role 'admin9', cardinality 0..*).

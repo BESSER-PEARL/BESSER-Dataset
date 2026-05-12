@@ -1,0 +1,87 @@
+The model has 73 class(es).
+The class 'DCMManager' has no attributes.
+The class 'GCSManager' has no attributes.
+The class 'SystemCreative' has no attributes.
+The class 'autopacing_inputs' has the following attributes: 'minimum_partner_data_delivery_percent' of type str; 'start_date' of type str; 'goal_type' of type str; 'sfdc_product_id' of type str; 'region1' of type str; 'min_daily_volume' of type str; 'product_start_date' of type str; 'exchange_rate' of type str; 'billing_currency' of type str; 'effective_impressions' of type str; 'sojern_goal_rae' of type str; 'expected_click_credit' of type str; 'percentage_impression_credit' of type str; 'pacing' of type str; 'region' of type str; 'cpx' of type str; 'impressions' of type str; 'cpm' of type str; 'product_end_date' of type str; 'product_type' of type str; 'avg_price_usd' of type str; 'percentage_conversion_credit' of type str; 'cvr' of type str; 'kpi_goal' of type str; 'on_off' of type str; 'end_date' of type str; 'min_daily_volume_percent' of type str; 'adjust_bids' of type str; 'sfdc_opportunity_id' of type str; 'estimated_booking_value' of type str; 'days_early_to_complete' of type str; 'conversions' of type str; 'account_manager' of type str; 'minimum_margin' of type str; 'dbm_io_id' of type str; 'hours_early_to_complete' of type str.
+The class 'FBManager' has no attributes.
+The class 'SojernBusiness' has no attributes.
+The class 'GCPManager' has no attributes.
+The class 'IOManager' has no attributes.
+The class 'SpendAccountBlocklistWhitelist' has no attributes.
+The class 'Class2' has no attributes.
+The class 'BQManager' has no attributes.
+The class 'APNStore_Interface' has no attributes.
+The class 'SystemInsertionOrder' has no attributes.
+The class 'updater_events_dataset_updater_events_daily' has the following attributes: 'segments_id' of type str; 'advertisername' of type str; 'sojernId' of type str.
+The class 'CreativeAsset' has no attributes.
+The class 'APNRepository_Interface' has no attributes.
+The class 'CreativeApproval' has no attributes.
+The class 'APNCache_Interface' has no attributes.
+The class 'APNModel' has no attributes.
+The class 'User' has no attributes.
+The class 'Campaign' has no attributes.
+The class 'Tactic' has no attributes.
+The class 'AdvertiserExcludedVertical' has no attributes.
+The class 'ProductLineItem' has no attributes.
+The class 'ProgrammaticModel_Interface' has no attributes.
+The class 'AgencyBlocklistWhitelist' has no attributes.
+The class 'GenericModel' has no attributes.
+The class 'APNLineItemModelService' has no attributes.
+The class 'DCSManager' has no attributes.
+The class 'Oauth2client_client_GoogleCredentials' has no attributes.
+The class 'BQTable' has no attributes.
+The class 'WHUtils' has no attributes.
+The class 'dbm_li_sfdc_product_li_mapping' has the following attributes: 'sfdc_product_id' of type str; 'dub_allocation_label' of type str; 'dbm_line_item_id' of type str; 'dbm_io_id' of type str; 'dbm_creative_ids' of type str.
+The class 'BidAdjuster' has no attributes.
+The class 'GCEManager' has no attributes.
+The class 'smp_events_dataset_smp_events_daily' has the following attributes: 'profileid' of type str; 'eventsourcename' of type str; 'externalIds_id__used_as_apnid_' of type str; 'ExternalIds_Type' of type str.
+The class 'APNAdvertiser' has no attributes.
+The class 'DBMManager' has no attributes.
+The class 'APNProgrammaticModel' has no attributes.
+The class 'BrandSafetyBrandSafetyLabel' has no attributes.
+The class 'BrandSafetyBrandSafetyCustomSetting' has no attributes.
+The class 'Salesforcemanager' has no attributes.
+The class 'Partner' has no attributes.
+The class 'Goal' has no attributes.
+The class 'ModelService_Interface' has no attributes.
+The class 'DSManager' has no attributes.
+The class 'APNModelFactory' has no attributes.
+The class 'APNAdv' has no attributes.
+The class 'AgencyExcludedVertical' has no attributes.
+The class 'APNManager' has no attributes.
+The class 'Advertiser' has the following attributes: 'crm_id' of type str.
+The class 'googleapiclient_discovery' has no attributes.
+The class 'APNLineItem' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'CampaignBlocklistWhitelist' has no attributes.
+The class 'AdvertiserBlocklistWhitelist' has no attributes.
+The class 'Pixel' has no attributes.
+The class 'CampaignTravelEventType' has no attributes.
+The class 'SalesforceBulkManager' has no attributes.
+The class 'SystemLineItemConversionPixel' has no attributes.
+The class 'Agency' has the following attributes: 'crm_id' of type str.
+The class 'CreativeAssetTactic' has no attributes.
+The class 'PartnerExcludedVertical' has no attributes.
+The class 'AppNexusClient' has no attributes.
+The class 'RestClient' has no attributes.
+The class 'BQJobError' has no attributes.
+The class 'AppNexus' has no attributes.
+The class 'Targeting' has no attributes.
+The class 'SpendAccount' has no attributes.
+The class 'Model_Interface' has no attributes.
+The class 'SystemLineItem' has no attributes.
+The class 'BrandSaftey' has no attributes.
+The class 'RecordType' has the following attributes: 'crm_id' of type str; 'updated_by' of type str; 'id' of type str; 'description' of type str; 'name' of type str; 'deleted' of type str.
+The class 'CloudSQLManager' has no attributes.
+'APNRepository_Interface' (role 'aPNProgrammaticModel7', cardinality 0..*) is associated with 'APNProgrammaticModel' (role 'aPNRepository6', cardinality 0..*).
+'APNModel' (role 'APNModelFactory_APNModel_117', cardinality 0..*) is associated with 'APNModelFactory' (role 'APNModelFactory_APNModel_016', cardinality 0..*).
+'APNLineItem' (role 'APNLineItem_APNModel_018', cardinality 0..*) is associated with 'APNModel' (role 'APNLineItem_APNModel_119', cardinality 0..*).
+'RestClient' (role 'aPNStore23', cardinality 0..*) is associated with 'APNStore_Interface' (role 'restClient22', cardinality 0..*).
+'APNRepository_Interface' (role 'aPNCache10', cardinality 0..*) is associated with 'APNCache_Interface' (role 'aPNRepository11', cardinality 0..*).
+'APNLineItem' (role 'APNModel_APNLineItem_15', cardinality 0..*) is associated with 'APNModel' (role 'APNModel_APNLineItem_04', cardinality 0..*).
+'APNModelFactory' (role 'aPNProgrammaticModel15', cardinality 0..*) is associated with 'APNProgrammaticModel' (role 'APNProgrammaticModel_APNModelFactory_014', cardinality 0..*).
+'BQJobError' (role 'bQManager1', cardinality 0..*) is associated with 'BQManager' (role 'bQJobError0', cardinality 0..*).
+'APNModel' (role 'aPNProgrammaticModel13', cardinality 0..*) is associated with 'APNProgrammaticModel' (role 'aPNModel12', cardinality 0..*).
+'APNStore_Interface' (role 'aPNRepository9', cardinality 0..*) is associated with 'APNRepository_Interface' (role 'aPNStore8', cardinality 0..*).
+'APNLineItemModelService' (role 'APNLineItemModelService_APNLineItem_020', cardinality 0..*) is associated with 'APNLineItem' (role 'APNLineItemModelService_APNLineItem_121', cardinality 0..*).
+'APNModel' (role 'APNModel_APNAdvertiser_02', cardinality 0..*) is associated with 'APNAdvertiser' (role 'APNModel_APNAdvertiser_13', cardinality 0..*).
+'APNModel' (role 'aPNAdv24', cardinality 0..*) is associated with 'APNAdv' (role 'aPNModel25', cardinality 0..*).

@@ -1,0 +1,31 @@
+The model has 19 class(es).
+The class 'Download_UseCase' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Playlist_Song' has the following attributes: 'sID' of type int; 'pID' of type int.
+The class 'User_Actor' has no attributes.
+The class 'Song' has the following attributes: 'sIMG_url' of type str; 'sName' of type str; 'sID' of type int; 'sDate' of type str; 'sArtist' of type str; 'sCateg' of type str.
+The class 'Search_UseCase' has no attributes.
+The class 'Downloads' has the following attributes: 'dID' of type int; 'sID' of type int.
+The class 'Play_UseCase' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'Create_playlist_UseCase' has no attributes.
+The class 'Playlist' has the following attributes: 'pDate' of type str; 'pName' of type str; 'pID' of type int.
+The class 'Stop_UseCase' has no attributes.
+The class 'Shuflfe_play_UseCase' has no attributes.
+The class 'Favourites' has the following attributes: 'fID' of type int; 'sID' of type int.
+The class 'Pause_UseCase' has no attributes.
+The class 'Repeat_Non_UseCase' has no attributes.
+The class 'TopMostPlayed' has the following attributes: 'sID' of type int; 'mpID' of type int.
+The class 'Favorite_UseCase' has no attributes.
+The class 'Recently_Played' has the following attributes: 'sID' of type int; 'rpID' of type int.
+'Stop_UseCase' (role 'play16', cardinality 0..*) is associated with 'Play_UseCase' (role 'useCase217', cardinality 0..*).
+'Play_UseCase' (role 'useCase319', cardinality 0..*) is associated with 'Shuflfe_play_UseCase' (role 'play18', cardinality 0..*).
+'Download_UseCase' (role 'user5', cardinality 0..*) is associated with 'User_Actor' (role 'useCase4', cardinality 0..*).
+'Play_UseCase' (role 'user9', cardinality 0..*) is associated with 'User_Actor' (role 'useCase28', cardinality 0..*).
+'Song' (role 'playlist_Song0', cardinality 0..*) is associated with 'Playlist_Song' (role 'song1', cardinality 0..*).
+'Search_UseCase' (role 'user7', cardinality 0..*) is associated with 'User_Actor' (role 'useCase46', cardinality 0..*).
+'User_Actor' (role 'useCase310', cardinality 0..*) is associated with 'Create_playlist_UseCase' (role 'user11', cardinality 0..*).
+'Repeat_Non_UseCase' (role 'play20', cardinality 0..*) is associated with 'Play_UseCase' (role 'useCase421', cardinality 0..*).
+'Play_UseCase' (role 'useCase15', cardinality 0..*) is associated with 'Pause_UseCase' (role 'play14', cardinality 0..*).
+'Playlist' (role 'playlist_Song2', cardinality 0..*) is associated with 'Playlist_Song' (role 'playlist3', cardinality 0..*).
+'User_Actor' (role 'useCase512', cardinality 0..*) is associated with 'Favorite_UseCase' (role 'user13', cardinality 0..*).

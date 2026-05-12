@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'User' has the following attributes: 'phoneno' of type int; 'address' of type str; 'gender' of type str; 'password' of type str; 'username' of type str.
+The class 'Timinglist' has the following attributes: 'source' of type str; 'time' of type str; 'destination' of type str; 'flightname' of type str.
+The class 'System' has the following attributes: 'id' of type str; 'session' of type str; 'name' of type str.
+The class 'Flightlist' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'Admin' has the following attributes: 'adminname' of type str; 'type' of type str; 'mobile' of type int; 'gender' of type str; 'password' of type str.
+The class 'Ticket' has the following attributes: 'flightname' of type str; 'ticketid' of type str; 'price' of type int; 'passengername' of type str; 'source' of type str; 'destination' of type str.
+'User' (role 'books0', cardinality 0..*) is associated with 'Ticket' (role 'system1', cardinality 0..*).
+'System' (role 'maintains5', cardinality 0..*) is associated with 'Admin' (role 'system4', cardinality 0..*).
+'System' (role 'has6', cardinality 0..*) is associated with 'Flightlist' (role 'system7', cardinality 0..*).
+'Timinglist' (role 'has9', cardinality 0..*) is associated with 'System' (role 'system8', cardinality 0..*).
+'User' (role 'system2', cardinality 0..*) is associated with 'System' (role 'visits3', cardinality 0..*).

@@ -1,0 +1,33 @@
+The model has 17 class(es).
+The class 'PlayerView' has the following attributes: 'busted' of type JLabel; 'cardLabels' of type JLabel; 'cardTotal' of type JLabel; 'moneyBox' of type JLabel; 'status' of type JLabel; 'player' of type BasePlayer.
+The class 'JLabel' has no attributes.
+The class 'Hand' has the following attributes: 'cards' of type Card; 'total' of type int.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Strategy' has the following attributes: 'game' of type BlackjackGame.
+The class 'Profile' has the following attributes: 'username' of type str; 'money' of type int.
+The class 'GameLauncher' has the following attributes: 'blackjack' of type BlackjackGame; 'login' of type LoginView.
+The class 'Player' has the following attributes: 'money' of type int; 'hand' of type Hand; 'profile' of type Profile.
+The class 'JButton' has no attributes.
+The class 'Card' has the following attributes: 'name' of type str; 'valueHard' of type str; 'rank' of type str; 'Count' of type int; 'valueSoft' of type str; 'avatar' of type str; 'suit' of type str.
+The class 'Dealer' has the following attributes: 'hand' of type Hand; 'cardTotalLimit' of type int.
+The class 'Deck' has the following attributes: 'cards' of type Card.
+The class 'BasePlayer' has the following attributes: 'isBusted' of type bool.
+The class 'BlackjackGame' has the following attributes: 'deck' of type Deck; 'player' of type Player; 'dealer' of type Dealer; 'bet' of type int.
+The class 'User_Actor' has no attributes.
+The class 'GameView' has the following attributes: 'standButton' of type JButton; 'doubleButton' of type JButton; 'hitButton' of type JButton; 'bet' of type JLabel; 'showStrategy' of type bool; 'splitButton' of type JButton; 'dealButton' of type JButton.
+The class 'LoginView' has the following attributes: 'user' of type Profile.
+'LoginView' (role 'gameLauncher3', cardinality 0..*) is associated with 'GameLauncher' (role 'loginView2', cardinality 0..*).
+'BlackjackGame' (role 'dealer15', cardinality 0..*) is associated with 'Dealer' (role 'blackjack14', cardinality 0..*).
+'BlackjackGame' (role 'deck216', cardinality 0..*) is associated with 'Deck' (role 'blackjack17', cardinality 0..*).
+'Deck' (role 'card28', cardinality 0..*) is associated with 'Card' (role 'deck29', cardinality 0..*).
+'PlayerView' (role 'gameView10', cardinality 0..*) is associated with 'GameView' (role 'playerView11', cardinality 0..*).
+'Hand' (role 'card26', cardinality 0..*) is associated with 'Card' (role 'hand27', cardinality 0..*).
+'Dealer' (role 'hand22', cardinality 0..*) is associated with 'Hand' (role 'dealer23', cardinality 0..*).
+'Player' (role 'profile220', cardinality 0..*) is associated with 'Profile' (role 'player21', cardinality 0..*).
+'BlackjackGame' (role 'gameView6', cardinality 0..*) is associated with 'GameView' (role 'blackjack7', cardinality 0..*).
+'BlackjackGame' (role 'strategy8', cardinality 0..*) is associated with 'Strategy' (role 'blackjack9', cardinality 0..*).
+'Profile' (role 'loginView1', cardinality 0..*) is associated with 'LoginView' (role 'profile0', cardinality 0..*).
+'Player' (role 'blackjack12', cardinality 0..*) is associated with 'BlackjackGame' (role 'player13', cardinality 0..*).
+'PlayerView' (role 'basePlayer19', cardinality 0..*) is associated with 'BasePlayer' (role 'playerView18', cardinality 0..*).
+'Profile' (role 'blackjack4', cardinality 0..*) is associated with 'BlackjackGame' (role 'profile5', cardinality 0..*).
+'Player' (role 'hand24', cardinality 0..*) is associated with 'Hand' (role 'player25', cardinality 0..*).

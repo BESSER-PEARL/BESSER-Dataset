@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Patient' has the following attributes: 'PhNo_' of type int; 'Age' of type int; 'Address' of type str; 'Id' of type int; 'WardNo' of type int; 'Name' of type str.
+The class 'Room' has the following attributes: 'RoomNo' of type int; 'RoomType' of type str.
+The class 'Doctor' has the following attributes: 'Department' of type str; 'Email' of type str; 'Address' of type str; 'DocId_' of type int; 'Name' of type str.
+The class 'Receptionist' has the following attributes: 'Name' of type str; 'Id' of type int; 'Email' of type str.
+The class 'Bill' has the following attributes: 'Patient_Id' of type int; 'Amount' of type str; 'BillNo' of type str.
+'Bill' (role 'receptionist5', cardinality 0..*) is associated with 'Receptionist' (role 'bill4', cardinality 0..*).
+'Patient' (role 'bill6', cardinality 0..*) is associated with 'Bill' (role 'patient7', cardinality 0..*).
+'Receptionist' (role 'patient3', cardinality 0..*) is associated with 'Patient' (role 'receptionist2', cardinality 0..*).
+'Patient' (role 'doctor1', cardinality 0..*) is associated with 'Doctor' (role 'patient0', cardinality 0..*).
+'Room' (role 'patient9', cardinality 0..*) is associated with 'Patient' (role 'rooms8', cardinality 0..*).

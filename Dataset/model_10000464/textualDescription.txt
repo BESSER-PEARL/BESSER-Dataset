@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Table' has the following attributes: 'Occupied' of type int; 'TableNo' of type int.
+The class 'ViewOrder' has the following attributes: 'getUser' of type int.
+The class 'Membership_Card' has the following attributes: 'ID' of type int; 'DiscountLVL' of type int.
+The class 'Bookings' has the following attributes: 'BookingID' of type int; 'Time' of type date; 'Date' of type date; 'People' of type int; 'TableNo' of type int; 'CustomerName' of type str; 'Phone' of type str.
+The class 'Users' has the following attributes: 'UserID' of type int; 'UserLevel' of type int; 'UserName' of type str.
+The class 'OrderItem' has the following attributes: 'RemaningTime' of type date; 'OrderItemID' of type int; 'Completed' of type int; 'ItemName' of type str; 'OrderID' of type int.
+The class 'Order' has the following attributes: 'UserID' of type int; 'DicountLvl' of type int; 'OrderID' of type int; 'Date' of type date; 'Total' of type float.
+The class 'Menu' has the following attributes: 'MenuItem' of type str; 'Availability' of type int; 'Price' of type float; 'Category' of type str.
+The class 'BookedTables' has the following attributes: 'TableNo' of type int; 'BookingID' of type int.
+'Order' (role 'table2', cardinality 0..*) is associated with 'Table' (role 'order3', cardinality 0..*).
+'BookedTables' (role 'bookings4', cardinality 0..*) is associated with 'Bookings' (role 'table5', cardinality 0..*).
+'Membership_Card' (role 'order0', cardinality 0..*) is associated with 'Order' (role 'membership_Card1', cardinality 0..*).
+'Users' (role 'order13', cardinality 0..*) is associated with 'Order' (role 'users12', cardinality 0..*).
+'Menu' (role 'orderItem7', cardinality 0..*) is associated with 'OrderItem' (role 'menu6', cardinality 0..*).
+'Table' (role 'bookedTables15', cardinality 0..*) is associated with 'BookedTables' (role 'table14', cardinality 0..*).
+'OrderItem' (role 'order10', cardinality 0..*) is associated with 'Order' (role 'orderItem11', cardinality 0..*).
+'OrderItem' (role 'viewOrder9', cardinality 0..*) is associated with 'ViewOrder' (role 'orderItem8', cardinality 0..*).

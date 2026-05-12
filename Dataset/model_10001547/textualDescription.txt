@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Table_booking_time' has the following attributes: 'end_time' of type int; 'start_time' of type int.
+The class 'Table' has the following attributes: 'table_number' of type int; 'total_person' of type int.
+The class 'Booking' has the following attributes: 'customer_name' of type str; 'arrival_time' of type int; 'table_number' of type int.
+The class 'Payment' has the following attributes: 'paytm' of type int; 'pay_hotel' of type int; 'debit_card' of type int; 'credit_card' of type int.
+The class 'Restaurant' has the following attributes: 'booking' of type int; 'time' of type int.
+The class 'Customer' has the following attributes: 'cust_id' of type int; 'email' of type str; 'mobile' of type int; 'name' of type str; 'Address' of type str.
+'Payment' (role 'table_booking_time7', cardinality 0..*) is associated with 'Table_booking_time' (role 'payment6', cardinality 0..*).
+'Table' (role 'restaurant9', cardinality 0..*) is associated with 'Restaurant' (role 'table8', cardinality 0..*).
+'Booking' (role 'table1', cardinality 0..*) is associated with 'Table' (role 'booking0', cardinality 0..*).
+'Booking' (role 'table_booking_time4', cardinality 0..*) is associated with 'Table_booking_time' (role 'booking5', cardinality 0..*).
+'Restaurant' (role 'customer2', cardinality 0..*) is associated with 'Customer' (role 'restaurant3', cardinality 0..*).

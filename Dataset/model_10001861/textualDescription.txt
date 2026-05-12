@@ -1,0 +1,23 @@
+The model has 16 class(es).
+The class 'C3' has no attributes.
+The class 'C1' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'C2' has no attributes.
+The class 'A21' has the following attributes: 'b' of type bool.
+The class 'Y' has the following attributes: 'attY' of type str.
+The class 'C' has the following attributes: 'attC2' of type bool; 'attC1' of type int.
+The class 'B1' has the following attributes: 'attB' of type int.
+The class 'B21' has no attributes.
+The class 'A3' has no attributes.
+The class 'Z' has no attributes.
+The class 'A2' has the following attributes: 'd' of type int.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'A1' has the following attributes: 'attA' of type str.
+The class 'B2' has no attributes.
+The class 'R' has no attributes.
+'A' (role 'b0', cardinality 0..*) is associated with 'B' (role 'a1', cardinality 0..*).
+'B1' (role 'c4', cardinality 0..*) is associated with 'C1' (role 'b5', cardinality 0..*).
+'R' (role 'aR8', cardinality 0..*) is associated with 'A1' (role 'r9', cardinality 0..*).
+'A1' (role 'b6', cardinality 0..*) is associated with 'B1' (role 'a7', cardinality 0..*).
+'A2' (role 'c11', cardinality 0..*) is associated with 'B2' (role 'a10', cardinality 0..*).
+'B' (role 'c2', cardinality 0..*) is associated with 'C' (role 'b3', cardinality 0..*).

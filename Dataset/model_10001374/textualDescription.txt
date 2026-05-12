@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'C1' has the following attributes: 'vv1' of type int.
+The class 'C2' has no attributes.

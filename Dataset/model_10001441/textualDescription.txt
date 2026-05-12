@@ -1,0 +1,37 @@
+The model has 19 class(es).
+The class 'Analyse2_Criteres' has the following attributes: 'amabilite' of type int; 'rapidite' of type int; 'respectHoraires' of type int; 'qualit_' of type int; 'rapportQualitePrix' of type int.
+The class 'Analyse2_Moderateurs' has no attributes.
+The class 'Controlleur_Actor' has no attributes.
+The class 'Analyse_Moderateurs' has no attributes.
+The class 'Analyse2_Utilisateur' has no attributes.
+The class 'Analyse2_Fast_Food' has the following attributes: 'Adresse' of type str; 'Ville' of type str; 'prixMax' of type int; 'reviews' of type str; 'siteDeCommande' of type str; 'description' of type str; 'nom' of type str; 'prixMin' of type int; 'nbPlaces' of type int; 'horaires' of type str; 'photos' of type str; 'numeroTel' of type str; 'proprietaire' of type str.
+The class 'Analyse_Fast_Food' has the following attributes: 'notes' of type str; 'prixMin' of type int; 'nom' of type str; 'Ville' of type str; 'numeroTel' of type str; 'Adresse' of type str; 'proprietaire' of type str; 'nbPlaces' of type int; 'photos' of type str; 'prixMax' of type int; 'horaires' of type str.
+The class 'Analyse_Review' has the following attributes: 'NoteGlobale' of type int; 'lesNotes' of type str; 'Commentaire' of type str.
+The class 'Pr_sentation' has the following attributes: 'adresse' of type str; 'ouverture' of type str; 'description' of type str; 'siteDeCommande' of type str; 'numTel' of type str.
+The class 'Photo' has no attributes.
+The class 'Analyse_Compte' has the following attributes: 'motdepasse' of type str; 'login' of type str.
+The class 'Analyse2_AvisGlobal' has the following attributes: 'Commentaires' of type str; 'notes' of type str; 'nbAvis' of type int.
+The class 'Analyse2_Review' has the following attributes: 'lesNotes' of type str; 'Commentaire' of type str; 'utilite' of type str.
+The class 'FicheRestaurant' has the following attributes: 'nom' of type str.
+The class 'Commentaire' has the following attributes: 'commentaire' of type str; 'auteur' of type Analyse_Compte.
+The class 'Analyse_Criteres' has the following attributes: 'qualit_' of type int; 'amabilite' of type int; 'rapidite' of type int; 'respectHoraires' of type int; 'rapportQualitePrix' of type int.
+The class 'AvisGlobal' has the following attributes: 'diagramme' of type str; 'Commentaires' of type str; 'nbAvis' of type int; 'note' of type str.
+The class 'Analyse2_Compte' has the following attributes: 'motdepasse' of type str; 'login' of type str.
+The class 'Analyse_Utilisateur' has no attributes.
+The enumeration 'Information' does not specify any literals.
+The enumeration 'IHM' does not specify any literals.
+'Analyse2_Compte' (role 'poss_de22', cardinality 0..*) is associated with 'Analyse2_Review' (role 'est__crite23', cardinality 0..*).
+'Analyse2_Utilisateur' (role 'poss_de21', cardinality 0..*) is associated with 'Analyse2_Compte' (role 'est_associ_20', cardinality 0..*).
+'FicheRestaurant' (role 'poss_de17', cardinality 0..*) is associated with 'Pr_sentation' (role 'repr_sente16', cardinality 0..*).
+'Analyse2_Criteres' (role 'sont_associ_s24', cardinality 0..*) is associated with 'Analyse2_Review' (role 'note25', cardinality 0..*).
+'Analyse2_Fast_Food' (role 'avisGlobal29', cardinality 0..*) is associated with 'Analyse2_AvisGlobal' (role 'fast_Food28', cardinality 0..*).
+'AvisGlobal' (role 'd_finit12', cardinality 0..*) is associated with 'FicheRestaurant' (role 'poss_de13', cardinality 0..*).
+'Analyse2_Review' (role 'caract_rise18', cardinality 0..*) is associated with 'Analyse2_Fast_Food' (role 'poss_de19', cardinality 0..*).
+'Analyse2_Compte' (role 'est_associ_27', cardinality 0..*) is associated with 'Analyse2_Moderateurs' (role 'poss_de26', cardinality 0..*).
+'FicheRestaurant' (role 'poss_de14', cardinality 0..*) is associated with 'Photo' (role 'repr_sente15', cardinality 0..*).
+'Analyse_Review' (role 'note7', cardinality 0..*) is associated with 'Analyse_Criteres' (role 'sont_associ_s6', cardinality 0..*).
+'Analyse_Compte' (role 'est_associ_2', cardinality 0..*) is associated with 'Analyse_Utilisateur' (role 'poss_de3', cardinality 0..*).
+'Analyse_Review' (role 'est__crite5', cardinality 0..*) is associated with 'Analyse_Compte' (role 'poss_de4', cardinality 0..*).
+'Analyse_Compte' (role 'est_associ_9', cardinality 0..*) is associated with 'Analyse_Moderateurs' (role 'poss_de8', cardinality 0..*).
+'Analyse_Fast_Food' (role 'poss_de1', cardinality 0..*) is associated with 'Analyse_Review' (role 'caract_rise0', cardinality 0..*).
+'AvisGlobal' (role 'commentaire11', cardinality 0..*) is associated with 'Commentaire' (role 'avisGlobal10', cardinality 0..*).

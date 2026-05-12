@@ -1,0 +1,29 @@
+The model has 18 class(es).
+The class 'account' has the following attributes: 'office' of type str; 'id' of type int; 'password' of type str; 'username' of type str.
+The class 'role' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'Role' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'Coordinator' has the following attributes: 'office' of type office.
+The class 'Person' has the following attributes: 'State' of type str; 'firstName' of type str; 'middleName' of type str; 'cellPhone' of type str; 'note' of type str; 'city' of type str; 'lastName' of type str; 'homePhone' of type str; 'DoB' of type date; 'email' of type str; 'address' of type str.
+The class 'hourlyPay' has the following attributes: 'employee' of type employee.
+The class 'office' has no attributes.
+The class 'employee' has the following attributes: 'Date_Started' of type date; 'workingHours' of type float; 'Department' of type Department; 'empid' of type str; 'Date_Hired' of type date; 'Date_Ended' of type date; 'ssn' of type str; 'Role' of type role.
+The class 'Employee_Management_System_Component' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Authentication_UseCase' has no attributes.
+The class 'Physician' has the following attributes: 'office' of type office.
+The class 'Login_external' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'Patient' has the following attributes: 'employee' of type Employee_Actor; 'patientid' of type str; 'ICD' of type str; 'approvedHours' of type float.
+The class 'Department' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'Salary_Management_UseCase' has no attributes.
+'Role' (role 'employee15', cardinality 0..*) is associated with 'employee' (role 'role14', cardinality 0..*).
+'Department' (role 'employee17', cardinality 0..*) is associated with 'employee' (role 'department16', cardinality 0..*).
+'Patient' (role 'account9', cardinality 0..*) is associated with 'account' (role 'patient8', cardinality 0..*).
+'account' (role 'employee7', cardinality 0..*) is associated with 'employee' (role 'account6', cardinality 0..*).
+'Person' (role 'physician10', cardinality 0..*) is associated with 'Physician' (role 'person11', cardinality 0..*).
+'Coordinator' (role 'person13', cardinality 0..*) is associated with 'Person' (role 'coordinator12', cardinality 0..*).
+'Employee_Actor' (role 'login0', cardinality 0..*) is associated with 'Login_external' (role 'employee1', cardinality 0..*).
+'Logout_external' (role 'employee3', cardinality 0..*) is associated with 'Employee_Actor' (role 'logout2', cardinality 0..*).
+'employee' (role 'hourlyPay19', cardinality 0..*) is associated with 'hourlyPay' (role 'employee18', cardinality 0..*).
+'Person' (role 'account4', cardinality 0..*) is associated with 'account' (role 'person5', cardinality 0..*).

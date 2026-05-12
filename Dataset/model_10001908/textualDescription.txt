@@ -1,0 +1,36 @@
+The model has 24 class(es).
+The class 'data_CustomerProfileRepository' has the following attributes: 'numAccounts' of type int; 'customerProfiles' of type str.
+The class 'model_SavingsAccount' has the following attributes: 'interestRate' of type float; 'type' of type str.
+The class 'model_Deposit' has no attributes.
+The class 'model_Bank' has the following attributes: 'address' of type str; 'customerMap' of type str; 'name' of type str.
+The class 'OnlineBanking_AppConfig' has no attributes.
+The class 'genmymodelreverse_C2' has no attributes.
+The class 'model_CheckingAccount' has the following attributes: 'interestRate' of type float; 'type' of type str.
+The class 'model_Account' has the following attributes: 'balance' of type float; 'type' of type str; 'customerId' of type int; 'accountNumber' of type int.
+The class 'model_MakePayment' has no attributes.
+The class 'model_AccountChain_Interface' has no attributes.
+The class 'model_AccountAction' has the following attributes: 'success' of type bool; 'amount' of type float; 'action' of type str.
+The class 'model_Loan' has the following attributes: 'minPayment' of type float; 'paymentDueDate' of type str; 'type' of type str; 'interestRate' of type float.
+The class 'model_Withdrawal' has no attributes.
+The class 'model_CloseAccount' has no attributes.
+The class 'TestAccountChain' has no attributes.
+The class 'model_AccountHandler' has no attributes.
+The class 'model_CreditAccount' has the following attributes: 'paymentDueDate' of type str; 'minPayment' of type float; 'type' of type str; 'interestRate' of type float.
+The class 'genmymodelreverse_org_springframework_ui_Model_Interface' has no attributes.
+The class 'genmymodelreverse_java_util_Date' has no attributes.
+The class 'model_Transaction' has the following attributes: 'date' of type genmymodelreverse_java_util_Date; 'ammount' of type float.
+The class 'genmymodelreverse_java_util_HashMap' has no attributes.
+The class 'model_OpenAccount' has no attributes.
+The class 'genmymodelreverse_C1' has no attributes.
+The class 'model_Customer' has the following attributes: 'name' of type str; 'accounts' of type str; 'password' of type str; 'id' of type int; 'address' of type str; 'username' of type str; 'dob' of type str.
+'model_Customer' (role 'bank12', cardinality 0..*) is associated with 'model_Bank' (role 'customer13', cardinality 0..*).
+'model_AccountChain_Interface' (role 'AccountChain_AccountChain_15', cardinality 0..*) is associated with 'model_AccountChain_Interface' (role 'successor4', cardinality 0..*).
+'model_AccountChain_Interface' (role 'withdrawal16', cardinality 0..*) is associated with 'model_Withdrawal' (role 'next17', cardinality 0..*).
+'model_Account' (role 'has1', cardinality 0..*) is associated with 'model_Customer' (role 'owns0', cardinality 0..*).
+'model_CloseAccount' (role 'next19', cardinality 0..*) is associated with 'model_AccountChain_Interface' (role 'closeaccount18', cardinality 0..*).
+'model_AccountAction' (role 'account7', cardinality 0..*) is associated with 'model_Account' (role 'accountAction6', cardinality 0..*).
+'model_Bank' (role 'accounts15', cardinality 0..*) is associated with 'model_Account' (role 'bank14', cardinality 0..*).
+'model_MakePayment' (role 'next11', cardinality 0..*) is associated with 'model_AccountChain_Interface' (role 'makepayment10', cardinality 0..*).
+'model_AccountChain_Interface' (role 'deposit20', cardinality 0..*) is associated with 'model_Deposit' (role 'next21', cardinality 0..*).
+'model_AccountChain_Interface' (role 'openaccount8', cardinality 0..*) is associated with 'model_OpenAccount' (role 'next9', cardinality 0..*).
+'model_AccountAction' (role 'customer3', cardinality 0..*) is associated with 'model_Customer' (role 'requests2', cardinality 0..*).

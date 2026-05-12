@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'zutaten' has the following attributes: 'zutatenListe' of type str.
+The class 'auftrag' has the following attributes: 'name' of type str; 'auftragsPlaetzchen' of type str; 'anzahl' of type str.
+The class 'backstrasse' has the following attributes: 'ofenlaenge' of type str; 'BLECHLAENGE' of type str; 'gestoppt' of type str; 'geschwindigkeit' of type str; 'temperatur' of type str; 'zutatenVorrat' of type str; 'eingabeAusgabe' of type str; 'backAuftrag' of type str; 'BLECHBREITE' of type str.
+The class 'plaetzchen' has the following attributes: 'temperatur' of type str; 'form' of type str; 'teig' of type str; 'laenge' of type str; 'belag' of type str; 'breite' of type str; 'backzeit' of type str.
+The class 'zutat' has the following attributes: 'menge' of type str; 'name' of type str; 'einheit' of type str.
+The class 'ea_helfer' has no attributes.
+'plaetzchen' (role 'auftrag3', cardinality 0..*) is associated with 'auftrag' (role 'plaetzchen22', cardinality 0..*).
+'zutat' (role 'backstrasse13', cardinality 0..*) is associated with 'backstrasse' (role 'zutat12', cardinality 0..*).
+'zutaten' (role 'plaetzchen9', cardinality 0..*) is associated with 'plaetzchen' (role 'teig28', cardinality 0..*).
+'zutaten' (role 'zutat10', cardinality 0..*) is associated with 'zutat' (role 'teig11', cardinality 0..*).
+'zutat' (role 'auftrag14', cardinality 0..*) is associated with 'auftrag' (role 'zutat15', cardinality 0..*).
+'ea_helfer' (role 'backstrasse7', cardinality 0..*) is associated with 'backstrasse' (role 'eaHelfer6', cardinality 0..*).
+'auftrag' (role 'backstrasse5', cardinality 0..*) is associated with 'backstrasse' (role 'auftrag24', cardinality 0..*).
+'zutat' (role 'plaetzchen1', cardinality 0..*) is associated with 'plaetzchen' (role 'zutat0', cardinality 0..*).

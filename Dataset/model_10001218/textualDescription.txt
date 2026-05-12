@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'Partido' has the following attributes: 'Ganador' of type str; 'Cod_partido' of type str; 'Hora' of type str; 'Cod_liga' of type str; 'Fecha' of type str; 'Visita' of type str; 'Local' of type str; 'GolVisita' of type str; 'GolLocal' of type str.
+The class 'Arbitro' has the following attributes: 'Cod_Arbitro' of type str; 'Partidos' of type str; 'Cod_persona' of type str.
+The class 'Evento' has the following attributes: 'Cod_jugador' of type str; 'Cod_partido' of type str; 'Cod_TipodeEvento' of type str.
+The class 'Estadio' has the following attributes: 'Ubicacion1' of type str; 'Nombre' of type str; 'Cod_Estadio' of type str; 'Capacidad' of type str; 'Ubicacion' of type str; 'Cod_equipo' of type str; 'Terreno' of type str.
+The class 'Equipo' has the following attributes: 'Nombre' of type str; 'Titulos' of type str; 'F_fundacion' of type str; 'Cod_Entrenador' of type str; 'Ciudad' of type str; 'Cod_equipo' of type str.
+The class 'Lesion' has the following attributes: 'Cod_jugador' of type str; 'Condicion' of type str; 'FechaLesion' of type str; 'TiempoLesion' of type str.
+The class 'Jugador' has the following attributes: 'Dorsal' of type str; 'Titulos' of type str; 'Posicion' of type str; 'Cod_persona' of type str; 'Cod_equipo' of type str; 'Altura' of type str; 'Peso' of type str; 'Cod_jugador' of type str.
+The class 'Clasificacion' has the following attributes: 'Cod_Equipo' of type str; 'Puntos' of type str; 'JE' of type str; 'JP' of type str; 'GF' of type str; 'JG' of type str; 'JJ' of type str; 'DG' of type str; 'GC' of type str; 'Posicion' of type str.
+The class 'Liga' has the following attributes: 'Nombre' of type str; 'Num_equipos' of type str; 'Inferior' of type str; 'Superior' of type str; 'Cod_liga' of type str; 'Cod_Clasificacion' of type str.
+The class 'TipoDeEvento' has the following attributes: 'Cod_TipodeEvento' of type str; 'Evento' of type str.
+The class 'Persona' has the following attributes: 'NombreCorto' of type str; 'Apellido' of type str; 'Nacionalidad' of type str; 'Cod_persona' of type str; 'Nombre' of type str; 'FechaNacimiento' of type str.
+The class 'Entrenador' has the following attributes: 'Cod_persona' of type str; 'Titulos' of type str; 'Cod_Entrenador' of type str.
+'Entrenador' (role 'equipo0', cardinality 0..*) is associated with 'Equipo' (role 'entrenador1', cardinality 0..*).
+'Jugador' (role 'equipo2', cardinality 0..*) is associated with 'Equipo' (role 'jugador3', cardinality 0..*).
+'Evento' (role 'tipoDeEvento15', cardinality 0..*) is associated with 'TipoDeEvento' (role 'evento14', cardinality 0..*).
+'Persona' (role 'jugador18', cardinality 0..*) is associated with 'Jugador' (role 'persona19', cardinality 0..*).
+'Partido' (role 'liga25', cardinality 0..*) is associated with 'Liga' (role 'partido24', cardinality 0..*).
+'Evento' (role 'partido12', cardinality 0..*) is associated with 'Partido' (role 'evento13', cardinality 0..*).
+'Arbitro' (role 'persona17', cardinality 0..*) is associated with 'Persona' (role 'arbitro16', cardinality 0..*).
+'Clasificacion' (role 'liga27', cardinality 0..*) is associated with 'Liga' (role 'clasificacion26', cardinality 0..*).
+'Partido' (role 'equipo6', cardinality 0..*) is associated with 'Equipo' (role 'partido7', cardinality 0..*).
+'Partido' (role 'equipo9', cardinality 0..*) is associated with 'Equipo' (role 'partido8', cardinality 0..*).
+'Jugador' (role 'evento10', cardinality 0..*) is associated with 'Evento' (role 'jugador11', cardinality 0..*).
+'Partido' (role 'estadio4', cardinality 0..*) is associated with 'Estadio' (role 'partido5', cardinality 0..*).
+'Entrenador' (role 'persona21', cardinality 0..*) is associated with 'Persona' (role 'entrenador20', cardinality 0..*).
+'Jugador' (role 'lesion22', cardinality 0..*) is associated with 'Lesion' (role 'jugador23', cardinality 0..*).

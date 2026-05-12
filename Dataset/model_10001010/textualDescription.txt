@@ -1,0 +1,13 @@
+The model has 10 class(es).
+The class 'Salary_Management_UseCase' has no attributes.
+The class 'Employee' has the following attributes: 'Emp_Name' of type str; 'Emp_Id' of type int; 'Emp_DOB' of type date; 'Emp_Date_Of_Joint' of type date; 'Emp_Position' of type str; 'Emp_Address' of type str.
+The class 'Administrator_Actor' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'Authenticate_staff' has the following attributes: 'Password' of type str; 'Authendication_Mood' of type str; 'UserName' of type str.
+The class 'Login' has the following attributes: 'UserName' of type str; 'Password' of type str.
+The class 'Login_external' has no attributes.
+The class 'Authentication_UseCase' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Employee_Management_System_Component' has no attributes.
+'Logout_external' (role 'employee3', cardinality 0..*) is associated with 'Employee_Actor' (role 'logout2', cardinality 0..*).
+'Employee_Actor' (role 'login0', cardinality 0..*) is associated with 'Login_external' (role 'employee1', cardinality 0..*).

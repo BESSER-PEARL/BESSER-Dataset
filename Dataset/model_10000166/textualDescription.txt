@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Bookings' has the following attributes: 'Date' of type date; 'CustomerName' of type str; 'BookingID' of type int; 'Time' of type date; 'Phone' of type str; 'People' of type int.
+The class 'Membership_Card' has the following attributes: 'ID' of type int; 'DiscountLVL' of type int.
+The class 'ViewOrder' has the following attributes: 'getUser' of type int.
+The class 'Menu' has the following attributes: 'MenuItem' of type str; 'Availability' of type int; 'Category' of type str; 'Price' of type float.
+The class 'Users' has the following attributes: 'UserID' of type int; 'UserName' of type str; 'UserLevel' of type int.
+The class 'Table' has the following attributes: 'Occupied' of type int; 'TableNo' of type int.
+The class 'OrderItem' has the following attributes: 'ItemName' of type str; 'RemaningTime' of type date; 'Completed' of type int; 'OrderID' of type int; 'OrderItemID' of type int.
+The class 'BookedTables' has the following attributes: 'TableNo' of type int; 'BookingID' of type int.
+The class 'Order' has the following attributes: 'UserID' of type int; 'Date' of type date; 'Total' of type float; 'DicountLvl' of type int; 'OrderID' of type int.
+'OrderItem' (role 'viewOrder9', cardinality 0..*) is associated with 'ViewOrder' (role 'orderItem8', cardinality 0..*).
+'Membership_Card' (role 'order0', cardinality 0..*) is associated with 'Order' (role 'membership_Card1', cardinality 0..*).
+'Order' (role 'users12', cardinality 0..*) is associated with 'Users' (role 'order13', cardinality 0..*).
+'Bookings' (role 'table5', cardinality 0..*) is associated with 'BookedTables' (role 'bookings4', cardinality 0..*).
+'Order' (role 'table2', cardinality 0..*) is associated with 'Table' (role 'order3', cardinality 0..*).
+'BookedTables' (role 'table14', cardinality 0..*) is associated with 'Table' (role 'bookedTables15', cardinality 0..*).
+'OrderItem' (role 'menu6', cardinality 0..*) is associated with 'Menu' (role 'orderItem7', cardinality 0..*).
+'Order' (role 'orderItem11', cardinality 0..*) is associated with 'OrderItem' (role 'order10', cardinality 0..*).

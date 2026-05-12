@@ -1,0 +1,163 @@
+The model has 109 class(es).
+The class 'Company_Actor' has no attributes.
+The class 'PrintLuggageBadge_UseCase' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'Employee_IEmployee_Interface' has no attributes.
+The class 'Taxes_Component' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'ChangeSeat_UseCase' has no attributes.
+The class 'Consomation_UseCase' has no attributes.
+The class 'AddASurbooking_UseCase' has no attributes.
+The class 'AddEmployee_external' has no attributes.
+The class 'Advertising_external' has no attributes.
+The class 'Employee_Pilot' has the following attributes: 'plane' of type FlightSystem_Plane; 'airport' of type Company_Airport.
+The class 'OnlineBuy_UseCase' has no attributes.
+The class 'Promotion_System_external' has no attributes.
+The class 'CheckConsomationCatalogue_UseCase' has no attributes.
+The class 'PassengerCheckIn_UseCase' has no attributes.
+The class 'Promotion_UseCase' has no attributes.
+The class 'Plane_Actor' has no attributes.
+The class 'ProviderSystem_Provider' has the following attributes: 'name' of type str; 'pricePerUnit' of type int.
+The class 'CheckSeat_UseCase' has no attributes.
+The class 'Customer_Actor1' has no attributes.
+The class 'Refuel_UseCase' has no attributes.
+The class 'Luggage_Checkin_UseCase' has no attributes.
+The class 'Send_Luggage_To_Loading_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Distribute_UseCase1' has no attributes.
+The class 'CheckInForFlight_UseCase' has no attributes.
+The class 'CheckInformations_UseCase' has no attributes.
+The class 'Steward_Actor' has no attributes.
+The class 'SellConsomation_UseCase' has no attributes.
+The class 'Marketting_Component' has no attributes.
+The class 'Company_Actor1' has no attributes.
+The class 'Consult_Luggage_Ticket_Infos_UseCase' has no attributes.
+The class 'AddABagage_UseCase' has no attributes.
+The class 'Surbooking_UseCase' has no attributes.
+The class 'DeleteEmployee_external' has no attributes.
+The class 'SetTaxes_external' has no attributes.
+The class 'UI_EmployeePlanning_Component' has no attributes.
+The class 'ByName_UseCase' has no attributes.
+The class 'PlanningCheck_external' has no attributes.
+The class 'Seller_Actor' has no attributes.
+The class 'CheckReportInFolder_UseCase' has no attributes.
+The class 'CloseCheckIn_UseCase' has no attributes.
+The class 'CheckPlanning_external' has no attributes.
+The class 'AirportAdministration_Actor1' has no attributes.
+The class 'ProcessWaitingList_UseCase' has no attributes.
+The class 'Company_Airport' has the following attributes: 'ticketCharges' of type int; 'endSchedule' of type int; 'beginSchedule' of type int; 'ticketPrice' of type int; 'city' of type str.
+The class 'SearchEmployee_external' has no attributes.
+The class 'Service_UseCase' has no attributes.
+The class 'Intervention_UseCase' has no attributes.
+The class 'Charges_UseCase' has no attributes.
+The class 'ProviderSystem_Consomation' has the following attributes: 'pricePerUnit' of type int; 'name' of type str.
+The class 'DistributionSystem_BoardingPass' has the following attributes: 'flight' of type str; 'dateOfPurchase' of type date; 'row' of type int; 'isValidated' of type bool; 'price' of type int; 'seat' of type int.
+The class 'Distribute_UseCase' has no attributes.
+The class 'CheckConsomationStock_UseCase' has no attributes.
+The class 'TicketsAveragePrice_UseCase' has no attributes.
+The class 'Controller_FlightEvent' has the following attributes: '_dateBegin' of type date; '_title' of type str; '_dateEnd' of type date; 'flight' of type FlightSystem_Flight.
+The class 'Reparation_UseCase' has no attributes.
+The class 'Revision_UseCase' has no attributes.
+The class 'FlightSystem_Plane' has the following attributes: '_flySinceRefuel' of type int; '_location' of type Company_Airport; 'nbPilote' of type int; '_crew' of type Employee_IEmployee_Interface; '_state' of type PlaneState; 'seatPerRow' of type int; 'nbSteward' of type int; 'row' of type int; '_millesFlyed' of type int; '_seat' of type int; '_millesSinceRevisionned' of type int.
+The class 'EditEmployee_external' has no attributes.
+The class 'Print_Luggage_Ticket_UseCase' has no attributes.
+The class 'Resources_UseCase' has no attributes.
+The class 'Immobilisation_UseCase' has no attributes.
+The class 'UI_FlightPlanning_Component' has no attributes.
+The class 'Admin_Actor1' has no attributes.
+The class 'ByBookingNumber_UseCase' has no attributes.
+The class 'Add_A_Luggage_UseCase' has no attributes.
+The class 'Customer_Actor2' has no attributes.
+The class 'DistributionSystem_Customer' has the following attributes: '_milesFlyed' of type int; 'name' of type str; 'Luggage' of type str.
+The class 'TicketsPrice_UseCase' has no attributes.
+The class 'StartBoarding_UseCase' has no attributes.
+The class 'CleaningService_UseCase' has no attributes.
+The class 'ProviderSystem_Fuel' has the following attributes: 'date' of type date; 'plane' of type FlightSystem_Plane; '_price' of type int; 'volme' of type int.
+The class 'UI_EmployeeManager_Component' has no attributes.
+The class 'AsksForFreeFlight_UseCase' has no attributes.
+The class 'ChooseProvider_UseCase' has no attributes.
+The class 'EditFlight_external' has no attributes.
+The class 'GenerateReport_UseCase' has no attributes.
+The class 'BuyConsomation_UseCase' has no attributes.
+The class 'Fuel_UseCase' has no attributes.
+The class 'CheckAvailability_UseCase' has no attributes.
+The class 'SetDestinationPrice_external' has no attributes.
+The class 'LuggageCheckIn_UseCase' has no attributes.
+The class 'CancelFlight_external' has no attributes.
+The class 'DistributionSystem_TicketDistributor' has the following attributes: 'payment' of type TicketPayment; 'from' of type TicketBuyType.
+The class 'CreateFlight_external' has no attributes.
+The class 'PassengerIdentification_UseCase' has no attributes.
+The class 'Flights_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'AirportAdministration_Actor2' has no attributes.
+The class 'Employee_AirportEmployee' has the following attributes: 'airport' of type Company_Airport.
+The class 'ProviderSystem_ConsomationStock' has the following attributes: '_capacity' of type int.
+The class 'CheckEligibility__FreeMiles__UseCase' has no attributes.
+The class 'Employee_Actor1' has no attributes.
+The class 'Customers_UseCase' has no attributes.
+The class 'AirportAdministration_Actor' has no attributes.
+The class 'Employee_Actor2' has no attributes.
+The class 'Company_Company' has the following attributes: 'pilots' of type Employee_Pilot; 'name' of type str; 'airportEmployees' of type Employee_AirportEmployee; 'stewards' of type Employee_Steward.
+The class 'Employee_Steward' has the following attributes: 'plane' of type FlightSystem_Plane; 'airport' of type Company_Airport.
+The class 'User_Actor1' has no attributes.
+The class 'UI_FlightManager_Component' has no attributes.
+The class 'RegisterToWaitingList_UseCase' has no attributes.
+The class 'DistributionSystem_Ticket' has the following attributes: 'from' of type TicketBuyType; 'payment' of type TicketPayment; '_numberPlace' of type int; '_price' of type int; 'isRegistered' of type bool.
+The class 'WaitingList_UseCase' has no attributes.
+The class 'FlightSystem_Flight' has the following attributes: '_miles' of type int; '_duration' of type int; 'flightType' of type FlightType; 'schedule' of type date; 'airportTo' of type Company_Airport; 'airportFrom' of type Company_Airport.
+The class 'EditPlanning_external' has no attributes.
+The class 'Employee_Employee' has the following attributes: 'dayByWeek' of type int; 'JobType' of type EmployeeType; 'name' of type str; 'gender' of type GenderType; 'isSuperUser' of type bool.
+The class 'FillConsomationStock_UseCase' has no attributes.
+The enumeration 'ProviderType' does not specify any literals.
+The enumeration 'ReportType' does not specify any literals.
+The enumeration 'TicketBuyType' does not specify any literals.
+The enumeration 'FlightType' does not specify any literals.
+The enumeration 'TicketPayment' does not specify any literals.
+The enumeration 'GenderType' does not specify any literals.
+The enumeration 'PlaneState' does not specify any literals.
+The enumeration 'EmployeeType' does not specify any literals.
+'ChooseProvider_UseCase' (role 'airport67', cardinality 0..*) is associated with 'AirportAdministration_Actor' (role 'chooseProvider66', cardinality 0..*).
+'SellConsomation_UseCase' (role 'steward59', cardinality 0..*) is associated with 'Steward_Actor' (role 'sellConsomation58', cardinality 0..*).
+'CheckReportInFolder_UseCase' (role 'airport79', cardinality 0..*) is associated with 'AirportAdministration_Actor2' (role 'checkReportInFolder78', cardinality 0..*).
+'SetTaxes_external' (role 'airport73', cardinality 0..*) is associated with 'AirportAdministration_Actor1' (role 'setTaxes72', cardinality 0..*).
+'PassengerCheckIn_UseCase' (role 'employee53', cardinality 0..*) is associated with 'Employee_Actor1' (role 'passengerCheckIn52', cardinality 0..*).
+'DistributionSystem_Ticket' (role 'boardingPass10', cardinality 0..*) is associated with 'DistributionSystem_BoardingPass' (role 'ticket11', cardinality 0..*).
+'Company_Company' (role 'ticketDistributor18', cardinality 0..*) is associated with 'DistributionSystem_TicketDistributor' (role 'company19', cardinality 0..*).
+'ProviderSystem_Consomation' (role 'consomationProvider89', cardinality 0..*) is associated with 'ProviderSystem_Provider' (role 'consomation88', cardinality 0..*).
+'Admin_Actor' (role 'createFlight24', cardinality 0..*) is associated with 'CreateFlight_external' (role 'bob25', cardinality 0..*).
+'SearchEmployee_external' (role 'user41', cardinality 0..*) is associated with 'Employee_Actor' (role 'searchEmployee40', cardinality 0..*).
+'Seller_Actor' (role 'customer43', cardinality 0..*) is associated with 'Customer_Actor' (role 'seller42', cardinality 0..*).
+'Company_Actor' (role 'promotion_System74', cardinality 0..*) is associated with 'Promotion_System_external' (role 'company75', cardinality 0..*).
+'FlightSystem_Plane' (role 'flight0', cardinality 0..*) is associated with 'FlightSystem_Flight' (role 'plane1', cardinality 0..*).
+'EditFlight_external' (role 'bob27', cardinality 0..*) is associated with 'Admin_Actor' (role 'editFlight26', cardinality 0..*).
+'CleaningService_UseCase' (role 'plane65', cardinality 0..*) is associated with 'Plane_Actor' (role 'cleaning___services64', cardinality 0..*).
+'SetDestinationPrice_external' (role 'company71', cardinality 0..*) is associated with 'Company_Actor' (role 'setDestinationPrice70', cardinality 0..*).
+'Employee_Actor' (role 'planningCheck38', cardinality 0..*) is associated with 'PlanningCheck_external' (role 'user39', cardinality 0..*).
+'FlightSystem_Flight' (role 'ticket17', cardinality 0..*) is associated with 'DistributionSystem_Ticket' (role 'flight16', cardinality 0..*).
+'Customer_Actor1' (role 'checkConsomationCatalogue56', cardinality 0..*) is associated with 'CheckConsomationCatalogue_UseCase' (role 'customer57', cardinality 0..*).
+'BuyConsomation_UseCase' (role 'customer55', cardinality 0..*) is associated with 'Customer_Actor1' (role 'buyConsomation54', cardinality 0..*).
+'ProviderSystem_Provider' (role 'fuel12', cardinality 0..*) is associated with 'ProviderSystem_Fuel' (role 'fuelProvider13', cardinality 0..*).
+'Luggage_Checkin_UseCase' (role 'employee84', cardinality 0..*) is associated with 'Employee_Actor2' (role 'luggage_Checkin85', cardinality 0..*).
+'Employee_IEmployee_Interface' (role 'company5', cardinality 0..*) is associated with 'Company_Company' (role 'IEmployee4', cardinality 0..*).
+'Distribute_UseCase' (role 'onlineBuy49', cardinality 0..*) is associated with 'OnlineBuy_UseCase' (role 'buyThing48', cardinality 0..*).
+'FlightSystem_Flight' (role 'company7', cardinality 0..*) is associated with 'Company_Company' (role 'flight6', cardinality 0..*).
+'FlightSystem_Plane' (role 'consomationStock22', cardinality 0..*) is associated with 'ProviderSystem_ConsomationStock' (role 'plane23', cardinality 0..*).
+'GenerateReport_UseCase' (role 'airport81', cardinality 0..*) is associated with 'AirportAdministration_Actor2' (role 'generateReport80', cardinality 0..*).
+'Customer_Actor2' (role 'asksForFreeFlight82', cardinality 0..*) is associated with 'AsksForFreeFlight_UseCase' (role 'customer83', cardinality 0..*).
+'Company_Actor' (role 'advertising76', cardinality 0..*) is associated with 'Advertising_external' (role 'company77', cardinality 0..*).
+'DistributionSystem_BoardingPass' (role 'customer9', cardinality 0..*) is associated with 'DistributionSystem_Customer' (role 'boardingPass8', cardinality 0..*).
+'Company_Company' (role 'plane2', cardinality 0..*) is associated with 'FlightSystem_Plane' (role 'company3', cardinality 0..*).
+'OnlineBuy_UseCase' (role 'customer45', cardinality 0..*) is associated with 'Customer_Actor' (role 'onlineBuy44', cardinality 0..*).
+'EditPlanning_external' (role 'bob51', cardinality 0..*) is associated with 'Admin_Actor1' (role 'editPlanning50', cardinality 0..*).
+'Admin_Actor1' (role 'addEmployee32', cardinality 0..*) is associated with 'AddEmployee_external' (role 'bob33', cardinality 0..*).
+'Company_Airport' (role 'company14', cardinality 0..*) is associated with 'Company_Company' (role 'airport15', cardinality 0..*).
+'Intervention_UseCase' (role 'plane63', cardinality 0..*) is associated with 'Plane_Actor' (role 'intervention62', cardinality 0..*).
+'ProviderSystem_Consomation' (role 'consomationStock87', cardinality 0..*) is associated with 'ProviderSystem_ConsomationStock' (role 'consomation86', cardinality 0..*).
+'FillConsomationStock_UseCase' (role 'airport69', cardinality 0..*) is associated with 'AirportAdministration_Actor' (role 'fillConsomationStock68', cardinality 0..*).
+'Company_Airport' (role 'provider20', cardinality 0..*) is associated with 'ProviderSystem_Provider' (role 'airport21', cardinality 0..*).
+'Admin_Actor' (role 'cancelFlight28', cardinality 0..*) is associated with 'CancelFlight_external' (role 'bob29', cardinality 0..*).
+'Admin_Actor1' (role 'deleteEmployee36', cardinality 0..*) is associated with 'DeleteEmployee_external' (role 'bob37', cardinality 0..*).
+'Steward_Actor' (role 'checkConsomationStock60', cardinality 0..*) is associated with 'CheckConsomationStock_UseCase' (role 'steward61', cardinality 0..*).
+'Admin_Actor1' (role 'editEmployee34', cardinality 0..*) is associated with 'EditEmployee_external' (role 'bob35', cardinality 0..*).
+'CheckPlanning_external' (role 'user31', cardinality 0..*) is associated with 'User_Actor1' (role 'checkPlanning30', cardinality 0..*).
+'Distribute_UseCase' (role 'seller47', cardinality 0..*) is associated with 'Seller_Actor' (role 'buyThing46', cardinality 0..*).

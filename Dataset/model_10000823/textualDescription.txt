@@ -1,0 +1,71 @@
+The model has 45 class(es).
+The class 'Review_collaborators__Expense_refunds_external' has no attributes.
+The class 'My_Expenses_general_use_case_diagram_Component' has no attributes.
+The class 'Comment' has the following attributes: 'user_id' of type str; 'text' of type str; 'id' of type str.
+The class 'Consult_collaborators__Expenses_Component' has no attributes.
+The class 'Manage_attached_files_UseCase' has no attributes.
+The class 'Expense' has the following attributes: 'project_id' of type str; 'mission_id' of type str; 'id' of type str; 'user_id' of type str; 'manager_id' of type str.
+The class 'Collaborator_Actor1' has no attributes.
+The class 'Update_an_Expense_external' has no attributes.
+The class 'Sales_Agent_Actor' has no attributes.
+The class 'Manage_Expense_currency_external' has no attributes.
+The class 'Consult_an_attched_file_UseCase' has no attributes.
+The class 'Upload_a_file_UseCase' has no attributes.
+The class 'Refuse_collaborators__Expense_refunds_external' has no attributes.
+The class 'Authenticate_UseCase' has no attributes.
+The class 'Manage_Expenses_Component' has no attributes.
+The class 'Manager_Actor3' has no attributes.
+The class 'Validate_collaborators__Expense_refunds_external' has no attributes.
+The class 'Manage_Expenses__settings_external' has no attributes.
+The class 'Delete_an_attached_file_UseCase' has no attributes.
+The class 'Refund_Expenses_external' has no attributes.
+The class 'Manage_Expenses_external' has no attributes.
+The class 'Bill' has the following attributes: 'date' of type str; 'attachment_id' of type str; 'payment_method' of type PaymentMethod; 'status' of type ExpenseStatus; 'distance' of type str; 'sum' of type str; 'id' of type str.
+The class 'Delete_an_Expense_external' has no attributes.
+The class 'Manager_Actor1' has no attributes.
+The class 'Verify_collaborators__Expenses_external' has no attributes.
+The class 'Super_Administrator_Actor' has no attributes.
+The class 'ExpenseType' has the following attributes: 'id' of type str; 'name' of type str; 'price' of type str.
+The class 'Send_an_Expense_to_verification_external' has no attributes.
+The class 'Consult_Expense_external' has no attributes.
+The class 'Manager_Actor' has no attributes.
+The class 'Search_Expenses_external' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'Download_an_attached_file_UseCase' has no attributes.
+The class 'Office_Manager_Actor' has no attributes.
+The class 'Collaborator_Actor' has no attributes.
+The class 'Sales_agent_Actor' has no attributes.
+The class 'Filter_Expenses_external' has no attributes.
+The class 'Currency1' has the following attributes: 'name' of type str; 'id' of type str; 'abr' of type str.
+The class 'Create_an_Expense_external' has no attributes.
+The class 'Manage_Expenses__settings_Component' has no attributes.
+The class 'Consult_collaborators__Expenses_external' has no attributes.
+The class 'Review_collaborators__Expense_refunds_Component' has no attributes.
+The class 'Manage_Expense_types_external' has no attributes.
+The class 'Office_Manager_Actor1' has no attributes.
+The class 'Manager_Actor2' has no attributes.
+The enumeration 'PaymentMethod' does not specify any literals.
+The enumeration 'Currency' does not specify any literals.
+The enumeration 'ExpenseStatus' does not specify any literals.
+'Send_an_Expense_to_verification_external' (role 'collaborator17', cardinality 0..*) is associated with 'Collaborator_Actor1' (role 'send_an_Expense_Report_to_verification16', cardinality 0..*).
+'ExpenseType' (role 'ExpenseType_Bill_038', cardinality 0..*) is associated with 'Bill' (role 'ExpenseType_Bill_139', cardinality 0..*).
+'Collaborator_Actor1' (role 'manage_attached_files34', cardinality 0..*) is associated with 'Manage_attached_files_UseCase' (role 'collaborator35', cardinality 0..*).
+'Manager_Actor3' (role 'refuse_collaborators__Expense_refunds32', cardinality 0..*) is associated with 'Manage_Expense_currency_external' (role 'manager33', cardinality 0..*).
+'Sales_Agent_Actor' (role 'filter_Expenses24', cardinality 0..*) is associated with 'Filter_Expenses_external' (role 'sales_Agent25', cardinality 0..*).
+'Review_collaborators__Expense_refunds_external' (role 'manager5', cardinality 0..*) is associated with 'Manager_Actor' (role 'review_collaborators__Expense_reports4', cardinality 0..*).
+'Refuse_collaborators__Expense_refunds_external' (role 'manager29', cardinality 0..*) is associated with 'Manager_Actor2' (role 'refuse_collaborators__Expense_refunds28', cardinality 0..*).
+'Bill' (role 'Currency_Expense_141', cardinality 0..*) is associated with 'Currency1' (role 'Currency_Expense_040', cardinality 0..*).
+'Manage_Expense_types_external' (role 'manager31', cardinality 0..*) is associated with 'Manager_Actor3' (role 'validate_collaborators__Expense_refunds30', cardinality 0..*).
+'Create_an_Expense_external' (role 'collaborator13', cardinality 0..*) is associated with 'Collaborator_Actor1' (role 'create_an_Expense_Report12', cardinality 0..*).
+'Sales_Agent_Actor' (role 'search_Expenses22', cardinality 0..*) is associated with 'Search_Expenses_external' (role 'sales_Agent23', cardinality 0..*).
+'Administrator_Actor' (role 'manage_Expense_report_settings8', cardinality 0..*) is associated with 'Manage_Expenses__settings_external' (role 'administrator9', cardinality 0..*).
+'Collaborator_Actor' (role 'manage_Expense_Report0', cardinality 0..*) is associated with 'Manage_Expenses_external' (role 'collaborator1', cardinality 0..*).
+'Collaborator_Actor1' (role 'view_an_Expense_Report20', cardinality 0..*) is associated with 'Consult_Expense_external' (role 'collaborator21', cardinality 0..*).
+'Verify_collaborators__Expenses_external' (role 'office_Manager11', cardinality 0..*) is associated with 'Office_Manager_Actor' (role 'verify_collaborators__Expense_reports10', cardinality 0..*).
+'Update_an_Expense_external' (role 'collaborator15', cardinality 0..*) is associated with 'Collaborator_Actor1' (role 'update_an_Expense_Report14', cardinality 0..*).
+'Comment' (role 'Expense_Comment_143', cardinality 0..*) is associated with 'Expense' (role 'Expense_Comment_042', cardinality 0..*).
+'Manager_Actor2' (role 'validate_collaborators__Expense_refunds26', cardinality 0..*) is associated with 'Validate_collaborators__Expense_refunds_external' (role 'manager27', cardinality 0..*).
+'Sales_agent_Actor' (role 'consult_collaborators__Expense_reports2', cardinality 0..*) is associated with 'Consult_collaborators__Expenses_external' (role 'sales_agent3', cardinality 0..*).
+'Delete_an_Expense_external' (role 'collaborator19', cardinality 0..*) is associated with 'Collaborator_Actor1' (role 'delete_an_Expense_Report18', cardinality 0..*).
+'Office_Manager_Actor' (role 'manage_refunds6', cardinality 0..*) is associated with 'Refund_Expenses_external' (role 'office_Manager7', cardinality 0..*).
+'Expense' (role 'Expense_Bill_036', cardinality 0..*) is associated with 'Bill' (role 'Expense_Bill_137', cardinality 0..*).

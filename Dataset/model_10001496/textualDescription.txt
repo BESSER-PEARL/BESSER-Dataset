@@ -1,0 +1,48 @@
+The model has 29 class(es).
+The class 'Person' has the following attributes: 'Telefonnummer' of type int; 'Name1' of type str; 'E_mail' of type str; 'Name' of type str.
+The class 'Fahrkarte_kaufen_Component' has no attributes.
+The class 'Servicetechniker_Actor' has no attributes.
+The class 'Automat_Actor' has no attributes.
+The class 'Wohnadresse' has the following attributes: 'Strasse' of type str; 'PLZ' of type int; 'Land' of type str; 'Stadt' of type str.
+The class 'Hilfe_rufen_external' has no attributes.
+The class 'Herr_Maier_Actor' has no attributes.
+The class 'Abbrechen_external' has no attributes.
+The class 'Kinokarten_kaufen_external' has no attributes.
+The class 'Professor' has the following attributes: 'attribute2' of type str; 'Lohn' of type int.
+The class 'Wartung_external' has no attributes.
+The class '_2_Stunden_Ticket_kaufen_external' has no attributes.
+The class 'Herr_M_ller_Actor' has no attributes.
+The class 'angestellt_in_der_Verwaltung_external' has no attributes.
+The class 'Schwimmbad_Eintritt_Component' has no attributes.
+The class 'Kunde_Actor' has no attributes.
+The class 'Tagesticket_kaufen_external' has no attributes.
+The class 'Gast_Actor' has no attributes.
+The class 'Auswahl_der_Fahrkartenkategorie_external' has no attributes.
+The class 'Name_Interface' has no attributes.
+The class 'Mitarbeiter_verwalten_external' has no attributes.
+The class 'Kino_besuch_Component' has no attributes.
+The class 'Automat_Actor1' has no attributes.
+The class 'Student' has the following attributes: 'Durchschnittsnote' of type int; 'Martikelnummer' of type int.
+The class '_Interface' has no attributes.
+The class 'Patienten_aufnehmen_entlassen_external' has no attributes.
+The class 'Wechselgeldbeh_lter_leeren_UseCase' has no attributes.
+The class 'Gast_Actor1' has no attributes.
+The class 'Krankenhaus_System_Component' has no attributes.
+'Automat_Actor' (role 'tagesticket_kaufen6', cardinality 0..*) is associated with 'Tagesticket_kaufen_external' (role 'automat7', cardinality 0..*).
+'Automat_Actor1' (role 'abbruchtaste_wird_gedr_ckt22', cardinality 0..*) is associated with 'Abbrechen_external' (role 'automat23', cardinality 0..*).
+'Automat_Actor' (role '_2_Stunden_Ticket_kaufen2', cardinality 0..*) is associated with '_2_Stunden_Ticket_kaufen_external' (role 'automat3', cardinality 0..*).
+'Gast_Actor' (role 'tagesticket_kaufen4', cardinality 0..*) is associated with 'Tagesticket_kaufen_external' (role 'gast5', cardinality 0..*).
+'Person' (role 'wohnadresse35', cardinality 0..*) is associated with 'Wohnadresse' (role 'person34', cardinality 0..*).
+'Patienten_aufnehmen_entlassen_external' (role 'herr_M_ller19', cardinality 0..*) is associated with 'Herr_M_ller_Actor' (role 'patienten_aufnehmen_entlassen18', cardinality 0..*).
+'Servicetechniker_Actor' (role 'hilfe_rufen28', cardinality 0..*) is associated with 'Hilfe_rufen_external' (role 'servicetechniker29', cardinality 0..*).
+'angestellt_in_der_Verwaltung_external' (role 'herr_Maier11', cardinality 0..*) is associated with 'Herr_Maier_Actor' (role 'angestellt_in_der_Verwaltung10', cardinality 0..*).
+'Kunde_Actor' (role 'auswahl_der_Fahrkartenkategorie20', cardinality 0..*) is associated with 'Auswahl_der_Fahrkartenkategorie_external' (role 'kunde21', cardinality 0..*).
+'Servicetechniker_Actor' (role 'auswahl_der_Fahrkartenkategorie30', cardinality 0..*) is associated with 'Auswahl_der_Fahrkartenkategorie_external' (role 'servicetechniker31', cardinality 0..*).
+'Gast_Actor' (role '_2_Stunden_Ticket_kaufen0', cardinality 0..*) is associated with '_2_Stunden_Ticket_kaufen_external' (role 'gast1', cardinality 0..*).
+'Servicetechniker_Actor' (role 'kunde32', cardinality 0..*) is associated with 'Kunde_Actor' (role 'servicetechniker33', cardinality 0..*).
+'Wartung_external' (role 'servicetechniker27', cardinality 0..*) is associated with 'Servicetechniker_Actor' (role 'wartung26', cardinality 0..*).
+'Hilfe_rufen_external' (role 'kunde25', cardinality 0..*) is associated with 'Kunde_Actor' (role 'hilfe_rufen24', cardinality 0..*).
+'Herr_Maier_Actor' (role 'patienten_aufnehmen_entlassen16', cardinality 0..*) is associated with 'Patienten_aufnehmen_entlassen_external' (role 'herr_Maier17', cardinality 0..*).
+'Herr_M_ller_Actor' (role 'mitarbeiter_verwalten14', cardinality 0..*) is associated with 'Mitarbeiter_verwalten_external' (role 'herr_M_ller15', cardinality 0..*).
+'Herr_M_ller_Actor' (role 'angestellt_in_der_Verwaltung12', cardinality 0..*) is associated with 'angestellt_in_der_Verwaltung_external' (role 'herr_M_ller13', cardinality 0..*).
+'Kinokarten_kaufen_external' (role 'gast9', cardinality 0..*) is associated with 'Gast_Actor1' (role 'kinokarten_kaufen8', cardinality 0..*).

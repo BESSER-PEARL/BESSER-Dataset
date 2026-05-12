@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Administrator' has the following attributes: 'admin_name' of type str; 'password' of type str.
+The class 'owner' has no attributes.
+The class 'customer' has no attributes.
+The class 'Property' has the following attributes: 'size' of type str; 'property_type' of type str; 'property_id' of type str; 'location' of type str; 'address' of type str; 'Available' of type bool.
+The class 'User' has the following attributes: 'Address' of type str; 'password' of type str; 'Id' of type int; 'email' of type str; 'phone' of type int.
+The class 'operation_or_contract' has the following attributes: 'operation_id' of type int; 'customer_id' of type str; 'owner_id' of type str; 'Property_id' of type int; 'operation_type' of type str.
+'Property' (role 'operation_or_contract9', cardinality 0..*) is associated with 'operation_or_contract' (role 'property8', cardinality 0..*).
+'Property' (role 'customer7', cardinality 0..*) is associated with 'customer' (role 'property6', cardinality 0..*).
+'owner' (role 'property3', cardinality 0..*) is associated with 'Property' (role 'owner2', cardinality 0..*).
+'operation_or_contract' (role 'owner5', cardinality 0..*) is associated with 'owner' (role 'operation_or_contract4', cardinality 0..*).
+'User' (role 'administrator0', cardinality 0..*) is associated with 'Administrator' (role 'employee1', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 11 class(es).
+The class 'Prescription' has the following attributes: 'medicines' of type str; 'tests' of type str.
+The class 'BloodBank' has the following attributes: 'bloodGroup' of type str; 'phone' of type str.
+The class 'Doctor' has the following attributes: 'timing' of type str; 'name' of type str; 'privateConsultancy' of type bool; 'specilization' of type str.
+The class 'DoctorDatabase' has the following attributes: 'doctorName' of type str; 'Specialization' of type str.
+The class 'Hospital' has the following attributes: 'phone' of type int; 'address' of type str; 'name' of type str.
+The class 'Patients' has the following attributes: 'BP' of type int; 'weight' of type int; 'name' of type str; 'History' of type str; 'Symptoms' of type str.
+The class 'Appointment' has the following attributes: 'Patient' of type str; 'Doctor' of type str; 'Time' of type str.
+The class 'PatientProfile' has the following attributes: 'name' of type str; 'appointment' of type str.
+The class 'Receptionist' has the following attributes: 'CNIC' of type str; 'name' of type str.
+The class 'Assistant' has the following attributes: 'CNIC' of type str; 'name' of type str.
+The class 'Billing_Report' has the following attributes: 'testCharges' of type str; 'serviceCharges' of type str.
+'Patients' (role 'record_history20', cardinality 0..*) is associated with 'Assistant' (role 'Patients_Assistant_121', cardinality 0..*).
+'Receptionist' (role 'generate26', cardinality 0..*) is associated with 'Billing_Report' (role 'Receptionist_Billing_Report_127', cardinality 0..*).
+'Patients' (role 'Visit6', cardinality 0..*) is associated with 'Hospital' (role 'Patients_Hospital_17', cardinality 0..*).
+'Receptionist' (role 'Receptionist_DoctorDatabase_012', cardinality 0..*) is associated with 'DoctorDatabase' (role 'check13', cardinality 0..*).
+'Doctor' (role 'forward_patient_history22', cardinality 0..*) is associated with 'Assistant' (role 'Doctor_Assistant_123', cardinality 0..*).
+'BloodBank' (role 'Hospital_BloodBank_125', cardinality 0..*) is associated with 'Hospital' (role 'has24', cardinality 0..*).
+'Doctor' (role 'Doctor_Prescription_018', cardinality 0..*) is associated with 'Prescription' (role 'writes19', cardinality 0..*).
+'Appointment' (role 'Receptionist_Appointment_19', cardinality 0..*) is associated with 'Receptionist' (role 'give8', cardinality 0..*).
+'Patients' (role 'calls_query4', cardinality 0..*) is associated with 'Receptionist' (role 'Patients_Receptionist_15', cardinality 0..*).
+'PatientProfile' (role 'Receptionist_PatientProfile_115', cardinality 0..*) is associated with 'Receptionist' (role 'create_update14', cardinality 0..*).
+'Doctor' (role 'Hospital_Doctor_11', cardinality 0..*) is associated with 'Hospital' (role 'has0', cardinality 0..*).
+'Appointment' (role 'requests11', cardinality 0..*) is associated with 'Patients' (role 'Patients_Appointment_010', cardinality 0..*).
+'Appointment' (role 'check_details17', cardinality 0..*) is associated with 'Assistant' (role 'Assistant_Appointment_016', cardinality 0..*).
+'Patients' (role 'Checks_up3', cardinality 0..*) is associated with 'Doctor' (role 'Doctor_Patients_02', cardinality 0..*).

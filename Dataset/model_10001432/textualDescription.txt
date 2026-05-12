@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'Administrasi' has the following attributes: 'NoPesan' of type int; 'IdPelanggan' of type int; 'Bayar' of type str; 'IdAdmin' of type int; 'Kembali' of type str; 'HargaSewa' of type str.
+The class 'Kendaraan' has the following attributes: 'Warna' of type str; 'TahunPembuatan' of type str; 'NoMesin' of type str; 'NoRangka' of type str; 'Merk' of type str; 'NoPolisi' of type str.
+The class 'Pesan' has the following attributes: 'NoPesan' of type int; 'TanggalRental' of type str; 'TanggalKembali' of type str; 'IdPelanggan' of type int.
+The class 'Login' has the following attributes: 'Password' of type str; 'Username' of type str.
+The class 'Admin' has the following attributes: 'Password' of type str; 'Username' of type str.
+The class 'Pelanggan' has the following attributes: 'Pekerjaan' of type str; 'Username' of type str; 'NoKTP' of type str; 'IdPelanggan' of type int; 'JenisKelamin' of type str; 'Alamat' of type str; 'Umur' of type int; 'Telepon' of type str; 'Password' of type str.
+The class 'Pemilik' has the following attributes: 'Username' of type str; 'Password' of type str.
+The class 'RentalMobil' has the following attributes: 'Alamat' of type str; 'Email' of type str; 'Telepon' of type str; 'Nama' of type str.
+'Admin' (role 'administrasi14', cardinality 0..*) is associated with 'Administrasi' (role 'admin15', cardinality 0..*).
+'Admin' (role 'pesan12', cardinality 0..*) is associated with 'Pesan' (role 'admin13', cardinality 0..*).
+'Pemilik' (role 'admin0', cardinality 0..*) is associated with 'Admin' (role 'pemilik1', cardinality 0..*).
+'Kendaraan' (role 'pesan6', cardinality 0..*) is associated with 'Pesan' (role 'kendaraan7', cardinality 0..*).
+'Pelanggan' (role 'pesan10', cardinality 0..*) is associated with 'Pesan' (role 'pelanggan11', cardinality 0..*).
+'Kendaraan' (role 'pelanggan5', cardinality 0..*) is associated with 'Pelanggan' (role 'kendaraan4', cardinality 0..*).
+'Pesan' (role 'administrasi9', cardinality 0..*) is associated with 'Administrasi' (role 'pesan8', cardinality 0..*).
+'Pelanggan' (role 'admin3', cardinality 0..*) is associated with 'Admin' (role 'pelanggan2', cardinality 0..*).

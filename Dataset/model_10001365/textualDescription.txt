@@ -1,0 +1,28 @@
+The model has 14 class(es).
+The class 'Patient' has the following attributes: 'age' of type int; 'accepted' of type date; 'roomno' of type int; 'sickness' of type str; 'sex' of type str; 'address' of type str; 'telno' of type int.
+The class 'Bill' has the following attributes: 'amount' of type float; 'billno' of type str; 'patientname' of type str.
+The class 'Hospital' has the following attributes: 'address' of type str; 'phone' of type int; 'name' of type str.
+The class 'Administrative_staff' has no attributes.
+The class 'Doctor' has the following attributes: 'specialization' of type str; 'address' of type str; 'department' of type str; 'docid' of type int; 'name' of type str; 'phno' of type int.
+The class 'RFID_Reader' has the following attributes: 'address' of type str; 'phone' of type int; 'Gender' of type str; 'birthDate' of type date; 'RFID' of type int; 'CRC_code' of type str.
+The class 'Room' has the following attributes: 'location' of type str; 'roomno' of type int.
+The class 'Operations_staff' has no attributes.
+The class 'Department' has no attributes.
+The class 'Nurse' has the following attributes: 'id' of type int; 'doctorid' of type int; 'name' of type str.
+The class 'Staff1' has no attributes.
+The class 'Nurse1' has no attributes.
+The class 'Technical_staff' has no attributes.
+The class 'Staff' has the following attributes: 'joined' of type date; 'education' of type str.
+'Bill' (role 'receptionist13', cardinality 0..*) is associated with 'Staff' (role 'sbill12', cardinality 0..*).
+'Department' (role 'staff21', cardinality 0..*) is associated with 'Staff' (role 'department20', cardinality 0..*).
+'Patient' (role 'operations_staff23', cardinality 0..*) is associated with 'Operations_staff' (role 'patient22', cardinality 0..*).
+'Department' (role 'hospital18', cardinality 0..*) is associated with 'Hospital' (role 'department19', cardinality 0..*).
+'RFID_Reader' (role 'hospital25', cardinality 0..*) is associated with 'Hospital' (role 'person24', cardinality 0..*).
+'Hospital' (role 'person16', cardinality 0..*) is associated with 'RFID_Reader' (role 'Person_Hospital2_117', cardinality 0..*).
+'Doctor' (role 'depmt2', cardinality 0..*) is associated with 'Nurse' (role 'doctor3', cardinality 0..*).
+'Patient' (role 'receptionist10', cardinality 0..*) is associated with 'Staff' (role 'p11', cardinality 0..*).
+'Room' (role 'staff6', cardinality 0..*) is associated with 'Staff1' (role 'room7', cardinality 0..*).
+'Patient' (role 'room4', cardinality 0..*) is associated with 'Room' (role 'patient5', cardinality 0..*).
+'RFID_Reader' (role 'hospital15', cardinality 0..*) is associated with 'Hospital' (role 'person14', cardinality 0..*).
+'Patient' (role 'doctors1', cardinality 0..*) is associated with 'Doctor' (role 'patients0', cardinality 0..*).
+'Bill' (role 'pat9', cardinality 0..*) is associated with 'Patient' (role 'bill8', cardinality 0..*).

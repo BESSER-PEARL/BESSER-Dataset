@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'Worker' has no attributes.
+The class 'Customer' has no attributes.
+The class 'Cashier' has no attributes.
+The class 'Waiter' has no attributes.
+The class 'Cook' has no attributes.
+The class 'People' has the following attributes: 'name' of type str.

@@ -1,0 +1,37 @@
+The model has 19 class(es).
+The class 'Reserve_a_Ticket_UseCase' has no attributes.
+The class 'Make_Payment___Checkout_UseCase' has no attributes.
+The class 'Receive_Payment_UseCase' has no attributes.
+The class 'Review_Order_UseCase' has no attributes.
+The class 'Valid_UseCase' has no attributes.
+The class 'Travel_Agent_Fee_UseCase' has no attributes.
+The class 'Invalid_UseCase' has no attributes.
+The class 'Pay_Travel_Agent_UseCase' has no attributes.
+The class 'Proceed_to_Checkout_UseCase' has no attributes.
+The class 'Check_Tickets_UseCase' has no attributes.
+The class 'Choose_Flight_UseCase' has no attributes.
+The class 'Airline_Agency_Actor' has no attributes.
+The class 'Valid_Details_UseCase' has no attributes.
+The class 'Create_Account_UseCase' has no attributes.
+The class 'Invalid_Details_UseCase' has no attributes.
+The class 'Travel_Agent_Actor' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'User___Passenger_Actor' has no attributes.
+The class 'Register__Login_UseCase' has no attributes.
+'Proceed_to_Checkout_UseCase' (role 'user___Passenger9', cardinality 0..*) is associated with 'User___Passenger_Actor' (role 'proceed_to_Checkout8', cardinality 0..*).
+'Review_Order_UseCase' (role 'airline_Agency19', cardinality 0..*) is associated with 'Airline_Agency_Actor' (role 'review_Order18', cardinality 0..*).
+'Airline_Agency_Actor' (role 'reserve_a_Ticket14', cardinality 0..*) is associated with 'Reserve_a_Ticket_UseCase' (role 'airline_Agency15', cardinality 0..*).
+'Make_Payment___Checkout_UseCase' (role 'user___Passenger11', cardinality 0..*) is associated with 'User___Passenger_Actor' (role 'make_Payment___Checkout10', cardinality 0..*).
+'Pay_Travel_Agent_UseCase' (role 'travel_Agent32', cardinality 0..*) is associated with 'Travel_Agent_Actor' (role 'pay_Travel_Agent33', cardinality 0..*).
+'User___Passenger_Actor' (role 'register__Login0', cardinality 0..*) is associated with 'Register__Login_UseCase' (role 'user___Passenger1', cardinality 0..*).
+'Airline_Agency_Actor' (role 'receive_Payment16', cardinality 0..*) is associated with 'Receive_Payment_UseCase' (role 'airline_Agency17', cardinality 0..*).
+'Travel_Agent_Actor' (role 'register__Login21', cardinality 0..*) is associated with 'Register__Login_UseCase' (role 'travel_Agent20', cardinality 0..*).
+'Review_Order_UseCase' (role 'user___Passenger3', cardinality 0..*) is associated with 'User___Passenger_Actor' (role 'review_Order2', cardinality 0..*).
+'User___Passenger_Actor' (role 'pay_Travel_Agent12', cardinality 0..*) is associated with 'Pay_Travel_Agent_UseCase' (role 'user___Passenger13', cardinality 0..*).
+'Review_Order_UseCase' (role 'travel_Agent23', cardinality 0..*) is associated with 'Travel_Agent_Actor' (role 'review_Order22', cardinality 0..*).
+'Proceed_to_Checkout_UseCase' (role 'travel_Agent28', cardinality 0..*) is associated with 'Travel_Agent_Actor' (role 'proceed_to_Checkout29', cardinality 0..*).
+'Check_Tickets_UseCase' (role 'user___Passenger5', cardinality 0..*) is associated with 'User___Passenger_Actor' (role 'check_Tickets4', cardinality 0..*).
+'Travel_Agent_Actor' (role 'choose_Flight27', cardinality 0..*) is associated with 'Choose_Flight_UseCase' (role 'travel_Agent26', cardinality 0..*).
+'Check_Tickets_UseCase' (role 'travel_Agent24', cardinality 0..*) is associated with 'Travel_Agent_Actor' (role 'check_Tickets25', cardinality 0..*).
+'Travel_Agent_Actor' (role 'make_Payment___Checkout31', cardinality 0..*) is associated with 'Make_Payment___Checkout_UseCase' (role 'travel_Agent30', cardinality 0..*).
+'User___Passenger_Actor' (role 'choose_Flight6', cardinality 0..*) is associated with 'Choose_Flight_UseCase' (role 'user___Passenger7', cardinality 0..*).

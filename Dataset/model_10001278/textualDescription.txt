@@ -1,0 +1,43 @@
+The model has 24 class(es).
+The class 'Add_Department_UseCase' has no attributes.
+The class 'Demonstrative_Adjectives__UseCase' has no attributes.
+The class 'Numbers_Adjectives__UseCase' has no attributes.
+The class 'Attributive_Adjectives__UseCase' has no attributes.
+The class 'Kind_of_Adjectives_UseCase' has no attributes.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'UseCase3_UseCase' has no attributes.
+The class '_UseCase' has no attributes.
+The class 'Interrogative_Adjectives__UseCase' has no attributes.
+The class 'UseCase4_UseCase' has no attributes.
+The class 'UseCase7_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Enroll_Student_UseCase' has no attributes.
+The class 'Indefinite_Adjectives__UseCase' has no attributes.
+The class 'Class' has no attributes.
+The class 'UseCase6_UseCase' has no attributes.
+The class 'Dashboard_UseCase' has no attributes.
+The class 'Enroll_Teacher_UseCase' has no attributes.
+The class 'Add_Subject_UseCase' has no attributes.
+The class 'Possessive_Adjectives__UseCase' has no attributes.
+The class 'UseCase5_UseCase' has no attributes.
+The class 'UseCase8_UseCase' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Add_Class_UseCase' has no attributes.
+'Enroll_Teacher_UseCase' (role 'admin3', cardinality 0..*) is associated with 'Admin_Actor' (role 'enroll_Teacher2', cardinality 0..*).
+'Add_Class_UseCase' (role 'zunair7', cardinality 0..*) is associated with 'Admin_Actor' (role 'add_Class6', cardinality 0..*).
+'UseCase5_UseCase' (role 'admin9', cardinality 0..*) is associated with 'Admin_Actor' (role 'useCase58', cardinality 0..*).
+'Kind_of_Adjectives_UseCase' (role 'demonstrative_Adjectives_29', cardinality 0..*) is associated with 'Demonstrative_Adjectives__UseCase' (role 'kind_of_Adjectives28', cardinality 0..*).
+'Attributive_Adjectives__UseCase' (role 'kind_of_Adjectives26', cardinality 0..*) is associated with 'Kind_of_Adjectives_UseCase' (role 'attributive_Adjectives_27', cardinality 0..*).
+'Admin_Actor' (role 'association_012', cardinality 0..*) is associated with '_UseCase' (role 'admin13', cardinality 0..*).
+'Kind_of_Adjectives_UseCase' (role 'interrogative_Adjectives_33', cardinality 0..*) is associated with 'Interrogative_Adjectives__UseCase' (role 'kind_of_Adjectives32', cardinality 0..*).
+'Kind_of_Adjectives_UseCase' (role 'numbers_Adjectives_31', cardinality 0..*) is associated with 'Numbers_Adjectives__UseCase' (role 'kind_of_Adjectives30', cardinality 0..*).
+'Admin_Actor' (role 'useCase720', cardinality 0..*) is associated with 'UseCase7_UseCase' (role 'admin21', cardinality 0..*).
+'Admin_Actor' (role 'useCase610', cardinality 0..*) is associated with 'UseCase6_UseCase' (role 'admin11', cardinality 0..*).
+'UseCase3_UseCase' (role 'admin17', cardinality 0..*) is associated with 'Admin_Actor' (role 'useCase316', cardinality 0..*).
+'UseCase2_UseCase' (role 'admin15', cardinality 0..*) is associated with 'Admin_Actor' (role 'useCase214', cardinality 0..*).
+'Admin_Actor' (role 'useCase418', cardinality 0..*) is associated with 'UseCase4_UseCase' (role 'admin19', cardinality 0..*).
+'Admin_Actor' (role 'enroll_Student0', cardinality 0..*) is associated with 'Enroll_Student_UseCase' (role 'admin1', cardinality 0..*).
+'Admin_Actor' (role 'add_Department4', cardinality 0..*) is associated with 'Add_Department_UseCase' (role 'admin5', cardinality 0..*).
+'Admin_Actor' (role 'useCase822', cardinality 0..*) is associated with 'UseCase8_UseCase' (role 'admin23', cardinality 0..*).
+'Kind_of_Adjectives_UseCase' (role 'indefinite_Adjectives_25', cardinality 0..*) is associated with 'Indefinite_Adjectives__UseCase' (role 'kind_of_Adjectives24', cardinality 0..*).
+'Possessive_Adjectives__UseCase' (role 'kind_of_Adjectives34', cardinality 0..*) is associated with 'Kind_of_Adjectives_UseCase' (role 'possessive_Adjectives_35', cardinality 0..*).

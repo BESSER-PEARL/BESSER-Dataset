@@ -1,0 +1,34 @@
+The model has 23 class(es).
+The class 'elevatortest_Person' has the following attributes: 'name' of type str.
+The class 'elevatortest_Patient' has the following attributes: 'urgencyIndex' of type int.
+The class 'elevatortest_ElevatorTest' has no attributes.
+The class 'hw3_Floor' has the following attributes: 'passengersWaiting' of type int; 'myFloorNumber' of type int.
+The class 'sec05_Person' has the following attributes: 'name' of type str.
+The class 'genmymodelreverse_C1' has no attributes.
+The class 'sec05_Patient' has the following attributes: 'urgencyIndex' of type int.
+The class 'hw2_Building' has the following attributes: 'floors' of type str; 'FLOORS' of type int.
+The class 'genmymodelreverse_java_lang_Comparable_Interface' has no attributes.
+The class 'hw3_Elevator' has the following attributes: 'NUMBER_OF_FLOORS' of type int; 'numOfPassengers' of type int; 'currentFloorIndex' of type int; 'isGoingUp' of type bool; 'CAPACITY' of type int; 'passengersToFloor' of type str.
+The class 'genmymodelreverse_java_lang_Object' has no attributes.
+The class 'hw3_Building' has the following attributes: 'floors' of type str; 'FLOORS' of type int.
+The class 'Comparable_Patient__Interface' has no attributes.
+The class 'hw3_ElevatorFullException' has no attributes.
+The class 'genmymodelreverse_java_lang_Exception' has no attributes.
+The class 'elevator_Elevator' has the following attributes: 'NUMBER_OF_FLOORS' of type int; 'passengersToFloor' of type str; 'isGoingUp' of type bool; 'currentFloor' of type int; 'numOfPassengers' of type int.
+The class 'sec05_demoSec05' has no attributes.
+The class 'hw3_Passenger' has the following attributes: 'currentFloor' of type int; 'id' of type int; 'UNDEFINED_FLOOR' of type int; 'destinationFloor' of type int.
+The class 'hw2test_HW2ElevatorSimulationTest' has no attributes.
+The class 'hw3test_HW3ElevatorSimulationTest' has no attributes.
+The class 'hw2_Floor' has the following attributes: 'passengersWaiting' of type int.
+The class 'hw2_Elevator' has the following attributes: 'numOfPassengers' of type int; 'passengersToFloor' of type str; 'isGoingUp' of type bool; 'CAPACITY' of type int; 'currentFloorIndex' of type int; 'NUMBER_OF_FLOORS' of type int.
+The class 'hw2_ElevatorFullException' has no attributes.
+'hw3_Passenger' (role 'elevator8', cardinality 0..*) is associated with 'hw3_Elevator' (role 'boardedPassengers9', cardinality 0..*).
+'sec05_Person' (role 'patient16', cardinality 0..*) is associated with 'sec05_Patient' (role 'person17', cardinality 0..*).
+'hw2_Building' (role 'elevator12', cardinality 0..*) is associated with 'hw2_Elevator' (role 'building13', cardinality 0..*).
+'hw3_Floor' (role 'upwardBound19', cardinality 0..*) is associated with 'hw3_Passenger' (role 'floor18', cardinality 0..*).
+'hw3_Passenger' (role 'floor6', cardinality 0..*) is associated with 'hw3_Floor' (role 'downwardBound7', cardinality 0..*).
+'hw2_Elevator' (role 'building14', cardinality 0..*) is associated with 'hw2_Building' (role 'elevator15', cardinality 0..*).
+'hw3_Floor' (role 'residents3', cardinality 0..*) is associated with 'hw3_Passenger' (role 'floor2', cardinality 0..*).
+'hw3_Building' (role 'elevator0', cardinality 0..*) is associated with 'hw3_Elevator' (role 'building1', cardinality 0..*).
+'elevatortest_Patient' (role 'person11', cardinality 0..*) is associated with 'elevatortest_Person' (role 'patient10', cardinality 0..*).
+'hw3_Elevator' (role 'building4', cardinality 0..*) is associated with 'hw3_Building' (role 'elevator5', cardinality 0..*).

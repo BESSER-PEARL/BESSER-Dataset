@@ -1,0 +1,12 @@
+The model has 11 class(es).
+The class 'choice_window' has the following attributes: 'response_3_' of type str; 'names_3_' of type str; 'prompt_3_' of type cursor.
+The class 'game_board1' has the following attributes: 'board' of type sudoku_board.
+The class 'sudoku_validator' has no attributes.
+The class 'window' has the following attributes: 'columns' of type int; 'lines' of type int; 'y' of type int; 'x' of type int; 'current' of type cursor; '_main' of type str.
+The class 'cursor' has no attributes.
+The class 'save' has the following attributes: 'file_name' of type str.
+The class 'sudoku_board' has no attributes.
+The class 'sudoku_board1' has the following attributes: 'board_9__9_' of type int; 'fixed_9__9_' of type int.
+The class 'cursor1' has the following attributes: 'pos_y' of type int; 'limit_y' of type str; 'pos_x' of type int; 'limit_x' of type int.
+The class 'load' has the following attributes: 'file_name' of type str.
+The class 'game_board' has no attributes.

@@ -1,0 +1,39 @@
+The model has 28 class(es).
+The class 'Medeina' has the following attributes: 'attribute' of type str; 'blackList_User_' of type User.
+The class 'Edit_user_information_UseCase' has no attributes.
+The class 'System_Actor' has no attributes.
+The class 'Logging_into_program_UseCase' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'User' has the following attributes: 'lastName' of type str; 'name' of type str.
+The class 'Registering_UseCase' has no attributes.
+The class 'Register_pets__physical_characteristics_UseCase' has no attributes.
+The class 'Logging_into_web_UseCase' has no attributes.
+The class 'Report_a_person_to_the_blacklist_UseCase' has no attributes.
+The class 'Register_as_a_pro_care_association_UseCase' has no attributes.
+The class 'Create_new_administrators_UseCase' has no attributes.
+The class 'Search_pet_s_UseCase' has no attributes.
+The class 'Edit_information_UseCase' has no attributes.
+The class 'Search_pet_accessories_UseCase' has no attributes.
+The class 'Pet' has the following attributes: 'email' of type str; 'breed' of type str; 'date' of type date; 'notes' of type str; 'place' of type str; 'color' of type str; 'state' of type str; 'picture' of type str; 'reward' of type int; 'phone' of type str; 'stray' of type bool; 'chipID' of type str; 'type' of type str; 'name' of type str.
+The class 'Organization' has the following attributes: 'name' of type str.
+The class 'Register_as_an_adopter_UseCase' has no attributes.
+The class 'Send_mail_to_lost_pet_owners_UseCase' has no attributes.
+The class 'Check_black_list_requests_UseCase' has no attributes.
+The class 'Register_pet_types_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Search_UseCase' has no attributes.
+The class 'Create_reports_UseCase' has no attributes.
+The class 'Match_lost_pet_cases_UseCase' has no attributes.
+The class 'Edit_pet_information_UseCase' has no attributes.
+The class 'Make_requests_to_administrator_UseCase' has no attributes.
+The class 'Register_a_pet_UseCase' has no attributes.
+'Logging_into_program_UseCase' (role 'check_black_list_requests16', cardinality 0..*) is associated with 'Check_black_list_requests_UseCase' (role 'logging_into_program17', cardinality 0..*).
+'Administrator_Actor' (role 'logging_into_program12', cardinality 0..*) is associated with 'Logging_into_program_UseCase' (role 'administrator13', cardinality 0..*).
+'Logging_into_program_UseCase' (role 'register_pets__physical_characteristics14', cardinality 0..*) is associated with 'Register_pets__physical_characteristics_UseCase' (role 'logging_into_program15', cardinality 0..*).
+'Make_requests_to_administrator_UseCase' (role 'administrator8', cardinality 0..*) is associated with 'Administrator_Actor' (role 'make_requests_to_administrator9', cardinality 0..*).
+'System_Actor' (role 'create_reports2', cardinality 0..*) is associated with 'Create_reports_UseCase' (role 'medeina3', cardinality 0..*).
+'System_Actor' (role 'send_mail_to_lost_pet_owners6', cardinality 0..*) is associated with 'Send_mail_to_lost_pet_owners_UseCase' (role 'medeina7', cardinality 0..*).
+'Logging_into_program_UseCase' (role 'create_new_administrators18', cardinality 0..*) is associated with 'Create_new_administrators_UseCase' (role 'logging_into_program19', cardinality 0..*).
+'Send_mail_to_lost_pet_owners_UseCase' (role 'user11', cardinality 0..*) is associated with 'User_Actor' (role 'send_mail_to_lost_pet_owners10', cardinality 0..*).
+'System_Actor' (role 'match_lost_pet_cases4', cardinality 0..*) is associated with 'Match_lost_pet_cases_UseCase' (role 'medeina5', cardinality 0..*).
+'User_Actor' (role 'logging_into_program0', cardinality 0..*) is associated with 'Logging_into_web_UseCase' (role 'user1', cardinality 0..*).

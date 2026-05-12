@@ -1,0 +1,12 @@
+The model has 11 class(es).
+The class 'ClassM' has no attributes.
+The class 'ClassV' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'ClassQ' has no attributes.
+The class 'ClassS' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'ClassN' has no attributes.
+The class 'InterfaceO_Interface' has no attributes.

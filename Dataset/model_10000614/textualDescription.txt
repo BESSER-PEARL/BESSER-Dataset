@@ -1,0 +1,19 @@
+The model has 14 class(es).
+The class 'ATM' has the following attributes: 'location' of type str; 'ManagedBy' of type str.
+The class 'Component322_Component' has no attributes.
+The class 'Component3_Component' has no attributes.
+The class 'Component3232_Component' has no attributes.
+The class 'Customer' has the following attributes: 'Pin' of type int; 'Card_num' of type int; 'DOB' of type str; 'Name' of type str.
+The class 'Component323_Component' has no attributes.
+The class 'ATM__Transactions' has the following attributes: 'Amount' of type str; 'Post_balance' of type str; 'Date' of type str; 'Transaction_id' of type str; 'Type' of type str.
+The class 'Account' has the following attributes: 'Balance' of type str; 'AccountNumber' of type str.
+The class 'BANK' has the following attributes: 'Code' of type str; 'Address' of type str.
+The class 'Component32_Component' has no attributes.
+The class 'T' has no attributes.
+The class 'Component32322_Component' has no attributes.
+The class 'Component_Component' has no attributes.
+The class 'ATM_Machine__Component' has no attributes.
+'Account' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'account4', cardinality 0..*).
+'BANK' (role 'account2', cardinality 0..*) is associated with 'Account' (role 'BANK3', cardinality 0..*).
+'BANK' (role 'ATM0', cardinality 0..*) is associated with 'ATM' (role 'BANK1', cardinality 0..*).
+'Account' (role 'ATM__Transactions6', cardinality 0..*) is associated with 'ATM__Transactions' (role 'account7', cardinality 0..*).

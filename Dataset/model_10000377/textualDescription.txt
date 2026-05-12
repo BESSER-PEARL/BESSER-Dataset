@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'Manage_Student___Faculty_List_UseCase' has no attributes.
+The class 'Student_Actor' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Faculty__Actor' has no attributes.
+The class 'Admin' has the following attributes: 'name' of type str; 'mail_ID' of type str.
+The class 'View_Questions_And_Post_Answers_UseCase' has no attributes.
+The class 'Logout_UseCase' has no attributes.
+The class 'Upload_Materials_UseCase' has no attributes.
+The class 'SignUp_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'View_The_Uploaded_Materials_UseCase' has no attributes.
+The class 'View___Modify_the_Uploaded_Materials_UseCase' has no attributes.
+The class 'Faculty' has the following attributes: 'mail_ID' of type str; 'name' of type str; 'emp_ID' of type str.
+The class 'Student' has the following attributes: 'reg_Num' of type str; 'name' of type str; 'mail_ID' of type str.
+The class 'Class' has the following attributes: 'attribute' of type str.
+The class 'Post_Questions_UseCase' has no attributes.
+'Faculty' (role 'student29', cardinality 0..*) is associated with 'Student' (role 'faculty28', cardinality 0..*).
+'Logout_UseCase' (role 'student23', cardinality 0..*) is associated with 'Student_Actor' (role 'logout22', cardinality 0..*).
+'SignUp_UseCase' (role 'teacher7', cardinality 0..*) is associated with 'Faculty__Actor' (role 'signUp6', cardinality 0..*).
+'Faculty' (role 'admin32', cardinality 0..*) is associated with 'Admin' (role 'faculty33', cardinality 0..*).
+'View___Modify_the_Uploaded_Materials_UseCase' (role 'admin13', cardinality 0..*) is associated with 'Admin_Actor' (role 'view___Modify_the_Uploaded_Materials12', cardinality 0..*).
+'Login_UseCase' (role 'student3', cardinality 0..*) is associated with 'Student_Actor' (role 'login2', cardinality 0..*).
+'Logout_UseCase' (role 'teacher25', cardinality 0..*) is associated with 'Faculty__Actor' (role 'logout24', cardinality 0..*).
+'Logout_UseCase' (role 'admin27', cardinality 0..*) is associated with 'Admin_Actor' (role 'logout26', cardinality 0..*).
+'Student' (role 'admin30', cardinality 0..*) is associated with 'Admin' (role 'student31', cardinality 0..*).
+'Student_Actor' (role 'signUp0', cardinality 0..*) is associated with 'SignUp_UseCase' (role 'student1', cardinality 0..*).
+'Upload_Materials_UseCase' (role 'teacher11', cardinality 0..*) is associated with 'Faculty__Actor' (role 'upload_Materials10', cardinality 0..*).
+'Manage_Student___Faculty_List_UseCase' (role 'admin5', cardinality 0..*) is associated with 'Admin_Actor' (role 'manage_Student___Faculty_List4', cardinality 0..*).
+'Post_Questions_UseCase' (role 'student19', cardinality 0..*) is associated with 'Student_Actor' (role 'post_Questions18', cardinality 0..*).
+'View_The_Uploaded_Materials_UseCase' (role 'student17', cardinality 0..*) is associated with 'Student_Actor' (role 'view_The_Uploaded_Materials16', cardinality 0..*).
+'Login_UseCase' (role 'teacher9', cardinality 0..*) is associated with 'Faculty__Actor' (role 'login8', cardinality 0..*).
+'Faculty__Actor' (role 'view___Modify_the_Uploaded_Materials14', cardinality 0..*) is associated with 'View___Modify_the_Uploaded_Materials_UseCase' (role 'teacher15', cardinality 0..*).
+'Faculty__Actor' (role 'view_Questions_And_Post_Answers20', cardinality 0..*) is associated with 'View_Questions_And_Post_Answers_UseCase' (role 'teacher21', cardinality 0..*).

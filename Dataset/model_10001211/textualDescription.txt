@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'TrickGame' has no attributes.
+The class 'Card' has the following attributes: 'suit' of type str; 'value' of type int.
+The class 'Player' has the following attributes: 'score' of type int; 'hand' of type str.
+The class 'MatchingGame' has no attributes.
+The class 'Deck' has the following attributes: 'deck' of type str.
+The class 'SheddingGame' has no attributes.
+The class 'Game' has the following attributes: 'players' of type str; 'winner' of type Player; 'round' of type int.
+'Game' (role 'player4', cardinality 0..*) is associated with 'Player' (role 'game5', cardinality 0..*).
+'Card' (role 'player2', cardinality 0..*) is associated with 'Player' (role 'card3', cardinality 0..*).
+'Card' (role 'deck1', cardinality 0..*) is associated with 'Deck' (role 'card0', cardinality 0..*).
+'Deck' (role 'game7', cardinality 0..*) is associated with 'Game' (role 'deck6', cardinality 0..*).

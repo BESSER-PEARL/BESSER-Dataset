@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'Guest' has no attributes.
+The class 'Payment' has the following attributes: 'ID' of type int; 'Customer' of type Customer; 'Details' of type str; 'Amount' of type int.
+The class 'Products' has the following attributes: 'Name' of type str; 'Description' of type str; 'ID' of type int.
+The class 'Address' has the following attributes: 'House' of type str; 'City' of type str; 'Street' of type str.
+The class 'OrderProduct' has the following attributes: 'Oid' of type Order; 'Pid' of type Products; 'ID' of type int.
+The class 'OrderCustomer' has the following attributes: 'Order' of type Order; 'Customer' of type Customer; 'id' of type int.
+The class 'CustomerProduct' has the following attributes: 'Customer' of type Customer; 'ID' of type int; 'Product' of type Products.
+The class 'Customer1' has the following attributes: 'attribute' of type str; 'ID' of type str; 'Password' of type str; 'Name' of type str; 'Email' of type str.
+The class 'Customer' has the following attributes: 'attribute3' of type str; 'attribute2' of type str; 'attribute' of type str.
+The class 'Order' has the following attributes: 'id' of type int; 'Date' of type str; 'ProductID' of type Products.
+'Customer1' (role 'customerProduct4', cardinality 0..*) is associated with 'CustomerProduct' (role 'customer5', cardinality 0..*).
+'Address' (role 'order16', cardinality 0..*) is associated with 'Order' (role 'address17', cardinality 0..*).
+'Customer1' (role 'orderCustomer20', cardinality 0..*) is associated with 'OrderCustomer' (role 'customer21', cardinality 0..*).
+'OrderProduct' (role 'order11', cardinality 0..*) is associated with 'Order' (role 'orderProduct10', cardinality 0..*).
+'Customer' (role 'customer3', cardinality 0..*) is associated with 'Customer' (role 'customer2', cardinality 0..*).
+'OrderProduct' (role 'products9', cardinality 0..*) is associated with 'Products' (role 'orderProduct8', cardinality 0..*).
+'CustomerProduct' (role 'products6', cardinality 0..*) is associated with 'Products' (role 'customerProduct7', cardinality 0..*).
+'Address' (role 'customer14', cardinality 0..*) is associated with 'Customer1' (role 'address15', cardinality 0..*).
+'Customer1' (role 'payment12', cardinality 0..*) is associated with 'Payment' (role 'customer13', cardinality 0..*).
+'Customer' (role 'customer0', cardinality 0..*) is associated with 'Customer' (role 'customer1', cardinality 0..*).
+'Order' (role 'orderCustomer18', cardinality 0..*) is associated with 'OrderCustomer' (role 'order19', cardinality 0..*).

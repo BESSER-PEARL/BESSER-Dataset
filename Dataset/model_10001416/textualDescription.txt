@@ -1,0 +1,58 @@
+The model has 25 class(es).
+The class 'Business_Users_Creation_UseCase' has no attributes.
+The class 'Order_Approved_Rejected_external' has no attributes.
+The class 'Confirm_Order_external' has no attributes.
+The class 'Support_User_Actor' has no attributes.
+The class 'Review_Order_external' has no attributes.
+The class 'Product_Invoice_generation_external' has no attributes.
+The class 'Sales_User_Actor' has no attributes.
+The class 'Select_Products_external' has no attributes.
+The class 'Invoice_generation_external' has no attributes.
+The class 'Manage_Accounts_external' has no attributes.
+The class 'Business_User_Actor' has no attributes.
+The class 'Order_Management_System_Component' has no attributes.
+The class 'T' has no attributes.
+The class 'Assign_Roles_external' has no attributes.
+The class 'Component_Component' has no attributes.
+The class 'Login_and_authentication_UseCase' has no attributes.
+The class 'Search_Products_to_Order_external' has no attributes.
+The class 'Sales_Users_Creation_UseCase' has no attributes.
+The class 'Business_Users_Creation_external' has no attributes.
+The class 'Notifications_for_Order_Tracking_external' has no attributes.
+The class 'T1' has no attributes.
+The class 'Order_Created_external' has no attributes.
+The class 'Sales_Users_Creation_UseCase1' has no attributes.
+The class 'Login_and_authentication_external' has no attributes.
+The class 'Manage_Sales_Users_external' has no attributes.
+'Support_User_Actor' (role 'login_and_authentication1', cardinality 0..*) is associated with 'Login_and_authentication_UseCase' (role 'support_User0', cardinality 0..*).
+'Sales_User_Actor' (role 'review_Order61', cardinality 0..*) is associated with 'Review_Order_external' (role 'sales_User60', cardinality 0..*).
+'Login_and_authentication_external' (role 'sales_User30', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'login_and_authentication31', cardinality 0..*).
+'Assign_Roles_external' (role 'sales_User46', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'assign_Roles47', cardinality 0..*).
+'Manage_Sales_Users_external' (role 'support_User54', cardinality 0..*) is associated with 'Support_User_Actor' (role 'manage_Sales_Users55', cardinality 0..*).
+'Business_User_Actor' (role 'business_Users_Creation7', cardinality 0..*) is associated with 'Business_Users_Creation_UseCase' (role 'business_User6', cardinality 0..*).
+'Support_User_Actor' (role 'sales_Users_Creation11', cardinality 0..*) is associated with 'Sales_Users_Creation_UseCase' (role 'support_User10', cardinality 0..*).
+'Business_Users_Creation_external' (role 'support_User38', cardinality 0..*) is associated with 'Support_User_Actor' (role 'business_Users_Creation39', cardinality 0..*).
+'Sales_User_Actor' (role 'order_Created16', cardinality 0..*) is associated with 'Order_Created_external' (role 'sales_User17', cardinality 0..*).
+'Sales_Users_Creation_UseCase' (role 'sales_User8', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'sales_Users_Creation9', cardinality 0..*).
+'Support_User_Actor' (role 'login_and_authentication29', cardinality 0..*) is associated with 'Login_and_authentication_external' (role 'support_User28', cardinality 0..*).
+'Support_User_Actor' (role 'business_Users_Creation13', cardinality 0..*) is associated with 'Business_Users_Creation_UseCase' (role 'support_User12', cardinality 0..*).
+'Support_User_Actor' (role 'notification_for_Order_Tracking26', cardinality 0..*) is associated with 'Notifications_for_Order_Tracking_external' (role 'support_User27', cardinality 0..*).
+'Invoice_generation_external' (role 'sales_User19', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'invoice_generation18', cardinality 0..*).
+'Login_and_authentication_external' (role 'business_User32', cardinality 0..*) is associated with 'Business_User_Actor' (role 'login_and_authentication33', cardinality 0..*).
+'Support_User_Actor' (role 'manage_Accounts53', cardinality 0..*) is associated with 'Manage_Accounts_external' (role 'support_User52', cardinality 0..*).
+'Business_User_Actor' (role 'login_and_authentication5', cardinality 0..*) is associated with 'Login_and_authentication_UseCase' (role 'business_User4', cardinality 0..*).
+'Order_Approved_Rejected_external' (role 'business_User15', cardinality 0..*) is associated with 'Business_User_Actor' (role 'order_Approved_Rejected14', cardinality 0..*).
+'Sales_User_Actor' (role 'search_Products_to_Order57', cardinality 0..*) is associated with 'Search_Products_to_Order_external' (role 'sales_User56', cardinality 0..*).
+'Sales_User_Actor' (role 'manage_Accounts41', cardinality 0..*) is associated with 'Manage_Accounts_external' (role 'sales_User40', cardinality 0..*).
+'Confirm_Order_external' (role 'sales_User62', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'confirm_Order63', cardinality 0..*).
+'Manage_Accounts_external' (role 'business_User42', cardinality 0..*) is associated with 'Business_User_Actor' (role 'manage_Accounts43', cardinality 0..*).
+'Sales_User_Actor' (role 'product_Invoice_generation20', cardinality 0..*) is associated with 'Product_Invoice_generation_external' (role 'sales_User21', cardinality 0..*).
+'Notifications_for_Order_Tracking_external' (role 'sales_User23', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'notification_for_Order_Tracking22', cardinality 0..*).
+'Sales_User_Actor' (role 'sales_User37', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'sales_User36', cardinality 0..*).
+'Support_User_Actor' (role 'assign_Roles45', cardinality 0..*) is associated with 'Assign_Roles_external' (role 'support_User44', cardinality 0..*).
+'Business_User_Actor' (role 'notification_for_Order_Tracking24', cardinality 0..*) is associated with 'Notifications_for_Order_Tracking_external' (role 'business_User25', cardinality 0..*).
+'Support_User_Actor' (role 'sales_Users_Creation35', cardinality 0..*) is associated with 'Sales_Users_Creation_UseCase1' (role 'support_User34', cardinality 0..*).
+'Business_User_Actor' (role 'assign_Roles49', cardinality 0..*) is associated with 'Assign_Roles_external' (role 'business_User48', cardinality 0..*).
+'Select_Products_external' (role 'sales_User58', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'select_Products59', cardinality 0..*).
+'Login_and_authentication_UseCase' (role 'sales_User2', cardinality 0..*) is associated with 'Sales_User_Actor' (role 'login_and_authentication3', cardinality 0..*).
+'Manage_Sales_Users_external' (role 'business_User50', cardinality 0..*) is associated with 'Business_User_Actor' (role 'manage_Sales_Users51', cardinality 0..*).

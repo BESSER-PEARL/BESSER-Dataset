@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'Receiptionist' has no attributes.
+The class 'Employee' has the following attributes: 'Emp_Name' of type str; 'Joindate' of type str; 'Salary' of type str; 'Address' of type str; 'Contact_NO' of type int; 'Emp_ID' of type int; 'Designation' of type str.
+The class 'patient' has the following attributes: 'Patient_Contact_NO' of type int; 'Status' of type str; 'DOB' of type str; 'Sex' of type str; 'Patient_Address' of type str; 'Patient_ID' of type int; 'Patient_Name' of type str.
+The class 'Doctor' has no attributes.
+The class 'Room' has the following attributes: 'Room_NO' of type int; 'Room_TYPE' of type str; 'Room_Rent' of type str.
+The class 'Nurse' has no attributes.
+'Doctor' (role 'patient0', cardinality 0..*) is associated with 'patient' (role 'doctor1', cardinality 0..*).
+'Nurse' (role 'room6', cardinality 0..*) is associated with 'Room' (role 'nurse7', cardinality 0..*).
+'patient' (role 'receiptionist3', cardinality 0..*) is associated with 'Receiptionist' (role 'patient2', cardinality 0..*).
+'patient' (role 'room4', cardinality 0..*) is associated with 'Room' (role 'patient5', cardinality 0..*).

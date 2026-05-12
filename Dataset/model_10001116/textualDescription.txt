@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'Staff' has the following attributes: 'Type' of type str; 'Id' of type int; 'Name' of type str.
+The class 'Rooms' has the following attributes: 'WardNo' of type str; 'RoomNo' of type int.
+The class 'Receptionsit' has the following attributes: 'Name' of type str; 'Id' of type int.
+The class 'Deparment' has the following attributes: 'Id' of type int; 'PhNo' of type int; 'Name' of type str.
+The class 'Bill' has the following attributes: 'Amount' of type str; 'BillNo' of type str; 'PatientName' of type str.
+The class 'Patient' has the following attributes: 'PatientId' of type int; 'age' of type int; 'Name' of type str.
+The class 'Doctor' has the following attributes: 'Name' of type str; 'PhNo' of type int; 'Department' of type str; 'DocId' of type int; 'Specialization' of type str.
+'Receptionsit' (role 'Generate_Bills6', cardinality 0..*) is associated with 'Bill' (role 'receptionsit7', cardinality 0..*).
+'Patient' (role 'Alloted_To10', cardinality 0..*) is associated with 'Rooms' (role 'patient11', cardinality 0..*).
+'Patient' (role 'Pay_Bill4', cardinality 0..*) is associated with 'Bill' (role 'patient5', cardinality 0..*).
+'Doctor' (role 'Checks0', cardinality 0..*) is associated with 'Patient' (role 'doctor1', cardinality 0..*).
+'Patient' (role 'staff12', cardinality 0..*) is associated with 'Staff' (role 'Do_Cleaning13', cardinality 0..*).
+'Deparment' (role 'doctor9', cardinality 0..*) is associated with 'Doctor' (role 'Belongs_To8', cardinality 0..*).
+'Receptionsit' (role 'patient3', cardinality 0..*) is associated with 'Patient' (role 'Give_Appointment2', cardinality 0..*).

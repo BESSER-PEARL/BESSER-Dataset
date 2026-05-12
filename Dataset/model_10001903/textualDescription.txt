@@ -1,0 +1,51 @@
+The model has 28 class(es).
+The class 'lager' has the following attributes: 'bestandZutaten' of type str; 'attribute' of type str.
+The class 'array_int__' has no attributes.
+The class 'list_zutat__' has no attributes.
+The class 'const_zutat' has no attributes.
+The class 'teig_2' has no attributes.
+The class 'ostream_1' has no attributes.
+The class 'backofen' has the following attributes: 'bandgeschwindigkeit' of type str; 'backzeit' of type str; 'teigmaschine' of type teigmaschine; 'ofenlaenge' of type str; 'backtemp' of type str.
+The class 'plaetzchenForm_' has no attributes.
+The class 'groesse_' has no attributes.
+The class 'teigmaschine' has the following attributes: 'blechgroesse' of type groesse_; 'anzPlaetzchenLetzesBlech' of type str; 'anzBleche' of type str; 'anzBlechePlaetzchen' of type array_int_3_; 'abstand' of type str.
+The class 'teig' has the following attributes: 'zutaten' of type str; 'attribute' of type str; 'name' of type str; 'form' of type plaetzchenForm; 'menge' of type str.
+The class 'plaetzchen' has the following attributes: 'pteig' of type teig_; 'pguss' of type zutat_; 'pdeko' of type zutat_; 'name' of type str.
+The class 'Blech' has no attributes.
+The class 'prozessHeizen' has the following attributes: 'temperatur_ist' of type str; 'attribute' of type str.
+The class 'auftrag' has the following attributes: 'name' of type str; 'backzeit' of type str; 'pteig' of type teig_; 'backofen' of type backofen; 'attribute' of type str; 'pteigmaschine' of type teigmaschine_; 'menge' of type str; 'pform' of type plaetzchenForm_; 'belagmaschine' of type belagmaschine; 'pguss' of type zutat_; 'pdeko' of type zutat_; 'backtemp' of type str.
+The class 'groesse' has the following attributes: 'laenge' of type str; 'name' of type str; 'breite' of type str; 'name1' of type str.
+The class 'lager_' has no attributes.
+The class 'array_int_3_' has no attributes.
+The class 'teigmaschine_' has no attributes.
+The class 'teig_' has no attributes.
+The class 'myException' has no attributes.
+The class 'ostream_' has no attributes.
+The class 'belagmaschine' has no attributes.
+The class 'prozessBand' has the following attributes: 'geschwindigkeit_ist' of type str.
+The class 'plaetzchenForm' has the following attributes: 'form' of type enum_form; 'groesse' of type groesse.
+The class 'zutat_' has no attributes.
+The class 'zutat' has the following attributes: 'einheit' of type str; 'name' of type str; 'menge' of type str.
+The class 'string_' has no attributes.
+The enumeration 'enum_form' does not specify any literals.
+The enumeration 'form' does not specify any literals.
+'auftrag' (role 'plaetzchen29', cardinality 0..*) is associated with 'plaetzchen' (role 'auftrag28', cardinality 0..*).
+'prozessBand' (role 'backstrasse4', cardinality 0..*) is associated with 'backofen' (role 'prozessBand5', cardinality 0..*).
+'auftrag' (role 'teigmaschine22', cardinality 0..*) is associated with 'teigmaschine' (role 'auftrag23', cardinality 0..*).
+'teig' (role 'zutat32', cardinality 0..*) is associated with 'zutat' (role 'teig33', cardinality 0..*).
+'prozessHeizen' (role 'backstrasse2', cardinality 0..*) is associated with 'backofen' (role 'prozessHeizen3', cardinality 0..*).
+'zutat' (role 'plaetzchen39', cardinality 0..*) is associated with 'plaetzchen' (role 'zutat38', cardinality 0..*).
+'backofen' (role 'myException34', cardinality 0..*) is associated with 'myException' (role 'backofen35', cardinality 0..*).
+'lager' (role 'zutat10', cardinality 0..*) is associated with 'zutat' (role 'lager11', cardinality 0..*).
+'auftrag' (role 'teig19', cardinality 0..*) is associated with 'teig' (role 'auftrag18', cardinality 0..*).
+'plaetzchenForm' (role 'groesse20', cardinality 0..*) is associated with 'groesse' (role 'plaetzchenForm1', cardinality 0..*).
+'auftrag' (role 'myException16', cardinality 0..*) is associated with 'myException' (role 'auftrag17', cardinality 0..*).
+'teigmaschine' (role 'groesse7', cardinality 0..*) is associated with 'groesse' (role 'belch6', cardinality 0..*).
+'auftrag' (role 'zutat21', cardinality 0..*) is associated with 'zutat' (role 'auftrag20', cardinality 0..*).
+'plaetzchenForm' (role 'auftrag30', cardinality 0..*) is associated with 'auftrag' (role 'plaetzchenForm31', cardinality 0..*).
+'auftrag' (role 'belagmaschine226', cardinality 0..*) is associated with 'belagmaschine' (role 'auftrag27', cardinality 0..*).
+'lager' (role 'auftrag9', cardinality 0..*) is associated with 'auftrag' (role 'lager8', cardinality 0..*).
+'plaetzchen' (role 'teig36', cardinality 0..*) is associated with 'teig' (role 'plaetzchen37', cardinality 0..*).
+'teig' (role 'lager13', cardinality 0..*) is associated with 'lager' (role 'teig12', cardinality 0..*).
+'lager' (role 'myException14', cardinality 0..*) is associated with 'myException' (role 'lager15', cardinality 0..*).
+'backofen' (role 'auftrag25', cardinality 0..*) is associated with 'auftrag' (role 'backofen224', cardinality 0..*).

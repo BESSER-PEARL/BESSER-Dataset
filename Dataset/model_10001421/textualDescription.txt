@@ -1,0 +1,19 @@
+The model has 18 class(es).
+The class 'mypackage_T' has no attributes.
+The class 'MyClass4' has no attributes.
+The class 'mypackage_T5' has no attributes.
+The class 'T3' has no attributes.
+The class 'MyClass' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'mypackage_MyClass' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'mypackage_T4' has no attributes.
+The class 'T' has no attributes.
+The class 'mypackage_T2' has no attributes.
+The class 'mypackage_T3' has no attributes.
+The class 'Class' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MyClass5' has no attributes.
+The class 'MyInterface3_Interface' has no attributes.
+The class 'MyInterface_Interface' has no attributes.
+The class 'T2' has no attributes.
+The class 'MyInterface2_Interface' has no attributes.

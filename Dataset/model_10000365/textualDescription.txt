@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'Managing_Users_UseCase' has no attributes.
+The class 'Log_In_UseCase' has no attributes.
+The class 'Employee_DB' has the following attributes: 'Name__1st_and_last_' of type Employee_Actor; 'Password' of type str; 'E_Mail' of type str; 'Title' of type Employee_Title__Non_Admin; 'Supervisor' of type Administrator_Actor; 'Username' of type Log_In_UseCase; 'Salary' of type int; 'Employee_ID' of type int; 'Telephone' of type int; 'Date_of_Birth' of type int; 'SSN' of type int; 'Address' of type str.
+The class 'Employee_Title__Non_Admin' has the following attributes: 'Teacher' of type Employee_Actor; 'Work_Study' of type str; 'Assistant_Teacher' of type Employee_Actor; 'Cook' of type Employee_Actor; 'Community_Service' of type str; 'Maintenance' of type Employee_Actor.
+The class 'Reporting_UseCase' has no attributes.
+The class 'Notes___Comments_UseCase' has no attributes.
+The class 'Edit__Archive_UseCase' has no attributes.
+The class 'Print_UseCase' has no attributes.
+The class 'Administration' has the following attributes: 'CFO' of type Administrator_Actor; 'Executive_Director___COO' of type Administrator_Actor; 'Asst__Executive_Director' of type Administrator_Actor; 'Office_Manager' of type Employee_Actor.
+The class 'Administrator_Actor' has no attributes.
+The class 'Log_Out_UseCase' has no attributes.
+The class 'Employee_Actor' has no attributes.
+'Employee_Actor' (role 'note___Comments4', cardinality 0..*) is associated with 'Notes___Comments_UseCase' (role 'employee5', cardinality 0..*).
+'Log_In_UseCase' (role 'employee1', cardinality 0..*) is associated with 'Employee_Actor' (role 'log_In0', cardinality 0..*).
+'Administrator_Actor' (role 'note___Comments14', cardinality 0..*) is associated with 'Notes___Comments_UseCase' (role 'administrator15', cardinality 0..*).
+'Administrator_Actor' (role 'archive___Save16', cardinality 0..*) is associated with 'Print_UseCase' (role 'administrator17', cardinality 0..*).
+'Print_UseCase' (role 'employee21', cardinality 0..*) is associated with 'Employee_Actor' (role 'print20', cardinality 0..*).
+'Log_Out_UseCase' (role 'employee3', cardinality 0..*) is associated with 'Employee_Actor' (role 'log_Out2', cardinality 0..*).
+'Employee_DB' (role 'administration24', cardinality 0..*) is associated with 'Administration' (role 'employee_DB25', cardinality 0..*).
+'Administrator_Actor' (role 'log_In6', cardinality 0..*) is associated with 'Log_In_UseCase' (role 'administrator7', cardinality 0..*).
+'Administrator_Actor' (role 'edit___Print12', cardinality 0..*) is associated with 'Edit__Archive_UseCase' (role 'administrator13', cardinality 0..*).
+'Employee_DB' (role 'employee_Title__Non_Admin22', cardinality 0..*) is associated with 'Employee_Title__Non_Admin' (role 'employee_DB23', cardinality 0..*).
+'Administrator_Actor' (role 'managing_Users18', cardinality 0..*) is associated with 'Managing_Users_UseCase' (role 'administrator19', cardinality 0..*).
+'Administrator_Actor' (role 'log_Out8', cardinality 0..*) is associated with 'Log_Out_UseCase' (role 'administrator9', cardinality 0..*).
+'Administrator_Actor' (role 'reporting10', cardinality 0..*) is associated with 'Reporting_UseCase' (role 'administrator11', cardinality 0..*).
