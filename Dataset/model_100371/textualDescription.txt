@@ -1,0 +1,72 @@
+The model has 29 class(es).
+The class 'OrState' has no attributes.
+The class 'CompoundState' has no attributes.
+The class 'PrimitiveState' has no attributes.
+The class 'DataVar' has no attributes.
+The class 'HSM::StateBase' has the following attributes: 'marked' of type str; 'defaultTransition' of type str.
+The class 'HSM::StateDateRelation' has the following attributes: 'color' of type str; 'value' of type str.
+The class 'AssociationStateState' has no attributes.
+The class 'HSM::AssociationDataStateBase' has no attributes.
+The class 'HSM::AssociationStateState' has no attributes.
+The class 'AndState' has no attributes.
+The class 'HSM::State' has no attributes.
+The class 'HSM::StateDataRelation' has the following attributes: 'value' of type str; 'color' of type str.
+The class 'StateBase' has no attributes.
+The class 'HSM::MgaObject' has the following attributes: 'name' of type str; 'position' of type str.
+The class 'HSM::CompoundState' has no attributes.
+The class 'StateDataRelation' has no attributes.
+The class 'RootFolder' has no attributes.
+The class 'State' has no attributes.
+The class 'HSM::Init' has no attributes.
+The class 'HSM::RootFolder' has the following attributes: 'name' of type str.
+The class 'HSM::AndState' has no attributes.
+The class 'MgaObject' has no attributes.
+The class 'HSM::Transition' has the following attributes: 'isSync' of type str; 'trigger' of type str; 'action' of type str; 'guard' of type str.
+The class 'HSM::PrimitiveState' has no attributes.
+The class 'Transition' has no attributes.
+The class 'AssociationDataStateBase' has no attributes.
+The class 'HSM::DataVar' has no attributes.
+The class 'Init' has no attributes.
+The class 'HSM::OrState' has no attributes.
+'HSM::Transition' is a specialization of 'MgaObject'.
+'HSM::CompoundState' is a specialization of 'StateBase'.
+'HSM::StateBase' is a specialization of 'MgaObject'.
+'HSM::AndState' is a specialization of 'CompoundState'.
+'HSM::OrState' is a specialization of 'CompoundState'.
+'HSM::PrimitiveState' is a specialization of 'StateBase'.
+'HSM::Init' is a specialization of 'PrimitiveState'.
+'HSM::DataVar' is a specialization of 'MgaObject'.
+'HSM::StateDateRelation' is a specialization of 'MgaObject'.
+'HSM::State' is a specialization of 'PrimitiveState'.
+'HSM::StateDataRelation' is a specialization of 'PrimitiveState'.
+'HSM::StateBase' (role 'dstTransition', cardinality 0..*) is associated with 'AssociationStateState' (role 'AssociationStateState', cardinality 0..*).
+'OrState' (role 'OrState18', cardinality 0..*) is associated with 'HSM::RootFolder' (role 'rootFolder', cardinality 0..*).
+'DataVar' (role 'DataVar', cardinality 0..*) is associated with 'HSM::StateBase' (role 'stateBase', cardinality 0..*).
+'HSM::RootFolder' (role 'HSM_RootFolder', cardinality 0..*) is associated with 'RootFolder' (role 'RootFolder', cardinality 0..*).
+'HSM::Transition' (role 'transition14', cardinality 0..*) is associated with 'AssociationStateState' (role 'AssociationStateState15', cardinality 0..*).
+'HSM::DataVar' (role 'dataVar', cardinality 0..*) is associated with 'OrState' (role 'OrState', cardinality 0..*).
+'StateBase' (role 'StateBase54', cardinality 0..*) is associated with 'HSM::AssociationStateState' (role 'associationStateStatesrc', cardinality 0..*).
+'HSM::AssociationDataStateBase' (role 'associationDataStateBase60', cardinality 0..*) is associated with 'StateBase' (role 'StateBase61', cardinality 0..*).
+'HSM::StateDataRelation' (role 'stateDataRelation47', cardinality 0..*) is associated with 'AssociationDataStateBase' (role 'AssociationDataStateBase48', cardinality 0..*).
+'StateDataRelation' (role 'StateDataRelation56', cardinality 0..*) is associated with 'HSM::AssociationDataStateBase' (role 'associationDataStateBase1', cardinality 0..*).
+'HSM::OrState' (role 'orState', cardinality 0..*) is associated with 'RootFolder' (role 'RootFolder20', cardinality 0..*).
+'CompoundState' (role 'CompoundState35', cardinality 0..*) is associated with 'HSM::AndState' (role 'andState', cardinality 0..*).
+'AssociationDataStateBase' (role 'AssociationDataStateBase', cardinality 0..*) is associated with 'HSM::StateBase' (role 'stateBase5', cardinality 0..*).
+'DataVar' (role 'DataVar27', cardinality 0..*) is associated with 'HSM::OrState' (role 'orState26', cardinality 0..*).
+'Transition' (role 'Transition50', cardinality 0..*) is associated with 'HSM::AssociationStateState' (role 'associationStateState', cardinality 0..*).
+'CompoundState' (role 'CompoundState', cardinality 0..*) is associated with 'HSM::OrState' (role 'orState33', cardinality 0..*).
+'HSM::CompoundState' (role 'compoundState38', cardinality 0..*) is associated with 'OrState' (role 'OrState39', cardinality 0..*).
+'AssociationDataStateBase' (role 'AssociationDataStateBase10', cardinality 0..*) is associated with 'HSM::DataVar' (role 'dataVar9', cardinality 0..*).
+'HSM::State' (role 'state', cardinality 0..*) is associated with 'OrState' (role 'OrState43', cardinality 0..*).
+'HSM::StateDataRelation' (role 'stateDataRelation', cardinality 0..*) is associated with 'OrState' (role 'OrState45', cardinality 0..*).
+'HSM::StateBase' (role 'srcTransition', cardinality 0..*) is associated with 'AssociationStateState' (role 'AssociationStateState2', cardinality 0..*).
+'HSM::OrState' (role 'orState22', cardinality 0..*) is associated with 'State' (role 'State', cardinality 0..*).
+'HSM::OrState' (role 'orState24', cardinality 0..*) is associated with 'Init' (role 'Init', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'HSM::OrState' (role 'orState31', cardinality 0..*).
+'OrState' (role 'OrState12', cardinality 0..*) is associated with 'HSM::Transition' (role 'transition', cardinality 0..*).
+'StateBase' (role 'StateBase', cardinality 0..*) is associated with 'HSM::DataVar' (role 'data', cardinality 0..*).
+'HSM::CompoundState' (role 'compoundState', cardinality 0..*) is associated with 'AndState' (role 'AndState', cardinality 0..*).
+'StateDataRelation' (role 'StateDataRelation', cardinality 0..*) is associated with 'HSM::OrState' (role 'orState29', cardinality 0..*).
+'HSM::AssociationStateState' (role 'associationStateStatedst', cardinality 0..*) is associated with 'StateBase' (role 'StateBase52', cardinality 0..*).
+'DataVar' (role 'DataVar58', cardinality 0..*) is associated with 'HSM::AssociationDataStateBase' (role 'associationDataStateBase', cardinality 0..*).
+'OrState' (role 'OrState41', cardinality 0..*) is associated with 'HSM::Init' (role 'init', cardinality 0..*).

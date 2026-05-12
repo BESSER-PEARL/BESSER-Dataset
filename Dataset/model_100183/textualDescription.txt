@@ -1,0 +1,219 @@
+The model has 93 class(es).
+The class 'SelectionQuery' has no attributes.
+The class 'sparql::RDFTag' has no attributes.
+The class 'sparql::Value' has no attributes.
+The class 'sparql::GroupGraphPattern' has no attributes.
+The class 'sparql::TypeTag' has no attributes.
+The class 'sparql::FilterPattern' has no attributes.
+The class 'sparql::UpdateQuery' has no attributes.
+The class 'sparql::DescribeQuery' has no attributes.
+The class 'sparql::ExistsPattern' has no attributes.
+The class 'sparql::GraphPattern' has no attributes.
+The class 'Aggregate' has no attributes.
+The class 'sparql::GraphGraphPattern' has no attributes.
+The class 'GroupCondition' has no attributes.
+The class 'sparql::IRI' has the following attributes: 'value' of type str.
+The class 'sparql::SumAggregate' has no attributes.
+The class 'sparql::ServiceGraphPattern' has no attributes.
+The class 'sparql::GroupAggregate' has the following attributes: 'isDistinct' of type bool; 'value' of type str.
+The class 'sparql::DeleteQuery' has the following attributes: 'graph' of type str.
+The class 'sparql::UsingGraph' has the following attributes: 'uri' of type str; 'named' of type bool.
+The class 'sparql::LimitClause' has the following attributes: 'limit' of type int.
+The class 'sparql::SelectQuery' has the following attributes: 'isDistinct' of type bool; 'all' of type bool; 'isReduced' of type bool.
+The class 'sparql::NamedDataSet' has no attributes.
+The class 'sparql::GroupOrUnionGraphPattern' has no attributes.
+The class 'sparql::ConstructQuery' has no attributes.
+The class 'sparql::SelectionQuery' has no attributes.
+The class 'sparql::Constraint' has no attributes.
+The class 'sparql::OptionalGraphPattern' has no attributes.
+The class 'sparql::ModifyQuery' has the following attributes: 'withGraph' of type str.
+The class 'sparql::GroupGraphPatternSub' has no attributes.
+The class 'sparql::MinAgregate' has no attributes.
+The class 'sparql::GroupCondition' has no attributes.
+The class 'sparql::SPARQLQuery' has no attributes.
+The class 'sparql::Function' has the following attributes: 'name' of type str.
+The class 'GraphPattern' has no attributes.
+The class 'sparql::TriplesSameSubject' has no attributes.
+The class 'sparql::CreateGraphQuery' has the following attributes: 'graph' of type str; 'isSilent' of type str.
+The class 'sparql::DeleteDataQuery' has the following attributes: 'graph' of type str.
+The class 'sparql::Expression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'sparql::OrFilterExpression' has no attributes.
+The class 'sparql::NamedFunction' has no attributes.
+The class 'sparql::ExpressionFilterExpression' has the following attributes: 'operator' of type str.
+The class 'sparql::NotExistsPattern' has no attributes.
+The class 'sparql::InsertDataQuery' has the following attributes: 'graph' of type str.
+The class 'sparql::InsertQuery' has the following attributes: 'graph' of type str.
+The class 'sparql::BuiltInCall' has no attributes.
+The class 'FilterNode' has no attributes.
+The class 'sparql::DropGraphQuery' has the following attributes: 'graph' of type str; 'isSilent' of type str.
+The class 'sparql::SampleAggregate' has no attributes.
+The class 'sparql::UpdateOperation' has no attributes.
+The class 'sparql::NamedVariable' has no attributes.
+The class 'sparql::PropertyList' has no attributes.
+The class 'sparql::LangTag' has the following attributes: 'lang' of type str.
+The class 'GraphNode' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'sparql::CountAggregate' has the following attributes: 'isDistinct' of type bool; 'isAll' of type bool.
+The class 'sparql::SparqlFunction' has no attributes.
+The class 'sparql::AskQuery' has no attributes.
+The class 'RDFTag' has no attributes.
+The class 'sparql::Prefix' has the following attributes: 'name' of type str; 'iref' of type str.
+The class 'DatasetClause' has no attributes.
+The class 'sparql::DefaultDataSet' has no attributes.
+The class 'SPARQLQuery' has no attributes.
+The class 'sparql::FilterNode' has no attributes.
+The class 'sparql::Aggregate' has no attributes.
+The class 'sparql::ServiceDataSet' has no attributes.
+The class 'sparql::StringValue' has the following attributes: 'value' of type str.
+The class 'sparql::GraphNode' has no attributes.
+The class 'sparql::BlankNode' has the following attributes: 'name' of type str.
+The class 'sparql::SubSelectQuery' has no attributes.
+The class 'sparql::Variable' has the following attributes: 'name' of type str.
+The class 'sparql::LoadGraphQuery' has the following attributes: 'graph' of type str; 'intoGraph' of type str.
+The class 'sparql::ExprAggArg' has the following attributes: 'isDistinct' of type bool.
+The class 'sparql::HavingClause' has no attributes.
+The class 'ModifyQuery' has no attributes.
+The class 'UpdateOperation' has no attributes.
+The class 'GroupGraphPattern' has no attributes.
+The class 'sparql::AvgAggregate' has no attributes.
+The class 'sparql::DatasetClause' has no attributes.
+The class 'Function' has no attributes.
+The class 'sparql::IntegerValue' has the following attributes: 'value' of type int.
+The class 'sparql::DeleteWhereQuery' has no attributes.
+The class 'sparql::MaxAggregate' has no attributes.
+The class 'sparql::GroupClause' has no attributes.
+The class 'sparql::MinusPattern' has no attributes.
+The class 'sparql::AndFilterExpression' has no attributes.
+The class 'sparql::UnNamedVariable' has no attributes.
+The class 'Value' has no attributes.
+The class 'sparql::Base' has no attributes.
+The class 'sparql::WhereClause' has no attributes.
+The class 'sparql::Parameter' has the following attributes: 'name' of type str.
+The class 'sparql::ClearGraphQuery' has the following attributes: 'uri' of type str; 'isDefault' of type bool.
+The class 'Variable' has no attributes.
+The enumeration 'Operator' has the following literals: 'greaterThen', 'sum', 'notEqual', 'div', 'sub', 'equal', 'multiplicity', 'lessEqual', 'greaterEqual', 'lessThen'.
+'sparql::BuiltInCall' is a specialization of 'Constraint'.
+'sparql::Value' is a specialization of 'GraphNode'.
+'sparql::SelectionQuery' is a specialization of 'SPARQLQuery'.
+'sparql::OptionalGraphPattern' is a specialization of 'GraphPattern'.
+'sparql::CreateGraphQuery' is a specialization of 'UpdateOperation'.
+'sparql::MaxAggregate' is a specialization of 'Aggregate'.
+'sparql::ConstructQuery' is a specialization of 'SelectionQuery'.
+'sparql::GraphGraphPattern' is a specialization of 'GraphPattern'.
+'sparql::Variable' is a specialization of 'GroupCondition'.
+'sparql::BlankNode' is a specialization of 'GraphNode'.
+'sparql::UpdateQuery' is a specialization of 'SPARQLQuery'.
+'sparql::InsertDataQuery' is a specialization of 'ModifyQuery'.
+'sparql::ExistsPattern' is a specialization of 'GraphPattern'.
+'sparql::UnNamedVariable' is a specialization of 'Variable'.
+'sparql::ModifyQuery' is a specialization of 'UpdateOperation'.
+'sparql::ExpressionFilterExpression' is a specialization of 'Expression'.
+'sparql::NamedDataSet' is a specialization of 'DatasetClause'.
+'sparql::NamedFunction' is a specialization of 'Function'.
+'sparql::DeleteQuery' is a specialization of 'ModifyQuery'.
+'sparql::SumAggregate' is a specialization of 'Aggregate'.
+'sparql::NamedVariable' is a specialization of 'Variable'.
+'sparql::IntegerValue' is a specialization of 'Value'.
+'sparql::Function' is a specialization of 'FilterNode'.
+'sparql::GroupGraphPatternSub' is a specialization of 'GroupGraphPattern'.
+'sparql::InsertQuery' is a specialization of 'ModifyQuery'.
+'sparql::ServiceDataSet' is a specialization of 'DatasetClause'.
+'sparql::SparqlFunction' is a specialization of 'Function'.
+'sparql::Function' is a specialization of 'GroupCondition'.
+'sparql::IRI' is a specialization of 'GraphNode'.
+'sparql::GroupOrUnionGraphPattern' is a specialization of 'GraphPattern'.
+'sparql::Expression' is a specialization of 'Constraint'.
+'sparql::GraphNode' is a specialization of 'FilterNode'.
+'sparql::BuiltInCall' is a specialization of 'GroupCondition'.
+'sparql::AndFilterExpression' is a specialization of 'Expression'.
+'sparql::DescribeQuery' is a specialization of 'SelectionQuery'.
+'sparql::DeleteDataQuery' is a specialization of 'ModifyQuery'.
+'sparql::StringValue' is a specialization of 'Value'.
+'sparql::TypeTag' is a specialization of 'RDFTag'.
+'sparql::CountAggregate' is a specialization of 'Aggregate'.
+'sparql::MinusPattern' is a specialization of 'GraphPattern'.
+'sparql::NotExistsPattern' is a specialization of 'GraphPattern'.
+'sparql::SampleAggregate' is a specialization of 'Aggregate'.
+'sparql::SelectQuery' is a specialization of 'SelectionQuery'.
+'sparql::Variable' is a specialization of 'GraphNode'.
+'sparql::ClearGraphQuery' is a specialization of 'UpdateOperation'.
+'sparql::DropGraphQuery' is a specialization of 'UpdateOperation'.
+'sparql::TriplesSameSubject' is a specialization of 'GraphPattern'.
+'sparql::Parameter' is a specialization of 'GraphNode'.
+'sparql::AskQuery' is a specialization of 'SelectionQuery'.
+'sparql::GroupAggregate' is a specialization of 'Aggregate'.
+'sparql::OrFilterExpression' is a specialization of 'Expression'.
+'sparql::MinAgregate' is a specialization of 'Aggregate'.
+'sparql::ServiceGraphPattern' is a specialization of 'GraphPattern'.
+'sparql::Function' is a specialization of 'Constraint'.
+'sparql::LangTag' is a specialization of 'RDFTag'.
+'sparql::LoadGraphQuery' is a specialization of 'UpdateOperation'.
+'sparql::FilterPattern' is a specialization of 'GraphPattern'.
+'sparql::AvgAggregate' is a specialization of 'Aggregate'.
+'sparql::SubSelectQuery' is a specialization of 'GroupGraphPattern'.
+'sparql::DefaultDataSet' is a specialization of 'DatasetClause'.
+'sparql::DeleteWhereQuery' is a specialization of 'ModifyQuery'.
+'sparql::DeleteQuery' (role 'sparql_DeleteQuery25', cardinality 0..*) is associated with 'sparql::WhereClause' (role 'sparql_WhereClause26', cardinality 0..*).
+'sparql::SPARQLQuery' (role 'sparql_SPARQLQuery', cardinality 0..*) is associated with 'sparql::Prefix' (role 'sparql_Prefix', cardinality 0..*).
+'sparql::SampleAggregate' (role 'sparql_SampleAggregate', cardinality 0..*) is associated with 'sparql::ExprAggArg' (role 'sparql_ExprAggArg130', cardinality 0..*).
+'sparql::GroupClause' (role 'sparql_GroupClause', cardinality 0..*) is associated with 'sparql::SelectionQuery' (role 'sparql_SelectionQuery9', cardinality 0..*).
+'sparql::GraphNode' (role 'sparql_GraphNode59', cardinality 0..*) is associated with 'sparql::PropertyList' (role 'sparql_PropertyList58', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression118', cardinality 0..*) is associated with 'sparql::AndFilterExpression' (role 'sparql_AndFilterExpression', cardinality 0..*).
+'sparql::WhereClause' (role 'sparql_WhereClause21', cardinality 0..*) is associated with 'sparql::InsertQuery' (role 'sparql_InsertQuery', cardinality 0..*).
+'sparql::DatasetClause' (role 'sparql_DatasetClause28', cardinality 0..*) is associated with 'sparql::IRI' (role 'sparql_IRI29', cardinality 0..*).
+'sparql::SubSelectQuery' (role 'sparql_SubSelectQuery43', cardinality 0..*) is associated with 'sparql::GroupClause' (role 'sparql_GroupClause44', cardinality 0..*).
+'sparql::BuiltInCall' (role 'sparql_BuiltInCall97', cardinality 0..*) is associated with 'sparql::Variable' (role 'sparql_Variable98', cardinality 0..*).
+'sparql::ExprAggArg' (role 'sparql_ExprAggArg126', cardinality 0..*) is associated with 'sparql::MaxAggregate' (role 'sparql_MaxAggregate', cardinality 0..*).
+'sparql::ExprAggArg' (role 'sparql_ExprAggArg', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression109', cardinality 0..*).
+'sparql::Constraint' (role 'sparql_Constraint', cardinality 0..*) is associated with 'sparql::HavingClause' (role 'sparql_HavingClause36', cardinality 0..*).
+'sparql::UpdateQuery' (role 'sparql_UpdateQuery', cardinality 0..*) is associated with 'sparql::UpdateOperation' (role 'sparql_UpdateOperation', cardinality 0..*).
+'sparql::SubSelectQuery' (role 'sparql_SubSelectQuery', cardinality 0..*) is associated with 'sparql::Variable' (role 'sparql_Variable38', cardinality 0..*).
+'sparql::NamedFunction' (role 'sparql_NamedFunction', cardinality 0..*) is associated with 'sparql::Prefix' (role 'sparql_Prefix87', cardinality 0..*).
+'sparql::DatasetClause' (role 'sparql_DatasetClause', cardinality 0..*) is associated with 'sparql::SelectionQuery' (role 'sparql_SelectionQuery5', cardinality 0..*).
+'sparql::Base' (role 'sparql_Base', cardinality 0..*) is associated with 'sparql::IRI' (role 'sparql_IRI', cardinality 0..*).
+'sparql::GroupAggregate' (role 'sparql_GroupAggregate', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression132', cardinality 0..*).
+'sparql::SelectQuery' (role 'sparql_SelectQuery', cardinality 0..*) is associated with 'sparql::Variable' (role 'sparql_Variable', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression92', cardinality 0..*) is associated with 'sparql::BuiltInCall' (role 'sparql_BuiltInCall91', cardinality 0..*).
+'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern72', cardinality 0..*) is associated with 'sparql::ServiceGraphPattern' (role 'sparql_ServiceGraphPattern71', cardinality 0..*).
+'sparql::GraphGraphPattern' (role 'sparql_GraphGraphPattern66', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern67', cardinality 0..*).
+'sparql::ServiceGraphPattern' (role 'sparql_ServiceGraphPattern', cardinality 0..*) is associated with 'sparql::GraphNode' (role 'sparql_GraphNode69', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression107', cardinality 0..*) is associated with 'sparql::BuiltInCall' (role 'sparql_BuiltInCall106', cardinality 0..*).
+'sparql::GraphPattern' (role 'sparql_GraphPattern', cardinality 0..*) is associated with 'sparql::GroupGraphPatternSub' (role 'sparql_GroupGraphPatternSub', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression89', cardinality 0..*) is associated with 'sparql::BuiltInCall' (role 'sparql_BuiltInCall', cardinality 0..*).
+'sparql::Variable' (role 'sparql_Variable85', cardinality 0..*) is associated with 'sparql::Function' (role 'sparql_Function', cardinality 0..*).
+'sparql::GraphNode' (role 'sparql_GraphNode50', cardinality 0..*) is associated with 'sparql::TriplesSameSubject' (role 'sparql_TriplesSameSubject', cardinality 0..*).
+'sparql::Base' (role 'sparql_Base3', cardinality 0..*) is associated with 'sparql::SelectionQuery' (role 'sparql_SelectionQuery', cardinality 0..*).
+'sparql::BuiltInCall' (role 'sparql_BuiltInCall94', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression95', cardinality 0..*).
+'sparql::GraphNode' (role 'sparql_GraphNode64', cardinality 0..*) is associated with 'sparql::GraphGraphPattern' (role 'sparql_GraphGraphPattern', cardinality 0..*).
+'sparql::SumAggregate' (role 'sparql_SumAggregate', cardinality 0..*) is associated with 'sparql::ExprAggArg' (role 'sparql_ExprAggArg122', cardinality 0..*).
+'sparql::TriplesSameSubject' (role 'sparql_TriplesSameSubject52', cardinality 0..*) is associated with 'sparql::PropertyList' (role 'sparql_PropertyList', cardinality 0..*).
+'sparql::HavingClause' (role 'sparql_HavingClause', cardinality 0..*) is associated with 'sparql::SelectionQuery' (role 'sparql_SelectionQuery11', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression104', cardinality 0..*) is associated with 'sparql::BuiltInCall' (role 'sparql_BuiltInCall103', cardinality 0..*).
+'sparql::HavingClause' (role 'sparql_HavingClause47', cardinality 0..*) is associated with 'sparql::SubSelectQuery' (role 'sparql_SubSelectQuery46', cardinality 0..*).
+'sparql::DescribeQuery' (role 'sparql_DescribeQuery', cardinality 0..*) is associated with 'sparql::GraphNode' (role 'sparql_GraphNode', cardinality 0..*).
+'sparql::GraphNode' (role 'sparql_GraphNode114', cardinality 0..*) is associated with 'sparql::TypeTag' (role 'sparql_TypeTag', cardinality 0..*).
+'sparql::GroupClause' (role 'sparql_GroupClause34', cardinality 0..*) is associated with 'sparql::GroupCondition' (role 'sparql_GroupCondition', cardinality 0..*).
+'sparql::NotExistsPattern' (role 'sparql_NotExistsPattern', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern77', cardinality 0..*).
+'sparql::ConstructQuery' (role 'sparql_ConstructQuery', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern', cardinality 0..*).
+'sparql::MinAgregate' (role 'sparql_MinAgregate', cardinality 0..*) is associated with 'sparql::ExprAggArg' (role 'sparql_ExprAggArg124', cardinality 0..*).
+'sparql::DeleteQuery' (role 'sparql_DeleteQuery', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern23', cardinality 0..*).
+'sparql::SubSelectQuery' (role 'sparql_SubSelectQuery40', cardinality 0..*) is associated with 'sparql::WhereClause' (role 'sparql_WhereClause41', cardinality 0..*).
+'sparql::GroupOrUnionGraphPattern' (role 'sparql_GroupOrUnionGraphPattern', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern54', cardinality 0..*).
+'sparql::WhereClause' (role 'sparql_WhereClause31', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern32', cardinality 0..*).
+'sparql::MinusPattern' (role 'sparql_MinusPattern', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern79', cardinality 0..*).
+'sparql::CountAggregate' (role 'sparql_CountAggregate', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression120', cardinality 0..*).
+'sparql::LimitClause' (role 'sparql_LimitClause', cardinality 0..*) is associated with 'sparql::SelectionQuery' (role 'sparql_SelectionQuery13', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression', cardinality 0..*) is associated with 'sparql::FilterPattern' (role 'sparql_FilterPattern', cardinality 0..*).
+'sparql::ExpressionFilterExpression' (role 'sparql_ExpressionFilterExpression82', cardinality 0..*) is associated with 'sparql::FilterNode' (role 'sparql_FilterNode83', cardinality 0..*).
+'sparql::RDFTag' (role 'sparql_RDFTag', cardinality 0..*) is associated with 'sparql::Value' (role 'sparql_Value', cardinality 0..*).
+'sparql::PropertyList' (role 'sparql_PropertyList61', cardinality 0..*) is associated with 'sparql::GraphNode' (role 'sparql_GraphNode62', cardinality 0..*).
+'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern56', cardinality 0..*) is associated with 'sparql::OptionalGraphPattern' (role 'sparql_OptionalGraphPattern', cardinality 0..*).
+'sparql::OrFilterExpression' (role 'sparql_OrFilterExpression', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression116', cardinality 0..*).
+'sparql::ExprAggArg' (role 'sparql_ExprAggArg128', cardinality 0..*) is associated with 'sparql::AvgAggregate' (role 'sparql_AvgAggregate', cardinality 0..*).
+'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern75', cardinality 0..*) is associated with 'sparql::ExistsPattern' (role 'sparql_ExistsPattern', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression101', cardinality 0..*) is associated with 'sparql::BuiltInCall' (role 'sparql_BuiltInCall100', cardinality 0..*).
+'sparql::FilterNode' (role 'sparql_FilterNode', cardinality 0..*) is associated with 'sparql::ExpressionFilterExpression' (role 'sparql_ExpressionFilterExpression', cardinality 0..*).
+'sparql::ModifyQuery' (role 'sparql_ModifyQuery', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern19', cardinality 0..*).
+'sparql::SelectionQuery' (role 'sparql_SelectionQuery7', cardinality 0..*) is associated with 'sparql::WhereClause' (role 'sparql_WhereClause', cardinality 0..*).
+'sparql::NamedVariable' (role 'sparql_NamedVariable', cardinality 0..*) is associated with 'sparql::Prefix' (role 'sparql_Prefix111', cardinality 0..*).

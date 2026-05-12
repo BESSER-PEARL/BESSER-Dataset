@@ -1,0 +1,45 @@
+The model has 22 class(es).
+The class 'Instance' has no attributes.
+The class 'ExtensionPoint' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'UseCases::RelationShip' has no attributes.
+The class 'UseCases::ModelElement' has no attributes.
+The class 'UseCases::UseCase' has the following attributes: 'extensionPoint' of type str.
+The class 'UseCases::LocationReference' has the following attributes: 'value' of type str.
+The class 'UseCases::Classifier' has no attributes.
+The class 'RelationShip' has no attributes.
+The class 'UseCases::Extend' has no attributes.
+The class 'UseCases::BooleanExpression' has the following attributes: 'value' of type str.
+The class 'ModelElement' has no attributes.
+The class 'UseCases::Instance' has no attributes.
+The class 'UseCases::UseCaseInstance' has no attributes.
+The class 'Include' has no attributes.
+The class 'UseCases::Actor' has no attributes.
+The class 'LocationReference' has no attributes.
+The class 'UseCases::Include' has no attributes.
+The class 'UseCases::ExtensionPoint' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Extend' has no attributes.
+'UseCases::Actor' is a specialization of 'Classifier'.
+'UseCases::Extend' is a specialization of 'RelationShip'.
+'UseCases::Include' is a specialization of 'RelationShip'.
+'UseCases::UseCase' is a specialization of 'Classifier'.
+'UseCases::ExtensionPoint' is a specialization of 'ModelElement'.
+'UseCases::UseCaseInstance' is a specialization of 'Instance'.
+'Include' (role 'Include4', cardinality 0..*) is associated with 'UseCases::UseCase' (role 'base', cardinality 0..*).
+'UseCases::Instance' (role 'instance', cardinality 0..*) is associated with 'Classifier' (role 'Classifier', cardinality 0..*).
+'Include' (role 'Include', cardinality 0..*) is associated with 'UseCases::UseCase' (role 'addition', cardinality 0..*).
+'UseCase' (role 'UseCase24', cardinality 0..*) is associated with 'UseCases::ExtensionPoint' (role 'extensionPoints', cardinality 0..*).
+'Extend' (role 'Extend22', cardinality 0..*) is associated with 'UseCases::ExtensionPoint' (role 'extensionPoint', cardinality 0..*).
+'UseCases::UseCase' (role 'useCase', cardinality 0..*) is associated with 'ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*).
+'UseCases::Extend' (role 'UseCases_Extend', cardinality 0..*) is associated with 'BooleanExpression' (role 'BooleanExpression', cardinality 0..*).
+'UseCase' (role 'UseCase15', cardinality 0..*) is associated with 'UseCases::Extend' (role 'extendExtension', cardinality 0..*).
+'UseCases::Extend' (role 'extend', cardinality 0..*) is associated with 'ExtensionPoint' (role 'ExtensionPoint19', cardinality 0..*).
+'UseCases::Include' (role 'includeAddition', cardinality 0..*) is associated with 'UseCase' (role 'UseCase', cardinality 0..*).
+'UseCase' (role 'UseCase12', cardinality 0..*) is associated with 'UseCases::Include' (role 'includeBase', cardinality 0..*).
+'UseCases::Classifier' (role 'classifier', cardinality 0..*) is associated with 'Instance' (role 'Instance', cardinality 0..*).
+'UseCases::Extend' (role 'extendBase', cardinality 0..*) is associated with 'UseCase' (role 'UseCase17', cardinality 0..*).
+'Extend' (role 'Extend', cardinality 0..*) is associated with 'UseCases::UseCase' (role 'extension', cardinality 0..*).
+'UseCases::UseCase' (role 'base7', cardinality 0..*) is associated with 'Extend' (role 'Extend8', cardinality 0..*).
+'LocationReference' (role 'LocationReference', cardinality 0..*) is associated with 'UseCases::ExtensionPoint' (role 'UseCases_ExtensionPoint', cardinality 0..*).

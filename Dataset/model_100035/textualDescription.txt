@@ -1,0 +1,67 @@
+The model has 25 class(es).
+The class 'publication2014::Rule' has the following attributes: 'key' of type str; 'text' of type str.
+The class 'publication2014::Labelled' has the following attributes: 'lname' of type str.
+The class 'publication2014::ReviewNote' has the following attributes: 'content' of type str.
+The class 'publication2014::PlaceHolder' has no attributes.
+The class 'publication2014::PlaceHolderPP' has no attributes.
+The class 'publication2014::PublicationPhase' has the following attributes: 'minTime' of type int; 'maxTime' of type int; 'name' of type str.
+The class 'publication2014::PublicationStructure' has no attributes.
+The class 'publication2014::Sequence' has the following attributes: 'sequenceType' of type str.
+The class 'Counted' has no attributes.
+The class 'publication2014::PlaceHolderRs' has no attributes.
+The class 'publication2014::PublicationSystem' has no attributes.
+The class 'publication2014::Counted' has the following attributes: 'id' of type int.
+The class 'publication2014::Paragraph' has the following attributes: 'content' of type str.
+The class 'publication2014::Review' has no attributes.
+The class 'publication2014::Write' has no attributes.
+The class 'publication2014::Progress' has the following attributes: 'percent' of type int; 'time' of type int.
+The class 'PlaceHolder' has no attributes.
+The class 'publication2014::PlaceHolderRule' has no attributes.
+The class 'Named' has no attributes.
+The class 'publication2014::PublicationProcess' has the following attributes: 'minTime' of type int; 'maxTime' of type int.
+The class 'Labelled' has no attributes.
+The class 'publication2014::Paper' has no attributes.
+The class 'publication2014::PlaceHolderRn' has no attributes.
+The class 'publication2014::Named' has the following attributes: 'name' of type str.
+The class 'publication2014::Researcher' has the following attributes: 'name' of type str; 'position' of type str; 'forName' of type str.
+The enumeration 'SequenceType' has the following literals: 'startToFinish', 'startToStart', 'finishToStart', 'finishToFinish'.
+'publication2014::Review' is a specialization of 'Labelled'.
+'publication2014::Paper' is a specialization of 'Named'.
+'publication2014::PlaceHolderRule' is a specialization of 'PlaceHolder'.
+'publication2014::PlaceHolderPP' is a specialization of 'PlaceHolder'.
+'publication2014::Progress' is a specialization of 'Labelled'.
+'publication2014::PublicationProcess' is a specialization of 'Named'.
+'publication2014::Write' is a specialization of 'Labelled'.
+'publication2014::Paragraph' is a specialization of 'Named'.
+'publication2014::PlaceHolderRn' is a specialization of 'PlaceHolder'.
+'publication2014::PlaceHolderRs' is a specialization of 'PlaceHolder'.
+'publication2014::Paragraph' is a specialization of 'Counted'.
+'publication2014::ReviewNote' is a specialization of 'Named'.
+'publication2014::PublicationStructure' is a specialization of 'Named'.
+'publication2014::Review' (role 'publication2014_Review42', cardinality 0..*) is associated with 'publication2014::ReviewNote' (role 'publication2014_ReviewNote43', cardinality 0..*).
+'publication2014::Paragraph' (role 'publication2014_Paragraph', cardinality 0..*) is associated with 'publication2014::Paper' (role 'publication2014_Paper', cardinality 0..*).
+'publication2014::ReviewNote' (role 'publication2014_ReviewNote33', cardinality 0..*) is associated with 'publication2014::PlaceHolderRn' (role 'publication2014_PlaceHolderRn', cardinality 0..*).
+'publication2014::ReviewNote' (role 'publication2014_ReviewNote', cardinality 0..*) is associated with 'publication2014::Paragraph' (role 'publication2014_Paragraph31', cardinality 0..*).
+'publication2014::PlaceHolderRs' (role 'publication2014_PlaceHolderRs', cardinality 0..*) is associated with 'publication2014::Researcher' (role 'publication2014_Researcher25', cardinality 0..*).
+'publication2014::PublicationPhase' (role 'phaseParticipation', cardinality 0..*) is associated with 'publication2014::Researcher' (role 'Researcher', cardinality 0..*).
+'publication2014::Researcher' (role 'Researcher29', cardinality 0..*) is associated with 'publication2014::Paper' (role 'papers', cardinality 0..*).
+'publication2014::PlaceHolderPP' (role 'publication2014_PlaceHolderPP', cardinality 0..*) is associated with 'publication2014::PublicationPhase' (role 'publication2014_PublicationPhase10', cardinality 0..*).
+'publication2014::PublicationProcess' (role 'publication2014_PublicationProcess2', cardinality 0..*) is associated with 'publication2014::Rule' (role 'publication2014_Rule', cardinality 0..*).
+'publication2014::PublicationProcess' (role 'publication2014_PublicationProcess35', cardinality 0..*) is associated with 'publication2014::Progress' (role 'publication2014_Progress', cardinality 0..*).
+'publication2014::PublicationStructure' (role 'publication2014_PublicationStructure53', cardinality 0..*) is associated with 'publication2014::PublicationSystem' (role 'publication2014_PublicationSystem52', cardinality 0..*).
+'publication2014::Paper' (role 'paper', cardinality 0..*) is associated with 'publication2014::Progress' (role 'Progress', cardinality 0..*).
+'publication2014::Write' (role 'publication2014_Write', cardinality 0..*) is associated with 'publication2014::Researcher' (role 'publication2014_Researcher', cardinality 0..*).
+'publication2014::PublicationPhase' (role 'publication2014_PublicationPhase', cardinality 0..*) is associated with 'publication2014::PublicationProcess' (role 'publication2014_PublicationProcess', cardinality 0..*).
+'publication2014::Sequence' (role 'publication2014_Sequence12', cardinality 0..*) is associated with 'publication2014::PublicationPhase' (role 'publication2014_PublicationPhase13', cardinality 0..*).
+'publication2014::Paper' (role 'Paper37', cardinality 0..*) is associated with 'publication2014::Progress' (role 'progress', cardinality 0..*).
+'publication2014::Paper' (role 'publication2014_Paper48', cardinality 0..*) is associated with 'publication2014::PublicationStructure' (role 'publication2014_PublicationStructure47', cardinality 0..*).
+'publication2014::Rule' (role 'publication2014_Rule18', cardinality 0..*) is associated with 'publication2014::PlaceHolderRule' (role 'publication2014_PlaceHolderRule', cardinality 0..*).
+'publication2014::PublicationPhase' (role 'publication2014_PublicationPhase16', cardinality 0..*) is associated with 'publication2014::Sequence' (role 'publication2014_Sequence15', cardinality 0..*).
+'publication2014::PublicationPhase' (role 'publication2014_PublicationPhase4', cardinality 0..*) is associated with 'publication2014::Sequence' (role 'publication2014_Sequence', cardinality 0..*).
+'publication2014::PublicationStructure' (role 'publication2014_PublicationStructure', cardinality 0..*) is associated with 'publication2014::Researcher' (role 'publication2014_Researcher45', cardinality 0..*).
+'publication2014::Rule' (role 'publication2014_Rule8', cardinality 0..*) is associated with 'publication2014::PublicationPhase' (role 'publication2014_PublicationPhase7', cardinality 0..*).
+'publication2014::Researcher' (role 'authors', cardinality 0..*) is associated with 'publication2014::Paper' (role 'Paper', cardinality 0..*).
+'publication2014::PublicationPhase' (role 'PublicationPhase', cardinality 0..*) is associated with 'publication2014::Researcher' (role 'neededPerson', cardinality 0..*).
+'publication2014::Researcher' (role 'publication2014_Researcher22', cardinality 0..*) is associated with 'publication2014::Review' (role 'publication2014_Review', cardinality 0..*).
+'publication2014::Write' (role 'publication2014_Write39', cardinality 0..*) is associated with 'publication2014::Paragraph' (role 'publication2014_Paragraph40', cardinality 0..*).
+'publication2014::PublicationSystem' (role 'publication2014_PublicationSystem', cardinality 0..*) is associated with 'publication2014::PublicationProcess' (role 'publication2014_PublicationProcess50', cardinality 0..*).

@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'mongodb::Document' has the following attributes: '_id' of type str.
+The class 'mongodb::Value' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'mongodb::Collection' has the following attributes: 'name' of type str.
+The class 'mongodb::Database' has the following attributes: 'name' of type str.
+The class 'mongodb::SubDocument' has no attributes.
+The class 'mongodb::Field' has the following attributes: 'key' of type str.
+The class 'IValue' has no attributes.
+The class 'mongodb::ValueList' has no attributes.
+The class 'mongodb::IValue' has no attributes.
+The enumeration 'Type' has the following literals: 'NULL', 'JAVASCRIPT', 'REGEXPR', 'DOUBLE', 'STRING', 'BOOLEAN', 'DATE', 'TIMESTAMP'.
+'mongodb::Value' is a specialization of 'IValue'.
+'mongodb::ValueList' is a specialization of 'IValue'.
+'mongodb::SubDocument' is a specialization of 'IValue'.
+'mongodb::Collection' (role 'mongodb_Collection', cardinality 0..*) is associated with 'mongodb::Database' (role 'mongodb_Database', cardinality 0..*).
+'mongodb::Collection' (role 'mongodb_Collection2', cardinality 0..*) is associated with 'mongodb::Document' (role 'mongodb_Document', cardinality 0..*).
+'mongodb::IValue' (role 'mongodb_IValue', cardinality 0..*) is associated with 'mongodb::Field' (role 'mongodb_Field6', cardinality 0..*).
+'mongodb::Field' (role 'mongodb_Field', cardinality 0..*) is associated with 'mongodb::Document' (role 'mongodb_Document4', cardinality 0..*).
+'mongodb::IValue' (role 'mongodb_IValue8', cardinality 0..*) is associated with 'mongodb::ValueList' (role 'mongodb_ValueList', cardinality 0..*).
+'mongodb::SubDocument' (role 'mongodb_SubDocument', cardinality 0..*) is associated with 'mongodb::Field' (role 'mongodb_Field10', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'DataBase' has no attributes.
+The class 'RelationalDBSchema::NamedElement' has the following attributes: 'name' of type str.
+The class 'Column' has no attributes.
+The class 'Table' has no attributes.
+The class 'RelationalDBSchema::Table' has no attributes.
+The class 'RelationalDBSchema::Column' has the following attributes: 'null' of type str; 'dataType' of type str; 'defaultValue' of type str.
+The class 'RelationalDBSchema::DataBase' has the following attributes: 'SGBDname' of type str.
+The class 'NamedElement' has no attributes.
+'RelationalDBSchema::DataBase' is a specialization of 'NamedElement'.
+'RelationalDBSchema::Table' is a specialization of 'NamedElement'.
+'RelationalDBSchema::Column' is a specialization of 'NamedElement'.
+'DataBase' (role 'DataBase', cardinality 0..*) is associated with 'RelationalDBSchema::Table' (role 'tables', cardinality 0..*).
+'Table' (role 'Table8', cardinality 0..*) is associated with 'RelationalDBSchema::Column' (role 'key', cardinality 0..*).
+'RelationalDBSchema::Table' (role 'owner', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).
+'RelationalDBSchema::Table' (role 'keyOf', cardinality 0..*) is associated with 'Column' (role 'Column4', cardinality 0..*).
+'Table' (role 'Table6', cardinality 0..*) is associated with 'RelationalDBSchema::Column' (role 'columns', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'RelationalDBSchema::DataBase' (role 'database', cardinality 0..*).

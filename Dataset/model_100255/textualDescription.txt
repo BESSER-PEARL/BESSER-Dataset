@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'wikigen::Document' has no attributes.
+The class 'wikigen::HtmlProfile' has no attributes.
+The class 'wikigen::Container' has no attributes.
+The class 'wikigen::GenHtmlDocument' has the following attributes: 'filename' of type str.
+The class 'HtmlProfile' has no attributes.
+The class 'wikigen::Article' has the following attributes: 'generateTOC' of type bool; 'nbColumns' of type int.
+The class 'wikigen::GenLatexDocument' has the following attributes: 'authors' of type str; 'title' of type str; 'filename' of type str.
+'wikigen::Article' is a specialization of 'HtmlProfile'.
+'wikigen::Document' (role 'wikigen_Document', cardinality 0..*) is associated with 'wikigen::GenHtmlDocument' (role 'wikigen_GenHtmlDocument3', cardinality 0..*).
+'wikigen::HtmlProfile' (role 'wikigen_HtmlProfile', cardinality 0..*) is associated with 'wikigen::GenHtmlDocument' (role 'wikigen_GenHtmlDocument', cardinality 0..*).
+'wikigen::GenLatexDocument' (role 'wikigen_GenLatexDocument', cardinality 0..*) is associated with 'wikigen::Container' (role 'wikigen_Container', cardinality 0..*).

@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class declarations_ArrayDeclaration  {
+
+
+
+
+
+
+    private timedAutomata_declarations_TypeDeclaration timedautomata_declarations_typedeclaration;
+
+
+    public declarations_ArrayDeclaration(
+    ) {
+    }
+
+
+
+    public timedAutomata_declarations_TypeDeclaration getTimedautomata_declarations_typedeclaration() {
+        return timedautomata_declarations_typedeclaration;
+    }
+
+    public void setTimedautomata_declarations_typedeclaration(timedAutomata_declarations_TypeDeclaration timedautomata_declarations_typedeclaration) {
+        this.timedautomata_declarations_typedeclaration = timedautomata_declarations_typedeclaration;
+    }
+
+}

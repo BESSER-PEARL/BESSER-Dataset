@@ -1,0 +1,26 @@
+The model has 9 class(es).
+The class 'build::Include' has no attributes.
+The class 'build::Configuration' has no attributes.
+The class 'OptionBinding' has no attributes.
+The class 'build::OptionInstance' has no attributes.
+The class 'Instance' has no attributes.
+The class 'build::Build' has no attributes.
+The class 'build::ModuleInstance' has no attributes.
+The class 'build::ModuleType' has no attributes.
+The class 'build::FileName' has no attributes.
+'build::ModuleInstance' is a specialization of 'Instance'.
+'build::OptionInstance' is a specialization of 'OptionBinding'.
+'build::ModuleInstance' (role 'module', cardinality 0..*) is associated with 'build::OptionInstance' (role 'OptionInstance', cardinality 0..*).
+'build::ModuleInstance' (role 'ModuleInstance12', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'dependent', cardinality 0..*).
+'build::OptionInstance' (role 'options', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'ModuleInstance28', cardinality 0..*).
+'build::ModuleType' (role 'build_ModuleType', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'build_ModuleInstance', cardinality 0..*).
+'build::Include' (role 'build_Include', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'build_ModuleInstance24', cardinality 0..*).
+'build::ModuleInstance' (role 'container', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'ModuleInstance15', cardinality 0..*).
+'build::ModuleInstance' (role 'build_ModuleInstance22', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'build_ModuleInstance20', cardinality 0..*).
+'build::FileName' (role 'build_FileName', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'build_ModuleInstance26', cardinality 0..*).
+'build::ModuleInstance' (role 'ModuleInstance9', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'depends', cardinality 0..*).
+'build::Configuration' (role 'build_Configuration', cardinality 0..*) is associated with 'build::Build' (role 'build_Build', cardinality 0..*).
+'build::ModuleInstance' (role 'modules', cardinality 0..*) is associated with 'build::Build' (role 'Build', cardinality 0..*).
+'build::ModuleInstance' (role 'build_ModuleInstance5', cardinality 0..*) is associated with 'build::ModuleType' (role 'build_ModuleType6', cardinality 0..*).
+'build::ModuleInstance' (role 'contents', cardinality 0..*) is associated with 'build::ModuleInstance' (role 'ModuleInstance18', cardinality 0..*).
+'build::ModuleInstance' (role 'ModuleInstance', cardinality 0..*) is associated with 'build::Build' (role 'build', cardinality 0..*).

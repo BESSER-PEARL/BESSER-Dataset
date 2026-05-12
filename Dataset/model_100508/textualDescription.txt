@@ -1,0 +1,63 @@
+The model has 29 class(es).
+The class 'requirement::HierarchicalElement' has the following attributes: 'nextReqIndex' of type str.
+The class 'EModelElement' has no attributes.
+The class 'requirement::EObject' has no attributes.
+The class 'requirement::ConfiguratedAttribute' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'Requirement' has no attributes.
+The class 'requirement::TrashChapter' has no attributes.
+The class 'requirement::ProblemChapter' has no attributes.
+The class 'requirement::TextAttribute' has the following attributes: 'value' of type str.
+The class 'requirement::SpecialChapter' has no attributes.
+The class 'requirement::ObjectAttribute' has no attributes.
+The class 'requirement::IdentifiedElement' has the following attributes: 'identifier' of type str; 'shortDescription' of type str.
+The class 'requirement::AttributeAllocate' has no attributes.
+The class 'requirement::Requirement' has the following attributes: 'externalResources' of type str.
+The class 'ObjectAttribute' has no attributes.
+The class 'requirement::UntracedChapter' has no attributes.
+The class 'IdentifiedElement' has no attributes.
+The class 'requirement::UpstreamModel' has no attributes.
+The class 'requirement::RequirementProject' has no attributes.
+The class 'requirement::AttributeValue' has the following attributes: 'value' of type str.
+The class 'requirement::DeletedChapter' has no attributes.
+The class 'Project' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'SpecialChapter' has no attributes.
+The class 'requirement::DefaultAttributeValue' has no attributes.
+The class 'requirement::CurrentRequirement' has the following attributes: 'impacted' of type bool.
+The class 'requirement::AttributeConfiguration' has no attributes.
+The class 'requirement::AttributeLink' has the following attributes: 'partial' of type str.
+The class 'requirement::AnonymousRequirement' has no attributes.
+The class 'requirement::Attribute' has the following attributes: 'name' of type str.
+The enumeration 'AttributesType' has the following literals: 'Allocate', 'Text', 'Object', 'Link'.
+'requirement::DeletedChapter' is a specialization of 'SpecialChapter'.
+'requirement::Attribute' is a specialization of 'EModelElement'.
+'requirement::UntracedChapter' is a specialization of 'SpecialChapter'.
+'requirement::AttributeLink' is a specialization of 'ObjectAttribute'.
+'requirement::IdentifiedElement' is a specialization of 'EModelElement'.
+'requirement::AnonymousRequirement' is a specialization of 'Requirement'.
+'requirement::TrashChapter' is a specialization of 'SpecialChapter'.
+'requirement::HierarchicalElement' is a specialization of 'IdentifiedElement'.
+'requirement::RequirementProject' is a specialization of 'IdentifiedElement'.
+'requirement::Requirement' is a specialization of 'IdentifiedElement'.
+'requirement::UpstreamModel' is a specialization of 'Project'.
+'requirement::ObjectAttribute' is a specialization of 'Attribute'.
+'requirement::CurrentRequirement' is a specialization of 'Requirement'.
+'requirement::TextAttribute' is a specialization of 'Attribute'.
+'requirement::ProblemChapter' is a specialization of 'SpecialChapter'.
+'requirement::AttributeAllocate' is a specialization of 'ObjectAttribute'.
+'requirement::ObjectAttribute' (role 'requirement_ObjectAttribute', cardinality 0..*) is associated with 'requirement::EObject' (role 'requirement_EObject32', cardinality 0..*).
+'requirement::RequirementProject' (role 'requirement_RequirementProject6', cardinality 0..*) is associated with 'requirement::UpstreamModel' (role 'requirement_UpstreamModel', cardinality 0..*).
+'requirement::Attribute' (role 'requirement_Attribute', cardinality 0..*) is associated with 'requirement::Requirement' (role 'requirement_Requirement34', cardinality 0..*).
+'requirement::AttributeConfiguration' (role 'requirement_AttributeConfiguration17', cardinality 0..*) is associated with 'requirement::ConfiguratedAttribute' (role 'requirement_ConfiguratedAttribute', cardinality 0..*).
+'requirement::Requirement' (role 'requirement_Requirement', cardinality 0..*) is associated with 'requirement::HierarchicalElement' (role 'requirement_HierarchicalElement15', cardinality 0..*).
+'requirement::HierarchicalElement' (role 'children', cardinality 0..*) is associated with 'requirement::HierarchicalElement' (role 'HierarchicalElement13', cardinality 0..*).
+'requirement::SpecialChapter' (role 'requirement_SpecialChapter', cardinality 0..*) is associated with 'requirement::RequirementProject' (role 'requirement_RequirementProject4', cardinality 0..*).
+'requirement::DefaultAttributeValue' (role 'requirement_DefaultAttributeValue', cardinality 0..*) is associated with 'requirement::ConfiguratedAttribute' (role 'requirement_ConfiguratedAttribute19', cardinality 0..*).
+'requirement::ConfiguratedAttribute' (role 'requirement_ConfiguratedAttribute21', cardinality 0..*) is associated with 'requirement::AttributeValue' (role 'requirement_AttributeValue', cardinality 0..*).
+'requirement::HierarchicalElement' (role 'parent', cardinality 0..*) is associated with 'requirement::HierarchicalElement' (role 'HierarchicalElement', cardinality 0..*).
+'requirement::EObject' (role 'requirement_EObject', cardinality 0..*) is associated with 'requirement::HierarchicalElement' (role 'requirement_HierarchicalElement8', cardinality 0..*).
+'requirement::RequirementProject' (role 'requirement_RequirementProject', cardinality 0..*) is associated with 'requirement::HierarchicalElement' (role 'requirement_HierarchicalElement', cardinality 0..*).
+'requirement::DefaultAttributeValue' (role 'requirement_DefaultAttributeValue23', cardinality 0..*) is associated with 'requirement::AttributeValue' (role 'requirement_AttributeValue24', cardinality 0..*).
+'requirement::SpecialChapter' (role 'requirement_SpecialChapter26', cardinality 0..*) is associated with 'requirement::HierarchicalElement' (role 'requirement_HierarchicalElement27', cardinality 0..*).
+'requirement::Requirement' (role 'requirement_Requirement30', cardinality 0..*) is associated with 'requirement::SpecialChapter' (role 'requirement_SpecialChapter29', cardinality 0..*).
+'requirement::AttributeConfiguration' (role 'requirement_AttributeConfiguration', cardinality 0..*) is associated with 'requirement::RequirementProject' (role 'requirement_RequirementProject2', cardinality 0..*).

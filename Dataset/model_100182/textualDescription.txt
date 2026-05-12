@@ -1,0 +1,450 @@
+The model has 178 class(es).
+The class 'sparql::TriplesSameSubject' has no attributes.
+The class 'sparql::PrefixDecl' has no attributes.
+The class 'sparql::Collection' has no attributes.
+The class 'sparql::BoundBuiltInCallNE' has no attributes.
+The class 'sparql::LimitOffsetClausesLeftNE' has no attributes.
+The class 'sparql::TriplesSameSubjectLeftNE' has no attributes.
+The class 'VarOrIRIref' has no attributes.
+The class 'OrderConditionRightNE' has no attributes.
+The class 'sparql::AscOrDecs' has no attributes.
+The class 'sparql::SparqlQueries' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'sparql::TimesAdditionalUnaryExpressionNE' has no attributes.
+The class 'Query' has no attributes.
+The class 'PrefixedName' has no attributes.
+The class 'sparql::VARNAME' has the following attributes: 'varname' of type str.
+The class 'sparql::SourceSelector' has no attributes.
+The class 'sparql::AdditionalGGPElement' has no attributes.
+The class 'sparql::VerbANE' has the following attributes: 'theA' of type str.
+The class 'ArgList' has no attributes.
+The class 'sparql::OrderCondition' has no attributes.
+The class 'sparql::STRING::LITERAL1' has the following attributes: 'string' of type str.
+The class 'sparql::GraphGraphPattern' has no attributes.
+The class 'StringLiteral' has no attributes.
+The class 'sparql::GraphNode' has no attributes.
+The class 'sparql::DescendingLiteral' has no attributes.
+The class 'OrderCondition' has no attributes.
+The class 'sparql::AdditionalExpressionNE' has no attributes.
+The class 'sparql::NumericLiteralPositive' has no attributes.
+The class 'sparql::ReducedNE' has no attributes.
+The class 'sparql::NamedGraphClause' has no attributes.
+The class 'sparql::Prologue' has no attributes.
+The class 'sparql::IsBlankBuiltInCallNE' has no attributes.
+The class 'sparql::BLANK::NODE::LABEL' has the following attributes: 'pn_local' of type str.
+The class 'sparql::LocatedElement' has the following attributes: 'commentsAfter' of type str; 'location' of type str; 'commentsBefore' of type str.
+The class 'sparql::AdditiveExpression' has no attributes.
+The class 'LANGTAGOrIRIrefNE' has no attributes.
+The class 'sparql::LANGTAG' has the following attributes: 'langtag' of type str.
+The class 'sparql::FalseBooleanLiteralNE' has no attributes.
+The class 'sparql::OptionalGraphPattern' has no attributes.
+The class 'BlankNode' has no attributes.
+The class 'sparql::BiggerOrEqualNumericExpressionNE' has no attributes.
+The class 'Verb' has no attributes.
+The class 'sparql::Object' has no attributes.
+The class 'sparql::ObjectList' has no attributes.
+The class 'sparql::IRI::REF' has the following attributes: 'iri_ref' of type str.
+The class 'BooleanLiteral' has no attributes.
+The class 'sparql::BrackettedExpression' has no attributes.
+The class 'sparql::TriplesBlock' has no attributes.
+The class 'PrimaryExpression' has no attributes.
+The class 'AdditionalMultiplicativeExpressionNE' has no attributes.
+The class 'SourceSelector' has no attributes.
+The class 'sparql::VarOrTerm' has no attributes.
+The class 'sparql::AskQuery' has no attributes.
+The class 'PatternOrFilterNE' has no attributes.
+The class 'sparql::AdditionalMultiplicativeExpressionNE' has no attributes.
+The class 'sparql::BaseDecl' has no attributes.
+The class 'sparql::DatasetClause' has no attributes.
+The class 'sparql::GraphClauseNE' has no attributes.
+The class 'sparql::BuiltInCall' has no attributes.
+The class 'sparql::RDFLiteral' has no attributes.
+The class 'GraphPatternNotTriples' has no attributes.
+The class 'sparql::PlusPrimaryExpressionNE' has no attributes.
+The class 'sparql::DOUBLE' has the following attributes: 'double' of type str.
+The class 'sparql::FunctionCall' has no attributes.
+The class 'sparql::Var' has the following attributes: 'varname' of type str.
+The class 'sparql::IRIrefOrFunction' has no attributes.
+The class 'sparql::OffsetClause' has no attributes.
+The class 'sparql::LangmatchesBuiltInCallNE' has no attributes.
+The class 'sparql::ANON' has no attributes.
+The class 'sparql::WhereClause' has no attributes.
+The class 'sparql::DistinctNE' has no attributes.
+The class 'sparql::RegexExpression' has no attributes.
+The class 'sparql::SameTermBuiltInCallNE' has no attributes.
+The class 'sparql::LimitOffsetClauses' has no attributes.
+The class 'sparql::PrimaryExpression' has no attributes.
+The class 'sparql::AdditionalUnaryExpressionNE' has no attributes.
+The class 'sparql::IsIRIBuiltInCallNE' has no attributes.
+The class 'sparql::SmallerOrEqualNumericExpressionNE' has no attributes.
+The class 'sparql::BiggerNumericExpressionNE' has no attributes.
+The class 'sparql::NumericLiteralUnsigned' has no attributes.
+The class 'sparql::VariablesNE' has no attributes.
+The class 'sparql::NumericLiteralNegative' has no attributes.
+The class 'sparql::Expression' has no attributes.
+The class 'AscOrDecs' has no attributes.
+The class 'sparql::LangBuiltInCallNE' has no attributes.
+The class 'sparql::ValueLogical' has no attributes.
+The class 'sparql::DECIMAL' has the following attributes: 'decimal' of type str.
+The class 'AdditionalUnaryExpressionNE' has no attributes.
+The class 'sparql::PN::LOCAL' has the following attributes: 'pn_local' of type str.
+The class 'GraphNode' has no attributes.
+The class 'VarOrTerm' has no attributes.
+The class 'sparql::DescribeQuery' has no attributes.
+The class 'sparql::AdditionalConditionalAndExpressionNE' has no attributes.
+The class 'sparql::StrBuiltInCallNE' has no attributes.
+The class 'sparql::AscendingLiteral' has no attributes.
+The class 'sparql::GroupGraphPattern' has no attributes.
+The class 'GraphClauseNE' has no attributes.
+The class 'sparql::EqualsNumericExpressionNE' has no attributes.
+The class 'sparql::TrueBooleanLiteralNE' has no attributes.
+The class 'sparql::Query' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'sparql::SmallerNumericExpressionNE' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'sparql::PNAME::NS' has the following attributes: 'pn_prefix' of type str.
+The class 'sparql::SolutionsDisplayNE' has no attributes.
+The class 'sparql::AdditionalNumericExpressionNE' has no attributes.
+The class 'sparql::PropertyListNotEmpty' has no attributes.
+The class 'sparql::Filter' has no attributes.
+The class 'sparql::NotInList' has no attributes.
+The class 'sparql::MinusPrimaryExpressionNE' has no attributes.
+The class 'VariablesNE' has no attributes.
+The class 'sparql::ArgListNILNE' has no attributes.
+The class 'sparql::PrefixedName' has no attributes.
+The class 'sparql::BlankNode' has no attributes.
+The class 'sparql::WhereLiteral' has no attributes.
+The class 'sparql::LimitOffsetClausesRightNE' has no attributes.
+The class 'sparql::PNAME::LN' has no attributes.
+The class 'sparql::GroupOrUnionGraphPattern' has no attributes.
+The class 'sparql::IsURIBuiltInCallNE' has no attributes.
+The class 'GraphTerm' has no attributes.
+The class 'sparql::NotPrimaryExpressionNE' has no attributes.
+The class 'sparql::VAR1' has no attributes.
+The class 'sparql::VAR2' has no attributes.
+The class 'NumericLiteral' has no attributes.
+The class 'sparql::STRING::LITERAL::LONG1' has the following attributes: 'string' of type str.
+The class 'sparql::AllVariablesNE' has no attributes.
+The class 'sparql::DatatypeBuiltInCallNE' has no attributes.
+The class 'sparql::UnaryExpression' has no attributes.
+The class 'sparql::VarOrIRIref' has no attributes.
+The class 'sparql::OrderConditionRightNE' has no attributes.
+The class 'sparql::NotEqualNumericExpressionNE' has no attributes.
+The class 'sparql::PlusMultiplicativeExpressionNE' has no attributes.
+The class 'sparql::LimitClause' has no attributes.
+The class 'sparql::STRING::LITERAL2' has the following attributes: 'string' of type str.
+The class 'sparql::ArgList' has no attributes.
+The class 'TriplesNode' has no attributes.
+The class 'sparql::BlankNodePropertyList' has no attributes.
+The class 'sparql::TriplesNode' has no attributes.
+The class 'sparql::OrderClause' has no attributes.
+The class 'sparql::STRING::LITERAL::LONG2' has the following attributes: 'string' of type str.
+The class 'sparql::Verb' has no attributes.
+The class 'sparql::DividedByAdditionalUnaryExpressionNE' has no attributes.
+The class 'sparql::IsLiteralBuiltInCallNE' has no attributes.
+The class 'sparql::OrderConditionLeftNE' has no attributes.
+The class 'sparql::ConditionalAndExpression' has no attributes.
+The class 'sparql::LANGTAGOrIRIrefNE' has no attributes.
+The class 'sparql::ConditionalOrExpression' has no attributes.
+The class 'sparql::DefaultGraphClause' has no attributes.
+The class 'sparql::UpIRIrefNE' has no attributes.
+The class 'TriplesSameSubject' has no attributes.
+The class 'sparql::NumericLiteral' has no attributes.
+The class 'sparql::IRIreference' has no attributes.
+The class 'sparql::SelectQuery' has no attributes.
+The class 'sparql::SolutionModifier' has no attributes.
+The class 'sparql::GraphPatternNotTriples' has no attributes.
+The class 'sparql::PN::PREFIX' has the following attributes: 'pn_prefix' of type str.
+The class 'sparql::NumericExpression' has no attributes.
+The class 'SolutionsDisplayNE' has no attributes.
+The class 'sparql::ConstructTemplate' has no attributes.
+The class 'sparql::ArgListExpressionNE' has no attributes.
+The class 'LimitOffsetClauses' has no attributes.
+The class 'sparql::MinusMultiplicativeExpressionNE' has no attributes.
+The class 'sparql::TriplesSameSubjectRightNE' has no attributes.
+The class 'sparql::SomeVariablesNE' has no attributes.
+The class 'sparql::BooleanLiteral' has no attributes.
+The class 'sparql::GraphTerm' has no attributes.
+The class 'sparql::ConstructQuery' has no attributes.
+The class 'sparql::RelationalExpression' has no attributes.
+The class 'sparql::MultiplicativeExpression' has no attributes.
+The class 'sparql::INTEGER' has the following attributes: 'integer' of type str.
+The class 'sparql::AdditionalValueLogicalNE' has no attributes.
+The class 'sparql::StringLiteral' has no attributes.
+The class 'sparql::Constraint' has no attributes.
+The class 'BuiltInCall' has no attributes.
+The class 'sparql::WS' has the following attributes: 'ws' of type str.
+The class 'AdditionalNumericExpressionNE' has no attributes.
+The class 'sparql::PatternOrFilterNE' has no attributes.
+The class 'IRIreference' has no attributes.
+'sparql::AdditionalExpressionNE' is a specialization of 'LocatedElement'.
+'sparql::BuiltInCall' is a specialization of 'PrimaryExpression'.
+'sparql::IRI::REF' is a specialization of 'IRIreference'.
+'sparql::IRIreference' is a specialization of 'GraphTerm'.
+'sparql::Object' is a specialization of 'LocatedElement'.
+'sparql::NotPrimaryExpressionNE' is a specialization of 'UnaryExpression'.
+'sparql::MultiplicativeExpression' is a specialization of 'LocatedElement'.
+'sparql::ANON' is a specialization of 'BlankNode'.
+'sparql::Prologue' is a specialization of 'LocatedElement'.
+'sparql::ConditionalOrExpression' is a specialization of 'LocatedElement'.
+'sparql::AdditionalConditionalAndExpressionNE' is a specialization of 'LocatedElement'.
+'sparql::NotEqualNumericExpressionNE' is a specialization of 'AdditionalNumericExpressionNE'.
+'sparql::AdditionalUnaryExpressionNE' is a specialization of 'LocatedElement'.
+'sparql::IRI::REF' is a specialization of 'VarOrIRIref'.
+'sparql::SelectQuery' is a specialization of 'Query'.
+'sparql::AllVariablesNE' is a specialization of 'VariablesNE'.
+'sparql::TrueBooleanLiteralNE' is a specialization of 'BooleanLiteral'.
+'sparql::Verb' is a specialization of 'LocatedElement'.
+'sparql::AscendingLiteral' is a specialization of 'AscOrDecs'.
+'sparql::SourceSelector' is a specialization of 'LocatedElement'.
+'sparql::PNAME::LN' is a specialization of 'VarOrIRIref'.
+'sparql::BiggerNumericExpressionNE' is a specialization of 'AdditionalNumericExpressionNE'.
+'sparql::INTEGER' is a specialization of 'NumericLiteral'.
+'sparql::PNAME::NS' is a specialization of 'PrefixedName'.
+'sparql::IsURIBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::ObjectList' is a specialization of 'LocatedElement'.
+'sparql::TriplesSameSubject' is a specialization of 'LocatedElement'.
+'sparql::Var' is a specialization of 'OrderConditionRightNE'.
+'sparql::STRING::LITERAL2' is a specialization of 'StringLiteral'.
+'sparql::FalseBooleanLiteralNE' is a specialization of 'BooleanLiteral'.
+'sparql::BrackettedExpression' is a specialization of 'Constraint'.
+'sparql::GraphClauseNE' is a specialization of 'LocatedElement'.
+'sparql::GraphPatternNotTriples' is a specialization of 'PatternOrFilterNE'.
+'sparql::OrderConditionLeftNE' is a specialization of 'OrderCondition'.
+'sparql::BlankNodePropertyList' is a specialization of 'TriplesNode'.
+'sparql::AdditionalValueLogicalNE' is a specialization of 'LocatedElement'.
+'sparql::BiggerOrEqualNumericExpressionNE' is a specialization of 'AdditionalNumericExpressionNE'.
+'sparql::SomeVariablesNE' is a specialization of 'VariablesNE'.
+'sparql::DECIMAL' is a specialization of 'NumericLiteral'.
+'sparql::GroupOrUnionGraphPattern' is a specialization of 'GraphPatternNotTriples'.
+'sparql::BlankNode' is a specialization of 'GraphTerm'.
+'sparql::LANGTAGOrIRIrefNE' is a specialization of 'LocatedElement'.
+'sparql::DistinctNE' is a specialization of 'SolutionsDisplayNE'.
+'sparql::Collection' is a specialization of 'TriplesNode'.
+'sparql::SolutionsDisplayNE' is a specialization of 'LocatedElement'.
+'sparql::DatasetClause' is a specialization of 'LocatedElement'.
+'sparql::STRING::LITERAL1' is a specialization of 'StringLiteral'.
+'sparql::LangBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::VarOrTerm' is a specialization of 'GraphNode'.
+'sparql::DatatypeBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::ConstructQuery' is a specialization of 'Query'.
+'sparql::ConditionalAndExpression' is a specialization of 'LocatedElement'.
+'sparql::GraphGraphPattern' is a specialization of 'GraphPatternNotTriples'.
+'sparql::Var' is a specialization of 'PrimaryExpression'.
+'sparql::PN::LOCAL' is a specialization of 'LocatedElement'.
+'sparql::OptionalGraphPattern' is a specialization of 'GraphPatternNotTriples'.
+'sparql::BuiltInCall' is a specialization of 'Constraint'.
+'sparql::ReducedNE' is a specialization of 'SolutionsDisplayNE'.
+'sparql::NumericLiteralNegative' is a specialization of 'AdditionalMultiplicativeExpressionNE'.
+'sparql::NotInList' is a specialization of 'GraphTerm'.
+'sparql::BLANK::NODE::LABEL' is a specialization of 'BlankNode'.
+'sparql::NumericLiteralPositive' is a specialization of 'NumericLiteral'.
+'sparql::ArgListNILNE' is a specialization of 'ArgList'.
+'sparql::BaseDecl' is a specialization of 'LocatedElement'.
+'sparql::IRIreference' is a specialization of 'SourceSelector'.
+'sparql::TimesAdditionalUnaryExpressionNE' is a specialization of 'AdditionalUnaryExpressionNE'.
+'sparql::SmallerOrEqualNumericExpressionNE' is a specialization of 'AdditionalNumericExpressionNE'.
+'sparql::LimitOffsetClausesLeftNE' is a specialization of 'LimitOffsetClauses'.
+'sparql::OrderClause' is a specialization of 'LocatedElement'.
+'sparql::NumericLiteralUnsigned' is a specialization of 'NumericLiteral'.
+'sparql::Query' is a specialization of 'LocatedElement'.
+'sparql::DefaultGraphClause' is a specialization of 'GraphClauseNE'.
+'sparql::NumericLiteralNegative' is a specialization of 'NumericLiteral'.
+'sparql::TriplesSameSubjectRightNE' is a specialization of 'TriplesSameSubject'.
+'sparql::IRIreference' is a specialization of 'VarOrIRIref'.
+'sparql::AdditiveExpression' is a specialization of 'LocatedElement'.
+'sparql::Filter' is a specialization of 'PatternOrFilterNE'.
+'sparql::BoundBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::STRING::LITERAL::LONG1' is a specialization of 'StringLiteral'.
+'sparql::Constraint' is a specialization of 'OrderConditionRightNE'.
+'sparql::BooleanLiteral' is a specialization of 'PrimaryExpression'.
+'sparql::RegexExpression' is a specialization of 'BuiltInCall'.
+'sparql::RelationalExpression' is a specialization of 'LocatedElement'.
+'sparql::DescendingLiteral' is a specialization of 'AscOrDecs'.
+'sparql::Expression' is a specialization of 'LocatedElement'.
+'sparql::STRING::LITERAL::LONG2' is a specialization of 'StringLiteral'.
+'sparql::Var' is a specialization of 'VarOrTerm'.
+'sparql::DescribeQuery' is a specialization of 'Query'.
+'sparql::PropertyListNotEmpty' is a specialization of 'LocatedElement'.
+'sparql::WS' is a specialization of 'LocatedElement'.
+'sparql::LimitOffsetClauses' is a specialization of 'LocatedElement'.
+'sparql::NumericLiteral' is a specialization of 'GraphTerm'.
+'sparql::LANGTAG' is a specialization of 'LANGTAGOrIRIrefNE'.
+'sparql::FunctionCall' is a specialization of 'Constraint'.
+'sparql::NumericLiteral' is a specialization of 'AdditionalMultiplicativeExpressionNE'.
+'sparql::NumericLiteral' is a specialization of 'PrimaryExpression'.
+'sparql::PlusPrimaryExpressionNE' is a specialization of 'UnaryExpression'.
+'sparql::VerbANE' is a specialization of 'Verb'.
+'sparql::OrderConditionRightNE' is a specialization of 'OrderCondition'.
+'sparql::PlusMultiplicativeExpressionNE' is a specialization of 'AdditionalMultiplicativeExpressionNE'.
+'sparql::RDFLiteral' is a specialization of 'GraphTerm'.
+'sparql::SameTermBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::DividedByAdditionalUnaryExpressionNE' is a specialization of 'AdditionalUnaryExpressionNE'.
+'sparql::LimitOffsetClausesRightNE' is a specialization of 'LimitOffsetClauses'.
+'sparql::PN::PREFIX' is a specialization of 'LocatedElement'.
+'sparql::VarOrIRIref' is a specialization of 'Verb'.
+'sparql::NumericLiteralPositive' is a specialization of 'AdditionalMultiplicativeExpressionNE'.
+'sparql::IsIRIBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::SmallerNumericExpressionNE' is a specialization of 'AdditionalNumericExpressionNE'.
+'sparql::OffsetClause' is a specialization of 'LocatedElement'.
+'sparql::VariablesNE' is a specialization of 'LocatedElement'.
+'sparql::ArgListExpressionNE' is a specialization of 'ArgList'.
+'sparql::GroupGraphPattern' is a specialization of 'LocatedElement'.
+'sparql::PNAME::NS' is a specialization of 'VarOrIRIref'.
+'sparql::RDFLiteral' is a specialization of 'PrimaryExpression'.
+'sparql::BrackettedExpression' is a specialization of 'PrimaryExpression'.
+'sparql::ValueLogical' is a specialization of 'LocatedElement'.
+'sparql::IsLiteralBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::ConstructTemplate' is a specialization of 'LocatedElement'.
+'sparql::AdditionalGGPElement' is a specialization of 'LocatedElement'.
+'sparql::PrefixDecl' is a specialization of 'LocatedElement'.
+'sparql::BooleanLiteral' is a specialization of 'GraphTerm'.
+'sparql::NamedGraphClause' is a specialization of 'GraphClauseNE'.
+'sparql::OrderCondition' is a specialization of 'LocatedElement'.
+'sparql::MinusMultiplicativeExpressionNE' is a specialization of 'AdditionalMultiplicativeExpressionNE'.
+'sparql::LangmatchesBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::AskQuery' is a specialization of 'Query'.
+'sparql::AdditionalMultiplicativeExpressionNE' is a specialization of 'LocatedElement'.
+'sparql::EqualsNumericExpressionNE' is a specialization of 'AdditionalNumericExpressionNE'.
+'sparql::MinusPrimaryExpressionNE' is a specialization of 'UnaryExpression'.
+'sparql::NumericExpression' is a specialization of 'LocatedElement'.
+'sparql::IRIrefOrFunction' is a specialization of 'PrimaryExpression'.
+'sparql::WhereClause' is a specialization of 'LocatedElement'.
+'sparql::PrefixedName' is a specialization of 'IRIreference'.
+'sparql::PrimaryExpression' is a specialization of 'UnaryExpression'.
+'sparql::StrBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::LimitClause' is a specialization of 'LocatedElement'.
+'sparql::IsBlankBuiltInCallNE' is a specialization of 'BuiltInCall'.
+'sparql::PNAME::LN' is a specialization of 'PrefixedName'.
+'sparql::Var' is a specialization of 'VarOrIRIref'.
+'sparql::UnaryExpression' is a specialization of 'LocatedElement'.
+'sparql::VARNAME' is a specialization of 'LocatedElement'.
+'sparql::ArgList' is a specialization of 'LocatedElement'.
+'sparql::TriplesNode' is a specialization of 'GraphNode'.
+'sparql::TriplesSameSubjectLeftNE' is a specialization of 'TriplesSameSubject'.
+'sparql::UpIRIrefNE' is a specialization of 'LANGTAGOrIRIrefNE'.
+'sparql::AdditionalNumericExpressionNE' is a specialization of 'LocatedElement'.
+'sparql::SparqlQueries' is a specialization of 'LocatedElement'.
+'sparql::DOUBLE' is a specialization of 'NumericLiteral'.
+'sparql::GraphNode' is a specialization of 'LocatedElement'.
+'sparql::SolutionModifier' is a specialization of 'LocatedElement'.
+'sparql::GraphTerm' is a specialization of 'VarOrTerm'.
+'sparql::ObjectList' (role 'sparql_ObjectList', cardinality 0..*) is associated with 'sparql::PropertyListNotEmpty' (role 'sparql_PropertyListNotEmpty115', cardinality 0..*).
+'sparql::StringLiteral' (role 'sparql_StringLiteral', cardinality 0..*) is associated with 'sparql::RDFLiteral' (role 'sparql_RDFLiteral', cardinality 0..*).
+'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern98', cardinality 0..*) is associated with 'sparql::GroupOrUnionGraphPattern' (role 'sparql_GroupOrUnionGraphPattern', cardinality 0..*).
+'sparql::INTEGER' (role 'sparql_INTEGER71', cardinality 0..*) is associated with 'sparql::OffsetClause' (role 'sparql_OffsetClause70', cardinality 0..*).
+'sparql::Prologue' (role 'sparql_Prologue', cardinality 0..*) is associated with 'sparql::SparqlQueries' (role 'sparql_SparqlQueries', cardinality 0..*).
+'sparql::WhereClause' (role 'sparql_WhereClause', cardinality 0..*) is associated with 'sparql::SelectQuery' (role 'sparql_SelectQuery20', cardinality 0..*).
+'sparql::ArgList' (role 'sparql_ArgList229', cardinality 0..*) is associated with 'sparql::IRIrefOrFunction' (role 'sparql_IRIrefOrFunction228', cardinality 0..*).
+'sparql::DatasetClause' (role 'sparql_DatasetClause', cardinality 0..*) is associated with 'sparql::SelectQuery' (role 'sparql_SelectQuery18', cardinality 0..*).
+'sparql::IsLiteralBuiltInCallNE' (role 'sparql_IsLiteralBuiltInCallNE', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression150', cardinality 0..*).
+'sparql::TriplesSameSubjectLeftNE' (role 'sparql_TriplesSameSubjectLeftNE', cardinality 0..*) is associated with 'sparql::VarOrTerm' (role 'sparql_VarOrTerm', cardinality 0..*).
+'sparql::IRI::REF' (role 'sparql_IRI_REF13', cardinality 0..*) is associated with 'sparql::PrefixDecl' (role 'sparql_PrefixDecl12', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression135', cardinality 0..*) is associated with 'sparql::DatatypeBuiltInCallNE' (role 'sparql_DatatypeBuiltInCallNE', cardinality 0..*).
+'sparql::IRIreference' (role 'sparql_IRIreference226', cardinality 0..*) is associated with 'sparql::IRIrefOrFunction' (role 'sparql_IRIrefOrFunction', cardinality 0..*).
+'sparql::BiggerNumericExpressionNE' (role 'sparql_BiggerNumericExpressionNE', cardinality 0..*) is associated with 'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression199', cardinality 0..*).
+'sparql::AdditionalValueLogicalNE' (role 'sparql_AdditionalValueLogicalNE', cardinality 0..*) is associated with 'sparql::ConditionalAndExpression' (role 'sparql_ConditionalAndExpression180', cardinality 0..*).
+'sparql::ConditionalAndExpression' (role 'sparql_ConditionalAndExpression178', cardinality 0..*) is associated with 'sparql::ValueLogical' (role 'sparql_ValueLogical', cardinality 0..*).
+'sparql::EqualsNumericExpressionNE' (role 'sparql_EqualsNumericExpressionNE', cardinality 0..*) is associated with 'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression193', cardinality 0..*).
+'sparql::BaseDecl' (role 'sparql_BaseDecl', cardinality 0..*) is associated with 'sparql::Prologue' (role 'sparql_Prologue4', cardinality 0..*).
+'sparql::RelationalExpression' (role 'sparql_RelationalExpression189', cardinality 0..*) is associated with 'sparql::AdditionalNumericExpressionNE' (role 'sparql_AdditionalNumericExpressionNE', cardinality 0..*).
+'sparql::PrimaryExpression' (role 'sparql_PrimaryExpression222', cardinality 0..*) is associated with 'sparql::PlusPrimaryExpressionNE' (role 'sparql_PlusPrimaryExpressionNE', cardinality 0..*).
+'sparql::BlankNodePropertyList' (role 'sparql_BlankNodePropertyList', cardinality 0..*) is associated with 'sparql::PropertyListNotEmpty' (role 'sparql_PropertyListNotEmpty123', cardinality 0..*).
+'sparql::TriplesSameSubject' (role 'sparql_TriplesSameSubject', cardinality 0..*) is associated with 'sparql::ConstructTemplate' (role 'sparql_ConstructTemplate49', cardinality 0..*).
+'sparql::AdditionalValueLogicalNE' (role 'sparql_AdditionalValueLogicalNE184', cardinality 0..*) is associated with 'sparql::RelationalExpression' (role 'sparql_RelationalExpression185', cardinality 0..*).
+'sparql::VAR1' (role 'sparql_VAR1', cardinality 0..*) is associated with 'sparql::VARNAME' (role 'sparql_VARNAME', cardinality 0..*).
+'sparql::Collection' (role 'sparql_Collection', cardinality 0..*) is associated with 'sparql::GraphNode' (role 'sparql_GraphNode121', cardinality 0..*).
+'sparql::PrefixDecl' (role 'sparql_PrefixDecl10', cardinality 0..*) is associated with 'sparql::PNAME::NS' (role 'sparql_PNAME_NS', cardinality 0..*).
+'sparql::WhereClause' (role 'sparql_WhereClause80', cardinality 0..*) is associated with 'sparql::WhereLiteral' (role 'sparql_WhereLiteral', cardinality 0..*).
+'sparql::TriplesNode' (role 'sparql_TriplesNode', cardinality 0..*) is associated with 'sparql::TriplesSameSubjectRightNE' (role 'sparql_TriplesSameSubjectRightNE', cardinality 0..*).
+'sparql::MultiplicativeExpression' (role 'sparql_MultiplicativeExpression209', cardinality 0..*) is associated with 'sparql::UnaryExpression' (role 'sparql_UnaryExpression', cardinality 0..*).
+'sparql::SomeVariablesNE' (role 'sparql_SomeVariablesNE', cardinality 0..*) is associated with 'sparql::Var' (role 'sparql_Var73', cardinality 0..*).
+'sparql::TriplesBlock' (role 'sparql_TriplesBlock91', cardinality 0..*) is associated with 'sparql::AdditionalGGPElement' (role 'sparql_AdditionalGGPElement90', cardinality 0..*).
+'sparql::TriplesSameSubject' (role 'sparql_TriplesSameSubject94', cardinality 0..*) is associated with 'sparql::TriplesBlock' (role 'sparql_TriplesBlock93', cardinality 0..*).
+'sparql::NotPrimaryExpressionNE' (role 'sparql_NotPrimaryExpressionNE', cardinality 0..*) is associated with 'sparql::PrimaryExpression' (role 'sparql_PrimaryExpression', cardinality 0..*).
+'sparql::WhereClause' (role 'sparql_WhereClause29', cardinality 0..*) is associated with 'sparql::ConstructQuery' (role 'sparql_ConstructQuery28', cardinality 0..*).
+'sparql::FunctionCall' (role 'sparql_FunctionCall158', cardinality 0..*) is associated with 'sparql::ArgList' (role 'sparql_ArgList', cardinality 0..*).
+'sparql::AdditionalGGPElement' (role 'sparql_AdditionalGGPElement', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern86', cardinality 0..*).
+'sparql::RegexExpression' (role 'sparql_RegexExpression154', cardinality 0..*) is associated with 'sparql::AdditionalExpressionNE' (role 'sparql_AdditionalExpressionNE155', cardinality 0..*).
+'sparql::UnaryExpression' (role 'sparql_UnaryExpression219', cardinality 0..*) is associated with 'sparql::DividedByAdditionalUnaryExpressionNE' (role 'sparql_DividedByAdditionalUnaryExpressionNE', cardinality 0..*).
+'sparql::TriplesSameSubjectRightNE' (role 'sparql_TriplesSameSubjectRightNE110', cardinality 0..*) is associated with 'sparql::PropertyListNotEmpty' (role 'sparql_PropertyListNotEmpty111', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression144', cardinality 0..*) is associated with 'sparql::IsIRIBuiltInCallNE' (role 'sparql_IsIRIBuiltInCallNE', cardinality 0..*).
+'sparql::VarOrIRIref' (role 'sparql_VarOrIRIref', cardinality 0..*) is associated with 'sparql::DescribeQuery' (role 'sparql_DescribeQuery', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression161', cardinality 0..*) is associated with 'sparql::ArgListExpressionNE' (role 'sparql_ArgListExpressionNE', cardinality 0..*).
+'sparql::OffsetClause' (role 'sparql_OffsetClause', cardinality 0..*) is associated with 'sparql::LimitOffsetClausesLeftNE' (role 'sparql_LimitOffsetClausesLeftNE61', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression127', cardinality 0..*) is associated with 'sparql::StrBuiltInCallNE' (role 'sparql_StrBuiltInCallNE', cardinality 0..*).
+'sparql::Prologue' (role 'sparql_Prologue6', cardinality 0..*) is associated with 'sparql::PrefixDecl' (role 'sparql_PrefixDecl', cardinality 0..*).
+'sparql::SmallerOrEqualNumericExpressionNE' (role 'sparql_SmallerOrEqualNumericExpressionNE', cardinality 0..*) is associated with 'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression201', cardinality 0..*).
+'sparql::SameTermBuiltInCallNE' (role 'sparql_SameTermBuiltInCallNE141', cardinality 0..*) is associated with 'sparql::AdditionalExpressionNE' (role 'sparql_AdditionalExpressionNE142', cardinality 0..*).
+'sparql::Verb' (role 'sparql_Verb', cardinality 0..*) is associated with 'sparql::PropertyListNotEmpty' (role 'sparql_PropertyListNotEmpty113', cardinality 0..*).
+'sparql::LimitOffsetClausesRightNE' (role 'sparql_LimitOffsetClausesRightNE', cardinality 0..*) is associated with 'sparql::OffsetClause' (role 'sparql_OffsetClause63', cardinality 0..*).
+'sparql::TriplesBlock' (role 'sparql_TriplesBlock', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern84', cardinality 0..*).
+'sparql::Var' (role 'sparql_Var137', cardinality 0..*) is associated with 'sparql::BoundBuiltInCallNE' (role 'sparql_BoundBuiltInCallNE', cardinality 0..*).
+'sparql::IsURIBuiltInCallNE' (role 'sparql_IsURIBuiltInCallNE', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression146', cardinality 0..*).
+'sparql::ConditionalAndExpression' (role 'sparql_ConditionalAndExpression176', cardinality 0..*) is associated with 'sparql::AdditionalConditionalAndExpressionNE' (role 'sparql_AdditionalConditionalAndExpressionNE175', cardinality 0..*).
+'sparql::PropertyListNotEmpty' (role 'sparql_PropertyListNotEmpty', cardinality 0..*) is associated with 'sparql::TriplesSameSubjectLeftNE' (role 'sparql_TriplesSameSubjectLeftNE107', cardinality 0..*).
+'sparql::AscOrDecs' (role 'sparql_AscOrDecs', cardinality 0..*) is associated with 'sparql::OrderConditionLeftNE' (role 'sparql_OrderConditionLeftNE', cardinality 0..*).
+'sparql::AdditionalExpressionNE' (role 'sparql_AdditionalExpressionNE164', cardinality 0..*) is associated with 'sparql::ArgListExpressionNE' (role 'sparql_ArgListExpressionNE163', cardinality 0..*).
+'sparql::OrderClause' (role 'sparql_OrderClause', cardinality 0..*) is associated with 'sparql::SolutionModifier' (role 'sparql_SolutionModifier51', cardinality 0..*).
+'sparql::ValueLogical' (role 'sparql_ValueLogical182', cardinality 0..*) is associated with 'sparql::RelationalExpression' (role 'sparql_RelationalExpression', cardinality 0..*).
+'sparql::DatasetClause' (role 'sparql_DatasetClause75', cardinality 0..*) is associated with 'sparql::GraphClauseNE' (role 'sparql_GraphClauseNE', cardinality 0..*).
+'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression205', cardinality 0..*) is associated with 'sparql::MultiplicativeExpression' (role 'sparql_MultiplicativeExpression', cardinality 0..*).
+'sparql::IRIreference' (role 'sparql_IRIreference', cardinality 0..*) is associated with 'sparql::FunctionCall' (role 'sparql_FunctionCall', cardinality 0..*).
+'sparql::RelationalExpression' (role 'sparql_RelationalExpression187', cardinality 0..*) is associated with 'sparql::NumericExpression' (role 'sparql_NumericExpression', cardinality 0..*).
+'sparql::TimesAdditionalUnaryExpressionNE' (role 'sparql_TimesAdditionalUnaryExpressionNE', cardinality 0..*) is associated with 'sparql::UnaryExpression' (role 'sparql_UnaryExpression217', cardinality 0..*).
+'sparql::SelectQuery' (role 'sparql_SelectQuery16', cardinality 0..*) is associated with 'sparql::Var' (role 'sparql_Var', cardinality 0..*).
+'sparql::PatternOrFilterNE' (role 'sparql_PatternOrFilterNE', cardinality 0..*) is associated with 'sparql::AdditionalGGPElement' (role 'sparql_AdditionalGGPElement88', cardinality 0..*).
+'sparql::WS' (role 'sparql_WS', cardinality 0..*) is associated with 'sparql::NotInList' (role 'sparql_NotInList240', cardinality 0..*).
+'sparql::ObjectList' (role 'sparql_ObjectList117', cardinality 0..*) is associated with 'sparql::Object' (role 'sparql_Object', cardinality 0..*).
+'sparql::ConstructQuery' (role 'sparql_ConstructQuery31', cardinality 0..*) is associated with 'sparql::SolutionModifier' (role 'sparql_SolutionModifier32', cardinality 0..*).
+'sparql::NotEqualNumericExpressionNE' (role 'sparql_NotEqualNumericExpressionNE', cardinality 0..*) is associated with 'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression195', cardinality 0..*).
+'sparql::ConditionalOrExpression' (role 'sparql_ConditionalOrExpression171', cardinality 0..*) is associated with 'sparql::ConditionalAndExpression' (role 'sparql_ConditionalAndExpression', cardinality 0..*).
+'sparql::WhereClause' (role 'sparql_WhereClause82', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression152', cardinality 0..*) is associated with 'sparql::RegexExpression' (role 'sparql_RegexExpression', cardinality 0..*).
+'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern103', cardinality 0..*) is associated with 'sparql::GraphGraphPattern' (role 'sparql_GraphGraphPattern102', cardinality 0..*).
+'sparql::SelectQuery' (role 'sparql_SelectQuery', cardinality 0..*) is associated with 'sparql::SolutionsDisplayNE' (role 'sparql_SolutionsDisplayNE', cardinality 0..*).
+'sparql::DefaultGraphClause' (role 'sparql_DefaultGraphClause', cardinality 0..*) is associated with 'sparql::SourceSelector' (role 'sparql_SourceSelector', cardinality 0..*).
+'sparql::UpIRIrefNE' (role 'sparql_UpIRIrefNE', cardinality 0..*) is associated with 'sparql::IRIreference' (role 'sparql_IRIreference234', cardinality 0..*).
+'sparql::MultiplicativeExpression' (role 'sparql_MultiplicativeExpression215', cardinality 0..*) is associated with 'sparql::MinusMultiplicativeExpressionNE' (role 'sparql_MinusMultiplicativeExpressionNE', cardinality 0..*).
+'sparql::OrderClause' (role 'sparql_OrderClause55', cardinality 0..*) is associated with 'sparql::OrderCondition' (role 'sparql_OrderCondition', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression148', cardinality 0..*) is associated with 'sparql::IsBlankBuiltInCallNE' (role 'sparql_IsBlankBuiltInCallNE', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression139', cardinality 0..*) is associated with 'sparql::SameTermBuiltInCallNE' (role 'sparql_SameTermBuiltInCallNE', cardinality 0..*).
+'sparql::PrimaryExpression' (role 'sparql_PrimaryExpression224', cardinality 0..*) is associated with 'sparql::MinusPrimaryExpressionNE' (role 'sparql_MinusPrimaryExpressionNE', cardinality 0..*).
+'sparql::SparqlQueries' (role 'sparql_SparqlQueries2', cardinality 0..*) is associated with 'sparql::Query' (role 'sparql_Query', cardinality 0..*).
+'sparql::Object' (role 'sparql_Object119', cardinality 0..*) is associated with 'sparql::GraphNode' (role 'sparql_GraphNode', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression129', cardinality 0..*) is associated with 'sparql::LangBuiltInCallNE' (role 'sparql_LangBuiltInCallNE', cardinality 0..*).
+'sparql::VARNAME' (role 'sparql_VARNAME237', cardinality 0..*) is associated with 'sparql::VAR2' (role 'sparql_VAR2', cardinality 0..*).
+'sparql::LimitClause' (role 'sparql_LimitClause68', cardinality 0..*) is associated with 'sparql::INTEGER' (role 'sparql_INTEGER', cardinality 0..*).
+'sparql::ConstructQuery' (role 'sparql_ConstructQuery25', cardinality 0..*) is associated with 'sparql::DatasetClause' (role 'sparql_DatasetClause26', cardinality 0..*).
+'sparql::Constraint' (role 'sparql_Constraint', cardinality 0..*) is associated with 'sparql::Filter' (role 'sparql_Filter', cardinality 0..*).
+'sparql::BiggerOrEqualNumericExpressionNE' (role 'sparql_BiggerOrEqualNumericExpressionNE', cardinality 0..*) is associated with 'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression203', cardinality 0..*).
+'sparql::AdditionalExpressionNE' (role 'sparql_AdditionalExpressionNE', cardinality 0..*) is associated with 'sparql::LangmatchesBuiltInCallNE' (role 'sparql_LangmatchesBuiltInCallNE133', cardinality 0..*).
+'sparql::PN::LOCAL' (role 'sparql_PN_LOCAL', cardinality 0..*) is associated with 'sparql::PNAME::LN' (role 'sparql_PNAME_LN', cardinality 0..*).
+'sparql::SmallerNumericExpressionNE' (role 'sparql_SmallerNumericExpressionNE', cardinality 0..*) is associated with 'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression197', cardinality 0..*).
+'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression', cardinality 0..*) is associated with 'sparql::NumericExpression' (role 'sparql_NumericExpression191', cardinality 0..*).
+'sparql::ConditionalOrExpression' (role 'sparql_ConditionalOrExpression169', cardinality 0..*) is associated with 'sparql::AdditionalExpressionNE' (role 'sparql_AdditionalExpressionNE168', cardinality 0..*).
+'sparql::DescribeQuery' (role 'sparql_DescribeQuery41', cardinality 0..*) is associated with 'sparql::SolutionModifier' (role 'sparql_SolutionModifier42', cardinality 0..*).
+'sparql::AdditionalUnaryExpressionNE' (role 'sparql_AdditionalUnaryExpressionNE', cardinality 0..*) is associated with 'sparql::MultiplicativeExpression' (role 'sparql_MultiplicativeExpression211', cardinality 0..*).
+'sparql::LimitClause' (role 'sparql_LimitClause66', cardinality 0..*) is associated with 'sparql::LimitOffsetClausesRightNE' (role 'sparql_LimitOffsetClausesRightNE65', cardinality 0..*).
+'sparql::OptionalGraphPattern' (role 'sparql_OptionalGraphPattern', cardinality 0..*) is associated with 'sparql::GroupGraphPattern' (role 'sparql_GroupGraphPattern96', cardinality 0..*).
+'sparql::NotInList' (role 'sparql_NotInList', cardinality 0..*) is associated with 'sparql::ArgListNILNE' (role 'sparql_ArgListNILNE', cardinality 0..*).
+'sparql::LimitOffsetClauses' (role 'sparql_LimitOffsetClauses', cardinality 0..*) is associated with 'sparql::SolutionModifier' (role 'sparql_SolutionModifier53', cardinality 0..*).
+'sparql::SourceSelector' (role 'sparql_SourceSelector78', cardinality 0..*) is associated with 'sparql::NamedGraphClause' (role 'sparql_NamedGraphClause', cardinality 0..*).
+'sparql::LangmatchesBuiltInCallNE' (role 'sparql_LangmatchesBuiltInCallNE', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression131', cardinality 0..*).
+'sparql::MultiplicativeExpression' (role 'sparql_MultiplicativeExpression213', cardinality 0..*) is associated with 'sparql::PlusMultiplicativeExpressionNE' (role 'sparql_PlusMultiplicativeExpressionNE', cardinality 0..*).
+'sparql::DescribeQuery' (role 'sparql_DescribeQuery35', cardinality 0..*) is associated with 'sparql::DatasetClause' (role 'sparql_DatasetClause36', cardinality 0..*).
+'sparql::WS' (role 'sparql_WS242', cardinality 0..*) is associated with 'sparql::ANON' (role 'sparql_ANON', cardinality 0..*).
+'sparql::LANGTAGOrIRIrefNE' (role 'sparql_LANGTAGOrIRIrefNE', cardinality 0..*) is associated with 'sparql::RDFLiteral' (role 'sparql_RDFLiteral232', cardinality 0..*).
+'sparql::LimitClause' (role 'sparql_LimitClause', cardinality 0..*) is associated with 'sparql::LimitOffsetClausesLeftNE' (role 'sparql_LimitOffsetClausesLeftNE', cardinality 0..*).
+'sparql::AdditionalConditionalAndExpressionNE' (role 'sparql_AdditionalConditionalAndExpressionNE', cardinality 0..*) is associated with 'sparql::ConditionalOrExpression' (role 'sparql_ConditionalOrExpression173', cardinality 0..*).
+'sparql::AdditiveExpression' (role 'sparql_AdditiveExpression207', cardinality 0..*) is associated with 'sparql::AdditionalMultiplicativeExpressionNE' (role 'sparql_AdditionalMultiplicativeExpressionNE', cardinality 0..*).
+'sparql::BrackettedExpression' (role 'sparql_BrackettedExpression125', cardinality 0..*) is associated with 'sparql::Expression' (role 'sparql_Expression', cardinality 0..*).
+'sparql::Expression' (role 'sparql_Expression166', cardinality 0..*) is associated with 'sparql::ConditionalOrExpression' (role 'sparql_ConditionalOrExpression', cardinality 0..*).
+'sparql::BrackettedExpression' (role 'sparql_BrackettedExpression', cardinality 0..*) is associated with 'sparql::OrderConditionLeftNE' (role 'sparql_OrderConditionLeftNE58', cardinality 0..*).
+'sparql::WhereClause' (role 'sparql_WhereClause47', cardinality 0..*) is associated with 'sparql::AskQuery' (role 'sparql_AskQuery46', cardinality 0..*).
+'sparql::AskQuery' (role 'sparql_AskQuery', cardinality 0..*) is associated with 'sparql::DatasetClause' (role 'sparql_DatasetClause44', cardinality 0..*).
+'sparql::DescribeQuery' (role 'sparql_DescribeQuery38', cardinality 0..*) is associated with 'sparql::WhereClause' (role 'sparql_WhereClause39', cardinality 0..*).
+'sparql::IRI::REF' (role 'sparql_IRI_REF', cardinality 0..*) is associated with 'sparql::BaseDecl' (role 'sparql_BaseDecl8', cardinality 0..*).
+'sparql::SolutionModifier' (role 'sparql_SolutionModifier', cardinality 0..*) is associated with 'sparql::SelectQuery' (role 'sparql_SelectQuery22', cardinality 0..*).
+'sparql::ConstructQuery' (role 'sparql_ConstructQuery', cardinality 0..*) is associated with 'sparql::ConstructTemplate' (role 'sparql_ConstructTemplate', cardinality 0..*).
+'sparql::GraphGraphPattern' (role 'sparql_GraphGraphPattern', cardinality 0..*) is associated with 'sparql::VarOrIRIref' (role 'sparql_VarOrIRIref100', cardinality 0..*).

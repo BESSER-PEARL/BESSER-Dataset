@@ -1,0 +1,32 @@
+The model has 16 class(es).
+The class 'ControllerUML::StateMachineAction' has no attributes.
+The class 'ControllerUML::Controller' has no attributes.
+The class 'ControllerUML::Event' has no attributes.
+The class 'ControllerAttribute' has no attributes.
+The class 'StateMachineAction' has no attributes.
+The class 'ControllerUML::State' has no attributes.
+The class 'ControllerUML::ViewState' has no attributes.
+The class 'ControllerUML::StateMachine' has no attributes.
+The class 'Controller' has no attributes.
+The class 'State' has no attributes.
+The class 'ControllerUML::SubControllerState' has no attributes.
+The class 'StateTransition' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'Event' has no attributes.
+The class 'ControllerUML::ControllerAttribute' has no attributes.
+The class 'ControllerUML::StateTransition' has no attributes.
+'ControllerUML::ViewState' is a specialization of 'State'.
+'ControllerUML::SubControllerState' is a specialization of 'State'.
+'ControllerUML::State' (role 'source', cardinality 0..*) is associated with 'StateTransition' (role 'StateTransition', cardinality 0..*).
+'Event' (role 'Event', cardinality 0..*) is associated with 'ControllerUML::StateTransition' (role 'ControllerUML_StateTransition', cardinality 0..*).
+'Controller' (role 'Controller', cardinality 0..*) is associated with 'ControllerUML::ControllerAttribute' (role 'controllerAttribute', cardinality 0..*).
+'State' (role 'State7', cardinality 0..*) is associated with 'ControllerUML::State' (role 'substates', cardinality 0..*).
+'State' (role 'State14', cardinality 0..*) is associated with 'ControllerUML::StateTransition' (role 'outGoing', cardinality 0..*).
+'State' (role 'State16', cardinality 0..*) is associated with 'ControllerUML::StateTransition' (role 'incoming', cardinality 0..*).
+'StateTransition' (role 'StateTransition10', cardinality 0..*) is associated with 'ControllerUML::State' (role 'target', cardinality 0..*).
+'StateMachineAction' (role 'StateMachineAction', cardinality 0..*) is associated with 'ControllerUML::StateTransition' (role 'ControllerUML_StateTransition19', cardinality 0..*).
+'ControllerUML::SubControllerState' (role 'ControllerUML_SubControllerState', cardinality 0..*) is associated with 'Controller' (role 'Controller12', cardinality 0..*).
+'State' (role 'State5', cardinality 0..*) is associated with 'ControllerUML::State' (role 'theContainer', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'ControllerUML::StateMachine' (role 'ControllerUML_StateMachine', cardinality 0..*).
+'ControllerAttribute' (role 'ControllerAttribute', cardinality 0..*) is associated with 'ControllerUML::Controller' (role 'controller', cardinality 0..*).
+'ControllerUML::Controller' (role 'ControllerUML_Controller', cardinality 0..*) is associated with 'StateMachine' (role 'StateMachine', cardinality 0..*).

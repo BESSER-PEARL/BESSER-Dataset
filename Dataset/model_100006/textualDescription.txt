@@ -1,0 +1,194 @@
+The model has 78 class(es).
+The class 'SWRC::Misc' has the following attributes: 'howpublished' of type str; 'month' of type str.
+The class 'SWRC::Unpublished' has the following attributes: 'month' of type str.
+The class 'Meeting' has no attributes.
+The class 'Person' has no attributes.
+The class 'SWRC::InBook' has the following attributes: 'number' of type str; 'volume' of type str; 'address' of type str; 'month' of type str; 'series' of type str; 'chapter' of type str; 'type' of type str; 'pages' of type str.
+The class 'SWRC::PhDStudent' has no attributes.
+The class 'Publication' has no attributes.
+The class 'SWRC::Person' has the following attributes: 'homepage' of type str; 'phone' of type str; 'photo' of type str; 'fax' of type str; 'name' of type str; 'address' of type str; 'email' of type str.
+The class 'SWRC::ProjectMeeting' has no attributes.
+The class 'SWRC::Employee' has no attributes.
+The class 'SWRC::Manual' has the following attributes: 'address' of type str; 'month' of type str; 'edition' of type str.
+The class 'TechnicalReport' has no attributes.
+The class 'Product' has no attributes.
+The class 'SWRC::Exhibition' has no attributes.
+The class 'SWRC::Article' has the following attributes: 'volume' of type str; 'journal' of type str; 'month' of type str; 'number' of type str; 'pages' of type str.
+The class 'Graduate' has no attributes.
+The class 'SWRC::ResearchGroup' has no attributes.
+The class 'SWRC::Lecture' has no attributes.
+The class 'SWRC::TechnicalStaff' has no attributes.
+The class 'SWRC::InCollection' has the following attributes: 'booktitle' of type str; 'pages' of type str; 'number' of type str; 'month' of type str; 'chapter' of type str; 'series' of type str; 'volume' of type str; 'address' of type str; 'type' of type str; 'edition' of type str.
+The class 'SWRC::Association' has no attributes.
+The class 'SWRC::InProceedings' has the following attributes: 'series' of type str; 'number' of type str; 'address' of type str; 'volume' of type str; 'month' of type str; 'booktitle' of type str; 'pages' of type str.
+The class 'SWRC::Booklet' has the following attributes: 'month' of type str; 'howpublished' of type str; 'edition' of type str; 'address' of type str.
+The class 'SWRC::Department' has no attributes.
+The class 'SWRC::SoftwareProject' has no attributes.
+The class 'Institute' has no attributes.
+The class 'SWRC::Product' has the following attributes: 'name' of type str.
+The class 'SWRC::AcademicStaff' has no attributes.
+The class 'Employee' has no attributes.
+The class 'SWRC::Proceedings' has the following attributes: 'volume' of type str; 'number' of type str; 'address' of type str; 'series' of type str; 'month' of type str.
+The class 'Organization' has no attributes.
+The class 'SWRC::University' has no attributes.
+The class 'AcademicStaff' has no attributes.
+The class 'SWRC::FullProfessor' has no attributes.
+The class 'SWRC::Institute' has no attributes.
+The class 'SWRC::Undergraduate' has no attributes.
+The class 'SWRC::ResearchProject' has no attributes.
+The class 'Department' has no attributes.
+The class 'SWRC::PhDThesis' has no attributes.
+The class 'SWRC::Student' has no attributes.
+The class 'SWRC::Thesis' has the following attributes: 'address' of type str; 'month' of type str; 'type' of type str.
+The class 'SWRC::MasterThesis' has no attributes.
+The class 'ProjectReport' has no attributes.
+The class 'SWRC::Bibliography' has no attributes.
+The class 'Thesis' has no attributes.
+The class 'ResearchGroup' has no attributes.
+The class 'SWRC::Conference' has the following attributes: 'series' of type str.
+The class 'SWRC::SoftwareComponent' has the following attributes: 'hasPrice' of type str.
+The class 'SWRC::Report' has no attributes.
+The class 'University' has no attributes.
+The class 'SWRC::Topic' has the following attributes: 'name' of type str.
+The class 'SWRC::DevelopmentProject' has no attributes.
+The class 'SWRC::AssociateProfessor' has no attributes.
+The class 'SWRC::ResearchTopic' has no attributes.
+The class 'Topic' has no attributes.
+The class 'SWRC::Manager' has no attributes.
+The class 'SWRC::TechnicalReport' has the following attributes: 'series' of type str.
+The class 'SWRC::Book' has the following attributes: 'price' of type str; 'series' of type str; 'edition' of type str; 'number' of type str; 'address' of type str; 'month' of type str; 'source' of type str; 'volume' of type str; 'isbn' of type str.
+The class 'SWRC::Meeting' has the following attributes: 'title' of type str.
+The class 'SWRC::Workshop' has the following attributes: 'series' of type str.
+The class 'SWRC::Graduate' has no attributes.
+The class 'PhDStudent' has no attributes.
+The class 'SWRC::Publication' has the following attributes: 'year' of type str; 'title' of type str; 'note' of type str; 'abstract' of type str; 'keywords' of type str.
+The class 'SWRC::Event' has the following attributes: 'date' of type str; 'name' of type str; 'eventTitle' of type str; 'location' of type str.
+The class 'SWRC::Lecturer' has no attributes.
+The class 'Event' has no attributes.
+The class 'SWRC::FacultyMember' has no attributes.
+The class 'SWRC::Organization' has the following attributes: 'name' of type str; 'location' of type str.
+The class 'SWRC::ProjectReport' has no attributes.
+The class 'Student' has no attributes.
+The class 'FacultyMember' has no attributes.
+The class 'ResearchTopic' has no attributes.
+The class 'SWRC::AssistantProfessor' has no attributes.
+The class 'SWRC::AdministrativeStaff' has no attributes.
+The class 'Report' has no attributes.
+The class 'SWRC::Project' has the following attributes: 'name' of type str.
+The class 'Project' has no attributes.
+The class 'SWRC::Enterprise' has no attributes.
+'SWRC::Conference' is a specialization of 'Event'.
+'SWRC::ResearchGroup' is a specialization of 'Organization'.
+'SWRC::Workshop' is a specialization of 'Event'.
+'SWRC::Association' is a specialization of 'Organization'.
+'SWRC::Department' is a specialization of 'Organization'.
+'SWRC::Exhibition' is a specialization of 'Event'.
+'SWRC::Book' is a specialization of 'Publication'.
+'SWRC::Enterprise' is a specialization of 'Organization'.
+'SWRC::Lecture' is a specialization of 'Event'.
+'SWRC::Institute' is a specialization of 'Organization'.
+'SWRC::Meeting' is a specialization of 'Event'.
+'SWRC::University' is a specialization of 'Organization'.
+'SWRC::Article' is a specialization of 'Publication'.
+'SWRC::ProjectMeeting' is a specialization of 'Meeting'.
+'SWRC::ResearchProject' is a specialization of 'Project'.
+'SWRC::InBook' is a specialization of 'Publication'.
+'SWRC::Employee' is a specialization of 'Person'.
+'SWRC::DevelopmentProject' is a specialization of 'Project'.
+'SWRC::Booklet' is a specialization of 'Publication'.
+'SWRC::SoftwareProject' is a specialization of 'Project'.
+'SWRC::AcademicStaff' is a specialization of 'Person'.
+'SWRC::InCollection' is a specialization of 'Publication'.
+'SWRC::Manager' is a specialization of 'Employee'.
+'SWRC::ResearchTopic' is a specialization of 'Topic'.
+'SWRC::InProceedings' is a specialization of 'Publication'.
+'SWRC::AdministrativeStaff' is a specialization of 'Employee'.
+'SWRC::Proceedings' is a specialization of 'Publication'.
+'SWRC::TechnicalStaff' is a specialization of 'Employee'.
+'SWRC::SoftwareComponent' is a specialization of 'Product'.
+'SWRC::Manual' is a specialization of 'Publication'.
+'SWRC::Lecturer' is a specialization of 'AcademicStaff'.
+'SWRC::Unpublished' is a specialization of 'Publication'.
+'SWRC::FacultyMember' is a specialization of 'AcademicStaff'.
+'SWRC::Misc' is a specialization of 'Publication'.
+'SWRC::FullProfessor' is a specialization of 'FacultyMember'.
+'SWRC::Thesis' is a specialization of 'Publication'.
+'SWRC::AssistantProfessor' is a specialization of 'FacultyMember'.
+'SWRC::MasterThesis' is a specialization of 'Thesis'.
+'SWRC::AssociateProfessor' is a specialization of 'FacultyMember'.
+'SWRC::PhDThesis' is a specialization of 'Thesis'.
+'SWRC::Student' is a specialization of 'Person'.
+'SWRC::Report' is a specialization of 'Publication'.
+'SWRC::Undergraduate' is a specialization of 'Student'.
+'SWRC::ProjectReport' is a specialization of 'Report'.
+'SWRC::Graduate' is a specialization of 'Student'.
+'SWRC::TechnicalReport' is a specialization of 'Report'.
+'SWRC::PhDStudent' is a specialization of 'Graduate'.
+'Person' (role 'Person52', cardinality 0..*) is associated with 'SWRC::Unpublished' (role 'SWRC_Unpublished', cardinality 0..*).
+'Organization' (role 'Organization123', cardinality 0..*) is associated with 'SWRC::Project' (role 'carriesOut', cardinality 0..*).
+'SWRC::University' (role 'SWRC_University', cardinality 0..*) is associated with 'Department' (role 'Department', cardinality 0..*).
+'Organization' (role 'Organization37', cardinality 0..*) is associated with 'SWRC::InProceedings' (role 'SWRC_InProceedings36', cardinality 0..*).
+'SWRC::Project' (role 'describesProject', cardinality 0..*) is associated with 'ProjectReport' (role 'ProjectReport', cardinality 0..*).
+'AcademicStaff' (role 'AcademicStaff140', cardinality 0..*) is associated with 'SWRC::ResearchTopic' (role 'worksAtProject', cardinality 0..*).
+'SWRC::Manual' (role 'SWRC_Manual', cardinality 0..*) is associated with 'Person' (role 'Person47', cardinality 0..*).
+'SWRC::InCollection' (role 'SWRC_InCollection22', cardinality 0..*) is associated with 'Person' (role 'Person23', cardinality 0..*).
+'SWRC::Institute' (role 'SWRC_Institute', cardinality 0..*) is associated with 'Institute' (role 'Institute115', cardinality 0..*).
+'SWRC::Project' (role 'SWRC_Project', cardinality 0..*) is associated with 'Person' (role 'Person131', cardinality 0..*).
+'SWRC::Book' (role 'SWRC_Book5', cardinality 0..*) is associated with 'Organization' (role 'Organization', cardinality 0..*).
+'ResearchGroup' (role 'ResearchGroup', cardinality 0..*) is associated with 'SWRC::AcademicStaff' (role 'head78', cardinality 0..*).
+'Organization' (role 'Organization125', cardinality 0..*) is associated with 'SWRC::Project' (role 'finances', cardinality 0..*).
+'SWRC::InCollection' (role 'SWRC_InCollection', cardinality 0..*) is associated with 'Person' (role 'Person20', cardinality 0..*).
+'SWRC::AcademicStaff' (role 'isWorkedOnBy', cardinality 0..*) is associated with 'ResearchTopic' (role 'ResearchTopic', cardinality 0..*).
+'Employee' (role 'Employee112', cardinality 0..*) is associated with 'SWRC::ResearchGroup' (role 'SWRC_ResearchGroup', cardinality 0..*).
+'AcademicStaff' (role 'AcademicStaff127', cardinality 0..*) is associated with 'SWRC::Project' (role 'headOf', cardinality 0..*).
+'Person' (role 'Person3', cardinality 0..*) is associated with 'SWRC::Book' (role 'SWRC_Book', cardinality 0..*).
+'Event' (role 'Event', cardinality 0..*) is associated with 'SWRC::Event' (role 'hasPartEvent', cardinality 0..*).
+'SWRC::Event' (role 'atEvent', cardinality 0..*) is associated with 'Event' (role 'Event64', cardinality 0..*).
+'Person' (role 'Person18', cardinality 0..*) is associated with 'SWRC::Booklet' (role 'SWRC_Booklet', cardinality 0..*).
+'Project' (role 'Project104', cardinality 0..*) is associated with 'SWRC::Organization' (role 'financedBy', cardinality 0..*).
+'Person' (role 'Person66', cardinality 0..*) is associated with 'SWRC::Lecture' (role 'SWRC_Lecture', cardinality 0..*).
+'Person' (role 'Person58', cardinality 0..*) is associated with 'SWRC::Report' (role 'SWRC_Report', cardinality 0..*).
+'SWRC::ProjectReport' (role 'projectInfo', cardinality 0..*) is associated with 'Project' (role 'Project', cardinality 0..*).
+'Organization' (role 'Organization42', cardinality 0..*) is associated with 'SWRC::Proceedings' (role 'SWRC_Proceedings41', cardinality 0..*).
+'SWRC::SoftwareProject' (role 'SWRC_SoftwareProject', cardinality 0..*) is associated with 'Product' (role 'Product134', cardinality 0..*).
+'Person' (role 'Person', cardinality 0..*) is associated with 'SWRC::Article' (role 'SWRC_Article', cardinality 0..*).
+'Organization' (role 'Organization61', cardinality 0..*) is associated with 'SWRC::TechnicalReport' (role 'SWRC_TechnicalReport', cardinality 0..*).
+'Organization' (role 'Organization13', cardinality 0..*) is associated with 'SWRC::InBook' (role 'SWRC_InBook12', cardinality 0..*).
+'SWRC::AcademicStaff' (role 'supervisor', cardinality 0..*) is associated with 'PhDStudent' (role 'PhDStudent', cardinality 0..*).
+'SWRC::Organization' (role 'SWRC_Organization', cardinality 0..*) is associated with 'Publication' (role 'Publication106', cardinality 0..*).
+'AcademicStaff' (role 'AcademicStaff110', cardinality 0..*) is associated with 'SWRC::ResearchGroup' (role 'headOfGroup', cardinality 0..*).
+'SWRC::InBook' (role 'SWRC_InBook', cardinality 0..*) is associated with 'Person' (role 'Person10', cardinality 0..*).
+'Organization' (role 'Organization26', cardinality 0..*) is associated with 'SWRC::InCollection' (role 'SWRC_InCollection25', cardinality 0..*).
+'SWRC::Organization' (role 'SWRC_Organization108', cardinality 0..*) is associated with 'TechnicalReport' (role 'TechnicalReport', cardinality 0..*).
+'Organization' (role 'Organization45', cardinality 0..*) is associated with 'SWRC::Proceedings' (role 'SWRC_Proceedings44', cardinality 0..*).
+'Product' (role 'Product', cardinality 0..*) is associated with 'SWRC::Organization' (role 'developedBy', cardinality 0..*).
+'Event' (role 'Event81', cardinality 0..*) is associated with 'SWRC::AcademicStaff' (role 'SWRC_AcademicStaff80', cardinality 0..*).
+'SWRC::Manual' (role 'SWRC_Manual49', cardinality 0..*) is associated with 'Organization' (role 'Organization50', cardinality 0..*).
+'SWRC::AcademicStaff' (role 'SWRC_AcademicStaff86', cardinality 0..*) is associated with 'Publication' (role 'Publication87', cardinality 0..*).
+'Event' (role 'Event84', cardinality 0..*) is associated with 'SWRC::AcademicStaff' (role 'SWRC_AcademicStaff83', cardinality 0..*).
+'SWRC::AcademicStaff' (role 'head', cardinality 0..*) is associated with 'Project' (role 'Project76', cardinality 0..*).
+'Organization' (role 'Organization34', cardinality 0..*) is associated with 'SWRC::InProceedings' (role 'SWRC_InProceedings33', cardinality 0..*).
+'SWRC::Organization' (role 'carriedOutBy', cardinality 0..*) is associated with 'Project' (role 'Project100', cardinality 0..*).
+'Institute' (role 'Institute', cardinality 0..*) is associated with 'SWRC::Department' (role 'SWRC_Department', cardinality 0..*).
+'SWRC::Proceedings' (role 'SWRC_Proceedings', cardinality 0..*) is associated with 'Person' (role 'Person39', cardinality 0..*).
+'SWRC::Institute' (role 'SWRC_Institute117', cardinality 0..*) is associated with 'ResearchGroup' (role 'ResearchGroup118', cardinality 0..*).
+'Organization' (role 'Organization136', cardinality 0..*) is associated with 'SWRC::Product' (role 'develops', cardinality 0..*).
+'SWRC::Student' (role 'SWRC_Student', cardinality 0..*) is associated with 'University' (role 'University91', cardinality 0..*).
+'SWRC::University' (role 'SWRC_University121', cardinality 0..*) is associated with 'Student' (role 'Student', cardinality 0..*).
+'Project' (role 'Project96', cardinality 0..*) is associated with 'SWRC::PhDStudent' (role 'SWRC_PhDStudent95', cardinality 0..*).
+'SWRC::Thesis' (role 'SWRC_Thesis56', cardinality 0..*) is associated with 'University' (role 'University', cardinality 0..*).
+'SWRC::PhDStudent' (role 'supervises', cardinality 0..*) is associated with 'AcademicStaff' (role 'AcademicStaff98', cardinality 0..*).
+'SWRC::Thesis' (role 'SWRC_Thesis', cardinality 0..*) is associated with 'Person' (role 'Person54', cardinality 0..*).
+'Publication' (role 'Publication', cardinality 0..*) is associated with 'SWRC::Bibliography' (role 'SWRC_Bibliography', cardinality 0..*).
+'SWRC::AcademicStaff' (role 'SWRC_AcademicStaff', cardinality 0..*) is associated with 'AcademicStaff' (role 'AcademicStaff', cardinality 0..*).
+'Person' (role 'Person8', cardinality 0..*) is associated with 'SWRC::Book' (role 'SWRC_Book7', cardinality 0..*).
+'Person' (role 'Person16', cardinality 0..*) is associated with 'SWRC::InBook' (role 'SWRC_InBook15', cardinality 0..*).
+'Person' (role 'Person28', cardinality 0..*) is associated with 'SWRC::InProceedings' (role 'SWRC_InProceedings', cardinality 0..*).
+'Employee' (role 'Employee', cardinality 0..*) is associated with 'SWRC::Organization' (role 'affiliation', cardinality 0..*).
+'Project' (role 'Project138', cardinality 0..*) is associated with 'SWRC::ResearchTopic' (role 'isAbout', cardinality 0..*).
+'Person' (role 'Person68', cardinality 0..*) is associated with 'SWRC::Meeting' (role 'SWRC_Meeting', cardinality 0..*).
+'Person' (role 'Person31', cardinality 0..*) is associated with 'SWRC::InProceedings' (role 'SWRC_InProceedings30', cardinality 0..*).
+'Organization' (role 'Organization70', cardinality 0..*) is associated with 'SWRC::Employee' (role 'employs', cardinality 0..*).
+'SWRC::PhDStudent' (role 'SWRC_PhDStudent', cardinality 0..*) is associated with 'Publication' (role 'Publication93', cardinality 0..*).
+'Publication' (role 'Publication74', cardinality 0..*) is associated with 'SWRC::AcademicStaff' (role 'SWRC_AcademicStaff73', cardinality 0..*).
+'SWRC::Project' (role 'dealWithIn', cardinality 0..*) is associated with 'ResearchTopic' (role 'ResearchTopic129', cardinality 0..*).

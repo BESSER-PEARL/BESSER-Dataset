@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'Build' has no attributes.
+The class 'MavenProject::Developer' has the following attributes: 'id' of type str.
+The class 'MavenProject::Build' has the following attributes: 'sourceDirectory' of type str; 'defaultGoal' of type str; 'unitTestSourceDirectory' of type str.
+The class 'MavenProject::MailingList' has the following attributes: 'otherArchives' of type str; 'subscribe' of type str; 'unsubscribe' of type str; 'name' of type str; 'archive' of type str; 'post' of type str.
+The class 'MavenProject::Person' has the following attributes: 'properties' of type str; 'name' of type str; 'organization' of type str; 'email' of type str; 'url' of type str; 'organizationUrl' of type str; 'roles' of type str; 'timezone' of type str.
+The class 'Project' has no attributes.
+The class 'MavenProject::Contributor' has no attributes.
+The class 'MavenProject::Project' has the following attributes: 'id' of type str; 'artifactId' of type str; 'groupId' of type str; 'name' of type str; 'description' of type str.
+The class 'MailingList' has no attributes.
+The class 'MavenProject::Resource' has the following attributes: 'includes' of type str; 'targetPath' of type str; 'directory' of type str; 'excludes' of type str; 'filtering' of type str.
+The class 'Resource' has no attributes.
+The class 'Person' has no attributes.
+'MavenProject::Developer' is a specialization of 'Person'.
+'MavenProject::Contributor' is a specialization of 'Person'.
+'MailingList' (role 'MailingList', cardinality 0..*) is associated with 'MavenProject::Project' (role 'MavenProject_Project', cardinality 0..*).
+'MavenProject::Project' (role 'MavenProject_Project6', cardinality 0..*) is associated with 'Project' (role 'Project', cardinality 0..*).
+'Person' (role 'Person', cardinality 0..*) is associated with 'MavenProject::Project' (role 'MavenProject_Project2', cardinality 0..*).
+'Build' (role 'Build', cardinality 0..*) is associated with 'MavenProject::Project' (role 'MavenProject_Project4', cardinality 0..*).
+'MavenProject::Build' (role 'MavenProject_Build', cardinality 0..*) is associated with 'Resource' (role 'Resource', cardinality 0..*).
+'MavenProject::Build' (role 'MavenProject_Build9', cardinality 0..*) is associated with 'Resource' (role 'Resource10', cardinality 0..*).

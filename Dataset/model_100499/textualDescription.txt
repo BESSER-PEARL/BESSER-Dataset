@@ -1,0 +1,52 @@
+The model has 18 class(es).
+The class 'OclAny' has no attributes.
+The class 'gore::Task' has no attributes.
+The class 'gore::DefinableRequirement' has the following attributes: 'state' of type str; 'time' of type date.
+The class 'gore::Parameter' has the following attributes: 'metric' of type str; 'unit' of type str; 'value' of type str; 'type' of type str.
+The class 'gore::DifferentialRelation' has the following attributes: 'value' of type float; 'lowerBound' of type str; 'operator' of type str; 'upperBound' of type str.
+The class 'gore::Requirement' has the following attributes: 'refinementType' of type str.
+The class 'gore::QualityConstraint' has no attributes.
+The class 'PerformativeRequirement' has no attributes.
+The class 'gore::AwReq' has the following attributes: 'incrementCoefficient' of type float.
+The class 'gore::DomainAssumption' has no attributes.
+The class 'gore::Actor' has no attributes.
+The class 'gore::Configuration' has no attributes.
+The class 'gore::Goal' has no attributes.
+The class 'gore::Softgoal' has no attributes.
+The class 'DefinableRequirement' has no attributes.
+The class 'gore::PerformativeRequirement' has the following attributes: 'startTime' of type date.
+The class 'Requirement' has no attributes.
+The class 'gore::GoalModel' has the following attributes: 'internalId' of type str.
+The enumeration 'AggregationLevel' has the following literals: 'INSTANCE', 'CLASS', 'BOTH'.
+The enumeration 'DifferentialRelationOperator' has the following literals: 'GREATER_THAN', 'FEWER_THAN'.
+The enumeration 'DefinableRequirementState' has the following literals: 'UNDEFINED', 'FAILED', 'STARTED', 'SUCCEEDED', 'CANCELED'.
+The enumeration 'RefinementType' has the following literals: 'AND', 'OR'.
+The enumeration 'ParameterType' has the following literals: 'NUMERIC_CONTROL_VARIABLE', 'ENUMERATED_CONTROL_VARIABLE', 'VARIATION_POINT'.
+The enumeration 'MonitorableMethod' has the following literals: 'END', 'START', 'FAIL', 'CANCEL', 'SUCCESS'.
+The enumeration 'ParameterMetric' has the following literals: 'INTEGER', 'REAL', 'ENUMERATED'.
+'gore::QualityConstraint' is a specialization of 'DefinableRequirement'.
+'gore::AwReq' is a specialization of 'DefinableRequirement'.
+'gore::DefinableRequirement' is a specialization of 'Requirement'.
+'gore::DomainAssumption' is a specialization of 'DefinableRequirement'.
+'gore::PerformativeRequirement' is a specialization of 'DefinableRequirement'.
+'gore::Task' is a specialization of 'PerformativeRequirement'.
+'gore::Requirement' is a specialization of 'OclAny'.
+'gore::Softgoal' is a specialization of 'Requirement'.
+'gore::Goal' is a specialization of 'PerformativeRequirement'.
+'gore::Goal' (role 'Goal', cardinality 0..*) is associated with 'gore::GoalModel' (role 'goalModel', cardinality 0..*).
+'gore::GoalModel' (role 'gore_GoalModel', cardinality 0..*) is associated with 'gore::DifferentialRelation' (role 'gore_DifferentialRelation28', cardinality 0..*).
+'gore::GoalModel' (role 'goalModel26', cardinality 0..*) is associated with 'gore::Configuration' (role 'Configuration', cardinality 0..*).
+'gore::QualityConstraint' (role 'constraints', cardinality 0..*) is associated with 'gore::Softgoal' (role 'Softgoal', cardinality 0..*).
+'gore::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'gore::Configuration' (role 'configuration', cardinality 0..*).
+'gore::QualityConstraint' (role 'QualityConstraint', cardinality 0..*) is associated with 'gore::Softgoal' (role 'softgoal', cardinality 0..*).
+'gore::GoalModel' (role 'GoalModel13', cardinality 0..*) is associated with 'gore::Actor' (role 'actors', cardinality 0..*).
+'gore::AwReq' (role 'gore_AwReq', cardinality 0..*) is associated with 'gore::DefinableRequirement' (role 'gore_DefinableRequirement', cardinality 0..*).
+'gore::DifferentialRelation' (role 'gore_DifferentialRelation', cardinality 0..*) is associated with 'gore::AwReq' (role 'gore_AwReq19', cardinality 0..*).
+'gore::Actor' (role 'Actor', cardinality 0..*) is associated with 'gore::GoalModel' (role 'goalModel24', cardinality 0..*).
+'gore::Requirement' (role 'Requirement4', cardinality 0..*) is associated with 'gore::Requirement' (role 'children', cardinality 0..*).
+'gore::Parameter' (role 'gore_Parameter', cardinality 0..*) is associated with 'gore::DifferentialRelation' (role 'gore_DifferentialRelation21', cardinality 0..*).
+'gore::DefinableRequirement' (role 'gore_DefinableRequirement10', cardinality 0..*) is associated with 'gore::AwReq' (role 'gore_AwReq9', cardinality 0..*).
+'gore::Parameter' (role 'parameters', cardinality 0..*) is associated with 'gore::Configuration' (role 'Configuration30', cardinality 0..*).
+'gore::Configuration' (role 'configuration16', cardinality 0..*) is associated with 'gore::GoalModel' (role 'GoalModel17', cardinality 0..*).
+'gore::Requirement' (role 'Requirement', cardinality 0..*) is associated with 'gore::Requirement' (role 'parent', cardinality 0..*).
+'gore::Goal' (role 'rootGoal', cardinality 0..*) is associated with 'gore::GoalModel' (role 'GoalModel', cardinality 0..*).

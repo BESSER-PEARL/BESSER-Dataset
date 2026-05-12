@@ -1,0 +1,167 @@
+The model has 71 class(es).
+The class 'mql::ExpressionTerm' has no attributes.
+The class 'mql::UpdateStatement' has no attributes.
+The class 'mql::BetweenExpression' has the following attributes: 'isNot' of type bool.
+The class 'mql::FromEntry' has no attributes.
+The class 'mql::UpdateItem' has no attributes.
+The class 'Expression' has no attributes.
+The class 'mql::QueryModule' has no attributes.
+The class 'mql::Value' has no attributes.
+The class 'mql::SelectStatement' has no attributes.
+The class 'InExpression' has no attributes.
+The class 'mql::NamedQuery' has the following attributes: 'name' of type str.
+The class 'mql::Join' has no attributes.
+The class 'mql::OperatorExpression' has the following attributes: 'operator' of type str.
+The class 'mql::InQueryExpression' has no attributes.
+The class 'mql::HavingClause' has no attributes.
+The class 'mql::SelectFromClause' has no attributes.
+The class 'mql::SelectAggregateExpression' has the following attributes: 'isDistinct' of type bool.
+The class 'mql::OrderItem' has the following attributes: 'feature' of type str.
+The class 'mql::Expression' has no attributes.
+The class 'mql::StringExpression' has the following attributes: 'value' of type str.
+The class 'mql::MaxAggregate' has no attributes.
+The class 'mql::InSeqExpression' has no attributes.
+The class 'mql::NullComparisonExpression' has the following attributes: 'isNot' of type bool.
+The class 'mql::InnerJoin' has no attributes.
+The class 'mql::FromJoin' has the following attributes: 'isFetch' of type bool.
+The class 'mql::SetClause' has no attributes.
+The class 'mql::OrderClause' has the following attributes: 'isDesc' of type bool; 'isAsc' of type bool.
+The class 'mql::SumAggregate' has no attributes.
+The class 'SelectExpression' has no attributes.
+The class 'MQuery' has no attributes.
+The class 'mql::CountAggregate' has no attributes.
+The class 'mql::Function' has the following attributes: 'name' of type str.
+The class 'mql::Import' has the following attributes: 'importURI' of type str.
+The class 'mql::CollectionExpression' has the following attributes: 'isNot' of type bool.
+The class 'ExpressionTerm' has no attributes.
+The class 'mql::DeleteStatement' has no attributes.
+The class 'FromJoin' has no attributes.
+The class 'mql::FromClass' has the following attributes: 'type' of type str.
+The class 'mql::OrExpression' has no attributes.
+The class 'mql::MQuery' has no attributes.
+The class 'mql::UpdateClause' has no attributes.
+The class 'mql::SelectClause' has the following attributes: 'isDistinct' of type bool.
+The class 'mql::SomeExpression' has no attributes.
+The class 'mql::DateTimeExpression' has the following attributes: 'value' of type str.
+The class 'mql::AliasAttributeExpression' has the following attributes: 'attributes' of type str.
+The class 'Value' has no attributes.
+The class 'mql::ExistsExpression' has the following attributes: 'isNot' of type bool.
+The class 'mql::IntegerExpression' has the following attributes: 'value' of type int.
+The class 'mql::LikeExpression' has the following attributes: 'isNot' of type bool; 'pattern' of type str.
+The class 'mql::NullExpression' has the following attributes: 'value' of type str.
+The class 'SelectAggregateExpression' has no attributes.
+The class 'mql::MinAggregate' has no attributes.
+The class 'mql::AndExpression' has no attributes.
+The class 'mql::SelectConstructorExpression' has the following attributes: 'name' of type str.
+The class 'mql::FromCollection' has no attributes.
+The class 'mql::DeleteClause' has no attributes.
+The class 'mql::WhereClause' has no attributes.
+The class 'mql::SelectExpression' has no attributes.
+The class 'mql::BooleanExpression' has the following attributes: 'value' of type bool.
+The class 'mql::AnyExpression' has no attributes.
+The class 'mql::AllExpression' has no attributes.
+The class 'mql::InExpression' has the following attributes: 'isNot' of type bool.
+The class 'FromEntry' has no attributes.
+The class 'mql::EmptyComparisonExpression' has the following attributes: 'isNot' of type bool.
+The class 'mql::AvgAggregate' has no attributes.
+The class 'mql::ParameterExpression' has the following attributes: 'name' of type str.
+The class 'mql::FromClause' has no attributes.
+The class 'mql::Variable' has no attributes.
+The class 'Variable' has no attributes.
+The class 'mql::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'mql::LeftJoin' has the following attributes: 'isOuter' of type bool.
+The enumeration 'Operator' has the following literals: 'lessEqual', 'lessThen', 'greaterThen', 'greaterEqual', 'equal', 'notEqual'.
+'mql::BetweenExpression' is a specialization of 'Expression'.
+'mql::NullComparisonExpression' is a specialization of 'Expression'.
+'mql::SomeExpression' is a specialization of 'Expression'.
+'mql::AllExpression' is a specialization of 'Expression'.
+'mql::OrExpression' is a specialization of 'Expression'.
+'mql::AvgAggregate' is a specialization of 'SelectAggregateExpression'.
+'mql::ParameterExpression' is a specialization of 'Variable'.
+'mql::OperatorExpression' is a specialization of 'Expression'.
+'mql::NullExpression' is a specialization of 'Value'.
+'mql::ExistsExpression' is a specialization of 'Expression'.
+'mql::Value' is a specialization of 'Variable'.
+'mql::ExpressionTerm' is a specialization of 'Expression'.
+'mql::Variable' is a specialization of 'ExpressionTerm'.
+'mql::DateTimeExpression' is a specialization of 'Value'.
+'mql::LikeExpression' is a specialization of 'Expression'.
+'mql::AliasAttributeExpression' is a specialization of 'Variable'.
+'mql::MaxAggregate' is a specialization of 'SelectAggregateExpression'.
+'mql::SelectStatement' is a specialization of 'MQuery'.
+'mql::SelectStatement' is a specialization of 'ExpressionTerm'.
+'mql::InExpression' is a specialization of 'Expression'.
+'mql::BooleanExpression' is a specialization of 'Value'.
+'mql::FromCollection' is a specialization of 'FromEntry'.
+'mql::CollectionExpression' is a specialization of 'Expression'.
+'mql::SelectConstructorExpression' is a specialization of 'SelectExpression'.
+'mql::CountAggregate' is a specialization of 'SelectAggregateExpression'.
+'mql::MinAggregate' is a specialization of 'SelectAggregateExpression'.
+'mql::AndExpression' is a specialization of 'Expression'.
+'mql::InnerJoin' is a specialization of 'FromJoin'.
+'mql::StringExpression' is a specialization of 'Value'.
+'mql::SelectAggregateExpression' is a specialization of 'SelectExpression'.
+'mql::AnyExpression' is a specialization of 'Expression'.
+'mql::SumAggregate' is a specialization of 'SelectAggregateExpression'.
+'mql::UpdateStatement' is a specialization of 'MQuery'.
+'mql::FromClass' is a specialization of 'FromEntry'.
+'mql::DeleteStatement' is a specialization of 'MQuery'.
+'mql::Join' is a specialization of 'FromJoin'.
+'mql::LeftJoin' is a specialization of 'FromJoin'.
+'mql::InSeqExpression' is a specialization of 'InExpression'.
+'mql::EmptyComparisonExpression' is a specialization of 'Expression'.
+'mql::IntegerExpression' is a specialization of 'Value'.
+'mql::InQueryExpression' is a specialization of 'InExpression'.
+'mql::AliasAttributeExpression' is a specialization of 'SelectExpression'.
+'mql::AliasAttributeExpression' (role 'mql_AliasAttributeExpression', cardinality 0..*) is associated with 'mql::UpdateItem' (role 'mql_UpdateItem30', cardinality 0..*).
+'mql::SelectAggregateExpression' (role 'mql_SelectAggregateExpression', cardinality 0..*) is associated with 'mql::AliasAttributeExpression' (role 'mql_AliasAttributeExpression44', cardinality 0..*).
+'mql::Expression' (role 'mql_Expression108', cardinality 0..*) is associated with 'mql::AndExpression' (role 'mql_AndExpression', cardinality 0..*).
+'mql::UpdateStatement' (role 'mql_UpdateStatement', cardinality 0..*) is associated with 'mql::UpdateClause' (role 'mql_UpdateClause', cardinality 0..*).
+'mql::FromEntry' (role 'mql_FromEntry51', cardinality 0..*) is associated with 'mql::VariableDeclaration' (role 'mql_VariableDeclaration', cardinality 0..*).
+'mql::FromJoin' (role 'mql_FromJoin59', cardinality 0..*) is associated with 'mql::VariableDeclaration' (role 'mql_VariableDeclaration60', cardinality 0..*).
+'mql::BetweenExpression' (role 'mql_BetweenExpression98', cardinality 0..*) is associated with 'mql::Value' (role 'mql_Value99', cardinality 0..*).
+'mql::QueryModule' (role 'mql_QueryModule2', cardinality 0..*) is associated with 'mql::MQuery' (role 'mql_MQuery', cardinality 0..*).
+'mql::AliasAttributeExpression' (role 'mql_AliasAttributeExpression101', cardinality 0..*) is associated with 'mql::VariableDeclaration' (role 'mql_VariableDeclaration102', cardinality 0..*).
+'mql::Expression' (role 'mql_Expression106', cardinality 0..*) is associated with 'mql::OrExpression' (role 'mql_OrExpression', cardinality 0..*).
+'mql::SetClause' (role 'mql_SetClause', cardinality 0..*) is associated with 'mql::UpdateStatement' (role 'mql_UpdateStatement23', cardinality 0..*).
+'mql::OrderItem' (role 'mql_OrderItem20', cardinality 0..*) is associated with 'mql::FromEntry' (role 'mql_FromEntry', cardinality 0..*).
+'mql::FromEntry' (role 'mql_FromEntry26', cardinality 0..*) is associated with 'mql::UpdateClause' (role 'mql_UpdateClause25', cardinality 0..*).
+'mql::ExistsExpression' (role 'mql_ExistsExpression', cardinality 0..*) is associated with 'mql::SelectStatement' (role 'mql_SelectStatement68', cardinality 0..*).
+'mql::Variable' (role 'mql_Variable85', cardinality 0..*) is associated with 'mql::LikeExpression' (role 'mql_LikeExpression', cardinality 0..*).
+'mql::Variable' (role 'mql_Variable83', cardinality 0..*) is associated with 'mql::EmptyComparisonExpression' (role 'mql_EmptyComparisonExpression', cardinality 0..*).
+'mql::Variable' (role 'mql_Variable87', cardinality 0..*) is associated with 'mql::InExpression' (role 'mql_InExpression', cardinality 0..*).
+'mql::InSeqExpression' (role 'mql_InSeqExpression', cardinality 0..*) is associated with 'mql::Variable' (role 'mql_Variable89', cardinality 0..*).
+'mql::OrderItem' (role 'mql_OrderItem', cardinality 0..*) is associated with 'mql::OrderClause' (role 'mql_OrderClause18', cardinality 0..*).
+'mql::InQueryExpression' (role 'mql_InQueryExpression', cardinality 0..*) is associated with 'mql::SelectStatement' (role 'mql_SelectStatement91', cardinality 0..*).
+'mql::SelectFromClause' (role 'mql_SelectFromClause39', cardinality 0..*) is associated with 'mql::FromClause' (role 'mql_FromClause40', cardinality 0..*).
+'mql::DeleteClause' (role 'mql_DeleteClause', cardinality 0..*) is associated with 'mql::DeleteStatement' (role 'mql_DeleteStatement', cardinality 0..*).
+'mql::AliasAttributeExpression' (role 'mql_AliasAttributeExpression79', cardinality 0..*) is associated with 'mql::CollectionExpression' (role 'mql_CollectionExpression78', cardinality 0..*).
+'mql::Value' (role 'mql_Value', cardinality 0..*) is associated with 'mql::UpdateItem' (role 'mql_UpdateItem32', cardinality 0..*).
+'mql::FromCollection' (role 'mql_FromCollection', cardinality 0..*) is associated with 'mql::AliasAttributeExpression' (role 'mql_AliasAttributeExpression54', cardinality 0..*).
+'mql::MQuery' (role 'mql_MQuery7', cardinality 0..*) is associated with 'mql::NamedQuery' (role 'mql_NamedQuery6', cardinality 0..*).
+'mql::FromClass' (role 'mql_FromClass', cardinality 0..*) is associated with 'mql::FromJoin' (role 'mql_FromJoin', cardinality 0..*).
+'mql::FromClause' (role 'mql_FromClause', cardinality 0..*) is associated with 'mql::DeleteClause' (role 'mql_DeleteClause35', cardinality 0..*).
+'mql::SelectFromClause' (role 'mql_SelectFromClause37', cardinality 0..*) is associated with 'mql::SelectClause' (role 'mql_SelectClause', cardinality 0..*).
+'mql::SelectClause' (role 'mql_SelectClause42', cardinality 0..*) is associated with 'mql::SelectExpression' (role 'mql_SelectExpression', cardinality 0..*).
+'mql::NullComparisonExpression' (role 'mql_NullComparisonExpression', cardinality 0..*) is associated with 'mql::Variable' (role 'mql_Variable81', cardinality 0..*).
+'mql::Variable' (role 'mql_Variable93', cardinality 0..*) is associated with 'mql::BetweenExpression' (role 'mql_BetweenExpression', cardinality 0..*).
+'mql::QueryModule' (role 'mql_QueryModule4', cardinality 0..*) is associated with 'mql::NamedQuery' (role 'mql_NamedQuery', cardinality 0..*).
+'mql::OperatorExpression' (role 'mql_OperatorExpression66', cardinality 0..*) is associated with 'mql::ExpressionTerm' (role 'mql_ExpressionTerm', cardinality 0..*).
+'mql::WhereClause' (role 'mql_WhereClause62', cardinality 0..*) is associated with 'mql::Expression' (role 'mql_Expression63', cardinality 0..*).
+'mql::AllExpression' (role 'mql_AllExpression', cardinality 0..*) is associated with 'mql::SelectStatement' (role 'mql_SelectStatement70', cardinality 0..*).
+'mql::FromJoin' (role 'mql_FromJoin56', cardinality 0..*) is associated with 'mql::AliasAttributeExpression' (role 'mql_AliasAttributeExpression57', cardinality 0..*).
+'mql::Variable' (role 'mql_Variable104', cardinality 0..*) is associated with 'mql::Function' (role 'mql_Function', cardinality 0..*).
+'mql::CollectionExpression' (role 'mql_CollectionExpression', cardinality 0..*) is associated with 'mql::Variable' (role 'mql_Variable76', cardinality 0..*).
+'mql::MQuery' (role 'mql_MQuery9', cardinality 0..*) is associated with 'mql::WhereClause' (role 'mql_WhereClause', cardinality 0..*).
+'mql::SelectStatement' (role 'mql_SelectStatement72', cardinality 0..*) is associated with 'mql::AnyExpression' (role 'mql_AnyExpression', cardinality 0..*).
+'mql::FromClause' (role 'mql_FromClause48', cardinality 0..*) is associated with 'mql::FromEntry' (role 'mql_FromEntry49', cardinality 0..*).
+'mql::SelectStatement' (role 'mql_SelectStatement12', cardinality 0..*) is associated with 'mql::HavingClause' (role 'mql_HavingClause', cardinality 0..*).
+'mql::SelectConstructorExpression' (role 'mql_SelectConstructorExpression', cardinality 0..*) is associated with 'mql::AliasAttributeExpression' (role 'mql_AliasAttributeExpression46', cardinality 0..*).
+'mql::Import' (role 'mql_Import', cardinality 0..*) is associated with 'mql::QueryModule' (role 'mql_QueryModule', cardinality 0..*).
+'mql::SelectFromClause' (role 'mql_SelectFromClause', cardinality 0..*) is associated with 'mql::SelectStatement' (role 'mql_SelectStatement', cardinality 0..*).
+'mql::SelectStatement' (role 'mql_SelectStatement14', cardinality 0..*) is associated with 'mql::OrderClause' (role 'mql_OrderClause', cardinality 0..*).
+'mql::HavingClause' (role 'mql_HavingClause16', cardinality 0..*) is associated with 'mql::Expression' (role 'mql_Expression', cardinality 0..*).
+'mql::SomeExpression' (role 'mql_SomeExpression', cardinality 0..*) is associated with 'mql::SelectStatement' (role 'mql_SelectStatement74', cardinality 0..*).
+'mql::BetweenExpression' (role 'mql_BetweenExpression95', cardinality 0..*) is associated with 'mql::Value' (role 'mql_Value96', cardinality 0..*).
+'mql::Variable' (role 'mql_Variable', cardinality 0..*) is associated with 'mql::OperatorExpression' (role 'mql_OperatorExpression', cardinality 0..*).
+'mql::SetClause' (role 'mql_SetClause28', cardinality 0..*) is associated with 'mql::UpdateItem' (role 'mql_UpdateItem', cardinality 0..*).

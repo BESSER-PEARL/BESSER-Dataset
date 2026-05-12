@@ -1,0 +1,42 @@
+The model has 20 class(es).
+The class 'qsar::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'qsar::DescriptorvalueType' has the following attributes: 'label' of type str; 'value' of type str; 'index' of type str.
+The class 'qsar::ResponsesListType' has no attributes.
+The class 'qsar::PreprocessingType' has no attributes.
+The class 'qsar::DescriptorproviderType' has the following attributes: 'id' of type str; 'version' of type str; 'vendor' of type str; 'name' of type str; 'uRL' of type str.
+The class 'qsar::ParameterType' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'qsar::DescriptorlistType' has no attributes.
+The class 'qsar::StructureType' has the following attributes: 'has3d' of type str; 'resourceindex' of type str; 'problem' of type str; 'id' of type str; 'resourceid' of type str; 'inchi' of type str; 'has2d' of type str.
+The class 'qsar::BibTeXMLEntriesClass' has no attributes.
+The class 'qsar::ResponseunitType' has the following attributes: 'uRL' of type str; 'id' of type str; 'name' of type str; 'shortname' of type str; 'description' of type str.
+The class 'qsar::StructurelistType' has no attributes.
+The class 'qsar::DescriptorresultType' has the following attributes: 'errorString' of type str; 'descriptorid' of type str; 'structureid' of type str.
+The class 'qsar::ResourceType' has the following attributes: 'type' of type str; 'id' of type str; 'uRL' of type str; 'containsErrors' of type str; 'name' of type str; 'file' of type str; 'noMols' of type str; 'checksum' of type str; 'excluded' of type str; 'no2d' of type str; 'no3d' of type str.
+The class 'qsar::PreprocessingStepType' has the following attributes: 'id' of type str; 'name' of type str; 'order' of type str; 'namespace' of type str; 'vendor' of type str.
+The class 'qsar::EStringToStringMapEntry' has no attributes.
+The class 'qsar::DescriptorresultlistsType' has no attributes.
+The class 'qsar::QsarType' has no attributes.
+The class 'qsar::DescriptorType' has the following attributes: 'id' of type str; 'ontologyid' of type str; 'provider' of type str.
+The class 'qsar::ResponseType' has the following attributes: 'value' of type str; 'structureID' of type str; 'unit' of type str.
+The class 'qsar::MetadataType' has the following attributes: 'uRL' of type str; 'datasetname' of type str; 'responsePlacement' of type str; 'responseLabel' of type str; 'authors' of type str; 'description' of type str; 'license' of type str.
+The enumeration 'TypeType' has the following literals: 'text', 'xml'.
+'qsar::QsarType' (role 'qsar_QsarType25', cardinality 0..*) is associated with 'qsar::ResponsesListType' (role 'qsar_ResponsesListType', cardinality 0..*).
+'qsar::QsarType' (role 'qsar_QsarType17', cardinality 0..*) is associated with 'qsar::DescriptorlistType' (role 'qsar_DescriptorlistType18', cardinality 0..*).
+'qsar::StructurelistType' (role 'qsar_StructurelistType', cardinality 0..*) is associated with 'qsar::QsarType' (role 'qsar_QsarType15', cardinality 0..*).
+'qsar::DocumentRoot' (role 'qsar_DocumentRoot', cardinality 0..*) is associated with 'qsar::EStringToStringMapEntry' (role 'qsar_EStringToStringMapEntry', cardinality 0..*).
+'qsar::StructureType' (role 'qsar_StructureType', cardinality 0..*) is associated with 'qsar::ResourceType' (role 'qsar_ResourceType', cardinality 0..*).
+'qsar::DescriptorType' (role 'qsar_DescriptorType5', cardinality 0..*) is associated with 'qsar::ParameterType' (role 'qsar_ParameterType', cardinality 0..*).
+'qsar::DescriptorproviderType' (role 'qsar_DescriptorproviderType', cardinality 0..*) is associated with 'qsar::QsarType' (role 'qsar_QsarType20', cardinality 0..*).
+'qsar::QsarType' (role 'qsar_QsarType27', cardinality 0..*) is associated with 'qsar::ResponseunitType' (role 'qsar_ResponseunitType', cardinality 0..*).
+'qsar::PreprocessingType' (role 'qsar_PreprocessingType', cardinality 0..*) is associated with 'qsar::PreprocessingStepType' (role 'qsar_PreprocessingStepType', cardinality 0..*).
+'qsar::PreprocessingType' (role 'qsar_PreprocessingType23', cardinality 0..*) is associated with 'qsar::QsarType' (role 'qsar_QsarType22', cardinality 0..*).
+'qsar::StructurelistType' (role 'qsar_StructurelistType38', cardinality 0..*) is associated with 'qsar::ResourceType' (role 'qsar_ResourceType39', cardinality 0..*).
+'qsar::EStringToStringMapEntry' (role 'qsar_EStringToStringMapEntry9', cardinality 0..*) is associated with 'qsar::DocumentRoot' (role 'qsar_DocumentRoot8', cardinality 0..*).
+'qsar::DescriptorresultType' (role 'qsar_DescriptorresultType', cardinality 0..*) is associated with 'qsar::DescriptorresultlistsType' (role 'qsar_DescriptorresultlistsType', cardinality 0..*).
+'qsar::BibTeXMLEntriesClass' (role 'qsar_BibTeXMLEntriesClass', cardinality 0..*) is associated with 'qsar::MetadataType' (role 'qsar_MetadataType', cardinality 0..*).
+'qsar::ResponsesListType' (role 'qsar_ResponsesListType36', cardinality 0..*) is associated with 'qsar::ResponseType' (role 'qsar_ResponseType', cardinality 0..*).
+'qsar::QsarType' (role 'qsar_QsarType29', cardinality 0..*) is associated with 'qsar::MetadataType' (role 'qsar_MetadataType30', cardinality 0..*).
+'qsar::DescriptorlistType' (role 'qsar_DescriptorlistType', cardinality 0..*) is associated with 'qsar::DescriptorType' (role 'qsar_DescriptorType', cardinality 0..*).
+'qsar::DescriptorresultType' (role 'qsar_DescriptorresultType3', cardinality 0..*) is associated with 'qsar::DescriptorvalueType' (role 'qsar_DescriptorvalueType', cardinality 0..*).
+'qsar::QsarType' (role 'qsar_QsarType', cardinality 0..*) is associated with 'qsar::DocumentRoot' (role 'qsar_DocumentRoot11', cardinality 0..*).
+'qsar::QsarType' (role 'qsar_QsarType32', cardinality 0..*) is associated with 'qsar::DescriptorresultlistsType' (role 'qsar_DescriptorresultlistsType33', cardinality 0..*).

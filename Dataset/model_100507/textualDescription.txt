@@ -1,0 +1,20 @@
+The model has 6 class(es).
+The class 'requirement::EObject' has no attributes.
+The class 'requirement::Category' has the following attributes: 'id' of type str.
+The class 'requirement::Repository' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'requirement::NamedElement' has the following attributes: 'name' of type str.
+The class 'requirement::Requirement' has the following attributes: 'id' of type str; 'modifiedOn' of type date; 'statement' of type str; 'status' of type str; 'subtype' of type str; 'version' of type int; 'acceptanceCriteria' of type str; 'createdOn' of type date; 'rationale' of type str; 'type' of type str.
+The enumeration 'RequirementType' has the following literals: 'technical', 'functional'.
+'requirement::Category' is a specialization of 'NamedElement'.
+'requirement::Repository' is a specialization of 'NamedElement'.
+'requirement::Requirement' is a specialization of 'NamedElement'.
+'requirement::Requirement' (role 'requirements', cardinality 0..*) is associated with 'requirement::Category' (role 'Category15', cardinality 0..*).
+'requirement::Requirement' (role 'requirement_Requirement', cardinality 0..*) is associated with 'requirement::EObject' (role 'requirement_EObject13', cardinality 0..*).
+'requirement::Category' (role 'parentCategory', cardinality 0..*) is associated with 'requirement::Category' (role 'Category5', cardinality 0..*).
+'requirement::Category' (role 'mainCategories', cardinality 0..*) is associated with 'requirement::Repository' (role 'Repository', cardinality 0..*).
+'requirement::Category' (role 'Category9', cardinality 0..*) is associated with 'requirement::Category' (role 'subCategories', cardinality 0..*).
+'requirement::EObject' (role 'requirement_EObject11', cardinality 0..*) is associated with 'requirement::Category' (role 'requirement_Category', cardinality 0..*).
+'requirement::EObject' (role 'requirement_EObject', cardinality 0..*) is associated with 'requirement::Repository' (role 'requirement_Repository', cardinality 0..*).
+'requirement::Requirement' (role 'Requirement', cardinality 0..*) is associated with 'requirement::Category' (role 'category', cardinality 0..*).
+'requirement::Category' (role 'Category', cardinality 0..*) is associated with 'requirement::Repository' (role 'repository', cardinality 0..*).

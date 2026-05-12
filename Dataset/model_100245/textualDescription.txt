@@ -1,0 +1,30 @@
+The model has 14 class(es).
+The class 'TableElement' has the following attributes: 'index' of type int.
+The class 'BooleanValue' has the following attributes: 'value' of type bool.
+The class 'Table' has no attributes.
+The class 'ColOrRowElement' has the following attributes: 'hidden' of type bool; 'span' of type int.
+The class 'ErrorValue' has no attributes.
+The class 'NumberValue' has the following attributes: 'value' of type float.
+The class 'Cell' has the following attributes: 'formula' of type str.
+The class 'Row' has no attributes.
+The class 'Worksheet' has the following attributes: 'name' of type str.
+The class 'Data' has no attributes.
+The class 'Workbook' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'Column' has no attributes.
+The class 'StringValue' has the following attributes: 'value' of type str.
+'StringValue' is a specialization of 'ValueType'.
+'Column' is a specialization of 'ColOrRowElement'.
+'NumberValue' is a specialization of 'ValueType'.
+'ColOrRowElement' is a specialization of 'TableElement'.
+'ErrorValue' is a specialization of 'ValueType'.
+'Row' is a specialization of 'ColOrRowElement'.
+'Cell' is a specialization of 'TableElement'.
+'BooleanValue' is a specialization of 'ValueType'.
+'Table' (role 'Table6', cardinality 0..*) is associated with 'Row' (role 'Row', cardinality 0..*).
+'Cell' (role 'Cell', cardinality 0..*) is associated with 'Row' (role 'Row8', cardinality 0..*).
+'Cell' (role 'Cell10', cardinality 0..*) is associated with 'Data' (role 'Data', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'Table' (role 'Table4', cardinality 0..*).
+'ValueType' (role 'ValueType', cardinality 0..*) is associated with 'Data' (role 'Data12', cardinality 0..*).
+'Worksheet' (role 'Worksheet', cardinality 0..*) is associated with 'Workbook' (role 'Workbook', cardinality 0..*).
+'Worksheet' (role 'Worksheet2', cardinality 0..*) is associated with 'Table' (role 'Table', cardinality 0..*).

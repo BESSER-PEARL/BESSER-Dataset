@@ -1,0 +1,98 @@
+The model has 46 class(es).
+The class 'WordprocessingMLBasicDef::FldChar' has no attributes.
+The class 'FldCharElt' has no attributes.
+The class 'BodyElt' has no attributes.
+The class 'WordDocument' has no attributes.
+The class 'BlockLevelChunkElt' has no attributes.
+The class 'WordprocessingMLBasicDef::Picture' has no attributes.
+The class 'RunContentElt' has no attributes.
+The class 'WordprocessingMLBasicDef::StringType' has the following attributes: 'val' of type StringType.
+The class 'WordprocessingMLBasicDef::WordDocument' has no attributes.
+The class 'NoteElt' has no attributes.
+The class 'BlockLevelElt' has no attributes.
+The class 'WordprocessingMLBasicDef::Symbol' has no attributes.
+The class 'WordprocessingMLBasicDef::RunElt' has no attributes.
+The class 'WordprocessingMLBasicDef::FootnoteRef' has no attributes.
+The class 'WordprocessingMLBasicDef::BlockLevelElt' has no attributes.
+The class 'WordprocessingMLBasicDef::Text' has no attributes.
+The class 'WordprocessingMLBasicDef::Endnote' has no attributes.
+The class 'ParaContentElt' has no attributes.
+The class 'WordprocessingMLBasicDef::Footnote' has no attributes.
+The class 'RunElt' has no attributes.
+The class 'WordprocessingMLBasicDef::BodyElt' has no attributes.
+The class 'SymElt' has no attributes.
+The class 'WordprocessingMLBasicDef::BlockLevelChunkElt' has no attributes.
+The class 'WordprocessingMLBasicDef::InstrText' has no attributes.
+The class 'WordprocessingMLBasicDef::AnnotationRef' has no attributes.
+The class 'WordprocessingMLBasicDef::SymElt' has no attributes.
+The class 'WordprocessingMLBasicDef::ParaElt' has no attributes.
+The class 'WordprocessingMLBasicDef::NoteElt' has the following attributes: 'suppressRef' of type StringType; 'type' of type StringType.
+The class 'WordprocessingMLBasicDef::Tab' has no attributes.
+The class 'WordprocessingMLBasicDef::SoftHyphen' has no attributes.
+The class 'WordprocessingMLBasicDef::StringProperty' has no attributes.
+The class 'WordprocessingMLBasicDef::Cr' has no attributes.
+The class 'WordprocessingMLBasicDef::ContinuationSeparator' has no attributes.
+The class 'WordprocessingMLBasicDef::NoBreakHyphen' has no attributes.
+The class 'WordprocessingMLBasicDef::BreakElt' has the following attributes: 'type' of type StringType.
+The class 'WordprocessingMLBasicDef::FldCharElt' has the following attributes: 'fldCharType' of type StringType; 'fldLock' of type StringType.
+The class 'WordprocessingMLBasicDef::RunContentElt' has no attributes.
+The class 'WordprocessingMLBasicDef::PgNum' has no attributes.
+The class 'WordprocessingMLBasicDef::DelText' has no attributes.
+The class 'WordprocessingMLBasicDef::DelInstrText' has no attributes.
+The class 'WordprocessingMLBasicDef::Separator' has no attributes.
+The class 'StringType' has no attributes.
+The class 'WordprocessingMLBasicDef::ParaContentElt' has no attributes.
+The class 'ParaElt' has no attributes.
+The class 'WordprocessingMLBasicDef::EndnoteRef' has no attributes.
+The class 'StringProperty' has no attributes.
+The enumeration 'OnOffType' has the following literals: 'oot_on', 'oot_off'.
+The enumeration 'NoteValue' has the following literals: 'ftn_normal', 'ftn_separator', 'ftn_continuation_notice', 'ftn_continuation_separator'.
+The enumeration 'FldCharTypeProperty' has the following literals: 'fctp_begin', 'fctp_separate', 'fctp_end'.
+The enumeration 'BreakType' has the following literals: 'bt_column', 'bt_text_wrapping', 'bt_page'.
+'WordprocessingMLBasicDef::EndnoteRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::FootnoteRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::RunElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLBasicDef::ParaElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLBasicDef::BlockLevelChunkElt' is a specialization of 'BlockLevelElt'.
+'WordprocessingMLBasicDef::BreakElt' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::StringProperty' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::Picture' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::FldChar' is a specialization of 'FldCharElt'.
+'WordprocessingMLBasicDef::FldChar' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Endnote' is a specialization of 'NoteElt'.
+'WordprocessingMLBasicDef::Endnote' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Tab' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Footnote' is a specialization of 'NoteElt'.
+'WordprocessingMLBasicDef::PgNum' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Cr' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Footnote' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Symbol' is a specialization of 'SymElt'.
+'WordprocessingMLBasicDef::Symbol' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::AnnotationRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::SoftHyphen' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::NoBreakHyphen' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::DelInstrText' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::DelInstrText' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::InstrText' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::InstrText' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::DelText' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::DelText' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Text' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::Text' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::ContinuationSeparator' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Separator' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::RunContentElt' (role 'rContentElts', cardinality 0..*) is associated with 'RunElt' (role 'RunElt', cardinality 0..*).
+'BodyElt' (role 'BodyElt8', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::BlockLevelElt' (role 'blockLevelElts', cardinality 0..*).
+'BodyElt' (role 'BodyElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::WordDocument' (role 'be_wordDocument', cardinality 0..*).
+'WordprocessingMLBasicDef::BodyElt' (role 'ble_bodyElt', cardinality 0..*) is associated with 'BlockLevelElt' (role 'BlockLevelElt', cardinality 0..*).
+'WordprocessingMLBasicDef::NoteElt' (role 'ble_note', cardinality 0..*) is associated with 'BlockLevelElt' (role 'BlockLevelElt15', cardinality 0..*).
+'StringType' (role 'StringType', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::SymElt' (role 'WordprocessingMLBasicDef_SymElt', cardinality 0..*).
+'WordprocessingMLBasicDef::FldCharElt' (role 'WordprocessingMLBasicDef_FldCharElt', cardinality 0..*) is associated with 'StringType' (role 'StringType21', cardinality 0..*).
+'ParaElt' (role 'ParaElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::ParaContentElt' (role 'pContentElts', cardinality 0..*).
+'WordprocessingMLBasicDef::WordDocument' (role 'WordprocessingMLBasicDef_WordDocument2', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty3', cardinality 0..*).
+'NoteElt' (role 'NoteElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::BlockLevelElt' (role 'n_blockLevelElts', cardinality 0..*).
+'StringProperty' (role 'StringProperty', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::WordDocument' (role 'WordprocessingMLBasicDef_WordDocument', cardinality 0..*).
+'WordDocument' (role 'WordDocument', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::BodyElt' (role 'body', cardinality 0..*).
+'WordprocessingMLBasicDef::SymElt' (role 'WordprocessingMLBasicDef_SymElt18', cardinality 0..*) is associated with 'StringType' (role 'StringType19', cardinality 0..*).
+'RunContentElt' (role 'RunContentElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::RunElt' (role 'rce_rElt', cardinality 0..*).
+'ParaContentElt' (role 'ParaContentElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::ParaElt' (role 'pce_pElt', cardinality 0..*).

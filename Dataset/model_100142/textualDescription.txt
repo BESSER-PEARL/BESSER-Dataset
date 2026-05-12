@@ -1,0 +1,28 @@
+The model has 15 class(es).
+The class 'Property' has no attributes.
+The class 'dSDL::Text' has the following attributes: 'text' of type str.
+The class 'dSDL::Database' has the following attributes: 'name' of type str.
+The class 'dSDL::PrimaryKey' has the following attributes: 'primaryKey' of type bool.
+The class 'Type' has no attributes.
+The class 'dSDL::Nullable' has the following attributes: 'nullable' of type bool.
+The class 'dSDL::DateTime' has the following attributes: 'date' of type str.
+The class 'dSDL::Type' has no attributes.
+The class 'dSDL::AutoIncrement' has the following attributes: 'autoIncrement' of type bool.
+The class 'dSDL::Varchar' has the following attributes: 'varchar' of type str; 'length' of type int.
+The class 'dSDL::Property' has no attributes.
+The class 'dSDL::Table' has the following attributes: 'name' of type str.
+The class 'dSDL::Integer' has the following attributes: 'integer' of type str; 'length' of type int.
+The class 'dSDL::Attribute' has the following attributes: 'attributeName' of type str.
+The class 'dSDL::ForeignKey' has the following attributes: 'attributeName' of type str; 'tableName' of type str.
+'dSDL::Varchar' is a specialization of 'Type'.
+'dSDL::PrimaryKey' is a specialization of 'Property'.
+'dSDL::Integer' is a specialization of 'Type'.
+'dSDL::AutoIncrement' is a specialization of 'Property'.
+'dSDL::Nullable' is a specialization of 'Property'.
+'dSDL::Text' is a specialization of 'Type'.
+'dSDL::DateTime' is a specialization of 'Type'.
+'dSDL::ForeignKey' is a specialization of 'Property'.
+'dSDL::Attribute' (role 'dSDL_Attribute6', cardinality 0..*) is associated with 'dSDL::Property' (role 'dSDL_Property', cardinality 0..*).
+'dSDL::Attribute' (role 'dSDL_Attribute4', cardinality 0..*) is associated with 'dSDL::Type' (role 'dSDL_Type', cardinality 0..*).
+'dSDL::Database' (role 'dSDL_Database', cardinality 0..*) is associated with 'dSDL::Table' (role 'dSDL_Table', cardinality 0..*).
+'dSDL::Table' (role 'dSDL_Table2', cardinality 0..*) is associated with 'dSDL::Attribute' (role 'dSDL_Attribute', cardinality 0..*).

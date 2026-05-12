@@ -1,0 +1,65 @@
+The model has 23 class(es).
+The class 'research13::Position' has the following attributes: 'description' of type str.
+The class 'research13::Labelled' has the following attributes: 'lname' of type str.
+The class 'research13::KnowledgeManager' has no attributes.
+The class 'research13::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research13::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'research13::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'research13::PublicationSystem' has no attributes.
+The class 'research13::Counted' has the following attributes: 'id' of type int.
+The class 'research13::Review' has the following attributes: 'date' of type date.
+The class 'Named' has no attributes.
+The class 'research13::ReviewNote' has the following attributes: 'content' of type str.
+The class 'Labelled' has no attributes.
+The class 'research13::Keyword' has the following attributes: 'description' of type str.
+The class 'research13::Skill' has the following attributes: 'description' of type str.
+The class 'research13::Paragraph' has the following attributes: 'content' of type str.
+The class 'research13::Paper' has no attributes.
+The class 'research13::PublicationProcess' has the following attributes: 'minTime' of type int; 'maxTime' of type int.
+The class 'research13::Named' has the following attributes: 'name' of type str.
+The class 'research13::Progress' has the following attributes: 'percent' of type int.
+The class 'research13::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'Counted' has no attributes.
+The class 'research13::PublicationStructure' has no attributes.
+The class 'research13::Phase' has the following attributes: 'name' of type str.
+'research13::KnowledgeManager' is a specialization of 'Named'.
+'research13::PublicationStructure' is a specialization of 'Named'.
+'research13::Position' is a specialization of 'Named'.
+'research13::Paper' is a specialization of 'Named'.
+'research13::Keyword' is a specialization of 'Named'.
+'research13::Paragraph' is a specialization of 'Counted'.
+'research13::PublicationProcess' is a specialization of 'Named'.
+'research13::Write' is a specialization of 'Labelled'.
+'research13::Paragraph' is a specialization of 'Named'.
+'research13::ReviewNote' is a specialization of 'Named'.
+'research13::Progress' is a specialization of 'Labelled'.
+'research13::PublicationSystem' is a specialization of 'Named'.
+'research13::Review' is a specialization of 'Labelled'.
+'research13::PublicationStructure' (role 'research13_PublicationStructure34', cardinality 0..*) is associated with 'research13::Paper' (role 'research13_Paper35', cardinality 0..*).
+'research13::Write' (role 'research13_Write', cardinality 0..*) is associated with 'research13::Researcher' (role 'research13_Researcher', cardinality 0..*).
+'research13::Review' (role 'research13_Review', cardinality 0..*) is associated with 'research13::Researcher' (role 'research13_Researcher3', cardinality 0..*).
+'research13::Progress' (role 'progress', cardinality 0..*) is associated with 'research13::Paper' (role 'Paper24', cardinality 0..*).
+'research13::Paragraph' (role 'research13_Paragraph', cardinality 0..*) is associated with 'research13::Paper' (role 'research13_Paper', cardinality 0..*).
+'research13::ReviewNote' (role 'research13_ReviewNote30', cardinality 0..*) is associated with 'research13::Review' (role 'research13_Review29', cardinality 0..*).
+'research13::Position' (role 'research13_Position48', cardinality 0..*) is associated with 'research13::Position' (role 'research13_Position46', cardinality 0..*).
+'research13::Keyword' (role 'research13_Keyword', cardinality 0..*) is associated with 'research13::Paper' (role 'research13_Paper50', cardinality 0..*).
+'research13::Researcher' (role 'research13_Researcher32', cardinality 0..*) is associated with 'research13::PublicationStructure' (role 'research13_PublicationStructure', cardinality 0..*).
+'research13::Researcher' (role 'research13_Researcher10', cardinality 0..*) is associated with 'research13::Collaboration' (role 'research13_Collaboration', cardinality 0..*).
+'research13::Keyword' (role 'research13_Keyword53', cardinality 0..*) is associated with 'research13::KnowledgeManager' (role 'research13_KnowledgeManager52', cardinality 0..*).
+'research13::PublicationSystem' (role 'research13_PublicationSystem44', cardinality 0..*) is associated with 'research13::Position' (role 'research13_Position45', cardinality 0..*).
+'research13::Paper' (role 'res_papers', cardinality 0..*) is associated with 'research13::Researcher' (role 'Researcher', cardinality 0..*).
+'research13::Paper' (role 'research13_Paper18', cardinality 0..*) is associated with 'research13::Paper' (role 'research13_Paper16', cardinality 0..*).
+'research13::PublicationStructure' (role 'research13_PublicationStructure42', cardinality 0..*) is associated with 'research13::PublicationSystem' (role 'research13_PublicationSystem41', cardinality 0..*).
+'research13::PublicationStructure' (role 'research13_PublicationStructure37', cardinality 0..*) is associated with 'research13::KnowledgeManager' (role 'research13_KnowledgeManager', cardinality 0..*).
+'research13::PaperKeyword' (role 'research13_PaperKeyword55', cardinality 0..*) is associated with 'research13::Keyword' (role 'research13_Keyword56', cardinality 0..*).
+'research13::PublicationProcess' (role 'research13_PublicationProcess22', cardinality 0..*) is associated with 'research13::Progress' (role 'research13_Progress', cardinality 0..*).
+'research13::Paper' (role 'research13_Paper59', cardinality 0..*) is associated with 'research13::Collaboration' (role 'research13_Collaboration58', cardinality 0..*).
+'research13::PublicationProcess' (role 'research13_PublicationProcess39', cardinality 0..*) is associated with 'research13::PublicationSystem' (role 'research13_PublicationSystem', cardinality 0..*).
+'research13::Position' (role 'research13_Position', cardinality 0..*) is associated with 'research13::Researcher' (role 'research13_Researcher8', cardinality 0..*).
+'research13::Paper' (role 'research13_Paper15', cardinality 0..*) is associated with 'research13::PaperKeyword' (role 'research13_PaperKeyword', cardinality 0..*).
+'research13::Paper' (role 'paper', cardinality 0..*) is associated with 'research13::Progress' (role 'Progress', cardinality 0..*).
+'research13::Paragraph' (role 'research13_Paragraph20', cardinality 0..*) is associated with 'research13::ReviewNote' (role 'research13_ReviewNote', cardinality 0..*).
+'research13::Researcher' (role 'research13_Researcher6', cardinality 0..*) is associated with 'research13::Skill' (role 'research13_Skill', cardinality 0..*).
+'research13::Paper' (role 'Paper', cardinality 0..*) is associated with 'research13::Researcher' (role 'authors', cardinality 0..*).
+'research13::Paragraph' (role 'research13_Paragraph27', cardinality 0..*) is associated with 'research13::Write' (role 'research13_Write26', cardinality 0..*).
+'research13::PublicationProcess' (role 'research13_PublicationProcess', cardinality 0..*) is associated with 'research13::Phase' (role 'research13_Phase', cardinality 0..*).

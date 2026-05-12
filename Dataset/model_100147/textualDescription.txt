@@ -1,0 +1,164 @@
+The model has 70 class(es).
+The class 'jPQL::Join' has no attributes.
+The class 'jPQL::SelectClause' has the following attributes: 'isDistinct' of type bool.
+The class 'jPQL::DeleteClause' has no attributes.
+The class 'jPQL::AliasAttributeExpression' has the following attributes: 'attributes' of type str.
+The class 'jPQL::SelectExpression' has no attributes.
+The class 'jPQL::UpdateStatement' has no attributes.
+The class 'jPQL::Expression' has no attributes.
+The class 'jPQL::SelectFromClause' has no attributes.
+The class 'jPQL::FromCollection' has no attributes.
+The class 'jPQL::InnerJoin' has no attributes.
+The class 'jPQL::UpdateItem' has no attributes.
+The class 'jPQL::AndExpression' has no attributes.
+The class 'ExpressionTerm' has no attributes.
+The class 'jPQL::QueryModule' has no attributes.
+The class 'jPQL::OrExpression' has no attributes.
+The class 'Variable' has no attributes.
+The class 'jPQL::InQueryExpression' has no attributes.
+The class 'jPQL::EmptyComparisonExpression' has the following attributes: 'isNot' of type bool.
+The class 'jPQL::AllExpression' has no attributes.
+The class 'jPQL::Variable' has no attributes.
+The class 'FromEntry' has no attributes.
+The class 'jPQL::SomeExpression' has no attributes.
+The class 'jPQL::StringExpression' has the following attributes: 'value' of type str.
+The class 'jPQL::Value' has no attributes.
+The class 'jPQL::LeftJoin' has the following attributes: 'isOuter' of type bool.
+The class 'jPQL::MaxAggregate' has no attributes.
+The class 'jPQL::UpdateClause' has no attributes.
+The class 'jPQL::Query' has no attributes.
+The class 'SelectAggregateExpression' has no attributes.
+The class 'Query' has no attributes.
+The class 'jPQL::MinAggregate' has no attributes.
+The class 'jPQL::AnyExpression' has no attributes.
+The class 'FromJoin' has no attributes.
+The class 'jPQL::OperatorExpression' has the following attributes: 'operator' of type str.
+The class 'jPQL::BooleanExpression' has the following attributes: 'value' of type bool.
+The class 'jPQL::SetClause' has no attributes.
+The class 'jPQL::AvgAggregate' has no attributes.
+The class 'jPQL::WhereClause' has no attributes.
+The class 'jPQL::OrderItem' has the following attributes: 'feature' of type str.
+The class 'jPQL::FromClause' has no attributes.
+The class 'jPQL::DeleteStatement' has no attributes.
+The class 'jPQL::DateTimeExpression' has the following attributes: 'value' of type str.
+The class 'jPQL::ExpressionTerm' has no attributes.
+The class 'jPQL::SelectAggregateExpression' has the following attributes: 'isDistinct' of type bool.
+The class 'jPQL::CollectionExpression' has the following attributes: 'isNot' of type bool.
+The class 'jPQL::FromEntry' has no attributes.
+The class 'jPQL::NullComparisonExpression' has the following attributes: 'isNot' of type bool.
+The class 'Expression' has no attributes.
+The class 'jPQL::OrderClause' has the following attributes: 'isDesc' of type bool; 'isAsc' of type bool.
+The class 'jPQL::FromJoin' has the following attributes: 'isFetch' of type bool.
+The class 'jPQL::FromClass' has no attributes.
+The class 'jPQL::Function' has the following attributes: 'name' of type str.
+The class 'jPQL::SumAggregate' has no attributes.
+The class 'jPQL::LikeExpression' has the following attributes: 'pattern' of type str; 'isNot' of type bool.
+The class 'jPQL::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'jPQL::ParameterExpression' has the following attributes: 'name' of type str.
+The class 'jPQL::JvmType' has no attributes.
+The class 'jPQL::CountAggregate' has no attributes.
+The class 'jPQL::InExpression' has the following attributes: 'isNot' of type bool.
+The class 'jPQL::NullExpression' has the following attributes: 'value' of type str.
+The class 'jPQL::SelectStatement' has no attributes.
+The class 'jPQL::SelectConstructorExpression' has the following attributes: 'name' of type str.
+The class 'jPQL::BetweenExpression' has the following attributes: 'isNot' of type bool.
+The class 'jPQL::ExistsExpression' has the following attributes: 'isNot' of type bool.
+The class 'jPQL::IntegerExpression' has the following attributes: 'value' of type int.
+The class 'jPQL::HavingClause' has no attributes.
+The class 'InExpression' has no attributes.
+The class 'SelectExpression' has no attributes.
+The class 'Value' has no attributes.
+The class 'jPQL::InSeqExpression' has no attributes.
+The enumeration 'Operator' has the following literals: 'equal', 'notEqual', 'lessEqual', 'greaterThen', 'lessThen', 'greaterEqual'.
+'jPQL::OperatorExpression' is a specialization of 'Expression'.
+'jPQL::Join' is a specialization of 'FromJoin'.
+'jPQL::InSeqExpression' is a specialization of 'InExpression'.
+'jPQL::InnerJoin' is a specialization of 'FromJoin'.
+'jPQL::NullExpression' is a specialization of 'Value'.
+'jPQL::NullComparisonExpression' is a specialization of 'Expression'.
+'jPQL::FromCollection' is a specialization of 'FromEntry'.
+'jPQL::EmptyComparisonExpression' is a specialization of 'Expression'.
+'jPQL::ParameterExpression' is a specialization of 'Variable'.
+'jPQL::ExpressionTerm' is a specialization of 'Expression'.
+'jPQL::SelectStatement' is a specialization of 'ExpressionTerm'.
+'jPQL::IntegerExpression' is a specialization of 'Value'.
+'jPQL::SomeExpression' is a specialization of 'Expression'.
+'jPQL::AvgAggregate' is a specialization of 'SelectAggregateExpression'.
+'jPQL::AnyExpression' is a specialization of 'Expression'.
+'jPQL::StringExpression' is a specialization of 'Value'.
+'jPQL::SelectAggregateExpression' is a specialization of 'SelectExpression'.
+'jPQL::AndExpression' is a specialization of 'Expression'.
+'jPQL::SelectStatement' is a specialization of 'Query'.
+'jPQL::InExpression' is a specialization of 'Expression'.
+'jPQL::AllExpression' is a specialization of 'Expression'.
+'jPQL::OrExpression' is a specialization of 'Expression'.
+'jPQL::Value' is a specialization of 'Variable'.
+'jPQL::BetweenExpression' is a specialization of 'Expression'.
+'jPQL::AliasAttributeExpression' is a specialization of 'SelectExpression'.
+'jPQL::SelectConstructorExpression' is a specialization of 'SelectExpression'.
+'jPQL::LeftJoin' is a specialization of 'FromJoin'.
+'jPQL::MinAggregate' is a specialization of 'SelectAggregateExpression'.
+'jPQL::DateTimeExpression' is a specialization of 'Value'.
+'jPQL::CollectionExpression' is a specialization of 'Expression'.
+'jPQL::MaxAggregate' is a specialization of 'SelectAggregateExpression'.
+'jPQL::LikeExpression' is a specialization of 'Expression'.
+'jPQL::Variable' is a specialization of 'ExpressionTerm'.
+'jPQL::CountAggregate' is a specialization of 'SelectAggregateExpression'.
+'jPQL::InQueryExpression' is a specialization of 'InExpression'.
+'jPQL::UpdateStatement' is a specialization of 'Query'.
+'jPQL::BooleanExpression' is a specialization of 'Value'.
+'jPQL::SumAggregate' is a specialization of 'SelectAggregateExpression'.
+'jPQL::ExistsExpression' is a specialization of 'Expression'.
+'jPQL::AliasAttributeExpression' is a specialization of 'Variable'.
+'jPQL::DeleteStatement' is a specialization of 'Query'.
+'jPQL::FromClass' is a specialization of 'FromEntry'.
+'jPQL::UpdateClause' (role 'jPQL_UpdateClause', cardinality 0..*) is associated with 'jPQL::UpdateStatement' (role 'jPQL_UpdateStatement', cardinality 0..*).
+'jPQL::SelectFromClause' (role 'jPQL_SelectFromClause', cardinality 0..*) is associated with 'jPQL::SelectStatement' (role 'jPQL_SelectStatement', cardinality 0..*).
+'jPQL::Variable' (role 'jPQL_Variable82', cardinality 0..*) is associated with 'jPQL::InExpression' (role 'jPQL_InExpression', cardinality 0..*).
+'jPQL::LikeExpression' (role 'jPQL_LikeExpression', cardinality 0..*) is associated with 'jPQL::Variable' (role 'jPQL_Variable80', cardinality 0..*).
+'jPQL::HavingClause' (role 'jPQL_HavingClause', cardinality 0..*) is associated with 'jPQL::SelectStatement' (role 'jPQL_SelectStatement5', cardinality 0..*).
+'jPQL::Value' (role 'jPQL_Value94', cardinality 0..*) is associated with 'jPQL::BetweenExpression' (role 'jPQL_BetweenExpression93', cardinality 0..*).
+'jPQL::SelectStatement' (role 'jPQL_SelectStatement65', cardinality 0..*) is associated with 'jPQL::AllExpression' (role 'jPQL_AllExpression', cardinality 0..*).
+'jPQL::Variable' (role 'jPQL_Variable84', cardinality 0..*) is associated with 'jPQL::InSeqExpression' (role 'jPQL_InSeqExpression', cardinality 0..*).
+'jPQL::UpdateItem' (role 'jPQL_UpdateItem23', cardinality 0..*) is associated with 'jPQL::AliasAttributeExpression' (role 'jPQL_AliasAttributeExpression', cardinality 0..*).
+'jPQL::VariableDeclaration' (role 'jPQL_VariableDeclaration55', cardinality 0..*) is associated with 'jPQL::FromJoin' (role 'jPQL_FromJoin54', cardinality 0..*).
+'jPQL::FromClause' (role 'jPQL_FromClause33', cardinality 0..*) is associated with 'jPQL::SelectFromClause' (role 'jPQL_SelectFromClause32', cardinality 0..*).
+'jPQL::SetClause' (role 'jPQL_SetClause21', cardinality 0..*) is associated with 'jPQL::UpdateItem' (role 'jPQL_UpdateItem', cardinality 0..*).
+'jPQL::Query' (role 'jPQL_Query2', cardinality 0..*) is associated with 'jPQL::WhereClause' (role 'jPQL_WhereClause', cardinality 0..*).
+'jPQL::FromCollection' (role 'jPQL_FromCollection', cardinality 0..*) is associated with 'jPQL::AliasAttributeExpression' (role 'jPQL_AliasAttributeExpression49', cardinality 0..*).
+'jPQL::SomeExpression' (role 'jPQL_SomeExpression', cardinality 0..*) is associated with 'jPQL::SelectStatement' (role 'jPQL_SelectStatement69', cardinality 0..*).
+'jPQL::DeleteStatement' (role 'jPQL_DeleteStatement', cardinality 0..*) is associated with 'jPQL::DeleteClause' (role 'jPQL_DeleteClause', cardinality 0..*).
+'jPQL::FromEntry' (role 'jPQL_FromEntry19', cardinality 0..*) is associated with 'jPQL::UpdateClause' (role 'jPQL_UpdateClause18', cardinality 0..*).
+'jPQL::ExistsExpression' (role 'jPQL_ExistsExpression', cardinality 0..*) is associated with 'jPQL::SelectStatement' (role 'jPQL_SelectStatement63', cardinality 0..*).
+'jPQL::EmptyComparisonExpression' (role 'jPQL_EmptyComparisonExpression', cardinality 0..*) is associated with 'jPQL::Variable' (role 'jPQL_Variable78', cardinality 0..*).
+'jPQL::Variable' (role 'jPQL_Variable71', cardinality 0..*) is associated with 'jPQL::CollectionExpression' (role 'jPQL_CollectionExpression', cardinality 0..*).
+'jPQL::SelectStatement' (role 'jPQL_SelectStatement7', cardinality 0..*) is associated with 'jPQL::OrderClause' (role 'jPQL_OrderClause', cardinality 0..*).
+'jPQL::Expression' (role 'jPQL_Expression103', cardinality 0..*) is associated with 'jPQL::AndExpression' (role 'jPQL_AndExpression', cardinality 0..*).
+'jPQL::Expression' (role 'jPQL_Expression101', cardinality 0..*) is associated with 'jPQL::OrExpression' (role 'jPQL_OrExpression', cardinality 0..*).
+'jPQL::BetweenExpression' (role 'jPQL_BetweenExpression90', cardinality 0..*) is associated with 'jPQL::Value' (role 'jPQL_Value91', cardinality 0..*).
+'jPQL::Variable' (role 'jPQL_Variable88', cardinality 0..*) is associated with 'jPQL::BetweenExpression' (role 'jPQL_BetweenExpression', cardinality 0..*).
+'jPQL::FromClause' (role 'jPQL_FromClause41', cardinality 0..*) is associated with 'jPQL::FromEntry' (role 'jPQL_FromEntry42', cardinality 0..*).
+'jPQL::Value' (role 'jPQL_Value', cardinality 0..*) is associated with 'jPQL::UpdateItem' (role 'jPQL_UpdateItem25', cardinality 0..*).
+'jPQL::SelectConstructorExpression' (role 'jPQL_SelectConstructorExpression', cardinality 0..*) is associated with 'jPQL::AliasAttributeExpression' (role 'jPQL_AliasAttributeExpression39', cardinality 0..*).
+'jPQL::VariableDeclaration' (role 'jPQL_VariableDeclaration97', cardinality 0..*) is associated with 'jPQL::AliasAttributeExpression' (role 'jPQL_AliasAttributeExpression96', cardinality 0..*).
+'jPQL::QueryModule' (role 'jPQL_QueryModule', cardinality 0..*) is associated with 'jPQL::Query' (role 'jPQL_Query', cardinality 0..*).
+'jPQL::SelectClause' (role 'jPQL_SelectClause', cardinality 0..*) is associated with 'jPQL::SelectFromClause' (role 'jPQL_SelectFromClause30', cardinality 0..*).
+'jPQL::AliasAttributeExpression' (role 'jPQL_AliasAttributeExpression52', cardinality 0..*) is associated with 'jPQL::FromJoin' (role 'jPQL_FromJoin51', cardinality 0..*).
+'jPQL::SelectExpression' (role 'jPQL_SelectExpression', cardinality 0..*) is associated with 'jPQL::SelectClause' (role 'jPQL_SelectClause35', cardinality 0..*).
+'jPQL::SelectStatement' (role 'jPQL_SelectStatement67', cardinality 0..*) is associated with 'jPQL::AnyExpression' (role 'jPQL_AnyExpression', cardinality 0..*).
+'jPQL::OperatorExpression' (role 'jPQL_OperatorExpression61', cardinality 0..*) is associated with 'jPQL::ExpressionTerm' (role 'jPQL_ExpressionTerm', cardinality 0..*).
+'jPQL::JvmType' (role 'jPQL_JvmType', cardinality 0..*) is associated with 'jPQL::FromClass' (role 'jPQL_FromClass', cardinality 0..*).
+'jPQL::OrderClause' (role 'jPQL_OrderClause11', cardinality 0..*) is associated with 'jPQL::OrderItem' (role 'jPQL_OrderItem', cardinality 0..*).
+'jPQL::OperatorExpression' (role 'jPQL_OperatorExpression', cardinality 0..*) is associated with 'jPQL::Variable' (role 'jPQL_Variable', cardinality 0..*).
+'jPQL::HavingClause' (role 'jPQL_HavingClause9', cardinality 0..*) is associated with 'jPQL::Expression' (role 'jPQL_Expression', cardinality 0..*).
+'jPQL::FromEntry' (role 'jPQL_FromEntry', cardinality 0..*) is associated with 'jPQL::OrderItem' (role 'jPQL_OrderItem13', cardinality 0..*).
+'jPQL::UpdateStatement' (role 'jPQL_UpdateStatement16', cardinality 0..*) is associated with 'jPQL::SetClause' (role 'jPQL_SetClause', cardinality 0..*).
+'jPQL::FromClause' (role 'jPQL_FromClause', cardinality 0..*) is associated with 'jPQL::DeleteClause' (role 'jPQL_DeleteClause28', cardinality 0..*).
+'jPQL::AliasAttributeExpression' (role 'jPQL_AliasAttributeExpression74', cardinality 0..*) is associated with 'jPQL::CollectionExpression' (role 'jPQL_CollectionExpression73', cardinality 0..*).
+'jPQL::NullComparisonExpression' (role 'jPQL_NullComparisonExpression', cardinality 0..*) is associated with 'jPQL::Variable' (role 'jPQL_Variable76', cardinality 0..*).
+'jPQL::WhereClause' (role 'jPQL_WhereClause57', cardinality 0..*) is associated with 'jPQL::Expression' (role 'jPQL_Expression58', cardinality 0..*).
+'jPQL::SelectStatement' (role 'jPQL_SelectStatement86', cardinality 0..*) is associated with 'jPQL::InQueryExpression' (role 'jPQL_InQueryExpression', cardinality 0..*).
+'jPQL::Variable' (role 'jPQL_Variable99', cardinality 0..*) is associated with 'jPQL::Function' (role 'jPQL_Function', cardinality 0..*).
+'jPQL::FromEntry' (role 'jPQL_FromEntry44', cardinality 0..*) is associated with 'jPQL::VariableDeclaration' (role 'jPQL_VariableDeclaration', cardinality 0..*).
+'jPQL::FromJoin' (role 'jPQL_FromJoin', cardinality 0..*) is associated with 'jPQL::FromClass' (role 'jPQL_FromClass47', cardinality 0..*).
+'jPQL::SelectAggregateExpression' (role 'jPQL_SelectAggregateExpression', cardinality 0..*) is associated with 'jPQL::AliasAttributeExpression' (role 'jPQL_AliasAttributeExpression37', cardinality 0..*).

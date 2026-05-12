@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class WordprocessingMLTableElts_SymElt  {
+
+
+
+
+
+
+    private StringType stringtype;
+
+
+
+
+    private StringType stringtype;
+
+
+    public WordprocessingMLTableElts_SymElt(
+    ) {
+    }
+
+
+
+    public StringType getStringtype() {
+        return stringtype;
+    }
+
+    public void setStringtype(StringType stringtype) {
+        this.stringtype = stringtype;
+    }
+    public StringType getStringtype() {
+        return stringtype;
+    }
+
+    public void setStringtype(StringType stringtype) {
+        this.stringtype = stringtype;
+    }
+
+}

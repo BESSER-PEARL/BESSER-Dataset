@@ -1,0 +1,52 @@
+The model has 23 class(es).
+The class 'requirements::editor::NOTOperator' has no attributes.
+The class 'Argument' has no attributes.
+The class 'Requirement' has no attributes.
+The class 'SimpleDependency' has no attributes.
+The class 'requirements::editor::Argument' has no attributes.
+The class 'requirements::editor::DocumentRoot' has the following attributes: 'name' of type str.
+The class 'requirements::editor::CValue' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'requirements::editor::SimpleDependency' has the following attributes: 'comment' of type str.
+The class 'Description' has no attributes.
+The class 'requirements::editor::FunctionalRequirement' has no attributes.
+The class 'requirements::editor::Dependency' has no attributes.
+The class 'requirements::editor::Person' has the following attributes: 'name' of type str.
+The class 'requirements::editor::RequirementArgument' has no attributes.
+The class 'requirements::editor::Refines' has no attributes.
+The class 'requirements::editor::ICost' has no attributes.
+The class 'requirements::editor::Requirement' has the following attributes: 'priority' of type int; 'isMandatory' of type bool; 'identifier' of type str; 'name' of type str.
+The class 'requirements::editor::Description' has no attributes.
+The class 'requirements::editor::BinaryOperatorArgument' has the following attributes: 'operator' of type str.
+The class 'requirements::editor::Category' has the following attributes: 'name' of type str.
+The class 'requirements::editor::TextualDescription' has the following attributes: 'description' of type str.
+The class 'requirements::editor::Requires' has no attributes.
+The class 'requirements::editor::QualityRequirement' has no attributes.
+The enumeration 'BinaryOperator' has the following literals: 'AND', 'OR'.
+'requirements::editor::RequirementArgument' is a specialization of 'Argument'.
+'requirements::editor::FunctionalRequirement' is a specialization of 'Requirement'.
+'requirements::editor::BinaryOperatorArgument' is a specialization of 'Argument'.
+'requirements::editor::TextualDescription' is a specialization of 'Description'.
+'requirements::editor::CValue' is a specialization of 'SimpleDependency'.
+'requirements::editor::QualityRequirement' is a specialization of 'Requirement'.
+'requirements::editor::ICost' is a specialization of 'SimpleDependency'.
+'requirements::editor::Refines' is a specialization of 'SimpleDependency'.
+'requirements::editor::Requires' is a specialization of 'Dependency'.
+'requirements::editor::NOTOperator' is a specialization of 'Argument'.
+'requirements::editor::SimpleDependency' is a specialization of 'Dependency'.
+'requirements::editor::DocumentRoot' (role 'requirements_editor_DocumentRoot', cardinality 0..*) is associated with 'requirements::editor::Category' (role 'requirements_editor_Category24', cardinality 0..*).
+'requirements::editor::NOTOperator' (role 'requirements_editor_NOTOperator', cardinality 0..*) is associated with 'requirements::editor::Argument' (role 'requirements_editor_Argument28', cardinality 0..*).
+'requirements::editor::Category' (role 'requirements_editor_Category', cardinality 0..*) is associated with 'requirements::editor::Category' (role 'requirements_editor_Category4', cardinality 0..*).
+'requirements::editor::Requirement' (role 'requirements_editor_Requirement10', cardinality 0..*) is associated with 'requirements::editor::Category' (role 'requirements_editor_Category9', cardinality 0..*).
+'requirements::editor::Person' (role 'categoryOwnedBy', cardinality 0..*) is associated with 'requirements::editor::Category' (role 'Category', cardinality 0..*).
+'requirements::editor::Dependency' (role 'requirements_editor_Dependency', cardinality 0..*) is associated with 'requirements::editor::Requirement' (role 'requirements_editor_Requirement3', cardinality 0..*).
+'requirements::editor::Requirement' (role 'requirements_editor_Requirement', cardinality 0..*) is associated with 'requirements::editor::Description' (role 'requirements_editor_Description', cardinality 0..*).
+'requirements::editor::Category' (role 'personOwnsCategory', cardinality 0..*) is associated with 'requirements::editor::Person' (role 'Person7', cardinality 0..*).
+'requirements::editor::SimpleDependency' (role 'requirements_editor_SimpleDependency', cardinality 0..*) is associated with 'requirements::editor::Requirement' (role 'requirements_editor_Requirement14', cardinality 0..*).
+'requirements::editor::Person' (role 'requirements_editor_Person', cardinality 0..*) is associated with 'requirements::editor::DocumentRoot' (role 'requirements_editor_DocumentRoot26', cardinality 0..*).
+'requirements::editor::Requirement' (role 'Requirement', cardinality 0..*) is associated with 'requirements::editor::Person' (role 'requirementOwnedBy', cardinality 0..*).
+'requirements::editor::Argument' (role 'requirements_editor_Argument', cardinality 0..*) is associated with 'requirements::editor::Requires' (role 'requirements_editor_Requires', cardinality 0..*).
+'requirements::editor::Person' (role 'Person', cardinality 0..*) is associated with 'requirements::editor::Requirement' (role 'personOwnsRequirement', cardinality 0..*).
+'requirements::editor::Requirement' (role 'requirements_editor_Requirement22', cardinality 0..*) is associated with 'requirements::editor::RequirementArgument' (role 'requirements_editor_RequirementArgument', cardinality 0..*).
+'requirements::editor::Argument' (role 'requirements_editor_Argument20', cardinality 0..*) is associated with 'requirements::editor::BinaryOperatorArgument' (role 'requirements_editor_BinaryOperatorArgument19', cardinality 0..*).
+'requirements::editor::BinaryOperatorArgument' (role 'requirements_editor_BinaryOperatorArgument', cardinality 0..*) is associated with 'requirements::editor::Argument' (role 'requirements_editor_Argument17', cardinality 0..*).

@@ -1,0 +1,97 @@
+The model has 49 class(es).
+The class 'Table' has no attributes.
+The class 'TableConstraint' has no attributes.
+The class 'model::table::Table' has no attributes.
+The class 'model::common::MappingEntry' has the following attributes: 'current' of type str; 'previous' of type str.
+The class 'Expression' has no attributes.
+The class 'model::trigger::Trigger' has no attributes.
+The class 'view::model::Database' has no attributes.
+The class 'ColumnConstraint' has no attributes.
+The class 'NameProvider' has no attributes.
+The class 'TableMapping' has no attributes.
+The class 'model::column::DefaultIntegerValueColumnConstraint' has no attributes.
+The class 'table::model::Database' has no attributes.
+The class 'model::column::CheckColumnConstraint' has no attributes.
+The class 'model::expression::Expression' has no attributes.
+The class 'IndexedColumn' has no attributes.
+The class 'model::view::View' has no attributes.
+The class 'model::column::DefaultExpressionValueColumnConstraint' has no attributes.
+The class 'model::index::Index' has no attributes.
+The class 'trigger::model::Database' has no attributes.
+The class 'Column' has no attributes.
+The class 'model::table::CheckTableConstraint' has no attributes.
+The class 'model::table::TableConstraint' has the following attributes: 'name' of type str.
+The class 'ColumnMapping' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'model::common::ColumnMapping' has no attributes.
+The class 'model::column::DefaultStringValueColumnConstraint' has no attributes.
+The class 'StringToTableMappingEntryMap' has no attributes.
+The class 'model::DatabaseVersion' has no attributes.
+The class 'StringToColumnMappingEntryMap' has no attributes.
+The class 'model::common::StringToTableMappingEntryMap' has the following attributes: 'key' of type str.
+The class 'index::model::Database' has no attributes.
+The class 'model::table::UniqueTableConstraint' has no attributes.
+The class 'model::column::NotNullColumnConstraint' has no attributes.
+The class 'model::table::PrimaryKeyTableConstraint' has no attributes.
+The class 'model::table::ForeignKeyTableConstraint' has no attributes.
+The class 'model::column::DefaultValueColumnConstraint' has no attributes.
+The class 'model::Database' has no attributes.
+The class 'model::column::IndexedColumn' has no attributes.
+The class 'Index' has no attributes.
+The class 'model::common::TableMapping' has no attributes.
+The class 'model::column::Column' has the following attributes: 'type' of type str.
+The class 'model::column::PrimaryKeyColumnConstraint' has no attributes.
+The class 'View' has no attributes.
+The class 'model::column::ColumnConstraint' has the following attributes: 'name' of type str.
+The class 'model::DatabaseVersions' has the following attributes: 'packageName' of type str; 'fileName' of type str.
+The class 'model::column::DefaultRealValueColumnConstraint' has no attributes.
+The class 'model::common::NameProvider' has the following attributes: 'name' of type str.
+The class 'model::common::StringToColumnMappingEntryMap' has the following attributes: 'key' of type str.
+The class 'model::column::UniqueColumnConstraint' has no attributes.
+The enumeration 'DataType' has the following literals: 'TEXT', 'INTEGER', 'BLOB', 'REAL', 'NULL'.
+'model::trigger::Trigger' is a specialization of 'NameProvider'.
+'model::view::View' is a specialization of 'NameProvider'.
+'model::column::CheckColumnConstraint' is a specialization of 'ColumnConstraint'.
+'model::column::PrimaryKeyColumnConstraint' is a specialization of 'ColumnConstraint'.
+'model::column::UniqueColumnConstraint' is a specialization of 'ColumnConstraint'.
+'model::column::NotNullColumnConstraint' is a specialization of 'ColumnConstraint'.
+'model::table::ForeignKeyTableConstraint' is a specialization of 'TableConstraint'.
+'model::table::Table' is a specialization of 'NameProvider'.
+'model::table::CheckTableConstraint' is a specialization of 'TableConstraint'.
+'model::table::UniqueTableConstraint' is a specialization of 'TableConstraint'.
+'model::column::Column' is a specialization of 'NameProvider'.
+'model::Database' is a specialization of 'NameProvider'.
+'model::table::PrimaryKeyTableConstraint' is a specialization of 'TableConstraint'.
+'model::column::DefaultValueColumnConstraint' is a specialization of 'ColumnConstraint'.
+'model::table::Table' (role 'table30', cardinality 0..*) is associated with 'TableConstraint' (role 'TableConstraint', cardinality 0..*).
+'View' (role 'View', cardinality 0..*) is associated with 'model::Database' (role 'database14', cardinality 0..*).
+'Column' (role 'Column38', cardinality 0..*) is associated with 'model::table::ForeignKeyTableConstraint' (role 'model_table_ForeignKeyTableConstraint', cardinality 0..*).
+'IndexedColumn' (role 'IndexedColumn', cardinality 0..*) is associated with 'model::table::PrimaryKeyTableConstraint' (role 'model_table_PrimaryKeyTableConstraint', cardinality 0..*).
+'model::column::IndexedColumn' (role 'model_column_IndexedColumn', cardinality 0..*) is associated with 'Column' (role 'Column49', cardinality 0..*).
+'StringToTableMappingEntryMap' (role 'StringToTableMappingEntryMap', cardinality 0..*) is associated with 'model::common::TableMapping' (role 'model_common_TableMapping', cardinality 0..*).
+'Column' (role 'Column52', cardinality 0..*) is associated with 'model::column::ColumnConstraint' (role 'constraints51', cardinality 0..*).
+'model::DatabaseVersion' (role 'previousVersion', cardinality 0..*) is associated with 'model::DatabaseVersion' (role 'DatabaseVersion7', cardinality 0..*).
+'model::column::Column' (role 'column', cardinality 0..*) is associated with 'ColumnConstraint' (role 'ColumnConstraint', cardinality 0..*).
+'model::table::ForeignKeyTableConstraint' (role 'model_table_ForeignKeyTableConstraint43', cardinality 0..*) is associated with 'Column' (role 'Column44', cardinality 0..*).
+'StringToTableMappingEntryMap' (role 'StringToTableMappingEntryMap22', cardinality 0..*) is associated with 'model::common::TableMapping' (role 'model_common_TableMapping21', cardinality 0..*).
+'model::DatabaseVersion' (role 'model_DatabaseVersion', cardinality 0..*) is associated with 'model::DatabaseVersions' (role 'model_DatabaseVersions', cardinality 0..*).
+'StringToColumnMappingEntryMap' (role 'StringToColumnMappingEntryMap26', cardinality 0..*) is associated with 'model::common::ColumnMapping' (role 'model_common_ColumnMapping25', cardinality 0..*).
+'model::DatabaseVersion' (role 'model_DatabaseVersion11', cardinality 0..*) is associated with 'ColumnMapping' (role 'ColumnMapping', cardinality 0..*).
+'model::column::CheckColumnConstraint' (role 'model_column_CheckColumnConstraint', cardinality 0..*) is associated with 'Expression' (role 'Expression54', cardinality 0..*).
+'view::model::Database' (role 'Database56', cardinality 0..*) is associated with 'model::view::View' (role 'views', cardinality 0..*).
+'table::model::Database' (role 'Database', cardinality 0..*) is associated with 'model::table::Table' (role 'tables', cardinality 0..*).
+'Trigger' (role 'Trigger', cardinality 0..*) is associated with 'model::Database' (role 'database16', cardinality 0..*).
+'Table' (role 'Table41', cardinality 0..*) is associated with 'model::table::ForeignKeyTableConstraint' (role 'model_table_ForeignKeyTableConstraint40', cardinality 0..*).
+'model::Database' (role 'model_Database', cardinality 0..*) is associated with 'model::DatabaseVersion' (role 'model_DatabaseVersion2', cardinality 0..*).
+'model::DatabaseVersion' (role 'model_DatabaseVersion9', cardinality 0..*) is associated with 'TableMapping' (role 'TableMapping', cardinality 0..*).
+'model::table::Table' (role 'table', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).
+'Table' (role 'Table32', cardinality 0..*) is associated with 'model::table::TableConstraint' (role 'constraints', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'model::Database' (role 'database', cardinality 0..*).
+'IndexedColumn' (role 'IndexedColumn35', cardinality 0..*) is associated with 'model::table::UniqueTableConstraint' (role 'model_table_UniqueTableConstraint', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'model::table::CheckTableConstraint' (role 'model_table_CheckTableConstraint', cardinality 0..*).
+'Table' (role 'Table46', cardinality 0..*) is associated with 'model::column::Column' (role 'columns', cardinality 0..*).
+'model::DatabaseVersion' (role 'nextVersion', cardinality 0..*) is associated with 'model::DatabaseVersion' (role 'DatabaseVersion', cardinality 0..*).
+'index::model::Database' (role 'Database58', cardinality 0..*) is associated with 'model::index::Index' (role 'indexes', cardinality 0..*).
+'model::common::ColumnMapping' (role 'model_common_ColumnMapping', cardinality 0..*) is associated with 'StringToColumnMappingEntryMap' (role 'StringToColumnMappingEntryMap', cardinality 0..*).
+'trigger::model::Database' (role 'Database60', cardinality 0..*) is associated with 'model::trigger::Trigger' (role 'triggers', cardinality 0..*).
+'model::Database' (role 'database18', cardinality 0..*) is associated with 'Index' (role 'Index', cardinality 0..*).

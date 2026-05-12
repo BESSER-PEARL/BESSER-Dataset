@@ -1,0 +1,52 @@
+The model has 23 class(es).
+The class 'mtpusecase::Relation' has no attributes.
+The class 'mtpusecase::RequirementUseCase' has no attributes.
+The class 'PackableElement' has no attributes.
+The class 'mtpusecase::Package' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'mtpusecase::TransformationActor' has no attributes.
+The class 'mtpusecase::PackableElement' has no attributes.
+The class 'mtpusecase::Extend' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'mtpusecase::DirectedAssociation' has the following attributes: 'targetName' of type str.
+The class 'mtpusecase::UseCase' has no attributes.
+The class 'mtpusecase::Generalization' has no attributes.
+The class 'mtpusecase::ConstraintComment' has no attributes.
+The class 'mtpusecase::Comment' has no attributes.
+The class 'mtpusecase::Association' has the following attributes: 'sourceName' of type str; 'targetName' of type str.
+The class 'mtpusecase::HasInheritance' has no attributes.
+The class 'mtpusecase::Include' has no attributes.
+The class 'Comment' has no attributes.
+The class 'HasInheritance' has no attributes.
+The class 'Actor' has no attributes.
+The class 'Relation' has no attributes.
+The class 'mtpusecase::NamedElement' has the following attributes: 'name' of type str.
+The class 'mtpusecase::Actor' has no attributes.
+'mtpusecase::Include' is a specialization of 'PackableElement'.
+'mtpusecase::DirectedAssociation' is a specialization of 'Relation'.
+'mtpusecase::Association' is a specialization of 'Relation'.
+'mtpusecase::ConstraintComment' is a specialization of 'Comment'.
+'mtpusecase::UseCase' is a specialization of 'HasInheritance'.
+'mtpusecase::Actor' is a specialization of 'HasInheritance'.
+'mtpusecase::Generalization' is a specialization of 'PackableElement'.
+'mtpusecase::Relation' is a specialization of 'PackableElement'.
+'mtpusecase::Package' is a specialization of 'NamedElement'.
+'mtpusecase::HasInheritance' is a specialization of 'PackableElement'.
+'mtpusecase::PackableElement' is a specialization of 'NamedElement'.
+'mtpusecase::RequirementUseCase' is a specialization of 'UseCase'.
+'mtpusecase::Comment' is a specialization of 'PackableElement'.
+'mtpusecase::TransformationActor' is a specialization of 'Actor'.
+'mtpusecase::Extend' is a specialization of 'PackableElement'.
+'mtpusecase::PackableElement' (role 'mtpusecase_PackableElement13', cardinality 0..*) is associated with 'mtpusecase::Relation' (role 'mtpusecase_Relation12', cardinality 0..*).
+'mtpusecase::Include' (role 'includes', cardinality 0..*) is associated with 'mtpusecase::UseCase' (role 'UseCase', cardinality 0..*).
+'mtpusecase::HasInheritance' (role 'mtpusecase_HasInheritance', cardinality 0..*) is associated with 'mtpusecase::Generalization' (role 'mtpusecase_Generalization', cardinality 0..*).
+'mtpusecase::Extend' (role 'mtpusecase_Extend', cardinality 0..*) is associated with 'mtpusecase::UseCase' (role 'mtpusecase_UseCase19', cardinality 0..*).
+'mtpusecase::Package' (role 'mtpusecase_Package', cardinality 0..*) is associated with 'mtpusecase::PackableElement' (role 'mtpusecase_PackableElement', cardinality 0..*).
+'mtpusecase::Extend' (role 'extends', cardinality 0..*) is associated with 'mtpusecase::UseCase' (role 'UseCase17', cardinality 0..*).
+'mtpusecase::HasInheritance' (role 'src', cardinality 0..*) is associated with 'mtpusecase::Generalization' (role 'Generalization', cardinality 0..*).
+'mtpusecase::UseCase' (role 'source', cardinality 0..*) is associated with 'mtpusecase::Include' (role 'Include', cardinality 0..*).
+'mtpusecase::Generalization' (role 'inheritances', cardinality 0..*) is associated with 'mtpusecase::HasInheritance' (role 'HasInheritance', cardinality 0..*).
+'mtpusecase::Extend' (role 'Extend', cardinality 0..*) is associated with 'mtpusecase::UseCase' (role 'source8', cardinality 0..*).
+'mtpusecase::Include' (role 'mtpusecase_Include', cardinality 0..*) is associated with 'mtpusecase::UseCase' (role 'mtpusecase_UseCase', cardinality 0..*).
+'mtpusecase::PackableElement' (role 'mtpusecase_PackableElement5', cardinality 0..*) is associated with 'mtpusecase::Comment' (role 'mtpusecase_Comment', cardinality 0..*).
+'mtpusecase::PackableElement' (role 'mtpusecase_PackableElement10', cardinality 0..*) is associated with 'mtpusecase::Relation' (role 'mtpusecase_Relation', cardinality 0..*).

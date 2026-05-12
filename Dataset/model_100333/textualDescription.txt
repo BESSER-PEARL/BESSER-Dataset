@@ -1,0 +1,42 @@
+The model has 20 class(es).
+The class 'OurPNVis::CanChange' has the following attributes: 'text' of type bool.
+The class 'OurPNVis::Place' has no attributes.
+The class 'OurPNVis::ident' has the following attributes: 'text' of type str.
+The class 'OurPNVis::Arc' has no attributes.
+The class 'Arc' has no attributes.
+The class 'OurPNVis::Tokens' has the following attributes: 'text' of type str.
+The class 'OurPNVis::Activities' has no attributes.
+The class 'OurPNVis::KeepAnim' has the following attributes: 'text' of type bool.
+The class 'OurPNVis::Finished' has the following attributes: 'text' of type bool.
+The class 'OurPNVis::Shape' has the following attributes: 'text' of type str.
+The class 'Place' has no attributes.
+The class 'Label' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'OurPNVis::PNVis' has no attributes.
+The class 'OurPNVis::Sequence' has no attributes.
+The class 'OurPNVis::Geometry' has the following attributes: 'text' of type str.
+The class 'StructuredLabel' has no attributes.
+The class 'OurPNVis::Transition' has no attributes.
+The class 'PetriNetType' has no attributes.
+The class 'Transition' has no attributes.
+'OurPNVis::Finished' is a specialization of 'Attribute'.
+'OurPNVis::CanChange' is a specialization of 'Attribute'.
+'OurPNVis::PNVis' is a specialization of 'PetriNetType'.
+'OurPNVis::Arc' is a specialization of 'Arc'.
+'OurPNVis::ident' is a specialization of 'Label'.
+'OurPNVis::Geometry' is a specialization of 'Label'.
+'OurPNVis::Shape' is a specialization of 'Attribute'.
+'OurPNVis::Tokens' is a specialization of 'Attribute'.
+'OurPNVis::KeepAnim' is a specialization of 'Attribute'.
+'OurPNVis::Place' is a specialization of 'Place'.
+'OurPNVis::Transition' is a specialization of 'Transition'.
+'OurPNVis::Activities' is a specialization of 'StructuredLabel'.
+'OurPNVis::Place' (role 'OurPNVis_Place11', cardinality 0..*) is associated with 'OurPNVis::Activities' (role 'OurPNVis_Activities', cardinality 0..*).
+'OurPNVis::Finished' (role 'OurPNVis_Finished', cardinality 0..*) is associated with 'OurPNVis::Arc' (role 'OurPNVis_Arc', cardinality 0..*).
+'OurPNVis::Shape' (role 'OurPNVis_Shape', cardinality 0..*) is associated with 'OurPNVis::Place' (role 'OurPNVis_Place9', cardinality 0..*).
+'OurPNVis::Place' (role 'OurPNVis_Place', cardinality 0..*) is associated with 'OurPNVis::Tokens' (role 'OurPNVis_Tokens', cardinality 0..*).
+'OurPNVis::ident' (role 'OurPNVis_ident', cardinality 0..*) is associated with 'OurPNVis::Arc' (role 'OurPNVis_Arc4', cardinality 0..*).
+'OurPNVis::Arc' (role 'OurPNVis_Arc2', cardinality 0..*) is associated with 'OurPNVis::KeepAnim' (role 'OurPNVis_KeepAnim', cardinality 0..*).
+'OurPNVis::Sequence' (role 'OurPNVis_Sequence', cardinality 0..*) is associated with 'OurPNVis::Activities' (role 'OurPNVis_Activities15', cardinality 0..*).
+'OurPNVis::CanChange' (role 'OurPNVis_CanChange', cardinality 0..*) is associated with 'OurPNVis::Place' (role 'OurPNVis_Place7', cardinality 0..*).
+'OurPNVis::Place' (role 'OurPNVis_Place13', cardinality 0..*) is associated with 'OurPNVis::Geometry' (role 'OurPNVis_Geometry', cardinality 0..*).

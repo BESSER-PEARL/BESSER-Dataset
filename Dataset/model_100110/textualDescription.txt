@@ -1,0 +1,45 @@
+The model has 22 class(es).
+The class 'CWMRelationalData::SQLDataType' has the following attributes: 'typeNumber' of type str.
+The class 'CWMRelationalData::SQLSimpleType' has the following attributes: 'numericPrecisionRadix' of type str; 'characterOctetLength' of type str; 'numericScale' of type str; 'characterMaximumLength' of type str; 'numericPrecision' of type str; 'dateTimePrecision' of type str.
+The class 'ColumnSet' has no attributes.
+The class 'CWMRelationalData::CheckConstraint' has no attributes.
+The class 'NamedColumnSet' has no attributes.
+The class 'CWMRelationalData::View' has the following attributes: 'isReadOnly' of type str; 'checkOption' of type str.
+The class 'Column' has no attributes.
+The class 'CWMRelationalData::QueryColumnSet' has no attributes.
+The class 'CheckConstraint' has no attributes.
+The class 'CWMRelationalData::Column' has the following attributes: 'length' of type str; 'collectionName' of type str; 'precision' of type str; 'characterSetName' of type str; 'scale' of type str; 'isNullable' of type str.
+The class 'QueryExpression' has no attributes.
+The class 'CWMRelationalData::Table' has the following attributes: 'temporaryScope' of type str; 'isSystem' of type str; 'isTemporary' of type str.
+The class 'Trigger' has no attributes.
+The class 'Table' has no attributes.
+The class 'SQLDataType' has no attributes.
+The class 'CWMRelationalData::SQLDistinctType' has the following attributes: 'precision' of type str; 'length' of type str; 'scale' of type str.
+The class 'SQLSimpleType' has no attributes.
+The class 'CWMRelationalData::NamedColumnSet' has no attributes.
+The class 'SQLDistinctType' has no attributes.
+The class 'CWMRelationalData::Trigger' has no attributes.
+The class 'CWMRelationalData::QueryExpression' has the following attributes: 'expresssion' of type str.
+The class 'CWMRelationalData::ColumnSet' has no attributes.
+'CWMRelationalData::SQLSimpleType' is a specialization of 'SQLDataType'.
+'CWMRelationalData::View' is a specialization of 'NamedColumnSet'.
+'CWMRelationalData::SQLDistinctType' is a specialization of 'SQLDataType'.
+'CWMRelationalData::NamedColumnSet' is a specialization of 'ColumnSet'.
+'CWMRelationalData::Table' is a specialization of 'NamedColumnSet'.
+'CWMRelationalData::QueryColumnSet' is a specialization of 'ColumnSet'.
+'CWMRelationalData::Column' (role 'structuralFeatures', cardinality 0..*) is associated with 'SQLDataType' (role 'SQLDataType', cardinality 0..*).
+'CWMRelationalData::NamedColumnSet' (role 'optionScopeColumnSet', cardinality 0..*) is associated with 'Column' (role 'Column9', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'CWMRelationalData::CheckConstraint' (role 'column_constraints', cardinality 0..*).
+'NamedColumnSet' (role 'NamedColumnSet', cardinality 0..*) is associated with 'CWMRelationalData::Column' (role 'optionScopeColumn', cardinality 0..*).
+'CWMRelationalData::Trigger' (role 'triggers', cardinality 0..*) is associated with 'NamedColumnSet' (role 'NamedColumnSet17', cardinality 0..*).
+'SQLDistinctType' (role 'SQLDistinctType', cardinality 0..*) is associated with 'CWMRelationalData::SQLSimpleType' (role 'sqlSimpleType', cardinality 0..*).
+'CWMRelationalData::SQLDataType' (role 'type', cardinality 0..*) is associated with 'Column' (role 'Column19', cardinality 0..*).
+'CWMRelationalData::Table' (role 'constrainedElements', cardinality 0..*) is associated with 'CheckConstraint' (role 'CheckConstraint13', cardinality 0..*).
+'CWMRelationalData::SQLDistinctType' (role 'sqlDistinctTypes', cardinality 0..*) is associated with 'SQLSimpleType' (role 'SQLSimpleType', cardinality 0..*).
+'QueryExpression' (role 'QueryExpression', cardinality 0..*) is associated with 'CWMRelationalData::QueryColumnSet' (role 'CWMRelationalData_QueryColumnSet', cardinality 0..*).
+'CheckConstraint' (role 'CheckConstraint', cardinality 0..*) is associated with 'CWMRelationalData::Column' (role 'constraintElements', cardinality 0..*).
+'ColumnSet' (role 'ColumnSet', cardinality 0..*) is associated with 'CWMRelationalData::Column' (role 'features', cardinality 0..*).
+'Column' (role 'Column7', cardinality 0..*) is associated with 'CWMRelationalData::ColumnSet' (role 'owner', cardinality 0..*).
+'Trigger' (role 'Trigger', cardinality 0..*) is associated with 'CWMRelationalData::NamedColumnSet' (role 'namedColumnSet', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'CWMRelationalData::CheckConstraint' (role 'table_constraints', cardinality 0..*).
+'QueryExpression' (role 'QueryExpression15', cardinality 0..*) is associated with 'CWMRelationalData::View' (role 'CWMRelationalData_View', cardinality 0..*).

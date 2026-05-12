@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'stylesheets::ModelStyleSheets' has no attributes.
+The class 'stylesheets::Theme' has the following attributes: 'icon' of type str; 'label' of type str; 'id' of type str.
+The class 'stylesheets::WorkspaceThemes' has no attributes.
+The class 'stylesheets::StyleSheetReference' has the following attributes: 'path' of type str.
+The class 'stylesheets::StyleSheet' has no attributes.
+The class 'stylesheets::EmbeddedStyleSheet' has the following attributes: 'content' of type str; 'label' of type str.
+The class 'StyleSheet' has no attributes.
+The class 'EModelElement' has no attributes.
+'stylesheets::ModelStyleSheets' is a specialization of 'EModelElement'.
+'stylesheets::WorkspaceThemes' is a specialization of 'EModelElement'.
+'stylesheets::StyleSheetReference' is a specialization of 'StyleSheet'.
+'stylesheets::EmbeddedStyleSheet' is a specialization of 'StyleSheet'.
+'stylesheets::StyleSheet' (role 'stylesheets_StyleSheet4', cardinality 0..*) is associated with 'stylesheets::Theme' (role 'stylesheets_Theme3', cardinality 0..*).
+'stylesheets::StyleSheet' (role 'stylesheets_StyleSheet', cardinality 0..*) is associated with 'stylesheets::ModelStyleSheets' (role 'stylesheets_ModelStyleSheets', cardinality 0..*).
+'stylesheets::Theme' (role 'stylesheets_Theme', cardinality 0..*) is associated with 'stylesheets::WorkspaceThemes' (role 'stylesheets_WorkspaceThemes', cardinality 0..*).

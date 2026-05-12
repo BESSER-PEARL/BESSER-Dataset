@@ -1,0 +1,44 @@
+The model has 19 class(es).
+The class 'FSMModel::AbstractTrigger' has no attributes.
+The class 'ClassicalExpression::BooleanExpression' has no attributes.
+The class 'ClockExpressionAndRelation::BindableEntity' has no attributes.
+The class 'FSMModel::Trigger' has no attributes.
+The class 'ClassicalExpression::ClassicalExpression' has no attributes.
+The class 'FSMModel::Transition' has no attributes.
+The class 'AbstractGuard' has no attributes.
+The class 'FSMModel::Guard' has no attributes.
+The class 'ClockExpressionAndRelation::ConcreteEntity' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'AbstractAction' has no attributes.
+The class 'FSMModel::StateMachineDefinition' has no attributes.
+The class 'AbstractTrigger' has no attributes.
+The class 'FSMModel::State' has no attributes.
+The class 'FSMModel::DeclarationBlock' has no attributes.
+The class 'FSMModel::IntegerAssignement' has no attributes.
+The class 'FSMModel::AbstractGuard' has no attributes.
+The class 'ClassicalExpression::BinaryIntegerExpression' has no attributes.
+The class 'FSMModel::AbstractAction' has no attributes.
+'FSMModel::State' is a specialization of 'NamedElement'.
+'FSMModel::IntegerAssignement' is a specialization of 'AbstractAction'.
+'FSMModel::StateMachineDefinition' is a specialization of 'NamedElement'.
+'FSMModel::Guard' is a specialization of 'AbstractGuard'.
+'FSMModel::IntegerAssignement' is a specialization of 'ClassicalExpression::BinaryIntegerExpression'.
+'FSMModel::Transition' is a specialization of 'NamedElement'.
+'FSMModel::Trigger' is a specialization of 'AbstractTrigger'.
+'ClockExpressionAndRelation::BindableEntity' (role 'ClockExpressionAndRelation_BindableEntity27', cardinality 0..*) is associated with 'FSMModel::Trigger' (role 'FSMModel_Trigger26', cardinality 0..*).
+'FSMModel::StateMachineDefinition' (role 'FSMModel_StateMachineDefinition18', cardinality 0..*) is associated with 'FSMModel::State' (role 'FSMModel_State19', cardinality 0..*).
+'FSMModel::StateMachineDefinition' (role 'FSMModel_StateMachineDefinition16', cardinality 0..*) is associated with 'FSMModel::State' (role 'FSMModel_State', cardinality 0..*).
+'FSMModel::Trigger' (role 'FSMModel_Trigger', cardinality 0..*) is associated with 'ClockExpressionAndRelation::BindableEntity' (role 'ClockExpressionAndRelation_BindableEntity', cardinality 0..*).
+'ClassicalExpression::ClassicalExpression' (role 'ClassicalExpression_ClassicalExpression', cardinality 0..*) is associated with 'FSMModel::DeclarationBlock' (role 'FSMModel_DeclarationBlock31', cardinality 0..*).
+'FSMModel::Transition' (role 'Transition2', cardinality 0..*) is associated with 'FSMModel::State' (role 'source', cardinality 0..*).
+'FSMModel::StateMachineDefinition' (role 'FSMModel_StateMachineDefinition13', cardinality 0..*) is associated with 'FSMModel::Transition' (role 'FSMModel_Transition14', cardinality 0..*).
+'FSMModel::AbstractTrigger' (role 'FSMModel_AbstractTrigger', cardinality 0..*) is associated with 'FSMModel::Transition' (role 'FSMModel_Transition8', cardinality 0..*).
+'FSMModel::Guard' (role 'FSMModel_Guard', cardinality 0..*) is associated with 'ClassicalExpression::BooleanExpression' (role 'ClassicalExpression_BooleanExpression', cardinality 0..*).
+'FSMModel::StateMachineDefinition' (role 'FSMModel_StateMachineDefinition21', cardinality 0..*) is associated with 'FSMModel::State' (role 'FSMModel_State22', cardinality 0..*).
+'FSMModel::DeclarationBlock' (role 'FSMModel_DeclarationBlock', cardinality 0..*) is associated with 'FSMModel::StateMachineDefinition' (role 'FSMModel_StateMachineDefinition', cardinality 0..*).
+'FSMModel::AbstractAction' (role 'FSMModel_AbstractAction', cardinality 0..*) is associated with 'FSMModel::Transition' (role 'FSMModel_Transition10', cardinality 0..*).
+'FSMModel::Transition' (role 'inputTransitions', cardinality 0..*) is associated with 'FSMModel::State' (role 'State5', cardinality 0..*).
+'FSMModel::Transition' (role 'FSMModel_Transition', cardinality 0..*) is associated with 'FSMModel::AbstractGuard' (role 'FSMModel_AbstractGuard', cardinality 0..*).
+'ClockExpressionAndRelation::ConcreteEntity' (role 'ClockExpressionAndRelation_ConcreteEntity', cardinality 0..*) is associated with 'FSMModel::DeclarationBlock' (role 'FSMModel_DeclarationBlock29', cardinality 0..*).
+'FSMModel::State' (role 'State', cardinality 0..*) is associated with 'FSMModel::Transition' (role 'outputTransitions', cardinality 0..*).
+'FSMModel::Transition' (role 'Transition', cardinality 0..*) is associated with 'FSMModel::State' (role 'target', cardinality 0..*).

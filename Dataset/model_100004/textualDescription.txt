@@ -1,0 +1,113 @@
+The model has 65 class(es).
+The class 'HAL::ArticleRetro' has the following attributes: 'dateRedaction' of type str.
+The class 'ArtRevueType' has no attributes.
+The class 'HAL::Brevet' has no attributes.
+The class 'HAL::BrevetType' has the following attributes: 'page' of type str; 'pays' of type str; 'numbrevet' of type str; 'datebrevet' of type str.
+The class 'HAL::MetaLab' has the following attributes: 'id' of type str.
+The class 'Laboratoire' has no attributes.
+The class 'HAL::Workshop' has no attributes.
+The class 'Connexion' has no attributes.
+The class 'HAL::AbstractDepot' has the following attributes: 'nom' of type str.
+The class 'HAL::TamponType' has the following attributes: 'id' of type str.
+The class 'HAL::AutreType' has the following attributes: 'description' of type str; 'urldoi' of type str; 'annee' of type str.
+The class 'AutreType' has no attributes.
+The class 'HAL::AbstractMetaLab' has no attributes.
+The class 'OuvrageType' has no attributes.
+The class 'MetaArtNoticeType' has no attributes.
+The class 'HAL::ReferenceBiblioType' has no attributes.
+The class 'HAL::DepotsType' has no attributes.
+The class 'HAL::ArtRevue' has no attributes.
+The class 'HAL::Auteur' has the following attributes: 'autrePrenom' of type str; 'urlPerso' of type str; 'prenom' of type str; 'nom' of type str; 'email' of type str.
+The class 'ReferenceBiblioType' has no attributes.
+The class 'HAL::AutLabType' has no attributes.
+The class 'TheseType' has no attributes.
+The class 'ArtOuvrageType' has no attributes.
+The class 'MetaArtType' has no attributes.
+The class 'HAL::MetaType' has the following attributes: 'isEpl' of type str; 'comment' of type str; 'keyword' of type str; 'researchteam' of type str; 'idext' of type str; 'datevisible' of type str; 'refInterne' of type str; 'classification' of type str; 'collaboration' of type str; 'isEpj' of type str; 'title' of type str; 'langue' of type str; 'financement' of type str.
+The class 'HAL::ArtJournal' has no attributes.
+The class 'AbstractMetaLab' has no attributes.
+The class 'AutLabType' has no attributes.
+The class 'HAL::Ouvrage' has no attributes.
+The class 'Server' has no attributes.
+The class 'HAL::Laboratoire' has the following attributes: 'id' of type str.
+The class 'Entry' has no attributes.
+The class 'HAL::ArticleRecent' has no attributes.
+The class 'HAL::Depot' has the following attributes: 'format' of type str.
+The class 'HAL::OuvrageType' has the following attributes: 'page' of type str; 'edcom' of type str; 'annee' of type str; 'urldoi' of type str.
+The class 'TamponType' has no attributes.
+The class 'HAL::ArtOuvrage' has no attributes.
+The class 'HAL::Entry' has no attributes.
+The class 'AbstractDepot' has no attributes.
+The class 'Article' has no attributes.
+The class 'HAL::ArtRevueType' has the following attributes: 'page' of type str; 'urldoi' of type str; 'journal' of type str; 'volume' of type str; 'annee' of type str.
+The class 'HAL::Article' has no attributes.
+The class 'HAL::AbstractDepotType' has no attributes.
+The class 'HAL::WebLink' has the following attributes: 'identifiant' of type str.
+The class 'HAL::Autre' has no attributes.
+The class 'HAL::Connexion' has the following attributes: 'password' of type str; 'login' of type str.
+The class 'WorkshopType' has no attributes.
+The class 'Auteur' has no attributes.
+The class 'BrevetType' has no attributes.
+The class 'DepotsType' has no attributes.
+The class 'HAL::TheseType' has the following attributes: 'codirecteur' of type str; 'niveau' of type str; 'defencedate' of type str; 'directeur' of type str; 'orgthe' of type str.
+The class 'HAL::Server' has no attributes.
+The class 'HAL::DepotWeb' has the following attributes: 'format' of type str.
+The class 'HAL::Communication' has no attributes.
+The class 'AbstractDepotType' has no attributes.
+The class 'HAL::These' has no attributes.
+The class 'HAL::HAL' has no attributes.
+The class 'HAL::AffiliationType' has the following attributes: 'universite' of type str; 'institution' of type str; 'prive' of type str; 'ecole' of type str.
+The class 'HAL::Conference' has no attributes.
+The class 'HAL::WorkshopType' has the following attributes: 'serie' of type str; 'ville' of type str; 'page' of type str; 'urldoi' of type str; 'edcom' of type str; 'titconf' of type str; 'annee' of type str; 'edsci' of type str; 'pays' of type str.
+The class 'HAL::MetaArtNoticeType' has the following attributes: 'domain' of type str; 'abstract' of type str.
+The class 'MetaType' has no attributes.
+The class 'HAL::Notice' has no attributes.
+The class 'HAL::ArtOuvrageType' has the following attributes: 'annee' of type str; 'edcom' of type str; 'urldoi' of type str; 'serie' of type str; 'titouv' of type str; 'edsci' of type str.
+The class 'HAL::MetaArtType' has the following attributes: 'abstract' of type str; 'domain' of type str.
+The enumeration 'FormatEnum' has the following literals: 'RTF', 'TXT', 'PDF', 'DOC', 'PS', 'ANNEX', 'TEX'.
+The enumeration 'FormatWebEnum' has the following literals: 'HTM', 'HTML', 'XML'.
+The enumeration 'DateVisibleEnum' has the following literals: '15J', '1M', '2A', 'JAMAIS', '1A', '3M'.
+'HAL::Brevet' is a specialization of 'BrevetType'.
+'HAL::MetaArtType' is a specialization of 'MetaType'.
+'HAL::MetaArtNoticeType' is a specialization of 'MetaType'.
+'HAL::WebLink' is a specialization of 'AbstractDepotType'.
+'HAL::Conference' is a specialization of 'WorkshopType'.
+'HAL::Article' is a specialization of 'Entry'.
+'HAL::WorkshopType' is a specialization of 'ReferenceBiblioType'.
+'HAL::ArtRevueType' is a specialization of 'ReferenceBiblioType'.
+'HAL::Autre' is a specialization of 'AutreType'.
+'HAL::AutreType' is a specialization of 'ReferenceBiblioType'.
+'HAL::TheseType' is a specialization of 'ReferenceBiblioType'.
+'HAL::DepotWeb' is a specialization of 'AbstractDepot'.
+'HAL::OuvrageType' is a specialization of 'ReferenceBiblioType'.
+'HAL::Depot' is a specialization of 'AbstractDepot'.
+'HAL::ArticleRetro' is a specialization of 'Article'.
+'HAL::ArticleRecent' is a specialization of 'Article'.
+'HAL::Workshop' is a specialization of 'WorkshopType'.
+'HAL::Ouvrage' is a specialization of 'OuvrageType'.
+'HAL::Communication' is a specialization of 'WorkshopType'.
+'HAL::DepotsType' is a specialization of 'AbstractDepotType'.
+'HAL::ArtJournal' is a specialization of 'ArtRevueType'.
+'HAL::MetaLab' is a specialization of 'AbstractMetaLab'.
+'HAL::ArtOuvrageType' is a specialization of 'ReferenceBiblioType'.
+'HAL::Notice' is a specialization of 'Entry'.
+'HAL::BrevetType' is a specialization of 'ReferenceBiblioType'.
+'HAL::ArtRevue' is a specialization of 'ArtRevueType'.
+'HAL::These' is a specialization of 'TheseType'.
+'HAL::ArtOuvrage' is a specialization of 'ArtOuvrageType'.
+'HAL::MetaArtType' (role 'HAL_MetaArtType', cardinality 0..*) is associated with 'ReferenceBiblioType' (role 'ReferenceBiblioType', cardinality 0..*).
+'HAL::WebLink' (role 'HAL_WebLink', cardinality 0..*) is associated with 'Server' (role 'Server', cardinality 0..*).
+'Auteur' (role 'Auteur', cardinality 0..*) is associated with 'HAL::AutLabType' (role 'HAL_AutLabType', cardinality 0..*).
+'ReferenceBiblioType' (role 'ReferenceBiblioType12', cardinality 0..*) is associated with 'HAL::MetaArtNoticeType' (role 'HAL_MetaArtNoticeType', cardinality 0..*).
+'HAL::Entry' (role 'HAL_Entry5', cardinality 0..*) is associated with 'TamponType' (role 'TamponType', cardinality 0..*).
+'HAL::Notice' (role 'HAL_Notice', cardinality 0..*) is associated with 'MetaArtNoticeType' (role 'MetaArtNoticeType', cardinality 0..*).
+'HAL::Article' (role 'HAL_Article', cardinality 0..*) is associated with 'MetaArtType' (role 'MetaArtType', cardinality 0..*).
+'AutLabType' (role 'AutLabType', cardinality 0..*) is associated with 'HAL::Entry' (role 'HAL_Entry', cardinality 0..*).
+'DepotsType' (role 'DepotsType', cardinality 0..*) is associated with 'HAL::ArticleRecent' (role 'HAL_ArticleRecent', cardinality 0..*).
+'Entry' (role 'Entry', cardinality 0..*) is associated with 'HAL::HAL' (role 'HAL_HAL2', cardinality 0..*).
+'AbstractDepot' (role 'AbstractDepot', cardinality 0..*) is associated with 'HAL::ArticleRetro' (role 'HAL_ArticleRetro', cardinality 0..*).
+'HAL::AutLabType' (role 'HAL_AutLabType15', cardinality 0..*) is associated with 'Laboratoire' (role 'Laboratoire', cardinality 0..*).
+'HAL::Auteur' (role 'HAL_Auteur', cardinality 0..*) is associated with 'Laboratoire' (role 'Laboratoire17', cardinality 0..*).
+'HAL::Laboratoire' (role 'HAL_Laboratoire', cardinality 0..*) is associated with 'AbstractMetaLab' (role 'AbstractMetaLab', cardinality 0..*).
+'HAL::DepotsType' (role 'HAL_DepotsType', cardinality 0..*) is associated with 'AbstractDepot' (role 'AbstractDepot20', cardinality 0..*).
+'Connexion' (role 'Connexion', cardinality 0..*) is associated with 'HAL::HAL' (role 'HAL_HAL', cardinality 0..*).

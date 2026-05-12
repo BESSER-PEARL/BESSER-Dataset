@@ -1,0 +1,27 @@
+The model has 10 class(es).
+The class 'zhu::Transitions' has no attributes.
+The class 'zhu::StateMachine' has no attributes.
+The class 'zhu::Transition' has the following attributes: 'behaviour' of type str; 'guard' of type str.
+The class 'zhu::State' has the following attributes: 'name' of type str.
+The class 'zhu::Region' has the following attributes: 'name' of type str.
+The class 'zhu::Triggers' has no attributes.
+The class 'zhu::StatesSeparated' has no attributes.
+The class 'zhu::TriggersSeparated' has the following attributes: 'firstTrigger' of type str; 'followingTriggers' of type str.
+The class 'zhu::States' has no attributes.
+The class 'zhu::TopRegion' has no attributes.
+'zhu::State' (role 'zhu_State35', cardinality 0..*) is associated with 'zhu::StatesSeparated' (role 'zhu_StatesSeparated34', cardinality 0..*).
+'zhu::TriggersSeparated' (role 'zhu_TriggersSeparated', cardinality 0..*) is associated with 'zhu::Triggers' (role 'zhu_Triggers37', cardinality 0..*).
+'zhu::Transitions' (role 'zhu_Transitions', cardinality 0..*) is associated with 'zhu::TopRegion' (role 'zhu_TopRegion6', cardinality 0..*).
+'zhu::Region' (role 'zhu_Region', cardinality 0..*) is associated with 'zhu::TopRegion' (role 'zhu_TopRegion4', cardinality 0..*).
+'zhu::StatesSeparated' (role 'zhu_StatesSeparated', cardinality 0..*) is associated with 'zhu::States' (role 'zhu_States29', cardinality 0..*).
+'zhu::TopRegion' (role 'zhu_TopRegion', cardinality 0..*) is associated with 'zhu::StateMachine' (role 'zhu_StateMachine', cardinality 0..*).
+'zhu::Region' (role 'zhu_Region14', cardinality 0..*) is associated with 'zhu::Transitions' (role 'zhu_Transitions15', cardinality 0..*).
+'zhu::Transitions' (role 'zhu_Transitions19', cardinality 0..*) is associated with 'zhu::Transition' (role 'zhu_Transition20', cardinality 0..*).
+'zhu::Transition' (role 'zhu_Transition24', cardinality 0..*) is associated with 'zhu::State' (role 'zhu_State25', cardinality 0..*).
+'zhu::Region' (role 'zhu_Region12', cardinality 0..*) is associated with 'zhu::Region' (role 'zhu_Region10', cardinality 0..*).
+'zhu::Transition' (role 'zhu_Transition', cardinality 0..*) is associated with 'zhu::Transitions' (role 'zhu_Transitions17', cardinality 0..*).
+'zhu::Transition' (role 'zhu_Transition22', cardinality 0..*) is associated with 'zhu::State' (role 'zhu_State', cardinality 0..*).
+'zhu::Triggers' (role 'zhu_Triggers', cardinality 0..*) is associated with 'zhu::Transition' (role 'zhu_Transition27', cardinality 0..*).
+'zhu::States' (role 'zhu_States', cardinality 0..*) is associated with 'zhu::TopRegion' (role 'zhu_TopRegion2', cardinality 0..*).
+'zhu::Region' (role 'zhu_Region8', cardinality 0..*) is associated with 'zhu::States' (role 'zhu_States9', cardinality 0..*).
+'zhu::StatesSeparated' (role 'zhu_StatesSeparated31', cardinality 0..*) is associated with 'zhu::State' (role 'zhu_State32', cardinality 0..*).

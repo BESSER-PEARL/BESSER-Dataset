@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'nupn::SizeType' has the following attributes: 'places' of type str; 'arcs' of type str; 'transitions' of type str.
+The class 'nupn::EStringToStringMapEntry' has no attributes.
+The class 'nupn::NUPNToolspecificType' has the following attributes: 'tool' of type str; 'mixed' of type str; 'version' of type str.
+The class 'nupn::UnitType' has the following attributes: 'subunits' of type str; 'id' of type str; 'places' of type str.
+The class 'nupn::StructureType' has the following attributes: 'root' of type str; 'safe' of type str; 'units' of type str.
+'nupn::StructureType' (role 'nupn_StructureType4', cardinality 0..*) is associated with 'nupn::NUPNToolspecificType' (role 'nupn_NUPNToolspecificType3', cardinality 0..*).
+'nupn::EStringToStringMapEntry' (role 'nupn_EStringToStringMapEntry9', cardinality 0..*) is associated with 'nupn::NUPNToolspecificType' (role 'nupn_NUPNToolspecificType8', cardinality 0..*).
+'nupn::NUPNToolspecificType' (role 'nupn_NUPNToolspecificType', cardinality 0..*) is associated with 'nupn::SizeType' (role 'nupn_SizeType', cardinality 0..*).
+'nupn::StructureType' (role 'nupn_StructureType', cardinality 0..*) is associated with 'nupn::UnitType' (role 'nupn_UnitType', cardinality 0..*).
+'nupn::NUPNToolspecificType' (role 'nupn_NUPNToolspecificType6', cardinality 0..*) is associated with 'nupn::EStringToStringMapEntry' (role 'nupn_EStringToStringMapEntry', cardinality 0..*).

@@ -1,0 +1,125 @@
+The model has 40 class(es).
+The class 'model::MappingFile' has no attributes.
+The class 'model::IFile' has no attributes.
+The class 'model::Column' has no attributes.
+The class 'model::FQNamedElement' has no attributes.
+The class 'Task' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'model::MappingImport' has no attributes.
+The class 'IColumn' has no attributes.
+The class 'model::Site' has no attributes.
+The class 'model::Database' has the following attributes: 'dsn' of type str.
+The class 'model::FileSet' has the following attributes: 'hostname' of type str.
+The class 'model::TaskFile' has no attributes.
+The class 'model::User' has the following attributes: 'password' of type str.
+The class 'model::Task' has the following attributes: 'fileName' of type str.
+The class 'DescribedElement' has no attributes.
+The class 'model::SCTFile' has the following attributes: 'file' of type str.
+The class 'model::TaskSQL' has no attributes.
+The class 'model::Type' has no attributes.
+The class 'model::Domain' has the following attributes: 'type' of type str.
+The class 'SeparatedElement' has no attributes.
+The class 'model::DescribedElement' has the following attributes: 'description' of type str.
+The class 'model::File' has the following attributes: 'numberOfHeaderLines' of type str; 'files' of type str.
+The class 'model::NamedElement' has the following attributes: 'name' of type str.
+The class 'model::NativeSQLType' has no attributes.
+The class 'model::IColumn' has no attributes.
+The class 'model::MappingSQL' has no attributes.
+The class 'model::MappingExport' has no attributes.
+The class 'model::TaskExport' has no attributes.
+The class 'model::Table' has no attributes.
+The class 'model::TaskImport' has no attributes.
+The class 'model::SeparatedElement' has the following attributes: 'separator' of type str.
+The class 'model::TaskSet' has no attributes.
+The class 'model::Field' has the following attributes: 'length' of type str; 'type' of type str; 'position' of type str.
+The class 'Type' has no attributes.
+The class 'IFile' has no attributes.
+The class 'model::Schema' has no attributes.
+The class 'model::Mapping' has the following attributes: 'expression' of type str.
+The class 'model::View' has the following attributes: 'sql' of type str.
+The class 'FQNamedElement' has no attributes.
+The enumeration 'FieldType' has the following literals: 'ABSOLUTE', 'RELATIVE'.
+'model::User' is a specialization of 'FQNamedElement'.
+'model::Task' is a specialization of 'DescribedElement'.
+'model::Column' is a specialization of 'IColumn'.
+'model::TaskSet' is a specialization of 'NamedElement'.
+'model::FileSet' is a specialization of 'NamedElement'.
+'model::TaskFile' is a specialization of 'Task'.
+'model::SCTFile' is a specialization of 'IFile'.
+'model::Domain' is a specialization of 'FQNamedElement'.
+'model::TaskExport' is a specialization of 'Task'.
+'model::Table' is a specialization of 'FQNamedElement'.
+'model::File' is a specialization of 'SeparatedElement'.
+'model::TaskImport' is a specialization of 'Task'.
+'model::TaskSQL' is a specialization of 'Task'.
+'model::FileSet' is a specialization of 'DescribedElement'.
+'model::Schema' is a specialization of 'NamedElement'.
+'model::Site' is a specialization of 'NamedElement'.
+'model::IColumn' is a specialization of 'FQNamedElement'.
+'model::User' is a specialization of 'NamedElement'.
+'model::Field' is a specialization of 'IColumn'.
+'model::NativeSQLType' is a specialization of 'Type'.
+'model::TaskSet' is a specialization of 'DescribedElement'.
+'model::MappingExport' is a specialization of 'Mapping'.
+'model::Database' is a specialization of 'NamedElement'.
+'model::Type' is a specialization of 'NamedElement'.
+'model::IColumn' is a specialization of 'NamedElement'.
+'model::Field' is a specialization of 'SeparatedElement'.
+'model::Domain' is a specialization of 'Type'.
+'model::MappingImport' is a specialization of 'Mapping'.
+'model::View' is a specialization of 'NamedElement'.
+'model::IFile' is a specialization of 'DescribedElement'.
+'model::User' is a specialization of 'DescribedElement'.
+'model::View' is a specialization of 'DescribedElement'.
+'model::MappingSQL' is a specialization of 'Mapping'.
+'model::Database' is a specialization of 'DescribedElement'.
+'model::Task' is a specialization of 'NamedElement'.
+'model::Schema' is a specialization of 'DescribedElement'.
+'model::MappingFile' is a specialization of 'Mapping'.
+'model::IColumn' is a specialization of 'DescribedElement'.
+'model::Site' is a specialization of 'DescribedElement'.
+'model::IFile' is a specialization of 'NamedElement'.
+'model::Table' is a specialization of 'NamedElement'.
+'model::File' is a specialization of 'IFile'.
+'model::Table' is a specialization of 'DescribedElement'.
+'model::View' is a specialization of 'FQNamedElement'.
+'model::Type' is a specialization of 'DescribedElement'.
+'model::Site' (role 'model_Site87', cardinality 0..*) is associated with 'model::TaskSet' (role 'model_TaskSet88', cardinality 0..*).
+'model::Task' (role 'model_Task46', cardinality 0..*) is associated with 'model::Task' (role 'model_Task48', cardinality 0..*).
+'model::MappingSQL' (role 'model_MappingSQL40', cardinality 0..*) is associated with 'model::Column' (role 'model_Column41', cardinality 0..*).
+'model::Table' (role 'model_Table74', cardinality 0..*) is associated with 'model::TaskSQL' (role 'model_TaskSQL', cardinality 0..*).
+'model::Field' (role 'model_Field31', cardinality 0..*) is associated with 'model::MappingFile' (role 'model_MappingFile30', cardinality 0..*).
+'model::Schema' (role 'model_Schema7', cardinality 0..*) is associated with 'model::Domain' (role 'model_Domain', cardinality 0..*).
+'model::Database' (role 'model_Database2', cardinality 0..*) is associated with 'model::Schema' (role 'model_Schema', cardinality 0..*).
+'model::Site' (role 'model_Site', cardinality 0..*) is associated with 'model::Database' (role 'model_Database82', cardinality 0..*).
+'model::FileSet' (role 'model_FileSet', cardinality 0..*) is associated with 'model::IFile' (role 'model_IFile', cardinality 0..*).
+'model::Domain' (role 'model_Domain22', cardinality 0..*) is associated with 'model::SCTFile' (role 'model_SCTFile21', cardinality 0..*).
+'model::Column' (role 'model_Column15', cardinality 0..*) is associated with 'model::Type' (role 'model_Type', cardinality 0..*).
+'model::Column' (role 'model_Column', cardinality 0..*) is associated with 'model::Table' (role 'model_Table13', cardinality 0..*).
+'model::TaskExport' (role 'model_TaskExport71', cardinality 0..*) is associated with 'model::MappingExport' (role 'model_MappingExport72', cardinality 0..*).
+'model::Table' (role 'model_Table53', cardinality 0..*) is associated with 'model::TaskImport' (role 'model_TaskImport52', cardinality 0..*).
+'model::User' (role 'model_User4', cardinality 0..*) is associated with 'model::Schema' (role 'model_Schema5', cardinality 0..*).
+'model::IColumn' (role 'model_IColumn36', cardinality 0..*) is associated with 'model::MappingExport' (role 'model_MappingExport35', cardinality 0..*).
+'model::File' (role 'model_File', cardinality 0..*) is associated with 'model::Field' (role 'model_Field', cardinality 0..*).
+'model::TaskSQL' (role 'model_TaskSQL79', cardinality 0..*) is associated with 'model::MappingSQL' (role 'model_MappingSQL80', cardinality 0..*).
+'model::TaskImport' (role 'model_TaskImport', cardinality 0..*) is associated with 'model::IFile' (role 'model_IFile50', cardinality 0..*).
+'model::MappingSQL' (role 'model_MappingSQL', cardinality 0..*) is associated with 'model::Column' (role 'model_Column38', cardinality 0..*).
+'model::Schema' (role 'model_Schema11', cardinality 0..*) is associated with 'model::View' (role 'model_View', cardinality 0..*).
+'model::TaskFile' (role 'model_TaskFile60', cardinality 0..*) is associated with 'model::File' (role 'model_File61', cardinality 0..*).
+'model::Field' (role 'model_Field28', cardinality 0..*) is associated with 'model::MappingFile' (role 'model_MappingFile', cardinality 0..*).
+'model::FileSet' (role 'model_FileSet85', cardinality 0..*) is associated with 'model::Site' (role 'model_Site84', cardinality 0..*).
+'model::MappingExport' (role 'model_MappingExport', cardinality 0..*) is associated with 'model::Column' (role 'model_Column33', cardinality 0..*).
+'model::TaskSQL' (role 'model_TaskSQL76', cardinality 0..*) is associated with 'model::Table' (role 'model_Table77', cardinality 0..*).
+'model::IColumn' (role 'model_IColumn', cardinality 0..*) is associated with 'model::MappingImport' (role 'model_MappingImport', cardinality 0..*).
+'model::TaskImport' (role 'model_TaskImport55', cardinality 0..*) is associated with 'model::MappingImport' (role 'model_MappingImport56', cardinality 0..*).
+'model::TaskSet' (role 'model_TaskSet', cardinality 0..*) is associated with 'model::Task' (role 'model_Task', cardinality 0..*).
+'model::Table' (role 'model_Table66', cardinality 0..*) is associated with 'model::TaskExport' (role 'model_TaskExport', cardinality 0..*).
+'model::MappingFile' (role 'model_MappingFile64', cardinality 0..*) is associated with 'model::TaskFile' (role 'model_TaskFile63', cardinality 0..*).
+'model::Database' (role 'model_Database', cardinality 0..*) is associated with 'model::User' (role 'model_User', cardinality 0..*).
+'model::TaskFile' (role 'model_TaskFile', cardinality 0..*) is associated with 'model::File' (role 'model_File58', cardinality 0..*).
+'model::Table' (role 'model_Table', cardinality 0..*) is associated with 'model::Schema' (role 'model_Schema9', cardinality 0..*).
+'model::SCTFile' (role 'model_SCTFile', cardinality 0..*) is associated with 'model::Column' (role 'model_Column19', cardinality 0..*).
+'model::MappingImport' (role 'model_MappingImport25', cardinality 0..*) is associated with 'model::Column' (role 'model_Column26', cardinality 0..*).
+'model::IFile' (role 'model_IFile69', cardinality 0..*) is associated with 'model::TaskExport' (role 'model_TaskExport68', cardinality 0..*).
+'model::Task' (role 'model_Task45', cardinality 0..*) is associated with 'model::TaskSet' (role 'model_TaskSet44', cardinality 0..*).

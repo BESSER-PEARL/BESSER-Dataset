@@ -1,0 +1,32 @@
+The model has 17 class(es).
+The class 'CPNInscription' has no attributes.
+The class 'cpndefinition::CPN' has no attributes.
+The class 'cpndefinition::Guard' has no attributes.
+The class 'cpndefinition::Arc' has no attributes.
+The class 'Label' has no attributes.
+The class 'cpndefinition::InitialMarking' has no attributes.
+The class 'cpndefinition::Sort' has no attributes.
+The class 'cpndefinition::Transition' has no attributes.
+The class 'PetriNetType' has no attributes.
+The class 'cpndefinition::Place' has no attributes.
+The class 'cpndefinition::ArcExpression' has no attributes.
+The class 'cpndefinition::Page' has no attributes.
+The class 'Place' has no attributes.
+The class 'cpndefinition::CPNInscription' has the following attributes: 'text' of type str.
+The class 'Transition' has no attributes.
+The class 'Arc' has no attributes.
+The class 'Page' has no attributes.
+'cpndefinition::Sort' is a specialization of 'CPNInscription'.
+'cpndefinition::InitialMarking' is a specialization of 'CPNInscription'.
+'cpndefinition::CPN' is a specialization of 'PetriNetType'.
+'cpndefinition::Arc' is a specialization of 'Arc'.
+'cpndefinition::Place' is a specialization of 'Place'.
+'cpndefinition::Guard' is a specialization of 'CPNInscription'.
+'cpndefinition::CPNInscription' is a specialization of 'Label'.
+'cpndefinition::Transition' is a specialization of 'Transition'.
+'cpndefinition::Page' is a specialization of 'Page'.
+'cpndefinition::ArcExpression' is a specialization of 'CPNInscription'.
+'cpndefinition::Sort' (role 'cpndefinition_Sort', cardinality 0..*) is associated with 'cpndefinition::Place' (role 'cpndefinition_Place2', cardinality 0..*).
+'cpndefinition::Place' (role 'cpndefinition_Place', cardinality 0..*) is associated with 'cpndefinition::InitialMarking' (role 'cpndefinition_InitialMarking', cardinality 0..*).
+'cpndefinition::ArcExpression' (role 'cpndefinition_ArcExpression', cardinality 0..*) is associated with 'cpndefinition::Arc' (role 'cpndefinition_Arc', cardinality 0..*).
+'cpndefinition::Guard' (role 'cpndefinition_Guard', cardinality 0..*) is associated with 'cpndefinition::Transition' (role 'cpndefinition_Transition', cardinality 0..*).

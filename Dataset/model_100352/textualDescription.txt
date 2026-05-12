@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'dfa::Dfa' has no attributes.
+The class 'dfa::NamedElement' has the following attributes: 'name' of type str.
+The class 'dfa::Language' has no attributes.
+The class 'dfa::RegularState' has no attributes.
+The class 'dfa::Transition' has no attributes.
+The class 'RegularState' has no attributes.
+The class 'dfa::Symbol' has the following attributes: 'direction' of type str; 'literal' of type str; 'description' of type str.
+The class 'dfa::FinalState' has no attributes.
+The class 'State' has no attributes.
+The class 'dfa::State' has the following attributes: 'description' of type str.
+The class 'dfa::InitialState' has no attributes.
+The class 'NamedElement' has no attributes.
+'dfa::State' is a specialization of 'NamedElement'.
+'dfa::Language' is a specialization of 'NamedElement'.
+'dfa::RegularState' is a specialization of 'State'.
+'dfa::Dfa' is a specialization of 'NamedElement'.
+'dfa::InitialState' is a specialization of 'RegularState'.
+'dfa::FinalState' is a specialization of 'State'.
+'dfa::RegularState' (role 'dfa_RegularState', cardinality 0..*) is associated with 'dfa::Dfa' (role 'dfa_Dfa2', cardinality 0..*).
+'dfa::Language' (role 'dfa_Language', cardinality 0..*) is associated with 'dfa::Dfa' (role 'dfa_Dfa', cardinality 0..*).
+'dfa::State' (role 'dfa_State', cardinality 0..*) is associated with 'dfa::Transition' (role 'dfa_Transition', cardinality 0..*).
+'dfa::InitialState' (role 'dfa_InitialState', cardinality 0..*) is associated with 'dfa::Dfa' (role 'dfa_Dfa4', cardinality 0..*).
+'dfa::Transition' (role 'dfa_Transition15', cardinality 0..*) is associated with 'dfa::RegularState' (role 'dfa_RegularState14', cardinality 0..*).
+'dfa::Language' (role 'dfa_Language11', cardinality 0..*) is associated with 'dfa::Symbol' (role 'dfa_Symbol12', cardinality 0..*).
+'dfa::FinalState' (role 'dfa_FinalState', cardinality 0..*) is associated with 'dfa::Dfa' (role 'dfa_Dfa6', cardinality 0..*).
+'dfa::Transition' (role 'dfa_Transition9', cardinality 0..*) is associated with 'dfa::Symbol' (role 'dfa_Symbol', cardinality 0..*).

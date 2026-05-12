@@ -1,0 +1,89 @@
+The model has 41 class(es).
+The class 'SQLDML::BinaryExp' has the following attributes: 'opName' of type str.
+The class 'SQLDML::NotExp' has the following attributes: 'opName' of type str.
+The class 'SQLDML::OperationExp' has the following attributes: 'optName' of type str.
+The class 'BinaryExp' has no attributes.
+The class 'DataType' has no attributes.
+The class 'SQLDML::OrExp' has no attributes.
+The class 'SQLDML::Predicate' has no attributes.
+The class 'SQLDML::QueryStmtCol' has no attributes.
+The class 'SQLDML::QueryStmt' has no attributes.
+The class 'WhereClause' has no attributes.
+The class 'ValueExp' has no attributes.
+The class 'StringValueExp' has no attributes.
+The class 'SQLDML::QueryStmtAllCol' has no attributes.
+The class 'SQLDML::ListExp' has no attributes.
+The class 'SQLDML::LocatedElement' has the following attributes: 'commentsAfter' of type str; 'location' of type str; 'commentsBefore' of type str.
+The class 'Table' has no attributes.
+The class 'SQLDML::Table' has the following attributes: 'alias' of type str.
+The class 'SQLDML::IntegerValueExp' has the following attributes: 'aValue' of type str.
+The class 'Statement' has no attributes.
+The class 'SQLDML::QueryPredicate' has no attributes.
+The class 'SQLDML::FunctionExp' has the following attributes: 'name' of type str.
+The class 'SQLDML::ValueExp' has no attributes.
+The class 'SQLDML::SQLRoot' has no attributes.
+The class 'SQLDML::StringValueExp' has the following attributes: 'aValue' of type str.
+The class 'SQLDML::Statement' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'SQLDML::InExp' has the following attributes: 'columnName' of type str.
+The class 'SQLDML::ColumnExp' has the following attributes: 'alias' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ColumnExp' has no attributes.
+The class 'SQLDML::InsertStmt' has the following attributes: 'tableName' of type str.
+The class 'Predicate' has no attributes.
+The class 'SQLDML::LikeExp' has the following attributes: 'columnName' of type str.
+The class 'Expression' has no attributes.
+The class 'SQLDML::ViewStatement' has the following attributes: 'name' of type str.
+The class 'SQLDML::NamedElement' has the following attributes: 'name' of type str.
+The class 'SQLDML::DataType' has no attributes.
+The class 'SQLDML::AndExp' has no attributes.
+The class 'SQLDML::WhereClause' has no attributes.
+The class 'SQLDML::Expression' has no attributes.
+The class 'QueryStmt' has no attributes.
+'SQLDML::Predicate' is a specialization of 'Expression'.
+'SQLDML::AndExp' is a specialization of 'BinaryExp'.
+'SQLDML::OrExp' is a specialization of 'BinaryExp'.
+'SQLDML::QueryPredicate' is a specialization of 'Expression'.
+'SQLDML::Expression' is a specialization of 'LocatedElement'.
+'SQLDML::NamedElement' is a specialization of 'LocatedElement'.
+'SQLDML::QueryStmtAllCol' is a specialization of 'QueryStmt'.
+'SQLDML::QueryStmtCol' is a specialization of 'QueryStmt'.
+'SQLDML::WhereClause' is a specialization of 'LocatedElement'.
+'SQLDML::BinaryExp' is a specialization of 'Expression'.
+'SQLDML::ViewStatement' is a specialization of 'Statement'.
+'SQLDML::Table' is a specialization of 'NamedElement'.
+'SQLDML::InsertStmt' is a specialization of 'Statement'.
+'SQLDML::NotExp' is a specialization of 'Expression'.
+'SQLDML::QueryStmt' is a specialization of 'Statement'.
+'SQLDML::SQLRoot' is a specialization of 'LocatedElement'.
+'SQLDML::InExp' is a specialization of 'Expression'.
+'SQLDML::OperationExp' is a specialization of 'BinaryExp'.
+'SQLDML::StringValueExp' is a specialization of 'ValueExp'.
+'SQLDML::Statement' is a specialization of 'LocatedElement'.
+'SQLDML::ListExp' is a specialization of 'Predicate'.
+'SQLDML::FunctionExp' is a specialization of 'Predicate'.
+'SQLDML::DataType' is a specialization of 'NamedElement'.
+'SQLDML::LikeExp' is a specialization of 'Expression'.
+'SQLDML::IntegerValueExp' is a specialization of 'ValueExp'.
+'SQLDML::ColumnExp' is a specialization of 'Predicate'.
+'SQLDML::ColumnExp' is a specialization of 'NamedElement'.
+'SQLDML::ValueExp' is a specialization of 'Predicate'.
+'Expression' (role 'Expression13', cardinality 0..*) is associated with 'SQLDML::BinaryExp' (role 'SQLDML_BinaryExp', cardinality 0..*).
+'Expression' (role 'Expression11', cardinality 0..*) is associated with 'SQLDML::WhereClause' (role 'SQLDML_WhereClause', cardinality 0..*).
+'ColumnExp' (role 'ColumnExp', cardinality 0..*) is associated with 'SQLDML::ViewStatement' (role 'SQLDML_ViewStatement', cardinality 0..*).
+'Expression' (role 'Expression32', cardinality 0..*) is associated with 'SQLDML::FunctionExp' (role 'SQLDML_FunctionExp', cardinality 0..*).
+'Expression' (role 'Expression21', cardinality 0..*) is associated with 'SQLDML::NotExp' (role 'SQLDML_NotExp20', cardinality 0..*).
+'SQLDML::InsertStmt' (role 'SQLDML_InsertStmt', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'SQLDML::LikeExp' (role 'SQLDML_LikeExp', cardinality 0..*) is associated with 'StringValueExp' (role 'StringValueExp', cardinality 0..*).
+'SQLDML::NotExp' (role 'SQLDML_NotExp', cardinality 0..*) is associated with 'Expression' (role 'Expression18', cardinality 0..*).
+'SQLDML::QueryStmtCol' (role 'SQLDML_QueryStmtCol', cardinality 0..*) is associated with 'Expression' (role 'Expression9', cardinality 0..*).
+'SQLDML::QueryPredicate' (role 'SQLDML_QueryPredicate', cardinality 0..*) is associated with 'QueryStmt' (role 'QueryStmt25', cardinality 0..*).
+'SQLDML::QueryStmt' (role 'SQLDML_QueryStmt', cardinality 0..*) is associated with 'Table' (role 'Table', cardinality 0..*).
+'SQLDML::QueryStmt' (role 'SQLDML_QueryStmt7', cardinality 0..*) is associated with 'WhereClause' (role 'WhereClause', cardinality 0..*).
+'Predicate' (role 'Predicate', cardinality 0..*) is associated with 'SQLDML::InExp' (role 'SQLDML_InExp', cardinality 0..*).
+'DataType' (role 'DataType28', cardinality 0..*) is associated with 'SQLDML::ValueExp' (role 'SQLDML_ValueExp', cardinality 0..*).
+'SQLDML::SQLRoot' (role 'SQLDML_SQLRoot', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'QueryStmt' (role 'QueryStmt', cardinality 0..*) is associated with 'SQLDML::ViewStatement' (role 'SQLDML_ViewStatement3', cardinality 0..*).
+'Expression' (role 'Expression16', cardinality 0..*) is associated with 'SQLDML::BinaryExp' (role 'SQLDML_BinaryExp15', cardinality 0..*).
+'SQLDML::ColumnExp' (role 'SQLDML_ColumnExp', cardinality 0..*) is associated with 'DataType' (role 'DataType', cardinality 0..*).
+'Expression' (role 'Expression30', cardinality 0..*) is associated with 'SQLDML::ListExp' (role 'SQLDML_ListExp', cardinality 0..*).

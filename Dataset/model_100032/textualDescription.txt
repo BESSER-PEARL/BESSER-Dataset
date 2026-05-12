@@ -1,0 +1,52 @@
+The model has 19 class(es).
+The class 'publication102::Named' has the following attributes: 'name' of type str.
+The class 'publication102::Paragraph' has the following attributes: 'content' of type str.
+The class 'publication102::Keyword' has the following attributes: 'description' of type str.
+The class 'publication102::Paper' has no attributes.
+The class 'publication102::Skill' has the following attributes: 'description' of type str.
+The class 'publication102::Labelled' has the following attributes: 'lname' of type str.
+The class 'publication102::Researcher' has the following attributes: 'name' of type str; 'forName' of type str.
+The class 'publication102::KnowledgeManager' has no attributes.
+The class 'Named' has no attributes.
+The class 'publication102::PublicationStructure' has no attributes.
+The class 'publication102::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'publication102::Review' has the following attributes: 'date' of type date.
+The class 'publication102::ReviewNote' has the following attributes: 'content' of type str.
+The class 'publication102::Position' has the following attributes: 'description' of type str.
+The class 'publication102::Write' has the following attributes: 'timeSpent' of type int.
+The class 'Labelled' has no attributes.
+The class 'publication102::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'publication102::Counted' has the following attributes: 'id' of type int.
+The class 'Counted' has no attributes.
+'publication102::Position' is a specialization of 'Named'.
+'publication102::PublicationStructure' is a specialization of 'Named'.
+'publication102::Paragraph' is a specialization of 'Counted'.
+'publication102::Keyword' is a specialization of 'Named'.
+'publication102::KnowledgeManager' is a specialization of 'Named'.
+'publication102::Write' is a specialization of 'Labelled'.
+'publication102::ReviewNote' is a specialization of 'Named'.
+'publication102::Review' is a specialization of 'Labelled'.
+'publication102::Paper' is a specialization of 'Named'.
+'publication102::Paragraph' is a specialization of 'Named'.
+'publication102::Paper' (role 'publication102_Paper29', cardinality 0..*) is associated with 'publication102::PublicationStructure' (role 'publication102_PublicationStructure28', cardinality 0..*).
+'publication102::Paper' (role 'res_papers', cardinality 0..*) is associated with 'publication102::Researcher' (role 'Researcher', cardinality 0..*).
+'publication102::ReviewNote' (role 'publication102_ReviewNote', cardinality 0..*) is associated with 'publication102::Paragraph' (role 'publication102_Paragraph18', cardinality 0..*).
+'publication102::PaperKeyword' (role 'publication102_PaperKeyword', cardinality 0..*) is associated with 'publication102::Paper' (role 'publication102_Paper13', cardinality 0..*).
+'publication102::Review' (role 'publication102_Review23', cardinality 0..*) is associated with 'publication102::ReviewNote' (role 'publication102_ReviewNote24', cardinality 0..*).
+'publication102::Position' (role 'publication102_Position37', cardinality 0..*) is associated with 'publication102::Position' (role 'publication102_Position35', cardinality 0..*).
+'publication102::PublicationStructure' (role 'publication102_PublicationStructure31', cardinality 0..*) is associated with 'publication102::KnowledgeManager' (role 'publication102_KnowledgeManager', cardinality 0..*).
+'publication102::Write' (role 'publication102_Write20', cardinality 0..*) is associated with 'publication102::Paragraph' (role 'publication102_Paragraph21', cardinality 0..*).
+'publication102::Paper' (role 'publication102_Paper16', cardinality 0..*) is associated with 'publication102::Paper' (role 'publication102_Paper14', cardinality 0..*).
+'publication102::Keyword' (role 'publication102_Keyword', cardinality 0..*) is associated with 'publication102::Paper' (role 'publication102_Paper39', cardinality 0..*).
+'publication102::Position' (role 'publication102_Position', cardinality 0..*) is associated with 'publication102::Researcher' (role 'publication102_Researcher7', cardinality 0..*).
+'publication102::Researcher' (role 'publication102_Researcher2', cardinality 0..*) is associated with 'publication102::Review' (role 'publication102_Review', cardinality 0..*).
+'publication102::Paper' (role 'Paper', cardinality 0..*) is associated with 'publication102::Researcher' (role 'authors', cardinality 0..*).
+'publication102::Researcher' (role 'publication102_Researcher', cardinality 0..*) is associated with 'publication102::Write' (role 'publication102_Write', cardinality 0..*).
+'publication102::Collaboration' (role 'publication102_Collaboration', cardinality 0..*) is associated with 'publication102::Researcher' (role 'publication102_Researcher9', cardinality 0..*).
+'publication102::Collaboration' (role 'publication102_Collaboration47', cardinality 0..*) is associated with 'publication102::Paper' (role 'publication102_Paper48', cardinality 0..*).
+'publication102::KnowledgeManager' (role 'publication102_KnowledgeManager41', cardinality 0..*) is associated with 'publication102::Keyword' (role 'publication102_Keyword42', cardinality 0..*).
+'publication102::Paper' (role 'publication102_Paper', cardinality 0..*) is associated with 'publication102::Paragraph' (role 'publication102_Paragraph', cardinality 0..*).
+'publication102::Keyword' (role 'publication102_Keyword45', cardinality 0..*) is associated with 'publication102::PaperKeyword' (role 'publication102_PaperKeyword44', cardinality 0..*).
+'publication102::Researcher' (role 'publication102_Researcher5', cardinality 0..*) is associated with 'publication102::Skill' (role 'publication102_Skill', cardinality 0..*).
+'publication102::Position' (role 'publication102_Position34', cardinality 0..*) is associated with 'publication102::PublicationStructure' (role 'publication102_PublicationStructure33', cardinality 0..*).
+'publication102::Researcher' (role 'publication102_Researcher26', cardinality 0..*) is associated with 'publication102::PublicationStructure' (role 'publication102_PublicationStructure', cardinality 0..*).

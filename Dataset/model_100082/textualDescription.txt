@@ -1,0 +1,83 @@
+The model has 41 class(es).
+The class 'kbuild::Value' has no attributes.
+The class 'kbuild::Entry' has no attributes.
+The class 'BuildEntry' has no attributes.
+The class 'kbuild::ObjectVariable' has the following attributes: 'additional' of type str.
+The class 'kbuild::If' has no attributes.
+The class 'kbuild::Variable' has no attributes.
+The class 'kbuild::Ifndef' has the following attributes: 'name' of type str.
+The class 'kbuild::ObjectShellCmd' has no attributes.
+The class 'kbuild::Obj::m' has no attributes.
+The class 'AssignExtra' has no attributes.
+The class 'kbuild::AssignExtra' has no attributes.
+The class 'Object::Y' has no attributes.
+The class 'kbuild::Obj::y' has no attributes.
+The class 'kbuild::ShellCmd' has the following attributes: 'name' of type str.
+The class 'kbuild::Object::Y' has no attributes.
+The class 'Object::M' has no attributes.
+The class 'Value' has no attributes.
+The class 'kbuild::IfEq' has no attributes.
+The class 'kbuild::ObjectString' has no attributes.
+The class 'kbuild::IfNEq' has no attributes.
+The class 'kbuild::ObjectSingleFile' has the following attributes: 'name' of type str.
+The class 'kbuild::ObjectShellChar' has the following attributes: 'value' of type str.
+The class 'VarSlashSym' has no attributes.
+The class 'kbuild::HostProgram' has the following attributes: 'name' of type str.
+The class 'kbuild::ObjectDir' has no attributes.
+The class 'kbuild::ShellPart' has no attributes.
+The class 'kbuild::Object::M' has no attributes.
+The class 'ShellCmd' has no attributes.
+The class 'kbuild::Include' has no attributes.
+The class 'kbuild::EObject' has no attributes.
+The class 'kbuild::BuildEntry' has no attributes.
+The class 'kbuild::ObjectFile' has no attributes.
+The class 'kbuild::Model' has no attributes.
+The class 'If' has no attributes.
+The class 'kbuild::Object' has no attributes.
+The class 'Assign' has no attributes.
+The class 'kbuild::MyVariable' has the following attributes: 'name' of type str.
+The class 'kbuild::VarSlashSym' has the following attributes: 'name' of type str.
+The class 'kbuild::Values' has no attributes.
+The class 'kbuild::Assign' has no attributes.
+The class 'kbuild::Target' has no attributes.
+'kbuild::MyVariable' is a specialization of 'BuildEntry'.
+'kbuild::Ifndef' is a specialization of 'BuildEntry'.
+'kbuild::ObjectShellCmd' is a specialization of 'Value'.
+'kbuild::Variable' is a specialization of 'VarSlashSym'.
+'kbuild::ObjectFile' is a specialization of 'Value'.
+'kbuild::Values' is a specialization of 'Assign'.
+'kbuild::Variable' is a specialization of 'If'.
+'kbuild::HostProgram' is a specialization of 'BuildEntry'.
+'kbuild::IfEq' is a specialization of 'BuildEntry'.
+'kbuild::Target' is a specialization of 'BuildEntry'.
+'kbuild::IfNEq' is a specialization of 'BuildEntry'.
+'kbuild::ObjectString' is a specialization of 'Value'.
+'kbuild::Include' is a specialization of 'ShellCmd'.
+'kbuild::ObjectSingleFile' is a specialization of 'Value'.
+'kbuild::Obj::y' is a specialization of 'Object::Y'.
+'kbuild::Assign' is a specialization of 'AssignExtra'.
+'kbuild::ObjectShellChar' is a specialization of 'Value'.
+'kbuild::Obj::m' is a specialization of 'Object::M'.
+'kbuild::ObjectDir' is a specialization of 'Value'.
+'kbuild::ObjectVariable' is a specialization of 'Value'.
+'kbuild::Object' is a specialization of 'BuildEntry'.
+'kbuild::EObject' (role 'kbuild_EObject9', cardinality 0..*) is associated with 'kbuild::If' (role 'kbuild_If8', cardinality 0..*).
+'kbuild::MyVariable' (role 'kbuild_MyVariable', cardinality 0..*) is associated with 'kbuild::Variable' (role 'kbuild_Variable31', cardinality 0..*).
+'kbuild::ShellCmd' (role 'kbuild_ShellCmd20', cardinality 0..*) is associated with 'kbuild::ShellPart' (role 'kbuild_ShellPart19', cardinality 0..*).
+'kbuild::Variable' (role 'kbuild_Variable22', cardinality 0..*) is associated with 'kbuild::HostProgram' (role 'kbuild_HostProgram', cardinality 0..*).
+'kbuild::AssignExtra' (role 'kbuild_AssignExtra', cardinality 0..*) is associated with 'kbuild::Entry' (role 'kbuild_Entry5', cardinality 0..*).
+'kbuild::Values' (role 'kbuild_Values29', cardinality 0..*) is associated with 'kbuild::Target' (role 'kbuild_Target28', cardinality 0..*).
+'kbuild::Variable' (role 'kbuild_Variable', cardinality 0..*) is associated with 'kbuild::Entry' (role 'kbuild_Entry', cardinality 0..*).
+'kbuild::ShellCmd' (role 'kbuild_ShellCmd39', cardinality 0..*) is associated with 'kbuild::ObjectShellCmd' (role 'kbuild_ObjectShellCmd', cardinality 0..*).
+'kbuild::Assign' (role 'kbuild_Assign', cardinality 0..*) is associated with 'kbuild::HostProgram' (role 'kbuild_HostProgram24', cardinality 0..*).
+'kbuild::VarSlashSym' (role 'kbuild_VarSlashSym', cardinality 0..*) is associated with 'kbuild::ShellPart' (role 'kbuild_ShellPart17', cardinality 0..*).
+'kbuild::Variable' (role 'kbuild_Variable37', cardinality 0..*) is associated with 'kbuild::ObjectVariable' (role 'kbuild_ObjectVariable', cardinality 0..*).
+'kbuild::AssignExtra' (role 'kbuild_AssignExtra33', cardinality 0..*) is associated with 'kbuild::Obj::y' (role 'kbuild_Obj_y', cardinality 0..*).
+'kbuild::ShellCmd' (role 'kbuild_ShellCmd', cardinality 0..*) is associated with 'kbuild::If' (role 'kbuild_If', cardinality 0..*).
+'kbuild::Values' (role 'kbuild_Values26', cardinality 0..*) is associated with 'kbuild::Target' (role 'kbuild_Target', cardinality 0..*).
+'kbuild::Value' (role 'kbuild_Value', cardinality 0..*) is associated with 'kbuild::Values' (role 'kbuild_Values', cardinality 0..*).
+'kbuild::BuildEntry' (role 'kbuild_BuildEntry', cardinality 0..*) is associated with 'kbuild::Model' (role 'kbuild_Model', cardinality 0..*).
+'kbuild::BuildEntry' (role 'kbuild_BuildEntry2', cardinality 0..*) is associated with 'kbuild::EObject' (role 'kbuild_EObject', cardinality 0..*).
+'kbuild::ShellCmd' (role 'kbuild_ShellCmd15', cardinality 0..*) is associated with 'kbuild::ShellPart' (role 'kbuild_ShellPart', cardinality 0..*).
+'kbuild::AssignExtra' (role 'kbuild_AssignExtra35', cardinality 0..*) is associated with 'kbuild::Obj::m' (role 'kbuild_Obj_m', cardinality 0..*).
+'kbuild::If' (role 'kbuild_If11', cardinality 0..*) is associated with 'kbuild::EObject' (role 'kbuild_EObject12', cardinality 0..*).

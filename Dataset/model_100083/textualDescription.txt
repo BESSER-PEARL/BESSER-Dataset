@@ -1,0 +1,25 @@
+The model has 14 class(es).
+The class 'Make::FileDep' has the following attributes: 'name' of type str.
+The class 'Make::Element' has the following attributes: 'name' of type str.
+The class 'Make::Macro' has the following attributes: 'value' of type str.
+The class 'Comment' has no attributes.
+The class 'Make::Rule' has no attributes.
+The class 'Make::Comment' has the following attributes: 'text' of type str.
+The class 'Rule' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'Make::Makefile' has the following attributes: 'name' of type str.
+The class 'Make::Dependency' has no attributes.
+The class 'ShellLine' has no attributes.
+The class 'Element' has no attributes.
+The class 'Make::ShellLine' has the following attributes: 'display' of type str; 'command' of type str.
+The class 'Make::RuleDep' has no attributes.
+'Make::Rule' is a specialization of 'Element'.
+'Make::Macro' is a specialization of 'Element'.
+'Make::RuleDep' is a specialization of 'Dependency'.
+'Make::FileDep' is a specialization of 'Dependency'.
+'Make::Makefile' (role 'Make_Makefile', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'Make::Makefile' (role 'Make_Makefile2', cardinality 0..*) is associated with 'Element' (role 'Element', cardinality 0..*).
+'Make::Rule' (role 'Make_Rule', cardinality 0..*) is associated with 'Dependency' (role 'Dependency', cardinality 0..*).
+'Make::Rule' (role 'ruleShellLine', cardinality 0..*) is associated with 'ShellLine' (role 'ShellLine', cardinality 0..*).
+'Rule' (role 'Rule', cardinality 0..*) is associated with 'Make::ShellLine' (role 'shellLines', cardinality 0..*).
+'Rule' (role 'Rule7', cardinality 0..*) is associated with 'Make::RuleDep' (role 'Make_RuleDep', cardinality 0..*).

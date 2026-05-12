@@ -1,0 +1,43 @@
+The model has 18 class(es).
+The class 'latex::Packages' has the following attributes: 'packagetype' of type str; 'packageprefix' of type str.
+The class 'latex::bibitem' has the following attributes: 'bibtext' of type str; 'bibprefix' of type str.
+The class 'latex::Abstracte' has the following attributes: 'abstracttext' of type str; 'abstractprefix' of type str.
+The class 'latex::Beginbib' has the following attributes: 'Beginbibprefix' of type str.
+The class 'latex::Endbib' has the following attributes: 'Endbibprefix' of type str.
+The class 'latex::Body' has no attributes.
+The class 'latex::Title' has the following attributes: 'authortext' of type str; 'titletext' of type str; 'titleprefix' of type str.
+The class 'latex::Commands' has the following attributes: 'comname' of type str; 'number' of type float; 'comtext' of type str; 'comprefix' of type str.
+The class 'latex::Section' has the following attributes: 'sectiontext' of type str; 'sectionprefix' of type str; 'sectionname' of type str.
+The class 'latex::Enumerate' has the following attributes: 'enumtext' of type str; 'enumprefix' of type str.
+The class 'latex::Document' has the following attributes: 'fontsize' of type str; 'papertype' of type str; 'documenttype' of type str; 'prefix' of type str.
+The class 'latex::End' has the following attributes: 'endprefix' of type str.
+The class 'latex::Figures' has the following attributes: 'figcaption' of type str; 'figprefix' of type str; 'figname' of type str.
+The class 'latex::Subsection' has the following attributes: 'subsectionprefix' of type str; 'subsectionname' of type str; 'subsectiontext' of type str.
+The class 'latex::Styles' has the following attributes: 'stylenames' of type str; 'styleprefix' of type str; 'stylesnames' of type str.
+The class 'latex::Bibliography' has the following attributes: 'bibstyle' of type str.
+The class 'latex::General' has the following attributes: 'genprefix' of type str; 'gentext' of type str; 'genname' of type str.
+The class 'latex::Begin' has the following attributes: 'beginprefix' of type str.
+'latex::General' (role 'latex_General53', cardinality 0..*) is associated with 'latex::Enumerate' (role 'latex_Enumerate52', cardinality 0..*).
+'latex::Document' (role 'latex_Document6', cardinality 0..*) is associated with 'latex::Styles' (role 'latex_Styles', cardinality 0..*).
+'latex::Body' (role 'latex_Body', cardinality 0..*) is associated with 'latex::Document' (role 'latex_Document10', cardinality 0..*).
+'latex::Subsection' (role 'latex_Subsection', cardinality 0..*) is associated with 'latex::Section' (role 'latex_Section41', cardinality 0..*).
+'latex::Abstracte' (role 'latex_Abstracte', cardinality 0..*) is associated with 'latex::Document' (role 'latex_Document8', cardinality 0..*).
+'latex::General' (role 'latex_General', cardinality 0..*) is associated with 'latex::Title' (role 'latex_Title18', cardinality 0..*).
+'latex::Bibliography' (role 'latex_Bibliography34', cardinality 0..*) is associated with 'latex::Beginbib' (role 'latex_Beginbib', cardinality 0..*).
+'latex::Endbib' (role 'latex_Endbib', cardinality 0..*) is associated with 'latex::Bibliography' (role 'latex_Bibliography36', cardinality 0..*).
+'latex::General' (role 'latex_General47', cardinality 0..*) is associated with 'latex::Subsection' (role 'latex_Subsection46', cardinality 0..*).
+'latex::Commands' (role 'latex_Commands', cardinality 0..*) is associated with 'latex::Document' (role 'latex_Document2', cardinality 0..*).
+'latex::Section' (role 'latex_Section', cardinality 0..*) is associated with 'latex::Body' (role 'latex_Body23', cardinality 0..*).
+'latex::Subsection' (role 'latex_Subsection44', cardinality 0..*) is associated with 'latex::Subsection' (role 'latex_Subsection42', cardinality 0..*).
+'latex::Abstracte' (role 'latex_Abstracte20', cardinality 0..*) is associated with 'latex::General' (role 'latex_General21', cardinality 0..*).
+'latex::Title' (role 'latex_Title', cardinality 0..*) is associated with 'latex::Document' (role 'latex_Document4', cardinality 0..*).
+'latex::General' (role 'latex_General39', cardinality 0..*) is associated with 'latex::Section' (role 'latex_Section38', cardinality 0..*).
+'latex::General' (role 'latex_General30', cardinality 0..*) is associated with 'latex::Bibliography' (role 'latex_Bibliography29', cardinality 0..*).
+'latex::Figures' (role 'latex_Figures49', cardinality 0..*) is associated with 'latex::General' (role 'latex_General50', cardinality 0..*).
+'latex::Body' (role 'latex_Body27', cardinality 0..*) is associated with 'latex::Enumerate' (role 'latex_Enumerate', cardinality 0..*).
+'latex::bibitem' (role 'latex_bibitem', cardinality 0..*) is associated with 'latex::Bibliography' (role 'latex_Bibliography32', cardinality 0..*).
+'latex::Document' (role 'latex_Document12', cardinality 0..*) is associated with 'latex::Bibliography' (role 'latex_Bibliography', cardinality 0..*).
+'latex::Begin' (role 'latex_Begin', cardinality 0..*) is associated with 'latex::Document' (role 'latex_Document14', cardinality 0..*).
+'latex::Figures' (role 'latex_Figures', cardinality 0..*) is associated with 'latex::Body' (role 'latex_Body25', cardinality 0..*).
+'latex::Packages' (role 'latex_Packages', cardinality 0..*) is associated with 'latex::Document' (role 'latex_Document', cardinality 0..*).
+'latex::Document' (role 'latex_Document16', cardinality 0..*) is associated with 'latex::End' (role 'latex_End', cardinality 0..*).

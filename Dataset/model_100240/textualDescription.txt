@@ -1,0 +1,370 @@
+The model has 139 class(es).
+The class 'DatadiagramMLXForm::ConnectsCollection' has no attributes.
+The class 'DatadiagramMLXForm::SplineStart' has no attributes.
+The class 'ArcTo' has no attributes.
+The class 'DatadiagramMLXForm::SolutionXML' has no attributes.
+The class 'DatadiagramMLXForm::Tab' has no attributes.
+The class 'DatadiagramMLXForm::EmailRoutingData' has the following attributes: 'size' of type str; 'data' of type str.
+The class 'MasterElt' has no attributes.
+The class 'Master' has no attributes.
+The class 'Ellipse' has no attributes.
+The class 'DatadiagramMLXForm::PagesCollection' has no attributes.
+The class 'DatadiagramMLXForm::MasterElt' has no attributes.
+The class 'DatadiagramMLXForm::PageSheet' has no attributes.
+The class 'DatadiagramMLXForm::XYAElt' has no attributes.
+The class 'DatadiagramMLXForm::IXrequiredElt' has the following attributes: 'iX' of type str.
+The class 'DatadiagramMLXForm::ShapesCollection' has no attributes.
+The class 'FaceName' has no attributes.
+The class 'DatadiagramMLXForm::Connect' has the following attributes: 'fromCell' of type str; 'fromPart' of type str; 'toCell' of type str; 'toSheet' of type str; 'fromSheet' of type str; 'toPart' of type str.
+The class 'EmailRoutingData' has no attributes.
+The class 'DatadiagramMLXForm::StringElt' has the following attributes: 'value' of type str.
+The class 'XYABCDElt' has no attributes.
+The class 'ShapeElt' has no attributes.
+The class 'DatadiagramMLXForm::FaceNamesTable' has no attributes.
+The class 'DatadiagramMLXForm::UniqueIdElt' has the following attributes: 'UniqueID' of type str.
+The class 'DatadiagramMLXForm::XYABElt' has no attributes.
+The class 'DatadiagramMLXForm::WindowsInfo' has no attributes.
+The class 'DatadiagramMLXForm::ShapeElt' has no attributes.
+The class 'DatadiagramMLXForm::Fld' has no attributes.
+The class 'DatadiagramMLXForm::Shape' has the following attributes: 'lineStyle' of type str; 'fillStyle' of type str; 'textStyle' of type str.
+The class 'DatadiagramMLXForm::EventList' has no attributes.
+The class 'DatadiagramMLXForm::Tp' has no attributes.
+The class 'XYABElt' has no attributes.
+The class 'UniqueIdElt' has no attributes.
+The class 'DatadiagramMLXForm::FontEntry' has the following attributes: 'charSet' of type str; 'pitchAndFamily' of type str; 'weight' of type str; 'name' of type str; 'unicode' of type str; 'attributes' of type str.
+The class 'DatadiagramMLXForm::ArcTo' has no attributes.
+The class 'EventList' has no attributes.
+The class 'DatadiagramMLXForm::MastersCollection' has no attributes.
+The class 'DatadiagramMLXForm::DocumentSettingsElt' has the following attributes: 'customMenusFile' of type str; 'attachedToolbars' of type str; 'customToolbarsFile' of type str; 'protectBkgnds' of type str; 'protectStyles' of type str; 'protectMasters' of type str; 'protectShapes' of type str; 'snapSettings' of type str; 'dynamicGridEnabled' of type str; 'glueSettings' of type str; 'snapExtensions' of type str.
+The class 'IdentifiedElt' has no attributes.
+The class 'WindowsInfo' has no attributes.
+The class 'TabsCollection' has no attributes.
+The class 'PolylineTo' has no attributes.
+The class 'DatadiagramMLXForm::MoveTo' has no attributes.
+The class 'MasterShortCut' has no attributes.
+The class 'DatadiagramMLXForm::XYElt' has no attributes.
+The class 'FaceNamesTable' has no attributes.
+The class 'FontEntry' has no attributes.
+The class 'DatadiagramMLXForm::DocumentSheet' has no attributes.
+The class 'XYABCDEElt' has no attributes.
+The class 'DatadiagramMLXForm::Master' has the following attributes: 'prompt' of type str; 'matchByName' of type str; 'patternFlags' of type str; 'baseID' of type str; 'hidden' of type str; 'iconSize' of type str; 'iconUpdate' of type str; 'alignName' of type str.
+The class 'DatadiagramMLXForm::NURBSTo' has no attributes.
+The class 'DatadiagramMLXForm::DateTimeType' has the following attributes: 'day' of type str; 'month' of type str; 'hour' of type str; 'second' of type str; 'minute' of type str; 'year' of type str.
+The class 'DatadiagramMLXForm::InfiniteLine' has no attributes.
+The class 'Connect' has no attributes.
+The class 'Shape' has no attributes.
+The class 'DatadiagramMLXForm::EllipticalArcTo' has no attributes.
+The class 'DatadiagramMLXForm::Icon' has the following attributes: 'value' of type str.
+The class 'DatadiagramMLXForm::SnapAngle' has the following attributes: 'angleValue' of type str.
+The class 'NURBSTo' has no attributes.
+The class 'DatadiagramMLXForm::TextElt' has no attributes.
+The class 'ConnectsCollection' has no attributes.
+The class 'DocumentSheet' has no attributes.
+The class 'DatadiagramMLXForm::Geom' has no attributes.
+The class 'LineTo' has no attributes.
+The class 'CustomProperty' has no attributes.
+The class 'DatadiagramMLXForm::Cp' has no attributes.
+The class 'DatadiagramMLXForm::PageElt' has no attributes.
+The class 'DatadiagramMLXForm::LineTo' has no attributes.
+The class 'DatadiagramMLXForm::MasterShortCut' has the following attributes: 'shortcutHelp' of type str; 'patternFlags' of type str; 'iconSize' of type str; 'shortcutURL' of type str; 'alignName' of type str; 'prompt' of type str.
+The class 'DatadiagramMLXForm::Pp' has no attributes.
+The class 'DatadiagramMLXForm::SplineKnot' has no attributes.
+The class 'DatadiagramMLXForm::Para' has no attributes.
+The class 'TextElt' has no attributes.
+The class 'ColorEntry' has no attributes.
+The class 'Text' has no attributes.
+The class 'XYAElt' has no attributes.
+The class 'DatadiagramMLXForm::Ellipse' has no attributes.
+The class 'DatadiagramMLXForm::HeaderFooter' has no attributes.
+The class 'PageSheet' has no attributes.
+The class 'Icon' has no attributes.
+The class 'VBProjectData' has no attributes.
+The class 'SplineStart' has no attributes.
+The class 'DatadiagramMLXForm::IdentifiedElt' has the following attributes: 'ID' of type str.
+The class 'InfiniteLine' has no attributes.
+The class 'DatadiagramMLXForm::XForm' has no attributes.
+The class 'PrintSetup' has no attributes.
+The class 'SolutionXML' has no attributes.
+The class 'DatadiagramMLXForm::TabsCollection' has no attributes.
+The class 'DatadiagramMLXForm::CustomPropertiesCollection' has no attributes.
+The class 'DatadiagramMLXForm::DocumentPropertiesCollection' has the following attributes: 'category' of type str; 'buildNumberEdited' of type str; 'template' of type str; 'hyperlinkBase_href' of type str; 'alternateNames' of type str; 'keywords' of type str; 'subject' of type str; 'creator' of type str; 'title' of type str; 'manager' of type str; 'description' of type str; 'buildNumberCreated' of type str; 'company' of type str.
+The class 'EllipticalArcTo' has no attributes.
+The class 'DatadiagramMLXForm::Text' has no attributes.
+The class 'DatadiagramMLXForm::StyleSheet' has no attributes.
+The class 'DatadiagramMLXForm::Page' has the following attributes: 'ViewCenterY' of type str; 'reviewerID' of type str; 'backPage' of type str; 'background' of type str; 'associatedPage' of type str; 'viewCenterX' of type str; 'viewScale' of type str.
+The class 'DatadiagramMLXForm::DelElt' has the following attributes: 'del_' of type str.
+The class 'DatadiagramMLXForm::Char' has no attributes.
+The class 'SnapAnglesCollection' has no attributes.
+The class 'Geom' has no attributes.
+The class 'DatadiagramMLXForm::SnapAnglesCollection' has no attributes.
+The class 'DatadiagramMLXForm::XYABCDEElt' has no attributes.
+The class 'DatadiagramMLXForm::PrintSetup' has no attributes.
+The class 'PagesCollection' has no attributes.
+The class 'SplineKnot' has no attributes.
+The class 'IXElt' has no attributes.
+The class 'DatadiagramMLXForm::VisioDocument' has the following attributes: 'docLangId' of type str; 'buildnum' of type str; 'key' of type str; 'start' of type str; 'version' of type str; 'metric' of type str.
+The class 'DatadiagramMLXForm::FontsTable' has no attributes.
+The class 'DatadiagramMLXForm::Field' has no attributes.
+The class 'PageElt' has no attributes.
+The class 'DatadiagramMLXForm::StyleSheetsCollection' has no attributes.
+The class 'CustomPropertiesCollection' has no attributes.
+The class 'ColorsTable' has no attributes.
+The class 'DatadiagramMLXForm::NamedElt' has the following attributes: 'name' of type str; 'nameU' of type str.
+The class 'XYElt' has no attributes.
+The class 'StyleSheet' has no attributes.
+The class 'IXrequiredElt' has no attributes.
+The class 'StyleSheetsCollection' has no attributes.
+The class 'FontsTable' has no attributes.
+The class 'ShapesCollection' has no attributes.
+The class 'DatadiagramMLXForm::PolylineTo' has no attributes.
+The class 'NamedElt' has no attributes.
+The class 'MoveTo' has no attributes.
+The class 'MastersCollection' has no attributes.
+The class 'DatadiagramMLXForm::XYABCDElt' has no attributes.
+The class 'HeaderFooter' has no attributes.
+The class 'CellType' has no attributes.
+The class 'DatadiagramMLXForm::ColorsTable' has no attributes.
+The class 'DatadiagramMLXForm::FaceName' has the following attributes: 'charSet' of type str; 'name' of type str; 'unicodeRanges' of type str; 'flags' of type str; 'panos' of type str.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'SnapAngle' has no attributes.
+The class 'DocumentSettingsElt' has no attributes.
+The class 'DatadiagramMLXForm::ColorEntry' has the following attributes: 'rgb' of type str.
+The class 'Tab' has no attributes.
+The class 'DatadiagramMLXForm::IXElt' has the following attributes: 'iX' of type str.
+The class 'DatadiagramMLXForm::VBProjectData' has the following attributes: 'data' of type str.
+The class 'DatadiagramMLXForm::CellType' has the following attributes: 'err' of type str; 'unit' of type str; 'value' of type str; 'formula' of type str.
+The class 'VisioDocument' has no attributes.
+The class 'DatadiagramMLXForm::CustomProperty' has the following attributes: 'name' of type str; 'dataType' of type str.
+The class 'DelElt' has no attributes.
+The class 'Page' has no attributes.
+The class 'DateTimeType' has no attributes.
+'DatadiagramMLXForm::Icon' is a specialization of 'MasterElt'.
+'DatadiagramMLXForm::XYABCDElt' is a specialization of 'XYABElt'.
+'DatadiagramMLXForm::Geom' is a specialization of 'DelElt'.
+'DatadiagramMLXForm::EllipticalArcTo' is a specialization of 'XYABCDElt'.
+'DatadiagramMLXForm::Pp' is a specialization of 'TextElt'.
+'DatadiagramMLXForm::StyleSheet' is a specialization of 'NamedElt'.
+'DatadiagramMLXForm::LineTo' is a specialization of 'XYElt'.
+'DatadiagramMLXForm::ConnectsCollection' is a specialization of 'MasterElt'.
+'DatadiagramMLXForm::Ellipse' is a specialization of 'XYABCDElt'.
+'DatadiagramMLXForm::ConnectsCollection' is a specialization of 'PageElt'.
+'DatadiagramMLXForm::Page' is a specialization of 'NamedElt'.
+'DatadiagramMLXForm::ArcTo' is a specialization of 'XYAElt'.
+'DatadiagramMLXForm::Field' is a specialization of 'ShapeElt'.
+'DatadiagramMLXForm::MasterShortCut' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLXForm::ShapesCollection' is a specialization of 'PageElt'.
+'DatadiagramMLXForm::XYAElt' is a specialization of 'XYElt'.
+'DatadiagramMLXForm::Fld' is a specialization of 'TextElt'.
+'DatadiagramMLXForm::Cp' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLXForm::Pp' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLXForm::PageSheet' is a specialization of 'UniqueIdElt'.
+'DatadiagramMLXForm::SplineStart' is a specialization of 'XYABCDElt'.
+'DatadiagramMLXForm::PolylineTo' is a specialization of 'XYAElt'.
+'DatadiagramMLXForm::XYABCDEElt' is a specialization of 'XYABCDElt'.
+'DatadiagramMLXForm::Master' is a specialization of 'UniqueIdElt'.
+'DatadiagramMLXForm::Tab' is a specialization of 'IXElt'.
+'DatadiagramMLXForm::Field' is a specialization of 'IXElt'.
+'DatadiagramMLXForm::PageSheet' is a specialization of 'PageElt'.
+'DatadiagramMLXForm::ColorEntry' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLXForm::Char' is a specialization of 'ShapeElt'.
+'DatadiagramMLXForm::XYElt' is a specialization of 'IXElt'.
+'DatadiagramMLXForm::Geom' is a specialization of 'ShapeElt'.
+'DatadiagramMLXForm::PageSheet' is a specialization of 'MasterElt'.
+'DatadiagramMLXForm::StyleSheet' is a specialization of 'Shape'.
+'DatadiagramMLXForm::NURBSTo' is a specialization of 'XYABCDEElt'.
+'DatadiagramMLXForm::Fld' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLXForm::Char' is a specialization of 'DelElt'.
+'DatadiagramMLXForm::DocumentSheet' is a specialization of 'NamedElt'.
+'DatadiagramMLXForm::XYElt' is a specialization of 'DelElt'.
+'DatadiagramMLXForm::Geom' is a specialization of 'IXElt'.
+'DatadiagramMLXForm::ShapesCollection' is a specialization of 'MasterElt'.
+'DatadiagramMLXForm::Para' is a specialization of 'DelElt'.
+'DatadiagramMLXForm::Field' is a specialization of 'DelElt'.
+'DatadiagramMLXForm::TabsCollection' is a specialization of 'ShapeElt'.
+'DatadiagramMLXForm::XYABElt' is a specialization of 'XYAElt'.
+'DatadiagramMLXForm::FontEntry' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLXForm::XForm' is a specialization of 'DelElt'.
+'DatadiagramMLXForm::FaceName' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLXForm::Char' is a specialization of 'IXElt'.
+'DatadiagramMLXForm::Page' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLXForm::TabsCollection' is a specialization of 'DelElt'.
+'DatadiagramMLXForm::MasterShortCut' is a specialization of 'NamedElt'.
+'DatadiagramMLXForm::StringElt' is a specialization of 'TextElt'.
+'DatadiagramMLXForm::Cp' is a specialization of 'TextElt'.
+'DatadiagramMLXForm::Tp' is a specialization of 'TextElt'.
+'DatadiagramMLXForm::PageSheet' is a specialization of 'Shape'.
+'DatadiagramMLXForm::Master' is a specialization of 'NamedElt'.
+'DatadiagramMLXForm::SplineKnot' is a specialization of 'XYAElt'.
+'DatadiagramMLXForm::Master' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLXForm::Tp' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLXForm::MoveTo' is a specialization of 'XYElt'.
+'DatadiagramMLXForm::Text' is a specialization of 'ShapeElt'.
+'DatadiagramMLXForm::Para' is a specialization of 'IXElt'.
+'DatadiagramMLXForm::TabsCollection' is a specialization of 'IXElt'.
+'DatadiagramMLXForm::XForm' is a specialization of 'ShapeElt'.
+'DatadiagramMLXForm::StyleSheet' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLXForm::DocumentSheet' is a specialization of 'PageSheet'.
+'DatadiagramMLXForm::Para' is a specialization of 'ShapeElt'.
+'DatadiagramMLXForm::InfiniteLine' is a specialization of 'XYABElt'.
+'FontsTable' (role 'FontsTable65', cardinality 0..*) is associated with 'DatadiagramMLXForm::FontEntry' (role 'fontEntries', cardinality 0..*).
+'DatadiagramMLXForm::CustomProperty' (role 'cps_customProps', cardinality 0..*) is associated with 'CustomPropertiesCollection' (role 'CustomPropertiesCollection33', cardinality 0..*).
+'DatadiagramMLXForm::PagesCollection' (role 'p_pages', cardinality 0..*) is associated with 'Page' (role 'Page317', cardinality 0..*).
+'DatadiagramMLXForm::FontsTable' (role 'fe_fonts', cardinality 0..*) is associated with 'FontEntry' (role 'FontEntry', cardinality 0..*).
+'DatadiagramMLXForm::Geom' (role 'ac_geom', cardinality 0..*) is associated with 'ArcTo' (role 'ArcTo', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para217', cardinality 0..*) is associated with 'CellType' (role 'CellType218', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'el_visioDocument', cardinality 0..*) is associated with 'EventList' (role 'EventList', cardinality 0..*).
+'DatadiagramMLXForm::DocumentSettingsElt' (role 'DatadiagramMLXForm_DocumentSettingsElt38', cardinality 0..*) is associated with 'StyleSheet' (role 'StyleSheet', cardinality 0..*).
+'CellType' (role 'CellType257', cardinality 0..*) is associated with 'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field256', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char149', cardinality 0..*) is associated with 'CellType' (role 'CellType150', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'ps_visioDocument10', cardinality 0..*) is associated with 'PagesCollection' (role 'PagesCollection', cardinality 0..*).
+'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field250', cardinality 0..*) is associated with 'CellType' (role 'CellType251', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection301', cardinality 0..*) is associated with 'DatadiagramMLXForm::MasterShortCut' (role 'masterShortCuts', cardinality 0..*).
+'CustomProperty' (role 'CustomProperty', cardinality 0..*) is associated with 'DatadiagramMLXForm::CustomPropertiesCollection' (role 'cp_customProps', cardinality 0..*).
+'Tab' (role 'Tab', cardinality 0..*) is associated with 'DatadiagramMLXForm::TabsCollection' (role 't_tabs', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para223', cardinality 0..*) is associated with 'CellType' (role 'CellType224', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument330', cardinality 0..*) is associated with 'DatadiagramMLXForm::SolutionXML' (role 'docSolutionXML', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'vpd_visioDocument', cardinality 0..*) is associated with 'VBProjectData' (role 'VBProjectData', cardinality 0..*).
+'DatadiagramMLXForm::Shape' (role 'sse_shapeSheet', cardinality 0..*) is associated with 'ShapeElt' (role 'ShapeElt', cardinality 0..*).
+'CellType' (role 'CellType271', cardinality 0..*) is associated with 'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm270', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'fs_visioDocument', cardinality 0..*) is associated with 'FontsTable' (role 'FontsTable', cardinality 0..*).
+'CellType' (role 'CellType', cardinality 0..*) is associated with 'DatadiagramMLXForm::Geom' (role 'DatadiagramMLXForm_Geom', cardinality 0..*).
+'DatadiagramMLXForm::StyleSheetsCollection' (role 'docStyleSheets', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument76', cardinality 0..*).
+'SplineStart' (role 'SplineStart', cardinality 0..*) is associated with 'DatadiagramMLXForm::Geom' (role 'ss_geom', cardinality 0..*).
+'CellType' (role 'CellType177', cardinality 0..*) is associated with 'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char176', cardinality 0..*).
+'DatadiagramMLXForm::ColorsTable' (role 'ce_colors', cardinality 0..*) is associated with 'ColorEntry' (role 'ColorEntry', cardinality 0..*).
+'DatadiagramMLXForm::ConnectsCollection' (role 'c_connects', cardinality 0..*) is associated with 'Connect' (role 'Connect', cardinality 0..*).
+'DatadiagramMLXForm::Geom' (role 'DatadiagramMLXForm_Geom88', cardinality 0..*) is associated with 'CellType' (role 'CellType89', cardinality 0..*).
+'CellType' (role 'CellType286', cardinality 0..*) is associated with 'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm285', cardinality 0..*).
+'DatadiagramMLXForm::Geom' (role 'DatadiagramMLXForm_Geom94', cardinality 0..*) is associated with 'CellType' (role 'CellType95', cardinality 0..*).
+'StyleSheet' (role 'StyleSheet44', cardinality 0..*) is associated with 'DatadiagramMLXForm::DocumentSettingsElt' (role 'DatadiagramMLXForm_DocumentSettingsElt43', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para211', cardinality 0..*) is associated with 'CellType' (role 'CellType212', cardinality 0..*).
+'Page' (role 'Page322', cardinality 0..*) is associated with 'DatadiagramMLXForm::PageElt' (role 'pageElts', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType', cardinality 0..*) is associated with 'DatadiagramMLXForm::DocumentPropertiesCollection' (role 'DatadiagramMLXForm_DocumentPropertiesCollection', cardinality 0..*).
+'SnapAngle' (role 'SnapAngle', cardinality 0..*) is associated with 'DatadiagramMLXForm::SnapAnglesCollection' (role 'sa_snapAngles', cardinality 0..*).
+'DatadiagramMLXForm::PagesCollection' (role 'docPages', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument315', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument35', cardinality 0..*) is associated with 'DatadiagramMLXForm::DocumentSettingsElt' (role 'docSettings', cardinality 0..*).
+'DatadiagramMLXForm::TextElt' (role 'textElts', cardinality 0..*) is associated with 'Text' (role 'Text', cardinality 0..*).
+'DatadiagramMLXForm::Tab' (role 'DatadiagramMLXForm_Tab239', cardinality 0..*) is associated with 'CellType' (role 'CellType240', cardinality 0..*).
+'FaceNamesTable' (role 'FaceNamesTable', cardinality 0..*) is associated with 'DatadiagramMLXForm::VisioDocument' (role 'fns_visioDocument', cardinality 0..*).
+'CellType' (role 'CellType203', cardinality 0..*) is associated with 'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para202', cardinality 0..*).
+'SnapAnglesCollection' (role 'SnapAnglesCollection', cardinality 0..*) is associated with 'DatadiagramMLXForm::DocumentSettingsElt' (role 'sa_docSettings', cardinality 0..*).
+'StyleSheet' (role 'StyleSheet78', cardinality 0..*) is associated with 'DatadiagramMLXForm::StyleSheetsCollection' (role 'ss_stylesSheets', cardinality 0..*).
+'DatadiagramMLXForm::EmailRoutingData' (role 'docEmailRoutingData', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument74', cardinality 0..*).
+'DatadiagramMLXForm::DocumentPropertiesCollection' (role 'DatadiagramMLXForm_DocumentPropertiesCollection27', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType28', cardinality 0..*).
+'FaceNamesTable' (role 'FaceNamesTable70', cardinality 0..*) is associated with 'DatadiagramMLXForm::FaceName' (role 'faceNameEntries', cardinality 0..*).
+'DatadiagramMLXForm::DocumentSheet' (role 'docDocumentSheet', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument82', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'sss_visioDocument', cardinality 0..*) is associated with 'StyleSheetsCollection' (role 'StyleSheetsCollection', cardinality 0..*).
+'DatadiagramMLXForm::XYElt' (role 'DatadiagramMLXForm_XYElt109', cardinality 0..*) is associated with 'CellType' (role 'CellType110', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'ef_visioDocument', cardinality 0..*) is associated with 'HeaderFooter' (role 'HeaderFooter', cardinality 0..*).
+'DatadiagramMLXForm::SnapAngle' (role 'snapAngles', cardinality 0..*) is associated with 'SnapAnglesCollection' (role 'SnapAnglesCollection53', cardinality 0..*).
+'CellType' (role 'CellType138', cardinality 0..*) is associated with 'DatadiagramMLXForm::XYABCDEElt' (role 'DatadiagramMLXForm_XYABCDEElt', cardinality 0..*).
+'CellType' (role 'CellType200', cardinality 0..*) is associated with 'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para199', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char182', cardinality 0..*) is associated with 'CellType' (role 'CellType183', cardinality 0..*).
+'CellType' (role 'CellType189', cardinality 0..*) is associated with 'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char188', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument', cardinality 0..*) is associated with 'DatadiagramMLXForm::DocumentPropertiesCollection' (role 'docProps', cardinality 0..*).
+'DatadiagramMLXForm::EventList' (role 'docEventList', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument326', cardinality 0..*).
+'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm273', cardinality 0..*) is associated with 'CellType' (role 'CellType274', cardinality 0..*).
+'DatadiagramMLXForm::Text' (role 'te_text', cardinality 0..*) is associated with 'TextElt' (role 'TextElt', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument62', cardinality 0..*) is associated with 'DatadiagramMLXForm::FontsTable' (role 'docFonts', cardinality 0..*).
+'DatadiagramMLXForm::InfiniteLine' (role 'infiniteLines', cardinality 0..*) is associated with 'Geom' (role 'Geom125', cardinality 0..*).
+'DatadiagramMLXForm::HeaderFooter' (role 'docHeaderFooter', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument328', cardinality 0..*).
+'DatadiagramMLXForm::DocumentSettingsElt' (role 'DatadiagramMLXForm_DocumentSettingsElt40', cardinality 0..*) is associated with 'StyleSheet' (role 'StyleSheet41', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument67', cardinality 0..*) is associated with 'DatadiagramMLXForm::FaceNamesTable' (role 'docFaceNames', cardinality 0..*).
+'CellType' (role 'CellType263', cardinality 0..*) is associated with 'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field262', cardinality 0..*).
+'CellType' (role 'CellType153', cardinality 0..*) is associated with 'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char152', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'cs_visioDocument', cardinality 0..*) is associated with 'ColorsTable' (role 'ColorsTable', cardinality 0..*).
+'MasterElt' (role 'MasterElt', cardinality 0..*) is associated with 'DatadiagramMLXForm::Master' (role 'me_master', cardinality 0..*).
+'Geom' (role 'Geom117', cardinality 0..*) is associated with 'DatadiagramMLXForm::ArcTo' (role 'arcsTo', cardinality 0..*).
+'Geom' (role 'Geom134', cardinality 0..*) is associated with 'DatadiagramMLXForm::EllipticalArcTo' (role 'ellipticalArcsTo', cardinality 0..*).
+'DocumentSettingsElt' (role 'DocumentSettingsElt', cardinality 0..*) is associated with 'DatadiagramMLXForm::VisioDocument' (role 'dss_visioDocument', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'dps_visioDocument', cardinality 0..*) is associated with 'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*).
+'DocumentSheet' (role 'DocumentSheet', cardinality 0..*) is associated with 'DatadiagramMLXForm::VisioDocument' (role 'ds_visioDocument', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument72', cardinality 0..*) is associated with 'DatadiagramMLXForm::VBProjectData' (role 'docVBProjectData', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char167', cardinality 0..*) is associated with 'CellType' (role 'CellType168', cardinality 0..*).
+'DatadiagramMLXForm::Geom' (role 'sk_geom', cardinality 0..*) is associated with 'SplineKnot' (role 'SplineKnot', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'ws_visioDocument', cardinality 0..*) is associated with 'WindowsInfo' (role 'WindowsInfo', cardinality 0..*).
+'CellType' (role 'CellType127', cardinality 0..*) is associated with 'DatadiagramMLXForm::XYABCDElt' (role 'DatadiagramMLXForm_XYABCDElt', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char164', cardinality 0..*) is associated with 'CellType' (role 'CellType165', cardinality 0..*).
+'DatadiagramMLXForm::ColorEntry' (role 'colorEntries', cardinality 0..*) is associated with 'ColorsTable' (role 'ColorsTable58', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para214', cardinality 0..*) is associated with 'CellType' (role 'CellType215', cardinality 0..*).
+'DatadiagramMLXForm::Geom' (role 'il_geom', cardinality 0..*) is associated with 'InfiniteLine' (role 'InfiniteLine', cardinality 0..*).
+'CellType' (role 'CellType295', cardinality 0..*) is associated with 'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm294', cardinality 0..*).
+'CellType' (role 'CellType115', cardinality 0..*) is associated with 'DatadiagramMLXForm::XYAElt' (role 'DatadiagramMLXForm_XYAElt', cardinality 0..*).
+'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection30', cardinality 0..*) is associated with 'DatadiagramMLXForm::CustomPropertiesCollection' (role 'customProps', cardinality 0..*).
+'DatadiagramMLXForm::PrintSetup' (role 'docPrintSetup', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument60', cardinality 0..*).
+'CellType' (role 'CellType254', cardinality 0..*) is associated with 'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field253', cardinality 0..*).
+'Geom' (role 'Geom136', cardinality 0..*) is associated with 'DatadiagramMLXForm::SplineStart' (role 'splineStarts', cardinality 0..*).
+'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm288', cardinality 0..*) is associated with 'CellType' (role 'CellType289', cardinality 0..*).
+'DatadiagramMLXForm::MastersCollection' (role 'm_masters', cardinality 0..*) is associated with 'Master' (role 'Master', cardinality 0..*).
+'CellType' (role 'CellType268', cardinality 0..*) is associated with 'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm', cardinality 0..*).
+'DatadiagramMLXForm::Connect' (role 'connections', cardinality 0..*) is associated with 'ConnectsCollection' (role 'ConnectsCollection', cardinality 0..*).
+'DocumentSettingsElt' (role 'DocumentSettingsElt50', cardinality 0..*) is associated with 'DatadiagramMLXForm::SnapAnglesCollection' (role 'ds_snapAngles', cardinality 0..*).
+'DatadiagramMLXForm::MasterShortCut' (role 'i_masterShortCut', cardinality 0..*) is associated with 'Icon' (role 'Icon', cardinality 0..*).
+'Geom' (role 'Geom119', cardinality 0..*) is associated with 'DatadiagramMLXForm::SplineKnot' (role 'splineKnots', cardinality 0..*).
+'DatadiagramMLXForm::DocumentPropertiesCollection' (role 'DatadiagramMLXForm_DocumentPropertiesCollection24', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType25', cardinality 0..*).
+'CellType' (role 'CellType245', cardinality 0..*) is associated with 'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field244', cardinality 0..*).
+'CellType' (role 'CellType237', cardinality 0..*) is associated with 'DatadiagramMLXForm::Tab' (role 'DatadiagramMLXForm_Tab', cardinality 0..*).
+'DatadiagramMLXForm::Geom' (role 'eat_geom', cardinality 0..*) is associated with 'EllipticalArcTo' (role 'EllipticalArcTo', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para205', cardinality 0..*) is associated with 'CellType' (role 'CellType206', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char146', cardinality 0..*) is associated with 'CellType' (role 'CellType147', cardinality 0..*).
+'CellType' (role 'CellType230', cardinality 0..*) is associated with 'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para229', cardinality 0..*).
+'CellType' (role 'CellType283', cardinality 0..*) is associated with 'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm282', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para220', cardinality 0..*) is associated with 'CellType' (role 'CellType221', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para', cardinality 0..*) is associated with 'CellType' (role 'CellType194', cardinality 0..*).
+'CellType' (role 'CellType280', cardinality 0..*) is associated with 'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm279', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char161', cardinality 0..*) is associated with 'CellType' (role 'CellType162', cardinality 0..*).
+'DatadiagramMLXForm::Shape' (role 'shapes', cardinality 0..*) is associated with 'ShapesCollection' (role 'ShapesCollection', cardinality 0..*).
+'DatadiagramMLXForm::MoveTo' (role 'movesTo', cardinality 0..*) is associated with 'Geom' (role 'Geom113', cardinality 0..*).
+'LineTo' (role 'LineTo', cardinality 0..*) is associated with 'DatadiagramMLXForm::Geom' (role 'lt_geom', cardinality 0..*).
+'DatadiagramMLXForm::DocumentPropertiesCollection' (role 'DatadiagramMLXForm_DocumentPropertiesCollection21', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType22', cardinality 0..*).
+'DatadiagramMLXForm::DocumentSettingsElt' (role 'DatadiagramMLXForm_DocumentSettingsElt', cardinality 0..*) is associated with 'Page' (role 'Page', cardinality 0..*).
+'CellType' (role 'CellType174', cardinality 0..*) is associated with 'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char173', cardinality 0..*).
+'CellType' (role 'CellType260', cardinality 0..*) is associated with 'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field259', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para226', cardinality 0..*) is associated with 'CellType' (role 'CellType227', cardinality 0..*).
+'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para196', cardinality 0..*) is associated with 'CellType' (role 'CellType197', cardinality 0..*).
+'DatadiagramMLXForm::Geom' (role 'nt_geom', cardinality 0..*) is associated with 'NURBSTo' (role 'NURBSTo', cardinality 0..*).
+'CellType' (role 'CellType180', cardinality 0..*) is associated with 'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char179', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection', cardinality 0..*) is associated with 'DatadiagramMLXForm::VisioDocument' (role 'ms_visioDocument', cardinality 0..*).
+'DatadiagramMLXForm::PolylineTo' (role 'polylinesTo', cardinality 0..*) is associated with 'Geom' (role 'Geom121', cardinality 0..*).
+'SolutionXML' (role 'SolutionXML', cardinality 0..*) is associated with 'DatadiagramMLXForm::VisioDocument' (role 'sx_visioDocument', cardinality 0..*).
+'Geom' (role 'Geom', cardinality 0..*) is associated with 'DatadiagramMLXForm::LineTo' (role 'linesTo', cardinality 0..*).
+'CustomPropertiesCollection' (role 'CustomPropertiesCollection', cardinality 0..*) is associated with 'DatadiagramMLXForm::DocumentPropertiesCollection' (role 'cps_docProp', cardinality 0..*).
+'CellType' (role 'CellType292', cardinality 0..*) is associated with 'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm291', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'erd_visioDocument', cardinality 0..*) is associated with 'EmailRoutingData' (role 'EmailRoutingData', cardinality 0..*).
+'CellType' (role 'CellType144', cardinality 0..*) is associated with 'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char', cardinality 0..*).
+'CellType' (role 'CellType186', cardinality 0..*) is associated with 'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char185', cardinality 0..*).
+'MoveTo' (role 'MoveTo', cardinality 0..*) is associated with 'DatadiagramMLXForm::Geom' (role 'mt_geom', cardinality 0..*).
+'StyleSheetsCollection' (role 'StyleSheetsCollection80', cardinality 0..*) is associated with 'DatadiagramMLXForm::StyleSheet' (role 'stylesSheets', cardinality 0..*).
+'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field265', cardinality 0..*) is associated with 'CellType' (role 'CellType266', cardinality 0..*).
+'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field247', cardinality 0..*) is associated with 'CellType' (role 'CellType248', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument55', cardinality 0..*) is associated with 'DatadiagramMLXForm::ColorsTable' (role 'docColors', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument324', cardinality 0..*) is associated with 'DatadiagramMLXForm::WindowsInfo' (role 'docWindows', cardinality 0..*).
+'Shape' (role 'Shape309', cardinality 0..*) is associated with 'DatadiagramMLXForm::ShapesCollection' (role 'ss_shapes', cardinality 0..*).
+'DatadiagramMLXForm::DocumentSettingsElt' (role 'DatadiagramMLXForm_DocumentSettingsElt46', cardinality 0..*) is associated with 'StyleSheet' (role 'StyleSheet47', cardinality 0..*).
+'PolylineTo' (role 'PolylineTo', cardinality 0..*) is associated with 'DatadiagramMLXForm::Geom' (role 'pt_geom', cardinality 0..*).
+'CellType' (role 'CellType209', cardinality 0..*) is associated with 'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para208', cardinality 0..*).
+'Geom' (role 'Geom132', cardinality 0..*) is associated with 'DatadiagramMLXForm::Ellipse' (role 'ellipses', cardinality 0..*).
+'MasterShortCut' (role 'MasterShortCut', cardinality 0..*) is associated with 'DatadiagramMLXForm::MastersCollection' (role 'm_masterShortCuts', cardinality 0..*).
+'DatadiagramMLXForm::Field' (role 'DatadiagramMLXForm_Field', cardinality 0..*) is associated with 'CellType' (role 'CellType242', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char170', cardinality 0..*) is associated with 'CellType' (role 'CellType171', cardinality 0..*).
+'CellType' (role 'CellType92', cardinality 0..*) is associated with 'DatadiagramMLXForm::Geom' (role 'DatadiagramMLXForm_Geom91', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char158', cardinality 0..*) is associated with 'CellType' (role 'CellType159', cardinality 0..*).
+'DatadiagramMLXForm::Page' (role 'pages', cardinality 0..*) is associated with 'PagesCollection' (role 'PagesCollection319', cardinality 0..*).
+'DatadiagramMLXForm::ShapeElt' (role 'shapeElts', cardinality 0..*) is associated with 'Shape' (role 'Shape', cardinality 0..*).
+'DatadiagramMLXForm::Tab' (role 'tabs', cardinality 0..*) is associated with 'TabsCollection' (role 'TabsCollection', cardinality 0..*).
+'CellType' (role 'CellType277', cardinality 0..*) is associated with 'DatadiagramMLXForm::XForm' (role 'DatadiagramMLXForm_XForm276', cardinality 0..*).
+'CellType' (role 'CellType107', cardinality 0..*) is associated with 'DatadiagramMLXForm::XYElt' (role 'DatadiagramMLXForm_XYElt', cardinality 0..*).
+'Geom' (role 'Geom140', cardinality 0..*) is associated with 'DatadiagramMLXForm::NURBSTo' (role 'nurbsTo', cardinality 0..*).
+'DatadiagramMLXForm::VisioDocument' (role 'ps_visioDocument', cardinality 0..*) is associated with 'PrintSetup' (role 'PrintSetup', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection306', cardinality 0..*) is associated with 'DatadiagramMLXForm::Master' (role 'masters', cardinality 0..*).
+'CellType' (role 'CellType233', cardinality 0..*) is associated with 'DatadiagramMLXForm::Para' (role 'DatadiagramMLXForm_Para232', cardinality 0..*).
+'PageElt' (role 'PageElt', cardinality 0..*) is associated with 'DatadiagramMLXForm::Page' (role 'pe_page', cardinality 0..*).
+'DatadiagramMLXForm::XYABCDElt' (role 'DatadiagramMLXForm_XYABCDElt129', cardinality 0..*) is associated with 'CellType' (role 'CellType130', cardinality 0..*).
+'DatadiagramMLXForm::Geom' (role 'e_geom', cardinality 0..*) is associated with 'Ellipse' (role 'Ellipse', cardinality 0..*).
+'CellType' (role 'CellType123', cardinality 0..*) is associated with 'DatadiagramMLXForm::XYABElt' (role 'DatadiagramMLXForm_XYABElt', cardinality 0..*).
+'FaceName' (role 'FaceName', cardinality 0..*) is associated with 'DatadiagramMLXForm::FaceNamesTable' (role 'fn_faceNames', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument297', cardinality 0..*) is associated with 'DatadiagramMLXForm::MastersCollection' (role 'docMasters', cardinality 0..*).
+'MasterShortCut' (role 'MasterShortCut304', cardinality 0..*) is associated with 'DatadiagramMLXForm::Icon' (role 'icons', cardinality 0..*).
+'Master' (role 'Master313', cardinality 0..*) is associated with 'DatadiagramMLXForm::MasterElt' (role 'masterElts', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char155', cardinality 0..*) is associated with 'CellType' (role 'CellType156', cardinality 0..*).
+'DatadiagramMLXForm::Char' (role 'DatadiagramMLXForm_Char191', cardinality 0..*) is associated with 'CellType' (role 'CellType192', cardinality 0..*).

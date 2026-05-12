@@ -1,0 +1,46 @@
+The model has 23 class(es).
+The class 'Styling::IntParameter' has the following attributes: 'value' of type int.
+The class 'Styling::OperationPattern' has the following attributes: 'operation' of type str.
+The class 'Styling::StylingPredicate' has no attributes.
+The class 'Styling::Basic' has no attributes.
+The class 'Styling::Styling' has no attributes.
+The class 'Styling::Pattern' has no attributes.
+The class 'Styling::Style' has the following attributes: 'color' of type str; 'appliedFonts' of type str.
+The class 'Styling::StringParameter' has the following attributes: 'value' of type str.
+The class 'Styling::EObjectParameter' has no attributes.
+The class 'Styling::ModelPattern' has the following attributes: 'attributeName' of type str.
+The class 'Styling::Segment' has no attributes.
+The class 'Styling::EObject' has no attributes.
+The class 'Styling::Icon' has the following attributes: 'image' of type str.
+The class 'Styling::Parameter' has the following attributes: 'name' of type str.
+The class 'Styling::ConstantPattern' has the following attributes: 'value' of type str.
+The class 'CaseStyle' has no attributes.
+The class 'Styling::IPredicate' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Styling::StylingModel' has the following attributes: 'modeName' of type str.
+The class 'Styling::Default' has no attributes.
+The class 'Pattern' has no attributes.
+The class 'Styling::BooleanParameter' has the following attributes: 'value' of type bool.
+The class 'Styling::CaseStyle' has no attributes.
+The enumeration 'FontOption' has the following literals: 'BOLD', 'STRIKE', 'UNDERLINE', 'ITALIC'.
+'Styling::ModelPattern' is a specialization of 'Pattern'.
+'Styling::StylingPredicate' is a specialization of 'CaseStyle'.
+'Styling::Basic' is a specialization of 'CaseStyle'.
+'Styling::Default' is a specialization of 'CaseStyle'.
+'Styling::BooleanParameter' is a specialization of 'Parameter'.
+'Styling::OperationPattern' is a specialization of 'Pattern'.
+'Styling::IntParameter' is a specialization of 'Parameter'.
+'Styling::EObjectParameter' is a specialization of 'Parameter'.
+'Styling::StringParameter' is a specialization of 'Parameter'.
+'Styling::ConstantPattern' is a specialization of 'Pattern'.
+'Styling::Parameter' (role 'Styling_Parameter', cardinality 0..*) is associated with 'Styling::OperationPattern' (role 'Styling_OperationPattern', cardinality 0..*).
+'Styling::IPredicate' (role 'Styling_IPredicate', cardinality 0..*) is associated with 'Styling::StylingPredicate' (role 'Styling_StylingPredicate', cardinality 0..*).
+'Styling::EObject' (role 'Styling_EObject', cardinality 0..*) is associated with 'Styling::EObjectParameter' (role 'Styling_EObjectParameter', cardinality 0..*).
+'Styling::Styling' (role 'Styling_Styling', cardinality 0..*) is associated with 'Styling::StylingModel' (role 'Styling_StylingModel15', cardinality 0..*).
+'Styling::CaseStyle' (role 'Styling_CaseStyle13', cardinality 0..*) is associated with 'Styling::Icon' (role 'Styling_Icon', cardinality 0..*).
+'Styling::Style' (role 'Styling_Style', cardinality 0..*) is associated with 'Styling::Segment' (role 'Styling_Segment', cardinality 0..*).
+'Styling::Basic' (role 'Styling_Basic', cardinality 0..*) is associated with 'Styling::StylingModel' (role 'Styling_StylingModel4', cardinality 0..*).
+'Styling::Segment' (role 'Styling_Segment8', cardinality 0..*) is associated with 'Styling::Pattern' (role 'Styling_Pattern', cardinality 0..*).
+'Styling::CaseStyle' (role 'Styling_CaseStyle10', cardinality 0..*) is associated with 'Styling::Segment' (role 'Styling_Segment11', cardinality 0..*).
+'Styling::StylingModel' (role 'Styling_StylingModel2', cardinality 0..*) is associated with 'Styling::Default' (role 'Styling_Default', cardinality 0..*).
+'Styling::CaseStyle' (role 'Styling_CaseStyle', cardinality 0..*) is associated with 'Styling::StylingModel' (role 'Styling_StylingModel', cardinality 0..*).

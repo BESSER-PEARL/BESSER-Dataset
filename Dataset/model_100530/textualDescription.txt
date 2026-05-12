@@ -1,0 +1,60 @@
+The model has 30 class(es).
+The class 'Parameter' has no attributes.
+The class 'USECASE1::Context' has no attributes.
+The class 'USECASE1::Episode' has no attributes.
+The class 'Event' has no attributes.
+The class 'USECASE1::Task' has no attributes.
+The class 'USECASE1::User' has no attributes.
+The class 'Service' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'USECASE1::Responce' has no attributes.
+The class 'USECASE1::Service' has no attributes.
+The class 'PostCondition' has no attributes.
+The class 'USECASE1::Event' has no attributes.
+The class 'USECASE1::Actor' has no attributes.
+The class 'Task' has no attributes.
+The class 'Actor' has no attributes.
+The class 'USECASE1::UseCase' has no attributes.
+The class 'USECASE1::Scenario' has no attributes.
+The class 'Responce' has no attributes.
+The class 'USECASE1::Stimilus' has no attributes.
+The class 'USECASE1::Action' has no attributes.
+The class 'Context' has no attributes.
+The class 'Stimilus' has no attributes.
+The class 'USECASE1::PreCondition' has no attributes.
+The class 'Goal' has no attributes.
+The class 'USECASE1::Parameter' has no attributes.
+The class 'USECASE1::PostCondition' has no attributes.
+The class 'USECASE1::Goal' has no attributes.
+The class 'PreCondition' has no attributes.
+The class 'Episode' has no attributes.
+The class 'User' has no attributes.
+'USECASE1::Responce' is a specialization of 'Event'.
+'USECASE1::Action' is a specialization of 'Event'.
+'USECASE1::Stimilus' is a specialization of 'Event'.
+'USECASE1::Episode' (role 'episode', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'USECASE1::User' (role 'user3', cardinality 0..*) is associated with 'Actor' (role 'Actor', cardinality 0..*).
+'UseCase' (role 'UseCase37', cardinality 0..*) is associated with 'USECASE1::Context' (role 'context36', cardinality 0..*).
+'Context' (role 'Context', cardinality 0..*) is associated with 'USECASE1::UseCase' (role 'useCase', cardinality 0..*).
+'UseCase' (role 'UseCase', cardinality 0..*) is associated with 'USECASE1::User' (role 'user', cardinality 0..*).
+'USECASE1::Responce' (role 'responce', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'USECASE1::Goal' (role 'goal', cardinality 0..*) is associated with 'Service' (role 'Service11', cardinality 0..*).
+'USECASE1::Service' (role 'service28', cardinality 0..*) is associated with 'Goal' (role 'Goal29', cardinality 0..*).
+'USECASE1::Context' (role 'context', cardinality 0..*) is associated with 'PreCondition' (role 'PreCondition', cardinality 0..*).
+'USECASE1::Actor' (role 'actor9', cardinality 0..*) is associated with 'User' (role 'User', cardinality 0..*).
+'USECASE1::UseCase' (role 'useCase23', cardinality 0..*) is associated with 'Actor' (role 'Actor24', cardinality 0..*).
+'Service' (role 'Service', cardinality 0..*) is associated with 'USECASE1::Task' (role 'task', cardinality 0..*).
+'Service' (role 'Service18', cardinality 0..*) is associated with 'USECASE1::UseCase' (role 'useCase17', cardinality 0..*).
+'UseCase' (role 'UseCase5', cardinality 0..*) is associated with 'USECASE1::Actor' (role 'actor', cardinality 0..*).
+'PostCondition' (role 'PostCondition', cardinality 0..*) is associated with 'USECASE1::Context' (role 'context34', cardinality 0..*).
+'Context' (role 'Context41', cardinality 0..*) is associated with 'USECASE1::PostCondition' (role 'postCondition', cardinality 0..*).
+'USECASE1::UseCase' (role 'useCase20', cardinality 0..*) is associated with 'User' (role 'User21', cardinality 0..*).
+'Context' (role 'Context39', cardinality 0..*) is associated with 'USECASE1::PreCondition' (role 'preCondition', cardinality 0..*).
+'Task' (role 'Task', cardinality 0..*) is associated with 'USECASE1::Service' (role 'service31', cardinality 0..*).
+'UseCase' (role 'UseCase26', cardinality 0..*) is associated with 'USECASE1::Service' (role 'service', cardinality 0..*).
+'Stimilus' (role 'Stimilus', cardinality 0..*) is associated with 'USECASE1::Parameter' (role 'parameter', cardinality 0..*).
+'Responce' (role 'Responce', cardinality 0..*) is associated with 'USECASE1::Parameter' (role 'parameter49', cardinality 0..*).
+'USECASE1::Event' (role 'event', cardinality 0..*) is associated with 'Episode' (role 'Episode', cardinality 0..*).
+'Parameter' (role 'Parameter46', cardinality 0..*) is associated with 'USECASE1::Stimilus' (role 'stimilus', cardinality 0..*).
+'Goal' (role 'Goal', cardinality 0..*) is associated with 'USECASE1::Actor' (role 'actor7', cardinality 0..*).
+'Actor' (role 'Actor14', cardinality 0..*) is associated with 'USECASE1::Goal' (role 'goal13', cardinality 0..*).

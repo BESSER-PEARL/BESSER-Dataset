@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'myDsl::Event' has the following attributes: 'name' of type str; 'resetEvent' of type bool.
+The class 'myDsl::XExpression' has no attributes.
+The class 'myDsl::State' has the following attributes: 'name' of type str.
+The class 'myDsl::Service' has the following attributes: 'name' of type str.
+The class 'myDsl::Statemachine' has no attributes.
+The class 'myDsl::JvmTypeReference' has no attributes.
+The class 'myDsl::Transition' has no attributes.
+'myDsl::State' (role 'myDsl_State16', cardinality 0..*) is associated with 'myDsl::Transition' (role 'myDsl_Transition15', cardinality 0..*).
+'myDsl::State' (role 'myDsl_State8', cardinality 0..*) is associated with 'myDsl::XExpression' (role 'myDsl_XExpression', cardinality 0..*).
+'myDsl::Event' (role 'myDsl_Event', cardinality 0..*) is associated with 'myDsl::Statemachine' (role 'myDsl_Statemachine', cardinality 0..*).
+'myDsl::Transition' (role 'myDsl_Transition', cardinality 0..*) is associated with 'myDsl::State' (role 'myDsl_State10', cardinality 0..*).
+'myDsl::JvmTypeReference' (role 'myDsl_JvmTypeReference', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service6', cardinality 0..*).
+'myDsl::Transition' (role 'myDsl_Transition12', cardinality 0..*) is associated with 'myDsl::Event' (role 'myDsl_Event13', cardinality 0..*).
+'myDsl::Statemachine' (role 'myDsl_Statemachine2', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service', cardinality 0..*).
+'myDsl::State' (role 'myDsl_State', cardinality 0..*) is associated with 'myDsl::Statemachine' (role 'myDsl_Statemachine4', cardinality 0..*).

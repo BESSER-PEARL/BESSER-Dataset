@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'pushbuttonbuild::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'pushbuttonbuild::ExtraZIPType' has the following attributes: 'name' of type str.
+The class 'pushbuttonbuild::EStringToStringMapEntry' has no attributes.
+The class 'pushbuttonbuild::BuildType' has the following attributes: 'isIncubation' of type str; 'newsgroupPublisherEmail' of type str; 'jre' of type str; 'newsgroupPublisherName' of type str; 'projectNamespace' of type str; 'testsAreJarred' of type str; 'shortName' of type str; 'parentProjectName' of type str.
+The enumeration 'JreType' has the following literals: 'J2SE14', 'J2SE15'.
+'pushbuttonbuild::EStringToStringMapEntry' (role 'pushbuttonbuild_EStringToStringMapEntry4', cardinality 0..*) is associated with 'pushbuttonbuild::DocumentRoot' (role 'pushbuttonbuild_DocumentRoot3', cardinality 0..*).
+'pushbuttonbuild::EStringToStringMapEntry' (role 'pushbuttonbuild_EStringToStringMapEntry', cardinality 0..*) is associated with 'pushbuttonbuild::DocumentRoot' (role 'pushbuttonbuild_DocumentRoot', cardinality 0..*).
+'pushbuttonbuild::BuildType' (role 'pushbuttonbuild_BuildType', cardinality 0..*) is associated with 'pushbuttonbuild::ExtraZIPType' (role 'pushbuttonbuild_ExtraZIPType', cardinality 0..*).
+'pushbuttonbuild::BuildType' (role 'pushbuttonbuild_BuildType7', cardinality 0..*) is associated with 'pushbuttonbuild::DocumentRoot' (role 'pushbuttonbuild_DocumentRoot6', cardinality 0..*).
+'pushbuttonbuild::DocumentRoot' (role 'pushbuttonbuild_DocumentRoot9', cardinality 0..*) is associated with 'pushbuttonbuild::ExtraZIPType' (role 'pushbuttonbuild_ExtraZIPType10', cardinality 0..*).

@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ShapeElt  {
+
+
+
+
+
+
+    private DatadiagramMLBasicDef_Shape datadiagrammlbasicdef_shape;
+
+
+    public ShapeElt(
+    ) {
+    }
+
+
+
+    public DatadiagramMLBasicDef_Shape getDatadiagrammlbasicdef_shape() {
+        return datadiagrammlbasicdef_shape;
+    }
+
+    public void setDatadiagrammlbasicdef_shape(DatadiagramMLBasicDef_Shape datadiagrammlbasicdef_shape) {
+        this.datadiagrammlbasicdef_shape = datadiagrammlbasicdef_shape;
+    }
+
+}

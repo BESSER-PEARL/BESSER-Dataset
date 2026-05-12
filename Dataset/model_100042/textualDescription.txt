@@ -1,0 +1,65 @@
+The model has 23 class(es).
+The class 'research101::PublicationStructure' has no attributes.
+The class 'research101::Skill' has the following attributes: 'description' of type str.
+The class 'research101::Named' has the following attributes: 'name' of type str.
+The class 'Named' has no attributes.
+The class 'research101::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research101::PublicationSystem' has no attributes.
+The class 'research101::Phase' has the following attributes: 'name' of type str.
+The class 'Counted' has no attributes.
+The class 'research101::Keyword' has the following attributes: 'description' of type str.
+The class 'research101::Counted' has the following attributes: 'id' of type int.
+The class 'research101::Paper' has no attributes.
+The class 'research101::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'research101::Labelled' has the following attributes: 'lname' of type str.
+The class 'research101::PublicationProcess' has the following attributes: 'maxTime' of type int; 'minTime' of type int.
+The class 'research101::KnowledgeManager' has no attributes.
+The class 'research101::Position' has the following attributes: 'description' of type str.
+The class 'research101::Progress' has the following attributes: 'percent' of type int.
+The class 'Labelled' has no attributes.
+The class 'research101::Paragraph' has the following attributes: 'content' of type str.
+The class 'research101::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'research101::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research101::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'research101::Review' has the following attributes: 'date' of type date.
+'research101::Write' is a specialization of 'Labelled'.
+'research101::PublicationStructure' is a specialization of 'Named'.
+'research101::Position' is a specialization of 'Named'.
+'research101::Paper' is a specialization of 'Named'.
+'research101::Progress' is a specialization of 'Labelled'.
+'research101::Keyword' is a specialization of 'Named'.
+'research101::PublicationSystem' is a specialization of 'Named'.
+'research101::Paragraph' is a specialization of 'Named'.
+'research101::KnowledgeManager' is a specialization of 'Named'.
+'research101::ReviewNote' is a specialization of 'Named'.
+'research101::Paragraph' is a specialization of 'Counted'.
+'research101::Review' is a specialization of 'Labelled'.
+'research101::PublicationProcess' is a specialization of 'Named'.
+'research101::Paper' (role 'paper', cardinality 0..*) is associated with 'research101::Progress' (role 'Progress', cardinality 0..*).
+'research101::Researcher' (role 'Researcher', cardinality 0..*) is associated with 'research101::Paper' (role 'res_papers', cardinality 0..*).
+'research101::PublicationStructure' (role 'research101_PublicationStructure34', cardinality 0..*) is associated with 'research101::Paper' (role 'research101_Paper35', cardinality 0..*).
+'research101::Paper' (role 'research101_Paper59', cardinality 0..*) is associated with 'research101::Collaboration' (role 'research101_Collaboration58', cardinality 0..*).
+'research101::PublicationProcess' (role 'research101_PublicationProcess39', cardinality 0..*) is associated with 'research101::PublicationSystem' (role 'research101_PublicationSystem', cardinality 0..*).
+'research101::PublicationStructure' (role 'research101_PublicationStructure42', cardinality 0..*) is associated with 'research101::PublicationSystem' (role 'research101_PublicationSystem41', cardinality 0..*).
+'research101::Paper' (role 'research101_Paper16', cardinality 0..*) is associated with 'research101::Paper' (role 'research101_Paper18', cardinality 0..*).
+'research101::Position' (role 'research101_Position46', cardinality 0..*) is associated with 'research101::Position' (role 'research101_Position48', cardinality 0..*).
+'research101::Paragraph' (role 'research101_Paragraph27', cardinality 0..*) is associated with 'research101::Write' (role 'research101_Write26', cardinality 0..*).
+'research101::Paper' (role 'research101_Paper15', cardinality 0..*) is associated with 'research101::PaperKeyword' (role 'research101_PaperKeyword', cardinality 0..*).
+'research101::Keyword' (role 'research101_Keyword53', cardinality 0..*) is associated with 'research101::KnowledgeManager' (role 'research101_KnowledgeManager52', cardinality 0..*).
+'research101::ReviewNote' (role 'research101_ReviewNote30', cardinality 0..*) is associated with 'research101::Review' (role 'research101_Review29', cardinality 0..*).
+'research101::Keyword' (role 'research101_Keyword', cardinality 0..*) is associated with 'research101::Paper' (role 'research101_Paper50', cardinality 0..*).
+'research101::Researcher' (role 'research101_Researcher', cardinality 0..*) is associated with 'research101::Write' (role 'research101_Write', cardinality 0..*).
+'research101::Researcher' (role 'research101_Researcher3', cardinality 0..*) is associated with 'research101::Review' (role 'research101_Review', cardinality 0..*).
+'research101::Position' (role 'research101_Position', cardinality 0..*) is associated with 'research101::Researcher' (role 'research101_Researcher8', cardinality 0..*).
+'research101::Phase' (role 'research101_Phase', cardinality 0..*) is associated with 'research101::PublicationProcess' (role 'research101_PublicationProcess', cardinality 0..*).
+'research101::PublicationStructure' (role 'research101_PublicationStructure', cardinality 0..*) is associated with 'research101::Researcher' (role 'research101_Researcher32', cardinality 0..*).
+'research101::Paragraph' (role 'research101_Paragraph', cardinality 0..*) is associated with 'research101::Paper' (role 'research101_Paper', cardinality 0..*).
+'research101::PublicationSystem' (role 'research101_PublicationSystem44', cardinality 0..*) is associated with 'research101::Position' (role 'research101_Position45', cardinality 0..*).
+'research101::Skill' (role 'research101_Skill', cardinality 0..*) is associated with 'research101::Researcher' (role 'research101_Researcher6', cardinality 0..*).
+'research101::PaperKeyword' (role 'research101_PaperKeyword55', cardinality 0..*) is associated with 'research101::Keyword' (role 'research101_Keyword56', cardinality 0..*).
+'research101::Researcher' (role 'authors', cardinality 0..*) is associated with 'research101::Paper' (role 'Paper', cardinality 0..*).
+'research101::PublicationProcess' (role 'research101_PublicationProcess22', cardinality 0..*) is associated with 'research101::Progress' (role 'research101_Progress', cardinality 0..*).
+'research101::Collaboration' (role 'research101_Collaboration', cardinality 0..*) is associated with 'research101::Researcher' (role 'research101_Researcher10', cardinality 0..*).
+'research101::Progress' (role 'progress', cardinality 0..*) is associated with 'research101::Paper' (role 'Paper24', cardinality 0..*).
+'research101::KnowledgeManager' (role 'research101_KnowledgeManager', cardinality 0..*) is associated with 'research101::PublicationStructure' (role 'research101_PublicationStructure37', cardinality 0..*).
+'research101::ReviewNote' (role 'research101_ReviewNote', cardinality 0..*) is associated with 'research101::Paragraph' (role 'research101_Paragraph20', cardinality 0..*).

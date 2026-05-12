@@ -1,0 +1,111 @@
+The model has 47 class(es).
+The class 'xdoc::Chapter' has no attributes.
+The class 'xdoc::XdocFile' has no attributes.
+The class 'xdoc::CodeBlock' has no attributes.
+The class 'xdoc::AbstractSection' has no attributes.
+The class 'xdoc::ImageProxy' has no attributes.
+The class 'xdoc::Table' has no attributes.
+The class 'xdoc::JvmDeclaredType' has no attributes.
+The class 'xdoc::TextPart' has the following attributes: 'text' of type str.
+The class 'xdoc::Section2' has no attributes.
+The class 'xdoc::MarkupInCode' has no attributes.
+The class 'xdoc::Part' has no attributes.
+The class 'xdoc::TableData' has no attributes.
+The class 'xdoc::Identifiable' has the following attributes: 'name' of type str.
+The class 'Chapter' has no attributes.
+The class 'xdoc::Ref' has no attributes.
+The class 'xdoc::Section3' has no attributes.
+The class 'Section2' has no attributes.
+The class 'xdoc::CodeRef' has no attributes.
+The class 'xdoc::OrderedList' has no attributes.
+The class 'xdoc::EObject' has no attributes.
+The class 'xdoc::Glossary' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'xdoc::SectionRef' has no attributes.
+The class 'xdoc::ChapterRef' has no attributes.
+The class 'xdoc::Emphasize' has no attributes.
+The class 'xdoc::UnorderedList' has no attributes.
+The class 'MarkUp' has no attributes.
+The class 'Part' has no attributes.
+The class 'xdoc::PartRef' has no attributes.
+The class 'xdoc::ImageRef' has the following attributes: 'path' of type str; 'name' of type str; 'clazz' of type str; 'caption' of type str; 'style' of type str.
+The class 'xdoc::Section' has no attributes.
+The class 'AbstractSection' has no attributes.
+The class 'xdoc::Item' has no attributes.
+The class 'xdoc::Document' has no attributes.
+The class 'xdoc::MarkUp' has no attributes.
+The class 'xdoc::GlossaryEntry' has the following attributes: 'name' of type str; 'alias' of type str.
+The class 'xdoc::Code' has the following attributes: 'contents' of type str.
+The class 'MarkupInCode' has no attributes.
+The class 'xdoc::TableRow' has no attributes.
+The class 'xdoc::Section2Ref' has no attributes.
+The class 'Section' has no attributes.
+The class 'xdoc::Anchor' has no attributes.
+The class 'xdoc::TextOrMarkup' has no attributes.
+The class 'xdoc::Link' has the following attributes: 'url' of type str; 'text' of type str.
+The class 'xdoc::Todo' has the following attributes: 'text' of type str.
+The class 'xdoc::Section4' has no attributes.
+The class 'xdoc::LangDef' has the following attributes: 'keywords' of type str; 'name' of type str.
+'xdoc::Part' is a specialization of 'AbstractSection'.
+'xdoc::Section2Ref' is a specialization of 'Section2'.
+'xdoc::ChapterRef' is a specialization of 'Chapter'.
+'xdoc::Section3' is a specialization of 'AbstractSection'.
+'xdoc::Section' is a specialization of 'AbstractSection'.
+'xdoc::Emphasize' is a specialization of 'MarkupInCode'.
+'xdoc::Ref' is a specialization of 'MarkUp'.
+'xdoc::Table' is a specialization of 'MarkUp'.
+'xdoc::Todo' is a specialization of 'MarkupInCode'.
+'xdoc::PartRef' is a specialization of 'Part'.
+'xdoc::ImageRef' is a specialization of 'MarkUp'.
+'xdoc::OrderedList' is a specialization of 'MarkUp'.
+'xdoc::Emphasize' is a specialization of 'MarkUp'.
+'xdoc::Anchor' is a specialization of 'Identifiable'.
+'xdoc::Document' is a specialization of 'AbstractSection'.
+'xdoc::Link' is a specialization of 'MarkUp'.
+'xdoc::Ref' is a specialization of 'MarkupInCode'.
+'xdoc::AbstractSection' is a specialization of 'Identifiable'.
+'xdoc::Anchor' is a specialization of 'MarkupInCode'.
+'xdoc::Chapter' is a specialization of 'AbstractSection'.
+'xdoc::Section4' is a specialization of 'AbstractSection'.
+'xdoc::CodeRef' is a specialization of 'MarkUp'.
+'xdoc::Section2' is a specialization of 'AbstractSection'.
+'xdoc::SectionRef' is a specialization of 'Section'.
+'xdoc::Todo' is a specialization of 'MarkUp'.
+'xdoc::UnorderedList' is a specialization of 'MarkUp'.
+'xdoc::Anchor' is a specialization of 'MarkUp'.
+'xdoc::CodeBlock' is a specialization of 'MarkUp'.
+'xdoc::SectionRef' (role 'xdoc_SectionRef', cardinality 0..*) is associated with 'xdoc::Section' (role 'xdoc_Section20', cardinality 0..*).
+'xdoc::CodeRef' (role 'xdoc_CodeRef55', cardinality 0..*) is associated with 'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup56', cardinality 0..*).
+'xdoc::Section2' (role 'xdoc_Section222', cardinality 0..*) is associated with 'xdoc::Section3' (role 'xdoc_Section3', cardinality 0..*).
+'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup42', cardinality 0..*) is associated with 'xdoc::Emphasize' (role 'xdoc_Emphasize', cardinality 0..*).
+'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup4', cardinality 0..*) is associated with 'xdoc::Document' (role 'xdoc_Document3', cardinality 0..*).
+'xdoc::AbstractSection' (role 'xdoc_AbstractSection', cardinality 0..*) is associated with 'xdoc::XdocFile' (role 'xdoc_XdocFile', cardinality 0..*).
+'xdoc::Section2' (role 'xdoc_Section2', cardinality 0..*) is associated with 'xdoc::Section' (role 'xdoc_Section18', cardinality 0..*).
+'xdoc::CodeBlock' (role 'xdoc_CodeBlock61', cardinality 0..*) is associated with 'xdoc::LangDef' (role 'xdoc_LangDef62', cardinality 0..*).
+'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup40', cardinality 0..*) is associated with 'xdoc::TableData' (role 'xdoc_TableData39', cardinality 0..*).
+'xdoc::Chapter' (role 'xdoc_Chapter70', cardinality 0..*) is associated with 'xdoc::Part' (role 'xdoc_Part69', cardinality 0..*).
+'xdoc::Document' (role 'xdoc_Document10', cardinality 0..*) is associated with 'xdoc::Glossary' (role 'xdoc_Glossary', cardinality 0..*).
+'xdoc::TableData' (role 'xdoc_TableData', cardinality 0..*) is associated with 'xdoc::TableRow' (role 'xdoc_TableRow37', cardinality 0..*).
+'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup', cardinality 0..*) is associated with 'xdoc::Document' (role 'xdoc_Document', cardinality 0..*).
+'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup34', cardinality 0..*) is associated with 'xdoc::EObject' (role 'xdoc_EObject', cardinality 0..*).
+'xdoc::Table' (role 'xdoc_Table', cardinality 0..*) is associated with 'xdoc::TableRow' (role 'xdoc_TableRow', cardinality 0..*).
+'xdoc::ImageRef' (role 'xdoc_ImageRef', cardinality 0..*) is associated with 'xdoc::ImageProxy' (role 'xdoc_ImageProxy', cardinality 0..*).
+'xdoc::CodeBlock' (role 'xdoc_CodeBlock', cardinality 0..*) is associated with 'xdoc::EObject' (role 'xdoc_EObject59', cardinality 0..*).
+'xdoc::Section3' (role 'xdoc_Section326', cardinality 0..*) is associated with 'xdoc::Section4' (role 'xdoc_Section4', cardinality 0..*).
+'xdoc::Identifiable' (role 'xdoc_Identifiable', cardinality 0..*) is associated with 'xdoc::Ref' (role 'xdoc_Ref', cardinality 0..*).
+'xdoc::CodeRef' (role 'xdoc_CodeRef', cardinality 0..*) is associated with 'xdoc::JvmDeclaredType' (role 'xdoc_JvmDeclaredType', cardinality 0..*).
+'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup29', cardinality 0..*) is associated with 'xdoc::AbstractSection' (role 'xdoc_AbstractSection28', cardinality 0..*).
+'xdoc::Section2' (role 'xdoc_Section224', cardinality 0..*) is associated with 'xdoc::Section2Ref' (role 'xdoc_Section2Ref', cardinality 0..*).
+'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup64', cardinality 0..*) is associated with 'xdoc::GlossaryEntry' (role 'xdoc_GlossaryEntry', cardinality 0..*).
+'xdoc::GlossaryEntry' (role 'xdoc_GlossaryEntry67', cardinality 0..*) is associated with 'xdoc::Glossary' (role 'xdoc_Glossary66', cardinality 0..*).
+'xdoc::ChapterRef' (role 'xdoc_ChapterRef', cardinality 0..*) is associated with 'xdoc::Chapter' (role 'xdoc_Chapter16', cardinality 0..*).
+'xdoc::Part' (role 'xdoc_Part72', cardinality 0..*) is associated with 'xdoc::PartRef' (role 'xdoc_PartRef', cardinality 0..*).
+'xdoc::Part' (role 'xdoc_Part', cardinality 0..*) is associated with 'xdoc::Document' (role 'xdoc_Document12', cardinality 0..*).
+'xdoc::AbstractSection' (role 'xdoc_AbstractSection31', cardinality 0..*) is associated with 'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup32', cardinality 0..*).
+'xdoc::Chapter' (role 'xdoc_Chapter', cardinality 0..*) is associated with 'xdoc::Document' (role 'xdoc_Document6', cardinality 0..*).
+'xdoc::Item' (role 'xdoc_Item49', cardinality 0..*) is associated with 'xdoc::UnorderedList' (role 'xdoc_UnorderedList', cardinality 0..*).
+'xdoc::OrderedList' (role 'xdoc_OrderedList', cardinality 0..*) is associated with 'xdoc::Item' (role 'xdoc_Item', cardinality 0..*).
+'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup52', cardinality 0..*) is associated with 'xdoc::Item' (role 'xdoc_Item51', cardinality 0..*).
+'xdoc::Chapter' (role 'xdoc_Chapter14', cardinality 0..*) is associated with 'xdoc::Section' (role 'xdoc_Section', cardinality 0..*).
+'xdoc::Ref' (role 'xdoc_Ref45', cardinality 0..*) is associated with 'xdoc::TextOrMarkup' (role 'xdoc_TextOrMarkup46', cardinality 0..*).
+'xdoc::LangDef' (role 'xdoc_LangDef', cardinality 0..*) is associated with 'xdoc::Document' (role 'xdoc_Document8', cardinality 0..*).

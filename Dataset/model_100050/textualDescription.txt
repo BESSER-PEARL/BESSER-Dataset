@@ -1,0 +1,85 @@
+The model has 30 class(es).
+The class 'research23::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research23::StateMachineVariable' has no attributes.
+The class 'research23::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research23::Paragraph' has the following attributes: 'content' of type str.
+The class 'Counted' has no attributes.
+The class 'research23::Skill' has the following attributes: 'description' of type str.
+The class 'research23::PublicationStructure' has no attributes.
+The class 'research23::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'research23::Progress' has the following attributes: 'percent' of type int.
+The class 'research23::PublicationProcess' has the following attributes: 'maxTime' of type int; 'minTime' of type int.
+The class 'research23::Researcher' has the following attributes: 'name' of type str; 'forName' of type str.
+The class 'research23::Position' has the following attributes: 'description' of type str.
+The class 'research23::Review' has the following attributes: 'date' of type date.
+The class 'StateMachineObject' has no attributes.
+The class 'research23::Labelled' has the following attributes: 'lname' of type str.
+The class 'research23::Transition' has the following attributes: 'guardLabel' of type str; 'guardExpression' of type str.
+The class 'research23::Named' has the following attributes: 'name' of type str.
+The class 'research23::PublicationStatus' has the following attributes: 'label' of type str.
+The class 'research23::Phase' has the following attributes: 'name' of type str.
+The class 'research23::KnowledgeManager' has no attributes.
+The class 'research23::Paper' has no attributes.
+The class 'research23::PublicationSystem' has no attributes.
+The class 'Labelled' has no attributes.
+The class 'research23::StateMachineObject' has the following attributes: 'label' of type str.
+The class 'Named' has no attributes.
+The class 'research23::Action' has the following attributes: 'actionLabel' of type str; 'actionStatement' of type str.
+The class 'research23::State' has the following attributes: 'id' of type int; 'kind' of type str; 'name' of type str.
+The class 'research23::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'research23::Counted' has the following attributes: 'id' of type int.
+The class 'research23::Keyword' has the following attributes: 'word' of type str.
+The enumeration 'StateType' has the following literals: 'final', 'initial', 'ongoing'.
+'research23::Paragraph' is a specialization of 'Named'.
+'research23::Write' is a specialization of 'Labelled'.
+'research23::Progress' is a specialization of 'Labelled'.
+'research23::Review' is a specialization of 'Labelled'.
+'research23::Position' is a specialization of 'Named'.
+'research23::Paragraph' is a specialization of 'Counted'.
+'research23::PublicationStructure' is a specialization of 'Named'.
+'research23::Keyword' is a specialization of 'Named'.
+'research23::State' is a specialization of 'StateMachineObject'.
+'research23::PublicationSystem' is a specialization of 'Named'.
+'research23::ReviewNote' is a specialization of 'Named'.
+'research23::Transition' is a specialization of 'StateMachineObject'.
+'research23::PublicationProcess' is a specialization of 'Named'.
+'research23::KnowledgeManager' is a specialization of 'Named'.
+'research23::Paper' is a specialization of 'Named'.
+'research23::Paper' (role 'Paper', cardinality 0..*) is associated with 'research23::Researcher' (role 'authors', cardinality 0..*).
+'research23::Collaboration' (role 'research23_Collaboration62', cardinality 0..*) is associated with 'research23::Paper' (role 'research23_Paper63', cardinality 0..*).
+'research23::PaperKeyword' (role 'research23_PaperKeyword', cardinality 0..*) is associated with 'research23::Paper' (role 'research23_Paper15', cardinality 0..*).
+'research23::Researcher' (role 'research23_Researcher10', cardinality 0..*) is associated with 'research23::Collaboration' (role 'research23_Collaboration', cardinality 0..*).
+'research23::Keyword' (role 'research23_Keyword', cardinality 0..*) is associated with 'research23::Paper' (role 'research23_Paper54', cardinality 0..*).
+'research23::Paper' (role 'Paper26', cardinality 0..*) is associated with 'research23::Progress' (role 'progress', cardinality 0..*).
+'research23::Researcher' (role 'research23_Researcher34', cardinality 0..*) is associated with 'research23::PublicationStructure' (role 'research23_PublicationStructure', cardinality 0..*).
+'research23::Transition' (role 'research23_Transition78', cardinality 0..*) is associated with 'research23::State' (role 'research23_State77', cardinality 0..*).
+'research23::ReviewNote' (role 'research23_ReviewNote32', cardinality 0..*) is associated with 'research23::Review' (role 'research23_Review31', cardinality 0..*).
+'research23::Paper' (role 'paper', cardinality 0..*) is associated with 'research23::Progress' (role 'Progress', cardinality 0..*).
+'research23::Paragraph' (role 'research23_Paragraph29', cardinality 0..*) is associated with 'research23::Write' (role 'research23_Write28', cardinality 0..*).
+'research23::KnowledgeManager' (role 'research23_KnowledgeManager56', cardinality 0..*) is associated with 'research23::Keyword' (role 'research23_Keyword57', cardinality 0..*).
+'research23::KnowledgeManager' (role 'research23_KnowledgeManager', cardinality 0..*) is associated with 'research23::PublicationStructure' (role 'research23_PublicationStructure39', cardinality 0..*).
+'research23::Researcher' (role 'Researcher', cardinality 0..*) is associated with 'research23::Paper' (role 'res_papers', cardinality 0..*).
+'research23::Transition' (role 'research23_Transition71', cardinality 0..*) is associated with 'research23::State' (role 'research23_State72', cardinality 0..*).
+'research23::State' (role 'research23_State', cardinality 0..*) is associated with 'research23::Paper' (role 'research23_Paper20', cardinality 0..*).
+'research23::Progress' (role 'research23_Progress', cardinality 0..*) is associated with 'research23::PublicationProcess' (role 'research23_PublicationProcess24', cardinality 0..*).
+'research23::Position' (role 'research23_Position50', cardinality 0..*) is associated with 'research23::Position' (role 'research23_Position52', cardinality 0..*).
+'research23::PublicationProcess' (role 'research23_PublicationProcess', cardinality 0..*) is associated with 'research23::Phase' (role 'research23_Phase', cardinality 0..*).
+'research23::Paper' (role 'research23_Paper37', cardinality 0..*) is associated with 'research23::PublicationStructure' (role 'research23_PublicationStructure36', cardinality 0..*).
+'research23::State' (role 'research23_State68', cardinality 0..*) is associated with 'research23::PublicationStatus' (role 'research23_PublicationStatus67', cardinality 0..*).
+'research23::ReviewNote' (role 'research23_ReviewNote', cardinality 0..*) is associated with 'research23::Paragraph' (role 'research23_Paragraph22', cardinality 0..*).
+'research23::Paper' (role 'research23_Paper', cardinality 0..*) is associated with 'research23::Paragraph' (role 'research23_Paragraph', cardinality 0..*).
+'research23::Position' (role 'research23_Position', cardinality 0..*) is associated with 'research23::Researcher' (role 'research23_Researcher8', cardinality 0..*).
+'research23::PublicationProcess' (role 'research23_PublicationProcess43', cardinality 0..*) is associated with 'research23::PublicationSystem' (role 'research23_PublicationSystem', cardinality 0..*).
+'research23::Write' (role 'research23_Write', cardinality 0..*) is associated with 'research23::Researcher' (role 'research23_Researcher', cardinality 0..*).
+'research23::Action' (role 'research23_Action82', cardinality 0..*) is associated with 'research23::Action' (role 'research23_Action84', cardinality 0..*).
+'research23::Transition' (role 'research23_Transition74', cardinality 0..*) is associated with 'research23::State' (role 'research23_State75', cardinality 0..*).
+'research23::Action' (role 'research23_Action', cardinality 0..*) is associated with 'research23::Transition' (role 'research23_Transition', cardinality 0..*).
+'research23::Paper' (role 'research23_Paper16', cardinality 0..*) is associated with 'research23::Paper' (role 'research23_Paper18', cardinality 0..*).
+'research23::Action' (role 'research23_Action81', cardinality 0..*) is associated with 'research23::State' (role 'research23_State80', cardinality 0..*).
+'research23::Review' (role 'research23_Review', cardinality 0..*) is associated with 'research23::Researcher' (role 'research23_Researcher3', cardinality 0..*).
+'research23::PublicationStructure' (role 'research23_PublicationStructure41', cardinality 0..*) is associated with 'research23::PublicationStatus' (role 'research23_PublicationStatus', cardinality 0..*).
+'research23::Researcher' (role 'research23_Researcher6', cardinality 0..*) is associated with 'research23::Skill' (role 'research23_Skill', cardinality 0..*).
+'research23::PublicationStructure' (role 'research23_PublicationStructure46', cardinality 0..*) is associated with 'research23::PublicationSystem' (role 'research23_PublicationSystem45', cardinality 0..*).
+'research23::Keyword' (role 'research23_Keyword60', cardinality 0..*) is associated with 'research23::PaperKeyword' (role 'research23_PaperKeyword59', cardinality 0..*).
+'research23::PublicationStatus' (role 'research23_PublicationStatus65', cardinality 0..*) is associated with 'research23::StateMachineVariable' (role 'research23_StateMachineVariable', cardinality 0..*).
+'research23::Position' (role 'research23_Position49', cardinality 0..*) is associated with 'research23::PublicationSystem' (role 'research23_PublicationSystem48', cardinality 0..*).

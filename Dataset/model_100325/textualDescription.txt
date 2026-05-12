@@ -1,0 +1,52 @@
+The model has 23 class(es).
+The class 'PNML::LabeledElement' has no attributes.
+The class 'PNML::Label' has the following attributes: 'text' of type str.
+The class 'URI' has no attributes.
+The class 'Label' has no attributes.
+The class 'PNML::URI' has the following attributes: 'value' of type str.
+The class 'PNML::LocatedElement' has the following attributes: 'location' of type str.
+The class 'NetContentElement' has no attributes.
+The class 'NetContent' has no attributes.
+The class 'PNML::Name' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'NetElement' has no attributes.
+The class 'PNML::Transition' has no attributes.
+The class 'Name' has no attributes.
+The class 'PNML::PNMLDocument' has no attributes.
+The class 'PNML::NetContent' has no attributes.
+The class 'PNML::Place' has no attributes.
+The class 'LabeledElement' has no attributes.
+The class 'PNML::Arc' has no attributes.
+The class 'IdedElement' has no attributes.
+The class 'PNML::NetContentElement' has no attributes.
+The class 'PNML::IdedElement' has the following attributes: 'id' of type str.
+The class 'PNMLDocument' has no attributes.
+The class 'PNML::NetElement' has no attributes.
+'PNML::Arc' is a specialization of 'NetContent'.
+'PNML::Name' is a specialization of 'LabeledElement'.
+'PNML::Transition' is a specialization of 'NetContentElement'.
+'PNML::NetContent' is a specialization of 'LocatedElement'.
+'PNML::Arc' is a specialization of 'IdedElement'.
+'PNML::IdedElement' is a specialization of 'LocatedElement'.
+'PNML::NetContentElement' is a specialization of 'NetContent'.
+'PNML::Place' is a specialization of 'NetContentElement'.
+'PNML::Label' is a specialization of 'LocatedElement'.
+'PNML::NetContentElement' is a specialization of 'IdedElement'.
+'PNML::LabeledElement' is a specialization of 'LocatedElement'.
+'PNML::URI' is a specialization of 'LocatedElement'.
+'PNML::PNMLDocument' is a specialization of 'LocatedElement'.
+'PNML::NetElement' is a specialization of 'IdedElement'.
+'NetContentElement' (role 'NetContentElement', cardinality 0..*) is associated with 'PNML::Arc' (role 'PNML_Arc', cardinality 0..*).
+'Name' (role 'Name11', cardinality 0..*) is associated with 'PNML::NetContent' (role 'netContent', cardinality 0..*).
+'NetContent' (role 'NetContent', cardinality 0..*) is associated with 'PNML::NetElement' (role 'net', cardinality 0..*).
+'Name' (role 'Name', cardinality 0..*) is associated with 'PNML::NetElement' (role 'net7', cardinality 0..*).
+'PNML::Name' (role 'name', cardinality 0..*) is associated with 'NetElement' (role 'NetElement15', cardinality 0..*).
+'PNML::NetElement' (role 'nets', cardinality 0..*) is associated with 'PNMLDocument' (role 'PNMLDocument', cardinality 0..*).
+'URI' (role 'URI', cardinality 0..*) is associated with 'PNML::PNMLDocument' (role 'PNML_PNMLDocument', cardinality 0..*).
+'PNML::Name' (role 'name17', cardinality 0..*) is associated with 'NetContent' (role 'NetContent18', cardinality 0..*).
+'Label' (role 'Label', cardinality 0..*) is associated with 'PNML::LabeledElement' (role 'labeledElement', cardinality 0..*).
+'LabeledElement' (role 'LabeledElement', cardinality 0..*) is associated with 'PNML::Label' (role 'labels', cardinality 0..*).
+'NetElement' (role 'NetElement', cardinality 0..*) is associated with 'PNML::PNMLDocument' (role 'document', cardinality 0..*).
+'NetElement' (role 'NetElement9', cardinality 0..*) is associated with 'PNML::NetContent' (role 'contents', cardinality 0..*).
+'URI' (role 'URI3', cardinality 0..*) is associated with 'PNML::NetElement' (role 'PNML_NetElement', cardinality 0..*).
+'NetContentElement' (role 'NetContentElement22', cardinality 0..*) is associated with 'PNML::Arc' (role 'PNML_Arc21', cardinality 0..*).

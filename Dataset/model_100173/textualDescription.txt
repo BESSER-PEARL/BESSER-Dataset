@@ -1,0 +1,23 @@
+The model has 7 class(es).
+The class 'relational::Schema' has the following attributes: 'name' of type str.
+The class 'relational::Database' has the following attributes: 'name' of type str; 'url' of type str.
+The class 'relational::ModelElement' has the following attributes: 'comment' of type str.
+The class 'relational::ForeignKey' has the following attributes: 'name' of type str.
+The class 'relational::Table' has the following attributes: 'name' of type str.
+The class 'ModelElement' has no attributes.
+The class 'relational::Column' has the following attributes: 'isUnique' of type bool; 'isPrimaryKey' of type bool; 'type' of type str; 'name' of type str.
+The enumeration 'Type' has the following literals: 'DATE', 'CHAR', 'FLOAT', 'TIME', 'VARCHAR', 'NUMERIC'.
+'relational::Database' is a specialization of 'ModelElement'.
+'relational::ForeignKey' is a specialization of 'ModelElement'.
+'relational::Schema' is a specialization of 'ModelElement'.
+'relational::Column' is a specialization of 'ModelElement'.
+'relational::Table' is a specialization of 'ModelElement'.
+'relational::Table' (role 'Table13', cardinality 0..*) is associated with 'relational::Column' (role 'ownedColumns', cardinality 0..*).
+'relational::Table' (role 'Table10', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'ownedForeignKeys', cardinality 0..*).
+'relational::Table' (role 'foreignTable', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'relational::Column' (role 'Column', cardinality 0..*) is associated with 'relational::Table' (role 'owner5', cardinality 0..*).
+'relational::Schema' (role 'Schema', cardinality 0..*) is associated with 'relational::Database' (role 'owner', cardinality 0..*).
+'relational::Schema' (role 'ownedSchemas', cardinality 0..*) is associated with 'relational::Database' (role 'Database', cardinality 0..*).
+'relational::Schema' (role 'Schema8', cardinality 0..*) is associated with 'relational::Table' (role 'ownedTables', cardinality 0..*).
+'relational::ForeignKey' (role 'relational_ForeignKey', cardinality 0..*) is associated with 'relational::Table' (role 'relational_Table', cardinality 0..*).
+'relational::Schema' (role 'owner2', cardinality 0..*) is associated with 'relational::Table' (role 'Table', cardinality 0..*).

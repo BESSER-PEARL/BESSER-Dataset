@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'PetriNet::Arc' has the following attributes: 'weight' of type str.
+The class 'TPArc' has no attributes.
+The class 'PetriNet::Net' has no attributes.
+The class 'Transition' has no attributes.
+The class 'Net' has no attributes.
+The class 'PetriNet::Transition' has no attributes.
+The class 'Arc' has no attributes.
+The class 'Place' has no attributes.
+The class 'PetriNet::TPArc' has no attributes.
+The class 'PTArc' has no attributes.
+The class 'PetriNet::Place' has no attributes.
+The class 'PetriNet::PTArc' has no attributes.
+'PetriNet::TPArc' is a specialization of 'Arc'.
+'PetriNet::PTArc' is a specialization of 'Arc'.
+'TPArc' (role 'TPArc', cardinality 0..*) is associated with 'PetriNet::Place' (role 'dst', cardinality 0..*).
+'PetriNet::Net' (role 'net', cardinality 0..*) is associated with 'Place' (role 'Place', cardinality 0..*).
+'PetriNet::PTArc' (role 'out', cardinality 0..*) is associated with 'Place' (role 'Place17', cardinality 0..*).
+'PetriNet::Transition' (role 'transition', cardinality 0..*) is associated with 'Net' (role 'Net4', cardinality 0..*).
+'PetriNet::Net' (role 'net13', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).
+'Net' (role 'Net', cardinality 0..*) is associated with 'PetriNet::Place' (role 'place', cardinality 0..*).
+'PetriNet::Transition' (role 'dst6', cardinality 0..*) is associated with 'PTArc' (role 'PTArc7', cardinality 0..*).
+'PetriNet::Place' (role 'src', cardinality 0..*) is associated with 'PTArc' (role 'PTArc', cardinality 0..*).
+'Transition' (role 'Transition15', cardinality 0..*) is associated with 'PetriNet::PTArc' (role 'in_', cardinality 0..*).
+'PetriNet::TPArc' (role 'out19', cardinality 0..*) is associated with 'Transition' (role 'Transition20', cardinality 0..*).
+'Place' (role 'Place23', cardinality 0..*) is associated with 'PetriNet::TPArc' (role 'in_22', cardinality 0..*).
+'TPArc' (role 'TPArc10', cardinality 0..*) is associated with 'PetriNet::Transition' (role 'src9', cardinality 0..*).

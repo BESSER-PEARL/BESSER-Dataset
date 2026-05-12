@@ -1,0 +1,52 @@
+The model has 22 class(es).
+The class 'SimplStateMachine::StateMachine' has no attributes.
+The class 'ExpressionElement' has no attributes.
+The class 'SimplStateMachine::Variable' has the following attributes: 'name' of type str.
+The class 'SimplStateMachine::IntegerData' has the following attributes: 'value' of type int.
+The class 'SimplStateMachine::VariableReference' has the following attributes: '_name' of type str.
+The class 'Variable' has no attributes.
+The class 'SimplStateMachine::Data' has no attributes.
+The class 'Data' has no attributes.
+The class 'SimplStateMachine::IntegerVariable' has no attributes.
+The class 'SimplStateMachine::BooleanData' has the following attributes: 'value' of type bool.
+The class 'SimplStateMachine::Transition' has no attributes.
+The class 'SimplStateMachine::State' has the following attributes: 'isActive' of type bool; 'name' of type str.
+The class 'SimplStateMachine::Assignment' has the following attributes: '_name' of type str.
+The class 'SimplStateMachine::BooleanVariable' has no attributes.
+The class 'SimplStateMachine::ExpressionElement' has no attributes.
+The class 'SimplStateMachine::InitialState' has no attributes.
+The class 'SimplStateMachine::Expression' has the following attributes: 'operator' of type str; '_name' of type str.
+The class 'SimplStateMachine::Operation' has no attributes.
+The class 'SimplStateMachine::Event' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'SimplStateMachine::CompositeState' has no attributes.
+The class 'CompositeState' has no attributes.
+The enumeration 'Operator' has the following literals: 'and_', 'gte', 'div', 'gt', 'eq', 'add', 'or_', 'mul', 'lte', 'lt', 'sub', 'not_', 'neq'.
+'SimplStateMachine::BooleanVariable' is a specialization of 'Variable'.
+'SimplStateMachine::VariableReference' is a specialization of 'ExpressionElement'.
+'SimplStateMachine::IntegerVariable' is a specialization of 'Variable'.
+'SimplStateMachine::StateMachine' is a specialization of 'CompositeState'.
+'SimplStateMachine::Expression' is a specialization of 'ExpressionElement'.
+'SimplStateMachine::CompositeState' is a specialization of 'State'.
+'SimplStateMachine::BooleanData' is a specialization of 'Data'.
+'SimplStateMachine::IntegerData' is a specialization of 'Data'.
+'SimplStateMachine::Data' is a specialization of 'ExpressionElement'.
+'SimplStateMachine::State' (role 'State', cardinality 0..*) is associated with 'SimplStateMachine::CompositeState' (role 'container', cardinality 0..*).
+'SimplStateMachine::State' (role 'states', cardinality 0..*) is associated with 'SimplStateMachine::CompositeState' (role 'CompositeState', cardinality 0..*).
+'SimplStateMachine::Transition' (role 'SimplStateMachine_Transition13', cardinality 0..*) is associated with 'SimplStateMachine::State' (role 'SimplStateMachine_State14', cardinality 0..*).
+'SimplStateMachine::State' (role 'SimplStateMachine_State11', cardinality 0..*) is associated with 'SimplStateMachine::InitialState' (role 'SimplStateMachine_InitialState10', cardinality 0..*).
+'SimplStateMachine::ExpressionElement' (role 'SimplStateMachine_ExpressionElement34', cardinality 0..*) is associated with 'SimplStateMachine::Assignment' (role 'SimplStateMachine_Assignment33', cardinality 0..*).
+'SimplStateMachine::Operation' (role 'SimplStateMachine_Operation31', cardinality 0..*) is associated with 'SimplStateMachine::Assignment' (role 'SimplStateMachine_Assignment', cardinality 0..*).
+'SimplStateMachine::Expression' (role 'SimplStateMachine_Expression', cardinality 0..*) is associated with 'SimplStateMachine::Transition' (role 'SimplStateMachine_Transition22', cardinality 0..*).
+'SimplStateMachine::StateMachine' (role 'SimplStateMachine_StateMachine2', cardinality 0..*) is associated with 'SimplStateMachine::Event' (role 'SimplStateMachine_Event', cardinality 0..*).
+'SimplStateMachine::Variable' (role 'SimplStateMachine_Variable29', cardinality 0..*) is associated with 'SimplStateMachine::Data' (role 'SimplStateMachine_Data', cardinality 0..*).
+'SimplStateMachine::Expression' (role 'SimplStateMachine_Expression24', cardinality 0..*) is associated with 'SimplStateMachine::ExpressionElement' (role 'SimplStateMachine_ExpressionElement', cardinality 0..*).
+'SimplStateMachine::StateMachine' (role 'SimplStateMachine_StateMachine4', cardinality 0..*) is associated with 'SimplStateMachine::Variable' (role 'SimplStateMachine_Variable', cardinality 0..*).
+'SimplStateMachine::InitialState' (role 'SimplStateMachine_InitialState', cardinality 0..*) is associated with 'SimplStateMachine::CompositeState' (role 'SimplStateMachine_CompositeState', cardinality 0..*).
+'SimplStateMachine::Variable' (role 'SimplStateMachine_Variable37', cardinality 0..*) is associated with 'SimplStateMachine::Assignment' (role 'SimplStateMachine_Assignment36', cardinality 0..*).
+'SimplStateMachine::Transition' (role 'SimplStateMachine_Transition19', cardinality 0..*) is associated with 'SimplStateMachine::Event' (role 'SimplStateMachine_Event20', cardinality 0..*).
+'SimplStateMachine::Operation' (role 'SimplStateMachine_Operation', cardinality 0..*) is associated with 'SimplStateMachine::State' (role 'SimplStateMachine_State', cardinality 0..*).
+'SimplStateMachine::StateMachine' (role 'SimplStateMachine_StateMachine', cardinality 0..*) is associated with 'SimplStateMachine::Transition' (role 'SimplStateMachine_Transition', cardinality 0..*).
+'SimplStateMachine::Variable' (role 'SimplStateMachine_Variable39', cardinality 0..*) is associated with 'SimplStateMachine::VariableReference' (role 'SimplStateMachine_VariableReference', cardinality 0..*).
+'SimplStateMachine::State' (role 'SimplStateMachine_State17', cardinality 0..*) is associated with 'SimplStateMachine::Transition' (role 'SimplStateMachine_Transition16', cardinality 0..*).
+'SimplStateMachine::Expression' (role 'SimplStateMachine_Expression26', cardinality 0..*) is associated with 'SimplStateMachine::ExpressionElement' (role 'SimplStateMachine_ExpressionElement27', cardinality 0..*).

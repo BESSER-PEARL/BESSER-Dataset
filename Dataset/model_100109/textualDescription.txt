@@ -1,0 +1,36 @@
+The model has 18 class(es).
+The class 'cassandra::Row' has the following attributes: 'key' of type str.
+The class 'cassandra::DataType' has no attributes.
+The class 'cassandra::BytesType' has the following attributes: 'value' of type str.
+The class 'cassandra::DoubleType' has the following attributes: 'value' of type float.
+The class 'cassandra::DateType' has the following attributes: 'value' of type str.
+The class 'cassandra::UTF8Type' has the following attributes: 'value' of type str.
+The class 'cassandra::Keyspace' has the following attributes: 'name' of type str.
+The class 'DataType' has no attributes.
+The class 'cassandra::FloatType' has the following attributes: 'value' of type float.
+The class 'cassandra::DecimalType' has the following attributes: 'value' of type str.
+The class 'cassandra::CounterColumnType' has the following attributes: 'value' of type str.
+The class 'cassandra::UUIDType' has the following attributes: 'value' of type str.
+The class 'cassandra::SuperColumn' has the following attributes: 'key' of type str.
+The class 'cassandra::ColumnFamily' has the following attributes: 'name' of type str.
+The class 'cassandra::AsciiType' has the following attributes: 'value' of type str.
+The class 'cassandra::BooleanType' has the following attributes: 'value' of type bool.
+The class 'cassandra::IntegerType' has the following attributes: 'value' of type int.
+The class 'cassandra::Column' has the following attributes: 'timestamp' of type str; 'key' of type str.
+'cassandra::AsciiType' is a specialization of 'DataType'.
+'cassandra::DoubleType' is a specialization of 'DataType'.
+'cassandra::UTF8Type' is a specialization of 'DataType'.
+'cassandra::DecimalType' is a specialization of 'DataType'.
+'cassandra::BytesType' is a specialization of 'DataType'.
+'cassandra::FloatType' is a specialization of 'DataType'.
+'cassandra::DateType' is a specialization of 'DataType'.
+'cassandra::UUIDType' is a specialization of 'DataType'.
+'cassandra::IntegerType' is a specialization of 'DataType'.
+'cassandra::BooleanType' is a specialization of 'DataType'.
+'cassandra::CounterColumnType' is a specialization of 'DataType'.
+'cassandra::Row' (role 'cassandra_Row4', cardinality 0..*) is associated with 'cassandra::Column' (role 'cassandra_Column', cardinality 0..*).
+'cassandra::Row' (role 'cassandra_Row', cardinality 0..*) is associated with 'cassandra::ColumnFamily' (role 'cassandra_ColumnFamily2', cardinality 0..*).
+'cassandra::SuperColumn' (role 'cassandra_SuperColumn', cardinality 0..*) is associated with 'cassandra::Row' (role 'cassandra_Row6', cardinality 0..*).
+'cassandra::Column' (role 'cassandra_Column8', cardinality 0..*) is associated with 'cassandra::DataType' (role 'cassandra_DataType', cardinality 0..*).
+'cassandra::Column' (role 'cassandra_Column11', cardinality 0..*) is associated with 'cassandra::SuperColumn' (role 'cassandra_SuperColumn10', cardinality 0..*).
+'cassandra::Keyspace' (role 'cassandra_Keyspace', cardinality 0..*) is associated with 'cassandra::ColumnFamily' (role 'cassandra_ColumnFamily', cardinality 0..*).

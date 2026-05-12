@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'PetriNets::PetriNet' has the following attributes: 'name' of type str.
+The class 'PetriNets::OutputArc' has the following attributes: 'weight' of type int.
+The class 'PetriNets::Transition' has the following attributes: 'name' of type str.
+The class 'PetriNets::Place' has the following attributes: 'numberOfTokens' of type int; 'name' of type str; 'capacity' of type int.
+The class 'PetriNets::InputArc' has the following attributes: 'weight' of type int.
+'PetriNets::OutputArc' (role 'PetriNets_OutputArc17', cardinality 0..*) is associated with 'PetriNets::Place' (role 'PetriNets_Place18', cardinality 0..*).
+'PetriNets::InputArc' (role 'PetriNets_InputArc', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'PetriNets_PetriNet4', cardinality 0..*).
+'PetriNets::PetriNet' (role 'PetriNets_PetriNet6', cardinality 0..*) is associated with 'PetriNets::OutputArc' (role 'PetriNets_OutputArc', cardinality 0..*).
+'PetriNets::Place' (role 'PetriNets_Place9', cardinality 0..*) is associated with 'PetriNets::InputArc' (role 'PetriNets_InputArc8', cardinality 0..*).
+'PetriNets::OutputArc' (role 'PetriNets_OutputArc14', cardinality 0..*) is associated with 'PetriNets::Transition' (role 'PetriNets_Transition15', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'PetriNets_PetriNet2', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition12', cardinality 0..*) is associated with 'PetriNets::InputArc' (role 'PetriNets_InputArc11', cardinality 0..*).
+'PetriNets::Place' (role 'PetriNets_Place', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'PetriNets_PetriNet', cardinality 0..*).

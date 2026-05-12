@@ -1,0 +1,63 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class requirements_Agent extends AnnotableElement {
+
+    private boolean isHuman;
+
+
+
+
+
+    private List<requirements_Goal> requirements_goals;
+
+
+
+
+    private requirements_Goal requirements_goal;
+
+
+    public requirements_Agent(
+        boolean isHuman    ) {
+        super(
+        );
+        this.isHuman = isHuman;
+        this.requirements_goals = new ArrayList<>();
+    }
+
+    public requirements_Agent(
+        boolean isHuman        ArrayList<requirements_Goal> requirements_goals    ) {
+        this.isHuman = isHuman;
+        this.requirements_goals = requirements_goals;
+    }
+
+    public boolean getIshuman() {
+        return isHuman;
+    }
+
+    public void setIshuman(boolean isHuman) {
+        this.isHuman = isHuman;
+    }
+
+    public List<requirements_Goal> getRequirements_goals() {
+        return requirements_goals;
+    }
+
+    public void addRequirements_goal(Requirements_goal requirements_goal) {
+        this.requirements_goals.add(requirements_goal);
+    }
+    public requirements_Goal getRequirements_goal() {
+        return requirements_goal;
+    }
+
+    public void setRequirements_goal(requirements_Goal requirements_goal) {
+        this.requirements_goal = requirements_goal;
+    }
+
+}

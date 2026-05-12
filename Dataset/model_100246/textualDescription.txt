@@ -1,0 +1,44 @@
+The model has 19 class(es).
+The class 'SpreadsheetMLSimplified::ErrorValue' has no attributes.
+The class 'SpreadsheetMLSimplified::Workbook' has no attributes.
+The class 'ColOrRowElement' has no attributes.
+The class 'SpreadsheetMLSimplified::DateTimeTypeValue' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'SpreadsheetMLSimplified::StringValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLSimplified::Worksheet' has the following attributes: 'name' of type str.
+The class 'SpreadsheetMLSimplified::Column' has the following attributes: 'width' of type float; 'autoFitWidth' of type bool.
+The class 'TableElement' has no attributes.
+The class 'SpreadsheetMLSimplified::Row' has the following attributes: 'autoFitHeight' of type bool; 'height' of type float.
+The class 'SpreadsheetMLSimplified::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'SpreadsheetMLSimplified::ValueType' has no attributes.
+The class 'SpreadsheetMLSimplified::Cell' has the following attributes: 'formula' of type str; 'arrayRange' of type str; 'hRef' of type str; 'mergeAcross' of type float; 'mergeDown' of type float.
+The class 'SpreadsheetMLSimplified::NumberValue' has the following attributes: 'value' of type float.
+The class 'SpreadsheetMLSimplified::TableElement' has the following attributes: 'index' of type int.
+The class 'SpreadsheetMLSimplified::Data' has no attributes.
+The class 'SpreadsheetMLSimplified::DateTimeType' has the following attributes: 'second' of type int; 'year' of type int; 'month' of type int; 'day' of type int; 'hour' of type int; 'minute' of type int.
+The class 'SpreadsheetMLSimplified::Table' has no attributes.
+The class 'SpreadsheetMLSimplified::ColOrRowElement' has the following attributes: 'hidden' of type bool; 'span' of type int.
+'SpreadsheetMLSimplified::ColOrRowElement' is a specialization of 'TableElement'.
+'SpreadsheetMLSimplified::DateTimeTypeValue' is a specialization of 'ValueType'.
+'SpreadsheetMLSimplified::StringValue' is a specialization of 'ValueType'.
+'SpreadsheetMLSimplified::BooleanValue' is a specialization of 'ValueType'.
+'SpreadsheetMLSimplified::ErrorValue' is a specialization of 'ValueType'.
+'SpreadsheetMLSimplified::Row' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLSimplified::Column' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLSimplified::NumberValue' is a specialization of 'ValueType'.
+'SpreadsheetMLSimplified::Cell' is a specialization of 'TableElement'.
+'SpreadsheetMLSimplified::Worksheet' (role 'Worksheet6', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Table' (role 'ws_table', cardinality 0..*).
+'SpreadsheetMLSimplified::Cell' (role 'Cell', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Row' (role 'c_row', cardinality 0..*).
+'SpreadsheetMLSimplified::Table' (role 'Table10', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Column' (role 't_cols', cardinality 0..*).
+'SpreadsheetMLSimplified::Data' (role 'vt_data', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::ValueType' (role 'ValueType', cardinality 0..*).
+'SpreadsheetMLSimplified::Data' (role 'c_data', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Cell' (role 'Cell19', cardinality 0..*).
+'SpreadsheetMLSimplified::Row' (role 'Row15', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Cell' (role 'r_cells', cardinality 0..*).
+'SpreadsheetMLSimplified::Data' (role 'Data', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::ValueType' (role 'value', cardinality 0..*).
+'SpreadsheetMLSimplified::Table' (role 'r_table', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Row' (role 'Row', cardinality 0..*).
+'SpreadsheetMLSimplified::Table' (role 'Table', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Worksheet' (role 't_worksheet', cardinality 0..*).
+'SpreadsheetMLSimplified::DateTimeTypeValue' (role 'SpreadsheetMLSimplified_DateTimeTypeValue', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::DateTimeType' (role 'SpreadsheetMLSimplified_DateTimeType', cardinality 0..*).
+'SpreadsheetMLSimplified::Worksheet' (role 'Worksheet', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Workbook' (role 'ws_workbook', cardinality 0..*).
+'SpreadsheetMLSimplified::Workbook' (role 'Workbook', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Worksheet' (role 'wb_worksheets', cardinality 0..*).
+'SpreadsheetMLSimplified::Row' (role 't_rows', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Table' (role 'Table12', cardinality 0..*).
+'SpreadsheetMLSimplified::Data' (role 'Data17', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Cell' (role 'd_cell', cardinality 0..*).
+'SpreadsheetMLSimplified::Column' (role 'Column', cardinality 0..*) is associated with 'SpreadsheetMLSimplified::Table' (role 'c_table', cardinality 0..*).

@@ -1,0 +1,40 @@
+The model has 17 class(es).
+The class 'conf::Contribution' has no attributes.
+The class 'conf::RevisionProcess' has no attributes.
+The class 'conf::SteeringComitee' has no attributes.
+The class 'conf::Laboratory' has no attributes.
+The class 'Person' has no attributes.
+The class 'conf::Evaluation' has no attributes.
+The class 'conf::Location' has the following attributes: 'name' of type str.
+The class 'conf::Admin' has no attributes.
+The class 'conf::RevisionNote' has no attributes.
+The class 'conf::ProgramComitee' has no attributes.
+The class 'conf::Chapter' has no attributes.
+The class 'conf::Session' has the following attributes: 'year' of type str.
+The class 'conf::Conference' has no attributes.
+The class 'conf::Publication' has no attributes.
+The class 'conf::Researcher' has no attributes.
+The class 'conf::Person' has no attributes.
+The class 'conf::System' has no attributes.
+'conf::Researcher' is a specialization of 'Person'.
+'conf::Laboratory' (role 'conf_Laboratory', cardinality 0..*) is associated with 'conf::System' (role 'conf_System2', cardinality 0..*).
+'conf::Researcher' (role 'conf_Researcher27', cardinality 0..*) is associated with 'conf::Chapter' (role 'conf_Chapter', cardinality 0..*).
+'conf::Contribution' (role 'conf_Contribution', cardinality 0..*) is associated with 'conf::Session' (role 'conf_Session13', cardinality 0..*).
+'conf::Session' (role 'conf_Session9', cardinality 0..*) is associated with 'conf::ProgramComitee' (role 'conf_ProgramComitee', cardinality 0..*).
+'conf::System' (role 'conf_System', cardinality 0..*) is associated with 'conf::Admin' (role 'conf_Admin', cardinality 0..*).
+'conf::ProgramComitee' (role 'conf_ProgramComitee39', cardinality 0..*) is associated with 'conf::Person' (role 'conf_Person40', cardinality 0..*).
+'conf::Publication' (role 'conf_Publication43', cardinality 0..*) is associated with 'conf::Contribution' (role 'conf_Contribution42', cardinality 0..*).
+'conf::Laboratory' (role 'conf_Laboratory23', cardinality 0..*) is associated with 'conf::Publication' (role 'conf_Publication', cardinality 0..*).
+'conf::Evaluation' (role 'conf_Evaluation45', cardinality 0..*) is associated with 'conf::Publication' (role 'conf_Publication46', cardinality 0..*).
+'conf::Session' (role 'conf_Session', cardinality 0..*) is associated with 'conf::Location' (role 'conf_Location', cardinality 0..*).
+'conf::SteeringComitee' (role 'conf_SteeringComitee', cardinality 0..*) is associated with 'conf::Session' (role 'conf_Session11', cardinality 0..*).
+'conf::Session' (role 'conf_Session19', cardinality 0..*) is associated with 'conf::Conference' (role 'conf_Conference18', cardinality 0..*).
+'conf::Researcher' (role 'conf_Researcher29', cardinality 0..*) is associated with 'conf::RevisionNote' (role 'conf_RevisionNote', cardinality 0..*).
+'conf::System' (role 'conf_System4', cardinality 0..*) is associated with 'conf::Conference' (role 'conf_Conference', cardinality 0..*).
+'conf::System' (role 'conf_System6', cardinality 0..*) is associated with 'conf::RevisionProcess' (role 'conf_RevisionProcess', cardinality 0..*).
+'conf::Researcher' (role 'conf_Researcher', cardinality 0..*) is associated with 'conf::Laboratory' (role 'conf_Laboratory21', cardinality 0..*).
+'conf::Location' (role 'conf_Location16', cardinality 0..*) is associated with 'conf::Admin' (role 'conf_Admin15', cardinality 0..*).
+'conf::RevisionNote' (role 'conf_RevisionNote35', cardinality 0..*) is associated with 'conf::Chapter' (role 'conf_Chapter34', cardinality 0..*).
+'conf::Chapter' (role 'conf_Chapter32', cardinality 0..*) is associated with 'conf::Publication' (role 'conf_Publication31', cardinality 0..*).
+'conf::Person' (role 'conf_Person', cardinality 0..*) is associated with 'conf::SteeringComitee' (role 'conf_SteeringComitee37', cardinality 0..*).
+'conf::Evaluation' (role 'conf_Evaluation', cardinality 0..*) is associated with 'conf::Researcher' (role 'conf_Researcher25', cardinality 0..*).

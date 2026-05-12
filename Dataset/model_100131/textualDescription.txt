@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'dbrouting::EStringToStringMapEntry' has no attributes.
+The class 'dbrouting::Executor' has the following attributes: 'executeBefore' of type str; 'executeOnElement' of type str; 'executeOnElementNS' of type str; 'datasource' of type str; 'statement' of type str.
+The class 'dbrouting::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'dbrouting::ResultSet' has the following attributes: 'scope' of type str; 'timeToLive' of type str; 'name' of type str.
+The class 'dbrouting::ResultSetRowSelector' has the following attributes: 'resultSetName' of type str; 'where' of type str; 'selectRowOnElement' of type str; 'failedSelectError' of type str; 'executeBefore' of type str; 'beanId' of type str.
+The class 'ElementVisitor' has no attributes.
+The enumeration 'ResultSetScopeType' has the following literals: 'EXECUTION', 'APPLICATION'.
+'dbrouting::Executor' is a specialization of 'ElementVisitor'.
+'dbrouting::ResultSetRowSelector' is a specialization of 'ElementVisitor'.
+'dbrouting::EStringToStringMapEntry' (role 'dbrouting_EStringToStringMapEntry', cardinality 0..*) is associated with 'dbrouting::DocumentRoot' (role 'dbrouting_DocumentRoot', cardinality 0..*).
+'dbrouting::Executor' (role 'dbrouting_Executor9', cardinality 0..*) is associated with 'dbrouting::ResultSet' (role 'dbrouting_ResultSet', cardinality 0..*).
+'dbrouting::EStringToStringMapEntry' (role 'dbrouting_EStringToStringMapEntry3', cardinality 0..*) is associated with 'dbrouting::DocumentRoot' (role 'dbrouting_DocumentRoot2', cardinality 0..*).
+'dbrouting::DocumentRoot' (role 'dbrouting_DocumentRoot7', cardinality 0..*) is associated with 'dbrouting::ResultSetRowSelector' (role 'dbrouting_ResultSetRowSelector', cardinality 0..*).
+'dbrouting::DocumentRoot' (role 'dbrouting_DocumentRoot5', cardinality 0..*) is associated with 'dbrouting::Executor' (role 'dbrouting_Executor', cardinality 0..*).

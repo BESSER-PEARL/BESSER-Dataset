@@ -1,0 +1,28 @@
+The model has 6 class(es).
+The class 'metaCompo::mState' has the following attributes: 'name' of type str.
+The class 'metaCompo::mFSM' has the following attributes: 'name' of type str.
+The class 'metaCompo::mPort' has the following attributes: 'type' of type str; 'name' of type str; 'io' of type str.
+The class 'metaCompo::mComp' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'metaCompo::mTransition' has the following attributes: 'name' of type str; 'guard' of type str; 'triggerExp' of type str; 'action' of type str.
+The class 'metaCompo::mVariable' has the following attributes: 'name' of type str; 'type' of type str.
+The enumeration 'mIO' has the following literals: 'out', 'in_', 'inout'.
+'metaCompo::mTransition' (role 'metaCompo_mTransition', cardinality 0..*) is associated with 'metaCompo::mVariable' (role 'metaCompo_mVariable38', cardinality 0..*).
+'metaCompo::mFSM' (role 'metaCompo_mFSM18', cardinality 0..*) is associated with 'metaCompo::mState' (role 'metaCompo_mState', cardinality 0..*).
+'metaCompo::mState' (role 'states', cardinality 0..*) is associated with 'metaCompo::mFSM' (role 'mFSM23', cardinality 0..*).
+'metaCompo::mComp' (role 'metaCompo_mComp6', cardinality 0..*) is associated with 'metaCompo::mVariable' (role 'metaCompo_mVariable', cardinality 0..*).
+'metaCompo::mState' (role 'metaCompo_mState32', cardinality 0..*) is associated with 'metaCompo::mState' (role 'metaCompo_mState30', cardinality 0..*).
+'metaCompo::mPort' (role 'metaCompo_mPort11', cardinality 0..*) is associated with 'metaCompo::mVariable' (role 'metaCompo_mVariable12', cardinality 0..*).
+'metaCompo::mFSM' (role 'mFSM', cardinality 0..*) is associated with 'metaCompo::mComp' (role 'component', cardinality 0..*).
+'metaCompo::mTransition' (role 'incomingTransitions', cardinality 0..*) is associated with 'metaCompo::mState' (role 'mState36', cardinality 0..*).
+'metaCompo::mVariable' (role 'metaCompo_mVariable15', cardinality 0..*) is associated with 'metaCompo::mFSM' (role 'metaCompo_mFSM', cardinality 0..*).
+'metaCompo::mPort' (role 'metaCompo_mPort', cardinality 0..*) is associated with 'metaCompo::mComp' (role 'metaCompo_mComp3', cardinality 0..*).
+'metaCompo::mVariable' (role 'metaCompo_mVariable26', cardinality 0..*) is associated with 'metaCompo::mState' (role 'metaCompo_mState25', cardinality 0..*).
+'metaCompo::mState' (role 'mState34', cardinality 0..*) is associated with 'metaCompo::mTransition' (role 'outgoingTransitions', cardinality 0..*).
+'metaCompo::mPort' (role 'metaCompo_mPort9', cardinality 0..*) is associated with 'metaCompo::mPort' (role 'metaCompo_mPort7', cardinality 0..*).
+'metaCompo::mComp' (role 'metaCompo_mComp0', cardinality 0..*) is associated with 'metaCompo::mComp' (role 'metaCompo_mComp', cardinality 0..*).
+'metaCompo::mState' (role 'source', cardinality 0..*) is associated with 'metaCompo::mTransition' (role 'mTransition', cardinality 0..*).
+'metaCompo::mFSM' (role 'FSMs', cardinality 0..*) is associated with 'metaCompo::mComp' (role 'mComp', cardinality 0..*).
+'metaCompo::mState' (role 'metaCompo_mState21', cardinality 0..*) is associated with 'metaCompo::mFSM' (role 'metaCompo_mFSM20', cardinality 0..*).
+'metaCompo::mTransition' (role 'metaCompo_mTransition40', cardinality 0..*) is associated with 'metaCompo::mPort' (role 'metaCompo_mPort41', cardinality 0..*).
+'metaCompo::mTransition' (role 'mTransition29', cardinality 0..*) is associated with 'metaCompo::mState' (role 'destination', cardinality 0..*).
+'metaCompo::mFSM' (role 'owningFSM', cardinality 0..*) is associated with 'metaCompo::mState' (role 'mState', cardinality 0..*).

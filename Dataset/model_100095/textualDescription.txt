@@ -1,0 +1,158 @@
+The model has 71 class(es).
+The class 'setup::FileAssociationsTask' has no attributes.
+The class 'setup::TargletData' has the following attributes: 'activeRepositoryList' of type str; 'includeAllPlatforms' of type bool; 'includeSources' of type bool; 'name' of type str.
+The class 'setup::Setup' has no attributes.
+The class 'setup::ComponentExtension' has no attributes.
+The class 'setup::MavenImportTask' has no attributes.
+The class 'setup::ManualSourceLocator' has the following attributes: 'componentNamePattern' of type str; 'location' of type str; 'componentTypes' of type str.
+The class 'setup::BuildPlan' has the following attributes: 'name' of type str.
+The class 'setup::EclipsePreferenceTask' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'setup::SetupTaskContainer' has no attributes.
+The class 'ConfigurableItem' has no attributes.
+The class 'setup::TargletImportTask' has the following attributes: 'targletURI' of type str.
+The class 'setup::Targlet' has no attributes.
+The class 'setup::SetupTask' has the following attributes: 'disabled' of type bool; 'excludedTriggers' of type str; 'scope' of type str; 'documentation' of type str.
+The class 'setup::MaterializationTask' has no attributes.
+The class 'setup::TextModifyTask' has the following attributes: 'encoding' of type str; 'uRL' of type str.
+The class 'setup::MylynQueriesTask' has the following attributes: 'connectorKind' of type str; 'password' of type str; 'repositoryURL' of type str; 'userID' of type str.
+The class 'setup::ScopeRoot' has no attributes.
+The class 'setup::Configuration' has no attributes.
+The class 'setup::RepositoryList' has the following attributes: 'name' of type str.
+The class 'setup::Index' has the following attributes: 'uRI' of type str; 'oldURIs' of type str; 'name' of type str.
+The class 'setup::CompoundSetupTask' has the following attributes: 'name' of type str.
+The class 'setup::ResourceCreationTask' has the following attributes: 'content' of type str; 'encoding' of type str; 'targetURL' of type str.
+The class 'setup::MylynQueryTask' has the following attributes: 'repositoryURL' of type str; 'summary' of type str; 'relativeURL' of type str; 'connectorKind' of type str.
+The class 'setup::JRETask' has the following attributes: 'location' of type str; 'version' of type str.
+The class 'setup::P2Task' has the following attributes: 'mergeDisabled' of type bool; 'licenseConfirmationDisabled' of type bool.
+The class 'setup::Preferences' has the following attributes: 'acceptedLicenses' of type str; 'installFolder' of type str.
+The class 'setup::MetaIndex' has no attributes.
+The class 'SourceLocator' has no attributes.
+The class 'setup::ConfigurableItem' has no attributes.
+The class 'setup::MylynBuildsTask' has the following attributes: 'userID' of type str; 'password' of type str; 'serverURL' of type str; 'connectorKind' of type str.
+The class 'setup::InstallableUnit' has the following attributes: 'iD' of type str; 'versionRange' of type str.
+The class 'ComponentExtension' has no attributes.
+The class 'ScopeRoot' has no attributes.
+The class 'setup::TextModification' has the following attributes: 'pattern' of type str; 'substitutions' of type str.
+The class 'setup::BuckminsterImportTask' has the following attributes: 'mspec' of type str.
+The class 'setup::CommandParameter' has the following attributes: 'iD' of type str; 'value' of type str.
+The class 'setup::VariableChoice' has the following attributes: 'label' of type str; 'value' of type str.
+The class 'SetupTaskContainer' has no attributes.
+The class 'setup::Eclipse' has the following attributes: 'version' of type str.
+The class 'setup::ComponentDefinition' has the following attributes: 'iD' of type str; 'version' of type str.
+The class 'setup::BasicMaterializationTask' has the following attributes: 'targetPlatform' of type str; 'bundlePool' of type str.
+The class 'setup::GitCloneTask' has the following attributes: 'checkoutBranch' of type str; 'remoteURI' of type str; 'location' of type str; 'pushURI' of type str; 'userID' of type str; 'remoteName' of type str.
+The class 'setup::ProjectSetImportTask' has the following attributes: 'uRL' of type str.
+The class 'setup::P2Repository' has the following attributes: 'uRL' of type str.
+The class 'setup::Query' has the following attributes: 'summary' of type str; 'uRL' of type str.
+The class 'setup::QueryAttribute' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'setup::TargletTask' has no attributes.
+The class 'BasicMaterializationTask' has no attributes.
+The class 'setup::WorkingSetTask' has no attributes.
+The class 'setup::KeyBindingTask' has the following attributes: 'keys' of type str; 'scheme' of type str; 'locale' of type str; 'command' of type str; 'platform' of type str.
+The class 'SetupTask' has no attributes.
+The class 'setup::SourceLocator' has no attributes.
+The class 'setup::WorkingSet' has no attributes.
+The class 'setup::Predicate' has no attributes.
+The class 'TargletData' has no attributes.
+The class 'setup::ContextVariableTask' has the following attributes: 'name' of type str; 'label' of type str; 'value' of type str; 'stringSubstitution' of type bool; 'type' of type str.
+The class 'setup::FileAssociationTask' has the following attributes: 'filePattern' of type str; 'defaultEditorID' of type str.
+The class 'setup::Project' has the following attributes: 'label' of type str; 'name' of type str.
+The class 'setup::KeyBindingContext' has the following attributes: 'iD' of type str.
+The class 'setup::RedirectionTask' has the following attributes: 'targetURL' of type str; 'sourceURL' of type str.
+The class 'setup::AutomaticSourceLocator' has the following attributes: 'rootFolder' of type str; 'locateNestedProjects' of type bool.
+The class 'setup::ApiBaselineTask' has the following attributes: 'zipLocation' of type str; 'version' of type str; 'containerFolder' of type str.
+The class 'setup::Branch' has the following attributes: 'name' of type str.
+The class 'setup::ProjectsImportTask' has no attributes.
+The class 'setup::EclipseIniTask' has the following attributes: 'vm' of type bool; 'value' of type str; 'option' of type str.
+The class 'setup::LinkLocationTask' has the following attributes: 'path' of type str; 'name' of type str.
+The class 'setup::FileMapping' has the following attributes: 'defaultEditorID' of type str; 'filePattern' of type str.
+The class 'setup::Component' has the following attributes: 'type' of type str; 'name' of type str; 'versionRange' of type str.
+The class 'setup::TargetPlatformTask' has the following attributes: 'name' of type str.
+The class 'setup::FileEditor' has the following attributes: 'iD' of type str.
+The class 'setup::ResourceCopyTask' has the following attributes: 'sourceURL' of type str; 'targetURL' of type str.
+The enumeration 'ComponentType' has the following literals: 'JAR', 'BUCKMINSTER', 'OSGI_BUNDLE', 'UNKNOWN', 'ECLIPSE_FEATURE', 'BOM'.
+The enumeration 'Trigger' has the following literals: 'STARTUP', 'BOOTSTRAP', 'MANUAL'.
+The enumeration 'SetupTaskScope' has the following literals: 'User', 'Project', 'Configuration', 'None_', 'Eclipse', 'Branch'.
+The enumeration 'VariableType' has the following literals: 'FLOAT', 'FILE', 'BOOLEAN', 'CONTAINER', 'STRING', 'FOLDER', 'PASSWORD', 'PATTERN', 'URI', 'RESOURCE', 'INTEGER', 'PROJECT', 'TEXT'.
+'setup::ComponentDefinition' is a specialization of 'ComponentExtension'.
+'setup::ContextVariableTask' is a specialization of 'SetupTask'.
+'setup::EclipsePreferenceTask' is a specialization of 'SetupTask'.
+'setup::Project' is a specialization of 'ConfigurableItem'.
+'setup::ScopeRoot' is a specialization of 'SetupTaskContainer'.
+'setup::ManualSourceLocator' is a specialization of 'SourceLocator'.
+'setup::ProjectSetImportTask' is a specialization of 'SetupTask'.
+'setup::AutomaticSourceLocator' is a specialization of 'SourceLocator'.
+'setup::ApiBaselineTask' is a specialization of 'SetupTask'.
+'setup::FileAssociationsTask' is a specialization of 'SetupTask'.
+'setup::FileAssociationTask' is a specialization of 'SetupTask'.
+'setup::GitCloneTask' is a specialization of 'SetupTask'.
+'setup::Preferences' is a specialization of 'ScopeRoot'.
+'setup::BasicMaterializationTask' is a specialization of 'SetupTask'.
+'setup::ConfigurableItem' is a specialization of 'ScopeRoot'.
+'setup::TextModifyTask' is a specialization of 'SetupTask'.
+'setup::MylynBuildsTask' is a specialization of 'SetupTask'.
+'setup::WorkingSetTask' is a specialization of 'SetupTask'.
+'setup::TargletImportTask' is a specialization of 'SetupTask'.
+'setup::P2Task' is a specialization of 'SetupTask'.
+'setup::Targlet' is a specialization of 'TargletData'.
+'setup::LinkLocationTask' is a specialization of 'SetupTask'.
+'setup::BuckminsterImportTask' is a specialization of 'BasicMaterializationTask'.
+'setup::ProjectsImportTask' is a specialization of 'SetupTask'.
+'setup::TargletTask' is a specialization of 'TargletData'.
+'setup::Eclipse' is a specialization of 'ConfigurableItem'.
+'setup::Configuration' is a specialization of 'ScopeRoot'.
+'setup::ResourceCopyTask' is a specialization of 'SetupTask'.
+'setup::RedirectionTask' is a specialization of 'SetupTask'.
+'setup::CompoundSetupTask' is a specialization of 'SetupTask'.
+'setup::KeyBindingTask' is a specialization of 'SetupTask'.
+'setup::CompoundSetupTask' is a specialization of 'SetupTaskContainer'.
+'setup::JRETask' is a specialization of 'SetupTask'.
+'setup::TargletTask' is a specialization of 'SetupTask'.
+'setup::MylynQueriesTask' is a specialization of 'SetupTask'.
+'setup::MavenImportTask' is a specialization of 'SetupTask'.
+'setup::ResourceCreationTask' is a specialization of 'SetupTask'.
+'setup::MaterializationTask' is a specialization of 'BasicMaterializationTask'.
+'setup::TargetPlatformTask' is a specialization of 'SetupTask'.
+'setup::Branch' is a specialization of 'ConfigurableItem'.
+'setup::EclipseIniTask' is a specialization of 'SetupTask'.
+'setup::MylynQueryTask' is a specialization of 'SetupTask'.
+'setup::SetupTask' (role 'setup_SetupTask21', cardinality 0..*) is associated with 'setup::ConfigurableItem' (role 'setup_ConfigurableItem', cardinality 0..*).
+'setup::Branch' (role 'branches', cardinality 0..*) is associated with 'setup::Project' (role 'Project10', cardinality 0..*).
+'setup::WorkingSetTask' (role 'setup_WorkingSetTask', cardinality 0..*) is associated with 'setup::WorkingSet' (role 'setup_WorkingSet', cardinality 0..*).
+'setup::Configuration' (role 'Configuration6', cardinality 0..*) is associated with 'setup::Project' (role 'projects', cardinality 0..*).
+'setup::Setup' (role 'setup_Setup', cardinality 0..*) is associated with 'setup::Branch' (role 'setup_Branch14', cardinality 0..*).
+'setup::P2Repository' (role 'setup_P2Repository51', cardinality 0..*) is associated with 'setup::RepositoryList' (role 'setup_RepositoryList50', cardinality 0..*).
+'setup::Index' (role 'setup_Index', cardinality 0..*) is associated with 'setup::MetaIndex' (role 'setup_MetaIndex', cardinality 0..*).
+'setup::SetupTask' (role 'setup_SetupTask23', cardinality 0..*) is associated with 'setup::SetupTaskContainer' (role 'setup_SetupTaskContainer', cardinality 0..*).
+'setup::Query' (role 'queries', cardinality 0..*) is associated with 'setup::MylynQueriesTask' (role 'MylynQueriesTask', cardinality 0..*).
+'setup::AutomaticSourceLocator' (role 'setup_AutomaticSourceLocator43', cardinality 0..*) is associated with 'setup::TargletData' (role 'setup_TargletData42', cardinality 0..*).
+'setup::ContextVariableTask' (role 'setup_ContextVariableTask', cardinality 0..*) is associated with 'setup::VariableChoice' (role 'setup_VariableChoice', cardinality 0..*).
+'setup::MylynBuildsTask' (role 'setup_MylynBuildsTask', cardinality 0..*) is associated with 'setup::BuildPlan' (role 'setup_BuildPlan', cardinality 0..*).
+'setup::P2Task' (role 'setup_P2Task27', cardinality 0..*) is associated with 'setup::P2Repository' (role 'setup_P2Repository', cardinality 0..*).
+'setup::TargletData' (role 'setup_TargletData', cardinality 0..*) is associated with 'setup::InstallableUnit' (role 'setup_InstallableUnit40', cardinality 0..*).
+'setup::TextModifyTask' (role 'setup_TextModifyTask', cardinality 0..*) is associated with 'setup::TextModification' (role 'setup_TextModification', cardinality 0..*).
+'setup::MylynQueriesTask' (role 'task', cardinality 0..*) is associated with 'setup::Query' (role 'Query', cardinality 0..*).
+'setup::QueryAttribute' (role 'setup_QueryAttribute', cardinality 0..*) is associated with 'setup::Query' (role 'setup_Query', cardinality 0..*).
+'setup::Eclipse' (role 'eclipseVersions', cardinality 0..*) is associated with 'setup::Configuration' (role 'Configuration', cardinality 0..*).
+'setup::Predicate' (role 'setup_Predicate', cardinality 0..*) is associated with 'setup::AutomaticSourceLocator' (role 'setup_AutomaticSourceLocator', cardinality 0..*).
+'setup::FileEditor' (role 'setup_FileEditor58', cardinality 0..*) is associated with 'setup::FileMapping' (role 'setup_FileMapping57', cardinality 0..*).
+'setup::FileMapping' (role 'setup_FileMapping', cardinality 0..*) is associated with 'setup::FileAssociationsTask' (role 'setup_FileAssociationsTask', cardinality 0..*).
+'setup::Configuration' (role 'configuration', cardinality 0..*) is associated with 'setup::Eclipse' (role 'Eclipse', cardinality 0..*).
+'setup::P2Repository' (role 'setup_P2Repository33', cardinality 0..*) is associated with 'setup::MaterializationTask' (role 'setup_MaterializationTask32', cardinality 0..*).
+'setup::SetupTask' (role 'setup_SetupTask18', cardinality 0..*) is associated with 'setup::SetupTask' (role 'setup_SetupTask', cardinality 0..*).
+'setup::KeyBindingTask' (role 'setup_KeyBindingTask63', cardinality 0..*) is associated with 'setup::CommandParameter' (role 'setup_CommandParameter', cardinality 0..*).
+'setup::Project' (role 'Project', cardinality 0..*) is associated with 'setup::Configuration' (role 'configuration4', cardinality 0..*).
+'setup::P2Repository' (role 'setup_P2Repository48', cardinality 0..*) is associated with 'setup::TargletData' (role 'setup_TargletData47', cardinality 0..*).
+'setup::Project' (role 'setup_Project', cardinality 0..*) is associated with 'setup::Eclipse' (role 'setup_Eclipse', cardinality 0..*).
+'setup::Branch' (role 'setup_Branch', cardinality 0..*) is associated with 'setup::Eclipse' (role 'setup_Eclipse12', cardinality 0..*).
+'setup::InstallableUnit' (role 'setup_InstallableUnit', cardinality 0..*) is associated with 'setup::P2Task' (role 'setup_P2Task', cardinality 0..*).
+'setup::Project' (role 'project', cardinality 0..*) is associated with 'setup::Branch' (role 'Branch', cardinality 0..*).
+'setup::MaterializationTask' (role 'setup_MaterializationTask', cardinality 0..*) is associated with 'setup::Component' (role 'setup_Component', cardinality 0..*).
+'setup::Eclipse' (role 'setup_Eclipse17', cardinality 0..*) is associated with 'setup::Setup' (role 'setup_Setup16', cardinality 0..*).
+'setup::RepositoryList' (role 'setup_RepositoryList', cardinality 0..*) is associated with 'setup::TargletData' (role 'setup_TargletData45', cardinality 0..*).
+'setup::FileEditor' (role 'setup_FileEditor', cardinality 0..*) is associated with 'setup::FileAssociationTask' (role 'setup_FileAssociationTask', cardinality 0..*).
+'setup::SourceLocator' (role 'setup_SourceLocator', cardinality 0..*) is associated with 'setup::MaterializationTask' (role 'setup_MaterializationTask30', cardinality 0..*).
+'setup::AutomaticSourceLocator' (role 'setup_AutomaticSourceLocator53', cardinality 0..*) is associated with 'setup::ProjectsImportTask' (role 'setup_ProjectsImportTask', cardinality 0..*).
+'setup::ComponentExtension' (role 'setup_ComponentExtension', cardinality 0..*) is associated with 'setup::InstallableUnit' (role 'setup_InstallableUnit36', cardinality 0..*).
+'setup::MavenImportTask' (role 'setup_MavenImportTask', cardinality 0..*) is associated with 'setup::AutomaticSourceLocator' (role 'setup_AutomaticSourceLocator38', cardinality 0..*).
+'setup::KeyBindingTask' (role 'setup_KeyBindingTask', cardinality 0..*) is associated with 'setup::KeyBindingContext' (role 'setup_KeyBindingContext', cardinality 0..*).

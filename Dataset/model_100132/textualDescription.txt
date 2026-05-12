@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'dbrouting::Executor' has the following attributes: 'executeOnElement' of type str; 'statement' of type str; 'executeBefore' of type str; 'datasource' of type str; 'executeOnElementNS' of type str.
+The class 'dbrouting::ResultSet' has the following attributes: 'scope' of type str; 'timeToLive' of type str; 'name' of type str.
+The class 'dbrouting::ResultSetRowSelector' has the following attributes: 'resultSetName' of type str; 'selectRowOnElement' of type str; 'executeBefore' of type str; 'beanId' of type str; 'where' of type str; 'failedSelectError' of type str.
+The class 'dbrouting::DBRoutingDocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'dbrouting::EStringToStringMapEntry' has no attributes.
+The class 'ElementVisitor' has no attributes.
+The enumeration 'ResultSetScopeType' has the following literals: 'EXECUTION', 'APPLICATION'.
+'dbrouting::ResultSetRowSelector' is a specialization of 'ElementVisitor'.
+'dbrouting::Executor' is a specialization of 'ElementVisitor'.
+'dbrouting::EStringToStringMapEntry' (role 'dbrouting_EStringToStringMapEntry3', cardinality 0..*) is associated with 'dbrouting::DBRoutingDocumentRoot' (role 'dbrouting_DBRoutingDocumentRoot2', cardinality 0..*).
+'dbrouting::Executor' (role 'dbrouting_Executor9', cardinality 0..*) is associated with 'dbrouting::ResultSet' (role 'dbrouting_ResultSet', cardinality 0..*).
+'dbrouting::ResultSetRowSelector' (role 'dbrouting_ResultSetRowSelector', cardinality 0..*) is associated with 'dbrouting::DBRoutingDocumentRoot' (role 'dbrouting_DBRoutingDocumentRoot7', cardinality 0..*).
+'dbrouting::EStringToStringMapEntry' (role 'dbrouting_EStringToStringMapEntry', cardinality 0..*) is associated with 'dbrouting::DBRoutingDocumentRoot' (role 'dbrouting_DBRoutingDocumentRoot', cardinality 0..*).
+'dbrouting::Executor' (role 'dbrouting_Executor', cardinality 0..*) is associated with 'dbrouting::DBRoutingDocumentRoot' (role 'dbrouting_DBRoutingDocumentRoot5', cardinality 0..*).

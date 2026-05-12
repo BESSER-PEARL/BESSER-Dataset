@@ -1,0 +1,120 @@
+The model has 60 class(es).
+The class 'dbevolution::UpdateTableCommentChange' has no attributes.
+The class 'dbevolution::UpdateIndex' has no attributes.
+The class 'dbevolution::RenameTableChange' has no attributes.
+The class 'dbevolution::UpdatePrimaryKey' has no attributes.
+The class 'dbevolution::ForeignKey' has no attributes.
+The class 'SequenceChange' has no attributes.
+The class 'dbevolution::TableChange' has no attributes.
+The class 'dbevolution::RemoveTable' has no attributes.
+The class 'ColumnChange' has no attributes.
+The class 'dbevolution::AddConstraint' has no attributes.
+The class 'SchemaChange' has no attributes.
+The class 'Diff' has no attributes.
+The class 'dbevolution::AddTable' has no attributes.
+The class 'dbevolution::UpdateColumnCommentChange' has no attributes.
+The class 'dbevolution::DBDiff' has no attributes.
+The class 'dbevolution::AlterTable' has no attributes.
+The class 'dbevolution::UpdateForeignKey' has no attributes.
+The class 'dbevolution::SchemaChange' has no attributes.
+The class 'dbevolution::UpdateSequence' has no attributes.
+The class 'dbevolution::UpdateSchemaCommentChange' has no attributes.
+The class 'dbevolution::ForeignKeyChange' has no attributes.
+The class 'dbevolution::Schema' has no attributes.
+The class 'dbevolution::Index' has no attributes.
+The class 'IndexChange' has no attributes.
+The class 'dbevolution::AddSchema' has no attributes.
+The class 'dbevolution::IndexChange' has no attributes.
+The class 'dbevolution::PrimaryKey' has no attributes.
+The class 'dbevolution::SequenceChange' has no attributes.
+The class 'TableChange' has no attributes.
+The class 'dbevolution::UpdateColumnChange' has no attributes.
+The class 'dbevolution::RemoveConstraint' has no attributes.
+The class 'dbevolution::RemoveSchema' has no attributes.
+The class 'dbevolution::RemoveIndex' has no attributes.
+The class 'dbevolution::RenameSchemaChange' has no attributes.
+The class 'dbevolution::AddIndex' has no attributes.
+The class 'dbevolution::ColumnChange' has no attributes.
+The class 'dbevolution::UpdateConstraint' has no attributes.
+The class 'dbevolution::AddPrimaryKey' has no attributes.
+The class 'dbevolution::RemoveColumnChange' has no attributes.
+The class 'dbevolution::AlterSchema' has no attributes.
+The class 'dbevolution::EObject' has no attributes.
+The class 'ForeignKeyChange' has no attributes.
+The class 'PrimaryKeyChange' has no attributes.
+The class 'dbevolution::Table' has no attributes.
+The class 'dbevolution::PrimaryKeyChange' has no attributes.
+The class 'dbevolution::RemovePrimaryKey' has no attributes.
+The class 'dbevolution::Constraint' has no attributes.
+The class 'dbevolution::ConstraintChange' has no attributes.
+The class 'DBDiff' has no attributes.
+The class 'dbevolution::Sequence' has no attributes.
+The class 'dbevolution::DatabaseChangeSet' has no attributes.
+The class 'dbevolution::RenameColumnChange' has no attributes.
+The class 'ConstraintChange' has no attributes.
+The class 'dbevolution::AddColumnChange' has no attributes.
+The class 'dbevolution::Column' has no attributes.
+The class 'dbevolution::AddSequence' has no attributes.
+The class 'dbevolution::RemoveSequence' has no attributes.
+The class 'dbevolution::AddForeignKey' has no attributes.
+The class 'Comparison' has no attributes.
+The class 'dbevolution::RemoveForeignKey' has no attributes.
+'dbevolution::AddIndex' is a specialization of 'IndexChange'.
+'dbevolution::UpdateIndex' is a specialization of 'IndexChange'.
+'dbevolution::AlterSchema' is a specialization of 'SchemaChange'.
+'dbevolution::AddTable' is a specialization of 'TableChange'.
+'dbevolution::RemoveIndex' is a specialization of 'IndexChange'.
+'dbevolution::AddSequence' is a specialization of 'SequenceChange'.
+'dbevolution::SequenceChange' is a specialization of 'DBDiff'.
+'dbevolution::RenameSchemaChange' is a specialization of 'SchemaChange'.
+'dbevolution::RemoveColumnChange' is a specialization of 'ColumnChange'.
+'dbevolution::SchemaChange' is a specialization of 'DBDiff'.
+'dbevolution::UpdateSchemaCommentChange' is a specialization of 'SchemaChange'.
+'dbevolution::UpdateForeignKey' is a specialization of 'ForeignKeyChange'.
+'dbevolution::DatabaseChangeSet' is a specialization of 'Comparison'.
+'dbevolution::AddForeignKey' is a specialization of 'ForeignKeyChange'.
+'dbevolution::RemoveTable' is a specialization of 'TableChange'.
+'dbevolution::RemovePrimaryKey' is a specialization of 'PrimaryKeyChange'.
+'dbevolution::UpdateColumnCommentChange' is a specialization of 'ColumnChange'.
+'dbevolution::AddSchema' is a specialization of 'SchemaChange'.
+'dbevolution::ForeignKeyChange' is a specialization of 'DBDiff'.
+'dbevolution::RenameColumnChange' is a specialization of 'ColumnChange'.
+'dbevolution::AlterTable' is a specialization of 'TableChange'.
+'dbevolution::ColumnChange' is a specialization of 'DBDiff'.
+'dbevolution::PrimaryKeyChange' is a specialization of 'DBDiff'.
+'dbevolution::AddPrimaryKey' is a specialization of 'PrimaryKeyChange'.
+'dbevolution::TableChange' is a specialization of 'DBDiff'.
+'dbevolution::UpdateSequence' is a specialization of 'SequenceChange'.
+'dbevolution::RenameTableChange' is a specialization of 'TableChange'.
+'dbevolution::ConstraintChange' is a specialization of 'DBDiff'.
+'dbevolution::AddColumnChange' is a specialization of 'ColumnChange'.
+'dbevolution::IndexChange' is a specialization of 'DBDiff'.
+'dbevolution::RemoveConstraint' is a specialization of 'ConstraintChange'.
+'dbevolution::RemoveSequence' is a specialization of 'SequenceChange'.
+'dbevolution::RemoveSchema' is a specialization of 'SchemaChange'.
+'dbevolution::UpdatePrimaryKey' is a specialization of 'PrimaryKeyChange'.
+'dbevolution::DBDiff' is a specialization of 'Diff'.
+'dbevolution::UpdateTableCommentChange' is a specialization of 'TableChange'.
+'dbevolution::AddConstraint' is a specialization of 'ConstraintChange'.
+'dbevolution::RemoveForeignKey' is a specialization of 'ForeignKeyChange'.
+'dbevolution::UpdateColumnChange' is a specialization of 'ColumnChange'.
+'dbevolution::UpdateConstraint' is a specialization of 'ConstraintChange'.
+'dbevolution::ConstraintChange' (role 'dbevolution_ConstraintChange', cardinality 0..*) is associated with 'dbevolution::Constraint' (role 'dbevolution_Constraint', cardinality 0..*).
+'dbevolution::Column' (role 'dbevolution_Column7', cardinality 0..*) is associated with 'dbevolution::RenameColumnChange' (role 'dbevolution_RenameColumnChange', cardinality 0..*).
+'dbevolution::UpdatePrimaryKey' (role 'dbevolution_UpdatePrimaryKey', cardinality 0..*) is associated with 'dbevolution::PrimaryKey' (role 'dbevolution_PrimaryKey10', cardinality 0..*).
+'dbevolution::ColumnChange' (role 'dbevolution_ColumnChange', cardinality 0..*) is associated with 'dbevolution::Column' (role 'dbevolution_Column', cardinality 0..*).
+'dbevolution::UpdateConstraint' (role 'dbevolution_UpdateConstraint', cardinality 0..*) is associated with 'dbevolution::Constraint' (role 'dbevolution_Constraint19', cardinality 0..*).
+'dbevolution::Schema' (role 'dbevolution_Schema', cardinality 0..*) is associated with 'dbevolution::SchemaChange' (role 'dbevolution_SchemaChange', cardinality 0..*).
+'dbevolution::EObject' (role 'dbevolution_EObject', cardinality 0..*) is associated with 'dbevolution::DBDiff' (role 'dbevolution_DBDiff', cardinality 0..*).
+'dbevolution::Sequence' (role 'dbevolution_Sequence', cardinality 0..*) is associated with 'dbevolution::SequenceChange' (role 'dbevolution_SequenceChange', cardinality 0..*).
+'dbevolution::Index' (role 'dbevolution_Index', cardinality 0..*) is associated with 'dbevolution::IndexChange' (role 'dbevolution_IndexChange', cardinality 0..*).
+'dbevolution::Schema' (role 'dbevolution_Schema25', cardinality 0..*) is associated with 'dbevolution::RenameSchemaChange' (role 'dbevolution_RenameSchemaChange', cardinality 0..*).
+'dbevolution::Schema' (role 'dbevolution_Schema27', cardinality 0..*) is associated with 'dbevolution::UpdateSchemaCommentChange' (role 'dbevolution_UpdateSchemaCommentChange', cardinality 0..*).
+'dbevolution::ForeignKey' (role 'dbevolution_ForeignKey16', cardinality 0..*) is associated with 'dbevolution::UpdateForeignKey' (role 'dbevolution_UpdateForeignKey', cardinality 0..*).
+'dbevolution::Index' (role 'dbevolution_Index13', cardinality 0..*) is associated with 'dbevolution::UpdateIndex' (role 'dbevolution_UpdateIndex', cardinality 0..*).
+'dbevolution::UpdateTableCommentChange' (role 'dbevolution_UpdateTableCommentChange', cardinality 0..*) is associated with 'dbevolution::Table' (role 'dbevolution_Table4', cardinality 0..*).
+'dbevolution::UpdateSequence' (role 'dbevolution_UpdateSequence', cardinality 0..*) is associated with 'dbevolution::Sequence' (role 'dbevolution_Sequence22', cardinality 0..*).
+'dbevolution::ForeignKey' (role 'dbevolution_ForeignKey', cardinality 0..*) is associated with 'dbevolution::ForeignKeyChange' (role 'dbevolution_ForeignKeyChange', cardinality 0..*).
+'dbevolution::PrimaryKeyChange' (role 'dbevolution_PrimaryKeyChange', cardinality 0..*) is associated with 'dbevolution::PrimaryKey' (role 'dbevolution_PrimaryKey', cardinality 0..*).
+'dbevolution::Table' (role 'dbevolution_Table', cardinality 0..*) is associated with 'dbevolution::TableChange' (role 'dbevolution_TableChange', cardinality 0..*).
+'dbevolution::Table' (role 'dbevolution_Table2', cardinality 0..*) is associated with 'dbevolution::RenameTableChange' (role 'dbevolution_RenameTableChange', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'relational::ForeignKey' has no attributes.
+The class 'relational::Key' has the following attributes: 'name' of type str.
+The class 'relational::Column' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'relational::Table' has the following attributes: 'name' of type str.
+'relational::Column' (role 'relational_Column5', cardinality 0..*) is associated with 'relational::Key' (role 'relational_Key', cardinality 0..*).
+'relational::ForeignKey' (role 'relational_ForeignKey', cardinality 0..*) is associated with 'relational::Column' (role 'relational_Column10', cardinality 0..*).
+'relational::ForeignKey' (role 'relational_ForeignKey15', cardinality 0..*) is associated with 'relational::Table' (role 'relational_Table16', cardinality 0..*).
+'relational::Key' (role 'Key', cardinality 0..*) is associated with 'relational::Table' (role 'table', cardinality 0..*).
+'relational::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'relational::Table' (role 'table3', cardinality 0..*).
+'relational::Key' (role 'relational_Key13', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'relational_ForeignKey12', cardinality 0..*).
+'relational::Table' (role 'Table', cardinality 0..*) is associated with 'relational::Key' (role 'key', cardinality 0..*).
+'relational::Column' (role 'relational_Column', cardinality 0..*) is associated with 'relational::Table' (role 'relational_Table', cardinality 0..*).
+'relational::Key' (role 'refersTo', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'ForeignKey7', cardinality 0..*).

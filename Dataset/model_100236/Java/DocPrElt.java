@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class DocPrElt  {
+
+
+
+
+
+
+    private WordprocessingMLTableElts_WordDocument wordprocessingmltableelts_worddocument;
+
+
+    public DocPrElt(
+    ) {
+    }
+
+
+
+    public WordprocessingMLTableElts_WordDocument getWordprocessingmltableelts_worddocument() {
+        return wordprocessingmltableelts_worddocument;
+    }
+
+    public void setWordprocessingmltableelts_worddocument(WordprocessingMLTableElts_WordDocument wordprocessingmltableelts_worddocument) {
+        this.wordprocessingmltableelts_worddocument = wordprocessingmltableelts_worddocument;
+    }
+
+}

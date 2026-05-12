@@ -1,0 +1,132 @@
+The model has 56 class(es).
+The class 'model::Arc' has no attributes.
+The class 'HLArcAddin' has no attributes.
+The class 'model::Transition' has no attributes.
+The class 'HasToolInfo' has no attributes.
+The class 'model::HLAnnotationAddin' has the following attributes: 'text' of type str.
+The class 'model::Place' has no attributes.
+The class 'HLPlaceAddin' has no attributes.
+The class 'model::Attribute' has no attributes.
+The class 'model::Monitor' has no attributes.
+The class 'model::HasLabel' has no attributes.
+The class 'model::Sort' has no attributes.
+The class 'model::Object' has no attributes.
+The class 'model::Time' has no attributes.
+The class 'model::HLPlaceAddin' has no attributes.
+The class 'model::Code' has no attributes.
+The class 'TransitionNode' has no attributes.
+The class 'HLTransitionAddin' has no attributes.
+The class 'HLAnnotation' has no attributes.
+The class 'model::RefPlace' has no attributes.
+The class 'model::ParameterAssignment' has the following attributes: 'value' of type str; 'parameter' of type str.
+The class 'model::CPNToolsTransitionAddin' has no attributes.
+The class 'model::HLAnnotation' has no attributes.
+The class 'CPNToolsTransitionAddin' has no attributes.
+The class 'HLAnnotationAddin' has no attributes.
+The class 'Label' has no attributes.
+The class 'model::HLArcAddin' has the following attributes: 'kind' of type str.
+The class 'model::HasName' has no attributes.
+The class 'HasName' has no attributes.
+The class 'Place' has no attributes.
+The class 'model::Condition' has no attributes.
+The class 'model::Node' has no attributes.
+The class 'model::Annotation' has no attributes.
+The class 'model::PetriNet' has the following attributes: 'kind' of type str; 'timeType' of type str.
+The class 'Annotation' has no attributes.
+The class 'model::HLTransitionAddin' has no attributes.
+The class 'model::ToolInfo' has the following attributes: 'version' of type str; 'tool' of type str.
+The class 'Object' has no attributes.
+The class 'HasId' has no attributes.
+The class 'model::HasId' has the following attributes: 'id' of type str.
+The class 'model::Instance' has the following attributes: 'subPageID' of type str.
+The class 'model::PlaceNode' has no attributes.
+The class 'model::FusionGroup' has no attributes.
+The class 'HasLabel' has no attributes.
+The class 'model::Name' has no attributes.
+The class 'model::TransitionNode' has no attributes.
+The class 'model::HasToolInfo' has no attributes.
+The class 'model::HLMarking' has no attributes.
+The class 'model::RefTrans' has no attributes.
+The class 'PlaceNode' has no attributes.
+The class 'HasGraphics' has no attributes.
+The class 'model::Label' has no attributes.
+The class 'model::DeclarationStructure' has no attributes.
+The class 'model::Page' has no attributes.
+The class 'Node' has no attributes.
+The class 'model::Priority' has no attributes.
+The class 'model::HLDeclaration' has no attributes.
+The enumeration 'TimeType' has the following literals: 'Integer', 'Real'.
+The enumeration 'HLArcType' has the following literals: 'Inhibitor', 'Test', 'Normal', 'Reset'.
+'model::TransitionNode' is a specialization of 'Node'.
+'model::RefTrans' is a specialization of 'TransitionNode'.
+'model::RefPlace' is a specialization of 'PlaceNode'.
+'model::Object' is a specialization of 'HasLabel'.
+'model::Object' is a specialization of 'HasName'.
+'model::Page' is a specialization of 'HasId'.
+'model::PetriNet' is a specialization of 'HasLabel'.
+'model::Arc' is a specialization of 'HasId'.
+'model::Arc' is a specialization of 'HLArcAddin'.
+'model::HLAnnotation' is a specialization of 'Annotation'.
+'model::Object' is a specialization of 'HasToolInfo'.
+'model::Attribute' is a specialization of 'Label'.
+'model::HLDeclaration' is a specialization of 'Annotation'.
+'model::HLDeclaration' is a specialization of 'HasId'.
+'model::TransitionNode' is a specialization of 'HLTransitionAddin'.
+'model::PetriNet' is a specialization of 'HasId'.
+'model::Transition' is a specialization of 'TransitionNode'.
+'model::Label' is a specialization of 'HasToolInfo'.
+'model::PlaceNode' is a specialization of 'Node'.
+'model::FusionGroup' is a specialization of 'Place'.
+'model::Name' is a specialization of 'HLAnnotation'.
+'model::Sort' is a specialization of 'Annotation'.
+'model::PlaceNode' is a specialization of 'HLPlaceAddin'.
+'model::PetriNet' is a specialization of 'HasName'.
+'model::Object' is a specialization of 'HasId'.
+'model::Annotation' is a specialization of 'HasGraphics'.
+'model::Arc' is a specialization of 'HasGraphics'.
+'model::Time' is a specialization of 'Annotation'.
+'model::PetriNet' is a specialization of 'HasToolInfo'.
+'model::Object' is a specialization of 'HasGraphics'.
+'model::Page' is a specialization of 'HasName'.
+'model::Code' is a specialization of 'Annotation'.
+'model::HLMarking' is a specialization of 'Annotation'.
+'model::Instance' is a specialization of 'Node'.
+'model::Node' is a specialization of 'Object'.
+'model::Place' is a specialization of 'PlaceNode'.
+'model::Condition' is a specialization of 'Annotation'.
+'model::Annotation' is a specialization of 'HLAnnotationAddin'.
+'model::TransitionNode' is a specialization of 'CPNToolsTransitionAddin'.
+'model::Annotation' is a specialization of 'Label'.
+'model::Page' is a specialization of 'HasLabel'.
+'model::Priority' is a specialization of 'Annotation'.
+'model::CPNToolsTransitionAddin' (role 'model_CPNToolsTransitionAddin', cardinality 0..*) is associated with 'model::Code' (role 'model_Code', cardinality 0..*).
+'model::RefPlace' (role 'references', cardinality 0..*) is associated with 'model::Place' (role 'Place', cardinality 0..*).
+'model::Object' (role 'object', cardinality 0..*) is associated with 'model::Page' (role 'Page26', cardinality 0..*).
+'model::Priority' (role 'model_Priority', cardinality 0..*) is associated with 'model::CPNToolsTransitionAddin' (role 'model_CPNToolsTransitionAddin8', cardinality 0..*).
+'model::Page' (role 'Page36', cardinality 0..*) is associated with 'model::PetriNet' (role 'petriNet', cardinality 0..*).
+'model::ToolInfo' (role 'toolinfo', cardinality 0..*) is associated with 'model::HasToolInfo' (role 'HasToolInfo', cardinality 0..*).
+'model::Page' (role 'page', cardinality 0..*) is associated with 'model::PetriNet' (role 'PetriNet28', cardinality 0..*).
+'model::Object' (role 'Object', cardinality 0..*) is associated with 'model::Page' (role 'page30', cardinality 0..*).
+'model::Label' (role 'Label', cardinality 0..*) is associated with 'model::HasLabel' (role 'parent', cardinality 0..*).
+'model::Sort' (role 'model_Sort', cardinality 0..*) is associated with 'model::HLPlaceAddin' (role 'model_HLPlaceAddin', cardinality 0..*).
+'model::Node' (role 'Node2', cardinality 0..*) is associated with 'model::Arc' (role 'targetArc', cardinality 0..*).
+'model::Node' (role 'source', cardinality 0..*) is associated with 'model::Arc' (role 'Arc', cardinality 0..*).
+'model::Time' (role 'model_Time', cardinality 0..*) is associated with 'model::CPNToolsTransitionAddin' (role 'model_CPNToolsTransitionAddin6', cardinality 0..*).
+'model::Arc' (role 'arc', cardinality 0..*) is associated with 'model::Page' (role 'Page', cardinality 0..*).
+'model::Name' (role 'model_Name', cardinality 0..*) is associated with 'model::HasName' (role 'model_HasName', cardinality 0..*).
+'model::PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'model::FusionGroup' (role 'fusionGroups', cardinality 0..*).
+'model::Node' (role 'target', cardinality 0..*) is associated with 'model::Arc' (role 'Arc24', cardinality 0..*).
+'model::HLPlaceAddin' (role 'model_HLPlaceAddin14', cardinality 0..*) is associated with 'model::HLMarking' (role 'model_HLMarking', cardinality 0..*).
+'model::FusionGroup' (role 'FusionGroup', cardinality 0..*) is associated with 'model::PetriNet' (role 'petriNet40', cardinality 0..*).
+'model::ToolInfo' (role 'ToolInfo', cardinality 0..*) is associated with 'model::HasToolInfo' (role 'parent19', cardinality 0..*).
+'model::ParameterAssignment' (role 'ParameterAssignment', cardinality 0..*) is associated with 'model::Instance' (role 'instance', cardinality 0..*).
+'model::ParameterAssignment' (role 'parameterAssignment', cardinality 0..*) is associated with 'model::Instance' (role 'Instance', cardinality 0..*).
+'model::RefPlace' (role 'RefPlace', cardinality 0..*) is associated with 'model::Place' (role 'ref', cardinality 0..*).
+'model::Condition' (role 'model_Condition', cardinality 0..*) is associated with 'model::HLTransitionAddin' (role 'model_HLTransitionAddin', cardinality 0..*).
+'model::HLAnnotation' (role 'model_HLAnnotation', cardinality 0..*) is associated with 'model::HLArcAddin' (role 'model_HLArcAddin', cardinality 0..*).
+'model::Arc' (role 'sourceArc', cardinality 0..*) is associated with 'model::Node' (role 'Node', cardinality 0..*).
+'model::Page' (role 'page32', cardinality 0..*) is associated with 'model::Arc' (role 'Arc33', cardinality 0..*).
+'model::TransitionNode' (role 'model_TransitionNode', cardinality 0..*) is associated with 'model::RefTrans' (role 'model_RefTrans', cardinality 0..*).
+'model::HLDeclaration' (role 'model_HLDeclaration', cardinality 0..*) is associated with 'model::DeclarationStructure' (role 'model_DeclarationStructure', cardinality 0..*).
+'model::PetriNet' (role 'petriNet38', cardinality 0..*) is associated with 'model::Monitor' (role 'monitors.ecoreMonitor', cardinality 0..*).
+'model::HasLabel' (role 'HasLabel', cardinality 0..*) is associated with 'model::Label' (role 'label', cardinality 0..*).

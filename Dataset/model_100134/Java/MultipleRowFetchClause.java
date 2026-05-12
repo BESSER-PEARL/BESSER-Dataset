@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class MultipleRowFetchClause  {
+
+
+
+
+
+
+    private syntax_dbl_FetchStatement syntax_dbl_fetchstatement;
+
+
+    public MultipleRowFetchClause(
+    ) {
+    }
+
+
+
+    public syntax_dbl_FetchStatement getSyntax_dbl_fetchstatement() {
+        return syntax_dbl_fetchstatement;
+    }
+
+    public void setSyntax_dbl_fetchstatement(syntax_dbl_FetchStatement syntax_dbl_fetchstatement) {
+        this.syntax_dbl_fetchstatement = syntax_dbl_fetchstatement;
+    }
+
+}

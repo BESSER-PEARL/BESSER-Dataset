@@ -1,0 +1,146 @@
+The model has 77 class(es).
+The class 'MiscellaneousTask' has no attributes.
+The class 'PatternSet' has no attributes.
+The class 'Ant::NewTask' has no attributes.
+The class 'Includes' has no attributes.
+The class 'InExcludes' has no attributes.
+The class 'FileSet' has no attributes.
+The class 'ExecutionTask' has no attributes.
+The class 'FileTask' has no attributes.
+The class 'Ant::IncludesFile' has no attributes.
+The class 'TaskDef' has no attributes.
+The class 'Set' has no attributes.
+The class 'Ant::PatternSet' has no attributes.
+The class 'Excludes' has no attributes.
+The class 'ClassPath' has no attributes.
+The class 'Ant::PreDefinedTask' has the following attributes: 'id' of type str; 'description' of type str; 'taskname' of type str.
+The class 'Ant::PropertyFile' has the following attributes: 'file' of type str.
+The class 'Ant::Mapper' has the following attributes: 'type' of type str; 'classpath' of type str; 'from_' of type str; 'classname' of type str; 'classpathref' of type str; 'to' of type str.
+The class 'Ant::Filter' has the following attributes: 'value' of type str; 'token' of type str.
+The class 'PreDefinedTask' has no attributes.
+The class 'Ant::Jar' has the following attributes: 'jarfile' of type str; 'encoding' of type str; 'basedir' of type str; 'manifest' of type str; 'compress' of type str.
+The class 'Ant::Basic' has no attributes.
+The class 'DocumentationTask' has no attributes.
+The class 'Ant::Javadoc' has the following attributes: 'use' of type str; 'sourcepath' of type str; 'windowtitle' of type str; 'destdir' of type str; 'defaultexcludes' of type str; 'author' of type str; 'version' of type str; 'packagenames' of type str.
+The class 'Ant::Includes' has no attributes.
+The class 'Ant::FiltersFile' has the following attributes: 'file' of type str.
+The class 'Pattern' has no attributes.
+The class 'Ant::Exec' has the following attributes: 'executable' of type str; 'dir' of type str.
+The class 'Ant::PathElement' has the following attributes: 'path' of type str; 'location' of type str.
+The class 'Ant::ArchiveTask' has no attributes.
+The class 'Ant::FormatTstamp' has the following attributes: 'pattern' of type str; 'unit' of type str; 'offset' of type str; 'property' of type str; 'locale' of type str.
+The class 'Ant::InExcludes' has the following attributes: 'ifCondition' of type str; 'unless' of type str; 'name' of type str.
+The class 'Ant::FileTask' has no attributes.
+The class 'Ant::Mkdir' has the following attributes: 'dir' of type str.
+The class 'Basic' has no attributes.
+The class 'Ant::Set' has no attributes.
+The class 'FormatTstamp' has no attributes.
+The class 'Ant::Echo' has the following attributes: 'append' of type str; 'file' of type str; 'message' of type str.
+The class 'Ant::CompileTask' has no attributes.
+The class 'Ant::ClassPath' has the following attributes: 'refid' of type str.
+The class 'Ant::DocumentationTask' has no attributes.
+The class 'Ant::Copy' has the following attributes: 'presservelastmodified' of type str; 'overwrite' of type str; 'tofile' of type str; 'filtering' of type str; 'includeEmptyDirs' of type str; 'flatten' of type str; 'file' of type str; 'todir' of type str.
+The class 'Ant::PropertyValue' has the following attributes: 'value' of type str.
+The class 'FiltersFile' has no attributes.
+The class 'Target' has no attributes.
+The class 'Filter' has no attributes.
+The class 'Ant::FileSet' has the following attributes: 'dir' of type str.
+The class 'Ant::Path' has the following attributes: 'id' of type str; 'refid' of type str.
+The class 'Attribut' has no attributes.
+The class 'Ant::Target' has the following attributes: 'description' of type str; 'ifCondition' of type str; 'name' of type str; 'unless' of type str.
+The class 'Ant::Excludes' has no attributes.
+The class 'PropertyName' has no attributes.
+The class 'Ant::PropertyEnv' has the following attributes: 'environment' of type str.
+The class 'Ant::PropertyName' has the following attributes: 'name' of type str.
+The class 'Ant::MiscellaneousTask' has no attributes.
+The class 'ArchiveTask' has no attributes.
+The class 'FilterSet' has no attributes.
+The class 'CompileTask' has no attributes.
+The class 'Mapper' has no attributes.
+The class 'Ant::Javac' has the following attributes: 'deprecation' of type str; 'srcdir' of type str; 'destdir' of type str; 'debug' of type str; 'fork' of type str; 'optimize' of type str.
+The class 'Ant::FilterSet' has the following attributes: 'starttoken' of type str; 'endtoken' of type str.
+The class 'Ant::Pattern' has no attributes.
+The class 'Ant::FileList' has the following attributes: 'files' of type str; 'dir' of type str.
+The class 'Property' has no attributes.
+The class 'Ant::PropertyLocation' has the following attributes: 'location' of type str.
+The class 'Ant::Java' has the following attributes: 'classname' of type str; 'fork' of type str; 'jar' of type str.
+The class 'Ant::Tstamp' has no attributes.
+The class 'Ant::Task' has no attributes.
+The class 'Task' has no attributes.
+The class 'Ant::Delete' has the following attributes: 'defaultexcludes' of type str; 'file' of type str; 'verbose' of type str; 'failonerror' of type str; 'quiet' of type str; 'excludesfile' of type str; 'dir' of type str; 'includes' of type str; 'excludes' of type str; 'includesfile' of type str; 'includeEmptyDirs' of type str.
+The class 'Ant::Property' has no attributes.
+The class 'Ant::Project' has the following attributes: 'name' of type str; 'description' of type str; 'basedir' of type str.
+The class 'Path' has no attributes.
+The class 'Ant::ExecutionTask' has no attributes.
+The class 'PathElement' has no attributes.
+The class 'Ant::TaskDef' has the following attributes: 'name' of type str; 'classname' of type str.
+The class 'Ant::ExcludesFile' has no attributes.
+The class 'Ant::Attribut' has the following attributes: 'name' of type str; 'value' of type str.
+'Ant::Jar' is a specialization of 'ArchiveTask'.
+'Ant::PathElement' is a specialization of 'Basic'.
+'Ant::Mapper' is a specialization of 'Basic'.
+'Ant::Java' is a specialization of 'ExecutionTask'.
+'Ant::Javac' is a specialization of 'CompileTask'.
+'Ant::ArchiveTask' is a specialization of 'PreDefinedTask'.
+'Ant::PatternSet' is a specialization of 'Set'.
+'Ant::Excludes' is a specialization of 'InExcludes'.
+'Ant::NewTask' is a specialization of 'Task'.
+'Ant::PreDefinedTask' is a specialization of 'Task'.
+'Ant::PropertyEnv' is a specialization of 'Property'.
+'Ant::IncludesFile' is a specialization of 'InExcludes'.
+'Ant::Set' is a specialization of 'Pattern'.
+'Ant::Tstamp' is a specialization of 'MiscellaneousTask'.
+'Ant::FilterSet' is a specialization of 'Set'.
+'Ant::FileList' is a specialization of 'Basic'.
+'Ant::MiscellaneousTask' is a specialization of 'PreDefinedTask'.
+'Ant::FileSet' is a specialization of 'Set'.
+'Ant::Filter' is a specialization of 'Basic'.
+'Ant::InExcludes' is a specialization of 'Basic'.
+'Ant::Includes' is a specialization of 'InExcludes'.
+'Ant::ExcludesFile' is a specialization of 'InExcludes'.
+'Ant::PropertyLocation' is a specialization of 'PropertyName'.
+'Ant::ExecutionTask' is a specialization of 'PreDefinedTask'.
+'Ant::Path' is a specialization of 'Set'.
+'Ant::Exec' is a specialization of 'ExecutionTask'.
+'Ant::CompileTask' is a specialization of 'PreDefinedTask'.
+'Ant::Basic' is a specialization of 'Pattern'.
+'Ant::FileTask' is a specialization of 'PreDefinedTask'.
+'Ant::PropertyFile' is a specialization of 'Property'.
+'Ant::PropertyValue' is a specialization of 'PropertyName'.
+'Ant::Delete' is a specialization of 'FileTask'.
+'Ant::Mkdir' is a specialization of 'FileTask'.
+'Ant::FiltersFile' is a specialization of 'Basic'.
+'Ant::Copy' is a specialization of 'FileTask'.
+'Ant::ClassPath' is a specialization of 'Set'.
+'Ant::DocumentationTask' is a specialization of 'PreDefinedTask'.
+'Ant::PropertyName' is a specialization of 'Property'.
+'Ant::Javadoc' is a specialization of 'DocumentationTask'.
+'Ant::Echo' is a specialization of 'MiscellaneousTask'.
+'Path' (role 'Path', cardinality 0..*) is associated with 'Ant::Project' (role 'Ant_Project2', cardinality 0..*).
+'Ant::Project' (role 'Ant_Project4', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'Ant::ClassPath' (role 'Ant_ClassPath', cardinality 0..*) is associated with 'PathElement' (role 'PathElement29', cardinality 0..*).
+'Ant::FileSet' (role 'Ant_FileSet', cardinality 0..*) is associated with 'PatternSet' (role 'PatternSet', cardinality 0..*).
+'ClassPath' (role 'ClassPath', cardinality 0..*) is associated with 'Ant::Java' (role 'Ant_Java', cardinality 0..*).
+'Ant::Task' (role 'tasks', cardinality 0..*) is associated with 'Target' (role 'Target34', cardinality 0..*).
+'Ant::Project' (role 'Ant_Project', cardinality 0..*) is associated with 'Target' (role 'Target', cardinality 0..*).
+'Ant::Target' (role 'Ant_Target', cardinality 0..*) is associated with 'Target' (role 'Target11', cardinality 0..*).
+'Ant::NewTask' (role 'Ant_NewTask38', cardinality 0..*) is associated with 'Attribut' (role 'Attribut', cardinality 0..*).
+'Ant::ClassPath' (role 'Ant_ClassPath31', cardinality 0..*) is associated with 'FileSet' (role 'FileSet32', cardinality 0..*).
+'FileSet' (role 'FileSet', cardinality 0..*) is associated with 'Ant::Path' (role 'Ant_Path27', cardinality 0..*).
+'Ant::Copy' (role 'Ant_Copy', cardinality 0..*) is associated with 'FileSet' (role 'FileSet47', cardinality 0..*).
+'Ant::FilterSet' (role 'Ant_FilterSet', cardinality 0..*) is associated with 'Filter' (role 'Filter', cardinality 0..*).
+'InExcludes' (role 'InExcludes', cardinality 0..*) is associated with 'Ant::PatternSet' (role 'Ant_PatternSet', cardinality 0..*).
+'Excludes' (role 'Excludes', cardinality 0..*) is associated with 'Ant::FileSet' (role 'Ant_FileSet18', cardinality 0..*).
+'Path' (role 'Path23', cardinality 0..*) is associated with 'Ant::Path' (role 'Ant_Path', cardinality 0..*).
+'Ant::FilterSet' (role 'Ant_FilterSet21', cardinality 0..*) is associated with 'FiltersFile' (role 'FiltersFile', cardinality 0..*).
+'Ant::Javac' (role 'Ant_Javac', cardinality 0..*) is associated with 'InExcludes' (role 'InExcludes42', cardinality 0..*).
+'Task' (role 'Task', cardinality 0..*) is associated with 'Ant::Target' (role 'target', cardinality 0..*).
+'Mapper' (role 'Mapper', cardinality 0..*) is associated with 'Ant::Copy' (role 'Ant_Copy51', cardinality 0..*).
+'Ant::Javac' (role 'Ant_Javac44', cardinality 0..*) is associated with 'ClassPath' (role 'ClassPath45', cardinality 0..*).
+'Ant::NewTask' (role 'Ant_NewTask', cardinality 0..*) is associated with 'TaskDef' (role 'TaskDef36', cardinality 0..*).
+'Ant::Project' (role 'Ant_Project6', cardinality 0..*) is associated with 'TaskDef' (role 'TaskDef', cardinality 0..*).
+'Includes' (role 'Includes', cardinality 0..*) is associated with 'Ant::FileSet' (role 'Ant_FileSet16', cardinality 0..*).
+'Target' (role 'Target9', cardinality 0..*) is associated with 'Ant::Project' (role 'Ant_Project8', cardinality 0..*).
+'Ant::Tstamp' (role 'Ant_Tstamp', cardinality 0..*) is associated with 'FormatTstamp' (role 'FormatTstamp', cardinality 0..*).
+'FilterSet' (role 'FilterSet', cardinality 0..*) is associated with 'Ant::Copy' (role 'Ant_Copy49', cardinality 0..*).
+'PathElement' (role 'PathElement', cardinality 0..*) is associated with 'Ant::Path' (role 'Ant_Path25', cardinality 0..*).

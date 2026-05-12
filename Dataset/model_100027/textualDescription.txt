@@ -1,0 +1,52 @@
+The model has 25 class(es).
+The class 'opf::Language' has no attributes.
+The class 'opf::Rights' has no attributes.
+The class 'opf::Tours' has no attributes.
+The class 'opf::Description' has no attributes.
+The class 'opf::Itemref' has the following attributes: 'linear' of type str; 'idref' of type str.
+The class 'opf::Reference' has the following attributes: 'href' of type str; 'type' of type str; 'title' of type str.
+The class 'opf::Contributor' has no attributes.
+The class 'opf::Guide' has no attributes.
+The class 'opf::Creator' has no attributes.
+The class 'opf::Metadata' has no attributes.
+The class 'opf::Title' has no attributes.
+The class 'opf::Type' has no attributes.
+The class 'opf::Manifest' has no attributes.
+The class 'opf::Item' has the following attributes: 'media_type' of type str; 'sourcePath' of type str; 'file' of type str; 'generated' of type bool; 'required_namespace' of type str; 'id' of type str; 'title' of type str; 'fallback_style' of type str; 'required_modules' of type str; 'fallback' of type str; 'href' of type str; 'noToc' of type bool.
+The class 'opf::Source' has no attributes.
+The class 'opf::Spine' has the following attributes: 'toc' of type str.
+The class 'opf::Publisher' has no attributes.
+The class 'opf::Package' has the following attributes: 'includeReferencedResources' of type bool; 'generateCoverHTML' of type bool; 'version' of type str; 'generateTableOfContents' of type bool; 'uniqueIdentifier' of type str.
+The class 'opf::Subject' has no attributes.
+The class 'opf::Date' has no attributes.
+The class 'opf::Identifier' has no attributes.
+The class 'opf::Format' has no attributes.
+The class 'opf::Relation' has no attributes.
+The class 'opf::Meta' has the following attributes: 'name' of type str; 'content' of type str.
+The class 'opf::Coverage' has no attributes.
+The enumeration 'Role' has the following literals: 'Contributor', 'Forger', 'Binder', 'Etcher', 'Corrector', 'Author_in_quotations_or_text_abstracts', 'Contractor', 'Field_director', 'Contestee_appellant', 'Attributed_name', 'Respondent_appellant', 'Analyst', 'Assignee', 'Designer', 'Graphic_technician', 'Director', 'Engineer', 'Vocalist', 'Expert', 'Research_team_head', 'Conservator', 'Rubricator', 'Auctioneer', 'Writer_of_accompanying_material', 'Type_designer', 'Renderer', 'Supporting_host', 'Markup_editor', 'Author_of_afterword_colophon_etc', 'Teacher', 'Author_of_dialog', 'Collotyper', 'Production_personnel', 'Adapter', 'Commentator', 'Editor', 'Plaintiff', 'Depicted', 'Engraver', 'Copyright_holder', 'Plaintiff_appellee', 'Second_party', 'Event_place', 'Electrician', 'Licensee', 'Distribution_place', 'Dedicator', 'Composer', 'Consultant', 'Depositor', 'Lithographer', 'Licensor', 'Dancer', 'Book_producer', 'Lyricist', 'Dissertant', 'Publisher', 'Standards_body', 'Transcriber', 'Compositor', 'Delineator', 'Publishing_director', 'Degree_grantor', 'Manufacture_place', 'Consultant_to_a_project', 'Music_copyist', 'Translator', 'Complainant_appellee', 'Bookseller', 'Contestant', 'Libelant_appellee', 'Creator', 'Printmaker', 'Libelant', 'Contestant_appellant', 'Marbler', 'Musical_director', 'Project_director', 'Author_of_introduction', 'Defendant_appellant', 'Libelant_appellant', 'Researcher', 'Musician', 'Facsimilist', 'Metal_engraver', 'Draftsman', 'Landscape_architect', 'Research_team_member', 'Contestee_appellee', 'Photographer', 'Thesis_advisor', 'Patent_applicant', 'Narrator', 'Opponent', 'Printer', 'Electrotyper', 'Actor', 'Donor', 'Production_place', 'Book_designer', 'Dedicatee', 'Colorist', 'Collector', 'Witness', 'Dubious_author', 'Woodcutter', 'Redactor', 'First_party', 'Data_manager', 'Producer', 'Recipient', 'Calligrapher', 'Data_contributor', 'Author_of_screenplay', 'Lead', 'Lighting_designer', 'Proofreader', 'Libelee_appellant', 'Typographer', 'Performer', 'Censor', 'Contestee', 'Process_contact', 'Puppeteer', 'Artist', 'University_place', 'Libelee_appellee', 'Originator', 'Funder', 'Patron', 'Inscriber', 'Platemaker', 'Artistic_director', 'Libelee', 'Owner', 'Other', 'Client', 'Conceptor', 'Bookjacket_designer', 'Applicant', 'Librettist', 'Defendant_appellee', 'Organizer_of_meeting', 'Commentator_for_written_text', 'Curator', 'Bookplate_designer', 'Stage_manager', 'Blurb_writer', 'Annotator', 'Recording_engineer', 'Defendant', 'Costume_designer', 'Programmer', 'Arranger', 'Honoree', 'Publication_place', 'Art_copyist', 'Host', 'Illustrator', 'Plaintiff_appellant', 'Illuminator', 'Permitting_agency', 'Correspondent', 'Patent_holder', 'Interviewer', 'Animator', 'Laboratory_director', 'Papermaker', 'Complainant_appellant', 'Printer_of_plates', 'Instrumentalist', 'Bibliographic_antecedent', 'Monitor', 'Inventor', 'Cinematographer', 'Production_manager', 'Interviewee', 'Singer', 'Laboratory', 'Distributor', 'Reviewer', 'Film_editor', 'Wood_engraver', 'Metadata_contact', 'Author', 'Signer', 'Collaborator', 'Conductor', 'Secretary', 'Former_owner', 'Sound_designer', 'Manufacturer', 'Moderator', 'Technical_director', 'Scribe', 'Storyteller', 'Copyright_claimant', 'Lender', 'Compiler', 'Repository', 'Choreographer', 'Cover_designer', 'Surveyor', 'Respondent_appellee', 'Scenarist', 'Responsible_party', 'Sculptor', 'Reporter', 'Architect', 'Set_designer', 'Scientific_advisor', 'Geographic_information_specialist', 'Associated_name', 'Sponsor', 'Speaker', 'Respondent', 'Cartographer', 'Complainant', 'Videographer', 'Stereotyper', 'Contestant_appellee', 'Binding_designer', 'Restager'.
+The enumeration 'Type' has the following literals: 'Glossary', 'Notes', 'Copyright', 'Cover', 'TOC', 'Acknowledgements', 'Tables', 'Index', 'Colophon', 'Dedication', 'Title', 'Preface', 'Illustrations', 'Text', 'Epigraph', 'Bibliography', 'Foreword'.
+'opf::Rights' (role 'opf_Rights', cardinality 0..*) is associated with 'opf::Metadata' (role 'opf_Metadata38', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata24', cardinality 0..*) is associated with 'opf::Type' (role 'opf_Type', cardinality 0..*).
+'opf::Package' (role 'opf_Package4', cardinality 0..*) is associated with 'opf::Spine' (role 'opf_Spine', cardinality 0..*).
+'opf::Contributor' (role 'opf_Contributor', cardinality 0..*) is associated with 'opf::Metadata' (role 'opf_Metadata20', cardinality 0..*).
+'opf::Package' (role 'opf_Package6', cardinality 0..*) is associated with 'opf::Guide' (role 'opf_Guide', cardinality 0..*).
+'opf::Package' (role 'opf_Package2', cardinality 0..*) is associated with 'opf::Manifest' (role 'opf_Manifest', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata40', cardinality 0..*) is associated with 'opf::Meta' (role 'opf_Meta', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata10', cardinality 0..*) is associated with 'opf::Title' (role 'opf_Title', cardinality 0..*).
+'opf::Creator' (role 'opf_Creator', cardinality 0..*) is associated with 'opf::Metadata' (role 'opf_Metadata12', cardinality 0..*).
+'opf::Format' (role 'opf_Format', cardinality 0..*) is associated with 'opf::Metadata' (role 'opf_Metadata26', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata16', cardinality 0..*) is associated with 'opf::Description' (role 'opf_Description', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata22', cardinality 0..*) is associated with 'opf::Date' (role 'opf_Date', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata36', cardinality 0..*) is associated with 'opf::Coverage' (role 'opf_Coverage', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata18', cardinality 0..*) is associated with 'opf::Publisher' (role 'opf_Publisher', cardinality 0..*).
+'opf::Manifest' (role 'opf_Manifest42', cardinality 0..*) is associated with 'opf::Item' (role 'opf_Item', cardinality 0..*).
+'opf::Tours' (role 'opf_Tours', cardinality 0..*) is associated with 'opf::Package' (role 'opf_Package8', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata30', cardinality 0..*) is associated with 'opf::Source' (role 'opf_Source', cardinality 0..*).
+'opf::Language' (role 'opf_Language', cardinality 0..*) is associated with 'opf::Metadata' (role 'opf_Metadata32', cardinality 0..*).
+'opf::Guide' (role 'opf_Guide46', cardinality 0..*) is associated with 'opf::Reference' (role 'opf_Reference', cardinality 0..*).
+'opf::Itemref' (role 'opf_Itemref', cardinality 0..*) is associated with 'opf::Spine' (role 'opf_Spine44', cardinality 0..*).
+'opf::Package' (role 'opf_Package', cardinality 0..*) is associated with 'opf::Metadata' (role 'opf_Metadata', cardinality 0..*).
+'opf::Identifier' (role 'opf_Identifier', cardinality 0..*) is associated with 'opf::Metadata' (role 'opf_Metadata28', cardinality 0..*).
+'opf::Metadata' (role 'opf_Metadata34', cardinality 0..*) is associated with 'opf::Relation' (role 'opf_Relation', cardinality 0..*).
+'opf::Subject' (role 'opf_Subject', cardinality 0..*) is associated with 'opf::Metadata' (role 'opf_Metadata14', cardinality 0..*).

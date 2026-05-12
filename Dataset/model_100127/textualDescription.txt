@@ -1,0 +1,29 @@
+The model has 11 class(es).
+The class 'relationaldatabase::Table' has no attributes.
+The class 'relationaldatabase::Taggable' has no attributes.
+The class 'relationaldatabase::Column' has the following attributes: 'nullable' of type bool; 'arrayDimensions' of type int; 'size' of type str; 'unique' of type bool; 'scale' of type str; 'primaryKey' of type bool.
+The class 'relationaldatabase::ForeignKey' has the following attributes: 'sourceLowerBoundary' of type str; 'targetUpperBoundary' of type str; 'sourceUpperBoundary' of type str; 'targetLowerBoundary' of type str.
+The class 'relationaldatabase::DataType' has no attributes.
+The class 'relationaldatabase::Tag' has the following attributes: 'documentation' of type str; 'name' of type str.
+The class 'Taggable' has no attributes.
+The class 'relationaldatabase::NamedElement' has the following attributes: 'name' of type str; 'documentation' of type str.
+The class 'relationaldatabase::DatabaseModel' has no attributes.
+The class 'relationaldatabase::Configuration' has no attributes.
+The class 'NamedElement' has no attributes.
+'relationaldatabase::Table' is a specialization of 'NamedElement'.
+'relationaldatabase::DataType' is a specialization of 'NamedElement'.
+'relationaldatabase::Column' is a specialization of 'NamedElement'.
+'relationaldatabase::ForeignKey' is a specialization of 'NamedElement'.
+'relationaldatabase::DatabaseModel' is a specialization of 'NamedElement'.
+'relationaldatabase::NamedElement' is a specialization of 'Taggable'.
+'relationaldatabase::ForeignKey' (role 'relationaldatabase_ForeignKey18', cardinality 0..*) is associated with 'relationaldatabase::Column' (role 'relationaldatabase_Column19', cardinality 0..*).
+'relationaldatabase::Table' (role 'relationaldatabase_Table10', cardinality 0..*) is associated with 'relationaldatabase::ForeignKey' (role 'relationaldatabase_ForeignKey', cardinality 0..*).
+'relationaldatabase::ForeignKey' (role 'relationaldatabase_ForeignKey15', cardinality 0..*) is associated with 'relationaldatabase::Column' (role 'relationaldatabase_Column16', cardinality 0..*).
+'relationaldatabase::Taggable' (role 'relationaldatabase_Taggable', cardinality 0..*) is associated with 'relationaldatabase::Tag' (role 'relationaldatabase_Tag24', cardinality 0..*).
+'relationaldatabase::Configuration' (role 'relationaldatabase_Configuration', cardinality 0..*) is associated with 'relationaldatabase::DatabaseModel' (role 'relationaldatabase_DatabaseModel6', cardinality 0..*).
+'relationaldatabase::DataType' (role 'relationaldatabase_DataType', cardinality 0..*) is associated with 'relationaldatabase::DatabaseModel' (role 'relationaldatabase_DatabaseModel2', cardinality 0..*).
+'relationaldatabase::Column' (role 'relationaldatabase_Column', cardinality 0..*) is associated with 'relationaldatabase::Table' (role 'relationaldatabase_Table8', cardinality 0..*).
+'relationaldatabase::Table' (role 'relationaldatabase_Table22', cardinality 0..*) is associated with 'relationaldatabase::ForeignKey' (role 'relationaldatabase_ForeignKey21', cardinality 0..*).
+'relationaldatabase::Column' (role 'relationaldatabase_Column12', cardinality 0..*) is associated with 'relationaldatabase::DataType' (role 'relationaldatabase_DataType13', cardinality 0..*).
+'relationaldatabase::DatabaseModel' (role 'relationaldatabase_DatabaseModel', cardinality 0..*) is associated with 'relationaldatabase::Table' (role 'relationaldatabase_Table', cardinality 0..*).
+'relationaldatabase::Tag' (role 'relationaldatabase_Tag', cardinality 0..*) is associated with 'relationaldatabase::DatabaseModel' (role 'relationaldatabase_DatabaseModel4', cardinality 0..*).

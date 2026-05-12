@@ -1,0 +1,94 @@
+The model has 37 class(es).
+The class 'statechartexpressions::ShiftExpression' has the following attributes: 'operator' of type str.
+The class 'statechartexpressions::Expression' has no attributes.
+The class 'statechartexpressions::EventRaising' has no attributes.
+The class 'statechartexpressions::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'statechartexpressions::Procedure' has the following attributes: 'identifier' of type str.
+The class 'statechartexpressions::BitwiseOrExpression' has no attributes.
+The class 'statechartexpressions::Trigger' has no attributes.
+The class 'statechartexpressions::BitwiseXorExpression' has no attributes.
+The class 'statechartexpressions::ProcedureCall' has no attributes.
+The class 'Event' has no attributes.
+The class 'statechartexpressions::TriggerExpression' has no attributes.
+The class 'statechartexpressions::Variable' has the following attributes: 'identifier' of type str.
+The class 'statechartexpressions::VariableReference' has no attributes.
+The class 'statechartexpressions::BitwiseAndExpression' has no attributes.
+The class 'statechartexpressions::Event' has no attributes.
+The class 'statechartexpressions::SignalEvent' has the following attributes: 'identifier' of type str.
+The class 'statechartexpressions::AdditiveExpression' has the following attributes: 'operator' of type str.
+The class 'TimeExpression' has no attributes.
+The class 'statechartexpressions::VariableAssignment' has the following attributes: 'operator' of type str.
+The class 'statechartexpressions::LiteralValue' has the following attributes: 'value' of type str.
+The class 'PrimaryExpression' has no attributes.
+The class 'statechartexpressions::ConditionalExpression' has no attributes.
+The class 'statechartexpressions::PrimaryExpression' has no attributes.
+The class 'statechartexpressions::BooleanOrExpression' has no attributes.
+The class 'statechartexpressions::GuardExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'statechartexpressions::BooleanAndExpression' has no attributes.
+The class 'statechartexpressions::Statement' has no attributes.
+The class 'statechartexpressions::TimeExpression' has no attributes.
+The class 'statechartexpressions::TimeConstant' has the following attributes: 'unit' of type str; 'value' of type int.
+The class 'statechartexpressions::MultiplicativeExpression' has the following attributes: 'operator' of type str.
+The class 'statechartexpressions::RelationalExpression' has the following attributes: 'operator' of type str.
+The class 'statechartexpressions::TimeEvent' has no attributes.
+The class 'statechartexpressions::EqualityExpression' has the following attributes: 'operator' of type str.
+The class 'Statement' has no attributes.
+The class 'statechartexpressions::NestedExpression' has no attributes.
+The class 'statechartexpressions::ActionExpression' has no attributes.
+The enumeration 'AssignmentOperator' has the following literals: 'modAssign', 'leftShiftAssign', 'rightShiftAssign', 'subAssign', 'divAssign', 'xorAssign', 'addAssign', 'orAssign', 'andAssign', 'assign', 'multAssign'.
+The enumeration 'TimeUnit' has the following literals: 'nanosecond', 'second', 'millisecond'.
+The enumeration 'MultiplicativeOperator' has the following literals: 'mod', 'div', 'mul'.
+The enumeration 'AdditiveOperator' has the following literals: 'minus', 'plus'.
+The enumeration 'EqualityOperator' has the following literals: 'equals', 'notEquals'.
+The enumeration 'ShiftOperator' has the following literals: 'right', 'left'.
+The enumeration 'RelationalOperator' has the following literals: 'greaterEqual', 'smallerEqual', 'greater', 'smaller'.
+The enumeration 'UnaryOperator' has the following literals: 'complement', 'negative', 'not_', 'positive'.
+'statechartexpressions::ProcedureCall' is a specialization of 'Statement'.
+'statechartexpressions::LiteralValue' is a specialization of 'PrimaryExpression'.
+'statechartexpressions::TriggerExpression' is a specialization of 'Expression'.
+'statechartexpressions::VariableReference' is a specialization of 'PrimaryExpression'.
+'statechartexpressions::SignalEvent' is a specialization of 'Event'.
+'statechartexpressions::GuardExpression' is a specialization of 'Expression'.
+'statechartexpressions::VariableAssignment' is a specialization of 'Statement'.
+'statechartexpressions::EventRaising' is a specialization of 'Statement'.
+'statechartexpressions::TimeEvent' is a specialization of 'Event'.
+'statechartexpressions::NestedExpression' is a specialization of 'PrimaryExpression'.
+'statechartexpressions::ActionExpression' is a specialization of 'Expression'.
+'statechartexpressions::TimeConstant' is a specialization of 'TimeExpression'.
+'statechartexpressions::VariableReference' is a specialization of 'TimeExpression'.
+'statechartexpressions::ConditionalExpression' (role 'statechartexpressions_ConditionalExpression55', cardinality 0..*) is associated with 'statechartexpressions::ShiftExpression' (role 'statechartexpressions_ShiftExpression56', cardinality 0..*).
+'statechartexpressions::MultiplicativeExpression' (role 'statechartexpressions_MultiplicativeExpression', cardinality 0..*) is associated with 'statechartexpressions::AdditiveExpression' (role 'statechartexpressions_AdditiveExpression63', cardinality 0..*).
+'statechartexpressions::RelationalExpression' (role 'statechartexpressions_RelationalExpression42', cardinality 0..*) is associated with 'statechartexpressions::EqualityExpression' (role 'statechartexpressions_EqualityExpression41', cardinality 0..*).
+'statechartexpressions::VariableReference' (role 'statechartexpressions_VariableReference', cardinality 0..*) is associated with 'statechartexpressions::Variable' (role 'statechartexpressions_Variable', cardinality 0..*).
+'statechartexpressions::BitwiseOrExpression' (role 'statechartexpressions_BitwiseOrExpression29', cardinality 0..*) is associated with 'statechartexpressions::BitwiseAndExpression' (role 'statechartexpressions_BitwiseAndExpression', cardinality 0..*).
+'statechartexpressions::VariableAssignment' (role 'statechartexpressions_VariableAssignment', cardinality 0..*) is associated with 'statechartexpressions::VariableReference' (role 'statechartexpressions_VariableReference8', cardinality 0..*).
+'statechartexpressions::BooleanAndExpression' (role 'statechartexpressions_BooleanAndExpression', cardinality 0..*) is associated with 'statechartexpressions::BooleanOrExpression' (role 'statechartexpressions_BooleanOrExpression14', cardinality 0..*).
+'statechartexpressions::Event' (role 'statechartexpressions_Event', cardinality 0..*) is associated with 'statechartexpressions::Trigger' (role 'statechartexpressions_Trigger4', cardinality 0..*).
+'statechartexpressions::VariableAssignment' (role 'statechartexpressions_VariableAssignment10', cardinality 0..*) is associated with 'statechartexpressions::ConditionalExpression' (role 'statechartexpressions_ConditionalExpression', cardinality 0..*).
+'statechartexpressions::BitwiseOrExpression' (role 'statechartexpressions_BitwiseOrExpression', cardinality 0..*) is associated with 'statechartexpressions::BitwiseXorExpression' (role 'statechartexpressions_BitwiseXorExpression24', cardinality 0..*).
+'statechartexpressions::BitwiseAndExpression' (role 'statechartexpressions_BitwiseAndExpression32', cardinality 0..*) is associated with 'statechartexpressions::BitwiseOrExpression' (role 'statechartexpressions_BitwiseOrExpression31', cardinality 0..*).
+'statechartexpressions::ActionExpression' (role 'statechartexpressions_ActionExpression', cardinality 0..*) is associated with 'statechartexpressions::Statement' (role 'statechartexpressions_Statement', cardinality 0..*).
+'statechartexpressions::Procedure' (role 'statechartexpressions_Procedure', cardinality 0..*) is associated with 'statechartexpressions::ProcedureCall' (role 'statechartexpressions_ProcedureCall', cardinality 0..*).
+'statechartexpressions::RelationalExpression' (role 'statechartexpressions_RelationalExpression44', cardinality 0..*) is associated with 'statechartexpressions::ShiftExpression' (role 'statechartexpressions_ShiftExpression', cardinality 0..*).
+'statechartexpressions::BooleanAndExpression' (role 'statechartexpressions_BooleanAndExpression21', cardinality 0..*) is associated with 'statechartexpressions::BitwiseXorExpression' (role 'statechartexpressions_BitwiseXorExpression22', cardinality 0..*).
+'statechartexpressions::RelationalExpression' (role 'statechartexpressions_RelationalExpression', cardinality 0..*) is associated with 'statechartexpressions::EqualityExpression' (role 'statechartexpressions_EqualityExpression39', cardinality 0..*).
+'statechartexpressions::BooleanOrExpression' (role 'statechartexpressions_BooleanOrExpression', cardinality 0..*) is associated with 'statechartexpressions::GuardExpression' (role 'statechartexpressions_GuardExpression', cardinality 0..*).
+'statechartexpressions::PrimaryExpression' (role 'statechartexpressions_PrimaryExpression', cardinality 0..*) is associated with 'statechartexpressions::UnaryExpression' (role 'statechartexpressions_UnaryExpression73', cardinality 0..*).
+'statechartexpressions::AdditiveExpression' (role 'statechartexpressions_AdditiveExpression61', cardinality 0..*) is associated with 'statechartexpressions::ShiftExpression' (role 'statechartexpressions_ShiftExpression60', cardinality 0..*).
+'statechartexpressions::TimeEvent' (role 'statechartexpressions_TimeEvent', cardinality 0..*) is associated with 'statechartexpressions::TimeExpression' (role 'statechartexpressions_TimeExpression', cardinality 0..*).
+'statechartexpressions::BitwiseAndExpression' (role 'statechartexpressions_BitwiseAndExpression34', cardinality 0..*) is associated with 'statechartexpressions::EqualityExpression' (role 'statechartexpressions_EqualityExpression', cardinality 0..*).
+'statechartexpressions::MultiplicativeExpression' (role 'statechartexpressions_MultiplicativeExpression70', cardinality 0..*) is associated with 'statechartexpressions::UnaryExpression' (role 'statechartexpressions_UnaryExpression71', cardinality 0..*).
+'statechartexpressions::BooleanOrExpression' (role 'statechartexpressions_BooleanOrExpression50', cardinality 0..*) is associated with 'statechartexpressions::ConditionalExpression' (role 'statechartexpressions_ConditionalExpression49', cardinality 0..*).
+'statechartexpressions::Trigger' (role 'statechartexpressions_Trigger', cardinality 0..*) is associated with 'statechartexpressions::TriggerExpression' (role 'statechartexpressions_TriggerExpression', cardinality 0..*).
+'statechartexpressions::BitwiseAndExpression' (role 'statechartexpressions_BitwiseAndExpression36', cardinality 0..*) is associated with 'statechartexpressions::EqualityExpression' (role 'statechartexpressions_EqualityExpression37', cardinality 0..*).
+'statechartexpressions::MultiplicativeExpression' (role 'statechartexpressions_MultiplicativeExpression68', cardinality 0..*) is associated with 'statechartexpressions::UnaryExpression' (role 'statechartexpressions_UnaryExpression', cardinality 0..*).
+'statechartexpressions::NestedExpression' (role 'statechartexpressions_NestedExpression', cardinality 0..*) is associated with 'statechartexpressions::ConditionalExpression' (role 'statechartexpressions_ConditionalExpression75', cardinality 0..*).
+'statechartexpressions::AdditiveExpression' (role 'statechartexpressions_AdditiveExpression', cardinality 0..*) is associated with 'statechartexpressions::ShiftExpression' (role 'statechartexpressions_ShiftExpression58', cardinality 0..*).
+'statechartexpressions::ConditionalExpression' (role 'statechartexpressions_ConditionalExpression52', cardinality 0..*) is associated with 'statechartexpressions::ShiftExpression' (role 'statechartexpressions_ShiftExpression53', cardinality 0..*).
+'statechartexpressions::SignalEvent' (role 'statechartexpressions_SignalEvent', cardinality 0..*) is associated with 'statechartexpressions::EventRaising' (role 'statechartexpressions_EventRaising', cardinality 0..*).
+'statechartexpressions::BooleanAndExpression' (role 'statechartexpressions_BooleanAndExpression19', cardinality 0..*) is associated with 'statechartexpressions::BitwiseXorExpression' (role 'statechartexpressions_BitwiseXorExpression', cardinality 0..*).
+'statechartexpressions::BitwiseOrExpression' (role 'statechartexpressions_BitwiseOrExpression27', cardinality 0..*) is associated with 'statechartexpressions::BitwiseXorExpression' (role 'statechartexpressions_BitwiseXorExpression26', cardinality 0..*).
+'statechartexpressions::BooleanAndExpression' (role 'statechartexpressions_BooleanAndExpression17', cardinality 0..*) is associated with 'statechartexpressions::BooleanOrExpression' (role 'statechartexpressions_BooleanOrExpression16', cardinality 0..*).
+'statechartexpressions::ShiftExpression' (role 'statechartexpressions_ShiftExpression47', cardinality 0..*) is associated with 'statechartexpressions::RelationalExpression' (role 'statechartexpressions_RelationalExpression46', cardinality 0..*).
+'statechartexpressions::AdditiveExpression' (role 'statechartexpressions_AdditiveExpression65', cardinality 0..*) is associated with 'statechartexpressions::MultiplicativeExpression' (role 'statechartexpressions_MultiplicativeExpression66', cardinality 0..*).

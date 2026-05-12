@@ -1,0 +1,18 @@
+The model has 5 class(es).
+The class 'PetriNetModel::ArcTP' has the following attributes: 'inscription' of type str.
+The class 'PetriNetModel::Place' has the following attributes: 'name' of type str; 'token' of type str.
+The class 'PetriNetModel::PetriNet' has the following attributes: 'name' of type str.
+The class 'PetriNetModel::ArcPT' has the following attributes: 'inscription' of type str.
+The class 'PetriNetModel::Transition' has the following attributes: 'name' of type str.
+'PetriNetModel::Place' (role 'PetriNetModel_Place', cardinality 0..*) is associated with 'PetriNetModel::PetriNet' (role 'PetriNetModel_PetriNet6', cardinality 0..*).
+'PetriNetModel::Place' (role 'PetriNetModel_Place26', cardinality 0..*) is associated with 'PetriNetModel::ArcTP' (role 'PetriNetModel_ArcTP27', cardinality 0..*).
+'PetriNetModel::ArcPT' (role 'PetriNetModel_ArcPT30', cardinality 0..*) is associated with 'PetriNetModel::Place' (role 'PetriNetModel_Place29', cardinality 0..*).
+'PetriNetModel::ArcPT' (role 'PetriNetModel_ArcPT14', cardinality 0..*) is associated with 'PetriNetModel::Transition' (role 'PetriNetModel_Transition15', cardinality 0..*).
+'PetriNetModel::ArcPT' (role 'PetriNetModel_ArcPT', cardinality 0..*) is associated with 'PetriNetModel::PetriNet' (role 'PetriNetModel_PetriNet2', cardinality 0..*).
+'PetriNetModel::Place' (role 'PetriNetModel_Place21', cardinality 0..*) is associated with 'PetriNetModel::ArcTP' (role 'PetriNetModel_ArcTP20', cardinality 0..*).
+'PetriNetModel::Place' (role 'PetriNetModel_Place18', cardinality 0..*) is associated with 'PetriNetModel::ArcPT' (role 'PetriNetModel_ArcPT17', cardinality 0..*).
+'PetriNetModel::ArcPT' (role 'PetriNetModel_ArcPT9', cardinality 0..*) is associated with 'PetriNetModel::Transition' (role 'PetriNetModel_Transition8', cardinality 0..*).
+'PetriNetModel::PetriNet' (role 'PetriNetModel_PetriNet4', cardinality 0..*) is associated with 'PetriNetModel::ArcTP' (role 'PetriNetModel_ArcTP', cardinality 0..*).
+'PetriNetModel::Transition' (role 'PetriNetModel_Transition', cardinality 0..*) is associated with 'PetriNetModel::PetriNet' (role 'PetriNetModel_PetriNet', cardinality 0..*).
+'PetriNetModel::ArcTP' (role 'PetriNetModel_ArcTP23', cardinality 0..*) is associated with 'PetriNetModel::Transition' (role 'PetriNetModel_Transition24', cardinality 0..*).
+'PetriNetModel::ArcTP' (role 'PetriNetModel_ArcTP12', cardinality 0..*) is associated with 'PetriNetModel::Transition' (role 'PetriNetModel_Transition11', cardinality 0..*).

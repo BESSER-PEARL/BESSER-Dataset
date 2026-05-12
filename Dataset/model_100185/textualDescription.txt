@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'sql::SqlProvides' has the following attributes: 'minIdle' of type str; 'timeBetweenEvictionRunsMillis' of type str; 'maxIdle' of type str; 'storedProcedure' of type str; 'url' of type str; 'metadata' of type str; 'user' of type str; 'driver' of type str; 'maxWait' of type str; 'password' of type str; 'maxActive' of type str.
+The class 'Provides' has no attributes.
+'sql::SqlProvides' is a specialization of 'Provides'.

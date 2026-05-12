@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'unql::Connection' has the following attributes: 'password' of type str; 'name' of type str; 'url' of type str; 'username' of type str.
+The class 'unql::Program' has no attributes.
+The class 'unql::Select' has the following attributes: 'attributes' of type str; 'relations' of type str; 'conditions' of type str.
+The class 'unql::Definition' has the following attributes: 'type' of type str; 'name' of type str.
+'unql::Program' (role 'unql_Program2', cardinality 0..*) is associated with 'unql::Connection' (role 'unql_Connection', cardinality 0..*).
+'unql::Definition' (role 'unql_Definition', cardinality 0..*) is associated with 'unql::Program' (role 'unql_Program', cardinality 0..*).
+'unql::Program' (role 'unql_Program4', cardinality 0..*) is associated with 'unql::Select' (role 'unql_Select', cardinality 0..*).

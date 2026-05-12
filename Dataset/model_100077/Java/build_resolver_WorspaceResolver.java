@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class build_resolver_WorspaceResolver extends EFSResolver {
+
+
+
+
+    public build_resolver_WorspaceResolver(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

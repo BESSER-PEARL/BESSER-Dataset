@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'RDBMS::Column' has the following attributes: 'name' of type str.
+The class 'RDBMS::FKey' has no attributes.
+The class 'RDBMS::PKey' has no attributes.
+The class 'RDBMS::Scheme' has the following attributes: 'name' of type str.
+The class 'RDBMS::Table' has the following attributes: 'name' of type str.
+'RDBMS::PKey' (role 'RDBMS_PKey', cardinality 0..*) is associated with 'RDBMS::Table' (role 'RDBMS_Table', cardinality 0..*).
+'RDBMS::Column' (role 'RDBMS.ecoreColumn', cardinality 0..*) is associated with 'RDBMS::Table' (role 'table', cardinality 0..*).
+'RDBMS::Scheme' (role 'RDBMS.ecoreScheme13', cardinality 0..*) is associated with 'RDBMS::FKey' (role 'keys', cardinality 0..*).
+'RDBMS::Column' (role 'RDBMS_Column', cardinality 0..*) is associated with 'RDBMS::FKey' (role 'RDBMS_FKey11', cardinality 0..*).
+'RDBMS::Column' (role 'columns', cardinality 0..*) is associated with 'RDBMS::Table' (role 'RDBMS.ecoreTable7', cardinality 0..*).
+'RDBMS::FKey' (role 'RDBMS_FKey', cardinality 0..*) is associated with 'RDBMS::PKey' (role 'RDBMS_PKey9', cardinality 0..*).
+'RDBMS::PKey' (role 'RDBMS_PKey15', cardinality 0..*) is associated with 'RDBMS::Column' (role 'RDBMS_Column16', cardinality 0..*).
+'RDBMS::Table' (role 'tables', cardinality 0..*) is associated with 'RDBMS::Scheme' (role 'RDBMS.ecoreScheme', cardinality 0..*).
+'RDBMS::FKey' (role 'RDBMS.ecoreFKey', cardinality 0..*) is associated with 'RDBMS::Scheme' (role 'scheme2', cardinality 0..*).
+'RDBMS::Table' (role 'RDBMS.ecoreTable', cardinality 0..*) is associated with 'RDBMS::Scheme' (role 'scheme', cardinality 0..*).

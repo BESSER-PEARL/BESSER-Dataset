@@ -1,0 +1,92 @@
+The model has 43 class(es).
+The class 'ddlDsl::Comment' has the following attributes: 'comment' of type str.
+The class 'ddlDsl::SqlNumber' has the following attributes: 'scale' of type int; 'hasPrecision' of type bool; 'precision' of type int.
+The class 'ddlDsl::LargeObjectType' has the following attributes: 'size' of type int.
+The class 'ddlDsl::Drop' has the following attributes: 'object' of type str.
+The class 'LongRaw' has no attributes.
+The class 'ddlDsl::LongRaw' has no attributes.
+The class 'ddlDsl::AlterTableAction' has no attributes.
+The class 'ddlDsl::Constraint' has no attributes.
+The class 'ddlDsl::DdlStatement' has no attributes.
+The class 'ddlDsl::ColumnComment' has no attributes.
+The class 'ddlDsl::Raw' has the following attributes: 'size' of type int.
+The class 'DdlStatement' has no attributes.
+The class 'ddlDsl::ReferenceClause' has no attributes.
+The class 'ddlDsl::Column' has the following attributes: 'sorted' of type bool; 'default' of type str.
+The class 'ddlDsl::SqlDate' has no attributes.
+The class 'ddlDsl::NullableConstraint' has the following attributes: 'not_' of type bool.
+The class 'ddlDsl::UniqueKeyConstraint' has no attributes.
+The class 'ddlDsl::SqlTimeStamp' has the following attributes: 'precision' of type int.
+The class 'ddlDsl::PrimaryKeyConstraint' has no attributes.
+The class 'ddlDsl::CreateTable' has no attributes.
+The class 'TableProperty' has no attributes.
+The class 'ddlDsl::Create' has the following attributes: 'name' of type str.
+The class 'ddlDsl::CreateIndex' has the following attributes: 'sortOrders' of type str; 'unique' of type bool.
+The class 'ddlDsl::ForeignKeyConstraint' has no attributes.
+The class 'Create' has no attributes.
+The class 'ddlDsl::AddTableConstraint' has the following attributes: 'name' of type str.
+The class 'ddlDsl::Long' has the following attributes: 'raw' of type bool.
+The class 'ddlDsl::TableComment' has no attributes.
+The class 'ddlDsl::SqlDataType' has the following attributes: 'name' of type str.
+The class 'ddlDsl::SqlBoolean' has no attributes.
+The class 'ddlDsl::Alter' has no attributes.
+The class 'SqlDateTime' has no attributes.
+The class 'AlterTableAction' has no attributes.
+The class 'SqlDataType' has no attributes.
+The class 'ddlDsl::SqlDateTime' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'ddlDsl::DropTableConstraint' has no attributes.
+The class 'Comment' has no attributes.
+The class 'ddlDsl::Ddl' has no attributes.
+The class 'ddlDsl::SqlCharacter' has the following attributes: 'size' of type int; 'national' of type bool.
+The class 'ddlDsl::SqlInterval' has the following attributes: 'secondsPrecision' of type int; 'year' of type bool; 'day' of type bool; 'precision' of type int.
+The class 'ddlDsl::RowIdType' has the following attributes: 'size' of type int.
+The class 'ddlDsl::TableProperty' has the following attributes: 'name' of type str.
+The enumeration 'SortDirectionEnum' has the following literals: 'ASC', 'DESC'.
+'ddlDsl::SqlInterval' is a specialization of 'SqlDateTime'.
+'ddlDsl::Alter' is a specialization of 'DdlStatement'.
+'ddlDsl::UniqueKeyConstraint' is a specialization of 'Constraint'.
+'ddlDsl::Create' is a specialization of 'DdlStatement'.
+'ddlDsl::Constraint' is a specialization of 'TableProperty'.
+'ddlDsl::AddTableConstraint' is a specialization of 'AlterTableAction'.
+'ddlDsl::LongRaw' is a specialization of 'SqlDataType'.
+'ddlDsl::SqlCharacter' is a specialization of 'SqlDataType'.
+'ddlDsl::ForeignKeyConstraint' is a specialization of 'Constraint'.
+'ddlDsl::LargeObjectType' is a specialization of 'SqlDataType'.
+'ddlDsl::ColumnComment' is a specialization of 'Comment'.
+'ddlDsl::NullableConstraint' is a specialization of 'Constraint'.
+'ddlDsl::CreateTable' is a specialization of 'Create'.
+'ddlDsl::DropTableConstraint' is a specialization of 'AlterTableAction'.
+'ddlDsl::RowIdType' is a specialization of 'SqlDataType'.
+'ddlDsl::Drop' is a specialization of 'DdlStatement'.
+'ddlDsl::CreateIndex' is a specialization of 'Create'.
+'ddlDsl::Column' is a specialization of 'TableProperty'.
+'ddlDsl::PrimaryKeyConstraint' is a specialization of 'Constraint'.
+'ddlDsl::Raw' is a specialization of 'LongRaw'.
+'ddlDsl::Comment' is a specialization of 'DdlStatement'.
+'ddlDsl::SqlDateTime' is a specialization of 'SqlDataType'.
+'ddlDsl::TableComment' is a specialization of 'Comment'.
+'ddlDsl::SqlNumber' is a specialization of 'SqlDataType'.
+'ddlDsl::Long' is a specialization of 'LongRaw'.
+'ddlDsl::SqlDate' is a specialization of 'SqlDateTime'.
+'ddlDsl::SqlBoolean' is a specialization of 'SqlDataType'.
+'ddlDsl::SqlTimeStamp' is a specialization of 'SqlDateTime'.
+'ddlDsl::TableProperty' (role 'ddlDsl_TableProperty', cardinality 0..*) is associated with 'ddlDsl::CreateTable' (role 'ddlDsl_CreateTable12', cardinality 0..*).
+'ddlDsl::Column' (role 'ddlDsl_Column17', cardinality 0..*) is associated with 'ddlDsl::CreateIndex' (role 'ddlDsl_CreateIndex16', cardinality 0..*).
+'ddlDsl::Column' (role 'ddlDsl_Column30', cardinality 0..*) is associated with 'ddlDsl::ForeignKeyConstraint' (role 'ddlDsl_ForeignKeyConstraint', cardinality 0..*).
+'ddlDsl::PrimaryKeyConstraint' (role 'ddlDsl_PrimaryKeyConstraint', cardinality 0..*) is associated with 'ddlDsl::Column' (role 'ddlDsl_Column28', cardinality 0..*).
+'ddlDsl::Column' (role 'ddlDsl_Column39', cardinality 0..*) is associated with 'ddlDsl::ReferenceClause' (role 'ddlDsl_ReferenceClause38', cardinality 0..*).
+'ddlDsl::ForeignKeyConstraint' (role 'ddlDsl_ForeignKeyConstraint32', cardinality 0..*) is associated with 'ddlDsl::ReferenceClause' (role 'ddlDsl_ReferenceClause33', cardinality 0..*).
+'ddlDsl::DropTableConstraint' (role 'ddlDsl_DropTableConstraint', cardinality 0..*) is associated with 'ddlDsl::Constraint' (role 'ddlDsl_Constraint7', cardinality 0..*).
+'ddlDsl::Alter' (role 'ddlDsl_Alter3', cardinality 0..*) is associated with 'ddlDsl::AlterTableAction' (role 'ddlDsl_AlterTableAction', cardinality 0..*).
+'ddlDsl::Column' (role 'ddlDsl_Column21', cardinality 0..*) is associated with 'ddlDsl::Constraint' (role 'ddlDsl_Constraint22', cardinality 0..*).
+'ddlDsl::ReferenceClause' (role 'ddlDsl_ReferenceClause', cardinality 0..*) is associated with 'ddlDsl::Column' (role 'ddlDsl_Column24', cardinality 0..*).
+'ddlDsl::Column' (role 'ddlDsl_Column', cardinality 0..*) is associated with 'ddlDsl::ColumnComment' (role 'ddlDsl_ColumnComment', cardinality 0..*).
+'ddlDsl::Constraint' (role 'ddlDsl_Constraint', cardinality 0..*) is associated with 'ddlDsl::AlterTableAction' (role 'ddlDsl_AlterTableAction5', cardinality 0..*).
+'ddlDsl::TableComment' (role 'ddlDsl_TableComment', cardinality 0..*) is associated with 'ddlDsl::CreateTable' (role 'ddlDsl_CreateTable9', cardinality 0..*).
+'ddlDsl::CreateTable' (role 'ddlDsl_CreateTable', cardinality 0..*) is associated with 'ddlDsl::Alter' (role 'ddlDsl_Alter', cardinality 0..*).
+'ddlDsl::Column' (role 'ddlDsl_Column26', cardinality 0..*) is associated with 'ddlDsl::UniqueKeyConstraint' (role 'ddlDsl_UniqueKeyConstraint', cardinality 0..*).
+'ddlDsl::SqlDataType' (role 'ddlDsl_SqlDataType', cardinality 0..*) is associated with 'ddlDsl::Column' (role 'ddlDsl_Column19', cardinality 0..*).
+'ddlDsl::ReferenceClause' (role 'ddlDsl_ReferenceClause35', cardinality 0..*) is associated with 'ddlDsl::CreateTable' (role 'ddlDsl_CreateTable36', cardinality 0..*).
+'ddlDsl::Ddl' (role 'ddlDsl_Ddl', cardinality 0..*) is associated with 'ddlDsl::DdlStatement' (role 'ddlDsl_DdlStatement', cardinality 0..*).
+'ddlDsl::CreateTable' (role 'ddlDsl_CreateTable14', cardinality 0..*) is associated with 'ddlDsl::CreateIndex' (role 'ddlDsl_CreateIndex', cardinality 0..*).

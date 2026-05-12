@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'resourcePetriNet::OutputArc' has the following attributes: 'weight' of type int.
+The class 'resourcePetriNet::InputArc' has the following attributes: 'weight' of type int.
+The class 'resourcePetriNet::GenericPlace' has the following attributes: 'name' of type str; 'numberOfTokens' of type int.
+The class 'resourcePetriNet::PetriNet' has the following attributes: 'name' of type str.
+The class 'GenericPlace' has no attributes.
+The class 'resourcePetriNet::Resource' has no attributes.
+The class 'resourcePetriNet::Place' has the following attributes: 'capacity' of type int.
+The class 'resourcePetriNet::Transition' has the following attributes: 'name' of type str.
+'resourcePetriNet::Place' is a specialization of 'GenericPlace'.
+'resourcePetriNet::Resource' is a specialization of 'GenericPlace'.
+'resourcePetriNet::InputArc' (role 'resourcePetriNet_InputArc', cardinality 0..*) is associated with 'resourcePetriNet::PetriNet' (role 'resourcePetriNet_PetriNet4', cardinality 0..*).
+'resourcePetriNet::OutputArc' (role 'resourcePetriNet_OutputArc14', cardinality 0..*) is associated with 'resourcePetriNet::Transition' (role 'resourcePetriNet_Transition15', cardinality 0..*).
+'resourcePetriNet::GenericPlace' (role 'resourcePetriNet_GenericPlace18', cardinality 0..*) is associated with 'resourcePetriNet::OutputArc' (role 'resourcePetriNet_OutputArc17', cardinality 0..*).
+'resourcePetriNet::InputArc' (role 'resourcePetriNet_InputArc11', cardinality 0..*) is associated with 'resourcePetriNet::Transition' (role 'resourcePetriNet_Transition12', cardinality 0..*).
+'resourcePetriNet::OutputArc' (role 'resourcePetriNet_OutputArc', cardinality 0..*) is associated with 'resourcePetriNet::PetriNet' (role 'resourcePetriNet_PetriNet6', cardinality 0..*).
+'resourcePetriNet::GenericPlace' (role 'resourcePetriNet_GenericPlace9', cardinality 0..*) is associated with 'resourcePetriNet::InputArc' (role 'resourcePetriNet_InputArc8', cardinality 0..*).
+'resourcePetriNet::PetriNet' (role 'resourcePetriNet_PetriNet', cardinality 0..*) is associated with 'resourcePetriNet::GenericPlace' (role 'resourcePetriNet_GenericPlace', cardinality 0..*).
+'resourcePetriNet::Transition' (role 'resourcePetriNet_Transition', cardinality 0..*) is associated with 'resourcePetriNet::PetriNet' (role 'resourcePetriNet_PetriNet2', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'mmb::Mode' has the following attributes: 'Name' of type str; 'Shape' of type str; 'InitialState' of type bool; 'Dimension' of type float.
+The class 'mmb::Model' has the following attributes: 'Name' of type str.
+The class 'mmb::Transition' has the following attributes: 'Event' of type str.
+The class 'mmb::Modification' has the following attributes: 'VarName' of type str; 'VarType' of type str.
+The class 'mmb::Automaton' has the following attributes: 'Name' of type str.
+'mmb::Model' (role 'mmb_Model', cardinality 0..*) is associated with 'mmb::Automaton' (role 'mmb_Automaton', cardinality 0..*).
+'mmb::Transition' (role 'mmb_Transition11', cardinality 0..*) is associated with 'mmb::Mode' (role 'mmb_Mode12', cardinality 0..*).
+'mmb::Mode' (role 'mmb_Mode', cardinality 0..*) is associated with 'mmb::Automaton' (role 'mmb_Automaton2', cardinality 0..*).
+'mmb::Modification' (role 'mmb_Modification', cardinality 0..*) is associated with 'mmb::Mode' (role 'mmb_Mode6', cardinality 0..*).
+'mmb::Mode' (role 'mmb_Mode9', cardinality 0..*) is associated with 'mmb::Transition' (role 'mmb_Transition8', cardinality 0..*).
+'mmb::Transition' (role 'mmb_Transition', cardinality 0..*) is associated with 'mmb::Automaton' (role 'mmb_Automaton4', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'maven::Mappings' has no attributes.
+The class 'maven::MavenProvider' has the following attributes: 'transitive' of type bool.
+The class 'GroupAndArtifact' has no attributes.
+The class 'maven::GroupAndArtifact' has the following attributes: 'groupId' of type str; 'artifactId' of type str.
+The class 'maven::Scope' has the following attributes: 'name' of type str; 'exclude' of type bool.
+The class 'maven::Transform' has no attributes.
+The class 'Provider' has no attributes.
+The class 'maven::MapEntry' has the following attributes: 'name' of type str.
+The class 'maven::Scopes' has no attributes.
+'maven::MapEntry' is a specialization of 'GroupAndArtifact'.
+'maven::MavenProvider' is a specialization of 'Provider'.
+'maven::GroupAndArtifact' (role 'maven_GroupAndArtifact', cardinality 0..*) is associated with 'maven::MapEntry' (role 'maven_MapEntry', cardinality 0..*).
+'maven::Scope' (role 'maven_Scope', cardinality 0..*) is associated with 'maven::Scopes' (role 'maven_Scopes10', cardinality 0..*).
+'maven::Mappings' (role 'maven_Mappings6', cardinality 0..*) is associated with 'maven::MavenProvider' (role 'maven_MavenProvider', cardinality 0..*).
+'maven::Mappings' (role 'maven_Mappings4', cardinality 0..*) is associated with 'maven::Transform' (role 'maven_Transform', cardinality 0..*).
+'maven::MavenProvider' (role 'maven_MavenProvider8', cardinality 0..*) is associated with 'maven::Scopes' (role 'maven_Scopes', cardinality 0..*).
+'maven::MapEntry' (role 'maven_MapEntry2', cardinality 0..*) is associated with 'maven::Mappings' (role 'maven_Mappings', cardinality 0..*).

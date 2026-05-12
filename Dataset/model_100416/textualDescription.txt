@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'state::Node' has no attributes.
+The class 'state::StateMachine' has the following attributes: 'name' of type str.
+The class 'state::FinalNode' has no attributes.
+The class 'state::Transition' has the following attributes: 'triggerEventName' of type str.
+The class 'Node' has no attributes.
+The class 'state::State' has the following attributes: 'duration' of type str; 'name' of type str.
+The class 'state::Condition' has the following attributes: 'expression' of type str.
+The class 'state::TimeoutTransition' has no attributes.
+The class 'state::InitialNode' has no attributes.
+The class 'state::Module' has no attributes.
+The class 'Transition' has no attributes.
+The class 'state::ConditionalNode' has no attributes.
+'state::TimeoutTransition' is a specialization of 'Transition'.
+'state::InitialNode' is a specialization of 'Node'.
+'state::ConditionalNode' is a specialization of 'Node'.
+'state::State' is a specialization of 'Node'.
+'state::FinalNode' is a specialization of 'Node'.
+'state::Node' (role 'state_Node9', cardinality 0..*) is associated with 'state::Transition' (role 'state_Transition8', cardinality 0..*).
+'state::StateMachine' (role 'state_StateMachine17', cardinality 0..*) is associated with 'state::Transition' (role 'state_Transition18', cardinality 0..*).
+'state::Node' (role 'state_Node6', cardinality 0..*) is associated with 'state::Transition' (role 'state_Transition5', cardinality 0..*).
+'state::Transition' (role 'state_Transition', cardinality 0..*) is associated with 'state::Node' (role 'state_Node', cardinality 0..*).
+'state::Condition' (role 'state_Condition', cardinality 0..*) is associated with 'state::Transition' (role 'state_Transition11', cardinality 0..*).
+'state::Node' (role 'state_Node15', cardinality 0..*) is associated with 'state::StateMachine' (role 'state_StateMachine', cardinality 0..*).
+'state::ConditionalNode' (role 'state_ConditionalNode', cardinality 0..*) is associated with 'state::Condition' (role 'state_Condition13', cardinality 0..*).
+'state::Node' (role 'state_Node2', cardinality 0..*) is associated with 'state::Transition' (role 'state_Transition3', cardinality 0..*).
+'state::StateMachine' (role 'state_StateMachine20', cardinality 0..*) is associated with 'state::Module' (role 'state_Module', cardinality 0..*).

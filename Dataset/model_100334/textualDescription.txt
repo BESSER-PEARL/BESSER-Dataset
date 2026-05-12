@@ -1,0 +1,36 @@
+The model has 18 class(es).
+The class 'CPN' has no attributes.
+The class 'pragmacpndefinition::Arc' has no attributes.
+The class 'OntologyMember' has no attributes.
+The class 'Transition' has no attributes.
+The class 'pragmacpndefinition::Pragma' has the following attributes: 'text' of type str.
+The class 'pragmacpndefinition::Place' has no attributes.
+The class 'pragmacpndefinition::Transition' has no attributes.
+The class 'Arc' has no attributes.
+The class 'PetriNet' has no attributes.
+The class 'Label' has no attributes.
+The class 'pragmacpndefinition::PragmaCPN' has no attributes.
+The class 'pragmacpndefinition::Page' has no attributes.
+The class 'Page' has no attributes.
+The class 'pragmacpndefinition::PetriNet' has no attributes.
+The class 'pragmacpndefinition::OntologyDocument' has the following attributes: 'path' of type str; 'iri' of type str.
+The class 'pragmacpndefinition::PragmaticsOntology' has the following attributes: 'manager' of type str.
+The class 'pragmacpndefinition::OntologyMember' has no attributes.
+The class 'Place' has no attributes.
+'pragmacpndefinition::Transition' is a specialization of 'OntologyMember'.
+'pragmacpndefinition::Place' is a specialization of 'OntologyMember'.
+'pragmacpndefinition::Transition' is a specialization of 'Transition'.
+'pragmacpndefinition::Pragma' is a specialization of 'Label'.
+'pragmacpndefinition::PragmaCPN' is a specialization of 'CPN'.
+'pragmacpndefinition::Arc' is a specialization of 'OntologyMember'.
+'pragmacpndefinition::Page' is a specialization of 'OntologyMember'.
+'pragmacpndefinition::Place' is a specialization of 'Place'.
+'pragmacpndefinition::PetriNet' is a specialization of 'PetriNet'.
+'pragmacpndefinition::Arc' is a specialization of 'Arc'.
+'pragmacpndefinition::Page' is a specialization of 'Page'.
+'pragmacpndefinition::PragmaticsOntology' is a specialization of 'Label'.
+'pragmacpndefinition::PetriNet' (role 'net', cardinality 0..*) is associated with 'pragmacpndefinition::PragmaticsOntology' (role 'PragmaticsOntology5', cardinality 0..*).
+'pragmacpndefinition::OntologyDocument' (role 'documents', cardinality 0..*) is associated with 'pragmacpndefinition::PragmaticsOntology' (role 'PragmaticsOntology', cardinality 0..*).
+'pragmacpndefinition::PragmaticsOntology' (role 'ontology', cardinality 0..*) is associated with 'pragmacpndefinition::OntologyDocument' (role 'OntologyDocument', cardinality 0..*).
+'pragmacpndefinition::OntologyMember' (role 'pragmacpndefinition_OntologyMember', cardinality 0..*) is associated with 'pragmacpndefinition::Pragma' (role 'pragmacpndefinition_Pragma', cardinality 0..*).
+'pragmacpndefinition::PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'pragmacpndefinition::PragmaticsOntology' (role 'ontology3', cardinality 0..*).

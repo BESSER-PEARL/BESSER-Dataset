@@ -1,0 +1,51 @@
+The model has 19 class(es).
+The class 'requirements::ModelElement' has no attributes.
+The class 'Organization' has no attributes.
+The class 'requirements::Entity' has no attributes.
+The class 'BasicElement' has no attributes.
+The class 'requirements::Goal' has the following attributes: 'priority' of type str; 'synopsis' of type str.
+The class 'ModelElement' has no attributes.
+The class 'AnnotableElement' has no attributes.
+The class 'requirements::GoalStep' has no attributes.
+The class 'requirements::PrivilegeGroup' has the following attributes: 'documentation' of type str.
+The class 'requirements::Organization' has no attributes.
+The class 'requirements::RequirementsDefinition' has the following attributes: 'version' of type str; 'date' of type date.
+The class 'requirements::Privilege' has the following attributes: 'category' of type str.
+The class 'requirements::AnnotableElement' has no attributes.
+The class 'requirements::Attribute' has the following attributes: 'type' of type str.
+The class 'requirements::BasicElement' has the following attributes: 'documentation' of type str; 'name' of type str; 'id' of type str.
+The class 'requirements::RelationShip' has the following attributes: 'sourceMax' of type int; 'targetMin' of type int; 'targetMax' of type int; 'sourceMin' of type int.
+The class 'requirements::Agent' has the following attributes: 'isHuman' of type bool.
+The class 'requirements::Process' has no attributes.
+The class 'requirements::Annotation' has the following attributes: 'id' of type str; 'comment' of type str; 'date' of type date; 'status' of type str; 'annotation' of type str; 'author' of type str.
+The enumeration 'PrivilegeNature' has the following literals: 'create', 'read', 'delete', 'update'.
+The enumeration 'PriorityLevel' has the following literals: 'High', 'Low', 'VeryHigh', 'VeryLow', 'Normal'.
+The enumeration 'AnnotationStatus' has the following literals: 'Duplicate', 'Fixed', 'Wontfix', 'Incomplete', 'New', 'Invalid'.
+The enumeration 'AttributeType' has the following literals: 'Other', 'TextualValue', 'NumericalValue', 'TemporalValue'.
+'requirements::AnnotableElement' is a specialization of 'BasicElement'.
+'requirements::Entity' is a specialization of 'BasicElement'.
+'requirements::Goal' is a specialization of 'AnnotableElement'.
+'requirements::RequirementsDefinition' is a specialization of 'Organization'.
+'requirements::Attribute' is a specialization of 'BasicElement'.
+'requirements::Organization' is a specialization of 'AnnotableElement'.
+'requirements::Agent' is a specialization of 'AnnotableElement'.
+'requirements::RelationShip' is a specialization of 'BasicElement'.
+'requirements::PrivilegeGroup' is a specialization of 'ModelElement'.
+'requirements::BasicElement' is a specialization of 'ModelElement'.
+'requirements::Process' is a specialization of 'Organization'.
+'requirements::RelationShip' (role 'requirements_RelationShip', cardinality 0..*) is associated with 'requirements::Entity' (role 'requirements_Entity5', cardinality 0..*).
+'requirements::Goal' (role 'requirements_Goal17', cardinality 0..*) is associated with 'requirements::GoalStep' (role 'requirements_GoalStep', cardinality 0..*).
+'requirements::PrivilegeGroup' (role 'requirements_PrivilegeGroup23', cardinality 0..*) is associated with 'requirements::Privilege' (role 'requirements_Privilege24', cardinality 0..*).
+'requirements::RelationShip' (role 'requirements_RelationShip7', cardinality 0..*) is associated with 'requirements::Entity' (role 'requirements_Entity8', cardinality 0..*).
+'requirements::Process' (role 'requirements_Process', cardinality 0..*) is associated with 'requirements::GoalStep' (role 'requirements_GoalStep29', cardinality 0..*).
+'requirements::Organization' (role 'requirements_Organization', cardinality 0..*) is associated with 'requirements::ModelElement' (role 'requirements_ModelElement', cardinality 0..*).
+'requirements::Entity' (role 'requirements_Entity3', cardinality 0..*) is associated with 'requirements::Attribute' (role 'requirements_Attribute', cardinality 0..*).
+'requirements::GoalStep' (role 'requirements_GoalStep26', cardinality 0..*) is associated with 'requirements::Goal' (role 'requirements_Goal27', cardinality 0..*).
+'requirements::Goal' (role 'requirements_Goal', cardinality 0..*) is associated with 'requirements::Goal' (role 'requirements_Goal11', cardinality 0..*).
+'requirements::AnnotableElement' (role 'requirements_AnnotableElement', cardinality 0..*) is associated with 'requirements::Annotation' (role 'requirements_Annotation', cardinality 0..*).
+'requirements::Entity' (role 'requirements_Entity', cardinality 0..*) is associated with 'requirements::Entity' (role 'requirements_Entity0', cardinality 0..*).
+'requirements::Goal' (role 'isResponsible', cardinality 0..*) is associated with 'requirements::Agent' (role 'Agent', cardinality 0..*).
+'requirements::Goal' (role 'requirements_Goal15', cardinality 0..*) is associated with 'requirements::PrivilegeGroup' (role 'requirements_PrivilegeGroup', cardinality 0..*).
+'requirements::BasicElement' (role 'requirements_BasicElement', cardinality 0..*) is associated with 'requirements::Privilege' (role 'requirements_Privilege', cardinality 0..*).
+'requirements::Agent' (role 'responsible', cardinality 0..*) is associated with 'requirements::Goal' (role 'Goal', cardinality 0..*).
+'requirements::Entity' (role 'requirements_Entity21', cardinality 0..*) is associated with 'requirements::PrivilegeGroup' (role 'requirements_PrivilegeGroup20', cardinality 0..*).

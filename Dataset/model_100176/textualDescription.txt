@@ -1,0 +1,29 @@
+The model has 12 class(es).
+The class 'Relational::Constraint' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'Relational::Schema' has the following attributes: 'name' of type str.
+The class 'Relational::Domain' has the following attributes: 'name' of type str.
+The class 'Relational::CandidateKey' has the following attributes: 'name' of type str.
+The class 'Relational::PrimitiveType' has no attributes.
+The class 'Relational::EnumerationType' has no attributes.
+The class 'Relational::Table' has the following attributes: 'name' of type str.
+The class 'CandidateKey' has no attributes.
+The class 'Domain' has no attributes.
+The class 'Relational::ForeignKey' has no attributes.
+The class 'Relational::EnumeratedLiteral' has the following attributes: 'name' of type str.
+The class 'Relational::Attribute' has the following attributes: 'name' of type str; 'multiplicity' of type int; 'type' of type str; 'nullable' of type bool.
+The enumeration 'AttributeType' has the following literals: 'Derivate', 'Simple'.
+'Relational::ForeignKey' is a specialization of 'CandidateKey'.
+'Relational::PrimitiveType' is a specialization of 'Domain'.
+'Relational::EnumerationType' is a specialization of 'Domain'.
+'Relational::Constraint' (role 'Relational_Constraint19', cardinality 0..*) is associated with 'Relational::Domain' (role 'Relational_Domain18', cardinality 0..*).
+'Relational::Table' (role 'Relational_Table8', cardinality 0..*) is associated with 'Relational::CandidateKey' (role 'Relational_CandidateKey9', cardinality 0..*).
+'Relational::Domain' (role 'Relational_Domain', cardinality 0..*) is associated with 'Relational::Schema' (role 'Relational_Schema2', cardinality 0..*).
+'Relational::Table' (role 'Relational_Table11', cardinality 0..*) is associated with 'Relational::Attribute' (role 'Relational_Attribute', cardinality 0..*).
+'Relational::Attribute' (role 'Relational_Attribute22', cardinality 0..*) is associated with 'Relational::CandidateKey' (role 'Relational_CandidateKey21', cardinality 0..*).
+'Relational::ForeignKey' (role 'Relational_ForeignKey24', cardinality 0..*) is associated with 'Relational::Table' (role 'Relational_Table25', cardinality 0..*).
+'Relational::CandidateKey' (role 'Relational_CandidateKey', cardinality 0..*) is associated with 'Relational::Table' (role 'Relational_Table6', cardinality 0..*).
+'Relational::Schema' (role 'Relational_Schema', cardinality 0..*) is associated with 'Relational::Table' (role 'Relational_Table', cardinality 0..*).
+'Relational::EnumeratedLiteral' (role 'Relational_EnumeratedLiteral', cardinality 0..*) is associated with 'Relational::EnumerationType' (role 'Relational_EnumerationType', cardinality 0..*).
+'Relational::Attribute' (role 'Relational_Attribute15', cardinality 0..*) is associated with 'Relational::Domain' (role 'Relational_Domain16', cardinality 0..*).
+'Relational::Constraint' (role 'Relational_Constraint', cardinality 0..*) is associated with 'Relational::Schema' (role 'Relational_Schema4', cardinality 0..*).
+'Relational::Table' (role 'Relational_Table13', cardinality 0..*) is associated with 'Relational::ForeignKey' (role 'Relational_ForeignKey', cardinality 0..*).

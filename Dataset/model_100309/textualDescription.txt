@@ -1,0 +1,81 @@
+The model has 38 class(es).
+The class 'petrinetv3::petrinetv3Trace::Transition' has no attributes.
+The class 'petrinetv3Trace::Steps::Step' has no attributes.
+The class 'petrinetv3::petrinetv3Trace::Place' has no attributes.
+The class 'petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions' has no attributes.
+The class 'petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep' has no attributes.
+The class 'petrinetv3Trace::Steps::Petrinetv3::Net::Initialize' has no attributes.
+The class 'State' has no attributes.
+The class 'Petrinetv3::Net::Run' has no attributes.
+The class 'petrinetv3::petrinetv3Trace::Net' has no attributes.
+The class 'petrinetv3Trace::States::State' has no attributes.
+The class 'petrinetv3Trace::States::Transition::clock::Value' has the following attributes: 'clock' of type int.
+The class 'petrinetv3::TracedPlace' has no attributes.
+The class 'petrinetv3Trace::Steps::RootImplicitStep' has no attributes.
+The class 'petrinetv3Trace::States::Place::tokens::Value' has no attributes.
+The class 'petrinetv3Trace::Steps::SmallStep' has no attributes.
+The class 'petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep' has no attributes.
+The class 'petrinetv3Trace::petrinetv3::TracedToken' has no attributes.
+The class 'MSEOccurrence' has no attributes.
+The class 'Petrinetv3::Transition::Fire' has no attributes.
+The class 'Place::tokens::Value' has no attributes.
+The class 'Steps::Petrinetv3::Net::Run::AbstractSubStep' has no attributes.
+The class 'petrinetv3::petrinetv3Trace::Token' has no attributes.
+The class 'Transition::clock::Value' has no attributes.
+The class 'SmallStep' has no attributes.
+The class 'petrinetv3Trace::Steps::BigStep' has no attributes.
+The class 'Petrinetv3::Net::TickEnabledTransitions' has no attributes.
+The class 'petrinetv3Trace::Steps::Petrinetv3::Net::Run' has no attributes.
+The class 'Petrinetv3::Net::Run::AbstractSubStep' has no attributes.
+The class 'petrinetv3Trace::petrinetv3::TracedTransition' has no attributes.
+The class 'Steps::SmallStep' has no attributes.
+The class 'petrinetv3Trace::Trace' has no attributes.
+The class 'BigStep' has no attributes.
+The class 'petrinetv3::TracedToken' has no attributes.
+The class 'petrinetv3::TracedTransition' has no attributes.
+The class 'petrinetv3Trace::Steps::Petrinetv3::Transition::Fire' has no attributes.
+The class 'Step' has no attributes.
+The class 'Petrinetv3::Net::Initialize' has no attributes.
+The class 'petrinetv3Trace::petrinetv3::TracedPlace' has no attributes.
+'petrinetv3Trace::Steps::Step' is a specialization of 'MSEOccurrence'.
+'petrinetv3Trace::Steps::Petrinetv3::Net::Initialize' is a specialization of 'Steps::Petrinetv3::Net::Run::AbstractSubStep'.
+'petrinetv3Trace::Steps::SmallStep' is a specialization of 'Step'.
+'petrinetv3Trace::Steps::Petrinetv3::Transition::Fire' is a specialization of 'Steps::Petrinetv3::Net::Run::AbstractSubStep'.
+'petrinetv3Trace::Steps::Petrinetv3::Net::Initialize' is a specialization of 'Steps::SmallStep'.
+'petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions' is a specialization of 'Steps::SmallStep'.
+'petrinetv3Trace::Steps::Petrinetv3::Transition::Fire' is a specialization of 'Steps::SmallStep'.
+'petrinetv3Trace::Steps::Petrinetv3::Net::Run' is a specialization of 'BigStep'.
+'petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions' is a specialization of 'Steps::Petrinetv3::Net::Run::AbstractSubStep'.
+'petrinetv3Trace::Steps::BigStep' is a specialization of 'Step'.
+'petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep' is a specialization of 'Steps::Petrinetv3::Net::Run::AbstractSubStep'.
+'petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep' is a specialization of 'Steps::SmallStep'.
+'petrinetv3Trace::Steps::RootImplicitStep' is a specialization of 'SmallStep'.
+'Step' (role 'Step31', cardinality 0..*) is associated with 'petrinetv3Trace::States::State' (role 'startingState', cardinality 0..*).
+'Transition::clock::Value' (role 'Transition_clock_Value44', cardinality 0..*) is associated with 'petrinetv3Trace::petrinetv3::TracedTransition' (role 'parent43', cardinality 0..*).
+'Step' (role 'Step', cardinality 0..*) is associated with 'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace14', cardinality 0..*).
+'petrinetv3::TracedTransition' (role 'TracedTransition', cardinality 0..*) is associated with 'petrinetv3Trace::States::Transition::clock::Value' (role 'clockSequence', cardinality 0..*).
+'petrinetv3Trace::States::Transition::clock::Value' (role 'transition_clock_Values', cardinality 0..*) is associated with 'State' (role 'State36', cardinality 0..*).
+'petrinetv3Trace::States::Place::tokens::Value' (role 'petrinetv3Trace_States_Place_tokens_Value', cardinality 0..*) is associated with 'petrinetv3::TracedToken' (role 'petrinetv3_TracedToken26', cardinality 0..*).
+'petrinetv3Trace::States::State' (role 'states33', cardinality 0..*) is associated with 'Transition::clock::Value' (role 'Transition_clock_Value', cardinality 0..*).
+'State' (role 'State19', cardinality 0..*) is associated with 'petrinetv3Trace::Steps::Step' (role 'endedSteps', cardinality 0..*).
+'State' (role 'State24', cardinality 0..*) is associated with 'petrinetv3Trace::States::Place::tokens::Value' (role 'place_tokens_Values', cardinality 0..*).
+'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace10', cardinality 0..*) is associated with 'petrinetv3::TracedToken' (role 'petrinetv3_TracedToken', cardinality 0..*).
+'Petrinetv3::Net::Run::AbstractSubStep' (role 'Petrinetv3_Net_Run_AbstractSubStep', cardinality 0..*) is associated with 'petrinetv3Trace::Steps::Petrinetv3::Net::Run' (role 'petrinetv3Trace_Steps_Petrinetv3_Net_Run', cardinality 0..*).
+'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace4', cardinality 0..*) is associated with 'Petrinetv3::Net::TickEnabledTransitions' (role 'Petrinetv3_Net_TickEnabledTransitions', cardinality 0..*).
+'petrinetv3::TracedPlace' (role 'petrinetv3_TracedPlace46', cardinality 0..*) is associated with 'petrinetv3Trace::petrinetv3::TracedTransition' (role 'petrinetv3Trace_petrinetv3_TracedTransition', cardinality 0..*).
+'Place::tokens::Value' (role 'Place_tokens_Value41', cardinality 0..*) is associated with 'petrinetv3Trace::petrinetv3::TracedPlace' (role 'parent', cardinality 0..*).
+'petrinetv3Trace::States::State' (role 'endingState', cardinality 0..*) is associated with 'Step' (role 'Step28', cardinality 0..*).
+'Petrinetv3::Net::Run' (role 'Petrinetv3_Net_Run', cardinality 0..*) is associated with 'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace2', cardinality 0..*).
+'petrinetv3::petrinetv3Trace::Transition' (role 'petrinetv3_petrinetv3Trace_Transition', cardinality 0..*) is associated with 'petrinetv3Trace::petrinetv3::TracedTransition' (role 'petrinetv3Trace_petrinetv3_TracedTransition48', cardinality 0..*).
+'petrinetv3::petrinetv3Trace::Place' (role 'petrinetv3_petrinetv3Trace_Place', cardinality 0..*) is associated with 'petrinetv3Trace::petrinetv3::TracedPlace' (role 'petrinetv3Trace_petrinetv3_TracedPlace', cardinality 0..*).
+'petrinetv3::TracedPlace' (role 'TracedPlace', cardinality 0..*) is associated with 'petrinetv3Trace::States::Place::tokens::Value' (role 'tokensSequence', cardinality 0..*).
+'Place::tokens::Value' (role 'Place_tokens_Value', cardinality 0..*) is associated with 'petrinetv3Trace::States::State' (role 'states', cardinality 0..*).
+'petrinetv3::TracedPlace' (role 'petrinetv3_TracedPlace', cardinality 0..*) is associated with 'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace8', cardinality 0..*).
+'Petrinetv3::Net::Initialize' (role 'Petrinetv3_Net_Initialize', cardinality 0..*) is associated with 'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace', cardinality 0..*).
+'petrinetv3Trace::petrinetv3::TracedPlace' (role 'petrinetv3Trace_petrinetv3_TracedPlace39', cardinality 0..*) is associated with 'petrinetv3::petrinetv3Trace::Token' (role 'petrinetv3_petrinetv3Trace_Token', cardinality 0..*).
+'State' (role 'State21', cardinality 0..*) is associated with 'petrinetv3Trace::Steps::Step' (role 'startedSteps', cardinality 0..*).
+'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace6', cardinality 0..*) is associated with 'Petrinetv3::Transition::Fire' (role 'Petrinetv3_Transition_Fire', cardinality 0..*).
+'petrinetv3::TracedTransition' (role 'petrinetv3_TracedTransition', cardinality 0..*) is associated with 'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace12', cardinality 0..*).
+'petrinetv3Trace::Trace' (role 'petrinetv3Trace_Trace16', cardinality 0..*) is associated with 'State' (role 'State', cardinality 0..*).
+'petrinetv3::TracedPlace' (role 'petrinetv3_TracedPlace51', cardinality 0..*) is associated with 'petrinetv3Trace::petrinetv3::TracedTransition' (role 'petrinetv3Trace_petrinetv3_TracedTransition50', cardinality 0..*).
+'petrinetv3::petrinetv3Trace::Net' (role 'petrinetv3_petrinetv3Trace_Net', cardinality 0..*) is associated with 'petrinetv3Trace::petrinetv3::TracedTransition' (role 'petrinetv3Trace_petrinetv3_TracedTransition53', cardinality 0..*).

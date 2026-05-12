@@ -1,0 +1,110 @@
+The model has 37 class(es).
+The class 'jDOQL::SubqueryFromClause' has the following attributes: 'isExcludeSubclasses' of type bool; 'candidateClassName' of type str.
+The class 'jDOQL::WhereClause' has no attributes.
+The class 'jDOQL::MultiplicationExpression' has the following attributes: 'operator' of type str.
+The class 'jDOQL::OrderByClause' has no attributes.
+The class 'jDOQL::ConditionalOrExpression' has no attributes.
+The class 'jDOQL::ParametersClause' has no attributes.
+The class 'jDOQL::VariablesClause' has no attributes.
+The class 'jDOQL::ResultNaming' has the following attributes: 'identifier' of type str.
+The class 'SubquerySelectClause' has no attributes.
+The class 'jDOQL::GroupByClause' has no attributes.
+The class 'jDOQL::RangeClause' has no attributes.
+The class 'jDOQL::FromClause' has the following attributes: 'isExcludeSubclasses' of type bool; 'candidateClassName' of type str.
+The class 'jDOQL::HavingClause' has no attributes.
+The class 'jDOQL::ResultClause' has the following attributes: 'isDistinct' of type bool.
+The class 'jDOQL::ComparisonOperatorExpression' has the following attributes: 'operator' of type str.
+The class 'jDOQL::SimpleAndExpression' has no attributes.
+The class 'jDOQL::ConditionalAndExpression' has no attributes.
+The class 'jDOQL::EObject' has no attributes.
+The class 'jDOQL::SubquerySelectClause' has no attributes.
+The class 'jDOQL::Expression' has the following attributes: 'unaryOperator' of type str; 'this' of type str; 'direction' of type str; 'name' of type str; 'castType' of type str; 'literal' of type str; 'isDistinct' of type bool; 'parameterName' of type str; 'id' of type str.
+The class 'jDOQL::SimpleOrExpression' has no attributes.
+The class 'jDOQL::SelectClause' has the following attributes: 'isUnique' of type bool.
+The class 'jDOQL::VariableDeclaration' has the following attributes: 'type' of type str; 'variableName' of type str.
+The class 'ResultSpec' has no attributes.
+The class 'jDOQL::ResultSpec' has no attributes.
+The class 'OrderBySpec' has no attributes.
+The class 'jDOQL::SingleStringJDOQL' has no attributes.
+The class 'Expression' has no attributes.
+The class 'jDOQL::IntoClause' has the following attributes: 'resultClassName' of type str.
+The class 'jDOQL::SubqueryResultClause' has the following attributes: 'isDistinct' of type bool.
+The class 'jDOQL::Subquery' has no attributes.
+The class 'jDOQL::AdditionExpression' has the following attributes: 'operator' of type str.
+The class 'jDOQL::ImportClause' has the following attributes: 'importDeclarations' of type str.
+The class 'jDOQL::ParameterDeclaration' has the following attributes: 'declaredParameterName' of type str; 'type' of type str.
+The class 'jDOQL::OrderBySpec' has no attributes.
+The class 'jDOQL::FieldAccessExpression' has no attributes.
+The class 'jDOQL::Alias' has the following attributes: 'identifier' of type str.
+The enumeration 'AdditionOperator' has the following literals: 'subtract', 'add'.
+The enumeration 'MultiplicationOperator' has the following literals: 'modulo', 'multiply', 'divide'.
+The enumeration 'UnaryOperator' has the following literals: 'bitwiseNot', 'negative', 'logicalNot', 'positive'.
+The enumeration 'ComparisonOperator' has the following literals: 'lessEqual', 'equal', 'greaterEqual', 'greaterThen', 'instanceof', 'notEqual', 'lessThen'.
+The enumeration 'OrderByDirection' has the following literals: 'descending', 'desc', 'asc', 'ascending'.
+'jDOQL::SelectClause' is a specialization of 'SubquerySelectClause'.
+'jDOQL::FieldAccessExpression' is a specialization of 'Expression'.
+'jDOQL::AdditionExpression' is a specialization of 'Expression'.
+'jDOQL::SimpleOrExpression' is a specialization of 'Expression'.
+'jDOQL::ConditionalAndExpression' is a specialization of 'Expression'.
+'jDOQL::MultiplicationExpression' is a specialization of 'Expression'.
+'jDOQL::ComparisonOperatorExpression' is a specialization of 'Expression'.
+'jDOQL::ConditionalOrExpression' is a specialization of 'Expression'.
+'jDOQL::SimpleAndExpression' is a specialization of 'Expression'.
+'jDOQL::Subquery' is a specialization of 'Expression'.
+'jDOQL::Expression' is a specialization of 'ResultSpec'.
+'jDOQL::Expression' is a specialization of 'OrderBySpec'.
+'jDOQL::Expression' (role 'jDOQL_Expression104', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression106', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression83', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression85', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression86', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression88', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression112', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression110', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression94', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression92', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression101', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression103', cardinality 0..*).
+'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL6', cardinality 0..*) is associated with 'jDOQL::VariablesClause' (role 'jDOQL_VariablesClause', cardinality 0..*).
+'jDOQL::RangeClause' (role 'jDOQL_RangeClause64', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression65', cardinality 0..*).
+'jDOQL::SubqueryFromClause' (role 'jDOQL_SubqueryFromClause', cardinality 0..*) is associated with 'jDOQL::Subquery' (role 'jDOQL_Subquery19', cardinality 0..*).
+'jDOQL::SubqueryFromClause' (role 'jDOQL_SubqueryFromClause42', cardinality 0..*) is associated with 'jDOQL::Alias' (role 'jDOQL_Alias', cardinality 0..*).
+'jDOQL::GroupByClause' (role 'jDOQL_GroupByClause51', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression52', cardinality 0..*).
+'jDOQL::EObject' (role 'jDOQL_EObject', cardinality 0..*) is associated with 'jDOQL::SelectClause' (role 'jDOQL_SelectClause33', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression57', cardinality 0..*) is associated with 'jDOQL::HavingClause' (role 'jDOQL_HavingClause56', cardinality 0..*).
+'jDOQL::OrderByClause' (role 'jDOQL_OrderByClause59', cardinality 0..*) is associated with 'jDOQL::OrderBySpec' (role 'jDOQL_OrderBySpec', cardinality 0..*).
+'jDOQL::VariablesClause' (role 'jDOQL_VariablesClause25', cardinality 0..*) is associated with 'jDOQL::Subquery' (role 'jDOQL_Subquery24', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression71', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression73', cardinality 0..*).
+'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL8', cardinality 0..*) is associated with 'jDOQL::ParametersClause' (role 'jDOQL_ParametersClause', cardinality 0..*).
+'jDOQL::SimpleOrExpression' (role 'jDOQL_SimpleOrExpression', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression121', cardinality 0..*).
+'jDOQL::ParameterDeclaration' (role 'jDOQL_ParameterDeclaration', cardinality 0..*) is associated with 'jDOQL::ParametersClause' (role 'jDOQL_ParametersClause49', cardinality 0..*).
+'jDOQL::HavingClause' (role 'jDOQL_HavingClause', cardinality 0..*) is associated with 'jDOQL::GroupByClause' (role 'jDOQL_GroupByClause54', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression70', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression68', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression40', cardinality 0..*) is associated with 'jDOQL::SubqueryFromClause' (role 'jDOQL_SubqueryFromClause39', cardinality 0..*).
+'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL14', cardinality 0..*) is associated with 'jDOQL::OrderByClause' (role 'jDOQL_OrderByClause', cardinality 0..*).
+'jDOQL::SelectClause' (role 'jDOQL_SelectClause35', cardinality 0..*) is associated with 'jDOQL::IntoClause' (role 'jDOQL_IntoClause', cardinality 0..*).
+'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL4', cardinality 0..*) is associated with 'jDOQL::WhereClause' (role 'jDOQL_WhereClause', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression117', cardinality 0..*) is associated with 'jDOQL::ConditionalOrExpression' (role 'jDOQL_ConditionalOrExpression', cardinality 0..*).
+'jDOQL::ResultClause' (role 'jDOQL_ResultClause', cardinality 0..*) is associated with 'jDOQL::ResultSpec' (role 'jDOQL_ResultSpec', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression62', cardinality 0..*) is associated with 'jDOQL::RangeClause' (role 'jDOQL_RangeClause61', cardinality 0..*).
+'jDOQL::Subquery' (role 'jDOQL_Subquery', cardinality 0..*) is associated with 'jDOQL::SubquerySelectClause' (role 'jDOQL_SubquerySelectClause', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression95', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression97', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression76', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression74', cardinality 0..*).
+'jDOQL::Subquery' (role 'jDOQL_Subquery30', cardinality 0..*) is associated with 'jDOQL::ImportClause' (role 'jDOQL_ImportClause31', cardinality 0..*).
+'jDOQL::SimpleAndExpression' (role 'jDOQL_SimpleAndExpression', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression123', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression119', cardinality 0..*) is associated with 'jDOQL::ConditionalAndExpression' (role 'jDOQL_ConditionalAndExpression', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression131', cardinality 0..*) is associated with 'jDOQL::FieldAccessExpression' (role 'jDOQL_FieldAccessExpression', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression115', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression113', cardinality 0..*).
+'jDOQL::ParametersClause' (role 'jDOQL_ParametersClause28', cardinality 0..*) is associated with 'jDOQL::Subquery' (role 'jDOQL_Subquery27', cardinality 0..*).
+'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL2', cardinality 0..*) is associated with 'jDOQL::FromClause' (role 'jDOQL_FromClause', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression', cardinality 0..*) is associated with 'jDOQL::SubqueryResultClause' (role 'jDOQL_SubqueryResultClause', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression98', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression100', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression127', cardinality 0..*) is associated with 'jDOQL::AdditionExpression' (role 'jDOQL_AdditionExpression', cardinality 0..*).
+'jDOQL::ResultNaming' (role 'jDOQL_ResultNaming', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression67', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression129', cardinality 0..*) is associated with 'jDOQL::MultiplicationExpression' (role 'jDOQL_MultiplicationExpression', cardinality 0..*).
+'jDOQL::ComparisonOperatorExpression' (role 'jDOQL_ComparisonOperatorExpression', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression125', cardinality 0..*).
+'jDOQL::ImportClause' (role 'jDOQL_ImportClause', cardinality 0..*) is associated with 'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL10', cardinality 0..*).
+'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL12', cardinality 0..*) is associated with 'jDOQL::GroupByClause' (role 'jDOQL_GroupByClause', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression80', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression82', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression45', cardinality 0..*) is associated with 'jDOQL::WhereClause' (role 'jDOQL_WhereClause44', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression91', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression89', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression77', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression79', cardinality 0..*).
+'jDOQL::Subquery' (role 'jDOQL_Subquery21', cardinality 0..*) is associated with 'jDOQL::WhereClause' (role 'jDOQL_WhereClause22', cardinality 0..*).
+'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL', cardinality 0..*) is associated with 'jDOQL::SelectClause' (role 'jDOQL_SelectClause', cardinality 0..*).
+'jDOQL::RangeClause' (role 'jDOQL_RangeClause', cardinality 0..*) is associated with 'jDOQL::SingleStringJDOQL' (role 'jDOQL_SingleStringJDOQL16', cardinality 0..*).
+'jDOQL::Expression' (role 'jDOQL_Expression107', cardinality 0..*) is associated with 'jDOQL::Expression' (role 'jDOQL_Expression109', cardinality 0..*).
+'jDOQL::VariablesClause' (role 'jDOQL_VariablesClause47', cardinality 0..*) is associated with 'jDOQL::VariableDeclaration' (role 'jDOQL_VariableDeclaration', cardinality 0..*).

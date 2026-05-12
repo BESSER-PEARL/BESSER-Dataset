@@ -1,0 +1,35 @@
+The model has 15 class(es).
+The class 'UHSM::State' has the following attributes: 'name' of type str.
+The class 'UHSM::FinalState' has no attributes.
+The class 'TracedClass' has no attributes.
+The class 'UHSM::UState' has no attributes.
+The class 'UHSM::InitialState' has no attributes.
+The class 'UHSM::UStateMachine' has no attributes.
+The class 'UHSM::StateMachine' has the following attributes: 'name' of type str.
+The class 'UHSM::TracedClass' has the following attributes: 'trace' of type str.
+The class 'State' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'UHSM::CompositeState' has no attributes.
+The class 'UHSM::UTransition' has no attributes.
+The class 'UHSM::Transition' has the following attributes: 'effect' of type str; 'trigger' of type str; 'name' of type str.
+The class 'UHSM::EObject' has no attributes.
+The class 'Transition' has no attributes.
+'UHSM::InitialState' is a specialization of 'State'.
+'UHSM::UTransition' is a specialization of 'Transition'.
+'UHSM::StateMachine' is a specialization of 'TracedClass'.
+'UHSM::UState' is a specialization of 'State'.
+'UHSM::State' is a specialization of 'TracedClass'.
+'UHSM::CompositeState' is a specialization of 'State'.
+'UHSM::UStateMachine' is a specialization of 'StateMachine'.
+'UHSM::FinalState' is a specialization of 'State'.
+'UHSM::Transition' is a specialization of 'TracedClass'.
+'UHSM::StateMachine' (role 'UHSM_StateMachine19', cardinality 0..*) is associated with 'UHSM::UStateMachine' (role 'UHSM_UStateMachine', cardinality 0..*).
+'UHSM::CompositeState' (role 'UHSM_CompositeState', cardinality 0..*) is associated with 'UHSM::State' (role 'UHSM_State', cardinality 0..*).
+'UHSM::State' (role 'UHSM_State17', cardinality 0..*) is associated with 'UHSM::UState' (role 'UHSM_UState', cardinality 0..*).
+'UHSM::EObject' (role 'UHSM_EObject', cardinality 0..*) is associated with 'UHSM::TracedClass' (role 'UHSM_TracedClass', cardinality 0..*).
+'UHSM::StateMachine' (role 'UHSM_StateMachine14', cardinality 0..*) is associated with 'UHSM::Transition' (role 'UHSM_Transition15', cardinality 0..*).
+'UHSM::StateMachine' (role 'UHSM_StateMachine', cardinality 0..*) is associated with 'UHSM::State' (role 'UHSM_State12', cardinality 0..*).
+'UHSM::CompositeState' (role 'UHSM_CompositeState9', cardinality 0..*) is associated with 'UHSM::State' (role 'UHSM_State10', cardinality 0..*).
+'UHSM::State' (role 'UHSM_State7', cardinality 0..*) is associated with 'UHSM::Transition' (role 'UHSM_Transition6', cardinality 0..*).
+'UHSM::Transition' (role 'UHSM_Transition', cardinality 0..*) is associated with 'UHSM::UTransition' (role 'UHSM_UTransition', cardinality 0..*).
+'UHSM::State' (role 'UHSM_State4', cardinality 0..*) is associated with 'UHSM::Transition' (role 'UHSM_Transition3', cardinality 0..*).

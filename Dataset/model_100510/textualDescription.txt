@@ -1,0 +1,37 @@
+The model has 15 class(es).
+The class 'requirementEngineeringLanguage::View' has the following attributes: 'desc' of type str; 'name' of type str.
+The class 'requirementEngineeringLanguage::Given' has the following attributes: 'dashboard' of type str.
+The class 'requirementEngineeringLanguage::Background' has the following attributes: 'dashboard' of type str.
+The class 'Then' has no attributes.
+The class 'requirementEngineeringLanguage::Update' has the following attributes: 'do' of type str.
+The class 'When' has no attributes.
+The class 'requirementEngineeringLanguage::Goal' has the following attributes: 'function' of type str; 'data' of type str.
+The class 'requirementEngineeringLanguage::Feature' has the following attributes: 'desc' of type str; 'name' of type str.
+The class 'requirementEngineeringLanguage::Scenario' has the following attributes: 'name' of type str.
+The class 'requirementEngineeringLanguage::Project' has the following attributes: 'name' of type str.
+The class 'requirementEngineeringLanguage::Then' has no attributes.
+The class 'requirementEngineeringLanguage::Data' has the following attributes: 'type' of type str; 'location' of type str; 'quantifier' of type str; 'locationType' of type str.
+The class 'requirementEngineeringLanguage::When' has no attributes.
+The class 'requirementEngineeringLanguage::Loading' has the following attributes: 'new' of type str.
+The class 'requirementEngineeringLanguage::Interaction' has the following attributes: 'action' of type str; 'target' of type str.
+The enumeration 'State' has the following literals: 'Over', 'Expected', 'Current'.
+The enumeration 'DataType' has the following literals: 'Humidity', 'Temperature', 'Pressure', 'Cardiac_frequency', 'Occupancy', 'Luminosity'.
+The enumeration 'Quantifier' has the following literals: 'All', 'Some', 'One'.
+The enumeration 'Action' has the following literals: 'element', 'range', 'previous', 'next'.
+The enumeration 'ContainerType' has the following literals: 'Room', 'Wall', 'Floor', 'Corridor', 'Furniture', 'Window', 'Building'.
+The enumeration 'Taxonomy' has the following literals: 'Relationship', 'Over_time', 'Hierarchy', 'Location', 'Pattern', 'Part_to_a_whole', 'Reference_tool', 'Range', 'Distribution', 'Proportion', 'Comparison'.
+The enumeration 'Reaction' has the following literals: 'GoTo', 'Synchronize', 'Enable', 'Disable'.
+'requirementEngineeringLanguage::Goal' is a specialization of 'Then'.
+'requirementEngineeringLanguage::Interaction' is a specialization of 'When'.
+'requirementEngineeringLanguage::Update' is a specialization of 'Then'.
+'requirementEngineeringLanguage::Loading' is a specialization of 'When'.
+'requirementEngineeringLanguage::View' (role 'requirementEngineeringLanguage_View13', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Update' (role 'requirementEngineeringLanguage_Update', cardinality 0..*).
+'requirementEngineeringLanguage::Feature' (role 'requirementEngineeringLanguage_Feature15', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Scenario' (role 'requirementEngineeringLanguage_Scenario16', cardinality 0..*).
+'requirementEngineeringLanguage::Scenario' (role 'requirementEngineeringLanguage_Scenario2', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Then' (role 'requirementEngineeringLanguage_Then', cardinality 0..*).
+'requirementEngineeringLanguage::View' (role 'requirementEngineeringLanguage_View', cardinality 0..*) is associated with 'requirementEngineeringLanguage::When' (role 'requirementEngineeringLanguage_When8', cardinality 0..*).
+'requirementEngineeringLanguage::View' (role 'requirementEngineeringLanguage_View19', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Background' (role 'requirementEngineeringLanguage_Background18', cardinality 0..*).
+'requirementEngineeringLanguage::Feature' (role 'requirementEngineeringLanguage_Feature', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Project' (role 'requirementEngineeringLanguage_Project', cardinality 0..*).
+'requirementEngineeringLanguage::Project' (role 'requirementEngineeringLanguage_Project11', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Background' (role 'requirementEngineeringLanguage_Background', cardinality 0..*).
+'requirementEngineeringLanguage::Given' (role 'requirementEngineeringLanguage_Given6', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Data' (role 'requirementEngineeringLanguage_Data', cardinality 0..*).
+'requirementEngineeringLanguage::When' (role 'requirementEngineeringLanguage_When', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Scenario' (role 'requirementEngineeringLanguage_Scenario', cardinality 0..*).
+'requirementEngineeringLanguage::Scenario' (role 'requirementEngineeringLanguage_Scenario4', cardinality 0..*) is associated with 'requirementEngineeringLanguage::Given' (role 'requirementEngineeringLanguage_Given', cardinality 0..*).

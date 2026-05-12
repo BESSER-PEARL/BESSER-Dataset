@@ -1,0 +1,97 @@
+The model has 45 class(es).
+The class 'Cell' has no attributes.
+The class 'ColOrRowElement' has no attributes.
+The class 'CustomDocumentPropertiesCollection' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::Data' has no attributes.
+The class 'StyledElement' has no attributes.
+The class 'Comment' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::Row' has the following attributes: 'autoFitHeight' of type str; 'height' of type str.
+The class 'SpreadsheetMLWorkbookProp::Comment' has the following attributes: 'author' of type str; 'showAlways' of type str.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::ColOrRowElement' has the following attributes: 'hidden' of type str; 'span' of type str.
+The class 'Row' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::Cell' has the following attributes: 'mergeAcross' of type str; 'arrayRange' of type str; 'hRef' of type str; 'formula' of type str; 'mergeDown' of type str.
+The class 'ValueType' has no attributes.
+The class 'Data' has no attributes.
+The class 'CustomDocumentProperty' has no attributes.
+The class 'ExcelWorkbook' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::CustomDocumentProperty' has the following attributes: 'name' of type str.
+The class 'Column' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::ErrorValue' has no attributes.
+The class 'SmartTagsCollection' has no attributes.
+The class 'Table' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::StringValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLWorkbookProp::TableElement' has the following attributes: 'index' of type str.
+The class 'SpreadsheetMLWorkbookProp::SmartTagsCollection' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::DateTimeTypeValue' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::ExcelWorkbook' has the following attributes: 'displayDrawingObjects' of type str; 'hideVerticalScrollBar' of type str; 'hideWorkbookTabs' of type str; 'hideHorizontalScrollBar' of type str; 'displayInkNotes' of type str; 'selectedSheets' of type str; 'activeSheet' of type str; 'windowTopX' of type str; 'doNotCalculateBeforeSave' of type str; 'windowIconic' of type str; 'iteration' of type str; 'tabRatio' of type str; 'hidePivotTableFieldList' of type str; 'maxChange' of type str; 'acceptLabelsInFormulas' of type str; 'precisionAsDisplayed' of type str; 'refModeR1C1' of type str; 'createBackup' of type str; 'uncalced' of type str; 'maxIterations' of type str; 'windowWidth' of type str; 'windowHeight' of type str; 'firstVisibleSheet' of type str; 'protectWindows' of type str; 'protectStructure' of type str; 'date1904' of type str; 'activeChart' of type str; 'futureVer' of type str; 'windowTopY' of type str; 'calculation' of type str; 'noAutoRecover' of type str; 'windowHidden' of type str; 'doNotSaveLinkValues' of type str; 'embedSaveSmartTags' of type str.
+The class 'SpreadsheetMLWorkbookProp::ValueType' has no attributes.
+The class 'Workbook' has no attributes.
+The class 'TableElement' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::BooleanValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLWorkbookProp::Table' has the following attributes: 'leftCell' of type str; 'topCell' of type str; 'fullRows' of type str; 'expandedColumnCount' of type str; 'fullColumns' of type str; 'expandedRowCount' of type str; 'defaultRowHeight' of type str; 'defaultColumnWidth' of type str.
+The class 'SpreadsheetMLWorkbookProp::VersionType' has the following attributes: 'n' of type str; 'nn' of type str.
+The class 'SpreadsheetMLWorkbookProp::DocumentPropertiesCollection' has the following attributes: 'description' of type str; 'paragraphs' of type str; 'revision' of type str; 'guid' of type str; 'lastAuthor' of type str; 'lines' of type str; 'category' of type str; 'bytes' of type str; 'appName' of type str; 'author' of type str; 'keywords' of type str; 'charactersWithSpaces' of type str; 'company' of type str; 'subject' of type str; 'title' of type str; 'manager' of type str; 'totalTime' of type str; 'hyperlinkBase' of type str; 'presentationFormat' of type str; 'words' of type str; 'pages' of type str; 'characters' of type str.
+The class 'SpreadsheetMLWorkbookProp::SmartTagType' has the following attributes: 'url' of type str; 'namespaceuri' of type str; 'name' of type str.
+The class 'VersionType' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::Column' has the following attributes: 'autoFitWidth' of type str; 'width' of type str.
+The class 'SpreadsheetMLWorkbookProp::CustomDocumentPropertiesCollection' has no attributes.
+The class 'DateTimeType' has no attributes.
+The class 'SmartTagType' has no attributes.
+The class 'Worksheet' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::StyledElement' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::NumberValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLWorkbookProp::Worksheet' has the following attributes: 'name' of type str.
+The class 'SpreadsheetMLWorkbookProp::Workbook' has no attributes.
+The class 'SpreadsheetMLWorkbookProp::DateTimeType' has the following attributes: 'year' of type str; 'minute' of type str; 'month' of type str; 'day' of type str; 'hour' of type str; 'second' of type str.
+The enumeration 'CalculationWorkbookType' has the following literals: 'cwt_automaticCalculation', 'cwt_semiAutomaticCalculation', 'cwt_manualCalculation'.
+The enumeration 'DisplayDrawingObjectsType' has the following literals: 'ddot_hideAll', 'ddot_placeHolders', 'ddot_displayShapes'.
+'SpreadsheetMLWorkbookProp::Cell' is a specialization of 'TableElement'.
+'SpreadsheetMLWorkbookProp::Column' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLWorkbookProp::BooleanValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorkbookProp::ColOrRowElement' is a specialization of 'TableElement'.
+'SpreadsheetMLWorkbookProp::StringValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorkbookProp::DateTimeTypeValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorkbookProp::TableElement' is a specialization of 'StyledElement'.
+'SpreadsheetMLWorkbookProp::Row' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLWorkbookProp::Table' is a specialization of 'StyledElement'.
+'SpreadsheetMLWorkbookProp::NumberValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorkbookProp::ErrorValue' is a specialization of 'ValueType'.
+'Row' (role 'Row46', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Cell' (role 'r_cells', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::Workbook' (role 'st_workbook', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection24', cardinality 0..*).
+'Workbook' (role 'Workbook61', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::ExcelWorkbook' (role 'wb_excelWorkbook', cardinality 0..*).
+'ExcelWorkbook' (role 'ExcelWorkbook', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Workbook' (role 'ew_workbook', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::Data' (role 'c_data', cardinality 0..*) is associated with 'Cell' (role 'Cell55', cardinality 0..*).
+'VersionType' (role 'VersionType', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::DocumentPropertiesCollection' (role 'SpreadsheetMLWorkbookProp_DocumentPropertiesCollection', cardinality 0..*).
+'ValueType' (role 'ValueType59', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Data' (role 'vt_data', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::Comment' (role 'c_comment', cardinality 0..*) is associated with 'Cell' (role 'Cell51', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Table' (role 'c_table', cardinality 0..*).
+'Comment' (role 'Comment', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Cell' (role 'c_cell', cardinality 0..*).
+'Workbook' (role 'Workbook', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::DocumentPropertiesCollection' (role 'wb_docProperties', cardinality 0..*).
+'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection27', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Workbook' (role 'cdp_workbook', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::Cell' (role 'st_cell', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection44', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::DocumentPropertiesCollection' (role 'SpreadsheetMLWorkbookProp_DocumentPropertiesCollection8', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType9', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::Data' (role 'com_data', cardinality 0..*) is associated with 'Comment' (role 'Comment57', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::SmartTagsCollection' (role 'wb_smartTags', cardinality 0..*) is associated with 'Workbook' (role 'Workbook20', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::CustomDocumentProperty' (role 'customDocumentProperties', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection', cardinality 0..*).
+'Data' (role 'Data53', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Comment' (role 'd_comment', cardinality 0..*).
+'SmartTagsCollection' (role 'SmartTagsCollection', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::SmartTagType' (role 'smartTagTypes', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::Worksheet' (role 't_worksheet', cardinality 0..*) is associated with 'Table' (role 'Table', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::ValueType' (role 'value', cardinality 0..*) is associated with 'Data' (role 'Data', cardinality 0..*).
+'Workbook' (role 'Workbook14', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::CustomDocumentPropertiesCollection' (role 'wb_customDocProperties', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::Workbook' (role 'dp_workbook', cardinality 0..*) is associated with 'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::Row' (role 'c_row', cardinality 0..*) is associated with 'Cell' (role 'Cell42', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::CustomDocumentPropertiesCollection' (role 'customDocumentProperty_cdpe', cardinality 0..*) is associated with 'CustomDocumentProperty' (role 'CustomDocumentProperty', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType6', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::DocumentPropertiesCollection' (role 'SpreadsheetMLWorkbookProp_DocumentPropertiesCollection5', cardinality 0..*).
+'Row' (role 'Row', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Table' (role 'r_table', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType12', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::DocumentPropertiesCollection' (role 'SpreadsheetMLWorkbookProp_DocumentPropertiesCollection11', cardinality 0..*).
+'Table' (role 'Table40', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Row' (role 't_rows', cardinality 0..*).
+'Worksheet' (role 'Worksheet34', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Table' (role 'ws_table', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::DateTimeTypeValue' (role 'SpreadsheetMLWorkbookProp_DateTimeTypeValue', cardinality 0..*).
+'ValueType' (role 'ValueType', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::CustomDocumentProperty' (role 'SpreadsheetMLWorkbookProp_CustomDocumentProperty', cardinality 0..*).
+'SpreadsheetMLWorkbookProp::SmartTagsCollection' (role 'smartTagType_ste', cardinality 0..*) is associated with 'SmartTagType' (role 'SmartTagType', cardinality 0..*).
+'Workbook' (role 'Workbook31', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Worksheet' (role 'wb_worksheets', cardinality 0..*).
+'Table' (role 'Table38', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Column' (role 't_cols', cardinality 0..*).
+'Cell' (role 'Cell', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::SmartTagsCollection' (role 'c_smartTags', cardinality 0..*).
+'Worksheet' (role 'Worksheet', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Workbook' (role 'ws_workbook', cardinality 0..*).
+'Data' (role 'Data48', cardinality 0..*) is associated with 'SpreadsheetMLWorkbookProp::Cell' (role 'd_cell', cardinality 0..*).

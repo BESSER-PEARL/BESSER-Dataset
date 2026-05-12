@@ -1,0 +1,84 @@
+The model has 35 class(es).
+The class 'wikiML::MainTemplate' has no attributes.
+The class 'wikiML::Template' has the following attributes: 'type' of type str.
+The class 'wikiML::AnyText' has no attributes.
+The class 'wikiML::Heading3' has no attributes.
+The class 'wikiML::ItalicBold' has no attributes.
+The class 'wikiML::Heading4' has no attributes.
+The class 'wikiML::Text' has the following attributes: 'name' of type str.
+The class 'wikiML::AnyTextSequence' has no attributes.
+The class 'AnyText' has no attributes.
+The class 'wikiML::AboutTemplate' has no attributes.
+The class 'wikiML::OrderListItem' has no attributes.
+The class 'wikiML::External' has the following attributes: 'name' of type str.
+The class 'wikiML::OrderedList' has no attributes.
+The class 'wikiML::UnorderListItem' has the following attributes: 'level' of type str.
+The class 'wikiML::Internal' has no attributes.
+The class 'wikiML::QuoteTemplate' has no attributes.
+The class 'wikiML::BlockQuote' has no attributes.
+The class 'Template' has no attributes.
+The class 'wikiML::Paragraph' has the following attributes: 'paragraph' of type str.
+The class 'wikiML::Italic' has no attributes.
+The class 'wikiML::Category' has the following attributes: 'value' of type str.
+The class 'wikiML::Image' has the following attributes: 'name' of type str; 'hAlign' of type str; 'type' of type str.
+The class 'wikiML::AbstractFormattedInlineContent' has no attributes.
+The class 'wikiML::ParagraphTypes' has no attributes.
+The class 'ParagraphTypes' has no attributes.
+The class 'wikiML::UnorderedList' has no attributes.
+The class 'wikiML::AbstractUnformattedInlineContent' has no attributes.
+The class 'wikiML::Heading5' has no attributes.
+The class 'wikiML::Bold' has no attributes.
+The class 'AbstractFormattedInlineContent' has no attributes.
+The class 'wikiML::HyperLink' has no attributes.
+The class 'HyperLink' has no attributes.
+The class 'wikiML::WikiPage' has the following attributes: 'name' of type str.
+The class 'wikiML::Heading2' has no attributes.
+The class 'AbstractUnformattedInlineContent' has no attributes.
+The enumeration 'ViewType' has the following literals: 'thumb'.
+The enumeration 'HorizontalAlign' has the following literals: 'right'.
+'wikiML::AnyText' is a specialization of 'ParagraphTypes'.
+'wikiML::BlockQuote' is a specialization of 'ParagraphTypes'.
+'wikiML::Category' is a specialization of 'ParagraphTypes'.
+'wikiML::HyperLink' is a specialization of 'AbstractUnformattedInlineContent'.
+'wikiML::Paragraph' is a specialization of 'ParagraphTypes'.
+'wikiML::AboutTemplate' is a specialization of 'Template'.
+'wikiML::QuoteTemplate' is a specialization of 'Template'.
+'wikiML::Heading3' is a specialization of 'ParagraphTypes'.
+'wikiML::AbstractUnformattedInlineContent' is a specialization of 'AnyText'.
+'wikiML::MainTemplate' is a specialization of 'Template'.
+'wikiML::AbstractFormattedInlineContent' is a specialization of 'AnyText'.
+'wikiML::UnorderedList' is a specialization of 'ParagraphTypes'.
+'wikiML::Bold' is a specialization of 'AbstractFormattedInlineContent'.
+'wikiML::Heading5' is a specialization of 'ParagraphTypes'.
+'wikiML::Heading2' is a specialization of 'ParagraphTypes'.
+'wikiML::Text' is a specialization of 'AbstractUnformattedInlineContent'.
+'wikiML::ItalicBold' is a specialization of 'AbstractFormattedInlineContent'.
+'wikiML::Template' is a specialization of 'ParagraphTypes'.
+'wikiML::OrderedList' is a specialization of 'ParagraphTypes'.
+'wikiML::Internal' is a specialization of 'HyperLink'.
+'wikiML::Heading4' is a specialization of 'ParagraphTypes'.
+'wikiML::Image' is a specialization of 'ParagraphTypes'.
+'wikiML::Italic' is a specialization of 'AbstractFormattedInlineContent'.
+'wikiML::External' is a specialization of 'HyperLink'.
+'wikiML::UnorderedList' (role 'wikiML_UnorderedList11', cardinality 0..*) is associated with 'wikiML::Paragraph' (role 'wikiML_Paragraph12', cardinality 0..*).
+'wikiML::HyperLink' (role 'wikiML_HyperLink', cardinality 0..*) is associated with 'wikiML::AnyText' (role 'wikiML_AnyText', cardinality 0..*).
+'wikiML::Image' (role 'wikiML_Image', cardinality 0..*) is associated with 'wikiML::AbstractUnformattedInlineContent' (role 'wikiML_AbstractUnformattedInlineContent', cardinality 0..*).
+'wikiML::Heading3' (role 'wikiML_Heading3', cardinality 0..*) is associated with 'wikiML::AbstractUnformattedInlineContent' (role 'wikiML_AbstractUnformattedInlineContent27', cardinality 0..*).
+'wikiML::Heading2' (role 'wikiML_Heading2', cardinality 0..*) is associated with 'wikiML::AbstractUnformattedInlineContent' (role 'wikiML_AbstractUnformattedInlineContent25', cardinality 0..*).
+'wikiML::AnyTextSequence' (role 'wikiML_AnyTextSequence18', cardinality 0..*) is associated with 'wikiML::OrderListItem' (role 'wikiML_OrderListItem17', cardinality 0..*).
+'wikiML::UnorderListItem' (role 'wikiML_UnorderListItem14', cardinality 0..*) is associated with 'wikiML::AnyTextSequence' (role 'wikiML_AnyTextSequence15', cardinality 0..*).
+'wikiML::WikiPage' (role 'wikiML_WikiPage36', cardinality 0..*) is associated with 'wikiML::Internal' (role 'wikiML_Internal', cardinality 0..*).
+'wikiML::Internal' (role 'wikiML_Internal38', cardinality 0..*) is associated with 'wikiML::Text' (role 'wikiML_Text39', cardinality 0..*).
+'wikiML::BlockQuote' (role 'wikiML_BlockQuote', cardinality 0..*) is associated with 'wikiML::AnyTextSequence' (role 'wikiML_AnyTextSequence', cardinality 0..*).
+'wikiML::Image' (role 'wikiML_Image21', cardinality 0..*) is associated with 'wikiML::AnyTextSequence' (role 'wikiML_AnyTextSequence22', cardinality 0..*).
+'wikiML::UnorderedList' (role 'wikiML_UnorderedList', cardinality 0..*) is associated with 'wikiML::UnorderListItem' (role 'wikiML_UnorderListItem', cardinality 0..*).
+'wikiML::OrderedList' (role 'wikiML_OrderedList8', cardinality 0..*) is associated with 'wikiML::Paragraph' (role 'wikiML_Paragraph', cardinality 0..*).
+'wikiML::MainTemplate' (role 'wikiML_MainTemplate', cardinality 0..*) is associated with 'wikiML::AnyTextSequence' (role 'wikiML_AnyTextSequence5', cardinality 0..*).
+'wikiML::Text' (role 'wikiML_Text', cardinality 0..*) is associated with 'wikiML::Category' (role 'wikiML_Category', cardinality 0..*).
+'wikiML::OrderListItem' (role 'wikiML_OrderListItem', cardinality 0..*) is associated with 'wikiML::OrderedList' (role 'wikiML_OrderedList', cardinality 0..*).
+'wikiML::AbstractFormattedInlineContent' (role 'wikiML_AbstractFormattedInlineContent', cardinality 0..*) is associated with 'wikiML::AbstractUnformattedInlineContent' (role 'wikiML_AbstractUnformattedInlineContent33', cardinality 0..*).
+'wikiML::AbstractUnformattedInlineContent' (role 'wikiML_AbstractUnformattedInlineContent31', cardinality 0..*) is associated with 'wikiML::Heading5' (role 'wikiML_Heading5', cardinality 0..*).
+'wikiML::AbstractUnformattedInlineContent' (role 'wikiML_AbstractUnformattedInlineContent29', cardinality 0..*) is associated with 'wikiML::Heading4' (role 'wikiML_Heading4', cardinality 0..*).
+'wikiML::AnyText' (role 'wikiML_AnyText42', cardinality 0..*) is associated with 'wikiML::AnyTextSequence' (role 'wikiML_AnyTextSequence41', cardinality 0..*).
+'wikiML::WikiPage' (role 'wikiML_WikiPage', cardinality 0..*) is associated with 'wikiML::ParagraphTypes' (role 'wikiML_ParagraphTypes', cardinality 0..*).
+'wikiML::AnyTextSequence' (role 'wikiML_AnyTextSequence3', cardinality 0..*) is associated with 'wikiML::AboutTemplate' (role 'wikiML_AboutTemplate', cardinality 0..*).

@@ -1,0 +1,107 @@
+The model has 30 class(es).
+The class 'datastyle::ScientificNumberType' has the following attributes: 'decimalPlaces' of type str; 'minExponentDigits' of type str; 'grouping' of type str; 'minIntegerDigits' of type str.
+The class 'datastyle::DayOfWeekType' has the following attributes: 'style' of type str; 'calendar' of type str.
+The class 'datastyle::NumberType' has the following attributes: 'decimalReplacement' of type str; 'decimalPlaces' of type str; 'grouping' of type str; 'displayFactor' of type str; 'minIntegerDigits' of type str.
+The class 'datastyle::EStringToStringMapEntry' has no attributes.
+The class 'datastyle::EObject' has no attributes.
+The class 'datastyle::AmPmType' has no attributes.
+The class 'datastyle::DateStyleType' has the following attributes: 'text1' of type str; 'transliterationLanguage' of type str; 'transliterationStyle' of type str; 'formatSource' of type str; 'volatile' of type str; 'transliterationCountry' of type str; 'title' of type str; 'language' of type str; 'name' of type str; 'transliterationFormat' of type str; 'automaticOrder' of type str; 'country' of type str; 'group' of type str; 'text' of type str.
+The class 'datastyle::DocumentRoot' has the following attributes: 'minExponentDigits' of type str; 'text' of type str; 'grouping' of type str; 'minDenominatorDigits' of type str; 'decimalPlaces' of type str; 'transliterationStyle' of type str; 'possessiveForm' of type str; 'calendar' of type str; 'transliterationFormat' of type str; 'automaticOrder' of type str; 'decimalReplacement' of type str; 'style' of type str; 'displayFactor' of type str; 'country' of type str; 'truncateOnOverflow' of type str; 'formatSource' of type str; 'textual' of type str; 'minNumeratorDigits' of type str; 'language' of type str; 'denominatorValue' of type str; 'position' of type str; 'transliterationCountry' of type str; 'minIntegerDigits' of type str; 'title' of type str; 'mixed' of type str; 'transliterationLanguage' of type str.
+The class 'datastyle::YearType' has the following attributes: 'style' of type str; 'calendar' of type str.
+The class 'datastyle::TextContentType' has no attributes.
+The class 'datastyle::MapType' has no attributes.
+The class 'datastyle::FractionType' has the following attributes: 'minNumeratorDigits' of type str; 'minDenominatorDigits' of type str; 'grouping' of type str; 'denominatorValue' of type str; 'minIntegerDigits' of type str.
+The class 'datastyle::TimeStyleType' has the following attributes: 'volatile' of type str; 'name' of type str; 'formatSource' of type str; 'text1' of type str; 'country' of type str; 'transliterationCountry' of type str; 'title' of type str; 'language' of type str; 'transliterationStyle' of type str; 'transliterationLanguage' of type str; 'transliterationFormat' of type str; 'group' of type str; 'truncateOnOverflow' of type str; 'text' of type str.
+The class 'datastyle::MonthType' has the following attributes: 'style' of type str; 'possessiveForm' of type str; 'textual' of type str; 'calendar' of type str.
+The class 'datastyle::CurrencySymbolType' has the following attributes: 'language' of type str; 'country' of type str; 'mixed' of type str.
+The class 'datastyle::PercentageStyleType' has the following attributes: 'language' of type str; 'title' of type str; 'transliterationCountry' of type str; 'transliterationFormat' of type str; 'text1' of type str; 'country' of type str; 'volatile' of type str; 'name' of type str; 'transliterationStyle' of type str; 'text' of type str; 'transliterationLanguage' of type str.
+The class 'datastyle::HoursType' has the following attributes: 'style' of type str.
+The class 'datastyle::EraType' has the following attributes: 'style' of type str; 'calendar' of type str.
+The class 'datastyle::WeekOfYearType' has the following attributes: 'calendar' of type str.
+The class 'datastyle::DayType' has the following attributes: 'style' of type str; 'calendar' of type str.
+The class 'datastyle::SecondsType' has the following attributes: 'decimalPlaces' of type str; 'style' of type str.
+The class 'datastyle::TextStyleType' has the following attributes: 'language' of type str; 'country' of type str; 'transliterationFormat' of type str; 'name' of type str; 'text1' of type str; 'transliterationLanguage' of type str; 'title' of type str; 'group' of type str; 'transliterationCountry' of type str; 'text' of type str; 'volatile' of type str; 'transliterationStyle' of type str.
+The class 'datastyle::BooleanType' has no attributes.
+The class 'datastyle::QuarterType' has the following attributes: 'style' of type str; 'calendar' of type str.
+The class 'datastyle::MinutesType' has the following attributes: 'style' of type str.
+The class 'datastyle::EmbeddedTextType' has the following attributes: 'position' of type str; 'mixed' of type str.
+The class 'datastyle::CurrencyStyleType' has the following attributes: 'country' of type str; 'automaticOrder' of type str; 'volatile' of type str; 'text4' of type str; 'name' of type str; 'title' of type str; 'transliterationStyle' of type str; 'text1' of type str; 'text' of type str; 'text3' of type str; 'transliterationFormat' of type str; 'text2' of type str; 'transliterationCountry' of type str; 'language' of type str; 'transliterationLanguage' of type str.
+The class 'datastyle::NumberStyleType' has the following attributes: 'country' of type str; 'text' of type str; 'anyNumberGroup' of type str; 'language' of type str; 'transliterationCountry' of type str; 'text1' of type str; 'transliterationFormat' of type str; 'volatile' of type str; 'title' of type str; 'transliterationLanguage' of type str; 'name' of type str; 'transliterationStyle' of type str.
+The class 'datastyle::StyleTextPropertiesContent' has no attributes.
+The class 'datastyle::BooleanStyleType' has the following attributes: 'transliterationStyle' of type str; 'title' of type str; 'transliterationCountry' of type str; 'volatile' of type str; 'name' of type str; 'country' of type str; 'language' of type str; 'text' of type str; 'text1' of type str; 'transliterationFormat' of type str; 'transliterationLanguage' of type str.
+The enumeration 'CalendarTypeMember5' has the following literals: 'hanja'.
+The enumeration 'CalendarTypeMember7' has the following literals: 'jewish'.
+The enumeration 'CalendarTypeMember3' has the following literals: 'ROC'.
+The enumeration 'StyleType' has the following literals: 'long', 'short'.
+The enumeration 'FormatSourceType' has the following literals: 'language', 'fixed'.
+The enumeration 'CalendarTypeMember6' has the following literals: 'hijri'.
+The enumeration 'CalendarTypeMember2' has the following literals: 'gengou'.
+The enumeration 'CalendarTypeMember1' has the following literals: 'gregorian'.
+The enumeration 'CalendarTypeMember4' has the following literals: 'hanjaYoil'.
+The enumeration 'TransliterationStyleType' has the following literals: 'medium', 'long', 'short'.
+The enumeration 'CalendarTypeMember8' has the following literals: 'buddhist'.
+'datastyle::SecondsType' (role 'datastyle_SecondsType', cardinality 0..*) is associated with 'datastyle::DateStyleType' (role 'datastyle_DateStyleType43', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot93', cardinality 0..*) is associated with 'datastyle::AmPmType' (role 'datastyle_AmPmType94', cardinality 0..*).
+'datastyle::CurrencyStyleType' (role 'datastyle_CurrencyStyleType12', cardinality 0..*) is associated with 'datastyle::CurrencySymbolType' (role 'datastyle_CurrencySymbolType13', cardinality 0..*).
+'datastyle::BooleanType' (role 'datastyle_BooleanType97', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot96', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot128', cardinality 0..*) is associated with 'datastyle::MinutesType' (role 'datastyle_MinutesType129', cardinality 0..*).
+'datastyle::DateStyleType' (role 'datastyle_DateStyleType23', cardinality 0..*) is associated with 'datastyle::DayType' (role 'datastyle_DayType', cardinality 0..*).
+'datastyle::DateStyleType' (role 'datastyle_DateStyleType33', cardinality 0..*) is associated with 'datastyle::WeekOfYearType' (role 'datastyle_WeekOfYearType', cardinality 0..*).
+'datastyle::MapType' (role 'datastyle_MapType63', cardinality 0..*) is associated with 'datastyle::PercentageStyleType' (role 'datastyle_PercentageStyleType62', cardinality 0..*).
+'datastyle::MinutesType' (role 'datastyle_MinutesType', cardinality 0..*) is associated with 'datastyle::DateStyleType' (role 'datastyle_DateStyleType41', cardinality 0..*).
+'datastyle::WeekOfYearType' (role 'datastyle_WeekOfYearType161', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot160', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot163', cardinality 0..*) is associated with 'datastyle::YearType' (role 'datastyle_YearType164', cardinality 0..*).
+'datastyle::EStringToStringMapEntry' (role 'datastyle_EStringToStringMapEntry', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot134', cardinality 0..*) is associated with 'datastyle::NumberType' (role 'datastyle_NumberType135', cardinality 0..*).
+'datastyle::NumberType' (role 'datastyle_NumberType55', cardinality 0..*) is associated with 'datastyle::EmbeddedTextType' (role 'datastyle_EmbeddedTextType', cardinality 0..*).
+'datastyle::EraType' (role 'datastyle_EraType', cardinality 0..*) is associated with 'datastyle::DateStyleType' (role 'datastyle_DateStyleType29', cardinality 0..*).
+'datastyle::BooleanStyleType' (role 'datastyle_BooleanStyleType2', cardinality 0..*) is associated with 'datastyle::BooleanType' (role 'datastyle_BooleanType', cardinality 0..*).
+'datastyle::TextStyleType' (role 'datastyle_TextStyleType', cardinality 0..*) is associated with 'datastyle::StyleTextPropertiesContent' (role 'datastyle_StyleTextPropertiesContent65', cardinality 0..*).
+'datastyle::PercentageStyleType' (role 'datastyle_PercentageStyleType141', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot140', cardinality 0..*).
+'datastyle::AmPmType' (role 'datastyle_AmPmType', cardinality 0..*) is associated with 'datastyle::DateStyleType' (role 'datastyle_DateStyleType39', cardinality 0..*).
+'datastyle::SecondsType' (role 'datastyle_SecondsType149', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot148', cardinality 0..*).
+'datastyle::StyleTextPropertiesContent' (role 'datastyle_StyleTextPropertiesContent48', cardinality 0..*) is associated with 'datastyle::NumberStyleType' (role 'datastyle_NumberStyleType', cardinality 0..*).
+'datastyle::TextContentType' (role 'datastyle_TextContentType152', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot151', cardinality 0..*).
+'datastyle::NumberStyleType' (role 'datastyle_NumberStyleType50', cardinality 0..*) is associated with 'datastyle::EObject' (role 'datastyle_EObject', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot123', cardinality 0..*) is associated with 'datastyle::FractionType' (role 'datastyle_FractionType', cardinality 0..*).
+'datastyle::MinutesType' (role 'datastyle_MinutesType81', cardinality 0..*) is associated with 'datastyle::TimeStyleType' (role 'datastyle_TimeStyleType80', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot131', cardinality 0..*) is associated with 'datastyle::MonthType' (role 'datastyle_MonthType132', cardinality 0..*).
+'datastyle::DateStyleType' (role 'datastyle_DateStyleType25', cardinality 0..*) is associated with 'datastyle::MonthType' (role 'datastyle_MonthType', cardinality 0..*).
+'datastyle::StyleTextPropertiesContent' (role 'datastyle_StyleTextPropertiesContent', cardinality 0..*) is associated with 'datastyle::BooleanStyleType' (role 'datastyle_BooleanStyleType', cardinality 0..*).
+'datastyle::StyleTextPropertiesContent' (role 'datastyle_StyleTextPropertiesContent6', cardinality 0..*) is associated with 'datastyle::CurrencyStyleType' (role 'datastyle_CurrencyStyleType', cardinality 0..*).
+'datastyle::TextStyleType' (role 'datastyle_TextStyleType69', cardinality 0..*) is associated with 'datastyle::MapType' (role 'datastyle_MapType70', cardinality 0..*).
+'datastyle::DayOfWeekType' (role 'datastyle_DayOfWeekType115', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot114', cardinality 0..*).
+'datastyle::TimeStyleType' (role 'datastyle_TimeStyleType', cardinality 0..*) is associated with 'datastyle::StyleTextPropertiesContent' (role 'datastyle_StyleTextPropertiesContent72', cardinality 0..*).
+'datastyle::CurrencySymbolType' (role 'datastyle_CurrencySymbolType106', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot105', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot157', cardinality 0..*) is associated with 'datastyle::TimeStyleType' (role 'datastyle_TimeStyleType158', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot117', cardinality 0..*) is associated with 'datastyle::EmbeddedTextType' (role 'datastyle_EmbeddedTextType118', cardinality 0..*).
+'datastyle::DayType' (role 'datastyle_DayType112', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot111', cardinality 0..*).
+'datastyle::DayOfWeekType' (role 'datastyle_DayOfWeekType', cardinality 0..*) is associated with 'datastyle::DateStyleType' (role 'datastyle_DateStyleType31', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot137', cardinality 0..*) is associated with 'datastyle::NumberStyleType' (role 'datastyle_NumberStyleType138', cardinality 0..*).
+'datastyle::TimeStyleType' (role 'datastyle_TimeStyleType77', cardinality 0..*) is associated with 'datastyle::AmPmType' (role 'datastyle_AmPmType78', cardinality 0..*).
+'datastyle::DateStyleType' (role 'datastyle_DateStyleType109', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot108', cardinality 0..*).
+'datastyle::QuarterType' (role 'datastyle_QuarterType144', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot143', cardinality 0..*).
+'datastyle::DateStyleType' (role 'datastyle_DateStyleType37', cardinality 0..*) is associated with 'datastyle::HoursType' (role 'datastyle_HoursType', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot90', cardinality 0..*) is associated with 'datastyle::EStringToStringMapEntry' (role 'datastyle_EStringToStringMapEntry91', cardinality 0..*).
+'datastyle::MapType' (role 'datastyle_MapType53', cardinality 0..*) is associated with 'datastyle::NumberStyleType' (role 'datastyle_NumberStyleType52', cardinality 0..*).
+'datastyle::TimeStyleType' (role 'datastyle_TimeStyleType74', cardinality 0..*) is associated with 'datastyle::HoursType' (role 'datastyle_HoursType75', cardinality 0..*).
+'datastyle::TextStyleType' (role 'datastyle_TextStyleType155', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot154', cardinality 0..*).
+'datastyle::TextContentType' (role 'datastyle_TextContentType', cardinality 0..*) is associated with 'datastyle::TextStyleType' (role 'datastyle_TextStyleType67', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot102', cardinality 0..*) is associated with 'datastyle::CurrencyStyleType' (role 'datastyle_CurrencyStyleType103', cardinality 0..*).
+'datastyle::NumberType' (role 'datastyle_NumberType16', cardinality 0..*) is associated with 'datastyle::CurrencyStyleType' (role 'datastyle_CurrencyStyleType15', cardinality 0..*).
+'datastyle::CurrencySymbolType' (role 'datastyle_CurrencySymbolType', cardinality 0..*) is associated with 'datastyle::CurrencyStyleType' (role 'datastyle_CurrencyStyleType10', cardinality 0..*).
+'datastyle::StyleTextPropertiesContent' (role 'datastyle_StyleTextPropertiesContent57', cardinality 0..*) is associated with 'datastyle::PercentageStyleType' (role 'datastyle_PercentageStyleType', cardinality 0..*).
+'datastyle::ScientificNumberType' (role 'datastyle_ScientificNumberType', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot146', cardinality 0..*).
+'datastyle::DateStyleType' (role 'datastyle_DateStyleType35', cardinality 0..*) is associated with 'datastyle::QuarterType' (role 'datastyle_QuarterType', cardinality 0..*).
+'datastyle::DateStyleType' (role 'datastyle_DateStyleType27', cardinality 0..*) is associated with 'datastyle::YearType' (role 'datastyle_YearType', cardinality 0..*).
+'datastyle::TimeStyleType' (role 'datastyle_TimeStyleType86', cardinality 0..*) is associated with 'datastyle::MapType' (role 'datastyle_MapType87', cardinality 0..*).
+'datastyle::BooleanStyleType' (role 'datastyle_BooleanStyleType100', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot99', cardinality 0..*).
+'datastyle::SecondsType' (role 'datastyle_SecondsType84', cardinality 0..*) is associated with 'datastyle::TimeStyleType' (role 'datastyle_TimeStyleType83', cardinality 0..*).
+'datastyle::HoursType' (role 'datastyle_HoursType126', cardinality 0..*) is associated with 'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot125', cardinality 0..*).
+'datastyle::StyleTextPropertiesContent' (role 'datastyle_StyleTextPropertiesContent21', cardinality 0..*) is associated with 'datastyle::DateStyleType' (role 'datastyle_DateStyleType', cardinality 0..*).
+'datastyle::PercentageStyleType' (role 'datastyle_PercentageStyleType59', cardinality 0..*) is associated with 'datastyle::NumberType' (role 'datastyle_NumberType60', cardinality 0..*).
+'datastyle::DocumentRoot' (role 'datastyle_DocumentRoot120', cardinality 0..*) is associated with 'datastyle::EraType' (role 'datastyle_EraType121', cardinality 0..*).
+'datastyle::CurrencyStyleType' (role 'datastyle_CurrencyStyleType8', cardinality 0..*) is associated with 'datastyle::NumberType' (role 'datastyle_NumberType', cardinality 0..*).
+'datastyle::BooleanStyleType' (role 'datastyle_BooleanStyleType4', cardinality 0..*) is associated with 'datastyle::MapType' (role 'datastyle_MapType', cardinality 0..*).
+'datastyle::CurrencyStyleType' (role 'datastyle_CurrencyStyleType18', cardinality 0..*) is associated with 'datastyle::MapType' (role 'datastyle_MapType19', cardinality 0..*).
+'datastyle::DateStyleType' (role 'datastyle_DateStyleType45', cardinality 0..*) is associated with 'datastyle::MapType' (role 'datastyle_MapType46', cardinality 0..*).

@@ -1,0 +1,114 @@
+The model has 56 class(es).
+The class 'scxmlxt::AssignmentAction' has no attributes.
+The class 'scxmlxt::EStepFilter' has the following attributes: 'freeVarName' of type str.
+The class 'AbstractTransition' has no attributes.
+The class 'scxmlxt::SymbolicAction' has the following attributes: 'name' of type str.
+The class 'Typed' has no attributes.
+The class 'scxmlxt::Transition' has no attributes.
+The class 'scxmlxt::InitialTransition' has no attributes.
+The class 'scxmlxt::AbstractState' has no attributes.
+The class 'scxmlxt::State' has the following attributes: 'name' of type str.
+The class 'scxmlxt::AbstractTransition' has no attributes.
+The class 'scxmlxt::VarRef' has no attributes.
+The class 'scxmlxt::EObject' has no attributes.
+The class 'scxmlxt::Condition' has the following attributes: 'script' of type str.
+The class 'scxmlxt::AbstractUriLiteral' has the following attributes: 'uri' of type str.
+The class 'scxmlxt::ExitEvent' has no attributes.
+The class 'scxmlxt::SymbolicEvent' has the following attributes: 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'scxmlxt::IntLiteral' has the following attributes: 'intValue' of type int.
+The class 'scxmlxt::EObjectReference' has no attributes.
+The class 'scxmlxt::UriLiteral' has the following attributes: 'uriValue' of type str.
+The class 'scxmlxt::ScriptAction' has the following attributes: 'script' of type str.
+The class 'scxmlxt::TransitionEvent' has no attributes.
+The class 'scxmlxt::AbstractTransitionEvent' has no attributes.
+The class 'scxmlxt::StringLiteral' has the following attributes: 'stringValue' of type str.
+The class 'scxmlxt::Event' has no attributes.
+The class 'scxmlxt::ResourceUriLiteral' has the following attributes: 'resourceUri' of type str.
+The class 'AbstractState' has no attributes.
+The class 'scxmlxt::FloatLiteral' has the following attributes: 'floatValue' of type float.
+The class 'scxmlxt::Action' has no attributes.
+The class 'AbstractUriLiteral' has no attributes.
+The class 'scxmlxt::EClassifier' has no attributes.
+The class 'scxmlxt::ResourceImport' has the following attributes: 'importURI' of type str.
+The class 'scxmlxt::VarDef' has the following attributes: 'name' of type str.
+The class 'scxmlxt::EnterEvent' has no attributes.
+The class 'ResourceImport' has no attributes.
+The class 'scxmlxt::TimerEvent' has no attributes.
+The class 'AbstractTransitionEvent' has no attributes.
+The class 'Action' has no attributes.
+The class 'scxmlxt::DomainDataImport' has no attributes.
+The class 'scxmlxt::ScriptExpression' has the following attributes: 'script' of type str.
+The class 'scxmlxt::EStep' has the following attributes: 'featureName' of type str.
+The class 'scxmlxt::Literal' has no attributes.
+The class 'ResourceUriLiteral' has no attributes.
+The class 'IntLiteral' has no attributes.
+The class 'scxmlxt::Expression' has no attributes.
+The class 'scxmlxt::StateMachine' has no attributes.
+The class 'scxmlxt::ScriptEvent' has the following attributes: 'script' of type str.
+The class 'scxmlxt::Typed' has the following attributes: 'many' of type bool.
+The class 'scxmlxt::DomainModelImport' has no attributes.
+The class 'Literal' has no attributes.
+The class 'scxmlxt::EPath' has no attributes.
+The class 'scxmlxt::BooleanLiteral' has the following attributes: 'booleanValue' of type bool.
+The class 'scxmlxt::DelayLiteral' has the following attributes: 'timeUnit' of type str.
+The class 'scxmlxt::EObjectUriLiteral' has the following attributes: 'uriFragment' of type str.
+The class 'Event' has no attributes.
+The class 'scxmlxt::InternalTransition' has no attributes.
+The enumeration 'TimeUnit' has the following literals: 'h', 'm', 'ms', 's'.
+'scxmlxt::TransitionEvent' is a specialization of 'AbstractTransitionEvent'.
+'scxmlxt::AbstractUriLiteral' is a specialization of 'Literal'.
+'scxmlxt::ResourceUriLiteral' is a specialization of 'AbstractUriLiteral'.
+'scxmlxt::DomainModelImport' is a specialization of 'ResourceImport'.
+'scxmlxt::SymbolicAction' is a specialization of 'Action'.
+'scxmlxt::SymbolicEvent' is a specialization of 'Event'.
+'scxmlxt::Literal' is a specialization of 'Expression'.
+'scxmlxt::AssignmentAction' is a specialization of 'Action'.
+'scxmlxt::IntLiteral' is a specialization of 'Literal'.
+'scxmlxt::InternalTransition' is a specialization of 'AbstractTransition'.
+'scxmlxt::DomainDataImport' is a specialization of 'ResourceImport'.
+'scxmlxt::VarDef' is a specialization of 'Typed'.
+'scxmlxt::EPath' is a specialization of 'Expression'.
+'scxmlxt::AbstractTransitionEvent' is a specialization of 'Event'.
+'scxmlxt::DelayLiteral' is a specialization of 'IntLiteral'.
+'scxmlxt::ScriptAction' is a specialization of 'Action'.
+'scxmlxt::FloatLiteral' is a specialization of 'Literal'.
+'scxmlxt::StateMachine' is a specialization of 'AbstractState'.
+'scxmlxt::ScriptEvent' is a specialization of 'Event'.
+'scxmlxt::StringLiteral' is a specialization of 'Literal'.
+'scxmlxt::ExitEvent' is a specialization of 'AbstractTransitionEvent'.
+'scxmlxt::TimerEvent' is a specialization of 'Event'.
+'scxmlxt::EObjectUriLiteral' is a specialization of 'ResourceUriLiteral'.
+'scxmlxt::VarRef' is a specialization of 'Expression'.
+'scxmlxt::BooleanLiteral' is a specialization of 'Literal'.
+'scxmlxt::EnterEvent' is a specialization of 'AbstractTransitionEvent'.
+'scxmlxt::State' is a specialization of 'AbstractState'.
+'scxmlxt::UriLiteral' is a specialization of 'AbstractUriLiteral'.
+'scxmlxt::Transition' is a specialization of 'AbstractTransition'.
+'scxmlxt::ScriptExpression' is a specialization of 'Expression'.
+'scxmlxt::EObject' (role 'scxmlxt_EObject', cardinality 0..*) is associated with 'scxmlxt::EObjectReference' (role 'scxmlxt_EObjectReference', cardinality 0..*).
+'scxmlxt::AssignmentAction' (role 'scxmlxt_AssignmentAction40', cardinality 0..*) is associated with 'scxmlxt::Expression' (role 'scxmlxt_Expression41', cardinality 0..*).
+'scxmlxt::EStep' (role 'scxmlxt_EStep49', cardinality 0..*) is associated with 'scxmlxt::EStepFilter' (role 'scxmlxt_EStepFilter', cardinality 0..*).
+'scxmlxt::VarRef' (role 'scxmlxt_VarRef', cardinality 0..*) is associated with 'scxmlxt::VarDef' (role 'scxmlxt_VarDef43', cardinality 0..*).
+'scxmlxt::TransitionEvent' (role 'scxmlxt_TransitionEvent', cardinality 0..*) is associated with 'scxmlxt::State' (role 'scxmlxt_State23', cardinality 0..*).
+'scxmlxt::StateMachine' (role 'scxmlxt_StateMachine', cardinality 0..*) is associated with 'scxmlxt::ResourceImport' (role 'scxmlxt_ResourceImport', cardinality 0..*).
+'scxmlxt::AbstractTransition' (role 'scxmlxt_AbstractTransition', cardinality 0..*) is associated with 'scxmlxt::AbstractState' (role 'scxmlxt_AbstractState10', cardinality 0..*).
+'scxmlxt::Event' (role 'scxmlxt_Event28', cardinality 0..*) is associated with 'scxmlxt::TimerEvent' (role 'scxmlxt_TimerEvent', cardinality 0..*).
+'scxmlxt::State' (role 'scxmlxt_State8', cardinality 0..*) is associated with 'scxmlxt::AbstractState' (role 'scxmlxt_AbstractState', cardinality 0..*).
+'scxmlxt::Action' (role 'scxmlxt_Action19', cardinality 0..*) is associated with 'scxmlxt::AbstractTransition' (role 'scxmlxt_AbstractTransition18', cardinality 0..*).
+'scxmlxt::TransitionEvent' (role 'scxmlxt_TransitionEvent25', cardinality 0..*) is associated with 'scxmlxt::State' (role 'scxmlxt_State26', cardinality 0..*).
+'scxmlxt::AbstractState' (role 'scxmlxt_AbstractState12', cardinality 0..*) is associated with 'scxmlxt::VarDef' (role 'scxmlxt_VarDef', cardinality 0..*).
+'scxmlxt::InitialTransition' (role 'scxmlxt_InitialTransition', cardinality 0..*) is associated with 'scxmlxt::State' (role 'scxmlxt_State4', cardinality 0..*).
+'scxmlxt::Condition' (role 'scxmlxt_Condition', cardinality 0..*) is associated with 'scxmlxt::AbstractTransition' (role 'scxmlxt_AbstractTransition16', cardinality 0..*).
+'scxmlxt::Expression' (role 'scxmlxt_Expression', cardinality 0..*) is associated with 'scxmlxt::TimerEvent' (role 'scxmlxt_TimerEvent30', cardinality 0..*).
+'scxmlxt::ScriptExpression' (role 'scxmlxt_ScriptExpression', cardinality 0..*) is associated with 'scxmlxt::EStepFilter' (role 'scxmlxt_EStepFilter51', cardinality 0..*).
+'scxmlxt::EClassifier' (role 'scxmlxt_EClassifier', cardinality 0..*) is associated with 'scxmlxt::Typed' (role 'scxmlxt_Typed', cardinality 0..*).
+'scxmlxt::Event' (role 'scxmlxt_Event', cardinality 0..*) is associated with 'scxmlxt::AbstractTransition' (role 'scxmlxt_AbstractTransition14', cardinality 0..*).
+'scxmlxt::EStep' (role 'scxmlxt_EStep', cardinality 0..*) is associated with 'scxmlxt::EPath' (role 'scxmlxt_EPath47', cardinality 0..*).
+'scxmlxt::State' (role 'scxmlxt_State21', cardinality 0..*) is associated with 'scxmlxt::Transition' (role 'scxmlxt_Transition', cardinality 0..*).
+'scxmlxt::State' (role 'scxmlxt_State', cardinality 0..*) is associated with 'scxmlxt::StateMachine' (role 'scxmlxt_StateMachine2', cardinality 0..*).
+'scxmlxt::Expression' (role 'scxmlxt_Expression36', cardinality 0..*) is associated with 'scxmlxt::VarDef' (role 'scxmlxt_VarDef35', cardinality 0..*).
+'scxmlxt::Action' (role 'scxmlxt_Action', cardinality 0..*) is associated with 'scxmlxt::InitialTransition' (role 'scxmlxt_InitialTransition6', cardinality 0..*).
+'scxmlxt::AssignmentAction' (role 'scxmlxt_AssignmentAction', cardinality 0..*) is associated with 'scxmlxt::VarDef' (role 'scxmlxt_VarDef38', cardinality 0..*).
+'scxmlxt::Expression' (role 'scxmlxt_Expression32', cardinality 0..*) is associated with 'scxmlxt::SymbolicAction' (role 'scxmlxt_SymbolicAction', cardinality 0..*).
+'scxmlxt::EPath' (role 'scxmlxt_EPath', cardinality 0..*) is associated with 'scxmlxt::VarRef' (role 'scxmlxt_VarRef45', cardinality 0..*).

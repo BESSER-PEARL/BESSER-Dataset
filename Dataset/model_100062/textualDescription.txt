@@ -1,0 +1,45 @@
+The model has 15 class(es).
+The class 'InstallationUnit' has no attributes.
+The class 'build::Repository' has the following attributes: 'location' of type str; 'label' of type str.
+The class 'build::Config' has the following attributes: 'os' of type str; 'arch' of type str; 'ws' of type str; 'archiveFormat' of type str.
+The class 'build::Promotion' has the following attributes: 'baseURL' of type str; 'uploadDirectory' of type str; 'incubating' of type bool; 'buildAlias' of type str; 'downloadDirectory' of type str.
+The class 'build::Platform' has the following attributes: 'deltapack' of type str; 'file' of type str; 'location' of type str.
+The class 'build::Map' has the following attributes: 'repo' of type str; 'root' of type str; 'tag' of type str.
+The class 'build::Compiler' has the following attributes: 'args' of type str; 'targetVersion' of type str; 'sourceVersion' of type str; 'verbose' of type bool; 'debugInfo' of type bool; 'failOnError' of type bool.
+The class 'build::Product' has no attributes.
+The class 'build::InstallationUnit' has the following attributes: 'id' of type str; 'version' of type str.
+The class 'build::Bundle' has no attributes.
+The class 'build::Feature' has the following attributes: 'inProduct' of type bool.
+The class 'build::Build' has the following attributes: 'buildRoot' of type str; 'date' of type str; 'time' of type str; 'sendmail' of type bool; 'launchVM' of type str; 'type' of type str; 'builderURL' of type str; 'fetchTag' of type str; 'label' of type str.
+The class 'build::Contact' has the following attributes: 'email' of type str; 'name' of type str.
+The class 'build::Category' has the following attributes: 'description' of type str; 'label' of type str; 'name' of type str.
+The class 'build::Contribution' has the following attributes: 'label' of type str.
+The enumeration 'ArchiveFormat' has the following literals: 'tar', 'zip'.
+The enumeration 'OS' has the following literals: 'macosx', 'hpux', 'aix', 'linux', 'solaris', 'win32'.
+The enumeration 'ARCH' has the following literals: 's390x', 'sparc', 'x86', 'x86_64', 's390', 'ia64_32', 'ppc', 'ppc64'.
+The enumeration 'BuildType' has the following literals: 'Release', 'Continuous', 'Nightly', 'Integration', 'Stable', 'Maintenance'.
+The enumeration 'WS' has the following literals: 'gtk', 'carbon', 'win32', 'cocoa', 'motif'.
+'build::Feature' is a specialization of 'InstallationUnit'.
+'build::Product' is a specialization of 'InstallationUnit'.
+'build::Bundle' is a specialization of 'InstallationUnit'.
+'build::Contact' (role 'build_Contact32', cardinality 0..*) is associated with 'build::Contribution' (role 'build_Contribution31', cardinality 0..*).
+'build::Build' (role 'build_Build2', cardinality 0..*) is associated with 'build::Config' (role 'build_Config', cardinality 0..*).
+'build::Contact' (role 'build_Contact25', cardinality 0..*) is associated with 'build::Build' (role 'build_Build24', cardinality 0..*).
+'build::Build' (role 'build_Build20', cardinality 0..*) is associated with 'build::Promotion' (role 'build_Promotion', cardinality 0..*).
+'build::Category' (role 'build_Category', cardinality 0..*) is associated with 'build::Build' (role 'build_Build6', cardinality 0..*).
+'build::Platform' (role 'build_Platform27', cardinality 0..*) is associated with 'build::Config' (role 'build_Config28', cardinality 0..*).
+'build::Map' (role 'build_Map', cardinality 0..*) is associated with 'build::Build' (role 'build_Build4', cardinality 0..*).
+'build::Feature' (role 'build_Feature', cardinality 0..*) is associated with 'build::Contribution' (role 'build_Contribution34', cardinality 0..*).
+'build::Feature' (role 'features', cardinality 0..*) is associated with 'build::Category' (role 'Category', cardinality 0..*).
+'build::Build' (role 'build_Build10', cardinality 0..*) is associated with 'build::Product' (role 'build_Product', cardinality 0..*).
+'build::Repository' (role 'build_Repository44', cardinality 0..*) is associated with 'build::InstallationUnit' (role 'build_InstallationUnit', cardinality 0..*).
+'build::Build' (role 'build_Build18', cardinality 0..*) is associated with 'build::Compiler' (role 'build_Compiler', cardinality 0..*).
+'build::Contribution' (role 'build_Contribution38', cardinality 0..*) is associated with 'build::Bundle' (role 'build_Bundle', cardinality 0..*).
+'build::Feature' (role 'Feature', cardinality 0..*) is associated with 'build::Category' (role 'category', cardinality 0..*).
+'build::Contribution' (role 'build_Contribution36', cardinality 0..*) is associated with 'build::Repository' (role 'build_Repository', cardinality 0..*).
+'build::Platform' (role 'build_Platform13', cardinality 0..*) is associated with 'build::Build' (role 'build_Build12', cardinality 0..*).
+'build::Contribution' (role 'build_Contribution40', cardinality 0..*) is associated with 'build::Product' (role 'build_Product41', cardinality 0..*).
+'build::Build' (role 'build_Build', cardinality 0..*) is associated with 'build::Platform' (role 'build_Platform', cardinality 0..*).
+'build::Contact' (role 'build_Contact', cardinality 0..*) is associated with 'build::Build' (role 'build_Build22', cardinality 0..*).
+'build::Platform' (role 'build_Platform16', cardinality 0..*) is associated with 'build::Build' (role 'build_Build15', cardinality 0..*).
+'build::Contribution' (role 'build_Contribution', cardinality 0..*) is associated with 'build::Build' (role 'build_Build8', cardinality 0..*).

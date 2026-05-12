@@ -1,0 +1,38 @@
+The model has 16 class(es).
+The class 'Statecharts::CompositeState' has the following attributes: 'isConcurrent' of type str.
+The class 'Statecharts::Transition' has no attributes.
+The class 'Statecharts::Event' has no attributes.
+The class 'Statecharts::Guard' has no attributes.
+The class 'Statecharts::BooleanExpression' has the following attributes: 'value' of type str.
+The class 'StateVertex' has no attributes.
+The class 'Statecharts::StateVertex' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'Statecharts::State' has no attributes.
+The class 'CompositeState' has no attributes.
+The class 'Event' has no attributes.
+The class 'Guard' has no attributes.
+The class 'Statecharts::StateMachine' has no attributes.
+The class 'State' has no attributes.
+The class 'Transition' has no attributes.
+The class 'StateMachine' has no attributes.
+'Statecharts::State' is a specialization of 'StateVertex'.
+'Statecharts::CompositeState' is a specialization of 'State'.
+'Statecharts::Event' (role 'trigger', cardinality 0..*) is associated with 'Transition' (role 'Transition27', cardinality 0..*).
+'StateMachine' (role 'StateMachine8', cardinality 0..*) is associated with 'Statecharts::Transition' (role 'transitions', cardinality 0..*).
+'Statecharts::Event' (role 'deferrableEvents', cardinality 0..*) is associated with 'State' (role 'State29', cardinality 0..*).
+'Statecharts::StateMachine' (role 'state_container', cardinality 0..*) is associated with 'State' (role 'State', cardinality 0..*).
+'CompositeState' (role 'CompositeState', cardinality 0..*) is associated with 'Statecharts::StateVertex' (role 'subVertexes', cardinality 0..*).
+'Statecharts::State' (role 'top', cardinality 0..*) is associated with 'StateMachine' (role 'StateMachine', cardinality 0..*).
+'Statecharts::Guard' (role 'guard', cardinality 0..*) is associated with 'Transition' (role 'Transition24', cardinality 0..*).
+'Statecharts::State' (role 'transS_container', cardinality 0..*) is associated with 'Transition' (role 'Transition4', cardinality 0..*).
+'Statecharts::Transition' (role 'evt_container', cardinality 0..*) is associated with 'Event' (role 'Event12', cardinality 0..*).
+'Transition' (role 'Transition22', cardinality 0..*) is associated with 'Statecharts::StateVertex' (role 'target', cardinality 0..*).
+'StateVertex' (role 'StateVertex17', cardinality 0..*) is associated with 'Statecharts::Transition' (role 'incoming', cardinality 0..*).
+'Statecharts::Transition' (role 'gua_container', cardinality 0..*) is associated with 'Guard' (role 'Guard', cardinality 0..*).
+'StateVertex' (role 'StateVertex15', cardinality 0..*) is associated with 'Statecharts::Transition' (role 'outgoing', cardinality 0..*).
+'Transition' (role 'Transition20', cardinality 0..*) is associated with 'Statecharts::StateVertex' (role 'source', cardinality 0..*).
+'Statecharts::StateMachine' (role 'transSM_container', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).
+'BooleanExpression' (role 'BooleanExpression', cardinality 0..*) is associated with 'Statecharts::Guard' (role 'Statecharts_Guard', cardinality 0..*).
+'State' (role 'State10', cardinality 0..*) is associated with 'Statecharts::Transition' (role 'internalTransitions', cardinality 0..*).
+'Statecharts::CompositeState' (role 'sv_container', cardinality 0..*) is associated with 'StateVertex' (role 'StateVertex', cardinality 0..*).
+'Event' (role 'Event', cardinality 0..*) is associated with 'Statecharts::State' (role 'targets', cardinality 0..*).

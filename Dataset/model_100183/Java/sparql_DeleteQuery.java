@@ -1,0 +1,57 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class sparql_DeleteQuery extends ModifyQuery {
+
+    private String graph;
+
+
+
+
+
+    private sparql_GroupGraphPattern sparql_groupgraphpattern;
+
+
+
+
+    private sparql_WhereClause sparql_whereclause;
+
+
+    public sparql_DeleteQuery(
+        String graph    ) {
+        super(
+        );
+        this.graph = graph;
+    }
+
+
+    public String getGraph() {
+        return graph;
+    }
+
+    public void setGraph(String graph) {
+        this.graph = graph;
+    }
+
+    public sparql_GroupGraphPattern getSparql_groupgraphpattern() {
+        return sparql_groupgraphpattern;
+    }
+
+    public void setSparql_groupgraphpattern(sparql_GroupGraphPattern sparql_groupgraphpattern) {
+        this.sparql_groupgraphpattern = sparql_groupgraphpattern;
+    }
+    public sparql_WhereClause getSparql_whereclause() {
+        return sparql_whereclause;
+    }
+
+    public void setSparql_whereclause(sparql_WhereClause sparql_whereclause) {
+        this.sparql_whereclause = sparql_whereclause;
+    }
+
+}

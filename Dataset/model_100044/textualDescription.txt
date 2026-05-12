@@ -1,0 +1,65 @@
+The model has 23 class(es).
+The class 'research15::Named' has the following attributes: 'name' of type str.
+The class 'research15::PublicationProcess' has the following attributes: 'maxTime' of type int; 'minTime' of type int.
+The class 'research15::Paper' has no attributes.
+The class 'research15::Phase' has the following attributes: 'name' of type str.
+The class 'Counted' has no attributes.
+The class 'research15::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research15::Paragraph' has the following attributes: 'content' of type str.
+The class 'Labelled' has no attributes.
+The class 'research15::Keyword' has the following attributes: 'description' of type str.
+The class 'research15::Progress' has the following attributes: 'percent' of type int.
+The class 'research15::Position' has the following attributes: 'description' of type str.
+The class 'research15::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'research15::Labelled' has the following attributes: 'lname' of type str.
+The class 'research15::Counted' has the following attributes: 'id' of type int.
+The class 'research15::Researcher' has the following attributes: 'name' of type str; 'forName' of type str.
+The class 'research15::KnowledgeManager' has no attributes.
+The class 'research15::Review' has the following attributes: 'date' of type date.
+The class 'research15::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'Named' has no attributes.
+The class 'research15::PublicationSystem' has no attributes.
+The class 'research15::Skill' has the following attributes: 'description' of type str.
+The class 'research15::PublicationStructure' has no attributes.
+The class 'research15::Write' has the following attributes: 'timeSpent' of type int.
+'research15::Write' is a specialization of 'Labelled'.
+'research15::PublicationSystem' is a specialization of 'Named'.
+'research15::Position' is a specialization of 'Named'.
+'research15::Keyword' is a specialization of 'Named'.
+'research15::PublicationStructure' is a specialization of 'Named'.
+'research15::PublicationProcess' is a specialization of 'Named'.
+'research15::Review' is a specialization of 'Labelled'.
+'research15::ReviewNote' is a specialization of 'Named'.
+'research15::Progress' is a specialization of 'Labelled'.
+'research15::Paragraph' is a specialization of 'Named'.
+'research15::Paragraph' is a specialization of 'Counted'.
+'research15::Paper' is a specialization of 'Named'.
+'research15::KnowledgeManager' is a specialization of 'Named'.
+'research15::PaperKeyword' (role 'research15_PaperKeyword55', cardinality 0..*) is associated with 'research15::Keyword' (role 'research15_Keyword56', cardinality 0..*).
+'research15::Paper' (role 'research15_Paper18', cardinality 0..*) is associated with 'research15::Paper' (role 'research15_Paper16', cardinality 0..*).
+'research15::Researcher' (role 'research15_Researcher3', cardinality 0..*) is associated with 'research15::Review' (role 'research15_Review', cardinality 0..*).
+'research15::Paper' (role 'research15_Paper59', cardinality 0..*) is associated with 'research15::Collaboration' (role 'research15_Collaboration58', cardinality 0..*).
+'research15::Researcher' (role 'research15_Researcher10', cardinality 0..*) is associated with 'research15::Collaboration' (role 'research15_Collaboration', cardinality 0..*).
+'research15::PublicationSystem' (role 'research15_PublicationSystem', cardinality 0..*) is associated with 'research15::PublicationProcess' (role 'research15_PublicationProcess39', cardinality 0..*).
+'research15::Paper' (role 'Paper24', cardinality 0..*) is associated with 'research15::Progress' (role 'progress', cardinality 0..*).
+'research15::Keyword' (role 'research15_Keyword53', cardinality 0..*) is associated with 'research15::KnowledgeManager' (role 'research15_KnowledgeManager52', cardinality 0..*).
+'research15::Paper' (role 'res_papers', cardinality 0..*) is associated with 'research15::Researcher' (role 'Researcher', cardinality 0..*).
+'research15::Write' (role 'research15_Write26', cardinality 0..*) is associated with 'research15::Paragraph' (role 'research15_Paragraph27', cardinality 0..*).
+'research15::PublicationSystem' (role 'research15_PublicationSystem41', cardinality 0..*) is associated with 'research15::PublicationStructure' (role 'research15_PublicationStructure42', cardinality 0..*).
+'research15::PublicationProcess' (role 'research15_PublicationProcess', cardinality 0..*) is associated with 'research15::Phase' (role 'research15_Phase', cardinality 0..*).
+'research15::Paper' (role 'Paper', cardinality 0..*) is associated with 'research15::Researcher' (role 'authors', cardinality 0..*).
+'research15::ReviewNote' (role 'research15_ReviewNote', cardinality 0..*) is associated with 'research15::Paragraph' (role 'research15_Paragraph20', cardinality 0..*).
+'research15::Paper' (role 'research15_Paper50', cardinality 0..*) is associated with 'research15::Keyword' (role 'research15_Keyword', cardinality 0..*).
+'research15::PublicationSystem' (role 'research15_PublicationSystem44', cardinality 0..*) is associated with 'research15::Position' (role 'research15_Position45', cardinality 0..*).
+'research15::Position' (role 'research15_Position48', cardinality 0..*) is associated with 'research15::Position' (role 'research15_Position46', cardinality 0..*).
+'research15::PaperKeyword' (role 'research15_PaperKeyword', cardinality 0..*) is associated with 'research15::Paper' (role 'research15_Paper15', cardinality 0..*).
+'research15::Progress' (role 'Progress', cardinality 0..*) is associated with 'research15::Paper' (role 'paper', cardinality 0..*).
+'research15::PublicationProcess' (role 'research15_PublicationProcess22', cardinality 0..*) is associated with 'research15::Progress' (role 'research15_Progress', cardinality 0..*).
+'research15::Review' (role 'research15_Review29', cardinality 0..*) is associated with 'research15::ReviewNote' (role 'research15_ReviewNote30', cardinality 0..*).
+'research15::Researcher' (role 'research15_Researcher6', cardinality 0..*) is associated with 'research15::Skill' (role 'research15_Skill', cardinality 0..*).
+'research15::Paragraph' (role 'research15_Paragraph', cardinality 0..*) is associated with 'research15::Paper' (role 'research15_Paper', cardinality 0..*).
+'research15::Position' (role 'research15_Position', cardinality 0..*) is associated with 'research15::Researcher' (role 'research15_Researcher8', cardinality 0..*).
+'research15::Paper' (role 'research15_Paper35', cardinality 0..*) is associated with 'research15::PublicationStructure' (role 'research15_PublicationStructure34', cardinality 0..*).
+'research15::Researcher' (role 'research15_Researcher', cardinality 0..*) is associated with 'research15::Write' (role 'research15_Write', cardinality 0..*).
+'research15::Researcher' (role 'research15_Researcher32', cardinality 0..*) is associated with 'research15::PublicationStructure' (role 'research15_PublicationStructure', cardinality 0..*).
+'research15::PublicationStructure' (role 'research15_PublicationStructure37', cardinality 0..*) is associated with 'research15::KnowledgeManager' (role 'research15_KnowledgeManager', cardinality 0..*).

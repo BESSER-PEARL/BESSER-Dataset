@@ -1,0 +1,33 @@
+The model has 16 class(es).
+The class 'Arc' has no attributes.
+The class 'extendedpetrinet::Identity' has the following attributes: 'text' of type int.
+The class 'Attribute' has no attributes.
+The class 'PetriNetType' has no attributes.
+The class 'extendedpetrinet::InputPlaceAppearance' has the following attributes: 'text' of type str.
+The class 'extendedpetrinet::ExtendedPetriNet' has no attributes.
+The class 'extendedpetrinet::Animation' has no attributes.
+The class 'extendedpetrinet::AnimationLabel' has no attributes.
+The class 'extendedpetrinet::GeometryLabel' has the following attributes: 'text' of type str.
+The class 'StructuredLabel' has no attributes.
+The class 'extendedpetrinet::Token' has the following attributes: 'text' of type str.
+The class 'Label' has no attributes.
+The class 'extendedpetrinet::InteractiveInput' has the following attributes: 'text' of type bool.
+The class 'extendedpetrinet::Place' has no attributes.
+The class 'extendedpetrinet::Arc' has no attributes.
+The class 'Place' has no attributes.
+'extendedpetrinet::AnimationLabel' is a specialization of 'StructuredLabel'.
+'extendedpetrinet::Place' is a specialization of 'Place'.
+'extendedpetrinet::GeometryLabel' is a specialization of 'Label'.
+'extendedpetrinet::ExtendedPetriNet' is a specialization of 'PetriNetType'.
+'extendedpetrinet::Identity' is a specialization of 'Attribute'.
+'extendedpetrinet::InputPlaceAppearance' is a specialization of 'Label'.
+'extendedpetrinet::Arc' is a specialization of 'Arc'.
+'extendedpetrinet::InteractiveInput' is a specialization of 'Attribute'.
+'extendedpetrinet::Token' is a specialization of 'Label'.
+'extendedpetrinet::GeometryLabel' (role 'extendedpetrinet_GeometryLabel', cardinality 0..*) is associated with 'extendedpetrinet::Place' (role 'extendedpetrinet_Place9', cardinality 0..*).
+'extendedpetrinet::Token' (role 'extendedpetrinet_Token', cardinality 0..*) is associated with 'extendedpetrinet::Place' (role 'extendedpetrinet_Place5', cardinality 0..*).
+'extendedpetrinet::Arc' (role 'extendedpetrinet_Arc', cardinality 0..*) is associated with 'extendedpetrinet::Identity' (role 'extendedpetrinet_Identity', cardinality 0..*).
+'extendedpetrinet::AnimationLabel' (role 'extendedpetrinet_AnimationLabel11', cardinality 0..*) is associated with 'extendedpetrinet::Animation' (role 'extendedpetrinet_Animation', cardinality 0..*).
+'extendedpetrinet::InteractiveInput' (role 'extendedpetrinet_InteractiveInput', cardinality 0..*) is associated with 'extendedpetrinet::Place' (role 'extendedpetrinet_Place', cardinality 0..*).
+'extendedpetrinet::AnimationLabel' (role 'extendedpetrinet_AnimationLabel', cardinality 0..*) is associated with 'extendedpetrinet::Place' (role 'extendedpetrinet_Place3', cardinality 0..*).
+'extendedpetrinet::InputPlaceAppearance' (role 'extendedpetrinet_InputPlaceAppearance', cardinality 0..*) is associated with 'extendedpetrinet::Place' (role 'extendedpetrinet_Place7', cardinality 0..*).

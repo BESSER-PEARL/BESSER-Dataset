@@ -1,0 +1,32 @@
+The model has 16 class(es).
+The class 'oracle::TriggerResourceData' has the following attributes: 'sql' of type str.
+The class 'oracle::SequenceResourceData' has the following attributes: 'cycle' of type bool; 'useCache' of type bool; 'isHistory' of type bool; 'minValue' of type str; 'increment' of type str; 'tableName' of type str; 'start' of type str; 'cache' of type str; 'maxValue' of type str.
+The class 'oracle::OracleUser' has the following attributes: 'decription' of type str; 'name' of type str; 'password' of type str; 'defaultTableSpace' of type str; 'enable' of type bool; 'attributes' of type str.
+The class 'oracle::OracleUserResourceData' has no attributes.
+The class 'ExtensibleModel' has no attributes.
+The class 'oracle::DatabaseModuleExtensibleProperty' has the following attributes: 'splitField' of type str; 'splitNum' of type str; 'space' of type str; 'tableType' of type str; 'bizPkg' of type str; 'startDate' of type str.
+The class 'oracle::OracleModuleProperty' has the following attributes: 'space' of type str.
+The class 'oracle::OracleViewProperty' has the following attributes: 'space' of type str.
+The class 'oracle::OraclePrivilege' has the following attributes: 'type' of type str; 'decription' of type str; 'name' of type str.
+The class 'oracle::OracleIndexProperty' has the following attributes: 'reverse' of type bool.
+The class 'oracle::OracleTableProperty' has the following attributes: 'tabletype' of type str; 'space' of type str.
+The class 'DatabaseResourceData' has no attributes.
+The class 'oracle::TableSpaceRelation' has the following attributes: 'mainSpace' of type str; 'indexSpace' of type str.
+The class 'oracle::OracleSpaceResourceData' has no attributes.
+The class 'oracle::OracleSequenceProperty' has the following attributes: 'space' of type str.
+The class 'oracle::TableSpace' has the following attributes: 'logicName' of type str; 'user' of type str; 'name' of type str; 'chineseName' of type str; 'size' of type str; 'file' of type str; 'description' of type str.
+The enumeration 'table_type' has the following literals: 'COMMON', 'TEMP_WITH_VALUE', 'TEMP_NO_VALUE'.
+'oracle::OracleUser' is a specialization of 'ExtensibleModel'.
+'oracle::DatabaseModuleExtensibleProperty' is a specialization of 'ExtensibleModel'.
+'oracle::TriggerResourceData' is a specialization of 'DatabaseResourceData'.
+'oracle::OracleSpaceResourceData' is a specialization of 'DatabaseResourceData'.
+'oracle::TableSpace' is a specialization of 'ExtensibleModel'.
+'oracle::SequenceResourceData' is a specialization of 'DatabaseResourceData'.
+'oracle::TableSpaceRelation' is a specialization of 'ExtensibleModel'.
+'oracle::OracleUserResourceData' is a specialization of 'DatabaseResourceData'.
+'oracle::OraclePrivilege' is a specialization of 'ExtensibleModel'.
+'oracle::OracleUser' (role 'oracle_OracleUser', cardinality 0..*) is associated with 'oracle::OracleUserResourceData' (role 'oracle_OracleUserResourceData', cardinality 0..*).
+'oracle::TableSpaceRelation' (role 'oracle_TableSpaceRelation', cardinality 0..*) is associated with 'oracle::OracleSpaceResourceData' (role 'oracle_OracleSpaceResourceData2', cardinality 0..*).
+'oracle::OracleSpaceResourceData' (role 'oracle_OracleSpaceResourceData', cardinality 0..*) is associated with 'oracle::TableSpace' (role 'oracle_TableSpace', cardinality 0..*).
+'oracle::OracleUser' (role 'oracle_OracleUser7', cardinality 0..*) is associated with 'oracle::OraclePrivilege' (role 'oracle_OraclePrivilege8', cardinality 0..*).
+'oracle::OraclePrivilege' (role 'oracle_OraclePrivilege', cardinality 0..*) is associated with 'oracle::OracleUserResourceData' (role 'oracle_OracleUserResourceData5', cardinality 0..*).

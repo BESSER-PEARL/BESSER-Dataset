@@ -1,0 +1,52 @@
+The model has 17 class(es).
+The class 'rdbms::schemas' has the following attributes: 'group' of type str.
+The class 'rdbms::RDBMS' has no attributes.
+The class 'rdbms::key' has the following attributes: 'name' of type str; 'kind' of type str; 'oID' of type str.
+The class 'rdbms::key2' has no attributes.
+The class 'rdbms::foreignKey' has the following attributes: 'owner' of type str; 'oID' of type str; 'kind' of type str; 'refersTo' of type str; 'name' of type str.
+The class 'rdbms::tables' has the following attributes: 'group' of type str.
+The class 'rdbms::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'rdbms::hasForeignKeys' has the following attributes: 'group' of type str.
+The class 'rdbms::schema' has the following attributes: 'oID' of type str; 'name' of type str; 'kind' of type str.
+The class 'rdbms::referencedKeys' has the following attributes: 'group' of type str.
+The class 'rdbms::oID' has the following attributes: 'oID' of type str.
+The class 'rdbms::referencedColumns' has the following attributes: 'group' of type str.
+The class 'rdbms::column' has the following attributes: 'type' of type str; 'kind' of type str; 'oID' of type str; 'name' of type str.
+The class 'rdbms::columns' has the following attributes: 'group' of type str.
+The class 'rdbms::table' has the following attributes: 'kind' of type str; 'oID' of type str; 'name' of type str.
+The class 'rdbms::foreignKeys' has the following attributes: 'group' of type str.
+The class 'rdbms::EStringToStringMapEntry' has no attributes.
+'rdbms::column' (role 'rdbms_column11', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot10', cardinality 0..*).
+'rdbms::table' (role 'rdbms_table84', cardinality 0..*) is associated with 'rdbms::tables' (role 'rdbms_tables83', cardinality 0..*).
+'rdbms::EStringToStringMapEntry' (role 'rdbms_EStringToStringMapEntry', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot', cardinality 0..*).
+'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot18', cardinality 0..*) is associated with 'rdbms::foreignKeys' (role 'rdbms_foreignKeys', cardinality 0..*).
+'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot36', cardinality 0..*) is associated with 'rdbms::schema' (role 'rdbms_schema', cardinality 0..*).
+'rdbms::oID' (role 'rdbms_oID66', cardinality 0..*) is associated with 'rdbms::referencedKeys' (role 'rdbms_referencedKeys65', cardinality 0..*).
+'rdbms::EStringToStringMapEntry' (role 'rdbms_EStringToStringMapEntry8', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot7', cardinality 0..*).
+'rdbms::foreignKey' (role 'rdbms_foreignKey48', cardinality 0..*) is associated with 'rdbms::foreignKeys' (role 'rdbms_foreignKeys47', cardinality 0..*).
+'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot40', cardinality 0..*) is associated with 'rdbms::table' (role 'rdbms_table', cardinality 0..*).
+'rdbms::foreignKey' (role 'rdbms_foreignKey', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot16', cardinality 0..*).
+'rdbms::referencedColumns' (role 'rdbms_referencedColumns54', cardinality 0..*) is associated with 'rdbms::key' (role 'rdbms_key53', cardinality 0..*).
+'rdbms::key2' (role 'rdbms_key256', cardinality 0..*) is associated with 'rdbms::key' (role 'rdbms_key57', cardinality 0..*).
+'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot27', cardinality 0..*) is associated with 'rdbms::oID' (role 'rdbms_oID', cardinality 0..*).
+'rdbms::RDBMS' (role 'rdbms_RDBMS59', cardinality 0..*) is associated with 'rdbms::schemas' (role 'rdbms_schemas60', cardinality 0..*).
+'rdbms::hasForeignKeys' (role 'rdbms_hasForeignKeys21', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot20', cardinality 0..*).
+'rdbms::table' (role 'rdbms_table80', cardinality 0..*) is associated with 'rdbms::key2' (role 'rdbms_key281', cardinality 0..*).
+'rdbms::referencedColumns' (role 'rdbms_referencedColumns62', cardinality 0..*) is associated with 'rdbms::oID' (role 'rdbms_oID63', cardinality 0..*).
+'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot38', cardinality 0..*) is associated with 'rdbms::schemas' (role 'rdbms_schemas', cardinality 0..*).
+'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot31', cardinality 0..*) is associated with 'rdbms::referencedColumns' (role 'rdbms_referencedColumns', cardinality 0..*).
+'rdbms::columns' (role 'rdbms_columns78', cardinality 0..*) is associated with 'rdbms::table' (role 'rdbms_table77', cardinality 0..*).
+'rdbms::columns' (role 'rdbms_columns14', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot13', cardinality 0..*).
+'rdbms::tables' (role 'rdbms_tables69', cardinality 0..*) is associated with 'rdbms::schema' (role 'rdbms_schema68', cardinality 0..*).
+'rdbms::key' (role 'rdbms_key', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot23', cardinality 0..*).
+'rdbms::referencedKeys' (role 'rdbms_referencedKeys34', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot33', cardinality 0..*).
+'rdbms::oID' (role 'rdbms_oID51', cardinality 0..*) is associated with 'rdbms::hasForeignKeys' (role 'rdbms_hasForeignKeys50', cardinality 0..*).
+'rdbms::foreignKeys' (role 'rdbms_foreignKeys72', cardinality 0..*) is associated with 'rdbms::schema' (role 'rdbms_schema71', cardinality 0..*).
+'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot42', cardinality 0..*) is associated with 'rdbms::tables' (role 'rdbms_tables', cardinality 0..*).
+'rdbms::referencedKeys' (role 'rdbms_referencedKeys', cardinality 0..*) is associated with 'rdbms::column' (role 'rdbms_column', cardinality 0..*).
+'rdbms::RDBMS' (role 'rdbms_RDBMS', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot29', cardinality 0..*).
+'rdbms::key2' (role 'rdbms_key2', cardinality 0..*) is associated with 'rdbms::DocumentRoot' (role 'rdbms_DocumentRoot25', cardinality 0..*).
+'rdbms::column' (role 'rdbms_column4', cardinality 0..*) is associated with 'rdbms::columns' (role 'rdbms_columns', cardinality 0..*).
+'rdbms::schemas' (role 'rdbms_schemas74', cardinality 0..*) is associated with 'rdbms::schema' (role 'rdbms_schema75', cardinality 0..*).
+'rdbms::column' (role 'rdbms_column2', cardinality 0..*) is associated with 'rdbms::hasForeignKeys' (role 'rdbms_hasForeignKeys', cardinality 0..*).
+'rdbms::foreignKey' (role 'rdbms_foreignKey44', cardinality 0..*) is associated with 'rdbms::referencedColumns' (role 'rdbms_referencedColumns45', cardinality 0..*).

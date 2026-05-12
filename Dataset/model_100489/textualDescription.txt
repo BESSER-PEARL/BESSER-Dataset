@@ -1,0 +1,181 @@
+The model has 76 class(es).
+The class 'TimeExpression' has no attributes.
+The class 'State::Machines::TimeEvent' has no attributes.
+The class 'Core::Parameter' has the following attributes: 'kind' of type str.
+The class 'Common::Behavior::Argument' has no attributes.
+The class 'Signal' has no attributes.
+The class 'Element' has no attributes.
+The class 'Core::Classifier' has no attributes.
+The class 'State::Machines::StateMachine' has no attributes.
+The class 'Common::Behavior::ReturnAction' has no attributes.
+The class 'Core::Operation' has the following attributes: 'concurrency' of type str; 'isLeaf' of type str; 'specification' of type str; 'isAbstract' of type str; 'isRoot' of type str.
+The class 'Core::ModelElement' has the following attributes: 'visibility' of type str; 'isSpecification' of type str; 'name' of type str.
+The class 'State::Machines::SynchState' has the following attributes: 'bound' of type str.
+The class 'State::Machines::FinalState' has no attributes.
+The class 'State::Machines::StateVertex' has no attributes.
+The class 'Event' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'State::Machines::Guard' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'Common::Behavior::CallAction' has no attributes.
+The class 'Generalization_' has no attributes.
+The class 'Core::Generalization_' has the following attributes: 'discriminator' of type str.
+The class 'State::Machines::SignalEvent' has no attributes.
+The class 'Core::Relationship' has no attributes.
+The class 'Common::Behavior::DestroyAction' has no attributes.
+The class 'StateVertex' has no attributes.
+The class 'Common::Behavior::CreateAction' has no attributes.
+The class 'State::Machines::SimpleState' has no attributes.
+The class 'Core::BehavioralFeature' has the following attributes: 'isQuery' of type str.
+The class 'State::Machines::CompositeState' has the following attributes: 'isConcurrent' of type str.
+The class 'Common::Behavior::SendAction' has no attributes.
+The class 'ActionSequence' has no attributes.
+The class 'Common::Behavior::Signal' has no attributes.
+The class 'Core::Namespace' has no attributes.
+The class 'Transition' has no attributes.
+The class 'State' has no attributes.
+The class 'IterationExpression' has no attributes.
+The class 'Guard' has no attributes.
+The class 'SubmachineState' has no attributes.
+The class 'Data::Types::TimeExpression' has no attributes.
+The class 'State::Machines::SubmachineState' has no attributes.
+The class 'CompositeState' has no attributes.
+The class 'Expression' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Operation' has no attributes.
+The class 'State::Machines::Transition' has no attributes.
+The class 'Data::Types::IterationExpression' has no attributes.
+The class 'Core::Element' has no attributes.
+The class 'State::Machines::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'Data::Types::ActionExpression' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'Data::Types::Expression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'Data::Types::BooleanExpression' has no attributes.
+The class 'ObjectSetExpression' has no attributes.
+The class 'State::Machines::State' has no attributes.
+The class 'ActionExpression' has no attributes.
+The class 'State::Machines::CallEvent' has no attributes.
+The class 'Common::Behavior::UninterpretedAction' has no attributes.
+The class 'State::Machines::StubState' has the following attributes: 'referenceState' of type str.
+The class 'Argument' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'Action' has no attributes.
+The class 'Common::Behavior::Action' has the following attributes: 'isAsynchronous' of type str.
+The class 'Common::Behavior::Exception' has no attributes.
+The class 'Feature' has no attributes.
+The class 'Common::Behavior::ActionSequence' has no attributes.
+The class 'Common::Behavior::Reception' has the following attributes: 'specification' of type str; 'isLeaf' of type str; 'isAbstract' of type str; 'isRoot' of type str.
+The class 'Core::GeneralizableElement' has the following attributes: 'isRoot' of type str; 'isAbstract' of type str; 'isLeaf' of type str.
+The class 'State::Machines::ChangeEvent' has no attributes.
+The class 'Common::Behavior::TerminateAction' has no attributes.
+The class 'Data::Types::ObjectSetExpression' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'Core::Feature' has the following attributes: 'ownerScope' of type str.
+The class 'GeneralizableElement' has no attributes.
+The class 'State::Machines::Event' has no attributes.
+The class 'StateMachine' has no attributes.
+The enumeration 'VisibilityKind' has the following literals: 'vk_package', 'vk_public', 'vk_private', 'vk_protected'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'pdk_in', 'pdk_inout', 'pdk_return', 'pdk_out'.
+The enumeration 'CallConcurrencyKind' has the following literals: 'cck_concurrent', 'cck_sequential', 'cck_guarded'.
+The enumeration 'PseudostateKind' has the following literals: 'pk_join', 'pk_initial', 'pk_fork', 'pk_deepHistory', 'pk_shallowHistory', 'pk_choice', 'pk_junction'.
+The enumeration 'ScopeKind' has the following literals: 'sk_instance', 'sk_classifier'.
+'Common::Behavior::SendAction' is a specialization of 'Action'.
+'State::Machines::CallEvent' is a specialization of 'Event'.
+'State::Machines::Transition' is a specialization of 'ModelElement'.
+'Common::Behavior::Reception' is a specialization of 'BehavioralFeature'.
+'State::Machines::Event' is a specialization of 'ModelElement'.
+'Core::Classifier' is a specialization of 'Namespace'.
+'Core::Relationship' is a specialization of 'ModelElement'.
+'State::Machines::SignalEvent' is a specialization of 'Event'.
+'Common::Behavior::CreateAction' is a specialization of 'Action'.
+'State::Machines::StateMachine' is a specialization of 'ModelElement'.
+'State::Machines::State' is a specialization of 'StateVertex'.
+'State::Machines::SynchState' is a specialization of 'StateVertex'.
+'Common::Behavior::DestroyAction' is a specialization of 'Action'.
+'Common::Behavior::TerminateAction' is a specialization of 'Action'.
+'Common::Behavior::ActionSequence' is a specialization of 'Action'.
+'Common::Behavior::Exception' is a specialization of 'Signal'.
+'Common::Behavior::Action' is a specialization of 'ModelElement'.
+'Common::Behavior::Signal' is a specialization of 'Classifier'.
+'Data::Types::ActionExpression' is a specialization of 'Expression'.
+'State::Machines::Pseudostate' is a specialization of 'StateVertex'.
+'State::Machines::FinalState' is a specialization of 'State'.
+'State::Machines::ChangeEvent' is a specialization of 'Event'.
+'State::Machines::TimeEvent' is a specialization of 'Event'.
+'Core::Parameter' is a specialization of 'ModelElement'.
+'Common::Behavior::UninterpretedAction' is a specialization of 'Action'.
+'State::Machines::Guard' is a specialization of 'ModelElement'.
+'State::Machines::StateVertex' is a specialization of 'ModelElement'.
+'Core::BehavioralFeature' is a specialization of 'Feature'.
+'State::Machines::StubState' is a specialization of 'StateVertex'.
+'Common::Behavior::CallAction' is a specialization of 'Action'.
+'Core::GeneralizableElement' is a specialization of 'ModelElement'.
+'Common::Behavior::Argument' is a specialization of 'ModelElement'.
+'Core::Classifier' is a specialization of 'GeneralizableElement'.
+'Core::Namespace' is a specialization of 'ModelElement'.
+'Data::Types::BooleanExpression' is a specialization of 'Expression'.
+'State::Machines::SubmachineState' is a specialization of 'CompositeState'.
+'Data::Types::ObjectSetExpression' is a specialization of 'Expression'.
+'Core::Operation' is a specialization of 'BehavioralFeature'.
+'State::Machines::CompositeState' is a specialization of 'State'.
+'Core::Generalization_' is a specialization of 'Relationship'.
+'Data::Types::IterationExpression' is a specialization of 'Expression'.
+'Core::Feature' is a specialization of 'ModelElement'.
+'Core::ModelElement' is a specialization of 'Element'.
+'Common::Behavior::ReturnAction' is a specialization of 'Action'.
+'Data::Types::TimeExpression' is a specialization of 'Expression'.
+'State::Machines::SimpleState' is a specialization of 'State'.
+'Signal' (role 'Signal16', cardinality 0..*) is associated with 'Common::Behavior::Reception' (role 'Common_Behavior_Reception', cardinality 0..*).
+'Core::Generalization_' (role 'powertypeRange', cardinality 0..*) is associated with 'Classifier' (role 'Classifier86', cardinality 0..*).
+'TimeExpression' (role 'TimeExpression', cardinality 0..*) is associated with 'State::Machines::TimeEvent' (role 'State_Machines_TimeEvent', cardinality 0..*).
+'BooleanExpression' (role 'BooleanExpression64', cardinality 0..*) is associated with 'State::Machines::Guard' (role 'State_Machines_Guard', cardinality 0..*).
+'Core::Classifier' (role 'powertype', cardinality 0..*) is associated with 'Generalization_' (role 'Generalization72', cardinality 0..*).
+'Core::Generalization_' (role 'Core_Generalization', cardinality 0..*) is associated with 'GeneralizableElement' (role 'GeneralizableElement', cardinality 0..*).
+'Feature' (role 'Feature', cardinality 0..*) is associated with 'Core::Classifier' (role 'owner', cardinality 0..*).
+'State::Machines::Event' (role 'State_Machines_Event', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'Action' (role 'Action', cardinality 0..*) is associated with 'Common::Behavior::ActionSequence' (role 'actionSequence', cardinality 0..*).
+'State::Machines::State' (role 'State_Machines_State36', cardinality 0..*) is associated with 'Action' (role 'Action37', cardinality 0..*).
+'Core::Parameter' (role 'Core_Parameter82', cardinality 0..*) is associated with 'Expression' (role 'Expression83', cardinality 0..*).
+'Core::BehavioralFeature' (role 'behavioralFeature', cardinality 0..*) is associated with 'Parameter' (role 'Parameter77', cardinality 0..*).
+'Core::Generalization_' (role 'generalization', cardinality 0..*) is associated with 'GeneralizableElement' (role 'GeneralizableElement88', cardinality 0..*).
+'Core::Namespace' (role 'namespace', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement70', cardinality 0..*).
+'BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*) is associated with 'Core::Parameter' (role 'parameter', cardinality 0..*).
+'Core::GeneralizableElement' (role 'child', cardinality 0..*) is associated with 'Generalization_' (role 'Generalization_', cardinality 0..*).
+'Guard' (role 'Guard', cardinality 0..*) is associated with 'State::Machines::Transition' (role 'transition', cardinality 0..*).
+'Transition' (role 'Transition25', cardinality 0..*) is associated with 'State::Machines::StateVertex' (role 'target', cardinality 0..*).
+'StateMachine' (role 'StateMachine51', cardinality 0..*) is associated with 'State::Machines::Transition' (role 'transitions', cardinality 0..*).
+'Core::Feature' (role 'feature', cardinality 0..*) is associated with 'Classifier' (role 'Classifier75', cardinality 0..*).
+'Signal' (role 'Signal46', cardinality 0..*) is associated with 'State::Machines::SignalEvent' (role 'State_Machines_SignalEvent', cardinality 0..*).
+'BooleanExpression' (role 'BooleanExpression', cardinality 0..*) is associated with 'State::Machines::ChangeEvent' (role 'State_Machines_ChangeEvent', cardinality 0..*).
+'Transition' (role 'Transition62', cardinality 0..*) is associated with 'State::Machines::Guard' (role 'guard', cardinality 0..*).
+'ActionSequence' (role 'ActionSequence', cardinality 0..*) is associated with 'Common::Behavior::Action' (role 'action2', cardinality 0..*).
+'Namespace' (role 'Namespace', cardinality 0..*) is associated with 'Core::ModelElement' (role 'ownedElement', cardinality 0..*).
+'StateMachine' (role 'StateMachine66', cardinality 0..*) is associated with 'State::Machines::SubmachineState' (role 'submachineState', cardinality 0..*).
+'Operation' (role 'Operation44', cardinality 0..*) is associated with 'State::Machines::CallEvent' (role 'State_Machines_CallEvent', cardinality 0..*).
+'Action' (role 'Action40', cardinality 0..*) is associated with 'State::Machines::State' (role 'State_Machines_State39', cardinality 0..*).
+'Action' (role 'Action13', cardinality 0..*) is associated with 'Common::Behavior::Argument' (role 'actualArgument', cardinality 0..*).
+'Action' (role 'Action56', cardinality 0..*) is associated with 'State::Machines::Transition' (role 'State_Machines_Transition55', cardinality 0..*).
+'Common::Behavior::Action' (role 'Common_Behavior_Action5', cardinality 0..*) is associated with 'ObjectSetExpression' (role 'ObjectSetExpression', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'Common::Behavior::Argument' (role 'Common_Behavior_Argument', cardinality 0..*).
+'StateVertex' (role 'StateVertex59', cardinality 0..*) is associated with 'State::Machines::CompositeState' (role 'container', cardinality 0..*).
+'Common::Behavior::SendAction' (role 'Common_Behavior_SendAction', cardinality 0..*) is associated with 'Signal' (role 'Signal', cardinality 0..*).
+'Event' (role 'Event', cardinality 0..*) is associated with 'State::Machines::State' (role 'State_Machines_State', cardinality 0..*).
+'State::Machines::Transition' (role 'State_Machines_Transition', cardinality 0..*) is associated with 'Event' (role 'Event49', cardinality 0..*).
+'Core::Parameter' (role 'Core_Parameter', cardinality 0..*) is associated with 'Classifier' (role 'Classifier79', cardinality 0..*).
+'StateVertex' (role 'StateVertex', cardinality 0..*) is associated with 'State::Machines::Transition' (role 'incoming', cardinality 0..*).
+'SubmachineState' (role 'SubmachineState', cardinality 0..*) is associated with 'State::Machines::StateMachine' (role 'submachine', cardinality 0..*).
+'State::Machines::StateVertex' (role 'source', cardinality 0..*) is associated with 'Transition' (role 'Transition27', cardinality 0..*).
+'StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'State::Machines::State' (role 'top', cardinality 0..*).
+'State::Machines::Transition' (role 'outgoing', cardinality 0..*) is associated with 'StateVertex' (role 'StateVertex53', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'State::Machines::StateMachine' (role 'stateMachine21', cardinality 0..*).
+'CompositeState' (role 'CompositeState', cardinality 0..*) is associated with 'State::Machines::StateVertex' (role 'subvertex', cardinality 0..*).
+'Common::Behavior::Action' (role 'Common_Behavior_Action', cardinality 0..*) is associated with 'IterationExpression' (role 'IterationExpression', cardinality 0..*).
+'Action' (role 'Action34', cardinality 0..*) is associated with 'State::Machines::State' (role 'State_Machines_State33', cardinality 0..*).
+'Transition' (role 'Transition31', cardinality 0..*) is associated with 'State::Machines::State' (role 'State_Machines_State30', cardinality 0..*).
+'State::Machines::StateMachine' (role 'State_Machines_StateMachine', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement', cardinality 0..*).
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'Common::Behavior::CreateAction' (role 'Common_Behavior_CreateAction', cardinality 0..*).
+'Argument' (role 'Argument', cardinality 0..*) is associated with 'Common::Behavior::Action' (role 'action', cardinality 0..*).
+'Common::Behavior::CallAction' (role 'Common_Behavior_CallAction', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'ActionExpression' (role 'ActionExpression', cardinality 0..*) is associated with 'Common::Behavior::Action' (role 'Common_Behavior_Action7', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'State::Machines::StateMachine' (role 'stateMachine', cardinality 0..*).

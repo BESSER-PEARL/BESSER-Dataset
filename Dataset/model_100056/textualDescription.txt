@@ -1,0 +1,67 @@
+The model has 25 class(es).
+The class 'revision::PlaceHolderPP' has no attributes.
+The class 'Named' has no attributes.
+The class 'Counted' has no attributes.
+The class 'revision::Review' has no attributes.
+The class 'revision::PlaceHolder' has no attributes.
+The class 'revision::Labelled' has the following attributes: 'lname' of type str.
+The class 'revision::Counted' has the following attributes: 'id' of type int.
+The class 'revision::Named' has the following attributes: 'name' of type str.
+The class 'revision::Paper' has no attributes.
+The class 'revision::PublicationStructure' has no attributes.
+The class 'revision::Write' has no attributes.
+The class 'revision::PlaceHolderRs' has no attributes.
+The class 'PlaceHolder' has no attributes.
+The class 'revision::PlaceHolderRule' has no attributes.
+The class 'revision::Rule' has the following attributes: 'key' of type str; 'text' of type str.
+The class 'Labelled' has no attributes.
+The class 'revision::Researcher' has the following attributes: 'forName' of type str; 'position' of type str; 'name' of type str.
+The class 'revision::ReviewNote' has the following attributes: 'content' of type str.
+The class 'revision::PublicationProcess' has the following attributes: 'minTime' of type int; 'maxTime' of type int.
+The class 'revision::Progress' has the following attributes: 'percent' of type int.
+The class 'revision::PublicationSystem' has no attributes.
+The class 'revision::PlaceHolderRn' has no attributes.
+The class 'revision::Paragraph' has the following attributes: 'content' of type str.
+The class 'revision::Sequence' has the following attributes: 'sequenceType' of type str.
+The class 'revision::PublicationPhase' has the following attributes: 'name' of type str; 'maxTime' of type int; 'minTime' of type int.
+The enumeration 'SequenceType' has the following literals: 'startToStart', 'startToFinish', 'finishToFinish', 'finishToStart'.
+'revision::Write' is a specialization of 'Labelled'.
+'revision::PlaceHolderRn' is a specialization of 'PlaceHolder'.
+'revision::PlaceHolderRule' is a specialization of 'PlaceHolder'.
+'revision::Review' is a specialization of 'Labelled'.
+'revision::ReviewNote' is a specialization of 'Named'.
+'revision::PlaceHolderRs' is a specialization of 'PlaceHolder'.
+'revision::Paragraph' is a specialization of 'Named'.
+'revision::Paper' is a specialization of 'Named'.
+'revision::PublicationProcess' is a specialization of 'Named'.
+'revision::Progress' is a specialization of 'Labelled'.
+'revision::Paragraph' is a specialization of 'Counted'.
+'revision::PlaceHolderPP' is a specialization of 'PlaceHolder'.
+'revision::PublicationStructure' is a specialization of 'Named'.
+'revision::Progress' (role 'Progress', cardinality 0..*) is associated with 'revision::Paper' (role 'paper', cardinality 0..*).
+'revision::Paper' (role 'revision_Paper48', cardinality 0..*) is associated with 'revision::PublicationStructure' (role 'revision_PublicationStructure47', cardinality 0..*).
+'revision::ReviewNote' (role 'revision_ReviewNote33', cardinality 0..*) is associated with 'revision::PlaceHolderRn' (role 'revision_PlaceHolderRn', cardinality 0..*).
+'revision::Researcher' (role 'revision_Researcher45', cardinality 0..*) is associated with 'revision::PublicationStructure' (role 'revision_PublicationStructure', cardinality 0..*).
+'revision::Review' (role 'revision_Review42', cardinality 0..*) is associated with 'revision::ReviewNote' (role 'revision_ReviewNote43', cardinality 0..*).
+'revision::PlaceHolderRule' (role 'revision_PlaceHolderRule', cardinality 0..*) is associated with 'revision::Rule' (role 'revision_Rule18', cardinality 0..*).
+'revision::Write' (role 'revision_Write39', cardinality 0..*) is associated with 'revision::Paragraph' (role 'revision_Paragraph40', cardinality 0..*).
+'revision::Researcher' (role 'authors', cardinality 0..*) is associated with 'revision::Paper' (role 'Paper', cardinality 0..*).
+'revision::Researcher' (role 'revision_Researcher', cardinality 0..*) is associated with 'revision::Write' (role 'revision_Write', cardinality 0..*).
+'revision::Paper' (role 'Paper37', cardinality 0..*) is associated with 'revision::Progress' (role 'progress', cardinality 0..*).
+'revision::Researcher' (role 'Researcher29', cardinality 0..*) is associated with 'revision::Paper' (role 'papers', cardinality 0..*).
+'revision::PlaceHolderPP' (role 'revision_PlaceHolderPP', cardinality 0..*) is associated with 'revision::PublicationPhase' (role 'revision_PublicationPhase10', cardinality 0..*).
+'revision::Researcher' (role 'Researcher', cardinality 0..*) is associated with 'revision::PublicationPhase' (role 'phaseParticipation', cardinality 0..*).
+'revision::Paragraph' (role 'revision_Paragraph', cardinality 0..*) is associated with 'revision::Paper' (role 'revision_Paper', cardinality 0..*).
+'revision::PublicationPhase' (role 'revision_PublicationPhase16', cardinality 0..*) is associated with 'revision::Sequence' (role 'revision_Sequence15', cardinality 0..*).
+'revision::Researcher' (role 'revision_Researcher22', cardinality 0..*) is associated with 'revision::Review' (role 'revision_Review', cardinality 0..*).
+'revision::PublicationPhase' (role 'revision_PublicationPhase7', cardinality 0..*) is associated with 'revision::Rule' (role 'revision_Rule8', cardinality 0..*).
+'revision::Progress' (role 'revision_Progress', cardinality 0..*) is associated with 'revision::PublicationProcess' (role 'revision_PublicationProcess35', cardinality 0..*).
+'revision::Researcher' (role 'revision_Researcher25', cardinality 0..*) is associated with 'revision::PlaceHolderRs' (role 'revision_PlaceHolderRs', cardinality 0..*).
+'revision::PublicationProcess' (role 'revision_PublicationProcess50', cardinality 0..*) is associated with 'revision::PublicationSystem' (role 'revision_PublicationSystem', cardinality 0..*).
+'revision::Researcher' (role 'neededPerson', cardinality 0..*) is associated with 'revision::PublicationPhase' (role 'PublicationPhase', cardinality 0..*).
+'revision::PublicationPhase' (role 'revision_PublicationPhase4', cardinality 0..*) is associated with 'revision::Sequence' (role 'revision_Sequence', cardinality 0..*).
+'revision::Paragraph' (role 'revision_Paragraph31', cardinality 0..*) is associated with 'revision::ReviewNote' (role 'revision_ReviewNote', cardinality 0..*).
+'revision::Sequence' (role 'revision_Sequence12', cardinality 0..*) is associated with 'revision::PublicationPhase' (role 'revision_PublicationPhase13', cardinality 0..*).
+'revision::PublicationProcess' (role 'revision_PublicationProcess2', cardinality 0..*) is associated with 'revision::Rule' (role 'revision_Rule', cardinality 0..*).
+'revision::PublicationPhase' (role 'revision_PublicationPhase', cardinality 0..*) is associated with 'revision::PublicationProcess' (role 'revision_PublicationProcess', cardinality 0..*).
+'revision::PublicationSystem' (role 'revision_PublicationSystem52', cardinality 0..*) is associated with 'revision::PublicationStructure' (role 'revision_PublicationStructure53', cardinality 0..*).

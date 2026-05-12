@@ -1,0 +1,190 @@
+The model has 83 class(es).
+The class 'connection::DatabaseConnection' has the following attributes: 'SQLMode' of type bool; 'DriverClass' of type str; 'Username' of type str; 'ProductId' of type str; 'DriverJarPath' of type str; 'Password' of type str; 'SystemSQL' of type bool; 'Port' of type str; 'URL' of type str; 'DbmsId' of type str; 'StandardSQL' of type bool; 'AdditionalParams' of type str; 'DBRootPath' of type str; 'StringQuote' of type str; 'DatasourceName' of type str; 'UiSchema' of type str; 'dbVersionString' of type str; 'ServerName' of type str; 'SID' of type str; 'cdcTypeMode' of type str; 'FileFieldName' of type str; 'NullChar' of type str; 'SqlSynthax' of type str; 'DatabaseType' of type str.
+The class 'xml::TdXmlContent' has no attributes.
+The class 'Package' has no attributes.
+The class 'connection::SAPTestInputParameterTable' has no attributes.
+The class 'xml::TdXmlSchema' has no attributes.
+The class 'connection::MetadataColumn' has the following attributes: 'originalField' of type str; 'defaultValue' of type str; 'pattern' of type str; 'key' of type bool; 'nullable' of type bool; 'talendType' of type str; 'sourceType' of type str; 'displayField' of type str.
+The class 'connection::SAPFunctionParameterTable' has no attributes.
+The class 'connection::softwaredeployment::TdDataManager' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'SQLSimpleType' has no attributes.
+The class 'connection::relational::TdProcedure' has no attributes.
+The class 'connection::softwaredeployment::TdMachine' has no attributes.
+The class 'connection::Connection' has the following attributes: 'version' of type str; 'ContextMode' of type bool; 'ContextId' of type str.
+The class 'connection::SalesforceSchemaConnection' has the following attributes: 'batchSize' of type str; 'proxyHost' of type str; 'userName' of type str; 'proxyUsername' of type str; 'password' of type str; 'proxyPassword' of type str; 'webServiceUrl' of type str; 'useAlphbet' of type bool; 'useProxy' of type bool; 'queryCondition' of type str; 'proxyPort' of type str; 'moduleName' of type str; 'timeOut' of type str; 'useHttpProxy' of type bool; 'useCustomModuleName' of type bool.
+The class 'connection::FTPConnection' has the following attributes: 'Usesocks' of type bool; 'Proxyport' of type str; 'Password' of type str; 'Username' of type str; 'Host' of type str; 'CustomEncode' of type str; 'Proxyhost' of type str; 'Method' of type str; 'Port' of type str; 'Proxypassword' of type str; 'FTPS' of type bool; 'Mode' of type str; 'Ecoding' of type str; 'SFTP' of type bool; 'KeystoreFile' of type str; 'KeystorePassword' of type str; 'Proxyuser' of type str.
+The class 'AbstractMetadataObject' has no attributes.
+The class 'connection::LdifFileConnection' has the following attributes: 'value' of type str; 'LimitEntry' of type int; 'FilePath' of type str; 'UseLimit' of type bool; 'Server' of type str.
+The class 'connection::SubscriberTable' has the following attributes: 'system' of type bool.
+The class 'connection::GenericPackage' has no attributes.
+The class 'connection::LDAPSchemaConnection' has the following attributes: 'UseLimit' of type bool; 'TimeOutLimit' of type str; 'Filter' of type str; 'GetBaseDNsFromRoot' of type bool; 'LimitValue' of type int; 'Separator' of type str; 'CountLimit' of type str; 'Port' of type str; 'Aliases' of type str; 'UseAuthen' of type bool; 'BaseDNs' of type str; 'Referrals' of type str; 'StorePath' of type str; 'BindPassword' of type str; 'UseAdvanced' of type bool; 'SavePassword' of type bool; 'Value' of type str; 'SelectedDN' of type str; 'EncryptionMethodName' of type str; 'ReturnAttributes' of type str; 'Protocol' of type str; 'Host' of type str; 'BindPrincipal' of type str.
+The class 'connection::relational::TdColumn' has no attributes.
+The class 'connection::WSDLParameter' has the following attributes: 'Element' of type str; 'source' of type str; 'ParameterInfoParent' of type str; 'ParameterInfo' of type str; 'Expression' of type str; 'Column' of type str.
+The class 'connection::relational::TdTable' has no attributes.
+The class 'relational::TdSqlDataType' has no attributes.
+The class 'connection::QueriesConnection' has no attributes.
+The class 'connection::SAPConnection' has the following attributes: 'Username' of type str; 'Language' of type str; 'Password' of type str; 'Client' of type str; 'SystemNumber' of type str; 'Host' of type str; 'currentFucntion' of type str.
+The class 'core::Class' has no attributes.
+The class 'DataManager' has no attributes.
+The class 'connection::SchemaTarget' has the following attributes: 'RelativeXPathQuery' of type str; 'TagName' of type str.
+The class 'relational::Table' has no attributes.
+The class 'connection::XMLFileNode' has the following attributes: 'Type' of type str; 'Order' of type int; 'DefaultValue' of type str; 'XMLPath' of type str; 'Attribute' of type str; 'RelatedColumn' of type str.
+The class 'softwaredeployment::DataProvider' has no attributes.
+The class 'connection::relational::TdTrigger' has no attributes.
+The class 'connection::FileExcelConnection' has the following attributes: 'SheetName' of type str; 'thousandSeparator' of type str; 'decimalSeparator' of type str; 'advancedSpearator' of type bool; 'firstColumn' of type str; 'sheetList' of type str; 'sheetColumns' of type str; 'lastColumn' of type str; 'selectAllSheets' of type bool.
+The class 'connection::XmlXPathLoopDescriptor' has the following attributes: 'AbsoluteXPathQuery' of type str; 'LimitBoucle' of type str.
+The class 'connection::XmlFileConnection' has the following attributes: 'outputFilePath' of type str; 'Guess' of type bool; 'XmlFilePath' of type str; 'Encoding' of type str; 'XsdFilePath' of type str; 'MaskXPattern' of type str; 'inputModel' of type bool.
+The class 'Trigger' has no attributes.
+The class 'connection::MDMConnection' has the following attributes: 'Password' of type str; 'Universe' of type str; 'Datamodel' of type str; 'Datacluster' of type str; 'Port' of type str; 'Server' of type str; 'context' of type str; 'Username' of type str; 'protocol' of type str.
+The class 'TdTable' has no attributes.
+The class 'connection::ConceptTarget' has the following attributes: 'targetName' of type str; 'RelativeLoopExpression' of type str.
+The class 'Schema' has no attributes.
+The class 'relational::View' has no attributes.
+The class 'connection::softwaredeployment::TdSoftwareSystem' has no attributes.
+The class 'connection::MetadataTable' has the following attributes: 'sourceName' of type str; 'attachedCDC' of type bool; 'activatedCDC' of type bool; 'tableType' of type str.
+The class 'connection::GenericSchemaConnection' has the following attributes: 'mappingTypeId' of type str; 'mappingTypeUsed' of type bool.
+The class 'SoftwareSystem' has no attributes.
+The class 'Procedure' has no attributes.
+The class 'connection::SAPFunctionUnit' has the following attributes: 'OutputTableName' of type str; 'OutputType' of type str.
+The class 'connection::SAPIDocUnit' has the following attributes: 'htmlFile' of type str; 'useHtmlOutput' of type bool; 'useXmlOutput' of type bool; 'programId' of type str; 'gatewayService' of type str; 'xmlFile' of type str.
+The class 'connection::xml::TdXmlSchema' has the following attributes: 'xsdFilePath' of type str.
+The class 'record::Field' has no attributes.
+The class 'connection::PositionalFileConnection' has no attributes.
+The class 'MetadataColumn' has no attributes.
+The class 'connection::relational::TdSqlDataType' has the following attributes: 'unsignedAttribute' of type str; 'localTypeName' of type str; 'autoIncrement' of type str; 'nullable' of type str; 'caseSensitive' of type str; 'javaDataType' of type int; 'searchable' of type str.
+The class 'ElementType' has no attributes.
+The class 'Connection' has no attributes.
+The class 'connection::AbstractMetadataObject' has the following attributes: 'label' of type str; 'synchronised' of type bool; 'properties' of type str; 'divergency' of type bool; 'readOnly' of type bool; 'comment' of type str; 'id' of type str.
+The class 'connection::HeaderFooterConnection' has the following attributes: 'isHeader' of type bool; 'imports' of type str; 'mainCode' of type str; 'libraries' of type str.
+The class 'connection::relational::TdView' has no attributes.
+The class 'connection::EbcdicConnection' has the following attributes: 'MidFile' of type str; 'DataFile' of type str.
+The class 'connection::CDCType' has the following attributes: 'journalName' of type str; 'linkDB' of type str.
+The class 'xml::connection::EObject' has no attributes.
+The class 'connection::FileConnection' has the following attributes: 'FilePath' of type str; 'TextEnclosure' of type str; 'RowSeparatorType' of type str; 'TextIdentifier' of type str; 'Server' of type str; 'Encoding' of type str; 'RowSeparatorValue' of type str; 'FirstLineCaption' of type bool; 'LimitValue' of type str; 'RemoveEmptyRow' of type bool; 'UseFooter' of type bool; 'HeaderValue' of type str; 'CsvOption' of type bool; 'UseLimit' of type bool; 'EscapeType' of type str; 'FieldSeparatorValue' of type str; 'EscapeChar' of type str; 'UseHeader' of type bool; 'FooterValue' of type str; 'Format' of type str.
+The class 'connection::WSDLSchemaConnection' has the following attributes: 'WSDL' of type str; 'Password' of type str; 'proxyUser' of type str; 'Value' of type str; 'EndpointURI' of type str; 'serverName' of type str; 'proxyHost' of type str; 'serverNameSpace' of type str; 'portName' of type str; 'isInputModel' of type bool; 'needAuth' of type bool; 'proxyPassword' of type str; 'useProxy' of type bool; 'methodName' of type str; 'parameters' of type str; 'timeOut' of type int; 'UserName' of type str; 'proxyPort' of type str; 'portNameSpace' of type str; 'Encoding' of type str.
+The class 'connection::Query' has the following attributes: 'contextMode' of type bool; 'value' of type str.
+The class 'connection::RegexpFileConnection' has the following attributes: 'FieldSeparatorType' of type str.
+The class 'MetadataTable' has no attributes.
+The class 'connection::HL7FileNode' has the following attributes: 'DefaultValue' of type str; 'Order' of type int; 'Repeatable' of type bool; 'FilePath' of type str; 'RelatedColumn' of type str; 'Attribute' of type str.
+The class 'connection::CDCConnection' has no attributes.
+The class 'Content' has no attributes.
+The class 'connection::HL7Connection' has the following attributes: 'EndChar' of type str; 'StartChar' of type str; 'outputFilePath' of type str.
+The class 'SAPFunctionParameterTable' has no attributes.
+The class 'connection::DelimitedFileConnection' has the following attributes: 'FieldSeparatorType' of type str; 'splitRecord' of type bool.
+The class 'connection::InputSAPFunctionParameterTable' has no attributes.
+The class 'connection::xml::TdXmlContent' has no attributes.
+The class 'xml::TdXmlElementType' has no attributes.
+The class 'connection::OutputSAPFunctionParameterTable' has no attributes.
+The class 'connection::xml::TdXmlElementType' has the following attributes: 'javaType' of type str.
+The class 'FileConnection' has no attributes.
+The class 'connection::Metadata' has no attributes.
+The class 'connection::SAPFunctionParameterColumn' has the following attributes: 'ParameterType' of type str; 'StructureOrTableName' of type str; 'DataType' of type str; 'Value' of type str; 'Length' of type str.
+The class 'Machine' has no attributes.
+The class 'connection::Concept' has the following attributes: 'inputModel' of type bool; 'LoopLimit' of type str; 'LoopExpression' of type str.
+The enumeration 'FileFormat' has the following literals: 'WINDOWS', 'UNIX', 'MAC'.
+The enumeration 'FieldSeparator' has the following literals: 'Custom_UTF8', 'Semicolon', 'Tabulation', 'Space', 'Custom_ANSI', 'Comma', 'Custom_RegExp', 'Alt_65'.
+The enumeration 'Escape' has the following literals: 'Delimited', 'CSV'.
+The enumeration 'MDMConnectionProtocol' has the following literals: 'HTTP'.
+The enumeration 'DevelopmentStatus' has the following literals: 'PROD', 'DRAFT'.
+The enumeration 'RowSeparator' has the following literals: 'Custom_String', 'Standart_EOL'.
+'connection::MetadataTable' is a specialization of 'core::Class'.
+'connection::OutputSAPFunctionParameterTable' is a specialization of 'SAPFunctionParameterTable'.
+'connection::Connection' is a specialization of 'AbstractMetadataObject'.
+'connection::SAPFunctionParameterColumn' is a specialization of 'AbstractMetadataObject'.
+'connection::relational::TdTable' is a specialization of 'MetadataTable'.
+'connection::SalesforceSchemaConnection' is a specialization of 'Connection'.
+'connection::DatabaseConnection' is a specialization of 'Connection'.
+'connection::CDCType' is a specialization of 'AbstractMetadataObject'.
+'connection::softwaredeployment::TdSoftwareSystem' is a specialization of 'SoftwareSystem'.
+'connection::MDMConnection' is a specialization of 'Connection'.
+'connection::FileExcelConnection' is a specialization of 'FileConnection'.
+'connection::PositionalFileConnection' is a specialization of 'FileConnection'.
+'connection::RegexpFileConnection' is a specialization of 'FileConnection'.
+'connection::SAPFunctionUnit' is a specialization of 'AbstractMetadataObject'.
+'connection::HeaderFooterConnection' is a specialization of 'Connection'.
+'connection::relational::TdTrigger' is a specialization of 'Trigger'.
+'connection::EbcdicConnection' is a specialization of 'FileConnection'.
+'connection::InputSAPFunctionParameterTable' is a specialization of 'SAPFunctionParameterTable'.
+'connection::xml::TdXmlSchema' is a specialization of 'Schema'.
+'connection::GenericSchemaConnection' is a specialization of 'Connection'.
+'connection::XmlFileConnection' is a specialization of 'Connection'.
+'connection::xml::TdXmlContent' is a specialization of 'Content'.
+'connection::relational::TdTable' is a specialization of 'relational::Table'.
+'connection::WSDLSchemaConnection' is a specialization of 'Connection'.
+'connection::softwaredeployment::TdDataManager' is a specialization of 'DataManager'.
+'connection::SAPFunctionParameterTable' is a specialization of 'AbstractMetadataObject'.
+'connection::MetadataColumn' is a specialization of 'AbstractMetadataObject'.
+'connection::SAPConnection' is a specialization of 'Connection'.
+'connection::softwaredeployment::TdMachine' is a specialization of 'Machine'.
+'connection::MetadataColumn' is a specialization of 'record::Field'.
+'connection::LDAPSchemaConnection' is a specialization of 'Connection'.
+'connection::relational::TdProcedure' is a specialization of 'Procedure'.
+'connection::Query' is a specialization of 'AbstractMetadataObject'.
+'connection::relational::TdColumn' is a specialization of 'MetadataColumn'.
+'connection::Concept' is a specialization of 'TdTable'.
+'connection::FileConnection' is a specialization of 'Connection'.
+'connection::relational::TdView' is a specialization of 'MetadataTable'.
+'connection::xml::TdXmlElementType' is a specialization of 'ElementType'.
+'connection::Metadata' is a specialization of 'AbstractMetadataObject'.
+'connection::HL7Connection' is a specialization of 'FileConnection'.
+'connection::DelimitedFileConnection' is a specialization of 'FileConnection'.
+'connection::LdifFileConnection' is a specialization of 'Connection'.
+'connection::AbstractMetadataObject' is a specialization of 'ModelElement'.
+'connection::GenericPackage' is a specialization of 'Package'.
+'connection::FTPConnection' is a specialization of 'Connection'.
+'connection::relational::TdSqlDataType' is a specialization of 'SQLSimpleType'.
+'connection::Connection' is a specialization of 'softwaredeployment::DataProvider'.
+'connection::SubscriberTable' is a specialization of 'TdTable'.
+'connection::SAPTestInputParameterTable' is a specialization of 'SAPFunctionParameterTable'.
+'connection::MetadataTable' is a specialization of 'AbstractMetadataObject'.
+'connection::relational::TdView' is a specialization of 'relational::View'.
+'connection::SAPIDocUnit' is a specialization of 'AbstractMetadataObject'.
+'connection::CDCType' (role 'connection_CDCType', cardinality 0..*) is associated with 'connection::CDCConnection' (role 'connection_CDCConnection', cardinality 0..*).
+'connection::MetadataTable' (role 'connection_MetadataTable7', cardinality 0..*) is associated with 'connection::Connection' (role 'connection_Connection8', cardinality 0..*).
+'connection::XmlXPathLoopDescriptor' (role 'schema53', cardinality 0..*) is associated with 'connection::SchemaTarget' (role 'SchemaTarget', cardinality 0..*).
+'connection::SAPFunctionUnit' (role 'connection_SAPFunctionUnit', cardinality 0..*) is associated with 'connection::MetadataTable' (role 'connection_MetadataTable20', cardinality 0..*).
+'connection::CDCType' (role 'connection_CDCType61', cardinality 0..*) is associated with 'connection::SubscriberTable' (role 'connection_SubscriberTable', cardinality 0..*).
+'connection::Concept' (role 'schema68', cardinality 0..*) is associated with 'connection::ConceptTarget' (role 'ConceptTarget', cardinality 0..*).
+'connection::XmlXPathLoopDescriptor' (role 'schema', cardinality 0..*) is associated with 'connection::XmlFileConnection' (role 'XmlFileConnection', cardinality 0..*).
+'connection::WSDLParameter' (role 'connection_WSDLParameter57', cardinality 0..*) is associated with 'connection::WSDLSchemaConnection' (role 'connection_WSDLSchemaConnection56', cardinality 0..*).
+'connection::Connection' (role 'connection_Connection', cardinality 0..*) is associated with 'connection::Metadata' (role 'connection_Metadata', cardinality 0..*).
+'connection::MetadataColumn' (role 'connection_MetadataColumn5', cardinality 0..*) is associated with 'connection::MetadataTable' (role 'connection_MetadataTable4', cardinality 0..*).
+'connection::Query' (role 'query', cardinality 0..*) is associated with 'connection::QueriesConnection' (role 'QueriesConnection50', cardinality 0..*).
+'connection::SAPConnection' (role 'connection15', cardinality 0..*) is associated with 'connection::SAPIDocUnit' (role 'SAPIDocUnit', cardinality 0..*).
+'connection::SAPFunctionUnit' (role 'functionUnit18', cardinality 0..*) is associated with 'connection::OutputSAPFunctionParameterTable' (role 'OutputSAPFunctionParameterTable', cardinality 0..*).
+'relational::TdSqlDataType' (role 'relational_TdSqlDataType', cardinality 0..*) is associated with 'connection::relational::TdColumn' (role 'connection_relational_TdColumn', cardinality 0..*).
+'connection::DatabaseConnection' (role 'DatabaseConnection', cardinality 0..*) is associated with 'connection::CDCConnection' (role 'cdcConns', cardinality 0..*).
+'connection::SAPFunctionUnit' (role 'connection_SAPFunctionUnit23', cardinality 0..*) is associated with 'connection::MetadataTable' (role 'connection_MetadataTable24', cardinality 0..*).
+'connection::OutputSAPFunctionParameterTable' (role 'OutputParameterTable', cardinality 0..*) is associated with 'connection::SAPFunctionUnit' (role 'SAPFunctionUnit34', cardinality 0..*).
+'connection::XmlFileConnection' (role 'connection_XmlFileConnection39', cardinality 0..*) is associated with 'connection::XMLFileNode' (role 'connection_XMLFileNode40', cardinality 0..*).
+'connection::XMLFileNode' (role 'connection_XMLFileNode74', cardinality 0..*) is associated with 'connection::Concept' (role 'connection_Concept73', cardinality 0..*).
+'connection::SAPConnection' (role 'connection13', cardinality 0..*) is associated with 'connection::SAPFunctionUnit' (role 'SAPFunctionUnit', cardinality 0..*).
+'connection::MetadataColumn' (role 'connection_MetadataColumn', cardinality 0..*) is associated with 'connection::MetadataTable' (role 'connection_MetadataTable', cardinality 0..*).
+'connection::QueriesConnection' (role 'queries48', cardinality 0..*) is associated with 'connection::Query' (role 'Query', cardinality 0..*).
+'connection::Connection' (role 'connection', cardinality 0..*) is associated with 'connection::QueriesConnection' (role 'QueriesConnection', cardinality 0..*).
+'connection::SAPFunctionUnit' (role 'Funtions', cardinality 0..*) is associated with 'connection::SAPConnection' (role 'SAPConnection', cardinality 0..*).
+'connection::SAPTestInputParameterTable' (role 'SAPTestInputParameterTable', cardinality 0..*) is associated with 'connection::SAPFunctionUnit' (role 'functionUnit26', cardinality 0..*).
+'connection::Concept' (role 'connection_Concept', cardinality 0..*) is associated with 'connection::MDMConnection' (role 'connection_MDMConnection', cardinality 0..*).
+'connection::CDCConnection' (role 'CDCConnection', cardinality 0..*) is associated with 'connection::DatabaseConnection' (role 'connection11', cardinality 0..*).
+'connection::InputSAPFunctionParameterTable' (role 'InputParameterTable', cardinality 0..*) is associated with 'connection::SAPFunctionUnit' (role 'SAPFunctionUnit32', cardinality 0..*).
+'connection::XmlXPathLoopDescriptor' (role 'XmlXPathLoopDescriptor45', cardinality 0..*) is associated with 'connection::SchemaTarget' (role 'schemaTargets', cardinality 0..*).
+'connection::SAPFunctionUnit' (role 'functionUnit', cardinality 0..*) is associated with 'connection::InputSAPFunctionParameterTable' (role 'InputSAPFunctionParameterTable', cardinality 0..*).
+'connection::XmlFileConnection' (role 'connection36', cardinality 0..*) is associated with 'connection::XmlXPathLoopDescriptor' (role 'XmlXPathLoopDescriptor', cardinality 0..*).
+'connection::QueriesConnection' (role 'queries', cardinality 0..*) is associated with 'connection::Connection' (role 'Connection', cardinality 0..*).
+'connection::xml::TdXmlElementType' (role 'connection_xml_TdXmlElementType83', cardinality 0..*) is associated with 'xml::TdXmlSchema' (role 'xml_TdXmlSchema', cardinality 0..*).
+'connection::CDCType' (role 'connection_CDCType63', cardinality 0..*) is associated with 'connection::CDCConnection' (role 'connection_CDCConnection64', cardinality 0..*).
+'connection::HL7Connection' (role 'connection_HL7Connection', cardinality 0..*) is associated with 'connection::HL7FileNode' (role 'connection_HL7FileNode', cardinality 0..*).
+'connection::Concept' (role 'connection_Concept76', cardinality 0..*) is associated with 'connection::XMLFileNode' (role 'connection_XMLFileNode77', cardinality 0..*).
+'connection::SAPIDocUnit' (role 'IDocs', cardinality 0..*) is associated with 'connection::SAPConnection' (role 'SAPConnection28', cardinality 0..*).
+'connection::XMLFileNode' (role 'connection_XMLFileNode', cardinality 0..*) is associated with 'connection::XmlFileConnection' (role 'connection_XmlFileConnection', cardinality 0..*).
+'connection::SAPFunctionParameterColumn' (role 'columns', cardinality 0..*) is associated with 'connection::SAPFunctionParameterTable' (role 'SAPFunctionParameterTable', cardinality 0..*).
+'connection::xml::TdXmlElementType' (role 'connection_xml_TdXmlElementType85', cardinality 0..*) is associated with 'xml::TdXmlContent' (role 'xml_TdXmlContent', cardinality 0..*).
+'xml::TdXmlElementType' (role 'xml_TdXmlElementType', cardinality 0..*) is associated with 'connection::xml::TdXmlContent' (role 'connection_xml_TdXmlContent', cardinality 0..*).
+'connection::XmlFileConnection' (role 'connection_XmlFileConnection42', cardinality 0..*) is associated with 'connection::XMLFileNode' (role 'connection_XMLFileNode43', cardinality 0..*).
+'xml::connection::EObject' (role 'xml_connection_EObject', cardinality 0..*) is associated with 'connection::xml::TdXmlElementType' (role 'connection_xml_TdXmlElementType', cardinality 0..*).
+'connection::Concept' (role 'Concept', cardinality 0..*) is associated with 'connection::ConceptTarget' (role 'conceptTargets', cardinality 0..*).
+'connection::WSDLSchemaConnection' (role 'connection_WSDLSchemaConnection', cardinality 0..*) is associated with 'connection::WSDLParameter' (role 'connection_WSDLParameter', cardinality 0..*).
+'connection::Concept' (role 'connection_Concept70', cardinality 0..*) is associated with 'connection::XMLFileNode' (role 'connection_XMLFileNode71', cardinality 0..*).
+'connection::SAPFunctionParameterTable' (role 'ParameterTable', cardinality 0..*) is associated with 'connection::SAPFunctionParameterColumn' (role 'SAPFunctionParameterColumn', cardinality 0..*).
+'connection::SAPTestInputParameterTable' (role 'TestInputParameterTable', cardinality 0..*) is associated with 'connection::SAPFunctionUnit' (role 'SAPFunctionUnit66', cardinality 0..*).

@@ -1,0 +1,49 @@
+The model has 21 class(es).
+The class 'UseCaseDSL::AlternativeFlowAlternative' has no attributes.
+The class 'UseCaseDSL::LocalAlternative' has the following attributes: 'description' of type str.
+The class 'UseCaseDSL::UseCase' has the following attributes: 'preConditions' of type str; 'postcondition' of type str; 'name' of type str; 'description' of type str.
+The class 'Step' has no attributes.
+The class 'UseCaseDSL::PackageDeclaration' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'UseCaseDSL::ParallelStep' has no attributes.
+The class 'UseCaseDSL::Step' has the following attributes: 'name' of type str; 'label' of type str.
+The class 'UseCaseDSL::NamedFlow' has the following attributes: 'name' of type str.
+The class 'UseCaseDSL::NormalStep' has the following attributes: 'customStepType' of type str.
+The class 'UseCaseDSL::Actor' has the following attributes: 'description' of type str; 'type' of type str; 'name' of type str.
+The class 'UseCaseDSL::Flow' has the following attributes: 'finalState' of type str.
+The class 'UseCaseDSL::AlternativeFlow' has no attributes.
+The class 'UseCaseDSL::StepAlternative' has the following attributes: 'condition' of type str.
+The class 'UseCaseDSL::ParallelFlow' has no attributes.
+The class 'Flow' has no attributes.
+The class 'StepAlternative' has no attributes.
+The class 'UseCaseDSL::ExceptionFlow' has the following attributes: 'condition' of type str.
+The class 'UseCaseDSL::UseCasesModel' has no attributes.
+The class 'UseCaseDSL::Condition' has no attributes.
+The class 'NamedFlow' has no attributes.
+The class 'UseCaseDSL::BasicFlow' has no attributes.
+The enumeration 'ActorType' has the following literals: 'ORGANIZATION', 'PERSON', 'SYSTEM'.
+The enumeration 'CustomStepType' has the following literals: 'INPUT', 'PROCESS', 'MIX', 'OUTPUT'.
+'UseCaseDSL::AlternativeFlow' is a specialization of 'NamedFlow'.
+'UseCaseDSL::ParallelStep' is a specialization of 'Step'.
+'UseCaseDSL::Condition' is a specialization of 'StepAlternative'.
+'UseCaseDSL::LocalAlternative' is a specialization of 'StepAlternative'.
+'UseCaseDSL::NamedFlow' is a specialization of 'Flow'.
+'UseCaseDSL::ParallelFlow' is a specialization of 'NamedFlow'.
+'UseCaseDSL::BasicFlow' is a specialization of 'Flow'.
+'UseCaseDSL::ExceptionFlow' is a specialization of 'NamedFlow'.
+'UseCaseDSL::NormalStep' is a specialization of 'Step'.
+'UseCaseDSL::AlternativeFlowAlternative' is a specialization of 'StepAlternative'.
+'UseCaseDSL::ParallelStep' (role 'UseCaseDSL_ParallelStep', cardinality 0..*) is associated with 'UseCaseDSL::ParallelFlow' (role 'UseCaseDSL_ParallelFlow', cardinality 0..*).
+'UseCaseDSL::UseCase' (role 'UseCaseDSL_UseCase28', cardinality 0..*) is associated with 'UseCaseDSL::Flow' (role 'UseCaseDSL_Flow29', cardinality 0..*).
+'UseCaseDSL::Flow' (role 'UseCaseDSL_Flow', cardinality 0..*) is associated with 'UseCaseDSL::Step' (role 'UseCaseDSL_Step', cardinality 0..*).
+'UseCaseDSL::Actor' (role 'UseCaseDSL_Actor0', cardinality 0..*) is associated with 'UseCaseDSL::Actor' (role 'UseCaseDSL_Actor', cardinality 0..*).
+'UseCaseDSL::StepAlternative' (role 'UseCaseDSL_StepAlternative22', cardinality 0..*) is associated with 'UseCaseDSL::Step' (role 'UseCaseDSL_Step23', cardinality 0..*).
+'UseCaseDSL::NormalStep' (role 'UseCaseDSL_NormalStep', cardinality 0..*) is associated with 'UseCaseDSL::StepAlternative' (role 'UseCaseDSL_StepAlternative', cardinality 0..*).
+'UseCaseDSL::NamedFlow' (role 'UseCaseDSL_NamedFlow', cardinality 0..*) is associated with 'UseCaseDSL::AlternativeFlowAlternative' (role 'UseCaseDSL_AlternativeFlowAlternative', cardinality 0..*).
+'UseCaseDSL::UseCasesModel' (role 'UseCaseDSL_UseCasesModel', cardinality 0..*) is associated with 'UseCaseDSL::PackageDeclaration' (role 'UseCaseDSL_PackageDeclaration31', cardinality 0..*).
+'UseCaseDSL::UseCase' (role 'UseCaseDSL_UseCase26', cardinality 0..*) is associated with 'UseCaseDSL::UseCase' (role 'UseCaseDSL_UseCase24', cardinality 0..*).
+'UseCaseDSL::UseCase' (role 'UseCaseDSL_UseCase20', cardinality 0..*) is associated with 'UseCaseDSL::Step' (role 'UseCaseDSL_Step19', cardinality 0..*).
+'UseCaseDSL::UseCase' (role 'UseCaseDSL_UseCase', cardinality 0..*) is associated with 'UseCaseDSL::LocalAlternative' (role 'UseCaseDSL_LocalAlternative', cardinality 0..*).
+'UseCaseDSL::PackageDeclaration' (role 'UseCaseDSL_PackageDeclaration', cardinality 0..*) is associated with 'UseCaseDSL::UseCase' (role 'UseCaseDSL_UseCase10', cardinality 0..*).
+'UseCaseDSL::PackageDeclaration' (role 'UseCaseDSL_PackageDeclaration12', cardinality 0..*) is associated with 'UseCaseDSL::Actor' (role 'UseCaseDSL_Actor13', cardinality 0..*).
+'UseCaseDSL::NormalStep' (role 'UseCaseDSL_NormalStep7', cardinality 0..*) is associated with 'UseCaseDSL::Actor' (role 'UseCaseDSL_Actor8', cardinality 0..*).
+'UseCaseDSL::Step' (role 'UseCaseDSL_Step17', cardinality 0..*) is associated with 'UseCaseDSL::Step' (role 'UseCaseDSL_Step15', cardinality 0..*).

@@ -1,0 +1,740 @@
+The model has 227 class(es).
+The class 'Specialpre' has no attributes.
+The class 'Misc' has no attributes.
+The class 'XHTML::ContentTypes' has no attributes.
+The class 'StyleSheet' has no attributes.
+The class 'XHTML::Colgroup' has no attributes.
+The class 'MultiLength' has no attributes.
+The class 'Coords' has no attributes.
+The class 'XHTML::IDREF' has no attributes.
+The class 'XHTML::Samp' has no attributes.
+The class 'XHTML::Span' has no attributes.
+The class 'XHTML::FormContent' has no attributes.
+The class 'Focus' has no attributes.
+The class 'XHTML::NMTOKEN' has no attributes.
+The class 'XHTML::Cite' has no attributes.
+The class 'XHTML::PCDATA' has no attributes.
+The class 'Fontstyle' has no attributes.
+The class 'XHTML::Tr' has no attributes.
+The class 'XHTML::Var' has no attributes.
+The class 'XHTML::Br' has no attributes.
+The class 'XHTML::A' has the following attributes: 'shape' of type str.
+The class 'XHTML::Col' has no attributes.
+The class 'XHTML::Heading' has no attributes.
+The class 'IDREFS' has no attributes.
+The class 'XHTML::Kbd' has no attributes.
+The class 'XHTML::Td' has the following attributes: 'scope' of type str.
+The class 'XHTML::Sub' has no attributes.
+The class 'XHTML::Lists' has no attributes.
+The class 'ValuedElement' has no attributes.
+The class 'XHTML::Flow' has no attributes.
+The class 'XHTML::Object' has the following attributes: 'declare' of type str.
+The class 'XHTML::Q' has no attributes.
+The class 'XHTML::Head' has no attributes.
+The class 'XHTML::Th' has the following attributes: 'scope' of type str.
+The class 'XHTML::TrElement' has no attributes.
+The class 'XHTML::Block' has no attributes.
+The class 'XHTML::Acronym' has no attributes.
+The class 'XHTML::Blocktext' has no attributes.
+The class 'XHTML::CDATA' has no attributes.
+The class 'XHTML::Abbr' has no attributes.
+The class 'XHTML::Html' has no attributes.
+The class 'XHTML::ValuedElement' has the following attributes: 'value' of type str.
+The class 'XHTML::PreContent' has no attributes.
+The class 'XHTML::Tt' has no attributes.
+The class 'XHTML::Tfoot' has no attributes.
+The class 'XHTML::ButtonContent' has no attributes.
+The class 'XHTML::I' has no attributes.
+The class 'XHTML::AContent' has no attributes.
+The class 'XHTML::Sup' has no attributes.
+The class 'XHTML::Del' has no attributes.
+The class 'ID' has no attributes.
+The class 'XHTML::Caption' has no attributes.
+The class 'block' has no attributes.
+The class 'Cellhalign' has no attributes.
+The class 'XHTML::Ins' has no attributes.
+The class 'XHTML::Thead' has no attributes.
+The class 'XHTML::CoreAttrs' has no attributes.
+The class 'XHTML::Blockquote' has no attributes.
+The class 'Length' has no attributes.
+The class 'IDREF' has no attributes.
+The class 'XHTML::Ol' has no attributes.
+The class 'Pixels' has no attributes.
+The class 'PCDATA' has no attributes.
+The class 'Li' has no attributes.
+The class 'Tr' has no attributes.
+The class 'XHTML::Big' has no attributes.
+The class 'Lists' has no attributes.
+The class 'XHTML::EMPTY' has no attributes.
+The class 'Body' has no attributes.
+The class 'XHTML::Form' has the following attributes: 'method' of type str.
+The class 'Head' has no attributes.
+The class 'XHTML::ID' has no attributes.
+The class 'XHTML::ObjectElement' has no attributes.
+The class 'XHTML::ContentType' has no attributes.
+The class 'UriList' has no attributes.
+The class 'XHTML::Number' has no attributes.
+The class 'XHTML::Small' has no attributes.
+The class 'MapElement' has no attributes.
+The class 'XHTML::HeadMisc' has no attributes.
+The class 'XHTML::URI' has no attributes.
+The class 'HeadMisc' has no attributes.
+The class 'XHTML::Select' has the following attributes: 'multiple' of type str; 'disabled' of type str.
+The class 'XHTML::MapContent' has no attributes.
+The class 'CDATA' has no attributes.
+The class 'Datetime' has no attributes.
+The class 'XHTML::Img' has the following attributes: 'ismap' of type str.
+The class 'XHTML::Param' has the following attributes: 'valuetype' of type str.
+The class 'XHTML::Charsets' has no attributes.
+The class 'XHTML::Length' has no attributes.
+The class 'Charset' has no attributes.
+The class 'XHTML::Map' has no attributes.
+The class 'XHTML::Dd' has no attributes.
+The class 'XHTML::Charset' has no attributes.
+The class 'XHTML::Text' has no attributes.
+The class 'XHTML::Dt' has no attributes.
+The class 'XHTML::MapElementContent' has no attributes.
+The class 'XHTML::DlElement' has no attributes.
+The class 'ContentType' has no attributes.
+The class 'XHTML::MultiLength' has no attributes.
+The class 'XHTML::MapElement' has no attributes.
+The class 'XHTML::block' has no attributes.
+The class 'NMTOKEN' has no attributes.
+The class 'DlElement' has no attributes.
+The class 'XHTML::Area' has the following attributes: 'nohref' of type str; 'shape' of type str.
+The class 'XHTML::Character' has no attributes.
+The class 'XHTML::Dl' has no attributes.
+The class 'XHTML::LinkTypes' has no attributes.
+The class 'ContentTypes' has no attributes.
+The class 'XHTML::Li' has no attributes.
+The class 'MapContent' has no attributes.
+The class 'XHTML::Fieldset' has no attributes.
+The class 'XHTML::Pixels' has no attributes.
+The class 'LinkTypes' has no attributes.
+The class 'XHTML::LanguageCode' has no attributes.
+The class 'XHTML::BaseHeadElement' has no attributes.
+The class 'XHTML::MediaDesc' has no attributes.
+The class 'Inlineforms' has no attributes.
+The class 'XHTML::UriList' has no attributes.
+The class 'Base' has no attributes.
+The class 'XHTML::BaseTitleHeadElement' has no attributes.
+The class 'XHTML::ScriptExpression' has no attributes.
+The class 'XHTML::Input' has the following attributes: 'type' of type str; 'checked' of type str; 'readonly' of type str; 'disabled' of type str.
+The class 'FieldsetElement' has no attributes.
+The class 'BaseTitleHeadElement' has no attributes.
+The class 'XHTML::Label' has no attributes.
+The class 'XHTML::Strong' has no attributes.
+The class 'XHTML::Datetime' has no attributes.
+The class 'URI' has no attributes.
+The class 'XHTML::P' has no attributes.
+The class 'SelectElement' has no attributes.
+The class 'Charsets' has no attributes.
+The class 'Title' has no attributes.
+The class 'XHTML::Option' has the following attributes: 'disabled' of type str; 'selected' of type str.
+The class 'XHTML::Script' has the following attributes: 'defer' of type str; 'xml_space' of type str.
+The class 'Thead' has no attributes.
+The class 'XHTML::inline' has no attributes.
+The class 'Attrs' has no attributes.
+The class 'XHTML::Optgroup' has the following attributes: 'disabled' of type str.
+The class 'XHTML::Code' has no attributes.
+The class 'XHTML::SelectElement' has no attributes.
+The class 'XHTML::Tbody' has no attributes.
+The class 'XHTML::TitleHeadElement' has no attributes.
+The class 'XHTML::Link' has no attributes.
+The class 'XHTML::Coords' has no attributes.
+The class 'XHTML::HeadElement' has no attributes.
+The class 'XHTML::StyleSheet' has no attributes.
+The class 'XHTML::Fontstyle' has no attributes.
+The class 'XHTML::FieldsetElement' has no attributes.
+The class 'XHTML::IDREFS' has no attributes.
+The class 'EMPTY' has no attributes.
+The class 'Option' has no attributes.
+The class 'XHTML::Dfn' has no attributes.
+The class 'MapElementContent' has no attributes.
+The class 'XHTML::Base' has no attributes.
+The class 'XHTML::Legend' has no attributes.
+The class 'XHTML::Textarea' has the following attributes: 'readonly' of type str; 'disabled' of type str.
+The class 'HeadElement' has no attributes.
+The class 'Text' has no attributes.
+The class 'XHTML::Cellvalign' has the following attributes: 'valign' of type str.
+The class 'XHTML::TableElement' has no attributes.
+The class 'ScriptExpression' has no attributes.
+The class 'XHTML::Title' has no attributes.
+The class 'XHTML::Events' has no attributes.
+The class 'XHTML::Cellhalign' has the following attributes: 'align' of type str.
+The class 'XHTML::Button' has the following attributes: 'disabled' of type str; 'type' of type str.
+The class 'LanguageCode' has no attributes.
+The class 'XHTML::TitleBaseHeadElement' has no attributes.
+The class 'XHTML::B' has no attributes.
+The class 'TitleBaseHeadElement' has no attributes.
+The class 'XHTML::I18n' has the following attributes: 'dir' of type str.
+The class 'Caption' has no attributes.
+The class 'XHTML::Div' has no attributes.
+The class 'XHTML::Style' has the following attributes: 'xml_space' of type str.
+The class 'CoreAttrs' has no attributes.
+The class 'Tfoot' has no attributes.
+The class 'XHTML::Attrs' has no attributes.
+The class 'XHTML::Noscript' has no attributes.
+The class 'XHTML::Table' has the following attributes: 'rules' of type str; 'frame' of type str.
+The class 'I18n' has no attributes.
+The class 'XHTML::H2' has no attributes.
+The class 'XHTML::ColElement' has no attributes.
+The class 'Character' has no attributes.
+The class 'XHTML::Address' has no attributes.
+The class 'XHTML::Focus' has no attributes.
+The class 'Miscinline' has no attributes.
+The class 'ColElement' has no attributes.
+The class 'TableElement' has no attributes.
+The class 'Events' has no attributes.
+The class 'XHTML::Meta' has no attributes.
+The class 'MediaDesc' has no attributes.
+The class 'Colgroup' has no attributes.
+The class 'Special' has no attributes.
+The class 'XHTML::Specialpre' has no attributes.
+The class 'Tbody' has no attributes.
+The class 'Col' has no attributes.
+The class 'XHTML::Body' has no attributes.
+The class 'XHTML::H6' has no attributes.
+The class 'Number' has no attributes.
+The class 'XHTML::H5' has no attributes.
+The class 'Inline' has no attributes.
+The class 'XHTML::H4' has no attributes.
+The class 'TrElement' has no attributes.
+The class 'XHTML::H3' has no attributes.
+The class 'XHTML::Miscinline' has no attributes.
+The class 'XHTML::Inlineforms' has no attributes.
+The class 'Phrase' has no attributes.
+The class 'XHTML::Phrase' has no attributes.
+The class 'XHTML::Misc' has no attributes.
+The class 'Cellvalign' has no attributes.
+The class 'XHTML::Special' has no attributes.
+The class 'Heading' has no attributes.
+The class 'XHTML::H1' has no attributes.
+The class 'ButtonContent' has no attributes.
+The class 'Html' has no attributes.
+The class 'AContent' has no attributes.
+The class 'XHTML::Em' has no attributes.
+The class 'inline' has no attributes.
+The class 'XHTML::Inline' has no attributes.
+The class 'XHTML::Ul' has no attributes.
+The class 'PreContent' has no attributes.
+The class 'Block' has no attributes.
+The class 'XHTML::Pre' has the following attributes: 'xml_space' of type str.
+The class 'XHTML::Bdo' has the following attributes: 'dir' of type str.
+The class 'ObjectElement' has no attributes.
+The class 'FormContent' has no attributes.
+The class 'XHTML::Hr' has no attributes.
+The class 'Flow' has no attributes.
+The class 'Blocktext' has no attributes.
+The enumeration 'Scope' has the following literals: 'col', 'row', 'colgroup', 'rowgroup'.
+The enumeration 'CellVAlign' has the following literals: 'top', 'middle', 'bottom', 'baseline'.
+The enumeration 'CellHAlign' has the following literals: 'justify', 'center', 'left', 'right', 'char'.
+The enumeration 'Direction' has the following literals: 'ltr', 'rtl'.
+The enumeration 'Shape' has the following literals: 'circle', 'default', 'poly', 'rect'.
+The enumeration 'FomeMethod' has the following literals: 'get', 'post'.
+The enumeration 'ValueType' has the following literals: 'ref', 'data', 'object'.
+The enumeration 'InputType' has the following literals: 'file', 'submit', 'password', 'reset', 'checkbox', 'button', 'text', 'radio', 'image', 'hidden'.
+The enumeration 'ButtonType' has the following literals: 'submit', 'button', 'reset'.
+The enumeration 'TRules' has the following literals: 'none', 'rows', 'all', 'groups', 'cols'.
+The enumeration 'TFrame' has the following literals: 'below', 'lhs', 'box', 'above', 'vsides', 'void', 'hsides', 'rhs', 'border'.
+'XHTML::ContentType' is a specialization of 'CDATA'.
+'XHTML::Object' is a specialization of 'Special'.
+'XHTML::Charset' is a specialization of 'CDATA'.
+'XHTML::Object' is a specialization of 'HeadMisc'.
+'XHTML::H2' is a specialization of 'Attrs'.
+'XHTML::Character' is a specialization of 'CDATA'.
+'XHTML::Sup' is a specialization of 'Attrs'.
+'XHTML::H2' is a specialization of 'Heading'.
+'XHTML::Number' is a specialization of 'CDATA'.
+'XHTML::Sup' is a specialization of 'Phrase'.
+'XHTML::H3' is a specialization of 'Attrs'.
+'XHTML::LinkTypes' is a specialization of 'CDATA'.
+'XHTML::Param' is a specialization of 'EMPTY'.
+'XHTML::H3' is a specialization of 'Heading'.
+'XHTML::MediaDesc' is a specialization of 'CDATA'.
+'XHTML::Param' is a specialization of 'ObjectElement'.
+'XHTML::H4' is a specialization of 'Attrs'.
+'XHTML::URI' is a specialization of 'CDATA'.
+'XHTML::Img' is a specialization of 'EMPTY'.
+'XHTML::H4' is a specialization of 'Heading'.
+'XHTML::Datetime' is a specialization of 'CDATA'.
+'XHTML::Img' is a specialization of 'Attrs'.
+'XHTML::H5' is a specialization of 'Attrs'.
+'XHTML::ScriptExpression' is a specialization of 'CDATA'.
+'XHTML::Img' is a specialization of 'Special'.
+'XHTML::H5' is a specialization of 'Heading'.
+'XHTML::StyleSheet' is a specialization of 'CDATA'.
+'XHTML::Map' is a specialization of 'I18n'.
+'XHTML::H6' is a specialization of 'Attrs'.
+'XHTML::Text' is a specialization of 'CDATA'.
+'XHTML::Map' is a specialization of 'Events'.
+'XHTML::H6' is a specialization of 'Heading'.
+'XHTML::Length' is a specialization of 'CDATA'.
+'XHTML::Map' is a specialization of 'Specialpre'.
+'XHTML::Body' is a specialization of 'Attrs'.
+'XHTML::MultiLength' is a specialization of 'CDATA'.
+'XHTML::Area' is a specialization of 'EMPTY'.
+'XHTML::Pixels' is a specialization of 'CDATA'.
+'XHTML::Ol' is a specialization of 'Attrs'.
+'XHTML::Area' is a specialization of 'Attrs'.
+'XHTML::LanguageCode' is a specialization of 'NMTOKEN'.
+'XHTML::Ol' is a specialization of 'Lists'.
+'XHTML::Area' is a specialization of 'Focus'.
+'XHTML::Li' is a specialization of 'Attrs'.
+'XHTML::Attrs' is a specialization of 'CoreAttrs'.
+'XHTML::Area' is a specialization of 'MapElement'.
+'XHTML::Dl' is a specialization of 'Attrs'.
+'XHTML::Attrs' is a specialization of 'I18n'.
+'XHTML::Form' is a specialization of 'Attrs'.
+'XHTML::Dl' is a specialization of 'Lists'.
+'XHTML::Attrs' is a specialization of 'Events'.
+'XHTML::Form' is a specialization of 'Block'.
+'XHTML::DlElement' is a specialization of 'Attrs'.
+'XHTML::Specialpre' is a specialization of 'Special'.
+'XHTML::Form' is a specialization of 'ObjectElement'.
+'XHTML::Dt' is a specialization of 'DlElement'.
+'XHTML::Specialpre' is a specialization of 'PreContent'.
+'XHTML::Form' is a specialization of 'MapElementContent'.
+'XHTML::Dd' is a specialization of 'DlElement'.
+'XHTML::Special' is a specialization of 'inline'.
+'XHTML::Form' is a specialization of 'FieldsetElement'.
+'XHTML::Address' is a specialization of 'Attrs'.
+'XHTML::Special' is a specialization of 'ButtonContent'.
+'XHTML::Label' is a specialization of 'Attrs'.
+'XHTML::Address' is a specialization of 'Blocktext'.
+'XHTML::Fontstyle' is a specialization of 'inline'.
+'XHTML::Label' is a specialization of 'Inlineforms'.
+'XHTML::Hr' is a specialization of 'EMPTY'.
+'XHTML::Fontstyle' is a specialization of 'AContent'.
+'XHTML::Input' is a specialization of 'Inlineforms'.
+'XHTML::Fontstyle' is a specialization of 'PreContent'.
+'XHTML::Hr' is a specialization of 'Attrs'.
+'XHTML::Input' is a specialization of 'EMPTY'.
+'XHTML::Fontstyle' is a specialization of 'ButtonContent'.
+'XHTML::Hr' is a specialization of 'Blocktext'.
+'XHTML::Input' is a specialization of 'Attrs'.
+'XHTML::Phrase' is a specialization of 'inline'.
+'XHTML::Pre' is a specialization of 'Attrs'.
+'XHTML::Input' is a specialization of 'Focus'.
+'XHTML::Phrase' is a specialization of 'AContent'.
+'XHTML::Pre' is a specialization of 'Blocktext'.
+'XHTML::Select' is a specialization of 'Attrs'.
+'XHTML::Phrase' is a specialization of 'PreContent'.
+'XHTML::Ul' is a specialization of 'Attrs'.
+'XHTML::Select' is a specialization of 'Inlineforms'.
+'XHTML::Phrase' is a specialization of 'ButtonContent'.
+'XHTML::Ul' is a specialization of 'Lists'.
+'XHTML::Optgroup' is a specialization of 'SelectElement'.
+'XHTML::Inlineforms' is a specialization of 'inline'.
+'XHTML::Blockquote' is a specialization of 'Attrs'.
+'XHTML::Optgroup' is a specialization of 'Attrs'.
+'XHTML::Inlineforms' is a specialization of 'AContent'.
+'XHTML::Blockquote' is a specialization of 'Blocktext'.
+'XHTML::Option' is a specialization of 'SelectElement'.
+'XHTML::Inlineforms' is a specialization of 'PreContent'.
+'XHTML::Ins' is a specialization of 'Attrs'.
+'XHTML::Option' is a specialization of 'PCDATA'.
+'XHTML::Miscinline' is a specialization of 'Misc'.
+'XHTML::Ins' is a specialization of 'Miscinline'.
+'XHTML::Option' is a specialization of 'Attrs'.
+'XHTML::Miscinline' is a specialization of 'Inline'.
+'XHTML::Del' is a specialization of 'Attrs'.
+'XHTML::Textarea' is a specialization of 'PCDATA'.
+'XHTML::Miscinline' is a specialization of 'AContent'.
+'XHTML::Del' is a specialization of 'Miscinline'.
+'XHTML::Textarea' is a specialization of 'Attrs'.
+'XHTML::Miscinline' is a specialization of 'PreContent'.
+'XHTML::A' is a specialization of 'Attrs'.
+'XHTML::Textarea' is a specialization of 'Focus'.
+'XHTML::Misc' is a specialization of 'Block'.
+'XHTML::A' is a specialization of 'Focus'.
+'XHTML::Textarea' is a specialization of 'Inlineforms'.
+'XHTML::Misc' is a specialization of 'Flow'.
+'XHTML::A' is a specialization of 'inline'.
+'XHTML::Fieldset' is a specialization of 'Attrs'.
+'XHTML::Misc' is a specialization of 'FormContent'.
+'XHTML::A' is a specialization of 'PreContent'.
+'XHTML::Misc' is a specialization of 'ButtonContent'.
+'XHTML::Legend' is a specialization of 'Attrs'.
+'XHTML::Span' is a specialization of 'Attrs'.
+'XHTML::Legend' is a specialization of 'FieldsetElement'.
+'XHTML::Span' is a specialization of 'Specialpre'.
+'XHTML::Misc' is a specialization of 'ObjectElement'.
+'XHTML::Button' is a specialization of 'Attrs'.
+'XHTML::Bdo' is a specialization of 'CoreAttrs'.
+'XHTML::Misc' is a specialization of 'MapElementContent'.
+'XHTML::Button' is a specialization of 'Focus'.
+'XHTML::Bdo' is a specialization of 'Events'.
+'XHTML::Misc' is a specialization of 'FieldsetElement'.
+'XHTML::Button' is a specialization of 'Inlineforms'.
+'XHTML::inline' is a specialization of 'Inline'.
+'XHTML::Bdo' is a specialization of 'Specialpre'.
+'XHTML::Inline' is a specialization of 'Flow'.
+'XHTML::Fieldset' is a specialization of 'block'.
+'XHTML::Br' is a specialization of 'EMPTY'.
+'XHTML::Table' is a specialization of 'Attrs'.
+'XHTML::Br' is a specialization of 'CoreAttrs'.
+'XHTML::Inline' is a specialization of 'ObjectElement'.
+'XHTML::Table' is a specialization of 'block'.
+'XHTML::Br' is a specialization of 'Specialpre'.
+'XHTML::Inline' is a specialization of 'FieldsetElement'.
+'XHTML::Table' is a specialization of 'ButtonContent'.
+'XHTML::Em' is a specialization of 'Attrs'.
+'XHTML::Heading' is a specialization of 'block'.
+'XHTML::Thead' is a specialization of 'Attrs'.
+'XHTML::Em' is a specialization of 'Phrase'.
+'XHTML::Heading' is a specialization of 'ButtonContent'.
+'XHTML::Strong' is a specialization of 'Attrs'.
+'XHTML::Lists' is a specialization of 'block'.
+'XHTML::Thead' is a specialization of 'Cellhalign'.
+'XHTML::Strong' is a specialization of 'Phrase'.
+'XHTML::Lists' is a specialization of 'ButtonContent'.
+'XHTML::Thead' is a specialization of 'Cellvalign'.
+'XHTML::Dfn' is a specialization of 'Attrs'.
+'XHTML::Blocktext' is a specialization of 'block'.
+'XHTML::Tfoot' is a specialization of 'Attrs'.
+'XHTML::Dfn' is a specialization of 'Phrase'.
+'XHTML::Blocktext' is a specialization of 'ButtonContent'.
+'XHTML::Tfoot' is a specialization of 'Cellhalign'.
+'XHTML::Code' is a specialization of 'Attrs'.
+'XHTML::block' is a specialization of 'Block'.
+'XHTML::Tfoot' is a specialization of 'Cellvalign'.
+'XHTML::block' is a specialization of 'Flow'.
+'XHTML::Tbody' is a specialization of 'Attrs'.
+'XHTML::Code' is a specialization of 'Phrase'.
+'XHTML::block' is a specialization of 'FormContent'.
+'XHTML::Tbody' is a specialization of 'Cellhalign'.
+'XHTML::Samp' is a specialization of 'Attrs'.
+'XHTML::block' is a specialization of 'ObjectElement'.
+'XHTML::Tbody' is a specialization of 'Cellvalign'.
+'XHTML::Samp' is a specialization of 'Phrase'.
+'XHTML::block' is a specialization of 'MapElementContent'.
+'XHTML::Colgroup' is a specialization of 'Attrs'.
+'XHTML::Kbd' is a specialization of 'Attrs'.
+'XHTML::block' is a specialization of 'FieldsetElement'.
+'XHTML::Colgroup' is a specialization of 'Cellhalign'.
+'XHTML::Kbd' is a specialization of 'Phrase'.
+'XHTML::TitleHeadElement' is a specialization of 'HeadElement'.
+'XHTML::Caption' is a specialization of 'Attrs'.
+'XHTML::Var' is a specialization of 'Attrs'.
+'XHTML::Var' is a specialization of 'Phrase'.
+'XHTML::BaseHeadElement' is a specialization of 'HeadElement'.
+'XHTML::Col' is a specialization of 'EMPTY'.
+'XHTML::Cite' is a specialization of 'Attrs'.
+'XHTML::Title' is a specialization of 'PCDATA'.
+'XHTML::Col' is a specialization of 'Attrs'.
+'XHTML::Cite' is a specialization of 'Phrase'.
+'XHTML::Base' is a specialization of 'EMPTY'.
+'XHTML::Col' is a specialization of 'Cellhalign'.
+'XHTML::Abbr' is a specialization of 'Attrs'.
+'XHTML::Link' is a specialization of 'EMPTY'.
+'XHTML::Col' is a specialization of 'Cellvalign'.
+'XHTML::Abbr' is a specialization of 'Phrase'.
+'XHTML::Link' is a specialization of 'Attrs'.
+'XHTML::Tr' is a specialization of 'Attrs'.
+'XHTML::Acronym' is a specialization of 'Attrs'.
+'XHTML::Link' is a specialization of 'HeadMisc'.
+'XHTML::Tr' is a specialization of 'Cellhalign'.
+'XHTML::Acronym' is a specialization of 'Phrase'.
+'XHTML::Meta' is a specialization of 'EMPTY'.
+'XHTML::Tr' is a specialization of 'Cellvalign'.
+'XHTML::Q' is a specialization of 'Attrs'.
+'XHTML::Meta' is a specialization of 'HeadMisc'.
+'XHTML::Colgroup' is a specialization of 'Cellvalign'.
+'XHTML::Q' is a specialization of 'Phrase'.
+'XHTML::Script' is a specialization of 'PCDATA'.
+'XHTML::Th' is a specialization of 'TrElement'.
+'XHTML::Sub' is a specialization of 'Attrs'.
+'XHTML::Script' is a specialization of 'Miscinline'.
+'XHTML::Th' is a specialization of 'Attrs'.
+'XHTML::Sub' is a specialization of 'Phrase'.
+'XHTML::Script' is a specialization of 'HeadMisc'.
+'XHTML::Th' is a specialization of 'Cellvalign'.
+'XHTML::Tt' is a specialization of 'Attrs'.
+'XHTML::Noscript' is a specialization of 'Attrs'.
+'XHTML::Th' is a specialization of 'Cellhalign'.
+'XHTML::Tt' is a specialization of 'Fontstyle'.
+'XHTML::Noscript' is a specialization of 'Misc'.
+'XHTML::Td' is a specialization of 'TrElement'.
+'XHTML::I' is a specialization of 'Attrs'.
+'XHTML::Style' is a specialization of 'PCDATA'.
+'XHTML::Td' is a specialization of 'Attrs'.
+'XHTML::I' is a specialization of 'Fontstyle'.
+'XHTML::Style' is a specialization of 'HeadMisc'.
+'XHTML::Td' is a specialization of 'Cellvalign'.
+'XHTML::B' is a specialization of 'Attrs'.
+'XHTML::Div' is a specialization of 'Attrs'.
+'XHTML::Td' is a specialization of 'Cellhalign'.
+'XHTML::CDATA' is a specialization of 'ValuedElement'.
+'XHTML::Div' is a specialization of 'block'.
+'XHTML::B' is a specialization of 'Fontstyle'.
+'XHTML::H1' is a specialization of 'Heading'.
+'XHTML::Big' is a specialization of 'Attrs'.
+'XHTML::Div' is a specialization of 'ButtonContent'.
+'XHTML::PCDATA' is a specialization of 'ValuedElement'.
+'XHTML::P' is a specialization of 'Attrs'.
+'XHTML::Big' is a specialization of 'Fontstyle'.
+'XHTML::NMTOKEN' is a specialization of 'ValuedElement'.
+'XHTML::P' is a specialization of 'block'.
+'XHTML::Small' is a specialization of 'Attrs'.
+'XHTML::IDREF' is a specialization of 'ValuedElement'.
+'XHTML::P' is a specialization of 'ButtonContent'.
+'XHTML::Small' is a specialization of 'Fontstyle'.
+'XHTML::ID' is a specialization of 'ValuedElement'.
+'XHTML::H1' is a specialization of 'Attrs'.
+'XHTML::Object' is a specialization of 'Attrs'.
+'CDATA' (role 'CDATA130', cardinality 0..*) is associated with 'XHTML::Meta' (role 'XHTML_Meta129', cardinality 0..*).
+'Flow' (role 'Flow206', cardinality 0..*) is associated with 'XHTML::Li' (role 'XHTML_Li', cardinality 0..*).
+'URI' (role 'URI448', cardinality 0..*) is associated with 'XHTML::Input' (role 'XHTML_Input447', cardinality 0..*).
+'HeadMisc' (role 'HeadMisc88', cardinality 0..*) is associated with 'XHTML::TitleHeadElement' (role 'XHTML_TitleHeadElement87', cardinality 0..*).
+'Inline' (role 'Inline283', cardinality 0..*) is associated with 'XHTML::Cite' (role 'XHTML_Cite', cardinality 0..*).
+'ContentType' (role 'ContentType404', cardinality 0..*) is associated with 'XHTML::Form' (role 'XHTML_Form403', cardinality 0..*).
+'XHTML::Events' (role 'XHTML_Events42', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression43', cardinality 0..*).
+'XHTML::A' (role 'XHTML_A240', cardinality 0..*) is associated with 'ContentType' (role 'ContentType241', cardinality 0..*).
+'MultiLength' (role 'MultiLength', cardinality 0..*) is associated with 'XHTML::Colgroup' (role 'XHTML_Colgroup563', cardinality 0..*).
+'XHTML::Table' (role 'XHTML_Table528', cardinality 0..*) is associated with 'TableElement' (role 'TableElement', cardinality 0..*).
+'URI' (role 'URI176', cardinality 0..*) is associated with 'XHTML::Script' (role 'XHTML_Script175', cardinality 0..*).
+'Length' (role 'Length366', cardinality 0..*) is associated with 'XHTML::Img' (role 'XHTML_Img365', cardinality 0..*).
+'XHTML::Textarea' (role 'XHTML_Textarea495', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression496', cardinality 0..*).
+'URI' (role 'URI318', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object317', cardinality 0..*).
+'XHTML::Dl' (role 'XHTML_Dl', cardinality 0..*) is associated with 'DlElement' (role 'DlElement', cardinality 0..*).
+'PCDATA' (role 'PCDATA57', cardinality 0..*) is associated with 'XHTML::AContent' (role 'XHTML_AContent', cardinality 0..*).
+'XHTML::Meta' (role 'XHTML_Meta132', cardinality 0..*) is associated with 'CDATA' (role 'CDATA133', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression451', cardinality 0..*) is associated with 'XHTML::Input' (role 'XHTML_Input450', cardinality 0..*).
+'XHTML::Events' (role 'XHTML_Events30', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression31', cardinality 0..*).
+'XHTML::Abbr' (role 'XHTML_Abbr', cardinality 0..*) is associated with 'Inline' (role 'Inline285', cardinality 0..*).
+'XHTML::Form' (role 'XHTML_Form406', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression407', cardinality 0..*).
+'NMTOKEN' (role 'NMTOKEN', cardinality 0..*) is associated with 'XHTML::A' (role 'XHTML_A243', cardinality 0..*).
+'XHTML::Col' (role 'XHTML_Col', cardinality 0..*) is associated with 'Number' (role 'Number565', cardinality 0..*).
+'Text' (role 'Text531', cardinality 0..*) is associated with 'XHTML::Table' (role 'XHTML_Table530', cardinality 0..*).
+'XHTML::TitleHeadElement' (role 'XHTML_TitleHeadElement90', cardinality 0..*) is associated with 'BaseTitleHeadElement' (role 'BaseTitleHeadElement', cardinality 0..*).
+'XHTML::Noscript' (role 'XHTML_Noscript', cardinality 0..*) is associated with 'Block' (role 'Block', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression28', cardinality 0..*) is associated with 'XHTML::Events' (role 'XHTML_Events27', cardinality 0..*).
+'XHTML::Img' (role 'XHTML_Img368', cardinality 0..*) is associated with 'Length' (role 'Length369', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression40', cardinality 0..*) is associated with 'XHTML::Events' (role 'XHTML_Events39', cardinality 0..*).
+'ContentType' (role 'ContentType321', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object320', cardinality 0..*).
+'XHTML::Textarea' (role 'XHTML_Textarea498', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression499', cardinality 0..*).
+'XHTML::Link' (role 'XHTML_Link', cardinality 0..*) is associated with 'Charset' (role 'Charset135', cardinality 0..*).
+'XHTML::Dt' (role 'XHTML_Dt', cardinality 0..*) is associated with 'Inline' (role 'Inline209', cardinality 0..*).
+'XHTML::Input' (role 'XHTML_Input453', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression454', cardinality 0..*).
+'PCDATA' (role 'PCDATA59', cardinality 0..*) is associated with 'XHTML::PreContent' (role 'XHTML_PreContent', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression410', cardinality 0..*) is associated with 'XHTML::Form' (role 'XHTML_Form409', cardinality 0..*).
+'Inline' (role 'Inline287', cardinality 0..*) is associated with 'XHTML::Acronym' (role 'XHTML_Acronym', cardinality 0..*).
+'MultiLength' (role 'MultiLength568', cardinality 0..*) is associated with 'XHTML::Col' (role 'XHTML_Col567', cardinality 0..*).
+'XHTML::A' (role 'XHTML_A245', cardinality 0..*) is associated with 'URI' (role 'URI246', cardinality 0..*).
+'XHTML::Table' (role 'XHTML_Table533', cardinality 0..*) is associated with 'Length' (role 'Length534', cardinality 0..*).
+'Base' (role 'Base', cardinality 0..*) is associated with 'XHTML::BaseTitleHeadElement' (role 'XHTML_BaseTitleHeadElement', cardinality 0..*).
+'MediaDesc' (role 'MediaDesc', cardinality 0..*) is associated with 'XHTML::Link' (role 'XHTML_Link151', cardinality 0..*).
+'CDATA' (role 'CDATA349', cardinality 0..*) is associated with 'XHTML::Param' (role 'XHTML_Param348', cardinality 0..*).
+'PCDATA' (role 'PCDATA501', cardinality 0..*) is associated with 'XHTML::FieldsetElement' (role 'XHTML_FieldsetElement', cardinality 0..*).
+'ContentType' (role 'ContentType324', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object323', cardinality 0..*).
+'Flow' (role 'Flow211', cardinality 0..*) is associated with 'XHTML::Dd' (role 'XHTML_Dd', cardinality 0..*).
+'ContentTypes' (role 'ContentTypes457', cardinality 0..*) is associated with 'XHTML::Input' (role 'XHTML_Input456', cardinality 0..*).
+'URI' (role 'URI138', cardinality 0..*) is associated with 'XHTML::Link' (role 'XHTML_Link137', cardinality 0..*).
+'ContentTypes' (role 'ContentTypes', cardinality 0..*) is associated with 'XHTML::Form' (role 'XHTML_Form412', cardinality 0..*).
+'PCDATA' (role 'PCDATA61', cardinality 0..*) is associated with 'XHTML::ButtonContent' (role 'XHTML_ButtonContent', cardinality 0..*).
+'Inline' (role 'Inline289', cardinality 0..*) is associated with 'XHTML::Q' (role 'XHTML_Q', cardinality 0..*).
+'LanguageCode' (role 'LanguageCode249', cardinality 0..*) is associated with 'XHTML::A' (role 'XHTML_A248', cardinality 0..*).
+'IDREFS' (role 'IDREFS', cardinality 0..*) is associated with 'XHTML::Th' (role 'XHTML_Th579', cardinality 0..*).
+'XHTML::Events' (role 'XHTML_Events24', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression25', cardinality 0..*).
+'XHTML::Body' (role 'XHTML_Body181', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression182', cardinality 0..*).
+'XHTML::Table' (role 'XHTML_Table538', cardinality 0..*) is associated with 'Length' (role 'Length539', cardinality 0..*).
+'HeadMisc' (role 'HeadMisc94', cardinality 0..*) is associated with 'XHTML::BaseTitleHeadElement' (role 'XHTML_BaseTitleHeadElement93', cardinality 0..*).
+'MapElement' (role 'MapElement', cardinality 0..*) is associated with 'XHTML::MapContent' (role 'XHTML_MapContent', cardinality 0..*).
+'UriList' (role 'UriList', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object326', cardinality 0..*).
+'SelectElement' (role 'SelectElement', cardinality 0..*) is associated with 'XHTML::Select' (role 'XHTML_Select', cardinality 0..*).
+'CDATA' (role 'CDATA487', cardinality 0..*) is associated with 'XHTML::Textarea' (role 'XHTML_Textarea', cardinality 0..*).
+'XHTML::Link' (role 'XHTML_Link140', cardinality 0..*) is associated with 'LanguageCode' (role 'LanguageCode141', cardinality 0..*).
+'XHTML::Address' (role 'XHTML_Address', cardinality 0..*) is associated with 'Inline' (role 'Inline213', cardinality 0..*).
+'Number' (role 'Number582', cardinality 0..*) is associated with 'XHTML::Th' (role 'XHTML_Th581', cardinality 0..*).
+'I18n' (role 'I18n', cardinality 0..*) is associated with 'XHTML::Html' (role 'XHTML_Html', cardinality 0..*).
+'URI' (role 'URI292', cardinality 0..*) is associated with 'XHTML::Q' (role 'XHTML_Q291', cardinality 0..*).
+'LinkTypes' (role 'LinkTypes252', cardinality 0..*) is associated with 'XHTML::A' (role 'XHTML_A251', cardinality 0..*).
+'Charsets' (role 'Charsets', cardinality 0..*) is associated with 'XHTML::Form' (role 'XHTML_Form414', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression34', cardinality 0..*) is associated with 'XHTML::Events' (role 'XHTML_Events33', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression185', cardinality 0..*) is associated with 'XHTML::Body' (role 'XHTML_Body184', cardinality 0..*).
+'Length' (role 'Length542', cardinality 0..*) is associated with 'XHTML::Table' (role 'XHTML_Table541', cardinality 0..*).
+'XHTML::BaseHeadElement' (role 'XHTML_BaseHeadElement', cardinality 0..*) is associated with 'Base' (role 'Base96', cardinality 0..*).
+'MapContent' (role 'MapContent', cardinality 0..*) is associated with 'XHTML::Map' (role 'XHTML_Map', cardinality 0..*).
+'Number' (role 'Number464', cardinality 0..*) is associated with 'XHTML::Select' (role 'XHTML_Select463', cardinality 0..*).
+'Text' (role 'Text329', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object328', cardinality 0..*).
+'Li' (role 'Li', cardinality 0..*) is associated with 'XHTML::Ul' (role 'XHTML_Ul', cardinality 0..*).
+'FieldsetElement' (role 'FieldsetElement', cardinality 0..*) is associated with 'XHTML::Fieldset' (role 'XHTML_Fieldset', cardinality 0..*).
+'XHTML::Th' (role 'XHTML_Th', cardinality 0..*) is associated with 'Flow' (role 'Flow571', cardinality 0..*).
+'XHTML::Html' (role 'XHTML_Html64', cardinality 0..*) is associated with 'ID' (role 'ID65', cardinality 0..*).
+'XHTML::Link' (role 'XHTML_Link143', cardinality 0..*) is associated with 'ContentType' (role 'ContentType144', cardinality 0..*).
+'LinkTypes' (role 'LinkTypes255', cardinality 0..*) is associated with 'XHTML::A' (role 'XHTML_A254', cardinality 0..*).
+'XHTML::Sub' (role 'XHTML_Sub', cardinality 0..*) is associated with 'Inline' (role 'Inline294', cardinality 0..*).
+'IDREF' (role 'IDREF419', cardinality 0..*) is associated with 'XHTML::Label' (role 'XHTML_Label418', cardinality 0..*).
+'XHTML::Body' (role 'body', cardinality 0..*) is associated with 'Html' (role 'Html187', cardinality 0..*).
+'XHTML::ColElement' (role 'XHTML_ColElement', cardinality 0..*) is associated with 'Col' (role 'Col', cardinality 0..*).
+'HeadMisc' (role 'HeadMisc99', cardinality 0..*) is associated with 'XHTML::BaseHeadElement' (role 'XHTML_BaseHeadElement98', cardinality 0..*).
+'URI' (role 'URI372', cardinality 0..*) is associated with 'XHTML::Img' (role 'XHTML_Img371', cardinality 0..*).
+'XHTML::Select' (role 'XHTML_Select466', cardinality 0..*) is associated with 'Number' (role 'Number467', cardinality 0..*).
+'Inline' (role 'Inline504', cardinality 0..*) is associated with 'XHTML::Legend' (role 'XHTML_Legend', cardinality 0..*).
+'Block' (role 'Block216', cardinality 0..*) is associated with 'XHTML::Blockquote' (role 'XHTML_Blockquote', cardinality 0..*).
+'Length' (role 'Length332', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object331', cardinality 0..*).
+'URI' (role 'URI68', cardinality 0..*) is associated with 'XHTML::Html' (role 'XHTML_Html67', cardinality 0..*).
+'LinkTypes' (role 'LinkTypes', cardinality 0..*) is associated with 'XHTML::Link' (role 'XHTML_Link146', cardinality 0..*).
+'XHTML::A' (role 'XHTML_A257', cardinality 0..*) is associated with 'Coords' (role 'Coords', cardinality 0..*).
+'Inline' (role 'Inline275', cardinality 0..*) is associated with 'XHTML::Code' (role 'XHTML_Code', cardinality 0..*).
+'XHTML::Th' (role 'XHTML_Th573', cardinality 0..*) is associated with 'Text' (role 'Text574', cardinality 0..*).
+'Character' (role 'Character422', cardinality 0..*) is associated with 'XHTML::Label' (role 'XHTML_Label421', cardinality 0..*).
+'Flow' (role 'Flow', cardinality 0..*) is associated with 'XHTML::Div' (role 'XHTML_Div', cardinality 0..*).
+'XHTML::BaseHeadElement' (role 'XHTML_BaseHeadElement101', cardinality 0..*) is associated with 'TitleBaseHeadElement' (role 'TitleBaseHeadElement', cardinality 0..*).
+'XHTML::Map' (role 'XHTML_Map382', cardinality 0..*) is associated with 'StyleSheet' (role 'StyleSheet383', cardinality 0..*).
+'XHTML::ColElement' (role 'XHTML_ColElement545', cardinality 0..*) is associated with 'Colgroup' (role 'Colgroup', cardinality 0..*).
+'Character' (role 'Character', cardinality 0..*) is associated with 'XHTML::Focus' (role 'XHTML_Focus', cardinality 0..*).
+'XHTML::Events' (role 'XHTML_Events36', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression37', cardinality 0..*).
+'URI' (role 'URI219', cardinality 0..*) is associated with 'XHTML::Blockquote' (role 'XHTML_Blockquote218', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression470', cardinality 0..*) is associated with 'XHTML::Select' (role 'XHTML_Select469', cardinality 0..*).
+'Length' (role 'Length335', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object334', cardinality 0..*).
+'Head' (role 'Head', cardinality 0..*) is associated with 'XHTML::Html' (role 'html', cardinality 0..*).
+'LinkTypes' (role 'LinkTypes149', cardinality 0..*) is associated with 'XHTML::Link' (role 'XHTML_Link148', cardinality 0..*).
+'Inline' (role 'Inline259', cardinality 0..*) is associated with 'XHTML::Span' (role 'XHTML_Span', cardinality 0..*).
+'Inline' (role 'Inline298', cardinality 0..*) is associated with 'XHTML::Tt' (role 'XHTML_Tt', cardinality 0..*).
+'Character' (role 'Character507', cardinality 0..*) is associated with 'XHTML::Legend' (role 'XHTML_Legend506', cardinality 0..*).
+'CDATA' (role 'CDATA577', cardinality 0..*) is associated with 'XHTML::Th' (role 'XHTML_Th576', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression425', cardinality 0..*) is associated with 'XHTML::Label' (role 'XHTML_Label424', cardinality 0..*).
+'XHTML::I18n' (role 'XHTML_I18n14', cardinality 0..*) is associated with 'LanguageCode' (role 'LanguageCode15', cardinality 0..*).
+'Inline' (role 'Inline', cardinality 0..*) is associated with 'XHTML::P' (role 'XHTML_P', cardinality 0..*).
+'Title' (role 'Title103', cardinality 0..*) is associated with 'XHTML::TitleBaseHeadElement' (role 'XHTML_TitleBaseHeadElement', cardinality 0..*).
+'Text' (role 'Text386', cardinality 0..*) is associated with 'XHTML::Map' (role 'XHTML_Map385', cardinality 0..*).
+'Tbody' (role 'Tbody', cardinality 0..*) is associated with 'XHTML::TableElement' (role 'XHTML_TableElement', cardinality 0..*).
+'XHTML::Ins' (role 'XHTML_Ins', cardinality 0..*) is associated with 'Flow' (role 'Flow221', cardinality 0..*).
+'ButtonContent' (role 'ButtonContent', cardinality 0..*) is associated with 'XHTML::Button' (role 'XHTML_Button', cardinality 0..*).
+'ID' (role 'ID116', cardinality 0..*) is associated with 'XHTML::Base' (role 'XHTML_Base115', cardinality 0..*).
+'Body' (role 'Body', cardinality 0..*) is associated with 'XHTML::Html' (role 'html71', cardinality 0..*).
+'Inline' (role 'Inline261', cardinality 0..*) is associated with 'XHTML::Bdo' (role 'XHTML_Bdo', cardinality 0..*).
+'Inline' (role 'Inline300', cardinality 0..*) is associated with 'XHTML::I' (role 'XHTML_I', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression473', cardinality 0..*) is associated with 'XHTML::Select' (role 'XHTML_Select472', cardinality 0..*).
+'XHTML::Object' (role 'XHTML_Object337', cardinality 0..*) is associated with 'URI' (role 'URI338', cardinality 0..*).
+'TrElement' (role 'TrElement', cardinality 0..*) is associated with 'XHTML::Tr' (role 'XHTML_Tr', cardinality 0..*).
+'XHTML::Events' (role 'XHTML_Events18', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression19', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression428', cardinality 0..*) is associated with 'XHTML::Label' (role 'XHTML_Label427', cardinality 0..*).
+'XHTML::H1' (role 'XHTML_H1', cardinality 0..*) is associated with 'Inline' (role 'Inline191', cardinality 0..*).
+'HeadMisc' (role 'HeadMisc106', cardinality 0..*) is associated with 'XHTML::TitleBaseHeadElement' (role 'XHTML_TitleBaseHeadElement105', cardinality 0..*).
+'NMTOKEN' (role 'NMTOKEN389', cardinality 0..*) is associated with 'XHTML::Map' (role 'XHTML_Map388', cardinality 0..*).
+'Tr' (role 'Tr', cardinality 0..*) is associated with 'XHTML::TableElement' (role 'XHTML_TableElement548', cardinality 0..*).
+'URI' (role 'URI224', cardinality 0..*) is associated with 'XHTML::Ins' (role 'XHTML_Ins223', cardinality 0..*).
+'Number' (role 'Number493', cardinality 0..*) is associated with 'XHTML::Textarea' (role 'XHTML_Textarea492', cardinality 0..*).
+'XHTML::Button' (role 'XHTML_Button513', cardinality 0..*) is associated with 'CDATA' (role 'CDATA514', cardinality 0..*).
+'XHTML::Style' (role 'XHTML_Style', cardinality 0..*) is associated with 'I18n' (role 'I18n153', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression', cardinality 0..*) is associated with 'XHTML::Events' (role 'XHTML_Events', cardinality 0..*).
+'XHTML::Head' (role 'XHTML_Head', cardinality 0..*) is associated with 'I18n' (role 'I18n73', cardinality 0..*).
+'LanguageCode' (role 'LanguageCode264', cardinality 0..*) is associated with 'XHTML::Bdo' (role 'XHTML_Bdo263', cardinality 0..*).
+'Inline' (role 'Inline302', cardinality 0..*) is associated with 'XHTML::B' (role 'XHTML_B', cardinality 0..*).
+'NMTOKEN' (role 'NMTOKEN341', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object340', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression476', cardinality 0..*) is associated with 'XHTML::Select' (role 'XHTML_Select475', cardinality 0..*).
+'Number' (role 'Number585', cardinality 0..*) is associated with 'XHTML::Th' (role 'XHTML_Th584', cardinality 0..*).
+'Inline' (role 'Inline416', cardinality 0..*) is associated with 'XHTML::Label' (role 'XHTML_Label', cardinality 0..*).
+'Inline' (role 'Inline193', cardinality 0..*) is associated with 'XHTML::H2' (role 'XHTML_H2', cardinality 0..*).
+'Coords' (role 'Coords391', cardinality 0..*) is associated with 'XHTML::Area' (role 'XHTML_Area', cardinality 0..*).
+'Pixels' (role 'Pixels', cardinality 0..*) is associated with 'XHTML::Table' (role 'XHTML_Table536', cardinality 0..*).
+'I18n' (role 'I18n108', cardinality 0..*) is associated with 'XHTML::Title' (role 'XHTML_Title', cardinality 0..*).
+'Datetime' (role 'Datetime', cardinality 0..*) is associated with 'XHTML::Ins' (role 'XHTML_Ins226', cardinality 0..*).
+'CDATA' (role 'CDATA511', cardinality 0..*) is associated with 'XHTML::Button' (role 'XHTML_Button510', cardinality 0..*).
+'ID' (role 'ID156', cardinality 0..*) is associated with 'XHTML::Style' (role 'XHTML_Style155', cardinality 0..*).
+'XHTML::Bdo' (role 'XHTML_Bdo266', cardinality 0..*) is associated with 'LanguageCode' (role 'LanguageCode267', cardinality 0..*).
+'XHTML::CoreAttrs' (role 'XHTML_CoreAttrs9', cardinality 0..*) is associated with 'StyleSheet' (role 'StyleSheet', cardinality 0..*).
+'CDATA' (role 'CDATA461', cardinality 0..*) is associated with 'XHTML::Select' (role 'XHTML_Select460', cardinality 0..*).
+'Flow' (role 'Flow587', cardinality 0..*) is associated with 'XHTML::Td' (role 'XHTML_Td', cardinality 0..*).
+'XHTML::Big' (role 'XHTML_Big', cardinality 0..*) is associated with 'Inline' (role 'Inline304', cardinality 0..*).
+'Number' (role 'Number344', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object343', cardinality 0..*).
+'XHTML::Head' (role 'XHTML_Head75', cardinality 0..*) is associated with 'ID' (role 'ID76', cardinality 0..*).
+'Inline' (role 'Inline195', cardinality 0..*) is associated with 'XHTML::H3' (role 'XHTML_H3', cardinality 0..*).
+'CDATA' (role 'CDATA430', cardinality 0..*) is associated with 'XHTML::Input' (role 'XHTML_Input', cardinality 0..*).
+'XHTML::Area' (role 'XHTML_Area393', cardinality 0..*) is associated with 'URI' (role 'URI394', cardinality 0..*).
+'XHTML::Caption' (role 'XHTML_Caption', cardinality 0..*) is associated with 'Inline' (role 'Inline550', cardinality 0..*).
+'XHTML::Focus' (role 'XHTML_Focus46', cardinality 0..*) is associated with 'Number' (role 'Number', cardinality 0..*).
+'ID' (role 'ID111', cardinality 0..*) is associated with 'XHTML::Title' (role 'XHTML_Title110', cardinality 0..*).
+'Flow' (role 'Flow228', cardinality 0..*) is associated with 'XHTML::Del' (role 'XHTML_Del', cardinality 0..*).
+'Character' (role 'Character516', cardinality 0..*) is associated with 'XHTML::Cellhalign' (role 'XHTML_Cellhalign', cardinality 0..*).
+'ContentType' (role 'ContentType159', cardinality 0..*) is associated with 'XHTML::Style' (role 'XHTML_Style158', cardinality 0..*).
+'Inline' (role 'Inline269', cardinality 0..*) is associated with 'XHTML::Em' (role 'XHTML_Em', cardinality 0..*).
+'IDREFS' (role 'IDREFS596', cardinality 0..*) is associated with 'XHTML::Td' (role 'XHTML_Td595', cardinality 0..*).
+'Inline' (role 'Inline306', cardinality 0..*) is associated with 'XHTML::Small' (role 'XHTML_Small', cardinality 0..*).
+'Option' (role 'Option', cardinality 0..*) is associated with 'XHTML::Optgroup' (role 'XHTML_Optgroup', cardinality 0..*).
+'ID' (role 'ID346', cardinality 0..*) is associated with 'XHTML::Param' (role 'XHTML_Param', cardinality 0..*).
+'URI' (role 'URI79', cardinality 0..*) is associated with 'XHTML::Head' (role 'XHTML_Head78', cardinality 0..*).
+'ScriptExpression' (role 'ScriptExpression52', cardinality 0..*) is associated with 'XHTML::Focus' (role 'XHTML_Focus51', cardinality 0..*).
+'Inline' (role 'Inline197', cardinality 0..*) is associated with 'XHTML::H4' (role 'XHTML_H4', cardinality 0..*).
+'XHTML::Input' (role 'XHTML_Input432', cardinality 0..*) is associated with 'CDATA' (role 'CDATA433', cardinality 0..*).
+'ContentType' (role 'ContentType', cardinality 0..*) is associated with 'XHTML::ContentTypes' (role 'XHTML_ContentTypes', cardinality 0..*).
+'Tr' (role 'Tr552', cardinality 0..*) is associated with 'XHTML::Thead' (role 'XHTML_Thead', cardinality 0..*).
+'XHTML::Base' (role 'XHTML_Base', cardinality 0..*) is associated with 'URI' (role 'URI113', cardinality 0..*).
+'XHTML::Focus' (role 'XHTML_Focus48', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression49', cardinality 0..*).
+'Text' (role 'Text397', cardinality 0..*) is associated with 'XHTML::Area' (role 'XHTML_Area396', cardinality 0..*).
+'XHTML::Del' (role 'XHTML_Del230', cardinality 0..*) is associated with 'URI' (role 'URI231', cardinality 0..*).
+'MediaDesc' (role 'MediaDesc162', cardinality 0..*) is associated with 'XHTML::Style' (role 'XHTML_Style161', cardinality 0..*).
+'Inline' (role 'Inline271', cardinality 0..*) is associated with 'XHTML::Strong' (role 'XHTML_Strong', cardinality 0..*).
+'XHTML::Cellhalign' (role 'XHTML_Cellhalign518', cardinality 0..*) is associated with 'Length' (role 'Length519', cardinality 0..*).
+'XHTML::Td' (role 'XHTML_Td589', cardinality 0..*) is associated with 'Text' (role 'Text590', cardinality 0..*).
+'Charset' (role 'Charset', cardinality 0..*) is associated with 'XHTML::Charsets' (role 'XHTML_Charsets', cardinality 0..*).
+'XHTML::Optgroup' (role 'XHTML_Optgroup479', cardinality 0..*) is associated with 'Text' (role 'Text480', cardinality 0..*).
+'XHTML::ObjectElement' (role 'XHTML_ObjectElement', cardinality 0..*) is associated with 'PCDATA' (role 'PCDATA308', cardinality 0..*).
+'CDATA' (role 'CDATA352', cardinality 0..*) is associated with 'XHTML::Param' (role 'XHTML_Param351', cardinality 0..*).
+'HeadMisc' (role 'HeadMisc', cardinality 0..*) is associated with 'XHTML::Head' (role 'XHTML_Head81', cardinality 0..*).
+'Text' (role 'Text', cardinality 0..*) is associated with 'XHTML::CoreAttrs' (role 'XHTML_CoreAttrs11', cardinality 0..*).
+'Inline' (role 'Inline199', cardinality 0..*) is associated with 'XHTML::H5' (role 'XHTML_H5', cardinality 0..*).
+'CDATA' (role 'CDATA436', cardinality 0..*) is associated with 'XHTML::Input' (role 'XHTML_Input435', cardinality 0..*).
+'XHTML::Tfoot' (role 'XHTML_Tfoot', cardinality 0..*) is associated with 'Tr' (role 'Tr554', cardinality 0..*).
+'I18n' (role 'I18n118', cardinality 0..*) is associated with 'XHTML::Meta' (role 'XHTML_Meta', cardinality 0..*).
+'XHTML::UriList' (role 'XHTML_UriList', cardinality 0..*) is associated with 'URI' (role 'URI', cardinality 0..*).
+'ID' (role 'ID377', cardinality 0..*) is associated with 'XHTML::Map' (role 'XHTML_Map376', cardinality 0..*).
+'Datetime' (role 'Datetime234', cardinality 0..*) is associated with 'XHTML::Del' (role 'XHTML_Del233', cardinality 0..*).
+'XHTML::Style' (role 'XHTML_Style164', cardinality 0..*) is associated with 'Text' (role 'Text165', cardinality 0..*).
+'Inline' (role 'Inline273', cardinality 0..*) is associated with 'XHTML::Dfn' (role 'XHTML_Dfn', cardinality 0..*).
+'LanguageCode' (role 'LanguageCode', cardinality 0..*) is associated with 'XHTML::I18n' (role 'XHTML_I18n', cardinality 0..*).
+'Caption' (role 'Caption', cardinality 0..*) is associated with 'XHTML::Table' (role 'XHTML_Table', cardinality 0..*).
+'Number' (role 'Number599', cardinality 0..*) is associated with 'XHTML::Td' (role 'XHTML_Td598', cardinality 0..*).
+'Text' (role 'Text482', cardinality 0..*) is associated with 'XHTML::Option' (role 'XHTML_Option', cardinality 0..*).
+'ContentType' (role 'ContentType355', cardinality 0..*) is associated with 'XHTML::Param' (role 'XHTML_Param354', cardinality 0..*).
+'XHTML::Object' (role 'XHTML_Object', cardinality 0..*) is associated with 'ObjectElement' (role 'ObjectElement', cardinality 0..*).
+'XHTML::Head' (role 'XHTML_Head83', cardinality 0..*) is associated with 'HeadElement' (role 'HeadElement', cardinality 0..*).
+'Inline' (role 'Inline201', cardinality 0..*) is associated with 'XHTML::H6' (role 'XHTML_H6', cardinality 0..*).
+'XHTML::IDREFS' (role 'XHTML_IDREFS', cardinality 0..*) is associated with 'IDREF' (role 'IDREF', cardinality 0..*).
+'XHTML::Events' (role 'XHTML_Events21', cardinality 0..*) is associated with 'ScriptExpression' (role 'ScriptExpression22', cardinality 0..*).
+'XHTML::Meta' (role 'XHTML_Meta120', cardinality 0..*) is associated with 'ID' (role 'ID121', cardinality 0..*).
+'XHTML::Map' (role 'XHTML_Map379', cardinality 0..*) is associated with 'CDATA' (role 'CDATA380', cardinality 0..*).
+'PreContent' (role 'PreContent', cardinality 0..*) is associated with 'XHTML::Pre' (role 'XHTML_Pre', cardinality 0..*).
+'XHTML::Input' (role 'XHTML_Input438', cardinality 0..*) is associated with 'Number' (role 'Number439', cardinality 0..*).
+'XHTML::Tbody' (role 'XHTML_Tbody', cardinality 0..*) is associated with 'Tr' (role 'Tr556', cardinality 0..*).
+'ID' (role 'ID167', cardinality 0..*) is associated with 'XHTML::Script' (role 'XHTML_Script', cardinality 0..*).
+'XHTML::Samp' (role 'XHTML_Samp', cardinality 0..*) is associated with 'Inline' (role 'Inline277', cardinality 0..*).
+'CDATA' (role 'CDATA593', cardinality 0..*) is associated with 'XHTML::Td' (role 'XHTML_Td592', cardinality 0..*).
+'XHTML::Table' (role 'XHTML_Table522', cardinality 0..*) is associated with 'ColElement' (role 'ColElement', cardinality 0..*).
+'XHTML::CoreAttrs' (role 'XHTML_CoreAttrs7', cardinality 0..*) is associated with 'CDATA' (role 'CDATA', cardinality 0..*).
+'XHTML::Option' (role 'XHTML_Option484', cardinality 0..*) is associated with 'CDATA' (role 'CDATA485', cardinality 0..*).
+'URI' (role 'URI357', cardinality 0..*) is associated with 'XHTML::Img' (role 'XHTML_Img', cardinality 0..*).
+'Inline' (role 'Inline296', cardinality 0..*) is associated with 'XHTML::Sup' (role 'XHTML_Sup', cardinality 0..*).
+'XHTML::Coords' (role 'XHTML_Coords', cardinality 0..*) is associated with 'Length' (role 'Length', cardinality 0..*).
+'XHTML::Head' (role 'head', cardinality 0..*) is associated with 'Html' (role 'Html', cardinality 0..*).
+'Block' (role 'Block179', cardinality 0..*) is associated with 'XHTML::Body' (role 'XHTML_Body', cardinality 0..*).
+'CDATA' (role 'CDATA124', cardinality 0..*) is associated with 'XHTML::Meta' (role 'XHTML_Meta123', cardinality 0..*).
+'FormContent' (role 'FormContent', cardinality 0..*) is associated with 'XHTML::Form' (role 'XHTML_Form', cardinality 0..*).
+'URI' (role 'URI442', cardinality 0..*) is associated with 'XHTML::Input' (role 'XHTML_Input441', cardinality 0..*).
+'Col' (role 'Col558', cardinality 0..*) is associated with 'XHTML::Colgroup' (role 'XHTML_Colgroup', cardinality 0..*).
+'AContent' (role 'AContent', cardinality 0..*) is associated with 'XHTML::A' (role 'XHTML_A', cardinality 0..*).
+'PCDATA' (role 'PCDATA', cardinality 0..*) is associated with 'XHTML::Inline' (role 'XHTML_Inline', cardinality 0..*).
+'Charset' (role 'Charset170', cardinality 0..*) is associated with 'XHTML::Script' (role 'XHTML_Script169', cardinality 0..*).
+'Inline' (role 'Inline279', cardinality 0..*) is associated with 'XHTML::Kbd' (role 'XHTML_Kbd', cardinality 0..*).
+'Number' (role 'Number602', cardinality 0..*) is associated with 'XHTML::Td' (role 'XHTML_Td601', cardinality 0..*).
+'Thead' (role 'Thead', cardinality 0..*) is associated with 'XHTML::Table' (role 'XHTML_Table524', cardinality 0..*).
+'XHTML::Flow' (role 'XHTML_Flow', cardinality 0..*) is associated with 'PCDATA' (role 'PCDATA55', cardinality 0..*).
+'XHTML::Img' (role 'XHTML_Img359', cardinality 0..*) is associated with 'Text' (role 'Text360', cardinality 0..*).
+'XHTML::Textarea' (role 'XHTML_Textarea489', cardinality 0..*) is associated with 'Number' (role 'Number490', cardinality 0..*).
+'XHTML::Object' (role 'XHTML_Object311', cardinality 0..*) is associated with 'URI' (role 'URI312', cardinality 0..*).
+'XHTML::Ol' (role 'XHTML_Ol', cardinality 0..*) is associated with 'Li' (role 'Li204', cardinality 0..*).
+'Title' (role 'Title', cardinality 0..*) is associated with 'XHTML::TitleHeadElement' (role 'XHTML_TitleHeadElement', cardinality 0..*).
+'CDATA' (role 'CDATA127', cardinality 0..*) is associated with 'XHTML::Meta' (role 'XHTML_Meta126', cardinality 0..*).
+'URI' (role 'URI401', cardinality 0..*) is associated with 'XHTML::Form' (role 'XHTML_Form400', cardinality 0..*).
+'Number' (role 'Number561', cardinality 0..*) is associated with 'XHTML::Colgroup' (role 'XHTML_Colgroup560', cardinality 0..*).
+'XHTML::Input' (role 'XHTML_Input444', cardinality 0..*) is associated with 'CDATA' (role 'CDATA445', cardinality 0..*).
+'Charset' (role 'Charset238', cardinality 0..*) is associated with 'XHTML::A' (role 'XHTML_A237', cardinality 0..*).
+'Inline' (role 'Inline281', cardinality 0..*) is associated with 'XHTML::Var' (role 'XHTML_Var', cardinality 0..*).
+'XHTML::Script' (role 'XHTML_Script172', cardinality 0..*) is associated with 'ContentType' (role 'ContentType173', cardinality 0..*).
+'Tfoot' (role 'Tfoot', cardinality 0..*) is associated with 'XHTML::Table' (role 'XHTML_Table526', cardinality 0..*).
+'XHTML::CoreAttrs' (role 'XHTML_CoreAttrs', cardinality 0..*) is associated with 'ID' (role 'ID', cardinality 0..*).
+'XHTML::Img' (role 'XHTML_Img362', cardinality 0..*) is associated with 'URI' (role 'URI363', cardinality 0..*).
+'URI' (role 'URI315', cardinality 0..*) is associated with 'XHTML::Object' (role 'XHTML_Object314', cardinality 0..*).

@@ -1,0 +1,29 @@
+The model has 13 class(es).
+The class 'ColumnFamily' has no attributes.
+The class 'nosql::MapType' has the following attributes: 'keyType' of type str; 'baseType' of type str.
+The class 'nosql::Column' has the following attributes: 'name' of type str.
+The class 'nosql::CollectionType' has the following attributes: 'keyType' of type str; 'kind' of type str.
+The class 'Type' has no attributes.
+The class 'nosql::ColumnFamily' has the following attributes: 'name' of type str.
+The class 'nosql::KeySpace' has the following attributes: 'replicaPlacementStrategy' of type str; 'name' of type str; 'replicationFactor' of type str.
+The class 'DataStructureType' has no attributes.
+The class 'nosql::PrimitiveType' has the following attributes: 'kind' of type str.
+The class 'nosql::DynamicColumnFamily' has no attributes.
+The class 'nosql::StaticColumnFamily' has no attributes.
+The class 'nosql::DataStructureType' has no attributes.
+The class 'nosql::Type' has no attributes.
+The enumeration 'ReplicaPlacementStrategies' has the following literals: 'OldNetworkTopologyStrategy', 'NetworkTopologyStrategy', 'SimpleStrategy'.
+The enumeration 'CollectionTypeType' has the following literals: 'set', 'list'.
+The enumeration 'PrimitiveTypeType' has the following literals: 'boolean', 'timestamp', 'float', 'inet', 'counter', 'varint', 'bigint', 'blob', 'varchar', 'double', 'uuid', 'timeuuid', 'int', 'text', 'decimal', 'ascii'.
+'nosql::CollectionType' is a specialization of 'DataStructureType'.
+'nosql::StaticColumnFamily' is a specialization of 'ColumnFamily'.
+'nosql::DynamicColumnFamily' is a specialization of 'ColumnFamily'.
+'nosql::DataStructureType' is a specialization of 'Type'.
+'nosql::MapType' is a specialization of 'DataStructureType'.
+'nosql::PrimitiveType' is a specialization of 'Type'.
+'nosql::Column' (role 'nosql_Column12', cardinality 0..*) is associated with 'nosql::DynamicColumnFamily' (role 'nosql_DynamicColumnFamily', cardinality 0..*).
+'nosql::Type' (role 'nosql_Type', cardinality 0..*) is associated with 'nosql::Column' (role 'nosql_Column10', cardinality 0..*).
+'nosql::ColumnFamily' (role 'nosql_ColumnFamily5', cardinality 0..*) is associated with 'nosql::Column' (role 'nosql_Column', cardinality 0..*).
+'nosql::ColumnFamily' (role 'nosql_ColumnFamily7', cardinality 0..*) is associated with 'nosql::Column' (role 'nosql_Column8', cardinality 0..*).
+'nosql::ColumnFamily' (role 'nosql_ColumnFamily', cardinality 0..*) is associated with 'nosql::KeySpace' (role 'nosql_KeySpace', cardinality 0..*).
+'nosql::KeySpace' (role 'nosql_KeySpace3', cardinality 0..*) is associated with 'nosql::ColumnFamily' (role 'nosql_ColumnFamily2', cardinality 0..*).

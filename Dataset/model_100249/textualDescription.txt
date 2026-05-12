@@ -1,0 +1,51 @@
+The model has 20 class(es).
+The class 'styles::GradientColorArea' has the following attributes: 'offset' of type float.
+The class 'ColorWithTransparency' has no attributes.
+The class 'styles::Gradient' has no attributes.
+The class 'styles::GradientRef' has no attributes.
+The class 'styles::Color' has no attributes.
+The class 'styles::StyleContainer' has no attributes.
+The class 'styles::Transparent' has the following attributes: 'transparent' of type bool.
+The class 'styles::Style' has no attributes.
+The class 'styles::StyleContainerElement' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'styles::HighlightingValues' has no attributes.
+The class 'styles::ColorWithTransparency' has no attributes.
+The class 'styles::ColorConstantRef' has the following attributes: 'value' of type str.
+The class 'styles::JvmTypeReference' has no attributes.
+The class 'styles::RGBColor' has the following attributes: 'red' of type int; 'green' of type int; 'blue' of type int.
+The class 'styles::GradientLayout' has no attributes.
+The class 'styles::StyleLayout' has the following attributes: 'fontBold' of type str; 'fontItalic' of type str; 'transparency' of type float; 'lineWidth' of type int; 'gradient_orientation' of type str; 'fontName' of type str; 'lineStyle' of type str; 'fontSize' of type int.
+The class 'StyleContainerElement' has no attributes.
+The class 'styles::ColorOrGradient' has no attributes.
+The class 'ColorOrGradient' has no attributes.
+The class 'Color' has no attributes.
+The enumeration 'LineStyle' has the following literals: 'DASHDOT', 'NULL', 'DOT', 'DASH', 'DASHDOTDOT', 'SOLID'.
+The enumeration 'YesNoBool' has the following literals: 'NULL', 'YES', 'NO'.
+The enumeration 'ColorConstants' has the following literals: 'LIGHT_LIGHT_GRAY', 'DARK_ORANGE', 'GRAY', 'DARK_BLUE', 'DARK_GRAY', 'NULL', 'DARK_GREEN', 'LIGHT_GREEN', 'GREEN', 'YELLOW', 'BLACK', 'BLUE', 'LIGHT_BLUE', 'CYAN', 'LIGHT_ORANGE', 'ORANGE', 'WHITE', 'LIGHT_GRAY', 'RED'.
+The enumeration 'GradientAllignment' has the following literals: 'VERTICAL', 'NULL', 'HORIZONTAL'.
+'styles::Style' is a specialization of 'StyleContainerElement'.
+'styles::RGBColor' is a specialization of 'Color'.
+'styles::Transparent' is a specialization of 'ColorWithTransparency'.
+'styles::Transparent' is a specialization of 'ColorOrGradient'.
+'styles::Color' is a specialization of 'ColorWithTransparency'.
+'styles::Gradient' is a specialization of 'StyleContainerElement'.
+'styles::Color' is a specialization of 'ColorOrGradient'.
+'styles::ColorConstantRef' is a specialization of 'Color'.
+'styles::GradientRef' is a specialization of 'ColorOrGradient'.
+'styles::GradientColorArea' (role 'styles_GradientColorArea31', cardinality 0..*) is associated with 'styles::Color' (role 'styles_Color32', cardinality 0..*).
+'styles::GradientLayout' (role 'styles_GradientLayout', cardinality 0..*) is associated with 'styles::Gradient' (role 'styles_Gradient', cardinality 0..*).
+'styles::JvmTypeReference' (role 'styles_JvmTypeReference', cardinality 0..*) is associated with 'styles::Style' (role 'styles_Style', cardinality 0..*).
+'styles::HighlightingValues' (role 'styles_HighlightingValues', cardinality 0..*) is associated with 'styles::StyleLayout' (role 'styles_StyleLayout11', cardinality 0..*).
+'styles::HighlightingValues' (role 'styles_HighlightingValues19', cardinality 0..*) is associated with 'styles::ColorOrGradient' (role 'styles_ColorOrGradient20', cardinality 0..*).
+'styles::StyleLayout' (role 'styles_StyleLayout9', cardinality 0..*) is associated with 'styles::ColorOrGradient' (role 'styles_ColorOrGradient', cardinality 0..*).
+'styles::StyleLayout' (role 'styles_StyleLayout13', cardinality 0..*) is associated with 'styles::ColorWithTransparency' (role 'styles_ColorWithTransparency', cardinality 0..*).
+'styles::StyleContainerElement' (role 'styles_StyleContainerElement', cardinality 0..*) is associated with 'styles::StyleContainer' (role 'styles_StyleContainer', cardinality 0..*).
+'styles::Style' (role 'styles_Style2', cardinality 0..*) is associated with 'styles::Style' (role 'styles_Style4', cardinality 0..*).
+'styles::GradientColorArea' (role 'styles_GradientColorArea', cardinality 0..*) is associated with 'styles::GradientLayout' (role 'styles_GradientLayout17', cardinality 0..*).
+'styles::Style' (role 'styles_Style6', cardinality 0..*) is associated with 'styles::StyleLayout' (role 'styles_StyleLayout', cardinality 0..*).
+'styles::GradientRef' (role 'styles_GradientRef', cardinality 0..*) is associated with 'styles::JvmTypeReference' (role 'styles_JvmTypeReference34', cardinality 0..*).
+'styles::Gradient' (role 'styles_Gradient37', cardinality 0..*) is associated with 'styles::GradientRef' (role 'styles_GradientRef36', cardinality 0..*).
+'styles::ColorOrGradient' (role 'styles_ColorOrGradient26', cardinality 0..*) is associated with 'styles::HighlightingValues' (role 'styles_HighlightingValues25', cardinality 0..*).
+'styles::ColorOrGradient' (role 'styles_ColorOrGradient29', cardinality 0..*) is associated with 'styles::HighlightingValues' (role 'styles_HighlightingValues28', cardinality 0..*).
+'styles::ColorOrGradient' (role 'styles_ColorOrGradient23', cardinality 0..*) is associated with 'styles::HighlightingValues' (role 'styles_HighlightingValues22', cardinality 0..*).
+'styles::Color' (role 'styles_Color', cardinality 0..*) is associated with 'styles::StyleLayout' (role 'styles_StyleLayout15', cardinality 0..*).

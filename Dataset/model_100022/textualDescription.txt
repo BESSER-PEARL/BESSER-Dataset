@@ -1,0 +1,20 @@
+The model has 10 class(es).
+The class 'BibText::BibTextFile' has no attributes.
+The class 'BibText::Article' has no attributes.
+The class 'BibText::Attribute' has the following attributes: 'value' of type str.
+The class 'BibTextEntry' has no attributes.
+The class 'BibText::Year' has no attributes.
+The class 'BibText::Author' has the following attributes: 'name' of type str.
+The class 'BibText::BibTextEntry' has the following attributes: 'key' of type str.
+The class 'Attribute' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'BibText::LocatedElement' has the following attributes: 'location' of type str.
+'BibText::Article' is a specialization of 'BibTextEntry'.
+'BibText::Attribute' is a specialization of 'LocatedElement'.
+'BibText::Year' is a specialization of 'Attribute'.
+'BibText::Author' is a specialization of 'BibTextEntry'.
+'BibText::BibTextEntry' is a specialization of 'LocatedElement'.
+'BibText::Article' (role 'articles', cardinality 0..*) is associated with 'BibText::BibTextEntry' (role 'Author', cardinality 0..*).
+'BibText::BibTextEntry' (role 'BibText_BibTextEntry2', cardinality 0..*) is associated with 'BibText::Attribute' (role 'BibText_Attribute', cardinality 0..*).
+'BibText::BibTextEntry' (role 'BibText_BibTextEntry', cardinality 0..*) is associated with 'BibText::BibTextFile' (role 'BibText_BibTextFile', cardinality 0..*).
+'BibText::Article' (role 'Article', cardinality 0..*) is associated with 'BibText::Author' (role 'author', cardinality 0..*).

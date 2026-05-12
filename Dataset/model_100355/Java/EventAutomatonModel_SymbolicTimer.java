@@ -1,0 +1,67 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class EventAutomatonModel_SymbolicTimer  {
+
+    private String name;
+
+
+
+
+
+    private EventAutomatonModel_SymbolicTimeoutEvent eventautomatonmodel_symbolictimeoutevent;
+
+
+
+
+    private EventAutomatonModel_SymbolicTimeoutEvent eventautomatonmodel_symbolictimeoutevent;
+
+
+
+
+    private EventAutomatonModel_Automaton eventautomatonmodel_automaton;
+
+
+    public EventAutomatonModel_SymbolicTimer(
+        String name    ) {
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public EventAutomatonModel_SymbolicTimeoutEvent getEventautomatonmodel_symbolictimeoutevent() {
+        return eventautomatonmodel_symbolictimeoutevent;
+    }
+
+    public void setEventautomatonmodel_symbolictimeoutevent(EventAutomatonModel_SymbolicTimeoutEvent eventautomatonmodel_symbolictimeoutevent) {
+        this.eventautomatonmodel_symbolictimeoutevent = eventautomatonmodel_symbolictimeoutevent;
+    }
+    public EventAutomatonModel_SymbolicTimeoutEvent getEventautomatonmodel_symbolictimeoutevent() {
+        return eventautomatonmodel_symbolictimeoutevent;
+    }
+
+    public void setEventautomatonmodel_symbolictimeoutevent(EventAutomatonModel_SymbolicTimeoutEvent eventautomatonmodel_symbolictimeoutevent) {
+        this.eventautomatonmodel_symbolictimeoutevent = eventautomatonmodel_symbolictimeoutevent;
+    }
+    public EventAutomatonModel_Automaton getEventautomatonmodel_automaton() {
+        return eventautomatonmodel_automaton;
+    }
+
+    public void setEventautomatonmodel_automaton(EventAutomatonModel_Automaton eventautomatonmodel_automaton) {
+        this.eventautomatonmodel_automaton = eventautomatonmodel_automaton;
+    }
+
+}

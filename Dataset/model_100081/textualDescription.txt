@@ -1,0 +1,51 @@
+The model has 22 class(es).
+The class 'driver::DriverInfo' has no attributes.
+The class 'driver::Transfer' has the following attributes: 'move' of type str; 'pCPath' of type str; 'symbianPath' of type str.
+The class 'driver::ExecuteOnPC' has the following attributes: 'group' of type str.
+The class 'driver::TestCasesList' has the following attributes: 'operator' of type str.
+The class 'driver::Driver' has no attributes.
+The class 'driver::CmdSymbian' has the following attributes: 'output' of type str; 'argument' of type str; 'sync' of type str; 'statCommand' of type str.
+The class 'driver::CmdPC' has the following attributes: 'value' of type str; 'sync' of type str; 'uRI' of type str; 'phase' of type str.
+The class 'driver::ExecuteOnSymbian' has the following attributes: 'group' of type str.
+The class 'driver::StartTrace' has the following attributes: 'disablePrimaryFilters' of type str; 'enablePrimaryFilters' of type str; 'enableSecondaryFilters' of type str; 'disableSecondaryFilters' of type str; 'configFilePath' of type str.
+The class 'driver::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'driver::Task' has the following attributes: 'name' of type str; 'timeout' of type str; 'group' of type str; 'preRebootDevice' of type str.
+The class 'driver::EStringToStringMapEntry' has no attributes.
+The class 'driver::TestExecuteScript' has the following attributes: 'symbianPath' of type str; 'pCPath' of type str.
+The class 'driver::Reference' has no attributes.
+The class 'driver::Rtest' has the following attributes: 'resultFile' of type str; 'symbianPath' of type str.
+The class 'driver::TransferToSymbian' has the following attributes: 'group' of type str.
+The class 'driver::TestCase' has the following attributes: 'target' of type str.
+The class 'driver::FlashROM' has the following attributes: 'pCPath' of type str.
+The class 'driver::Info' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'driver::StopTrace' has no attributes.
+The class 'driver::Build' has the following attributes: 'componentName' of type str; 'testBuild' of type str; 'uRI' of type str.
+The class 'driver::RetrieveFromSymbian' has the following attributes: 'group' of type str.
+The enumeration 'OperatorType' has the following literals: 'include', 'exclude'.
+The enumeration 'StatCommand' has the following literals: 'listFiles', 'getScreenCapture', 'run', 'delete', 'stopLogging', 'removeFolder', 'listDrives', 'createFolder', 'startLogging'.
+The enumeration 'Phase' has the following literals: 'both', 'build', 'run'.
+'driver::Task' (role 'driver_Task27', cardinality 0..*) is associated with 'driver::TransferToSymbian' (role 'driver_TransferToSymbian', cardinality 0..*).
+'driver::TransferToSymbian' (role 'driver_TransferToSymbian51', cardinality 0..*) is associated with 'driver::Transfer' (role 'driver_Transfer52', cardinality 0..*).
+'driver::Transfer' (role 'driver_Transfer', cardinality 0..*) is associated with 'driver::RetrieveFromSymbian' (role 'driver_RetrieveFromSymbian', cardinality 0..*).
+'driver::Task' (role 'driver_Task21', cardinality 0..*) is associated with 'driver::Reference' (role 'driver_Reference', cardinality 0..*).
+'driver::Task' (role 'driver_Task43', cardinality 0..*) is associated with 'driver::StartTrace' (role 'driver_StartTrace', cardinality 0..*).
+'driver::DriverInfo' (role 'driver_DriverInfo', cardinality 0..*) is associated with 'driver::Driver' (role 'driver_Driver7', cardinality 0..*).
+'driver::TestExecuteScript' (role 'driver_TestExecuteScript', cardinality 0..*) is associated with 'driver::ExecuteOnSymbian' (role 'driver_ExecuteOnSymbian17', cardinality 0..*).
+'driver::Reference' (role 'driver_Reference36', cardinality 0..*) is associated with 'driver::Task' (role 'driver_Task35', cardinality 0..*).
+'driver::FlashROM' (role 'driver_FlashROM', cardinality 0..*) is associated with 'driver::Task' (role 'driver_Task41', cardinality 0..*).
+'driver::RetrieveFromSymbian' (role 'driver_RetrieveFromSymbian33', cardinality 0..*) is associated with 'driver::Task' (role 'driver_Task32', cardinality 0..*).
+'driver::Task' (role 'driver_Task', cardinality 0..*) is associated with 'driver::Driver' (role 'driver_Driver9', cardinality 0..*).
+'driver::CmdPC' (role 'driver_CmdPC', cardinality 0..*) is associated with 'driver::ExecuteOnPC' (role 'driver_ExecuteOnPC', cardinality 0..*).
+'driver::ExecuteOnSymbian' (role 'driver_ExecuteOnSymbian19', cardinality 0..*) is associated with 'driver::Rtest' (role 'driver_Rtest', cardinality 0..*).
+'driver::TestExecuteScript' (role 'driver_TestExecuteScript48', cardinality 0..*) is associated with 'driver::TestCasesList' (role 'driver_TestCasesList49', cardinality 0..*).
+'driver::ExecuteOnPC' (role 'driver_ExecuteOnPC14', cardinality 0..*) is associated with 'driver::Build' (role 'driver_Build', cardinality 0..*).
+'driver::TestCasesList' (role 'driver_TestCasesList', cardinality 0..*) is associated with 'driver::TestCase' (role 'driver_TestCase', cardinality 0..*).
+'driver::ExecuteOnPC' (role 'driver_ExecuteOnPC25', cardinality 0..*) is associated with 'driver::Task' (role 'driver_Task24', cardinality 0..*).
+'driver::DriverInfo' (role 'driver_DriverInfo11', cardinality 0..*) is associated with 'driver::Info' (role 'driver_Info', cardinality 0..*).
+'driver::DocumentRoot' (role 'driver_DocumentRoot5', cardinality 0..*) is associated with 'driver::Driver' (role 'driver_Driver', cardinality 0..*).
+'driver::ExecuteOnSymbian' (role 'driver_ExecuteOnSymbian', cardinality 0..*) is associated with 'driver::CmdSymbian' (role 'driver_CmdSymbian', cardinality 0..*).
+'driver::Task' (role 'driver_Task29', cardinality 0..*) is associated with 'driver::ExecuteOnSymbian' (role 'driver_ExecuteOnSymbian30', cardinality 0..*).
+'driver::Task' (role 'driver_Task37', cardinality 0..*) is associated with 'driver::Task' (role 'driver_Task39', cardinality 0..*).
+'driver::EStringToStringMapEntry' (role 'driver_EStringToStringMapEntry3', cardinality 0..*) is associated with 'driver::DocumentRoot' (role 'driver_DocumentRoot2', cardinality 0..*).
+'driver::StopTrace' (role 'driver_StopTrace', cardinality 0..*) is associated with 'driver::Task' (role 'driver_Task45', cardinality 0..*).
+'driver::EStringToStringMapEntry' (role 'driver_EStringToStringMapEntry', cardinality 0..*) is associated with 'driver::DocumentRoot' (role 'driver_DocumentRoot', cardinality 0..*).

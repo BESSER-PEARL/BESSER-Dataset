@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'DatedEntry' has no attributes.
+The class 'Entries' has no attributes.
+The class 'bibtex::MonthEntry' has the following attributes: 'month' of type str.
+The class 'AuthoredEntry' has no attributes.
+The class 'bibtex::AuthoredEntry' has no attributes.
+The class 'bibtex::Book' has the following attributes: 'volume' of type int; 'edition' of type int; 'publisher' of type str; 'series' of type int; 'address' of type str.
+The class 'MonthEntry' has no attributes.
+The class 'bibtex::DatedEntry' has the following attributes: 'year' of type int.
+The class 'bibtex::Article' has the following attributes: 'journal' of type str; 'number' of type int; 'pages' of type int; 'volume' of type int; 'note' of type str.
+The class 'bibtex::Entries' has no attributes.
+The class 'bibtex::Author' has the following attributes: 'surname' of type str; 'name' of type str.
+The class 'bibtex::Bibtex' has no attributes.
+'bibtex::MonthEntry' is a specialization of 'Entries'.
+'bibtex::Book' is a specialization of 'DatedEntry'.
+'bibtex::Book' is a specialization of 'AuthoredEntry'.
+'bibtex::Book' is a specialization of 'MonthEntry'.
+'bibtex::Book' is a specialization of 'Entries'.
+'bibtex::DatedEntry' is a specialization of 'Entries'.
+'bibtex::Article' is a specialization of 'AuthoredEntry'.
+'bibtex::Article' is a specialization of 'Entries'.
+'bibtex::AuthoredEntry' is a specialization of 'Entries'.
+'bibtex::Article' is a specialization of 'DatedEntry'.
+'bibtex::Article' is a specialization of 'MonthEntry'.
+'bibtex::Bibtex' (role 'bibtex_Bibtex', cardinality 0..*) is associated with 'bibtex::Entries' (role 'bibtex_Entries', cardinality 0..*).
+'bibtex::AuthoredEntry' (role 'bibtex_AuthoredEntry', cardinality 0..*) is associated with 'bibtex::Author' (role 'bibtex_Author', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'IEObjectDescription' has no attributes.
+The class 'builderState::IReferenceDescription' has the following attributes: 'containerEObjectURI' of type str; 'sourceEObjectUri' of type str; 'targetEObjectUri' of type str; 'indexInList' of type int.
+The class 'builderState::EClass' has no attributes.
+The class 'builderState::ReferenceDescription' has the following attributes: 'externalFormOfEReference' of type str.
+The class 'builderState::ResourceDescription' has the following attributes: 'URI' of type str; 'importedNames' of type str.
+The class 'IReferenceDescription' has no attributes.
+The class 'builderState::EObjectDescription' has the following attributes: 'fragment' of type str.
+The class 'builderState::IEObjectDescription' has the following attributes: 'name' of type str.
+The class 'builderState::UserDataEntry' has the following attributes: 'key' of type str; 'value' of type str.
+'builderState::EObjectDescription' is a specialization of 'IEObjectDescription'.
+'builderState::ReferenceDescription' is a specialization of 'IReferenceDescription'.
+'builderState::UserDataEntry' (role 'builderState_UserDataEntry', cardinality 0..*) is associated with 'builderState::EObjectDescription' (role 'builderState_EObjectDescription', cardinality 0..*).
+'builderState::IEObjectDescription' (role 'builderState_IEObjectDescription5', cardinality 0..*) is associated with 'builderState::EClass' (role 'builderState_EClass', cardinality 0..*).
+'builderState::ResourceDescription' (role 'builderState_ResourceDescription2', cardinality 0..*) is associated with 'builderState::IReferenceDescription' (role 'builderState_IReferenceDescription', cardinality 0..*).
+'builderState::ResourceDescription' (role 'builderState_ResourceDescription', cardinality 0..*) is associated with 'builderState::IEObjectDescription' (role 'builderState_IEObjectDescription', cardinality 0..*).

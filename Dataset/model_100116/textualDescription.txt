@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'database::Column' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'database::Table' has the following attributes: 'name' of type str; 'is_local' of type bool.
+The class 'database::ForeignKey' has no attributes.
+The class 'database::Schema' has the following attributes: 'name' of type str.
+'database::Schema' (role 'database_Schema', cardinality 0..*) is associated with 'database::Table' (role 'database_Table', cardinality 0..*).
+'database::Table' (role 'database_Table4', cardinality 0..*) is associated with 'database::ForeignKey' (role 'database_ForeignKey', cardinality 0..*).
+'database::Column' (role 'database_Column7', cardinality 0..*) is associated with 'database::Table' (role 'database_Table6', cardinality 0..*).
+'database::Table' (role 'database_Table13', cardinality 0..*) is associated with 'database::ForeignKey' (role 'database_ForeignKey12', cardinality 0..*).
+'database::Column' (role 'database_Column', cardinality 0..*) is associated with 'database::Table' (role 'database_Table2', cardinality 0..*).
+'database::ForeignKey' (role 'database_ForeignKey9', cardinality 0..*) is associated with 'database::Column' (role 'database_Column10', cardinality 0..*).

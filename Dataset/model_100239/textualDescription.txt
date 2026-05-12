@@ -1,0 +1,344 @@
+The model has 134 class(es).
+The class 'MoveTo' has no attributes.
+The class 'DatadiagramMLTextFormat::ColorEntry' has the following attributes: 'rgb' of type str.
+The class 'DatadiagramMLTextFormat::XYElt' has no attributes.
+The class 'DatadiagramMLTextFormat::Fld' has no attributes.
+The class 'DatadiagramMLTextFormat::FontEntry' has the following attributes: 'charSet' of type str; 'attributes' of type str; 'weight' of type str; 'name' of type str; 'pitchAndFamily' of type str; 'unicode' of type str.
+The class 'DatadiagramMLTextFormat::LineTo' has no attributes.
+The class 'Page' has no attributes.
+The class 'DatadiagramMLTextFormat::TabsCollection' has no attributes.
+The class 'FontsTable' has no attributes.
+The class 'DocumentSettingsElt' has no attributes.
+The class 'EmailRoutingData' has no attributes.
+The class 'DatadiagramMLTextFormat::MasterShortCut' has the following attributes: 'prompt' of type str; 'iconSize' of type str; 'shortcutURL' of type str; 'shortcutHelp' of type str; 'patternFlags' of type str; 'alignName' of type str.
+The class 'DatadiagramMLTextFormat::SplineStart' has no attributes.
+The class 'DatadiagramMLTextFormat::DocumentPropertiesCollection' has the following attributes: 'subject' of type str; 'alternateNames' of type str; 'keywords' of type str; 'buildNumberCreated' of type str; 'buildNumberEdited' of type str; 'title' of type str; 'category' of type str; 'creator' of type str; 'hyperlinkBase_href' of type str; 'manager' of type str; 'company' of type str; 'template' of type str; 'description' of type str.
+The class 'DatadiagramMLTextFormat::EllipticalArcTo' has no attributes.
+The class 'NURBSTo' has no attributes.
+The class 'ColorEntry' has no attributes.
+The class 'Icon' has no attributes.
+The class 'DatadiagramMLTextFormat::SolutionXML' has no attributes.
+The class 'DatadiagramMLTextFormat::ShapeElt' has no attributes.
+The class 'DatadiagramMLTextFormat::MoveTo' has no attributes.
+The class 'ShapeElt' has no attributes.
+The class 'DatadiagramMLTextFormat::StyleSheetsCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::FaceNamesTable' has no attributes.
+The class 'NamedElt' has no attributes.
+The class 'StyleSheetsCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::Tp' has no attributes.
+The class 'DatadiagramMLTextFormat::Geom' has no attributes.
+The class 'DatadiagramMLTextFormat::StringElt' has the following attributes: 'value' of type str.
+The class 'ShapesCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::FontsTable' has no attributes.
+The class 'DatadiagramMLTextFormat::XYAElt' has no attributes.
+The class 'DatadiagramMLTextFormat::UniqueIdElt' has the following attributes: 'UniqueID' of type str.
+The class 'VisioDocument' has no attributes.
+The class 'Tab' has no attributes.
+The class 'DatadiagramMLTextFormat::DelElt' has the following attributes: 'del_' of type str.
+The class 'DatadiagramMLTextFormat::Icon' has the following attributes: 'value' of type str.
+The class 'DatadiagramMLTextFormat::FaceName' has the following attributes: 'charSet' of type str; 'flags' of type str; 'panos' of type str; 'unicodeRanges' of type str; 'name' of type str.
+The class 'DatadiagramMLTextFormat::ShapesCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::CustomProperty' has the following attributes: 'dataType' of type str; 'name' of type str.
+The class 'IXElt' has no attributes.
+The class 'XYABCDEElt' has no attributes.
+The class 'Master' has no attributes.
+The class 'Ellipse' has no attributes.
+The class 'CustomProperty' has no attributes.
+The class 'InfiniteLine' has no attributes.
+The class 'DatadiagramMLTextFormat::WindowsInfo' has no attributes.
+The class 'DatadiagramMLTextFormat::Char' has no attributes.
+The class 'SplineKnot' has no attributes.
+The class 'Shape' has no attributes.
+The class 'DatadiagramMLTextFormat::VBProjectData' has the following attributes: 'data' of type str.
+The class 'DatadiagramMLTextFormat::PageSheet' has no attributes.
+The class 'DatadiagramMLTextFormat::Field' has no attributes.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::XYABCDEElt' has no attributes.
+The class 'SolutionXML' has no attributes.
+The class 'PageSheet' has no attributes.
+The class 'ArcTo' has no attributes.
+The class 'StyleSheet' has no attributes.
+The class 'TextElt' has no attributes.
+The class 'MasterElt' has no attributes.
+The class 'DatadiagramMLTextFormat::DateTimeType' has the following attributes: 'day' of type str; 'month' of type str; 'minute' of type str; 'hour' of type str; 'year' of type str; 'second' of type str.
+The class 'TabsCollection' has no attributes.
+The class 'EventList' has no attributes.
+The class 'LineTo' has no attributes.
+The class 'MasterShortCut' has no attributes.
+The class 'IXrequiredElt' has no attributes.
+The class 'XYABCDElt' has no attributes.
+The class 'DatadiagramMLTextFormat::EmailRoutingData' has the following attributes: 'size' of type str; 'data' of type str.
+The class 'DatadiagramMLTextFormat::IdentifiedElt' has the following attributes: 'ID' of type str.
+The class 'CustomPropertiesCollection' has no attributes.
+The class 'PagesCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::PrintSetup' has no attributes.
+The class 'DatadiagramMLTextFormat::ColorsTable' has no attributes.
+The class 'DatadiagramMLTextFormat::IXElt' has the following attributes: 'iX' of type str.
+The class 'VBProjectData' has no attributes.
+The class 'DatadiagramMLTextFormat::XYABElt' has no attributes.
+The class 'DatadiagramMLTextFormat::CustomPropertiesCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::SplineKnot' has no attributes.
+The class 'XYElt' has no attributes.
+The class 'MastersCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::Ellipse' has no attributes.
+The class 'Geom' has no attributes.
+The class 'DatadiagramMLTextFormat::MastersCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::Para' has no attributes.
+The class 'DatadiagramMLTextFormat::XYABCDElt' has no attributes.
+The class 'DatadiagramMLTextFormat::Connect' has the following attributes: 'fromSheet' of type str; 'toSheet' of type str; 'toCell' of type str; 'toPart' of type str; 'fromCell' of type str; 'fromPart' of type str.
+The class 'DatadiagramMLTextFormat::StyleSheet' has no attributes.
+The class 'FaceNamesTable' has no attributes.
+The class 'PageElt' has no attributes.
+The class 'DatadiagramMLTextFormat::Shape' has the following attributes: 'textStyle' of type str; 'lineStyle' of type str; 'fillStyle' of type str.
+The class 'DatadiagramMLTextFormat::PageElt' has no attributes.
+The class 'DatadiagramMLTextFormat::TextElt' has no attributes.
+The class 'DatadiagramMLTextFormat::Tab' has no attributes.
+The class 'DatadiagramMLTextFormat::Master' has the following attributes: 'hidden' of type str; 'baseID' of type str; 'matchByName' of type str; 'alignName' of type str; 'prompt' of type str; 'iconUpdate' of type str; 'iconSize' of type str; 'patternFlags' of type str.
+The class 'EllipticalArcTo' has no attributes.
+The class 'Connect' has no attributes.
+The class 'ColorsTable' has no attributes.
+The class 'DatadiagramMLTextFormat::PagesCollection' has no attributes.
+The class 'XYABElt' has no attributes.
+The class 'DocumentSheet' has no attributes.
+The class 'DelElt' has no attributes.
+The class 'IdentifiedElt' has no attributes.
+The class 'DatadiagramMLTextFormat::MasterElt' has no attributes.
+The class 'DatadiagramMLTextFormat::CellType' has the following attributes: 'unit' of type str; 'formula' of type str; 'err' of type str; 'value' of type str.
+The class 'DateTimeType' has no attributes.
+The class 'DatadiagramMLTextFormat::VisioDocument' has the following attributes: 'key' of type str; 'docLangId' of type str; 'metric' of type str; 'start' of type str; 'version' of type str; 'buildnum' of type str.
+The class 'DatadiagramMLTextFormat::HeaderFooter' has no attributes.
+The class 'DatadiagramMLTextFormat::Cp' has no attributes.
+The class 'DatadiagramMLTextFormat::DocumentSettingsElt' has no attributes.
+The class 'Text' has no attributes.
+The class 'DatadiagramMLTextFormat::ConnectsCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::IXrequiredElt' has the following attributes: 'iX' of type str.
+The class 'FaceName' has no attributes.
+The class 'SplineStart' has no attributes.
+The class 'XYAElt' has no attributes.
+The class 'DatadiagramMLTextFormat::InfiniteLine' has no attributes.
+The class 'DatadiagramMLTextFormat::EventList' has no attributes.
+The class 'DatadiagramMLTextFormat::Pp' has no attributes.
+The class 'CellType' has no attributes.
+The class 'PrintSetup' has no attributes.
+The class 'HeaderFooter' has no attributes.
+The class 'DatadiagramMLTextFormat::Page' has the following attributes: 'backPage' of type str; 'background' of type str; 'viewCenterX' of type str; 'ViewCenterY' of type str; 'associatedPage' of type str; 'viewScale' of type str; 'reviewerID' of type str.
+The class 'ConnectsCollection' has no attributes.
+The class 'DatadiagramMLTextFormat::PolylineTo' has no attributes.
+The class 'PolylineTo' has no attributes.
+The class 'DatadiagramMLTextFormat::Text' has no attributes.
+The class 'WindowsInfo' has no attributes.
+The class 'DatadiagramMLTextFormat::NamedElt' has the following attributes: 'nameU' of type str; 'name' of type str.
+The class 'DatadiagramMLTextFormat::NURBSTo' has no attributes.
+The class 'UniqueIdElt' has no attributes.
+The class 'DatadiagramMLTextFormat::DocumentSheet' has no attributes.
+The class 'DatadiagramMLTextFormat::ArcTo' has no attributes.
+The class 'FontEntry' has no attributes.
+'DatadiagramMLTextFormat::Page' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLTextFormat::FaceName' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLTextFormat::Field' is a specialization of 'DelElt'.
+'DatadiagramMLTextFormat::Master' is a specialization of 'UniqueIdElt'.
+'DatadiagramMLTextFormat::Geom' is a specialization of 'ShapeElt'.
+'DatadiagramMLTextFormat::Tab' is a specialization of 'IXElt'.
+'DatadiagramMLTextFormat::Cp' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLTextFormat::NURBSTo' is a specialization of 'XYABCDEElt'.
+'DatadiagramMLTextFormat::XYABCDEElt' is a specialization of 'XYABCDElt'.
+'DatadiagramMLTextFormat::FontEntry' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLTextFormat::XYElt' is a specialization of 'DelElt'.
+'DatadiagramMLTextFormat::SplineStart' is a specialization of 'XYABCDElt'.
+'DatadiagramMLTextFormat::Fld' is a specialization of 'TextElt'.
+'DatadiagramMLTextFormat::MasterShortCut' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLTextFormat::ConnectsCollection' is a specialization of 'MasterElt'.
+'DatadiagramMLTextFormat::SplineKnot' is a specialization of 'XYAElt'.
+'DatadiagramMLTextFormat::Tp' is a specialization of 'TextElt'.
+'DatadiagramMLTextFormat::Pp' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLTextFormat::Char' is a specialization of 'ShapeElt'.
+'DatadiagramMLTextFormat::TabsCollection' is a specialization of 'DelElt'.
+'DatadiagramMLTextFormat::Field' is a specialization of 'IXElt'.
+'DatadiagramMLTextFormat::Geom' is a specialization of 'IXElt'.
+'DatadiagramMLTextFormat::TabsCollection' is a specialization of 'ShapeElt'.
+'DatadiagramMLTextFormat::ShapesCollection' is a specialization of 'MasterElt'.
+'DatadiagramMLTextFormat::DocumentSheet' is a specialization of 'NamedElt'.
+'DatadiagramMLTextFormat::Pp' is a specialization of 'TextElt'.
+'DatadiagramMLTextFormat::PolylineTo' is a specialization of 'XYAElt'.
+'DatadiagramMLTextFormat::XYABCDElt' is a specialization of 'XYABElt'.
+'DatadiagramMLTextFormat::Text' is a specialization of 'ShapeElt'.
+'DatadiagramMLTextFormat::Field' is a specialization of 'ShapeElt'.
+'DatadiagramMLTextFormat::Char' is a specialization of 'IXElt'.
+'DatadiagramMLTextFormat::Geom' is a specialization of 'DelElt'.
+'DatadiagramMLTextFormat::Char' is a specialization of 'DelElt'.
+'DatadiagramMLTextFormat::ShapesCollection' is a specialization of 'PageElt'.
+'DatadiagramMLTextFormat::XYElt' is a specialization of 'IXElt'.
+'DatadiagramMLTextFormat::Tp' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLTextFormat::Master' is a specialization of 'NamedElt'.
+'DatadiagramMLTextFormat::Para' is a specialization of 'ShapeElt'.
+'DatadiagramMLTextFormat::PageSheet' is a specialization of 'UniqueIdElt'.
+'DatadiagramMLTextFormat::Ellipse' is a specialization of 'XYABCDElt'.
+'DatadiagramMLTextFormat::Fld' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLTextFormat::XYABElt' is a specialization of 'XYAElt'.
+'DatadiagramMLTextFormat::XYAElt' is a specialization of 'XYElt'.
+'DatadiagramMLTextFormat::ArcTo' is a specialization of 'XYAElt'.
+'DatadiagramMLTextFormat::StyleSheet' is a specialization of 'NamedElt'.
+'DatadiagramMLTextFormat::Page' is a specialization of 'NamedElt'.
+'DatadiagramMLTextFormat::Icon' is a specialization of 'MasterElt'.
+'DatadiagramMLTextFormat::StringElt' is a specialization of 'TextElt'.
+'DatadiagramMLTextFormat::InfiniteLine' is a specialization of 'XYABElt'.
+'DatadiagramMLTextFormat::DocumentSheet' is a specialization of 'PageSheet'.
+'DatadiagramMLTextFormat::PageSheet' is a specialization of 'Shape'.
+'DatadiagramMLTextFormat::EllipticalArcTo' is a specialization of 'XYABCDElt'.
+'DatadiagramMLTextFormat::StyleSheet' is a specialization of 'Shape'.
+'DatadiagramMLTextFormat::StyleSheet' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLTextFormat::Master' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLTextFormat::TabsCollection' is a specialization of 'IXElt'.
+'DatadiagramMLTextFormat::ColorEntry' is a specialization of 'IXrequiredElt'.
+'DatadiagramMLTextFormat::MasterShortCut' is a specialization of 'NamedElt'.
+'DatadiagramMLTextFormat::ConnectsCollection' is a specialization of 'PageElt'.
+'DatadiagramMLTextFormat::PageSheet' is a specialization of 'MasterElt'.
+'DatadiagramMLTextFormat::Cp' is a specialization of 'TextElt'.
+'DatadiagramMLTextFormat::Para' is a specialization of 'IXElt'.
+'DatadiagramMLTextFormat::MoveTo' is a specialization of 'XYElt'.
+'DatadiagramMLTextFormat::LineTo' is a specialization of 'XYElt'.
+'DatadiagramMLTextFormat::PageSheet' is a specialization of 'PageElt'.
+'DatadiagramMLTextFormat::Para' is a specialization of 'DelElt'.
+'DatadiagramMLTextFormat::InfiniteLine' (role 'infiniteLines', cardinality 0..*) is associated with 'Geom' (role 'Geom102', cardinality 0..*).
+'DatadiagramMLTextFormat::ConnectsCollection' (role 'c_connects', cardinality 0..*) is associated with 'Connect' (role 'Connect', cardinality 0..*).
+'SplineKnot' (role 'SplineKnot', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Geom' (role 'sk_geom', cardinality 0..*).
+'PagesCollection' (role 'PagesCollection266', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Page' (role 'pages', cardinality 0..*).
+'DatadiagramMLTextFormat::HeaderFooter' (role 'docHeaderFooter', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument279', cardinality 0..*).
+'CellType' (role 'CellType169', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char168', cardinality 0..*).
+'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para203', cardinality 0..*) is associated with 'CellType' (role 'CellType204', cardinality 0..*).
+'DatadiagramMLTextFormat::Shape' (role 'shapes', cardinality 0..*) is associated with 'ShapesCollection' (role 'ShapesCollection', cardinality 0..*).
+'DatadiagramMLTextFormat::VisioDocument' (role 'sx_visioDocument', cardinality 0..*) is associated with 'SolutionXML' (role 'SolutionXML', cardinality 0..*).
+'CellType' (role 'CellType237', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field236', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType22', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::DocumentPropertiesCollection' (role 'DatadiagramMLTextFormat_DocumentPropertiesCollection21', cardinality 0..*).
+'DatadiagramMLTextFormat::Geom' (role 'DatadiagramMLTextFormat_Geom71', cardinality 0..*) is associated with 'CellType' (role 'CellType72', cardinality 0..*).
+'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para209', cardinality 0..*) is associated with 'CellType' (role 'CellType210', cardinality 0..*).
+'MoveTo' (role 'MoveTo', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Geom' (role 'mt_geom', cardinality 0..*).
+'CellType' (role 'CellType100', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::XYABElt' (role 'DatadiagramMLTextFormat_XYABElt', cardinality 0..*).
+'MasterShortCut' (role 'MasterShortCut', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::MastersCollection' (role 'm_masterShortCuts', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument35', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::ColorsTable' (role 'docColors', cardinality 0..*).
+'CellType' (role 'CellType66', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Geom' (role 'DatadiagramMLTextFormat_Geom65', cardinality 0..*).
+'DatadiagramMLTextFormat::ColorEntry' (role 'colorEntries', cardinality 0..*) is associated with 'ColorsTable' (role 'ColorsTable38', cardinality 0..*).
+'DatadiagramMLTextFormat::XYABCDElt' (role 'DatadiagramMLTextFormat_XYABCDElt', cardinality 0..*) is associated with 'CellType' (role 'CellType104', cardinality 0..*).
+'CellType' (role 'CellType130', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char129', cardinality 0..*).
+'DatadiagramMLTextFormat::PagesCollection' (role 'docPages', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument263', cardinality 0..*).
+'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char123', cardinality 0..*) is associated with 'CellType' (role 'CellType124', cardinality 0..*).
+'CustomPropertiesCollection' (role 'CustomPropertiesCollection33', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::CustomProperty' (role 'cps_customProps', cardinality 0..*).
+'FontsTable' (role 'FontsTable43', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::FontEntry' (role 'fontEntries', cardinality 0..*).
+'ConnectsCollection' (role 'ConnectsCollection', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Connect' (role 'connections', cardinality 0..*).
+'DatadiagramMLTextFormat::VisioDocument' (role 'ws_visioDocument', cardinality 0..*) is associated with 'WindowsInfo' (role 'WindowsInfo', cardinality 0..*).
+'DatadiagramMLTextFormat::DocumentPropertiesCollection' (role 'DatadiagramMLTextFormat_DocumentPropertiesCollection24', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType25', cardinality 0..*).
+'NURBSTo' (role 'NURBSTo', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Geom' (role 'nt_geom', cardinality 0..*).
+'DatadiagramMLTextFormat::VisioDocument' (role 'ps_visioDocument10', cardinality 0..*) is associated with 'PagesCollection' (role 'PagesCollection', cardinality 0..*).
+'DatadiagramMLTextFormat::Geom' (role 'pt_geom', cardinality 0..*) is associated with 'PolylineTo' (role 'PolylineTo', cardinality 0..*).
+'Page' (role 'Page', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::PagesCollection' (role 'p_pages', cardinality 0..*).
+'CellType' (role 'CellType207', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para206', cardinality 0..*).
+'DatadiagramMLTextFormat::Ellipse' (role 'ellipses', cardinality 0..*) is associated with 'Geom' (role 'Geom109', cardinality 0..*).
+'PrintSetup' (role 'PrintSetup', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'ps_visioDocument', cardinality 0..*).
+'DatadiagramMLTextFormat::DocumentSettingsElt' (role 'docSettings', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument271', cardinality 0..*).
+'DatadiagramMLTextFormat::DocumentSheet' (role 'docDocumentSheet', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument59', cardinality 0..*).
+'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field230', cardinality 0..*) is associated with 'CellType' (role 'CellType231', cardinality 0..*).
+'DatadiagramMLTextFormat::DocumentPropertiesCollection' (role 'cps_docProp', cardinality 0..*) is associated with 'CustomPropertiesCollection' (role 'CustomPropertiesCollection', cardinality 0..*).
+'CellType' (role 'CellType219', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field', cardinality 0..*).
+'Geom' (role 'Geom113', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::SplineStart' (role 'splineStarts', cardinality 0..*).
+'VBProjectData' (role 'VBProjectData', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'vpd_visioDocument', cardinality 0..*).
+'CellType' (role 'CellType157', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char156', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::DocumentPropertiesCollection' (role 'docProps', cardinality 0..*).
+'DatadiagramMLTextFormat::XYABCDElt' (role 'DatadiagramMLTextFormat_XYABCDElt106', cardinality 0..*) is associated with 'CellType' (role 'CellType107', cardinality 0..*).
+'DocumentSheet' (role 'DocumentSheet', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'ds_visioDocument', cardinality 0..*).
+'DatadiagramMLTextFormat::FaceNamesTable' (role 'docFaceNames', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument45', cardinality 0..*).
+'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char138', cardinality 0..*) is associated with 'CellType' (role 'CellType139', cardinality 0..*).
+'DatadiagramMLTextFormat::CustomPropertiesCollection' (role 'cp_customProps', cardinality 0..*) is associated with 'CustomProperty' (role 'CustomProperty', cardinality 0..*).
+'InfiniteLine' (role 'InfiniteLine', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Geom' (role 'il_geom', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType28', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::DocumentPropertiesCollection' (role 'DatadiagramMLTextFormat_DocumentPropertiesCollection27', cardinality 0..*).
+'ShapeElt' (role 'ShapeElt', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Shape' (role 'sse_shapeSheet', cardinality 0..*).
+'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char', cardinality 0..*) is associated with 'CellType' (role 'CellType121', cardinality 0..*).
+'DatadiagramMLTextFormat::VisioDocument' (role 'fs_visioDocument', cardinality 0..*) is associated with 'FontsTable' (role 'FontsTable', cardinality 0..*).
+'DatadiagramMLTextFormat::SplineKnot' (role 'splineKnots', cardinality 0..*) is associated with 'Geom' (role 'Geom96', cardinality 0..*).
+'EmailRoutingData' (role 'EmailRoutingData', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'erd_visioDocument', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument277', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::EventList' (role 'docEventList', cardinality 0..*).
+'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char150', cardinality 0..*) is associated with 'CellType' (role 'CellType151', cardinality 0..*).
+'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char147', cardinality 0..*) is associated with 'CellType' (role 'CellType148', cardinality 0..*).
+'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para173', cardinality 0..*) is associated with 'CellType' (role 'CellType174', cardinality 0..*).
+'StyleSheetsCollection' (role 'StyleSheetsCollection57', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::StyleSheet' (role 'stylesSheets', cardinality 0..*).
+'CellType' (role 'CellType127', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char126', cardinality 0..*).
+'FaceName' (role 'FaceName', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::FaceNamesTable' (role 'fn_faceNames', cardinality 0..*).
+'Ellipse' (role 'Ellipse', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Geom' (role 'e_geom', cardinality 0..*).
+'CellType' (role 'CellType142', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char141', cardinality 0..*).
+'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field227', cardinality 0..*) is associated with 'CellType' (role 'CellType228', cardinality 0..*).
+'CellType' (role 'CellType154', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char153', cardinality 0..*).
+'LineTo' (role 'LineTo', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Geom' (role 'lt_geom', cardinality 0..*).
+'DatadiagramMLTextFormat::TextElt' (role 'textElts', cardinality 0..*) is associated with 'Text' (role 'Text', cardinality 0..*).
+'DatadiagramMLTextFormat::Icon' (role 'icons', cardinality 0..*) is associated with 'MasterShortCut' (role 'MasterShortCut252', cardinality 0..*).
+'DatadiagramMLTextFormat::Master' (role 'me_master', cardinality 0..*) is associated with 'MasterElt' (role 'MasterElt', cardinality 0..*).
+'Master' (role 'Master', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::MastersCollection' (role 'm_masters', cardinality 0..*).
+'DatadiagramMLTextFormat::Geom' (role 'eat_geom', cardinality 0..*) is associated with 'EllipticalArcTo' (role 'EllipticalArcTo', cardinality 0..*).
+'DatadiagramMLTextFormat::ShapeElt' (role 'shapeElts', cardinality 0..*) is associated with 'Shape' (role 'Shape', cardinality 0..*).
+'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char162', cardinality 0..*) is associated with 'CellType' (role 'CellType163', cardinality 0..*).
+'CellType' (role 'CellType189', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para188', cardinality 0..*).
+'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para194', cardinality 0..*) is associated with 'CellType' (role 'CellType195', cardinality 0..*).
+'CellType' (role 'CellType177', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para176', cardinality 0..*).
+'DatadiagramMLTextFormat::VisioDocument' (role 'ms_visioDocument', cardinality 0..*) is associated with 'MastersCollection' (role 'MastersCollection', cardinality 0..*).
+'Geom' (role 'Geom98', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::PolylineTo' (role 'polylinesTo', cardinality 0..*).
+'TabsCollection' (role 'TabsCollection', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Tab' (role 'tabs', cardinality 0..*).
+'CellType' (role 'CellType92', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::XYAElt' (role 'DatadiagramMLTextFormat_XYAElt', cardinality 0..*).
+'DatadiagramMLTextFormat::Geom' (role 'ac_geom', cardinality 0..*) is associated with 'ArcTo' (role 'ArcTo', cardinality 0..*).
+'DatadiagramMLTextFormat::VisioDocument' (role 'dss_visioDocument', cardinality 0..*) is associated with 'DocumentSettingsElt' (role 'DocumentSettingsElt', cardinality 0..*).
+'DatadiagramMLTextFormat::ColorsTable' (role 'ce_colors', cardinality 0..*) is associated with 'ColorEntry' (role 'ColorEntry', cardinality 0..*).
+'DatadiagramMLTextFormat::MasterShortCut' (role 'i_masterShortCut', cardinality 0..*) is associated with 'Icon' (role 'Icon', cardinality 0..*).
+'FaceNamesTable' (role 'FaceNamesTable48', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::FaceName' (role 'faceNameEntries', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument245', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::MastersCollection' (role 'docMasters', cardinality 0..*).
+'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char135', cardinality 0..*) is associated with 'CellType' (role 'CellType136', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument50', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VBProjectData' (role 'docVBProjectData', cardinality 0..*).
+'CellType' (role 'CellType186', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para185', cardinality 0..*).
+'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'dps_visioDocument', cardinality 0..*).
+'CellType' (role 'CellType', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Geom' (role 'DatadiagramMLTextFormat_Geom', cardinality 0..*).
+'DatadiagramMLTextFormat::XYABCDEElt' (role 'DatadiagramMLTextFormat_XYABCDEElt', cardinality 0..*) is associated with 'CellType' (role 'CellType115', cardinality 0..*).
+'CellType' (role 'CellType214', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Tab' (role 'DatadiagramMLTextFormat_Tab', cardinality 0..*).
+'HeaderFooter' (role 'HeaderFooter', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'ef_visioDocument', cardinality 0..*).
+'TextElt' (role 'TextElt', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Text' (role 'te_text', cardinality 0..*).
+'StyleSheet' (role 'StyleSheet', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::StyleSheetsCollection' (role 'ss_stylesSheets', cardinality 0..*).
+'EventList' (role 'EventList', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'el_visioDocument', cardinality 0..*).
+'DatadiagramMLTextFormat::Geom' (role 'ss_geom', cardinality 0..*) is associated with 'SplineStart' (role 'SplineStart', cardinality 0..*).
+'DatadiagramMLTextFormat::EllipticalArcTo' (role 'ellipticalArcsTo', cardinality 0..*) is associated with 'Geom' (role 'Geom111', cardinality 0..*).
+'DatadiagramMLTextFormat::Geom' (role 'DatadiagramMLTextFormat_Geom68', cardinality 0..*) is associated with 'CellType' (role 'CellType69', cardinality 0..*).
+'PageElt' (role 'PageElt', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Page' (role 'pe_page', cardinality 0..*).
+'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field242', cardinality 0..*) is associated with 'CellType' (role 'CellType243', cardinality 0..*).
+'CellType' (role 'CellType145', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char144', cardinality 0..*).
+'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para182', cardinality 0..*) is associated with 'CellType' (role 'CellType183', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument281', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::SolutionXML' (role 'docSolutionXML', cardinality 0..*).
+'CellType' (role 'CellType198', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para197', cardinality 0..*).
+'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field239', cardinality 0..*) is associated with 'CellType' (role 'CellType240', cardinality 0..*).
+'FontEntry' (role 'FontEntry', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::FontsTable' (role 'fe_fonts', cardinality 0..*).
+'CellType' (role 'CellType84', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::XYElt' (role 'DatadiagramMLTextFormat_XYElt', cardinality 0..*).
+'DatadiagramMLTextFormat::ArcTo' (role 'arcsTo', cardinality 0..*) is associated with 'Geom' (role 'Geom94', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection254', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Master' (role 'masters', cardinality 0..*).
+'CellType' (role 'CellType217', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Tab' (role 'DatadiagramMLTextFormat_Tab216', cardinality 0..*).
+'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection30', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::CustomPropertiesCollection' (role 'customProps', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection249', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::MasterShortCut' (role 'masterShortCuts', cardinality 0..*).
+'DatadiagramMLTextFormat::FontsTable' (role 'docFonts', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument40', cardinality 0..*).
+'DatadiagramMLTextFormat::ShapesCollection' (role 'ss_shapes', cardinality 0..*) is associated with 'Shape' (role 'Shape257', cardinality 0..*).
+'ColorsTable' (role 'ColorsTable', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'cs_visioDocument', cardinality 0..*).
+'Geom' (role 'Geom90', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::MoveTo' (role 'movesTo', cardinality 0..*).
+'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field221', cardinality 0..*) is associated with 'CellType' (role 'CellType222', cardinality 0..*).
+'CellType' (role 'CellType180', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para179', cardinality 0..*).
+'FaceNamesTable' (role 'FaceNamesTable', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'fns_visioDocument', cardinality 0..*).
+'Geom' (role 'Geom117', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::NURBSTo' (role 'nurbsTo', cardinality 0..*).
+'DatadiagramMLTextFormat::LineTo' (role 'linesTo', cardinality 0..*) is associated with 'Geom' (role 'Geom', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument52', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::EmailRoutingData' (role 'docEmailRoutingData', cardinality 0..*).
+'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char132', cardinality 0..*) is associated with 'CellType' (role 'CellType133', cardinality 0..*).
+'Tab' (role 'Tab', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::TabsCollection' (role 't_tabs', cardinality 0..*).
+'DatadiagramMLTextFormat::PageElt' (role 'pageElts', cardinality 0..*) is associated with 'Page' (role 'Page269', cardinality 0..*).
+'StyleSheetsCollection' (role 'StyleSheetsCollection', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::VisioDocument' (role 'sss_visioDocument', cardinality 0..*).
+'CellType' (role 'CellType160', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char159', cardinality 0..*).
+'DatadiagramMLTextFormat::XYElt' (role 'DatadiagramMLTextFormat_XYElt86', cardinality 0..*) is associated with 'CellType' (role 'CellType87', cardinality 0..*).
+'CellType' (role 'CellType166', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Char' (role 'DatadiagramMLTextFormat_Char165', cardinality 0..*).
+'CellType' (role 'CellType171', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument275', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::WindowsInfo' (role 'docWindows', cardinality 0..*).
+'DatadiagramMLTextFormat::PrintSetup' (role 'docPrintSetup', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument273', cardinality 0..*).
+'CellType' (role 'CellType234', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field233', cardinality 0..*).
+'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para200', cardinality 0..*) is associated with 'CellType' (role 'CellType201', cardinality 0..*).
+'DatadiagramMLTextFormat::DocumentPropertiesCollection' (role 'DatadiagramMLTextFormat_DocumentPropertiesCollection', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType', cardinality 0..*).
+'DatadiagramMLTextFormat::MasterElt' (role 'masterElts', cardinality 0..*) is associated with 'Master' (role 'Master261', cardinality 0..*).
+'CellType' (role 'CellType192', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Para' (role 'DatadiagramMLTextFormat_Para191', cardinality 0..*).
+'CellType' (role 'CellType225', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::Field' (role 'DatadiagramMLTextFormat_Field224', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument54', cardinality 0..*) is associated with 'DatadiagramMLTextFormat::StyleSheetsCollection' (role 'docStyleSheets', cardinality 0..*).

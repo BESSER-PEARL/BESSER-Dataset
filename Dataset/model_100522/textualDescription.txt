@@ -1,0 +1,136 @@
+The model has 54 class(es).
+The class 'Relationship' has no attributes.
+The class 'ComponentInstance' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Core::Namespace' has no attributes.
+The class 'Common::Behavior::AttributeLink' has no attributes.
+The class 'Use::Cases::Include' has no attributes.
+The class 'Core::StructuralFeature' has the following attributes: 'changeability' of type str; 'targetScope' of type str; 'ordering' of type str.
+The class 'Link' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'Instance' has no attributes.
+The class 'Common::Behavior::Instance' has no attributes.
+The class 'NodeInstance' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'Use::Cases::Extend' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'Use::Cases::Actor' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'Use::Cases::UseCase' has no attributes.
+The class 'Expression' has no attributes.
+The class 'Common::Behavior::NodeInstance' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'Core::Element' has no attributes.
+The class 'Feature' has no attributes.
+The class 'Association' has no attributes.
+The class 'Core::Generalization_' has the following attributes: 'discriminator' of type str.
+The class 'Core::GeneralizableElement' has the following attributes: 'isAbstract' of type str; 'isRoot' of type str; 'isLeaf' of type str.
+The class 'Common::Behavior::Link' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'Use::Cases::UseCaseInstance' has no attributes.
+The class 'Element' has no attributes.
+The class 'Generalization_' has no attributes.
+The class 'Multiplicity_' has no attributes.
+The class 'Common::Behavior::LinkEnd' has no attributes.
+The class 'Core::AssociationEnd' has the following attributes: 'aggregation' of type str; 'changeability' of type str; 'targetScope' of type str; 'ordering' of type str; 'isNavigable' of type str.
+The class 'AssociationEnd' has no attributes.
+The class 'Data::Types::Expression' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'GeneralizableElement' has no attributes.
+The class 'ExtensionPoint' has no attributes.
+The class 'Use::Cases::ExtensionPoint' has the following attributes: 'location' of type str.
+The class 'Include' has no attributes.
+The class 'Core::Relationship' has no attributes.
+The class 'Core::Classifier' has no attributes.
+The class 'LinkEnd' has no attributes.
+The class 'Extend' has no attributes.
+The class 'Data::Types::Multiplicity_' has no attributes.
+The class 'Core::Attribute' has no attributes.
+The class 'Core::Association' has no attributes.
+The class 'Data::Types::MultiplicityRange' has the following attributes: 'upper' of type str; 'lower' of type str.
+The class 'Core::Feature' has the following attributes: 'ownerScope' of type str.
+The class 'MultiplicityRange' has no attributes.
+The class 'Data::Types::BooleanExpression' has no attributes.
+The class 'Common::Behavior::ComponentInstance' has no attributes.
+The class 'Core::ModelElement' has the following attributes: 'isSpecification' of type str; 'name' of type str; 'visibility' of type str.
+The class 'AttributeLink' has no attributes.
+The enumeration 'AggregationKind' has the following literals: 'ak_aggregate', 'ak_composite', 'ak_none'.
+The enumeration 'OrderingKind' has the following literals: 'ok_ordered', 'ok_unordered'.
+The enumeration 'VisibilityKind' has the following literals: 'vk_private', 'vk_protected', 'vk_package', 'vk_public'.
+The enumeration 'ChangeableKind' has the following literals: 'ck_changeable', 'ck_frozen', 'ck_addOnly'.
+The enumeration 'ScopeKind' has the following literals: 'sk_classifier', 'sk_instance'.
+'Core::ModelElement' is a specialization of 'Element'.
+'Use::Cases::UseCaseInstance' is a specialization of 'Instance'.
+'Use::Cases::Actor' is a specialization of 'Classifier'.
+'Common::Behavior::ComponentInstance' is a specialization of 'Instance'.
+'Core::StructuralFeature' is a specialization of 'Feature'.
+'Core::Association' is a specialization of 'Relationship'.
+'Core::Association' is a specialization of 'GeneralizableElement'.
+'Common::Behavior::NodeInstance' is a specialization of 'Instance'.
+'Common::Behavior::AttributeLink' is a specialization of 'ModelElement'.
+'Core::Namespace' is a specialization of 'ModelElement'.
+'Core::GeneralizableElement' is a specialization of 'ModelElement'.
+'Common::Behavior::Link' is a specialization of 'ModelElement'.
+'Core::Relationship' is a specialization of 'ModelElement'.
+'Common::Behavior::LinkEnd' is a specialization of 'ModelElement'.
+'Use::Cases::Include' is a specialization of 'Relationship'.
+'Data::Types::BooleanExpression' is a specialization of 'Expression'.
+'Common::Behavior::Instance' is a specialization of 'ModelElement'.
+'Core::Generalization_' is a specialization of 'Relationship'.
+'Core::Classifier' is a specialization of 'GeneralizableElement'.
+'Core::Feature' is a specialization of 'ModelElement'.
+'Core::AssociationEnd' is a specialization of 'ModelElement'.
+'Use::Cases::UseCase' is a specialization of 'Classifier'.
+'Use::Cases::Extend' is a specialization of 'Relationship'.
+'Core::Attribute' is a specialization of 'StructuralFeature'.
+'Use::Cases::ExtensionPoint' is a specialization of 'ModelElement'.
+'Core::Classifier' is a specialization of 'Namespace'.
+'Common::Behavior::LinkEnd' (role 'connection', cardinality 0..*) is associated with 'Link' (role 'Link21', cardinality 0..*).
+'Common::Behavior::AttributeLink' (role 'Common_Behavior_AttributeLink', cardinality 0..*) is associated with 'Instance' (role 'Instance12', cardinality 0..*).
+'Data::Types::MultiplicityRange' (role 'range', cardinality 0..*) is associated with 'Multiplicity_' (role 'Multiplicity88', cardinality 0..*).
+'Classifier' (role 'Classifier67', cardinality 0..*) is associated with 'Core::AssociationEnd' (role 'Core_AssociationEnd', cardinality 0..*).
+'Attribute' (role 'Attribute72', cardinality 0..*) is associated with 'Core::AssociationEnd' (role 'associationEnd', cardinality 0..*).
+'Use::Cases::Extend' (role 'Use_Cases_Extend44', cardinality 0..*) is associated with 'BooleanExpression' (role 'BooleanExpression', cardinality 0..*).
+'Common::Behavior::ComponentInstance' (role 'resident31', cardinality 0..*) is associated with 'NodeInstance' (role 'NodeInstance', cardinality 0..*).
+'UseCase' (role 'UseCase42', cardinality 0..*) is associated with 'Use::Cases::Extend' (role 'Use_Cases_Extend41', cardinality 0..*).
+'Generalization_' (role 'Generalization_', cardinality 0..*) is associated with 'Core::GeneralizableElement' (role 'child', cardinality 0..*).
+'Common::Behavior::NodeInstance' (role 'nodeInstance', cardinality 0..*) is associated with 'ComponentInstance' (role 'ComponentInstance33', cardinality 0..*).
+'Use::Cases::Extend' (role 'Use_Cases_Extend', cardinality 0..*) is associated with 'ExtensionPoint' (role 'ExtensionPoint38', cardinality 0..*).
+'Extend' (role 'Extend', cardinality 0..*) is associated with 'Use::Cases::UseCase' (role 'extension', cardinality 0..*).
+'Use::Cases::ExtensionPoint' (role 'extensionPoint', cardinality 0..*) is associated with 'UseCase' (role 'UseCase50', cardinality 0..*).
+'Core::Association' (role 'association', cardinality 0..*) is associated with 'AssociationEnd' (role 'AssociationEnd77', cardinality 0..*).
+'Classifier' (role 'Classifier70', cardinality 0..*) is associated with 'Core::AssociationEnd' (role 'Core_AssociationEnd69', cardinality 0..*).
+'Common::Behavior::Instance' (role 'instance6', cardinality 0..*) is associated with 'AttributeLink' (role 'AttributeLink', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'Common::Behavior::AttributeLink' (role 'Common_Behavior_AttributeLink16', cardinality 0..*).
+'Common::Behavior::AttributeLink' (role 'qualifiedValue', cardinality 0..*) is associated with 'LinkEnd' (role 'LinkEnd14', cardinality 0..*).
+'Use::Cases::Extend' (role 'extend', cardinality 0..*) is associated with 'UseCase' (role 'UseCase', cardinality 0..*).
+'Include' (role 'Include', cardinality 0..*) is associated with 'Use::Cases::UseCase' (role 'base', cardinality 0..*).
+'Core::ModelElement' (role 'ownedElement', cardinality 0..*) is associated with 'Namespace' (role 'Namespace', cardinality 0..*).
+'Instance' (role 'Instance10', cardinality 0..*) is associated with 'Common::Behavior::AttributeLink' (role 'slot', cardinality 0..*).
+'Generalization_' (role 'Generalization55', cardinality 0..*) is associated with 'Core::Classifier' (role 'powertype', cardinality 0..*).
+'AssociationEnd' (role 'AssociationEnd79', cardinality 0..*) is associated with 'Core::Attribute' (role 'qualifier', cardinality 0..*).
+'Use::Cases::Include' (role 'Use_Cases_Include', cardinality 0..*) is associated with 'UseCase' (role 'UseCase46', cardinality 0..*).
+'Multiplicity_' (role 'Multiplicity75', cardinality 0..*) is associated with 'Core::AssociationEnd' (role 'Core_AssociationEnd74', cardinality 0..*).
+'AttributeLink' (role 'AttributeLink23', cardinality 0..*) is associated with 'Common::Behavior::LinkEnd' (role 'linkEnd', cardinality 0..*).
+'Common::Behavior::Instance' (role 'Common_Behavior_Instance', cardinality 0..*) is associated with 'Instance' (role 'Instance', cardinality 0..*).
+'ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*) is associated with 'Use::Cases::UseCase' (role 'useCase', cardinality 0..*).
+'Common::Behavior::Link' (role 'Common_Behavior_Link', cardinality 0..*) is associated with 'Association' (role 'Association', cardinality 0..*).
+'GeneralizableElement' (role 'GeneralizableElement85', cardinality 0..*) is associated with 'Core::Generalization_' (role 'generalization', cardinality 0..*).
+'Common::Behavior::Instance' (role 'resident', cardinality 0..*) is associated with 'ComponentInstance' (role 'ComponentInstance', cardinality 0..*).
+'Core::Namespace' (role 'namespace', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement', cardinality 0..*).
+'Core::AssociationEnd' (role 'connection64', cardinality 0..*) is associated with 'Association' (role 'Association65', cardinality 0..*).
+'Core::Classifier' (role 'owner', cardinality 0..*) is associated with 'Feature' (role 'Feature', cardinality 0..*).
+'Common::Behavior::LinkEnd' (role 'linkEnd25', cardinality 0..*) is associated with 'Instance' (role 'Instance26', cardinality 0..*).
+'Classifier' (role 'Classifier58', cardinality 0..*) is associated with 'Core::Feature' (role 'feature', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'Core::Attribute' (role 'Core_Attribute', cardinality 0..*).
+'Common::Behavior::Link' (role 'link', cardinality 0..*) is associated with 'LinkEnd' (role 'LinkEnd19', cardinality 0..*).
+'LinkEnd' (role 'LinkEnd', cardinality 0..*) is associated with 'Common::Behavior::Instance' (role 'instance', cardinality 0..*).
+'Core::StructuralFeature' (role 'Core_StructuralFeature', cardinality 0..*) is associated with 'Classifier' (role 'Classifier60', cardinality 0..*).
+'Classifier' (role 'Classifier83', cardinality 0..*) is associated with 'Core::Generalization_' (role 'powertypeRange', cardinality 0..*).
+'Multiplicity_' (role 'Multiplicity', cardinality 0..*) is associated with 'Core::StructuralFeature' (role 'Core_StructuralFeature62', cardinality 0..*).
+'Link' (role 'Link', cardinality 0..*) is associated with 'Common::Behavior::Instance' (role 'Common_Behavior_Instance8', cardinality 0..*).
+'Common::Behavior::LinkEnd' (role 'Common_Behavior_LinkEnd', cardinality 0..*) is associated with 'AssociationEnd' (role 'AssociationEnd', cardinality 0..*).
+'Data::Types::Multiplicity_' (role 'multiplicity', cardinality 0..*) is associated with 'MultiplicityRange' (role 'MultiplicityRange', cardinality 0..*).
+'UseCase' (role 'UseCase48', cardinality 0..*) is associated with 'Use::Cases::Include' (role 'include', cardinality 0..*).
+'Instance' (role 'Instance29', cardinality 0..*) is associated with 'Common::Behavior::ComponentInstance' (role 'componentInstance', cardinality 0..*).
+'GeneralizableElement' (role 'GeneralizableElement', cardinality 0..*) is associated with 'Core::Generalization_' (role 'Core_Generalization', cardinality 0..*).
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'Common::Behavior::Instance' (role 'Common_Behavior_Instance3', cardinality 0..*).

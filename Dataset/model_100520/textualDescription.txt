@@ -1,0 +1,55 @@
+The model has 19 class(es).
+The class 'textualusecase::Include' has no attributes.
+The class 'FlowOfEvents' has no attributes.
+The class 'textualusecase::BasicFlow' has no attributes.
+The class 'textualusecase::UseCase' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'textualusecase::Statement' has no attributes.
+The class 'textualusecase::Agent' has the following attributes: 'name' of type str.
+The class 'Agent' has no attributes.
+The class 'textualusecase::Condition' has the following attributes: 'expression' of type str.
+The class 'textualusecase::UseCaseModel' has no attributes.
+The class 'Step' has no attributes.
+The class 'textualusecase::LoopStatement' has no attributes.
+The class 'textualusecase::Actor' has no attributes.
+The class 'textualusecase::Subject' has no attributes.
+The class 'textualusecase::AlternativeFlow' has no attributes.
+The class 'textualusecase::Step' has the following attributes: 'name' of type str.
+The class 'textualusecase::FlowOfEvents' has the following attributes: 'name' of type str.
+The class 'textualusecase::Action' has the following attributes: 'description' of type str.
+The class 'Statement' has no attributes.
+The class 'textualusecase::ConditionalStatement' has no attributes.
+'textualusecase::ConditionalStatement' is a specialization of 'Statement'.
+'textualusecase::Actor' is a specialization of 'Agent'.
+'textualusecase::AlternativeFlow' is a specialization of 'FlowOfEvents'.
+'textualusecase::Include' is a specialization of 'Step'.
+'textualusecase::Statement' is a specialization of 'Step'.
+'textualusecase::Action' is a specialization of 'Step'.
+'textualusecase::BasicFlow' is a specialization of 'FlowOfEvents'.
+'textualusecase::LoopStatement' is a specialization of 'Statement'.
+'textualusecase::Subject' is a specialization of 'Agent'.
+'textualusecase::Statement' (role 'statement', cardinality 0..*) is associated with 'textualusecase::Step' (role 'Step35', cardinality 0..*).
+'textualusecase::AlternativeFlow' (role 'AlternativeFlow27', cardinality 0..*) is associated with 'textualusecase::Step' (role 'branchingStep', cardinality 0..*).
+'textualusecase::Subject' (role 'Subject', cardinality 0..*) is associated with 'textualusecase::UseCaseModel' (role 'useCasemodel', cardinality 0..*).
+'textualusecase::Agent' (role 'agent', cardinality 0..*) is associated with 'textualusecase::Action' (role 'Action', cardinality 0..*).
+'textualusecase::BasicFlow' (role 'BasicFlow', cardinality 0..*) is associated with 'textualusecase::UseCase' (role 'useCase6', cardinality 0..*).
+'textualusecase::Include' (role 'includes', cardinality 0..*) is associated with 'textualusecase::UseCase' (role 'UseCase47', cardinality 0..*).
+'textualusecase::Include' (role 'Include', cardinality 0..*) is associated with 'textualusecase::UseCase' (role 'useCase17', cardinality 0..*).
+'textualusecase::Statement' (role 'Statement', cardinality 0..*) is associated with 'textualusecase::Step' (role 'steps', cardinality 0..*).
+'textualusecase::UseCase' (role 'useCase8', cardinality 0..*) is associated with 'textualusecase::Actor' (role 'Actor9', cardinality 0..*).
+'textualusecase::UseCase' (role 'useCase', cardinality 0..*) is associated with 'textualusecase::AlternativeFlow' (role 'AlternativeFlow', cardinality 0..*).
+'textualusecase::Actor' (role 'actor', cardinality 0..*) is associated with 'textualusecase::UseCaseModel' (role 'UseCaseModel39', cardinality 0..*).
+'textualusecase::Condition' (role 'textualusecase_Condition', cardinality 0..*) is associated with 'textualusecase::UseCase' (role 'textualusecase_UseCase', cardinality 0..*).
+'textualusecase::UseCase' (role 'UseCase42', cardinality 0..*) is associated with 'textualusecase::Actor' (role 'actor41', cardinality 0..*).
+'textualusecase::UseCaseModel' (role 'useCaseModel2', cardinality 0..*) is associated with 'textualusecase::Actor' (role 'Actor', cardinality 0..*).
+'textualusecase::AlternativeFlow' (role 'alternativeFlow22', cardinality 0..*) is associated with 'textualusecase::UseCase' (role 'UseCase23', cardinality 0..*).
+'textualusecase::UseCase' (role 'useCase15', cardinality 0..*) is associated with 'textualusecase::UseCaseModel' (role 'UseCaseModel', cardinality 0..*).
+'textualusecase::Statement' (role 'textualusecase_Statement', cardinality 0..*) is associated with 'textualusecase::Condition' (role 'textualusecase_Condition33', cardinality 0..*).
+'textualusecase::Step' (role 'Step25', cardinality 0..*) is associated with 'textualusecase::FlowOfEvents' (role 'flowOfEvents', cardinality 0..*).
+'textualusecase::Condition' (role 'textualusecase_Condition13', cardinality 0..*) is associated with 'textualusecase::UseCase' (role 'textualusecase_UseCase12', cardinality 0..*).
+'textualusecase::AlternativeFlow' (role 'alternativeFlow', cardinality 0..*) is associated with 'textualusecase::Step' (role 'Step', cardinality 0..*).
+'textualusecase::Subject' (role 'subject', cardinality 0..*) is associated with 'textualusecase::UseCaseModel' (role 'UseCaseModel44', cardinality 0..*).
+'textualusecase::Action' (role 'actions', cardinality 0..*) is associated with 'textualusecase::Agent' (role 'Agent', cardinality 0..*).
+'textualusecase::BasicFlow' (role 'basicFlow', cardinality 0..*) is associated with 'textualusecase::UseCase' (role 'UseCase37', cardinality 0..*).
+'textualusecase::Condition' (role 'textualusecase_Condition20', cardinality 0..*) is associated with 'textualusecase::AlternativeFlow' (role 'textualusecase_AlternativeFlow', cardinality 0..*).
+'textualusecase::UseCaseModel' (role 'useCaseModel', cardinality 0..*) is associated with 'textualusecase::UseCase' (role 'UseCase', cardinality 0..*).
+'textualusecase::FlowOfEvents' (role 'FlowOfEvents', cardinality 0..*) is associated with 'textualusecase::Step' (role 'steps30', cardinality 0..*).

@@ -1,0 +1,134 @@
+The model has 61 class(es).
+The class 'SpreadsheetMLPrintingSetup::WorksheetOptionsElt' has the following attributes: 'standardWidth' of type str; 'name' of type str; 'doNotDisplayOutline' of type str; 'allowInsertCols' of type str; 'zoom' of type str; 'enableSelection' of type str; 'allowDeleteCols' of type str; 'transitionFormulaEntry' of type str; 'fitToPage' of type str; 'splitVertical' of type str; 'noSummaryColumnsRightDetail' of type str; 'displayFormulas' of type str; 'rangeSelection' of type str; 'allowSizeCols' of type str; 'gridlineColorIndex' of type str; 'protectObjects' of type str; 'gridlineColor' of type str; 'allowFormatCells' of type str; 'excelWorksheetType' of type str; 'protectContentst' of type str; 'allowSort' of type str; 'displayRightToLeft' of type str; 'allowFilter' of type str; 'doNotDisplayColHeaders' of type str; 'allowSizeRows' of type str; 'topRowVisible' of type str; 'doNotDisplayZeros' of type str; 'filterOn' of type str; 'defaultRowHeight' of type str; 'activePane' of type str; 'splitHorizontal' of type str; 'allowUsePivotTables' of type str; 'leftColumnVisible' of type str; 'tabColorIndex' of type str; 'frozenNoSplit' of type str; 'defaultColumnWidth' of type str; 'freezePanes' of type str; 'unsynced' of type str; 'visible' of type str; 'doNotDisplayRowHeaders' of type str; 'activeRow' of type str; 'allowInsertHyperlinks' of type str; 'codeName' of type str; 'doNotDisplayHeadings' of type str; 'selected' of type str; 'allowDeleteRows' of type str; 'intlMacro' of type str; 'leftColumnRightPane' of type str; 'doNotDisplayGridlines' of type str; 'activeColumn' of type str; 'noSummaryRowsBelowDetail' of type str; 'applyAutomaticOutlineStyles' of type str; 'topRowBottomPane' of type str; 'displayPageBreak' of type str; 'protectScenarios' of type str; 'allowInsertRows' of type str; 'showPageBreakZoom' of type str; 'transitionExpressionEvaluation' of type str; 'pageBreakZoom' of type str.
+The class 'SpreadsheetMLPrintingSetup::BooleanValue' has the following attributes: 'value' of type str.
+The class 'Column' has no attributes.
+The class 'Table' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Header' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::HeaderOrFooterElt' has the following attributes: 'data' of type str; 'margin' of type str.
+The class 'SpreadsheetMLPrintingSetup::DateTimeType' has the following attributes: 'year' of type str; 'hour' of type str; 'month' of type str; 'minute' of type str; 'second' of type str; 'day' of type str.
+The class 'StyledElement' has no attributes.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Cell' has the following attributes: 'formula' of type str; 'hRef' of type str; 'mergeDown' of type str; 'mergeAcross' of type str; 'arrayRange' of type str.
+The class 'CustomDocumentProperty' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::DateTimeTypeValue' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::PageMarginsInfo' has the following attributes: 'left' of type str; 'bottom' of type str; 'right' of type str; 'top' of type str.
+The class 'SmartTagsCollection' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::ExcelWorkbook' has the following attributes: 'precisionAsDisplayed' of type str; 'noAutoRecover' of type str; 'protectWindows' of type str; 'hideVerticalScrollBar' of type str; 'embedSaveSmartTags' of type str; 'activeSheet' of type str; 'windowTopY' of type str; 'windowHeight' of type str; 'calculation' of type str; 'hideHorizontalScrollBar' of type str; 'hidePivotTableFieldList' of type str; 'refModeR1C1' of type str; 'date1904' of type str; 'doNotCalculateBeforeSave' of type str; 'iteration' of type str; 'windowWidth' of type str; 'createBackup' of type str; 'tabRatio' of type str; 'windowTopX' of type str; 'protectStructure' of type str; 'windowIconic' of type str; 'maxIterations' of type str; 'maxChange' of type str; 'futureVer' of type str; 'acceptLabelsInFormulas' of type str; 'doNotSaveLinkValues' of type str; 'displayDrawingObjects' of type str; 'hideWorkbookTabs' of type str; 'firstVisibleSheet' of type str; 'windowHidden' of type str; 'selectedSheets' of type str; 'uncalced' of type str; 'displayInkNotes' of type str; 'activeChart' of type str.
+The class 'SpreadsheetMLPrintingSetup::Data' has no attributes.
+The class 'ColOrRowElement' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::NumberValue' has the following attributes: 'value' of type str.
+The class 'Row' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::ErrorValue' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Footer' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Worksheet' has the following attributes: 'protected' of type str; 'name' of type str; 'rightToLeft' of type str.
+The class 'HeaderOrFooterElt' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::StyledElement' has no attributes.
+The class 'VersionType' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Workbook' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::StringValue' has the following attributes: 'value' of type str.
+The class 'WorksheetOptionsElt' has no attributes.
+The class 'Comment' has no attributes.
+The class 'SmartTagType' has no attributes.
+The class 'Header' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Table' has the following attributes: 'leftCell' of type str; 'fullColumns' of type str; 'expandedColumnCount' of type str; 'expandedRowCount' of type str; 'defaultColumnWidth' of type str; 'defaultRowHeight' of type str; 'fullRows' of type str; 'topCell' of type str.
+The class 'SpreadsheetMLPrintingSetup::Comment' has the following attributes: 'author' of type str; 'showAlways' of type str.
+The class 'DateTimeType' has no attributes.
+The class 'PageMarginsInfo' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::CustomDocumentProperty' has the following attributes: 'name' of type str.
+The class 'SpreadsheetMLPrintingSetup::Print' has the following attributes: 'leftToRight' of type str; 'printErrors' of type str; 'draftQuality' of type str; 'commentsLayout' of type str; 'blackAndWhite' of type str; 'paperSizeIndex' of type str; 'fitHeight' of type str; 'scale' of type str; 'gridlines' of type str; 'verticalResolution' of type str; 'validPrinterInfo' of type str; 'numberOfCopies' of type str; 'horizontalResolution' of type str; 'rowColHeadings' of type str; 'fitWidth' of type str.
+The class 'ExcelWorkbook' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::TableElement' has the following attributes: 'index' of type str.
+The class 'SpreadsheetMLPrintingSetup::DocumentPropertiesCollection' has the following attributes: 'paragraphs' of type str; 'totalTime' of type str; 'manager' of type str; 'charactersWithSpaces' of type str; 'words' of type str; 'description' of type str; 'author' of type str; 'appName' of type str; 'revision' of type str; 'bytes' of type str; 'subject' of type str; 'lines' of type str; 'hyperlinkBase' of type str; 'pages' of type str; 'lastAuthor' of type str; 'company' of type str; 'guid' of type str; 'category' of type str; 'keywords' of type str; 'title' of type str; 'characters' of type str; 'presentationFormat' of type str.
+The class 'SpreadsheetMLPrintingSetup::ValueType' has no attributes.
+The class 'Print' has no attributes.
+The class 'Workbook' has no attributes.
+The class 'Data' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Column' has the following attributes: 'autoFitWidth' of type str; 'width' of type str.
+The class 'Cell' has no attributes.
+The class 'Footer' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Layout' has the following attributes: 'orientation' of type str; 'centerVertical' of type str; 'centerHorizontal' of type str; 'startPageNumber' of type str.
+The class 'SpreadsheetMLPrintingSetup::CustomDocumentPropertiesCollection' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::SmartTagType' has the following attributes: 'name' of type str; 'url' of type str; 'namespaceuri' of type str.
+The class 'PageSetup' has no attributes.
+The class 'CustomDocumentPropertiesCollection' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::PageSetup' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::SmartTagsCollection' has no attributes.
+The class 'TableElement' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::Row' has the following attributes: 'autoFitHeight' of type str; 'height' of type str.
+The class 'SpreadsheetMLPrintingSetup::ColOrRowElement' has the following attributes: 'hidden' of type str; 'span' of type str.
+The class 'Layout' has no attributes.
+The class 'SpreadsheetMLPrintingSetup::VersionType' has the following attributes: 'n' of type str; 'nn' of type str.
+The class 'Worksheet' has no attributes.
+The enumeration 'ExcelWorksheetTypeType' has the following literals: 'ewt_Worksheet', 'ewt_Dialog', 'ewt_Chart', 'ewt_Macro'.
+The enumeration 'CommentsLayoutType' has the following literals: 'clt_PrintNone', 'clt_SheetEnd', 'clt_InPlace'.
+The enumeration 'DisplayDrawingObjectsType' has the following literals: 'ddot_hideAll', 'ddot_placeHolders', 'ddot_displayShapes'.
+The enumeration 'OrientationType' has the following literals: 'ot_Portrait', 'ot_Landscape'.
+The enumeration 'CalculationWorkbookType' has the following literals: 'cwt_manualCalculation', 'cwt_semiAutomaticCalculation', 'cwt_automaticCalculation'.
+The enumeration 'VisibleType' has the following literals: 'vt_SheetVeryHidden', 'vt_SheetHidden', 'vt_SheetVisible'.
+The enumeration 'EnableSelectionType' has the following literals: 'est_NoSelection', 'est_UnlockedCells'.
+'SpreadsheetMLPrintingSetup::DateTimeTypeValue' is a specialization of 'ValueType'.
+'SpreadsheetMLPrintingSetup::NumberValue' is a specialization of 'ValueType'.
+'SpreadsheetMLPrintingSetup::TableElement' is a specialization of 'StyledElement'.
+'SpreadsheetMLPrintingSetup::Cell' is a specialization of 'TableElement'.
+'SpreadsheetMLPrintingSetup::Table' is a specialization of 'StyledElement'.
+'SpreadsheetMLPrintingSetup::StringValue' is a specialization of 'ValueType'.
+'SpreadsheetMLPrintingSetup::BooleanValue' is a specialization of 'ValueType'.
+'SpreadsheetMLPrintingSetup::ErrorValue' is a specialization of 'ValueType'.
+'SpreadsheetMLPrintingSetup::Column' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLPrintingSetup::Row' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLPrintingSetup::ColOrRowElement' is a specialization of 'TableElement'.
+'SpreadsheetMLPrintingSetup::Footer' is a specialization of 'HeaderOrFooterElt'.
+'SpreadsheetMLPrintingSetup::Header' is a specialization of 'HeaderOrFooterElt'.
+'SpreadsheetMLPrintingSetup::Comment' (role 'c_comment', cardinality 0..*) is associated with 'Cell' (role 'Cell52', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::ValueType' (role 'value', cardinality 0..*) is associated with 'Data' (role 'Data', cardinality 0..*).
+'ValueType' (role 'ValueType60', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Data' (role 'vt_data', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::WorksheetOptionsElt' (role 'ps_worksheetOptions', cardinality 0..*) is associated with 'PageSetup' (role 'PageSetup', cardinality 0..*).
+'CustomDocumentProperty' (role 'CustomDocumentProperty', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::CustomDocumentPropertiesCollection' (role 'customDocumentProperty_cdpe', cardinality 0..*).
+'VersionType' (role 'VersionType', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::DocumentPropertiesCollection' (role 'SpreadsheetMLPrintingSetup_DocumentPropertiesCollection', cardinality 0..*).
+'WorksheetOptionsElt' (role 'WorksheetOptionsElt68', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::PageSetup' (role 'wo_pageSetup', cardinality 0..*).
+'Workbook' (role 'Workbook14', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::CustomDocumentPropertiesCollection' (role 'wb_customDocProperties', cardinality 0..*).
+'PageMarginsInfo' (role 'PageMarginsInfo', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::PageSetup' (role 'pm_pageSetup', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::PageSetup' (role 'l_pageSetup', cardinality 0..*) is associated with 'Layout' (role 'Layout', cardinality 0..*).
+'Cell' (role 'Cell43', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Row' (role 'c_row', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Worksheet' (role 't_worksheet', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::SmartTagType' (role 'smartTagTypes', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection', cardinality 0..*).
+'Workbook' (role 'Workbook62', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::ExcelWorkbook' (role 'wb_excelWorkbook', cardinality 0..*).
+'Data' (role 'Data54', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Comment' (role 'd_comment', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Layout' (role 'ps_layout', cardinality 0..*) is associated with 'PageSetup' (role 'PageSetup74', cardinality 0..*).
+'Cell' (role 'Cell', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::SmartTagsCollection' (role 'c_smartTags', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Row' (role 't_rows', cardinality 0..*) is associated with 'Table' (role 'Table41', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Workbook' (role 'ew_workbook', cardinality 0..*) is associated with 'ExcelWorkbook' (role 'ExcelWorkbook', cardinality 0..*).
+'PageSetup' (role 'PageSetup76', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Header' (role 'ps_header', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Table' (role 'c_table', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::PageMarginsInfo' (role 'ps_pageMargins', cardinality 0..*) is associated with 'PageSetup' (role 'PageSetup80', cardinality 0..*).
+'Header' (role 'Header', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::PageSetup' (role 'h_pageSetup', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Workbook' (role 'dp_workbook', cardinality 0..*) is associated with 'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*).
+'Workbook' (role 'Workbook', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::DocumentPropertiesCollection' (role 'wb_docProperties', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Workbook' (role 'st_workbook', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection24', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::WorksheetOptionsElt' (role 'w_worksheetOptions', cardinality 0..*) is associated with 'Worksheet' (role 'Worksheet64', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Data' (role 'c_data', cardinality 0..*) is associated with 'Cell' (role 'Cell56', cardinality 0..*).
+'WorksheetOptionsElt' (role 'WorksheetOptionsElt', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Worksheet' (role 'wo_worksheet', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::DateTimeTypeValue' (role 'SpreadsheetMLPrintingSetup_DateTimeTypeValue', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType', cardinality 0..*).
+'Workbook' (role 'Workbook20', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::SmartTagsCollection' (role 'wb_smartTags', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Cell' (role 'r_cells', cardinality 0..*) is associated with 'Row' (role 'Row47', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Table' (role 'r_table', cardinality 0..*) is associated with 'Row' (role 'Row', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType6', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::DocumentPropertiesCollection' (role 'SpreadsheetMLPrintingSetup_DocumentPropertiesCollection5', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::SmartTagsCollection' (role 'smartTagType_ste', cardinality 0..*) is associated with 'SmartTagType' (role 'SmartTagType', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Workbook' (role 'cdp_workbook', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection27', cardinality 0..*).
+'Comment' (role 'Comment58', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Data' (role 'com_data', cardinality 0..*).
+'Footer' (role 'Footer', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::PageSetup' (role 'f_pageSetup', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::WorksheetOptionsElt' (role 'p_worksheetOptions', cardinality 0..*) is associated with 'Print' (role 'Print', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::DocumentPropertiesCollection' (role 'SpreadsheetMLPrintingSetup_DocumentPropertiesCollection8', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType9', cardinality 0..*).
+'SmartTagsCollection' (role 'SmartTagsCollection45', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Cell' (role 'st_cell', cardinality 0..*).
+'Table' (role 'Table39', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Column' (role 't_cols', cardinality 0..*).
+'Worksheet' (role 'Worksheet', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Workbook' (role 'ws_workbook', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType12', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::DocumentPropertiesCollection' (role 'SpreadsheetMLPrintingSetup_DocumentPropertiesCollection11', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Cell' (role 'c_cell', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'Workbook' (role 'Workbook31', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Worksheet' (role 'wb_worksheets', cardinality 0..*).
+'Data' (role 'Data49', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Cell' (role 'd_cell', cardinality 0..*).
+'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::CustomDocumentProperty' (role 'customDocumentProperties', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Print' (role 'wo_print', cardinality 0..*) is associated with 'WorksheetOptionsElt' (role 'WorksheetOptionsElt82', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::CustomDocumentProperty' (role 'SpreadsheetMLPrintingSetup_CustomDocumentProperty', cardinality 0..*) is associated with 'ValueType' (role 'ValueType', cardinality 0..*).
+'Worksheet' (role 'Worksheet35', cardinality 0..*) is associated with 'SpreadsheetMLPrintingSetup::Table' (role 'ws_table', cardinality 0..*).
+'SpreadsheetMLPrintingSetup::Footer' (role 'ps_footer', cardinality 0..*) is associated with 'PageSetup' (role 'PageSetup78', cardinality 0..*).

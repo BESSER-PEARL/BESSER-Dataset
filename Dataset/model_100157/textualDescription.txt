@@ -1,0 +1,54 @@
+The model has 27 class(es).
+The class 'query::DateExpression' has the following attributes: 'value' of type date.
+The class 'query::DateArrayExpression' has the following attributes: 'values' of type date.
+The class 'query::StringArrayExpression' has the following attributes: 'values' of type str.
+The class 'ExpressionWhereEntry' has no attributes.
+The class 'query::BooleanArrayExpression' has the following attributes: 'values' of type str.
+The class 'query::LongExpression' has the following attributes: 'value' of type str.
+The class 'Expression' has no attributes.
+The class 'query::LongArrayExpression' has the following attributes: 'values' of type str.
+The class 'query::NullExpression' has the following attributes: 'value' of type str.
+The class 'query::DoubleExpression' has the following attributes: 'value' of type float.
+The class 'query::StringExpression' has the following attributes: 'value' of type str.
+The class 'query::WhereEntry' has no attributes.
+The class 'query::MultiExpressionWhereEntry' has the following attributes: 'operator' of type str.
+The class 'query::ExpressionWhereEntry' has the following attributes: 'name' of type str.
+The class 'query::Expression' has no attributes.
+The class 'query::OrWhereEntry' has no attributes.
+The class 'query::DoubleArrayExpression' has the following attributes: 'values' of type float.
+The class 'query::SingleExpressionWhereEntry' has the following attributes: 'operator' of type str.
+The class 'query::NullArrayExpression' has the following attributes: 'values' of type str.
+The class 'WhereEntry' has no attributes.
+The class 'query::ArrayExpression' has no attributes.
+The class 'query::Model' has the following attributes: 'attrs' of type str.
+The class 'query::Database' has the following attributes: 'name' of type str; 'dbName' of type str; 'port' of type str; 'url' of type str.
+The class 'query::BooleanExpression' has the following attributes: 'true' of type str.
+The class 'query::AndWhereEntry' has no attributes.
+The class 'ArrayExpression' has no attributes.
+The class 'query::ReplacableValue' has the following attributes: 'value' of type str.
+The enumeration 'ArrayOperator' has the following literals: 'sql_notIn', 'mongo_all', 'mongo_in', 'sql_in', 'mongo_nin'.
+The enumeration 'Operator' has the following literals: 'like', 'greaterEqual', 'greaterThen', 'notEqual', 'notIn', 'lessThen', 'in_', 'lessEqual', 'equal', 'notLike'.
+'query::DoubleExpression' is a specialization of 'Expression'.
+'query::BooleanArrayExpression' is a specialization of 'ArrayExpression'.
+'query::LongExpression' is a specialization of 'Expression'.
+'query::NullExpression' is a specialization of 'Expression'.
+'query::ExpressionWhereEntry' is a specialization of 'WhereEntry'.
+'query::StringArrayExpression' is a specialization of 'ArrayExpression'.
+'query::BooleanExpression' is a specialization of 'Expression'.
+'query::ReplacableValue' is a specialization of 'Expression'.
+'query::StringExpression' is a specialization of 'Expression'.
+'query::DateExpression' is a specialization of 'Expression'.
+'query::NullArrayExpression' is a specialization of 'ArrayExpression'.
+'query::MultiExpressionWhereEntry' is a specialization of 'ExpressionWhereEntry'.
+'query::LongArrayExpression' is a specialization of 'ArrayExpression'.
+'query::SingleExpressionWhereEntry' is a specialization of 'ExpressionWhereEntry'.
+'query::OrWhereEntry' is a specialization of 'WhereEntry'.
+'query::AndWhereEntry' is a specialization of 'WhereEntry'.
+'query::DoubleArrayExpression' is a specialization of 'ArrayExpression'.
+'query::DateArrayExpression' is a specialization of 'ArrayExpression'.
+'query::ArrayExpression' (role 'query_ArrayExpression', cardinality 0..*) is associated with 'query::MultiExpressionWhereEntry' (role 'query_MultiExpressionWhereEntry', cardinality 0..*).
+'query::Model' (role 'query_Model2', cardinality 0..*) is associated with 'query::WhereEntry' (role 'query_WhereEntry', cardinality 0..*).
+'query::WhereEntry' (role 'query_WhereEntry8', cardinality 0..*) is associated with 'query::AndWhereEntry' (role 'query_AndWhereEntry', cardinality 0..*).
+'query::Model' (role 'query_Model', cardinality 0..*) is associated with 'query::Database' (role 'query_Database', cardinality 0..*).
+'query::SingleExpressionWhereEntry' (role 'query_SingleExpressionWhereEntry', cardinality 0..*) is associated with 'query::Expression' (role 'query_Expression', cardinality 0..*).
+'query::WhereEntry' (role 'query_WhereEntry6', cardinality 0..*) is associated with 'query::OrWhereEntry' (role 'query_OrWhereEntry', cardinality 0..*).

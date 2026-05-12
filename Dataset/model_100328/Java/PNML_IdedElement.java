@@ -1,0 +1,33 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class PNML_IdedElement extends LocatedElement {
+
+    private String id;
+
+
+
+    public PNML_IdedElement(
+        String id    ) {
+        super(
+        );
+        this.id = id;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
+}

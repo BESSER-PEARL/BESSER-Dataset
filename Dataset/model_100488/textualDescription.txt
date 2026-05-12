@@ -1,0 +1,45 @@
+The model has 23 class(es).
+The class 'Generalization_' has no attributes.
+The class 'UMLMetamodelFragment::CompositeState' has no attributes.
+The class 'UMLMetamodelFragment::SimpleState' has no attributes.
+The class 'UMLMetamodelFragment::Event' has no attributes.
+The class 'State' has no attributes.
+The class 'Stereotype' has no attributes.
+The class 'UMLMetamodelFragment::StateMachine' has no attributes.
+The class 'UMLMetamodelFragment::Class' has no attributes.
+The class 'UMLMetamodelFragment::StateVertex' has no attributes.
+The class 'Class' has no attributes.
+The class 'UMLMetamodelFragment::Generalization_' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'UMLMetamodelFragment::State' has no attributes.
+The class 'Event' has no attributes.
+The class 'UMLMetamodelFragment::Stereotype' has the following attributes: 'baseClass' of type str.
+The class 'CompositeState' has no attributes.
+The class 'UMLMetamodelFragment::Dependency' has no attributes.
+The class 'UMLMetamodelFragment::FinalState' has no attributes.
+The class 'UMLMetamodelFragment::Transition' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'UMLMetamodelFragment::PseudoState' has no attributes.
+The class 'Transition' has no attributes.
+The class 'StateVertex' has no attributes.
+'UMLMetamodelFragment::State' is a specialization of 'StateVertex'.
+'UMLMetamodelFragment::FinalState' is a specialization of 'State'.
+'UMLMetamodelFragment::SimpleState' is a specialization of 'State'.
+'UMLMetamodelFragment::PseudoState' is a specialization of 'StateVertex'.
+'UMLMetamodelFragment::CompositeState' is a specialization of 'State'.
+'Dependency' (role 'Dependency9', cardinality 0..*) is associated with 'UMLMetamodelFragment::Stereotype' (role 'stereotype', cardinality 0..*).
+'StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'UMLMetamodelFragment::Dependency' (role 'UMLMetamodelFragment_Dependency', cardinality 0..*).
+'Class' (role 'Class', cardinality 0..*) is associated with 'UMLMetamodelFragment::Dependency' (role 'dependency', cardinality 0..*).
+'UMLMetamodelFragment::CompositeState' (role 'compositeState', cardinality 0..*) is associated with 'StateVertex' (role 'StateVertex', cardinality 0..*).
+'UMLMetamodelFragment::Class' (role 'client', cardinality 0..*) is associated with 'Dependency' (role 'Dependency', cardinality 0..*).
+'StateVertex' (role 'StateVertex21', cardinality 0..*) is associated with 'UMLMetamodelFragment::Transition' (role 'UMLMetamodelFragment_Transition20', cardinality 0..*).
+'UMLMetamodelFragment::Class' (role 'UMLMetamodelFragment_Class', cardinality 0..*) is associated with 'Generalization_' (role 'Generalization_', cardinality 0..*).
+'UMLMetamodelFragment::State' (role 'top', cardinality 0..*) is associated with 'StateMachine' (role 'StateMachine14', cardinality 0..*).
+'CompositeState' (role 'CompositeState', cardinality 0..*) is associated with 'UMLMetamodelFragment::StateVertex' (role 'subvertex', cardinality 0..*).
+'Generalization_' (role 'Generalization3', cardinality 0..*) is associated with 'UMLMetamodelFragment::Class' (role 'UMLMetamodelFragment_Class2', cardinality 0..*).
+'Stereotype' (role 'Stereotype', cardinality 0..*) is associated with 'UMLMetamodelFragment::Dependency' (role 'extendedElement', cardinality 0..*).
+'UMLMetamodelFragment::State' (role 'UMLMetamodelFragment_State', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).
+'UMLMetamodelFragment::StateMachine' (role 'UMLMetamodelFragment_StateMachine', cardinality 0..*) is associated with 'Class' (role 'Class11', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'UMLMetamodelFragment::StateMachine' (role 'stateMachine', cardinality 0..*).
+'UMLMetamodelFragment::Transition' (role 'UMLMetamodelFragment_Transition', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'UMLMetamodelFragment::Transition' (role 'UMLMetamodelFragment_Transition23', cardinality 0..*) is associated with 'StateVertex' (role 'StateVertex24', cardinality 0..*).

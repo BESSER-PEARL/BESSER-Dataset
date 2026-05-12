@@ -1,0 +1,189 @@
+The model has 80 class(es).
+The class 'plSql::IfStatementElsifBranch' has no attributes.
+The class 'plSql::CaseStatementWhenBranch' has no attributes.
+The class 'plSql::CaseStatementElseBranch' has no attributes.
+The class 'plSql::FunctionContent' has no attributes.
+The class 'plSql::DeclareSection' has no attributes.
+The class 'plSql::VariableDeclaration' has the following attributes: 'isConstant' of type bool; 'isNotNull' of type bool; 'dataType' of type str.
+The class 'plSql::Item' has no attributes.
+The class 'FunctionContent' has no attributes.
+The class 'plSql::VariableValue' has no attributes.
+The class 'plSql::FunctionClause' has no attributes.
+The class 'plSql::ProcedureContent' has no attributes.
+The class 'plSql::NullLiteralExpression' has no attributes.
+The class 'ProcedureContent' has no attributes.
+The class 'plSql::ProcedureInvokerRightsClause' has the following attributes: 'right' of type str.
+The class 'plSql::Expression' has no attributes.
+The class 'plSql::Pragma' has no attributes.
+The class 'plSql::FetchStatementSingleIntoClause' has no attributes.
+The class 'plSql::CompilationUnit' has no attributes.
+The class 'plSql::ParameterDeclaration' has the following attributes: 'behavior' of type str; 'dataType' of type str.
+The class 'plSql::Procedure' has the following attributes: 'schemaName' of type str.
+The class 'plSql::StatementBody' has the following attributes: 'endName' of type str.
+The class 'plSql::StringLiteralExpression' has the following attributes: 'value' of type str.
+The class 'plSql::ProcedureImplementation' has no attributes.
+The class 'plSql::Function' has the following attributes: 'returnType' of type str; 'schemaName' of type str.
+The class 'plSql::ProcedureDefinition' has no attributes.
+The class 'plSql::BooleanLiteralExpression' has the following attributes: 'value' of type str.
+The class 'LoopStatement' has no attributes.
+The class 'FunctionClause' has no attributes.
+The class 'plSql::BasicLoopStatement' has no attributes.
+The class 'plSql::RaiseStatement' has the following attributes: 'exceptionName' of type str.
+The class 'plSql::Label' has the following attributes: 'name' of type str.
+The class 'plSql::GotoStatement' has no attributes.
+The class 'plSql::PragmaRestrictReferences' has the following attributes: 'restrictions' of type str.
+The class 'plSql::ExternalProcedureDeclaration' has no attributes.
+The class 'plSql::IfStatementElseBranch' has no attributes.
+The class 'plSql::ResultCacheClause' has the following attributes: 'dataSources' of type str.
+The class 'Expression' has no attributes.
+The class 'plSql::VariableAssignmentTarget' has no attributes.
+The class 'plSql::CaseStatement' has the following attributes: 'endLabel' of type str.
+The class 'FetchStatementIntoClause' has no attributes.
+The class 'plSql::NameDeclaration' has the following attributes: 'name' of type str.
+The class 'plSql::FunctionInvokerRightsClause' has the following attributes: 'right' of type str.
+The class 'Pragma' has no attributes.
+The class 'Item' has no attributes.
+The class 'plSql::Name' has no attributes.
+The class 'plSql::Statement' has no attributes.
+The class 'plSql::ItemDeclaration' has no attributes.
+The class 'AssignmentTarget' has no attributes.
+The class 'plSql::LoopVariableDeclaration' has no attributes.
+The class 'plSql::ParameterSequence' has no attributes.
+The class 'plSql::DeterministicClause' has no attributes.
+The class 'plSql::Package' has the following attributes: 'schemaName' of type str; 'endName' of type str.
+The class 'plSql::VariableRefExpression' has no attributes.
+The class 'plSql::WhileLoopStatement' has no attributes.
+The class 'plSql::ReturnStatement' has no attributes.
+The class 'plSql::FunctionImplementation' has no attributes.
+The class 'plSql::NullStatement' has no attributes.
+The class 'plSql::ProcedureDeclaration' has the following attributes: 'name' of type str.
+The class 'plSql::AssignmentTarget' has no attributes.
+The class 'plSql::LoopStatement' has the following attributes: 'endLabel' of type str.
+The class 'plSql::PragmaTimestamp' has the following attributes: 'timestamp' of type str.
+The class 'plSql::IfStatement' has no attributes.
+The class 'plSql::AssignmentStatement' has no attributes.
+The class 'plSql::BlockStatement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'plSql::ContinueStatement' has the following attributes: 'labelName' of type str.
+The class 'plSql::FetchStatementIntoClause' has no attributes.
+The class 'plSql::ParameterValue' has no attributes.
+The class 'plSql::FetchStatementBulkIntoClause' has no attributes.
+The class 'plSql::CloseStatement' has no attributes.
+The class 'CompilationUnit' has no attributes.
+The class 'ItemDeclaration' has no attributes.
+The class 'plSql::ForLoopStatement' has no attributes.
+The class 'plSql::VariableRef' has the following attributes: 'isHostRef' of type bool.
+The class 'plSql::PipelinedClause' has no attributes.
+The class 'plSql::FetchStatement' has no attributes.
+The class 'plSql::ExitStatement' has the following attributes: 'labelName' of type str.
+The class 'plSql::QualifiedName' has no attributes.
+The class 'plSql::IntLiteralExpression' has the following attributes: 'value' of type int.
+The class 'NameDeclaration' has no attributes.
+The enumeration 'InvokerRight' has the following literals: 'DEFINER', 'CURRENT_USER'.
+'plSql::PipelinedClause' is a specialization of 'FunctionClause'.
+'plSql::FunctionInvokerRightsClause' is a specialization of 'FunctionClause'.
+'plSql::FetchStatement' is a specialization of 'Statement'.
+'plSql::VariableRefExpression' is a specialization of 'Expression'.
+'plSql::VariableAssignmentTarget' is a specialization of 'AssignmentTarget'.
+'plSql::ParameterDeclaration' is a specialization of 'NameDeclaration'.
+'plSql::FetchStatementBulkIntoClause' is a specialization of 'FetchStatementIntoClause'.
+'plSql::CloseStatement' is a specialization of 'Statement'.
+'plSql::ItemDeclaration' is a specialization of 'Item'.
+'plSql::BlockStatement' is a specialization of 'Statement'.
+'plSql::StringLiteralExpression' is a specialization of 'Expression'.
+'plSql::PragmaTimestamp' is a specialization of 'Pragma'.
+'plSql::Procedure' is a specialization of 'NameDeclaration'.
+'plSql::BasicLoopStatement' is a specialization of 'LoopStatement'.
+'plSql::DeterministicClause' is a specialization of 'FunctionClause'.
+'plSql::ContinueStatement' is a specialization of 'Statement'.
+'plSql::ForLoopStatement' is a specialization of 'LoopStatement'.
+'plSql::Pragma' is a specialization of 'Item'.
+'plSql::ProcedureDefinition' is a specialization of 'NameDeclaration'.
+'plSql::VariableDeclaration' is a specialization of 'ItemDeclaration'.
+'plSql::Function' is a specialization of 'NameDeclaration'.
+'plSql::NullLiteralExpression' is a specialization of 'Expression'.
+'plSql::Function' is a specialization of 'CompilationUnit'.
+'plSql::IntLiteralExpression' is a specialization of 'Expression'.
+'plSql::ExternalProcedureDeclaration' is a specialization of 'ProcedureContent'.
+'plSql::GotoStatement' is a specialization of 'Statement'.
+'plSql::NullStatement' is a specialization of 'Statement'.
+'plSql::RaiseStatement' is a specialization of 'Statement'.
+'plSql::Procedure' is a specialization of 'CompilationUnit'.
+'plSql::ResultCacheClause' is a specialization of 'FunctionClause'.
+'plSql::ProcedureDefinition' is a specialization of 'Item'.
+'plSql::Package' is a specialization of 'NameDeclaration'.
+'plSql::FunctionImplementation' is a specialization of 'FunctionContent'.
+'plSql::CaseStatement' is a specialization of 'Statement'.
+'plSql::FetchStatementSingleIntoClause' is a specialization of 'FetchStatementIntoClause'.
+'plSql::ProcedureImplementation' is a specialization of 'ProcedureContent'.
+'plSql::LoopStatement' is a specialization of 'Statement'.
+'plSql::ExitStatement' is a specialization of 'Statement'.
+'plSql::Package' is a specialization of 'CompilationUnit'.
+'plSql::WhileLoopStatement' is a specialization of 'LoopStatement'.
+'plSql::VariableDeclaration' is a specialization of 'NameDeclaration'.
+'plSql::IfStatement' is a specialization of 'Statement'.
+'plSql::BooleanLiteralExpression' is a specialization of 'Expression'.
+'plSql::AssignmentStatement' is a specialization of 'Statement'.
+'plSql::LoopVariableDeclaration' is a specialization of 'NameDeclaration'.
+'plSql::PragmaRestrictReferences' is a specialization of 'Pragma'.
+'plSql::ReturnStatement' is a specialization of 'Statement'.
+'plSql::ProcedureDeclaration' is a specialization of 'Item'.
+'plSql::Expression' (role 'plSql_Expression116', cardinality 0..*) is associated with 'plSql::ForLoopStatement' (role 'plSql_ForLoopStatement115', cardinality 0..*).
+'plSql::ProcedureDefinition' (role 'plSql_ProcedureDefinition', cardinality 0..*) is associated with 'plSql::ParameterSequence' (role 'plSql_ParameterSequence12', cardinality 0..*).
+'plSql::ProcedureImplementation' (role 'plSql_ProcedureImplementation30', cardinality 0..*) is associated with 'plSql::StatementBody' (role 'plSql_StatementBody', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression88', cardinality 0..*) is associated with 'plSql::FetchStatementBulkIntoClause' (role 'plSql_FetchStatementBulkIntoClause', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression121', cardinality 0..*) is associated with 'plSql::ReturnStatement' (role 'plSql_ReturnStatement', cardinality 0..*).
+'plSql::Statement' (role 'plSql_Statement95', cardinality 0..*) is associated with 'plSql::IfStatement' (role 'plSql_IfStatement94', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression102', cardinality 0..*) is associated with 'plSql::IfStatementElsifBranch' (role 'plSql_IfStatementElsifBranch101', cardinality 0..*).
+'plSql::ParameterDeclaration' (role 'plSql_ParameterDeclaration24', cardinality 0..*) is associated with 'plSql::ParameterValue' (role 'plSql_ParameterValue', cardinality 0..*).
+'plSql::CloseStatement' (role 'plSql_CloseStatement', cardinality 0..*) is associated with 'plSql::VariableRef' (role 'plSql_VariableRef75', cardinality 0..*).
+'plSql::IfStatementElseBranch' (role 'plSql_IfStatementElseBranch107', cardinality 0..*) is associated with 'plSql::Statement' (role 'plSql_Statement108', cardinality 0..*).
+'plSql::FunctionImplementation' (role 'plSql_FunctionImplementation', cardinality 0..*) is associated with 'plSql::DeclareSection' (role 'plSql_DeclareSection32', cardinality 0..*).
+'plSql::Procedure' (role 'plSql_Procedure', cardinality 0..*) is associated with 'plSql::ParameterSequence' (role 'plSql_ParameterSequence', cardinality 0..*).
+'plSql::Package' (role 'plSql_Package', cardinality 0..*) is associated with 'plSql::ProcedureInvokerRightsClause' (role 'plSql_ProcedureInvokerRightsClause6', cardinality 0..*).
+'plSql::VariableValue' (role 'plSql_VariableValue43', cardinality 0..*) is associated with 'plSql::Expression' (role 'plSql_Expression44', cardinality 0..*).
+'plSql::FetchStatement' (role 'plSql_FetchStatement83', cardinality 0..*) is associated with 'plSql::FetchStatementIntoClause' (role 'plSql_FetchStatementIntoClause', cardinality 0..*).
+'plSql::IfStatement' (role 'plSql_IfStatement97', cardinality 0..*) is associated with 'plSql::IfStatementElsifBranch' (role 'plSql_IfStatementElsifBranch', cardinality 0..*).
+'plSql::ParameterSequence' (role 'plSql_ParameterSequence16', cardinality 0..*) is associated with 'plSql::Function' (role 'plSql_Function', cardinality 0..*).
+'plSql::Statement' (role 'plSql_Statement110', cardinality 0..*) is associated with 'plSql::LoopStatement' (role 'plSql_LoopStatement', cardinality 0..*).
+'plSql::FunctionImplementation' (role 'plSql_FunctionImplementation34', cardinality 0..*) is associated with 'plSql::StatementBody' (role 'plSql_StatementBody35', cardinality 0..*).
+'plSql::VariableRefExpression' (role 'plSql_VariableRefExpression', cardinality 0..*) is associated with 'plSql::VariableRef' (role 'plSql_VariableRef', cardinality 0..*).
+'plSql::QualifiedName' (role 'plSql_QualifiedName', cardinality 0..*) is associated with 'plSql::VariableRef' (role 'plSql_VariableRef123', cardinality 0..*).
+'plSql::VariableDeclaration' (role 'plSql_VariableDeclaration', cardinality 0..*) is associated with 'plSql::VariableValue' (role 'plSql_VariableValue', cardinality 0..*).
+'plSql::IfStatementElseBranch' (role 'plSql_IfStatementElseBranch', cardinality 0..*) is associated with 'plSql::IfStatement' (role 'plSql_IfStatement99', cardinality 0..*).
+'plSql::ParameterSequence' (role 'plSql_ParameterSequence10', cardinality 0..*) is associated with 'plSql::ProcedureDeclaration' (role 'plSql_ProcedureDeclaration', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression60', cardinality 0..*) is associated with 'plSql::CaseStatement' (role 'plSql_CaseStatement', cardinality 0..*).
+'plSql::FetchStatementIntoClause' (role 'plSql_FetchStatementIntoClause85', cardinality 0..*) is associated with 'plSql::VariableRef' (role 'plSql_VariableRef86', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression112', cardinality 0..*) is associated with 'plSql::WhileLoopStatement' (role 'plSql_WhileLoopStatement', cardinality 0..*).
+'plSql::QualifiedName' (role 'plSql_QualifiedName125', cardinality 0..*) is associated with 'plSql::Name' (role 'plSql_Name', cardinality 0..*).
+'plSql::GotoStatement' (role 'plSql_GotoStatement', cardinality 0..*) is associated with 'plSql::Label' (role 'plSql_Label90', cardinality 0..*).
+'plSql::DeclareSection' (role 'plSql_DeclareSection39', cardinality 0..*) is associated with 'plSql::Item' (role 'plSql_Item40', cardinality 0..*).
+'plSql::CaseStatementWhenBranch' (role 'plSql_CaseStatementWhenBranch69', cardinality 0..*) is associated with 'plSql::Statement' (role 'plSql_Statement70', cardinality 0..*).
+'plSql::ParameterDeclaration' (role 'plSql_ParameterDeclaration', cardinality 0..*) is associated with 'plSql::ParameterSequence' (role 'plSql_ParameterSequence22', cardinality 0..*).
+'plSql::CaseStatement' (role 'plSql_CaseStatement62', cardinality 0..*) is associated with 'plSql::CaseStatementWhenBranch' (role 'plSql_CaseStatementWhenBranch', cardinality 0..*).
+'plSql::Function' (role 'plSql_Function20', cardinality 0..*) is associated with 'plSql::FunctionContent' (role 'plSql_FunctionContent', cardinality 0..*).
+'plSql::ProcedureContent' (role 'plSql_ProcedureContent', cardinality 0..*) is associated with 'plSql::Procedure' (role 'plSql_Procedure4', cardinality 0..*).
+'plSql::StatementBody' (role 'plSql_StatementBody37', cardinality 0..*) is associated with 'plSql::Statement' (role 'plSql_Statement', cardinality 0..*).
+'plSql::AssignmentStatement' (role 'plSql_AssignmentStatement', cardinality 0..*) is associated with 'plSql::AssignmentTarget' (role 'plSql_AssignmentTarget', cardinality 0..*).
+'plSql::CaseStatementWhenBranch' (role 'plSql_CaseStatementWhenBranch66', cardinality 0..*) is associated with 'plSql::Expression' (role 'plSql_Expression67', cardinality 0..*).
+'plSql::VariableRef' (role 'plSql_VariableRef53', cardinality 0..*) is associated with 'plSql::VariableAssignmentTarget' (role 'plSql_VariableAssignmentTarget', cardinality 0..*).
+'plSql::Procedure' (role 'plSql_Procedure2', cardinality 0..*) is associated with 'plSql::ProcedureInvokerRightsClause' (role 'plSql_ProcedureInvokerRightsClause', cardinality 0..*).
+'plSql::Item' (role 'plSql_Item', cardinality 0..*) is associated with 'plSql::Package' (role 'plSql_Package8', cardinality 0..*).
+'plSql::FetchStatement' (role 'plSql_FetchStatement', cardinality 0..*) is associated with 'plSql::VariableRef' (role 'plSql_VariableRef81', cardinality 0..*).
+'plSql::Name' (role 'plSql_Name127', cardinality 0..*) is associated with 'plSql::NameDeclaration' (role 'plSql_NameDeclaration', cardinality 0..*).
+'plSql::BlockStatement' (role 'plSql_BlockStatement57', cardinality 0..*) is associated with 'plSql::StatementBody' (role 'plSql_StatementBody58', cardinality 0..*).
+'plSql::DeclareSection' (role 'plSql_DeclareSection', cardinality 0..*) is associated with 'plSql::ProcedureImplementation' (role 'plSql_ProcedureImplementation28', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression', cardinality 0..*) is associated with 'plSql::ParameterValue' (role 'plSql_ParameterValue26', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression51', cardinality 0..*) is associated with 'plSql::AssignmentStatement' (role 'plSql_AssignmentStatement50', cardinality 0..*).
+'plSql::LoopVariableDeclaration' (role 'plSql_LoopVariableDeclaration', cardinality 0..*) is associated with 'plSql::ForLoopStatement' (role 'plSql_ForLoopStatement', cardinality 0..*).
+'plSql::FunctionClause' (role 'plSql_FunctionClause', cardinality 0..*) is associated with 'plSql::Function' (role 'plSql_Function18', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression92', cardinality 0..*) is associated with 'plSql::IfStatement' (role 'plSql_IfStatement', cardinality 0..*).
+'plSql::ExitStatement' (role 'plSql_ExitStatement', cardinality 0..*) is associated with 'plSql::Expression' (role 'plSql_Expression79', cardinality 0..*).
+'plSql::CaseStatementElseBranch' (role 'plSql_CaseStatementElseBranch', cardinality 0..*) is associated with 'plSql::CaseStatement' (role 'plSql_CaseStatement64', cardinality 0..*).
+'plSql::ForLoopStatement' (role 'plSql_ForLoopStatement118', cardinality 0..*) is associated with 'plSql::Expression' (role 'plSql_Expression119', cardinality 0..*).
+'plSql::ProcedureDefinition' (role 'plSql_ProcedureDefinition14', cardinality 0..*) is associated with 'plSql::ProcedureImplementation' (role 'plSql_ProcedureImplementation', cardinality 0..*).
+'plSql::CaseStatementElseBranch' (role 'plSql_CaseStatementElseBranch72', cardinality 0..*) is associated with 'plSql::Statement' (role 'plSql_Statement73', cardinality 0..*).
+'plSql::Expression' (role 'plSql_Expression77', cardinality 0..*) is associated with 'plSql::ContinueStatement' (role 'plSql_ContinueStatement', cardinality 0..*).
+'plSql::IfStatementElsifBranch' (role 'plSql_IfStatementElsifBranch104', cardinality 0..*) is associated with 'plSql::Statement' (role 'plSql_Statement105', cardinality 0..*).
+'plSql::Label' (role 'plSql_Label', cardinality 0..*) is associated with 'plSql::Statement' (role 'plSql_Statement47', cardinality 0..*).
+'plSql::DeclareSection' (role 'plSql_DeclareSection55', cardinality 0..*) is associated with 'plSql::BlockStatement' (role 'plSql_BlockStatement', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'simplefsm::State' has the following attributes: 'name' of type str; 'action' of type str.
+The class 'simplefsm::Transition' has the following attributes: 'name' of type str; 'event' of type str.
+The class 'simplefsm::SimpleFiniteStateMachine' has the following attributes: 'name' of type str.
+'simplefsm::State' (role 'simplefsm_State', cardinality 0..*) is associated with 'simplefsm::Transition' (role 'simplefsm_Transition', cardinality 0..*).
+'simplefsm::State' (role 'states', cardinality 0..*) is associated with 'simplefsm::SimpleFiniteStateMachine' (role 'SimpleFiniteStateMachine', cardinality 0..*).
+'simplefsm::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'simplefsm::State' (role 'State5', cardinality 0..*).
+'simplefsm::State' (role 'owningState', cardinality 0..*) is associated with 'simplefsm::Transition' (role 'Transition', cardinality 0..*).
+'simplefsm::SimpleFiniteStateMachine' (role 'owningFSM', cardinality 0..*) is associated with 'simplefsm::State' (role 'State', cardinality 0..*).

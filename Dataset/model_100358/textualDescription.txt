@@ -1,0 +1,54 @@
+The model has 20 class(es).
+The class 'fmpl::Policy' has the following attributes: 'parserURI' of type str; 'name' of type str.
+The class 'fmpl::Read' has the following attributes: 'initBit' of type int; 'length' of type int.
+The class 'fmpl::VarReference' has no attributes.
+The class 'fmpl::Init' has no attributes.
+The class 'fmpl::State' has the following attributes: 'name' of type str.
+The class 'fmpl::StringLit' has the following attributes: 'value' of type str.
+The class 'fmpl::Literal' has no attributes.
+The class 'fmpl::Relational' has the following attributes: 'operator' of type str.
+The class 'fmpl::IntegerLit' has the following attributes: 'value' of type int.
+The class 'fmpl::Field' has no attributes.
+The class 'fmpl::Cond' has no attributes.
+The class 'fmpl::VarDeclaration' has the following attributes: 'name' of type str.
+The class 'fmpl::Transition' has the following attributes: 'name' of type str.
+The class 'fmpl::Write' has the following attributes: 'initBit' of type int; 'length' of type int.
+The class 'fmpl::Automata' has the following attributes: 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'fmpl::Exec' has no attributes.
+The class 'Literal' has no attributes.
+The class 'fmpl::ArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'fmpl::Expression' has no attributes.
+The enumeration 'ArithmeticOperator' has the following literals: 'mult', 'minus', 'div', 'plus'.
+The enumeration 'RelationalOperator' has the following literals: 'lessEqual', 'and_', 'greater', 'greaterEqual', 'equal', 'less'.
+'fmpl::Field' is a specialization of 'Literal'.
+'fmpl::Read' is a specialization of 'Expression'.
+'fmpl::Literal' is a specialization of 'Expression'.
+'fmpl::VarDeclaration' is a specialization of 'Expression'.
+'fmpl::Write' is a specialization of 'Expression'.
+'fmpl::Exec' is a specialization of 'Expression'.
+'fmpl::Init' is a specialization of 'Expression'.
+'fmpl::IntegerLit' is a specialization of 'Literal'.
+'fmpl::ArithmeticExpression' is a specialization of 'Expression'.
+'fmpl::VarReference' is a specialization of 'Expression'.
+'fmpl::Cond' is a specialization of 'Expression'.
+'fmpl::StringLit' is a specialization of 'Literal'.
+'fmpl::Relational' is a specialization of 'Expression'.
+'fmpl::Automata' (role 'fmpl_Automata6', cardinality 0..*) is associated with 'fmpl::Transition' (role 'fmpl_Transition', cardinality 0..*).
+'fmpl::Transition' (role 'fmpl_Transition11', cardinality 0..*) is associated with 'fmpl::State' (role 'fmpl_State12', cardinality 0..*).
+'fmpl::Expression' (role 'fmpl_Expression37', cardinality 0..*) is associated with 'fmpl::VarDeclaration' (role 'fmpl_VarDeclaration', cardinality 0..*).
+'fmpl::Automata' (role 'fmpl_Automata4', cardinality 0..*) is associated with 'fmpl::State' (role 'fmpl_State', cardinality 0..*).
+'fmpl::Relational' (role 'fmpl_Relational26', cardinality 0..*) is associated with 'fmpl::Expression' (role 'fmpl_Expression27', cardinality 0..*).
+'fmpl::State' (role 'fmpl_State15', cardinality 0..*) is associated with 'fmpl::Transition' (role 'fmpl_Transition14', cardinality 0..*).
+'fmpl::Policy' (role 'fmpl_Policy2', cardinality 0..*) is associated with 'fmpl::Expression' (role 'fmpl_Expression', cardinality 0..*).
+'fmpl::Relational' (role 'fmpl_Relational', cardinality 0..*) is associated with 'fmpl::Cond' (role 'fmpl_Cond', cardinality 0..*).
+'fmpl::ArithmeticExpression' (role 'fmpl_ArithmeticExpression34', cardinality 0..*) is associated with 'fmpl::Expression' (role 'fmpl_Expression35', cardinality 0..*).
+'fmpl::Transition' (role 'fmpl_Transition17', cardinality 0..*) is associated with 'fmpl::Exec' (role 'fmpl_Exec', cardinality 0..*).
+'fmpl::Relational' (role 'fmpl_Relational29', cardinality 0..*) is associated with 'fmpl::Expression' (role 'fmpl_Expression30', cardinality 0..*).
+'fmpl::Automata' (role 'fmpl_Automata', cardinality 0..*) is associated with 'fmpl::Policy' (role 'fmpl_Policy', cardinality 0..*).
+'fmpl::Cond' (role 'fmpl_Cond20', cardinality 0..*) is associated with 'fmpl::Expression' (role 'fmpl_Expression21', cardinality 0..*).
+'fmpl::Expression' (role 'fmpl_Expression32', cardinality 0..*) is associated with 'fmpl::ArithmeticExpression' (role 'fmpl_ArithmeticExpression', cardinality 0..*).
+'fmpl::VarReference' (role 'fmpl_VarReference39', cardinality 0..*) is associated with 'fmpl::VarDeclaration' (role 'fmpl_VarDeclaration40', cardinality 0..*).
+'fmpl::Automata' (role 'fmpl_Automata8', cardinality 0..*) is associated with 'fmpl::State' (role 'fmpl_State9', cardinality 0..*).
+'fmpl::VarReference' (role 'fmpl_VarReference', cardinality 0..*) is associated with 'fmpl::Write' (role 'fmpl_Write', cardinality 0..*).
+'fmpl::Automata' (role 'fmpl_Automata24', cardinality 0..*) is associated with 'fmpl::Init' (role 'fmpl_Init', cardinality 0..*).

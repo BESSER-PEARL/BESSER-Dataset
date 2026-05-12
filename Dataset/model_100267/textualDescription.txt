@@ -1,0 +1,29 @@
+The model has 12 class(es).
+The class 'PetriNet::Type' has the following attributes: 'name' of type str.
+The class 'PetriNet::Place' has no attributes.
+The class 'PetriNet::IdentifiableElement' has the following attributes: 'name' of type str; 'author' of type str.
+The class 'PetriNet::PrimitiveAttribute' has the following attributes: 'name' of type str; 'primType' of type str.
+The class 'Arc' has no attributes.
+The class 'IdentifiableElement' has no attributes.
+The class 'PetriNet::TransToPlaceArc' has no attributes.
+The class 'PetriNet::Arc' has the following attributes: 'weight' of type int.
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::Token' has the following attributes: 'values' of type str.
+The class 'PetriNet::PlaceToTransArc' has no attributes.
+The class 'PetriNet::PetriNet' has no attributes.
+'PetriNet::PlaceToTransArc' is a specialization of 'Arc'.
+'PetriNet::PetriNet' is a specialization of 'IdentifiableElement'.
+'PetriNet::Place' is a specialization of 'IdentifiableElement'.
+'PetriNet::TransToPlaceArc' is a specialization of 'Arc'.
+'PetriNet::Transition' is a specialization of 'IdentifiableElement'.
+'PetriNet::PetriNet' (role 'PetriNet_PetriNet', cardinality 0..*) is associated with 'PetriNet::Place' (role 'PetriNet_Place', cardinality 0..*).
+'PetriNet::Type' (role 'PetriNet_Type13', cardinality 0..*) is associated with 'PetriNet::Place' (role 'PetriNet_Place12', cardinality 0..*).
+'PetriNet::Place' (role 'PetriNet_Place10', cardinality 0..*) is associated with 'PetriNet::Token' (role 'PetriNet_Token', cardinality 0..*).
+'PetriNet::Transition' (role 'PetriNet_Transition18', cardinality 0..*) is associated with 'PetriNet::PlaceToTransArc' (role 'PetriNet_PlaceToTransArc17', cardinality 0..*).
+'PetriNet::PetriNet' (role 'PetriNet_PetriNet6', cardinality 0..*) is associated with 'PetriNet::Type' (role 'PetriNet_Type', cardinality 0..*).
+'PetriNet::Transition' (role 'PetriNet_Transition', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'PetriNet_PetriNet2', cardinality 0..*).
+'PetriNet::Transition' (role 'PetriNet_Transition20', cardinality 0..*) is associated with 'PetriNet::TransToPlaceArc' (role 'PetriNet_TransToPlaceArc', cardinality 0..*).
+'PetriNet::TransToPlaceArc' (role 'PetriNet_TransToPlaceArc22', cardinality 0..*) is associated with 'PetriNet::Place' (role 'PetriNet_Place23', cardinality 0..*).
+'PetriNet::Place' (role 'PetriNet_Place15', cardinality 0..*) is associated with 'PetriNet::PlaceToTransArc' (role 'PetriNet_PlaceToTransArc', cardinality 0..*).
+'PetriNet::Type' (role 'PetriNet_Type8', cardinality 0..*) is associated with 'PetriNet::PrimitiveAttribute' (role 'PetriNet_PrimitiveAttribute', cardinality 0..*).
+'PetriNet::PetriNet' (role 'PetriNet_PetriNet4', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'PetriNet_Arc', cardinality 0..*).

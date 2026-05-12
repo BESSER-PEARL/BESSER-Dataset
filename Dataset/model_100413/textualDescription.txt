@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'smachDSL::ServiceClient' has the following attributes: 'name' of type str; 'servicesrv' of type str; 'servicename' of type str.
+The class 'smachDSL::PrimitivePackage' has no attributes.
+The class 'smachDSL::Test' has the following attributes: 'ros' of type str.
+The class 'smachDSL::ActionState' has the following attributes: 'name' of type str.
+The class 'smachDSL::ActionClient' has the following attributes: 'actiontype' of type str; 'name' of type str; 'actionname' of type str.
+The class 'smachDSL::StateMachine' has the following attributes: 'name' of type str.
+The class 'smachDSL::Transition' has the following attributes: 'outcome' of type str.
+'smachDSL::StateMachine' (role 'smachDSL_StateMachine4', cardinality 0..*) is associated with 'smachDSL::ServiceClient' (role 'smachDSL_ServiceClient', cardinality 0..*).
+'smachDSL::StateMachine' (role 'smachDSL_StateMachine', cardinality 0..*) is associated with 'smachDSL::PrimitivePackage' (role 'smachDSL_PrimitivePackage', cardinality 0..*).
+'smachDSL::ActionClient' (role 'smachDSL_ActionClient', cardinality 0..*) is associated with 'smachDSL::StateMachine' (role 'smachDSL_StateMachine2', cardinality 0..*).
+'smachDSL::ActionState' (role 'smachDSL_ActionState', cardinality 0..*) is associated with 'smachDSL::StateMachine' (role 'smachDSL_StateMachine6', cardinality 0..*).
+'smachDSL::ActionClient' (role 'smachDSL_ActionClient9', cardinality 0..*) is associated with 'smachDSL::ActionState' (role 'smachDSL_ActionState8', cardinality 0..*).
+'smachDSL::ActionState' (role 'smachDSL_ActionState11', cardinality 0..*) is associated with 'smachDSL::Transition' (role 'smachDSL_Transition', cardinality 0..*).
+'smachDSL::Transition' (role 'smachDSL_Transition13', cardinality 0..*) is associated with 'smachDSL::ActionState' (role 'smachDSL_ActionState14', cardinality 0..*).

@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'PetriNet::TransitionToPlace' has no attributes.
+The class 'Arc' has no attributes.
+The class 'Transition' has no attributes.
+The class 'PetriNet::Arc' has the following attributes: 'name' of type str; 'weight' of type str.
+The class 'PetriNet::PetriNet' has no attributes.
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::PlaceToTransition' has no attributes.
+The class 'PetriNet::Place' has no attributes.
+The class 'Element' has no attributes.
+The class 'EObject' has no attributes.
+The class 'Place' has no attributes.
+The class 'PetriNet::Element' has the following attributes: 'name' of type str.
+'PetriNet::PetriNet' is a specialization of 'EObject'.
+'PetriNet::Place' is a specialization of 'Element'.
+'PetriNet::Transition' is a specialization of 'Element'.
+'PetriNet::PlaceToTransition' is a specialization of 'Arc'.
+'PetriNet::TransitionToPlace' is a specialization of 'Arc'.
+'PetriNet::PetriNet' (role 'PetriNet_PetriNet', cardinality 0..*) is associated with 'Element' (role 'Element', cardinality 0..*).
+'PetriNet::TransitionToPlace' (role 'PetriNet_TransitionToPlace', cardinality 0..*) is associated with 'Transition' (role 'Transition7', cardinality 0..*).
+'PetriNet::TransitionToPlace' (role 'PetriNet_TransitionToPlace9', cardinality 0..*) is associated with 'Place' (role 'Place10', cardinality 0..*).
+'Place' (role 'Place', cardinality 0..*) is associated with 'PetriNet::PlaceToTransition' (role 'PetriNet_PlaceToTransition', cardinality 0..*).
+'PetriNet::PetriNet' (role 'PetriNet_PetriNet2', cardinality 0..*) is associated with 'Arc' (role 'Arc', cardinality 0..*).
+'PetriNet::PlaceToTransition' (role 'PetriNet_PlaceToTransition5', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).

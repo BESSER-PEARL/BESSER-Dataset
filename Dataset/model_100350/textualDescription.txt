@@ -1,0 +1,18 @@
+The model has 5 class(es).
+The class 'ctmc::Label' has the following attributes: 'name' of type str.
+The class 'IDBase' has no attributes.
+The class 'ctmc::Transition' has the following attributes: 'rate' of type float; 'prob' of type float.
+The class 'ctmc::State' has the following attributes: 'name' of type str; 'exitRate' of type float.
+The class 'ctmc::CTMC' has the following attributes: 'name' of type str.
+'ctmc::Label' is a specialization of 'IDBase'.
+'ctmc::State' is a specialization of 'IDBase'.
+'ctmc::CTMC' is a specialization of 'IDBase'.
+'ctmc::Transition' is a specialization of 'IDBase'.
+'ctmc::Label' (role 'labels', cardinality 0..*) is associated with 'ctmc::State' (role 'State12', cardinality 0..*).
+'ctmc::State' (role 'state', cardinality 0..*) is associated with 'ctmc::Label' (role 'Label', cardinality 0..*).
+'ctmc::Transition' (role 'outgoing', cardinality 0..*) is associated with 'ctmc::State' (role 'State', cardinality 0..*).
+'ctmc::State' (role 'ctmc_State3', cardinality 0..*) is associated with 'ctmc::CTMC' (role 'ctmc_CTMC2', cardinality 0..*).
+'ctmc::State' (role 'from_', cardinality 0..*) is associated with 'ctmc::Transition' (role 'Transition6', cardinality 0..*).
+'ctmc::State' (role 'ctmc_State', cardinality 0..*) is associated with 'ctmc::CTMC' (role 'ctmc_CTMC', cardinality 0..*).
+'ctmc::Transition' (role 'Transition', cardinality 0..*) is associated with 'ctmc::State' (role 'to', cardinality 0..*).
+'ctmc::State' (role 'State10', cardinality 0..*) is associated with 'ctmc::Transition' (role 'incoming', cardinality 0..*).

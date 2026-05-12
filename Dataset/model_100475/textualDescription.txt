@@ -1,0 +1,57 @@
+The model has 20 class(es).
+The class 'synccharts::Expression' has no attributes.
+The class 'synccharts::Signal' has no attributes.
+The class 'synccharts::Region' has no attributes.
+The class 'Scope' has no attributes.
+The class 'Annotatable' has no attributes.
+The class 'synccharts::Variable' has no attributes.
+The class 'TextualCode' has no attributes.
+The class 'synccharts::TextEffect' has no attributes.
+The class 'synccharts::State' has the following attributes: 'isInitial' of type bool; 'isFinal' of type bool; 'type' of type str.
+The class 'synccharts::Transition' has the following attributes: 'isHistory' of type bool; 'type' of type str; 'priority' of type int.
+The class 'synccharts::Scope' has the following attributes: 'interfaceDeclaration' of type str; 'id' of type str; 'label' of type str.
+The class 'synccharts::Emission' has no attributes.
+The class 'synccharts::TextualCode' has no attributes.
+The class 'synccharts::Action' has the following attributes: 'delay' of type int; 'label' of type str; 'isImmediate' of type bool.
+The class 'synccharts::Effect' has no attributes.
+The class 'synccharts::Assignment' has no attributes.
+The class 'synccharts::EObject' has no attributes.
+The class 'Action' has no attributes.
+The class 'synccharts::Substitution' has the following attributes: 'formal' of type str; 'actual' of type str.
+The class 'Effect' has no attributes.
+The enumeration 'StateType' has the following literals: 'NORMAL', 'CONDITIONAL', 'TEXTUAL', 'REFERENCE'.
+The enumeration 'TransitionType' has the following literals: 'WEAKABORT', 'NORMALTERMINATION', 'STRONGABORT'.
+'synccharts::State' is a specialization of 'Scope'.
+'synccharts::Emission' is a specialization of 'Effect'.
+'synccharts::TextEffect' is a specialization of 'Effect'.
+'synccharts::TextEffect' is a specialization of 'TextualCode'.
+'synccharts::Scope' is a specialization of 'Annotatable'.
+'synccharts::Assignment' is a specialization of 'Effect'.
+'synccharts::Region' is a specialization of 'Scope'.
+'synccharts::Action' is a specialization of 'Annotatable'.
+'synccharts::Transition' is a specialization of 'Action'.
+'synccharts::Scope' (role 'synccharts_Scope37', cardinality 0..*) is associated with 'synccharts::Action' (role 'synccharts_Action38', cardinality 0..*).
+'synccharts::Region' (role 'regions', cardinality 0..*) is associated with 'synccharts::State' (role 'State13', cardinality 0..*).
+'synccharts::Signal' (role 'synccharts_Signal', cardinality 0..*) is associated with 'synccharts::Emission' (role 'synccharts_Emission', cardinality 0..*).
+'synccharts::Scope' (role 'synccharts_Scope34', cardinality 0..*) is associated with 'synccharts::Action' (role 'synccharts_Action35', cardinality 0..*).
+'synccharts::Scope' (role 'synccharts_Scope48', cardinality 0..*) is associated with 'synccharts::TextualCode' (role 'synccharts_TextualCode', cardinality 0..*).
+'synccharts::State' (role 'State22', cardinality 0..*) is associated with 'synccharts::Transition' (role 'incomingTransitions', cardinality 0..*).
+'synccharts::Variable' (role 'synccharts_Variable29', cardinality 0..*) is associated with 'synccharts::Scope' (role 'synccharts_Scope28', cardinality 0..*).
+'synccharts::Action' (role 'synccharts_Action32', cardinality 0..*) is associated with 'synccharts::Scope' (role 'synccharts_Scope31', cardinality 0..*).
+'synccharts::Region' (role 'parentRegion', cardinality 0..*) is associated with 'synccharts::State' (role 'State', cardinality 0..*).
+'synccharts::State' (role 'sourceState', cardinality 0..*) is associated with 'synccharts::Transition' (role 'Transition', cardinality 0..*).
+'synccharts::Scope' (role 'Scope', cardinality 0..*) is associated with 'synccharts::Substitution' (role 'renamings', cardinality 0..*).
+'synccharts::State' (role 'parentState', cardinality 0..*) is associated with 'synccharts::Region' (role 'Region', cardinality 0..*).
+'synccharts::Scope' (role 'synccharts_Scope43', cardinality 0..*) is associated with 'synccharts::EObject' (role 'synccharts_EObject', cardinality 0..*).
+'synccharts::State' (role 'states', cardinality 0..*) is associated with 'synccharts::Region' (role 'Region17', cardinality 0..*).
+'synccharts::Emission' (role 'synccharts_Emission9', cardinality 0..*) is associated with 'synccharts::Expression' (role 'synccharts_Expression10', cardinality 0..*).
+'synccharts::Signal' (role 'synccharts_Signal26', cardinality 0..*) is associated with 'synccharts::Scope' (role 'synccharts_Scope', cardinality 0..*).
+'synccharts::Action' (role 'synccharts_Action', cardinality 0..*) is associated with 'synccharts::Effect' (role 'synccharts_Effect', cardinality 0..*).
+'synccharts::Action' (role 'synccharts_Action2', cardinality 0..*) is associated with 'synccharts::Expression' (role 'synccharts_Expression', cardinality 0..*).
+'synccharts::Expression' (role 'synccharts_Expression6', cardinality 0..*) is associated with 'synccharts::Assignment' (role 'synccharts_Assignment5', cardinality 0..*).
+'synccharts::EObject' (role 'synccharts_EObject46', cardinality 0..*) is associated with 'synccharts::Scope' (role 'synccharts_Scope45', cardinality 0..*).
+'synccharts::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'synccharts::State' (role 'State24', cardinality 0..*).
+'synccharts::Transition' (role 'Transition20', cardinality 0..*) is associated with 'synccharts::State' (role 'targetState', cardinality 0..*).
+'synccharts::Substitution' (role 'Substitution', cardinality 0..*) is associated with 'synccharts::Scope' (role 'parentScope', cardinality 0..*).
+'synccharts::Scope' (role 'synccharts_Scope40', cardinality 0..*) is associated with 'synccharts::Action' (role 'synccharts_Action41', cardinality 0..*).
+'synccharts::Assignment' (role 'synccharts_Assignment', cardinality 0..*) is associated with 'synccharts::Variable' (role 'synccharts_Variable', cardinality 0..*).

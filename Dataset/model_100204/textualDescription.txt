@@ -1,0 +1,465 @@
+The model has 127 class(es).
+The class 'expressions::QueryExpression' has no attributes.
+The class 'ValueExpressionAtomic' has no attributes.
+The class 'query::ValueExpressionNullValue' has no attributes.
+The class 'query::ValueExpressionFunction' has the following attributes: 'distinct' of type bool; 'columnFunction' of type bool; 'specialRegister' of type bool.
+The class 'query::ValueExpressionSimple' has the following attributes: 'value' of type str.
+The class 'query::GroupingSets' has no attributes.
+The class 'query::TableExpression' has no attributes.
+The class 'query::SearchConditionNested' has no attributes.
+The class 'query::UpdateSourceQuery' has no attributes.
+The class 'QueryValueExpression' has no attributes.
+The class 'query::ValueExpressionCaseSimpleContent' has no attributes.
+The class 'query::WithTableReference' has no attributes.
+The class 'query::ValueExpressionCombined' has the following attributes: 'combinedOperator' of type str.
+The class 'query::QueryExpressionBody' has the following attributes: 'rowFetchLimit' of type int.
+The class 'query::PredicateQuantifiedRowSelect' has the following attributes: 'quantifiedType' of type str.
+The class 'query::OrderByResultColumn' has no attributes.
+The class 'query::QueryNested' has no attributes.
+The class 'QueryStatement' has no attributes.
+The class 'query::ColumnName' has no attributes.
+The class 'query::ValueExpressionNested' has no attributes.
+The class 'query::QueryCombined' has the following attributes: 'combinedOperator' of type str.
+The class 'QueryResultSpecification' has no attributes.
+The class 'query::ValueExpressionVariable' has no attributes.
+The class 'GroupingSpecification' has no attributes.
+The class 'query::PredicateBasic' has the following attributes: 'comparisonOperator' of type str.
+The class 'query::QuerySelectStatement' has no attributes.
+The class 'OrderBySpecification' has no attributes.
+The class 'query::UpdateSourceExprList' has no attributes.
+The class 'query::ValueExpressionCaseSearch' has no attributes.
+The class 'query::TableCorrelation' has no attributes.
+The class 'Procedure' has no attributes.
+The class 'query::PredicateQuantifiedValueSelect' has the following attributes: 'quantifiedType' of type str; 'comparisonOperator' of type str.
+The class 'query::GroupingSetsElementSublist' has no attributes.
+The class 'MergeOperationSpecification' has no attributes.
+The class 'PredicateQuantified' has no attributes.
+The class 'statements::SQLDataChangeStatement' has no attributes.
+The class 'query::QueryValues' has no attributes.
+The class 'query::QueryValueExpression' has the following attributes: 'unaryOperator' of type str.
+The class 'query::OrderByValueExpression' has no attributes.
+The class 'query::MergeSourceTable' has no attributes.
+The class 'QueryExpressionBody' has no attributes.
+The class 'query::TableReference' has no attributes.
+The class 'query::ValueExpressionCaseSearchContent' has no attributes.
+The class 'query::PredicateInValueList' has no attributes.
+The class 'query::PredicateBetween' has the following attributes: 'notBetween' of type bool.
+The class 'query::PredicateIsNull' has the following attributes: 'notNull' of type bool.
+The class 'query::ResultTableAllColumns' has no attributes.
+The class 'query::ValueExpressionColumn' has no attributes.
+The class 'query::ValueExpressionCase' has no attributes.
+The class 'query::QueryDeleteStatement' has no attributes.
+The class 'query::TableNested' has no attributes.
+The class 'query::TableFunction' has no attributes.
+The class 'query::ProcedureReference' has no attributes.
+The class 'query::PredicateQuantified' has no attributes.
+The class 'query::CallStatement' has no attributes.
+The class 'query::ValueExpressionLabeledDuration' has the following attributes: 'labeledDurationType' of type str.
+The class 'query::ValueExpressionRow' has no attributes.
+The class 'query::Predicate' has the following attributes: 'negatedPredicate' of type bool; 'hasSelectivity' of type bool; 'selectivityValue' of type str.
+The class 'query::MergeInsertSpecification' has no attributes.
+The class 'query::SuperGroup' has the following attributes: 'superGroupType' of type str.
+The class 'query::ValueExpressionCaseElse' has no attributes.
+The class 'query::ValueExpressionScalarSelect' has no attributes.
+The class 'TableReference' has no attributes.
+The class 'query::PredicateIn' has the following attributes: 'notIn' of type bool.
+The class 'query::QueryStatement' has no attributes.
+The class 'query::PredicateInValueSelect' has no attributes.
+The class 'query::ResultColumn' has no attributes.
+The class 'query::SearchConditionCombined' has the following attributes: 'combinedOperator' of type str.
+The class 'query::SuperGroupElementExpression' has no attributes.
+The class 'QuerySearchCondition' has no attributes.
+The class 'statements::SQLControlStatement' has no attributes.
+The class 'Function' has no attributes.
+The class 'query::PredicateExists' has no attributes.
+The class 'query::OrderBySpecification' has the following attributes: 'descending' of type bool; 'NullOrderingOption' of type str; 'OrderingSpecOption' of type str.
+The class 'query::MergeTargetTable' has no attributes.
+The class 'TableExpression' has no attributes.
+The class 'query::ValueExpressionDefaultValue' has no attributes.
+The class 'SQLObject' has no attributes.
+The class 'query::QuerySelect' has the following attributes: 'distinct' of type bool.
+The class 'query::WithTableSpecification' has no attributes.
+The class 'query::SQLQueryObject' has no attributes.
+The class 'query::GroupingSetsElementExpression' has no attributes.
+The class 'query::QuerySearchCondition' has the following attributes: 'negatedCondition' of type bool.
+The class 'query::UpdateAssignmentExpression' has no attributes.
+The class 'query::MergeOperationSpecification' has no attributes.
+The class 'query::PredicateLike' has the following attributes: 'notLike' of type bool.
+The class 'query::Grouping' has no attributes.
+The class 'query::GroupingSetsElement' has no attributes.
+The class 'query::SuperGroupElement' has no attributes.
+The class 'ValueExpressionCase' has no attributes.
+The class 'statements::SQLDataStatement' has no attributes.
+The class 'PredicateIn' has no attributes.
+The class 'query::QueryMergeStatement' has no attributes.
+The class 'query::MergeUpdateSpecification' has no attributes.
+The class 'DataType' has no attributes.
+The class 'Predicate' has no attributes.
+The class 'query::ValueExpressionCast' has no attributes.
+The class 'query::UpdatabilityExpression' has the following attributes: 'updatabilityType' of type str.
+The class 'query::QueryExpressionRoot' has no attributes.
+The class 'query::ValueExpressionAtomic' has no attributes.
+The class 'query::OrderByOrdinal' has the following attributes: 'ordinalValue' of type int.
+The class 'query::TableQueryLateral' has no attributes.
+The class 'query::CursorReference' has no attributes.
+The class 'query::UpdateSource' has no attributes.
+The class 'Grouping' has no attributes.
+The class 'query::GroupingExpression' has no attributes.
+The class 'QueryChangeStatement' has no attributes.
+The class 'query::ValueExpressionCaseSimple' has no attributes.
+The class 'expressions::SearchCondition' has no attributes.
+The class 'query::TableInDatabase' has no attributes.
+The class 'UpdateSource' has no attributes.
+The class 'query::ValuesRow' has no attributes.
+The class 'query::QueryChangeStatement' has no attributes.
+The class 'Table' has no attributes.
+The class 'query::TableJoined' has the following attributes: 'joinOperator' of type str.
+The class 'query::SuperGroupElementSublist' has no attributes.
+The class 'query::UpdateOfColumn' has no attributes.
+The class 'query::QueryResultSpecification' has no attributes.
+The class 'expressions::ValueExpression' has no attributes.
+The class 'query::GroupingSpecification' has no attributes.
+The class 'query::QueryInsertStatement' has no attributes.
+The class 'GroupingSetsElement' has no attributes.
+The class 'query::MergeOnCondition' has no attributes.
+The class 'SuperGroupElement' has no attributes.
+The class 'query::PredicateInValueRowSelect' has no attributes.
+The class 'query::QueryUpdateStatement' has no attributes.
+The class 'SQLQueryObject' has no attributes.
+The enumeration 'PredicateQuantifiedType' has the following literals: 'ANY', 'ALL', 'SOME'.
+The enumeration 'TableJoinedOperator' has the following literals: 'DEFAULT_INNER', 'EXPLICIT_INNER', 'RIGHT_OUTER', 'LEFT_OUTER', 'FULL_OUTER'.
+The enumeration 'OrderingSpecType' has the following literals: 'NONE', 'DESC', 'ASC'.
+The enumeration 'QueryCombinedOperator' has the following literals: 'EXCEPT', 'UNION', 'INTERSECT', 'UNION_ALL', 'EXCEPT_ALL', 'INTERSECT_ALL'.
+The enumeration 'SearchConditionCombinedOperator' has the following literals: 'AND', 'OR'.
+The enumeration 'NullOrderingType' has the following literals: 'NONE', 'NULLS_FIRST', 'NULLS_LAST'.
+The enumeration 'UpdatabilityType' has the following literals: 'READ_ONLY', 'UPDATE'.
+The enumeration 'SuperGroupType' has the following literals: 'ROLLUP', 'GRANDTOTAL', 'CUBE'.
+The enumeration 'ValueExpressionCombinedOperator' has the following literals: 'DIVIDE', 'CONCATENATE', 'ADD', 'MULTIPLY', 'SUBTRACT'.
+The enumeration 'ValueExpressionUnaryOperator' has the following literals: 'MINUS', 'PLUS', 'NONE'.
+The enumeration 'PredicateComparisonOperator' has the following literals: 'GREATER_THAN_OR_EQUAL', 'GREATER_THAN', 'LESS_THAN', 'EQUAL', 'LESS_THAN_OR_EQUAL', 'NOT_EQUAL'.
+The enumeration 'ValueExpressionLabeledDurationType' has the following literals: 'MONTHS', 'YEARS', 'MICROSECONDS', 'DAYS', 'MINUTES', 'SECONDS', 'HOURS'.
+'query::ValueExpressionDefaultValue' is a specialization of 'ValueExpressionAtomic'.
+'query::ValueExpressionFunction' is a specialization of 'ValueExpressionAtomic'.
+'query::ValueExpressionCombined' is a specialization of 'QueryValueExpression'.
+'query::GroupingSetsElementExpression' is a specialization of 'GroupingSetsElement'.
+'query::GroupingSets' is a specialization of 'GroupingSpecification'.
+'query::Grouping' is a specialization of 'GroupingSpecification'.
+'query::GroupingSetsElement' is a specialization of 'SQLQueryObject'.
+'query::GroupingSetsElementSublist' is a specialization of 'GroupingSetsElement'.
+'query::SuperGroupElementSublist' is a specialization of 'SuperGroupElement'.
+'query::SuperGroup' is a specialization of 'Grouping'.
+'query::GroupingExpression' is a specialization of 'Grouping'.
+'query::SuperGroupElement' is a specialization of 'SQLQueryObject'.
+'query::ValueExpressionCaseElse' is a specialization of 'SQLQueryObject'.
+'query::SuperGroupElementExpression' is a specialization of 'SuperGroupElement'.
+'query::ValueExpressionCaseSearchContent' is a specialization of 'SQLQueryObject'.
+'query::ValueExpressionCaseSearch' is a specialization of 'ValueExpressionCase'.
+'query::ValueExpressionCaseSimple' is a specialization of 'ValueExpressionCase'.
+'query::ValueExpressionCaseSimpleContent' is a specialization of 'SQLQueryObject'.
+'query::TableInDatabase' is a specialization of 'TableExpression'.
+'query::SQLQueryObject' is a specialization of 'SQLObject'.
+'query::TableFunction' is a specialization of 'TableExpression'.
+'query::TableNested' is a specialization of 'TableReference'.
+'query::QueryMergeStatement' is a specialization of 'QueryChangeStatement'.
+'query::QueryChangeStatement' is a specialization of 'QueryStatement'.
+'query::QueryChangeStatement' is a specialization of 'statements::SQLDataChangeStatement'.
+'query::ColumnName' is a specialization of 'SQLQueryObject'.
+'query::SearchConditionNested' is a specialization of 'QuerySearchCondition'.
+'query::ValueExpressionNested' is a specialization of 'QueryValueExpression'.
+'query::OrderByOrdinal' is a specialization of 'OrderBySpecification'.
+'query::TableCorrelation' is a specialization of 'SQLQueryObject'.
+'query::ValueExpressionAtomic' is a specialization of 'QueryValueExpression'.
+'query::OrderBySpecification' is a specialization of 'SQLQueryObject'.
+'query::UpdateSource' is a specialization of 'SQLQueryObject'.
+'query::QueryDeleteStatement' is a specialization of 'QueryChangeStatement'.
+'query::ValueExpressionNullValue' is a specialization of 'ValueExpressionAtomic'.
+'query::UpdateSourceExprList' is a specialization of 'UpdateSource'.
+'query::UpdateSourceQuery' is a specialization of 'UpdateSource'.
+'query::QueryStatement' is a specialization of 'SQLQueryObject'.
+'query::WithTableReference' is a specialization of 'TableExpression'.
+'query::QueryStatement' is a specialization of 'statements::SQLDataStatement'.
+'query::MergeTargetTable' is a specialization of 'SQLQueryObject'.
+'query::QueryInsertStatement' is a specialization of 'QueryChangeStatement'.
+'query::OrderByResultColumn' is a specialization of 'OrderBySpecification'.
+'query::QuerySelectStatement' is a specialization of 'QueryStatement'.
+'query::QueryNested' is a specialization of 'QueryExpressionBody'.
+'query::QueryUpdateStatement' is a specialization of 'QueryChangeStatement'.
+'query::ValueExpressionRow' is a specialization of 'QueryValueExpression'.
+'query::CursorReference' is a specialization of 'SQLQueryObject'.
+'query::MergeOnCondition' is a specialization of 'SQLQueryObject'.
+'query::UpdateAssignmentExpression' is a specialization of 'SQLQueryObject'.
+'query::MergeSourceTable' is a specialization of 'SQLQueryObject'.
+'query::QuerySearchCondition' is a specialization of 'SQLQueryObject'.
+'query::MergeUpdateSpecification' is a specialization of 'MergeOperationSpecification'.
+'query::QuerySearchCondition' is a specialization of 'expressions::SearchCondition'.
+'query::MergeInsertSpecification' is a specialization of 'MergeOperationSpecification'.
+'query::QueryExpressionBody' is a specialization of 'TableExpression'.
+'query::MergeOperationSpecification' is a specialization of 'SQLQueryObject'.
+'query::QueryValueExpression' is a specialization of 'SQLQueryObject'.
+'query::UpdateOfColumn' is a specialization of 'SQLQueryObject'.
+'query::QueryValueExpression' is a specialization of 'expressions::ValueExpression'.
+'query::UpdatabilityExpression' is a specialization of 'SQLQueryObject'.
+'query::QueryExpressionRoot' is a specialization of 'expressions::QueryExpression'.
+'query::CallStatement' is a specialization of 'SQLQueryObject'.
+'query::QueryExpressionRoot' is a specialization of 'SQLQueryObject'.
+'query::CallStatement' is a specialization of 'statements::SQLControlStatement'.
+'query::ValuesRow' is a specialization of 'SQLQueryObject'.
+'query::ProcedureReference' is a specialization of 'SQLQueryObject'.
+'query::QueryValues' is a specialization of 'QueryExpressionBody'.
+'query::TableQueryLateral' is a specialization of 'TableExpression'.
+'query::TableReference' is a specialization of 'SQLQueryObject'.
+'query::TableExpression' is a specialization of 'TableReference'.
+'query::TableJoined' is a specialization of 'TableReference'.
+'query::WithTableSpecification' is a specialization of 'SQLQueryObject'.
+'query::Predicate' is a specialization of 'QuerySearchCondition'.
+'query::SearchConditionCombined' is a specialization of 'QuerySearchCondition'.
+'query::QuerySelect' is a specialization of 'QueryExpressionBody'.
+'query::OrderByValueExpression' is a specialization of 'OrderBySpecification'.
+'query::QueryCombined' is a specialization of 'QueryExpressionBody'.
+'query::QueryResultSpecification' is a specialization of 'SQLQueryObject'.
+'query::GroupingSpecification' is a specialization of 'SQLQueryObject'.
+'query::ResultTableAllColumns' is a specialization of 'QueryResultSpecification'.
+'query::ResultColumn' is a specialization of 'QueryResultSpecification'.
+'query::PredicateBasic' is a specialization of 'Predicate'.
+'query::PredicateExists' is a specialization of 'Predicate'.
+'query::PredicateQuantified' is a specialization of 'Predicate'.
+'query::PredicateBetween' is a specialization of 'Predicate'.
+'query::PredicateIsNull' is a specialization of 'Predicate'.
+'query::PredicateIn' is a specialization of 'Predicate'.
+'query::PredicateLike' is a specialization of 'Predicate'.
+'query::PredicateQuantifiedValueSelect' is a specialization of 'PredicateQuantified'.
+'query::PredicateQuantifiedRowSelect' is a specialization of 'PredicateQuantified'.
+'query::PredicateInValueSelect' is a specialization of 'PredicateIn'.
+'query::PredicateInValueList' is a specialization of 'PredicateIn'.
+'query::PredicateInValueRowSelect' is a specialization of 'PredicateIn'.
+'query::ValueExpressionSimple' is a specialization of 'ValueExpressionAtomic'.
+'query::ValueExpressionColumn' is a specialization of 'ValueExpressionAtomic'.
+'query::ValueExpressionCase' is a specialization of 'ValueExpressionAtomic'.
+'query::ValueExpressionVariable' is a specialization of 'ValueExpressionAtomic'.
+'query::ValueExpressionScalarSelect' is a specialization of 'ValueExpressionAtomic'.
+'query::ValueExpressionLabeledDuration' is a specialization of 'ValueExpressionAtomic'.
+'query::ValueExpressionCast' is a specialization of 'ValueExpressionAtomic'.
+'query::PredicateQuantifiedValueSelect' (role 'quantifiedValueSelectRight', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'QueryExpressionRoot242', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression283', cardinality 0..*) is associated with 'query::ValueExpressionCast' (role 'valueExprCast', cardinality 0..*).
+'query::TableExpression' (role 'parentTableExpr', cardinality 0..*) is associated with 'query::ValueExpressionColumn' (role 'ValueExpressionColumn167', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression345', cardinality 0..*) is associated with 'query::TableFunction' (role 'tableFunction', cardinality 0..*).
+'query::PredicateBetween' (role 'PredicateBetween97', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'rightValueExpr1', cardinality 0..*).
+'query::WithTableReference' (role 'withTableReferences', cardinality 0..*) is associated with 'query::WithTableSpecification' (role 'WithTableSpecification387', cardinality 0..*).
+'query::UpdateOfColumn' (role 'updateOfColumnList', cardinality 0..*) is associated with 'query::UpdatabilityExpression' (role 'UpdatabilityExpression413', cardinality 0..*).
+'query::SearchConditionNested' (role 'SearchConditionNested', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'nestedCondition', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression285', cardinality 0..*) is associated with 'query::ValueExpressionFunction' (role 'valueExprFunction', cardinality 0..*).
+'query::QuerySearchCondition' (role 'rightCondition', cardinality 0..*) is associated with 'query::SearchConditionCombined' (role 'SearchConditionCombined46', cardinality 0..*).
+'query::QueryValueExpression' (role 'rightValueExpr106', cardinality 0..*) is associated with 'query::ValueExpressionCombined' (role 'ValueExpressionCombined107', cardinality 0..*).
+'query::PredicateLike' (role 'likeEscape', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression238', cardinality 0..*).
+'query::SuperGroupElementSublist' (role 'SuperGroupElementSublist', cardinality 0..*) is associated with 'query::SuperGroupElementExpression' (role 'superGroupElementExprList', cardinality 0..*).
+'query::ValueExpressionColumn' (role 'ValueExpressionColumn341', cardinality 0..*) is associated with 'query::TableInDatabase' (role 'tableInDatabase', cardinality 0..*).
+'query::QueryInsertStatement' (role 'QueryInsertStatement153', cardinality 0..*) is associated with 'query::ValuesRow' (role 'sourceValuesRowList', cardinality 0..*).
+'query::QueryExpressionRoot' (role 'queryExpr145', cardinality 0..*) is associated with 'query::PredicateQuantifiedRowSelect' (role 'PredicateQuantifiedRowSelect146', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression256', cardinality 0..*) is associated with 'query::PredicateInValueList' (role 'inValueListLeft', cardinality 0..*).
+'query::UpdateAssignmentExpression' (role 'assignementExprList', cardinality 0..*) is associated with 'query::MergeUpdateSpecification' (role 'MergeUpdateSpecification', cardinality 0..*).
+'query::QueryExpressionBody' (role 'QueryExpressionBody383', cardinality 0..*) is associated with 'query::UpdateSourceQuery' (role 'updateSourceQuery', cardinality 0..*).
+'Procedure' (role 'Procedure', cardinality 0..*) is associated with 'query::ProcedureReference' (role 'query_ProcedureReference', cardinality 0..*).
+'query::TableExpression' (role 'tableExpr', cardinality 0..*) is associated with 'query::TableCorrelation' (role 'TableCorrelation', cardinality 0..*).
+'query::QueryResultSpecification' (role 'selectClause', cardinality 0..*) is associated with 'query::QuerySelect' (role 'QuerySelect216', cardinality 0..*).
+'query::PredicateQuantifiedValueSelect' (role 'PredicateQuantifiedValueSelect149', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'queryExpr148', cardinality 0..*).
+'query::ValueExpressionCombined' (role 'valueExprCombinedLeft', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression288', cardinality 0..*).
+'query::UpdateAssignmentExpression' (role 'UpdateAssignmentExpression', cardinality 0..*) is associated with 'query::QueryUpdateStatement' (role 'updateStatement', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExpr113', cardinality 0..*) is associated with 'query::ValueExpressionCaseSimple' (role 'ValueExpressionCaseSimple', cardinality 0..*).
+'query::GroupingExpression' (role 'GroupingExpression308', cardinality 0..*) is associated with 'query::SuperGroupElementExpression' (role 'superGroupElementExpr', cardinality 0..*).
+'query::QueryValueExpression' (role 'leftValueExpr95', cardinality 0..*) is associated with 'query::PredicateBetween' (role 'PredicateBetween', cardinality 0..*).
+'query::QuerySearchCondition' (role 'leftCondition', cardinality 0..*) is associated with 'query::SearchConditionCombined' (role 'SearchConditionCombined', cardinality 0..*).
+'query::ValueExpressionCast' (role 'ValueExpressionCast', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'valueExpr101', cardinality 0..*).
+'query::QueryResultSpecification' (role 'QueryResultSpecification', cardinality 0..*) is associated with 'query::QuerySelect' (role 'querySelect207', cardinality 0..*).
+'query::ColumnName' (role 'columnNameList349', cardinality 0..*) is associated with 'query::WithTableSpecification' (role 'WithTableSpecification350', cardinality 0..*).
+'query::ValueExpressionFunction' (role 'ValueExpressionFunction', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'parameterList', cardinality 0..*).
+'query::QueryExpressionBody' (role 'QueryExpressionBody', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'queryExpression', cardinality 0..*).
+'query::WithTableReference' (role 'WithTableReference', cardinality 0..*) is associated with 'query::WithTableSpecification' (role 'withTableSpecification186', cardinality 0..*).
+'query::GroupingSetsElementExpression' (role 'GroupingSetsElementExpression295', cardinality 0..*) is associated with 'query::GroupingSetsElementSublist' (role 'groupingSetsElementSublist', cardinality 0..*).
+'query::QueryExpressionBody' (role 'rightQuery', cardinality 0..*) is associated with 'query::QueryCombined' (role 'QueryCombined59', cardinality 0..*).
+'query::ResultColumn' (role 'ResultColumn385', cardinality 0..*) is associated with 'query::OrderByResultColumn' (role 'orderByResultCol', cardinality 0..*).
+'query::QuerySelectStatement' (role 'QuerySelectStatement417', cardinality 0..*) is associated with 'query::UpdatabilityExpression' (role 'updatabilityExpr416', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression254', cardinality 0..*) is associated with 'query::PredicateInValueList' (role 'inValueListRight', cardinality 0..*).
+'query::PredicateLike' (role 'PredicateLike79', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'matchingValueExpr', cardinality 0..*).
+'query::PredicateQuantifiedRowSelect' (role 'quantifiedRowSelectRight', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'QueryExpressionRoot246', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression320', cardinality 0..*) is associated with 'query::ValueExpressionCaseSearchContent' (role 'valueExprCaseSearchContent', cardinality 0..*).
+'query::TableReference' (role 'TableReference352', cardinality 0..*) is associated with 'query::TableNested' (role 'nest', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExpr84', cardinality 0..*) is associated with 'query::PredicateInValueList' (role 'PredicateInValueList85', cardinality 0..*).
+'query::GroupingExpression' (role 'GroupingExpression', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'valueExpr109', cardinality 0..*).
+'query::SearchConditionCombined' (role 'combinedLeft', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'QuerySearchCondition190', cardinality 0..*).
+'query::QueryValueExpression' (role 'nestedValueExpr', cardinality 0..*) is associated with 'query::ValueExpressionNested' (role 'ValueExpressionNested', cardinality 0..*).
+'query::PredicateBasic' (role 'PredicateBasic', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'rightValueExpr', cardinality 0..*).
+'query::QueryExpressionBody' (role 'QueryExpressionBody389', cardinality 0..*) is associated with 'query::QueryNested' (role 'queryNest', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression419', cardinality 0..*) is associated with 'query::CallStatement' (role 'callStatement', cardinality 0..*).
+'query::UpdateSourceQuery' (role 'UpdateSourceQuery', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'queryExpr62', cardinality 0..*).
+'query::ValueExpressionRow' (role 'ValueExpressionRow', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'valueExprList130', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression224', cardinality 0..*) is associated with 'query::PredicateBasic' (role 'basicLeft', cardinality 0..*).
+'query::OrderBySpecification' (role 'OrderBySpecification67', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'query66', cardinality 0..*).
+'query::ValueExpressionCaseSearch' (role 'valueExprCaseSearch', cardinality 0..*) is associated with 'query::ValueExpressionCaseSearchContent' (role 'ValueExpressionCaseSearchContent310', cardinality 0..*).
+'query::QuerySelectStatement' (role 'selectStatement16', cardinality 0..*) is associated with 'query::OrderBySpecification' (role 'OrderBySpecification', cardinality 0..*).
+'query::TableJoined' (role 'tableJoined', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'QuerySearchCondition177', cardinality 0..*).
+'query::GroupingSets' (role 'groupingSets', cardinality 0..*) is associated with 'query::GroupingSetsElement' (role 'GroupingSetsElement', cardinality 0..*).
+'query::MergeTargetTable' (role 'MergeTargetTable354', cardinality 0..*) is associated with 'query::QueryMergeStatement' (role 'mergeStatement', cardinality 0..*).
+'query::ValueExpressionCombined' (role 'valueExprCombinedRight', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression290', cardinality 0..*).
+'query::SearchConditionCombined' (role 'combinedRight', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'QuerySearchCondition192', cardinality 0..*).
+'query::ValueExpressionColumn' (role 'derivedColumnList', cardinality 0..*) is associated with 'query::TableInDatabase' (role 'TableInDatabase271', cardinality 0..*).
+'query::QueryValues' (role 'QueryValues', cardinality 0..*) is associated with 'query::ValuesRow' (role 'valuesRowList', cardinality 0..*).
+'query::QueryValueExpression' (role 'argumentList', cardinality 0..*) is associated with 'query::CallStatement' (role 'CallStatement', cardinality 0..*).
+'query::ValueExpressionRow' (role 'valueExprRow', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression391', cardinality 0..*).
+'query::CallStatement' (role 'callStatement421', cardinality 0..*) is associated with 'query::ProcedureReference' (role 'ProcedureReference', cardinality 0..*).
+'query::QueryNested' (role 'QueryNested', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'nestedQuery', cardinality 0..*).
+'query::ValuesRow' (role 'ValuesRow70', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'exprList', cardinality 0..*).
+'query::QueryInsertStatement' (role 'insertStatement12', cardinality 0..*) is associated with 'query::ValueExpressionColumn' (role 'ValueExpressionColumn', cardinality 0..*).
+'query::ValueExpressionLabeledDuration' (role 'valueExprLabeledDuration', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression279', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression318', cardinality 0..*) is associated with 'query::ValueExpressionCaseElse' (role 'valueExprCaseElse', cardinality 0..*).
+'query::ValueExpressionCaseSimpleContent' (role 'ValueExpressionCaseSimpleContent312', cardinality 0..*) is associated with 'query::ValueExpressionCaseSimple' (role 'valueExprCaseSimple', cardinality 0..*).
+'query::PredicateInValueSelect' (role 'inValueSelectLeft', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression252', cardinality 0..*).
+'query::TableCorrelation' (role 'TableCorrelation347', cardinality 0..*) is associated with 'query::ColumnName' (role 'columnNameList', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression222', cardinality 0..*) is associated with 'query::PredicateBasic' (role 'basicRight', cardinality 0..*).
+'query::QueryInsertStatement' (role 'QueryInsertStatement267', cardinality 0..*) is associated with 'query::ValueExpressionColumn' (role 'targetColumnList266', cardinality 0..*).
+'query::TableReference' (role 'TableReference400', cardinality 0..*) is associated with 'query::MergeSourceTable' (role 'mergeSourceTable', cardinality 0..*).
+'query::CallStatement' (role 'CallStatement423', cardinality 0..*) is associated with 'query::ProcedureReference' (role 'procedureRef', cardinality 0..*).
+'query::QueryUpdateStatement' (role 'QueryUpdateStatement39', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'whereClause', cardinality 0..*).
+'query::PredicateBetween' (role 'betweenLeft', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression226', cardinality 0..*).
+'query::QueryValueExpression' (role 'parameterList128', cardinality 0..*) is associated with 'query::TableFunction' (role 'TableFunction', cardinality 0..*).
+'query::QueryUpdateStatement' (role 'QueryUpdateStatement', cardinality 0..*) is associated with 'query::UpdateAssignmentExpression' (role 'assignmentClause', cardinality 0..*).
+'query::WithTableSpecification' (role 'withClause', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'QueryExpressionRoot182', cardinality 0..*).
+'query::QueryValueExpression' (role 'leftValueExpr', cardinality 0..*) is associated with 'query::PredicateBasic' (role 'PredicateBasic76', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression315', cardinality 0..*) is associated with 'query::ValueExpressionCaseSimple' (role 'valueExprCaseSimple314', cardinality 0..*).
+'query::PredicateInValueRowSelect' (role 'inValueRowSelectLeft', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression258', cardinality 0..*).
+'query::QueryMergeStatement' (role 'mergeStatement362', cardinality 0..*) is associated with 'query::MergeOperationSpecification' (role 'MergeOperationSpecification', cardinality 0..*).
+'query::PredicateIsNull' (role 'predicateNull', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression240', cardinality 0..*).
+'query::QuerySelect' (role 'QuerySelect275', cardinality 0..*) is associated with 'query::ValueExpressionVariable' (role 'intoClause', cardinality 0..*).
+'query::PredicateInValueList' (role 'PredicateInValueList', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'valueExprList', cardinality 0..*).
+'query::QueryExpressionRoot' (role 'QueryExpressionRoot56', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'query', cardinality 0..*).
+'query::QueryCombined' (role 'combinedLeft196', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'QueryExpressionBody197', cardinality 0..*).
+'query::QueryMergeStatement' (role 'QueryMergeStatement', cardinality 0..*) is associated with 'query::MergeTargetTable' (role 'targetTable393', cardinality 0..*).
+'query::QueryExpressionBody' (role 'query_QueryExpressionBody', cardinality 0..*) is associated with 'query::TableQueryLateral' (role 'query_TableQueryLateral', cardinality 0..*).
+'query::Grouping' (role 'grouping', cardinality 0..*) is associated with 'query::GroupingSetsElementExpression' (role 'GroupingSetsElementExpression', cardinality 0..*).
+'query::TableReference' (role 'tableRefLeft', cardinality 0..*) is associated with 'query::TableJoined' (role 'TableJoined161', cardinality 0..*).
+'query::QueryExpressionRoot' (role 'QueryExpressionRoot14', cardinality 0..*) is associated with 'query::QuerySelectStatement' (role 'selectStatement', cardinality 0..*).
+'query::ValueExpressionCaseSearchContent' (role 'ValueExpressionCaseSearchContent119', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'valueExpr118', cardinality 0..*).
+'query::ValueExpressionCaseSimple' (role 'ValueExpressionCaseSimple326', cardinality 0..*) is associated with 'query::ValueExpressionCaseSimpleContent' (role 'contentList', cardinality 0..*).
+'query::QuerySearchCondition' (role 'QuerySearchCondition365', cardinality 0..*) is associated with 'query::SearchConditionNested' (role 'nest364', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExpr93', cardinality 0..*) is associated with 'query::PredicateQuantifiedValueSelect' (role 'PredicateQuantifiedValueSelect', cardinality 0..*).
+'query::QuerySearchCondition' (role 'havingClause', cardinality 0..*) is associated with 'query::QuerySelect' (role 'QuerySelect', cardinality 0..*).
+'query::ValuesRow' (role 'valuesRow', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression', cardinality 0..*).
+'query::QueryInsertStatement' (role 'insertStatement9', cardinality 0..*) is associated with 'query::TableInDatabase' (role 'TableInDatabase10', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression244', cardinality 0..*) is associated with 'query::PredicateQuantifiedValueSelect' (role 'quantifiedValueSelectLeft', cardinality 0..*).
+'query::TableExpression' (role 'TableExpression395', cardinality 0..*) is associated with 'query::MergeTargetTable' (role 'mergeTargetTable', cardinality 0..*).
+'query::ValueExpressionColumn' (role 'targetColumnList273', cardinality 0..*) is associated with 'query::MergeInsertSpecification' (role 'MergeInsertSpecification', cardinality 0..*).
+'query::MergeSourceTable' (role 'MergeSourceTable', cardinality 0..*) is associated with 'query::TableReference' (role 'tableRef', cardinality 0..*).
+'query::OrderByResultColumn' (role 'OrderByResultColumn', cardinality 0..*) is associated with 'query::ResultColumn' (role 'resultCol', cardinality 0..*).
+'query::WithTableSpecification' (role 'WithTableSpecification136', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'queryExpressionRoot', cardinality 0..*).
+'query::TableExpression' (role 'TableExpression269', cardinality 0..*) is associated with 'query::ValueExpressionColumn' (role 'valueExprColumns', cardinality 0..*).
+'query::GroupingSets' (role 'GroupingSets', cardinality 0..*) is associated with 'query::GroupingSetsElement' (role 'groupingSetsElementList', cardinality 0..*).
+'query::TableExpression' (role 'TableExpression264', cardinality 0..*) is associated with 'query::ValueExpressionColumn' (role 'columnList', cardinality 0..*).
+'query::QueryExpressionBody' (role 'leftQuery', cardinality 0..*) is associated with 'query::QueryCombined' (role 'QueryCombined', cardinality 0..*).
+'query::ValueExpressionCaseSimpleContent' (role 'valueExprCaseSimpleContentWhen', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression328', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression234', cardinality 0..*) is associated with 'query::PredicateLike' (role 'likePattern', cardinality 0..*).
+'query::QueryValueExpression' (role 'leftValueExpr104', cardinality 0..*) is associated with 'query::ValueExpressionCombined' (role 'ValueExpressionCombined', cardinality 0..*).
+'query::ValueExpressionNested' (role 'nest367', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression368', cardinality 0..*).
+'query::ValueExpressionCaseSearchContent' (role 'ValueExpressionCaseSearchContent', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'searchCondition', cardinality 0..*).
+'query::ValueExpressionScalarSelect' (role 'ValueExpressionScalarSelect', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'queryExpr151', cardinality 0..*).
+'query::CursorReference' (role 'CursorReference22', cardinality 0..*) is associated with 'query::QueryUpdateStatement' (role 'updateStatement21', cardinality 0..*).
+'query::MergeSourceTable' (role 'query_MergeSourceTable', cardinality 0..*) is associated with 'query::QueryMergeStatement' (role 'query_QueryMergeStatement', cardinality 0..*).
+'query::SuperGroupElement' (role 'superGroupElementList', cardinality 0..*) is associated with 'query::SuperGroup' (role 'SuperGroup', cardinality 0..*).
+'query::UpdateAssignmentExpression' (role 'updateAssignmentExpr', cardinality 0..*) is associated with 'query::UpdateSource' (role 'UpdateSource', cardinality 0..*).
+'query::QueryValues' (role 'queryValues', cardinality 0..*) is associated with 'query::ValuesRow' (role 'ValuesRow157', cardinality 0..*).
+'query::TableReference' (role 'fromClause', cardinality 0..*) is associated with 'query::QuerySelect' (role 'QuerySelect163', cardinality 0..*).
+'query::QueryCombined' (role 'combinedRight199', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'QueryExpressionBody200', cardinality 0..*).
+'query::MergeOnCondition' (role 'MergeOnCondition', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'searchCondition54', cardinality 0..*).
+'query::TableJoined' (role 'tableJoinedLeft', cardinality 0..*) is associated with 'query::TableReference' (role 'TableReference180', cardinality 0..*).
+'query::PredicateInValueSelect' (role 'PredicateInValueSelect143', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'queryExpr142', cardinality 0..*).
+'query::UpdateAssignmentExpression' (role 'UpdateAssignmentExpression262', cardinality 0..*) is associated with 'query::ValueExpressionColumn' (role 'targetColumnList', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression330', cardinality 0..*) is associated with 'query::ValueExpressionCaseSimpleContent' (role 'valueExprCaseSimpleContentResult', cardinality 0..*).
+'query::MergeSourceTable' (role 'MergeSourceTable357', cardinality 0..*) is associated with 'query::QueryMergeStatement' (role 'mergeStatement356', cardinality 0..*).
+'query::PredicateLike' (role 'PredicateLike', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'patternValueExpr', cardinality 0..*).
+'query::WithTableSpecification' (role 'withTableSpecification188', cardinality 0..*) is associated with 'query::ColumnName' (role 'ColumnName', cardinality 0..*).
+'query::ValuesRow' (role 'ValuesRow', cardinality 0..*) is associated with 'query::QueryInsertStatement' (role 'insertStatement7', cardinality 0..*).
+'query::PredicateIsNull' (role 'PredicateIsNull', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'valueExpr81', cardinality 0..*).
+'query::TableReference' (role 'nestedTableRef', cardinality 0..*) is associated with 'query::TableNested' (role 'TableNested', cardinality 0..*).
+'query::QueryMergeStatement' (role 'QueryMergeStatement398', cardinality 0..*) is associated with 'query::MergeSourceTable' (role 'sourceTable', cardinality 0..*).
+'query::GroupingSetsElementSublist' (role 'GroupingSetsElementSublist', cardinality 0..*) is associated with 'query::GroupingSetsElementExpression' (role 'groupingSetsElementExprList', cardinality 0..*).
+'query::QuerySearchCondition' (role 'QuerySearchCondition', cardinality 0..*) is associated with 'query::QueryDeleteStatement' (role 'deleteStatement2', cardinality 0..*).
+'query::CursorReference' (role 'whereCurrentOfClause', cardinality 0..*) is associated with 'query::QueryUpdateStatement' (role 'QueryUpdateStatement35', cardinality 0..*).
+'query::QueryDeleteStatement' (role 'deleteStatement4', cardinality 0..*) is associated with 'query::TableInDatabase' (role 'TableInDatabase', cardinality 0..*).
+'query::QueryDeleteStatement' (role 'QueryDeleteStatement', cardinality 0..*) is associated with 'query::CursorReference' (role 'whereCurrentOfClause37', cardinality 0..*).
+'query::QuerySearchCondition' (role 'QuerySearchCondition323', cardinality 0..*) is associated with 'query::ValueExpressionCaseSearchContent' (role 'valueExprCaseSearchContent322', cardinality 0..*).
+'query::MergeOnCondition' (role 'MergeOnCondition360', cardinality 0..*) is associated with 'query::QueryMergeStatement' (role 'mergeStatement359', cardinality 0..*).
+'query::PredicateInValueRowSelect' (role 'PredicateInValueRowSelect', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'valueExprList87', cardinality 0..*).
+'query::ValueExpressionColumn' (role 'ValueExpressionColumn408', cardinality 0..*) is associated with 'query::MergeInsertSpecification' (role 'mergeInsertSpec', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExpr', cardinality 0..*) is associated with 'query::OrderByValueExpression' (role 'OrderByValueExpression', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExprList126', cardinality 0..*) is associated with 'query::UpdateSourceExprList' (role 'UpdateSourceExprList', cardinality 0..*).
+'query::Grouping' (role 'Grouping', cardinality 0..*) is associated with 'query::GroupingSetsElementExpression' (role 'groupingSetsElementExpr', cardinality 0..*).
+'query::QuerySelect' (role 'querySelect212', cardinality 0..*) is associated with 'query::ValueExpressionVariable' (role 'ValueExpressionVariable', cardinality 0..*).
+'query::TableJoined' (role 'TableJoined', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'joinCondition', cardinality 0..*).
+'query::PredicateLike' (role 'likeMatching', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression236', cardinality 0..*).
+'query::ValueExpressionCaseSearchContent' (role 'searchContentList', cardinality 0..*) is associated with 'query::ValueExpressionCaseSearch' (role 'ValueExpressionCaseSearch', cardinality 0..*).
+'query::QuerySelectStatement' (role 'QuerySelectStatement370', cardinality 0..*) is associated with 'query::OrderBySpecification' (role 'orderByClause', cardinality 0..*).
+'query::QueryMergeStatement' (role 'QueryMergeStatement402', cardinality 0..*) is associated with 'query::MergeOnCondition' (role 'onCondition', cardinality 0..*).
+'query::QueryValueExpression' (role 'whenValueExpr', cardinality 0..*) is associated with 'query::ValueExpressionCaseSimpleContent' (role 'ValueExpressionCaseSimpleContent', cardinality 0..*).
+'query::ResultColumn' (role 'ResultColumn', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'valueExpr73', cardinality 0..*).
+'query::ResultTableAllColumns' (role 'resultTableAllColumns', cardinality 0..*) is associated with 'query::TableExpression' (role 'TableExpression', cardinality 0..*).
+'query::SuperGroup' (role 'superGroup', cardinality 0..*) is associated with 'query::SuperGroupElement' (role 'SuperGroupElement', cardinality 0..*).
+'query::PredicateBetween' (role 'PredicateBetween99', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'rightValueExpr2', cardinality 0..*).
+'query::PredicateExists' (role 'predicateExists', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'QueryExpressionBody232', cardinality 0..*).
+'query::OrderByValueExpression' (role 'orderByValueExpr', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression194', cardinality 0..*).
+'query::CursorReference' (role 'CursorReference', cardinality 0..*) is associated with 'query::QueryDeleteStatement' (role 'deleteStatement', cardinality 0..*).
+'query::QueryExpressionBody' (role 'withTableQueryExpr', cardinality 0..*) is associated with 'query::WithTableSpecification' (role 'WithTableSpecification', cardinality 0..*).
+'query::TableInDatabase' (role 'targetTable', cardinality 0..*) is associated with 'query::QueryUpdateStatement' (role 'QueryUpdateStatement332', cardinality 0..*).
+'query::QuerySelect' (role 'querySelect209', cardinality 0..*) is associated with 'query::TableReference' (role 'TableReference210', cardinality 0..*).
+'query::QueryInsertStatement' (role 'insertStatement', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'QueryExpressionRoot', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExpr123', cardinality 0..*) is associated with 'query::ValueExpressionLabeledDuration' (role 'ValueExpressionLabeledDuration', cardinality 0..*).
+'query::QueryExpressionBody' (role 'QueryExpressionBody372', cardinality 0..*) is associated with 'query::OrderBySpecification' (role 'sortSpecList', cardinality 0..*).
+'query::MergeOnCondition' (role 'mergeOnCondition', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'QuerySearchCondition404', cardinality 0..*).
+'query::PredicateQuantifiedRowSelect' (role 'quantifiedRowSelectLeft', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression248', cardinality 0..*).
+'query::QueryUpdateStatement' (role 'updateStatement27', cardinality 0..*) is associated with 'query::TableInDatabase' (role 'TableInDatabase28', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression300', cardinality 0..*) is associated with 'query::GroupingExpression' (role 'groupingExpr', cardinality 0..*).
+'query::ValueExpressionCaseElse' (role 'ValueExpressionCaseElse281', cardinality 0..*) is associated with 'query::ValueExpressionCase' (role 'valueExprCase', cardinality 0..*).
+'query::QuerySelect' (role 'querySelectHaving', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'QuerySearchCondition202', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression228', cardinality 0..*) is associated with 'query::PredicateBetween' (role 'betweenRight1', cardinality 0..*).
+'query::ValueExpressionColumn' (role 'ValueExpressionColumn173', cardinality 0..*) is associated with 'query::TableExpression' (role 'tableExpr172', cardinality 0..*).
+'query::TableReference' (role 'TableReference', cardinality 0..*) is associated with 'query::TableJoined' (role 'tableJoinedRight', cardinality 0..*).
+'query::QueryDeleteStatement' (role 'QueryDeleteStatement335', cardinality 0..*) is associated with 'query::TableInDatabase' (role 'targetTable334', cardinality 0..*).
+'query::QuerySelectStatement' (role 'selectStatement18', cardinality 0..*) is associated with 'query::UpdatabilityExpression' (role 'UpdatabilityExpression', cardinality 0..*).
+'query::MergeTargetTable' (role 'MergeTargetTable', cardinality 0..*) is associated with 'query::TableExpression' (role 'tableExpr175', cardinality 0..*).
+'query::UpdateAssignmentExpression' (role 'UpdateAssignmentExpression379', cardinality 0..*) is associated with 'query::UpdateSource' (role 'updateSource', cardinality 0..*).
+'query::MergeUpdateSpecification' (role 'mergeUpdateSpec', cardinality 0..*) is associated with 'query::UpdateAssignmentExpression' (role 'UpdateAssignmentExpression406', cardinality 0..*).
+'query::PredicateInValueRowSelect' (role 'inValueRowSelectRight', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'QueryExpressionRoot260', cardinality 0..*).
+'query::GroupingExpression' (role 'groupingExpr302', cardinality 0..*) is associated with 'query::SuperGroupElementExpression' (role 'SuperGroupElementExpression', cardinality 0..*).
+'query::QueryValueExpression' (role 'query_QueryValueExpression', cardinality 0..*) is associated with 'DataType' (role 'DataType', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExprList91', cardinality 0..*) is associated with 'query::PredicateQuantifiedRowSelect' (role 'PredicateQuantifiedRowSelect', cardinality 0..*).
+'query::QueryInsertStatement' (role 'QueryInsertStatement338', cardinality 0..*) is associated with 'query::TableInDatabase' (role 'targetTable337', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExpr111', cardinality 0..*) is associated with 'query::ValueExpressionCaseElse' (role 'ValueExpressionCaseElse', cardinality 0..*).
+'query::WithTableSpecification' (role 'withTableSpecification', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'QueryExpressionBody184', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression381', cardinality 0..*) is associated with 'query::UpdateSourceExprList' (role 'updateSourceExprList', cardinality 0..*).
+'query::UpdateOfColumn' (role 'UpdateOfColumn', cardinality 0..*) is associated with 'query::UpdatabilityExpression' (role 'updatabilityExpr', cardinality 0..*).
+'query::GroupingSpecification' (role 'groupByClause', cardinality 0..*) is associated with 'query::QuerySelect' (role 'QuerySelect214', cardinality 0..*).
+'query::QueryExpressionRoot' (role 'QueryExpressionRoot277', cardinality 0..*) is associated with 'query::ValueExpressionScalarSelect' (role 'valExprScalarSelect', cardinality 0..*).
+'query::QueryExpressionRoot' (role 'sourceQuery', cardinality 0..*) is associated with 'query::QueryInsertStatement' (role 'QueryInsertStatement', cardinality 0..*).
+'query::ValueExpressionCase' (role 'ValueExpressionCase', cardinality 0..*) is associated with 'query::ValueExpressionCaseElse' (role 'caseElse', cardinality 0..*).
+'query::UpdateAssignmentExpression' (role 'assignmentExprTarget', cardinality 0..*) is associated with 'query::ValueExpressionColumn' (role 'ValueExpressionColumn31', cardinality 0..*).
+'query::ValueExpressionCaseSimpleContent' (role 'ValueExpressionCaseSimpleContent116', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'resultValueExpr', cardinality 0..*).
+'query::QueryExpressionRoot' (role 'queryExpr139', cardinality 0..*) is associated with 'query::PredicateInValueRowSelect' (role 'PredicateInValueRowSelect140', cardinality 0..*).
+'query::TableInDatabase' (role 'query_TableInDatabase', cardinality 0..*) is associated with 'Table' (role 'Table', cardinality 0..*).
+'query::PredicateBetween' (role 'betweenRight2', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'QueryValueExpression230', cardinality 0..*).
+'query::QuerySearchCondition' (role 'whereClause49', cardinality 0..*) is associated with 'query::QuerySelect' (role 'QuerySelect50', cardinality 0..*).
+'query::TableCorrelation' (role 'tableCorrelation', cardinality 0..*) is associated with 'query::TableExpression' (role 'TableExpression374', cardinality 0..*).
+'query::QueryValueExpression' (role 'QueryValueExpression219', cardinality 0..*) is associated with 'query::ResultColumn' (role 'resultColumn', cardinality 0..*).
+'query::QueryExpressionRoot' (role 'QueryExpressionRoot250', cardinality 0..*) is associated with 'query::PredicateInValueSelect' (role 'inValueSelectRight', cardinality 0..*).
+'query::ValuesRow' (role 'query_ValuesRow', cardinality 0..*) is associated with 'query::MergeInsertSpecification' (role 'query_MergeInsertSpecification', cardinality 0..*).
+'query::QueryValueExpression' (role 'escapeValueExpr', cardinality 0..*) is associated with 'query::PredicateLike' (role 'PredicateLike121', cardinality 0..*).
+'query::QueryValueExpression' (role 'valueExpr89', cardinality 0..*) is associated with 'query::PredicateInValueSelect' (role 'PredicateInValueSelect', cardinality 0..*).
+'query::SuperGroupElementExpression' (role 'SuperGroupElementExpression305', cardinality 0..*) is associated with 'query::SuperGroupElementSublist' (role 'superGroupElementSublist', cardinality 0..*).
+'query::ValueExpressionFunction' (role 'query_ValueExpressionFunction', cardinality 0..*) is associated with 'Function' (role 'Function', cardinality 0..*).
+'query::TableFunction' (role 'query_TableFunction', cardinality 0..*) is associated with 'Function' (role 'Function343', cardinality 0..*).
+'query::PredicateExists' (role 'PredicateExists', cardinality 0..*) is associated with 'query::QueryExpressionBody' (role 'queryExpr', cardinality 0..*).
+'query::QueryDeleteStatement' (role 'QueryDeleteStatement42', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'whereClause41', cardinality 0..*).
+'query::ColumnName' (role 'ColumnName377', cardinality 0..*) is associated with 'query::TableCorrelation' (role 'tableCorrelation376', cardinality 0..*).
+'query::TableJoined' (role 'TableJoined159', cardinality 0..*) is associated with 'query::TableReference' (role 'tableRefRight', cardinality 0..*).
+'query::QuerySearchCondition' (role 'QuerySearchCondition25', cardinality 0..*) is associated with 'query::QueryUpdateStatement' (role 'updateStatement24', cardinality 0..*).
+'query::QuerySelect' (role 'querySelectWhere', cardinality 0..*) is associated with 'query::QuerySearchCondition' (role 'QuerySearchCondition204', cardinality 0..*).
+'query::QueryMergeStatement' (role 'QueryMergeStatement411', cardinality 0..*) is associated with 'query::MergeOperationSpecification' (role 'operationSpecList', cardinality 0..*).
+'query::GroupingSpecification' (role 'GroupingSpecification', cardinality 0..*) is associated with 'query::QuerySelect' (role 'querySelect', cardinality 0..*).
+'query::QuerySelectStatement' (role 'QuerySelectStatement', cardinality 0..*) is associated with 'query::QueryExpressionRoot' (role 'queryExpr134', cardinality 0..*).
+'query::ResultTableAllColumns' (role 'ResultTableAllColumns', cardinality 0..*) is associated with 'query::TableExpression' (role 'tableExpr170', cardinality 0..*).

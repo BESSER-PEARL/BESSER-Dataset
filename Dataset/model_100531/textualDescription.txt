@@ -1,0 +1,46 @@
+The model has 24 class(es).
+The class 'ScenarioDescription' has no attributes.
+The class 'USECASEUML::NonFunctionnelRequirement' has no attributes.
+The class 'USECASEUML::Post' has no attributes.
+The class 'USECASEUML::Requirement' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'USECASEUML::Goal' has no attributes.
+The class 'FunctionnelRequirement' has no attributes.
+The class 'USECASEUML::Resource' has no attributes.
+The class 'USECASEUML::ScenarioDescription' has no attributes.
+The class 'USECASEUML::FunctionnelRequirement' has no attributes.
+The class 'Condition' has no attributes.
+The class 'USECASEUML::Pre' has no attributes.
+The class 'USECASEUML::Role' has no attributes.
+The class 'USECASEUML::HumanRole' has no attributes.
+The class 'Goal' has no attributes.
+The class 'Requirement' has no attributes.
+The class 'USECASEUML::Manage' has no attributes.
+The class 'NonFunctionnelRequirement' has no attributes.
+The class 'Resource' has no attributes.
+The class 'USECASEUML::SystemRole' has no attributes.
+The class 'USECASEUML::EventRole' has no attributes.
+The class 'USECASEUML::UseCase' has no attributes.
+The class 'Role' has no attributes.
+The class 'USECASEUML::Condition' has no attributes.
+'USECASEUML::Pre' is a specialization of 'Condition'.
+'USECASEUML::Manage' is a specialization of 'UseCase'.
+'USECASEUML::SystemRole' is a specialization of 'Role'.
+'USECASEUML::EventRole' is a specialization of 'Role'.
+'USECASEUML::NonFunctionnelRequirement' is a specialization of 'Requirement'.
+'USECASEUML::Post' is a specialization of 'Condition'.
+'USECASEUML::HumanRole' is a specialization of 'Role'.
+'USECASEUML::FunctionnelRequirement' is a specialization of 'Requirement'.
+'USECASEUML::UseCase' (role 'scopes', cardinality 0..*) is associated with 'NonFunctionnelRequirement' (role 'NonFunctionnelRequirement', cardinality 0..*).
+'USECASEUML::Manage' (role 'USECASEUML_Manage', cardinality 0..*) is associated with 'Resource' (role 'Resource', cardinality 0..*).
+'UseCase' (role 'UseCase10', cardinality 0..*) is associated with 'USECASEUML::Goal' (role 'meet_by', cardinality 0..*).
+'FunctionnelRequirement' (role 'FunctionnelRequirement', cardinality 0..*) is associated with 'USECASEUML::UseCase' (role 'specifies', cardinality 0..*).
+'UseCase' (role 'UseCase', cardinality 0..*) is associated with 'USECASEUML::NonFunctionnelRequirement' (role 'scoped_by', cardinality 0..*).
+'UseCase' (role 'UseCase12', cardinality 0..*) is associated with 'USECASEUML::Role' (role 'interacter', cardinality 0..*).
+'USECASEUML::ScenarioDescription' (role 'scenario', cardinality 0..*) is associated with 'UseCase' (role 'UseCase15', cardinality 0..*).
+'Role' (role 'Role', cardinality 0..*) is associated with 'USECASEUML::UseCase' (role 'interacted_with', cardinality 0..*).
+'USECASEUML::Condition' (role 'condition', cardinality 0..*) is associated with 'UseCase' (role 'UseCase17', cardinality 0..*).
+'Condition' (role 'Condition', cardinality 0..*) is associated with 'USECASEUML::UseCase' (role 'constrained_with', cardinality 0..*).
+'ScenarioDescription' (role 'ScenarioDescription', cardinality 0..*) is associated with 'USECASEUML::UseCase' (role 'useCase', cardinality 0..*).
+'USECASEUML::UseCase' (role 'to_meet', cardinality 0..*) is associated with 'Goal' (role 'Goal', cardinality 0..*).
+'UseCase' (role 'UseCase2', cardinality 0..*) is associated with 'USECASEUML::FunctionnelRequirement' (role 'specified_by', cardinality 0..*).

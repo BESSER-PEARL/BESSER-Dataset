@@ -1,0 +1,47 @@
+The model has 27 class(es).
+The class 'TableDef' has no attributes.
+The class 'core::CatalogMetaData' has no attributes.
+The class 'core::TableDef' has no attributes.
+The class 'core::QualifiedName' has the following attributes: 'qualifiers' of type str.
+The class 'AuthenticationUserPassword' has no attributes.
+The class 'core::IndexColumnDef' has the following attributes: 'sequence' of type int; 'ordering' of type str; 'name' of type str.
+The class 'core::ConnectionConfig' has the following attributes: 'vendor' of type str; 'persistent' of type bool; 'version' of type str; 'catalog' of type str; 'url' of type str.
+The class 'DatabaseObjectDef' has no attributes.
+The class 'core::Statement' has no attributes.
+The class 'core::TableColumnDef' has the following attributes: 'default' of type bool; 'name' of type str; 'nullable' of type bool.
+The class 'core::CatalogContainer' has the following attributes: 'name' of type str; 'active' of type bool; 'supportsGuestAccess' of type bool.
+The class 'Object' has no attributes.
+The class 'JavaCloseable' has no attributes.
+The class 'core::ConnectionCredentials' has no attributes.
+The class 'core::SchemaDef' has no attributes.
+The class 'core::DatabaseManager' has no attributes.
+The class 'ContextProvider' has no attributes.
+The class 'core::DatabaseContainer' has the following attributes: 'vendor' of type str; 'version' of type str.
+The class 'core::ViewDef' has the following attributes: 'querySelect' of type str.
+The class 'core::PreparedStatement' has no attributes.
+The class 'core::Connection' has no attributes.
+The class 'core::CatalogGenerationStrategy' has the following attributes: 'createRelativeRecordNumber' of type bool; 'createIndexOnView' of type bool.
+The class 'core::DatabaseObjectDef' has the following attributes: 'label' of type str.
+The class 'core::IndexDef' has the following attributes: 'unique' of type bool; 'clustered' of type bool.
+The class 'core::ConnectionManager' has no attributes.
+The class 'Statement' has no attributes.
+The class 'core::DataSourceFactory' has no attributes.
+The enumeration 'OrderingType' has the following literals: 'Ascend', 'Descend'.
+'core::ViewDef' is a specialization of 'TableDef'.
+'core::SchemaDef' is a specialization of 'DatabaseObjectDef'.
+'core::TableDef' is a specialization of 'DatabaseObjectDef'.
+'core::PreparedStatement' is a specialization of 'Statement'.
+'core::IndexDef' is a specialization of 'DatabaseObjectDef'.
+'core::Connection' is a specialization of 'ContextProvider'.
+'core::IndexColumnDef' is a specialization of 'DatabaseObjectDef'.
+'core::TableColumnDef' is a specialization of 'DatabaseObjectDef'.
+'core::ConnectionCredentials' is a specialization of 'AuthenticationUserPassword'.
+'core::Statement' is a specialization of 'JavaCloseable'.
+'core::DatabaseContainer' is a specialization of 'Object'.
+'core::TableDef' (role 'core_TableDef', cardinality 0..*) is associated with 'core::TableColumnDef' (role 'core_TableColumnDef', cardinality 0..*).
+'core::IndexColumnDef' (role 'core_IndexColumnDef', cardinality 0..*) is associated with 'core::IndexDef' (role 'core_IndexDef', cardinality 0..*).
+'core::CatalogContainer' (role 'core_CatalogContainer', cardinality 0..*) is associated with 'core::ConnectionConfig' (role 'core_ConnectionConfig', cardinality 0..*).
+'core::CatalogGenerationStrategy' (role 'core_CatalogGenerationStrategy', cardinality 0..*) is associated with 'core::CatalogContainer' (role 'core_CatalogContainer2', cardinality 0..*).
+'core::ConnectionCredentials' (role 'core_ConnectionCredentials', cardinality 0..*) is associated with 'core::ConnectionConfig' (role 'core_ConnectionConfig4', cardinality 0..*).
+'core::CatalogContainer' (role 'core_CatalogContainer9', cardinality 0..*) is associated with 'core::DatabaseContainer' (role 'core_DatabaseContainer8', cardinality 0..*).
+'core::CatalogContainer' (role 'core_CatalogContainer6', cardinality 0..*) is associated with 'core::DatabaseContainer' (role 'core_DatabaseContainer', cardinality 0..*).

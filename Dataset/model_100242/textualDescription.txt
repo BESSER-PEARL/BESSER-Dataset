@@ -1,0 +1,17 @@
+The model has 5 class(es).
+The class 'spreadsheet::Spreadsheet' has the following attributes: 'FilePath' of type str; 'Label' of type str.
+The class 'spreadsheet::Row' has the following attributes: 'RowIndex' of type int.
+The class 'spreadsheet::Cell' has the following attributes: 'CellType' of type str; 'StringValue' of type str; 'ValueFormatted' of type str; 'DoubleValue' of type float.
+The class 'spreadsheet::Column' has the following attributes: 'ColumnIndex' of type int.
+The class 'spreadsheet::Sheet' has the following attributes: 'SheetName' of type str; 'SheetIndex' of type int.
+The enumeration 'CellType' has the following literals: 'CellTypeFormula', 'CellTypeString', 'CellTypeDate', 'CellTypeNumeric'.
+'spreadsheet::Cell' (role 'Cell20', cardinality 0..*) is associated with 'spreadsheet::Row' (role 'Row21', cardinality 0..*).
+'spreadsheet::Cell' (role 'Cell23', cardinality 0..*) is associated with 'spreadsheet::Column' (role 'Column24', cardinality 0..*).
+'spreadsheet::Spreadsheet' (role 'Spreadsheet7', cardinality 0..*) is associated with 'spreadsheet::Sheet' (role 'Sheet6', cardinality 0..*).
+'spreadsheet::Sheet' (role 'Sheet18', cardinality 0..*) is associated with 'spreadsheet::Column' (role 'Column17', cardinality 0..*).
+'spreadsheet::Cell' (role 'Cell15', cardinality 0..*) is associated with 'spreadsheet::Column' (role 'Column14', cardinality 0..*).
+'spreadsheet::Sheet' (role 'Sheet', cardinality 0..*) is associated with 'spreadsheet::Spreadsheet' (role 'Spreadsheet', cardinality 0..*).
+'spreadsheet::Row' (role 'Row', cardinality 0..*) is associated with 'spreadsheet::Sheet' (role 'Sheet2', cardinality 0..*).
+'spreadsheet::Row' (role 'Row11', cardinality 0..*) is associated with 'spreadsheet::Sheet' (role 'Sheet12', cardinality 0..*).
+'spreadsheet::Sheet' (role 'Sheet4', cardinality 0..*) is associated with 'spreadsheet::Column' (role 'Column', cardinality 0..*).
+'spreadsheet::Cell' (role 'Cell', cardinality 0..*) is associated with 'spreadsheet::Row' (role 'Row9', cardinality 0..*).

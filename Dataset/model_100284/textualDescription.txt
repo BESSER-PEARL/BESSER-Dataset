@@ -1,0 +1,138 @@
+The model has 75 class(es).
+The class 'org_k1s_nppn::Bindings' has no attributes.
+The class 'nppn::Place' has no attributes.
+The class 'Container' has no attributes.
+The class 'org_k1s_nppn::Instance' has the following attributes: 'subPageID' of type str.
+The class 'org_k1s_nppn::CustomDerivedPragmatics' has no attributes.
+The class 'org_k1s_nppn::Label' has no attributes.
+The class 'org_k1s_nppn::TransitionNode' has no attributes.
+The class 'nppn::Binding' has no attributes.
+The class 'org_k1s_nppn::PlaceNode' has no attributes.
+The class 'nppn::Label' has no attributes.
+The class 'org_k1s_nppn::Transition' has no attributes.
+The class 'org_k1s_nppn::HasLabel' has no attributes.
+The class 'org_k1s_nppn::Explicit' has no attributes.
+The class 'HasLabel' has no attributes.
+The class 'nppn::PNPattern' has no attributes.
+The class 'Pragmatic' has no attributes.
+The class 'nppn::Name' has no attributes.
+The class 'org_k1s_nppn::HasName' has no attributes.
+The class 'org_k1s_nppn::Derived' has no attributes.
+The class 'nppn::Page' has no attributes.
+The class 'nppn::Transition' has no attributes.
+The class 'nppn::PlacementConstraints' has no attributes.
+The class 'Derived' has no attributes.
+The class 'nppn::Pragmatic' has no attributes.
+The class 'org_k1s_nppn::PNPattern' has no attributes.
+The class 'HasName' has no attributes.
+The class 'nppn::Monitor' has no attributes.
+The class 'org_k1s_nppn::Conditinoal' has no attributes.
+The class 'Object' has no attributes.
+The class 'nppn::PlaceNode' has no attributes.
+The class 'nppn::Arc' has no attributes.
+The class 'org_k1s_nppn::Block' has no attributes.
+The class 'org_k1s_nppn::Node' has no attributes.
+The class 'Explicit' has no attributes.
+The class 'nppn::Block' has no attributes.
+The class 'org_k1s_nppn::Service' has no attributes.
+The class 'HLAnnotation' has no attributes.
+The class 'org_k1s_nppn::HLArcAddin' has the following attributes: 'kind' of type str.
+The class 'Node' has no attributes.
+The class 'org_k1s_nppn::CustomPragmatics' has no attributes.
+The class 'org_k1s_nppn::Name' has no attributes.
+The class 'nppn::Service' has no attributes.
+The class 'org_k1s_nppn::AbstractTemplateTree' has no attributes.
+The class 'nppn::HasLabel' has no attributes.
+The class 'org_k1s_nppn::CustomExplicitPragmatics' has no attributes.
+The class 'nppn::HLAnnotation' has no attributes.
+The class 'nppn::Principal' has no attributes.
+The class 'nppn::Instance' has no attributes.
+The class 'org_k1s_nppn::HLAnnotation' has no attributes.
+The class 'org_k1s_nppn::Principal' has no attributes.
+The class 'org_k1s_nppn::PlacementConstraints' has no attributes.
+The class 'org_k1s_nppn::Page' has no attributes.
+The class 'CustomPragmatics' has no attributes.
+The class 'nppn::PetriNet' has no attributes.
+The class 'org_k1s_nppn::PetriNet' has the following attributes: 'kind' of type str; 'timeType' of type str.
+The class 'org_k1s_nppn::Arc' has no attributes.
+The class 'org_k1s_nppn::Container' has no attributes.
+The class 'org_k1s_nppn::Object' has no attributes.
+The class 'org_k1s_nppn::Place' has no attributes.
+The class 'nppn::Object' has no attributes.
+The class 'org_k1s_nppn::RefPlace' has no attributes.
+The class 'org_k1s_nppn::Pragmatic' has the following attributes: 'name' of type str.
+The class 'Block' has no attributes.
+The class 'nppn::RefPlace' has no attributes.
+The class 'PlaceNode' has no attributes.
+The class 'org_k1s_nppn::Atomic' has no attributes.
+The class 'HasGraphics' has no attributes.
+The class 'org_k1s_nppn::Loop' has no attributes.
+The class 'nppn::TransitionNode' has no attributes.
+The class 'org_k1s_nppn::Binding' has the following attributes: 'template' of type str.
+The class 'HLArcAddin' has no attributes.
+The class 'TransitionNode' has no attributes.
+The class 'org_k1s_nppn::RefTrans' has no attributes.
+The class 'org_k1s_nppn::Conditional' has no attributes.
+The class 'nppn::Node' has no attributes.
+'org_k1s_nppn::RefPlace' is a specialization of 'PlaceNode'.
+'org_k1s_nppn::Transition' is a specialization of 'TransitionNode'.
+'org_k1s_nppn::PlaceNode' is a specialization of 'Node'.
+'org_k1s_nppn::CustomDerivedPragmatics' is a specialization of 'Derived'.
+'org_k1s_nppn::Arc' is a specialization of 'HasGraphics'.
+'org_k1s_nppn::Explicit' is a specialization of 'Pragmatic'.
+'org_k1s_nppn::Derived' is a specialization of 'Pragmatic'.
+'org_k1s_nppn::TransitionNode' is a specialization of 'Node'.
+'org_k1s_nppn::RefTrans' is a specialization of 'TransitionNode'.
+'org_k1s_nppn::Instance' is a specialization of 'Node'.
+'org_k1s_nppn::CustomExplicitPragmatics' is a specialization of 'CustomPragmatics'.
+'org_k1s_nppn::Node' is a specialization of 'Object'.
+'org_k1s_nppn::CustomExplicitPragmatics' is a specialization of 'Explicit'.
+'org_k1s_nppn::Arc' is a specialization of 'HLArcAddin'.
+'org_k1s_nppn::CustomDerivedPragmatics' is a specialization of 'CustomPragmatics'.
+'org_k1s_nppn::Object' is a specialization of 'HasGraphics'.
+'org_k1s_nppn::Container' is a specialization of 'Block'.
+'org_k1s_nppn::Object' is a specialization of 'HasName'.
+'org_k1s_nppn::Place' is a specialization of 'PlaceNode'.
+'org_k1s_nppn::CustomPragmatics' is a specialization of 'Pragmatic'.
+'org_k1s_nppn::Name' is a specialization of 'HLAnnotation'.
+'org_k1s_nppn::PetriNet' is a specialization of 'HasName'.
+'org_k1s_nppn::PetriNet' is a specialization of 'HasLabel'.
+'org_k1s_nppn::Loop' is a specialization of 'Container'.
+'org_k1s_nppn::Page' is a specialization of 'HasLabel'.
+'org_k1s_nppn::Conditional' is a specialization of 'Container'.
+'org_k1s_nppn::Conditinoal' is a specialization of 'Container'.
+'org_k1s_nppn::Page' is a specialization of 'HasName'.
+'org_k1s_nppn::Object' is a specialization of 'HasLabel'.
+'org_k1s_nppn::Atomic' is a specialization of 'Block'.
+'nppn::Principal' (role 'nppn_Principal', cardinality 0..*) is associated with 'org_k1s_nppn::AbstractTemplateTree' (role 'org_k1s_nppn_AbstractTemplateTree', cardinality 0..*).
+'nppn::Instance' (role 'nppn_Instance34', cardinality 0..*) is associated with 'org_k1s_nppn::Service' (role 'org_k1s_nppn_Service', cardinality 0..*).
+'org_k1s_nppn::Atomic' (role 'org_k1s_nppn_Atomic', cardinality 0..*) is associated with 'nppn::Transition' (role 'nppn_Transition', cardinality 0..*).
+'org_k1s_nppn::PetriNet' (role 'petriNet', cardinality 0..*) is associated with 'nppn::Page' (role 'Page21', cardinality 0..*).
+'org_k1s_nppn::Arc' (role 'arc', cardinality 0..*) is associated with 'nppn::Page' (role 'Page', cardinality 0..*).
+'org_k1s_nppn::Bindings' (role 'org_k1s_nppn_Bindings', cardinality 0..*) is associated with 'nppn::Binding' (role 'nppn_Binding', cardinality 0..*).
+'nppn::Arc' (role 'Arc', cardinality 0..*) is associated with 'org_k1s_nppn::Node' (role 'source', cardinality 0..*).
+'nppn::HLAnnotation' (role 'nppn_HLAnnotation', cardinality 0..*) is associated with 'org_k1s_nppn::HLArcAddin' (role 'org_k1s_nppn_HLArcAddin', cardinality 0..*).
+'nppn::PlacementConstraints' (role 'nppn_PlacementConstraints', cardinality 0..*) is associated with 'org_k1s_nppn::Pragmatic' (role 'org_k1s_nppn_Pragmatic', cardinality 0..*).
+'org_k1s_nppn::Node' (role 'org_k1s_nppn_Node', cardinality 0..*) is associated with 'nppn::Pragmatic' (role 'nppn_Pragmatic', cardinality 0..*).
+'nppn::PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'org_k1s_nppn::Page' (role 'page', cardinality 0..*).
+'org_k1s_nppn::Service' (role 'org_k1s_nppn_Service36', cardinality 0..*) is associated with 'nppn::Block' (role 'nppn_Block', cardinality 0..*).
+'org_k1s_nppn::Arc' (role 'sourceArc', cardinality 0..*) is associated with 'nppn::Node' (role 'Node', cardinality 0..*).
+'nppn::Service' (role 'nppn_Service', cardinality 0..*) is associated with 'org_k1s_nppn::Principal' (role 'org_k1s_nppn_Principal32', cardinality 0..*).
+'nppn::PlaceNode' (role 'nppn_PlaceNode40', cardinality 0..*) is associated with 'org_k1s_nppn::Block' (role 'org_k1s_nppn_Block39', cardinality 0..*).
+'nppn::Label' (role 'Label', cardinality 0..*) is associated with 'org_k1s_nppn::HasLabel' (role 'parent', cardinality 0..*).
+'org_k1s_nppn::Place' (role 'ref', cardinality 0..*) is associated with 'nppn::RefPlace' (role 'RefPlace', cardinality 0..*).
+'org_k1s_nppn::Container' (role 'org_k1s_nppn_Container', cardinality 0..*) is associated with 'nppn::Block' (role 'nppn_Block43', cardinality 0..*).
+'nppn::Instance' (role 'nppn_Instance', cardinality 0..*) is associated with 'org_k1s_nppn::Principal' (role 'org_k1s_nppn_Principal', cardinality 0..*).
+'nppn::Place' (role 'Place', cardinality 0..*) is associated with 'org_k1s_nppn::RefPlace' (role 'references', cardinality 0..*).
+'nppn::PNPattern' (role 'nppn_PNPattern', cardinality 0..*) is associated with 'org_k1s_nppn::Derived' (role 'org_k1s_nppn_Derived', cardinality 0..*).
+'org_k1s_nppn::Block' (role 'org_k1s_nppn_Block', cardinality 0..*) is associated with 'nppn::PlaceNode' (role 'nppn_PlaceNode', cardinality 0..*).
+'org_k1s_nppn::Page' (role 'page18', cardinality 0..*) is associated with 'nppn::Arc' (role 'Arc19', cardinality 0..*).
+'nppn::Node' (role 'Node2', cardinality 0..*) is associated with 'org_k1s_nppn::Arc' (role 'targetArc', cardinality 0..*).
+'nppn::HasLabel' (role 'HasLabel', cardinality 0..*) is associated with 'org_k1s_nppn::Label' (role 'label', cardinality 0..*).
+'nppn::Monitor' (role 'monitors.ecoreMonitor', cardinality 0..*) is associated with 'org_k1s_nppn::PetriNet' (role 'petriNet23', cardinality 0..*).
+'nppn::Name' (role 'nppn_Name', cardinality 0..*) is associated with 'org_k1s_nppn::HasName' (role 'org_k1s_nppn_HasName', cardinality 0..*).
+'org_k1s_nppn::Binding' (role 'org_k1s_nppn_Binding', cardinality 0..*) is associated with 'nppn::Pragmatic' (role 'nppn_Pragmatic45', cardinality 0..*).
+'nppn::TransitionNode' (role 'nppn_TransitionNode', cardinality 0..*) is associated with 'org_k1s_nppn::RefTrans' (role 'org_k1s_nppn_RefTrans', cardinality 0..*).
+'nppn::Arc' (role 'Arc10', cardinality 0..*) is associated with 'org_k1s_nppn::Node' (role 'target', cardinality 0..*).
+'nppn::Page' (role 'Page13', cardinality 0..*) is associated with 'org_k1s_nppn::Object' (role 'object', cardinality 0..*).
+'org_k1s_nppn::Page' (role 'page16', cardinality 0..*) is associated with 'nppn::Object' (role 'Object', cardinality 0..*).

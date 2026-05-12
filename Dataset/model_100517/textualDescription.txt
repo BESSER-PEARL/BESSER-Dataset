@@ -1,0 +1,57 @@
+The model has 24 class(es).
+The class 'story::ConditionalProtagonist' has the following attributes: 'condition' of type str.
+The class 'story::Epic' has no attributes.
+The class 'story::Persona' has the following attributes: 'picture' of type str.
+The class 'StoryContainer' has no attributes.
+The class 'story::Protagonist' has no attributes.
+The class 'story::System' has no attributes.
+The class 'story::StoryContainer' has no attributes.
+The class 'story::Actor' has no attributes.
+The class 'story::User' has no attributes.
+The class 'story::EClass' has no attributes.
+The class 'CatalogElement' has no attributes.
+The class 'story::Parameter' has the following attributes: 'type' of type str; 'description' of type str; 'name' of type str.
+The class 'story::StoryBase' has no attributes.
+The class 'story::Story' has the following attributes: 'completed' of type bool; 'benefit' of type str; 'goal' of type str.
+The class 'Actor' has no attributes.
+The class 'story::Theme' has no attributes.
+The class 'Protagonist' has no attributes.
+The class 'User' has no attributes.
+The class 'story::Scenario' has the following attributes: 'action' of type str; 'outcome' of type str; 'context' of type str.
+The class 'story::Goal' has the following attributes: 'details' of type str; 'name' of type str.
+The class 'story::CatalogElement' has the following attributes: 'id' of type str; 'description' of type str; 'name' of type str.
+The class 'story::Role' has no attributes.
+The class 'StoryBase' has no attributes.
+The class 'story::Catalog' has no attributes.
+'story::Protagonist' is a specialization of 'StoryContainer'.
+'story::Scenario' is a specialization of 'CatalogElement'.
+'story::System' is a specialization of 'Actor'.
+'story::Epic' is a specialization of 'StoryContainer'.
+'story::Actor' is a specialization of 'Protagonist'.
+'story::Persona' is a specialization of 'User'.
+'story::StoryBase' is a specialization of 'CatalogElement'.
+'story::Epic' is a specialization of 'StoryBase'.
+'story::Theme' is a specialization of 'CatalogElement'.
+'story::Catalog' is a specialization of 'CatalogElement'.
+'story::Role' is a specialization of 'Protagonist'.
+'story::StoryContainer' is a specialization of 'CatalogElement'.
+'story::User' is a specialization of 'Actor'.
+'story::Story' is a specialization of 'StoryBase'.
+'story::Theme' (role 'story_Theme17', cardinality 0..*) is associated with 'story::Theme' (role 'story_Theme', cardinality 0..*).
+'story::Actor' (role 'story_Actor12', cardinality 0..*) is associated with 'story::Actor' (role 'story_Actor10', cardinality 0..*).
+'story::Actor' (role 'story_Actor13', cardinality 0..*) is associated with 'story::Actor' (role 'story_Actor15', cardinality 0..*).
+'story::Parameter' (role 'story_Parameter', cardinality 0..*) is associated with 'story::Story' (role 'story_Story32', cardinality 0..*).
+'story::Catalog' (role 'story_Catalog', cardinality 0..*) is associated with 'story::CatalogElement' (role 'story_CatalogElement', cardinality 0..*).
+'story::StoryContainer' (role 'story_StoryContainer', cardinality 0..*) is associated with 'story::StoryBase' (role 'story_StoryBase', cardinality 0..*).
+'story::Role' (role 'story_Role3', cardinality 0..*) is associated with 'story::Role' (role 'story_Role', cardinality 0..*).
+'story::Protagonist' (role 'story_Protagonist', cardinality 0..*) is associated with 'story::EClass' (role 'story_EClass', cardinality 0..*).
+'story::Story' (role 'story_Story27', cardinality 0..*) is associated with 'story::Protagonist' (role 'story_Protagonist28', cardinality 0..*).
+'story::Persona' (role 'story_Persona', cardinality 0..*) is associated with 'story::Goal' (role 'story_Goal', cardinality 0..*).
+'story::ConditionalProtagonist' (role 'story_ConditionalProtagonist37', cardinality 0..*) is associated with 'story::Protagonist' (role 'story_Protagonist38', cardinality 0..*).
+'story::Theme' (role 'story_Theme25', cardinality 0..*) is associated with 'story::Story' (role 'story_Story24', cardinality 0..*).
+'story::Story' (role 'story_Story34', cardinality 0..*) is associated with 'story::Goal' (role 'story_Goal35', cardinality 0..*).
+'story::Scenario' (role 'story_Scenario', cardinality 0..*) is associated with 'story::Story' (role 'story_Story', cardinality 0..*).
+'story::Story' (role 'story_Story30', cardinality 0..*) is associated with 'story::ConditionalProtagonist' (role 'story_ConditionalProtagonist', cardinality 0..*).
+'story::Actor' (role 'story_Actor', cardinality 0..*) is associated with 'story::Role' (role 'story_Role9', cardinality 0..*).
+'story::Role' (role 'story_Role7', cardinality 0..*) is associated with 'story::Role' (role 'story_Role5', cardinality 0..*).
+'story::Story' (role 'story_Story22', cardinality 0..*) is associated with 'story::Story' (role 'story_Story20', cardinality 0..*).

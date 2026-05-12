@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'Bibtex::LiteratureDb' has the following attributes: 'name' of type str.
+The class 'Bibtex::Entry' has the following attributes: 'id' of type str; 'title' of type str.
+The class 'Bibtex::Author' has the following attributes: 'name' of type str.
+'Bibtex::Author' (role 'Author', cardinality 0..*) is associated with 'Bibtex::LiteratureDb' (role 'literaturedb', cardinality 0..*).
+'Bibtex::Entry' (role 'publications', cardinality 0..*) is associated with 'Bibtex::Author' (role 'Author4', cardinality 0..*).
+'Bibtex::Entry' (role 'entries', cardinality 0..*) is associated with 'Bibtex::LiteratureDb' (role 'LiteratureDb', cardinality 0..*).
+'Bibtex::Entry' (role 'Entry7', cardinality 0..*) is associated with 'Bibtex::Author' (role 'author', cardinality 0..*).
+'Bibtex::Entry' (role 'Entry', cardinality 0..*) is associated with 'Bibtex::LiteratureDb' (role 'literaturedb2', cardinality 0..*).
+'Bibtex::LiteratureDb' (role 'LiteratureDb10', cardinality 0..*) is associated with 'Bibtex::Author' (role 'author9', cardinality 0..*).

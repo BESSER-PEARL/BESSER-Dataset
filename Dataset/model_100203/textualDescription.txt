@@ -1,0 +1,378 @@
+The model has 159 class(es).
+The class 'sqlmodel::datatypes::ConstructedDataType' has no attributes.
+The class 'sqlmodel::datatypes::ReferenceDataType' has no attributes.
+The class 'SQLStatement' has no attributes.
+The class 'sqlmodel::datatypes::Field' has the following attributes: 'scopeCheck' of type str; 'scopeChecked' of type bool.
+The class 'sqlmodel::routines::Parameter' has the following attributes: 'locator' of type bool; 'mode' of type str.
+The class 'sqlmodel::routines::Method' has the following attributes: 'overriding' of type bool; 'constructor' of type bool.
+The class 'sqlmodel::schema::IdentitySpecifier' has the following attributes: 'increment' of type str; 'generationType' of type str; 'maximum' of type str; 'minimum' of type str; 'startValue' of type str; 'cycleOption' of type bool.
+The class 'sqlmodel::routines::BuiltInFunction' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'sqlmodel::datatypes::ApproximateNumericDataType' has no attributes.
+The class 'sqlmodel::schema::Dependency' has the following attributes: 'dependencyType' of type str.
+The class 'sqlmodel::schema::Sequence' has no attributes.
+The class 'sqlmodel::routines::Source' has the following attributes: 'body' of type str.
+The class 'Schema' has no attributes.
+The class 'sqlmodel::expressions::QueryExpression' has no attributes.
+The class 'sqlmodel::routines::Function' has the following attributes: 'typePreserving' of type bool; 'nullCall' of type bool; 'transformGroup' of type str; 'static' of type bool; 'mutator' of type bool.
+The class 'sqlmodel::expressions::SearchConditionDefault' has the following attributes: 'SQL' of type str.
+The class 'sqlmodel::constraints::Assertion' has no attributes.
+The class 'sqlmodel::statements::SQLControlStatement' has no attributes.
+The class 'sqlmodel::expressions::QueryExpressionDefault' has the following attributes: 'SQL' of type str.
+The class 'sqlmodel::schema::Schema' has no attributes.
+The class 'expressions::ValueExpression' has no attributes.
+The class 'sqlmodel::datatypes::UserDefinedTypeOrdering' has the following attributes: 'orderingCategory' of type str; 'orderingForm' of type str.
+The class 'sqlmodel::routines::Procedure' has the following attributes: 'oldSavePoint' of type bool; 'maxResultSets' of type int.
+The class 'sqlmodel::statements::SQLConnectionStatement' has no attributes.
+The class 'sqlmodel::datatypes::ExactNumericDataType' has the following attributes: 'scale' of type int.
+The class 'sqlmodel::datatypes::CharacterSet' has the following attributes: 'repertoire' of type str; 'defaultCollation' of type str; 'encoding' of type str.
+The class 'NumericalDataType' has no attributes.
+The class 'Event' has no attributes.
+The class 'sqlmodel::datatypes::IntegerDataType' has no attributes.
+The class 'schema::SQLObject' has no attributes.
+The class 'sqlmodel::schema::Comment' has the following attributes: 'description' of type str.
+The class 'sqlmodel::routines::Routine' has the following attributes: 'creationTS' of type str; 'security' of type str; 'specificName' of type str; 'externalName' of type str; 'parameterStyle' of type str; 'lastAlteredTS' of type str; 'authorizationID' of type str; 'sqlDataAccess' of type str; 'language' of type str; 'deterministic' of type bool.
+The class 'expressions::SearchCondition' has no attributes.
+The class 'sqlmodel::datatypes::SQLDataType' has no attributes.
+The class 'RoutineResultTable' has no attributes.
+The class 'sqlmodel::datatypes::IntervalDataType' has the following attributes: 'leadingFieldPrecision' of type int; 'trailingQualifier' of type str; 'trailingFieldPrecision' of type int; 'fractionalSecondsPrecision' of type int; 'leadingQualifier' of type str.
+The class 'sqlmodel::statements::SQLStatementDefault' has the following attributes: 'SQL' of type str.
+The class 'sqlmodel::expressions::ValueExpressionDefault' has the following attributes: 'SQL' of type str.
+The class 'Privilege' has no attributes.
+The class 'Function' has no attributes.
+The class 'sqlmodel::statements::SQLSchemaStatement' has no attributes.
+The class 'sqlmodel::expressions::ValueExpression' has no attributes.
+The class 'sqlmodel::routines::RoutineResultTable' has no attributes.
+The class 'sqlmodel::statements::SQLStatement' has no attributes.
+The class 'BaseTable' has no attributes.
+The class 'sqlmodel::schema::Catalog' has no attributes.
+The class 'sqlmodel::schema::SQLObject' has the following attributes: 'label' of type str; 'description' of type str.
+The class 'sqlmodel::constraints::Constraint' has the following attributes: 'enforced' of type bool; 'deferrable' of type bool; 'initiallyDeferred' of type bool.
+The class 'sqlmodel::datatypes::DistinctUserDefinedType' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'sqlmodel::routines::UserDefinedFunction' has no attributes.
+The class 'sqlmodel::datatypes::BinaryStringDataType' has the following attributes: 'length' of type int.
+The class 'sqlmodel::statements::SQLTransactionStatement' has no attributes.
+The class 'UserDefinedTypeOrdering' has no attributes.
+The class 'sqlmodel::datatypes::AttributeDefinition' has the following attributes: 'scopeCheck' of type str; 'defaultValue' of type str; 'scopeChecked' of type bool.
+The class 'statements::SQLStatement' has no attributes.
+The class 'Source' has no attributes.
+The class 'CollectionDataType' has no attributes.
+The class 'Routine' has no attributes.
+The class 'sqlmodel::datatypes::FixedPrecisionDataType' has no attributes.
+The class 'ObjectExtension' has no attributes.
+The class 'CharacterStringDataType' has no attributes.
+The class 'sqlmodel::constraints::CheckConstraint' has no attributes.
+The class 'sqlmodel::statements::SQLSessionStatement' has no attributes.
+The class 'Comment' has no attributes.
+The class 'TableConstraint' has no attributes.
+The class 'UniqueConstraint' has no attributes.
+The class 'SQLObject' has no attributes.
+The class 'DataType' has no attributes.
+The class 'CheckConstraint' has no attributes.
+The class 'Method' has no attributes.
+The class 'Field' has no attributes.
+The class 'SQLDataStatement' has no attributes.
+The class 'sqlmodel::datatypes::StructuredUserDefinedType' has the following attributes: 'final' of type bool; 'instantiable' of type bool.
+The class 'sqlmodel::tables::Table' has the following attributes: 'selfRefColumnGeneration' of type str; 'insertable' of type bool; 'updatable' of type bool.
+The class 'sqlmodel::constraints::IndexMember' has the following attributes: 'incrementType' of type str.
+The class 'sqlmodel::datatypes::TimeDataType' has the following attributes: 'fractionalSecondsPrecision' of type int; 'timeZone' of type bool.
+The class 'sqlmodel::tables::PersistentTable' has no attributes.
+The class 'sqlmodel::schema::ObjectExtension' has no attributes.
+The class 'sqlmodel::datatypes::CharacterStringDataType' has the following attributes: 'coercibility' of type str; 'fixedLength' of type bool; 'length' of type int; 'collationName' of type str.
+The class 'sqlmodel::tables::ViewTable' has the following attributes: 'checkType' of type str.
+The class 'ExactNumericDataType' has no attributes.
+The class 'sqlmodel::tables::TemporaryTable' has the following attributes: 'local' of type bool; 'deleteOnCommit' of type bool.
+The class 'sqlmodel::expressions::SearchCondition' has no attributes.
+The class 'sqlmodel::accesscontrol::AuthorizationIdentifier' has no attributes.
+The class 'schema::sqlmodel::EObject' has no attributes.
+The class 'StructuredUserDefinedType' has no attributes.
+The class 'CharacterSet' has no attributes.
+The class 'sqlmodel::statements::SQLDiagnosticsStatement' has no attributes.
+The class 'SearchCondition' has no attributes.
+The class 'ReferenceConstraint' has no attributes.
+The class 'sqlmodel::statements::SQLDynamicStatement' has no attributes.
+The class 'sqlmodel::tables::BaseTable' has no attributes.
+The class 'sqlmodel::datatypes::MultisetDataType' has no attributes.
+The class 'sqlmodel::constraints::PrimaryKey' has no attributes.
+The class 'sqlmodel::constraints::UniqueConstraint' has the following attributes: 'clustered' of type bool.
+The class 'DerivedTable' has no attributes.
+The class 'sqlmodel::tables::DerivedTable' has no attributes.
+The class 'sqlmodel::constraints::ReferenceConstraint' has no attributes.
+The class 'Assertion' has no attributes.
+The class 'sqlmodel::datatypes::RowDataType' has no attributes.
+The class 'sqlmodel::accesscontrol::Privilege' has the following attributes: 'withHierarchy' of type bool; 'action' of type str; 'grantable' of type bool.
+The class 'Column' has no attributes.
+The class 'sqlmodel::statements::SQLDataStatement' has no attributes.
+The class 'QueryExpression' has no attributes.
+The class 'ForeignKey' has no attributes.
+The class 'IdentitySpecifier' has no attributes.
+The class 'IndexExpression' has no attributes.
+The class 'ValueExpression' has no attributes.
+The class 'sqlmodel::datatypes::ArrayDataType' has the following attributes: 'maxCardinality' of type int.
+The class 'Dependency' has no attributes.
+The class 'IndexMember' has no attributes.
+The class 'sqlmodel::tables::Column' has the following attributes: 'implementationDependent' of type bool; 'defaultValue' of type str; 'scopeChecked' of type bool; 'nullable' of type bool; 'scopeCheck' of type str.
+The class 'sqlmodel::constraints::Index' has the following attributes: 'fillFactor' of type int; 'systemGenerated' of type bool; 'clustered' of type bool; 'unique' of type bool.
+The class 'sqlmodel::datatypes::XMLDataType' has no attributes.
+The class 'sqlmodel::datatypes::CollectionDataType' has no attributes.
+The class 'sqlmodel::constraints::IndexExpression' has the following attributes: 'sql' of type str.
+The class 'sqlmodel::accesscontrol::Group' has no attributes.
+The class 'sqlmodel::datatypes::NumericalDataType' has the following attributes: 'precision' of type int.
+The class 'sqlmodel::statements::SQLDataChangeStatement' has no attributes.
+The class 'sqlmodel::tables::Trigger' has the following attributes: 'actionGranularity' of type str; 'deleteType' of type bool; 'actionTime' of type str; 'updateType' of type bool; 'timeStamp' of type str; 'oldTable' of type str; 'oldRow' of type str; 'newRow' of type str; 'newTable' of type str; 'insertType' of type bool.
+The class 'sqlmodel::accesscontrol::RoleAuthorization' has the following attributes: 'grantable' of type bool.
+The class 'sqlmodel::schema::Database' has the following attributes: 'version' of type str; 'vendor' of type str.
+The class 'sqlmodel::constraints::ForeignKey' has the following attributes: 'onUpdate' of type str; 'match' of type str; 'onDelete' of type str.
+The class 'RoleAuthorization' has no attributes.
+The class 'SQLDataType' has no attributes.
+The class 'sqlmodel::schema::Event' has the following attributes: 'action' of type str; 'for_' of type str; 'condition' of type str; 'enabled' of type bool.
+The class 'sqlmodel::datatypes::DateDataType' has no attributes.
+The class 'sqlmodel::datatypes::BooleanDataType' has no attributes.
+The class 'User' has no attributes.
+The class 'sqlmodel::datatypes::DataLinkDataType' has the following attributes: 'length' of type int; 'writePermission' of type str; 'recovery' of type bool; 'linkControl' of type str; 'readPermission' of type str; 'unlink' of type str; 'integrityControl' of type str.
+The class 'DistinctUserDefinedType' has no attributes.
+The class 'Table' has no attributes.
+The class 'sqlmodel::datatypes::DataType' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'ElementType' has no attributes.
+The class 'sqlmodel::datatypes::Domain' has the following attributes: 'defaultValue' of type str.
+The class 'Group' has no attributes.
+The class 'Catalog' has no attributes.
+The class 'AttributeDefinition' has no attributes.
+The class 'ENamedElement' has no attributes.
+The class 'AuthorizationIdentifier' has no attributes.
+The class 'UserDefinedType' has no attributes.
+The class 'sqlmodel::datatypes::ElementType' has no attributes.
+The class 'Index' has no attributes.
+The class 'sqlmodel::accesscontrol::Role' has no attributes.
+The class 'sqlmodel::accesscontrol::User' has no attributes.
+The class 'ConstructedDataType' has no attributes.
+The class 'sqlmodel::datatypes::PredefinedDataType' has the following attributes: 'primitiveType' of type str.
+The class 'sqlmodel::schema::TypedElement' has no attributes.
+The class 'sqlmodel::datatypes::UserDefinedType' has no attributes.
+The class 'Role' has no attributes.
+The class 'sqlmodel::constraints::TableConstraint' has no attributes.
+The class 'PredefinedDataType' has no attributes.
+The class 'Database' has no attributes.
+The class 'expressions::QueryExpression' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Trigger' has no attributes.
+The enumeration 'UnlinkOption' has the following literals: 'RESTORE', 'DELETE', 'NONE'.
+The enumeration 'CoercibilityType' has the following literals: 'NO_COLLATION', 'COERCIBILE', 'IMPLICIT', 'EXPLICIT'.
+The enumeration 'ReferenceType' has the following literals: 'DERIVED_SELF_REF', 'USER_GENERATED', 'SYSTEM_GENERATED'.
+The enumeration 'WritePermissionOption' has the following literals: 'BLOCKED', 'FS', 'ADMIN'.
+The enumeration 'GenerateType' has the following literals: 'DEFAULT_GENERATED', 'ALWAYS_GENERATED'.
+The enumeration 'PrimitiveType' has the following literals: 'DECIMAL', 'REAL', 'SMALLINT', 'XML_TYPE', 'NATIONAL_CHARACTER_LARGE_OBJECT', 'BINARY_VARYING', 'FLOAT', 'TIME', 'CHARACTER', 'CHARACTER_LARGE_OBJECT', 'BINARY', 'DATE', 'TIMESTAMP', 'NUMERIC', 'INTERVAL', 'BINARY_LARGE_OBJECT', 'DATALINK', 'DOUBLE_PRECISION', 'BOOLEAN', 'BIGINT', 'NATIONAL_CHARACTER_VARYING', 'CHARACTER_VARYING', 'INTEGER', 'NATIONAL_CHARACTER'.
+The enumeration 'IntegrityControlOption' has the following literals: 'ALL', 'NONE', 'SELECTIVE'.
+The enumeration 'ReferentialActionType' has the following literals: 'RESTRICT', 'CASCADE', 'SET_DEFAULT', 'NO_ACTION', 'SET_NULL'.
+The enumeration 'LinkControlOption' has the following literals: 'NO_FILE_LINK_CONTROL', 'FILE_LINK_CONTROL'.
+The enumeration 'ParameterMode' has the following literals: 'INOUT', 'OUT', 'IN'.
+The enumeration 'ReadPermissionOption' has the following literals: 'FS', 'DB'.
+The enumeration 'OrderingCategoryType' has the following literals: 'STATE', 'RELATIVE', 'MAP'.
+The enumeration 'IntervalQualifierType' has the following literals: 'HOUR', 'SECOND', 'DAY', 'MINUTE', 'FRACTION', 'MONTH', 'YEAR'.
+The enumeration 'DataAccess' has the following literals: 'READS_SQL_DATA', 'MODIFIES_SQL_DATA', 'CONTAINS_SQL', 'NO_SQL'.
+The enumeration 'ActionTimeType' has the following literals: 'BEFORE', 'AFTER', 'INSTEADOF'.
+The enumeration 'CheckType' has the following literals: 'NONE', 'LOCAL', 'CASCADED'.
+The enumeration 'OrderingType' has the following literals: 'EQUALS', 'FULL'.
+The enumeration 'MatchType' has the following literals: 'MATCH_SIMPLE', 'MATCH_PARTIAL', 'MATCH_FULL'.
+The enumeration 'IncrementType' has the following literals: 'DESC', 'RANDOM', 'ASC'.
+The enumeration 'ActionGranularityType' has the following literals: 'ROW', 'STATEMENT'.
+'sqlmodel::datatypes::PredefinedDataType' is a specialization of 'SQLDataType'.
+'sqlmodel::expressions::ValueExpressionDefault' is a specialization of 'schema::SQLObject'.
+'sqlmodel::expressions::SearchConditionDefault' is a specialization of 'expressions::SearchCondition'.
+'sqlmodel::accesscontrol::AuthorizationIdentifier' is a specialization of 'SQLObject'.
+'sqlmodel::accesscontrol::Privilege' is a specialization of 'SQLObject'.
+'sqlmodel::tables::TemporaryTable' is a specialization of 'BaseTable'.
+'sqlmodel::datatypes::MultisetDataType' is a specialization of 'CollectionDataType'.
+'sqlmodel::datatypes::ArrayDataType' is a specialization of 'CollectionDataType'.
+'sqlmodel::routines::UserDefinedFunction' is a specialization of 'Function'.
+'sqlmodel::routines::RoutineResultTable' is a specialization of 'Table'.
+'sqlmodel::routines::Parameter' is a specialization of 'TypedElement'.
+'sqlmodel::expressions::SearchConditionDefault' is a specialization of 'schema::SQLObject'.
+'sqlmodel::routines::Function' is a specialization of 'Routine'.
+'sqlmodel::schema::Schema' is a specialization of 'SQLObject'.
+'sqlmodel::statements::SQLDataChangeStatement' is a specialization of 'SQLDataStatement'.
+'sqlmodel::accesscontrol::Group' is a specialization of 'AuthorizationIdentifier'.
+'sqlmodel::datatypes::BinaryStringDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::accesscontrol::RoleAuthorization' is a specialization of 'SQLObject'.
+'sqlmodel::schema::IdentitySpecifier' is a specialization of 'SQLObject'.
+'sqlmodel::constraints::IndexExpression' is a specialization of 'SQLObject'.
+'sqlmodel::routines::Source' is a specialization of 'SQLObject'.
+'sqlmodel::datatypes::Field' is a specialization of 'TypedElement'.
+'sqlmodel::tables::BaseTable' is a specialization of 'Table'.
+'sqlmodel::datatypes::UserDefinedType' is a specialization of 'DataType'.
+'sqlmodel::statements::SQLDataStatement' is a specialization of 'SQLStatement'.
+'sqlmodel::tables::Column' is a specialization of 'TypedElement'.
+'sqlmodel::constraints::ForeignKey' is a specialization of 'ReferenceConstraint'.
+'sqlmodel::statements::SQLConnectionStatement' is a specialization of 'SQLStatement'.
+'sqlmodel::statements::SQLStatementDefault' is a specialization of 'statements::SQLStatement'.
+'sqlmodel::statements::SQLStatementDefault' is a specialization of 'schema::SQLObject'.
+'sqlmodel::routines::BuiltInFunction' is a specialization of 'Function'.
+'sqlmodel::statements::SQLControlStatement' is a specialization of 'SQLStatement'.
+'sqlmodel::tables::PersistentTable' is a specialization of 'BaseTable'.
+'sqlmodel::constraints::Assertion' is a specialization of 'Constraint'.
+'sqlmodel::constraints::TableConstraint' is a specialization of 'Constraint'.
+'sqlmodel::datatypes::XMLDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::datatypes::ApproximateNumericDataType' is a specialization of 'NumericalDataType'.
+'sqlmodel::statements::SQLSchemaStatement' is a specialization of 'SQLStatement'.
+'sqlmodel::expressions::QueryExpressionDefault' is a specialization of 'expressions::QueryExpression'.
+'sqlmodel::datatypes::DataLinkDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::datatypes::DistinctUserDefinedType' is a specialization of 'UserDefinedType'.
+'sqlmodel::tables::Table' is a specialization of 'SQLObject'.
+'sqlmodel::expressions::ValueExpressionDefault' is a specialization of 'expressions::ValueExpression'.
+'sqlmodel::tables::DerivedTable' is a specialization of 'Table'.
+'sqlmodel::datatypes::Domain' is a specialization of 'DistinctUserDefinedType'.
+'sqlmodel::datatypes::DateDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::datatypes::TimeDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::tables::Trigger' is a specialization of 'SQLObject'.
+'sqlmodel::routines::Procedure' is a specialization of 'Routine'.
+'sqlmodel::datatypes::IntegerDataType' is a specialization of 'ExactNumericDataType'.
+'sqlmodel::datatypes::StructuredUserDefinedType' is a specialization of 'UserDefinedType'.
+'sqlmodel::statements::SQLSessionStatement' is a specialization of 'SQLStatement'.
+'sqlmodel::tables::ViewTable' is a specialization of 'DerivedTable'.
+'sqlmodel::datatypes::CharacterStringDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::datatypes::FixedPrecisionDataType' is a specialization of 'ExactNumericDataType'.
+'sqlmodel::datatypes::SQLDataType' is a specialization of 'DataType'.
+'sqlmodel::datatypes::ReferenceDataType' is a specialization of 'ConstructedDataType'.
+'sqlmodel::datatypes::AttributeDefinition' is a specialization of 'TypedElement'.
+'sqlmodel::datatypes::ElementType' is a specialization of 'TypedElement'.
+'sqlmodel::schema::Event' is a specialization of 'SQLObject'.
+'sqlmodel::datatypes::ExactNumericDataType' is a specialization of 'NumericalDataType'.
+'sqlmodel::datatypes::CharacterSet' is a specialization of 'SQLObject'.
+'sqlmodel::constraints::UniqueConstraint' is a specialization of 'ReferenceConstraint'.
+'sqlmodel::constraints::IndexMember' is a specialization of 'SQLObject'.
+'sqlmodel::statements::SQLDynamicStatement' is a specialization of 'SQLStatement'.
+'sqlmodel::datatypes::IntervalDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::schema::Catalog' is a specialization of 'SQLObject'.
+'sqlmodel::schema::Sequence' is a specialization of 'TypedElement'.
+'sqlmodel::accesscontrol::Role' is a specialization of 'AuthorizationIdentifier'.
+'sqlmodel::accesscontrol::User' is a specialization of 'AuthorizationIdentifier'.
+'sqlmodel::schema::SQLObject' is a specialization of 'ENamedElement'.
+'sqlmodel::statements::SQLTransactionStatement' is a specialization of 'SQLStatement'.
+'sqlmodel::statements::SQLDiagnosticsStatement' is a specialization of 'SQLStatement'.
+'sqlmodel::routines::Method' is a specialization of 'Function'.
+'sqlmodel::datatypes::CollectionDataType' is a specialization of 'ConstructedDataType'.
+'sqlmodel::datatypes::BooleanDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::constraints::Index' is a specialization of 'SQLObject'.
+'sqlmodel::schema::Database' is a specialization of 'SQLObject'.
+'sqlmodel::datatypes::DataType' is a specialization of 'SQLObject'.
+'sqlmodel::datatypes::ConstructedDataType' is a specialization of 'DataType'.
+'sqlmodel::constraints::ReferenceConstraint' is a specialization of 'TableConstraint'.
+'sqlmodel::constraints::PrimaryKey' is a specialization of 'UniqueConstraint'.
+'sqlmodel::constraints::Constraint' is a specialization of 'SQLObject'.
+'sqlmodel::datatypes::UserDefinedTypeOrdering' is a specialization of 'SQLObject'.
+'sqlmodel::datatypes::NumericalDataType' is a specialization of 'PredefinedDataType'.
+'sqlmodel::expressions::QueryExpressionDefault' is a specialization of 'schema::SQLObject'.
+'sqlmodel::schema::TypedElement' is a specialization of 'SQLObject'.
+'sqlmodel::datatypes::RowDataType' is a specialization of 'ConstructedDataType'.
+'sqlmodel::constraints::CheckConstraint' is a specialization of 'TableConstraint'.
+'sqlmodel::schema::Dependency' is a specialization of 'SQLObject'.
+'sqlmodel::routines::Routine' is a specialization of 'SQLObject'.
+'IndexMember' (role 'IndexMember', cardinality 0..*) is associated with 'sqlmodel::constraints::Index' (role 'sqlmodel_constraints_Index', cardinality 0..*).
+'sqlmodel::tables::Trigger' (role 'sqlmodel_tables_Trigger', cardinality 0..*) is associated with 'SQLStatement' (role 'SQLStatement', cardinality 0..*).
+'sqlmodel::schema::Schema' (role 'schema16', cardinality 0..*) is associated with 'UserDefinedType' (role 'UserDefinedType17', cardinality 0..*).
+'StructuredUserDefinedType' (role 'StructuredUserDefinedType', cardinality 0..*) is associated with 'sqlmodel::datatypes::StructuredUserDefinedType' (role 'sub', cardinality 0..*).
+'ForeignKey' (role 'ForeignKey78', cardinality 0..*) is associated with 'sqlmodel::constraints::Index' (role 'uniqueIndex', cardinality 0..*).
+'UserDefinedTypeOrdering' (role 'UserDefinedTypeOrdering', cardinality 0..*) is associated with 'sqlmodel::datatypes::UserDefinedType' (role 'sqlmodel_datatypes_UserDefinedType', cardinality 0..*).
+'sqlmodel::constraints::ForeignKey' (role 'sqlmodel_constraints_ForeignKey', cardinality 0..*) is associated with 'Column' (role 'Column64', cardinality 0..*).
+'Table' (role 'Table152', cardinality 0..*) is associated with 'sqlmodel::tables::Column' (role 'columns', cardinality 0..*).
+'AuthorizationIdentifier' (role 'AuthorizationIdentifier198', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::RoleAuthorization' (role 'grantedRoleAuthorization', cardinality 0..*).
+'StructuredUserDefinedType' (role 'StructuredUserDefinedType100', cardinality 0..*) is associated with 'sqlmodel::datatypes::StructuredUserDefinedType' (role 'super', cardinality 0..*).
+'Index' (role 'Index', cardinality 0..*) is associated with 'sqlmodel::schema::Schema' (role 'Schema', cardinality 0..*).
+'Schema' (role 'Schema96', cardinality 0..*) is associated with 'sqlmodel::datatypes::CharacterSet' (role 'charSets', cardinality 0..*).
+'sqlmodel::datatypes::DistinctUserDefinedType' (role 'sqlmodel_datatypes_DistinctUserDefinedType', cardinality 0..*) is associated with 'PredefinedDataType' (role 'PredefinedDataType', cardinality 0..*).
+'CollectionDataType' (role 'CollectionDataType113', cardinality 0..*) is associated with 'sqlmodel::datatypes::ElementType' (role 'elementType', cardinality 0..*).
+'sqlmodel::schema::Schema' (role 'schema14', cardinality 0..*) is associated with 'Assertion' (role 'Assertion', cardinality 0..*).
+'sqlmodel::routines::Routine' (role 'routine', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'sqlmodel::schema::SQLObject' (role 'SQLObject', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'sqlmodel::routines::Routine' (role 'sqlmodel_routines_Routine', cardinality 0..*) is associated with 'Source' (role 'Source', cardinality 0..*).
+'BaseTable' (role 'BaseTable58', cardinality 0..*) is associated with 'sqlmodel::constraints::TableConstraint' (role 'constraints', cardinality 0..*).
+'sqlmodel::schema::ObjectExtension' (role 'extensions', cardinality 0..*) is associated with 'SQLObject' (role 'SQLObject51', cardinality 0..*).
+'sqlmodel::datatypes::CollectionDataType' (role 'CollectionDataType', cardinality 0..*) is associated with 'ElementType' (role 'ElementType', cardinality 0..*).
+'sqlmodel::accesscontrol::AuthorizationIdentifier' (role 'grantee', cardinality 0..*) is associated with 'RoleAuthorization' (role 'RoleAuthorization', cardinality 0..*).
+'sqlmodel::schema::Catalog' (role 'catalogs', cardinality 0..*) is associated with 'Database' (role 'Database46', cardinality 0..*).
+'sqlmodel::schema::Sequence' (role 'sqlmodel_schema_Sequence', cardinality 0..*) is associated with 'IdentitySpecifier' (role 'IdentitySpecifier', cardinality 0..*).
+'User' (role 'User', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::Group' (role 'group', cardinality 0..*).
+'Routine' (role 'Routine119', cardinality 0..*) is associated with 'sqlmodel::routines::Parameter' (role 'parameters', cardinality 0..*).
+'sqlmodel::routines::Parameter' (role 'sqlmodel_routines_Parameter', cardinality 0..*) is associated with 'CharacterStringDataType' (role 'CharacterStringDataType121', cardinality 0..*).
+'sqlmodel::tables::Column' (role 'sqlmodel_tables_Column156', cardinality 0..*) is associated with 'ValueExpression' (role 'ValueExpression', cardinality 0..*).
+'SQLObject' (role 'SQLObject189', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::Privilege' (role 'privileges', cardinality 0..*).
+'AttributeDefinition' (role 'AttributeDefinition', cardinality 0..*) is associated with 'sqlmodel::datatypes::StructuredUserDefinedType' (role 'sqlmodel_datatypes_StructuredUserDefinedType', cardinality 0..*).
+'sqlmodel::constraints::CheckConstraint' (role 'sqlmodel_constraints_CheckConstraint', cardinality 0..*) is associated with 'SearchCondition' (role 'SearchCondition61', cardinality 0..*).
+'sqlmodel::schema::Catalog' (role 'Catalog48', cardinality 0..*) is associated with 'Schema' (role 'Schema49', cardinality 0..*).
+'sqlmodel::schema::Database' (role 'Database34', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'Schema' (role 'Schema170', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::AuthorizationIdentifier' (role 'owner', cardinality 0..*).
+'SearchCondition' (role 'SearchCondition168', cardinality 0..*) is associated with 'sqlmodel::tables::Trigger' (role 'sqlmodel_tables_Trigger167', cardinality 0..*).
+'ObjectExtension' (role 'ObjectExtension', cardinality 0..*) is associated with 'sqlmodel::schema::SQLObject' (role 'SQLObject26', cardinality 0..*).
+'sqlmodel::routines::Procedure' (role 'sqlmodel_routines_Procedure', cardinality 0..*) is associated with 'RoutineResultTable' (role 'RoutineResultTable', cardinality 0..*).
+'UserDefinedType' (role 'UserDefinedType', cardinality 0..*) is associated with 'sqlmodel::schema::TypedElement' (role 'sqlmodel_schema_TypedElement2', cardinality 0..*).
+'sqlmodel::routines::Routine' (role 'routines', cardinality 0..*) is associated with 'Schema' (role 'Schema117', cardinality 0..*).
+'sqlmodel::accesscontrol::User' (role 'user', cardinality 0..*) is associated with 'Group' (role 'Group', cardinality 0..*).
+'RoutineResultTable' (role 'RoutineResultTable124', cardinality 0..*) is associated with 'sqlmodel::routines::Function' (role 'sqlmodel_routines_Function', cardinality 0..*).
+'SQLObject' (role 'SQLObject44', cardinality 0..*) is associated with 'sqlmodel::schema::Comment' (role 'comments', cardinality 0..*).
+'sqlmodel::tables::Table' (role 'table', cardinality 0..*) is associated with 'Column' (role 'Column132', cardinality 0..*).
+'Schema' (role 'Schema158', cardinality 0..*) is associated with 'sqlmodel::tables::Trigger' (role 'triggers', cardinality 0..*).
+'Parameter' (role 'Parameter130', cardinality 0..*) is associated with 'sqlmodel::routines::Function' (role 'sqlmodel_routines_Function129', cardinality 0..*).
+'Routine' (role 'Routine111', cardinality 0..*) is associated with 'sqlmodel::datatypes::UserDefinedTypeOrdering' (role 'sqlmodel_datatypes_UserDefinedTypeOrdering', cardinality 0..*).
+'sqlmodel::tables::Column' (role 'sqlmodel_tables_Column', cardinality 0..*) is associated with 'IdentitySpecifier' (role 'IdentitySpecifier154', cardinality 0..*).
+'ForeignKey' (role 'ForeignKey71', cardinality 0..*) is associated with 'sqlmodel::constraints::UniqueConstraint' (role 'uniqueConstraint', cardinality 0..*).
+'sqlmodel::accesscontrol::Privilege' (role 'grantedPrivilege', cardinality 0..*) is associated with 'AuthorizationIdentifier' (role 'AuthorizationIdentifier183', cardinality 0..*).
+'Schema' (role 'Schema138', cardinality 0..*) is associated with 'sqlmodel::tables::Table' (role 'tables', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'sqlmodel::schema::Schema' (role 'schema7', cardinality 0..*).
+'SearchCondition' (role 'SearchCondition', cardinality 0..*) is associated with 'sqlmodel::constraints::Assertion' (role 'sqlmodel_constraints_Assertion', cardinality 0..*).
+'sqlmodel::constraints::ForeignKey' (role 'referencingForeignKeys', cardinality 0..*) is associated with 'BaseTable' (role 'BaseTable69', cardinality 0..*).
+'AuthorizationIdentifier' (role 'AuthorizationIdentifier40', cardinality 0..*) is associated with 'sqlmodel::schema::Database' (role 'Database39', cardinality 0..*).
+'Method' (role 'Method', cardinality 0..*) is associated with 'sqlmodel::datatypes::StructuredUserDefinedType' (role 'sqlmodel_datatypes_StructuredUserDefinedType103', cardinality 0..*).
+'sqlmodel::constraints::Assertion' (role 'assertions', cardinality 0..*) is associated with 'Schema' (role 'Schema54', cardinality 0..*).
+'Routine' (role 'Routine', cardinality 0..*) is associated with 'sqlmodel::schema::Schema' (role 'schema21', cardinality 0..*).
+'sqlmodel::schema::Schema' (role 'schema19', cardinality 0..*) is associated with 'CharacterSet' (role 'CharacterSet', cardinality 0..*).
+'sqlmodel::accesscontrol::AuthorizationIdentifier' (role 'authorizationIds', cardinality 0..*) is associated with 'Database' (role 'Database172', cardinality 0..*).
+'sqlmodel::schema::Schema' (role 'schema9', cardinality 0..*) is associated with 'Sequence' (role 'Sequence', cardinality 0..*).
+'AuthorizationIdentifier' (role 'AuthorizationIdentifier196', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::RoleAuthorization' (role 'receivedRoleAuthorization', cardinality 0..*).
+'Dependency' (role 'Dependency', cardinality 0..*) is associated with 'sqlmodel::schema::SQLObject' (role 'sqlmodel_schema_SQLObject', cardinality 0..*).
+'Trigger' (role 'Trigger', cardinality 0..*) is associated with 'sqlmodel::schema::Schema' (role 'schema', cardinality 0..*).
+'QueryExpression' (role 'QueryExpression', cardinality 0..*) is associated with 'sqlmodel::tables::DerivedTable' (role 'sqlmodel_tables_DerivedTable', cardinality 0..*).
+'sqlmodel::constraints::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'UniqueConstraint' (role 'UniqueConstraint', cardinality 0..*).
+'sqlmodel::constraints::Assertion' (role 'sqlmodel_constraints_Assertion56', cardinality 0..*) is associated with 'BaseTable' (role 'BaseTable', cardinality 0..*).
+'sqlmodel::schema::SQLObject' (role 'object', cardinality 0..*) is associated with 'Privilege' (role 'Privilege', cardinality 0..*).
+'Column' (role 'Column83', cardinality 0..*) is associated with 'sqlmodel::constraints::IndexMember' (role 'sqlmodel_constraints_IndexMember', cardinality 0..*).
+'sqlmodel::constraints::ReferenceConstraint' (role 'sqlmodel_constraints_ReferenceConstraint', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).
+'sqlmodel::datatypes::CharacterStringDataType' (role 'CharacterStringDataType', cardinality 0..*) is associated with 'CharacterSet' (role 'CharacterSet91', cardinality 0..*).
+'sqlmodel::schema::Event' (role 'events', cardinality 0..*) is associated with 'Database' (role 'Database42', cardinality 0..*).
+'sqlmodel::accesscontrol::AuthorizationIdentifier' (role 'grantor', cardinality 0..*) is associated with 'RoleAuthorization' (role 'RoleAuthorization175', cardinality 0..*).
+'sqlmodel::schema::Schema' (role 'schemas', cardinality 0..*) is associated with 'Database' (role 'Database', cardinality 0..*).
+'Index' (role 'Index67', cardinality 0..*) is associated with 'sqlmodel::constraints::ForeignKey' (role 'ForeignKey66', cardinality 0..*).
+'Parameter' (role 'Parameter127', cardinality 0..*) is associated with 'sqlmodel::routines::Function' (role 'sqlmodel_routines_Function126', cardinality 0..*).
+'Trigger' (role 'Trigger142', cardinality 0..*) is associated with 'sqlmodel::tables::Table' (role 'subjectTable', cardinality 0..*).
+'sqlmodel::accesscontrol::Privilege' (role 'receivedPrivilege', cardinality 0..*) is associated with 'AuthorizationIdentifier' (role 'AuthorizationIdentifier185', cardinality 0..*).
+'Index' (role 'Index145', cardinality 0..*) is associated with 'sqlmodel::tables::Table' (role 'table144', cardinality 0..*).
+'AuthorizationIdentifier' (role 'AuthorizationIdentifier', cardinality 0..*) is associated with 'sqlmodel::schema::Schema' (role 'ownedSchema', cardinality 0..*).
+'schema::sqlmodel::EObject' (role 'schema_sqlmodel_EObject', cardinality 0..*) is associated with 'sqlmodel::schema::Dependency' (role 'sqlmodel_schema_Dependency', cardinality 0..*).
+'Table' (role 'Table136', cardinality 0..*) is associated with 'sqlmodel::tables::Table' (role 'supertable', cardinality 0..*).
+'Schema' (role 'Schema87', cardinality 0..*) is associated with 'sqlmodel::datatypes::UserDefinedType' (role 'userDefinedTypes', cardinality 0..*).
+'TableConstraint' (role 'TableConstraint', cardinality 0..*) is associated with 'sqlmodel::tables::BaseTable' (role 'BaseTable148', cardinality 0..*).
+'Role' (role 'Role', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::RoleAuthorization' (role 'roleAuthorization', cardinality 0..*).
+'sqlmodel::schema::Sequence' (role 'sequences', cardinality 0..*) is associated with 'Schema' (role 'Schema30', cardinality 0..*).
+'ForeignKey' (role 'ForeignKey150', cardinality 0..*) is associated with 'sqlmodel::tables::BaseTable' (role 'referencedTable', cardinality 0..*).
+'CharacterStringDataType' (role 'CharacterStringDataType94', cardinality 0..*) is associated with 'sqlmodel::datatypes::CharacterSet' (role 'characterSet', cardinality 0..*).
+'CheckConstraint' (role 'CheckConstraint', cardinality 0..*) is associated with 'sqlmodel::datatypes::Domain' (role 'sqlmodel_datatypes_Domain', cardinality 0..*).
+'Privilege' (role 'Privilege178', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::AuthorizationIdentifier' (role 'grantor177', cardinality 0..*).
+'sqlmodel::datatypes::ReferenceDataType' (role 'sqlmodel_datatypes_ReferenceDataType108', cardinality 0..*) is associated with 'StructuredUserDefinedType' (role 'StructuredUserDefinedType109', cardinality 0..*).
+'sqlmodel::schema::Schema' (role 'schemas12', cardinality 0..*) is associated with 'Catalog' (role 'Catalog', cardinality 0..*).
+'Field' (role 'Field', cardinality 0..*) is associated with 'sqlmodel::datatypes::RowDataType' (role 'sqlmodel_datatypes_RowDataType', cardinality 0..*).
+'sqlmodel::constraints::Index' (role 'sqlmodel_constraints_Index80', cardinality 0..*) is associated with 'IndexMember' (role 'IndexMember81', cardinality 0..*).
+'sqlmodel::schema::TypedElement' (role 'sqlmodel_schema_TypedElement', cardinality 0..*) is associated with 'SQLDataType' (role 'SQLDataType', cardinality 0..*).
+'sqlmodel::tables::Table' (role 'sqlmodel_tables_Table', cardinality 0..*) is associated with 'StructuredUserDefinedType' (role 'StructuredUserDefinedType140', cardinality 0..*).
+'Catalog' (role 'Catalog37', cardinality 0..*) is associated with 'sqlmodel::schema::Database' (role 'Database36', cardinality 0..*).
+'Table' (role 'Table76', cardinality 0..*) is associated with 'sqlmodel::constraints::Index' (role 'index', cardinality 0..*).
+'Privilege' (role 'Privilege181', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::AuthorizationIdentifier' (role 'grantee180', cardinality 0..*).
+'Column' (role 'Column165', cardinality 0..*) is associated with 'sqlmodel::tables::Trigger' (role 'sqlmodel_tables_Trigger164', cardinality 0..*).
+'Schema' (role 'Schema73', cardinality 0..*) is associated with 'sqlmodel::constraints::Index' (role 'indices', cardinality 0..*).
+'sqlmodel::tables::Trigger' (role 'triggers160', cardinality 0..*) is associated with 'Table' (role 'Table161', cardinality 0..*).
+'SQLObject' (role 'SQLObject187', cardinality 0..*) is associated with 'sqlmodel::accesscontrol::Privilege' (role 'sqlmodel_accesscontrol_Privilege', cardinality 0..*).
+'sqlmodel::tables::Table' (role 'subtables', cardinality 0..*) is associated with 'Table' (role 'Table134', cardinality 0..*).
+'sqlmodel::accesscontrol::Role' (role 'role', cardinality 0..*) is associated with 'RoleAuthorization' (role 'RoleAuthorization193', cardinality 0..*).
+'Table' (role 'Table106', cardinality 0..*) is associated with 'sqlmodel::datatypes::ReferenceDataType' (role 'sqlmodel_datatypes_ReferenceDataType', cardinality 0..*).
+'Schema' (role 'Schema32', cardinality 0..*) is associated with 'sqlmodel::schema::Database' (role 'database', cardinality 0..*).
+'IndexExpression' (role 'IndexExpression', cardinality 0..*) is associated with 'sqlmodel::constraints::IndexMember' (role 'sqlmodel_constraints_IndexMember85', cardinality 0..*).

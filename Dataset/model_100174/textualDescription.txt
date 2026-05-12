@@ -1,0 +1,99 @@
+The model has 26 class(es).
+The class 'relational::UniqueConstraint' has no attributes.
+The class 'relational::ProcedureResult' has no attributes.
+The class 'RelationalEntity' has no attributes.
+The class 'relational::PrimaryKey' has no attributes.
+The class 'relational::EObject' has no attributes.
+The class 'relational::Procedure' has the following attributes: 'updateCount' of type str; 'function' of type bool.
+The class 'UniqueKey' has no attributes.
+The class 'relational::ColumnSet' has no attributes.
+The class 'relational::Relationship' has no attributes.
+The class 'relational::AccessPattern' has no attributes.
+The class 'relational::RelationalEntity' has the following attributes: 'name' of type str; 'nameInSource' of type str.
+The class 'relational::LogicalRelationshipEnd' has the following attributes: 'multiplicity' of type str.
+The class 'relational::View' has no attributes.
+The class 'relational::BaseTable' has no attributes.
+The class 'relational::ForeignKey' has the following attributes: 'foreignKeyMultiplicity' of type str; 'primaryKeyMultiplicity' of type str.
+The class 'relational::LogicalRelationship' has no attributes.
+The class 'relational::ProcedureParameter' has the following attributes: 'scale' of type int; 'defaultValue' of type str; 'precision' of type int; 'nullable' of type str; 'length' of type int; 'direction' of type str; 'nativeType' of type str; 'radix' of type int.
+The class 'relational::Column' has the following attributes: 'characterSetName' of type str; 'nativeType' of type str; 'autoIncremented' of type bool; 'radix' of type int; 'precision' of type int; 'format' of type str; 'nullable' of type str; 'distinctValueCount' of type int; 'nullValueCount' of type int; 'fixedLength' of type bool; 'defaultValue' of type str; 'collationName' of type str; 'updateable' of type bool; 'searchability' of type str; 'currency' of type bool; 'minimumValue' of type str; 'length' of type int; 'maximumValue' of type str; 'caseSensitive' of type bool; 'signed' of type bool; 'scale' of type int; 'selectable' of type bool.
+The class 'Table' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'relational::Schema' has no attributes.
+The class 'relational::Table' has the following attributes: 'supportsUpdate' of type bool; 'system' of type bool; 'cardinality' of type int; 'materialized' of type bool.
+The class 'relational::UniqueKey' has no attributes.
+The class 'ColumnSet' has no attributes.
+The class 'relational::Catalog' has no attributes.
+The class 'relational::Index' has the following attributes: 'autoUpdate' of type bool; 'unique' of type bool; 'nullable' of type bool; 'filterCondition' of type str.
+The enumeration 'MultiplicityKind' has the following literals: 'MANY', 'UNSPECIFIED', 'ZERO_TO_ONE', 'ONE', 'ZERO_TO_MANY'.
+The enumeration 'SearchabilityType' has the following literals: 'UNSEARCHABLE', 'LIKE_ONLY', 'ALL_EXCEPT_LIKE', 'SEARCHABLE'.
+The enumeration 'NullableType' has the following literals: 'NULLABLE_UNKNOWN', 'NULLABLE', 'NO_NULLS'.
+The enumeration 'ProcedureUpdateCount' has the following literals: 'AUTO', 'MULTIPLE', 'ONE', 'ZERO'.
+The enumeration 'DirectionKind' has the following literals: 'OUT', 'INOUT', 'IN', 'RETURN', 'UNKNOWN'.
+'relational::Column' is a specialization of 'RelationalEntity'.
+'relational::Catalog' is a specialization of 'RelationalEntity'.
+'relational::LogicalRelationship' is a specialization of 'Relationship'.
+'relational::ForeignKey' is a specialization of 'Relationship'.
+'relational::AccessPattern' is a specialization of 'RelationalEntity'.
+'relational::LogicalRelationshipEnd' is a specialization of 'RelationalEntity'.
+'relational::Schema' is a specialization of 'RelationalEntity'.
+'relational::UniqueConstraint' is a specialization of 'UniqueKey'.
+'relational::Index' is a specialization of 'RelationalEntity'.
+'relational::Procedure' is a specialization of 'RelationalEntity'.
+'relational::Relationship' is a specialization of 'RelationalEntity'.
+'relational::Table' is a specialization of 'ColumnSet'.
+'relational::PrimaryKey' is a specialization of 'UniqueKey'.
+'relational::BaseTable' is a specialization of 'Table'.
+'relational::ProcedureResult' is a specialization of 'ColumnSet'.
+'relational::View' is a specialization of 'Table'.
+'relational::UniqueKey' is a specialization of 'RelationalEntity'.
+'relational::ColumnSet' is a specialization of 'RelationalEntity'.
+'relational::ProcedureParameter' is a specialization of 'RelationalEntity'.
+'relational::Column' (role 'columns10', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'relational::BaseTable' (role 'BaseTable', cardinality 0..*) is associated with 'relational::PrimaryKey' (role 'primaryKey', cardinality 0..*).
+'relational::Catalog' (role 'catalog42', cardinality 0..*) is associated with 'relational::Procedure' (role 'Procedure43', cardinality 0..*).
+'relational::LogicalRelationshipEnd' (role 'LogicalRelationshipEnd86', cardinality 0..*) is associated with 'relational::LogicalRelationship' (role 'relationship', cardinality 0..*).
+'relational::ProcedureParameter' (role 'relational_ProcedureParameter', cardinality 0..*) is associated with 'relational::EObject' (role 'relational_EObject72', cardinality 0..*).
+'relational::ForeignKey' (role 'foreignKeys30', cardinality 0..*) is associated with 'relational::UniqueKey' (role 'UniqueKey31', cardinality 0..*).
+'relational::Schema' (role 'Schema40', cardinality 0..*) is associated with 'relational::Catalog' (role 'catalog', cardinality 0..*).
+'relational::Index' (role 'Index46', cardinality 0..*) is associated with 'relational::Catalog' (role 'catalog45', cardinality 0..*).
+'relational::Catalog' (role 'Catalog68', cardinality 0..*) is associated with 'relational::Index' (role 'indexes67', cardinality 0..*).
+'relational::LogicalRelationship' (role 'LogicalRelationship91', cardinality 0..*) is associated with 'relational::LogicalRelationshipEnd' (role 'ends', cardinality 0..*).
+'relational::ForeignKey' (role 'ForeignKey94', cardinality 0..*) is associated with 'relational::BaseTable' (role 'table93', cardinality 0..*).
+'relational::UniqueConstraint' (role 'UniqueConstraint', cardinality 0..*) is associated with 'relational::BaseTable' (role 'table98', cardinality 0..*).
+'relational::Schema' (role 'schema', cardinality 0..*) is associated with 'relational::Table' (role 'Table', cardinality 0..*).
+'relational::LogicalRelationshipEnd' (role 'LogicalRelationshipEnd', cardinality 0..*) is associated with 'relational::Table' (role 'table5', cardinality 0..*).
+'relational::ColumnSet' (role 'ColumnSet', cardinality 0..*) is associated with 'relational::Column' (role 'columns15', cardinality 0..*).
+'relational::Catalog' (role 'Catalog58', cardinality 0..*) is associated with 'relational::Procedure' (role 'procedures57', cardinality 0..*).
+'relational::Column' (role 'columns8', cardinality 0..*) is associated with 'relational::Index' (role 'Index', cardinality 0..*).
+'relational::Procedure' (role 'procedure', cardinality 0..*) is associated with 'relational::ProcedureParameter' (role 'ProcedureParameter', cardinality 0..*).
+'relational::Table' (role 'Table79', cardinality 0..*) is associated with 'relational::AccessPattern' (role 'accessPatterns78', cardinality 0..*).
+'relational::Schema' (role 'schemas', cardinality 0..*) is associated with 'relational::Catalog' (role 'Catalog19', cardinality 0..*).
+'relational::Schema' (role 'schema26', cardinality 0..*) is associated with 'relational::LogicalRelationship' (role 'LogicalRelationship', cardinality 0..*).
+'relational::AccessPattern' (role 'AccessPattern', cardinality 0..*) is associated with 'relational::Table' (role 'table', cardinality 0..*).
+'relational::ForeignKey' (role 'foreignKeys33', cardinality 0..*) is associated with 'relational::BaseTable' (role 'BaseTable34', cardinality 0..*).
+'relational::Catalog' (role 'catalog48', cardinality 0..*) is associated with 'relational::Table' (role 'Table49', cardinality 0..*).
+'relational::Schema' (role 'Schema62', cardinality 0..*) is associated with 'relational::Index' (role 'indexes', cardinality 0..*).
+'relational::Catalog' (role 'Catalog', cardinality 0..*) is associated with 'relational::Table' (role 'tables3', cardinality 0..*).
+'relational::Procedure' (role 'procedure60', cardinality 0..*) is associated with 'relational::ProcedureResult' (role 'ProcedureResult', cardinality 0..*).
+'relational::Index' (role 'indexes64', cardinality 0..*) is associated with 'relational::Column' (role 'Column65', cardinality 0..*).
+'relational::Column' (role 'Column', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'foreignKeys', cardinality 0..*).
+'relational::Table' (role 'Table89', cardinality 0..*) is associated with 'relational::LogicalRelationshipEnd' (role 'logicalRelationships88', cardinality 0..*).
+'relational::BaseTable' (role 'BaseTable74', cardinality 0..*) is associated with 'relational::UniqueConstraint' (role 'uniqueConstraints', cardinality 0..*).
+'relational::UniqueKey' (role 'UniqueKey', cardinality 0..*) is associated with 'relational::Column' (role 'columns', cardinality 0..*).
+'relational::Schema' (role 'Schema', cardinality 0..*) is associated with 'relational::Table' (role 'tables', cardinality 0..*).
+'relational::AccessPattern' (role 'accessPatterns', cardinality 0..*) is associated with 'relational::Column' (role 'Column76', cardinality 0..*).
+'relational::LogicalRelationship' (role 'logicalRelationships83', cardinality 0..*) is associated with 'relational::Schema' (role 'Schema84', cardinality 0..*).
+'relational::LogicalRelationship' (role 'logicalRelationships', cardinality 0..*) is associated with 'relational::Catalog' (role 'Catalog81', cardinality 0..*).
+'relational::Procedure' (role 'Procedure', cardinality 0..*) is associated with 'relational::Schema' (role 'schema21', cardinality 0..*).
+'relational::ProcedureResult' (role 'result', cardinality 0..*) is associated with 'relational::Procedure' (role 'Procedure102', cardinality 0..*).
+'relational::Catalog' (role 'catalog51', cardinality 0..*) is associated with 'relational::LogicalRelationship' (role 'LogicalRelationship52', cardinality 0..*).
+'relational::Index' (role 'Index24', cardinality 0..*) is associated with 'relational::Schema' (role 'schema23', cardinality 0..*).
+'relational::UniqueKey' (role 'uniqueKeys', cardinality 0..*) is associated with 'relational::Column' (role 'Column36', cardinality 0..*).
+'relational::Schema' (role 'Schema54', cardinality 0..*) is associated with 'relational::Procedure' (role 'procedures', cardinality 0..*).
+'relational::Procedure' (role 'Procedure70', cardinality 0..*) is associated with 'relational::ProcedureParameter' (role 'parameters', cardinality 0..*).
+'relational::Column' (role 'columns12', cardinality 0..*) is associated with 'relational::AccessPattern' (role 'AccessPattern13', cardinality 0..*).
+'relational::EObject' (role 'relational_EObject', cardinality 0..*) is associated with 'relational::Column' (role 'relational_Column', cardinality 0..*).
+'relational::BaseTable' (role 'table96', cardinality 0..*) is associated with 'relational::PrimaryKey' (role 'PrimaryKey', cardinality 0..*).
+'relational::ForeignKey' (role 'ForeignKey38', cardinality 0..*) is associated with 'relational::UniqueKey' (role 'uniqueKey', cardinality 0..*).
+'relational::Column' (role 'Column100', cardinality 0..*) is associated with 'relational::ColumnSet' (role 'owner', cardinality 0..*).

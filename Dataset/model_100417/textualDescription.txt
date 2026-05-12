@@ -1,0 +1,44 @@
+The model has 20 class(es).
+The class 'statemachine::StateChange' has no attributes.
+The class 'statemachine::AttributeCondition' has no attributes.
+The class 'statemachine::StateAttribute' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'statemachine::InitialState' has no attributes.
+The class 'statemachine::AbstractCondition' has the following attributes: 'isNotCondition' of type bool.
+The class 'statemachine::ConditionalTransition' has no attributes.
+The class 'AbstractTransition' has no attributes.
+The class 'statemachine::State' has the following attributes: 'stateColor' of type str.
+The class 'statemachine::FieldCondition' has the following attributes: 'fieldName' of type str.
+The class 'AbstractCondition' has no attributes.
+The class 'Named' has no attributes.
+The class 'statemachine::StateValue' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'statemachine::Statemachine' has the following attributes: 'associatedAttribute' of type str; 'associatedTree' of type str.
+The class 'statemachine::AbstractTransition' has no attributes.
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::AbstractState' has no attributes.
+The class 'statemachine::Named' has the following attributes: 'name' of type str.
+The class 'AbstractState' has no attributes.
+The class 'statemachine::ConditionalState' has the following attributes: 'conditionsOrganization' of type str; 'andExpression' of type bool.
+The class 'statemachine::FinalState' has no attributes.
+The enumeration 'StateValueType' has the following literals: 'long', 'int', 'string', 'delete', 'eventName', 'query', 'null', 'definedState', 'eventField'.
+The enumeration 'StateAttributeType' has the following literals: 'constant', 'query', 'null', 'eventField', 'location'.
+'statemachine::InitialState' is a specialization of 'AbstractState'.
+'statemachine::AbstractState' is a specialization of 'Named'.
+'statemachine::AbstractTransition' is a specialization of 'Named'.
+'statemachine::AttributeCondition' is a specialization of 'AbstractCondition'.
+'statemachine::ConditionalTransition' is a specialization of 'AbstractTransition'.
+'statemachine::Transition' is a specialization of 'AbstractTransition'.
+'statemachine::ConditionalState' is a specialization of 'AbstractState'.
+'statemachine::State' is a specialization of 'AbstractState'.
+'statemachine::Statemachine' is a specialization of 'Named'.
+'statemachine::FinalState' is a specialization of 'AbstractState'.
+'statemachine::FieldCondition' is a specialization of 'AbstractCondition'.
+'statemachine::StateAttribute' (role 'statemachine_StateAttribute13', cardinality 0..*) is associated with 'statemachine::StateChange' (role 'statemachine_StateChange12', cardinality 0..*).
+'statemachine::ConditionalState' (role 'statemachine_ConditionalState', cardinality 0..*) is associated with 'statemachine::AbstractCondition' (role 'statemachine_AbstractCondition', cardinality 0..*).
+'statemachine::AbstractState' (role 'statemachine_AbstractState2', cardinality 0..*) is associated with 'statemachine::AbstractTransition' (role 'statemachine_AbstractTransition', cardinality 0..*).
+'statemachine::StateChange' (role 'statemachine_StateChange15', cardinality 0..*) is associated with 'statemachine::StateValue' (role 'statemachine_StateValue', cardinality 0..*).
+'statemachine::AbstractState' (role 'statemachine_AbstractState5', cardinality 0..*) is associated with 'statemachine::AbstractTransition' (role 'statemachine_AbstractTransition4', cardinality 0..*).
+'statemachine::StateChange' (role 'statemachine_StateChange', cardinality 0..*) is associated with 'statemachine::AbstractTransition' (role 'statemachine_AbstractTransition7', cardinality 0..*).
+'statemachine::Statemachine' (role 'statemachine_Statemachine', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'statemachine_AbstractState', cardinality 0..*).
+'statemachine::AttributeCondition' (role 'statemachine_AttributeCondition', cardinality 0..*) is associated with 'statemachine::StateAttribute' (role 'statemachine_StateAttribute20', cardinality 0..*).
+'statemachine::AbstractCondition' (role 'statemachine_AbstractCondition17', cardinality 0..*) is associated with 'statemachine::StateValue' (role 'statemachine_StateValue18', cardinality 0..*).
+'statemachine::StateAttribute' (role 'statemachine_StateAttribute8', cardinality 0..*) is associated with 'statemachine::StateAttribute' (role 'statemachine_StateAttribute', cardinality 0..*).

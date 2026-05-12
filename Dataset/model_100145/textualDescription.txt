@@ -1,0 +1,167 @@
+The model has 71 class(es).
+The class 'jpql::NamedQuery' has the following attributes: 'name' of type str.
+The class 'jpql::FromJoin' has the following attributes: 'isFetch' of type bool.
+The class 'JPQLQuery' has no attributes.
+The class 'jpql::NullComparisonExpression' has the following attributes: 'isNot' of type bool.
+The class 'jpql::UpdateItem' has no attributes.
+The class 'jpql::DateTimeExpression' has the following attributes: 'value' of type str.
+The class 'jpql::AllExpression' has no attributes.
+The class 'jpql::SetClause' has no attributes.
+The class 'jpql::FromClause' has no attributes.
+The class 'jpql::AvgAggregate' has no attributes.
+The class 'jpql::ParameterExpression' has the following attributes: 'name' of type str.
+The class 'jpql::OrderClause' has the following attributes: 'isDesc' of type bool; 'isAsc' of type bool.
+The class 'Expression' has no attributes.
+The class 'SelectAggregateExpression' has no attributes.
+The class 'jpql::CollectionExpression' has the following attributes: 'isNot' of type bool.
+The class 'jpql::MinAggregate' has no attributes.
+The class 'jpql::SelectExpression' has no attributes.
+The class 'jpql::Expression' has no attributes.
+The class 'jpql::SelectConstructorExpression' has the following attributes: 'name' of type str.
+The class 'jpql::NullExpression' has the following attributes: 'value' of type str.
+The class 'jpql::IntegerExpression' has the following attributes: 'value' of type int.
+The class 'jpql::MaxAggregate' has no attributes.
+The class 'jpql::OperatorExpression' has the following attributes: 'operator' of type str.
+The class 'jpql::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'jpql::QueryModule' has no attributes.
+The class 'jpql::InExpression' has the following attributes: 'isNot' of type bool.
+The class 'jpql::HavingClause' has no attributes.
+The class 'jpql::InQueryExpression' has no attributes.
+The class 'jpql::Function' has the following attributes: 'name' of type str.
+The class 'SelectExpression' has no attributes.
+The class 'jpql::AliasAttributeExpression' has the following attributes: 'attributes' of type str.
+The class 'jpql::ExpressionTerm' has no attributes.
+The class 'jpql::BetweenExpression' has the following attributes: 'isNot' of type bool.
+The class 'jpql::InnerJoin' has no attributes.
+The class 'Variable' has no attributes.
+The class 'jpql::EmptyComparisonExpression' has the following attributes: 'isNot' of type bool.
+The class 'jpql::Import' has the following attributes: 'importURI' of type str.
+The class 'ExpressionTerm' has no attributes.
+The class 'jpql::BooleanExpression' has the following attributes: 'value' of type bool.
+The class 'jpql::InSeqExpression' has no attributes.
+The class 'jpql::OrderItem' has the following attributes: 'feature' of type str.
+The class 'jpql::WhereClause' has no attributes.
+The class 'jpql::SelectClause' has the following attributes: 'isDistinct' of type bool.
+The class 'jpql::AndExpression' has no attributes.
+The class 'jpql::FromCollection' has no attributes.
+The class 'InExpression' has no attributes.
+The class 'jpql::SumAggregate' has no attributes.
+The class 'jpql::AnyExpression' has no attributes.
+The class 'jpql::SomeExpression' has no attributes.
+The class 'jpql::Join' has no attributes.
+The class 'jpql::Variable' has no attributes.
+The class 'FromEntry' has no attributes.
+The class 'jpql::SelectStatement' has no attributes.
+The class 'jpql::LikeExpression' has the following attributes: 'pattern' of type str; 'isNot' of type bool.
+The class 'jpql::FromClass' has the following attributes: 'type' of type str.
+The class 'jpql::LeftJoin' has the following attributes: 'isOuter' of type bool.
+The class 'jpql::CountAggregate' has no attributes.
+The class 'jpql::UpdateClause' has no attributes.
+The class 'jpql::JPQLQuery' has no attributes.
+The class 'jpql::DeleteStatement' has no attributes.
+The class 'jpql::UpdateStatement' has no attributes.
+The class 'jpql::FromEntry' has no attributes.
+The class 'jpql::DeleteClause' has no attributes.
+The class 'jpql::ExistsExpression' has the following attributes: 'isNot' of type bool.
+The class 'Value' has no attributes.
+The class 'jpql::StringExpression' has the following attributes: 'value' of type str.
+The class 'jpql::Value' has no attributes.
+The class 'FromJoin' has no attributes.
+The class 'jpql::OrExpression' has no attributes.
+The class 'jpql::SelectAggregateExpression' has the following attributes: 'isDistinct' of type bool.
+The class 'jpql::SelectFromClause' has no attributes.
+The enumeration 'Operator' has the following literals: 'lessEqual', 'notEqual', 'greaterEqual', 'equal', 'greaterThen', 'lessThen'.
+'jpql::DeleteStatement' is a specialization of 'JPQLQuery'.
+'jpql::AliasAttributeExpression' is a specialization of 'SelectExpression'.
+'jpql::FromCollection' is a specialization of 'FromEntry'.
+'jpql::FromClass' is a specialization of 'FromEntry'.
+'jpql::EmptyComparisonExpression' is a specialization of 'Expression'.
+'jpql::AnyExpression' is a specialization of 'Expression'.
+'jpql::LikeExpression' is a specialization of 'Expression'.
+'jpql::InnerJoin' is a specialization of 'FromJoin'.
+'jpql::InQueryExpression' is a specialization of 'InExpression'.
+'jpql::Value' is a specialization of 'Variable'.
+'jpql::MinAggregate' is a specialization of 'SelectAggregateExpression'.
+'jpql::InExpression' is a specialization of 'Expression'.
+'jpql::SelectConstructorExpression' is a specialization of 'SelectExpression'.
+'jpql::IntegerExpression' is a specialization of 'Value'.
+'jpql::SumAggregate' is a specialization of 'SelectAggregateExpression'.
+'jpql::CollectionExpression' is a specialization of 'Expression'.
+'jpql::SelectStatement' is a specialization of 'ExpressionTerm'.
+'jpql::AliasAttributeExpression' is a specialization of 'Variable'.
+'jpql::AllExpression' is a specialization of 'Expression'.
+'jpql::InSeqExpression' is a specialization of 'InExpression'.
+'jpql::ExpressionTerm' is a specialization of 'Expression'.
+'jpql::Variable' is a specialization of 'ExpressionTerm'.
+'jpql::MaxAggregate' is a specialization of 'SelectAggregateExpression'.
+'jpql::OrExpression' is a specialization of 'Expression'.
+'jpql::OperatorExpression' is a specialization of 'Expression'.
+'jpql::SelectAggregateExpression' is a specialization of 'SelectExpression'.
+'jpql::NullComparisonExpression' is a specialization of 'Expression'.
+'jpql::CountAggregate' is a specialization of 'SelectAggregateExpression'.
+'jpql::ExistsExpression' is a specialization of 'Expression'.
+'jpql::BooleanExpression' is a specialization of 'Value'.
+'jpql::UpdateStatement' is a specialization of 'JPQLQuery'.
+'jpql::BetweenExpression' is a specialization of 'Expression'.
+'jpql::StringExpression' is a specialization of 'Value'.
+'jpql::LeftJoin' is a specialization of 'FromJoin'.
+'jpql::ParameterExpression' is a specialization of 'Variable'.
+'jpql::SelectStatement' is a specialization of 'JPQLQuery'.
+'jpql::Join' is a specialization of 'FromJoin'.
+'jpql::SomeExpression' is a specialization of 'Expression'.
+'jpql::AndExpression' is a specialization of 'Expression'.
+'jpql::AvgAggregate' is a specialization of 'SelectAggregateExpression'.
+'jpql::NullExpression' is a specialization of 'Value'.
+'jpql::DateTimeExpression' is a specialization of 'Value'.
+'jpql::FromClause' (role 'jpql_FromClause', cardinality 0..*) is associated with 'jpql::DeleteClause' (role 'jpql_DeleteClause35', cardinality 0..*).
+'jpql::FromEntry' (role 'jpql_FromEntry51', cardinality 0..*) is associated with 'jpql::VariableDeclaration' (role 'jpql_VariableDeclaration', cardinality 0..*).
+'jpql::Variable' (role 'jpql_Variable87', cardinality 0..*) is associated with 'jpql::InExpression' (role 'jpql_InExpression', cardinality 0..*).
+'jpql::ExpressionTerm' (role 'jpql_ExpressionTerm', cardinality 0..*) is associated with 'jpql::OperatorExpression' (role 'jpql_OperatorExpression66', cardinality 0..*).
+'jpql::ExistsExpression' (role 'jpql_ExistsExpression', cardinality 0..*) is associated with 'jpql::SelectStatement' (role 'jpql_SelectStatement68', cardinality 0..*).
+'jpql::NamedQuery' (role 'jpql_NamedQuery6', cardinality 0..*) is associated with 'jpql::JPQLQuery' (role 'jpql_JPQLQuery7', cardinality 0..*).
+'jpql::FromClause' (role 'jpql_FromClause40', cardinality 0..*) is associated with 'jpql::SelectFromClause' (role 'jpql_SelectFromClause39', cardinality 0..*).
+'jpql::SelectStatement' (role 'jpql_SelectStatement70', cardinality 0..*) is associated with 'jpql::AllExpression' (role 'jpql_AllExpression', cardinality 0..*).
+'jpql::FromJoin' (role 'jpql_FromJoin59', cardinality 0..*) is associated with 'jpql::VariableDeclaration' (role 'jpql_VariableDeclaration60', cardinality 0..*).
+'jpql::SelectStatement' (role 'jpql_SelectStatement72', cardinality 0..*) is associated with 'jpql::AnyExpression' (role 'jpql_AnyExpression', cardinality 0..*).
+'jpql::Variable' (role 'jpql_Variable93', cardinality 0..*) is associated with 'jpql::BetweenExpression' (role 'jpql_BetweenExpression', cardinality 0..*).
+'jpql::UpdateClause' (role 'jpql_UpdateClause25', cardinality 0..*) is associated with 'jpql::FromEntry' (role 'jpql_FromEntry26', cardinality 0..*).
+'jpql::CollectionExpression' (role 'jpql_CollectionExpression', cardinality 0..*) is associated with 'jpql::Variable' (role 'jpql_Variable76', cardinality 0..*).
+'jpql::OrExpression' (role 'jpql_OrExpression', cardinality 0..*) is associated with 'jpql::Expression' (role 'jpql_Expression106', cardinality 0..*).
+'jpql::Value' (role 'jpql_Value99', cardinality 0..*) is associated with 'jpql::BetweenExpression' (role 'jpql_BetweenExpression98', cardinality 0..*).
+'jpql::SelectFromClause' (role 'jpql_SelectFromClause37', cardinality 0..*) is associated with 'jpql::SelectClause' (role 'jpql_SelectClause', cardinality 0..*).
+'jpql::Function' (role 'jpql_Function', cardinality 0..*) is associated with 'jpql::Variable' (role 'jpql_Variable104', cardinality 0..*).
+'jpql::DeleteStatement' (role 'jpql_DeleteStatement', cardinality 0..*) is associated with 'jpql::DeleteClause' (role 'jpql_DeleteClause', cardinality 0..*).
+'jpql::AliasAttributeExpression' (role 'jpql_AliasAttributeExpression79', cardinality 0..*) is associated with 'jpql::CollectionExpression' (role 'jpql_CollectionExpression78', cardinality 0..*).
+'jpql::HavingClause' (role 'jpql_HavingClause16', cardinality 0..*) is associated with 'jpql::Expression' (role 'jpql_Expression', cardinality 0..*).
+'jpql::UpdateStatement' (role 'jpql_UpdateStatement23', cardinality 0..*) is associated with 'jpql::SetClause' (role 'jpql_SetClause', cardinality 0..*).
+'jpql::QueryModule' (role 'jpql_QueryModule', cardinality 0..*) is associated with 'jpql::Import' (role 'jpql_Import', cardinality 0..*).
+'jpql::OrderItem' (role 'jpql_OrderItem', cardinality 0..*) is associated with 'jpql::OrderClause' (role 'jpql_OrderClause18', cardinality 0..*).
+'jpql::UpdateStatement' (role 'jpql_UpdateStatement', cardinality 0..*) is associated with 'jpql::UpdateClause' (role 'jpql_UpdateClause', cardinality 0..*).
+'jpql::VariableDeclaration' (role 'jpql_VariableDeclaration102', cardinality 0..*) is associated with 'jpql::AliasAttributeExpression' (role 'jpql_AliasAttributeExpression101', cardinality 0..*).
+'jpql::BetweenExpression' (role 'jpql_BetweenExpression95', cardinality 0..*) is associated with 'jpql::Value' (role 'jpql_Value96', cardinality 0..*).
+'jpql::SelectStatement' (role 'jpql_SelectStatement', cardinality 0..*) is associated with 'jpql::SelectFromClause' (role 'jpql_SelectFromClause', cardinality 0..*).
+'jpql::Variable' (role 'jpql_Variable', cardinality 0..*) is associated with 'jpql::OperatorExpression' (role 'jpql_OperatorExpression', cardinality 0..*).
+'jpql::WhereClause' (role 'jpql_WhereClause62', cardinality 0..*) is associated with 'jpql::Expression' (role 'jpql_Expression63', cardinality 0..*).
+'jpql::NamedQuery' (role 'jpql_NamedQuery', cardinality 0..*) is associated with 'jpql::QueryModule' (role 'jpql_QueryModule4', cardinality 0..*).
+'jpql::WhereClause' (role 'jpql_WhereClause', cardinality 0..*) is associated with 'jpql::JPQLQuery' (role 'jpql_JPQLQuery9', cardinality 0..*).
+'jpql::QueryModule' (role 'jpql_QueryModule2', cardinality 0..*) is associated with 'jpql::JPQLQuery' (role 'jpql_JPQLQuery', cardinality 0..*).
+'jpql::AndExpression' (role 'jpql_AndExpression', cardinality 0..*) is associated with 'jpql::Expression' (role 'jpql_Expression108', cardinality 0..*).
+'jpql::FromClass' (role 'jpql_FromClass', cardinality 0..*) is associated with 'jpql::FromJoin' (role 'jpql_FromJoin', cardinality 0..*).
+'jpql::OrderClause' (role 'jpql_OrderClause', cardinality 0..*) is associated with 'jpql::SelectStatement' (role 'jpql_SelectStatement14', cardinality 0..*).
+'jpql::SelectStatement' (role 'jpql_SelectStatement91', cardinality 0..*) is associated with 'jpql::InQueryExpression' (role 'jpql_InQueryExpression', cardinality 0..*).
+'jpql::EmptyComparisonExpression' (role 'jpql_EmptyComparisonExpression', cardinality 0..*) is associated with 'jpql::Variable' (role 'jpql_Variable83', cardinality 0..*).
+'jpql::SelectClause' (role 'jpql_SelectClause42', cardinality 0..*) is associated with 'jpql::SelectExpression' (role 'jpql_SelectExpression', cardinality 0..*).
+'jpql::UpdateItem' (role 'jpql_UpdateItem30', cardinality 0..*) is associated with 'jpql::AliasAttributeExpression' (role 'jpql_AliasAttributeExpression', cardinality 0..*).
+'jpql::UpdateItem' (role 'jpql_UpdateItem', cardinality 0..*) is associated with 'jpql::SetClause' (role 'jpql_SetClause28', cardinality 0..*).
+'jpql::FromEntry' (role 'jpql_FromEntry', cardinality 0..*) is associated with 'jpql::OrderItem' (role 'jpql_OrderItem20', cardinality 0..*).
+'jpql::AliasAttributeExpression' (role 'jpql_AliasAttributeExpression46', cardinality 0..*) is associated with 'jpql::SelectConstructorExpression' (role 'jpql_SelectConstructorExpression', cardinality 0..*).
+'jpql::FromClause' (role 'jpql_FromClause48', cardinality 0..*) is associated with 'jpql::FromEntry' (role 'jpql_FromEntry49', cardinality 0..*).
+'jpql::InSeqExpression' (role 'jpql_InSeqExpression', cardinality 0..*) is associated with 'jpql::Variable' (role 'jpql_Variable89', cardinality 0..*).
+'jpql::Value' (role 'jpql_Value', cardinality 0..*) is associated with 'jpql::UpdateItem' (role 'jpql_UpdateItem32', cardinality 0..*).
+'jpql::AliasAttributeExpression' (role 'jpql_AliasAttributeExpression57', cardinality 0..*) is associated with 'jpql::FromJoin' (role 'jpql_FromJoin56', cardinality 0..*).
+'jpql::LikeExpression' (role 'jpql_LikeExpression', cardinality 0..*) is associated with 'jpql::Variable' (role 'jpql_Variable85', cardinality 0..*).
+'jpql::Variable' (role 'jpql_Variable81', cardinality 0..*) is associated with 'jpql::NullComparisonExpression' (role 'jpql_NullComparisonExpression', cardinality 0..*).
+'jpql::SelectStatement' (role 'jpql_SelectStatement12', cardinality 0..*) is associated with 'jpql::HavingClause' (role 'jpql_HavingClause', cardinality 0..*).
+'jpql::FromCollection' (role 'jpql_FromCollection', cardinality 0..*) is associated with 'jpql::AliasAttributeExpression' (role 'jpql_AliasAttributeExpression54', cardinality 0..*).
+'jpql::SelectStatement' (role 'jpql_SelectStatement74', cardinality 0..*) is associated with 'jpql::SomeExpression' (role 'jpql_SomeExpression', cardinality 0..*).
+'jpql::SelectAggregateExpression' (role 'jpql_SelectAggregateExpression', cardinality 0..*) is associated with 'jpql::AliasAttributeExpression' (role 'jpql_AliasAttributeExpression44', cardinality 0..*).

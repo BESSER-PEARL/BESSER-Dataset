@@ -1,0 +1,249 @@
+The model has 128 class(es).
+The class 'build::filter::OSGiBasedFilter' has no attributes.
+The class 'build::filter::IFilter' has no attributes.
+The class 'Match' has no attributes.
+The class 'build::filter::RegexpFilter' has no attributes.
+The class 'EFSResolver' has no attributes.
+The class 'IFilter' has no attributes.
+The class 'build::materializer::WorkspaceMaterializer' has no attributes.
+The class 'build::resolver::ILocation' has no attributes.
+The class 'build::properties::Format' has the following attributes: 'formatString' of type str.
+The class 'build::command::NewInstanceAdvice' has the following attributes: 'clazz' of type str.
+The class 'build::resolver::EFSResolver' has no attributes.
+The class 'MetaDataTranslatorFactoryExtension' has no attributes.
+The class 'build::resolver::IMetaDataTranslatorFactory' has no attributes.
+The class 'build::resolver::IMetaDataTranslator' has no attributes.
+The class 'IRequirement' has no attributes.
+The class 'build::context::ResolutionOptions' has the following attributes: 'prune' of type bool; 'branchTagPath' of type str; 'revision' of type str; 'source' of type str; 'mutable' of type str; 'overlayPath' of type str; 'resolverFilter' of type str; 'excludeParts' of type str; 'filterGroups' of type bool; 'timestamp' of type str; 'includeParts' of type str.
+The class 'PropertyScope' has no attributes.
+The class 'build::properties::replace' has no attributes.
+The class 'context::build::IBuildUnit' has no attributes.
+The class 'build::resolver::IResolutionContext' has no attributes.
+The class 'IGenericUnit' has no attributes.
+The class 'build::resolver::IResourceMap' has no attributes.
+The class 'IClosure' has no attributes.
+The class 'build::filter::SimplePatternFIlter' has no attributes.
+The class 'build::filter::SinglePropertyFilter' has the following attributes: 'property' of type str.
+The class 'build::properties::Split' has the following attributes: 'pattern' of type str; 'limit' of type int; 'style' of type str.
+The class 'build::command::AdviceGroup' has no attributes.
+The class 'build::resolver::FirstChoice' has no attributes.
+The class 'build::materializer::IMaterializer' has no attributes.
+The class 'build::PartCapability' has no attributes.
+The class 'IBuildPart' has no attributes.
+The class 'build::resolver::ResolverGroup' has no attributes.
+The class 'build::command::IAdvise' has no attributes.
+The class 'build::IPathGroup' has the following attributes: 'paths' of type str; 'basePath' of type str.
+The class 'build::resolver::DefaultResolver' has no attributes.
+The class 'build::command::BuildUnitCommand' has no attributes.
+The class 'build::PartRequirement' has no attributes.
+The class 'build::IRequirement' has the following attributes: 'includePattern' of type str; 'memberName' of type str; 'contributor' of type bool; 'alias' of type str; 'filter' of type str; 'excludePattern' of type str.
+The class 'build::command::ContextNodeSelector' has no attributes.
+The class 'build::IUpToDatePolicy' has no attributes.
+The class 'build::materializer::P2Materializer' has no attributes.
+The class 'build::filter::OrFilter' has no attributes.
+The class 'build::resolver::IResolver' has the following attributes: 'failOnError' of type bool; 'filter' of type str.
+The class 'build::IGenericUnit' has no attributes.
+The class 'ResolutionOptions' has no attributes.
+The class 'build::StringProperties' has the following attributes: 'immutable' of type bool; 'key' of type str; 'value' of type str.
+The class 'build::properties::ToUpper' has no attributes.
+The class 'ICapability' has no attributes.
+The class 'build::properties::toLower' has no attributes.
+The class 'build::properties::IExpr' has no attributes.
+The class 'build::command::PropertyAdvice' has no attributes.
+The class 'build::context::IBuildContext' has no attributes.
+The class 'IHumanSelectable' has no attributes.
+The class 'IMetaDataTranslator' has no attributes.
+The class 'IAdvise' has no attributes.
+The class 'IMaterializer' has no attributes.
+The class 'build::resolver::P2Resolver' has no attributes.
+The class 'build::properties::PropertyRef' has no attributes.
+The class 'build::resolver::WorspaceResolver' has no attributes.
+The class 'build::properties::IFunction' has no attributes.
+The class 'build::runtime::MetaDataTranslatorFactoryExtension' has no attributes.
+The class 'build::IClosure' has the following attributes: 'executeOnce' of type bool.
+The class 'build::command::IUnitRequest' has the following attributes: 'name' of type str; 'range' of type str; 'nameSpace' of type str.
+The class 'IExpr' has no attributes.
+The class 'build::IPartGroup' has no attributes.
+The class 'runtime::build::IUpToDatePolicy' has no attributes.
+The class 'UpToDateExtension' has no attributes.
+The class 'build::filter::FilterGroup' has no attributes.
+The class 'AdviceGroup' has no attributes.
+The class 'ContextNodeSelector' has no attributes.
+The class 'build::IResultingParts' has no attributes.
+The class 'BuildUnitCommand' has no attributes.
+The class 'ImportOptions' has no attributes.
+The class 'ResolverGroup' has no attributes.
+The class 'build::command::VersionAdvice' has the following attributes: 'version' of type str.
+The class 'resolver::DefaultResolver' has no attributes.
+The class 'build::resolver::IEFSBasedAccess' has no attributes.
+The class 'build::ICapability' has the following attributes: 'name' of type str; 'version' of type str; 'namespace' of type str.
+The class 'build::IProvidedCapability' has no attributes.
+The class 'build::properties::Literal' has the following attributes: 'value' of type str.
+The class 'FilterGroup' has no attributes.
+The class 'command::build::PropertyScope' has no attributes.
+The class 'build::runtime::IExtension' has no attributes.
+The class 'build::runtime::IHumanSelectable' has the following attributes: 'typeName' of type str; 'label' of type str.
+The class 'build::properties::Match' has the following attributes: 'pattern' of type str; 'quotePattern' of type bool; 'replacement' of type str.
+The class 'build::IArtifactsPart' has no attributes.
+The class 'IFunction' has no attributes.
+The class 'build::command::InvokeCommand' has the following attributes: 'action' of type str.
+The class 'build::IActionResult' has no attributes.
+The class 'build::resolver::BestChoice' has no attributes.
+The class 'build::runtime::UpToDateExtension' has no attributes.
+The class 'build::command::BooleanAdvice' has the following attributes: 'value' of type bool.
+The class 'context::build::IRequiredCapability' has no attributes.
+The class 'build::runtime::ResolverExtension' has no attributes.
+The class 'build::runtime::MaterializerExtension' has no attributes.
+The class 'build::ResultingPathGroup' has no attributes.
+The class 'IClosurePart' has no attributes.
+The class 'build::command::StringAdvice' has the following attributes: 'value' of type str.
+The class 'build::IRequiredCapability' has the following attributes: 'name' of type str; 'filter' of type str; 'namespace' of type str; 'range' of type str.
+The class 'IMetaDataTranslatorFactory' has no attributes.
+The class 'ResolverExtension' has no attributes.
+The class 'build::context::ImportOptions' has the following attributes: 'suffix' of type str; 'conflictResolution' of type str; 'unpack' of type bool; 'expand' of type bool; 'resourcePath' of type str; 'location' of type str.
+The class 'build::IClosurePart' has no attributes.
+The class 'IPrerequisites' has no attributes.
+The class 'IResolution' has no attributes.
+The class 'build::materializer::FileSystemMaterializer' has no attributes.
+The class 'build::IProducedPart' has no attributes.
+The class 'IUnitRequest' has no attributes.
+The class 'build::IActionPart' has no attributes.
+The class 'build::PropertyScope' has the following attributes: 'unsetProperties' of type str.
+The class 'build::context::IResolution' has no attributes.
+The class 'build::command::VersionRangeAdvice' has the following attributes: 'versionRange' of type str.
+The class 'build::command::UnsetAdvice' has no attributes.
+The class 'build::IBuildPart' has the following attributes: 'name' of type str.
+The class 'build::IBuildUnit' has the following attributes: 'circularityAllowed' of type bool; 'filter' of type str; 'instanceLocation' of type str.
+The class 'resolver::IEFSBasedAccess' has no attributes.
+The class 'SinglePropertyFilter' has no attributes.
+The class 'build::command::ImportCommand' has no attributes.
+The class 'build::IPrerequisites' has the following attributes: 'alias' of type str; 'rebasePath' of type str.
+The class 'IActionResult' has no attributes.
+The class 'IResolver' has no attributes.
+The class 'IExtension' has no attributes.
+The class 'build::Requirement' has no attributes.
+The class 'context::build::ICapability' has no attributes.
+The class 'build::command::FilterAdvice' has the following attributes: 'filterOp' of type str.
+The class 'build::runtime::BuildRuntime' has no attributes.
+The class 'MaterializerExtension' has no attributes.
+The class 'build::filter::AndFilter' has no attributes.
+The enumeration 'Disposition' has the following literals: 'desired', 'required', 'unbiassed', 'rejected', 'undesired'.
+The enumeration 'FilterAdviceOperation' has the following literals: 'AND', 'OR', 'REPLACE'.
+The enumeration 'ConflictResolution' has the following literals: 'fail', 'replace', 'keep', 'update'.
+The enumeration 'SplitStyle' has the following literals: 'groups', 'quoted', 'unquoted'.
+'build::ResultingPathGroup' is a specialization of 'IActionResult'.
+'build::runtime::MetaDataTranslatorFactoryExtension' is a specialization of 'IExtension'.
+'build::IProducedPart' is a specialization of 'IClosurePart'.
+'build::resolver::P2Resolver' is a specialization of 'IResolver'.
+'build::resolver::FirstChoice' is a specialization of 'ResolverGroup'.
+'build::filter::RegexpFilter' is a specialization of 'SinglePropertyFilter'.
+'build::IClosure' is a specialization of 'PropertyScope'.
+'build::command::InvokeCommand' is a specialization of 'BuildUnitCommand'.
+'build::resolver::DefaultResolver' is a specialization of 'IResolver'.
+'build::IClosurePart' is a specialization of 'IClosure'.
+'build::IBuildUnit' is a specialization of 'IGenericUnit'.
+'build::resolver::EFSResolver' is a specialization of 'resolver::IEFSBasedAccess'.
+'build::filter::SinglePropertyFilter' is a specialization of 'IFilter'.
+'build::command::PropertyAdvice' is a specialization of 'IAdvise'.
+'build::command::BooleanAdvice' is a specialization of 'IAdvise'.
+'build::IArtifactsPart' is a specialization of 'IBuildPart'.
+'build::command::FilterAdvice' is a specialization of 'IAdvise'.
+'build::IClosurePart' is a specialization of 'IBuildPart'.
+'build::properties::Split' is a specialization of 'IFunction'.
+'build::properties::Format' is a specialization of 'IFunction'.
+'build::filter::OSGiBasedFilter' is a specialization of 'IFilter'.
+'build::properties::PropertyRef' is a specialization of 'IFunction'.
+'build::IClosure' is a specialization of 'IPrerequisites'.
+'build::IPrerequisites' is a specialization of 'IBuildPart'.
+'build::filter::SimplePatternFIlter' is a specialization of 'SinglePropertyFilter'.
+'build::IBuildUnit' is a specialization of 'PropertyScope'.
+'build::IPartGroup' is a specialization of 'IClosurePart'.
+'build::command::UnsetAdvice' is a specialization of 'IAdvise'.
+'build::properties::Literal' is a specialization of 'IExpr'.
+'build::command::NewInstanceAdvice' is a specialization of 'AdviceGroup'.
+'build::materializer::P2Materializer' is a specialization of 'IMaterializer'.
+'build::properties::replace' is a specialization of 'IFunction'.
+'build::command::VersionAdvice' is a specialization of 'IAdvise'.
+'build::materializer::WorkspaceMaterializer' is a specialization of 'IMaterializer'.
+'build::IResultingParts' is a specialization of 'IActionResult'.
+'build::runtime::IHumanSelectable' is a specialization of 'IExtension'.
+'build::IBuildUnit' is a specialization of 'ICapability'.
+'build::command::VersionRangeAdvice' is a specialization of 'IAdvise'.
+'build::materializer::FileSystemMaterializer' is a specialization of 'IMaterializer'.
+'build::filter::AndFilter' is a specialization of 'FilterGroup'.
+'build::filter::FilterGroup' is a specialization of 'IFilter'.
+'build::resolver::ResolverGroup' is a specialization of 'IResolver'.
+'build::PartRequirement' is a specialization of 'IRequirement'.
+'build::PartCapability' is a specialization of 'ICapability'.
+'build::runtime::MaterializerExtension' is a specialization of 'IHumanSelectable'.
+'build::IActionPart' is a specialization of 'IClosurePart'.
+'build::properties::ToUpper' is a specialization of 'IFunction'.
+'build::Requirement' is a specialization of 'IRequirement'.
+'build::command::ImportCommand' is a specialization of 'BuildUnitCommand'.
+'build::resolver::WorspaceResolver' is a specialization of 'EFSResolver'.
+'build::runtime::UpToDateExtension' is a specialization of 'IHumanSelectable'.
+'build::filter::OrFilter' is a specialization of 'FilterGroup'.
+'build::runtime::ResolverExtension' is a specialization of 'IHumanSelectable'.
+'build::resolver::EFSResolver' is a specialization of 'resolver::DefaultResolver'.
+'build::properties::toLower' is a specialization of 'IFunction'.
+'build::properties::IFunction' is a specialization of 'IExpr'.
+'build::resolver::BestChoice' is a specialization of 'ResolverGroup'.
+'build::command::StringAdvice' is a specialization of 'IAdvise'.
+'IAdvise' (role 'IAdvise', cardinality 0..*) is associated with 'build::IClosure' (role 'build_IClosure', cardinality 0..*).
+'build::IActionPart' (role 'IActionPart', cardinality 0..*) is associated with 'build::IActionResult' (role 'produces', cardinality 0..*).
+'IMetaDataTranslatorFactory' (role 'IMetaDataTranslatorFactory', cardinality 0..*) is associated with 'build::runtime::MetaDataTranslatorFactoryExtension' (role 'build_runtime_MetaDataTranslatorFactoryExtension', cardinality 0..*).
+'MaterializerExtension' (role 'MaterializerExtension', cardinality 0..*) is associated with 'build::runtime::BuildRuntime' (role 'build_runtime_BuildRuntime59', cardinality 0..*).
+'IFilter' (role 'IFilter', cardinality 0..*) is associated with 'build::command::FilterAdvice' (role 'build_command_FilterAdvice', cardinality 0..*).
+'build::runtime::BuildRuntime' (role 'build_runtime_BuildRuntime', cardinality 0..*) is associated with 'UpToDateExtension' (role 'UpToDateExtension', cardinality 0..*).
+'build::command::IUnitRequest' (role 'build_command_IUnitRequest', cardinality 0..*) is associated with 'ResolutionOptions' (role 'ResolutionOptions', cardinality 0..*).
+'build::IBuildPart' (role 'IBuildPart34', cardinality 0..*) is associated with 'build::PartCapability' (role 'publishedCapabilities', cardinality 0..*).
+'build::resolver::DefaultResolver' (role 'build_resolver_DefaultResolver', cardinality 0..*) is associated with 'IMetaDataTranslator' (role 'IMetaDataTranslator', cardinality 0..*).
+'build::IProducedPart' (role 'build_IProducedPart', cardinality 0..*) is associated with 'build::IPathGroup' (role 'build_IPathGroup25', cardinality 0..*).
+'build::IBuildPart' (role 'buildPart', cardinality 0..*) is associated with 'build::PartCapability' (role 'PartCapability', cardinality 0..*).
+'build::IArtifactsPart' (role 'build_IArtifactsPart', cardinality 0..*) is associated with 'build::IPathGroup' (role 'build_IPathGroup', cardinality 0..*).
+'IResolution' (role 'IResolution', cardinality 0..*) is associated with 'build::context::IBuildContext' (role 'build_context_IBuildContext40', cardinality 0..*).
+'IMaterializer' (role 'IMaterializer66', cardinality 0..*) is associated with 'build::runtime::MaterializerExtension' (role 'build_runtime_MaterializerExtension', cardinality 0..*).
+'IAdvise' (role 'IAdvise87', cardinality 0..*) is associated with 'build::command::BuildUnitCommand' (role 'build_command_BuildUnitCommand86', cardinality 0..*).
+'build::command::IAdvise' (role 'build_command_IAdvise', cardinality 0..*) is associated with 'ContextNodeSelector' (role 'ContextNodeSelector', cardinality 0..*).
+'build::IRequiredCapability' (role 'build_IRequiredCapability', cardinality 0..*) is associated with 'build::IBuildUnit' (role 'build_IBuildUnit', cardinality 0..*).
+'build::context::ImportOptions' (role 'build_context_ImportOptions', cardinality 0..*) is associated with 'IMaterializer' (role 'IMaterializer', cardinality 0..*).
+'build::properties::IFunction' (role 'build_properties_IFunction', cardinality 0..*) is associated with 'IExpr' (role 'IExpr75', cardinality 0..*).
+'build::PartRequirement' (role 'build_PartRequirement', cardinality 0..*) is associated with 'build::IBuildPart' (role 'build_IBuildPart', cardinality 0..*).
+'build::IBuildUnit' (role 'IBuildUnit', cardinality 0..*) is associated with 'build::IBuildPart' (role 'parts', cardinality 0..*).
+'build::IResultingParts' (role 'IResultingParts', cardinality 0..*) is associated with 'build::IProducedPart' (role 'producedParts', cardinality 0..*).
+'build::IBuildUnit' (role 'build_IBuildUnit14', cardinality 0..*) is associated with 'build::PartCapability' (role 'build_PartCapability', cardinality 0..*).
+'build::IBuildUnit' (role 'build_IBuildUnit12', cardinality 0..*) is associated with 'build::IBuildUnit' (role 'build_IBuildUnit10', cardinality 0..*).
+'build::IUpToDatePolicy' (role 'build_IUpToDatePolicy', cardinality 0..*) is associated with 'build::IActionPart' (role 'build_IActionPart', cardinality 0..*).
+'build::runtime::UpToDateExtension' (role 'build_runtime_UpToDateExtension', cardinality 0..*) is associated with 'runtime::build::IUpToDatePolicy' (role 'runtime_build_IUpToDatePolicy', cardinality 0..*).
+'build::command::BuildUnitCommand' (role 'build_command_BuildUnitCommand81', cardinality 0..*) is associated with 'command::build::PropertyScope' (role 'command_build_PropertyScope', cardinality 0..*).
+'build::runtime::ResolverExtension' (role 'build_runtime_ResolverExtension', cardinality 0..*) is associated with 'IResolver' (role 'IResolver69', cardinality 0..*).
+'IUnitRequest' (role 'IUnitRequest', cardinality 0..*) is associated with 'build::context::IBuildContext' (role 'build_context_IBuildContext', cardinality 0..*).
+'build::IRequiredCapability' (role 'build_IRequiredCapability7', cardinality 0..*) is associated with 'build::IBuildUnit' (role 'build_IBuildUnit6', cardinality 0..*).
+'build::context::IResolution' (role 'build_context_IResolution', cardinality 0..*) is associated with 'context::build::IRequiredCapability' (role 'context_build_IRequiredCapability', cardinality 0..*).
+'ResolverExtension' (role 'ResolverExtension', cardinality 0..*) is associated with 'build::runtime::BuildRuntime' (role 'build_runtime_BuildRuntime63', cardinality 0..*).
+'IResolver' (role 'IResolver72', cardinality 0..*) is associated with 'build::resolver::ResolverGroup' (role 'build_resolver_ResolverGroup', cardinality 0..*).
+'build::IActionResult' (role 'IActionResult', cardinality 0..*) is associated with 'build::IActionPart' (role 'producedBy', cardinality 0..*).
+'IUnitRequest' (role 'IUnitRequest79', cardinality 0..*) is associated with 'build::command::BuildUnitCommand' (role 'build_command_BuildUnitCommand', cardinality 0..*).
+'IResolution' (role 'IResolution53', cardinality 0..*) is associated with 'build::context::IResolution' (role 'build_context_IResolution52', cardinality 0..*).
+'build::ResultingPathGroup' (role 'build_ResultingPathGroup', cardinality 0..*) is associated with 'build::IPathGroup' (role 'build_IPathGroup32', cardinality 0..*).
+'build::command::BuildUnitCommand' (role 'build_command_BuildUnitCommand83', cardinality 0..*) is associated with 'IResolver' (role 'IResolver84', cardinality 0..*).
+'build::ICapability' (role 'build_ICapability', cardinality 0..*) is associated with 'build::IBuildUnit' (role 'build_IBuildUnit9', cardinality 0..*).
+'build::IBuildUnit' (role 'build_IBuildUnit3', cardinality 0..*) is associated with 'build::IRequiredCapability' (role 'build_IRequiredCapability4', cardinality 0..*).
+'build::IBuildUnit' (role 'buildUnit', cardinality 0..*) is associated with 'build::IBuildPart' (role 'IBuildPart', cardinality 0..*).
+'build::context::IResolution' (role 'build_context_IResolution55', cardinality 0..*) is associated with 'ImportOptions' (role 'ImportOptions', cardinality 0..*).
+'MetaDataTranslatorFactoryExtension' (role 'MetaDataTranslatorFactoryExtension', cardinality 0..*) is associated with 'build::runtime::BuildRuntime' (role 'build_runtime_BuildRuntime61', cardinality 0..*).
+'IResolver' (role 'IResolver', cardinality 0..*) is associated with 'build::context::IBuildContext' (role 'build_context_IBuildContext47', cardinality 0..*).
+'IFilter' (role 'IFilter94', cardinality 0..*) is associated with 'build::command::FilterAdvice' (role 'build_command_FilterAdvice93', cardinality 0..*).
+'IAdvise' (role 'IAdvise45', cardinality 0..*) is associated with 'build::context::IBuildContext' (role 'build_context_IBuildContext44', cardinality 0..*).
+'build::command::PropertyAdvice' (role 'build_command_PropertyAdvice', cardinality 0..*) is associated with 'command::build::PropertyScope' (role 'command_build_PropertyScope90', cardinality 0..*).
+'build::resolver::IResolver' (role 'build_resolver_IResolver', cardinality 0..*) is associated with 'IExpr' (role 'IExpr', cardinality 0..*).
+'build::properties::replace' (role 'build_properties_replace', cardinality 0..*) is associated with 'Match' (role 'Match', cardinality 0..*).
+'build::IPathGroup' (role 'build_IPathGroup37', cardinality 0..*) is associated with 'build::IGenericUnit' (role 'build_IGenericUnit', cardinality 0..*).
+'build::StringProperties' (role 'build_StringProperties', cardinality 0..*) is associated with 'build::PropertyScope' (role 'build_PropertyScope', cardinality 0..*).
+'IAdvise' (role 'IAdvise96', cardinality 0..*) is associated with 'build::command::AdviceGroup' (role 'build_command_AdviceGroup', cardinality 0..*).
+'build::IResultingParts' (role 'producedBy28', cardinality 0..*) is associated with 'build::IProducedPart' (role 'IProducedPart', cardinality 0..*).
+'context::build::ICapability' (role 'context_build_ICapability', cardinality 0..*) is associated with 'build::context::IResolution' (role 'build_context_IResolution50', cardinality 0..*).
+'build::filter::FilterGroup' (role 'build_filter_FilterGroup', cardinality 0..*) is associated with 'IFilter' (role 'IFilter98', cardinality 0..*).
+'build::context::IBuildContext' (role 'build_context_IBuildContext42', cardinality 0..*) is associated with 'context::build::IBuildUnit' (role 'context_build_IBuildUnit', cardinality 0..*).
+'build::IRequiredCapability' (role 'build_IRequiredCapability30', cardinality 0..*) is associated with 'build::Requirement' (role 'build_Requirement', cardinality 0..*).
+'build::IRequirement' (role 'build_IRequirement', cardinality 0..*) is associated with 'build::IPrerequisites' (role 'build_IPrerequisites', cardinality 0..*).

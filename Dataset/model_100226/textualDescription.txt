@@ -1,0 +1,91 @@
+The model has 43 class(es).
+The class 'SpreadsheetMLBasicDef::Worksheet' has the following attributes: 'name' of type str.
+The class 'SpreadsheetMLBasicDef::VersionType' has the following attributes: 'n' of type str; 'nn' of type str.
+The class 'SpreadsheetMLBasicDef::Comment' has the following attributes: 'showAlways' of type str; 'author' of type str.
+The class 'SpreadsheetMLBasicDef::DateTimeTypeValue' has no attributes.
+The class 'SpreadsheetMLBasicDef::NumberValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLBasicDef::Workbook' has no attributes.
+The class 'SpreadsheetMLBasicDef::CustomDocumentProperty' has the following attributes: 'name' of type str.
+The class 'SpreadsheetMLBasicDef::BooleanValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLBasicDef::SmartTagsCollection' has no attributes.
+The class 'SpreadsheetMLBasicDef::StringValue' has the following attributes: 'value' of type str.
+The class 'Table' has no attributes.
+The class 'SpreadsheetMLBasicDef::Row' has the following attributes: 'height' of type str; 'autoFitHeight' of type str.
+The class 'Comment' has no attributes.
+The class 'Worksheet' has no attributes.
+The class 'SpreadsheetMLBasicDef::Column' has the following attributes: 'autoFitWidth' of type str; 'width' of type str.
+The class 'SpreadsheetMLBasicDef::DateTimeType' has the following attributes: 'hour' of type str; 'year' of type str; 'second' of type str; 'minute' of type str; 'day' of type str; 'month' of type str.
+The class 'SpreadsheetMLBasicDef::SmartTagType' has the following attributes: 'url' of type str; 'name' of type str; 'namespaceuri' of type str.
+The class 'VersionType' has no attributes.
+The class 'Data' has no attributes.
+The class 'SpreadsheetMLBasicDef::TableElement' has the following attributes: 'index' of type str.
+The class 'ValueType' has no attributes.
+The class 'SpreadsheetMLBasicDef::Table' has the following attributes: 'leftCell' of type str; 'expandedColumnCount' of type str; 'defaultRowHeight' of type str; 'topCell' of type str; 'fullColumns' of type str; 'expandedRowCount' of type str; 'fullRows' of type str; 'defaultColumnWidth' of type str.
+The class 'SpreadsheetMLBasicDef::Cell' has the following attributes: 'hRef' of type str; 'mergeDown' of type str; 'mergeAcross' of type str; 'arrayRange' of type str; 'formula' of type str.
+The class 'CustomDocumentProperty' has no attributes.
+The class 'DateTimeType' has no attributes.
+The class 'Column' has no attributes.
+The class 'TableElement' has no attributes.
+The class 'SpreadsheetMLBasicDef::Data' has no attributes.
+The class 'Workbook' has no attributes.
+The class 'SpreadsheetMLBasicDef::ColOrRowElement' has the following attributes: 'hidden' of type str; 'span' of type str.
+The class 'Row' has no attributes.
+The class 'SpreadsheetMLBasicDef::ErrorValue' has no attributes.
+The class 'CustomDocumentPropertiesCollection' has no attributes.
+The class 'SmartTagsCollection' has no attributes.
+The class 'StyledElement' has no attributes.
+The class 'ColOrRowElement' has no attributes.
+The class 'SmartTagType' has no attributes.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'Cell' has no attributes.
+The class 'SpreadsheetMLBasicDef::CustomDocumentPropertiesCollection' has no attributes.
+The class 'SpreadsheetMLBasicDef::ValueType' has no attributes.
+The class 'SpreadsheetMLBasicDef::StyledElement' has no attributes.
+The class 'SpreadsheetMLBasicDef::DocumentPropertiesCollection' has the following attributes: 'charactersWithSpaces' of type str; 'company' of type str; 'hyperlinkBase' of type str; 'presentationFormat' of type str; 'lines' of type str; 'words' of type str; 'description' of type str; 'subject' of type str; 'characters' of type str; 'bytes' of type str; 'lastAuthor' of type str; 'manager' of type str; 'appName' of type str; 'keywords' of type str; 'category' of type str; 'paragraphs' of type str; 'pages' of type str; 'title' of type str; 'totalTime' of type str; 'revision' of type str; 'author' of type str; 'guid' of type str.
+'SpreadsheetMLBasicDef::ErrorValue' is a specialization of 'ValueType'.
+'SpreadsheetMLBasicDef::Table' is a specialization of 'StyledElement'.
+'SpreadsheetMLBasicDef::Cell' is a specialization of 'TableElement'.
+'SpreadsheetMLBasicDef::TableElement' is a specialization of 'StyledElement'.
+'SpreadsheetMLBasicDef::NumberValue' is a specialization of 'ValueType'.
+'SpreadsheetMLBasicDef::BooleanValue' is a specialization of 'ValueType'.
+'SpreadsheetMLBasicDef::ColOrRowElement' is a specialization of 'TableElement'.
+'SpreadsheetMLBasicDef::Column' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLBasicDef::StringValue' is a specialization of 'ValueType'.
+'SpreadsheetMLBasicDef::Row' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLBasicDef::DateTimeTypeValue' is a specialization of 'ValueType'.
+'Table' (role 'Table39', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Row' (role 't_rows', cardinality 0..*).
+'Workbook' (role 'Workbook30', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Worksheet' (role 'wb_worksheets', cardinality 0..*).
+'Comment' (role 'Comment56', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Data' (role 'com_data', cardinality 0..*).
+'CustomDocumentProperty' (role 'CustomDocumentProperty', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::CustomDocumentPropertiesCollection' (role 'customDocumentProperty_cdpe', cardinality 0..*).
+'SpreadsheetMLBasicDef::SmartTagsCollection' (role 'smartTagType_ste', cardinality 0..*) is associated with 'SmartTagType' (role 'SmartTagType', cardinality 0..*).
+'SpreadsheetMLBasicDef::Column' (role 't_cols', cardinality 0..*) is associated with 'Table' (role 'Table37', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Worksheet' (role 't_worksheet', cardinality 0..*).
+'Row' (role 'Row43', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Cell' (role 'r_cells', cardinality 0..*).
+'Cell' (role 'Cell41', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Row' (role 'c_row', cardinality 0..*).
+'Row' (role 'Row', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Table' (role 'r_table', cardinality 0..*).
+'SpreadsheetMLBasicDef::DateTimeTypeValue' (role 'SpreadsheetMLBasicDef_DateTimeTypeValue', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType', cardinality 0..*).
+'SpreadsheetMLBasicDef::Data' (role 'c_data', cardinality 0..*) is associated with 'Cell' (role 'Cell54', cardinality 0..*).
+'SpreadsheetMLBasicDef::DocumentPropertiesCollection' (role 'SpreadsheetMLBasicDef_DocumentPropertiesCollection5', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType6', cardinality 0..*).
+'SpreadsheetMLBasicDef::CustomDocumentProperty' (role 'customDocumentProperties', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType12', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::DocumentPropertiesCollection' (role 'SpreadsheetMLBasicDef_DocumentPropertiesCollection11', cardinality 0..*).
+'SpreadsheetMLBasicDef::CustomDocumentPropertiesCollection' (role 'wb_customDocProperties', cardinality 0..*) is associated with 'Workbook' (role 'Workbook14', cardinality 0..*).
+'SpreadsheetMLBasicDef::Workbook' (role 'dp_workbook', cardinality 0..*) is associated with 'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*).
+'SpreadsheetMLBasicDef::CustomDocumentProperty' (role 'SpreadsheetMLBasicDef_CustomDocumentProperty', cardinality 0..*) is associated with 'ValueType' (role 'ValueType', cardinality 0..*).
+'Worksheet' (role 'Worksheet33', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Table' (role 'ws_table', cardinality 0..*).
+'ValueType' (role 'ValueType58', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Data' (role 'vt_data', cardinality 0..*).
+'SpreadsheetMLBasicDef::Cell' (role 'st_cell', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection45', cardinality 0..*).
+'SpreadsheetMLBasicDef::SmartTagsCollection' (role 'wb_smartTags', cardinality 0..*) is associated with 'Workbook' (role 'Workbook20', cardinality 0..*).
+'SmartTagsCollection' (role 'SmartTagsCollection24', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Workbook' (role 'st_workbook', cardinality 0..*).
+'Workbook' (role 'Workbook', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::DocumentPropertiesCollection' (role 'wb_docProperties', cardinality 0..*).
+'Data' (role 'Data', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::ValueType' (role 'value', cardinality 0..*).
+'Cell' (role 'Cell', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::SmartTagsCollection' (role 'c_smartTags', cardinality 0..*).
+'SpreadsheetMLBasicDef::DocumentPropertiesCollection' (role 'SpreadsheetMLBasicDef_DocumentPropertiesCollection', cardinality 0..*) is associated with 'VersionType' (role 'VersionType', cardinality 0..*).
+'Worksheet' (role 'Worksheet', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Workbook' (role 'ws_workbook', cardinality 0..*).
+'SpreadsheetMLBasicDef::Cell' (role 'd_cell', cardinality 0..*) is associated with 'Data' (role 'Data47', cardinality 0..*).
+'Data' (role 'Data52', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Comment' (role 'd_comment', cardinality 0..*).
+'SpreadsheetMLBasicDef::SmartTagType' (role 'smartTagTypes', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection', cardinality 0..*).
+'SpreadsheetMLBasicDef::DocumentPropertiesCollection' (role 'SpreadsheetMLBasicDef_DocumentPropertiesCollection8', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType9', cardinality 0..*).
+'Cell' (role 'Cell50', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Comment' (role 'c_comment', cardinality 0..*).
+'SpreadsheetMLBasicDef::Cell' (role 'c_cell', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection27', cardinality 0..*) is associated with 'SpreadsheetMLBasicDef::Workbook' (role 'cdp_workbook', cardinality 0..*).
+'SpreadsheetMLBasicDef::Table' (role 'c_table', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).

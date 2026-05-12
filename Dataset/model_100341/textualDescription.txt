@@ -1,0 +1,239 @@
+The model has 98 class(es).
+The class 'AsmL::StepWhile' has no attributes.
+The class 'AsmL::Operator' has the following attributes: 'opName' of type str.
+The class 'AsmL::NullConstant' has no attributes.
+The class 'AsmL::Rule' has no attributes.
+The class 'AsmL::Term' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'SequenceTerm' has no attributes.
+The class 'AsmL::TulpletTerm' has no attributes.
+The class 'UpdateRule' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'AsmL::SkipRule' has no attributes.
+The class 'AsmL::LocatedElement' has the following attributes: 'location' of type str; 'commentsAfter' of type str; 'commentsBefore' of type str.
+The class 'AsmL::UpdateMapRule' has no attributes.
+The class 'AsmLFile' has no attributes.
+The class 'AsmL::VarTerm' has the following attributes: 'name' of type str.
+The class 'AsmL::VarOrCase' has no attributes.
+The class 'AsmL::SequenceType' has no attributes.
+The class 'Function' has no attributes.
+The class 'AsmL::AlgorithmSet' has no attributes.
+The class 'StepExpression' has no attributes.
+The class 'AsmL::MethodCallTerm' has the following attributes: 'name' of type str.
+The class 'AsmL::StepExpression' has no attributes.
+The class 'AsmL::VarDeclaration' has the following attributes: 'isLocal' of type str; 'name' of type str; 'isDeclaration' of type str; 'isConstant' of type str.
+The class 'Structure' has no attributes.
+The class 'Rule' has no attributes.
+The class 'Body' has no attributes.
+The class 'AsmL::UpdateVarRule' has no attributes.
+The class 'SetTerm' has no attributes.
+The class 'AsmL::ConditionalRule' has no attributes.
+The class 'AsmL::ReturnRule' has no attributes.
+The class 'AsmL::MethodInvocation' has no attributes.
+The class 'AsmL::Class' has the following attributes: 'superClassName' of type str; 'name' of type str; 'isAbstract' of type str.
+The class 'AsmL::Parameter' has the following attributes: 'name' of type str.
+The class 'AsmL::VarOrMethod' has no attributes.
+The class 'Initially' has no attributes.
+The class 'AsmL::PredicateTerm' has no attributes.
+The class 'Main' has no attributes.
+The class 'AsmL::Method' has the following attributes: 'isOverride' of type str; 'isShared' of type str; 'isEntryPoint' of type str; 'isAbstract' of type str.
+The class 'AsmL::BooleanConstant' has the following attributes: 'val' of type str.
+The class 'AsmL::Structure' has the following attributes: 'superStructureName' of type str; 'name' of type str.
+The class 'AsmL::ElseIf' has no attributes.
+The class 'AsmLElement' has no attributes.
+The class 'Constant' has no attributes.
+The class 'AsmL::NewInstance' has no attributes.
+The class 'AsmL::MapType' has no attributes.
+The class 'AsmL::Namespace' has the following attributes: 'name' of type str.
+The class 'AsmL::SetTerm' has no attributes.
+The class 'VarOrCase' has no attributes.
+The class 'AsmL::Main' has no attributes.
+The class 'Method' has no attributes.
+The class 'AsmL::Case' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'AsmL::StepUntilFixPoint' has no attributes.
+The class 'AsmL::StepUntil' has no attributes.
+The class 'AsmL::RangeSequence' has no attributes.
+The class 'MethodCallTerm' has no attributes.
+The class 'AsmL::Initially' has no attributes.
+The class 'AsmL::StringConstant' has the following attributes: 'val' of type str.
+The class 'Step' has no attributes.
+The class 'AsmL::TupletType' has no attributes.
+The class 'ElseIf' has no attributes.
+The class 'AsmL::ForAllTerm' has no attributes.
+The class 'AsmL::Enumeration' has the following attributes: 'name' of type str.
+The class 'AsmL::Constant' has no attributes.
+The class 'ConditionalRule' has no attributes.
+The class 'AsmL::EnumerateSet' has no attributes.
+The class 'AsmL::StepForEach' has no attributes.
+The class 'AsmL::UpdateRule' has no attributes.
+The class 'InWhereHolds' has no attributes.
+The class 'AsmL::SequenceTerm' has no attributes.
+The class 'AsmL::ChooseRule' has no attributes.
+The class 'AsmL::Function' has the following attributes: 'name' of type str.
+The class 'AsmL::EnumerateSequence' has no attributes.
+The class 'AsmL::IntegerConstant' has the following attributes: 'val' of type str.
+The class 'Class' has no attributes.
+The class 'AsmL::Body' has no attributes.
+The class 'Term' has no attributes.
+The class 'VarDeclaration' has no attributes.
+The class 'VarTerm' has no attributes.
+The class 'AsmL::MapTerm' has the following attributes: 'separator' of type str.
+The class 'AsmL::SetType' has no attributes.
+The class 'AsmL::Step' has the following attributes: 'name' of type str.
+The class 'VarOrMethod' has no attributes.
+The class 'Enumerator' has no attributes.
+The class 'AsmL::RangeSet' has no attributes.
+The class 'AsmL::AsmLFile' has no attributes.
+The class 'AsmL::RemoveRule' has no attributes.
+The class 'AsmL::UpdateFieldRule' has no attributes.
+The class 'AsmL::AsmLElement' has no attributes.
+The class 'AsmL::Type' has the following attributes: 'withNull' of type str.
+The class 'AsmL::NamedType' has the following attributes: 'name' of type str.
+The class 'AsmL::Enumerator' has the following attributes: 'name' of type str.
+The class 'AsmL::AnyIn' has no attributes.
+The class 'PredicateTerm' has no attributes.
+The class 'AsmL::ForallRule' has no attributes.
+The class 'AsmL::AddRule' has no attributes.
+The class 'AsmL::InWhereHolds' has no attributes.
+The class 'AsmL::ExistsTerm' has the following attributes: 'isUnique' of type str.
+'AsmL::RangeSequence' is a specialization of 'SequenceTerm'.
+'AsmL::Structure' is a specialization of 'AsmLElement'.
+'AsmL::ForAllTerm' is a specialization of 'PredicateTerm'.
+'AsmL::RangeSet' is a specialization of 'SetTerm'.
+'AsmL::InWhereHolds' is a specialization of 'LocatedElement'.
+'AsmL::ConditionalRule' is a specialization of 'Rule'.
+'AsmL::AsmLElement' is a specialization of 'LocatedElement'.
+'AsmL::Constant' is a specialization of 'Term'.
+'AsmL::SetTerm' is a specialization of 'Term'.
+'AsmL::Initially' is a specialization of 'LocatedElement'.
+'AsmL::ChooseRule' is a specialization of 'Rule'.
+'AsmL::Function' is a specialization of 'AsmLElement'.
+'AsmL::SetType' is a specialization of 'Type'.
+'AsmL::Step' is a specialization of 'Rule'.
+'AsmL::VarOrMethod' is a specialization of 'LocatedElement'.
+'AsmL::UpdateVarRule' is a specialization of 'UpdateRule'.
+'AsmL::VarDeclaration' is a specialization of 'AsmLElement'.
+'AsmL::TupletType' is a specialization of 'Type'.
+'AsmL::UpdateRule' is a specialization of 'Rule'.
+'AsmL::AlgorithmSet' is a specialization of 'SetTerm'.
+'AsmL::AddRule' is a specialization of 'Rule'.
+'AsmL::Parameter' is a specialization of 'LocatedElement'.
+'AsmL::ElseIf' is a specialization of 'ConditionalRule'.
+'AsmL::BooleanConstant' is a specialization of 'Constant'.
+'AsmL::ExistsTerm' is a specialization of 'PredicateTerm'.
+'AsmL::Namespace' is a specialization of 'AsmLElement'.
+'AsmL::ReturnRule' is a specialization of 'Rule'.
+'AsmL::NewInstance' is a specialization of 'MethodCallTerm'.
+'AsmL::StepWhile' is a specialization of 'StepExpression'.
+'AsmL::NamedType' is a specialization of 'Type'.
+'AsmL::VarDeclaration' is a specialization of 'VarOrCase'.
+'AsmL::StepUntilFixPoint' is a specialization of 'Step'.
+'AsmL::UpdateMapRule' is a specialization of 'UpdateRule'.
+'AsmL::EnumerateSequence' is a specialization of 'SequenceTerm'.
+'AsmL::NullConstant' is a specialization of 'Constant'.
+'AsmL::ForallRule' is a specialization of 'Rule'.
+'AsmL::Method' is a specialization of 'Function'.
+'AsmL::MapType' is a specialization of 'Type'.
+'AsmL::MethodInvocation' is a specialization of 'Rule'.
+'AsmL::MethodCallTerm' is a specialization of 'Term'.
+'AsmL::Rule' is a specialization of 'LocatedElement'.
+'AsmL::TulpletTerm' is a specialization of 'Term'.
+'AsmL::Operator' is a specialization of 'Term'.
+'AsmL::SequenceType' is a specialization of 'Type'.
+'AsmL::Type' is a specialization of 'AsmLElement'.
+'AsmL::VarTerm' is a specialization of 'Term'.
+'AsmL::AsmLFile' is a specialization of 'LocatedElement'.
+'AsmL::StepExpression' is a specialization of 'Step'.
+'AsmL::StepForEach' is a specialization of 'Step'.
+'AsmL::Body' is a specialization of 'LocatedElement'.
+'AsmL::UpdateFieldRule' is a specialization of 'UpdateRule'.
+'AsmL::SequenceTerm' is a specialization of 'Term'.
+'AsmL::Method' is a specialization of 'VarOrMethod'.
+'AsmL::VarOrCase' is a specialization of 'LocatedElement'.
+'AsmL::SkipRule' is a specialization of 'Rule'.
+'AsmL::StepUntil' is a specialization of 'StepExpression'.
+'AsmL::MapTerm' is a specialization of 'Term'.
+'AsmL::Enumeration' is a specialization of 'AsmLElement'.
+'AsmL::Term' is a specialization of 'LocatedElement'.
+'AsmL::AnyIn' is a specialization of 'PredicateTerm'.
+'AsmL::Main' is a specialization of 'Function'.
+'AsmL::PredicateTerm' is a specialization of 'Term'.
+'AsmL::VarDeclaration' is a specialization of 'VarOrMethod'.
+'AsmL::Case' is a specialization of 'VarOrCase'.
+'AsmL::EnumerateSet' is a specialization of 'SetTerm'.
+'AsmL::IntegerConstant' is a specialization of 'Constant'.
+'AsmL::Enumerator' is a specialization of 'LocatedElement'.
+'AsmL::RemoveRule' is a specialization of 'Rule'.
+'AsmL::Class' is a specialization of 'AsmLElement'.
+'AsmL::StringConstant' is a specialization of 'Constant'.
+'AsmL::UpdateVarRule' (role 'AsmL_UpdateVarRule', cardinality 0..*) is associated with 'Term' (role 'Term47', cardinality 0..*).
+'ElseIf' (role 'ElseIf', cardinality 0..*) is associated with 'AsmL::ConditionalRule' (role 'AsmL_ConditionalRule77', cardinality 0..*).
+'AsmL::RangeSet' (role 'AsmL_RangeSet', cardinality 0..*) is associated with 'Term' (role 'Term127', cardinality 0..*).
+'Term' (role 'Term41', cardinality 0..*) is associated with 'AsmL::StepExpression' (role 'AsmL_StepExpression', cardinality 0..*).
+'AsmL::UpdateRule' (role 'AsmL_UpdateRule', cardinality 0..*) is associated with 'Term' (role 'Term45', cardinality 0..*).
+'Type' (role 'Type98', cardinality 0..*) is associated with 'AsmL::MapType' (role 'AsmL_MapType', cardinality 0..*).
+'Type' (role 'Type103', cardinality 0..*) is associated with 'AsmL::TupletType' (role 'AsmL_TupletType', cardinality 0..*).
+'Term' (role 'Term134', cardinality 0..*) is associated with 'AsmL::EnumerateSequence' (role 'AsmL_EnumerateSequence', cardinality 0..*).
+'AsmL::Type' (role 'type95', cardinality 0..*) is associated with 'Parameter' (role 'Parameter96', cardinality 0..*).
+'Term' (role 'Term4', cardinality 0..*) is associated with 'AsmL::InWhereHolds' (role 'AsmL_InWhereHolds3', cardinality 0..*).
+'AsmL::VarOrCase' (role 'varOrCase', cardinality 0..*) is associated with 'Structure' (role 'Structure', cardinality 0..*).
+'AsmL::Method' (role 'ownerMethod27', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'VarTerm' (role 'VarTerm51', cardinality 0..*) is associated with 'AsmL::UpdateMapRule' (role 'AsmL_UpdateMapRule', cardinality 0..*).
+'AsmL::Main' (role 'AsmL_Main', cardinality 0..*) is associated with 'Initially' (role 'Initially', cardinality 0..*).
+'AsmL::Parameter' (role 'parameters', cardinality 0..*) is associated with 'Method' (role 'Method', cardinality 0..*).
+'AsmL::Initially' (role 'AsmL_Initially', cardinality 0..*) is associated with 'VarTerm' (role 'VarTerm', cardinality 0..*).
+'VarTerm' (role 'VarTerm89', cardinality 0..*) is associated with 'AsmL::RemoveRule' (role 'AsmL_RemoveRule88', cardinality 0..*).
+'Type' (role 'Type107', cardinality 0..*) is associated with 'AsmL::SequenceType' (role 'AsmL_SequenceType', cardinality 0..*).
+'AsmL::ChooseRule' (role 'AsmL_ChooseRule61', cardinality 0..*) is associated with 'Body' (role 'Body62', cardinality 0..*).
+'AsmL::TulpletTerm' (role 'AsmL_TulpletTerm', cardinality 0..*) is associated with 'Term' (role 'Term119', cardinality 0..*).
+'AsmL::Type' (role 'type', cardinality 0..*) is associated with 'VarDeclaration' (role 'VarDeclaration91', cardinality 0..*).
+'Body' (role 'Body39', cardinality 0..*) is associated with 'AsmL::Rule' (role 'rules', cardinality 0..*).
+'AsmL::ChooseRule' (role 'AsmL_ChooseRule58', cardinality 0..*) is associated with 'Body' (role 'Body59', cardinality 0..*).
+'InWhereHolds' (role 'InWhereHolds64', cardinality 0..*) is associated with 'AsmL::ForallRule' (role 'AsmL_ForallRule', cardinality 0..*).
+'Term' (role 'Term112', cardinality 0..*) is associated with 'AsmL::Operator' (role 'AsmL_Operator111', cardinality 0..*).
+'AsmL::StepForEach' (role 'AsmL_StepForEach', cardinality 0..*) is associated with 'InWhereHolds' (role 'InWhereHolds', cardinality 0..*).
+'Type' (role 'Type25', cardinality 0..*) is associated with 'AsmL::Method' (role 'ownerMethod', cardinality 0..*).
+'AsmL::UpdateMapRule' (role 'AsmL_UpdateMapRule53', cardinality 0..*) is associated with 'Term' (role 'Term54', cardinality 0..*).
+'Term' (role 'Term139', cardinality 0..*) is associated with 'AsmL::RangeSequence' (role 'AsmL_RangeSequence138', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'AsmL::VarDeclaration' (role 'ownerDeclaration', cardinality 0..*).
+'AsmL::Main' (role 'main', cardinality 0..*) is associated with 'AsmLFile' (role 'AsmLFile32', cardinality 0..*).
+'AsmL::AddRule' (role 'AsmL_AddRule', cardinality 0..*) is associated with 'Term' (role 'Term81', cardinality 0..*).
+'Term' (role 'Term86', cardinality 0..*) is associated with 'AsmL::RemoveRule' (role 'AsmL_RemoveRule', cardinality 0..*).
+'Term' (role 'Term37', cardinality 0..*) is associated with 'AsmL::Initially' (role 'AsmL_Initially36', cardinality 0..*).
+'Term' (role 'Term130', cardinality 0..*) is associated with 'AsmL::RangeSet' (role 'AsmL_RangeSet129', cardinality 0..*).
+'InWhereHolds' (role 'InWhereHolds56', cardinality 0..*) is associated with 'AsmL::ChooseRule' (role 'AsmL_ChooseRule', cardinality 0..*).
+'Term' (role 'Term136', cardinality 0..*) is associated with 'AsmL::RangeSequence' (role 'AsmL_RangeSequence', cardinality 0..*).
+'AsmLFile' (role 'AsmLFile', cardinality 0..*) is associated with 'AsmL::AsmLElement' (role 'elements', cardinality 0..*).
+'Term' (role 'Term69', cardinality 0..*) is associated with 'AsmL::ConditionalRule' (role 'AsmL_ConditionalRule', cardinality 0..*).
+'AsmL::Type' (role 'returnType', cardinality 0..*) is associated with 'Method' (role 'Method93', cardinality 0..*).
+'AsmL::Body' (role 'ownerBody', cardinality 0..*) is associated with 'Rule' (role 'Rule', cardinality 0..*).
+'Main' (role 'Main', cardinality 0..*) is associated with 'AsmL::AsmLFile' (role 'mainFile', cardinality 0..*).
+'AsmL::MethodInvocation' (role 'AsmL_MethodInvocation', cardinality 0..*) is associated with 'MethodCallTerm' (role 'MethodCallTerm', cardinality 0..*).
+'Term' (role 'Term22', cardinality 0..*) is associated with 'AsmL::Enumerator' (role 'AsmL_Enumerator', cardinality 0..*).
+'Term' (role 'Term10', cardinality 0..*) is associated with 'AsmL::InWhereHolds' (role 'AsmL_InWhereHolds9', cardinality 0..*).
+'AsmL::EnumerateSet' (role 'AsmL_EnumerateSet', cardinality 0..*) is associated with 'Term' (role 'Term125', cardinality 0..*).
+'Body' (role 'Body75', cardinality 0..*) is associated with 'AsmL::ConditionalRule' (role 'AsmL_ConditionalRule74', cardinality 0..*).
+'Body' (role 'Body', cardinality 0..*) is associated with 'AsmL::Function' (role 'AsmL_Function', cardinality 0..*).
+'AsmL::InWhereHolds' (role 'AsmL_InWhereHolds6', cardinality 0..*) is associated with 'Term' (role 'Term7', cardinality 0..*).
+'AsmL::AddRule' (role 'AsmL_AddRule83', cardinality 0..*) is associated with 'VarTerm' (role 'VarTerm84', cardinality 0..*).
+'Term' (role 'Term117', cardinality 0..*) is associated with 'AsmL::MapTerm' (role 'AsmL_MapTerm116', cardinality 0..*).
+'AsmLElement' (role 'AsmLElement', cardinality 0..*) is associated with 'AsmL::AsmLFile' (role 'file', cardinality 0..*).
+'AsmL::SetType' (role 'AsmL_SetType', cardinality 0..*) is associated with 'Type' (role 'Type105', cardinality 0..*).
+'Term' (role 'Term109', cardinality 0..*) is associated with 'AsmL::Operator' (role 'AsmL_Operator', cardinality 0..*).
+'Term' (role 'Term121', cardinality 0..*) is associated with 'AsmL::MethodCallTerm' (role 'AsmL_MethodCallTerm', cardinality 0..*).
+'InWhereHolds' (role 'InWhereHolds132', cardinality 0..*) is associated with 'AsmL::AlgorithmSet' (role 'AsmL_AlgorithmSet', cardinality 0..*).
+'InWhereHolds' (role 'InWhereHolds123', cardinality 0..*) is associated with 'AsmL::PredicateTerm' (role 'AsmL_PredicateTerm', cardinality 0..*).
+'Type' (role 'Type101', cardinality 0..*) is associated with 'AsmL::MapType' (role 'AsmL_MapType100', cardinality 0..*).
+'AsmL::Parameter' (role 'ownerParameter', cardinality 0..*) is associated with 'Type' (role 'Type29', cardinality 0..*).
+'VarTerm' (role 'VarTerm49', cardinality 0..*) is associated with 'AsmL::UpdateFieldRule' (role 'AsmL_UpdateFieldRule', cardinality 0..*).
+'AsmL::InWhereHolds' (role 'AsmL_InWhereHolds', cardinality 0..*) is associated with 'Term' (role 'Term', cardinality 0..*).
+'AsmL::MapTerm' (role 'AsmL_MapTerm', cardinality 0..*) is associated with 'Term' (role 'Term114', cardinality 0..*).
+'Body' (role 'Body67', cardinality 0..*) is associated with 'AsmL::ForallRule' (role 'AsmL_ForallRule66', cardinality 0..*).
+'VarDeclaration' (role 'VarDeclaration', cardinality 0..*) is associated with 'AsmL::Case' (role 'AsmL_Case', cardinality 0..*).
+'AsmL::Class' (role 'ownerClass', cardinality 0..*) is associated with 'VarOrMethod' (role 'VarOrMethod', cardinality 0..*).
+'AsmL::VarOrMethod' (role 'varOrMethod', cardinality 0..*) is associated with 'Class' (role 'Class', cardinality 0..*).
+'Body' (role 'Body72', cardinality 0..*) is associated with 'AsmL::ConditionalRule' (role 'AsmL_ConditionalRule71', cardinality 0..*).
+'AsmL::Structure' (role 'ownerStructure', cardinality 0..*) is associated with 'VarOrCase' (role 'VarOrCase', cardinality 0..*).
+'Term' (role 'Term79', cardinality 0..*) is associated with 'AsmL::ReturnRule' (role 'AsmL_ReturnRule', cardinality 0..*).
+'Enumerator' (role 'Enumerator', cardinality 0..*) is associated with 'AsmL::Enumeration' (role 'AsmL_Enumeration', cardinality 0..*).

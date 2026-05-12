@@ -1,0 +1,60 @@
+The model has 37 class(es).
+The class 'TdXMLContent' has no attributes.
+The class 'Machine' has no attributes.
+The class 'cwm::relational::TdProcedure' has no attributes.
+The class 'TdSqlDataType' has no attributes.
+The class 'DataManager' has no attributes.
+The class 'DataProvider' has no attributes.
+The class 'SoftwareSystem' has no attributes.
+The class 'cwm::relational::TdSchema' has no attributes.
+The class 'TdXMLElement' has no attributes.
+The class 'Schema' has no attributes.
+The class 'cwm::softwaredeployment::TdMachine' has no attributes.
+The class 'Column' has no attributes.
+The class 'cwm::relational::TdColumn' has the following attributes: 'javaType' of type int.
+The class 'TdXMLDocument' has no attributes.
+The class 'View' has no attributes.
+The class 'cwm::softwaredeployment::TdSoftwareSystem' has no attributes.
+The class 'xml::cwm::EObject' has no attributes.
+The class 'Table' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'Document' has no attributes.
+The class 'cwm::relational::TdSqlDataType' has the following attributes: 'searchable' of type str; 'nullable' of type str; 'autoIncrement' of type str; 'javaDataType' of type int; 'localTypeName' of type str; 'caseSensitive' of type str; 'unsignedAttribute' of type str.
+The class 'cwm::softwaredeployment::TdProviderConnection' has the following attributes: 'connectionString' of type str; 'login' of type str; 'driverClassName' of type str; 'password' of type str.
+The class 'cwm::relational::TdTrigger' has no attributes.
+The class 'ProviderConnection' has no attributes.
+The class 'Procedure' has no attributes.
+The class 'Element' has no attributes.
+The class 'cwm::xml::TdXMLElement' has the following attributes: 'javaType' of type str.
+The class 'cwm::softwaredeployment::TdDataProvider' has no attributes.
+The class 'Content' has no attributes.
+The class 'cwm::relational::TdView' has no attributes.
+The class 'cwm::xml::TdXMLDocument' has the following attributes: 'xsdFilePath' of type str.
+The class 'cwm::relational::TdCatalog' has no attributes.
+The class 'Catalog' has no attributes.
+The class 'SQLSimpleType' has no attributes.
+The class 'cwm::softwaredeployment::TdDataManager' has no attributes.
+The class 'cwm::xml::TdXMLContent' has no attributes.
+The class 'cwm::relational::TdTable' has no attributes.
+The enumeration 'DevelopmentStatus' has the following literals: 'DRAFT', 'PROD'.
+'cwm::relational::TdSqlDataType' is a specialization of 'SQLSimpleType'.
+'cwm::relational::TdProcedure' is a specialization of 'Procedure'.
+'cwm::relational::TdTable' is a specialization of 'Table'.
+'cwm::relational::TdSchema' is a specialization of 'Schema'.
+'cwm::xml::TdXMLContent' is a specialization of 'Content'.
+'cwm::softwaredeployment::TdDataProvider' is a specialization of 'DataProvider'.
+'cwm::relational::TdTrigger' is a specialization of 'Trigger'.
+'cwm::xml::TdXMLDocument' is a specialization of 'Document'.
+'cwm::softwaredeployment::TdSoftwareSystem' is a specialization of 'SoftwareSystem'.
+'cwm::softwaredeployment::TdDataManager' is a specialization of 'DataManager'.
+'cwm::relational::TdColumn' is a specialization of 'Column'.
+'cwm::softwaredeployment::TdProviderConnection' is a specialization of 'ProviderConnection'.
+'cwm::xml::TdXMLElement' is a specialization of 'Element'.
+'cwm::relational::TdView' is a specialization of 'View'.
+'cwm::softwaredeployment::TdMachine' is a specialization of 'Machine'.
+'cwm::relational::TdCatalog' is a specialization of 'Catalog'.
+'xml::cwm::EObject' (role 'xml_cwm_EObject', cardinality 0..*) is associated with 'cwm::xml::TdXMLElement' (role 'cwm_xml_TdXMLElement', cardinality 0..*).
+'cwm::xml::TdXMLElement' (role 'cwm_xml_TdXMLElement5', cardinality 0..*) is associated with 'TdXMLContent' (role 'TdXMLContent', cardinality 0..*).
+'cwm::xml::TdXMLElement' (role 'cwm_xml_TdXMLElement3', cardinality 0..*) is associated with 'TdXMLDocument' (role 'TdXMLDocument', cardinality 0..*).
+'cwm::relational::TdColumn' (role 'cwm_relational_TdColumn', cardinality 0..*) is associated with 'TdSqlDataType' (role 'TdSqlDataType', cardinality 0..*).
+'TdXMLElement' (role 'TdXMLElement', cardinality 0..*) is associated with 'cwm::xml::TdXMLContent' (role 'cwm_xml_TdXMLContent', cardinality 0..*).

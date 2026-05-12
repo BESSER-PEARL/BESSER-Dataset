@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'releng::CompositeRepository' has no attributes.
+The class 'releng::Repository' has the following attributes: 'location' of type str.
+The class 'releng::Promotion' has the following attributes: 'buildType' of type str.
+The class 'Repository' has no attributes.
+The class 'releng::Server' has the following attributes: 'name' of type str.
+The class 'releng::BuildJob' has the following attributes: 'buckminsterComponent' of type str; 'sourceBranch' of type str; 'name' of type str; 'types' of type str.
+The class 'releng::Criterion' has the following attributes: 'description' of type str.
+The enumeration 'BuildType' has the following literals: 'N', 'M', 'I', 'S', 'R'.
+'releng::CompositeRepository' is a specialization of 'Repository'.
+'releng::Criterion' (role 'releng_Criterion', cardinality 0..*) is associated with 'releng::Promotion' (role 'releng_Promotion11', cardinality 0..*).
+'releng::CompositeRepository' (role 'releng_CompositeRepository', cardinality 0..*) is associated with 'releng::Repository' (role 'releng_Repository13', cardinality 0..*).
+'releng::Repository' (role 'releng_Repository9', cardinality 0..*) is associated with 'releng::Promotion' (role 'releng_Promotion', cardinality 0..*).
+'releng::BuildJob' (role 'build', cardinality 0..*) is associated with 'releng::Promotion' (role 'Promotion', cardinality 0..*).
+'releng::Repository' (role 'releng_Repository', cardinality 0..*) is associated with 'releng::Server' (role 'releng_Server2', cardinality 0..*).
+'releng::BuildJob' (role 'releng_BuildJob4', cardinality 0..*) is associated with 'releng::Repository' (role 'releng_Repository5', cardinality 0..*).
+'releng::Promotion' (role 'promotions', cardinality 0..*) is associated with 'releng::BuildJob' (role 'BuildJob', cardinality 0..*).
+'releng::BuildJob' (role 'releng_BuildJob', cardinality 0..*) is associated with 'releng::Server' (role 'releng_Server', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'standardPetriNets::Transition' has the following attributes: 'name' of type str.
+The class 'standardPetriNets::InputArc' has the following attributes: 'weight' of type int.
+The class 'standardPetriNets::OutputArc' has the following attributes: 'weight' of type int.
+The class 'standardPetriNets::Place' has the following attributes: 'numOfTokens' of type int; 'name' of type str; 'capacity' of type int.
+The class 'standardPetriNets::PetriNet' has the following attributes: 'name' of type str.
+'standardPetriNets::OutputArc' (role 'standardPetriNets_OutputArc6', cardinality 0..*) is associated with 'standardPetriNets::Place' (role 'standardPetriNets_Place7', cardinality 0..*).
+'standardPetriNets::Place' (role 'standardPetriNets_Place9', cardinality 0..*) is associated with 'standardPetriNets::PetriNet' (role 'standardPetriNets_PetriNet', cardinality 0..*).
+'standardPetriNets::OutputArc' (role 'standardPetriNets_OutputArc18', cardinality 0..*) is associated with 'standardPetriNets::PetriNet' (role 'standardPetriNets_PetriNet17', cardinality 0..*).
+'standardPetriNets::Transition' (role 'standardPetriNets_Transition', cardinality 0..*) is associated with 'standardPetriNets::InputArc' (role 'standardPetriNets_InputArc2', cardinality 0..*).
+'standardPetriNets::Transition' (role 'standardPetriNets_Transition12', cardinality 0..*) is associated with 'standardPetriNets::PetriNet' (role 'standardPetriNets_PetriNet11', cardinality 0..*).
+'standardPetriNets::Transition' (role 'standardPetriNets_Transition4', cardinality 0..*) is associated with 'standardPetriNets::OutputArc' (role 'standardPetriNets_OutputArc', cardinality 0..*).
+'standardPetriNets::InputArc' (role 'standardPetriNets_InputArc', cardinality 0..*) is associated with 'standardPetriNets::Place' (role 'standardPetriNets_Place', cardinality 0..*).
+'standardPetriNets::PetriNet' (role 'standardPetriNets_PetriNet14', cardinality 0..*) is associated with 'standardPetriNets::InputArc' (role 'standardPetriNets_InputArc15', cardinality 0..*).

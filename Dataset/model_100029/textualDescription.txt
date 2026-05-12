@@ -1,0 +1,70 @@
+The model has 30 class(es).
+The class 'publication::Proceeding' has no attributes.
+The class 'publication::SimpleOntologyTerm' has no attributes.
+The class 'publication::WebResource' has the following attributes: 'uRL' of type str.
+The class 'publication::LegalEntity' has no attributes.
+The class 'BiblioReference' has no attributes.
+The class 'publication::Thesis' has no attributes.
+The class 'Journal' has no attributes.
+The class 'publication::Protocol' has no attributes.
+The class 'SimpleIdentifier' has no attributes.
+The class 'SimpleCitation' has no attributes.
+The class 'publication::Multimedia' has no attributes.
+The class 'publication::JournalIssue' has the following attributes: 'issue' of type str; 'volume' of type str; 'issueSupplement' of type str.
+The class 'publication::TechnicalReport' has no attributes.
+The class 'publication::BiblioReferenceSet' has no attributes.
+The class 'publication::Journal' has the following attributes: 'iSSN' of type str.
+The class 'publication::JournalArticle' has no attributes.
+The class 'publication::SimpleFeature' has no attributes.
+The class 'publication::Article' has the following attributes: 'firstPage' of type str; 'lastPage' of type str.
+The class 'publication::BiblioReference' has no attributes.
+The class 'publication::Contact' has no attributes.
+The class 'publication::BookArticle' has the following attributes: 'section' of type str.
+The class 'publication::Indexing' has the following attributes: 'keywords' of type str.
+The class 'Article' has no attributes.
+The class 'publication::SimpleCitation' has the following attributes: 'date' of type date; 'source' of type str; 'authorList' of type str.
+The class 'publication::Ontology' has no attributes.
+The class 'publication::Organization' has no attributes.
+The class 'publication::Content' has the following attributes: 'body' of type str.
+The class 'publication::OrderedLegalEntitySet' has no attributes.
+The class 'publication::Book' has the following attributes: 'edition' of type str; 'series' of type str; 'volume' of type str; 'iSBN' of type str.
+The class 'SimpleFeature' has no attributes.
+'publication::TechnicalReport' is a specialization of 'BiblioReference'.
+'publication::BiblioReference' is a specialization of 'SimpleCitation'.
+'publication::SimpleCitation' is a specialization of 'SimpleFeature'.
+'publication::Book' is a specialization of 'BiblioReference'.
+'publication::Proceeding' is a specialization of 'BiblioReference'.
+'publication::Multimedia' is a specialization of 'BiblioReference'.
+'publication::Content' is a specialization of 'SimpleFeature'.
+'publication::JournalArticle' is a specialization of 'Article'.
+'publication::Journal' is a specialization of 'BiblioReference'.
+'publication::Article' is a specialization of 'BiblioReference'.
+'publication::Thesis' is a specialization of 'BiblioReference'.
+'publication::BookArticle' is a specialization of 'Article'.
+'publication::BiblioReferenceSet' is a specialization of 'SimpleIdentifier'.
+'publication::JournalIssue' is a specialization of 'Journal'.
+'publication::Protocol' is a specialization of 'BiblioReference'.
+'publication::WebResource' is a specialization of 'BiblioReference'.
+'publication::Indexing' (role 'indexings', cardinality 0..*) is associated with 'publication::BiblioReference' (role 'BiblioReference', cardinality 0..*).
+'publication::Journal' (role 'publication_Journal', cardinality 0..*) is associated with 'publication::SimpleOntologyTerm' (role 'publication_SimpleOntologyTerm36', cardinality 0..*).
+'publication::SimpleOntologyTerm' (role 'publication_SimpleOntologyTerm30', cardinality 0..*) is associated with 'publication::Indexing' (role 'publication_Indexing29', cardinality 0..*).
+'publication::SimpleOntologyTerm' (role 'publication_SimpleOntologyTerm33', cardinality 0..*) is associated with 'publication::Indexing' (role 'publication_Indexing32', cardinality 0..*).
+'publication::SimpleOntologyTerm' (role 'publication_SimpleOntologyTerm3', cardinality 0..*) is associated with 'publication::BiblioReference' (role 'publication_BiblioReference2', cardinality 0..*).
+'publication::Book' (role 'Book', cardinality 0..*) is associated with 'publication::BookArticle' (role 'articles', cardinality 0..*).
+'publication::LegalEntity' (role 'publication_LegalEntity25', cardinality 0..*) is associated with 'publication::Indexing' (role 'publication_Indexing24', cardinality 0..*).
+'publication::OrderedLegalEntitySet' (role 'publication_OrderedLegalEntitySet16', cardinality 0..*) is associated with 'publication::Book' (role 'publication_Book', cardinality 0..*).
+'publication::BiblioReference' (role 'publication_BiblioReference21', cardinality 0..*) is associated with 'publication::Content' (role 'publication_Content20', cardinality 0..*).
+'publication::Thesis' (role 'publication_Thesis', cardinality 0..*) is associated with 'publication::Organization' (role 'publication_Organization', cardinality 0..*).
+'publication::JournalIssue' (role 'JournalIssue', cardinality 0..*) is associated with 'publication::JournalArticle' (role 'articles38', cardinality 0..*).
+'publication::SimpleOntologyTerm' (role 'publication_SimpleOntologyTerm', cardinality 0..*) is associated with 'publication::BiblioReference' (role 'publication_BiblioReference', cardinality 0..*).
+'publication::Content' (role 'publication_Content', cardinality 0..*) is associated with 'publication::BiblioReference' (role 'publication_BiblioReference12', cardinality 0..*).
+'publication::SimpleFeature' (role 'publication_SimpleFeature', cardinality 0..*) is associated with 'publication::Protocol' (role 'publication_Protocol', cardinality 0..*).
+'publication::Ontology' (role 'publication_Ontology', cardinality 0..*) is associated with 'publication::Indexing' (role 'publication_Indexing27', cardinality 0..*).
+'publication::BookArticle' (role 'BookArticle', cardinality 0..*) is associated with 'publication::Book' (role 'book', cardinality 0..*).
+'publication::Indexing' (role 'Indexing', cardinality 0..*) is associated with 'publication::BiblioReference' (role 'reference', cardinality 0..*).
+'publication::LegalEntity' (role 'publication_LegalEntity', cardinality 0..*) is associated with 'publication::BiblioReference' (role 'publication_BiblioReference5', cardinality 0..*).
+'publication::Contact' (role 'publication_Contact', cardinality 0..*) is associated with 'publication::Indexing' (role 'publication_Indexing', cardinality 0..*).
+'publication::OrderedLegalEntitySet' (role 'publication_OrderedLegalEntitySet', cardinality 0..*) is associated with 'publication::BiblioReference' (role 'publication_BiblioReference7', cardinality 0..*).
+'publication::JournalArticle' (role 'JournalArticle', cardinality 0..*) is associated with 'publication::JournalIssue' (role 'journalIssue', cardinality 0..*).
+'publication::BiblioReference' (role 'publication_BiblioReference9', cardinality 0..*) is associated with 'publication::OrderedLegalEntitySet' (role 'publication_OrderedLegalEntitySet10', cardinality 0..*).
+'publication::BiblioReferenceSet' (role 'publication_BiblioReferenceSet', cardinality 0..*) is associated with 'publication::SimpleCitation' (role 'publication_SimpleCitation', cardinality 0..*).

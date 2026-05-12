@@ -1,0 +1,120 @@
+The model has 57 class(es).
+The class 'Author' has no attributes.
+The class 'Keywords' has no attributes.
+The class 'LaTeX::Date' has no attributes.
+The class 'LaTeX::Keywords' has no attributes.
+The class 'LaTeX::ValuedElement' has the following attributes: 'value' of type str.
+The class 'LaTeX::Figure' has no attributes.
+The class 'Item' has no attributes.
+The class 'Label' has no attributes.
+The class 'LaTeX::Label' has no attributes.
+The class 'Name' has no attributes.
+The class 'Title' has no attributes.
+The class 'Fax' has no attributes.
+The class 'EMail' has no attributes.
+The class 'Enumerate' has no attributes.
+The class 'Citation' has no attributes.
+The class 'Organisation' has no attributes.
+The class 'LaTeX::Title' has no attributes.
+The class 'LaTeX::Citation' has no attributes.
+The class 'ValuedElement' has no attributes.
+The class 'LaTeX::Enumerate' has no attributes.
+The class 'LaTeX::Name' has no attributes.
+The class 'LaTeX::Organisation' has no attributes.
+The class 'Corps' has no attributes.
+The class 'Phone' has no attributes.
+The class 'SectionBody' has no attributes.
+The class 'LaTeX::SectionBody' has no attributes.
+The class 'Heading' has no attributes.
+The class 'Adress' has no attributes.
+The class 'LaTeX::Value' has no attributes.
+The class 'Bibliography' has no attributes.
+The class 'LaTeX::Path' has no attributes.
+The class 'LaTeX::EMail' has no attributes.
+The class 'LaTeX::Phone' has no attributes.
+The class 'LaTeX::Description' has no attributes.
+The class 'LaTeX::Type' has no attributes.
+The class 'LaTeX::Fax' has no attributes.
+The class 'LaTeX::Items' has no attributes.
+The class 'LaTeX::Bibliography' has no attributes.
+The class 'LaTeX::Cite' has no attributes.
+The class 'LaTeX::Adress' has no attributes.
+The class 'LaTeX::Corps' has no attributes.
+The class 'LaTeX::Heading' has no attributes.
+The class 'LaTeX::Author' has no attributes.
+The class 'Items' has no attributes.
+The class 'LaTeX::Section' has no attributes.
+The class 'LaTeX::Abstract' has no attributes.
+The class 'Path' has no attributes.
+The class 'Description' has no attributes.
+The class 'Section' has no attributes.
+The class 'DocumentBody' has no attributes.
+The class 'Type' has no attributes.
+The class 'Date' has no attributes.
+The class 'LaTeX::Item' has no attributes.
+The class 'Abstract' has no attributes.
+The class 'LaTeX::DocumentBody' has no attributes.
+The class 'Document' has no attributes.
+The class 'LaTeX::Document' has no attributes.
+'LaTeX::Path' is a specialization of 'ValuedElement'.
+'LaTeX::Value' is a specialization of 'Corps'.
+'LaTeX::Cite' is a specialization of 'Corps'.
+'LaTeX::Keywords' is a specialization of 'ValuedElement'.
+'LaTeX::Label' is a specialization of 'ValuedElement'.
+'LaTeX::Date' is a specialization of 'ValuedElement'.
+'LaTeX::Title' is a specialization of 'ValuedElement'.
+'LaTeX::Items' is a specialization of 'Corps'.
+'LaTeX::Item' is a specialization of 'ValuedElement'.
+'LaTeX::Phone' is a specialization of 'ValuedElement'.
+'LaTeX::EMail' is a specialization of 'ValuedElement'.
+'LaTeX::Abstract' is a specialization of 'ValuedElement'.
+'LaTeX::Figure' is a specialization of 'Corps'.
+'LaTeX::Adress' is a specialization of 'ValuedElement'.
+'LaTeX::Name' is a specialization of 'ValuedElement'.
+'LaTeX::Value' is a specialization of 'ValuedElement'.
+'LaTeX::Fax' is a specialization of 'ValuedElement'.
+'LaTeX::Description' is a specialization of 'ValuedElement'.
+'LaTeX::Type' is a specialization of 'ValuedElement'.
+'LaTeX::Enumerate' is a specialization of 'Corps'.
+'LaTeX::Cite' is a specialization of 'ValuedElement'.
+'LaTeX::Section' is a specialization of 'Corps'.
+'LaTeX::Items' (role 'itemscontainer', cardinality 0..*) is associated with 'Item' (role 'Item', cardinality 0..*).
+'Bibliography' (role 'Bibliography48', cardinality 0..*) is associated with 'LaTeX::DocumentBody' (role 'documentbody', cardinality 0..*).
+'LaTeX::Corps' (role 'corps', cardinality 0..*) is associated with 'SectionBody' (role 'SectionBody', cardinality 0..*).
+'LaTeX::Organisation' (role 'organisations', cardinality 0..*) is associated with 'Heading' (role 'Heading', cardinality 0..*).
+'LaTeX::Citation' (role 'citations', cardinality 0..*) is associated with 'Bibliography' (role 'Bibliography', cardinality 0..*).
+'DocumentBody' (role 'DocumentBody69', cardinality 0..*) is associated with 'LaTeX::Document' (role 'document', cardinality 0..*).
+'LaTeX::Citation' (role 'LaTeX_Citation37', cardinality 0..*) is associated with 'Author' (role 'Author38', cardinality 0..*).
+'LaTeX::Heading' (role 'LaTeX_Heading12', cardinality 0..*) is associated with 'Fax' (role 'Fax', cardinality 0..*).
+'LaTeX::Citation' (role 'LaTeX_Citation', cardinality 0..*) is associated with 'Label' (role 'Label35', cardinality 0..*).
+'SectionBody' (role 'SectionBody32', cardinality 0..*) is associated with 'LaTeX::Section' (role 'section', cardinality 0..*).
+'Date' (role 'Date', cardinality 0..*) is associated with 'LaTeX::Description' (role 'LaTeX_Description', cardinality 0..*).
+'Title' (role 'Title', cardinality 0..*) is associated with 'LaTeX::Figure' (role 'LaTeX_Figure22', cardinality 0..*).
+'Author' (role 'Author', cardinality 0..*) is associated with 'LaTeX::Name' (role 'names', cardinality 0..*).
+'LaTeX::Section' (role 'LaTeX_Section', cardinality 0..*) is associated with 'Title' (role 'Title30', cardinality 0..*).
+'LaTeX::Document' (role 'LaTeX_Document62', cardinality 0..*) is associated with 'Heading' (role 'Heading63', cardinality 0..*).
+'Corps' (role 'Corps', cardinality 0..*) is associated with 'LaTeX::SectionBody' (role 'sectionbody', cardinality 0..*).
+'Organisation' (role 'Organisation', cardinality 0..*) is associated with 'LaTeX::Name' (role 'names2', cardinality 0..*).
+'Abstract' (role 'Abstract', cardinality 0..*) is associated with 'LaTeX::Document' (role 'LaTeX_Document65', cardinality 0..*).
+'Organisation' (role 'Organisation9', cardinality 0..*) is associated with 'LaTeX::Heading' (role 'heading', cardinality 0..*).
+'Label' (role 'Label', cardinality 0..*) is associated with 'LaTeX::Figure' (role 'LaTeX_Figure20', cardinality 0..*).
+'LaTeX::Enumerate' (role 'enumeratecontainer', cardinality 0..*) is associated with 'Item' (role 'Item28', cardinality 0..*).
+'Citation' (role 'Citation', cardinality 0..*) is associated with 'LaTeX::Bibliography' (role 'bibliography', cardinality 0..*).
+'LaTeX::Document' (role 'LaTeX_Document59', cardinality 0..*) is associated with 'Date' (role 'Date60', cardinality 0..*).
+'LaTeX::Item' (role 'item', cardinality 0..*) is associated with 'Items' (role 'Items', cardinality 0..*).
+'LaTeX::Document' (role 'LaTeX_Document', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'LaTeX::Organisation' (role 'organisation', cardinality 0..*) is associated with 'Name' (role 'Name5', cardinality 0..*).
+'LaTeX::Figure' (role 'LaTeX_Figure', cardinality 0..*) is associated with 'Path' (role 'Path', cardinality 0..*).
+'Phone' (role 'Phone', cardinality 0..*) is associated with 'LaTeX::Heading' (role 'LaTeX_Heading', cardinality 0..*).
+'Title' (role 'Title54', cardinality 0..*) is associated with 'LaTeX::Document' (role 'LaTeX_Document53', cardinality 0..*).
+'Keywords' (role 'Keywords', cardinality 0..*) is associated with 'LaTeX::Document' (role 'LaTeX_Document67', cardinality 0..*).
+'LaTeX::Document' (role 'LaTeX_Document56', cardinality 0..*) is associated with 'Author' (role 'Author57', cardinality 0..*).
+'LaTeX::Heading' (role 'LaTeX_Heading14', cardinality 0..*) is associated with 'EMail' (role 'EMail', cardinality 0..*).
+'Document' (role 'Document', cardinality 0..*) is associated with 'LaTeX::DocumentBody' (role 'documentbody50', cardinality 0..*).
+'LaTeX::SectionBody' (role 'sectionBody', cardinality 0..*) is associated with 'Section' (role 'Section', cardinality 0..*).
+'LaTeX::DocumentBody' (role 'LaTeX_DocumentBody', cardinality 0..*) is associated with 'Section' (role 'Section46', cardinality 0..*).
+'LaTeX::Author' (role 'author', cardinality 0..*) is associated with 'Name' (role 'Name', cardinality 0..*).
+'Adress' (role 'Adress', cardinality 0..*) is associated with 'LaTeX::Organisation' (role 'LaTeX_Organisation', cardinality 0..*).
+'DocumentBody' (role 'DocumentBody', cardinality 0..*) is associated with 'LaTeX::Bibliography' (role 'bibliography44', cardinality 0..*).
+'Enumerate' (role 'Enumerate', cardinality 0..*) is associated with 'LaTeX::Item' (role 'item25', cardinality 0..*).
+'Description' (role 'Description', cardinality 0..*) is associated with 'LaTeX::Citation' (role 'LaTeX_Citation40', cardinality 0..*).

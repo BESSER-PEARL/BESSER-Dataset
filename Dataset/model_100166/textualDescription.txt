@@ -1,0 +1,34 @@
+The model has 14 class(es).
+The class 'properties::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'properties::SqlQuery' has the following attributes: 'queryString' of type str.
+The class 'properties::EStringToStringMapEntry' has no attributes.
+The class 'properties::DatabasePropertiesListType' has no attributes.
+The class 'properties::SqlFile' has the following attributes: 'filePath' of type str.
+The class 'properties::SpecificDBMSProperties' has the following attributes: 'dBMS' of type str.
+The class 'properties::Property' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'properties::Sql' has the following attributes: 'id' of type str; 'hqlQuery' of type str.
+The class 'properties::SqlGroup' has the following attributes: 'description' of type str; 'id' of type str.
+The class 'properties::DatabaseAlias' has the following attributes: 'id' of type str; 'alias' of type str.
+The class 'properties::SqlProperties' has no attributes.
+The class 'properties::SqlParameter' has the following attributes: 'type' of type str; 'name' of type str; 'index' of type str.
+The class 'Sql' has no attributes.
+The class 'properties::DatabaseProperties' has the following attributes: 'driverClassName' of type str; 'databaseName' of type str; 'dBMS' of type str; 'username' of type str; 'id' of type str; 'port' of type str; 'serverURL' of type str; 'dialect' of type str; 'persistenceUnitName' of type str; 'password' of type str; 'namespace' of type str.
+The enumeration 'DBMS' has the following literals: 'SQLite', 'MySQL', 'MSAccess', 'PgSQL', 'HSQLDB'.
+The enumeration 'ParameterType' has the following literals: 'Date', 'Blob', 'TimeStampCalendar', 'BigDecimal', 'Short', 'Int', 'Array', 'Object', 'TimeCalendar', 'Boolean', 'Double', 'URL', 'CharacterStream', 'Clob', 'Long', 'Token', 'String', 'Byte', 'Bytes', 'AsciiStream', 'UnicodeStream', 'Timestamp', 'Float', 'Ref', 'DateCalendar', 'Time', 'BinaryStream'.
+'properties::SqlQuery' is a specialization of 'Sql'.
+'properties::SqlFile' is a specialization of 'Sql'.
+'properties::Sql' (role 'properties_Sql', cardinality 0..*) is associated with 'properties::SqlParameter' (role 'properties_SqlParameter', cardinality 0..*).
+'properties::SqlProperties' (role 'properties_SqlProperties30', cardinality 0..*) is associated with 'properties::SqlGroup' (role 'properties_SqlGroup31', cardinality 0..*).
+'properties::DatabaseProperties' (role 'properties_DatabaseProperties4', cardinality 0..*) is associated with 'properties::DatabasePropertiesListType' (role 'properties_DatabasePropertiesListType', cardinality 0..*).
+'properties::DatabaseProperties' (role 'properties_DatabaseProperties2', cardinality 0..*) is associated with 'properties::Property' (role 'properties_Property', cardinality 0..*).
+'properties::SqlQuery' (role 'properties_SqlQuery', cardinality 0..*) is associated with 'properties::SpecificDBMSProperties' (role 'properties_SpecificDBMSProperties', cardinality 0..*).
+'properties::DatabaseAlias' (role 'properties_DatabaseAlias', cardinality 0..*) is associated with 'properties::DatabasePropertiesListType' (role 'properties_DatabasePropertiesListType6', cardinality 0..*).
+'properties::SqlGroup' (role 'properties_SqlGroup24', cardinality 0..*) is associated with 'properties::SqlFile' (role 'properties_SqlFile25', cardinality 0..*).
+'properties::DocumentRoot' (role 'properties_DocumentRoot12', cardinality 0..*) is associated with 'properties::DatabasePropertiesListType' (role 'properties_DatabasePropertiesListType13', cardinality 0..*).
+'properties::SqlGroup' (role 'properties_SqlGroup', cardinality 0..*) is associated with 'properties::SqlQuery' (role 'properties_SqlQuery22', cardinality 0..*).
+'properties::SqlFile' (role 'properties_SqlFile', cardinality 0..*) is associated with 'properties::SpecificDBMSProperties' (role 'properties_SpecificDBMSProperties19', cardinality 0..*).
+'properties::DocumentRoot' (role 'properties_DocumentRoot9', cardinality 0..*) is associated with 'properties::EStringToStringMapEntry' (role 'properties_EStringToStringMapEntry10', cardinality 0..*).
+'properties::DocumentRoot' (role 'properties_DocumentRoot', cardinality 0..*) is associated with 'properties::EStringToStringMapEntry' (role 'properties_EStringToStringMapEntry', cardinality 0..*).
+'properties::SqlProperties' (role 'properties_SqlProperties16', cardinality 0..*) is associated with 'properties::DocumentRoot' (role 'properties_DocumentRoot15', cardinality 0..*).
+'properties::DatabaseProperties' (role 'properties_DatabaseProperties', cardinality 0..*) is associated with 'properties::SqlProperties' (role 'properties_SqlProperties', cardinality 0..*).
+'properties::SpecificDBMSProperties' (role 'properties_SpecificDBMSProperties28', cardinality 0..*) is associated with 'properties::SqlGroup' (role 'properties_SqlGroup27', cardinality 0..*).

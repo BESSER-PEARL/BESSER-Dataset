@@ -1,0 +1,123 @@
+The model has 66 class(es).
+The class 'html::B' has no attributes.
+The class 'html::I' has no attributes.
+The class 'html::LINK' has the following attributes: 'rel' of type str; 'title' of type str; 'type' of type str; 'ahref' of type str.
+The class 'html::PRE' has no attributes.
+The class 'html::TITLE' has no attributes.
+The class 'html::FONT' has the following attributes: 'color' of type str; 'size' of type str; 'face' of type str.
+The class 'FRAME' has no attributes.
+The class 'html::SPAN' has the following attributes: 'style' of type str.
+The class 'html::MAP' has no attributes.
+The class 'html::H1' has no attributes.
+The class 'html::H4' has no attributes.
+The class 'TABLEElement' has no attributes.
+The class 'html::TH' has no attributes.
+The class 'html::HTMLElement' has the following attributes: 'value' of type str.
+The class 'html::HTML' has no attributes.
+The class 'html::STRONG' has no attributes.
+The class 'html::INPUT' has the following attributes: 'src' of type str; 'name' of type str; 'align' of type str; 'inputValue' of type str; 'size' of type str; 'checked' of type str; 'type' of type str; 'maxlength' of type str.
+The class 'html::BODY' has the following attributes: 'alink' of type str; 'background' of type str; 'text' of type str; 'link' of type str; 'vlink' of type str; 'bgcolor' of type str.
+The class 'TD' has no attributes.
+The class 'html::TABLE' has the following attributes: 'border' of type str; 'cellspacing' of type str; 'cellpadding' of type str; 'width' of type str.
+The class 'html::BIG' has no attributes.
+The class 'html::AREA' has the following attributes: 'coords' of type str; 'shape' of type str; 'ahref' of type str.
+The class 'html::DIV' has the following attributes: 'align' of type str.
+The class 'html::HEAD' has no attributes.
+The class 'html::ListElement' has the following attributes: 'type' of type str.
+The class 'html::LI' has the following attributes: 'liValue' of type str.
+The class 'html::NOEMBED' has no attributes.
+The class 'HTMLElement' has no attributes.
+The class 'html::EM' has no attributes.
+The class 'html::SUP' has no attributes.
+The class 'html::DT' has no attributes.
+The class 'html::NOFRAME' has no attributes.
+The class 'html::STYLE' has no attributes.
+The class 'html::STRIKE' has no attributes.
+The class 'html::EMBED' has the following attributes: 'align' of type str; 'height' of type str; 'hspace' of type str; 'width' of type str; 'src' of type str; 'border' of type str; 'vspace' of type str.
+The class 'html::OPTION' has the following attributes: 'optionValue' of type str; 'selected' of type str.
+The class 'html::BODYElement' has no attributes.
+The class 'html::TEXTAREA' has the following attributes: 'name' of type str; 'rows' of type str; 'cols' of type str.
+The class 'html::P' has no attributes.
+The class 'html::SELECT' has the following attributes: 'size' of type str; 'multiple' of type str; 'name' of type str.
+The class 'html::DD' has no attributes.
+The class 'html::H3' has no attributes.
+The class 'html::H2' has no attributes.
+The class 'html::DL' has no attributes.
+The class 'html::IFRAME' has no attributes.
+The class 'html::UL' has no attributes.
+The class 'html::IMG' has the following attributes: 'height' of type str; 'alt' of type str; 'src' of type str; 'width' of type str; 'border' of type str; 'hspace' of type str; 'ismap' of type str; 'align' of type str; 'usemap' of type str; 'vspace' of type str.
+The class 'html::APPLET' has the following attributes: 'width' of type str; 'applet' of type str; 'src' of type str; 'align' of type str; 'height' of type str; 'class_' of type str.
+The class 'html::BR' has the following attributes: 'clear' of type str.
+The class 'html::OBJECT' has the following attributes: 'standby' of type str; 'id' of type str; 'type' of type str; 'classid' of type str; 'data' of type str.
+The class 'html::TT' has no attributes.
+The class 'html::TABLEElement' has the following attributes: 'bgcolor' of type str; 'background' of type str.
+The class 'html::PARAM' has the following attributes: 'paramValue' of type str; 'name' of type str.
+The class 'html::FORM' has the following attributes: 'action' of type str; 'method' of type str.
+The class 'html::SUB' has no attributes.
+The class 'html::FRAME' has the following attributes: 'src' of type str; 'marginheight' of type str; 'name' of type str; 'noresize' of type str; 'scrolling' of type str; 'marginwidth' of type str.
+The class 'html::TR' has the following attributes: 'align' of type str; 'valign' of type str.
+The class 'html::HEADElement' has no attributes.
+The class 'ListElement' has no attributes.
+The class 'html::TD' has the following attributes: 'align' of type str; 'width' of type str; 'colspan' of type str; 'valign' of type str; 'rowspan' of type str.
+The class 'html::OL' has the following attributes: 'start' of type str.
+The class 'html::A' has the following attributes: 'id' of type str; 'name' of type str; 'ahref' of type str.
+The class 'HEADElement' has no attributes.
+The class 'html::SMALL' has no attributes.
+The class 'BODYElement' has no attributes.
+The class 'html::FRAMESET' has the following attributes: 'border' of type str; 'frameborder' of type str; 'rows' of type str; 'cols' of type str; 'framespacing' of type str.
+'html::TH' is a specialization of 'TD'.
+'html::H2' is a specialization of 'BODYElement'.
+'html::EMBED' is a specialization of 'BODYElement'.
+'html::SMALL' is a specialization of 'BODYElement'.
+'html::NOEMBED' is a specialization of 'BODYElement'.
+'html::DIV' is a specialization of 'BODYElement'.
+'html::HEADElement' is a specialization of 'HTMLElement'.
+'html::TR' is a specialization of 'TABLEElement'.
+'html::LI' is a specialization of 'ListElement'.
+'html::IMG' is a specialization of 'BODYElement'.
+'html::AREA' is a specialization of 'BODYElement'.
+'html::STYLE' is a specialization of 'BODYElement'.
+'html::SUP' is a specialization of 'BODYElement'.
+'html::UL' is a specialization of 'ListElement'.
+'html::BODYElement' is a specialization of 'HTMLElement'.
+'html::BIG' is a specialization of 'BODYElement'.
+'html::TITLE' is a specialization of 'HEADElement'.
+'html::OL' is a specialization of 'ListElement'.
+'html::EM' is a specialization of 'BODYElement'.
+'html::SUB' is a specialization of 'BODYElement'.
+'html::TABLE' is a specialization of 'TABLEElement'.
+'html::B' is a specialization of 'BODYElement'.
+'html::P' is a specialization of 'BODYElement'.
+'html::H1' is a specialization of 'BODYElement'.
+'html::TT' is a specialization of 'BODYElement'.
+'html::HEAD' is a specialization of 'HTMLElement'.
+'html::PRE' is a specialization of 'BODYElement'.
+'html::IFRAME' is a specialization of 'FRAME'.
+'html::FONT' is a specialization of 'BODYElement'.
+'html::MAP' is a specialization of 'BODYElement'.
+'html::BR' is a specialization of 'BODYElement'.
+'html::TABLEElement' is a specialization of 'BODYElement'.
+'html::STRIKE' is a specialization of 'BODYElement'.
+'html::H4' is a specialization of 'BODYElement'.
+'html::H3' is a specialization of 'BODYElement'.
+'html::I' is a specialization of 'BODYElement'.
+'html::A' is a specialization of 'BODYElement'.
+'html::LINK' is a specialization of 'HEADElement'.
+'html::TD' is a specialization of 'TABLEElement'.
+'html::STRONG' is a specialization of 'BODYElement'.
+'html::BODY' is a specialization of 'HTMLElement'.
+'html::SPAN' is a specialization of 'BODYElement'.
+'html::BODY' (role 'BODY', cardinality 0..*) is associated with 'html::HTML' (role 'html2', cardinality 0..*).
+'html::HEAD' (role 'head', cardinality 0..*) is associated with 'html::HEADElement' (role 'HEADElement', cardinality 0..*).
+'html::BODYElement' (role 'BODYElement', cardinality 0..*) is associated with 'html::BODY' (role 'body', cardinality 0..*).
+'html::HTML' (role 'HTML', cardinality 0..*) is associated with 'html::HEAD' (role 'head10', cardinality 0..*).
+'html::HTMLElement' (role 'HTMLElement', cardinality 0..*) is associated with 'html::HTMLElement' (role 'parent', cardinality 0..*).
+'html::BODY' (role 'BODY18', cardinality 0..*) is associated with 'html::BODYElement' (role 'bodyElements', cardinality 0..*).
+'html::BODY' (role 'body15', cardinality 0..*) is associated with 'html::HTML' (role 'HTML16', cardinality 0..*).
+'html::TABLE' (role 'TABLE', cardinality 0..*) is associated with 'html::TR' (role 'trs', cardinality 0..*).
+'html::HTMLElement' (role 'children', cardinality 0..*) is associated with 'html::HTMLElement' (role 'HTMLElement7', cardinality 0..*).
+'html::HEAD' (role 'HEAD12', cardinality 0..*) is associated with 'html::HEADElement' (role 'headElements', cardinality 0..*).
+'html::TR' (role 'TR23', cardinality 0..*) is associated with 'html::TD' (role 'tds', cardinality 0..*).
+'html::TD' (role 'TD', cardinality 0..*) is associated with 'html::TR' (role 'tr', cardinality 0..*).
+'html::HEAD' (role 'HEAD', cardinality 0..*) is associated with 'html::HTML' (role 'html', cardinality 0..*).
+'html::TR' (role 'TR', cardinality 0..*) is associated with 'html::TABLE' (role 'table', cardinality 0..*).

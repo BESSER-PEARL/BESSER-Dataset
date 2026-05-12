@@ -1,0 +1,28 @@
+The model has 9 class(es).
+The class 'MDAIntermediateStateMachine::Message' has no attributes.
+The class 'MDAIntermediateStateMachine::Transition' has no attributes.
+The class 'MDAIntermediateStateMachine::Participant' has the following attributes: 'name' of type str.
+The class 'MDAIntermediateStateMachine::State' has the following attributes: 'name' of type str.
+The class 'MDAIntermediateStateMachine::Value' has the following attributes: 'value' of type str.
+The class 'MDAIntermediateStateMachine::Operation' has the following attributes: 'name' of type str.
+The class 'MDAIntermediateStateMachine::Content' has the following attributes: 'name' of type str.
+The class 'MDAIntermediateStateMachine::MessageSequence' has no attributes.
+The class 'MDAIntermediateStateMachine::Automaton' has the following attributes: 'name' of type str.
+'MDAIntermediateStateMachine::MessageSequence' (role 'MDAIntermediateStateMachine_MessageSequence43', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Message' (role 'MDAIntermediateStateMachine_Message44', cardinality 0..*).
+'MDAIntermediateStateMachine::Content' (role 'MDAIntermediateStateMachine_Content6', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Participant' (role 'MDAIntermediateStateMachine_Participant', cardinality 0..*).
+'MDAIntermediateStateMachine::Content' (role 'MDAIntermediateStateMachine_Content4', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Operation' (role 'MDAIntermediateStateMachine_Operation', cardinality 0..*).
+'MDAIntermediateStateMachine::Transition' (role 'MDAIntermediateStateMachine_Transition', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Automaton' (role 'MDAIntermediateStateMachine_Automaton18', cardinality 0..*).
+'MDAIntermediateStateMachine::Participant' (role 'MDAIntermediateStateMachine_Participant21', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Automaton' (role 'MDAIntermediateStateMachine_Automaton20', cardinality 0..*).
+'MDAIntermediateStateMachine::State' (role 'MDAIntermediateStateMachine_State27', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Transition' (role 'MDAIntermediateStateMachine_Transition26', cardinality 0..*).
+'MDAIntermediateStateMachine::Transition' (role 'MDAIntermediateStateMachine_Transition29', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Operation' (role 'MDAIntermediateStateMachine_Operation30', cardinality 0..*).
+'MDAIntermediateStateMachine::Content' (role 'MDAIntermediateStateMachine_Content2', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Automaton' (role 'MDAIntermediateStateMachine_Automaton', cardinality 0..*).
+'MDAIntermediateStateMachine::Transition' (role 'MDAIntermediateStateMachine_Transition32', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Value' (role 'MDAIntermediateStateMachine_Value', cardinality 0..*).
+'MDAIntermediateStateMachine::Automaton' (role 'MDAIntermediateStateMachine_Automaton15', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::State' (role 'MDAIntermediateStateMachine_State16', cardinality 0..*).
+'MDAIntermediateStateMachine::Content' (role 'MDAIntermediateStateMachine_Content8', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Message' (role 'MDAIntermediateStateMachine_Message', cardinality 0..*).
+'MDAIntermediateStateMachine::MessageSequence' (role 'MDAIntermediateStateMachine_MessageSequence', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::State' (role 'MDAIntermediateStateMachine_State10', cardinality 0..*).
+'MDAIntermediateStateMachine::Message' (role 'MDAIntermediateStateMachine_Message40', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Value' (role 'MDAIntermediateStateMachine_Value41', cardinality 0..*).
+'MDAIntermediateStateMachine::State' (role 'MDAIntermediateStateMachine_State', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Content' (role 'MDAIntermediateStateMachine_Content', cardinality 0..*).
+'MDAIntermediateStateMachine::Automaton' (role 'MDAIntermediateStateMachine_Automaton12', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::State' (role 'MDAIntermediateStateMachine_State13', cardinality 0..*).
+'MDAIntermediateStateMachine::Message' (role 'MDAIntermediateStateMachine_Message34', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Operation' (role 'MDAIntermediateStateMachine_Operation35', cardinality 0..*).
+'MDAIntermediateStateMachine::Participant' (role 'MDAIntermediateStateMachine_Participant38', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Message' (role 'MDAIntermediateStateMachine_Message37', cardinality 0..*).
+'MDAIntermediateStateMachine::State' (role 'MDAIntermediateStateMachine_State24', cardinality 0..*) is associated with 'MDAIntermediateStateMachine::Transition' (role 'MDAIntermediateStateMachine_Transition23', cardinality 0..*).

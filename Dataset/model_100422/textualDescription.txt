@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'statechart101::NamedElement' has the following attributes: 'name' of type str.
+The class 'statechart101::Thing' has no attributes.
+The class 'statechart101::Variable' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'Thing' has no attributes.
+The class 'statechart101::State' has the following attributes: 'label' of type str; 'activity' of type str; 'type' of type str.
+The class 'NamedElement' has no attributes.
+The class 'statechart101::Transition' has the following attributes: 'expression' of type str.
+'statechart101::Variable' is a specialization of 'Thing'.
+'statechart101::State' is a specialization of 'NamedElement'.
+'statechart101::Variable' is a specialization of 'NamedElement'.
+'statechart101::Transition' is a specialization of 'NamedElement'.
+'statechart101::State' (role 'statechart101_State13', cardinality 0..*) is associated with 'statechart101::Transition' (role 'statechart101_Transition12', cardinality 0..*).
+'statechart101::Variable' (role 'statechart101_Variable', cardinality 0..*) is associated with 'statechart101::State' (role 'statechart101_State', cardinality 0..*).
+'statechart101::State' (role 'parentstate', cardinality 0..*) is associated with 'statechart101::State' (role 'State', cardinality 0..*).
+'statechart101::State' (role 'statechart101_State7', cardinality 0..*) is associated with 'statechart101::Transition' (role 'statechart101_Transition', cardinality 0..*).
+'statechart101::Transition' (role 'statechart101_Transition9', cardinality 0..*) is associated with 'statechart101::State' (role 'statechart101_State10', cardinality 0..*).
+'statechart101::State' (role 'State4', cardinality 0..*) is associated with 'statechart101::State' (role 'substates', cardinality 0..*).

@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'pnextensions::pnutils::ToolInfoUtils' has no attributes.
+The class 'pnextensions::pnutils::DataTypeUtils' has no attributes.
+The class 'pnextensions::pnutils::PnUtils' has no attributes.
+The enumeration 'ToolInfoConstants' has the following literals: 'toolName', 'toolVersion', 'uri'.
+The enumeration 'ServerType' has the following literals: 'OneServer', 'MarkingDependent', 'InfiniteServer', 'LoadDependent'.
+The enumeration 'TransitionKind' has the following literals: 'Immediate', 'Exponential', 'Deterministic'.

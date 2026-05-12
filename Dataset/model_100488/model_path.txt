@@ -1,0 +1,1 @@
+508_008_150_UML_metamodel_fragment.ecore

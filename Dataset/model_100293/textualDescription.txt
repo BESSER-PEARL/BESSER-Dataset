@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'petriNet::Transition' has the following attributes: 'name' of type str.
+The class 'petriNet::PetriNet' has the following attributes: 'name' of type str.
+The class 'petriNet::OutputArc' has the following attributes: 'weight' of type int.
+The class 'GenericPlace' has no attributes.
+The class 'petriNet::InputArc' has the following attributes: 'weight' of type int.
+The class 'petriNet::Place' has the following attributes: 'capacity' of type int.
+The class 'petriNet::GenericPlace' has the following attributes: 'name' of type str; 'numberOfTokens' of type int.
+The class 'petriNet::Resource' has no attributes.
+'petriNet::Resource' is a specialization of 'GenericPlace'.
+'petriNet::Place' is a specialization of 'GenericPlace'.
+'petriNet::InputArc' (role 'petriNet_InputArc11', cardinality 0..*) is associated with 'petriNet::Transition' (role 'petriNet_Transition12', cardinality 0..*).
+'petriNet::InputArc' (role 'petriNet_InputArc', cardinality 0..*) is associated with 'petriNet::PetriNet' (role 'petriNet_PetriNet4', cardinality 0..*).
+'petriNet::GenericPlace' (role 'petriNet_GenericPlace9', cardinality 0..*) is associated with 'petriNet::InputArc' (role 'petriNet_InputArc8', cardinality 0..*).
+'petriNet::GenericPlace' (role 'petriNet_GenericPlace', cardinality 0..*) is associated with 'petriNet::PetriNet' (role 'petriNet_PetriNet', cardinality 0..*).
+'petriNet::Transition' (role 'petriNet_Transition', cardinality 0..*) is associated with 'petriNet::PetriNet' (role 'petriNet_PetriNet2', cardinality 0..*).
+'petriNet::GenericPlace' (role 'petriNet_GenericPlace18', cardinality 0..*) is associated with 'petriNet::OutputArc' (role 'petriNet_OutputArc17', cardinality 0..*).
+'petriNet::OutputArc' (role 'petriNet_OutputArc', cardinality 0..*) is associated with 'petriNet::PetriNet' (role 'petriNet_PetriNet6', cardinality 0..*).
+'petriNet::OutputArc' (role 'petriNet_OutputArc14', cardinality 0..*) is associated with 'petriNet::Transition' (role 'petriNet_Transition15', cardinality 0..*).

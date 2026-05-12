@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'useCase::Uses' has the following attributes: 'name' of type str; 'multiplicity' of type str.
+The class 'useCase::Case' has the following attributes: 'name' of type str.
+The class 'useCase::ExtensionPoint' has the following attributes: 'name' of type str.
+The class 'useCase::UseCase' has no attributes.
+The class 'useCase::Actor' has the following attributes: 'name' of type str.
+The class 'useCase::Subsystem' has the following attributes: 'name' of type str.
+The class 'useCase::Extends' has the following attributes: 'rules' of type str; 'name' of type str.
+The class 'useCase::Inheritance' has the following attributes: 'name' of type str.
+The class 'useCase::Includes' has the following attributes: 'name' of type str; 'rules' of type str.
+'useCase::Uses' (role 'useCase_Uses', cardinality 0..*) is associated with 'useCase::Actor' (role 'useCase_Actor14', cardinality 0..*).
+'useCase::Actor' (role 'useCase_Actor', cardinality 0..*) is associated with 'useCase::UseCase' (role 'useCase_UseCase2', cardinality 0..*).
+'useCase::Subsystem' (role 'useCase_Subsystem', cardinality 0..*) is associated with 'useCase::UseCase' (role 'useCase_UseCase', cardinality 0..*).
+'useCase::Inheritance' (role 'useCase_Inheritance', cardinality 0..*) is associated with 'useCase::Actor' (role 'useCase_Actor12', cardinality 0..*).
+'useCase::Includes' (role 'useCase_Includes', cardinality 0..*) is associated with 'useCase::Case' (role 'useCase_Case8', cardinality 0..*).
+'useCase::ExtensionPoint' (role 'useCase_ExtensionPoint', cardinality 0..*) is associated with 'useCase::Case' (role 'useCase_Case6', cardinality 0..*).
+'useCase::Case' (role 'useCase_Case10', cardinality 0..*) is associated with 'useCase::Extends' (role 'useCase_Extends', cardinality 0..*).
+'useCase::Subsystem' (role 'useCase_Subsystem4', cardinality 0..*) is associated with 'useCase::Case' (role 'useCase_Case', cardinality 0..*).

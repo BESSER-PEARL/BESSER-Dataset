@@ -1,0 +1,151 @@
+The model has 74 class(es).
+The class 'syntax::StatementWriter' has no attributes.
+The class 'syntax::ddl::DisconnectStatement' has the following attributes: 'target' of type str.
+The class 'syntax::ddl::ConnectStatement' has the following attributes: 'pwd' of type str; 'to' of type str; 'reset' of type bool; 'user' of type str.
+The class 'syntax::dml::ExtendedQuerySelect' has no attributes.
+The class 'syntax::ddl::SetConnectionStatement' has the following attributes: 'databaseName' of type str.
+The class 'syntax::dbl::SetDescriptorStatement' has the following attributes: 'value' of type str; 'descriptorName' of type str.
+The class 'syntax::BindingParseResult' has no attributes.
+The class 'syntax::DefinitionParseResult' has no attributes.
+The class 'syntax::dbl::ExecuteImmediateStatement' has the following attributes: 'variable' of type str.
+The class 'syntax::ddl::CreateIndexStatement' has the following attributes: 'unique' of type bool.
+The class 'QueryExpressionBody' has no attributes.
+The class 'syntax::BindingParserRegistry' has no attributes.
+The class 'syntax::NameHelperRegistry' has no attributes.
+The class 'ddl::syntax::TableColumnDef' has no attributes.
+The class 'syntax::dbl::IntoClause' has the following attributes: 'using' of type str; 'descriptorName' of type str.
+The class 'syntax::dbl::SetOptionStatement' has no attributes.
+The class 'syntax::NameHelper' has no attributes.
+The class 'ConditionInfoClause' has no attributes.
+The class 'StatementParser' has no attributes.
+The class 'syntax::ddl::CreateAliasStatement' has no attributes.
+The class 'syntax::dbl::OpenStatement' has the following attributes: 'usingType' of type str; 'using' of type str; 'cursor' of type str.
+The class 'syntax::ddl::ReleaseStatement' has the following attributes: 'serverName' of type str.
+The class 'Option' has no attributes.
+The class 'syntax::DefinitionWriter' has no attributes.
+The class 'syntax::ddl::RollbackStatement' has the following attributes: 'hold' of type bool.
+The class 'syntax::ddl::LockTableStatement' has the following attributes: 'allowRead' of type bool; 'shareMode' of type str.
+The class 'syntax::ddl::RenameStatement' has the following attributes: 'newName' of type str; 'system' of type str; 'target' of type str.
+The class 'syntax::dbl::MultipleRowFetchClause' has the following attributes: 'into' of type str; 'usingDescriptor' of type bool; 'rowsNumber' of type str; 'descriptor' of type str.
+The class 'StatementWriter' has no attributes.
+The class 'syntax::BindingParser' has no attributes.
+The class 'syntax::dbl::SetTransactionStatement' has the following attributes: 'isolationLevel' of type str; 'rwOperation' of type str.
+The class 'syntax::dbl::ConditionInfoClause' has the following attributes: 'condition' of type str.
+The class 'syntax::DefinitionParseError' has no attributes.
+The class 'syntax::dbl::GetDescriptorStatement' has the following attributes: 'descriptorScope' of type str; 'descriptorName' of type str; 'value' of type str.
+The class 'SingleRowFetchClause' has no attributes.
+The class 'syntax::dbl::SingleRowFetchClause' has the following attributes: 'usingDescriptor' of type bool; 'into' of type str.
+The class 'syntax::AliasResolver' has no attributes.
+The class 'DefinitionStatement' has no attributes.
+The class 'ddl::syntax::IndexDef' has no attributes.
+The class 'syntax::ddl::DropStatement' has the following attributes: 'target' of type str; 'range' of type str.
+The class 'syntax::dbl::CloseStatement' has the following attributes: 'cursor' of type str.
+The class 'syntax::dbl::AllocateDescriptorStatement' has the following attributes: 'descriptorScope' of type str; 'withMax' of type str; 'descriptorName' of type str.
+The class 'syntax::DefinitionParser' has no attributes.
+The class 'syntax::QueryParser' has no attributes.
+The class 'syntax::dbl::DescribeStatement' has the following attributes: 'statementName' of type str.
+The class 'QuerySelect' has no attributes.
+The class 'syntax::DefinitionStatement' has no attributes.
+The class 'IntoClause' has no attributes.
+The class 'syntax::BindingStatement' has no attributes.
+The class 'BindingStatement' has no attributes.
+The class 'dml::ExtendedQueryExpressionBody' has no attributes.
+The class 'syntax::dml::ExtendedQueryExpressionBody' has the following attributes: 'optimizeRecordsNumber' of type int.
+The class 'syntax::StatementParser' has no attributes.
+The class 'syntax::ddl::CreateViewStatement' has the following attributes: 'query' of type str; 'fields' of type str.
+The class 'syntax::DefinitionParserRegistry' has no attributes.
+The class 'syntax::dbl::DeallocateDescriptorStatement' has the following attributes: 'descriptorScope' of type str; 'descriptorName' of type str.
+The class 'syntax::dbl::PrepareStatement' has the following attributes: 'statementName' of type str; 'from_' of type str.
+The class 'syntax::QueryWriter' has no attributes.
+The class 'ddl::syntax::QualifiedName' has no attributes.
+The class 'syntax::QueryParserRegistry' has no attributes.
+The class 'SQLObjectNameHelper' has no attributes.
+The class 'MultipleRowFetchClause' has no attributes.
+The class 'syntax::dbl::Option' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'syntax::dbl::FetchStatement' has the following attributes: 'relativePosition' of type str; 'position' of type str; 'cursorName' of type str.
+The class 'syntax::dbl::DeclareCursorStatement' has the following attributes: 'cursorType' of type str; 'forQuery' of type str; 'cursorName' of type str; 'forStatementName' of type str; 'hold' of type bool.
+The class 'syntax::dbl::ExecuteStatement' has the following attributes: 'statementName' of type str.
+The class 'syntax::ddl::CreateTableStatement' has no attributes.
+The class 'syntax::SQLObjectNameHelper' has no attributes.
+The class 'syntax::dbl::GetDiagnosticsStatement' has no attributes.
+The class 'syntax::ddl::CallStatement' has the following attributes: 'parms' of type str.
+The class 'syntax::DefinitionWriterRegistry' has no attributes.
+The class 'syntax::QueryWriterRegistry' has no attributes.
+The class 'syntax::BindingParseError' has no attributes.
+The class 'syntax::ddl::CommitStatement' has the following attributes: 'hold' of type bool.
+The enumeration 'OpenUsingType' has the following literals: 'DESCRIPTOR', 'NONE', 'VARIABLE'.
+The enumeration 'DropRange' has the following literals: 'CASCADE', 'RESTRICT'.
+The enumeration 'DescriptorScope' has the following literals: 'GLOBAL', 'LOCAL', 'NONE'.
+The enumeration 'ShareMode' has the following literals: 'SHARE', 'EXCLUSIVE'.
+The enumeration 'RWOperation' has the following literals: 'READ_WRITE', 'READ_ONLY'.
+The enumeration 'TargetItem' has the following literals: 'CURRENT', 'ALLSQL', 'ALL'.
+The enumeration 'UsingType' has the following literals: 'ALL', 'LABELS', 'NONE', 'BOTH', 'SYSTEM_NAMES', 'NAMES', 'ANY'.
+The enumeration 'CursorType' has the following literals: 'DYNSCROLL', 'NOTSCROLL', 'SCROLL'.
+The enumeration 'FetchPosition' has the following literals: 'PRIOR', 'FIRST', 'LAST', 'NEXT', 'CURRENT', 'RELATIVE', 'AFTER', 'BEFORE'.
+The enumeration 'IsolationLevel' has the following literals: 'REPEATABLE_READ', 'READ_COMMITTED', 'SERIALIZABLE', 'NONE', 'READ_UNCOMMITTED', 'NO_COMMIT'.
+The enumeration 'TargetElement' has the following literals: 'INDEX', 'ALIAS', 'VIEW', 'TABLE'.
+The enumeration 'StatementType' has the following literals: 'DDL', 'DML', 'DBL'.
+'syntax::BindingParser' is a specialization of 'StatementParser'.
+'syntax::ddl::CreateTableStatement' is a specialization of 'DefinitionStatement'.
+'syntax::dbl::ExecuteStatement' is a specialization of 'BindingStatement'.
+'syntax::dbl::FetchStatement' is a specialization of 'BindingStatement'.
+'syntax::ddl::ConnectStatement' is a specialization of 'DefinitionStatement'.
+'syntax::ddl::CreateViewStatement' is a specialization of 'DefinitionStatement'.
+'syntax::dbl::SetTransactionStatement' is a specialization of 'BindingStatement'.
+'syntax::dbl::CloseStatement' is a specialization of 'BindingStatement'.
+'syntax::dml::ExtendedQueryExpressionBody' is a specialization of 'QueryExpressionBody'.
+'syntax::dbl::DeallocateDescriptorStatement' is a specialization of 'BindingStatement'.
+'syntax::DefinitionParser' is a specialization of 'StatementParser'.
+'syntax::ddl::DropStatement' is a specialization of 'DefinitionStatement'.
+'syntax::ddl::CreateAliasStatement' is a specialization of 'DefinitionStatement'.
+'syntax::ddl::SetConnectionStatement' is a specialization of 'DefinitionStatement'.
+'syntax::dml::ExtendedQuerySelect' is a specialization of 'dml::ExtendedQueryExpressionBody'.
+'syntax::dbl::AllocateDescriptorStatement' is a specialization of 'BindingStatement'.
+'syntax::dbl::GetDiagnosticsStatement' is a specialization of 'BindingStatement'.
+'syntax::ddl::CallStatement' is a specialization of 'DefinitionStatement'.
+'syntax::ddl::LockTableStatement' is a specialization of 'DefinitionStatement'.
+'syntax::dbl::SetDescriptorStatement' is a specialization of 'BindingStatement'.
+'syntax::ddl::ReleaseStatement' is a specialization of 'DefinitionStatement'.
+'syntax::dbl::OpenStatement' is a specialization of 'BindingStatement'.
+'syntax::ddl::CommitStatement' is a specialization of 'DefinitionStatement'.
+'syntax::dml::ExtendedQuerySelect' is a specialization of 'QuerySelect'.
+'syntax::NameHelper' is a specialization of 'SQLObjectNameHelper'.
+'syntax::dbl::DescribeStatement' is a specialization of 'BindingStatement'.
+'syntax::dbl::ExecuteImmediateStatement' is a specialization of 'BindingStatement'.
+'syntax::dbl::SetOptionStatement' is a specialization of 'BindingStatement'.
+'syntax::dbl::DeclareCursorStatement' is a specialization of 'BindingStatement'.
+'syntax::dbl::PrepareStatement' is a specialization of 'BindingStatement'.
+'syntax::DefinitionWriter' is a specialization of 'StatementWriter'.
+'syntax::QueryParser' is a specialization of 'StatementParser'.
+'syntax::dbl::GetDescriptorStatement' is a specialization of 'BindingStatement'.
+'syntax::ddl::RenameStatement' is a specialization of 'DefinitionStatement'.
+'syntax::ddl::RollbackStatement' is a specialization of 'DefinitionStatement'.
+'syntax::QueryWriter' is a specialization of 'StatementWriter'.
+'syntax::ddl::DisconnectStatement' is a specialization of 'DefinitionStatement'.
+'syntax::ddl::CreateIndexStatement' is a specialization of 'DefinitionStatement'.
+'syntax::DefinitionStatement' (role 'syntax_DefinitionStatement', cardinality 0..*) is associated with 'syntax::DefinitionParseResult' (role 'syntax_DefinitionParseResult', cardinality 0..*).
+'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName21', cardinality 0..*) is associated with 'syntax::ddl::CreateTableStatement' (role 'syntax_ddl_CreateTableStatement', cardinality 0..*).
+'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName14', cardinality 0..*) is associated with 'syntax::ddl::CreateIndexStatement' (role 'syntax_ddl_CreateIndexStatement', cardinality 0..*).
+'syntax::dbl::DescribeStatement' (role 'syntax_dbl_DescribeStatement', cardinality 0..*) is associated with 'IntoClause' (role 'IntoClause', cardinality 0..*).
+'syntax::NameHelper' (role 'syntax_NameHelper', cardinality 0..*) is associated with 'syntax::StatementWriter' (role 'syntax_StatementWriter', cardinality 0..*).
+'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName25', cardinality 0..*) is associated with 'syntax::ddl::CreateViewStatement' (role 'syntax_ddl_CreateViewStatement', cardinality 0..*).
+'syntax::ddl::CreateTableStatement' (role 'syntax_ddl_CreateTableStatement23', cardinality 0..*) is associated with 'ddl::syntax::TableColumnDef' (role 'ddl_syntax_TableColumnDef', cardinality 0..*).
+'syntax::dbl::FetchStatement' (role 'syntax_dbl_FetchStatement36', cardinality 0..*) is associated with 'SingleRowFetchClause' (role 'SingleRowFetchClause', cardinality 0..*).
+'IntoClause' (role 'IntoClause45', cardinality 0..*) is associated with 'syntax::dbl::PrepareStatement' (role 'syntax_dbl_PrepareStatement', cardinality 0..*).
+'ddl::syntax::IndexDef' (role 'ddl_syntax_IndexDef', cardinality 0..*) is associated with 'syntax::ddl::CreateIndexStatement' (role 'syntax_ddl_CreateIndexStatement19', cardinality 0..*).
+'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName', cardinality 0..*) is associated with 'syntax::ddl::CallStatement' (role 'syntax_ddl_CallStatement', cardinality 0..*).
+'Option' (role 'Option', cardinality 0..*) is associated with 'syntax::dbl::ConditionInfoClause' (role 'syntax_dbl_ConditionInfoClause', cardinality 0..*).
+'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName17', cardinality 0..*) is associated with 'syntax::ddl::CreateIndexStatement' (role 'syntax_ddl_CreateIndexStatement16', cardinality 0..*).
+'syntax::DefinitionParseResult' (role 'syntax_DefinitionParseResult5', cardinality 0..*) is associated with 'syntax::DefinitionParseError' (role 'syntax_DefinitionParseError', cardinality 0..*).
+'Option' (role 'Option43', cardinality 0..*) is associated with 'syntax::dbl::SetOptionStatement' (role 'syntax_dbl_SetOptionStatement', cardinality 0..*).
+'MultipleRowFetchClause' (role 'MultipleRowFetchClause', cardinality 0..*) is associated with 'syntax::dbl::FetchStatement' (role 'syntax_dbl_FetchStatement', cardinality 0..*).
+'syntax::ddl::CreateAliasStatement' (role 'syntax_ddl_CreateAliasStatement11', cardinality 0..*) is associated with 'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName12', cardinality 0..*).
+'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName29', cardinality 0..*) is associated with 'syntax::ddl::LockTableStatement' (role 'syntax_ddl_LockTableStatement', cardinality 0..*).
+'syntax::BindingParseResult' (role 'syntax_BindingParseResult', cardinality 0..*) is associated with 'syntax::BindingStatement' (role 'syntax_BindingStatement', cardinality 0..*).
+'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName27', cardinality 0..*) is associated with 'syntax::ddl::DropStatement' (role 'syntax_ddl_DropStatement', cardinality 0..*).
+'syntax::dbl::SetDescriptorStatement' (role 'syntax_dbl_SetDescriptorStatement', cardinality 0..*) is associated with 'Option' (role 'Option41', cardinality 0..*).
+'syntax::ddl::RenameStatement' (role 'syntax_ddl_RenameStatement', cardinality 0..*) is associated with 'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName31', cardinality 0..*).
+'syntax::BindingParseResult' (role 'syntax_BindingParseResult2', cardinality 0..*) is associated with 'syntax::BindingParseError' (role 'syntax_BindingParseError', cardinality 0..*).
+'ddl::syntax::QualifiedName' (role 'ddl_syntax_QualifiedName9', cardinality 0..*) is associated with 'syntax::ddl::CreateAliasStatement' (role 'syntax_ddl_CreateAliasStatement', cardinality 0..*).
+'ConditionInfoClause' (role 'ConditionInfoClause', cardinality 0..*) is associated with 'syntax::dbl::GetDiagnosticsStatement' (role 'syntax_dbl_GetDiagnosticsStatement', cardinality 0..*).
+'syntax::dbl::GetDescriptorStatement' (role 'syntax_dbl_GetDescriptorStatement', cardinality 0..*) is associated with 'Option' (role 'Option38', cardinality 0..*).

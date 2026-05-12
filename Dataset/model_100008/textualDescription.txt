@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Bibtex::BibtexEntry' has the following attributes: 'Journal' of type str; 'Text' of type str; 'Volume' of type str; 'Author' of type str; 'Title' of type str; 'publicationFilePath' of type str; 'Pages' of type str; 'Year' of type str.
+The class 'Bibtex::Tag' has the following attributes: 'Name' of type str.
+'Bibtex::BibtexEntry' (role 'Bibtex_BibtexEntry', cardinality 0..*) is associated with 'Bibtex::Tag' (role 'Bibtex_Tag', cardinality 0..*).

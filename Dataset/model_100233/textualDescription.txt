@@ -1,0 +1,182 @@
+The model has 89 class(es).
+The class 'WordprocessingMLBasicDef::DelText' has no attributes.
+The class 'CustomDocumentPropertiesCollection' has no attributes.
+The class 'WordprocessingMLBasicDef::StringProperty' has no attributes.
+The class 'CustomDocumentProperty' has no attributes.
+The class 'WordprocessingMLBasicDef::HLinkElt' has no attributes.
+The class 'WordprocessingMLBasicDef::DocPrElt' has no attributes.
+The class 'WordprocessingMLBasicDef::BodyElt' has no attributes.
+The class 'WordprocessingMLBasicDef::ListsElt' has no attributes.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'WordprocessingMLBasicDef::BlockLevelElt' has no attributes.
+The class 'WordprocessingMLBasicDef::DateTimeType' has the following attributes: 'second' of type StringType; 'year' of type StringType; 'day' of type StringType; 'minute' of type StringType; 'month' of type StringType; 'hour' of type StringType.
+The class 'WordprocessingMLBasicDef::FloatValue' has the following attributes: 'value' of type StringType.
+The class 'NoteElt' has no attributes.
+The class 'RunContentElt' has no attributes.
+The class 'BlockLevelChunkElt' has no attributes.
+The class 'WordprocessingMLBasicDef::PgNum' has no attributes.
+The class 'DocPrElt' has no attributes.
+The class 'RunPrElt' has no attributes.
+The class 'SectPrElt' has no attributes.
+The class 'SymElt' has no attributes.
+The class 'WordprocessingMLBasicDef::FontsListElt' has no attributes.
+The class 'WordprocessingMLBasicDef::Cr' has no attributes.
+The class 'WordprocessingMLBasicDef::AnnotationRef' has no attributes.
+The class 'WordprocessingMLBasicDef::FldChar' has no attributes.
+The class 'WordprocessingMLBasicDef::SymElt' has no attributes.
+The class 'WordprocessingMLBasicDef::NoteElt' has the following attributes: 'suppressRef' of type StringType; 'type' of type StringType.
+The class 'WordprocessingMLBasicDef::CustomDocumentProperty' has the following attributes: 'name' of type StringType.
+The class 'DateTimeType' has no attributes.
+The class 'WordprocessingMLBasicDef::Separator' has no attributes.
+The class 'FldCharElt' has no attributes.
+The class 'WordprocessingMLBasicDef::CustomDocumentPropertiesCollection' has no attributes.
+The class 'WordprocessingMLBasicDef::ParaPrElt' has no attributes.
+The class 'WordprocessingMLBasicDef::CfChunk' has no attributes.
+The class 'WordprocessingMLBasicDef::BlockLevelChunkElt' has no attributes.
+The class 'WordprocessingMLBasicDef::BreakElt' has the following attributes: 'type' of type StringType.
+The class 'WordprocessingMLBasicDef::DocumentPropertiesCollection' has the following attributes: 'lines' of type StringType; 'guid' of type StringType; 'manager' of type StringType; 'paragraphs' of type StringType; 'charactersWithSpaces' of type StringType; 'appName' of type StringType; 'description' of type StringType; 'revision' of type StringType; 'lastAuthor' of type StringType; 'company' of type StringType; 'keywords' of type StringType; 'bytes' of type StringType; 'presentationFormat' of type StringType; 'characters' of type StringType; 'subject' of type StringType; 'title' of type StringType; 'words' of type StringType; 'hyperlinkBase' of type StringType; 'totalTime' of type StringType; 'category' of type StringType; 'pages' of type StringType; 'author' of type StringType.
+The class 'StringProperty' has no attributes.
+The class 'WordprocessingMLBasicDef::Text' has no attributes.
+The class 'WordprocessingMLBasicDef::Tab' has no attributes.
+The class 'WordprocessingMLBasicDef::ParaElt' has no attributes.
+The class 'ParaElt' has no attributes.
+The class 'WordprocessingMLBasicDef::Symbol' has no attributes.
+The class 'SmartTagsCollection' has no attributes.
+The class 'StringType' has no attributes.
+The class 'WordprocessingMLBasicDef::Endnote' has no attributes.
+The class 'WordprocessingMLBasicDef::StringType' has the following attributes: 'val' of type StringType.
+The class 'WordprocessingMLBasicDef::WordDocument' has no attributes.
+The class 'WordprocessingMLBasicDef::RunElt' has no attributes.
+The class 'WordprocessingMLBasicDef::ValueType' has no attributes.
+The class 'WordprocessingMLBasicDef::EndnoteRef' has no attributes.
+The class 'RunElt' has no attributes.
+The class 'WordprocessingMLBasicDef::FldCharElt' has the following attributes: 'fldLock' of type StringType; 'fldCharType' of type StringType.
+The class 'WordprocessingMLBasicDef::SimpleFieldElt' has no attributes.
+The class 'WordprocessingMLBasicDef::PictureType' has no attributes.
+The class 'VersionType' has no attributes.
+The class 'ParaContentElt' has no attributes.
+The class 'WordprocessingMLBasicDef::RunContentElt' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'WordprocessingMLBasicDef::BooleanValue' has the following attributes: 'value' of type StringType.
+The class 'WordprocessingMLBasicDef::NoBreakHyphen' has no attributes.
+The class 'WordprocessingMLBasicDef::SectPrElt' has no attributes.
+The class 'WordprocessingMLBasicDef::SmartTagType' has the following attributes: 'url' of type StringType; 'name' of type StringType; 'namespaceuri' of type StringType.
+The class 'WordprocessingMLBasicDef::DelInstrText' has no attributes.
+The class 'SmartTagType' has no attributes.
+The class 'ListsElt' has no attributes.
+The class 'WordprocessingMLBasicDef::FootnoteRef' has no attributes.
+The class 'WordprocessingMLBasicDef::ParaContentElt' has no attributes.
+The class 'BodyElt' has no attributes.
+The class 'StylesElt' has no attributes.
+The class 'WordprocessingMLBasicDef::RunPrElt' has no attributes.
+The class 'WordprocessingMLBasicDef::SoftHyphen' has no attributes.
+The class 'WordprocessingMLBasicDef::ContinuationSeparator' has no attributes.
+The class 'WordprocessingMLBasicDef::SubDocElt' has no attributes.
+The class 'WordprocessingMLBasicDef::Picture' has no attributes.
+The class 'WordprocessingMLBasicDef::StylesElt' has no attributes.
+The class 'WordprocessingMLBasicDef::RunLevelElt' has no attributes.
+The class 'TabElt' has no attributes.
+The class 'WordprocessingMLBasicDef::DateTimeTypeValue' has no attributes.
+The class 'WordprocessingMLBasicDef::VersionType' has the following attributes: 'nn' of type StringType; 'n' of type StringType.
+The class 'WordprocessingMLBasicDef::TabElt' has no attributes.
+The class 'WordDocument' has no attributes.
+The class 'ParaPrElt' has no attributes.
+The class 'WordprocessingMLBasicDef::StringValue' has the following attributes: 'value' of type StringType.
+The class 'FontsListElt' has no attributes.
+The class 'WordprocessingMLBasicDef::InstrText' has no attributes.
+The class 'WordprocessingMLBasicDef::Footnote' has no attributes.
+The class 'BlockLevelElt' has no attributes.
+The class 'WordprocessingMLBasicDef::SmartTagsCollection' has no attributes.
+The class 'PictureType' has no attributes.
+The enumeration 'OnOffType' has the following literals: 'oot_off', 'oot_on'.
+The enumeration 'BreakType' has the following literals: 'bt_column', 'bt_page', 'bt_text_wrapping'.
+The enumeration 'NoteValue' has the following literals: 'ftn_continuation_separator', 'ftn_separator', 'ftn_normal', 'ftn_continuation_notice'.
+The enumeration 'FldCharTypeProperty' has the following literals: 'fctp_separate', 'fctp_end', 'fctp_begin'.
+'WordprocessingMLBasicDef::Symbol' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::HLinkElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLBasicDef::Symbol' is a specialization of 'SymElt'.
+'WordprocessingMLBasicDef::DelInstrText' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::SoftHyphen' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Separator' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::PgNum' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::ContinuationSeparator' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Footnote' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::FldChar' is a specialization of 'FldCharElt'.
+'WordprocessingMLBasicDef::DateTimeTypeValue' is a specialization of 'ValueType'.
+'WordprocessingMLBasicDef::RunLevelElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLBasicDef::InstrText' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::BooleanValue' is a specialization of 'ValueType'.
+'WordprocessingMLBasicDef::AnnotationRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Picture' is a specialization of 'PictureType'.
+'WordprocessingMLBasicDef::Endnote' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Tab' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Tab' is a specialization of 'TabElt'.
+'WordprocessingMLBasicDef::DelText' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::Cr' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::DelText' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::FootnoteRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::InstrText' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::NoBreakHyphen' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::DelInstrText' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::Endnote' is a specialization of 'NoteElt'.
+'WordprocessingMLBasicDef::Text' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::StringValue' is a specialization of 'ValueType'.
+'WordprocessingMLBasicDef::SubDocElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLBasicDef::Picture' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::EndnoteRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::BlockLevelChunkElt' is a specialization of 'BlockLevelElt'.
+'WordprocessingMLBasicDef::ParaElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLBasicDef::Text' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::CfChunk' is a specialization of 'BlockLevelElt'.
+'WordprocessingMLBasicDef::SimpleFieldElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLBasicDef::FldChar' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::StringProperty' is a specialization of 'StringType'.
+'WordprocessingMLBasicDef::BreakElt' is a specialization of 'RunContentElt'.
+'WordprocessingMLBasicDef::Footnote' is a specialization of 'NoteElt'.
+'WordprocessingMLBasicDef::RunElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLBasicDef::FloatValue' is a specialization of 'ValueType'.
+'SmartTagsCollection' (role 'SmartTagsCollection', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::SmartTagType' (role 'smartTagTypes', cardinality 0..*).
+'ParaContentElt' (role 'ParaContentElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::ParaElt' (role 'pce_pElt', cardinality 0..*).
+'WordprocessingMLBasicDef::SymElt' (role 'WordprocessingMLBasicDef_SymElt58', cardinality 0..*) is associated with 'StringType' (role 'StringType59', cardinality 0..*).
+'StringProperty' (role 'StringProperty', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::WordDocument' (role 'WordprocessingMLBasicDef_WordDocument', cardinality 0..*).
+'FontsListElt' (role 'FontsListElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::WordDocument' (role 'fle_wordDocument', cardinality 0..*).
+'WordprocessingMLBasicDef::CustomDocumentProperty' (role 'customDocumentProperties', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection', cardinality 0..*).
+'WordprocessingMLBasicDef::CustomDocumentPropertiesCollection' (role 'customDocumentProperty_cdpe', cardinality 0..*) is associated with 'CustomDocumentProperty' (role 'CustomDocumentProperty', cardinality 0..*).
+'RunContentElt' (role 'RunContentElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::RunElt' (role 'rce_rElt', cardinality 0..*).
+'WordprocessingMLBasicDef::FldCharElt' (role 'WordprocessingMLBasicDef_FldCharElt', cardinality 0..*) is associated with 'StringType' (role 'StringType61', cardinality 0..*).
+'WordprocessingMLBasicDef::SectPrElt' (role 'sectPr', cardinality 0..*) is associated with 'BodyElt' (role 'BodyElt69', cardinality 0..*).
+'WordprocessingMLBasicDef::WordDocument' (role 'WordprocessingMLBasicDef_WordDocument28', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty29', cardinality 0..*).
+'ParaElt' (role 'ParaElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::ParaPrElt' (role 'pPr', cardinality 0..*).
+'DocPrElt' (role 'DocPrElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::WordDocument' (role 'dpe_wordDocument', cardinality 0..*).
+'WordDocument' (role 'WordDocument13', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::CustomDocumentPropertiesCollection' (role 'wd_customDocProperties', cardinality 0..*).
+'WordprocessingMLBasicDef::CustomDocumentProperty' (role 'WordprocessingMLBasicDef_CustomDocumentProperty', cardinality 0..*) is associated with 'ValueType' (role 'ValueType', cardinality 0..*).
+'WordprocessingMLBasicDef::WordDocument' (role 'le_wordDocument', cardinality 0..*) is associated with 'ListsElt' (role 'ListsElt', cardinality 0..*).
+'SmartTagsCollection' (role 'SmartTagsCollection22', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::WordDocument' (role 'st_wordDocument', cardinality 0..*).
+'WordprocessingMLBasicDef::DocumentPropertiesCollection' (role 'WordprocessingMLBasicDef_DocumentPropertiesCollection4', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType5', cardinality 0..*).
+'BodyElt' (role 'BodyElt42', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::BlockLevelElt' (role 'blockLevelElts', cardinality 0..*).
+'WordprocessingMLBasicDef::DocPrElt' (role 'docPr', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument36', cardinality 0..*).
+'ParaPrElt' (role 'ParaPrElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::ParaElt' (role 'ppe_pElt', cardinality 0..*).
+'WordprocessingMLBasicDef::SmartTagsCollection' (role 'smartTagType_ste', cardinality 0..*) is associated with 'SmartTagType' (role 'SmartTagType', cardinality 0..*).
+'BlockLevelElt' (role 'BlockLevelElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::BodyElt' (role 'ble_bodyElt', cardinality 0..*).
+'RunElt' (role 'RunElt53', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::RunContentElt' (role 'rContentElts', cardinality 0..*).
+'WordDocument' (role 'WordDocument65', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::ListsElt' (role 'lists', cardinality 0..*).
+'RunPrElt' (role 'RunPrElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::RunElt' (role 'rpe_rElt', cardinality 0..*).
+'WordprocessingMLBasicDef::RunPrElt' (role 'rPr', cardinality 0..*) is associated with 'RunElt' (role 'RunElt', cardinality 0..*).
+'WordDocument' (role 'WordDocument19', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::SmartTagsCollection' (role 'wd_smartTags', cardinality 0..*).
+'WordprocessingMLBasicDef::WordDocument' (role 'dp_wordDocument', cardinality 0..*) is associated with 'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*).
+'BlockLevelElt' (role 'BlockLevelElt55', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::NoteElt' (role 'ble_note', cardinality 0..*).
+'SectPrElt' (role 'SectPrElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::BodyElt' (role 'spe_bodyElt', cardinality 0..*).
+'WordprocessingMLBasicDef::WordDocument' (role 'cdp_wordDocument', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection25', cardinality 0..*).
+'WordprocessingMLBasicDef::ParaContentElt' (role 'pContentElts', cardinality 0..*) is associated with 'ParaElt' (role 'ParaElt48', cardinality 0..*).
+'StringType' (role 'StringType', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::SymElt' (role 'WordprocessingMLBasicDef_SymElt', cardinality 0..*).
+'WordprocessingMLBasicDef::WordDocument' (role 'se_wordDocument', cardinality 0..*) is associated with 'StylesElt' (role 'StylesElt', cardinality 0..*).
+'WordprocessingMLBasicDef::DocumentPropertiesCollection' (role 'WordprocessingMLBasicDef_DocumentPropertiesCollection10', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType11', cardinality 0..*).
+'NoteElt' (role 'NoteElt', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::BlockLevelElt' (role 'n_blockLevelElts', cardinality 0..*).
+'WordprocessingMLBasicDef::FontsListElt' (role 'fonts', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument63', cardinality 0..*).
+'WordDocument' (role 'WordDocument67', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::StylesElt' (role 'styles', cardinality 0..*).
+'WordprocessingMLBasicDef::WordDocument' (role 'be_wordDocument', cardinality 0..*) is associated with 'BodyElt' (role 'BodyElt', cardinality 0..*).
+'WordDocument' (role 'WordDocument', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::DocumentPropertiesCollection' (role 'wd_docProperties', cardinality 0..*).
+'WordprocessingMLBasicDef::DateTimeTypeValue' (role 'WordprocessingMLBasicDef_DateTimeTypeValue', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType', cardinality 0..*).
+'WordprocessingMLBasicDef::DocumentPropertiesCollection' (role 'WordprocessingMLBasicDef_DocumentPropertiesCollection7', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType8', cardinality 0..*).
+'WordDocument' (role 'WordDocument38', cardinality 0..*) is associated with 'WordprocessingMLBasicDef::BodyElt' (role 'body', cardinality 0..*).
+'WordprocessingMLBasicDef::DocumentPropertiesCollection' (role 'WordprocessingMLBasicDef_DocumentPropertiesCollection', cardinality 0..*) is associated with 'VersionType' (role 'VersionType', cardinality 0..*).

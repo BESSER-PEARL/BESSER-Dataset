@@ -1,0 +1,60 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class uml_State extends Vertex {
+
+
+
+
+
+
+    private uml_Behavior uml_behavior;
+
+
+
+
+    private uml_Behavior uml_behavior;
+
+
+
+
+    private uml_Behavior uml_behavior;
+
+
+    public uml_State(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public uml_Behavior getUml_behavior() {
+        return uml_behavior;
+    }
+
+    public void setUml_behavior(uml_Behavior uml_behavior) {
+        this.uml_behavior = uml_behavior;
+    }
+    public uml_Behavior getUml_behavior() {
+        return uml_behavior;
+    }
+
+    public void setUml_behavior(uml_Behavior uml_behavior) {
+        this.uml_behavior = uml_behavior;
+    }
+    public uml_Behavior getUml_behavior() {
+        return uml_behavior;
+    }
+
+    public void setUml_behavior(uml_Behavior uml_behavior) {
+        this.uml_behavior = uml_behavior;
+    }
+
+}

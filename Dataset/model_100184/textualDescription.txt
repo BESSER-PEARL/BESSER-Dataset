@@ -1,0 +1,365 @@
+The model has 127 class(es).
+The class 'sparqlas::SubClassOf' has no attributes.
+The class 'sparqlas::InverseFunctionalObjectProperty' has no attributes.
+The class 'sparqlas::DataPropertyAtom' has no attributes.
+The class 'sparqlas::TemplateParameterSubstitution' has no attributes.
+The class 'ClassAtom' has no attributes.
+The class 'sparqlas::DataOneOf' has no attributes.
+The class 'sparqlas::AnonymousIndividual' has the following attributes: 'nodeID' of type str.
+The class 'DataPropertyAtom' has no attributes.
+The class 'sparqlas::DataProperty' has no attributes.
+The class 'sparqlas::DataPropertyAssertion' has no attributes.
+The class 'sparqlas::ObjectPropertyDomain' has no attributes.
+The class 'sparqlas::ObjectComplementOf' has no attributes.
+The class 'DataRange' has no attributes.
+The class 'sparqlas::AbbreviatedIRI' has no attributes.
+The class 'sparqlas::TemplateParameter' has no attributes.
+The class 'sparqlas::DataComplementOf' has no attributes.
+The class 'Assertion' has no attributes.
+The class 'sparqlas::DataRange' has no attributes.
+The class 'sparqlas::TemplateableElement' has no attributes.
+The class 'sparqlas::LiteralVariable' has no attributes.
+The class 'sparqlas::ObjectPropertyExpression' has no attributes.
+The class 'sparqlas::DisjointUnion' has no attributes.
+The class 'DataPropertyExpression' has no attributes.
+The class 'Term' has no attributes.
+The class 'sparqlas::TemplateSignature' has no attributes.
+The class 'sparqlas::Literal' has the following attributes: 'lexicalForm' of type str.
+The class 'sparqlas::DatatypePropertyDeclaration' has no attributes.
+The class 'sparqlas::AbstractLiteral' has no attributes.
+The class 'sparqlas::IndividualVariable' has no attributes.
+The class 'Atom' has no attributes.
+The class 'sparqlas::SubDataPropertyOf' has no attributes.
+The class 'sparqlas::PrefixDefinition' has the following attributes: 'pref' of type str.
+The class 'sparqlas::SelectQuery' has no attributes.
+The class 'sparqlas::ObjectIntersectionOf' has no attributes.
+The class 'sparqlas::DatatypeRestriction' has no attributes.
+The class 'sparqlas::NegativeDataPropertyAssertion' has no attributes.
+The class 'sparqlas::Constant' has no attributes.
+The class 'sparqlas::DisjointObjectProperties' has no attributes.
+The class 'sparqlas::IrreflexiveObjectProperty' has no attributes.
+The class 'sparqlas::DescribeQuery' has no attributes.
+The class 'Query' has no attributes.
+The class 'sparqlas::EquivalentDataProperties' has no attributes.
+The class 'sparqlas::DataUnionOf' has no attributes.
+The class 'Constant' has no attributes.
+The class 'sparqlas::DataHasValue' has no attributes.
+The class 'sparqlas::ParameterableElement' has no attributes.
+The class 'sparqlas::ObjectMinCardinality' has the following attributes: 'cardinality' of type int.
+The class 'sparqlas::Import' has no attributes.
+The class 'sparqlas::ObjectHasValue' has no attributes.
+The class 'sparqlas::FullIRI' has no attributes.
+The class 'sparqlas::ClassExpression' has no attributes.
+The class 'sparqlas::ObjectPropertyRange' has no attributes.
+The class 'sparqlas::ObjectUnionOf' has no attributes.
+The class 'sparqlas::Class' has no attributes.
+The class 'sparqlas::EquivalentObjectProperties' has no attributes.
+The class 'sparqlas::DirectSubClassOf' has no attributes.
+The class 'ObjectPropertyAtom' has no attributes.
+The class 'sparqlas::ObjectSomeValuesFrom' has no attributes.
+The class 'sparqlas::DataMinCardinality' has the following attributes: 'cardinality' of type int.
+The class 'sparqlas::DisjointClasses' has no attributes.
+The class 'sparqlas::EquivalentClasses' has no attributes.
+The class 'sparqlas::Term' has no attributes.
+The class 'sparqlas::IndividualDeclaration' has no attributes.
+The class 'sparqlas::DataPropertyRange' has no attributes.
+The class 'sparqlas::DataPropertyDomain' has no attributes.
+The class 'sparqlas::ClassVariable' has no attributes.
+The class 'sparqlas::Declaration' has no attributes.
+The class 'sparqlas::ObjectMaxCardinality' has the following attributes: 'cardinality' of type int.
+The class 'sparqlas::DataMaxCardinality' has the following attributes: 'cardinality' of type int.
+The class 'sparqlas::Datatype' has no attributes.
+The class 'sparqlas::Individual' has no attributes.
+The class 'sparqlas::DifferentIndividuals' has no attributes.
+The class 'sparqlas::DataPropertyExpression' has no attributes.
+The class 'sparqlas::DirectClassAssertion' has no attributes.
+The class 'ObjectPropertyExpression' has no attributes.
+The class 'sparqlas::ClassDeclaration' has no attributes.
+The class 'sparqlas::AsymmetricObjectProperty' has no attributes.
+The class 'Individual' has no attributes.
+The class 'sparqlas::ObjectPropertyAssertion' has no attributes.
+The class 'sparqlas::Query' has no attributes.
+The class 'sparqlas::ObjectPropertyChain' has no attributes.
+The class 'sparqlas::NamedIndividual' has no attributes.
+The class 'sparqlas::DisjointDataProperties' has no attributes.
+The class 'sparqlas::StrictSubClassOf' has no attributes.
+The class 'sparqlas::SymmetricObjectProperty' has no attributes.
+The class 'sparqlas::FunctionalObjectProperty' has no attributes.
+The class 'IRI' has no attributes.
+The class 'sparqlas::DataIntersectionOf' has no attributes.
+The class 'sparqlas::DataSomeValuesFrom' has no attributes.
+The class 'sparqlas::ConstructQuery' has no attributes.
+The class 'sparqlas::FacetRestriction' has no attributes.
+The class 'sparqlas::SameIndividual' has no attributes.
+The class 'sparqlas::ObjectPropertyDeclaration' has no attributes.
+The class 'sparqlas::DataExactCardinality' has the following attributes: 'cardinality' of type int.
+The class 'sparqlas::ObjectPropertyAtom' has no attributes.
+The class 'sparqlas::IRI' has the following attributes: 'id' of type str.
+The class 'sparqlas::InverseObjectPropertyAtom' has no attributes.
+The class 'sparqlas::ObjectPropertyVariable' has no attributes.
+The class 'sparqlas::InverseObjectProperty' has no attributes.
+The class 'AbstractLiteral' has no attributes.
+The class 'sparqlas::FunctionalDataProperty' has no attributes.
+The class 'sparqlas::Expression' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'ClassExpression' has no attributes.
+The class 'sparqlas::DataAllValuesFrom' has no attributes.
+The class 'sparqlas::ClassAtom' has no attributes.
+The class 'sparqlas::ObjectProperty' has no attributes.
+The class 'sparqlas::Variable' has the following attributes: 'symbol' of type str.
+The class 'sparqlas::Assertion' has no attributes.
+The class 'sparqlas::HasKey' has no attributes.
+The class 'Variable' has no attributes.
+The class 'sparqlas::NegativeObjectPropertyAssertion' has no attributes.
+The class 'sparqlas::ObjectOneOf' has no attributes.
+The class 'sparqlas::ReflexiveObjectProperty' has no attributes.
+The class 'sparqlas::DataPropertyVariable' has no attributes.
+The class 'TemplateableElement' has no attributes.
+The class 'sparqlas::OntologyDocument' has no attributes.
+The class 'Expression' has no attributes.
+The class 'sparqlas::TransitiveObjectProperty' has no attributes.
+The class 'sparqlas::AskQuery' has no attributes.
+The class 'sparqlas::Atom' has no attributes.
+The class 'sparqlas::SubObjectPropertyOf' has no attributes.
+The class 'sparqlas::ObjectExactCardinality' has the following attributes: 'cardinality' of type int.
+The class 'sparqlas::ObjectAllValuesFrom' has no attributes.
+The class 'sparqlas::TemplateBinding' has no attributes.
+The class 'ParameterableElement' has no attributes.
+The class 'sparqlas::ClassAssertion' has no attributes.
+'sparqlas::SelectQuery' is a specialization of 'TemplateableElement'.
+'sparqlas::IndividualVariable' is a specialization of 'Individual'.
+'sparqlas::Literal' is a specialization of 'AbstractLiteral'.
+'sparqlas::InverseFunctionalObjectProperty' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::ObjectIntersectionOf' is a specialization of 'ClassExpression'.
+'sparqlas::DisjointObjectProperties' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::FunctionalDataProperty' is a specialization of 'DataPropertyAtom'.
+'sparqlas::ClassVariable' is a specialization of 'Variable'.
+'sparqlas::ObjectSomeValuesFrom' is a specialization of 'ClassExpression'.
+'sparqlas::DataOneOf' is a specialization of 'DataRange'.
+'sparqlas::DisjointClasses' is a specialization of 'ClassAtom'.
+'sparqlas::IndividualDeclaration' is a specialization of 'Declaration'.
+'sparqlas::AsymmetricObjectProperty' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::DatatypeRestriction' is a specialization of 'DataRange'.
+'sparqlas::DescribeQuery' is a specialization of 'Query'.
+'sparqlas::ObjectComplementOf' is a specialization of 'ClassExpression'.
+'sparqlas::FunctionalObjectProperty' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::ClassVariable' is a specialization of 'ClassExpression'.
+'sparqlas::DataIntersectionOf' is a specialization of 'DataRange'.
+'sparqlas::ObjectPropertyVariable' is a specialization of 'Variable'.
+'sparqlas::DisjointDataProperties' is a specialization of 'DataPropertyAtom'.
+'sparqlas::NamedIndividual' is a specialization of 'Individual'.
+'sparqlas::AbbreviatedIRI' is a specialization of 'IRI'.
+'sparqlas::DifferentIndividuals' is a specialization of 'Assertion'.
+'sparqlas::StrictSubClassOf' is a specialization of 'ClassAtom'.
+'sparqlas::ObjectMaxCardinality' is a specialization of 'ClassExpression'.
+'sparqlas::ObjectPropertyDeclaration' is a specialization of 'Declaration'.
+'sparqlas::DataProperty' is a specialization of 'Constant'.
+'sparqlas::DataMinCardinality' is a specialization of 'ClassExpression'.
+'sparqlas::ClassExpression' is a specialization of 'Expression'.
+'sparqlas::DescribeQuery' is a specialization of 'TemplateableElement'.
+'sparqlas::DataPropertyExpression' is a specialization of 'Expression'.
+'sparqlas::SubClassOf' is a specialization of 'ClassAtom'.
+'sparqlas::DataMaxCardinality' is a specialization of 'ClassExpression'.
+'sparqlas::DataSomeValuesFrom' is a specialization of 'ClassExpression'.
+'sparqlas::TransitiveObjectProperty' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::DirectClassAssertion' is a specialization of 'Assertion'.
+'sparqlas::ObjectPropertyExpression' is a specialization of 'Expression'.
+'sparqlas::Class' is a specialization of 'Constant'.
+'sparqlas::DataPropertyVariable' is a specialization of 'Variable'.
+'sparqlas::DataUnionOf' is a specialization of 'DataRange'.
+'sparqlas::Datatype' is a specialization of 'Constant'.
+'sparqlas::ClassAtom' is a specialization of 'Atom'.
+'sparqlas::ObjectProperty' is a specialization of 'ObjectPropertyExpression'.
+'sparqlas::ObjectMinCardinality' is a specialization of 'ClassExpression'.
+'sparqlas::EquivalentClasses' is a specialization of 'ClassAtom'.
+'sparqlas::Expression' is a specialization of 'ParameterableElement'.
+'sparqlas::SelectQuery' is a specialization of 'Query'.
+'sparqlas::EquivalentDataProperties' is a specialization of 'DataPropertyAtom'.
+'sparqlas::IndividualVariable' is a specialization of 'Variable'.
+'sparqlas::DataPropertyRange' is a specialization of 'DataPropertyAtom'.
+'sparqlas::ObjectPropertyVariable' is a specialization of 'ObjectPropertyExpression'.
+'sparqlas::ObjectPropertyAtom' is a specialization of 'Atom'.
+'sparqlas::LiteralVariable' is a specialization of 'AbstractLiteral'.
+'sparqlas::DataPropertyAssertion' is a specialization of 'Assertion'.
+'sparqlas::ClassAssertion' is a specialization of 'Assertion'.
+'sparqlas::SymmetricObjectProperty' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::DirectSubClassOf' is a specialization of 'ClassAtom'.
+'sparqlas::Assertion' is a specialization of 'Atom'.
+'sparqlas::DisjointUnion' is a specialization of 'ClassAtom'.
+'sparqlas::SameIndividual' is a specialization of 'Assertion'.
+'sparqlas::InverseObjectPropertyAtom' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::DataExactCardinality' is a specialization of 'ClassExpression'.
+'sparqlas::ClassDeclaration' is a specialization of 'Declaration'.
+'sparqlas::InverseObjectProperty' is a specialization of 'ObjectPropertyExpression'.
+'sparqlas::ObjectOneOf' is a specialization of 'ClassExpression'.
+'sparqlas::FullIRI' is a specialization of 'IRI'.
+'sparqlas::NegativeDataPropertyAssertion' is a specialization of 'Assertion'.
+'sparqlas::AnonymousIndividual' is a specialization of 'Individual'.
+'sparqlas::DataPropertyVariable' is a specialization of 'DataPropertyExpression'.
+'sparqlas::AskQuery' is a specialization of 'TemplateableElement'.
+'sparqlas::ObjectAllValuesFrom' is a specialization of 'ClassExpression'.
+'sparqlas::DataPropertyAtom' is a specialization of 'Atom'.
+'sparqlas::ObjectProperty' is a specialization of 'Constant'.
+'sparqlas::SubObjectPropertyOf' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::ObjectPropertyDomain' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::IrreflexiveObjectProperty' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::SubDataPropertyOf' is a specialization of 'DataPropertyAtom'.
+'sparqlas::ObjectUnionOf' is a specialization of 'ClassExpression'.
+'sparqlas::Class' is a specialization of 'ClassExpression'.
+'sparqlas::AskQuery' is a specialization of 'Query'.
+'sparqlas::LiteralVariable' is a specialization of 'Variable'.
+'sparqlas::DataAllValuesFrom' is a specialization of 'ClassExpression'.
+'sparqlas::Constant' is a specialization of 'Term'.
+'sparqlas::ConstructQuery' is a specialization of 'Query'.
+'sparqlas::ObjectPropertyAssertion' is a specialization of 'Assertion'.
+'sparqlas::ObjectExactCardinality' is a specialization of 'ClassExpression'.
+'sparqlas::Declaration' is a specialization of 'Atom'.
+'sparqlas::Datatype' is a specialization of 'DataRange'.
+'sparqlas::ReflexiveObjectProperty' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::DatatypePropertyDeclaration' is a specialization of 'Declaration'.
+'sparqlas::ObjectHasValue' is a specialization of 'ClassExpression'.
+'sparqlas::EquivalentObjectProperties' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::ConstructQuery' is a specialization of 'TemplateableElement'.
+'sparqlas::DataComplementOf' is a specialization of 'DataRange'.
+'sparqlas::Variable' is a specialization of 'Term'.
+'sparqlas::NamedIndividual' is a specialization of 'Constant'.
+'sparqlas::DataHasValue' is a specialization of 'ClassExpression'.
+'sparqlas::ObjectPropertyRange' is a specialization of 'ObjectPropertyAtom'.
+'sparqlas::DataPropertyDomain' is a specialization of 'DataPropertyAtom'.
+'sparqlas::DataProperty' is a specialization of 'DataPropertyExpression'.
+'sparqlas::HasKey' is a specialization of 'Atom'.
+'sparqlas::NegativeObjectPropertyAssertion' is a specialization of 'Assertion'.
+'sparqlas::Import' (role 'sparqlas_Import8', cardinality 0..*) is associated with 'sparqlas::IRI' (role 'sparqlas_IRI9', cardinality 0..*).
+'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyAssertion' (role 'sparqlas_ObjectPropertyAssertion39', cardinality 0..*).
+'sparqlas::EquivalentClasses' (role 'sparqlas_EquivalentClasses', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression72', cardinality 0..*).
+'sparqlas::DisjointClasses' (role 'sparqlas_DisjointClasses', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression74', cardinality 0..*).
+'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression239', cardinality 0..*) is associated with 'sparqlas::HasKey' (role 'sparqlas_HasKey238', cardinality 0..*).
+'sparqlas::DataPropertyDomain' (role 'sparqlas_DataPropertyDomain', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression221', cardinality 0..*).
+'sparqlas::DataProperty' (role 'sparqlas_DataProperty', cardinality 0..*) is associated with 'sparqlas::DatatypePropertyDeclaration' (role 'sparqlas_DatatypePropertyDeclaration', cardinality 0..*).
+'sparqlas::DataRange' (role 'sparqlas_DataRange124', cardinality 0..*) is associated with 'sparqlas::DataSomeValuesFrom' (role 'sparqlas_DataSomeValuesFrom', cardinality 0..*).
+'sparqlas::FacetRestriction' (role 'sparqlas_FacetRestriction164', cardinality 0..*) is associated with 'sparqlas::AbstractLiteral' (role 'sparqlas_AbstractLiteral165', cardinality 0..*).
+'sparqlas::ObjectPropertyDeclaration' (role 'sparqlas_ObjectPropertyDeclaration', cardinality 0..*) is associated with 'sparqlas::ObjectProperty' (role 'sparqlas_ObjectProperty', cardinality 0..*).
+'sparqlas::TemplateParameterSubstitution' (role 'parameterSubstitution', cardinality 0..*) is associated with 'sparqlas::TemplateBinding' (role 'TemplateBinding267', cardinality 0..*).
+'sparqlas::ObjectSomeValuesFrom' (role 'sparqlas_ObjectSomeValuesFrom', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression95', cardinality 0..*).
+'sparqlas::DataAllValuesFrom' (role 'sparqlas_DataAllValuesFrom', cardinality 0..*) is associated with 'sparqlas::DataRange' (role 'sparqlas_DataRange', cardinality 0..*).
+'sparqlas::ObjectExactCardinality' (role 'sparqlas_ObjectExactCardinality', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression115', cardinality 0..*).
+'sparqlas::DataMaxCardinality' (role 'sparqlas_DataMaxCardinality141', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression142', cardinality 0..*).
+'sparqlas::ObjectAllValuesFrom' (role 'sparqlas_ObjectAllValuesFrom92', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression93', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression282', cardinality 0..*) is associated with 'sparqlas::DirectSubClassOf' (role 'sparqlas_DirectSubClassOf', cardinality 0..*).
+'sparqlas::DataHasValue' (role 'sparqlas_DataHasValue', cardinality 0..*) is associated with 'sparqlas::AbstractLiteral' (role 'sparqlas_AbstractLiteral129', cardinality 0..*).
+'sparqlas::DisjointDataProperties' (role 'sparqlas_DisjointDataProperties', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression219', cardinality 0..*).
+'sparqlas::TemplateBinding' (role 'templateBinding', cardinality 0..*) is associated with 'sparqlas::TemplateParameterSubstitution' (role 'TemplateParameterSubstitution', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression84', cardinality 0..*) is associated with 'sparqlas::ObjectComplementOf' (role 'sparqlas_ObjectComplementOf', cardinality 0..*).
+'sparqlas::DataMaxCardinality' (role 'sparqlas_DataMaxCardinality', cardinality 0..*) is associated with 'sparqlas::DataRange' (role 'sparqlas_DataRange139', cardinality 0..*).
+'sparqlas::Atom' (role 'sparqlas_Atom', cardinality 0..*) is associated with 'sparqlas::SelectQuery' (role 'sparqlas_SelectQuery', cardinality 0..*).
+'sparqlas::ObjectPropertyDomain' (role 'sparqlas_ObjectPropertyDomain', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression181', cardinality 0..*).
+'sparqlas::EquivalentDataProperties' (role 'sparqlas_EquivalentDataProperties', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression217', cardinality 0..*).
+'sparqlas::ObjectIntersectionOf' (role 'sparqlas_ObjectIntersectionOf', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression88', cardinality 0..*).
+'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression226', cardinality 0..*) is associated with 'sparqlas::DataPropertyRange' (role 'sparqlas_DataPropertyRange', cardinality 0..*).
+'sparqlas::ReflexiveObjectProperty' (role 'sparqlas_ReflexiveObjectProperty', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression200', cardinality 0..*).
+'sparqlas::DataPropertyAssertion' (role 'sparqlas_DataPropertyAssertion', cardinality 0..*) is associated with 'sparqlas::Individual' (role 'sparqlas_Individual41', cardinality 0..*).
+'sparqlas::DataHasValue' (role 'sparqlas_DataHasValue131', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression132', cardinality 0..*).
+'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression177', cardinality 0..*) is associated with 'sparqlas::EquivalentObjectProperties' (role 'sparqlas_EquivalentObjectProperties', cardinality 0..*).
+'sparqlas::Individual' (role 'sparqlas_Individual', cardinality 0..*) is associated with 'sparqlas::ClassAssertion' (role 'sparqlas_ClassAssertion', cardinality 0..*).
+'sparqlas::AskQuery' (role 'sparqlas_AskQuery', cardinality 0..*) is associated with 'sparqlas::Atom' (role 'sparqlas_Atom21', cardinality 0..*).
+'sparqlas::DataRange' (role 'sparqlas_DataRange149', cardinality 0..*) is associated with 'sparqlas::DataUnionOf' (role 'sparqlas_DataUnionOf', cardinality 0..*).
+'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression194', cardinality 0..*) is associated with 'sparqlas::InverseObjectPropertyAtom' (role 'sparqlas_InverseObjectPropertyAtom193', cardinality 0..*).
+'sparqlas::DataPropertyDomain' (role 'sparqlas_DataPropertyDomain223', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression224', cardinality 0..*).
+'sparqlas::HasKey' (role 'sparqlas_HasKey235', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression236', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression287', cardinality 0..*) is associated with 'sparqlas::StrictSubClassOf' (role 'sparqlas_StrictSubClassOf', cardinality 0..*).
+'sparqlas::TemplateSignature' (role 'TemplateSignature262', cardinality 0..*) is associated with 'sparqlas::TemplateableElement' (role 'template', cardinality 0..*).
+'sparqlas::DisjointUnion' (role 'sparqlas_DisjointUnion', cardinality 0..*) is associated with 'sparqlas::Class' (role 'sparqlas_Class', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression290', cardinality 0..*) is associated with 'sparqlas::StrictSubClassOf' (role 'sparqlas_StrictSubClassOf289', cardinality 0..*).
+'sparqlas::DataRange' (role 'sparqlas_DataRange144', cardinality 0..*) is associated with 'sparqlas::DataExactCardinality' (role 'sparqlas_DataExactCardinality', cardinality 0..*).
+'sparqlas::Query' (role 'sparqlas_Query', cardinality 0..*) is associated with 'sparqlas::OntologyDocument' (role 'sparqlas_OntologyDocument6', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression82', cardinality 0..*) is associated with 'sparqlas::ObjectUnionOf' (role 'sparqlas_ObjectUnionOf', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression184', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyDomain' (role 'sparqlas_ObjectPropertyDomain183', cardinality 0..*).
+'sparqlas::DifferentIndividuals' (role 'sparqlas_DifferentIndividuals', cardinality 0..*) is associated with 'sparqlas::Individual' (role 'sparqlas_Individual65', cardinality 0..*).
+'sparqlas::TransitiveObjectProperty' (role 'sparqlas_TransitiveObjectProperty', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression208', cardinality 0..*).
+'sparqlas::NegativeObjectPropertyAssertion' (role 'sparqlas_NegativeObjectPropertyAssertion49', cardinality 0..*) is associated with 'sparqlas::Individual' (role 'sparqlas_Individual50', cardinality 0..*).
+'sparqlas::Atom' (role 'sparqlas_Atom26', cardinality 0..*) is associated with 'sparqlas::DescribeQuery' (role 'sparqlas_DescribeQuery25', cardinality 0..*).
+'sparqlas::DisjointObjectProperties' (role 'sparqlas_DisjointObjectProperties', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression179', cardinality 0..*).
+'sparqlas::Datatype' (role 'sparqlas_Datatype', cardinality 0..*) is associated with 'sparqlas::Literal' (role 'sparqlas_Literal', cardinality 0..*).
+'sparqlas::Atom' (role 'sparqlas_Atom16', cardinality 0..*) is associated with 'sparqlas::ConstructQuery' (role 'sparqlas_ConstructQuery', cardinality 0..*).
+'sparqlas::DataExactCardinality' (role 'sparqlas_DataExactCardinality146', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression147', cardinality 0..*).
+'sparqlas::SubDataPropertyOf' (role 'sparqlas_SubDataPropertyOf214', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression215', cardinality 0..*).
+'sparqlas::ClassVariable' (role 'sparqlas_ClassVariable', cardinality 0..*) is associated with 'sparqlas::DisjointUnion' (role 'sparqlas_DisjointUnion77', cardinality 0..*).
+'sparqlas::SubObjectPropertyOf' (role 'sparqlas_SubObjectPropertyOf169', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyChain' (role 'sparqlas_ObjectPropertyChain', cardinality 0..*).
+'sparqlas::SymmetricObjectProperty' (role 'sparqlas_SymmetricObjectProperty', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression204', cardinality 0..*).
+'sparqlas::IrreflexiveObjectProperty' (role 'sparqlas_IrreflexiveObjectProperty', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression202', cardinality 0..*).
+'sparqlas::TemplateableElement' (role 'boundElement', cardinality 0..*) is associated with 'sparqlas::TemplateBinding' (role 'TemplateBinding', cardinality 0..*).
+'sparqlas::DirectSubClassOf' (role 'sparqlas_DirectSubClassOf284', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression285', cardinality 0..*).
+'sparqlas::FunctionalDataProperty' (role 'sparqlas_FunctionalDataProperty', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression231', cardinality 0..*).
+'sparqlas::PrefixDefinition' (role 'sparqlas_PrefixDefinition', cardinality 0..*) is associated with 'sparqlas::OntologyDocument' (role 'sparqlas_OntologyDocument4', cardinality 0..*).
+'sparqlas::ClassAssertion' (role 'sparqlas_ClassAssertion32', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression', cardinality 0..*).
+'sparqlas::Individual' (role 'sparqlas_Individual47', cardinality 0..*) is associated with 'sparqlas::NegativeObjectPropertyAssertion' (role 'sparqlas_NegativeObjectPropertyAssertion', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression80', cardinality 0..*) is associated with 'sparqlas::DisjointUnion' (role 'sparqlas_DisjointUnion79', cardinality 0..*).
+'sparqlas::SameIndividual' (role 'sparqlas_SameIndividual', cardinality 0..*) is associated with 'sparqlas::Individual' (role 'sparqlas_Individual63', cardinality 0..*).
+'sparqlas::ObjectExactCardinality' (role 'sparqlas_ObjectExactCardinality117', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression118', cardinality 0..*).
+'sparqlas::AsymmetricObjectProperty' (role 'sparqlas_AsymmetricObjectProperty', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression206', cardinality 0..*).
+'sparqlas::IndividualVariable' (role 'sparqlas_IndividualVariable', cardinality 0..*) is associated with 'sparqlas::IndividualDeclaration' (role 'sparqlas_IndividualDeclaration253', cardinality 0..*).
+'sparqlas::ObjectMinCardinality' (role 'sparqlas_ObjectMinCardinality107', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression108', cardinality 0..*).
+'sparqlas::HasKey' (role 'sparqlas_HasKey', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression233', cardinality 0..*).
+'sparqlas::OntologyDocument' (role 'sparqlas_OntologyDocument', cardinality 0..*) is associated with 'sparqlas::IRI' (role 'sparqlas_IRI', cardinality 0..*).
+'sparqlas::Import' (role 'sparqlas_Import', cardinality 0..*) is associated with 'sparqlas::OntologyDocument' (role 'sparqlas_OntologyDocument2', cardinality 0..*).
+'sparqlas::DataRange' (role 'sparqlas_DataRange151', cardinality 0..*) is associated with 'sparqlas::DataComplementOf' (role 'sparqlas_DataComplementOf', cardinality 0..*).
+'sparqlas::ObjectPropertyAssertion' (role 'sparqlas_ObjectPropertyAssertion36', cardinality 0..*) is associated with 'sparqlas::Individual' (role 'sparqlas_Individual37', cardinality 0..*).
+'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression175', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyChain' (role 'sparqlas_ObjectPropertyChain174', cardinality 0..*).
+'sparqlas::ClassDeclaration' (role 'sparqlas_ClassDeclaration243', cardinality 0..*) is associated with 'sparqlas::ClassVariable' (role 'sparqlas_ClassVariable244', cardinality 0..*).
+'sparqlas::DatatypeRestriction' (role 'sparqlas_DatatypeRestriction', cardinality 0..*) is associated with 'sparqlas::Datatype' (role 'sparqlas_Datatype157', cardinality 0..*).
+'sparqlas::NegativeDataPropertyAssertion' (role 'sparqlas_NegativeDataPropertyAssertion', cardinality 0..*) is associated with 'sparqlas::Individual' (role 'sparqlas_Individual55', cardinality 0..*).
+'sparqlas::Constant' (role 'sparqlas_Constant', cardinality 0..*) is associated with 'sparqlas::IRI' (role 'sparqlas_IRI28', cardinality 0..*).
+'sparqlas::NegativeDataPropertyAssertion' (role 'sparqlas_NegativeDataPropertyAssertion60', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression61', cardinality 0..*).
+'sparqlas::DatatypeRestriction' (role 'sparqlas_DatatypeRestriction159', cardinality 0..*) is associated with 'sparqlas::FacetRestriction' (role 'sparqlas_FacetRestriction', cardinality 0..*).
+'sparqlas::DataPropertyVariable' (role 'sparqlas_DataPropertyVariable', cardinality 0..*) is associated with 'sparqlas::DatatypePropertyDeclaration' (role 'sparqlas_DatatypePropertyDeclaration250', cardinality 0..*).
+'sparqlas::TemplateBinding' (role 'sparqlas_TemplateBinding', cardinality 0..*) is associated with 'sparqlas::TemplateSignature' (role 'sparqlas_TemplateSignature', cardinality 0..*).
+'sparqlas::SubClassOf' (role 'sparqlas_SubClassOf69', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression70', cardinality 0..*).
+'sparqlas::ObjectMaxCardinality' (role 'sparqlas_ObjectMaxCardinality', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression110', cardinality 0..*).
+'sparqlas::ParameterableElement' (role 'sparqlas_ParameterableElement', cardinality 0..*) is associated with 'sparqlas::TemplateParameterSubstitution' (role 'sparqlas_TemplateParameterSubstitution265', cardinality 0..*).
+'sparqlas::Atom' (role 'sparqlas_Atom19', cardinality 0..*) is associated with 'sparqlas::ConstructQuery' (role 'sparqlas_ConstructQuery18', cardinality 0..*).
+'sparqlas::FacetRestriction' (role 'sparqlas_FacetRestriction161', cardinality 0..*) is associated with 'sparqlas::IRI' (role 'sparqlas_IRI162', cardinality 0..*).
+'sparqlas::AbstractLiteral' (role 'sparqlas_AbstractLiteral58', cardinality 0..*) is associated with 'sparqlas::NegativeDataPropertyAssertion' (role 'sparqlas_NegativeDataPropertyAssertion57', cardinality 0..*).
+'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression103', cardinality 0..*) is associated with 'sparqlas::ObjectHasValue' (role 'sparqlas_ObjectHasValue102', cardinality 0..*).
+'sparqlas::DataIntersectionOf' (role 'sparqlas_DataIntersectionOf', cardinality 0..*) is associated with 'sparqlas::DataRange' (role 'sparqlas_DataRange155', cardinality 0..*).
+'sparqlas::IndividualDeclaration' (role 'sparqlas_IndividualDeclaration', cardinality 0..*) is associated with 'sparqlas::NamedIndividual' (role 'sparqlas_NamedIndividual', cardinality 0..*).
+'sparqlas::TemplateBinding' (role 'templateBinding273', cardinality 0..*) is associated with 'sparqlas::TemplateableElement' (role 'TemplateableElement274', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression280', cardinality 0..*) is associated with 'sparqlas::DirectClassAssertion' (role 'sparqlas_DirectClassAssertion279', cardinality 0..*).
+'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression122', cardinality 0..*) is associated with 'sparqlas::DataAllValuesFrom' (role 'sparqlas_DataAllValuesFrom121', cardinality 0..*).
+'sparqlas::TemplateSignature' (role 'signature', cardinality 0..*) is associated with 'sparqlas::TemplateParameter' (role 'TemplateParameter259', cardinality 0..*).
+'sparqlas::DataSomeValuesFrom' (role 'sparqlas_DataSomeValuesFrom126', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression127', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression67', cardinality 0..*) is associated with 'sparqlas::SubClassOf' (role 'sparqlas_SubClassOf', cardinality 0..*).
+'sparqlas::ObjectOneOf' (role 'sparqlas_ObjectOneOf', cardinality 0..*) is associated with 'sparqlas::Individual' (role 'sparqlas_Individual86', cardinality 0..*).
+'sparqlas::SelectQuery' (role 'sparqlas_SelectQuery14', cardinality 0..*) is associated with 'sparqlas::Variable' (role 'sparqlas_Variable', cardinality 0..*).
+'sparqlas::ObjectPropertyDeclaration' (role 'sparqlas_ObjectPropertyDeclaration247', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyVariable' (role 'sparqlas_ObjectPropertyVariable', cardinality 0..*).
+'sparqlas::Individual' (role 'sparqlas_Individual277', cardinality 0..*) is associated with 'sparqlas::DirectClassAssertion' (role 'sparqlas_DirectClassAssertion', cardinality 0..*).
+'sparqlas::ObjectPropertyRange' (role 'sparqlas_ObjectPropertyRange188', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression189', cardinality 0..*).
+'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression', cardinality 0..*) is associated with 'sparqlas::DataPropertyAssertion' (role 'sparqlas_DataPropertyAssertion45', cardinality 0..*).
+'sparqlas::ObjectSomeValuesFrom' (role 'sparqlas_ObjectSomeValuesFrom97', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression98', cardinality 0..*).
+'sparqlas::ParameterableElement' (role 'parameteredElement', cardinality 0..*) is associated with 'sparqlas::TemplateParameter' (role 'TemplateParameter', cardinality 0..*).
+'sparqlas::TemplateParameter' (role 'templateParameter', cardinality 0..*) is associated with 'sparqlas::ParameterableElement' (role 'ParameterableElement', cardinality 0..*).
+'sparqlas::ObjectHasValue' (role 'sparqlas_ObjectHasValue', cardinality 0..*) is associated with 'sparqlas::Individual' (role 'sparqlas_Individual100', cardinality 0..*).
+'sparqlas::PrefixDefinition' (role 'sparqlas_PrefixDefinition11', cardinality 0..*) is associated with 'sparqlas::FullIRI' (role 'sparqlas_FullIRI', cardinality 0..*).
+'sparqlas::Class' (role 'sparqlas_Class241', cardinality 0..*) is associated with 'sparqlas::ClassDeclaration' (role 'sparqlas_ClassDeclaration', cardinality 0..*).
+'sparqlas::TemplateParameter' (role 'ownedParameter', cardinality 0..*) is associated with 'sparqlas::TemplateSignature' (role 'TemplateSignature', cardinality 0..*).
+'sparqlas::ObjectMaxCardinality' (role 'sparqlas_ObjectMaxCardinality112', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression113', cardinality 0..*).
+'sparqlas::InverseFunctionalObjectProperty' (role 'sparqlas_InverseFunctionalObjectProperty', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression198', cardinality 0..*).
+'sparqlas::TemplateParameterSubstitution' (role 'sparqlas_TemplateParameterSubstitution269', cardinality 0..*) is associated with 'sparqlas::ParameterableElement' (role 'sparqlas_ParameterableElement270', cardinality 0..*).
+'sparqlas::SubObjectPropertyOf' (role 'sparqlas_SubObjectPropertyOf171', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression172', cardinality 0..*).
+'sparqlas::Individual' (role 'sparqlas_Individual34', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyAssertion' (role 'sparqlas_ObjectPropertyAssertion', cardinality 0..*).
+'sparqlas::ObjectMinCardinality' (role 'sparqlas_ObjectMinCardinality', cardinality 0..*) is associated with 'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression105', cardinality 0..*).
+'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression191', cardinality 0..*) is associated with 'sparqlas::InverseObjectPropertyAtom' (role 'sparqlas_InverseObjectPropertyAtom', cardinality 0..*).
+'sparqlas::DataMinCardinality' (role 'sparqlas_DataMinCardinality', cardinality 0..*) is associated with 'sparqlas::DataRange' (role 'sparqlas_DataRange134', cardinality 0..*).
+'sparqlas::SubObjectPropertyOf' (role 'sparqlas_SubObjectPropertyOf', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression167', cardinality 0..*).
+'sparqlas::TemplateableElement' (role 'TemplateableElement', cardinality 0..*) is associated with 'sparqlas::TemplateSignature' (role 'ownedTemplateSignature', cardinality 0..*).
+'sparqlas::DataPropertyRange' (role 'sparqlas_DataPropertyRange228', cardinality 0..*) is associated with 'sparqlas::DataRange' (role 'sparqlas_DataRange229', cardinality 0..*).
+'sparqlas::AbstractLiteral' (role 'sparqlas_AbstractLiteral153', cardinality 0..*) is associated with 'sparqlas::DataOneOf' (role 'sparqlas_DataOneOf', cardinality 0..*).
+'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression210', cardinality 0..*) is associated with 'sparqlas::InverseObjectProperty' (role 'sparqlas_InverseObjectProperty', cardinality 0..*).
+'sparqlas::ClassExpression' (role 'sparqlas_ClassExpression90', cardinality 0..*) is associated with 'sparqlas::ObjectAllValuesFrom' (role 'sparqlas_ObjectAllValuesFrom', cardinality 0..*).
+'sparqlas::ObjectPropertyRange' (role 'sparqlas_ObjectPropertyRange', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression186', cardinality 0..*).
+'sparqlas::DataPropertyAssertion' (role 'sparqlas_DataPropertyAssertion43', cardinality 0..*) is associated with 'sparqlas::AbstractLiteral' (role 'sparqlas_AbstractLiteral', cardinality 0..*).
+'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression137', cardinality 0..*) is associated with 'sparqlas::DataMinCardinality' (role 'sparqlas_DataMinCardinality136', cardinality 0..*).
+'sparqlas::FunctionalObjectProperty' (role 'sparqlas_FunctionalObjectProperty', cardinality 0..*) is associated with 'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression196', cardinality 0..*).
+'sparqlas::DescribeQuery' (role 'sparqlas_DescribeQuery', cardinality 0..*) is associated with 'sparqlas::IRI' (role 'sparqlas_IRI23', cardinality 0..*).
+'sparqlas::ObjectPropertyExpression' (role 'sparqlas_ObjectPropertyExpression53', cardinality 0..*) is associated with 'sparqlas::NegativeObjectPropertyAssertion' (role 'sparqlas_NegativeObjectPropertyAssertion52', cardinality 0..*).
+'sparqlas::SubDataPropertyOf' (role 'sparqlas_SubDataPropertyOf', cardinality 0..*) is associated with 'sparqlas::DataPropertyExpression' (role 'sparqlas_DataPropertyExpression212', cardinality 0..*).
+'sparqlas::TemplateParameterSubstitution' (role 'sparqlas_TemplateParameterSubstitution', cardinality 0..*) is associated with 'sparqlas::TemplateParameter' (role 'sparqlas_TemplateParameter', cardinality 0..*).

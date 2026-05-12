@@ -1,0 +1,85 @@
+The model has 30 class(es).
+The class 'Named' has no attributes.
+The class 'research18::PublicationStatus' has the following attributes: 'label' of type str.
+The class 'Labelled' has no attributes.
+The class 'research18::PublicationProcess' has the following attributes: 'minTime' of type int; 'maxTime' of type int.
+The class 'research18::Position' has the following attributes: 'description' of type str.
+The class 'Counted' has no attributes.
+The class 'research18::State' has the following attributes: 'kind' of type str; 'id' of type int; 'name' of type str.
+The class 'research18::PublicationStructure' has no attributes.
+The class 'research18::Researcher' has the following attributes: 'name' of type str; 'forName' of type str.
+The class 'research18::Paragraph' has the following attributes: 'content' of type str.
+The class 'research18::Progress' has the following attributes: 'percent' of type int.
+The class 'research18::Counted' has the following attributes: 'id' of type int.
+The class 'research18::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research18::Review' has the following attributes: 'date' of type date.
+The class 'research18::Phase' has the following attributes: 'name' of type str.
+The class 'research18::Paper' has no attributes.
+The class 'research18::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'research18::Action' has the following attributes: 'actionLabel' of type str; 'actionStatement' of type str.
+The class 'research18::Transition' has the following attributes: 'guardExpression' of type str; 'guardLabel' of type str.
+The class 'research18::KnowledgeManager' has no attributes.
+The class 'research18::Skill' has the following attributes: 'description' of type str.
+The class 'research18::Keyword' has the following attributes: 'word' of type str.
+The class 'research18::StateMachineObject' has the following attributes: 'label' of type str.
+The class 'research18::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research18::Named' has the following attributes: 'name' of type str.
+The class 'research18::Labelled' has the following attributes: 'lname' of type str.
+The class 'StateMachineObject' has no attributes.
+The class 'research18::StateMachineVariable' has no attributes.
+The class 'research18::PublicationSystem' has no attributes.
+The class 'research18::Collaboration' has the following attributes: 'ratio' of type int.
+The enumeration 'StateType' has the following literals: 'final', 'initial', 'ongoing'.
+'research18::Write' is a specialization of 'Labelled'.
+'research18::Progress' is a specialization of 'Labelled'.
+'research18::Review' is a specialization of 'Labelled'.
+'research18::Paragraph' is a specialization of 'Counted'.
+'research18::PublicationProcess' is a specialization of 'Named'.
+'research18::Keyword' is a specialization of 'Named'.
+'research18::Position' is a specialization of 'Named'.
+'research18::PublicationSystem' is a specialization of 'Named'.
+'research18::State' is a specialization of 'StateMachineObject'.
+'research18::Paper' is a specialization of 'Named'.
+'research18::PublicationStructure' is a specialization of 'Named'.
+'research18::KnowledgeManager' is a specialization of 'Named'.
+'research18::ReviewNote' is a specialization of 'Named'.
+'research18::Paragraph' is a specialization of 'Named'.
+'research18::Transition' is a specialization of 'StateMachineObject'.
+'research18::Transition' (role 'research18_Transition', cardinality 0..*) is associated with 'research18::Action' (role 'research18_Action', cardinality 0..*).
+'research18::State' (role 'research18_State77', cardinality 0..*) is associated with 'research18::Transition' (role 'research18_Transition78', cardinality 0..*).
+'research18::Progress' (role 'progress', cardinality 0..*) is associated with 'research18::Paper' (role 'Paper26', cardinality 0..*).
+'research18::Paragraph' (role 'research18_Paragraph', cardinality 0..*) is associated with 'research18::Paper' (role 'research18_Paper', cardinality 0..*).
+'research18::Paper' (role 'research18_Paper18', cardinality 0..*) is associated with 'research18::Paper' (role 'research18_Paper16', cardinality 0..*).
+'research18::Paragraph' (role 'research18_Paragraph22', cardinality 0..*) is associated with 'research18::ReviewNote' (role 'research18_ReviewNote', cardinality 0..*).
+'research18::PaperKeyword' (role 'research18_PaperKeyword59', cardinality 0..*) is associated with 'research18::Keyword' (role 'research18_Keyword60', cardinality 0..*).
+'research18::Paper' (role 'research18_Paper54', cardinality 0..*) is associated with 'research18::Keyword' (role 'research18_Keyword', cardinality 0..*).
+'research18::Paper' (role 'Paper', cardinality 0..*) is associated with 'research18::Researcher' (role 'authors', cardinality 0..*).
+'research18::Position' (role 'research18_Position47', cardinality 0..*) is associated with 'research18::PublicationSystem' (role 'research18_PublicationSystem46', cardinality 0..*).
+'research18::Review' (role 'research18_Review', cardinality 0..*) is associated with 'research18::Researcher' (role 'research18_Researcher3', cardinality 0..*).
+'research18::State' (role 'research18_State80', cardinality 0..*) is associated with 'research18::Action' (role 'research18_Action81', cardinality 0..*).
+'research18::Transition' (role 'research18_Transition74', cardinality 0..*) is associated with 'research18::State' (role 'research18_State75', cardinality 0..*).
+'research18::State' (role 'research18_State68', cardinality 0..*) is associated with 'research18::PublicationStatus' (role 'research18_PublicationStatus67', cardinality 0..*).
+'research18::PublicationStructure' (role 'research18_PublicationStructure44', cardinality 0..*) is associated with 'research18::PublicationSystem' (role 'research18_PublicationSystem43', cardinality 0..*).
+'research18::KnowledgeManager' (role 'research18_KnowledgeManager', cardinality 0..*) is associated with 'research18::PublicationStructure' (role 'research18_PublicationStructure39', cardinality 0..*).
+'research18::PaperKeyword' (role 'research18_PaperKeyword', cardinality 0..*) is associated with 'research18::Paper' (role 'research18_Paper15', cardinality 0..*).
+'research18::Researcher' (role 'research18_Researcher8', cardinality 0..*) is associated with 'research18::Position' (role 'research18_Position', cardinality 0..*).
+'research18::Paper' (role 'research18_Paper63', cardinality 0..*) is associated with 'research18::Collaboration' (role 'research18_Collaboration62', cardinality 0..*).
+'research18::Paper' (role 'paper', cardinality 0..*) is associated with 'research18::Progress' (role 'Progress', cardinality 0..*).
+'research18::State' (role 'research18_State', cardinality 0..*) is associated with 'research18::Paper' (role 'research18_Paper20', cardinality 0..*).
+'research18::PublicationProcess' (role 'research18_PublicationProcess24', cardinality 0..*) is associated with 'research18::Progress' (role 'research18_Progress', cardinality 0..*).
+'research18::Collaboration' (role 'research18_Collaboration', cardinality 0..*) is associated with 'research18::Researcher' (role 'research18_Researcher10', cardinality 0..*).
+'research18::StateMachineVariable' (role 'research18_StateMachineVariable', cardinality 0..*) is associated with 'research18::PublicationStatus' (role 'research18_PublicationStatus65', cardinality 0..*).
+'research18::Position' (role 'research18_Position52', cardinality 0..*) is associated with 'research18::Position' (role 'research18_Position50', cardinality 0..*).
+'research18::Keyword' (role 'research18_Keyword57', cardinality 0..*) is associated with 'research18::KnowledgeManager' (role 'research18_KnowledgeManager56', cardinality 0..*).
+'research18::Write' (role 'research18_Write28', cardinality 0..*) is associated with 'research18::Paragraph' (role 'research18_Paragraph29', cardinality 0..*).
+'research18::PublicationProcess' (role 'research18_PublicationProcess', cardinality 0..*) is associated with 'research18::Phase' (role 'research18_Phase', cardinality 0..*).
+'research18::PublicationStatus' (role 'research18_PublicationStatus', cardinality 0..*) is associated with 'research18::PublicationSystem' (role 'research18_PublicationSystem49', cardinality 0..*).
+'research18::Researcher' (role 'research18_Researcher', cardinality 0..*) is associated with 'research18::Write' (role 'research18_Write', cardinality 0..*).
+'research18::Review' (role 'research18_Review31', cardinality 0..*) is associated with 'research18::ReviewNote' (role 'research18_ReviewNote32', cardinality 0..*).
+'research18::Paper' (role 'research18_Paper37', cardinality 0..*) is associated with 'research18::PublicationStructure' (role 'research18_PublicationStructure36', cardinality 0..*).
+'research18::Action' (role 'research18_Action84', cardinality 0..*) is associated with 'research18::Action' (role 'research18_Action82', cardinality 0..*).
+'research18::Researcher' (role 'research18_Researcher6', cardinality 0..*) is associated with 'research18::Skill' (role 'research18_Skill', cardinality 0..*).
+'research18::PublicationProcess' (role 'research18_PublicationProcess41', cardinality 0..*) is associated with 'research18::PublicationSystem' (role 'research18_PublicationSystem', cardinality 0..*).
+'research18::PublicationStructure' (role 'research18_PublicationStructure', cardinality 0..*) is associated with 'research18::Researcher' (role 'research18_Researcher34', cardinality 0..*).
+'research18::Paper' (role 'res_papers', cardinality 0..*) is associated with 'research18::Researcher' (role 'Researcher', cardinality 0..*).
+'research18::State' (role 'research18_State72', cardinality 0..*) is associated with 'research18::Transition' (role 'research18_Transition71', cardinality 0..*).

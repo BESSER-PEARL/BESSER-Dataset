@@ -1,0 +1,35 @@
+The model has 18 class(es).
+The class 'd3ql::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'd3ql::SelectExpression' has no attributes.
+The class 'Literal' has no attributes.
+The class 'd3ql::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'd3ql::AggregateRoot' has no attributes.
+The class 'd3ql::Named' has the following attributes: 'name' of type str.
+The class 'd3ql::FunctionCall' has the following attributes: 'function' of type str.
+The class 'd3ql::SelectStatement' has no attributes.
+The class 'Named' has no attributes.
+The class 'd3ql::StringLiteral' has the following attributes: 'value' of type str.
+The class 'd3ql::FromStatement' has no attributes.
+The class 'd3ql::PathExpression' has no attributes.
+The class 'd3ql::FunctionArgument' has no attributes.
+The class 'd3ql::Query' has no attributes.
+The class 'd3ql::Alias' has no attributes.
+The class 'd3ql::EObject' has no attributes.
+The class 'd3ql::PathElement' has the following attributes: 'name' of type str.
+The class 'd3ql::Literal' has no attributes.
+'d3ql::BooleanLiteral' is a specialization of 'Literal'.
+'d3ql::StringLiteral' is a specialization of 'Literal'.
+'d3ql::IntegerLiteral' is a specialization of 'Literal'.
+'d3ql::Alias' is a specialization of 'Named'.
+'d3ql::AggregateRoot' is a specialization of 'Named'.
+'d3ql::SelectExpression' (role 'd3ql_SelectExpression', cardinality 0..*) is associated with 'd3ql::SelectStatement' (role 'd3ql_SelectStatement8', cardinality 0..*).
+'d3ql::SelectStatement' (role 'd3ql_SelectStatement', cardinality 0..*) is associated with 'd3ql::Query' (role 'd3ql_Query2', cardinality 0..*).
+'d3ql::FromStatement' (role 'd3ql_FromStatement', cardinality 0..*) is associated with 'd3ql::Query' (role 'd3ql_Query', cardinality 0..*).
+'d3ql::Alias' (role 'd3ql_Alias', cardinality 0..*) is associated with 'd3ql::AggregateRoot' (role 'd3ql_AggregateRoot6', cardinality 0..*).
+'d3ql::FunctionArgument' (role 'd3ql_FunctionArgument', cardinality 0..*) is associated with 'd3ql::FunctionCall' (role 'd3ql_FunctionCall', cardinality 0..*).
+'d3ql::EObject' (role 'd3ql_EObject', cardinality 0..*) is associated with 'd3ql::SelectExpression' (role 'd3ql_SelectExpression10', cardinality 0..*).
+'d3ql::PathElement' (role 'd3ql_PathElement', cardinality 0..*) is associated with 'd3ql::PathExpression' (role 'd3ql_PathExpression16', cardinality 0..*).
+'d3ql::Named' (role 'd3ql_Named', cardinality 0..*) is associated with 'd3ql::PathExpression' (role 'd3ql_PathExpression', cardinality 0..*).
+'d3ql::AggregateRoot' (role 'd3ql_AggregateRoot', cardinality 0..*) is associated with 'd3ql::FromStatement' (role 'd3ql_FromStatement4', cardinality 0..*).
+'d3ql::EObject' (role 'd3ql_EObject20', cardinality 0..*) is associated with 'd3ql::FunctionArgument' (role 'd3ql_FunctionArgument19', cardinality 0..*).
+'d3ql::Alias' (role 'd3ql_Alias13', cardinality 0..*) is associated with 'd3ql::SelectExpression' (role 'd3ql_SelectExpression12', cardinality 0..*).

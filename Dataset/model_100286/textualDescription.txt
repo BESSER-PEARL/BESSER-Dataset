@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'pETRI::Node' has the following attributes: 'name' of type str.
+The class 'pETRI::Place' has the following attributes: 'marking' of type int.
+The class 'pETRI::PetriNet' has the following attributes: 'name' of type str.
+The class 'pETRI::Arc' has the following attributes: 'multiplicity' of type int; 'readOnly' of type bool.
+The class 'PetriNetElement' has no attributes.
+The class 'pETRI::Transition' has no attributes.
+The class 'pETRI::PetriNetElement' has no attributes.
+The class 'Node' has no attributes.
+'pETRI::Arc' is a specialization of 'PetriNetElement'.
+'pETRI::Transition' is a specialization of 'Node'.
+'pETRI::Node' is a specialization of 'PetriNetElement'.
+'pETRI::Place' is a specialization of 'Node'.
+'pETRI::Node' (role 'pETRI_Node4', cardinality 0..*) is associated with 'pETRI::Arc' (role 'pETRI_Arc3', cardinality 0..*).
+'pETRI::Node' (role 'pETRI_Node', cardinality 0..*) is associated with 'pETRI::Arc' (role 'pETRI_Arc', cardinality 0..*).
+'pETRI::PetriNet' (role 'pETRI_PetriNet', cardinality 0..*) is associated with 'pETRI::PetriNetElement' (role 'pETRI_PetriNetElement', cardinality 0..*).

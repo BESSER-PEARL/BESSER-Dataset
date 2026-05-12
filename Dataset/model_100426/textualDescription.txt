@@ -1,0 +1,30 @@
+The model has 13 class(es).
+The class 'State' has no attributes.
+The class 'Node' has no attributes.
+The class 'statemachine::Event' has the following attributes: 'trigger' of type str.
+The class 'statemachine::DataElement' has the following attributes: 'port' of type int; 'ioType' of type str; 'name' of type str.
+The class 'statemachine::Transition' has the following attributes: 'expression' of type str; 'priority' of type int; 'id' of type int.
+The class 'statemachine::FinalState' has no attributes.
+The class 'statemachine::Variable' has the following attributes: 'dataType' of type str.
+The class 'statemachine::Pseudostate' has the following attributes: 'pseudoType' of type str.
+The class 'statemachine::Statechart' has the following attributes: 'name' of type str; 'UUID' of type str.
+The class 'statemachine::State' has the following attributes: 'entry' of type str; 'exit' of type str; 'do' of type str.
+The class 'statemachine::Node' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'statemachine::Region' has the following attributes: 'priority' of type int.
+The class 'DataElement' has no attributes.
+The enumeration 'TriggerTypes' has the following literals: 'rising', 'functionCall', 'falling', 'either'.
+The enumeration 'PseudoTypes' has the following literals: 'initial', 'choice', 'junction', 'entryPoint', 'join', 'shallowHistory', 'exitPoint', 'fork', 'deepHistory', 'terminate'.
+The enumeration 'DataTypes' has the following literals: 'boolean', 'double', 'int'.
+The enumeration 'IOTypes' has the following literals: 'input', 'local', 'output'.
+'statemachine::Event' is a specialization of 'DataElement'.
+'statemachine::Variable' is a specialization of 'DataElement'.
+'statemachine::FinalState' is a specialization of 'State'.
+'statemachine::Pseudostate' is a specialization of 'Node'.
+'statemachine::State' is a specialization of 'Node'.
+'statemachine::Transition' (role 'statemachine_Transition4', cardinality 0..*) is associated with 'statemachine::Node' (role 'statemachine_Node5', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*) is associated with 'statemachine::Node' (role 'statemachine_Node2', cardinality 0..*).
+'statemachine::Statechart' (role 'statemachine_Statechart13', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition14', cardinality 0..*).
+'statemachine::DataElement' (role 'statemachine_DataElement', cardinality 0..*) is associated with 'statemachine::Statechart' (role 'statemachine_Statechart', cardinality 0..*).
+'statemachine::Region' (role 'statemachine_Region11', cardinality 0..*) is associated with 'statemachine::Statechart' (role 'statemachine_Statechart10', cardinality 0..*).
+'statemachine::Node' (role 'statemachine_Node', cardinality 0..*) is associated with 'statemachine::Region' (role 'statemachine_Region', cardinality 0..*).
+'statemachine::Region' (role 'statemachine_Region7', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State', cardinality 0..*).

@@ -1,0 +1,209 @@
+The model has 100 class(es).
+The class 'EntityDescription' has no attributes.
+The class 'luniferadoc::richstring::RichStringURL' has the following attributes: 'location' of type str.
+The class 'luniferadoc::document::UIDescription' has no attributes.
+The class 'XForLoopExpression' has no attributes.
+The class 'luniferadoc::richstring::RichStringSpan' has no attributes.
+The class 'luniferadoc::richstring::RichStringChapter' has the following attributes: 'name' of type str.
+The class 'luniferadoc::richstring::RichStringH2' has no attributes.
+The class 'EntityDocument' has no attributes.
+The class 'luniferadoc::document::DTOProperty' has the following attributes: 'name' of type str.
+The class 'luniferadoc::richstring::RichStringRef' has the following attributes: 'refId' of type str.
+The class 'luniferadoc::document::UILayout' has no attributes.
+The class 'luniferadoc::richstring::RichStringMovie' has the following attributes: 'src' of type str; 'height' of type str; 'width' of type str; 'type' of type str.
+The class 'luniferadoc::richstring::RichStringExample' has no attributes.
+The class 'XStringLiteral' has no attributes.
+The class 'BPMProcessDocument' has no attributes.
+The class 'RichStringMarkup' has no attributes.
+The class 'luniferadoc::richstring::RichStringUIRef' has no attributes.
+The class 'luniferadoc::document::BPMProcessDescription' has no attributes.
+The class 'luniferadoc::document::VaaclipseViewLayout' has no attributes.
+The class 'luniferadoc::richstring::RichStringEntityRef' has no attributes.
+The class 'luniferadoc::richstring::RichStringH3' has no attributes.
+The class 'luniferadoc::richstring::RichStringH5' has no attributes.
+The class 'luniferadoc::document::BPMHumanTaskDescription' has no attributes.
+The class 'luniferadoc::document::GeneralDocument' has no attributes.
+The class 'RichStringListElement' has no attributes.
+The class 'RichStringTableData' has no attributes.
+The class 'luniferadoc::richstring::RichStringViewRef' has no attributes.
+The class 'luniferadoc::document::VaaclipseViewDescription' has no attributes.
+The class 'DTOProperties' has no attributes.
+The class 'DTODescription' has no attributes.
+The class 'luniferadoc::richstring::RichStringStartProcess' has the following attributes: 'processId' of type str.
+The class 'UIDescription' has no attributes.
+The class 'luniferadoc::richstring::RichStringProcessRef' has no attributes.
+The class 'document::luniferadoc::DocumentInclude' has no attributes.
+The class 'richstring::luniferadoc::XExpression' has no attributes.
+The class 'luniferadoc::document::DTOLayout' has no attributes.
+The class 'luniferadoc::richstring::RichStringLiteral' has no attributes.
+The class 'document::luniferadoc::XImportDeclaration' has no attributes.
+The class 'XBlockExpression' has no attributes.
+The class 'luniferadoc::document::EntityDescription' has no attributes.
+The class 'luniferadoc::richstring::RichStringOpenView' has the following attributes: 'viewId' of type str.
+The class 'luniferadoc::richstring::RichStringCode' has the following attributes: 'lang' of type str.
+The class 'RichStringElseIf' has no attributes.
+The class 'luniferadoc::document::DTODocument' has the following attributes: 'dtoClass' of type str.
+The class 'EntityField' has no attributes.
+The class 'luniferadoc::richstring::RichStringIf' has no attributes.
+The class 'luniferadoc::richstring::RichStringBold' has no attributes.
+The class 'luniferadoc::document::VaaclipseViewDocument' has the following attributes: 'view' of type str.
+The class 'luniferadoc::richstring::RichStringMarkup' has the following attributes: 'id' of type str; 'styleClass' of type str.
+The class 'luniferadoc::richstring::RichStringMailto' has the following attributes: 'email' of type str.
+The class 'BPMHumanTaskDescription' has no attributes.
+The class 'LuniferaDocDocument' has no attributes.
+The class 'luniferadoc::document::EntityDocument' has the following attributes: 'entityClass' of type str.
+The class 'luniferadoc::richstring::RichString' has no attributes.
+The class 'EntityFields' has no attributes.
+The class 'luniferadoc::document::UIDocument' has the following attributes: 'ui' of type str.
+The class 'luniferadoc::richstring::RichStringList' has no attributes.
+The class 'luniferadoc::richstring::RichStringUnderline' has no attributes.
+The class 'luniferadoc::document::EntityLayout' has no attributes.
+The class 'luniferadoc::richstring::RichStringH4' has no attributes.
+The class 'luniferadoc::richstring::RichStringH6' has no attributes.
+The class 'DTODocument' has no attributes.
+The class 'luniferadoc::document::DTOProperties' has no attributes.
+The class 'luniferadoc::richstring::RichStringImg' has the following attributes: 'height' of type str; 'alt' of type str; 'src' of type str; 'width' of type str.
+The class 'UIDocument' has no attributes.
+The class 'luniferadoc::document::BPMProcessDocument' has the following attributes: 'process' of type str.
+The class 'luniferadoc::richstring::RichStringSection' has the following attributes: 'name' of type str.
+The class 'luniferadoc::richstring::RichStringSkype' has the following attributes: 'target' of type str.
+The class 'luniferadoc::document::BPMHumanTaskDocument' has the following attributes: 'task' of type str.
+The class 'luniferadoc::richstring::RichStringTableData' has no attributes.
+The class 'luniferadoc::richstring::RichStringListElement' has no attributes.
+The class 'NamedDocument' has no attributes.
+The class 'VaaclipseViewDocument' has no attributes.
+The class 'luniferadoc::richstring::RichStringTableRow' has no attributes.
+The class 'luniferadoc::document::DTODescription' has no attributes.
+The class 'luniferadoc::richstring::RichStringTaskRef' has no attributes.
+The class 'luniferadoc::document::BPMProcessLayout' has no attributes.
+The class 'BPMHumanTaskDocument' has no attributes.
+The class 'XExpression' has no attributes.
+The class 'luniferadoc::richstring::RichStringSubsection' has the following attributes: 'name' of type str.
+The class 'luniferadoc::document::BPMHumanTaskLayout' has no attributes.
+The class 'luniferadoc::document::EntityFields' has no attributes.
+The class 'BPMProcessDescription' has no attributes.
+The class 'DTOProperty' has no attributes.
+The class 'VaaclipseViewDescription' has no attributes.
+The class 'luniferadoc::richstring::RichStringOrderedList' has no attributes.
+The class 'LuniferaDocLayout' has no attributes.
+The class 'luniferadoc::richstring::RichStringH1' has no attributes.
+The class 'luniferadoc::richstring::RichStringForLoop' has no attributes.
+The class 'luniferadoc::document::LuniferaDocLayout' has no attributes.
+The class 'luniferadoc::NamedDocument' has the following attributes: 'name' of type str.
+The class 'luniferadoc::document::LuniferaDocDocument' has no attributes.
+The class 'luniferadoc::richstring::RichStringElseIf' has no attributes.
+The class 'RichString' has no attributes.
+The class 'luniferadoc::DocumentInclude' has the following attributes: 'varName' of type str.
+The class 'luniferadoc::document::EntityField' has the following attributes: 'pk' of type bool; 'nullable' of type bool; 'type' of type str; 'name' of type str; 'length' of type int.
+The class 'luniferadoc::richstring::RichStringItalic' has no attributes.
+The class 'luniferadoc::richstring::RichStringDTORef' has no attributes.
+The class 'luniferadoc::richstring::RichStringTable' has no attributes.
+The class 'RichStringTableRow' has no attributes.
+The enumeration 'DocType' has the following literals: 'DTO', 'UI', 'BPM_TASK', 'ENTITY', 'BPM_PROCESS', 'VAACLIPSE_VIEW'.
+'luniferadoc::document::EntityLayout' is a specialization of 'LuniferaDocLayout'.
+'luniferadoc::richstring::RichStringIf' is a specialization of 'XExpression'.
+'luniferadoc::richstring::RichStringH1' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringDTORef' is a specialization of 'RichStringMarkup'.
+'luniferadoc::document::BPMHumanTaskLayout' is a specialization of 'LuniferaDocLayout'.
+'luniferadoc::document::VaaclipseViewDocument' is a specialization of 'LuniferaDocDocument'.
+'luniferadoc::richstring::RichStringExample' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringH4' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringItalic' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringTaskRef' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringUnderline' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringTableRow' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringStartProcess' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringLiteral' is a specialization of 'XStringLiteral'.
+'luniferadoc::document::DTODocument' is a specialization of 'LuniferaDocDocument'.
+'luniferadoc::richstring::RichStringH5' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringTable' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringH6' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringProcessRef' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringMailto' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringOpenView' is a specialization of 'RichStringMarkup'.
+'luniferadoc::document::LuniferaDocDocument' is a specialization of 'NamedDocument'.
+'luniferadoc::richstring::RichStringMarkup' is a specialization of 'XExpression'.
+'luniferadoc::richstring::RichStringEntityRef' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringViewRef' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringList' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringBold' is a specialization of 'RichStringMarkup'.
+'luniferadoc::document::VaaclipseViewLayout' is a specialization of 'LuniferaDocLayout'.
+'luniferadoc::richstring::RichStringH2' is a specialization of 'RichStringMarkup'.
+'luniferadoc::document::BPMProcessLayout' is a specialization of 'LuniferaDocLayout'.
+'luniferadoc::document::BPMProcessDocument' is a specialization of 'LuniferaDocDocument'.
+'luniferadoc::richstring::RichStringForLoop' is a specialization of 'XForLoopExpression'.
+'luniferadoc::richstring::RichStringOrderedList' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringSkype' is a specialization of 'RichStringMarkup'.
+'luniferadoc::document::UILayout' is a specialization of 'LuniferaDocLayout'.
+'luniferadoc::richstring::RichStringCode' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringTableData' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringSection' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringUIRef' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringURL' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringMovie' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringChapter' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringImg' is a specialization of 'RichStringMarkup'.
+'luniferadoc::document::UIDocument' is a specialization of 'LuniferaDocDocument'.
+'luniferadoc::document::DTOLayout' is a specialization of 'LuniferaDocLayout'.
+'luniferadoc::richstring::RichStringSubsection' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringH3' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichStringSpan' is a specialization of 'RichStringMarkup'.
+'luniferadoc::document::GeneralDocument' is a specialization of 'LuniferaDocLayout'.
+'luniferadoc::document::LuniferaDocLayout' is a specialization of 'NamedDocument'.
+'luniferadoc::richstring::RichStringRef' is a specialization of 'RichStringMarkup'.
+'luniferadoc::document::EntityDocument' is a specialization of 'LuniferaDocDocument'.
+'luniferadoc::document::BPMHumanTaskDocument' is a specialization of 'LuniferaDocDocument'.
+'luniferadoc::richstring::RichStringListElement' is a specialization of 'RichStringMarkup'.
+'luniferadoc::richstring::RichString' is a specialization of 'XBlockExpression'.
+'luniferadoc::document::BPMHumanTaskDocument' (role 'luniferadoc_document_BPMHumanTaskDocument', cardinality 0..*) is associated with 'BPMHumanTaskDescription' (role 'BPMHumanTaskDescription', cardinality 0..*).
+'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression76', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringTableRow' (role 'luniferadoc_richstring_RichStringTableRow75', cardinality 0..*).
+'luniferadoc::richstring::RichStringUIRef' (role 'luniferadoc_richstring_RichStringUIRef', cardinality 0..*) is associated with 'UIDocument' (role 'UIDocument', cardinality 0..*).
+'luniferadoc::document::EntityField' (role 'luniferadoc_document_EntityField', cardinality 0..*) is associated with 'RichString' (role 'RichString7', cardinality 0..*).
+'luniferadoc::richstring::RichStringForLoop' (role 'luniferadoc_richstring_RichStringForLoop', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression38', cardinality 0..*).
+'luniferadoc::document::BPMProcessDescription' (role 'luniferadoc_document_BPMProcessDescription', cardinality 0..*) is associated with 'RichString' (role 'RichString18', cardinality 0..*).
+'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression72', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringTable' (role 'luniferadoc_richstring_RichStringTable71', cardinality 0..*).
+'luniferadoc::richstring::RichStringTaskRef' (role 'luniferadoc_richstring_RichStringTaskRef', cardinality 0..*) is associated with 'BPMHumanTaskDocument' (role 'BPMHumanTaskDocument', cardinality 0..*).
+'luniferadoc::richstring::RichStringForLoop' (role 'luniferadoc_richstring_RichStringForLoop43', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression44', cardinality 0..*).
+'luniferadoc::richstring::RichStringMovie' (role 'luniferadoc_richstring_RichStringMovie', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression66', cardinality 0..*).
+'luniferadoc::document::EntityFields' (role 'luniferadoc_document_EntityFields', cardinality 0..*) is associated with 'EntityField' (role 'EntityField', cardinality 0..*).
+'luniferadoc::document::EntityDocument' (role 'luniferadoc_document_EntityDocument3', cardinality 0..*) is associated with 'EntityFields' (role 'EntityFields', cardinality 0..*).
+'RichString' (role 'RichString21', cardinality 0..*) is associated with 'luniferadoc::document::BPMHumanTaskDescription' (role 'luniferadoc_document_BPMHumanTaskDescription', cardinality 0..*).
+'VaaclipseViewDocument' (role 'VaaclipseViewDocument', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringViewRef' (role 'luniferadoc_richstring_RichStringViewRef', cardinality 0..*).
+'luniferadoc::DocumentInclude' (role 'luniferadoc_DocumentInclude', cardinality 0..*) is associated with 'LuniferaDocDocument' (role 'LuniferaDocDocument', cardinality 0..*).
+'luniferadoc::richstring::RichStringIf' (role 'luniferadoc_richstring_RichStringIf48', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression49', cardinality 0..*).
+'luniferadoc::document::LuniferaDocLayout' (role 'luniferadoc_document_LuniferaDocLayout', cardinality 0..*) is associated with 'RichString' (role 'RichString30', cardinality 0..*).
+'luniferadoc::document::DTOProperty' (role 'luniferadoc_document_DTOProperty', cardinality 0..*) is associated with 'RichString' (role 'RichString15', cardinality 0..*).
+'luniferadoc::richstring::RichStringIf' (role 'luniferadoc_richstring_RichStringIf', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression46', cardinality 0..*).
+'luniferadoc::richstring::RichStringImg' (role 'luniferadoc_richstring_RichStringImg', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression60', cardinality 0..*).
+'luniferadoc::richstring::RichStringDTORef' (role 'luniferadoc_richstring_RichStringDTORef', cardinality 0..*) is associated with 'DTODocument' (role 'DTODocument', cardinality 0..*).
+'luniferadoc::richstring::RichStringList' (role 'luniferadoc_richstring_RichStringList85', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression86', cardinality 0..*).
+'luniferadoc::document::DTODescription' (role 'luniferadoc_document_DTODescription', cardinality 0..*) is associated with 'RichString' (role 'RichString12', cardinality 0..*).
+'luniferadoc::richstring::RichStringOrderedList' (role 'luniferadoc_richstring_RichStringOrderedList90', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression91', cardinality 0..*).
+'luniferadoc::document::UIDescription' (role 'luniferadoc_document_UIDescription', cardinality 0..*) is associated with 'RichString' (role 'RichString27', cardinality 0..*).
+'luniferadoc::document::GeneralDocument' (role 'luniferadoc_document_GeneralDocument', cardinality 0..*) is associated with 'document::luniferadoc::DocumentInclude' (role 'document_luniferadoc_DocumentInclude', cardinality 0..*).
+'luniferadoc::richstring::RichStringURL' (role 'luniferadoc_richstring_RichStringURL', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression58', cardinality 0..*).
+'luniferadoc::richstring::RichStringElseIf' (role 'luniferadoc_richstring_RichStringElseIf', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression', cardinality 0..*).
+'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression54', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringIf' (role 'luniferadoc_richstring_RichStringIf53', cardinality 0..*).
+'luniferadoc::richstring::RichStringCode' (role 'luniferadoc_richstring_RichStringCode', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression68', cardinality 0..*).
+'UIDescription' (role 'UIDescription', cardinality 0..*) is associated with 'luniferadoc::document::UIDocument' (role 'luniferadoc_document_UIDocument', cardinality 0..*).
+'luniferadoc::document::EntityDescription' (role 'luniferadoc_document_EntityDescription', cardinality 0..*) is associated with 'RichString' (role 'RichString', cardinality 0..*).
+'DTODescription' (role 'DTODescription', cardinality 0..*) is associated with 'luniferadoc::document::DTODocument' (role 'luniferadoc_document_DTODocument', cardinality 0..*).
+'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression56', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringMarkup' (role 'luniferadoc_richstring_RichStringMarkup', cardinality 0..*).
+'BPMProcessDocument' (role 'BPMProcessDocument', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringProcessRef' (role 'luniferadoc_richstring_RichStringProcessRef', cardinality 0..*).
+'RichStringListElement' (role 'RichStringListElement88', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringOrderedList' (role 'luniferadoc_richstring_RichStringOrderedList', cardinality 0..*).
+'RichStringElseIf' (role 'RichStringElseIf', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringIf' (role 'luniferadoc_richstring_RichStringIf51', cardinality 0..*).
+'luniferadoc::document::DTOProperties' (role 'luniferadoc_document_DTOProperties', cardinality 0..*) is associated with 'DTOProperty' (role 'DTOProperty', cardinality 0..*).
+'EntityDescription' (role 'EntityDescription', cardinality 0..*) is associated with 'luniferadoc::document::EntityDocument' (role 'luniferadoc_document_EntityDocument', cardinality 0..*).
+'luniferadoc::richstring::RichStringMailto' (role 'luniferadoc_richstring_RichStringMailto', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression62', cardinality 0..*).
+'luniferadoc::richstring::RichStringTable' (role 'luniferadoc_richstring_RichStringTable', cardinality 0..*) is associated with 'RichStringTableRow' (role 'RichStringTableRow', cardinality 0..*).
+'EntityDocument' (role 'EntityDocument', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringEntityRef' (role 'luniferadoc_richstring_RichStringEntityRef', cardinality 0..*).
+'luniferadoc::document::BPMProcessDocument' (role 'luniferadoc_document_BPMProcessDocument', cardinality 0..*) is associated with 'BPMProcessDescription' (role 'BPMProcessDescription', cardinality 0..*).
+'DTOProperties' (role 'DTOProperties', cardinality 0..*) is associated with 'luniferadoc::document::DTODocument' (role 'luniferadoc_document_DTODocument10', cardinality 0..*).
+'luniferadoc::document::VaaclipseViewDocument' (role 'luniferadoc_document_VaaclipseViewDocument', cardinality 0..*) is associated with 'VaaclipseViewDescription' (role 'VaaclipseViewDescription', cardinality 0..*).
+'luniferadoc::richstring::RichStringElseIf' (role 'luniferadoc_richstring_RichStringElseIf35', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression36', cardinality 0..*).
+'document::luniferadoc::XImportDeclaration' (role 'document_luniferadoc_XImportDeclaration', cardinality 0..*) is associated with 'luniferadoc::document::LuniferaDocLayout' (role 'luniferadoc_document_LuniferaDocLayout32', cardinality 0..*).
+'RichStringListElement' (role 'RichStringListElement', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringList' (role 'luniferadoc_richstring_RichStringList', cardinality 0..*).
+'luniferadoc::richstring::RichStringTableRow' (role 'luniferadoc_richstring_RichStringTableRow', cardinality 0..*) is associated with 'RichStringTableData' (role 'RichStringTableData', cardinality 0..*).
+'luniferadoc::document::VaaclipseViewDescription' (role 'luniferadoc_document_VaaclipseViewDescription', cardinality 0..*) is associated with 'RichString' (role 'RichString24', cardinality 0..*).
+'luniferadoc::richstring::RichStringForLoop' (role 'luniferadoc_richstring_RichStringForLoop40', cardinality 0..*) is associated with 'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression41', cardinality 0..*).
+'richstring::luniferadoc::XExpression' (role 'richstring_luniferadoc_XExpression64', cardinality 0..*) is associated with 'luniferadoc::richstring::RichStringSkype' (role 'luniferadoc_richstring_RichStringSkype', cardinality 0..*).

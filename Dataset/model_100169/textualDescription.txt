@@ -1,0 +1,22 @@
+The model has 5 class(es).
+The class 'RDBMS::Column' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'RDBMS::Schema' has the following attributes: 'name' of type str.
+The class 'RDBMS::Key' has the following attributes: 'name' of type str.
+The class 'RDBMS::ForeignKey' has the following attributes: 'name' of type str.
+The class 'RDBMS::Table' has the following attributes: 'name' of type str.
+'RDBMS::Table' (role 'Table', cardinality 0..*) is associated with 'RDBMS::Schema' (role 'schema', cardinality 0..*).
+'RDBMS::Column' (role 'column16', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'ForeignKey17', cardinality 0..*).
+'RDBMS::ForeignKey' (role 'hasForeignKey32', cardinality 0..*) is associated with 'RDBMS::Column' (role 'Column33', cardinality 0..*).
+'RDBMS::Table' (role 'owner8', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'ForeignKey9', cardinality 0..*).
+'RDBMS::Table' (role 'table', cardinality 0..*) is associated with 'RDBMS::Schema' (role 'Schema', cardinality 0..*).
+'RDBMS::Key' (role 'hasKey', cardinality 0..*) is associated with 'RDBMS::Table' (role 'Table19', cardinality 0..*).
+'RDBMS::Column' (role 'column13', cardinality 0..*) is associated with 'RDBMS::Key' (role 'Key14', cardinality 0..*).
+'RDBMS::Schema' (role 'Schema26', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'foreignKey', cardinality 0..*).
+'RDBMS::Column' (role 'Column', cardinality 0..*) is associated with 'RDBMS::Table' (role 'owner', cardinality 0..*).
+'RDBMS::Key' (role 'hasKey21', cardinality 0..*) is associated with 'RDBMS::Column' (role 'Column22', cardinality 0..*).
+'RDBMS::Column' (role 'column', cardinality 0..*) is associated with 'RDBMS::Table' (role 'Table11', cardinality 0..*).
+'RDBMS::Schema' (role 'schema2', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'RDBMS::Key' (role 'Key', cardinality 0..*) is associated with 'RDBMS::Table' (role 'owner6', cardinality 0..*).
+'RDBMS::Key' (role 'refersTo', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'ForeignKey24', cardinality 0..*).
+'RDBMS::Table' (role 'Table30', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'hasForeignKey', cardinality 0..*).
+'RDBMS::ForeignKey' (role 'referredBy', cardinality 0..*) is associated with 'RDBMS::Key' (role 'Key28', cardinality 0..*).

@@ -1,0 +1,30 @@
+The model has 12 class(es).
+The class 'ContentElement' has no attributes.
+The class 'spreadsheet::SpreadsheetFile' has the following attributes: 'nbSheet' of type int.
+The class 'spreadsheet::Sheet' has the following attributes: 'name' of type str.
+The class 'spreadsheet::Table' has the following attributes: 'nbColumns' of type int.
+The class 'spreadsheet::Cell' has no attributes.
+The class 'spreadsheet::Row' has no attributes.
+The class 'spreadsheet::Image' has the following attributes: 'height' of type int; 'width' of type int.
+The class 'DocumentModel' has no attributes.
+The class 'spreadsheet::Text' has the following attributes: 'textContent' of type str.
+The class 'spreadsheet::Title' has the following attributes: 'hiearchy' of type str.
+The class 'spreadsheet::Point' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'spreadsheet::Header' has no attributes.
+'spreadsheet::Title' is a specialization of 'ContentElement'.
+'spreadsheet::SpreadsheetFile' is a specialization of 'DocumentModel'.
+'spreadsheet::Cell' is a specialization of 'ContentElement'.
+'spreadsheet::Row' (role 'spreadsheet_Row30', cardinality 0..*) is associated with 'spreadsheet::Cell' (role 'spreadsheet_Cell31', cardinality 0..*).
+'spreadsheet::Table' (role 'spreadsheet_Table22', cardinality 0..*) is associated with 'spreadsheet::Point' (role 'spreadsheet_Point23', cardinality 0..*).
+'spreadsheet::Table' (role 'spreadsheet_Table15', cardinality 0..*) is associated with 'spreadsheet::Title' (role 'spreadsheet_Title16', cardinality 0..*).
+'spreadsheet::Table' (role 'spreadsheet_Table20', cardinality 0..*) is associated with 'spreadsheet::Row' (role 'spreadsheet_Row', cardinality 0..*).
+'spreadsheet::Title' (role 'spreadsheet_Title11', cardinality 0..*) is associated with 'spreadsheet::Image' (role 'spreadsheet_Image10', cardinality 0..*).
+'spreadsheet::Point' (role 'spreadsheet_Point', cardinality 0..*) is associated with 'spreadsheet::Image' (role 'spreadsheet_Image13', cardinality 0..*).
+'spreadsheet::Image' (role 'spreadsheet_Image', cardinality 0..*) is associated with 'spreadsheet::Sheet' (role 'spreadsheet_Sheet4', cardinality 0..*).
+'spreadsheet::Table' (role 'spreadsheet_Table', cardinality 0..*) is associated with 'spreadsheet::Sheet' (role 'spreadsheet_Sheet6', cardinality 0..*).
+'spreadsheet::Title' (role 'spreadsheet_Title', cardinality 0..*) is associated with 'spreadsheet::Text' (role 'spreadsheet_Text8', cardinality 0..*).
+'spreadsheet::Header' (role 'spreadsheet_Header25', cardinality 0..*) is associated with 'spreadsheet::Cell' (role 'spreadsheet_Cell', cardinality 0..*).
+'spreadsheet::Cell' (role 'spreadsheet_Cell27', cardinality 0..*) is associated with 'spreadsheet::Point' (role 'spreadsheet_Point28', cardinality 0..*).
+'spreadsheet::Text' (role 'spreadsheet_Text', cardinality 0..*) is associated with 'spreadsheet::Sheet' (role 'spreadsheet_Sheet2', cardinality 0..*).
+'spreadsheet::SpreadsheetFile' (role 'spreadsheet_SpreadsheetFile', cardinality 0..*) is associated with 'spreadsheet::Sheet' (role 'spreadsheet_Sheet', cardinality 0..*).
+'spreadsheet::Header' (role 'spreadsheet_Header', cardinality 0..*) is associated with 'spreadsheet::Table' (role 'spreadsheet_Table18', cardinality 0..*).

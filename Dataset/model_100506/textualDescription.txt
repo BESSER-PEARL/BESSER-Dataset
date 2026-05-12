@@ -1,0 +1,44 @@
+The model has 21 class(es).
+The class 'Attribute' has no attributes.
+The class 'Document' has no attributes.
+The class 'AbstractRequirement' has no attributes.
+The class 'ElementWithIL' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Reqtify::CoverLink' has no attributes.
+The class 'Reqtify::Section' has no attributes.
+The class 'Reqtify::TextElement' has the following attributes: 'description' of type str.
+The class 'Reqtify::Project' has no attributes.
+The class 'Reqtify::Attribute' has the following attributes: 'value' of type str.
+The class 'Reqtify::AbstractRequirement' has no attributes.
+The class 'Project' has no attributes.
+The class 'TextElement' has no attributes.
+The class 'Reqtify::TypedElement' has the following attributes: 'type' of type str.
+The class 'Reqtify::MacroRequirement' has no attributes.
+The class 'Reqtify::Document' has no attributes.
+The class 'MacroRequirement' has no attributes.
+The class 'Reqtify::Requirement' has no attributes.
+The class 'Reqtify::ElementWithIL' has the following attributes: 'label' of type str; 'name' of type str.
+The class 'CoverLink' has no attributes.
+The class 'Section' has no attributes.
+'Reqtify::Attribute' is a specialization of 'TypedElement'.
+'Reqtify::TextElement' is a specialization of 'ElementWithIL'.
+'Reqtify::ElementWithIL' is a specialization of 'TypedElement'.
+'Reqtify::Document' is a specialization of 'ElementWithIL'.
+'Reqtify::MacroRequirement' is a specialization of 'AbstractRequirement'.
+'Reqtify::Section' is a specialization of 'TextElement'.
+'Reqtify::CoverLink' is a specialization of 'TypedElement'.
+'Reqtify::Requirement' is a specialization of 'AbstractRequirement'.
+'Reqtify::AbstractRequirement' is a specialization of 'TextElement'.
+'Section' (role 'Section6', cardinality 0..*) is associated with 'Reqtify::Section' (role 'sectionParent', cardinality 0..*).
+'Reqtify::AbstractRequirement' (role 'Reqtify_AbstractRequirement', cardinality 0..*) is associated with 'CoverLink' (role 'CoverLink', cardinality 0..*).
+'AbstractRequirement' (role 'AbstractRequirement19', cardinality 0..*) is associated with 'Reqtify::CoverLink' (role 'Reqtify_CoverLink', cardinality 0..*).
+'Reqtify::MacroRequirement' (role 'isContained', cardinality 0..*) is associated with 'AbstractRequirement' (role 'AbstractRequirement17', cardinality 0..*).
+'Section' (role 'Section', cardinality 0..*) is associated with 'Reqtify::Document' (role 'document', cardinality 0..*).
+'Reqtify::Project' (role 'project', cardinality 0..*) is associated with 'Document' (role 'Document', cardinality 0..*).
+'Reqtify::AbstractRequirement' (role 'contains', cardinality 0..*) is associated with 'MacroRequirement' (role 'MacroRequirement', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'Reqtify::AbstractRequirement' (role 'Reqtify_AbstractRequirement15', cardinality 0..*).
+'AbstractRequirement' (role 'AbstractRequirement', cardinality 0..*) is associated with 'Reqtify::Section' (role 'section', cardinality 0..*).
+'Reqtify::Document' (role 'documents', cardinality 0..*) is associated with 'Project' (role 'Project', cardinality 0..*).
+'Reqtify::AbstractRequirement' (role 'requirements', cardinality 0..*) is associated with 'Section' (role 'Section11', cardinality 0..*).
+'Reqtify::Section' (role 'sections', cardinality 0..*) is associated with 'Document' (role 'Document4', cardinality 0..*).
+'Section' (role 'Section8', cardinality 0..*) is associated with 'Reqtify::Section' (role 'sectionChildren', cardinality 0..*).

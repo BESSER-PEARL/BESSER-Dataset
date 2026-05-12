@@ -1,0 +1,76 @@
+The model has 33 class(es).
+The class 'EventAutomatonModel::FixParameter' has the following attributes: 'value' of type str.
+The class 'TimerAction' has no attributes.
+The class 'EventAutomatonModel::ComplexEventProcessor' has no attributes.
+The class 'EventAutomatonModel::SymbolicInputEvent' has the following attributes: 'name' of type str.
+The class 'EventAutomatonModel::Parameter' has no attributes.
+The class 'EventAutomatonModel::TokenParameterBinding' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'EventAutomatonModel::FreeParameter' has the following attributes: 'excludedValues' of type str.
+The class 'EventAutomatonModel::State' has the following attributes: 'id' of type int; 'acceptor' of type str.
+The class 'EventAutomatonModel::SymbolicTimer' has the following attributes: 'name' of type str.
+The class 'EventAutomatonModel::SymbolicTokenParameter' has no attributes.
+The class 'EventAutomatonModel::Binding' has no attributes.
+The class 'EventAutomatonModel::EventGuard' has no attributes.
+The class 'EventAutomatonModel::ResetTimerAction' has no attributes.
+The class 'EventAutomatonModel::SymbolicEvent' has no attributes.
+The class 'EventAutomatonModel::ConstantBinding' has no attributes.
+The class 'EventAutomatonModel::Action' has no attributes.
+The class 'SymbolicParameter' has no attributes.
+The class 'EventAutomatonModel::SymbolicTimeoutEvent' has no attributes.
+The class 'SymbolicEvent' has no attributes.
+The class 'EventAutomatonModel::Token' has no attributes.
+The class 'EventAutomatonModel::Transition' has no attributes.
+The class 'Binding' has no attributes.
+The class 'EventAutomatonModel::AbstractTransition' has no attributes.
+The class 'EventAutomatonModel::SymbolicEventParameter' has no attributes.
+The class 'Action' has no attributes.
+The class 'EventAutomatonModel::TimerAction' has no attributes.
+The class 'EventAutomatonModel::Event' has no attributes.
+The class 'EventAutomatonModel::SetTimerAction' has the following attributes: 'toValue' of type int.
+The class 'EventAutomatonModel::EpsilonTransition' has no attributes.
+The class 'EventAutomatonModel::Automaton' has the following attributes: 'name' of type str.
+The class 'AbstractTransition' has no attributes.
+The class 'EventAutomatonModel::SymbolicParameter' has the following attributes: 'name' of type str.
+'EventAutomatonModel::FreeParameter' is a specialization of 'Parameter'.
+'EventAutomatonModel::Transition' is a specialization of 'AbstractTransition'.
+'EventAutomatonModel::SymbolicTokenParameter' is a specialization of 'SymbolicParameter'.
+'EventAutomatonModel::FixParameter' is a specialization of 'Parameter'.
+'EventAutomatonModel::ConstantBinding' is a specialization of 'Binding'.
+'EventAutomatonModel::SetTimerAction' is a specialization of 'TimerAction'.
+'EventAutomatonModel::TimerAction' is a specialization of 'Action'.
+'EventAutomatonModel::SymbolicEventParameter' is a specialization of 'SymbolicParameter'.
+'EventAutomatonModel::SymbolicTimeoutEvent' is a specialization of 'SymbolicEvent'.
+'EventAutomatonModel::TokenParameterBinding' is a specialization of 'Binding'.
+'EventAutomatonModel::SymbolicInputEvent' is a specialization of 'SymbolicEvent'.
+'EventAutomatonModel::EpsilonTransition' is a specialization of 'AbstractTransition'.
+'EventAutomatonModel::ResetTimerAction' is a specialization of 'TimerAction'.
+'EventAutomatonModel::SymbolicParameter' (role 'EventAutomatonModel_SymbolicParameter20', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicEvent' (role 'EventAutomatonModel_SymbolicEvent', cardinality 0..*).
+'EventAutomatonModel::SymbolicEvent' (role 'EventAutomatonModel_SymbolicEvent33', cardinality 0..*) is associated with 'EventAutomatonModel::Event' (role 'EventAutomatonModel_Event', cardinality 0..*).
+'EventAutomatonModel::SymbolicTimeoutEvent' (role 'timeoutEvent', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicTimer' (role 'SymbolicTimer', cardinality 0..*).
+'EventAutomatonModel::Token' (role 'EventAutomatonModel_Token39', cardinality 0..*) is associated with 'EventAutomatonModel::Parameter' (role 'EventAutomatonModel_Parameter40', cardinality 0..*).
+'EventAutomatonModel::FixParameter' (role 'EventAutomatonModel_FixParameter', cardinality 0..*) is associated with 'EventAutomatonModel::ConstantBinding' (role 'EventAutomatonModel_ConstantBinding', cardinality 0..*).
+'EventAutomatonModel::State' (role 'State49', cardinality 0..*) is associated with 'EventAutomatonModel::AbstractTransition' (role 'incomingTransitions', cardinality 0..*).
+'EventAutomatonModel::Automaton' (role 'EventAutomatonModel_Automaton', cardinality 0..*) is associated with 'EventAutomatonModel::State' (role 'EventAutomatonModel_State', cardinality 0..*).
+'EventAutomatonModel::SymbolicEvent' (role 'EventAutomatonModel_SymbolicEvent47', cardinality 0..*) is associated with 'EventAutomatonModel::EventGuard' (role 'EventAutomatonModel_EventGuard46', cardinality 0..*).
+'EventAutomatonModel::AbstractTransition' (role 'AbstractTransition', cardinality 0..*) is associated with 'EventAutomatonModel::State' (role 'to', cardinality 0..*).
+'EventAutomatonModel::Event' (role 'EventAutomatonModel_Event35', cardinality 0..*) is associated with 'EventAutomatonModel::FixParameter' (role 'EventAutomatonModel_FixParameter36', cardinality 0..*).
+'EventAutomatonModel::Automaton' (role 'EventAutomatonModel_Automaton16', cardinality 0..*) is associated with 'EventAutomatonModel::ComplexEventProcessor' (role 'EventAutomatonModel_ComplexEventProcessor', cardinality 0..*).
+'EventAutomatonModel::Automaton' (role 'EventAutomatonModel_Automaton9', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicTimer' (role 'EventAutomatonModel_SymbolicTimer', cardinality 0..*).
+'EventAutomatonModel::Action' (role 'EventAutomatonModel_Action', cardinality 0..*) is associated with 'EventAutomatonModel::AbstractTransition' (role 'EventAutomatonModel_AbstractTransition', cardinality 0..*).
+'EventAutomatonModel::State' (role 'State51', cardinality 0..*) is associated with 'EventAutomatonModel::AbstractTransition' (role 'outgoingTransitions', cardinality 0..*).
+'EventAutomatonModel::EventGuard' (role 'EventAutomatonModel_EventGuard43', cardinality 0..*) is associated with 'EventAutomatonModel::Binding' (role 'EventAutomatonModel_Binding44', cardinality 0..*).
+'EventAutomatonModel::Binding' (role 'EventAutomatonModel_Binding', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicEventParameter' (role 'EventAutomatonModel_SymbolicEventParameter', cardinality 0..*).
+'EventAutomatonModel::Automaton' (role 'EventAutomatonModel_Automaton4', cardinality 0..*) is associated with 'EventAutomatonModel::State' (role 'EventAutomatonModel_State5', cardinality 0..*).
+'EventAutomatonModel::TimerAction' (role 'EventAutomatonModel_TimerAction', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicTimer' (role 'EventAutomatonModel_SymbolicTimer31', cardinality 0..*).
+'EventAutomatonModel::State' (role 'from_', cardinality 0..*) is associated with 'EventAutomatonModel::AbstractTransition' (role 'AbstractTransition26', cardinality 0..*).
+'EventAutomatonModel::State' (role 'on', cardinality 0..*) is associated with 'EventAutomatonModel::Token' (role 'Token', cardinality 0..*).
+'EventAutomatonModel::SymbolicParameter' (role 'EventAutomatonModel_SymbolicParameter22', cardinality 0..*) is associated with 'EventAutomatonModel::Parameter' (role 'EventAutomatonModel_Parameter', cardinality 0..*).
+'EventAutomatonModel::TokenParameterBinding' (role 'EventAutomatonModel_TokenParameterBinding', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicTokenParameter' (role 'EventAutomatonModel_SymbolicTokenParameter', cardinality 0..*).
+'EventAutomatonModel::State' (role 'EventAutomatonModel_State12', cardinality 0..*) is associated with 'EventAutomatonModel::Automaton' (role 'EventAutomatonModel_Automaton11', cardinality 0..*).
+'EventAutomatonModel::SymbolicTimeoutEvent' (role 'SymbolicTimeoutEvent', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicTimer' (role 'timer', cardinality 0..*).
+'EventAutomatonModel::ComplexEventProcessor' (role 'EventAutomatonModel_ComplexEventProcessor18', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicInputEvent' (role 'EventAutomatonModel_SymbolicInputEvent', cardinality 0..*).
+'EventAutomatonModel::Transition' (role 'EventAutomatonModel_Transition', cardinality 0..*) is associated with 'EventAutomatonModel::EventGuard' (role 'EventAutomatonModel_EventGuard', cardinality 0..*).
+'EventAutomatonModel::Token' (role 'EventAutomatonModel_Token', cardinality 0..*) is associated with 'EventAutomatonModel::Automaton' (role 'EventAutomatonModel_Automaton2', cardinality 0..*).
+'EventAutomatonModel::Token' (role 'tokens', cardinality 0..*) is associated with 'EventAutomatonModel::State' (role 'State', cardinality 0..*).
+'EventAutomatonModel::Automaton' (role 'EventAutomatonModel_Automaton7', cardinality 0..*) is associated with 'EventAutomatonModel::SymbolicParameter' (role 'EventAutomatonModel_SymbolicParameter', cardinality 0..*).

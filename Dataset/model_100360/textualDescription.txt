@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'fowlerdsl::Statemachine' has no attributes.
+The class 'fowlerdsl::Transition' has no attributes.
+The class 'fowlerdsl::State' has the following attributes: 'name' of type str.
+The class 'fowlerdsl::Command' has the following attributes: 'name' of type str; 'code' of type str.
+The class 'fowlerdsl::Event' has the following attributes: 'resetting' of type bool; 'name' of type str; 'code' of type str.
+'fowlerdsl::Statemachine' (role 'fowlerdsl_Statemachine', cardinality 0..*) is associated with 'fowlerdsl::Event' (role 'fowlerdsl_Event', cardinality 0..*).
+'fowlerdsl::State' (role 'fowlerdsl_State15', cardinality 0..*) is associated with 'fowlerdsl::Transition' (role 'fowlerdsl_Transition14', cardinality 0..*).
+'fowlerdsl::Statemachine' (role 'fowlerdsl_Statemachine4', cardinality 0..*) is associated with 'fowlerdsl::State' (role 'fowlerdsl_State', cardinality 0..*).
+'fowlerdsl::Command' (role 'fowlerdsl_Command', cardinality 0..*) is associated with 'fowlerdsl::Statemachine' (role 'fowlerdsl_Statemachine2', cardinality 0..*).
+'fowlerdsl::Command' (role 'fowlerdsl_Command7', cardinality 0..*) is associated with 'fowlerdsl::State' (role 'fowlerdsl_State6', cardinality 0..*).
+'fowlerdsl::Transition' (role 'fowlerdsl_Transition11', cardinality 0..*) is associated with 'fowlerdsl::Event' (role 'fowlerdsl_Event12', cardinality 0..*).
+'fowlerdsl::State' (role 'fowlerdsl_State9', cardinality 0..*) is associated with 'fowlerdsl::Transition' (role 'fowlerdsl_Transition', cardinality 0..*).

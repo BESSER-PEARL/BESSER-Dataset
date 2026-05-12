@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'RelationalDBContent::NamedElement' has the following attributes: 'name' of type str.
+The class 'TupleElement' has no attributes.
+The class 'Tuple' has no attributes.
+The class 'RelationalDBContent::DataBase' has the following attributes: 'SGBDname' of type str.
+The class 'DataBase' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'RelationalDBContent::TupleElement' has the following attributes: 'value' of type str.
+The class 'Table' has no attributes.
+The class 'RelationalDBContent::Table' has no attributes.
+The class 'RelationalDBContent::Tuple' has no attributes.
+'RelationalDBContent::DataBase' is a specialization of 'NamedElement'.
+'RelationalDBContent::Table' is a specialization of 'NamedElement'.
+'Table' (role 'Table', cardinality 0..*) is associated with 'RelationalDBContent::DataBase' (role 'database', cardinality 0..*).
+'TupleElement' (role 'TupleElement', cardinality 0..*) is associated with 'RelationalDBContent::Tuple' (role 'tuple', cardinality 0..*).
+'RelationalDBContent::Table' (role 'owner', cardinality 0..*) is associated with 'Tuple' (role 'Tuple', cardinality 0..*).
+'Table' (role 'Table4', cardinality 0..*) is associated with 'RelationalDBContent::Tuple' (role 'tuples', cardinality 0..*).
+'DataBase' (role 'DataBase', cardinality 0..*) is associated with 'RelationalDBContent::Table' (role 'tables', cardinality 0..*).
+'Tuple' (role 'Tuple7', cardinality 0..*) is associated with 'RelationalDBContent::TupleElement' (role 'elements', cardinality 0..*).

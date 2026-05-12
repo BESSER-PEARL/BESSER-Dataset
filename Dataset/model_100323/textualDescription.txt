@@ -1,0 +1,142 @@
+The model has 59 class(es).
+The class 'PNML::Name' has no attributes.
+The class 'Label' has no attributes.
+The class 'PNML::URI' has the following attributes: 'value' of type str.
+The class 'PNML::Label' has the following attributes: 'text' of type str.
+The class 'PNML::NodeGraphics' has no attributes.
+The class 'NetContent' has no attributes.
+The class 'Graphics' has no attributes.
+The class 'PNML::NetContent' has no attributes.
+The class 'PNML::Coordinate' has the following attributes: 'x' of type str; 'y' of type str.
+The class 'PNMLDocument' has no attributes.
+The class 'Font' has no attributes.
+The class 'AnyElement' has no attributes.
+The class 'Coordinate' has no attributes.
+The class 'PNML::NetGraphics' has no attributes.
+The class 'PNML::Offset' has no attributes.
+The class 'PNML::ToolSpecific' has the following attributes: 'tool' of type str; 'version' of type str.
+The class 'NetGraphics' has no attributes.
+The class 'NodeGraphics' has no attributes.
+The class 'LabeledElement' has no attributes.
+The class 'PNML::Inscription' has no attributes.
+The class 'PNML::Node' has no attributes.
+The class 'EdgeGraphics' has no attributes.
+The class 'PNML::LabeledElement' has no attributes.
+The class 'PNML::Arc' has no attributes.
+The class 'PNML::Place' has no attributes.
+The class 'PNML::AnyElement' has the following attributes: 'name' of type str; 'text' of type str.
+The class 'PNML::Transition' has no attributes.
+The class 'PNML::NetElement' has no attributes.
+The class 'AnnotationGraphics' has no attributes.
+The class 'PNML::IdedElement' has the following attributes: 'id' of type str.
+The class 'ToolSpecific' has no attributes.
+The class 'PNML::Dimension' has the following attributes: 'height' of type str; 'width' of type str.
+The class 'PNML::Font' has the following attributes: 'family' of type str; 'align' of type str; 'rotation' of type str; 'style' of type str; 'weight' of type str; 'size' of type str; 'decoration' of type str.
+The class 'Dimension' has no attributes.
+The class 'PNML::Fill' has the following attributes: 'gradientrotation' of type str.
+The class 'PNML::EdgeGraphics' has no attributes.
+The class 'Color' has no attributes.
+The class 'URI' has no attributes.
+The class 'IdedElement' has no attributes.
+The class 'PNML::NetContentElement' has no attributes.
+The class 'Arc' has no attributes.
+The class 'PNML::Position' has no attributes.
+The class 'PNML::InitialMarking' has no attributes.
+The class 'PNML::Graphics' has no attributes.
+The class 'Node' has no attributes.
+The class 'Place' has no attributes.
+The class 'Name' has no attributes.
+The class 'Fill' has no attributes.
+The class 'NetContentElement' has no attributes.
+The class 'Offset' has no attributes.
+The class 'Inscription' has no attributes.
+The class 'Line' has no attributes.
+The class 'InitialMarking' has no attributes.
+The class 'PNML::Line' has the following attributes: 'shape' of type str; 'style' of type str; 'width' of type str.
+The class 'Position' has no attributes.
+The class 'NetElement' has no attributes.
+The class 'PNML::PNMLDocument' has no attributes.
+The class 'PNML::Color' has no attributes.
+The class 'PNML::AnnotationGraphics' has no attributes.
+The enumeration 'StyleType' has the following literals: 'sttsolid', 'sttdot', 'sttdash'.
+The enumeration 'DecorationType' has the following literals: 'dtunderligne', 'dtoverligne', 'dtlinethrough'.
+The enumeration 'AlignType' has the following literals: 'atleft', 'atcenter', 'atright'.
+The enumeration 'RotationType' has the following literals: 'rtdiagonal', 'rthorizontal', 'rtvertical'.
+The enumeration 'ShapeType' has the following literals: 'shtcurve', 'shtline'.
+'PNML::Node' is a specialization of 'IdedElement'.
+'PNML::NetContentElement' is a specialization of 'NetContent'.
+'PNML::Name' is a specialization of 'LabeledElement'.
+'PNML::InitialMarking' is a specialization of 'LabeledElement'.
+'PNML::NodeGraphics' is a specialization of 'Graphics'.
+'PNML::Offset' is a specialization of 'Coordinate'.
+'PNML::EdgeGraphics' is a specialization of 'Graphics'.
+'PNML::NetGraphics' is a specialization of 'Graphics'.
+'PNML::Inscription' is a specialization of 'LabeledElement'.
+'PNML::Place' is a specialization of 'NetContentElement'.
+'PNML::Arc' is a specialization of 'NetContent'.
+'PNML::AnnotationGraphics' is a specialization of 'Graphics'.
+'PNML::Arc' is a specialization of 'IdedElement'.
+'PNML::Position' is a specialization of 'Coordinate'.
+'PNML::Transition' is a specialization of 'NetContentElement'.
+'PNML::NetElement' is a specialization of 'IdedElement'.
+'PNML::EdgeGraphics' (role 'edgegraphics76', cardinality 0..*) is associated with 'Line' (role 'Line77', cardinality 0..*).
+'PNML::NodeGraphics' (role 'nodegraphics62', cardinality 0..*) is associated with 'Dimension' (role 'Dimension', cardinality 0..*).
+'LabeledElement' (role 'LabeledElement79', cardinality 0..*) is associated with 'PNML::AnnotationGraphics' (role 'annotationgraphics', cardinality 0..*).
+'PNML::Fill' (role 'PNML_Fill104', cardinality 0..*) is associated with 'URI' (role 'URI105', cardinality 0..*).
+'Color' (role 'Color', cardinality 0..*) is associated with 'PNML::Fill' (role 'PNML_Fill', cardinality 0..*).
+'Line' (role 'Line', cardinality 0..*) is associated with 'PNML::NodeGraphics' (role 'nodegraphics66', cardinality 0..*).
+'ToolSpecific' (role 'ToolSpecific', cardinality 0..*) is associated with 'PNML::NetElement' (role 'net7', cardinality 0..*).
+'Fill' (role 'Fill74', cardinality 0..*) is associated with 'PNML::EdgeGraphics' (role 'edgegraphics73', cardinality 0..*).
+'NetGraphics' (role 'NetGraphics', cardinality 0..*) is associated with 'PNML::NetElement' (role 'net9', cardinality 0..*).
+'PNML::NetContent' (role 'contents', cardinality 0..*) is associated with 'NetElement' (role 'NetElement13', cardinality 0..*).
+'EdgeGraphics' (role 'EdgeGraphics94', cardinality 0..*) is associated with 'PNML::Position' (role 'position93', cardinality 0..*).
+'URI' (role 'URI3', cardinality 0..*) is associated with 'PNML::NetElement' (role 'PNML_NetElement', cardinality 0..*).
+'Font' (role 'Font', cardinality 0..*) is associated with 'PNML::AnnotationGraphics' (role 'annotationgraphics83', cardinality 0..*).
+'Name' (role 'Name15', cardinality 0..*) is associated with 'PNML::NetContent' (role 'netcontent', cardinality 0..*).
+'PNML::NodeGraphics' (role 'nodegraphics60', cardinality 0..*) is associated with 'Position' (role 'Position', cardinality 0..*).
+'AnnotationGraphics' (role 'AnnotationGraphics123', cardinality 0..*) is associated with 'PNML::Line' (role 'line122', cardinality 0..*).
+'NetContentElement' (role 'NetContentElement', cardinality 0..*) is associated with 'PNML::Arc' (role 'PNML_Arc', cardinality 0..*).
+'Node' (role 'Node58', cardinality 0..*) is associated with 'PNML::NodeGraphics' (role 'nodegraphics', cardinality 0..*).
+'AnnotationGraphics' (role 'AnnotationGraphics96', cardinality 0..*) is associated with 'PNML::Offset' (role 'offset', cardinality 0..*).
+'NodeGraphics' (role 'NodeGraphics117', cardinality 0..*) is associated with 'PNML::Line' (role 'line', cardinality 0..*).
+'Arc' (role 'Arc', cardinality 0..*) is associated with 'PNML::ToolSpecific' (role 'tools20', cardinality 0..*).
+'NetContentElement' (role 'NetContentElement40', cardinality 0..*) is associated with 'PNML::Arc' (role 'PNML_Arc39', cardinality 0..*).
+'Node' (role 'Node36', cardinality 0..*) is associated with 'PNML::NetContentElement' (role 'netcontentelement', cardinality 0..*).
+'PNML::AnnotationGraphics' (role 'annotationgraphics85', cardinality 0..*) is associated with 'Fill' (role 'Fill86', cardinality 0..*).
+'ToolSpecific' (role 'ToolSpecific51', cardinality 0..*) is associated with 'PNML::Node' (role 'node50', cardinality 0..*).
+'Line' (role 'Line89', cardinality 0..*) is associated with 'PNML::AnnotationGraphics' (role 'annotationgraphics88', cardinality 0..*).
+'PNML::Position' (role 'position', cardinality 0..*) is associated with 'NodeGraphics' (role 'NodeGraphics91', cardinality 0..*).
+'Color' (role 'Color115', cardinality 0..*) is associated with 'PNML::Line' (role 'PNML_Line', cardinality 0..*).
+'AnnotationGraphics' (role 'AnnotationGraphics113', cardinality 0..*) is associated with 'PNML::Fill' (role 'fill112', cardinality 0..*).
+'LabeledElement' (role 'LabeledElement', cardinality 0..*) is associated with 'PNML::Label' (role 'labels', cardinality 0..*).
+'EdgeGraphics' (role 'EdgeGraphics', cardinality 0..*) is associated with 'PNML::Arc' (role 'arc44', cardinality 0..*).
+'PNML::AnnotationGraphics' (role 'annotationgraphics81', cardinality 0..*) is associated with 'Offset' (role 'Offset', cardinality 0..*).
+'NetElement' (role 'NetElement56', cardinality 0..*) is associated with 'PNML::NetGraphics' (role 'netgraphics', cardinality 0..*).
+'NetElement' (role 'NetElement', cardinality 0..*) is associated with 'PNML::PNMLDocument' (role 'document', cardinality 0..*).
+'NodeGraphics' (role 'NodeGraphics', cardinality 0..*) is associated with 'PNML::Node' (role 'node53', cardinality 0..*).
+'AnnotationGraphics' (role 'AnnotationGraphics', cardinality 0..*) is associated with 'PNML::LabeledElement' (role 'namedelement25', cardinality 0..*).
+'Fill' (role 'Fill', cardinality 0..*) is associated with 'PNML::NodeGraphics' (role 'nodegraphics64', cardinality 0..*).
+'NetContent' (role 'NetContent31', cardinality 0..*) is associated with 'PNML::Name' (role 'name30', cardinality 0..*).
+'EdgeGraphics' (role 'EdgeGraphics110', cardinality 0..*) is associated with 'PNML::Fill' (role 'fill109', cardinality 0..*).
+'NodeGraphics' (role 'NodeGraphics107', cardinality 0..*) is associated with 'PNML::Fill' (role 'fill', cardinality 0..*).
+'PNML::NetElement' (role 'nets', cardinality 0..*) is associated with 'PNMLDocument' (role 'PNMLDocument', cardinality 0..*).
+'PNML::Dimension' (role 'dimension', cardinality 0..*) is associated with 'NodeGraphics' (role 'NodeGraphics98', cardinality 0..*).
+'PNML::InitialMarking' (role 'initialmarking', cardinality 0..*) is associated with 'Place' (role 'Place', cardinality 0..*).
+'PNML::Font' (role 'font', cardinality 0..*) is associated with 'AnnotationGraphics' (role 'AnnotationGraphics125', cardinality 0..*).
+'PNML::Name' (role 'name', cardinality 0..*) is associated with 'NetElement' (role 'NetElement28', cardinality 0..*).
+'PNML::Line' (role 'line119', cardinality 0..*) is associated with 'EdgeGraphics' (role 'EdgeGraphics120', cardinality 0..*).
+'PNML::EdgeGraphics' (role 'edgegraphics70', cardinality 0..*) is associated with 'Position' (role 'Position71', cardinality 0..*).
+'PNML::ToolSpecific' (role 'tools', cardinality 0..*) is associated with 'NetElement' (role 'NetElement18', cardinality 0..*).
+'PNML::Fill' (role 'PNML_Fill101', cardinality 0..*) is associated with 'Color' (role 'Color102', cardinality 0..*).
+'Inscription' (role 'Inscription', cardinality 0..*) is associated with 'PNML::Arc' (role 'arc46', cardinality 0..*).
+'PNML::PNMLDocument' (role 'PNML_PNMLDocument', cardinality 0..*) is associated with 'URI' (role 'URI', cardinality 0..*).
+'Node' (role 'Node', cardinality 0..*) is associated with 'PNML::ToolSpecific' (role 'tools22', cardinality 0..*).
+'PNML::NetElement' (role 'net', cardinality 0..*) is associated with 'NetContent' (role 'NetContent', cardinality 0..*).
+'Name' (role 'Name', cardinality 0..*) is associated with 'PNML::NetElement' (role 'net11', cardinality 0..*).
+'Label' (role 'Label', cardinality 0..*) is associated with 'PNML::LabeledElement' (role 'namedelement', cardinality 0..*).
+'AnyElement' (role 'AnyElement', cardinality 0..*) is associated with 'PNML::ToolSpecific' (role 'PNML_ToolSpecific', cardinality 0..*).
+'Arc' (role 'Arc33', cardinality 0..*) is associated with 'PNML::Inscription' (role 'inscription', cardinality 0..*).
+'InitialMarking' (role 'InitialMarking', cardinality 0..*) is associated with 'PNML::Place' (role 'place', cardinality 0..*).
+'PNML::EdgeGraphics' (role 'edgegraphics', cardinality 0..*) is associated with 'Arc' (role 'Arc68', cardinality 0..*).
+'NetContentElement' (role 'NetContentElement48', cardinality 0..*) is associated with 'PNML::Node' (role 'node', cardinality 0..*).
+'ToolSpecific' (role 'ToolSpecific42', cardinality 0..*) is associated with 'PNML::Arc' (role 'arc', cardinality 0..*).

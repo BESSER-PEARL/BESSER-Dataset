@@ -1,0 +1,228 @@
+The model has 94 class(es).
+The class 'plsql::declaration::PLSQLDefinition' has no attributes.
+The class 'plsql::statement::ExitStatement' has no attributes.
+The class 'plsql::statement::SetTransactionStatement' has no attributes.
+The class 'plsql::statement::CloseStatement' has no attributes.
+The class 'CursorDeclaration' has no attributes.
+The class 'expression::Expression' has no attributes.
+The class 'plsql::declaration::VariableDeclaration' has the following attributes: 'constant' of type bool; 'default' of type bool; 'notnull' of type bool.
+The class 'plsql::expression::SQLVariable' has no attributes.
+The class 'LoopStatement' has no attributes.
+The class 'plsql::expression::LikeExpression' has no attributes.
+The class 'plsql::expression::Expression' has no attributes.
+The class 'statement::BlockStatement' has no attributes.
+The class 'plsql::condition::BooleanCondition' has the following attributes: 'type' of type str.
+The class 'plsql::statement::ExceptionSection' has the following attributes: 'exceptionNames' of type str.
+The class 'TriggerBlock' has no attributes.
+The class 'UpdatePair' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'plsql::statement::AssignmentStatement' has no attributes.
+The class 'declaration::Declaration' has no attributes.
+The class 'plsql::expression::FoundExpression' has no attributes.
+The class 'plsql::statement::InsertStatement' has the following attributes: 'columns' of type str; 'into' of type str.
+The class 'plsql::statement::SelectStatement' has the following attributes: 'bulk' of type bool; 'selectList' of type str; 'unique' of type bool; 'isCount' of type bool; 'from_' of type str; 'all' of type bool; 'distinct' of type bool; 'collect' of type bool.
+The class 'plsql::declaration::FunctionDeclaration' has no attributes.
+The class 'plsql::statement::RaiseStatement' has the following attributes: 'exception' of type str.
+The class 'plsql::statement::GotoStatement' has no attributes.
+The class 'plsql::statement::ControlSQLStatement' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'plsql::expression::LiteralExpression' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'plsql::statement::CommitStatement' has no attributes.
+The class 'plsql::statement::UpdatePair' has the following attributes: 'column' of type str.
+The class 'plsql::statement::ReturnStatement' has no attributes.
+The class 'plsql::statement::BlockStatement' has no attributes.
+The class 'IfStatement' has no attributes.
+The class 'plsql::statement::FetchStatement' has no attributes.
+The class 'SelectStatement' has no attributes.
+The class 'plsql::statement::SavepointStatement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'plsql::statement::UpdateStatement' has the following attributes: 'table' of type str.
+The class 'plsql::condition::SQLCondition' has no attributes.
+The class 'ExceptionSection' has no attributes.
+The class 'SQLStatement' has no attributes.
+The class 'plsql::declaration::TriggerBlock' has no attributes.
+The class 'plsql::type::IndirectType' has the following attributes: 'range' of type int; 'type' of type bool; 'identifier' of type str; 'rowtype' of type bool.
+The class 'VarRefExpression' has no attributes.
+The class 'plsql::statement::DeleteStatement' has no attributes.
+The class 'type::TypedElement' has no attributes.
+The class 'plsql::expression::FormsVarRef' has the following attributes: 'reference' of type str.
+The class 'Type' has no attributes.
+The class 'plsql::type::TypedElement' has no attributes.
+The class 'plsql::statement::Statement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'plsql::statement::LockTableStatement' has no attributes.
+The class 'plsql::type::Datatype' has the following attributes: 'name' of type str; 'range' of type int.
+The class 'plsql::statement::SQLStatement' has no attributes.
+The class 'plsql::declaration::Argument' has the following attributes: 'out' of type bool; 'default' of type bool; 'in_' of type bool.
+The class 'plsql::statement::LoopStatement' has no attributes.
+The class 'plsql::statement::ModifySQLStatement' has no attributes.
+The class 'plsql::statement::RollbackStatement' has no attributes.
+The class 'condition::SQLCondition' has no attributes.
+The class 'Argument' has no attributes.
+The class 'statement::Statement' has no attributes.
+The class 'plsql::statement::CaseStatement' has no attributes.
+The class 'plsql::expression::VarRefExpression' has no attributes.
+The class 'plsql::declaration::CursorDeclaration' has no attributes.
+The class 'ModifySQLStatement' has no attributes.
+The class 'plsql::expression::NotExpression' has no attributes.
+The class 'plsql::expression::SQLCursor' has no attributes.
+The class 'Statement' has no attributes.
+The class 'plsql::expression::IsNullExpression' has no attributes.
+The class 'plsql::expression::InRangeExpression' has no attributes.
+The class 'plsql::declaration::Declaration' has no attributes.
+The class 'plsql::expression::ConcatString' has no attributes.
+The class 'plsql::declaration::NamedElement' has the following attributes: 'name' of type str.
+The class 'plsql::expression::ArithmeticExpression' has the following attributes: 'type' of type str.
+The class 'plsql::statement::NullStatement' has no attributes.
+The class 'plsql::statement::FunctionCallStatement' has no attributes.
+The class 'plsql::type::GenericType' has no attributes.
+The class 'plsql::condition::NotCondition' has no attributes.
+The class 'plsql::type::Type' has no attributes.
+The class 'plsql::expression::PropertyAccess' has the following attributes: 'propertyName' of type str.
+The class 'declaration::NamedElement' has no attributes.
+The class 'plsql::declaration::ProcedureDeclaration' has no attributes.
+The class 'plsql::expression::FunctionCallParameter' has no attributes.
+The class 'plsql::expression::StringOperation' has no attributes.
+The class 'plsql::statement::ForStatement' has no attributes.
+The class 'plsql::condition::ConditionComparison' has the following attributes: 'type' of type str.
+The class 'plsql::statement::OpenStatement' has no attributes.
+The class 'ControlSQLStatement' has no attributes.
+The class 'SQLCondition' has no attributes.
+The class 'FunctionCallParameter' has no attributes.
+The class 'plsql::statement::IfStatement' has no attributes.
+The class 'plsql::declaration::Package' has no attributes.
+The class 'plsql::expression::BooleanExpression' has the following attributes: 'type' of type str.
+The class 'StringOperation' has no attributes.
+The enumeration 'LiteralExpressionType' has the following literals: 'BOOLEAN', 'STRING', 'INTEGER', 'NULL'.
+The enumeration 'BooleanOperatorType' has the following literals: 'OR', 'AND', 'EQUALS', 'NOT', 'GREATEREQUALS', 'NOTEQUALS', 'LESSEQUALS', 'GREATERTHAN', 'LESSTHAN'.
+The enumeration 'BasicTypes' has the following literals: 'NCHAR', 'CHAR', 'DOUBLE', 'LONG', 'BINARY_INTEGER', 'NUMERIC', 'INT', 'BINARY_DOUBLE', 'VARCHAR2', 'CLOB', 'NUMBER', 'REAL', 'DEC', 'POSITIVE', 'VARCHAR', 'BINARY_FLOAT', 'FLOAT', 'DATE', 'NVARCHAR', 'NVARCHAR2', 'DECIMAL', 'ROWID', 'CHARACTER', 'BLOB', 'BOOLEAN', 'NATURAL', 'INTEGER'.
+The enumeration 'ArithmeticOperatorType' has the following literals: 'POSITIVE', 'PLUS', 'MULTIPLICATION', 'DIVISION', 'EXPONENT', 'DOUBLEVERTICALBAR', 'MINUS', 'NEGATIVE'.
+'plsql::statement::GotoStatement' is a specialization of 'declaration::NamedElement'.
+'plsql::expression::SQLVariable' is a specialization of 'VarRefExpression'.
+'plsql::statement::CaseStatement' is a specialization of 'Statement'.
+'plsql::expression::BooleanExpression' is a specialization of 'condition::SQLCondition'.
+'plsql::declaration::Declaration' is a specialization of 'NamedElement'.
+'plsql::statement::SavepointStatement' is a specialization of 'ControlSQLStatement'.
+'plsql::statement::GotoStatement' is a specialization of 'statement::Statement'.
+'plsql::type::IndirectType' is a specialization of 'Type'.
+'plsql::statement::FunctionCallStatement' is a specialization of 'statement::Statement'.
+'plsql::condition::BooleanCondition' is a specialization of 'SQLCondition'.
+'plsql::statement::ForStatement' is a specialization of 'LoopStatement'.
+'plsql::declaration::FunctionDeclaration' is a specialization of 'declaration::Declaration'.
+'plsql::statement::RollbackStatement' is a specialization of 'ControlSQLStatement'.
+'plsql::declaration::Package' is a specialization of 'NamedElement'.
+'plsql::declaration::ProcedureDeclaration' is a specialization of 'Declaration'.
+'plsql::statement::LockTableStatement' is a specialization of 'ControlSQLStatement'.
+'plsql::expression::NotExpression' is a specialization of 'Expression'.
+'plsql::expression::SQLCursor' is a specialization of 'VarRefExpression'.
+'plsql::condition::ConditionComparison' is a specialization of 'SQLCondition'.
+'plsql::statement::SelectStatement' is a specialization of 'ModifySQLStatement'.
+'plsql::type::GenericType' is a specialization of 'Type'.
+'plsql::declaration::CursorDeclaration' is a specialization of 'Declaration'.
+'plsql::declaration::TriggerBlock' is a specialization of 'declaration::NamedElement'.
+'plsql::expression::FunctionCallParameter' is a specialization of 'NamedElement'.
+'plsql::expression::PropertyAccess' is a specialization of 'Expression'.
+'plsql::statement::FunctionCallStatement' is a specialization of 'expression::Expression'.
+'plsql::declaration::FunctionDeclaration' is a specialization of 'type::TypedElement'.
+'plsql::expression::ConcatString' is a specialization of 'StringOperation'.
+'plsql::statement::RaiseStatement' is a specialization of 'Statement'.
+'plsql::declaration::Argument' is a specialization of 'type::TypedElement'.
+'plsql::expression::BooleanExpression' is a specialization of 'expression::Expression'.
+'plsql::statement::ReturnStatement' is a specialization of 'Statement'.
+'plsql::statement::DeleteStatement' is a specialization of 'ModifySQLStatement'.
+'plsql::expression::InRangeExpression' is a specialization of 'Expression'.
+'plsql::expression::VarRefExpression' is a specialization of 'Expression'.
+'plsql::statement::FunctionCallStatement' is a specialization of 'declaration::NamedElement'.
+'plsql::statement::OpenStatement' is a specialization of 'ControlSQLStatement'.
+'plsql::statement::NullStatement' is a specialization of 'Statement'.
+'plsql::statement::AssignmentStatement' is a specialization of 'Statement'.
+'plsql::expression::FormsVarRef' is a specialization of 'VarRefExpression'.
+'plsql::expression::ArithmeticExpression' is a specialization of 'Expression'.
+'plsql::statement::ControlSQLStatement' is a specialization of 'SQLStatement'.
+'plsql::statement::CommitStatement' is a specialization of 'ControlSQLStatement'.
+'plsql::statement::FetchStatement' is a specialization of 'ControlSQLStatement'.
+'plsql::statement::SetTransactionStatement' is a specialization of 'ModifySQLStatement'.
+'plsql::expression::FoundExpression' is a specialization of 'Expression'.
+'plsql::declaration::Argument' is a specialization of 'declaration::NamedElement'.
+'plsql::statement::CloseStatement' is a specialization of 'ControlSQLStatement'.
+'plsql::declaration::VariableDeclaration' is a specialization of 'declaration::Declaration'.
+'plsql::statement::UpdateStatement' is a specialization of 'ModifySQLStatement'.
+'plsql::statement::ExitStatement' is a specialization of 'Statement'.
+'plsql::expression::IsNullExpression' is a specialization of 'Expression'.
+'plsql::declaration::TriggerBlock' is a specialization of 'statement::BlockStatement'.
+'plsql::statement::IfStatement' is a specialization of 'Statement'.
+'plsql::statement::InsertStatement' is a specialization of 'ModifySQLStatement'.
+'plsql::condition::NotCondition' is a specialization of 'SQLCondition'.
+'plsql::statement::SQLStatement' is a specialization of 'Statement'.
+'plsql::expression::LiteralExpression' is a specialization of 'Expression'.
+'plsql::declaration::VariableDeclaration' is a specialization of 'type::TypedElement'.
+'plsql::statement::BlockStatement' is a specialization of 'Statement'.
+'plsql::type::Datatype' is a specialization of 'Type'.
+'plsql::expression::StringOperation' is a specialization of 'Expression'.
+'plsql::expression::LikeExpression' is a specialization of 'Expression'.
+'plsql::statement::ModifySQLStatement' is a specialization of 'SQLStatement'.
+'plsql::statement::LoopStatement' is a specialization of 'Statement'.
+'Argument' (role 'Argument', cardinality 0..*) is associated with 'plsql::declaration::CursorDeclaration' (role 'plsql_declaration_CursorDeclaration', cardinality 0..*).
+'SQLCondition' (role 'SQLCondition101', cardinality 0..*) is associated with 'plsql::condition::NotCondition' (role 'plsql_condition_NotCondition', cardinality 0..*).
+'Declaration' (role 'Declaration116', cardinality 0..*) is associated with 'plsql::declaration::ProcedureDeclaration' (role 'plsql_declaration_ProcedureDeclaration115', cardinality 0..*).
+'plsql::statement::ForStatement' (role 'plsql_statement_ForStatement', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*).
+'plsql::type::TypedElement' (role 'plsql_type_TypedElement', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'Expression' (role 'Expression106', cardinality 0..*) is associated with 'plsql::condition::ConditionComparison' (role 'plsql_condition_ConditionComparison105', cardinality 0..*).
+'VarRefExpression' (role 'VarRefExpression39', cardinality 0..*) is associated with 'plsql::statement::SelectStatement' (role 'plsql_statement_SelectStatement', cardinality 0..*).
+'plsql::statement::IfStatement' (role 'plsql_statement_IfStatement11', cardinality 0..*) is associated with 'Statement' (role 'Statement12', cardinality 0..*).
+'SQLCondition' (role 'SQLCondition', cardinality 0..*) is associated with 'plsql::statement::SelectStatement' (role 'plsql_statement_SelectStatement41', cardinality 0..*).
+'plsql::declaration::FunctionDeclaration' (role 'plsql_declaration_FunctionDeclaration129', cardinality 0..*) is associated with 'ExceptionSection' (role 'ExceptionSection130', cardinality 0..*).
+'plsql::expression::InRangeExpression' (role 'plsql_expression_InRangeExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression65', cardinality 0..*).
+'plsql::statement::BlockStatement' (role 'plsql_statement_BlockStatement26', cardinality 0..*) is associated with 'ExceptionSection' (role 'ExceptionSection', cardinality 0..*).
+'Statement' (role 'Statement24', cardinality 0..*) is associated with 'plsql::statement::BlockStatement' (role 'plsql_statement_BlockStatement23', cardinality 0..*).
+'IfStatement' (role 'IfStatement', cardinality 0..*) is associated with 'plsql::statement::IfStatement' (role 'plsql_statement_IfStatement9', cardinality 0..*).
+'Expression' (role 'Expression61', cardinality 0..*) is associated with 'plsql::expression::NotExpression' (role 'plsql_expression_NotExpression', cardinality 0..*).
+'CursorDeclaration' (role 'CursorDeclaration78', cardinality 0..*) is associated with 'plsql::expression::FoundExpression' (role 'plsql_expression_FoundExpression', cardinality 0..*).
+'plsql::statement::OpenStatement' (role 'plsql_statement_OpenStatement', cardinality 0..*) is associated with 'CursorDeclaration' (role 'CursorDeclaration34', cardinality 0..*).
+'SQLCondition' (role 'SQLCondition99', cardinality 0..*) is associated with 'plsql::condition::BooleanCondition' (role 'plsql_condition_BooleanCondition98', cardinality 0..*).
+'Declaration' (role 'Declaration134', cardinality 0..*) is associated with 'plsql::declaration::Package' (role 'plsql_declaration_Package', cardinality 0..*).
+'plsql::statement::AssignmentStatement' (role 'plsql_statement_AssignmentStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'plsql::statement::UpdateStatement' (role 'plsql_statement_UpdateStatement49', cardinality 0..*) is associated with 'SQLCondition' (role 'SQLCondition50', cardinality 0..*).
+'Expression' (role 'Expression56', cardinality 0..*) is associated with 'plsql::expression::BooleanExpression' (role 'plsql_expression_BooleanExpression', cardinality 0..*).
+'plsql::statement::LoopStatement' (role 'plsql_statement_LoopStatement', cardinality 0..*) is associated with 'Statement' (role 'Statement14', cardinality 0..*).
+'plsql::declaration::ProcedureDeclaration' (role 'plsql_declaration_ProcedureDeclaration', cardinality 0..*) is associated with 'Argument' (role 'Argument113', cardinality 0..*).
+'plsql::expression::ArithmeticExpression' (role 'plsql_expression_ArithmeticExpression90', cardinality 0..*) is associated with 'Expression' (role 'Expression91', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'plsql::statement::IfStatement' (role 'plsql_statement_IfStatement7', cardinality 0..*).
+'plsql::condition::ConditionComparison' (role 'plsql_condition_ConditionComparison', cardinality 0..*) is associated with 'Expression' (role 'Expression103', cardinality 0..*).
+'plsql::statement::ForStatement' (role 'plsql_statement_ForStatement17', cardinality 0..*) is associated with 'Expression' (role 'Expression18', cardinality 0..*).
+'plsql::expression::ConcatString' (role 'plsql_expression_ConcatString', cardinality 0..*) is associated with 'Expression' (role 'Expression93', cardinality 0..*).
+'plsql::statement::UpdatePair' (role 'plsql_statement_UpdatePair', cardinality 0..*) is associated with 'Expression' (role 'Expression52', cardinality 0..*).
+'Expression' (role 'Expression76', cardinality 0..*) is associated with 'plsql::expression::LikeExpression' (role 'plsql_expression_LikeExpression75', cardinality 0..*).
+'Expression' (role 'Expression73', cardinality 0..*) is associated with 'plsql::expression::LikeExpression' (role 'plsql_expression_LikeExpression', cardinality 0..*).
+'plsql::expression::SQLCursor' (role 'plsql_expression_SQLCursor', cardinality 0..*) is associated with 'CursorDeclaration' (role 'CursorDeclaration82', cardinality 0..*).
+'Expression' (role 'Expression37', cardinality 0..*) is associated with 'plsql::statement::OpenStatement' (role 'plsql_statement_OpenStatement36', cardinality 0..*).
+'Expression' (role 'Expression59', cardinality 0..*) is associated with 'plsql::expression::BooleanExpression' (role 'plsql_expression_BooleanExpression58', cardinality 0..*).
+'plsql::statement::FetchStatement' (role 'plsql_statement_FetchStatement', cardinality 0..*) is associated with 'CursorDeclaration' (role 'CursorDeclaration30', cardinality 0..*).
+'FunctionCallParameter' (role 'FunctionCallParameter', cardinality 0..*) is associated with 'plsql::statement::FunctionCallStatement' (role 'plsql_statement_FunctionCallStatement', cardinality 0..*).
+'Expression' (role 'Expression84', cardinality 0..*) is associated with 'plsql::expression::PropertyAccess' (role 'plsql_expression_PropertyAccess', cardinality 0..*).
+'Expression' (role 'Expression88', cardinality 0..*) is associated with 'plsql::expression::ArithmeticExpression' (role 'plsql_expression_ArithmeticExpression', cardinality 0..*).
+'Expression' (role 'Expression44', cardinality 0..*) is associated with 'plsql::statement::SelectStatement' (role 'plsql_statement_SelectStatement43', cardinality 0..*).
+'Expression' (role 'Expression46', cardinality 0..*) is associated with 'plsql::statement::InsertStatement' (role 'plsql_statement_InsertStatement', cardinality 0..*).
+'plsql::declaration::VariableDeclaration' (role 'plsql_declaration_VariableDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression108', cardinality 0..*).
+'plsql::declaration::Argument' (role 'plsql_declaration_Argument', cardinality 0..*) is associated with 'Expression' (role 'Expression132', cardinality 0..*).
+'Declaration' (role 'Declaration', cardinality 0..*) is associated with 'plsql::statement::BlockStatement' (role 'plsql_statement_BlockStatement', cardinality 0..*).
+'plsql::condition::BooleanCondition' (role 'plsql_condition_BooleanCondition', cardinality 0..*) is associated with 'SQLCondition' (role 'SQLCondition96', cardinality 0..*).
+'plsql::declaration::CursorDeclaration' (role 'plsql_declaration_CursorDeclaration111', cardinality 0..*) is associated with 'SelectStatement' (role 'SelectStatement', cardinality 0..*).
+'Statement' (role 'Statement54', cardinality 0..*) is associated with 'plsql::statement::ExceptionSection' (role 'plsql_statement_ExceptionSection', cardinality 0..*).
+'plsql::expression::FunctionCallParameter' (role 'plsql_expression_FunctionCallParameter', cardinality 0..*) is associated with 'Expression' (role 'Expression86', cardinality 0..*).
+'plsql::expression::SQLVariable' (role 'plsql_expression_SQLVariable', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration80', cardinality 0..*).
+'plsql::expression::InRangeExpression' (role 'plsql_expression_InRangeExpression70', cardinality 0..*) is associated with 'Expression' (role 'Expression71', cardinality 0..*).
+'plsql::statement::UpdateStatement' (role 'plsql_statement_UpdateStatement', cardinality 0..*) is associated with 'UpdatePair' (role 'UpdatePair', cardinality 0..*).
+'Declaration' (role 'Declaration124', cardinality 0..*) is associated with 'plsql::declaration::FunctionDeclaration' (role 'plsql_declaration_FunctionDeclaration123', cardinality 0..*).
+'Expression' (role 'Expression20', cardinality 0..*) is associated with 'plsql::statement::ReturnStatement' (role 'plsql_statement_ReturnStatement', cardinality 0..*).
+'Statement' (role 'Statement127', cardinality 0..*) is associated with 'plsql::declaration::FunctionDeclaration' (role 'plsql_declaration_FunctionDeclaration126', cardinality 0..*).
+'VarRefExpression' (role 'VarRefExpression', cardinality 0..*) is associated with 'plsql::statement::FetchStatement' (role 'plsql_statement_FetchStatement32', cardinality 0..*).
+'Statement' (role 'Statement137', cardinality 0..*) is associated with 'plsql::declaration::Package' (role 'plsql_declaration_Package136', cardinality 0..*).
+'plsql::statement::IfStatement' (role 'plsql_statement_IfStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression5', cardinality 0..*).
+'Expression' (role 'Expression3', cardinality 0..*) is associated with 'plsql::statement::AssignmentStatement' (role 'plsql_statement_AssignmentStatement2', cardinality 0..*).
+'Expression' (role 'Expression68', cardinality 0..*) is associated with 'plsql::expression::InRangeExpression' (role 'plsql_expression_InRangeExpression67', cardinality 0..*).
+'Statement' (role 'Statement119', cardinality 0..*) is associated with 'plsql::declaration::ProcedureDeclaration' (role 'plsql_declaration_ProcedureDeclaration118', cardinality 0..*).
+'TriggerBlock' (role 'TriggerBlock', cardinality 0..*) is associated with 'plsql::declaration::PLSQLDefinition' (role 'plsql_declaration_PLSQLDefinition', cardinality 0..*).
+'CursorDeclaration' (role 'CursorDeclaration', cardinality 0..*) is associated with 'plsql::statement::CloseStatement' (role 'plsql_statement_CloseStatement', cardinality 0..*).
+'Expression' (role 'Expression63', cardinality 0..*) is associated with 'plsql::expression::IsNullExpression' (role 'plsql_expression_IsNullExpression', cardinality 0..*).
+'Argument' (role 'Argument121', cardinality 0..*) is associated with 'plsql::declaration::FunctionDeclaration' (role 'plsql_declaration_FunctionDeclaration', cardinality 0..*).

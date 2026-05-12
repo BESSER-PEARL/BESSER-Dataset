@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'schema::FunctionalElement' has no attributes.
+The class 'schema::DataModelerNamedElement' has no attributes.
+The class 'Diagram' has no attributes.
+The class 'ui::project::Project' has the following attributes: 'description' of type str; 'application' of type str.
+The class 'Schema' has no attributes.
+The class 'Database' has no attributes.
+The class 'ui::diagram::DMDiagram' has no attributes.
+'ui::project::Project' is a specialization of 'schema::FunctionalElement'.
+'ui::project::Project' is a specialization of 'schema::DataModelerNamedElement'.
+'ui::diagram::DMDiagram' is a specialization of 'Diagram'.
+'Schema' (role 'Schema', cardinality 0..*) is associated with 'ui::project::Project' (role 'ui_project_Project2', cardinality 0..*).
+'Database' (role 'Database', cardinality 0..*) is associated with 'ui::project::Project' (role 'ui_project_Project', cardinality 0..*).

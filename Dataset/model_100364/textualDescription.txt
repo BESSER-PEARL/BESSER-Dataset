@@ -1,0 +1,49 @@
+The model has 21 class(es).
+The class 'State' has no attributes.
+The class 'fsm::Pseudostate' has no attributes.
+The class 'fsm::Guard' has the following attributes: 'expression' of type str.
+The class 'fsm::Trigger' has the following attributes: 'expression' of type str.
+The class 'fsm::Action' has the following attributes: 'value' of type bool; 'variable' of type str.
+The class 'Transition' has no attributes.
+The class 'fsm::FinalState' has no attributes.
+The class 'fsm::TimedTransition' has the following attributes: 'duration' of type int.
+The class 'fsm::State' has the following attributes: 'finalTime' of type int; 'initialTime' of type int.
+The class 'fsm::Variable' has the following attributes: 'value' of type bool; 'name' of type str.
+The class 'fsm::Join' has no attributes.
+The class 'fsm::Region' has no attributes.
+The class 'fsm::Transition' has the following attributes: 'finalTime' of type int; 'initialTime' of type int.
+The class 'fsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'fsm::StateMachine' has no attributes.
+The class 'fsm::Choice' has no attributes.
+The class 'fsm::CompositeState' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'fsm::InitialState' has no attributes.
+The class 'fsm::Fork' has no attributes.
+The class 'Pseudostate' has no attributes.
+'fsm::StateMachine' is a specialization of 'NamedElement'.
+'fsm::Transition' is a specialization of 'NamedElement'.
+'fsm::Choice' is a specialization of 'Pseudostate'.
+'fsm::InitialState' is a specialization of 'State'.
+'fsm::Pseudostate' is a specialization of 'State'.
+'fsm::CompositeState' is a specialization of 'State'.
+'fsm::State' is a specialization of 'NamedElement'.
+'fsm::Join' is a specialization of 'Pseudostate'.
+'fsm::Fork' is a specialization of 'Pseudostate'.
+'fsm::TimedTransition' is a specialization of 'Transition'.
+'fsm::FinalState' is a specialization of 'State'.
+'fsm::Region' (role 'fsm_Region24', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State25', cardinality 0..*).
+'fsm::Trigger' (role 'fsm_Trigger', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::StateMachine' (role 'fsm_StateMachine', cardinality 0..*) is associated with 'fsm::Variable' (role 'fsm_Variable', cardinality 0..*).
+'fsm::State' (role 'State', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'stateMachine', cardinality 0..*).
+'fsm::CompositeState' (role 'fsm_CompositeState22', cardinality 0..*) is associated with 'fsm::Region' (role 'fsm_Region', cardinality 0..*).
+'fsm::State' (role 'State11', cardinality 0..*) is associated with 'fsm::Transition' (role 'incoming', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition18', cardinality 0..*) is associated with 'fsm::Guard' (role 'fsm_Guard', cardinality 0..*).
+'fsm::StateMachine' (role 'stateMachine2', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::State' (role 'source', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition5', cardinality 0..*).
+'fsm::State' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition7', cardinality 0..*).
+'fsm::CompositeState' (role 'fsm_CompositeState', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::State' (role 'State13', cardinality 0..*) is associated with 'fsm::Transition' (role 'outgoing', cardinality 0..*).
+'fsm::Region' (role 'fsm_Region27', cardinality 0..*) is associated with 'fsm::CompositeState' (role 'fsm_CompositeState28', cardinality 0..*).
+'fsm::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'fsm::State' (role 'states', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition20', cardinality 0..*) is associated with 'fsm::Action' (role 'fsm_Action', cardinality 0..*).
+'fsm::StateMachine' (role 'StateMachine16', cardinality 0..*) is associated with 'fsm::Transition' (role 'transitions', cardinality 0..*).

@@ -1,0 +1,106 @@
+The model has 33 class(es).
+The class 'YasperEPNML114::Net' has the following attributes: 'id' of type str; 'group' of type str; 'type' of type str.
+The class 'YasperEPNML114::Cost' has no attributes.
+The class 'YasperEPNML114::ReferencePlaceSpecific' has the following attributes: 'tool' of type str; 'version' of type str.
+The class 'YasperEPNML114::ProcessingTime' has no attributes.
+The class 'YasperEPNML114::Role' has the following attributes: 'text' of type str.
+The class 'YasperEPNML114::TwoDimVector' has the following attributes: 'x' of type str; 'y' of type str.
+The class 'YasperEPNML114::PlaceType1' has no attributes.
+The class 'YasperEPNML114::ReferencePlace' has the following attributes: 'id' of type str; 'group' of type str; 'ref' of type str.
+The class 'YasperEPNML114::ArcType' has the following attributes: 'text' of type str.
+The class 'YasperEPNML114::Arc' has the following attributes: 'source' of type str; 'group' of type str; 'id' of type str; 'target' of type str.
+The class 'YasperEPNML114::TransitionType' has the following attributes: 'text' of type str.
+The class 'Place' has no attributes.
+The class 'YasperEPNML114::PnmlAnnotation' has the following attributes: 'text' of type str.
+The class 'YasperEPNML114::Transformation' has the following attributes: 'text' of type str.
+The class 'YasperEPNML114::Roles' has no attributes.
+The class 'YasperEPNML114::Page' has the following attributes: 'id' of type str; 'group' of type str.
+The class 'YasperEPNML114::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'YasperEPNML114::ConnectionWeight' has the following attributes: 'connection' of type str.
+The class 'YasperEPNML114::EdgeGraphics' has no attributes.
+The class 'YasperEPNML114::Place' has the following attributes: 'id' of type str; 'group' of type str.
+The class 'YasperEPNML114::Inscription' has the following attributes: 'text' of type str.
+The class 'YasperEPNML114::Stat' has the following attributes: 'text' of type str.
+The class 'YasperEPNML114::InitialMarking' has the following attributes: 'text' of type str.
+The class 'YasperEPNML114::TransitionSpecific' has the following attributes: 'tokenCaseSensitive' of type str; 'version' of type str; 'tool' of type str.
+The class 'YasperEPNML114::EStringToStringMapEntry' has no attributes.
+The class 'YasperEPNML114::AnnotationGraphics' has no attributes.
+The class 'YasperEPNML114::ToolspecificType' has the following attributes: 'mixed' of type str; 'any' of type str; 'group' of type str; 'version' of type str; 'tool' of type str.
+The class 'YasperEPNML114::NetGraphics' has the following attributes: 'group' of type str.
+The class 'YasperEPNML114::Pnml' has the following attributes: 'group' of type str.
+The class 'YasperEPNML114::ConnectionWeights' has no attributes.
+The class 'YasperEPNML114::Transition' has the following attributes: 'id' of type str; 'group' of type str.
+The class 'YasperEPNML114::NodeGraphics' has the following attributes: 'group' of type str.
+The class 'YasperEPNML114::PlaceType' has the following attributes: 'text' of type str.
+The enumeration 'TextType1' has the following literals: 'XOR', 'AND'.
+The enumeration 'TextTypeMember0' has the following literals: 'inflow', 'inhibitor', 'reset', 'outflow', 'biflow'.
+The enumeration 'Version' has the following literals: '_1'.
+The enumeration 'TextType2' has the following literals: 'channel', 'store'.
+The enumeration 'Tool' has the following literals: 'Yasper'.
+'YasperEPNML114::PlaceType1' is a specialization of 'Place'.
+'YasperEPNML114::TwoDimVector' (role 'YasperEPNML114_TwoDimVector56', cardinality 0..*) is associated with 'YasperEPNML114::NetGraphics' (role 'YasperEPNML114_NetGraphics55', cardinality 0..*).
+'YasperEPNML114::EdgeGraphics' (role 'YasperEPNML114_EdgeGraphics28', cardinality 0..*) is associated with 'YasperEPNML114::TwoDimVector' (role 'YasperEPNML114_TwoDimVector29', cardinality 0..*).
+'YasperEPNML114::ConnectionWeights' (role 'YasperEPNML114_ConnectionWeights', cardinality 0..*) is associated with 'YasperEPNML114::ConnectionWeight' (role 'YasperEPNML114_ConnectionWeight15', cardinality 0..*).
+'YasperEPNML114::Stat' (role 'YasperEPNML114_Stat20', cardinality 0..*) is associated with 'YasperEPNML114::Cost' (role 'YasperEPNML114_Cost19', cardinality 0..*).
+'YasperEPNML114::Inscription' (role 'YasperEPNML114_Inscription33', cardinality 0..*) is associated with 'YasperEPNML114::AnnotationGraphics' (role 'YasperEPNML114_AnnotationGraphics34', cardinality 0..*).
+'YasperEPNML114::Stat' (role 'YasperEPNML114_Stat119', cardinality 0..*) is associated with 'YasperEPNML114::ProcessingTime' (role 'YasperEPNML114_ProcessingTime', cardinality 0..*).
+'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation128', cardinality 0..*) is associated with 'YasperEPNML114::ReferencePlace' (role 'YasperEPNML114_ReferencePlace127', cardinality 0..*).
+'YasperEPNML114::Transition' (role 'YasperEPNML114_Transition147', cardinality 0..*) is associated with 'YasperEPNML114::Transformation' (role 'YasperEPNML114_Transformation148', cardinality 0..*).
+'YasperEPNML114::Inscription' (role 'YasperEPNML114_Inscription', cardinality 0..*) is associated with 'YasperEPNML114::Arc' (role 'YasperEPNML114_Arc5', cardinality 0..*).
+'YasperEPNML114::ProcessingTime' (role 'YasperEPNML114_ProcessingTime165', cardinality 0..*) is associated with 'YasperEPNML114::TransitionSpecific' (role 'YasperEPNML114_TransitionSpecific164', cardinality 0..*).
+'YasperEPNML114::Page' (role 'YasperEPNML114_Page71', cardinality 0..*) is associated with 'YasperEPNML114::TransitionType' (role 'YasperEPNML114_TransitionType', cardinality 0..*).
+'YasperEPNML114::Arc' (role 'YasperEPNML114_Arc7', cardinality 0..*) is associated with 'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation', cardinality 0..*).
+'YasperEPNML114::Net' (role 'YasperEPNML114_Net46', cardinality 0..*) is associated with 'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation47', cardinality 0..*).
+'YasperEPNML114::ReferencePlace' (role 'YasperEPNML114_ReferencePlace', cardinality 0..*) is associated with 'YasperEPNML114::Page' (role 'YasperEPNML114_Page66', cardinality 0..*).
+'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation151', cardinality 0..*) is associated with 'YasperEPNML114::Transition' (role 'YasperEPNML114_Transition150', cardinality 0..*).
+'YasperEPNML114::Page' (role 'YasperEPNML114_Page73', cardinality 0..*) is associated with 'YasperEPNML114::PlaceType1' (role 'YasperEPNML114_PlaceType174', cardinality 0..*).
+'YasperEPNML114::Transition' (role 'YasperEPNML114_Transition153', cardinality 0..*) is associated with 'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation154', cardinality 0..*).
+'YasperEPNML114::TwoDimVector' (role 'YasperEPNML114_TwoDimVector', cardinality 0..*) is associated with 'YasperEPNML114::AnnotationGraphics' (role 'YasperEPNML114_AnnotationGraphics', cardinality 0..*).
+'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation102', cardinality 0..*) is associated with 'YasperEPNML114::Place' (role 'YasperEPNML114_Place101', cardinality 0..*).
+'YasperEPNML114::NetGraphics' (role 'YasperEPNML114_NetGraphics', cardinality 0..*) is associated with 'YasperEPNML114::Net' (role 'YasperEPNML114_Net', cardinality 0..*).
+'YasperEPNML114::Net' (role 'YasperEPNML114_Net52', cardinality 0..*) is associated with 'YasperEPNML114::ToolspecificType' (role 'YasperEPNML114_ToolspecificType53', cardinality 0..*).
+'YasperEPNML114::Page' (role 'YasperEPNML114_Page81', cardinality 0..*) is associated with 'YasperEPNML114::Page' (role 'YasperEPNML114_Page83', cardinality 0..*).
+'YasperEPNML114::NodeGraphics' (role 'YasperEPNML114_NodeGraphics145', cardinality 0..*) is associated with 'YasperEPNML114::Transition' (role 'YasperEPNML114_Transition144', cardinality 0..*).
+'YasperEPNML114::TransitionSpecific' (role 'YasperEPNML114_TransitionSpecific161', cardinality 0..*) is associated with 'YasperEPNML114::Cost' (role 'YasperEPNML114_Cost162', cardinality 0..*).
+'YasperEPNML114::PlaceType' (role 'YasperEPNML114_PlaceType', cardinality 0..*) is associated with 'YasperEPNML114::Place' (role 'YasperEPNML114_Place', cardinality 0..*).
+'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation86', cardinality 0..*) is associated with 'YasperEPNML114::Page' (role 'YasperEPNML114_Page85', cardinality 0..*).
+'YasperEPNML114::Transition' (role 'YasperEPNML114_Transition141', cardinality 0..*) is associated with 'YasperEPNML114::TransitionType' (role 'YasperEPNML114_TransitionType142', cardinality 0..*).
+'YasperEPNML114::DocumentRoot' (role 'YasperEPNML114_DocumentRoot', cardinality 0..*) is associated with 'YasperEPNML114::EStringToStringMapEntry' (role 'YasperEPNML114_EStringToStringMapEntry', cardinality 0..*).
+'YasperEPNML114::Pnml' (role 'YasperEPNML114_Pnml', cardinality 0..*) is associated with 'YasperEPNML114::DocumentRoot' (role 'YasperEPNML114_DocumentRoot26', cardinality 0..*).
+'YasperEPNML114::TwoDimVector' (role 'YasperEPNML114_TwoDimVector61', cardinality 0..*) is associated with 'YasperEPNML114::NodeGraphics' (role 'YasperEPNML114_NodeGraphics', cardinality 0..*).
+'YasperEPNML114::ToolspecificType' (role 'YasperEPNML114_ToolspecificType', cardinality 0..*) is associated with 'YasperEPNML114::Arc' (role 'YasperEPNML114_Arc12', cardinality 0..*).
+'YasperEPNML114::ConnectionWeight' (role 'YasperEPNML114_ConnectionWeight', cardinality 0..*) is associated with 'YasperEPNML114::Stat' (role 'YasperEPNML114_Stat', cardinality 0..*).
+'YasperEPNML114::Page' (role 'YasperEPNML114_Page91', cardinality 0..*) is associated with 'YasperEPNML114::ToolspecificType' (role 'YasperEPNML114_ToolspecificType92', cardinality 0..*).
+'YasperEPNML114::NodeGraphics' (role 'YasperEPNML114_NodeGraphics136', cardinality 0..*) is associated with 'YasperEPNML114::ReferencePlaceSpecific' (role 'YasperEPNML114_ReferencePlaceSpecific', cardinality 0..*).
+'YasperEPNML114::Arc' (role 'YasperEPNML114_Arc', cardinality 0..*) is associated with 'YasperEPNML114::ArcType' (role 'YasperEPNML114_ArcType', cardinality 0..*).
+'YasperEPNML114::NodeGraphics' (role 'YasperEPNML114_NodeGraphics96', cardinality 0..*) is associated with 'YasperEPNML114::Place' (role 'YasperEPNML114_Place95', cardinality 0..*).
+'YasperEPNML114::NodeGraphics' (role 'YasperEPNML114_NodeGraphics125', cardinality 0..*) is associated with 'YasperEPNML114::ReferencePlace' (role 'YasperEPNML114_ReferencePlace124', cardinality 0..*).
+'YasperEPNML114::Cost' (role 'YasperEPNML114_Cost', cardinality 0..*) is associated with 'YasperEPNML114::Stat' (role 'YasperEPNML114_Stat17', cardinality 0..*).
+'YasperEPNML114::Arc' (role 'YasperEPNML114_Arc80', cardinality 0..*) is associated with 'YasperEPNML114::Page' (role 'YasperEPNML114_Page79', cardinality 0..*).
+'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation105', cardinality 0..*) is associated with 'YasperEPNML114::Place' (role 'YasperEPNML114_Place104', cardinality 0..*).
+'YasperEPNML114::EdgeGraphics' (role 'YasperEPNML114_EdgeGraphics', cardinality 0..*) is associated with 'YasperEPNML114::Arc' (role 'YasperEPNML114_Arc3', cardinality 0..*).
+'YasperEPNML114::Pnml' (role 'YasperEPNML114_Pnml110', cardinality 0..*) is associated with 'YasperEPNML114::Net' (role 'YasperEPNML114_Net111', cardinality 0..*).
+'YasperEPNML114::ProcessingTime' (role 'YasperEPNML114_ProcessingTime121', cardinality 0..*) is associated with 'YasperEPNML114::Stat' (role 'YasperEPNML114_Stat122', cardinality 0..*).
+'YasperEPNML114::ToolspecificType' (role 'YasperEPNML114_ToolspecificType157', cardinality 0..*) is associated with 'YasperEPNML114::Transition' (role 'YasperEPNML114_Transition156', cardinality 0..*).
+'YasperEPNML114::ToolspecificType' (role 'YasperEPNML114_ToolspecificType108', cardinality 0..*) is associated with 'YasperEPNML114::Place' (role 'YasperEPNML114_Place107', cardinality 0..*).
+'YasperEPNML114::InitialMarking' (role 'YasperEPNML114_InitialMarking99', cardinality 0..*) is associated with 'YasperEPNML114::Place' (role 'YasperEPNML114_Place98', cardinality 0..*).
+'YasperEPNML114::Page' (role 'YasperEPNML114_Page', cardinality 0..*) is associated with 'YasperEPNML114::Net' (role 'YasperEPNML114_Net44', cardinality 0..*).
+'YasperEPNML114::Arc' (role 'YasperEPNML114_Arc9', cardinality 0..*) is associated with 'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation10', cardinality 0..*).
+'YasperEPNML114::AnnotationGraphics' (role 'YasperEPNML114_AnnotationGraphics31', cardinality 0..*) is associated with 'YasperEPNML114::InitialMarking' (role 'YasperEPNML114_InitialMarking', cardinality 0..*).
+'YasperEPNML114::ReferencePlace' (role 'YasperEPNML114_ReferencePlace130', cardinality 0..*) is associated with 'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation131', cardinality 0..*).
+'YasperEPNML114::ReferencePlace' (role 'YasperEPNML114_ReferencePlace133', cardinality 0..*) is associated with 'YasperEPNML114::ToolspecificType' (role 'YasperEPNML114_ToolspecificType134', cardinality 0..*).
+'YasperEPNML114::Transition' (role 'YasperEPNML114_Transition77', cardinality 0..*) is associated with 'YasperEPNML114::Page' (role 'YasperEPNML114_Page76', cardinality 0..*).
+'YasperEPNML114::ToolspecificType' (role 'YasperEPNML114_ToolspecificType114', cardinality 0..*) is associated with 'YasperEPNML114::Pnml' (role 'YasperEPNML114_Pnml113', cardinality 0..*).
+'YasperEPNML114::Net' (role 'YasperEPNML114_Net49', cardinality 0..*) is associated with 'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation50', cardinality 0..*).
+'YasperEPNML114::Roles' (role 'YasperEPNML114_Roles159', cardinality 0..*) is associated with 'YasperEPNML114::TransitionSpecific' (role 'YasperEPNML114_TransitionSpecific', cardinality 0..*).
+'YasperEPNML114::DocumentRoot' (role 'YasperEPNML114_DocumentRoot23', cardinality 0..*) is associated with 'YasperEPNML114::EStringToStringMapEntry' (role 'YasperEPNML114_EStringToStringMapEntry24', cardinality 0..*).
+'YasperEPNML114::Page' (role 'YasperEPNML114_Page68', cardinality 0..*) is associated with 'YasperEPNML114::NetGraphics' (role 'YasperEPNML114_NetGraphics69', cardinality 0..*).
+'YasperEPNML114::NetGraphics' (role 'YasperEPNML114_NetGraphics58', cardinality 0..*) is associated with 'YasperEPNML114::TwoDimVector' (role 'YasperEPNML114_TwoDimVector59', cardinality 0..*).
+'YasperEPNML114::NodeGraphics' (role 'YasperEPNML114_NodeGraphics63', cardinality 0..*) is associated with 'YasperEPNML114::TwoDimVector' (role 'YasperEPNML114_TwoDimVector64', cardinality 0..*).
+'YasperEPNML114::Net' (role 'YasperEPNML114_Net37', cardinality 0..*) is associated with 'YasperEPNML114::PlaceType1' (role 'YasperEPNML114_PlaceType1', cardinality 0..*).
+'YasperEPNML114::AnnotationGraphics' (role 'YasperEPNML114_AnnotationGraphics117', cardinality 0..*) is associated with 'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation116', cardinality 0..*).
+'YasperEPNML114::PnmlAnnotation' (role 'YasperEPNML114_PnmlAnnotation89', cardinality 0..*) is associated with 'YasperEPNML114::Page' (role 'YasperEPNML114_Page88', cardinality 0..*).
+'YasperEPNML114::Transition' (role 'YasperEPNML114_Transition', cardinality 0..*) is associated with 'YasperEPNML114::Net' (role 'YasperEPNML114_Net39', cardinality 0..*).
+'YasperEPNML114::Role' (role 'YasperEPNML114_Role', cardinality 0..*) is associated with 'YasperEPNML114::Roles' (role 'YasperEPNML114_Roles', cardinality 0..*).
+'YasperEPNML114::Arc' (role 'YasperEPNML114_Arc42', cardinality 0..*) is associated with 'YasperEPNML114::Net' (role 'YasperEPNML114_Net41', cardinality 0..*).
+'YasperEPNML114::AnnotationGraphics' (role 'YasperEPNML114_AnnotationGraphics139', cardinality 0..*) is associated with 'YasperEPNML114::Transformation' (role 'YasperEPNML114_Transformation', cardinality 0..*).

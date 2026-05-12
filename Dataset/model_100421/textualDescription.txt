@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'statechart02::Transition' has the following attributes: 'expression' of type str; 'name' of type str.
+The class 'statechart02::Variable' has the following attributes: 'type' of type str; 'value' of type str; 'name' of type str.
+The class 'statechart02::State' has the following attributes: 'label' of type str; 'activity' of type str; 'type' of type str; 'name' of type str.
+'statechart02::State' (role 'State', cardinality 0..*) is associated with 'statechart02::State' (role 'parentstate', cardinality 0..*).
+'statechart02::State' (role 'statechart02_State7', cardinality 0..*) is associated with 'statechart02::Transition' (role 'statechart02_Transition', cardinality 0..*).
+'statechart02::Transition' (role 'statechart02_Transition9', cardinality 0..*) is associated with 'statechart02::State' (role 'statechart02_State10', cardinality 0..*).
+'statechart02::State' (role 'State4', cardinality 0..*) is associated with 'statechart02::State' (role 'substates', cardinality 0..*).
+'statechart02::State' (role 'statechart02_State13', cardinality 0..*) is associated with 'statechart02::Transition' (role 'statechart02_Transition12', cardinality 0..*).
+'statechart02::State' (role 'statechart02_State', cardinality 0..*) is associated with 'statechart02::Variable' (role 'statechart02_Variable', cardinality 0..*).

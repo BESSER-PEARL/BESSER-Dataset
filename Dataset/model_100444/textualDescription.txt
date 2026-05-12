@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'StateMachineUnnamed::InitialState' has no attributes.
+The class 'StateMachineUnnamed::Transition' has the following attributes: 'name' of type str.
+The class 'StateMachineUnnamed::Event' has no attributes.
+The class 'StateMachineUnnamed::SimpleState' has no attributes.
+The class 'StateVertex' has no attributes.
+The class 'StateMachineUnnamed::FinalState' has no attributes.
+The class 'StateMachineUnnamed::StateMachine' has no attributes.
+The class 'StateMachineUnnamed::StateVertex' has the following attributes: 'name' of type str.
+'StateMachineUnnamed::FinalState' is a specialization of 'StateVertex'.
+'StateMachineUnnamed::SimpleState' is a specialization of 'StateVertex'.
+'StateMachineUnnamed::InitialState' is a specialization of 'StateVertex'.
+'StateMachineUnnamed::StateVertex' (role 'StateMachineUnnamed_StateVertex6', cardinality 0..*) is associated with 'StateMachineUnnamed::StateVertex' (role 'StateMachineUnnamed_StateVertex8', cardinality 0..*).
+'StateMachineUnnamed::Transition' (role 'Transition5', cardinality 0..*) is associated with 'StateMachineUnnamed::StateVertex' (role 'target', cardinality 0..*).
+'StateMachineUnnamed::Transition' (role 'StateMachineUnnamed_Transition', cardinality 0..*) is associated with 'StateMachineUnnamed::StateMachine' (role 'StateMachineUnnamed_StateMachine2', cardinality 0..*).
+'StateMachineUnnamed::StateMachine' (role 'StateMachineUnnamed_StateMachine', cardinality 0..*) is associated with 'StateMachineUnnamed::StateVertex' (role 'StateMachineUnnamed_StateVertex', cardinality 0..*).
+'StateMachineUnnamed::Transition' (role 'Transition', cardinality 0..*) is associated with 'StateMachineUnnamed::StateVertex' (role 'source', cardinality 0..*).
+'StateMachineUnnamed::StateVertex' (role 'StateVertex', cardinality 0..*) is associated with 'StateMachineUnnamed::Transition' (role 'outgoing', cardinality 0..*).
+'StateMachineUnnamed::Transition' (role 'StateMachineUnnamed_Transition13', cardinality 0..*) is associated with 'StateMachineUnnamed::Event' (role 'StateMachineUnnamed_Event', cardinality 0..*).
+'StateMachineUnnamed::Transition' (role 'incoming', cardinality 0..*) is associated with 'StateMachineUnnamed::StateVertex' (role 'StateVertex11', cardinality 0..*).

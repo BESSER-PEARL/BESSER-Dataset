@@ -1,0 +1,124 @@
+The model has 41 class(es).
+The class 'bibtex::VolumeField' has no attributes.
+The class 'bibtex::EditorField' has no attributes.
+The class 'bibtex::ReviewField' has no attributes.
+The class 'bibtex::BibtexKeyField' has no attributes.
+The class 'bibtex::AuthorField' has no attributes.
+The class 'bibtex::NoteField' has no attributes.
+The class 'bibtex::Keyword' has no attributes.
+The class 'Person' has no attributes.
+The class 'bibtex::Person' has the following attributes: 'lastName' of type str; 'firstName' of type str; 'secondName' of type str.
+The class 'bibtex::EidField' has no attributes.
+The class 'StringValue' has no attributes.
+The class 'bibtex::Field' has no attributes.
+The class 'bibtex::PartField' has no attributes.
+The class 'Field' has no attributes.
+The class 'bibtex::MonthField' has no attributes.
+The class 'Entry' has no attributes.
+The class 'bibtex::YearValue' has the following attributes: 'value' of type int.
+The class 'bibtex::YearField' has no attributes.
+The class 'bibtex::Page' has no attributes.
+The class 'bibtex::NumberField' has no attributes.
+The class 'bibtex::JournalField' has no attributes.
+The class 'bibtex::AbstractField' has no attributes.
+The class 'bibtex::InProceedingsEntry' has no attributes.
+The class 'bibtex::TitleField' has no attributes.
+The class 'bibtex::ArticleEntry' has no attributes.
+The class 'bibtex::Author' has no attributes.
+The class 'bibtex::OrganizationField' has no attributes.
+The class 'bibtex::KeywordField' has no attributes.
+The class 'bibtex::AddressField' has no attributes.
+The class 'bibtex::Entry' has no attributes.
+The class 'bibtex::StringValue' has the following attributes: 'value' of type str.
+The class 'bibtex::BookTitleField' has no attributes.
+The class 'IntValue' has no attributes.
+The class 'bibtex::SeriesField' has no attributes.
+The class 'bibtex::PublisherField' has no attributes.
+The class 'bibtex::IntValue' has the following attributes: 'value' of type int.
+The class 'YearValue' has no attributes.
+The class 'bibtex::Bibliography' has no attributes.
+The class 'bibtex::PageField' has no attributes.
+The class 'bibtex::UrlField' has no attributes.
+The class 'bibtex::Editor' has no attributes.
+'bibtex::NoteField' is a specialization of 'StringValue'.
+'bibtex::UrlField' is a specialization of 'Field'.
+'bibtex::UrlField' is a specialization of 'StringValue'.
+'bibtex::ReviewField' is a specialization of 'Field'.
+'bibtex::TitleField' is a specialization of 'Field'.
+'bibtex::NoteField' is a specialization of 'Field'.
+'bibtex::AbstractField' is a specialization of 'StringValue'.
+'bibtex::PublisherField' is a specialization of 'StringValue'.
+'bibtex::OrganizationField' is a specialization of 'StringValue'.
+'bibtex::EidField' is a specialization of 'StringValue'.
+'bibtex::PartField' is a specialization of 'Field'.
+'bibtex::PageField' is a specialization of 'Field'.
+'bibtex::KeywordField' is a specialization of 'Field'.
+'bibtex::BookTitleField' is a specialization of 'Field'.
+'bibtex::YearField' is a specialization of 'Field'.
+'bibtex::OrganizationField' is a specialization of 'Field'.
+'bibtex::AuthorField' is a specialization of 'Field'.
+'bibtex::PublisherField' is a specialization of 'Field'.
+'bibtex::NumberField' is a specialization of 'IntValue'.
+'bibtex::PartField' is a specialization of 'IntValue'.
+'bibtex::InProceedingsEntry' is a specialization of 'Entry'.
+'bibtex::SeriesField' is a specialization of 'StringValue'.
+'bibtex::NumberField' is a specialization of 'Field'.
+'bibtex::ReviewField' is a specialization of 'StringValue'.
+'bibtex::VolumeField' is a specialization of 'Field'.
+'bibtex::VolumeField' is a specialization of 'IntValue'.
+'bibtex::JournalField' is a specialization of 'Field'.
+'bibtex::Page' is a specialization of 'IntValue'.
+'bibtex::Author' is a specialization of 'Person'.
+'bibtex::JournalField' is a specialization of 'StringValue'.
+'bibtex::AddressField' is a specialization of 'Field'.
+'bibtex::YearField' is a specialization of 'YearValue'.
+'bibtex::BibtexKeyField' is a specialization of 'Field'.
+'bibtex::EditorField' is a specialization of 'Field'.
+'bibtex::AbstractField' is a specialization of 'Field'.
+'bibtex::MonthField' is a specialization of 'Field'.
+'bibtex::SeriesField' is a specialization of 'Field'.
+'bibtex::AddressField' is a specialization of 'StringValue'.
+'bibtex::BibtexKeyField' is a specialization of 'StringValue'.
+'bibtex::BookTitleField' is a specialization of 'StringValue'.
+'bibtex::EidField' is a specialization of 'Field'.
+'bibtex::Editor' is a specialization of 'Person'.
+'bibtex::TitleField' is a specialization of 'StringValue'.
+'bibtex::Keyword' is a specialization of 'StringValue'.
+'bibtex::ArticleEntry' is a specialization of 'Entry'.
+'bibtex::MonthField' is a specialization of 'StringValue'.
+'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry40', cardinality 0..*) is associated with 'bibtex::MonthField' (role 'bibtex_MonthField', cardinality 0..*).
+'bibtex::PageField' (role 'bibtex_PageField', cardinality 0..*) is associated with 'bibtex::Page' (role 'bibtex_Page', cardinality 0..*).
+'bibtex::PublisherField' (role 'bibtex_PublisherField', cardinality 0..*) is associated with 'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry46', cardinality 0..*).
+'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry64', cardinality 0..*) is associated with 'bibtex::NumberField' (role 'bibtex_NumberField65', cardinality 0..*).
+'bibtex::Editor' (role 'bibtex_Editor', cardinality 0..*) is associated with 'bibtex::EditorField' (role 'bibtex_EditorField', cardinality 0..*).
+'bibtex::Keyword' (role 'bibtex_Keyword', cardinality 0..*) is associated with 'bibtex::KeywordField' (role 'bibtex_KeywordField', cardinality 0..*).
+'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry50', cardinality 0..*) is associated with 'bibtex::TitleField' (role 'bibtex_TitleField51', cardinality 0..*).
+'bibtex::YearField' (role 'bibtex_YearField', cardinality 0..*) is associated with 'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry24', cardinality 0..*).
+'bibtex::PageField' (role 'bibtex_PageField4', cardinality 0..*) is associated with 'bibtex::Page' (role 'bibtex_Page5', cardinality 0..*).
+'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry42', cardinality 0..*) is associated with 'bibtex::OrganizationField' (role 'bibtex_OrganizationField', cardinality 0..*).
+'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry53', cardinality 0..*) is associated with 'bibtex::YearField' (role 'bibtex_YearField54', cardinality 0..*).
+'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry73', cardinality 0..*) is associated with 'bibtex::PartField' (role 'bibtex_PartField', cardinality 0..*).
+'bibtex::EditorField' (role 'bibtex_EditorField27', cardinality 0..*) is associated with 'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry26', cardinality 0..*).
+'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry34', cardinality 0..*) is associated with 'bibtex::NumberField' (role 'bibtex_NumberField', cardinality 0..*).
+'bibtex::JournalField' (role 'bibtex_JournalField', cardinality 0..*) is associated with 'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry56', cardinality 0..*).
+'bibtex::AbstractField' (role 'bibtex_AbstractField', cardinality 0..*) is associated with 'bibtex::Entry' (role 'bibtex_Entry9', cardinality 0..*).
+'bibtex::Bibliography' (role 'bibtex_Bibliography', cardinality 0..*) is associated with 'bibtex::Entry' (role 'bibtex_Entry77', cardinality 0..*).
+'bibtex::BibtexKeyField' (role 'bibtex_BibtexKeyField', cardinality 0..*) is associated with 'bibtex::Entry' (role 'bibtex_Entry', cardinality 0..*).
+'bibtex::MonthField' (role 'bibtex_MonthField68', cardinality 0..*) is associated with 'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry67', cardinality 0..*).
+'bibtex::ReviewField' (role 'bibtex_ReviewField', cardinality 0..*) is associated with 'bibtex::Entry' (role 'bibtex_Entry16', cardinality 0..*).
+'bibtex::NoteField' (role 'bibtex_NoteField71', cardinality 0..*) is associated with 'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry70', cardinality 0..*).
+'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry29', cardinality 0..*) is associated with 'bibtex::PageField' (role 'bibtex_PageField30', cardinality 0..*).
+'bibtex::Entry' (role 'bibtex_Entry11', cardinality 0..*) is associated with 'bibtex::UrlField' (role 'bibtex_UrlField', cardinality 0..*).
+'bibtex::AuthorField' (role 'bibtex_AuthorField18', cardinality 0..*) is associated with 'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry', cardinality 0..*).
+'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry36', cardinality 0..*) is associated with 'bibtex::SeriesField' (role 'bibtex_SeriesField', cardinality 0..*).
+'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry', cardinality 0..*) is associated with 'bibtex::AuthorField' (role 'bibtex_AuthorField48', cardinality 0..*).
+'bibtex::NoteField' (role 'bibtex_NoteField', cardinality 0..*) is associated with 'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry44', cardinality 0..*).
+'bibtex::BookTitleField' (role 'bibtex_BookTitleField', cardinality 0..*) is associated with 'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry22', cardinality 0..*).
+'bibtex::PageField' (role 'bibtex_PageField59', cardinality 0..*) is associated with 'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry58', cardinality 0..*).
+'bibtex::Entry' (role 'bibtex_Entry13', cardinality 0..*) is associated with 'bibtex::KeywordField' (role 'bibtex_KeywordField14', cardinality 0..*).
+'bibtex::VolumeField' (role 'bibtex_VolumeField62', cardinality 0..*) is associated with 'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry61', cardinality 0..*).
+'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry38', cardinality 0..*) is associated with 'bibtex::AddressField' (role 'bibtex_AddressField', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author', cardinality 0..*) is associated with 'bibtex::AuthorField' (role 'bibtex_AuthorField', cardinality 0..*).
+'bibtex::VolumeField' (role 'bibtex_VolumeField', cardinality 0..*) is associated with 'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry32', cardinality 0..*).
+'bibtex::EidField' (role 'bibtex_EidField', cardinality 0..*) is associated with 'bibtex::ArticleEntry' (role 'bibtex_ArticleEntry75', cardinality 0..*).
+'bibtex::TitleField' (role 'bibtex_TitleField', cardinality 0..*) is associated with 'bibtex::InProceedingsEntry' (role 'bibtex_InProceedingsEntry20', cardinality 0..*).

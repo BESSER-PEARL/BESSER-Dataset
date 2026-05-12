@@ -1,0 +1,191 @@
+The model has 83 class(es).
+The class 'SpreadsheetMLStyles::Workbook' has no attributes.
+The class 'PageMarginsInfo' has no attributes.
+The class 'FontType' has no attributes.
+The class 'SpreadsheetMLStyles::Worksheet' has the following attributes: 'name' of type str; 'rightToLeft' of type str; 'protected' of type str.
+The class 'DateTimeType' has no attributes.
+The class 'ColOrRowElement' has no attributes.
+The class 'CustomDocumentProperty' has no attributes.
+The class 'SpreadsheetMLStyles::NumberFormatType' has the following attributes: 'format' of type str.
+The class 'TableElement' has no attributes.
+The class 'SpreadsheetMLStyles::ErrorValue' has no attributes.
+The class 'SpreadsheetMLStyles::HeaderOrFooterElt' has the following attributes: 'margin' of type str; 'data' of type str.
+The class 'Footer' has no attributes.
+The class 'WorksheetOptionsElt' has no attributes.
+The class 'HeaderOrFooterElt' has no attributes.
+The class 'SpreadsheetMLStyles::Data' has no attributes.
+The class 'SpreadsheetMLStyles::BooleanValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLStyles::VersionType' has the following attributes: 'nn' of type str; 'n' of type str.
+The class 'SpreadsheetMLStyles::Row' has the following attributes: 'autoFitHeight' of type str; 'height' of type str.
+The class 'Workbook' has no attributes.
+The class 'Comment' has no attributes.
+The class 'ProtectionType' has no attributes.
+The class 'BorderType' has no attributes.
+The class 'SpreadsheetMLStyles::ProtectionType' has the following attributes: 'protected' of type str.
+The class 'SpreadsheetMLStyles::BordersType' has no attributes.
+The class 'SpreadsheetMLStyles::SmartTagType' has the following attributes: 'url' of type str; 'namespaceuri' of type str; 'name' of type str.
+The class 'StyledElement' has no attributes.
+The class 'SpreadsheetMLStyles::TableElement' has the following attributes: 'index' of type str.
+The class 'SpreadsheetMLStyles::NumberValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLStyles::SmartTagsCollection' has no attributes.
+The class 'SpreadsheetMLStyles::StyleType' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'SpreadsheetMLStyles::Layout' has the following attributes: 'startPageNumber' of type str; 'orientation' of type str; 'centerVertical' of type str; 'centerHorizontal' of type str.
+The class 'InteriorType' has no attributes.
+The class 'SpreadsheetMLStyles::StringValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLStyles::CustomDocumentPropertiesCollection' has no attributes.
+The class 'BordersType' has no attributes.
+The class 'SpreadsheetMLStyles::BorderType' has the following attributes: 'weight' of type str; 'color' of type str; 'position' of type str; 'lineStyle' of type str.
+The class 'SpreadsheetMLStyles::ColOrRowElement' has the following attributes: 'hidden' of type str; 'span' of type str.
+The class 'NumberFormatType' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'SpreadsheetMLStyles::InteriorType' has the following attributes: 'patternColor' of type str; 'pattern' of type str; 'color' of type str.
+The class 'SpreadsheetMLStyles::ExcelWorkbook' has the following attributes: 'createBackup' of type str; 'protectWindows' of type str; 'date1904' of type str; 'displayDrawingObjects' of type str; 'hideHorizontalScrollBar' of type str; 'doNotSaveLinkValues' of type str; 'calculation' of type str; 'activeSheet' of type str; 'windowHidden' of type str; 'displayInkNotes' of type str; 'windowWidth' of type str; 'tabRatio' of type str; 'windowHeight' of type str; 'selectedSheets' of type str; 'hideVerticalScrollBar' of type str; 'doNotCalculateBeforeSave' of type str; 'protectStructure' of type str; 'maxChange' of type str; 'firstVisibleSheet' of type str; 'activeChart' of type str; 'hideWorkbookTabs' of type str; 'embedSaveSmartTags' of type str; 'windowIconic' of type str; 'acceptLabelsInFormulas' of type str; 'windowTopX' of type str; 'refModeR1C1' of type str; 'hidePivotTableFieldList' of type str; 'futureVer' of type str; 'noAutoRecover' of type str; 'precisionAsDisplayed' of type str; 'iteration' of type str; 'uncalced' of type str; 'windowTopY' of type str; 'maxIterations' of type str.
+The class 'SmartTagsCollection' has no attributes.
+The class 'SpreadsheetMLStyles::WorksheetOptionsElt' has the following attributes: 'protectObjects' of type str; 'splitVertical' of type str; 'doNotDisplayZeros' of type str; 'freezePanes' of type str; 'activePane' of type str; 'standardWidth' of type str; 'allowInsertRows' of type str; 'allowInsertHyperlinks' of type str; 'zoom' of type str; 'activeRow' of type str; 'tabColorIndex' of type str; 'unsynced' of type str; 'noSummaryColumnsRightDetail' of type str; 'pageBreakZoom' of type str; 'allowSort' of type str; 'frozenNoSplit' of type str; 'displayPageBreak' of type str; 'applyAutomaticOutlineStyles' of type str; 'filterOn' of type str; 'activeColumn' of type str; 'protectScenarios' of type str; 'noSummaryRowsBelowDetail' of type str; 'splitHorizontal' of type str; 'doNotDisplayHeadings' of type str; 'protectContentst' of type str; 'doNotDisplayOutline' of type str; 'showPageBreakZoom' of type str; 'displayRightToLeft' of type str; 'displayFormulas' of type str; 'defaultRowHeight' of type str; 'allowInsertCols' of type str; 'topRowVisible' of type str; 'codeName' of type str; 'transitionFormulaEntry' of type str; 'gridlineColorIndex' of type str; 'fitToPage' of type str; 'allowSizeRows' of type str; 'topRowBottomPane' of type str; 'allowUsePivotTables' of type str; 'gridlineColor' of type str; 'enableSelection' of type str; 'selected' of type str; 'allowDeleteRows' of type str; 'doNotDisplayColHeaders' of type str; 'excelWorksheetType' of type str; 'intlMacro' of type str; 'doNotDisplayGridlines' of type str; 'doNotDisplayRowHeaders' of type str; 'allowSizeCols' of type str; 'leftColumnRightPane' of type str; 'name' of type str; 'transitionExpressionEvaluation' of type str; 'allowFormatCells' of type str; 'allowFilter' of type str; 'rangeSelection' of type str; 'leftColumnVisible' of type str; 'defaultColumnWidth' of type str; 'visible' of type str; 'allowDeleteCols' of type str.
+The class 'NamedRange' has no attributes.
+The class 'VersionType' has no attributes.
+The class 'SpreadsheetMLStyles::NamedRange' has the following attributes: 'name' of type str; 'hidden' of type str; 'refersTo' of type str.
+The class 'SpreadsheetMLStyles::Cell' has the following attributes: 'arrayRange' of type str; 'hRef' of type str; 'mergeAcross' of type str; 'formula' of type str; 'mergeDown' of type str.
+The class 'SpreadsheetMLStyles::Comment' has the following attributes: 'showAlways' of type str; 'author' of type str.
+The class 'SpreadsheetMLStyles::StyledElement' has no attributes.
+The class 'SpreadsheetMLStyles::DateTimeType' has the following attributes: 'month' of type str; 'year' of type str; 'hour' of type str; 'second' of type str; 'day' of type str; 'minute' of type str.
+The class 'Row' has no attributes.
+The class 'PageSetup' has no attributes.
+The class 'SpreadsheetMLStyles::ValueType' has no attributes.
+The class 'SpreadsheetMLStyles::Table' has the following attributes: 'defaultColumnWidth' of type str; 'leftCell' of type str; 'defaultRowHeight' of type str; 'topCell' of type str; 'expandedRowCount' of type str; 'fullRows' of type str; 'fullColumns' of type str; 'expandedColumnCount' of type str.
+The class 'StylesCollection' has no attributes.
+The class 'Table' has no attributes.
+The class 'SpreadsheetMLStyles::PageMarginsInfo' has the following attributes: 'right' of type str; 'top' of type str; 'bottom' of type str; 'left' of type str.
+The class 'SpreadsheetMLStyles::DateTimeTypeValue' has no attributes.
+The class 'Column' has no attributes.
+The class 'SpreadsheetMLStyles::NamesType' has no attributes.
+The class 'StyleType' has no attributes.
+The class 'SpreadsheetMLStyles::PageSetup' has no attributes.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'Print' has no attributes.
+The class 'SpreadsheetMLStyles::DocumentPropertiesCollection' has the following attributes: 'keywords' of type str; 'charactersWithSpaces' of type str; 'words' of type str; 'revision' of type str; 'hyperlinkBase' of type str; 'totalTime' of type str; 'author' of type str; 'appName' of type str; 'guid' of type str; 'paragraphs' of type str; 'title' of type str; 'lines' of type str; 'subject' of type str; 'pages' of type str; 'lastAuthor' of type str; 'description' of type str; 'presentationFormat' of type str; 'bytes' of type str; 'characters' of type str; 'manager' of type str; 'company' of type str; 'category' of type str.
+The class 'NamesType' has no attributes.
+The class 'Data' has no attributes.
+The class 'SpreadsheetMLStyles::Footer' has no attributes.
+The class 'SpreadsheetMLStyles::FontType' has the following attributes: 'outline' of type str; 'fontName' of type str; 'color' of type str; 'strikeThrough' of type str; 'shadow' of type str; 'italic' of type str; 'verticalAlign' of type str; 'size' of type str; 'underline' of type str; 'bold' of type str.
+The class 'SpreadsheetMLStyles::StylesCollection' has no attributes.
+The class 'Worksheet' has no attributes.
+The class 'SmartTagType' has no attributes.
+The class 'SpreadsheetMLStyles::Header' has no attributes.
+The class 'SpreadsheetMLStyles::CustomDocumentProperty' has the following attributes: 'name' of type str.
+The class 'AlignmentType' has no attributes.
+The class 'SpreadsheetMLStyles::AlignmentType' has the following attributes: 'vertical' of type str; 'horizontal' of type str; 'wrapText' of type str; 'indent' of type str; 'shrinkToFit' of type str; 'verticalText' of type str; 'readingOrder' of type str; 'rotate' of type str.
+The class 'CustomDocumentPropertiesCollection' has no attributes.
+The class 'SpreadsheetMLStyles::Column' has the following attributes: 'width' of type str; 'autoFitWidth' of type str.
+The class 'Layout' has no attributes.
+The class 'ExcelWorkbook' has no attributes.
+The class 'SpreadsheetMLStyles::Print' has the following attributes: 'fitHeight' of type str; 'gridlines' of type str; 'validPrinterInfo' of type str; 'commentsLayout' of type str; 'scale' of type str; 'numberOfCopies' of type str; 'blackAndWhite' of type str; 'verticalResolution' of type str; 'rowColHeadings' of type str; 'leftToRight' of type str; 'fitWidth' of type str; 'draftQuality' of type str; 'horizontalResolution' of type str; 'paperSizeIndex' of type str; 'printErrors' of type str.
+The class 'Header' has no attributes.
+The class 'Cell' has no attributes.
+The enumeration 'ReadingOrderType' has the following literals: 'rot_RightToLeft', 'rot_LeftToRight', 'rot_Context'.
+The enumeration 'OrientationType' has the following literals: 'ot_Landscape', 'ot_Portrait'.
+The enumeration 'VerticalAlignementType' has the following literals: 'vat_Distributed', 'vat_Center', 'vat_Top', 'vat_Automatic', 'vat_Bottom', 'vat_JustifyDistributed', 'vat_Justify'.
+The enumeration 'EnableSelectionType' has the following literals: 'est_UnlockedCells', 'est_NoSelection'.
+The enumeration 'CalculationWorkbookType' has the following literals: 'cwt_automaticCalculation', 'cwt_manualCalculation', 'cwt_semiAutomaticCalculation'.
+The enumeration 'CommentsLayoutType' has the following literals: 'clt_SheetEnd', 'clt_PrintNone', 'clt_InPlace'.
+The enumeration 'VisibleType' has the following literals: 'vt_SheetHidden', 'vt_SheetVisible', 'vt_SheetVeryHidden'.
+The enumeration 'ExcelWorksheetTypeType' has the following literals: 'ewt_Worksheet', 'ewt_Chart', 'ewt_Dialog', 'ewt_Macro'.
+The enumeration 'UnderlineType' has the following literals: 'ut_None', 'ut_Single', 'ut_Double', 'ut_DoubleAccounting', 'ut_SingleAccounting'.
+The enumeration 'DisplayDrawingObjectsType' has the following literals: 'ddot_displayShapes', 'ddot_hideAll', 'ddot_placeHolders'.
+The enumeration 'HorizontalAlignementType' has the following literals: 'hat_JustifyDistributed', 'hat_Left', 'hat_Fill', 'hat_Right', 'hat_Distributed', 'hat_Justify', 'hat_CenterAcrossSelection', 'hat_Center', 'hat_Automatic'.
+The enumeration 'PositionType' has the following literals: 'pt_Bottom', 'pt_Right', 'pt_Left', 'pt_DiagonalLeft', 'pt_Top', 'pt_DiagonalRight'.
+The enumeration 'PatternType' has the following literals: 'pt_Gray75', 'pt_ThinHorzCross', 'pt_ThinVertStripe', 'pt_Gray50', 'pt_Gray0625', 'pt_DiagStripe', 'pt_ThinHorzStripe', 'pt_Gray25', 'pt_ReverseDiagStripe', 'pt_Gray125', 'pt_ThinDiagStripe', 'pt_ThickDiagCross', 'pt_VertStripe', 'pt_DiagCross', 'pt_None', 'pt_ThinReverseDiagStripe', 'pt_ThinDiagCross', 'pt_HorzStripe', 'pt_Solid'.
+The enumeration 'LineStyleType' has the following literals: 'lst_DashDotDot', 'lst_Double', 'lst_Continuous', 'lst_Dash', 'lst_None', 'lst_Dot', 'lst_DashDot', 'lst_SlantDashDot'.
+The enumeration 'VerticalAlignType' has the following literals: 'vat_Superscript', 'vat_None', 'vat_Subscript'.
+The enumeration 'ExcelNumberFormatType' has the following literals: 'enft_Scientific', 'enft_Euro_Currency', 'enft_Yes_No', 'enft_Short_Date', 'enft_Long_Time', 'enft_General', 'enft_Currency', 'enft_Medium_Date', 'enft_Long_Date', 'enft_Medium_Time', 'enft_Short_Time', 'enft_Percent', 'enft_General_Number', 'enft_True_False', 'enft_On_Off', 'enft_General_Date', 'enft_Fixed', 'enft_Standard'.
+'SpreadsheetMLStyles::Table' is a specialization of 'StyledElement'.
+'SpreadsheetMLStyles::Header' is a specialization of 'HeaderOrFooterElt'.
+'SpreadsheetMLStyles::ColOrRowElement' is a specialization of 'TableElement'.
+'SpreadsheetMLStyles::DateTimeTypeValue' is a specialization of 'ValueType'.
+'SpreadsheetMLStyles::BooleanValue' is a specialization of 'ValueType'.
+'SpreadsheetMLStyles::Column' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLStyles::Cell' is a specialization of 'TableElement'.
+'SpreadsheetMLStyles::ErrorValue' is a specialization of 'ValueType'.
+'SpreadsheetMLStyles::NumberValue' is a specialization of 'ValueType'.
+'SpreadsheetMLStyles::TableElement' is a specialization of 'StyledElement'.
+'SpreadsheetMLStyles::Footer' is a specialization of 'HeaderOrFooterElt'.
+'SpreadsheetMLStyles::StringValue' is a specialization of 'ValueType'.
+'SpreadsheetMLStyles::Row' is a specialization of 'ColOrRowElement'.
+'StylesCollection' (role 'StylesCollection91', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StyleType' (role 'style', cardinality 0..*).
+'Worksheet' (role 'Worksheet38', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Table' (role 'ws_table', cardinality 0..*).
+'StyleType' (role 'StyleType106', cardinality 0..*) is associated with 'SpreadsheetMLStyles::AlignmentType' (role 'alignment', cardinality 0..*).
+'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Workbook' (role 'dp_workbook', cardinality 0..*).
+'SpreadsheetMLStyles::Workbook' (role 'ws_workbook', cardinality 0..*) is associated with 'Worksheet' (role 'Worksheet', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType', cardinality 0..*) is associated with 'SpreadsheetMLStyles::DateTimeTypeValue' (role 'SpreadsheetMLStyles_DateTimeTypeValue', cardinality 0..*).
+'SpreadsheetMLStyles::Cell' (role 'd_cell', cardinality 0..*) is associated with 'Data' (role 'Data52', cardinality 0..*).
+'SpreadsheetMLStyles::Workbook' (role 's_workbook', cardinality 0..*) is associated with 'StylesCollection' (role 'StylesCollection', cardinality 0..*).
+'SpreadsheetMLStyles::Worksheet' (role 'wb_worksheets', cardinality 0..*) is associated with 'Workbook' (role 'Workbook33', cardinality 0..*).
+'Row' (role 'Row', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Table' (role 'r_table', cardinality 0..*).
+'SpreadsheetMLStyles::DocumentPropertiesCollection' (role 'SpreadsheetMLStyles_DocumentPropertiesCollection', cardinality 0..*) is associated with 'VersionType' (role 'VersionType', cardinality 0..*).
+'PageMarginsInfo' (role 'PageMarginsInfo', cardinality 0..*) is associated with 'SpreadsheetMLStyles::PageSetup' (role 'pm_pageSetup', cardinality 0..*).
+'SpreadsheetMLStyles::PageMarginsInfo' (role 'ps_pageMargins', cardinality 0..*) is associated with 'PageSetup' (role 'PageSetup83', cardinality 0..*).
+'SpreadsheetMLStyles::StyleType' (role 'styleID', cardinality 0..*) is associated with 'StyledElement' (role 'StyledElement', cardinality 0..*).
+'PageSetup' (role 'PageSetup81', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Footer' (role 'ps_footer', cardinality 0..*).
+'Footer' (role 'Footer', cardinality 0..*) is associated with 'SpreadsheetMLStyles::PageSetup' (role 'f_pageSetup', cardinality 0..*).
+'SpreadsheetMLStyles::WorksheetOptionsElt' (role 'w_worksheetOptions', cardinality 0..*) is associated with 'Worksheet' (role 'Worksheet67', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType9', cardinality 0..*) is associated with 'SpreadsheetMLStyles::DocumentPropertiesCollection' (role 'SpreadsheetMLStyles_DocumentPropertiesCollection8', cardinality 0..*).
+'StyleType' (role 'StyleType94', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StyleType' (role 'st_parent', cardinality 0..*).
+'NumberFormatType' (role 'NumberFormatType', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StyleType' (role 'nft_styleType', cardinality 0..*).
+'SmartTagsCollection' (role 'SmartTagsCollection', cardinality 0..*) is associated with 'SpreadsheetMLStyles::SmartTagType' (role 'smartTagTypes', cardinality 0..*).
+'SpreadsheetMLStyles::CustomDocumentPropertiesCollection' (role 'wb_customDocProperties', cardinality 0..*) is associated with 'Workbook' (role 'Workbook14', cardinality 0..*).
+'Table' (role 'Table44', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Row' (role 't_rows', cardinality 0..*).
+'Print' (role 'Print', cardinality 0..*) is associated with 'SpreadsheetMLStyles::WorksheetOptionsElt' (role 'p_worksheetOptions', cardinality 0..*).
+'Workbook' (role 'Workbook65', cardinality 0..*) is associated with 'SpreadsheetMLStyles::ExcelWorkbook' (role 'wb_excelWorkbook', cardinality 0..*).
+'Cell' (role 'Cell55', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Comment' (role 'c_comment', cardinality 0..*).
+'FontType' (role 'FontType', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StyleType' (role 'ft_styleType', cardinality 0..*).
+'Workbook' (role 'Workbook119', cardinality 0..*) is associated with 'SpreadsheetMLStyles::NamesType' (role 'wb_names', cardinality 0..*).
+'SpreadsheetMLStyles::Worksheet' (role 'wo_worksheet', cardinality 0..*) is associated with 'WorksheetOptionsElt' (role 'WorksheetOptionsElt', cardinality 0..*).
+'Workbook' (role 'Workbook', cardinality 0..*) is associated with 'SpreadsheetMLStyles::DocumentPropertiesCollection' (role 'wb_docProperties', cardinality 0..*).
+'Cell' (role 'Cell59', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Data' (role 'c_data', cardinality 0..*).
+'SpreadsheetMLStyles::Workbook' (role 'st_workbook', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection24', cardinality 0..*).
+'SpreadsheetMLStyles::BorderType' (role 'border', cardinality 0..*) is associated with 'BordersType' (role 'BordersType111', cardinality 0..*).
+'SpreadsheetMLStyles::PageSetup' (role 'h_pageSetup', cardinality 0..*) is associated with 'Header' (role 'Header', cardinality 0..*).
+'CustomDocumentProperty' (role 'CustomDocumentProperty', cardinality 0..*) is associated with 'SpreadsheetMLStyles::CustomDocumentPropertiesCollection' (role 'customDocumentProperty_cdpe', cardinality 0..*).
+'SpreadsheetMLStyles::CustomDocumentProperty' (role 'SpreadsheetMLStyles_CustomDocumentProperty', cardinality 0..*) is associated with 'ValueType' (role 'ValueType', cardinality 0..*).
+'SpreadsheetMLStyles::Cell' (role 'st_cell', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection48', cardinality 0..*).
+'PageSetup' (role 'PageSetup77', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Layout' (role 'ps_layout', cardinality 0..*).
+'NamedRange' (role 'NamedRange', cardinality 0..*) is associated with 'SpreadsheetMLStyles::NamesType' (role 'nr_namesType', cardinality 0..*).
+'SpreadsheetMLStyles::Workbook' (role 'nt_workbook', cardinality 0..*) is associated with 'NamesType' (role 'NamesType', cardinality 0..*).
+'Workbook' (role 'Workbook87', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StylesCollection' (role 'wb_styles', cardinality 0..*).
+'SpreadsheetMLStyles::StyleType' (role 'bt_styleType', cardinality 0..*) is associated with 'BordersType' (role 'BordersType', cardinality 0..*).
+'SpreadsheetMLStyles::StyleType' (role 'at_styleType', cardinality 0..*) is associated with 'AlignmentType' (role 'AlignmentType', cardinality 0..*).
+'InteriorType' (role 'InteriorType', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StyleType' (role 'it_styleType', cardinality 0..*).
+'Data' (role 'Data', cardinality 0..*) is associated with 'SpreadsheetMLStyles::ValueType' (role 'value', cardinality 0..*).
+'StyleType' (role 'StyleType96', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StyleType' (role 'parent', cardinality 0..*).
+'Comment' (role 'Comment', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Cell' (role 'c_cell', cardinality 0..*).
+'Comment' (role 'Comment61', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Data' (role 'com_data', cardinality 0..*).
+'SpreadsheetMLStyles::SmartTagsCollection' (role 'wb_smartTags', cardinality 0..*) is associated with 'Workbook' (role 'Workbook20', cardinality 0..*).
+'ValueType' (role 'ValueType63', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Data' (role 'vt_data', cardinality 0..*).
+'Table' (role 'Table42', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Column' (role 't_cols', cardinality 0..*).
+'SpreadsheetMLStyles::PageSetup' (role 'l_pageSetup', cardinality 0..*) is associated with 'Layout' (role 'Layout', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Worksheet' (role 't_worksheet', cardinality 0..*).
+'ExcelWorkbook' (role 'ExcelWorkbook', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Workbook' (role 'ew_workbook', cardinality 0..*).
+'SpreadsheetMLStyles::Comment' (role 'd_comment', cardinality 0..*) is associated with 'Data' (role 'Data57', cardinality 0..*).
+'StyleType' (role 'StyleType113', cardinality 0..*) is associated with 'SpreadsheetMLStyles::FontType' (role 'font', cardinality 0..*).
+'WorksheetOptionsElt' (role 'WorksheetOptionsElt85', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Print' (role 'wo_print', cardinality 0..*).
+'SpreadsheetMLStyles::WorksheetOptionsElt' (role 'ps_worksheetOptions', cardinality 0..*) is associated with 'PageSetup' (role 'PageSetup', cardinality 0..*).
+'SpreadsheetMLStyles::PageSetup' (role 'wo_pageSetup', cardinality 0..*) is associated with 'WorksheetOptionsElt' (role 'WorksheetOptionsElt71', cardinality 0..*).
+'SpreadsheetMLStyles::Cell' (role 'r_cells', cardinality 0..*) is associated with 'Row' (role 'Row50', cardinality 0..*).
+'SpreadsheetMLStyles::Table' (role 'c_table', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).
+'StyleType' (role 'StyleType89', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StylesCollection' (role 'st_styles', cardinality 0..*).
+'SpreadsheetMLStyles::BordersType' (role 'bt_bordersType', cardinality 0..*) is associated with 'BorderType' (role 'BorderType', cardinality 0..*).
+'StyleType' (role 'StyleType108', cardinality 0..*) is associated with 'SpreadsheetMLStyles::BordersType' (role 'borders', cardinality 0..*).
+'SpreadsheetMLStyles::CustomDocumentProperty' (role 'customDocumentProperties', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection', cardinality 0..*).
+'SpreadsheetMLStyles::InteriorType' (role 'interior', cardinality 0..*) is associated with 'StyleType' (role 'StyleType115', cardinality 0..*).
+'PageSetup' (role 'PageSetup79', cardinality 0..*) is associated with 'SpreadsheetMLStyles::Header' (role 'ps_header', cardinality 0..*).
+'SpreadsheetMLStyles::DocumentPropertiesCollection' (role 'SpreadsheetMLStyles_DocumentPropertiesCollection5', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType6', cardinality 0..*).
+'SpreadsheetMLStyles::Workbook' (role 'cdp_workbook', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection27', cardinality 0..*).
+'SpreadsheetMLStyles::ProtectionType' (role 'protection', cardinality 0..*) is associated with 'StyleType' (role 'StyleType104', cardinality 0..*).
+'SpreadsheetMLStyles::Row' (role 'c_row', cardinality 0..*) is associated with 'Cell' (role 'Cell46', cardinality 0..*).
+'ProtectionType' (role 'ProtectionType', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StyleType' (role 'pt_styleType', cardinality 0..*).
+'SpreadsheetMLStyles::SmartTagsCollection' (role 'c_smartTags', cardinality 0..*) is associated with 'Cell' (role 'Cell', cardinality 0..*).
+'StyleType' (role 'StyleType', cardinality 0..*) is associated with 'SpreadsheetMLStyles::StyledElement' (role 'st_styledElement', cardinality 0..*).
+'StyleType' (role 'StyleType117', cardinality 0..*) is associated with 'SpreadsheetMLStyles::NumberFormatType' (role 'numberFormat', cardinality 0..*).
+'NamesType' (role 'NamesType122', cardinality 0..*) is associated with 'SpreadsheetMLStyles::NamedRange' (role 'namedRanges', cardinality 0..*).
+'SpreadsheetMLStyles::SmartTagsCollection' (role 'smartTagType_ste', cardinality 0..*) is associated with 'SmartTagType' (role 'SmartTagType', cardinality 0..*).
+'SpreadsheetMLStyles::DocumentPropertiesCollection' (role 'SpreadsheetMLStyles_DocumentPropertiesCollection11', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType12', cardinality 0..*).

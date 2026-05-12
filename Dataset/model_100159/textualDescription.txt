@@ -1,0 +1,28 @@
+The model has 14 class(es).
+The class 'MySQL::EnumSet' has no attributes.
+The class 'MySQL::EnumItem' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Column' has no attributes.
+The class 'EnumSet' has no attributes.
+The class 'MySQL::EnumColumn' has no attributes.
+The class 'DataBase' has no attributes.
+The class 'EnumItem' has no attributes.
+The class 'MySQL::IntegerColumn' has the following attributes: 'isAutoIncrement' of type str.
+The class 'MySQL::Table' has no attributes.
+The class 'MySQL::DataBase' has no attributes.
+The class 'MySQL::NamedElement' has the following attributes: 'name' of type str.
+The class 'MySQL::Column' has the following attributes: 'comment' of type str; 'null' of type str; 'isPrimaryKey' of type str; 'defaultValue' of type str; 'type' of type str.
+The class 'Table' has no attributes.
+'MySQL::Column' is a specialization of 'NamedElement'.
+'MySQL::Table' is a specialization of 'NamedElement'.
+'MySQL::EnumColumn' is a specialization of 'Column'.
+'MySQL::IntegerColumn' is a specialization of 'Column'.
+'MySQL::EnumItem' is a specialization of 'NamedElement'.
+'MySQL::DataBase' is a specialization of 'NamedElement'.
+'MySQL::Column' (role 'columns', cardinality 0..*) is associated with 'Table' (role 'Table4', cardinality 0..*).
+'EnumItem' (role 'EnumItem', cardinality 0..*) is associated with 'MySQL::EnumSet' (role 'enumSet', cardinality 0..*).
+'MySQL::DataBase' (role 'database', cardinality 0..*) is associated with 'Table' (role 'Table', cardinality 0..*).
+'MySQL::EnumItem' (role 'enumItems', cardinality 0..*) is associated with 'EnumSet' (role 'EnumSet8', cardinality 0..*).
+'EnumSet' (role 'EnumSet', cardinality 0..*) is associated with 'MySQL::EnumColumn' (role 'MySQL_EnumColumn', cardinality 0..*).
+'MySQL::Table' (role 'tables', cardinality 0..*) is associated with 'DataBase' (role 'DataBase', cardinality 0..*).
+'MySQL::Table' (role 'table', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).

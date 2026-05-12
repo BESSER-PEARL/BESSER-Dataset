@@ -1,0 +1,109 @@
+The model has 55 class(es).
+The class 'stext::EventRaisingExpression' has no attributes.
+The class 'DefRoot' has no attributes.
+The class 'stext::StatechartScope' has no attributes.
+The class 'stext::OperationDefinition' has no attributes.
+The class 'stext::DefaultTrigger' has no attributes.
+The class 'Effect' has no attributes.
+The class 'stext::RegularEventSpec' has no attributes.
+The class 'Event' has no attributes.
+The class 'stext::TransitionSpecification' has no attributes.
+The class 'stext::Root' has no attributes.
+The class 'stext::SimpleScope' has no attributes.
+The class 'stext::TimeEventSpec' has the following attributes: 'unit' of type str; 'type' of type str.
+The class 'BuiltinEventSpec' has no attributes.
+The class 'stext::State' has no attributes.
+The class 'ScopedElement' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'stext::ExitPointSpec' has the following attributes: 'exitpoint' of type str.
+The class 'Operation' has no attributes.
+The class 'stext::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'stext::TransitionRoot' has no attributes.
+The class 'stext::InterfaceScope' has no attributes.
+The class 'stext::ImportScope' has no attributes.
+The class 'Property' has no attributes.
+The class 'Scope' has no attributes.
+The class 'stext::StatechartRoot' has no attributes.
+The class 'stext::LocalReaction' has no attributes.
+The class 'stext::ActiveStateReferenceExpression' has no attributes.
+The class 'stext::TransitionReaction' has no attributes.
+The class 'stext::Guard' has no attributes.
+The class 'StatechartScope' has no attributes.
+The class 'EventSpec' has no attributes.
+The class 'stext::Scope' has no attributes.
+The class 'Expression' has no attributes.
+The class 'stext::EventValueReferenceExpression' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'stext::DefRoot' has no attributes.
+The class 'ReactionProperty' has no attributes.
+The class 'stext::AlwaysEvent' has no attributes.
+The class 'stext::BuiltinEventSpec' has no attributes.
+The class 'stext::ExitEvent' has no attributes.
+The class 'Variable' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'stext::ReactionEffect' has no attributes.
+The class 'stext::EntryPointSpec' has the following attributes: 'entrypoint' of type str.
+The class 'Reaction' has no attributes.
+The class 'stext::ReactionTrigger' has no attributes.
+The class 'stext::EntryEvent' has no attributes.
+The class 'stext::EventSpec' has no attributes.
+The class 'stext::Expression' has no attributes.
+The class 'stext::InternalScope' has no attributes.
+The class 'stext::StatechartSpecification' has no attributes.
+The class 'stext::EventDefinition' has the following attributes: 'direction' of type str.
+The class 'stext::StateRoot' has no attributes.
+The class 'stext::VariableDefinition' has the following attributes: 'external' of type bool; 'readonly' of type bool.
+The class 'stext::StateSpecification' has no attributes.
+The enumeration 'TimeEventType' has the following literals: 'after', 'every'.
+The enumeration 'Direction' has the following literals: 'OUT', 'IN', 'LOCAL'.
+The enumeration 'TimeUnit' has the following literals: 'second', 'microsecond', 'nanosecond', 'millisecond'.
+'stext::BuiltinEventSpec' is a specialization of 'EventSpec'.
+'stext::OperationDefinition' is a specialization of 'Operation'.
+'stext::VariableDefinition' is a specialization of 'Property'.
+'stext::TimeEventSpec' is a specialization of 'EventSpec'.
+'stext::RegularEventSpec' is a specialization of 'EventSpec'.
+'stext::StateRoot' is a specialization of 'DefRoot'.
+'stext::ImportScope' is a specialization of 'StatechartScope'.
+'stext::LocalReaction' is a specialization of 'Declaration'.
+'stext::EntryEvent' is a specialization of 'BuiltinEventSpec'.
+'stext::LocalReaction' is a specialization of 'Reaction'.
+'stext::SimpleScope' is a specialization of 'Scope'.
+'stext::OperationDefinition' is a specialization of 'Declaration'.
+'stext::InterfaceScope' is a specialization of 'StatechartScope'.
+'stext::ActiveStateReferenceExpression' is a specialization of 'Expression'.
+'stext::DefaultTrigger' is a specialization of 'Trigger'.
+'stext::AlwaysEvent' is a specialization of 'BuiltinEventSpec'.
+'stext::ExitEvent' is a specialization of 'BuiltinEventSpec'.
+'stext::ExitPointSpec' is a specialization of 'ReactionProperty'.
+'stext::ReactionTrigger' is a specialization of 'Trigger'.
+'stext::TransitionReaction' is a specialization of 'Reaction'.
+'stext::StatechartRoot' is a specialization of 'DefRoot'.
+'stext::EntryPointSpec' is a specialization of 'ReactionProperty'.
+'stext::EventRaisingExpression' is a specialization of 'Expression'.
+'stext::StatechartSpecification' is a specialization of 'ScopedElement'.
+'stext::VariableDefinition' is a specialization of 'Variable'.
+'stext::EventValueReferenceExpression' is a specialization of 'Expression'.
+'stext::StatechartScope' is a specialization of 'Scope'.
+'stext::InterfaceScope' is a specialization of 'NamedElement'.
+'stext::InternalScope' is a specialization of 'StatechartScope'.
+'stext::TransitionRoot' is a specialization of 'DefRoot'.
+'stext::ReactionEffect' is a specialization of 'Effect'.
+'stext::EventDefinition' is a specialization of 'Event'.
+'stext::TransitionRoot' (role 'stext_TransitionRoot', cardinality 0..*) is associated with 'stext::TransitionSpecification' (role 'stext_TransitionSpecification', cardinality 0..*).
+'stext::TransitionReaction' (role 'stext_TransitionReaction', cardinality 0..*) is associated with 'stext::TransitionSpecification' (role 'stext_TransitionSpecification7', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression15', cardinality 0..*) is associated with 'stext::TimeEventSpec' (role 'stext_TimeEventSpec', cardinality 0..*).
+'stext::Import' (role 'stext_Import', cardinality 0..*) is associated with 'stext::ImportScope' (role 'stext_ImportScope', cardinality 0..*).
+'stext::StatechartSpecification' (role 'stext_StatechartSpecification', cardinality 0..*) is associated with 'stext::StatechartRoot' (role 'stext_StatechartRoot', cardinality 0..*).
+'stext::StateRoot' (role 'stext_StateRoot', cardinality 0..*) is associated with 'stext::StateSpecification' (role 'stext_StateSpecification', cardinality 0..*).
+'stext::VariableDefinition' (role 'stext_VariableDefinition', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression', cardinality 0..*).
+'stext::StateSpecification' (role 'stext_StateSpecification5', cardinality 0..*) is associated with 'stext::Scope' (role 'stext_Scope', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression11', cardinality 0..*) is associated with 'stext::Guard' (role 'stext_Guard', cardinality 0..*).
+'stext::ReactionTrigger' (role 'stext_ReactionTrigger', cardinality 0..*) is associated with 'stext::EventSpec' (role 'stext_EventSpec', cardinality 0..*).
+'stext::ReactionEffect' (role 'stext_ReactionEffect', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression21', cardinality 0..*).
+'stext::ReactionTrigger' (role 'stext_ReactionTrigger18', cardinality 0..*) is associated with 'stext::Guard' (role 'stext_Guard19', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression28', cardinality 0..*) is associated with 'stext::EventValueReferenceExpression' (role 'stext_EventValueReferenceExpression', cardinality 0..*).
+'stext::State' (role 'stext_State', cardinality 0..*) is associated with 'stext::ActiveStateReferenceExpression' (role 'stext_ActiveStateReferenceExpression', cardinality 0..*).
+'stext::Root' (role 'stext_Root', cardinality 0..*) is associated with 'stext::DefRoot' (role 'stext_DefRoot', cardinality 0..*).
+'stext::RegularEventSpec' (role 'stext_RegularEventSpec', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression13', cardinality 0..*).
+'stext::EventRaisingExpression' (role 'stext_EventRaisingExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression23', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression26', cardinality 0..*) is associated with 'stext::EventRaisingExpression' (role 'stext_EventRaisingExpression25', cardinality 0..*).

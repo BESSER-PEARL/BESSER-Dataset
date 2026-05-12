@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'stateMachineActions::TERM' has the following attributes: 'variable' of type str; 'constant' of type int.
+The class 'stateMachineActions::Model' has no attributes.
+The class 'stateMachineActions::Assignment' has the following attributes: 'leftvar' of type str.
+The class 'stateMachineActions::EXPRESSION' has the following attributes: 'operator' of type str.
+The class 'stateMachineActions::Action' has no attributes.
+The class 'stateMachineActions::EventAction' has the following attributes: 'eventName' of type str; 'eventExtension' of type str.
+The class 'stateMachineActions::Parameters' has the following attributes: 'param' of type str.
+'stateMachineActions::TERM' (role 'stateMachineActions_TERM14', cardinality 0..*) is associated with 'stateMachineActions::EXPRESSION' (role 'stateMachineActions_EXPRESSION13', cardinality 0..*).
+'stateMachineActions::Action' (role 'stateMachineActions_Action', cardinality 0..*) is associated with 'stateMachineActions::Model' (role 'stateMachineActions_Model', cardinality 0..*).
+'stateMachineActions::Assignment' (role 'stateMachineActions_Assignment', cardinality 0..*) is associated with 'stateMachineActions::Action' (role 'stateMachineActions_Action2', cardinality 0..*).
+'stateMachineActions::EXPRESSION' (role 'stateMachineActions_EXPRESSION', cardinality 0..*) is associated with 'stateMachineActions::Assignment' (role 'stateMachineActions_Assignment6', cardinality 0..*).
+'stateMachineActions::Parameters' (role 'stateMachineActions_Parameters17', cardinality 0..*) is associated with 'stateMachineActions::Parameters' (role 'stateMachineActions_Parameters19', cardinality 0..*).
+'stateMachineActions::TERM' (role 'stateMachineActions_TERM', cardinality 0..*) is associated with 'stateMachineActions::EXPRESSION' (role 'stateMachineActions_EXPRESSION8', cardinality 0..*).
+'stateMachineActions::EventAction' (role 'stateMachineActions_EventAction', cardinality 0..*) is associated with 'stateMachineActions::Action' (role 'stateMachineActions_Action4', cardinality 0..*).
+'stateMachineActions::EXPRESSION' (role 'stateMachineActions_EXPRESSION10', cardinality 0..*) is associated with 'stateMachineActions::TERM' (role 'stateMachineActions_TERM11', cardinality 0..*).
+'stateMachineActions::Parameters' (role 'stateMachineActions_Parameters', cardinality 0..*) is associated with 'stateMachineActions::EventAction' (role 'stateMachineActions_EventAction16', cardinality 0..*).

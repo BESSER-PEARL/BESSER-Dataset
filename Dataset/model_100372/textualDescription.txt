@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'SimpleHierarchicalStateMachine::InitialState' has no attributes.
+The class 'SimpleHierarchicalStateMachine::Transition' has the following attributes: 'effect' of type str; 'trigger' of type str.
+The class 'SimpleHierarchicalStateMachine::StateMachine' has the following attributes: 'name' of type str.
+The class 'SimpleHierarchicalStateMachine::State' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'SimpleHierarchicalStateMachine::FinalState' has no attributes.
+The class 'SimpleHierarchicalStateMachine::CompositeState' has no attributes.
+'SimpleHierarchicalStateMachine::FinalState' is a specialization of 'State'.
+'SimpleHierarchicalStateMachine::InitialState' is a specialization of 'State'.
+'SimpleHierarchicalStateMachine::CompositeState' is a specialization of 'State'.
+'SimpleHierarchicalStateMachine::State' (role 'SimpleHierarchicalStateMachine_State8', cardinality 0..*) is associated with 'SimpleHierarchicalStateMachine::CompositeState' (role 'SimpleHierarchicalStateMachine_CompositeState7', cardinality 0..*).
+'SimpleHierarchicalStateMachine::State' (role 'SimpleHierarchicalStateMachine_State10', cardinality 0..*) is associated with 'SimpleHierarchicalStateMachine::StateMachine' (role 'SimpleHierarchicalStateMachine_StateMachine', cardinality 0..*).
+'SimpleHierarchicalStateMachine::Transition' (role 'SimpleHierarchicalStateMachine_Transition', cardinality 0..*) is associated with 'SimpleHierarchicalStateMachine::State' (role 'SimpleHierarchicalStateMachine_State2', cardinality 0..*).
+'SimpleHierarchicalStateMachine::Transition' (role 'SimpleHierarchicalStateMachine_Transition4', cardinality 0..*) is associated with 'SimpleHierarchicalStateMachine::State' (role 'SimpleHierarchicalStateMachine_State5', cardinality 0..*).
+'SimpleHierarchicalStateMachine::Transition' (role 'SimpleHierarchicalStateMachine_Transition13', cardinality 0..*) is associated with 'SimpleHierarchicalStateMachine::StateMachine' (role 'SimpleHierarchicalStateMachine_StateMachine12', cardinality 0..*).
+'SimpleHierarchicalStateMachine::CompositeState' (role 'SimpleHierarchicalStateMachine_CompositeState', cardinality 0..*) is associated with 'SimpleHierarchicalStateMachine::State' (role 'SimpleHierarchicalStateMachine_State', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Row' has no attributes.
+The class 'WikiTable::Table' has the following attributes: 'border' of type str; 'style' of type str; 'class_' of type str.
+The class 'Cell' has no attributes.
+The class 'WikiTable::Cell' has the following attributes: 'align' of type str; 'isHeading' of type str; 'content' of type str; 'style' of type str.
+The class 'WikiTable::Caption' has the following attributes: 'content' of type str.
+The class 'Caption' has no attributes.
+The class 'WikiTable::LocatedElement' has the following attributes: 'commentsBefore' of type str; 'commentsAfter' of type str; 'location' of type str.
+The class 'WikiTable::Row' has no attributes.
+The class 'LocatedElement' has no attributes.
+'WikiTable::Caption' is a specialization of 'LocatedElement'.
+'WikiTable::Cell' is a specialization of 'LocatedElement'.
+'WikiTable::Table' is a specialization of 'LocatedElement'.
+'WikiTable::Row' is a specialization of 'LocatedElement'.
+'WikiTable::Row' (role 'WikiTable_Row', cardinality 0..*) is associated with 'Cell' (role 'Cell', cardinality 0..*).
+'WikiTable::Table' (role 'WikiTable_Table2', cardinality 0..*) is associated with 'Row' (role 'Row', cardinality 0..*).
+'Caption' (role 'Caption', cardinality 0..*) is associated with 'WikiTable::Table' (role 'WikiTable_Table', cardinality 0..*).

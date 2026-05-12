@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'datasetload::Table' has the following attributes: 'Name' of type str; 'SQLStatement' of type str; 'LastLoad' of type date; 'KeyColumns' of type int; 'NumberOfRows' of type int; 'ParamTableGroupAttributes' of type str; 'ColumnTableRowAttributes' of type str.
+The class 'DataSource' has no attributes.
+The class 'datasetload::TableRow' has the following attributes: 'Key' of type str; 'RowNumber' of type int; 'NewRow' of type bool.
+The class 'datasetload::DataSourceJdbc' has the following attributes: 'DataBaseUserPwd' of type str; 'DataBaseUser' of type str; 'DefaultSchema' of type str.
+The class 'datasetload::DataSource' has the following attributes: 'Connected' of type bool; 'Name' of type str.
+The class 'datasetload::TableGroup' has the following attributes: 'Name' of type str.
+'datasetload::DataSourceJdbc' is a specialization of 'DataSource'.
+'datasetload::TableGroup' (role 'datasetload_TableGroup', cardinality 0..*) is associated with 'datasetload::Table' (role 'datasetload_Table', cardinality 0..*).
+'datasetload::TableRow' (role 'datasetload_TableRow', cardinality 0..*) is associated with 'datasetload::Table' (role 'datasetload_Table7', cardinality 0..*).
+'datasetload::TableRow' (role 'datasetload_TableRow9', cardinality 0..*) is associated with 'datasetload::Table' (role 'datasetload_Table10', cardinality 0..*).
+'datasetload::Table' (role 'datasetload_Table4', cardinality 0..*) is associated with 'datasetload::TableGroup' (role 'datasetload_TableGroup5', cardinality 0..*).
+'datasetload::TableGroup' (role 'datasetload_TableGroup2', cardinality 0..*) is associated with 'datasetload::DataSource' (role 'datasetload_DataSource', cardinality 0..*).

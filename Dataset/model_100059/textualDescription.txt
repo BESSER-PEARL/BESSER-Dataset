@@ -1,0 +1,31 @@
+The model has 10 class(es).
+The class 'itm::IssueTrackingDatabase' has no attributes.
+The class 'itm::Project' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'itm::Role' has the following attributes: 'name' of type str; 'permissions' of type str.
+The class 'itm::Member' has no attributes.
+The class 'itm::IssueDependency' has the following attributes: 'type' of type str.
+The class 'itm::IssueCategory' has the following attributes: 'name' of type str.
+The class 'itm::Issue' has the following attributes: 'priority' of type str; 'status' of type str; 'estimatedHours' of type float; 'dueDate' of type date; 'elapsedHours' of type float; 'name' of type str; 'description' of type str; 'doneRatio' of type float; 'completedDate' of type date.
+The class 'itm::Tracker' has the following attributes: 'name' of type str.
+The class 'itm::Version' has the following attributes: 'name' of type str; 'completedDate' of type date; 'description' of type str; 'status' of type str.
+The class 'itm::User' has the following attributes: 'login' of type str; 'language' of type str.
+The enumeration 'DependencyType' has the following literals: 'END_START', 'START_END', 'END_END', 'START_START'.
+The enumeration 'IssuePriority' has the following literals: 'HIGH', 'NORMAL', 'LOW', 'LOWER', 'HIGHER'.
+The enumeration 'VersionStatus' has the following literals: 'CLOSED', 'OPEN', 'INPROGRESS'.
+The enumeration 'IssueStatus' has the following literals: 'OPEN', 'CLOSED', 'RESOLVED', 'ASSIGNED'.
+'itm::Project' (role 'itm_Project8', cardinality 0..*) is associated with 'itm::Version' (role 'itm_Version', cardinality 0..*).
+'itm::IssueDependency' (role 'itm_IssueDependency', cardinality 0..*) is associated with 'itm::Issue' (role 'itm_Issue19', cardinality 0..*).
+'itm::IssueCategory' (role 'itm_IssueCategory', cardinality 0..*) is associated with 'itm::Project' (role 'itm_Project10', cardinality 0..*).
+'itm::IssueTrackingDatabase' (role 'itm_IssueTrackingDatabase6', cardinality 0..*) is associated with 'itm::User' (role 'itm_User', cardinality 0..*).
+'itm::Role' (role 'itm_Role37', cardinality 0..*) is associated with 'itm::Member' (role 'itm_Member36', cardinality 0..*).
+'itm::Project' (role 'itm_Project', cardinality 0..*) is associated with 'itm::IssueTrackingDatabase' (role 'itm_IssueTrackingDatabase', cardinality 0..*).
+'itm::IssueTrackingDatabase' (role 'itm_IssueTrackingDatabase2', cardinality 0..*) is associated with 'itm::Tracker' (role 'itm_Tracker', cardinality 0..*).
+'itm::IssueTrackingDatabase' (role 'itm_IssueTrackingDatabase4', cardinality 0..*) is associated with 'itm::Role' (role 'itm_Role', cardinality 0..*).
+'itm::Issue' (role 'itm_Issue21', cardinality 0..*) is associated with 'itm::IssueCategory' (role 'itm_IssueCategory22', cardinality 0..*).
+'itm::Member' (role 'itm_Member28', cardinality 0..*) is associated with 'itm::Issue' (role 'itm_Issue27', cardinality 0..*).
+'itm::Tracker' (role 'itm_Tracker17', cardinality 0..*) is associated with 'itm::Issue' (role 'itm_Issue16', cardinality 0..*).
+'itm::Project' (role 'itm_Project12', cardinality 0..*) is associated with 'itm::Member' (role 'itm_Member', cardinality 0..*).
+'itm::Issue' (role 'itm_Issue24', cardinality 0..*) is associated with 'itm::Member' (role 'itm_Member25', cardinality 0..*).
+'itm::Version' (role 'itm_Version14', cardinality 0..*) is associated with 'itm::Issue' (role 'itm_Issue', cardinality 0..*).
+'itm::Issue' (role 'itm_Issue31', cardinality 0..*) is associated with 'itm::IssueDependency' (role 'itm_IssueDependency30', cardinality 0..*).
+'itm::Member' (role 'itm_Member33', cardinality 0..*) is associated with 'itm::User' (role 'itm_User34', cardinality 0..*).

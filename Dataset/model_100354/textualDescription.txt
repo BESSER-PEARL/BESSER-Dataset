@@ -1,0 +1,31 @@
+The model has 13 class(es).
+The class 'uml::Activity' has no attributes.
+The class 'uml::Transition' has the following attributes: 'name' of type str.
+The class 'uml::State' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'uml::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'uml::Trigger' has the following attributes: 'name' of type str.
+The class 'uml::FinalState' has no attributes.
+The class 'uml::StateMachine' has no attributes.
+The class 'uml::Vertex' has the following attributes: 'name' of type str.
+The class 'uml::Region' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'uml::Behavior' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The enumeration 'PseudostateKind' has the following literals: 'entryPoint', 'join', 'initial', 'fork', 'choice', 'deepHistory', 'junction', 'terminate', 'exitPoint', 'shallowHistory'.
+'uml::Pseudostate' is a specialization of 'Vertex'.
+'uml::FinalState' is a specialization of 'State'.
+'uml::State' is a specialization of 'Vertex'.
+'uml::StateMachine' is a specialization of 'Behavior'.
+'uml::Activity' is a specialization of 'Behavior'.
+'uml::Transition' (role 'uml_Transition3', cardinality 0..*) is associated with 'uml::Trigger' (role 'uml_Trigger', cardinality 0..*).
+'uml::Region' (role 'uml_Region', cardinality 0..*) is associated with 'uml::StateMachine' (role 'uml_StateMachine', cardinality 0..*).
+'uml::Region' (role 'container', cardinality 0..*) is associated with 'uml::Vertex' (role 'Vertex', cardinality 0..*).
+'uml::Region' (role 'Region', cardinality 0..*) is associated with 'uml::Vertex' (role 'subvertex', cardinality 0..*).
+'uml::Behavior' (role 'uml_Behavior18', cardinality 0..*) is associated with 'uml::State' (role 'uml_State17', cardinality 0..*).
+'uml::Transition' (role 'uml_Transition12', cardinality 0..*) is associated with 'uml::Region' (role 'uml_Region11', cardinality 0..*).
+'uml::Behavior' (role 'uml_Behavior15', cardinality 0..*) is associated with 'uml::State' (role 'uml_State', cardinality 0..*).
+'uml::State' (role 'uml_State20', cardinality 0..*) is associated with 'uml::Behavior' (role 'uml_Behavior21', cardinality 0..*).
+'uml::Vertex' (role 'uml_Vertex8', cardinality 0..*) is associated with 'uml::Transition' (role 'uml_Transition7', cardinality 0..*).
+'uml::Transition' (role 'uml_Transition', cardinality 0..*) is associated with 'uml::Behavior' (role 'uml_Behavior', cardinality 0..*).
+'uml::Vertex' (role 'uml_Vertex', cardinality 0..*) is associated with 'uml::Transition' (role 'uml_Transition5', cardinality 0..*).

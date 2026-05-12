@@ -1,0 +1,50 @@
+The model has 17 class(es).
+The class 'dbmodel::StructOverride' has the following attributes: 'altname' of type str.
+The class 'dbmodel::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'dbmodel::Ltype' has no attributes.
+The class 'ClassOrDuplicate' has no attributes.
+The class 'dbmodel::Type' has no attributes.
+The class 'dbmodel::Primkey' has no attributes.
+The class 'dbmodel::DbModel' has the following attributes: 'kobeType' of type str; 'version' of type str; 'name' of type str; 'mtype' of type str; 'doAll' of type bool; 'kudaType' of type str.
+The class 'dbmodel::StructShare' has no attributes.
+The class 'dbmodel::Attribute' has the following attributes: 'isPublic' of type bool; 'shared' of type bool; 'exttable' of type str; 'kukoindex' of type bool; 'kukoonly' of type bool; 'immutable' of type bool; 'sybident' of type bool; 'descr' of type str; 'name' of type str; 'isInDB' of type bool; 'archiv' of type bool; 'nullOK' of type bool; 'aName' of type str; 'optional' of type bool; 'kuko' of type bool; 'extattr' of type str; 'foreign' of type bool.
+The class 'dbmodel::ClassOrDuplicate' has the following attributes: 'abbrev' of type str; 'name' of type str; 'reps' of type str.
+The class 'dbmodel::Subject' has the following attributes: 'name' of type str.
+The class 'dbmodel::IndexRef' has the following attributes: 'isPrimkey' of type bool; 'clustered' of type bool.
+The class 'dbmodel::Duplicate' has no attributes.
+The class 'dbmodel::Index' has the following attributes: 'unique' of type bool; 'kuko' of type bool; 'name' of type str.
+The class 'dbmodel::Stype' has no attributes.
+The class 'dbmodel::Pdb' has the following attributes: 'name' of type str; 'tablePartitioning' of type int; 'lockSchema' of type str.
+The class 'dbmodel::Class' has the following attributes: 'archivIndex' of type str; 'noDBio' of type bool; 'descr' of type str; 'vmin' of type int; 'publish' of type bool; 'whereclause' of type str; 'vmaj' of type int; 'aName' of type str; 'pubspec' of type bool; 'pubname' of type str.
+The enumeration 'KudaReplicate' has the following literals: 'PUBLISHSTV', 'SNAP', 'PUBLISH', 'DWH'.
+The enumeration 'LockSchema' has the following literals: 'ALLPAGES', 'DATAROWS', 'DATAPAGES'.
+The enumeration 'KobeType' has the following literals: 'AUSW', 'MAIN', 'KORA'.
+The enumeration 'Mtype' has the following literals: 'KOBE', 'KUDA'.
+The enumeration 'KudaType' has the following literals: 'MAIN', 'PUBLISH', 'TIPO'.
+The enumeration 'PhysicalDatabase' has the following literals: 'PDB_ABFRAGE_BUCH_STAMM', 'PDB_AUSW_KOBE_PKT_STAMM', 'PDB_MANDANT_PKT_STAMM', 'PDB_KOBE_KNDTEST', 'PDB_PART_PKT_DATA', 'PDB_KOBE_DEZ_STAMM', 'PDB_PART_TAG_A', 'PDB_PART_AUFT', 'PDB_ABFRAGE_FZK', 'PDB_PART_BUCH_STAMM', 'PDB_KOBE_AUSW_ADMIN', 'PDB_KOBE_DATA', 'PDB_KOBE_PMON', 'PDB_MANDANT_TAG_A', 'PDB_AUSW_KOBE_BUCH_STAMM', 'PDB_PART_MON', 'PDB_ABFRAGE_PKT_STAMM', 'PDB_PART_JAHR', 'PDB_AUSW_KOBE_ARCHIV', 'PDB_ABFRAGE_ARCHIV', 'PDB_MANDANT_BUCH_PROV', 'PDB_KUDA_TRANS_TRANSIT', 'PDB_KOBE_GLOBAL', 'PDB_ABFRAGE_VSTI', 'PDB_PART_PKT_STAMM', 'PDB_PART_TAG', 'PDB_AUSW_KOBE_MON', 'PDB_MANDANT_BUCH_STAMM', 'PDB_AUSW_KOBE_STATISTIK', 'PDB_MANDANT_MON', 'PDB_ABFRAGE_ETV', 'PDB_KOBE_STAMM', 'PDB_ABFRAGE_MON', 'PDB_MANDANT_TAG', 'PDB_PART_BUCH_PROV', 'PDB_MANDANT_PKT_DATA', 'PDB_KOBE_STEUERUNG'.
+'dbmodel::Class' is a specialization of 'ClassOrDuplicate'.
+'dbmodel::Duplicate' is a specialization of 'ClassOrDuplicate'.
+'dbmodel::Index' (role 'dbmodel_Index40', cardinality 0..*) is associated with 'dbmodel::IndexRef' (role 'dbmodel_IndexRef', cardinality 0..*).
+'dbmodel::StructOverride' (role 'dbmodel_StructOverride', cardinality 0..*) is associated with 'dbmodel::Attribute' (role 'dbmodel_Attribute29', cardinality 0..*).
+'dbmodel::Type' (role 'dbmodel_Type', cardinality 0..*) is associated with 'dbmodel::Ltype' (role 'dbmodel_Ltype48', cardinality 0..*).
+'dbmodel::Ltype' (role 'dbmodel_Ltype', cardinality 0..*) is associated with 'dbmodel::Attribute' (role 'dbmodel_Attribute22', cardinality 0..*).
+'dbmodel::Class' (role 'dbmodel_Class17', cardinality 0..*) is associated with 'dbmodel::Pdb' (role 'dbmodel_Pdb', cardinality 0..*).
+'dbmodel::Stype' (role 'dbmodel_Stype56', cardinality 0..*) is associated with 'dbmodel::StructShare' (role 'dbmodel_StructShare55', cardinality 0..*).
+'dbmodel::Subject' (role 'dbmodel_Subject', cardinality 0..*) is associated with 'dbmodel::DbModel' (role 'dbmodel_DbModel2', cardinality 0..*).
+'dbmodel::StructShare' (role 'dbmodel_StructShare52', cardinality 0..*) is associated with 'dbmodel::Attribute' (role 'dbmodel_Attribute53', cardinality 0..*).
+'dbmodel::IndexRef' (role 'dbmodel_IndexRef42', cardinality 0..*) is associated with 'dbmodel::Attribute' (role 'dbmodel_Attribute43', cardinality 0..*).
+'dbmodel::Duplicate' (role 'dbmodel_Duplicate19', cardinality 0..*) is associated with 'dbmodel::Class' (role 'dbmodel_Class20', cardinality 0..*).
+'dbmodel::Class' (role 'dbmodel_Class11', cardinality 0..*) is associated with 'dbmodel::Attribute' (role 'dbmodel_Attribute', cardinality 0..*).
+'dbmodel::DbModel' (role 'dbmodel_DbModel6', cardinality 0..*) is associated with 'dbmodel::Duplicate' (role 'dbmodel_Duplicate', cardinality 0..*).
+'dbmodel::Class' (role 'dbmodel_Class8', cardinality 0..*) is associated with 'dbmodel::Subject' (role 'dbmodel_Subject9', cardinality 0..*).
+'dbmodel::Attribute' (role 'dbmodel_Attribute30', cardinality 0..*) is associated with 'dbmodel::Attribute' (role 'dbmodel_Attribute32', cardinality 0..*).
+'dbmodel::Attribute' (role 'dbmodel_Attribute25', cardinality 0..*) is associated with 'dbmodel::Attribute' (role 'dbmodel_Attribute23', cardinality 0..*).
+'dbmodel::Class' (role 'dbmodel_Class', cardinality 0..*) is associated with 'dbmodel::DbModel' (role 'dbmodel_DbModel4', cardinality 0..*).
+'dbmodel::Import' (role 'dbmodel_Import', cardinality 0..*) is associated with 'dbmodel::DbModel' (role 'dbmodel_DbModel', cardinality 0..*).
+'dbmodel::Pdb' (role 'dbmodel_Pdb45', cardinality 0..*) is associated with 'dbmodel::IndexRef' (role 'dbmodel_IndexRef46', cardinality 0..*).
+'dbmodel::Attribute' (role 'dbmodel_Attribute27', cardinality 0..*) is associated with 'dbmodel::StructShare' (role 'dbmodel_StructShare', cardinality 0..*).
+'dbmodel::StructOverride' (role 'dbmodel_StructOverride50', cardinality 0..*) is associated with 'dbmodel::Stype' (role 'dbmodel_Stype', cardinality 0..*).
+'dbmodel::Attribute' (role 'dbmodel_Attribute35', cardinality 0..*) is associated with 'dbmodel::Primkey' (role 'dbmodel_Primkey34', cardinality 0..*).
+'dbmodel::Primkey' (role 'dbmodel_Primkey', cardinality 0..*) is associated with 'dbmodel::Class' (role 'dbmodel_Class13', cardinality 0..*).
+'dbmodel::Index' (role 'dbmodel_Index', cardinality 0..*) is associated with 'dbmodel::Class' (role 'dbmodel_Class15', cardinality 0..*).
+'dbmodel::Attribute' (role 'dbmodel_Attribute38', cardinality 0..*) is associated with 'dbmodel::Index' (role 'dbmodel_Index37', cardinality 0..*).

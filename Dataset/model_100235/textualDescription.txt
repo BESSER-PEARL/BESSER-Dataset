@@ -1,0 +1,280 @@
+The model has 120 class(es).
+The class 'ParaContentElt' has no attributes.
+The class 'WordprocessingMLStyles::NoteElt' has the following attributes: 'type' of type StringType; 'suppressRef' of type StringType.
+The class 'RunContentElt' has no attributes.
+The class 'WordprocessingMLStyles::TabElt' has no attributes.
+The class 'WordprocessingMLStyles::BlockLevelElt' has no attributes.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'CustomDocumentPropertiesCollection' has no attributes.
+The class 'SymElt' has no attributes.
+The class 'WordprocessingMLStyles::ListsElt' has no attributes.
+The class 'StylesElt' has no attributes.
+The class 'WordprocessingMLStyles::EndnoteRef' has no attributes.
+The class 'BodyElt' has no attributes.
+The class 'BlockLevelChunkElt' has no attributes.
+The class 'WordprocessingMLStyles::DateTimeTypeValue' has no attributes.
+The class 'WordprocessingMLStyles::RowContentElt' has no attributes.
+The class 'UnderlineProperty' has no attributes.
+The class 'WordprocessingMLStyles::StringValue' has the following attributes: 'value' of type StringType.
+The class 'WordprocessingMLStyles::TableRowPrElt' has no attributes.
+The class 'WordprocessingMLStyles::Symbol' has no attributes.
+The class 'WordprocessingMLStyles::TableCellElt' has no attributes.
+The class 'WordprocessingMLStyles::NoBreakHyphen' has no attributes.
+The class 'RowElt' has no attributes.
+The class 'WordprocessingMLStyles::ParaContentElt' has no attributes.
+The class 'PictureType' has no attributes.
+The class 'StyleElt' has no attributes.
+The class 'WordprocessingMLStyles::BreakElt' has the following attributes: 'type' of type StringType.
+The class 'WordprocessingMLStyles::RunContentElt' has no attributes.
+The class 'TableElt' has no attributes.
+The class 'SmartTagsCollection' has no attributes.
+The class 'RunElt' has no attributes.
+The class 'WordprocessingMLStyles::HLinkElt' has no attributes.
+The class 'WordprocessingMLStyles::TableCellPrElt' has no attributes.
+The class 'DateTimeType' has no attributes.
+The class 'RowContentElt' has no attributes.
+The class 'WordprocessingMLStyles::Separator' has no attributes.
+The class 'WordprocessingMLStyles::SubDocElt' has no attributes.
+The class 'WordprocessingMLStyles::StylesElt' has the following attributes: 'versionOfBuiltInStylenames' of type StringType.
+The class 'WordprocessingMLStyles::FloatValue' has the following attributes: 'value' of type StringType.
+The class 'WordprocessingMLStyles::ParaPrElt' has the following attributes: 'suppressAutoHyphens' of type StringType; 'supressLineNumbers' of type StringType; 'bidi' of type StringType; 'pageBreakBefore' of type StringType; 'keepLines' of type StringType; 'justification' of type StringType; 'contextualSpacing' of type StringType; 'keepNext' of type StringType.
+The class 'WordprocessingMLStyles::DocPrElt' has no attributes.
+The class 'WordprocessingMLStyles::LangElt' has the following attributes: 'bidi' of type StringType; 'val' of type StringType.
+The class 'WordprocessingMLStyles::SymElt' has no attributes.
+The class 'WordprocessingMLStyles::UnderlineProperty' has the following attributes: 'color' of type StringType; 'val' of type StringType.
+The class 'WordprocessingMLStyles::DateTimeType' has the following attributes: 'month' of type StringType; 'year' of type StringType; 'day' of type StringType; 'second' of type StringType; 'minute' of type StringType; 'hour' of type StringType.
+The class 'FldCharElt' has no attributes.
+The class 'WordprocessingMLStyles::DelInstrText' has no attributes.
+The class 'SmartTagType' has no attributes.
+The class 'WordprocessingMLStyles::SoftHyphen' has no attributes.
+The class 'FontsListElt' has no attributes.
+The class 'WordprocessingMLStyles::AnnotationRef' has no attributes.
+The class 'WordprocessingMLStyles::ValueType' has no attributes.
+The class 'WordprocessingMLStyles::DocumentPropertiesCollection' has the following attributes: 'keywords' of type StringType; 'pages' of type StringType; 'author' of type StringType; 'bytes' of type StringType; 'manager' of type StringType; 'charactersWithSpaces' of type StringType; 'company' of type StringType; 'subject' of type StringType; 'paragraphs' of type StringType; 'guid' of type StringType; 'lines' of type StringType; 'title' of type StringType; 'totalTime' of type StringType; 'hyperlinkBase' of type StringType; 'revision' of type StringType; 'characters' of type StringType; 'description' of type StringType; 'lastAuthor' of type StringType; 'category' of type StringType; 'appName' of type StringType; 'presentationFormat' of type StringType; 'words' of type StringType.
+The class 'WordprocessingMLStyles::FontElt' has no attributes.
+The class 'WordprocessingMLStyles::SmartTagsCollection' has no attributes.
+The class 'WordprocessingMLStyles::TableGridElt' has no attributes.
+The class 'WordprocessingMLStyles::Footnote' has no attributes.
+The class 'LangElt' has no attributes.
+The class 'WordprocessingMLStyles::FootnoteRef' has no attributes.
+The class 'WordprocessingMLStyles::RowElt' has no attributes.
+The class 'WordprocessingMLStyles::StyleElt' has the following attributes: 'personalReply' of type StringType; 'personal' of type StringType; 'personalCompose' of type StringType; 'sti' of type StringType; 'default' of type StringType; 'semiHidden' of type StringType; 'hidden' of type StringType; 'locked' of type StringType; 'type' of type StringType; 'autoRedefine' of type StringType.
+The class 'TableCellElt' has no attributes.
+The class 'FontsElt' has no attributes.
+The class 'WordprocessingMLStyles::SmartTagType' has the following attributes: 'url' of type StringType; 'namespaceuri' of type StringType; 'name' of type StringType.
+The class 'WordprocessingMLStyles::ParaElt' has no attributes.
+The class 'WordDocument' has no attributes.
+The class 'WordprocessingMLStyles::StringProperty' has no attributes.
+The class 'WordprocessingMLStyles::FontsElt' has the following attributes: 'hint' of type StringType.
+The class 'StringType' has no attributes.
+The class 'WordprocessingMLStyles::CfChunk' has no attributes.
+The class 'TableContentElt' has no attributes.
+The class 'BlockLevelElt' has no attributes.
+The class 'WordprocessingMLStyles::PictureType' has no attributes.
+The class 'WordprocessingMLStyles::BodyElt' has no attributes.
+The class 'WordprocessingMLStyles::Endnote' has no attributes.
+The class 'WordprocessingMLStyles::ContinuationSeparator' has no attributes.
+The class 'WordprocessingMLStyles::TableContentElt' has no attributes.
+The class 'WordprocessingMLStyles::WordDocument' has no attributes.
+The class 'SectPrElt' has no attributes.
+The class 'WordprocessingMLStyles::SectPrElt' has no attributes.
+The class 'WordprocessingMLStyles::StringType' has the following attributes: 'val' of type StringType.
+The class 'WordprocessingMLStyles::BlockLevelChunkElt' has no attributes.
+The class 'WordprocessingMLStyles::DelText' has no attributes.
+The class 'WordprocessingMLStyles::TablePrExElt' has no attributes.
+The class 'WordprocessingMLStyles::Picture' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'WordprocessingMLStyles::TableElt' has no attributes.
+The class 'TableRowPrElt' has no attributes.
+The class 'FontElt' has no attributes.
+The class 'TabElt' has no attributes.
+The class 'WordprocessingMLStyles::RunPrElt' has the following attributes: 'strike' of type StringType; 'doubleStrike' of type StringType; 'italic' of type StringType; 'cs' of type StringType; 'specVanish' of type StringType; 'shadow' of type StringType; 'italic_cs' of type StringType; 'noProof' of type StringType; 'verticalAlign' of type StringType; 'color' of type StringType; 'vanish' of type StringType; 'bold' of type StringType; 'imprint' of type StringType; 'highlight' of type StringType; 'rtl' of type StringType; 'capitals' of type StringType; 'outline' of type StringType; 'emboss' of type StringType; 'bold_cs' of type StringType; 'smallCapitals' of type StringType.
+The class 'RunPrElt' has no attributes.
+The class 'WordprocessingMLStyles::Tab' has no attributes.
+The class 'WordprocessingMLStyles::RunElt' has no attributes.
+The class 'ListsElt' has no attributes.
+The class 'TablePrExElt' has no attributes.
+The class 'StringProperty' has no attributes.
+The class 'TablePrElt' has no attributes.
+The class 'WordprocessingMLStyles::BooleanValue' has the following attributes: 'value' of type StringType.
+The class 'WordprocessingMLStyles::InstrText' has no attributes.
+The class 'WordprocessingMLStyles::RunLevelElt' has no attributes.
+The class 'WordprocessingMLStyles::SimpleFieldElt' has no attributes.
+The class 'RunLevelElt' has no attributes.
+The class 'NoteElt' has no attributes.
+The class 'WordprocessingMLStyles::TablePrElt' has no attributes.
+The class 'TableCellPrElt' has no attributes.
+The class 'VersionType' has no attributes.
+The class 'WordprocessingMLStyles::FldCharElt' has the following attributes: 'fldCharType' of type StringType; 'fldLock' of type StringType.
+The class 'WordprocessingMLStyles::CustomDocumentProperty' has the following attributes: 'name' of type StringType.
+The class 'WordprocessingMLStyles::FontsListElt' has no attributes.
+The class 'ParaElt' has no attributes.
+The class 'CustomDocumentProperty' has no attributes.
+The class 'WordprocessingMLStyles::CustomDocumentPropertiesCollection' has no attributes.
+The class 'DocPrElt' has no attributes.
+The class 'WordprocessingMLStyles::PgNum' has no attributes.
+The class 'TableGridElt' has no attributes.
+The class 'WordprocessingMLStyles::Cr' has no attributes.
+The class 'ParaPrElt' has no attributes.
+The class 'WordprocessingMLStyles::FldChar' has no attributes.
+The class 'WordprocessingMLStyles::VersionType' has the following attributes: 'n' of type StringType; 'nn' of type StringType.
+The class 'WordprocessingMLStyles::Text' has no attributes.
+The enumeration 'StyleKindValue' has the following literals: 'skv_table', 'skv_paragraph', 'skv_character', 'skv_list'.
+The enumeration 'HighlightColorValues' has the following literals: 'hcv_blue', 'hcv_none', 'hcv_red', 'hcv_dark_gray', 'hcv_dark_green', 'hcv_white', 'hcv_yellow', 'hcv_dark_yellow', 'hcv_dark_blue', 'hcv_magenta', 'hcv_dark_cyan', 'hcv_cyan', 'hcv_dark_magenta', 'hcv_green', 'hcv_light_gray', 'hcv_dark_red', 'hcv_black'.
+The enumeration 'UnderlineValues' has the following literals: 'uv_dash_dot_heavy', 'uv_words', 'uv_none', 'uv_dot_dash', 'uv_dotted', 'uv_wave', 'uv_wavy_double', 'uv_double', 'uv_dash', 'uv_thick', 'uv_single', 'uv_dotted_heavy', 'uv_dash_long', 'uv_dot_dot_dash', 'uv_dash_dot_dot_heavy', 'uv_dashed_heavy', 'uv_dash_long_heavy', 'uv_wavy_heavy'.
+The enumeration 'OnOffType' has the following literals: 'oot_on', 'oot_off'.
+The enumeration 'VerticalAlignRunType' has the following literals: 'vart_baseline', 'vart_subscript', 'vart_superscript'.
+The enumeration 'NoteValue' has the following literals: 'ftn_normal', 'ftn_continuation_separator', 'ftn_continuation_notice', 'ftn_separator'.
+The enumeration 'JustificationValue' has the following literals: 'jv_center', 'jv_right', 'jv_left', 'jv_both'.
+The enumeration 'HintType' has the following literals: 'ht_fareast', 'ht_default', 'ht_cs'.
+The enumeration 'FldCharTypeProperty' has the following literals: 'fctp_end', 'fctp_separate', 'fctp_begin'.
+The enumeration 'BreakType' has the following literals: 'bt_column', 'bt_text_wrapping', 'bt_page'.
+'WordprocessingMLStyles::Text' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::InstrText' is a specialization of 'StringType'.
+'WordprocessingMLStyles::DelInstrText' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::BreakElt' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Symbol' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::AnnotationRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::StringProperty' is a specialization of 'StringType'.
+'WordprocessingMLStyles::SoftHyphen' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::TableElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLStyles::FldChar' is a specialization of 'FldCharElt'.
+'WordprocessingMLStyles::DateTimeTypeValue' is a specialization of 'ValueType'.
+'WordprocessingMLStyles::Picture' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::PgNum' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Footnote' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::ParaElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLStyles::Separator' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::NoBreakHyphen' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Text' is a specialization of 'StringType'.
+'WordprocessingMLStyles::Picture' is a specialization of 'PictureType'.
+'WordprocessingMLStyles::SubDocElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLStyles::HLinkElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLStyles::DelText' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Cr' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Symbol' is a specialization of 'SymElt'.
+'WordprocessingMLStyles::RunElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLStyles::FootnoteRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Footnote' is a specialization of 'NoteElt'.
+'WordprocessingMLStyles::ContinuationSeparator' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::CfChunk' is a specialization of 'BlockLevelElt'.
+'WordprocessingMLStyles::DelText' is a specialization of 'StringType'.
+'WordprocessingMLStyles::EndnoteRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Endnote' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::SimpleFieldElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLStyles::BooleanValue' is a specialization of 'ValueType'.
+'WordprocessingMLStyles::StringValue' is a specialization of 'ValueType'.
+'WordprocessingMLStyles::DelInstrText' is a specialization of 'StringType'.
+'WordprocessingMLStyles::Tab' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::FldChar' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Tab' is a specialization of 'TabElt'.
+'WordprocessingMLStyles::RunLevelElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLStyles::FloatValue' is a specialization of 'ValueType'.
+'WordprocessingMLStyles::InstrText' is a specialization of 'RunContentElt'.
+'WordprocessingMLStyles::Endnote' is a specialization of 'NoteElt'.
+'WordprocessingMLStyles::BlockLevelChunkElt' is a specialization of 'BlockLevelElt'.
+'StringType' (role 'StringType127', cardinality 0..*) is associated with 'WordprocessingMLStyles::FontsElt' (role 'WordprocessingMLStyles_FontsElt126', cardinality 0..*).
+'StringProperty' (role 'StringProperty50', cardinality 0..*) is associated with 'WordprocessingMLStyles::ParaPrElt' (role 'WordprocessingMLStyles_ParaPrElt', cardinality 0..*).
+'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection25', cardinality 0..*) is associated with 'WordprocessingMLStyles::WordDocument' (role 'cdp_wordDocument', cardinality 0..*).
+'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*) is associated with 'WordprocessingMLStyles::WordDocument' (role 'dp_wordDocument', cardinality 0..*).
+'WordprocessingMLStyles::RunPrElt' (role 'WordprocessingMLStyles_RunPrElt', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty59', cardinality 0..*).
+'StringProperty' (role 'StringProperty156', cardinality 0..*) is associated with 'WordprocessingMLStyles::StyleElt' (role 'WordprocessingMLStyles_StyleElt155', cardinality 0..*).
+'StringType' (role 'StringType73', cardinality 0..*) is associated with 'WordprocessingMLStyles::SymElt' (role 'WordprocessingMLStyles_SymElt72', cardinality 0..*).
+'TableContentElt' (role 'TableContentElt184', cardinality 0..*) is associated with 'WordprocessingMLStyles::RunLevelElt' (role 'tce_runLevelElts', cardinality 0..*).
+'WordprocessingMLStyles::TableGridElt' (role 'tblGrid', cardinality 0..*) is associated with 'TableElt' (role 'TableElt83', cardinality 0..*).
+'BodyElt' (role 'BodyElt42', cardinality 0..*) is associated with 'WordprocessingMLStyles::BlockLevelElt' (role 'blockLevelElts', cardinality 0..*).
+'WordprocessingMLStyles::TablePrExElt' (role 'tblPrEx', cardinality 0..*) is associated with 'RowElt' (role 'RowElt94', cardinality 0..*).
+'CustomDocumentProperty' (role 'CustomDocumentProperty', cardinality 0..*) is associated with 'WordprocessingMLStyles::CustomDocumentPropertiesCollection' (role 'customDocumentProperty_cdpe', cardinality 0..*).
+'RunContentElt' (role 'RunContentElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::RunElt' (role 'rce_rElt', cardinality 0..*).
+'FontsListElt' (role 'FontsListElt136', cardinality 0..*) is associated with 'WordprocessingMLStyles::FontElt' (role 'fonts135', cardinality 0..*).
+'WordprocessingMLStyles::WordDocument' (role 'dpe_wordDocument', cardinality 0..*) is associated with 'DocPrElt' (role 'DocPrElt', cardinality 0..*).
+'WordprocessingMLStyles::RowElt' (role 'tr', cardinality 0..*) is associated with 'TableContentElt' (role 'TableContentElt89', cardinality 0..*).
+'WordprocessingMLStyles::TableElt' (role 'tge_tblElt', cardinality 0..*) is associated with 'TableGridElt' (role 'TableGridElt', cardinality 0..*).
+'StringType' (role 'StringType', cardinality 0..*) is associated with 'WordprocessingMLStyles::SymElt' (role 'WordprocessingMLStyles_SymElt', cardinality 0..*).
+'RunElt' (role 'RunElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::RunPrElt' (role 'rPr', cardinality 0..*).
+'WordprocessingMLStyles::TableCellElt' (role 'ble_tableCellElt', cardinality 0..*) is associated with 'BlockLevelElt' (role 'BlockLevelElt109', cardinality 0..*).
+'WordprocessingMLStyles::ListsElt' (role 'lists', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument180', cardinality 0..*).
+'WordprocessingMLStyles::RunPrElt' (role 'le_runPrElt', cardinality 0..*) is associated with 'LangElt' (role 'LangElt', cardinality 0..*).
+'StylesElt' (role 'StylesElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::WordDocument' (role 'se_wordDocument', cardinality 0..*).
+'WordprocessingMLStyles::WordDocument' (role 'WordprocessingMLStyles_WordDocument28', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty29', cardinality 0..*).
+'WordprocessingMLStyles::TableCellPrElt' (role 'tcPr', cardinality 0..*) is associated with 'TableCellElt' (role 'TableCellElt111', cardinality 0..*).
+'RowElt' (role 'RowElt96', cardinality 0..*) is associated with 'WordprocessingMLStyles::TableRowPrElt' (role 'trPr', cardinality 0..*).
+'StringProperty' (role 'StringProperty165', cardinality 0..*) is associated with 'WordprocessingMLStyles::StyleElt' (role 'WordprocessingMLStyles_StyleElt164', cardinality 0..*).
+'WordDocument' (role 'WordDocument143', cardinality 0..*) is associated with 'WordprocessingMLStyles::StylesElt' (role 'styles', cardinality 0..*).
+'StyleElt' (role 'StyleElt98', cardinality 0..*) is associated with 'WordprocessingMLStyles::TableRowPrElt' (role 'se_trPr', cardinality 0..*).
+'WordprocessingMLStyles::FontElt' (role 'WordprocessingMLStyles_FontElt140', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty141', cardinality 0..*).
+'WordprocessingMLStyles::WordDocument' (role 'be_wordDocument', cardinality 0..*) is associated with 'BodyElt' (role 'BodyElt', cardinality 0..*).
+'StringType' (role 'StringType168', cardinality 0..*) is associated with 'WordprocessingMLStyles::StyleElt' (role 'WordprocessingMLStyles_StyleElt167', cardinality 0..*).
+'WordprocessingMLStyles::FldCharElt' (role 'WordprocessingMLStyles_FldCharElt', cardinality 0..*) is associated with 'StringType' (role 'StringType75', cardinality 0..*).
+'ValueType' (role 'ValueType', cardinality 0..*) is associated with 'WordprocessingMLStyles::CustomDocumentProperty' (role 'WordprocessingMLStyles_CustomDocumentProperty', cardinality 0..*).
+'RunPrElt' (role 'RunPrElt172', cardinality 0..*) is associated with 'WordprocessingMLStyles::StyleElt' (role 'rpe_styleElt', cardinality 0..*).
+'TablePrElt' (role 'TablePrElt174', cardinality 0..*) is associated with 'WordprocessingMLStyles::StyleElt' (role 'tpe_styleElt', cardinality 0..*).
+'WordprocessingMLStyles::StyleElt' (role 'styles147', cardinality 0..*) is associated with 'StylesElt' (role 'StylesElt148', cardinality 0..*).
+'WordprocessingMLStyles::ParaElt' (role 'ppe_pElt', cardinality 0..*) is associated with 'ParaPrElt' (role 'ParaPrElt', cardinality 0..*).
+'StringType' (role 'StringType130', cardinality 0..*) is associated with 'WordprocessingMLStyles::FontsElt' (role 'WordprocessingMLStyles_FontsElt129', cardinality 0..*).
+'WordprocessingMLStyles::RunLevelElt' (role 'rce_runLevelElts', cardinality 0..*) is associated with 'RowContentElt' (role 'RowContentElt186', cardinality 0..*).
+'WordprocessingMLStyles::TableCellElt' (role 'tcpe_tableCellElt', cardinality 0..*) is associated with 'TableCellPrElt' (role 'TableCellPrElt', cardinality 0..*).
+'WordprocessingMLStyles::DocumentPropertiesCollection' (role 'WordprocessingMLStyles_DocumentPropertiesCollection7', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType8', cardinality 0..*).
+'RowElt' (role 'RowElt100', cardinality 0..*) is associated with 'WordprocessingMLStyles::RowContentElt' (role 'rowContent', cardinality 0..*).
+'NoteElt' (role 'NoteElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::BlockLevelElt' (role 'n_blockLevelElts', cardinality 0..*).
+'WordprocessingMLStyles::RowContentElt' (role 'rle_rowContentElt', cardinality 0..*) is associated with 'RunLevelElt' (role 'RunLevelElt104', cardinality 0..*).
+'StringProperty' (role 'StringProperty', cardinality 0..*) is associated with 'WordprocessingMLStyles::WordDocument' (role 'WordprocessingMLStyles_WordDocument', cardinality 0..*).
+'StyleElt' (role 'StyleElt57', cardinality 0..*) is associated with 'WordprocessingMLStyles::RunPrElt' (role 'se_rPr', cardinality 0..*).
+'TableElt' (role 'TableElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::TablePrElt' (role 'tblPr', cardinality 0..*).
+'WordprocessingMLStyles::RowElt' (role 'tpee_rowElt', cardinality 0..*) is associated with 'TablePrExElt' (role 'TablePrExElt', cardinality 0..*).
+'WordprocessingMLStyles::ParaPrElt' (role 'pPr', cardinality 0..*) is associated with 'ParaElt' (role 'ParaElt', cardinality 0..*).
+'WordprocessingMLStyles::WordDocument' (role 'le_wordDocument', cardinality 0..*) is associated with 'ListsElt' (role 'ListsElt', cardinality 0..*).
+'TableCellElt' (role 'TableCellElt102', cardinality 0..*) is associated with 'WordprocessingMLStyles::RowContentElt' (role 'tce_rowContentElt', cardinality 0..*).
+'WordprocessingMLStyles::StyleElt' (role 'WordprocessingMLStyles_StyleElt158', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty159', cardinality 0..*).
+'WordprocessingMLStyles::TableContentElt' (role 'tblContent', cardinality 0..*) is associated with 'TableElt' (role 'TableElt85', cardinality 0..*).
+'WordprocessingMLStyles::FontsElt' (role 'defaultFonts', cardinality 0..*) is associated with 'FontsListElt' (role 'FontsListElt120', cardinality 0..*).
+'WordprocessingMLStyles::ParaPrElt' (role 'se_pPr', cardinality 0..*) is associated with 'StyleElt' (role 'StyleElt', cardinality 0..*).
+'FontsElt' (role 'FontsElt117', cardinality 0..*) is associated with 'WordprocessingMLStyles::FontsListElt' (role 'fse_fontsListElt', cardinality 0..*).
+'WordprocessingMLStyles::NoteElt' (role 'ble_note', cardinality 0..*) is associated with 'BlockLevelElt' (role 'BlockLevelElt69', cardinality 0..*).
+'WordprocessingMLStyles::SmartTagsCollection' (role 'smartTagType_ste', cardinality 0..*) is associated with 'SmartTagType' (role 'SmartTagType', cardinality 0..*).
+'WordprocessingMLStyles::StyleElt' (role 'tcpe_styleElt', cardinality 0..*) is associated with 'TableCellPrElt' (role 'TableCellPrElt178', cardinality 0..*).
+'WordDocument' (role 'WordDocument38', cardinality 0..*) is associated with 'WordprocessingMLStyles::BodyElt' (role 'body', cardinality 0..*).
+'WordprocessingMLStyles::DateTimeTypeValue' (role 'WordprocessingMLStyles_DateTimeTypeValue', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType', cardinality 0..*).
+'RunElt' (role 'RunElt67', cardinality 0..*) is associated with 'WordprocessingMLStyles::RunContentElt' (role 'rContentElts', cardinality 0..*).
+'BlockLevelElt' (role 'BlockLevelElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::BodyElt' (role 'ble_bodyElt', cardinality 0..*).
+'WordprocessingMLStyles::ParaElt' (role 'pce_pElt', cardinality 0..*) is associated with 'ParaContentElt' (role 'ParaContentElt', cardinality 0..*).
+'WordprocessingMLStyles::DocumentPropertiesCollection' (role 'WordprocessingMLStyles_DocumentPropertiesCollection4', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType5', cardinality 0..*).
+'WordprocessingMLStyles::SmartTagType' (role 'smartTagTypes', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection', cardinality 0..*).
+'StringType' (role 'StringType124', cardinality 0..*) is associated with 'WordprocessingMLStyles::FontsElt' (role 'WordprocessingMLStyles_FontsElt', cardinality 0..*).
+'BodyElt' (role 'BodyElt182', cardinality 0..*) is associated with 'WordprocessingMLStyles::SectPrElt' (role 'sectPr', cardinality 0..*).
+'WordprocessingMLStyles::StyleElt' (role 'WordprocessingMLStyles_StyleElt161', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty162', cardinality 0..*).
+'WordprocessingMLStyles::DocPrElt' (role 'docPr', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument36', cardinality 0..*).
+'FontElt' (role 'FontElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::FontsListElt' (role 'fe_fontsListElt', cardinality 0..*).
+'WordprocessingMLStyles::WordDocument' (role 'st_wordDocument', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection22', cardinality 0..*).
+'WordprocessingMLStyles::StyleElt' (role 'WordprocessingMLStyles_StyleElt152', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty153', cardinality 0..*).
+'WordprocessingMLStyles::RunElt' (role 'rpe_rElt', cardinality 0..*) is associated with 'RunPrElt' (role 'RunPrElt', cardinality 0..*).
+'WordDocument' (role 'WordDocument19', cardinality 0..*) is associated with 'WordprocessingMLStyles::SmartTagsCollection' (role 'wd_smartTags', cardinality 0..*).
+'TableCellElt' (role 'TableCellElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::BlockLevelElt' (role 'tce_content', cardinality 0..*).
+'WordprocessingMLStyles::CustomDocumentProperty' (role 'customDocumentProperties', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection', cardinality 0..*).
+'WordprocessingMLStyles::StyleElt' (role 'trpe_styleElt', cardinality 0..*) is associated with 'TableRowPrElt' (role 'TableRowPrElt176', cardinality 0..*).
+'StyleElt' (role 'StyleElt145', cardinality 0..*) is associated with 'WordprocessingMLStyles::StylesElt' (role 'se_stylesElt', cardinality 0..*).
+'RunPrElt' (role 'RunPrElt122', cardinality 0..*) is associated with 'WordprocessingMLStyles::FontsElt' (role 'rFonts', cardinality 0..*).
+'WordprocessingMLStyles::WordDocument' (role 'fle_wordDocument', cardinality 0..*) is associated with 'FontsListElt' (role 'FontsListElt', cardinality 0..*).
+'WordprocessingMLStyles::RunPrElt' (role 'WordprocessingMLStyles_RunPrElt62', cardinality 0..*) is associated with 'UnderlineProperty' (role 'UnderlineProperty', cardinality 0..*).
+'WordprocessingMLStyles::StyleElt' (role 'ppe_styleElt', cardinality 0..*) is associated with 'ParaPrElt' (role 'ParaPrElt170', cardinality 0..*).
+'WordprocessingMLStyles::TableCellElt' (role 'tc', cardinality 0..*) is associated with 'RowContentElt' (role 'RowContentElt106', cardinality 0..*).
+'WordprocessingMLStyles::DocumentPropertiesCollection' (role 'WordprocessingMLStyles_DocumentPropertiesCollection', cardinality 0..*) is associated with 'VersionType' (role 'VersionType', cardinality 0..*).
+'StyleElt' (role 'StyleElt81', cardinality 0..*) is associated with 'WordprocessingMLStyles::TablePrElt' (role 'se_tblPr', cardinality 0..*).
+'WordprocessingMLStyles::ParaContentElt' (role 'pContentElts', cardinality 0..*) is associated with 'ParaElt' (role 'ParaElt52', cardinality 0..*).
+'WordprocessingMLStyles::TableElt' (role 'tce_tblElt', cardinality 0..*) is associated with 'TableContentElt' (role 'TableContentElt', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType11', cardinality 0..*) is associated with 'WordprocessingMLStyles::DocumentPropertiesCollection' (role 'WordprocessingMLStyles_DocumentPropertiesCollection10', cardinality 0..*).
+'WordprocessingMLStyles::RowElt' (role 'tpe_rowElt', cardinality 0..*) is associated with 'TableRowPrElt' (role 'TableRowPrElt', cardinality 0..*).
+'RunPrElt' (role 'RunPrElt65', cardinality 0..*) is associated with 'WordprocessingMLStyles::LangElt' (role 'language', cardinality 0..*).
+'WordprocessingMLStyles::RowElt' (role 'rce_rowElt', cardinality 0..*) is associated with 'RowContentElt' (role 'RowContentElt', cardinality 0..*).
+'StringType' (role 'StringType138', cardinality 0..*) is associated with 'WordprocessingMLStyles::FontElt' (role 'WordprocessingMLStyles_FontElt', cardinality 0..*).
+'WordDocument' (role 'WordDocument13', cardinality 0..*) is associated with 'WordprocessingMLStyles::CustomDocumentPropertiesCollection' (role 'wd_customDocProperties', cardinality 0..*).
+'WordDocument' (role 'WordDocument', cardinality 0..*) is associated with 'WordprocessingMLStyles::DocumentPropertiesCollection' (role 'wd_docProperties', cardinality 0..*).
+'WordprocessingMLStyles::BodyElt' (role 'spe_bodyElt', cardinality 0..*) is associated with 'SectPrElt' (role 'SectPrElt', cardinality 0..*).
+'WordprocessingMLStyles::FontsListElt' (role 'fonts', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument115', cardinality 0..*).
+'RowElt' (role 'RowElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::TableContentElt' (role 're_tblContentElt', cardinality 0..*).
+'WordprocessingMLStyles::StyleElt' (role 'WordprocessingMLStyles_StyleElt', cardinality 0..*) is associated with 'StringType' (role 'StringType150', cardinality 0..*).
+'WordprocessingMLStyles::FontsElt' (role 'WordprocessingMLStyles_FontsElt132', cardinality 0..*) is associated with 'StringType' (role 'StringType133', cardinality 0..*).
+'TablePrElt' (role 'TablePrElt', cardinality 0..*) is associated with 'WordprocessingMLStyles::TableElt' (role 'tpe_tblElt', cardinality 0..*).
+'WordprocessingMLStyles::TableContentElt' (role 'rle_tblContentElt', cardinality 0..*) is associated with 'RunLevelElt' (role 'RunLevelElt', cardinality 0..*).
+'WordprocessingMLStyles::RunPrElt' (role 'fse_runPrElt', cardinality 0..*) is associated with 'FontsElt' (role 'FontsElt', cardinality 0..*).
+'WordprocessingMLStyles::TableCellPrElt' (role 'se_tcPr', cardinality 0..*) is associated with 'StyleElt' (role 'StyleElt113', cardinality 0..*).

@@ -1,0 +1,89 @@
+The model has 44 class(es).
+The class 'stateMachine::Properties' has the following attributes: 'setupConference' of type bool; 'scscfUser' of type str; 'applicationServerHost' of type str; 'mediaFromAddr' of type str; 'applicationServerProtocol' of type str; 'scscfHost' of type str; 'mediaURI' of type str; 'mediaProtocol' of type str; 'mediaHost' of type str; 'applicationAddress' of type str; 'scscfPort' of type int; 'mediaToAddr' of type str; 'recordPath' of type str; 'mediaPort' of type int; 'applicationServerPort' of type int; 'scscfProtocol' of type str.
+The class 'stateMachine::Key' has the following attributes: 'key' of type str.
+The class 'stateMachine::Branch' has no attributes.
+The class 'stateMachine::SetTimer' has the following attributes: 'millis' of type float.
+The class 'stateMachine::PickUp' has no attributes.
+The class 'stateMachine::Terminated' has no attributes.
+The class 'stateMachine::StateMachine' has the following attributes: 'nombre' of type str.
+The class 'stateMachine::PlayRecord' has no attributes.
+The class 'stateMachine::SendSms' has no attributes.
+The class 'Action' has no attributes.
+The class 'stateMachine::CompositeState' has no attributes.
+The class 'stateMachine::RemoveRecord' has the following attributes: 'recordId' of type str.
+The class 'Transition' has no attributes.
+The class 'stateMachine::IvrAction' has no attributes.
+The class 'stateMachine::Timer' has no attributes.
+The class 'stateMachine::Cancel' has no attributes.
+The class 'stateMachine::SMSReceived' has no attributes.
+The class 'stateMachine::InitialState' has no attributes.
+The class 'Play' has no attributes.
+The class 'stateMachine::Call' has the following attributes: 'from_' of type str; 'to' of type str.
+The class 'stateMachine::Action' has no attributes.
+The class 'Branch' has no attributes.
+The class 'stateMachine::IVREvent' has no attributes.
+The class 'stateMachine::Otherwise' has no attributes.
+The class 'stateMachine::Init' has no attributes.
+The class 'stateMachine::SMS' has the following attributes: 'from_' of type str; 'text' of type str; 'to' of type str.
+The class 'stateMachine::Recorderd' has the following attributes: 'recordId' of type str.
+The class 'stateMachine::NewCall' has the following attributes: 'to' of type str; 'from_' of type str.
+The class 'stateMachine::State' has the following attributes: 'nombre' of type str.
+The class 'stateMachine::FinalState' has no attributes.
+The class 'IVREvent' has no attributes.
+The class 'stateMachine::CollectTimeout' has no attributes.
+The class 'State' has no attributes.
+The class 'stateMachine::Transition' has no attributes.
+The class 'stateMachine::Played' has no attributes.
+The class 'stateMachine::Terminate' has no attributes.
+The class 'stateMachine::Bye' has no attributes.
+The class 'stateMachine::HangUp' has no attributes.
+The class 'stateMachine::Play' has the following attributes: 'mediaURI' of type str; 'baseURL' of type str.
+The class 'stateMachine::PlayCollect' has no attributes.
+The class 'stateMachine::Collected' has no attributes.
+The class 'stateMachine::Managed' has the following attributes: 'code' of type int; 'success' of type bool.
+The class 'stateMachine::NoneEvent' has no attributes.
+The class 'IvrAction' has no attributes.
+'stateMachine::RemoveRecord' is a specialization of 'IvrAction'.
+'stateMachine::CompositeState' is a specialization of 'State'.
+'stateMachine::Play' is a specialization of 'IvrAction'.
+'stateMachine::Cancel' is a specialization of 'IVREvent'.
+'stateMachine::NoneEvent' is a specialization of 'Transition'.
+'stateMachine::Init' is a specialization of 'IVREvent'.
+'stateMachine::Terminate' is a specialization of 'IvrAction'.
+'stateMachine::PlayRecord' is a specialization of 'Play'.
+'stateMachine::Timer' is a specialization of 'Transition'.
+'stateMachine::CollectTimeout' is a specialization of 'IVREvent'.
+'stateMachine::FinalState' is a specialization of 'State'.
+'stateMachine::Played' is a specialization of 'IVREvent'.
+'stateMachine::NewCall' is a specialization of 'IvrAction'.
+'stateMachine::InitialState' is a specialization of 'State'.
+'stateMachine::PlayCollect' is a specialization of 'Play'.
+'stateMachine::Managed' is a specialization of 'IVREvent'.
+'stateMachine::Call' is a specialization of 'IVREvent'.
+'stateMachine::Collected' is a specialization of 'IVREvent'.
+'stateMachine::HangUp' is a specialization of 'IvrAction'.
+'stateMachine::Key' is a specialization of 'Branch'.
+'stateMachine::SMSReceived' is a specialization of 'Transition'.
+'stateMachine::IVREvent' is a specialization of 'Transition'.
+'stateMachine::SetTimer' is a specialization of 'Action'.
+'stateMachine::Terminated' is a specialization of 'IVREvent'.
+'stateMachine::PickUp' is a specialization of 'IVREvent'.
+'stateMachine::SendSms' is a specialization of 'Action'.
+'stateMachine::Otherwise' is a specialization of 'Branch'.
+'stateMachine::Recorderd' is a specialization of 'IVREvent'.
+'stateMachine::IvrAction' is a specialization of 'Action'.
+'stateMachine::Bye' is a specialization of 'IVREvent'.
+'stateMachine::Transition' (role 'stateMachine_Transition', cardinality 0..*) is associated with 'stateMachine::Action' (role 'stateMachine_Action', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State23', cardinality 0..*) is associated with 'stateMachine::Branch' (role 'stateMachine_Branch22', cardinality 0..*).
+'stateMachine::SMS' (role 'stateMachine_SMS19', cardinality 0..*) is associated with 'stateMachine::SMSReceived' (role 'stateMachine_SMSReceived', cardinality 0..*).
+'stateMachine::Transition' (role 'Transition', cardinality 0..*) is associated with 'stateMachine::State' (role 'src', cardinality 0..*).
+'stateMachine::Branch' (role 'stateMachine_Branch', cardinality 0..*) is associated with 'stateMachine::Collected' (role 'stateMachine_Collected', cardinality 0..*).
+'stateMachine::Properties' (role 'stateMachine_Properties', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine2', cardinality 0..*).
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine', cardinality 0..*) is associated with 'stateMachine::State' (role 'stateMachine_State', cardinality 0..*).
+'stateMachine::Action' (role 'stateMachine_Action26', cardinality 0..*) is associated with 'stateMachine::Branch' (role 'stateMachine_Branch25', cardinality 0..*).
+'stateMachine::CompositeState' (role 'stateMachine_CompositeState', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine10', cardinality 0..*).
+'stateMachine::SendSms' (role 'stateMachine_SendSms', cardinality 0..*) is associated with 'stateMachine::SMS' (role 'stateMachine_SMS', cardinality 0..*).
+'stateMachine::State' (role 'State', cardinality 0..*) is associated with 'stateMachine::State' (role 'parent', cardinality 0..*).
+'stateMachine::State' (role 'State14', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'outs', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State17', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'stateMachine_Transition16', cardinality 0..*).
+'stateMachine::State' (role 'State8', cardinality 0..*) is associated with 'stateMachine::State' (role 'children', cardinality 0..*).

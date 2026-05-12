@@ -1,0 +1,66 @@
+The model has 21 class(es).
+The class 'statechart::State' has no attributes.
+The class 'statechart::CompositeState' has the following attributes: 'isConcurrent' of type bool.
+The class 'statechart::TransitionAction' has no attributes.
+The class 'State' has no attributes.
+The class 'IDBase' has no attributes.
+The class 'Action' has no attributes.
+The class 'statechart::Label' has the following attributes: 'name' of type str.
+The class 'statechart::StateMachine' has the following attributes: 'name' of type str.
+The class 'statechart::ENTRY' has no attributes.
+The class 'statechart::Action' has the following attributes: 'value' of type str.
+The class 'statechart::EXIT' has no attributes.
+The class 'StateVertex' has no attributes.
+The class 'statechart::Transition' has the following attributes: 'description' of type str.
+The class 'StateAction' has no attributes.
+The class 'NameBase' has no attributes.
+The class 'statechart::StateMachineRoot' has no attributes.
+The class 'statechart::Event' has the following attributes: 'name' of type str.
+The class 'statechart::DO' has no attributes.
+The class 'statechart::StateVertex' has no attributes.
+The class 'statechart::Guard' has the following attributes: 'expression' of type str.
+The class 'statechart::StateAction' has no attributes.
+'statechart::Event' is a specialization of 'IDBase'.
+'statechart::StateVertex' is a specialization of 'IDBase'.
+'statechart::StateMachineRoot' is a specialization of 'IDBase'.
+'statechart::Action' is a specialization of 'IDBase'.
+'statechart::EXIT' is a specialization of 'StateAction'.
+'statechart::CompositeState' is a specialization of 'State'.
+'statechart::StateVertex' is a specialization of 'NameBase'.
+'statechart::State' is a specialization of 'StateVertex'.
+'statechart::StateAction' is a specialization of 'Action'.
+'statechart::DO' is a specialization of 'StateAction'.
+'statechart::Guard' is a specialization of 'IDBase'.
+'statechart::Label' is a specialization of 'IDBase'.
+'statechart::Transition' is a specialization of 'IDBase'.
+'statechart::TransitionAction' is a specialization of 'Action'.
+'statechart::StateMachine' is a specialization of 'IDBase'.
+'statechart::ENTRY' is a specialization of 'StateAction'.
+'statechart::StateVertex' (role 'source', cardinality 0..*) is associated with 'statechart::Transition' (role 'Transition37', cardinality 0..*).
+'statechart::Label' (role 'statechart_Label', cardinality 0..*) is associated with 'statechart::StateVertex' (role 'statechart_StateVertex', cardinality 0..*).
+'statechart::StateMachine' (role 'subStateMachines', cardinality 0..*) is associated with 'statechart::StateMachineRoot' (role 'StateMachineRoot', cardinality 0..*).
+'statechart::State' (role 'State', cardinality 0..*) is associated with 'statechart::StateMachine' (role 'state_container', cardinality 0..*).
+'statechart::CompositeState' (role 'sv_container', cardinality 0..*) is associated with 'statechart::StateVertex' (role 'StateVertex', cardinality 0..*).
+'statechart::State' (role 'action_container', cardinality 0..*) is associated with 'statechart::StateAction' (role 'StateAction', cardinality 0..*).
+'statechart::Transition' (role 'evt_container', cardinality 0..*) is associated with 'statechart::Event' (role 'Event', cardinality 0..*).
+'statechart::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'statechart::StateMachineRoot' (role 'statemachine_container', cardinality 0..*).
+'statechart::Transition' (role 'Transition11', cardinality 0..*) is associated with 'statechart::State' (role 'transS_container', cardinality 0..*).
+'statechart::State' (role 'top', cardinality 0..*) is associated with 'statechart::StateMachine' (role 'StateMachine9', cardinality 0..*).
+'statechart::Transition' (role 'internalTransitions', cardinality 0..*) is associated with 'statechart::State' (role 'State21', cardinality 0..*).
+'statechart::Transition' (role 'Transition', cardinality 0..*) is associated with 'statechart::StateMachine' (role 'transSM_container', cardinality 0..*).
+'statechart::State' (role 'State42', cardinality 0..*) is associated with 'statechart::StateAction' (role 'actions', cardinality 0..*).
+'statechart::Transition' (role 'Transition34', cardinality 0..*) is associated with 'statechart::TransitionAction' (role 'action', cardinality 0..*).
+'statechart::Guard' (role 'Guard', cardinality 0..*) is associated with 'statechart::Transition' (role 'gua_container', cardinality 0..*).
+'statechart::StateMachine' (role 'statechart_StateMachine7', cardinality 0..*) is associated with 'statechart::State' (role 'statechart_State', cardinality 0..*).
+'statechart::StateMachine' (role 'statechart_StateMachine', cardinality 0..*) is associated with 'statechart::StateMachineRoot' (role 'statechart_StateMachineRoot', cardinality 0..*).
+'statechart::StateMachine' (role 'StateMachine19', cardinality 0..*) is associated with 'statechart::Transition' (role 'transitions', cardinality 0..*).
+'statechart::StateMachine' (role 'stateMachineCall', cardinality 0..*) is associated with 'statechart::Action' (role 'Action', cardinality 0..*).
+'statechart::TransitionAction' (role 'TransitionAction', cardinality 0..*) is associated with 'statechart::Transition' (role 'act_container', cardinality 0..*).
+'statechart::StateVertex' (role 'StateVertex26', cardinality 0..*) is associated with 'statechart::Transition' (role 'outgoing', cardinality 0..*).
+'statechart::Transition' (role 'incoming', cardinality 0..*) is associated with 'statechart::StateVertex' (role 'StateVertex28', cardinality 0..*).
+'statechart::State' (role 'statechart_State13', cardinality 0..*) is associated with 'statechart::Event' (role 'statechart_Event', cardinality 0..*).
+'statechart::CompositeState' (role 'CompositeState', cardinality 0..*) is associated with 'statechart::StateVertex' (role 'subVertexes', cardinality 0..*).
+'statechart::StateMachine' (role 'StateMachine17', cardinality 0..*) is associated with 'statechart::Action' (role 'calledByAction', cardinality 0..*).
+'statechart::Guard' (role 'guard', cardinality 0..*) is associated with 'statechart::Transition' (role 'Transition32', cardinality 0..*).
+'statechart::StateVertex' (role 'target', cardinality 0..*) is associated with 'statechart::Transition' (role 'Transition39', cardinality 0..*).
+'statechart::Event' (role 'trigger', cardinality 0..*) is associated with 'statechart::Transition' (role 'Transition30', cardinality 0..*).

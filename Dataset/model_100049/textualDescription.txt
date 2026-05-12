@@ -1,0 +1,85 @@
+The model has 30 class(es).
+The class 'Named' has no attributes.
+The class 'research20::PublicationStructure' has no attributes.
+The class 'research20::Transition' has the following attributes: 'guardLabel' of type str; 'guardExpression' of type str.
+The class 'Labelled' has no attributes.
+The class 'research20::PublicationProcess' has the following attributes: 'minTime' of type int; 'maxTime' of type int.
+The class 'research20::Position' has the following attributes: 'description' of type str.
+The class 'research20::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'research20::Paper' has no attributes.
+The class 'research20::StateMachineObject' has the following attributes: 'label' of type str.
+The class 'research20::Skill' has the following attributes: 'description' of type str.
+The class 'research20::PublicationStatus' has the following attributes: 'label' of type str.
+The class 'research20::KnowledgeManager' has no attributes.
+The class 'research20::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research20::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research20::Paragraph' has the following attributes: 'content' of type str.
+The class 'research20::State' has the following attributes: 'name' of type str; 'id' of type int; 'kind' of type str.
+The class 'research20::Keyword' has the following attributes: 'word' of type str.
+The class 'Counted' has no attributes.
+The class 'research20::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'research20::Counted' has the following attributes: 'id' of type int.
+The class 'research20::Progress' has the following attributes: 'percent' of type int.
+The class 'research20::PublicationSystem' has no attributes.
+The class 'research20::Named' has the following attributes: 'name' of type str.
+The class 'research20::StateMachineVariable' has no attributes.
+The class 'research20::Review' has the following attributes: 'date' of type date.
+The class 'research20::Researcher' has the following attributes: 'name' of type str; 'forName' of type str.
+The class 'StateMachineObject' has no attributes.
+The class 'research20::Labelled' has the following attributes: 'lname' of type str.
+The class 'research20::Action' has the following attributes: 'actionStatement' of type str; 'actionLabel' of type str.
+The class 'research20::Phase' has the following attributes: 'name' of type str.
+The enumeration 'StateType' has the following literals: 'initial', 'final', 'ongoing'.
+'research20::Transition' is a specialization of 'StateMachineObject'.
+'research20::Paragraph' is a specialization of 'Named'.
+'research20::PublicationSystem' is a specialization of 'Named'.
+'research20::State' is a specialization of 'StateMachineObject'.
+'research20::Paper' is a specialization of 'Named'.
+'research20::Paragraph' is a specialization of 'Counted'.
+'research20::KnowledgeManager' is a specialization of 'Named'.
+'research20::ReviewNote' is a specialization of 'Named'.
+'research20::Progress' is a specialization of 'Labelled'.
+'research20::Review' is a specialization of 'Labelled'.
+'research20::Keyword' is a specialization of 'Named'.
+'research20::PublicationProcess' is a specialization of 'Named'.
+'research20::Write' is a specialization of 'Labelled'.
+'research20::PublicationStructure' is a specialization of 'Named'.
+'research20::Position' is a specialization of 'Named'.
+'research20::Paragraph' (role 'research20_Paragraph', cardinality 0..*) is associated with 'research20::Paper' (role 'research20_Paper', cardinality 0..*).
+'research20::PublicationStructure' (role 'research20_PublicationStructure46', cardinality 0..*) is associated with 'research20::PublicationSystem' (role 'research20_PublicationSystem45', cardinality 0..*).
+'research20::PublicationStructure' (role 'research20_PublicationStructure36', cardinality 0..*) is associated with 'research20::Paper' (role 'research20_Paper37', cardinality 0..*).
+'research20::Researcher' (role 'research20_Researcher10', cardinality 0..*) is associated with 'research20::Collaboration' (role 'research20_Collaboration', cardinality 0..*).
+'research20::Paper' (role 'res_papers', cardinality 0..*) is associated with 'research20::Researcher' (role 'Researcher', cardinality 0..*).
+'research20::Paragraph' (role 'research20_Paragraph29', cardinality 0..*) is associated with 'research20::Write' (role 'research20_Write28', cardinality 0..*).
+'research20::PaperKeyword' (role 'research20_PaperKeyword59', cardinality 0..*) is associated with 'research20::Keyword' (role 'research20_Keyword60', cardinality 0..*).
+'research20::Action' (role 'research20_Action84', cardinality 0..*) is associated with 'research20::Action' (role 'research20_Action82', cardinality 0..*).
+'research20::State' (role 'research20_State75', cardinality 0..*) is associated with 'research20::Transition' (role 'research20_Transition74', cardinality 0..*).
+'research20::Transition' (role 'research20_Transition71', cardinality 0..*) is associated with 'research20::State' (role 'research20_State72', cardinality 0..*).
+'research20::Position' (role 'research20_Position52', cardinality 0..*) is associated with 'research20::Position' (role 'research20_Position50', cardinality 0..*).
+'research20::Paper' (role 'Paper', cardinality 0..*) is associated with 'research20::Researcher' (role 'authors', cardinality 0..*).
+'research20::PublicationStatus' (role 'research20_PublicationStatus65', cardinality 0..*) is associated with 'research20::StateMachineVariable' (role 'research20_StateMachineVariable', cardinality 0..*).
+'research20::Phase' (role 'research20_Phase', cardinality 0..*) is associated with 'research20::PublicationProcess' (role 'research20_PublicationProcess', cardinality 0..*).
+'research20::PublicationSystem' (role 'research20_PublicationSystem', cardinality 0..*) is associated with 'research20::PublicationProcess' (role 'research20_PublicationProcess43', cardinality 0..*).
+'research20::Paper' (role 'paper', cardinality 0..*) is associated with 'research20::Progress' (role 'Progress', cardinality 0..*).
+'research20::PublicationStructure' (role 'research20_PublicationStructure41', cardinality 0..*) is associated with 'research20::PublicationStatus' (role 'research20_PublicationStatus', cardinality 0..*).
+'research20::Researcher' (role 'research20_Researcher', cardinality 0..*) is associated with 'research20::Write' (role 'research20_Write', cardinality 0..*).
+'research20::PublicationProcess' (role 'research20_PublicationProcess24', cardinality 0..*) is associated with 'research20::Progress' (role 'research20_Progress', cardinality 0..*).
+'research20::Review' (role 'research20_Review31', cardinality 0..*) is associated with 'research20::ReviewNote' (role 'research20_ReviewNote32', cardinality 0..*).
+'research20::Action' (role 'research20_Action81', cardinality 0..*) is associated with 'research20::State' (role 'research20_State80', cardinality 0..*).
+'research20::PublicationStructure' (role 'research20_PublicationStructure39', cardinality 0..*) is associated with 'research20::KnowledgeManager' (role 'research20_KnowledgeManager', cardinality 0..*).
+'research20::Paper' (role 'research20_Paper18', cardinality 0..*) is associated with 'research20::Paper' (role 'research20_Paper16', cardinality 0..*).
+'research20::Researcher' (role 'research20_Researcher34', cardinality 0..*) is associated with 'research20::PublicationStructure' (role 'research20_PublicationStructure', cardinality 0..*).
+'research20::Paper' (role 'research20_Paper20', cardinality 0..*) is associated with 'research20::State' (role 'research20_State', cardinality 0..*).
+'research20::Transition' (role 'research20_Transition', cardinality 0..*) is associated with 'research20::Action' (role 'research20_Action', cardinality 0..*).
+'research20::State' (role 'research20_State77', cardinality 0..*) is associated with 'research20::Transition' (role 'research20_Transition78', cardinality 0..*).
+'research20::Progress' (role 'progress', cardinality 0..*) is associated with 'research20::Paper' (role 'Paper26', cardinality 0..*).
+'research20::State' (role 'research20_State68', cardinality 0..*) is associated with 'research20::PublicationStatus' (role 'research20_PublicationStatus67', cardinality 0..*).
+'research20::Paper' (role 'research20_Paper63', cardinality 0..*) is associated with 'research20::Collaboration' (role 'research20_Collaboration62', cardinality 0..*).
+'research20::Researcher' (role 'research20_Researcher6', cardinality 0..*) is associated with 'research20::Skill' (role 'research20_Skill', cardinality 0..*).
+'research20::Position' (role 'research20_Position49', cardinality 0..*) is associated with 'research20::PublicationSystem' (role 'research20_PublicationSystem48', cardinality 0..*).
+'research20::Review' (role 'research20_Review', cardinality 0..*) is associated with 'research20::Researcher' (role 'research20_Researcher3', cardinality 0..*).
+'research20::Paper' (role 'research20_Paper15', cardinality 0..*) is associated with 'research20::PaperKeyword' (role 'research20_PaperKeyword', cardinality 0..*).
+'research20::Paper' (role 'research20_Paper54', cardinality 0..*) is associated with 'research20::Keyword' (role 'research20_Keyword', cardinality 0..*).
+'research20::Position' (role 'research20_Position', cardinality 0..*) is associated with 'research20::Researcher' (role 'research20_Researcher8', cardinality 0..*).
+'research20::ReviewNote' (role 'research20_ReviewNote', cardinality 0..*) is associated with 'research20::Paragraph' (role 'research20_Paragraph22', cardinality 0..*).
+'research20::Keyword' (role 'research20_Keyword57', cardinality 0..*) is associated with 'research20::KnowledgeManager' (role 'research20_KnowledgeManager56', cardinality 0..*).

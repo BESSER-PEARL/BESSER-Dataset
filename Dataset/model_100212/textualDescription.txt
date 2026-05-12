@@ -1,0 +1,46 @@
+The model has 20 class(es).
+The class 'documentation::Paragraph' has no attributes.
+The class 'TextFragmentContainer' has no attributes.
+The class 'documentation::TableHeader' has the following attributes: 'headerCells' of type str.
+The class 'Fragment' has no attributes.
+The class 'documentation::NamedElement' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'documentation::ListItem' has the following attributes: 'text' of type str.
+The class 'documentation::Line' has the following attributes: 'text' of type str.
+The class 'documentation::Section' has no attributes.
+The class 'documentation::TableRow' has the following attributes: 'rowCells' of type str.
+The class 'documentation::Subsection' has no attributes.
+The class 'documentation::Fragment' has no attributes.
+The class 'documentation::TermEntry' has the following attributes: 'description' of type str.
+The class 'documentation::Documentation' has the following attributes: 'title' of type str.
+The class 'documentation::Table' has no attributes.
+The class 'documentation::Subsubsection' has no attributes.
+The class 'documentation::Image' has the following attributes: 'originalSource' of type str; 'width' of type str.
+The class 'documentation::TextFragmentContainer' has no attributes.
+The class 'documentation::XML' has the following attributes: 'contextClassName' of type str; 'resource' of type str.
+The class 'documentation::List' has no attributes.
+'documentation::XML' is a specialization of 'NamedElement'.
+'documentation::Subsubsection' is a specialization of 'Fragment'.
+'documentation::Table' is a specialization of 'Fragment'.
+'documentation::Line' is a specialization of 'Fragment'.
+'documentation::Subsubsection' is a specialization of 'NamedElement'.
+'documentation::Subsection' is a specialization of 'TextFragmentContainer'.
+'documentation::Subsubsection' is a specialization of 'TextFragmentContainer'.
+'documentation::XML' is a specialization of 'Fragment'.
+'documentation::Image' is a specialization of 'NamedElement'.
+'documentation::Section' is a specialization of 'TextFragmentContainer'.
+'documentation::ListItem' is a specialization of 'TextFragmentContainer'.
+'documentation::Subsection' is a specialization of 'NamedElement'.
+'documentation::Paragraph' is a specialization of 'Fragment'.
+'documentation::List' is a specialization of 'Fragment'.
+'documentation::TermEntry' is a specialization of 'NamedElement'.
+'documentation::Paragraph' is a specialization of 'TextFragmentContainer'.
+'documentation::Section' is a specialization of 'NamedElement'.
+'documentation::Image' is a specialization of 'Fragment'.
+'documentation::Subsection' is a specialization of 'Fragment'.
+'documentation::Documentation' (role 'documentation_Documentation', cardinality 0..*) is associated with 'documentation::Section' (role 'documentation_Section', cardinality 0..*).
+'documentation::TableRow' (role 'documentation_TableRow', cardinality 0..*) is associated with 'documentation::Table' (role 'documentation_Table7', cardinality 0..*).
+'documentation::ListItem' (role 'documentation_ListItem', cardinality 0..*) is associated with 'documentation::List' (role 'documentation_List', cardinality 0..*).
+'documentation::Fragment' (role 'documentation_Fragment', cardinality 0..*) is associated with 'documentation::TextFragmentContainer' (role 'documentation_TextFragmentContainer', cardinality 0..*).
+'documentation::Table' (role 'documentation_Table', cardinality 0..*) is associated with 'documentation::TableHeader' (role 'documentation_TableHeader', cardinality 0..*).
+'documentation::TermEntry' (role 'documentation_TermEntry', cardinality 0..*) is associated with 'documentation::Documentation' (role 'documentation_Documentation2', cardinality 0..*).

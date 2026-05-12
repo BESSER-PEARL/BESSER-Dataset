@@ -1,0 +1,43 @@
+The model has 19 class(es).
+The class 'research::team::Misc' has no attributes.
+The class 'research::team::TypeCollaboration' has the following attributes: 'name' of type str.
+The class 'research::team::Section' has the following attributes: 'text' of type str.
+The class 'research::team::Person' has the following attributes: 'name' of type str; 'firstname' of type str; 'affiliation' of type str; 'phone' of type str; 'mail' of type str.
+The class 'research::team::Software' has the following attributes: 'title' of type str; 'description' of type str; 'website' of type str.
+The class 'Publication' has no attributes.
+The class 'research::team::ActivityReport' has no attributes.
+The class 'research::team::Article' has no attributes.
+The class 'research::team::InProceedings' has no attributes.
+The class 'research::team::OpenPosition' has the following attributes: 'mission' of type str; 'status' of type str; 'duration' of type str.
+The class 'research::team::Publication' has no attributes.
+The class 'research::team::Seminar' has the following attributes: 'dateFrom' of type str; 'dateUntil' of type str; 'url4slides' of type str; 'title' of type str; 'abstract' of type str; 'place' of type str.
+The class 'research::team::PhDThesis' has no attributes.
+The class 'research::team::MasterThesis' has no attributes.
+The class 'research::team::Team' has the following attributes: 'name' of type str; 'urlPage' of type str; 'status' of type str; 'meaning' of type str.
+The class 'research::team::Paper' has the following attributes: 'state' of type str; 'url4pdf' of type str; 'title' of type str.
+The class 'research::team::CallForPaper' has the following attributes: 'deadline' of type str; 'category' of type str; 'title' of type str; 'url' of type str.
+The class 'research::team::Collaboration' has the following attributes: 'status' of type str; 'from_' of type str; 'until' of type str; 'website' of type str; 'title' of type str.
+The class 'research::team::Partner' has the following attributes: 'category' of type str; 'country' of type str; 'name' of type str.
+'research::team::PhDThesis' is a specialization of 'Publication'.
+'research::team::InProceedings' is a specialization of 'Publication'.
+'research::team::Article' is a specialization of 'Publication'.
+'research::team::Misc' is a specialization of 'Publication'.
+'research::team::MasterThesis' is a specialization of 'Publication'.
+'research::team::Team' (role 'team', cardinality 0..*) is associated with 'research::team::Publication' (role 'Publication', cardinality 0..*).
+'research::team::Collaboration' (role 'research_team_Collaboration', cardinality 0..*) is associated with 'research::team::Team' (role 'research_team_Team9', cardinality 0..*).
+'research::team::OpenPosition' (role 'research_team_OpenPosition', cardinality 0..*) is associated with 'research::team::Team' (role 'research_team_Team7', cardinality 0..*).
+'research::team::Person' (role 'research_team_Person5', cardinality 0..*) is associated with 'research::team::Team' (role 'research_team_Team4', cardinality 0..*).
+'research::team::Team' (role 'research_team_Team2', cardinality 0..*) is associated with 'research::team::Person' (role 'research_team_Person', cardinality 0..*).
+'research::team::Partner' (role 'partners', cardinality 0..*) is associated with 'research::team::Collaboration' (role 'Collaboration28', cardinality 0..*).
+'research::team::ActivityReport' (role 'research_team_ActivityReport', cardinality 0..*) is associated with 'research::team::Team' (role 'research_team_Team', cardinality 0..*).
+'research::team::Person' (role 'Person26', cardinality 0..*) is associated with 'research::team::Software' (role 'soft', cardinality 0..*).
+'research::team::Person' (role 'Person24', cardinality 0..*) is associated with 'research::team::Paper' (role 'paper', cardinality 0..*).
+'research::team::Publication' (role 'Publication22', cardinality 0..*) is associated with 'research::team::Paper' (role 'publishedAs', cardinality 0..*).
+'research::team::OpenPosition' (role 'openPositions', cardinality 0..*) is associated with 'research::team::Collaboration' (role 'Collaboration', cardinality 0..*).
+'research::team::Person' (role 'Person', cardinality 0..*) is associated with 'research::team::Seminar' (role 'seminars', cardinality 0..*).
+'research::team::Paper' (role 'research_team_Paper', cardinality 0..*) is associated with 'research::team::Publication' (role 'research_team_Publication', cardinality 0..*).
+'research::team::Team' (role 'Team', cardinality 0..*) is associated with 'research::team::Publication' (role 'mainReferences', cardinality 0..*).
+'research::team::Person' (role 'research_team_Person15', cardinality 0..*) is associated with 'research::team::Collaboration' (role 'research_team_Collaboration16', cardinality 0..*).
+'research::team::Paper' (role 'Paper', cardinality 0..*) is associated with 'research::team::Person' (role 'author', cardinality 0..*).
+'research::team::Seminar' (role 'Seminar', cardinality 0..*) is associated with 'research::team::Person' (role 'speakers', cardinality 0..*).
+'research::team::Software' (role 'Software', cardinality 0..*) is associated with 'research::team::Person' (role 'developers', cardinality 0..*).

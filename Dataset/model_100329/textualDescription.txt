@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'pnml::Element' has the following attributes: 'location' of type str; 'id' of type str.
+The class 'pnml::NetElement' has the following attributes: 'name' of type str.
+The class 'pnml::TransitionElement' has the following attributes: 'name' of type str.
+The class 'Element' has no attributes.
+The class 'pnml::PNMLDocument' has the following attributes: 'location' of type str.
+The class 'pnml::PlaceElement' has the following attributes: 'name' of type str; 'tokens' of type int.
+The class 'pnml::ArcPlace2Transition' has no attributes.
+The class 'pnml::ArcTransition2Place' has no attributes.
+'pnml::NetElement' is a specialization of 'Element'.
+'pnml::ArcPlace2Transition' is a specialization of 'Element'.
+'pnml::ArcTransition2Place' is a specialization of 'Element'.
+'pnml::TransitionElement' is a specialization of 'Element'.
+'pnml::PlaceElement' is a specialization of 'Element'.
+'pnml::ArcTransition2Place' (role 'pnml_ArcTransition2Place7', cardinality 0..*) is associated with 'pnml::TransitionElement' (role 'pnml_TransitionElement8', cardinality 0..*).
+'pnml::ArcPlace2Transition' (role 'pnml_ArcPlace2Transition3', cardinality 0..*) is associated with 'pnml::TransitionElement' (role 'pnml_TransitionElement', cardinality 0..*).
+'pnml::PlaceElement' (role 'pnml_PlaceElement', cardinality 0..*) is associated with 'pnml::ArcPlace2Transition' (role 'pnml_ArcPlace2Transition', cardinality 0..*).
+'pnml::NetElement' (role 'pnml_NetElement10', cardinality 0..*) is associated with 'pnml::Element' (role 'pnml_Element', cardinality 0..*).
+'pnml::NetElement' (role 'pnml_NetElement', cardinality 0..*) is associated with 'pnml::PNMLDocument' (role 'pnml_PNMLDocument', cardinality 0..*).
+'pnml::PlaceElement' (role 'pnml_PlaceElement5', cardinality 0..*) is associated with 'pnml::ArcTransition2Place' (role 'pnml_ArcTransition2Place', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 6 class(es).
+The class 'BZ::BZProduct' has the following attributes: 'productId' of type str; 'productURL' of type str; 'productDescription' of type str.
+The class 'BZ::BZEvent' has the following attributes: 'newValue' of type str; 'date' of type date; 'author' of type str; 'issueId' of type int; 'field' of type str; 'oldValue' of type str.
+The class 'BZ::BZIssue' has the following attributes: 'productName' of type str; 'versionFixedIn' of type str; 'status' of type str; 'classification' of type str; 'reportedBy' of type str; 'importance' of type str; 'componentName' of type str; 'ccList' of type str; 'referenceURL' of type str; 'platform' of type str; 'dependsOn' of type str; 'version' of type str; 'milestone' of type str; 'issueTitle' of type str; 'blocks' of type str; 'keywords' of type str; 'seeAlso' of type str; 'reportedOn' of type date; 'issueId' of type int; 'assignedTo' of type str; 'issueURL' of type str; 'reportedByUsername' of type str; 'latestCommit' of type str; 'lastModifiedOn' of type date.
+The class 'BZ::BZComment' has the following attributes: 'commentTime' of type date; 'commentHTML' of type str; 'issueId' of type int; 'commentText' of type str; 'commentId' of type str; 'commentAuthor' of type str.
+The class 'BZ::BZRepo' has the following attributes: 'repoURL' of type str.
+The class 'BZ::BZComponent' has the following attributes: 'componentId' of type str; 'componentDescription' of type str; 'defaultAssignee' of type str; 'componentURL' of type str.
+'BZ::BZIssue' (role 'issues', cardinality 0..*) is associated with 'BZ::BZRepo' (role 'BZRepo19', cardinality 0..*).
+'BZ::BZIssue' (role 'issue22', cardinality 0..*) is associated with 'BZ::BZEvent' (role 'BZEvent', cardinality 0..*).
+'BZ::BZIssue' (role 'BZIssue', cardinality 0..*) is associated with 'BZ::BZRepo' (role 'repo4', cardinality 0..*).
+'BZ::BZProduct' (role 'BZProduct', cardinality 0..*) is associated with 'BZ::BZRepo' (role 'repo', cardinality 0..*).
+'BZ::BZProduct' (role 'BZProduct28', cardinality 0..*) is associated with 'BZ::BZIssue' (role 'issues27', cardinality 0..*).
+'BZ::BZComment' (role 'BZComment', cardinality 0..*) is associated with 'BZ::BZIssue' (role 'issue', cardinality 0..*).
+'BZ::BZProduct' (role 'product', cardinality 0..*) is associated with 'BZ::BZComponent' (role 'BZComponent7', cardinality 0..*).
+'BZ::BZProduct' (role 'BZProduct14', cardinality 0..*) is associated with 'BZ::BZComponent' (role 'components', cardinality 0..*).
+'BZ::BZIssue' (role 'BZIssue30', cardinality 0..*) is associated with 'BZ::BZComment' (role 'comments', cardinality 0..*).
+'BZ::BZEvent' (role 'events', cardinality 0..*) is associated with 'BZ::BZIssue' (role 'BZIssue32', cardinality 0..*).
+'BZ::BZComponent' (role 'components16', cardinality 0..*) is associated with 'BZ::BZRepo' (role 'BZRepo17', cardinality 0..*).
+'BZ::BZIssue' (role 'BZIssue10', cardinality 0..*) is associated with 'BZ::BZProduct' (role 'product9', cardinality 0..*).
+'BZ::BZIssue' (role 'issues24', cardinality 0..*) is associated with 'BZ::BZComponent' (role 'BZComponent25', cardinality 0..*).
+'BZ::BZComponent' (role 'component', cardinality 0..*) is associated with 'BZ::BZIssue' (role 'BZIssue12', cardinality 0..*).
+'BZ::BZRepo' (role 'repo2', cardinality 0..*) is associated with 'BZ::BZComponent' (role 'BZComponent', cardinality 0..*).
+'BZ::BZRepo' (role 'BZRepo', cardinality 0..*) is associated with 'BZ::BZProduct' (role 'products', cardinality 0..*).

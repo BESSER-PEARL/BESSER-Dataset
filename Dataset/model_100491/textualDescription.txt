@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'umlState::StateRule' has the following attributes: 'name' of type str.
+The class 'umlState::QualifiedName' has no attributes.
+The class 'umlState::Namespace' has no attributes.
+The class 'umlState::ExitRule' has the following attributes: 'behaviorName' of type str; 'kind' of type str.
+The class 'umlState::StateMachine' has no attributes.
+The class 'umlState::DoRule' has the following attributes: 'kind' of type str; 'behaviorName' of type str.
+The class 'umlState::EntryRule' has the following attributes: 'kind' of type str; 'behaviorName' of type str.
+The class 'umlState::SubmachineRule' has no attributes.
+The enumeration 'BehaviorKind' has the following literals: 'OPAQUE_BEHAVIOR', 'STATE_MACHINE', 'ACTIVITY'.
+'umlState::SubmachineRule' (role 'umlState_SubmachineRule', cardinality 0..*) is associated with 'umlState::StateRule' (role 'umlState_StateRule', cardinality 0..*).
+'umlState::Namespace' (role 'umlState_Namespace', cardinality 0..*) is associated with 'umlState::QualifiedName' (role 'umlState_QualifiedName12', cardinality 0..*).
+'umlState::DoRule' (role 'umlState_DoRule', cardinality 0..*) is associated with 'umlState::StateRule' (role 'umlState_StateRule4', cardinality 0..*).
+'umlState::StateRule' (role 'umlState_StateRule2', cardinality 0..*) is associated with 'umlState::EntryRule' (role 'umlState_EntryRule', cardinality 0..*).
+'umlState::QualifiedName' (role 'umlState_QualifiedName', cardinality 0..*) is associated with 'umlState::SubmachineRule' (role 'umlState_SubmachineRule8', cardinality 0..*).
+'umlState::QualifiedName' (role 'umlState_QualifiedName15', cardinality 0..*) is associated with 'umlState::QualifiedName' (role 'umlState_QualifiedName13', cardinality 0..*).
+'umlState::SubmachineRule' (role 'umlState_SubmachineRule10', cardinality 0..*) is associated with 'umlState::StateMachine' (role 'umlState_StateMachine', cardinality 0..*).
+'umlState::StateRule' (role 'umlState_StateRule6', cardinality 0..*) is associated with 'umlState::ExitRule' (role 'umlState_ExitRule', cardinality 0..*).

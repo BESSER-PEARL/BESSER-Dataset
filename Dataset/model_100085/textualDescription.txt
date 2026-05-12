@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'metadata::MetaData' has the following attributes: 'version' of type str; 'groupId' of type str; 'artifactId' of type str.
+The class 'metadata::EStringToStringMapEntry' has no attributes.
+The class 'metadata::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'metadata::Versioning' has the following attributes: 'release' of type str; 'lastUpdated' of type str; 'latest' of type str.
+The class 'metadata::Versions' has the following attributes: 'version' of type str.
+'metadata::MetaData' (role 'metadata_MetaData7', cardinality 0..*) is associated with 'metadata::Versioning' (role 'metadata_Versioning', cardinality 0..*).
+'metadata::Versions' (role 'metadata_Versions', cardinality 0..*) is associated with 'metadata::Versioning' (role 'metadata_Versioning9', cardinality 0..*).
+'metadata::EStringToStringMapEntry' (role 'metadata_EStringToStringMapEntry', cardinality 0..*) is associated with 'metadata::DocumentRoot' (role 'metadata_DocumentRoot', cardinality 0..*).
+'metadata::DocumentRoot' (role 'metadata_DocumentRoot5', cardinality 0..*) is associated with 'metadata::MetaData' (role 'metadata_MetaData', cardinality 0..*).
+'metadata::EStringToStringMapEntry' (role 'metadata_EStringToStringMapEntry3', cardinality 0..*) is associated with 'metadata::DocumentRoot' (role 'metadata_DocumentRoot2', cardinality 0..*).

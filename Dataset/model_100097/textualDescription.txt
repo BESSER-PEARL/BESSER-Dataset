@@ -1,0 +1,128 @@
+The model has 50 class(es).
+The class 'ConferenceMember' has no attributes.
+The class 'cmt::Review' has no attributes.
+The class 'cmt::Paper' has the following attributes: 'title' of type str; 'paperID' of type str.
+The class 'Co_author' has no attributes.
+The class 'cmt::Meta-Reviewer' has no attributes.
+The class 'ExternalReviewer' has no attributes.
+The class 'cmt::ConferenceMember' has no attributes.
+The class 'cmt::Rejection' has no attributes.
+The class 'Person' has no attributes.
+The class 'User' has no attributes.
+The class 'cmt::ConferenceChair' has no attributes.
+The class 'Conference' has no attributes.
+The class 'Document' has no attributes.
+The class 'Chairman' has no attributes.
+The class 'cmt::AssociatedChair' has no attributes.
+The class 'cmt::Document' has no attributes.
+The class 'cmt::Thing' has no attributes.
+The class 'cmt::ProgramCommitteeMember' has the following attributes: 'maxPapers' of type str.
+The class 'Paper' has no attributes.
+The class 'cmt::Preference' has no attributes.
+The class 'ProgramCommittee' has no attributes.
+The class 'cmt::ProgramCommittee' has no attributes.
+The class 'Meta_Reviewer' has no attributes.
+The class 'cmt::Person' has the following attributes: 'email' of type str.
+The class 'ProgramCommitteeMember' has no attributes.
+The class 'cmt::Author' has no attributes.
+The class 'cmt::Bid' has no attributes.
+The class 'cmt::User' has no attributes.
+The class 'Thing' has no attributes.
+The class 'cmt::AuthorNotReviewer' has no attributes.
+The class 'cmt::Co_author' has no attributes.
+The class 'Reviewer' has no attributes.
+The class 'Author' has no attributes.
+The class 'cmt::Conference' has the following attributes: 'reviewsPerPaper' of type str; 'logoURL' of type str; 'acceptsHardcopySubmissions' of type str; 'siteURL' of type str; 'date' of type str.
+The class 'Administrator' has no attributes.
+The class 'cmt::PaperAbstract' has no attributes.
+The class 'cmt::SubjectArea' has no attributes.
+The class 'Bid' has no attributes.
+The class 'Review' has no attributes.
+The class 'cmt::PaperFullVersion' has no attributes.
+The class 'cmt::ExternalReviewer' has no attributes.
+The class 'cmt::Reviewer' has no attributes.
+The class 'cmt::Administrator' has no attributes.
+The class 'cmt::Chairman' has no attributes.
+The class 'SubjectArea' has no attributes.
+The class 'cmt::Decision' has no attributes.
+The class 'cmt::ProgramCommitteeChair' has no attributes.
+The class 'cmt::Meta-Review' has no attributes.
+The class 'cmt::Acceptance' has no attributes.
+The class 'Decision' has no attributes.
+'cmt::Chairman' is a specialization of 'Person'.
+'cmt::Chairman' is a specialization of 'ConferenceMember'.
+'cmt::ProgramCommitteeChair' is a specialization of 'ProgramCommitteeMember'.
+'cmt::ProgramCommitteeChair' is a specialization of 'Chairman'.
+'cmt::Acceptance' is a specialization of 'Decision'.
+'cmt::Rejection' is a specialization of 'Decision'.
+'cmt::Review' is a specialization of 'Document'.
+'cmt::Paper' is a specialization of 'Document'.
+'cmt::ConferenceMember' is a specialization of 'Person'.
+'cmt::AssociatedChair' is a specialization of 'ConferenceMember'.
+'cmt::AssociatedChair' is a specialization of 'Chairman'.
+'cmt::ProgramCommitteeMember' is a specialization of 'Person'.
+'cmt::ProgramCommitteeMember' is a specialization of 'ConferenceMember'.
+'cmt::Meta-Reviewer' is a specialization of 'Reviewer'.
+'cmt::Author' is a specialization of 'ConferenceMember'.
+'cmt::Author' is a specialization of 'User'.
+'cmt::Reviewer' is a specialization of 'ConferenceMember'.
+'cmt::User' is a specialization of 'Person'.
+'cmt::Reviewer' is a specialization of 'User'.
+'cmt::Co_author' is a specialization of 'Author'.
+'cmt::Conference' is a specialization of 'Thing'.
+'cmt::PaperAbstract' is a specialization of 'Paper'.
+'cmt::ConferenceChair' is a specialization of 'ConferenceMember'.
+'cmt::PaperFullVersion' is a specialization of 'Paper'.
+'cmt::ConferenceChair' is a specialization of 'Chairman'.
+'cmt::Administrator' is a specialization of 'User'.
+'cmt::AuthorNotReviewer' is a specialization of 'Author'.
+'cmt::Meta-Review' is a specialization of 'Review'.
+'cmt::ExternalReviewer' is a specialization of 'Person'.
+'Paper' (role 'Paper58', cardinality 0..*) is associated with 'cmt::Co_author' (role 'hasCo_author', cardinality 0..*).
+'Administrator' (role 'Administrator18', cardinality 0..*) is associated with 'cmt::Conference' (role 'enableVirtualMeeting', cardinality 0..*).
+'Paper' (role 'Paper70', cardinality 0..*) is associated with 'cmt::Administrator' (role 'rejectedBy', cardinality 0..*).
+'cmt::Paper' (role 'rejectPaper', cardinality 0..*) is associated with 'Administrator' (role 'Administrator50', cardinality 0..*).
+'Reviewer' (role 'Reviewer41', cardinality 0..*) is associated with 'cmt::Paper' (role 'hasBeenAssigned', cardinality 0..*).
+'ConferenceMember' (role 'ConferenceMember', cardinality 0..*) is associated with 'cmt::Conference' (role 'memberOfConference', cardinality 0..*).
+'Conference' (role 'Conference78', cardinality 0..*) is associated with 'cmt::Administrator' (role 'reviewCriteriaEnteredBy', cardinality 0..*).
+'Reviewer' (role 'Reviewer34', cardinality 0..*) is associated with 'cmt::Review' (role 'writeReview', cardinality 0..*).
+'Paper' (role 'Paper4', cardinality 0..*) is associated with 'cmt::Reviewer' (role 'assignedTo', cardinality 0..*).
+'Conference' (role 'Conference66', cardinality 0..*) is associated with 'cmt::Administrator' (role 'reviewerBiddingStartedBy', cardinality 0..*).
+'ProgramCommitteeMember' (role 'ProgramCommitteeMember', cardinality 0..*) is associated with 'cmt::ProgramCommittee' (role 'memberOfProgramCommittee', cardinality 0..*).
+'Conference' (role 'Conference60', cardinality 0..*) is associated with 'cmt::Administrator' (role 'paperAssignmentFinalizedBy', cardinality 0..*).
+'Administrator' (role 'Administrator20', cardinality 0..*) is associated with 'cmt::Conference' (role 'printHardcopyMailingManifests', cardinality 0..*).
+'Conference' (role 'Conference72', cardinality 0..*) is associated with 'cmt::Administrator' (role 'detailsEnteredBy', cardinality 0..*).
+'Meta_Reviewer' (role 'Meta_Reviewer', cardinality 0..*) is associated with 'cmt::Paper' (role 'cmt_Paper52', cardinality 0..*).
+'cmt::ConferenceMember' (role 'hasConferenceMember', cardinality 0..*) is associated with 'Conference' (role 'Conference', cardinality 0..*).
+'Administrator' (role 'Administrator12', cardinality 0..*) is associated with 'cmt::Conference' (role 'finalizePaperAssignment', cardinality 0..*).
+'Paper' (role 'Paper80', cardinality 0..*) is associated with 'cmt::Administrator' (role 'acceptedBy', cardinality 0..*).
+'cmt::Paper' (role 'co-writePaper', cardinality 0..*) is associated with 'Co_author' (role 'Co_author', cardinality 0..*).
+'Review' (role 'Review', cardinality 0..*) is associated with 'cmt::Reviewer' (role 'writtenBy', cardinality 0..*).
+'Reviewer' (role 'Reviewer45', cardinality 0..*) is associated with 'cmt::Paper' (role 'readPaper', cardinality 0..*).
+'cmt::Bid' (role 'adjustBid', cardinality 0..*) is associated with 'Reviewer' (role 'Reviewer', cardinality 0..*).
+'Administrator' (role 'Administrator', cardinality 0..*) is associated with 'cmt::Reviewer' (role 'assignReviewer', cardinality 0..*).
+'Conference' (role 'Conference62', cardinality 0..*) is associated with 'cmt::Administrator' (role 'paperAssignmentToolsRunBy', cardinality 0..*).
+'cmt::Conference' (role 'enterConferenceDetails', cardinality 0..*) is associated with 'Administrator' (role 'Administrator22', cardinality 0..*).
+'cmt::Administrator' (role 'hardcopyMailingManifestsPrintedBy', cardinality 0..*) is associated with 'Conference' (role 'Conference74', cardinality 0..*).
+'Paper' (role 'Paper54', cardinality 0..*) is associated with 'cmt::Author' (role 'cmt_Author', cardinality 0..*).
+'ProgramCommittee' (role 'ProgramCommittee', cardinality 0..*) is associated with 'cmt::ProgramCommitteeMember' (role 'hasProgramCommitteeMember', cardinality 0..*).
+'cmt::Conference' (role 'enterReviewCriteria', cardinality 0..*) is associated with 'Administrator' (role 'Administrator14', cardinality 0..*).
+'cmt::Administrator' (role 'addedBy', cardinality 0..*) is associated with 'ProgramCommitteeMember' (role 'ProgramCommitteeMember82', cardinality 0..*).
+'Bid' (role 'Bid37', cardinality 0..*) is associated with 'cmt::Paper' (role 'cmt_Paper', cardinality 0..*).
+'cmt::Reviewer' (role 'assignedByReviewer', cardinality 0..*) is associated with 'ExternalReviewer' (role 'ExternalReviewer', cardinality 0..*).
+'cmt::Paper' (role 'writePaper', cardinality 0..*) is associated with 'Author' (role 'Author', cardinality 0..*).
+'Reviewer' (role 'Reviewer30', cardinality 0..*) is associated with 'cmt::ExternalReviewer' (role 'assignExternalReviewer', cardinality 0..*).
+'cmt::Reviewer' (role 'adjustedBy', cardinality 0..*) is associated with 'Bid' (role 'Bid', cardinality 0..*).
+'cmt::Administrator' (role 'virtualMeetingEnabledBy', cardinality 0..*) is associated with 'Conference' (role 'Conference64', cardinality 0..*).
+'Administrator' (role 'Administrator24', cardinality 0..*) is associated with 'cmt::Conference' (role 'startReviewerBidding', cardinality 0..*).
+'SubjectArea' (role 'SubjectArea', cardinality 0..*) is associated with 'cmt::Paper' (role 'cmt_Paper43', cardinality 0..*).
+'cmt::Author' (role 'hasAuthor', cardinality 0..*) is associated with 'Paper' (role 'Paper56', cardinality 0..*).
+'Administrator' (role 'Administrator48', cardinality 0..*) is associated with 'cmt::Paper' (role 'acceptPaper', cardinality 0..*).
+'Administrator' (role 'Administrator16', cardinality 0..*) is associated with 'cmt::Conference' (role 'runPaperAssignmentTools', cardinality 0..*).
+'Reviewer' (role 'Reviewer68', cardinality 0..*) is associated with 'cmt::Administrator' (role 'assignedByAdministrator', cardinality 0..*).
+'Decision' (role 'Decision', cardinality 0..*) is associated with 'cmt::Paper' (role 'cmt_Paper39', cardinality 0..*).
+'Document' (role 'Document', cardinality 0..*) is associated with 'cmt::Person' (role 'cmt_Person', cardinality 0..*).
+'ProgramCommitteeMember' (role 'ProgramCommitteeMember76', cardinality 0..*) is associated with 'cmt::Administrator' (role 'cmt_Administrator', cardinality 0..*).
+'Review' (role 'Review32', cardinality 0..*) is associated with 'cmt::ProgramCommitteeChair' (role 'cmt_ProgramCommitteeChair', cardinality 0..*).
+'Paper' (role 'Paper', cardinality 0..*) is associated with 'cmt::Reviewer' (role 'readByReviewer', cardinality 0..*).
+'Administrator' (role 'Administrator28', cardinality 0..*) is associated with 'cmt::ProgramCommitteeMember' (role 'addProgramCommitteeMember', cardinality 0..*).

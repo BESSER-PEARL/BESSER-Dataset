@@ -1,0 +1,50 @@
+The model has 18 class(es).
+The class 'sourcecleaner::Extension' has the following attributes: 'diagraph' of type bool; 'pointId' of type str; 'clazz' of type str; 'name' of type str; 'extra' of type str; 'id' of type str.
+The class 'sourcecleaner::Project' has the following attributes: 'workspace' of type str; 'id' of type int.
+The class 'Source' has no attributes.
+The class 'sourcecleaner::Dependency' has the following attributes: 'diagraph' of type bool; 'reexport' of type bool; 'version' of type str; 'name' of type str.
+The class 'sourcecleaner::Java' has the following attributes: 'package' of type str.
+The class 'sourcecleaner::LocatedElement' has the following attributes: 'absolutePath' of type str; 'name' of type str.
+The class 'sourcecleaner::Export' has the following attributes: 'name' of type str.
+The class 'LocatedElement' has no attributes.
+The class 'sourcecleaner::Build' has no attributes.
+The class 'sourcecleaner::ClassPath' has the following attributes: 'name' of type str.
+The class 'sourcecleaner::Configuration' has the following attributes: 'location' of type str; 'temp' of type str.
+The class 'sourcecleaner::ExtensionPoint' has the following attributes: 'id' of type str; 'name' of type str; 'schema' of type str; 'diagraph' of type bool.
+The class 'sourcecleaner::Schema' has the following attributes: 'pluginName' of type str; 'extensionName' of type str; 'extensionId' of type str.
+The class 'sourcecleaner::Manifest' has the following attributes: 'vendor' of type str; 'version' of type str; 'symbolicName' of type str; 'versionQualifier' of type str; 'singleton' of type bool; 'diagraph' of type bool; 'versionId' of type str; 'lazy' of type bool; 'executionEnvironment' of type str.
+The class 'sourcecleaner::ExtensionReference' has the following attributes: 'java' of type str; 'name' of type str; 'project' of type str; 'package' of type str.
+The class 'sourcecleaner::Source' has the following attributes: 'comment' of type str; 'mark' of type bool; 'handled' of type bool; 'content' of type str.
+The class 'sourcecleaner::Plugin' has the following attributes: 'extra' of type str.
+The class 'sourcecleaner::ExtensionAttribute' has the following attributes: 'value' of type str; 'name' of type str.
+'sourcecleaner::Schema' is a specialization of 'Source'.
+'sourcecleaner::Java' is a specialization of 'Source'.
+'sourcecleaner::Source' is a specialization of 'LocatedElement'.
+'sourcecleaner::Plugin' is a specialization of 'Source'.
+'sourcecleaner::Build' is a specialization of 'Source'.
+'sourcecleaner::Manifest' is a specialization of 'Source'.
+'sourcecleaner::Project' is a specialization of 'LocatedElement'.
+'sourcecleaner::Project' (role 'Project32', cardinality 0..*) is associated with 'sourcecleaner::Plugin' (role 'plugin31', cardinality 0..*).
+'sourcecleaner::Configuration' (role 'sourcecleaner_Configuration', cardinality 0..*) is associated with 'sourcecleaner::Project' (role 'sourcecleaner_Project', cardinality 0..*).
+'sourcecleaner::Java' (role 'sourcecleaner_Java', cardinality 0..*) is associated with 'sourcecleaner::Extension' (role 'sourcecleaner_Extension19', cardinality 0..*).
+'sourcecleaner::Manifest' (role 'sourcecleaner_Manifest21', cardinality 0..*) is associated with 'sourcecleaner::Dependency' (role 'sourcecleaner_Dependency', cardinality 0..*).
+'sourcecleaner::Schema' (role 'schema', cardinality 0..*) is associated with 'sourcecleaner::ExtensionReference' (role 'ExtensionReference', cardinality 0..*).
+'sourcecleaner::Project' (role 'sourcecleaner_Project5', cardinality 0..*) is associated with 'sourcecleaner::Build' (role 'sourcecleaner_Build', cardinality 0..*).
+'sourcecleaner::ExtensionReference' (role 'references', cardinality 0..*) is associated with 'sourcecleaner::Schema' (role 'Schema38', cardinality 0..*).
+'sourcecleaner::Project' (role 'project', cardinality 0..*) is associated with 'sourcecleaner::Java' (role 'Java', cardinality 0..*).
+'sourcecleaner::Extension' (role 'sourcecleaner_Extension27', cardinality 0..*) is associated with 'sourcecleaner::Plugin' (role 'sourcecleaner_Plugin', cardinality 0..*).
+'sourcecleaner::Project' (role 'sourcecleaner_Project3', cardinality 0..*) is associated with 'sourcecleaner::Manifest' (role 'sourcecleaner_Manifest', cardinality 0..*).
+'sourcecleaner::Schema' (role 'Schema', cardinality 0..*) is associated with 'sourcecleaner::Project' (role 'project9', cardinality 0..*).
+'sourcecleaner::Extension' (role 'extensions', cardinality 0..*) is associated with 'sourcecleaner::ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*).
+'sourcecleaner::Manifest' (role 'requerant', cardinality 0..*) is associated with 'sourcecleaner::Dependency' (role 'Dependency', cardinality 0..*).
+'sourcecleaner::Plugin' (role 'plugin', cardinality 0..*) is associated with 'sourcecleaner::ExtensionPoint' (role 'ExtensionPoint29', cardinality 0..*).
+'sourcecleaner::Java' (role 'sourcecleaner_Java40', cardinality 0..*) is associated with 'sourcecleaner::ExtensionReference' (role 'sourcecleaner_ExtensionReference', cardinality 0..*).
+'sourcecleaner::ExtensionPoint' (role 'extensionPoint', cardinality 0..*) is associated with 'sourcecleaner::Extension' (role 'Extension', cardinality 0..*).
+'sourcecleaner::ExtensionPoint' (role 'extensionPoints', cardinality 0..*) is associated with 'sourcecleaner::Plugin' (role 'Plugin25', cardinality 0..*).
+'sourcecleaner::Schema' (role 'schema35', cardinality 0..*) is associated with 'sourcecleaner::Project' (role 'Project36', cardinality 0..*).
+'sourcecleaner::ExtensionAttribute' (role 'sourcecleaner_ExtensionAttribute', cardinality 0..*) is associated with 'sourcecleaner::Extension' (role 'sourcecleaner_Extension', cardinality 0..*).
+'sourcecleaner::Manifest' (role 'Manifest', cardinality 0..*) is associated with 'sourcecleaner::Dependency' (role 'dependencies', cardinality 0..*).
+'sourcecleaner::Java' (role 'sources', cardinality 0..*) is associated with 'sourcecleaner::Project' (role 'Project', cardinality 0..*).
+'sourcecleaner::Plugin' (role 'Plugin', cardinality 0..*) is associated with 'sourcecleaner::Project' (role 'project7', cardinality 0..*).
+'sourcecleaner::ClassPath' (role 'sourcecleaner_ClassPath', cardinality 0..*) is associated with 'sourcecleaner::Manifest' (role 'sourcecleaner_Manifest13', cardinality 0..*).
+'sourcecleaner::Manifest' (role 'sourcecleaner_Manifest15', cardinality 0..*) is associated with 'sourcecleaner::Export' (role 'sourcecleaner_Export', cardinality 0..*).

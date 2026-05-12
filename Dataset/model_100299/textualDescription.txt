@@ -1,0 +1,30 @@
+The model has 15 class(es).
+The class 'petrinet::InputPlace' has the following attributes: 'text' of type bool.
+The class 'Arc' has no attributes.
+The class 'petrinet::AnimationLabel' has no attributes.
+The class 'PetriNetType' has no attributes.
+The class 'petrinet::ExtendedPetriNet' has no attributes.
+The class 'Label' has no attributes.
+The class 'Place' has no attributes.
+The class 'petrinet::Identity' has the following attributes: 'text' of type str.
+The class 'Attribute' has no attributes.
+The class 'petrinet::GeometryLabel' has the following attributes: 'text' of type str.
+The class 'petrinet::Animation' has no attributes.
+The class 'petrinet::Place' has no attributes.
+The class 'petrinet::Arc' has no attributes.
+The class 'petrinet::Token' has the following attributes: 'text' of type str.
+The class 'StructuredLabel' has no attributes.
+'petrinet::Place' is a specialization of 'Place'.
+'petrinet::Arc' is a specialization of 'Arc'.
+'petrinet::InputPlace' is a specialization of 'Attribute'.
+'petrinet::AnimationLabel' is a specialization of 'StructuredLabel'.
+'petrinet::Token' is a specialization of 'Attribute'.
+'petrinet::Identity' is a specialization of 'Attribute'.
+'petrinet::GeometryLabel' is a specialization of 'Label'.
+'petrinet::ExtendedPetriNet' is a specialization of 'PetriNetType'.
+'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*) is associated with 'petrinet::Identity' (role 'petrinet_Identity', cardinality 0..*).
+'petrinet::AnimationLabel' (role 'petrinet_AnimationLabel', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place2', cardinality 0..*).
+'petrinet::GeometryLabel' (role 'petrinet_GeometryLabel', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place', cardinality 0..*).
+'petrinet::Animation' (role 'petrinet_Animation', cardinality 0..*) is associated with 'petrinet::AnimationLabel' (role 'petrinet_AnimationLabel8', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place4', cardinality 0..*) is associated with 'petrinet::Token' (role 'petrinet_Token', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place6', cardinality 0..*) is associated with 'petrinet::InputPlace' (role 'petrinet_InputPlace', cardinality 0..*).

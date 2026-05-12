@@ -1,0 +1,43 @@
+The model has 13 class(es).
+The class 'tfsm::TFSM' has no attributes.
+The class 'tfsm::FSMEvent' has no attributes.
+The class 'tfsm::Transition' has the following attributes: 'action' of type str.
+The class 'tfsm::FSMClock' has the following attributes: 'numberOfTicks' of type bool.
+The class 'tfsm::TemporalGuard' has the following attributes: 'afterDuration' of type str.
+The class 'Guard' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'tfsm::State' has no attributes.
+The class 'tfsm::Guard' has no attributes.
+The class 'tfsm::EvaluateGuard' has the following attributes: 'condition' of type str.
+The class 'tfsm::TimedSystem' has no attributes.
+The class 'tfsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'tfsm::EventGuard' has no attributes.
+'tfsm::Transition' is a specialization of 'NamedElement'.
+'tfsm::Guard' is a specialization of 'NamedElement'.
+'tfsm::TemporalGuard' is a specialization of 'Guard'.
+'tfsm::FSMClock' is a specialization of 'NamedElement'.
+'tfsm::TimedSystem' is a specialization of 'NamedElement'.
+'tfsm::EvaluateGuard' is a specialization of 'Guard'.
+'tfsm::State' is a specialization of 'NamedElement'.
+'tfsm::FSMEvent' is a specialization of 'NamedElement'.
+'tfsm::TFSM' is a specialization of 'NamedElement'.
+'tfsm::EventGuard' is a specialization of 'Guard'.
+'tfsm::Transition' (role 'tfsm_Transition22', cardinality 0..*) is associated with 'tfsm::FSMEvent' (role 'tfsm_FSMEvent23', cardinality 0..*).
+'tfsm::State' (role 'tfsm_State10', cardinality 0..*) is associated with 'tfsm::TFSM' (role 'tfsm_TFSM9', cardinality 0..*).
+'tfsm::State' (role 'State18', cardinality 0..*) is associated with 'tfsm::Transition' (role 'incomingTransitions', cardinality 0..*).
+'tfsm::State' (role 'source', cardinality 0..*) is associated with 'tfsm::Transition' (role 'Transition', cardinality 0..*).
+'tfsm::TemporalGuard' (role 'tfsm_TemporalGuard', cardinality 0..*) is associated with 'tfsm::FSMClock' (role 'tfsm_FSMClock25', cardinality 0..*).
+'tfsm::TFSM' (role 'TFSM', cardinality 0..*) is associated with 'tfsm::State' (role 'ownedStates', cardinality 0..*).
+'tfsm::FSMEvent' (role 'tfsm_FSMEvent38', cardinality 0..*) is associated with 'tfsm::TimedSystem' (role 'tfsm_TimedSystem37', cardinality 0..*).
+'tfsm::Guard' (role 'tfsm_Guard', cardinality 0..*) is associated with 'tfsm::Transition' (role 'tfsm_Transition20', cardinality 0..*).
+'tfsm::Transition' (role 'tfsm_Transition30', cardinality 0..*) is associated with 'tfsm::FSMEvent' (role 'tfsm_FSMEvent29', cardinality 0..*).
+'tfsm::FSMClock' (role 'tfsm_FSMClock35', cardinality 0..*) is associated with 'tfsm::TimedSystem' (role 'tfsm_TimedSystem34', cardinality 0..*).
+'tfsm::FSMClock' (role 'tfsm_FSMClock', cardinality 0..*) is associated with 'tfsm::TFSM' (role 'tfsm_TFSM5', cardinality 0..*).
+'tfsm::EventGuard' (role 'tfsm_EventGuard', cardinality 0..*) is associated with 'tfsm::FSMEvent' (role 'tfsm_FSMEvent27', cardinality 0..*).
+'tfsm::State' (role 'State16', cardinality 0..*) is associated with 'tfsm::Transition' (role 'outgoingTransitions', cardinality 0..*).
+'tfsm::TFSM' (role 'tfsm_TFSM', cardinality 0..*) is associated with 'tfsm::State' (role 'tfsm_State', cardinality 0..*).
+'tfsm::FSMEvent' (role 'tfsm_FSMEvent', cardinality 0..*) is associated with 'tfsm::TFSM' (role 'tfsm_TFSM3', cardinality 0..*).
+'tfsm::TFSM' (role 'tfsm_TFSM7', cardinality 0..*) is associated with 'tfsm::Transition' (role 'tfsm_Transition', cardinality 0..*).
+'tfsm::TFSM' (role 'tfsm_TFSM32', cardinality 0..*) is associated with 'tfsm::TimedSystem' (role 'tfsm_TimedSystem', cardinality 0..*).
+'tfsm::TFSM' (role 'owningFSM', cardinality 0..*) is associated with 'tfsm::State' (role 'State', cardinality 0..*).
+'tfsm::State' (role 'target', cardinality 0..*) is associated with 'tfsm::Transition' (role 'Transition14', cardinality 0..*).

@@ -1,0 +1,45 @@
+The model has 24 class(es).
+The class 'RefTable' has no attributes.
+The class 'RefParameter' has no attributes.
+The class 'database::RefDatabase' has no attributes.
+The class 'database::Table' has the following attributes: 'name' of type str.
+The class 'RefProcedure' has no attributes.
+The class 'RefFKey' has no attributes.
+The class 'database::RefProcedure' has no attributes.
+The class 'database::FKey' has the following attributes: 'name' of type str.
+The class 'database::RefPKey' has no attributes.
+The class 'RefPKey' has no attributes.
+The class 'database::Parameter' has the following attributes: 'name' of type str.
+The class 'database::RefColumn' has no attributes.
+The class 'database::RefFKey' has no attributes.
+The class 'database::PKey' has the following attributes: 'name' of type str.
+The class 'database::Column' has the following attributes: 'name' of type str.
+The class 'database::Procedure' has the following attributes: 'name' of type str.
+The class 'database::RefType' has no attributes.
+The class 'database::Type' has the following attributes: 'name' of type str.
+The class 'database::RefTable' has no attributes.
+The class 'RefColumn' has no attributes.
+The class 'RefType' has no attributes.
+The class 'database::RefParameter' has no attributes.
+The class 'RefDatabase' has no attributes.
+The class 'database::Database' has the following attributes: 'name' of type str.
+'database::FKey' is a specialization of 'RefFKey'.
+'database::Type' is a specialization of 'RefType'.
+'database::Procedure' is a specialization of 'RefProcedure'.
+'database::Database' is a specialization of 'RefDatabase'.
+'database::Column' is a specialization of 'RefColumn'.
+'database::PKey' is a specialization of 'RefPKey'.
+'database::Parameter' is a specialization of 'RefParameter'.
+'database::Table' is a specialization of 'RefTable'.
+'database::Column' (role 'database_Column21', cardinality 0..*) is associated with 'database::PKey' (role 'database_PKey', cardinality 0..*).
+'database::RefTable' (role 'database_RefTable', cardinality 0..*) is associated with 'database::FKey' (role 'database_FKey7', cardinality 0..*).
+'database::RefProcedure' (role 'database_RefProcedure', cardinality 0..*) is associated with 'database::Database' (role 'database_Database13', cardinality 0..*).
+'database::RefType' (role 'database_RefType19', cardinality 0..*) is associated with 'database::Parameter' (role 'database_Parameter', cardinality 0..*).
+'database::Table' (role 'database_Table', cardinality 0..*) is associated with 'database::RefColumn' (role 'database_RefColumn', cardinality 0..*).
+'database::RefFKey' (role 'database_RefFKey', cardinality 0..*) is associated with 'database::Table' (role 'database_Table4', cardinality 0..*).
+'database::Table' (role 'database_Table2', cardinality 0..*) is associated with 'database::RefPKey' (role 'database_RefPKey', cardinality 0..*).
+'database::RefType' (role 'database_RefType17', cardinality 0..*) is associated with 'database::Procedure' (role 'database_Procedure16', cardinality 0..*).
+'database::Procedure' (role 'database_Procedure', cardinality 0..*) is associated with 'database::RefParameter' (role 'database_RefParameter', cardinality 0..*).
+'database::RefTable' (role 'database_RefTable11', cardinality 0..*) is associated with 'database::Database' (role 'database_Database', cardinality 0..*).
+'database::RefType' (role 'database_RefType', cardinality 0..*) is associated with 'database::Column' (role 'database_Column9', cardinality 0..*).
+'database::FKey' (role 'database_FKey', cardinality 0..*) is associated with 'database::Column' (role 'database_Column', cardinality 0..*).

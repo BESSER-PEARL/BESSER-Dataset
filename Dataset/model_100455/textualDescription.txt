@@ -1,0 +1,192 @@
+The model has 79 class(es).
+The class 'stext::ShiftExpression' has the following attributes: 'operator' of type str.
+The class 'stext::EventDefinition' has the following attributes: 'direction' of type str.
+The class 'StatechartScope' has no attributes.
+The class 'stext::ReactionEffect' has no attributes.
+The class 'stext::StatechartScope' has no attributes.
+The class 'stext::OperationDefinition' has no attributes.
+The class 'stext::EntryPointSpec' has the following attributes: 'entrypoint' of type str.
+The class 'stext::BoolLiteral' has the following attributes: 'value' of type bool.
+The class 'Scope' has no attributes.
+The class 'stext::ActiveStateReferenceExpression' has no attributes.
+The class 'stext::RegularEventSpec' has no attributes.
+The class 'EventSpec' has no attributes.
+The class 'ScopedElement' has no attributes.
+The class 'stext::InterfaceScope' has no attributes.
+The class 'stext::LogicalNotExpression' has no attributes.
+The class 'stext::EventSpec' has no attributes.
+The class 'Statement' has no attributes.
+The class 'stext::NumericalAddSubtractExpression' has the following attributes: 'operator' of type str.
+The class 'stext::LocalReaction' has no attributes.
+The class 'stext::StateRoot' has no attributes.
+The class 'stext::BuiltinEventSpec' has no attributes.
+The class 'Event' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'stext::LogicalRelationExpression' has the following attributes: 'operator' of type str.
+The class 'stext::AssignmentExpression' has the following attributes: 'operator' of type str.
+The class 'stext::SimpleScope' has no attributes.
+The class 'stext::TransitionReaction' has no attributes.
+The class 'stext::ReactionTrigger' has no attributes.
+The class 'stext::ExitEvent' has no attributes.
+The class 'stext::AlwaysEvent' has no attributes.
+The class 'stext::TimeEventSpec' has the following attributes: 'type' of type str; 'unit' of type str.
+The class 'stext::ParenthesizedExpression' has no attributes.
+The class 'stext::Expression' has no attributes.
+The class 'stext::Literal' has no attributes.
+The class 'stext::BitwiseAndExpression' has no attributes.
+The class 'stext::VariableDefinition' has the following attributes: 'readonly' of type bool; 'external' of type bool.
+The class 'stext::StateSpecification' has no attributes.
+The class 'stext::EntryEvent' has no attributes.
+The class 'Operation' has no attributes.
+The class 'stext::NumericalMultiplyDivideExpression' has the following attributes: 'operator' of type str.
+The class 'stext::InternalScope' has no attributes.
+The class 'stext::StatechartSpecification' has no attributes.
+The class 'stext::ExitPointSpec' has the following attributes: 'exitpoint' of type str.
+The class 'stext::IntLiteral' has the following attributes: 'value' of type int.
+The class 'stext::StatechartRoot' has no attributes.
+The class 'Effect' has no attributes.
+The class 'stext::ConditionalExpression' has no attributes.
+The class 'stext::Scope' has no attributes.
+The class 'Reaction' has no attributes.
+The class 'stext::StringLiteral' has the following attributes: 'value' of type str.
+The class 'stext::EventValueReferenceExpression' has no attributes.
+The class 'stext::LogicalAndExpression' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'BuiltinEventSpec' has no attributes.
+The class 'stext::State' has no attributes.
+The class 'stext::DefaultTrigger' has no attributes.
+The class 'stext::BitwiseOrExpression' has no attributes.
+The class 'stext::TransitionRoot' has no attributes.
+The class 'stext::Guard' has no attributes.
+The class 'Expression' has no attributes.
+The class 'stext::PrimitiveValueExpression' has no attributes.
+The class 'stext::ElementReferenceExpression' has the following attributes: 'operationCall' of type bool.
+The class 'stext::EObject' has no attributes.
+The class 'stext::NumericalUnaryExpression' has the following attributes: 'operator' of type str.
+The class 'DefRoot' has no attributes.
+The class 'stext::FeatureCall' has the following attributes: 'operationCall' of type bool.
+The class 'ReactionProperty' has no attributes.
+The class 'stext::HexLiteral' has the following attributes: 'value' of type int.
+The class 'Declaration' has no attributes.
+The class 'stext::EventRaisingExpression' has no attributes.
+The class 'Literal' has no attributes.
+The class 'stext::DefRoot' has no attributes.
+The class 'stext::TransitionSpecification' has no attributes.
+The class 'stext::BitwiseXorExpression' has no attributes.
+The class 'Property' has no attributes.
+The class 'stext::LogicalOrExpression' has no attributes.
+The class 'Variable' has no attributes.
+The class 'stext::RealLiteral' has the following attributes: 'value' of type float.
+The class 'stext::Root' has no attributes.
+The enumeration 'TimeEventType' has the following literals: 'after', 'every'.
+The enumeration 'UnaryOperator' has the following literals: 'positive', 'negative', 'complement'.
+The enumeration 'AssignmentOperator' has the following literals: 'orAssign', 'andAssign', 'multAssign', 'assign', 'modAssign', 'divAssign', 'rightShiftAssign', 'leftShiftAssign', 'xorAssign', 'subAssign', 'addAssign'.
+The enumeration 'Direction' has the following literals: 'OUT', 'LOCAL', 'IN'.
+The enumeration 'ShiftOperator' has the following literals: 'left', 'right'.
+The enumeration 'MultiplicativeOperator' has the following literals: 'mul', 'div', 'mod'.
+The enumeration 'AdditiveOperator' has the following literals: 'minus', 'plus'.
+The enumeration 'TimeUnit' has the following literals: 'nanosecond', 'microsecond', 'millisecond', 'second'.
+The enumeration 'RelationalOperator' has the following literals: 'equals', 'greater', 'notEquals', 'smaller', 'smallerEqual', 'greaterEqual'.
+'stext::BitwiseXorExpression' is a specialization of 'Expression'.
+'stext::NumericalUnaryExpression' is a specialization of 'Expression'.
+'stext::Expression' is a specialization of 'Statement'.
+'stext::StateRoot' is a specialization of 'DefRoot'.
+'stext::LocalReaction' is a specialization of 'Reaction'.
+'stext::OperationDefinition' is a specialization of 'Operation'.
+'stext::BoolLiteral' is a specialization of 'Literal'.
+'stext::LogicalNotExpression' is a specialization of 'Expression'.
+'stext::DefaultTrigger' is a specialization of 'Trigger'.
+'stext::BitwiseOrExpression' is a specialization of 'Expression'.
+'stext::InternalScope' is a specialization of 'StatechartScope'.
+'stext::NumericalAddSubtractExpression' is a specialization of 'Expression'.
+'stext::ReactionTrigger' is a specialization of 'Trigger'.
+'stext::InterfaceScope' is a specialization of 'StatechartScope'.
+'stext::NumericalMultiplyDivideExpression' is a specialization of 'Expression'.
+'stext::RealLiteral' is a specialization of 'Literal'.
+'stext::EntryPointSpec' is a specialization of 'ReactionProperty'.
+'stext::ParenthesizedExpression' is a specialization of 'Expression'.
+'stext::TransitionReaction' is a specialization of 'Reaction'.
+'stext::EventDefinition' is a specialization of 'Event'.
+'stext::StatechartScope' is a specialization of 'Scope'.
+'stext::ExitEvent' is a specialization of 'BuiltinEventSpec'.
+'stext::VariableDefinition' is a specialization of 'Variable'.
+'stext::OperationDefinition' is a specialization of 'Declaration'.
+'stext::LocalReaction' is a specialization of 'Declaration'.
+'stext::ConditionalExpression' is a specialization of 'Expression'.
+'stext::EventValueReferenceExpression' is a specialization of 'Expression'.
+'stext::InterfaceScope' is a specialization of 'NamedElement'.
+'stext::PrimitiveValueExpression' is a specialization of 'Expression'.
+'stext::StatechartSpecification' is a specialization of 'ScopedElement'.
+'stext::BuiltinEventSpec' is a specialization of 'EventSpec'.
+'stext::AlwaysEvent' is a specialization of 'BuiltinEventSpec'.
+'stext::LogicalOrExpression' is a specialization of 'Expression'.
+'stext::VariableDefinition' is a specialization of 'Property'.
+'stext::TimeEventSpec' is a specialization of 'EventSpec'.
+'stext::ReactionEffect' is a specialization of 'Effect'.
+'stext::TransitionRoot' is a specialization of 'DefRoot'.
+'stext::LogicalAndExpression' is a specialization of 'Expression'.
+'stext::ElementReferenceExpression' is a specialization of 'Expression'.
+'stext::HexLiteral' is a specialization of 'Literal'.
+'stext::AssignmentExpression' is a specialization of 'Expression'.
+'stext::RegularEventSpec' is a specialization of 'EventSpec'.
+'stext::IntLiteral' is a specialization of 'Literal'.
+'stext::LogicalRelationExpression' is a specialization of 'Expression'.
+'stext::StatechartRoot' is a specialization of 'DefRoot'.
+'stext::ExitPointSpec' is a specialization of 'ReactionProperty'.
+'stext::StringLiteral' is a specialization of 'Literal'.
+'stext::ShiftExpression' is a specialization of 'Expression'.
+'stext::ActiveStateReferenceExpression' is a specialization of 'Expression'.
+'stext::EventRaisingExpression' is a specialization of 'Expression'.
+'stext::FeatureCall' is a specialization of 'Expression'.
+'stext::EntryEvent' is a specialization of 'BuiltinEventSpec'.
+'stext::SimpleScope' is a specialization of 'Scope'.
+'stext::BitwiseAndExpression' is a specialization of 'Expression'.
+'stext::Expression' (role 'stext_Expression77', cardinality 0..*) is associated with 'stext::NumericalAddSubtractExpression' (role 'stext_NumericalAddSubtractExpression', cardinality 0..*).
+'stext::LogicalAndExpression' (role 'stext_LogicalAndExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression45', cardinality 0..*).
+'stext::LogicalNotExpression' (role 'stext_LogicalNotExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression50', cardinality 0..*).
+'stext::LogicalRelationExpression' (role 'stext_LogicalRelationExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression67', cardinality 0..*).
+'stext::LogicalAndExpression' (role 'stext_LogicalAndExpression47', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression48', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression20', cardinality 0..*) is associated with 'stext::ReactionEffect' (role 'stext_ReactionEffect', cardinality 0..*).
+'stext::TransitionSpecification' (role 'stext_TransitionSpecification', cardinality 0..*) is associated with 'stext::TransitionRoot' (role 'stext_TransitionRoot', cardinality 0..*).
+'stext::AssignmentExpression' (role 'stext_AssignmentExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression27', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression14', cardinality 0..*) is associated with 'stext::TimeEventSpec' (role 'stext_TimeEventSpec', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression25', cardinality 0..*) is associated with 'stext::EventRaisingExpression' (role 'stext_EventRaisingExpression24', cardinality 0..*).
+'stext::ParenthesizedExpression' (role 'stext_ParenthesizedExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression105', cardinality 0..*).
+'stext::NumericalAddSubtractExpression' (role 'stext_NumericalAddSubtractExpression79', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression80', cardinality 0..*).
+'stext::StatechartRoot' (role 'stext_StatechartRoot', cardinality 0..*) is associated with 'stext::StatechartSpecification' (role 'stext_StatechartSpecification', cardinality 0..*).
+'stext::ReactionTrigger' (role 'stext_ReactionTrigger', cardinality 0..*) is associated with 'stext::EventSpec' (role 'stext_EventSpec', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression95', cardinality 0..*) is associated with 'stext::FeatureCall' (role 'stext_FeatureCall94', cardinality 0..*).
+'stext::Root' (role 'stext_Root', cardinality 0..*) is associated with 'stext::DefRoot' (role 'stext_DefRoot', cardinality 0..*).
+'stext::AssignmentExpression' (role 'stext_AssignmentExpression29', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression30', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression65', cardinality 0..*) is associated with 'stext::BitwiseAndExpression' (role 'stext_BitwiseAndExpression64', cardinality 0..*).
+'stext::TransitionReaction' (role 'stext_TransitionReaction', cardinality 0..*) is associated with 'stext::TransitionSpecification' (role 'stext_TransitionSpecification7', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression10', cardinality 0..*) is associated with 'stext::Guard' (role 'stext_Guard', cardinality 0..*).
+'stext::FeatureCall' (role 'stext_FeatureCall92', cardinality 0..*) is associated with 'stext::EObject' (role 'stext_EObject', cardinality 0..*).
+'stext::Guard' (role 'stext_Guard18', cardinality 0..*) is associated with 'stext::ReactionTrigger' (role 'stext_ReactionTrigger17', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression62', cardinality 0..*) is associated with 'stext::BitwiseAndExpression' (role 'stext_BitwiseAndExpression', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression72', cardinality 0..*) is associated with 'stext::ShiftExpression' (role 'stext_ShiftExpression', cardinality 0..*).
+'stext::BitwiseXorExpression' (role 'stext_BitwiseXorExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression52', cardinality 0..*).
+'stext::LogicalOrExpression' (role 'stext_LogicalOrExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression40', cardinality 0..*).
+'stext::NumericalMultiplyDivideExpression' (role 'stext_NumericalMultiplyDivideExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression82', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression38', cardinality 0..*) is associated with 'stext::ConditionalExpression' (role 'stext_ConditionalExpression37', cardinality 0..*).
+'stext::EventValueReferenceExpression' (role 'stext_EventValueReferenceExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression102', cardinality 0..*).
+'stext::NumericalMultiplyDivideExpression' (role 'stext_NumericalMultiplyDivideExpression84', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression85', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression43', cardinality 0..*) is associated with 'stext::LogicalOrExpression' (role 'stext_LogicalOrExpression42', cardinality 0..*).
+'stext::ActiveStateReferenceExpression' (role 'stext_ActiveStateReferenceExpression', cardinality 0..*) is associated with 'stext::State' (role 'stext_State', cardinality 0..*).
+'stext::EObject' (role 'stext_EObject97', cardinality 0..*) is associated with 'stext::ElementReferenceExpression' (role 'stext_ElementReferenceExpression', cardinality 0..*).
+'stext::EventRaisingExpression' (role 'stext_EventRaisingExpression', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression22', cardinality 0..*).
+'stext::ShiftExpression' (role 'stext_ShiftExpression74', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression75', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression57', cardinality 0..*) is associated with 'stext::BitwiseOrExpression' (role 'stext_BitwiseOrExpression', cardinality 0..*).
+'stext::ConditionalExpression' (role 'stext_ConditionalExpression34', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression35', cardinality 0..*).
+'stext::StateRoot' (role 'stext_StateRoot', cardinality 0..*) is associated with 'stext::StateSpecification' (role 'stext_StateSpecification', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression87', cardinality 0..*) is associated with 'stext::NumericalUnaryExpression' (role 'stext_NumericalUnaryExpression', cardinality 0..*).
+'stext::Literal' (role 'stext_Literal', cardinality 0..*) is associated with 'stext::PrimitiveValueExpression' (role 'stext_PrimitiveValueExpression', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression55', cardinality 0..*) is associated with 'stext::BitwiseXorExpression' (role 'stext_BitwiseXorExpression54', cardinality 0..*).
+'stext::StateSpecification' (role 'stext_StateSpecification5', cardinality 0..*) is associated with 'stext::Scope' (role 'stext_Scope', cardinality 0..*).
+'stext::ElementReferenceExpression' (role 'stext_ElementReferenceExpression99', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression100', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression12', cardinality 0..*) is associated with 'stext::RegularEventSpec' (role 'stext_RegularEventSpec', cardinality 0..*).
+'stext::FeatureCall' (role 'stext_FeatureCall', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression90', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression70', cardinality 0..*) is associated with 'stext::LogicalRelationExpression' (role 'stext_LogicalRelationExpression69', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression60', cardinality 0..*) is associated with 'stext::BitwiseOrExpression' (role 'stext_BitwiseOrExpression59', cardinality 0..*).
+'stext::Expression' (role 'stext_Expression32', cardinality 0..*) is associated with 'stext::ConditionalExpression' (role 'stext_ConditionalExpression', cardinality 0..*).
+'stext::VariableDefinition' (role 'stext_VariableDefinition', cardinality 0..*) is associated with 'stext::Expression' (role 'stext_Expression', cardinality 0..*).

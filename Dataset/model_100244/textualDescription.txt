@@ -1,0 +1,33 @@
+The model has 16 class(es).
+The class 'spreadsheetGrammarLanguage::Grammar' has the following attributes: 'name' of type str.
+The class 'spreadsheetGrammarLanguage::Block' has no attributes.
+The class 'spreadsheetGrammarLanguage::Syntax' has the following attributes: 'is_int' of type bool; 'is_id' of type bool; 'token' of type str; 'is_string' of type bool.
+The class 'spreadsheetGrammarLanguage::SyntaxSeq' has no attributes.
+The class 'ColumnDefinition' has no attributes.
+The class 'spreadsheetGrammarLanguage::ColumnDefinition' has no attributes.
+The class 'spreadsheetGrammarLanguage::RowSpec' has the following attributes: 'header' of type str.
+The class 'spreadsheetGrammarLanguage::Column' has the following attributes: 'multiple' of type bool; 'name' of type str.
+The class 'spreadsheetGrammarLanguage::Rule' has no attributes.
+The class 'spreadsheetGrammarLanguage::OptionalColumn' has no attributes.
+The class 'spreadsheetGrammarLanguage::MandatoryColumn' has no attributes.
+The class 'Element' has no attributes.
+The class 'spreadsheetGrammarLanguage::Element' has the following attributes: 'name' of type str.
+The class 'spreadsheetGrammarLanguage::ColumnSpec' has no attributes.
+The class 'ColumnSpec' has no attributes.
+The class 'spreadsheetGrammarLanguage::BlockSpec' has no attributes.
+'spreadsheetGrammarLanguage::MandatoryColumn' is a specialization of 'ColumnDefinition'.
+'spreadsheetGrammarLanguage::Rule' is a specialization of 'Element'.
+'spreadsheetGrammarLanguage::RowSpec' is a specialization of 'ColumnSpec'.
+'spreadsheetGrammarLanguage::OptionalColumn' is a specialization of 'ColumnDefinition'.
+'spreadsheetGrammarLanguage::Block' is a specialization of 'Element'.
+'spreadsheetGrammarLanguage::BlockSpec' is a specialization of 'ColumnSpec'.
+'spreadsheetGrammarLanguage::Block' (role 'spreadsheetGrammarLanguage_Block4', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::Column' (role 'spreadsheetGrammarLanguage_Column', cardinality 0..*).
+'spreadsheetGrammarLanguage::Syntax' (role 'spreadsheetGrammarLanguage_Syntax13', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::Rule' (role 'spreadsheetGrammarLanguage_Rule', cardinality 0..*).
+'spreadsheetGrammarLanguage::Grammar' (role 'spreadsheetGrammarLanguage_Grammar2', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::Element' (role 'spreadsheetGrammarLanguage_Element', cardinality 0..*).
+'spreadsheetGrammarLanguage::ColumnDefinition' (role 'spreadsheetGrammarLanguage_ColumnDefinition', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::Column' (role 'spreadsheetGrammarLanguage_Column6', cardinality 0..*).
+'spreadsheetGrammarLanguage::SyntaxSeq' (role 'spreadsheetGrammarLanguage_SyntaxSeq', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::Rule' (role 'spreadsheetGrammarLanguage_Rule15', cardinality 0..*).
+'spreadsheetGrammarLanguage::SyntaxSeq' (role 'spreadsheetGrammarLanguage_SyntaxSeq17', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::Syntax' (role 'spreadsheetGrammarLanguage_Syntax18', cardinality 0..*).
+'spreadsheetGrammarLanguage::RowSpec' (role 'spreadsheetGrammarLanguage_RowSpec', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::Syntax' (role 'spreadsheetGrammarLanguage_Syntax', cardinality 0..*).
+'spreadsheetGrammarLanguage::Block' (role 'spreadsheetGrammarLanguage_Block11', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::BlockSpec' (role 'spreadsheetGrammarLanguage_BlockSpec', cardinality 0..*).
+'spreadsheetGrammarLanguage::Grammar' (role 'spreadsheetGrammarLanguage_Grammar', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::Block' (role 'spreadsheetGrammarLanguage_Block', cardinality 0..*).
+'spreadsheetGrammarLanguage::ColumnSpec' (role 'spreadsheetGrammarLanguage_ColumnSpec', cardinality 0..*) is associated with 'spreadsheetGrammarLanguage::ColumnDefinition' (role 'spreadsheetGrammarLanguage_ColumnDefinition8', cardinality 0..*).

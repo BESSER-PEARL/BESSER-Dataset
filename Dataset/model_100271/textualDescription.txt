@@ -1,0 +1,39 @@
+The model has 18 class(es).
+The class 'Element' has no attributes.
+The class 'StepToTransition' has no attributes.
+The class 'Grafcet::Grafcet' has no attributes.
+The class 'Grafcet::Connection' has no attributes.
+The class 'Grafcet::StepToTransition' has no attributes.
+The class 'Transition' has no attributes.
+The class 'Grafcet::NamedElement' has the following attributes: 'name' of type str.
+The class 'TransitionToStep' has no attributes.
+The class 'Step' has no attributes.
+The class 'Grafcet::Step' has the following attributes: 'isActive' of type str; 'action' of type str; 'isInitial' of type str.
+The class 'LocatedElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Connection' has no attributes.
+The class 'Grafcet::LocatedElement' has the following attributes: 'location' of type str.
+The class 'Grafcet::Transition' has the following attributes: 'condition' of type str.
+The class 'Grafcet' has no attributes.
+The class 'Grafcet::TransitionToStep' has no attributes.
+The class 'Grafcet::Element' has no attributes.
+'Grafcet::NamedElement' is a specialization of 'LocatedElement'.
+'Grafcet::Transition' is a specialization of 'Element'.
+'Grafcet::Connection' is a specialization of 'NamedElement'.
+'Grafcet::Step' is a specialization of 'Element'.
+'Grafcet::Element' is a specialization of 'NamedElement'.
+'Grafcet::Grafcet' is a specialization of 'NamedElement'.
+'Grafcet::StepToTransition' is a specialization of 'Connection'.
+'Grafcet::TransitionToStep' is a specialization of 'Connection'.
+'Element' (role 'Element', cardinality 0..*) is associated with 'Grafcet::Grafcet' (role 'grafcet', cardinality 0..*).
+'Grafcet::Transition' (role 'to7', cardinality 0..*) is associated with 'StepToTransition' (role 'StepToTransition8', cardinality 0..*).
+'Grafcet::TransitionToStep' (role 'outgoingConnections17', cardinality 0..*) is associated with 'Transition' (role 'Transition18', cardinality 0..*).
+'Step' (role 'Step', cardinality 0..*) is associated with 'Grafcet::StepToTransition' (role 'outgoingConnections', cardinality 0..*).
+'Step' (role 'Step21', cardinality 0..*) is associated with 'Grafcet::TransitionToStep' (role 'incomingConnections20', cardinality 0..*).
+'Grafcet::StepToTransition' (role 'incomingConnections', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).
+'Grafcet::Step' (role 'to', cardinality 0..*) is associated with 'TransitionToStep' (role 'TransitionToStep', cardinality 0..*).
+'Grafcet' (role 'Grafcet13', cardinality 0..*) is associated with 'Grafcet::Connection' (role 'connections', cardinality 0..*).
+'StepToTransition' (role 'StepToTransition', cardinality 0..*) is associated with 'Grafcet::Step' (role 'from_', cardinality 0..*).
+'Grafcet::Grafcet' (role 'grafcet2', cardinality 0..*) is associated with 'Connection' (role 'Connection', cardinality 0..*).
+'TransitionToStep' (role 'TransitionToStep11', cardinality 0..*) is associated with 'Grafcet::Transition' (role 'from_10', cardinality 0..*).
+'Grafcet' (role 'Grafcet', cardinality 0..*) is associated with 'Grafcet::Element' (role 'elements', cardinality 0..*).

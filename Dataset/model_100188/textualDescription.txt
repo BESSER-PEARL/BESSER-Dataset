@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'metamodel::Database' has the following attributes: 'name' of type str.
+The class 'metamodel::Table' has the following attributes: 'name' of type str.
+The class 'metamodel::Sequence' has the following attributes: 'minValue' of type int; 'cycle' of type bool; 'startwith' of type str; 'name' of type str; 'maxValue' of type str; 'incrementby' of type int; 'currentValue' of type str.
+The class 'metamodel::Constraint' has the following attributes: 'name' of type str; 'reference' of type str; 'type' of type str.
+The class 'metamodel::Row' has no attributes.
+The class 'metamodel::Cell' has the following attributes: 'value' of type str.
+The class 'metamodel::Column' has the following attributes: 'size' of type str; 'name' of type str; 'type' of type str; 'nullable' of type bool.
+The enumeration 'Datatype' has the following literals: 'TIMESTAMP', 'DOUBLE', 'CHAR', 'FLOAT', 'STRING', 'VARCHAR', 'BIGINT', 'BOOLEAN', 'DATE', 'DECIMAL', 'INT', 'TEXT', 'TINYTEXT', 'LONGTEXT', 'SMALLINT', 'BLOB', 'DATETIME'.
+The enumeration 'ConstraintType' has the following literals: 'PRIMARY_KEY', 'FOREIGN_KEY', 'COMPOSITE_PRIMARY_KEY', 'UNIQUE'.
+'metamodel::Table' (role 'metamodel_Table', cardinality 0..*) is associated with 'metamodel::Database' (role 'metamodel_Database', cardinality 0..*).
+'metamodel::Table' (role 'metamodel_Table4', cardinality 0..*) is associated with 'metamodel::Constraint' (role 'metamodel_Constraint', cardinality 0..*).
+'metamodel::Column' (role 'metamodel_Column', cardinality 0..*) is associated with 'metamodel::Table' (role 'metamodel_Table6', cardinality 0..*).
+'metamodel::Row' (role 'metamodel_Row', cardinality 0..*) is associated with 'metamodel::Table' (role 'metamodel_Table8', cardinality 0..*).
+'metamodel::Column' (role 'metamodel_Column13', cardinality 0..*) is associated with 'metamodel::Constraint' (role 'metamodel_Constraint14', cardinality 0..*).
+'metamodel::Database' (role 'metamodel_Database2', cardinality 0..*) is associated with 'metamodel::Sequence' (role 'metamodel_Sequence', cardinality 0..*).
+'metamodel::Cell' (role 'metamodel_Cell18', cardinality 0..*) is associated with 'metamodel::Column' (role 'metamodel_Column19', cardinality 0..*).
+'metamodel::Constraint' (role 'metamodel_Constraint10', cardinality 0..*) is associated with 'metamodel::Column' (role 'metamodel_Column11', cardinality 0..*).
+'metamodel::Cell' (role 'metamodel_Cell', cardinality 0..*) is associated with 'metamodel::Row' (role 'metamodel_Row16', cardinality 0..*).

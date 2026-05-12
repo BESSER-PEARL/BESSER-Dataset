@@ -1,0 +1,129 @@
+The model has 39 class(es).
+The class 'ptnet::Place' has no attributes.
+The class 'ptnet::Page' has no attributes.
+The class 'ptnet::Font' has the following attributes: 'decoration' of type str; 'rotation' of type str; 'family' of type str; 'weight' of type str; 'style' of type str; 'size' of type str; 'align' of type str.
+The class 'Node' has no attributes.
+The class 'ptnet::PnObject' has the following attributes: 'id' of type str.
+The class 'ptnet::RefTransition' has no attributes.
+The class 'ptnet::Coordinate' has the following attributes: 'y' of type str; 'x' of type str.
+The class 'ptnet::PlaceNode' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'ptnet::PetriNetDoc' has the following attributes: 'xmlns' of type str.
+The class 'ptnet::Fill' has the following attributes: 'gradientcolor' of type str; 'color' of type str; 'image' of type str; 'gradientrotation' of type str.
+The class 'ptnet::AnyObject' has no attributes.
+The class 'ptnet::Arc' has no attributes.
+The class 'ptnet::Offset' has no attributes.
+The class 'Graphics' has no attributes.
+The class 'ptnet::PetriNet' has the following attributes: 'id' of type str; 'type' of type str.
+The class 'ptnet::TransitionNode' has no attributes.
+The class 'ptnet::Annotation' has no attributes.
+The class 'ptnet::Transition' has no attributes.
+The class 'Label' has no attributes.
+The class 'ptnet::Position' has no attributes.
+The class 'ptnet::Line' has the following attributes: 'width' of type str; 'color' of type str; 'shape' of type str; 'style' of type str.
+The class 'ptnet::Name' has the following attributes: 'text' of type str.
+The class 'ptnet::ToolInfo' has the following attributes: 'toolInfoGrammarURI' of type str; 'formattedXMLBuffer' of type str; 'tool' of type str; 'version' of type str.
+The class 'PnObject' has no attributes.
+The class 'ptnet::Label' has no attributes.
+The class 'ptnet::ArcGraphics' has no attributes.
+The class 'ptnet::Node' has no attributes.
+The class 'ptnet::Attribute' has no attributes.
+The class 'ptnet::Dimension' has no attributes.
+The class 'Coordinate' has no attributes.
+The class 'ptnet::NodeGraphics' has no attributes.
+The class 'ptnet::RefPlace' has no attributes.
+The class 'PlaceNode' has no attributes.
+The class 'ptnet::PTMarking' has the following attributes: 'text' of type str.
+The class 'TransitionNode' has no attributes.
+The class 'ptnet::AnnotationGraphics' has no attributes.
+The class 'ptnet::Graphics' has no attributes.
+The class 'ptnet::PTArcAnnotation' has the following attributes: 'text' of type str.
+The enumeration 'CSS2FontStyle' has the following literals: 'NORMAL', 'OBLIQUE', 'ITALIC'.
+The enumeration 'Gradient' has the following literals: 'VERTICAL', 'DIAGONAL', 'HORIZONTAL'.
+The enumeration 'CSS2FontWeight' has the following literals: 'LIGHTER', 'BOLDER', 'BOLD', 'NORMAL'.
+The enumeration 'CSS2FontSize' has the following literals: 'XXSMALL', 'MEDIUM', 'SMALL', 'XSMALL', 'XLARGE', 'LARGE', 'XXLARGE'.
+The enumeration 'CSS2FontFamily' has the following literals: 'TIMES', 'TREBUCHET', 'VERDANA', 'ARIAL', 'GEORGIA'.
+The enumeration 'CSS2Color' has the following literals: 'BLACK', 'BLUE', 'ORANGE', 'WHITE', 'GREEN', 'PURPLE', 'NAVY', 'SILVER', 'MAROON', 'OLIVE', 'RED', 'LIME', 'TEAL', 'YELLOW', 'GRAY', 'AQUA', 'FUCHSIA'.
+The enumeration 'FontAlign' has the following literals: 'CENTER', 'LEFT', 'RIGHT'.
+The enumeration 'PNType' has the following literals: 'SYMNET', 'HLPN', 'PTNET', 'COREMODEL'.
+The enumeration 'FontDecoration' has the following literals: 'LINETHROUGH', 'UNDERLINE', 'OVERLINE'.
+The enumeration 'LineStyle' has the following literals: 'SOLID', 'DASH', 'DOT'.
+The enumeration 'LineShape' has the following literals: 'LINE', 'CURVE'.
+'ptnet::RefPlace' is a specialization of 'PlaceNode'.
+'ptnet::Place' is a specialization of 'PlaceNode'.
+'ptnet::RefTransition' is a specialization of 'TransitionNode'.
+'ptnet::PTArcAnnotation' is a specialization of 'Annotation'.
+'ptnet::AnnotationGraphics' is a specialization of 'Graphics'.
+'ptnet::NodeGraphics' is a specialization of 'Graphics'.
+'ptnet::Page' is a specialization of 'PnObject'.
+'ptnet::Arc' is a specialization of 'PnObject'.
+'ptnet::Attribute' is a specialization of 'Label'.
+'ptnet::ArcGraphics' is a specialization of 'Graphics'.
+'ptnet::Position' is a specialization of 'Coordinate'.
+'ptnet::Name' is a specialization of 'Annotation'.
+'ptnet::Dimension' is a specialization of 'Coordinate'.
+'ptnet::Node' is a specialization of 'PnObject'.
+'ptnet::Transition' is a specialization of 'TransitionNode'.
+'ptnet::Annotation' is a specialization of 'Label'.
+'ptnet::Offset' is a specialization of 'Coordinate'.
+'ptnet::PTMarking' is a specialization of 'Annotation'.
+'ptnet::PlaceNode' is a specialization of 'Node'.
+'ptnet::TransitionNode' is a specialization of 'Node'.
+'ptnet::NodeGraphics' (role 'NodeGraphics60', cardinality 0..*) is associated with 'ptnet::Fill' (role 'fill', cardinality 0..*).
+'ptnet::AnnotationGraphics' (role 'AnnotationGraphics94', cardinality 0..*) is associated with 'ptnet::Font' (role 'font', cardinality 0..*).
+'ptnet::Node' (role 'source', cardinality 0..*) is associated with 'ptnet::Arc' (role 'Arc90', cardinality 0..*).
+'ptnet::NodeGraphics' (role 'containerNodeGraphics38', cardinality 0..*) is associated with 'ptnet::Line' (role 'Line', cardinality 0..*).
+'ptnet::PetriNet' (role 'containerPetriNet6', cardinality 0..*) is associated with 'ptnet::ToolInfo' (role 'ToolInfo', cardinality 0..*).
+'ptnet::Position' (role 'Position', cardinality 0..*) is associated with 'ptnet::NodeGraphics' (role 'containerPNodeGraphics', cardinality 0..*).
+'ptnet::Page' (role 'Page', cardinality 0..*) is associated with 'ptnet::PetriNet' (role 'containerPetriNet', cardinality 0..*).
+'ptnet::Node' (role 'Node', cardinality 0..*) is associated with 'ptnet::NodeGraphics' (role 'nodegraphics', cardinality 0..*).
+'ptnet::Page' (role 'Page42', cardinality 0..*) is associated with 'ptnet::NodeGraphics' (role 'nodegraphics41', cardinality 0..*).
+'ptnet::ToolInfo' (role 'toolspecifics30', cardinality 0..*) is associated with 'ptnet::Label' (role 'Label', cardinality 0..*).
+'ptnet::NodeGraphics' (role 'NodeGraphics92', cardinality 0..*) is associated with 'ptnet::Node' (role 'containerNode', cardinality 0..*).
+'ptnet::PetriNet' (role 'PetriNet20', cardinality 0..*) is associated with 'ptnet::Name' (role 'name', cardinality 0..*).
+'ptnet::Line' (role 'line', cardinality 0..*) is associated with 'ptnet::NodeGraphics' (role 'NodeGraphics65', cardinality 0..*).
+'ptnet::RefPlace' (role 'RefPlace', cardinality 0..*) is associated with 'ptnet::PlaceNode' (role 'ref', cardinality 0..*).
+'ptnet::TransitionNode' (role 'TransitionNode', cardinality 0..*) is associated with 'ptnet::RefTransition' (role 'referencingTransitions', cardinality 0..*).
+'ptnet::PnObject' (role 'PnObject23', cardinality 0..*) is associated with 'ptnet::Name' (role 'name22', cardinality 0..*).
+'ptnet::PnObject' (role 'containerNamePnObject', cardinality 0..*) is associated with 'ptnet::Name' (role 'Name14', cardinality 0..*).
+'ptnet::Place' (role 'containerPlace', cardinality 0..*) is associated with 'ptnet::PTMarking' (role 'PTMarking', cardinality 0..*).
+'ptnet::ToolInfo' (role 'ToolInfo33', cardinality 0..*) is associated with 'ptnet::Label' (role 'containerLabel', cardinality 0..*).
+'ptnet::AnnotationGraphics' (role 'AnnotationGraphics71', cardinality 0..*) is associated with 'ptnet::Line' (role 'line70', cardinality 0..*).
+'ptnet::Node' (role 'target', cardinality 0..*) is associated with 'ptnet::Arc' (role 'Arc88', cardinality 0..*).
+'ptnet::RefTransition' (role 'RefTransition', cardinality 0..*) is associated with 'ptnet::TransitionNode' (role 'ref97', cardinality 0..*).
+'ptnet::PnObject' (role 'containerPnObject', cardinality 0..*) is associated with 'ptnet::ToolInfo' (role 'ToolInfo16', cardinality 0..*).
+'ptnet::Dimension' (role 'Dimension', cardinality 0..*) is associated with 'ptnet::NodeGraphics' (role 'containerDNodeGraphics', cardinality 0..*).
+'ptnet::PetriNetDoc' (role 'containerPetriNetDoc', cardinality 0..*) is associated with 'ptnet::PetriNet' (role 'PetriNet', cardinality 0..*).
+'ptnet::ArcGraphics' (role 'ArcGraphics84', cardinality 0..*) is associated with 'ptnet::Arc' (role 'containerArc', cardinality 0..*).
+'ptnet::ArcGraphics' (role 'arcgraphics', cardinality 0..*) is associated with 'ptnet::Arc' (role 'Arc78', cardinality 0..*).
+'ptnet::PetriNet' (role 'nets', cardinality 0..*) is associated with 'ptnet::PetriNetDoc' (role 'PetriNetDoc', cardinality 0..*).
+'ptnet::ToolInfo' (role 'ToolInfo104', cardinality 0..*) is associated with 'ptnet::AnyObject' (role 'toolInfoModel', cardinality 0..*).
+'ptnet::AnnotationGraphics' (role 'AnnotationGraphics102', cardinality 0..*) is associated with 'ptnet::Annotation' (role 'containerAnnotation', cardinality 0..*).
+'ptnet::Page' (role 'containerPage', cardinality 0..*) is associated with 'ptnet::PnObject' (role 'PnObject', cardinality 0..*).
+'ptnet::AnnotationGraphics' (role 'containerAnnotationGraphics54', cardinality 0..*) is associated with 'ptnet::Line' (role 'Line55', cardinality 0..*).
+'ptnet::AnnotationGraphics' (role 'containerAnnotationGraphics57', cardinality 0..*) is associated with 'ptnet::Font' (role 'Font', cardinality 0..*).
+'ptnet::NodeGraphics' (role 'containerNodeGraphics', cardinality 0..*) is associated with 'ptnet::Fill' (role 'Fill', cardinality 0..*).
+'ptnet::ArcGraphics' (role 'containerArcGraphics75', cardinality 0..*) is associated with 'ptnet::Line' (role 'Line76', cardinality 0..*).
+'ptnet::AnyObject' (role 'AnyObject', cardinality 0..*) is associated with 'ptnet::ToolInfo' (role 'containerToolInfo', cardinality 0..*).
+'ptnet::Fill' (role 'Fill52', cardinality 0..*) is associated with 'ptnet::AnnotationGraphics' (role 'containerAnnotationGraphics51', cardinality 0..*).
+'ptnet::Node' (role 'Node80', cardinality 0..*) is associated with 'ptnet::Arc' (role 'OutArcs', cardinality 0..*).
+'ptnet::Fill' (role 'fill62', cardinality 0..*) is associated with 'ptnet::AnnotationGraphics' (role 'AnnotationGraphics63', cardinality 0..*).
+'ptnet::Offset' (role 'offset', cardinality 0..*) is associated with 'ptnet::AnnotationGraphics' (role 'AnnotationGraphics', cardinality 0..*).
+'ptnet::Arc' (role 'Arc', cardinality 0..*) is associated with 'ptnet::PTArcAnnotation' (role 'inscription', cardinality 0..*).
+'ptnet::Node' (role 'Node82', cardinality 0..*) is associated with 'ptnet::Arc' (role 'InArcs', cardinality 0..*).
+'ptnet::Page' (role 'Page18', cardinality 0..*) is associated with 'ptnet::PnObject' (role 'objects', cardinality 0..*).
+'ptnet::ArcGraphics' (role 'containerArcGraphics', cardinality 0..*) is associated with 'ptnet::Position' (role 'Position73', cardinality 0..*).
+'ptnet::Position' (role 'position', cardinality 0..*) is associated with 'ptnet::NodeGraphics' (role 'NodeGraphics45', cardinality 0..*).
+'ptnet::Line' (role 'line67', cardinality 0..*) is associated with 'ptnet::ArcGraphics' (role 'ArcGraphics68', cardinality 0..*).
+'ptnet::PetriNet' (role 'containerNamePetriNet', cardinality 0..*) is associated with 'ptnet::Name' (role 'Name', cardinality 0..*).
+'ptnet::Page' (role 'containerPage12', cardinality 0..*) is associated with 'ptnet::NodeGraphics' (role 'NodeGraphics', cardinality 0..*).
+'ptnet::Dimension' (role 'dimension', cardinality 0..*) is associated with 'ptnet::NodeGraphics' (role 'NodeGraphics48', cardinality 0..*).
+'ptnet::PlaceNode' (role 'PlaceNode', cardinality 0..*) is associated with 'ptnet::RefPlace' (role 'referencingPlaces', cardinality 0..*).
+'ptnet::PetriNet' (role 'PetriNet10', cardinality 0..*) is associated with 'ptnet::Page' (role 'pages', cardinality 0..*).
+'ptnet::Position' (role 'positions', cardinality 0..*) is associated with 'ptnet::ArcGraphics' (role 'ArcGraphics', cardinality 0..*).
+'ptnet::PTMarking' (role 'initialMarking', cardinality 0..*) is associated with 'ptnet::Place' (role 'Place', cardinality 0..*).
+'ptnet::Annotation' (role 'Annotation', cardinality 0..*) is associated with 'ptnet::AnnotationGraphics' (role 'annotationgraphics', cardinality 0..*).
+'ptnet::ToolInfo' (role 'toolspecifics', cardinality 0..*) is associated with 'ptnet::PetriNet' (role 'PetriNet25', cardinality 0..*).
+'ptnet::Arc' (role 'containerArc86', cardinality 0..*) is associated with 'ptnet::PTArcAnnotation' (role 'PTArcAnnotation', cardinality 0..*).
+'ptnet::Offset' (role 'Offset', cardinality 0..*) is associated with 'ptnet::AnnotationGraphics' (role 'containerAnnotationGraphics', cardinality 0..*).
+'ptnet::ToolInfo' (role 'toolspecifics27', cardinality 0..*) is associated with 'ptnet::PnObject' (role 'PnObject28', cardinality 0..*).

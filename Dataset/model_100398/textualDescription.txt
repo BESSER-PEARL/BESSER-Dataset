@@ -1,0 +1,73 @@
+The model has 32 class(es).
+The class 'sgraph::Variable' has no attributes.
+The class 'sgraph::Entry' has the following attributes: 'kind' of type str.
+The class 'sgraph::Trigger' has no attributes.
+The class 'sgraph::Vertex' has no attributes.
+The class 'sgraph::Synchronization' has no attributes.
+The class 'ExpressionElement' has no attributes.
+The class 'ScopedElement' has no attributes.
+The class 'sgraph::Event' has no attributes.
+The class 'sgraph::ReactiveElement' has no attributes.
+The class 'sgraph::NamedElement' has the following attributes: 'name' of type str.
+The class 'Declaration' has no attributes.
+The class 'sgraph::Transition' has the following attributes: 'priority' of type int.
+The class 'sgraph::State' has the following attributes: 'simple' of type bool; 'leaf' of type bool; 'submachine' of type bool; 'composite' of type bool; 'orthogonal' of type bool.
+The class 'sgraph::ScopedElement' has no attributes.
+The class 'sgraph::Statement' has no attributes.
+The class 'sgraph::Declaration' has no attributes.
+The class 'Reaction' has no attributes.
+The class 'ReactiveElement' has no attributes.
+The class 'sgraph::FinalState' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'sgraph::Choice' has no attributes.
+The class 'Pseudostate' has no attributes.
+The class 'sgraph::Scope' has no attributes.
+The class 'sgraph::Exit' has no attributes.
+The class 'sgraph::Pseudostate' has no attributes.
+The class 'sgraph::Statechart' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'sgraph::Reaction' has no attributes.
+The class 'sgraph::Effect' has no attributes.
+The class 'sgraph::ExpressionElement' has the following attributes: 'expression' of type str.
+The class 'sgraph::Region' has the following attributes: 'priority' of type int.
+The class 'sgraph::Junction' has no attributes.
+The enumeration 'EntryKind' has the following literals: 'shallowHistory', 'initial', 'deepHistory'.
+'sgraph::Statechart' is a specialization of 'ReactiveElement'.
+'sgraph::Variable' is a specialization of 'Declaration'.
+'sgraph::Entry' is a specialization of 'Pseudostate'.
+'sgraph::State' is a specialization of 'ScopedElement'.
+'sgraph::Vertex' is a specialization of 'NamedElement'.
+'sgraph::Choice' is a specialization of 'Pseudostate'.
+'sgraph::State' is a specialization of 'ReactiveElement'.
+'sgraph::State' is a specialization of 'ExpressionElement'.
+'sgraph::State' is a specialization of 'Vertex'.
+'sgraph::Event' is a specialization of 'Declaration'.
+'sgraph::Statechart' is a specialization of 'ExpressionElement'.
+'sgraph::Region' is a specialization of 'NamedElement'.
+'sgraph::Synchronization' is a specialization of 'Pseudostate'.
+'sgraph::FinalState' is a specialization of 'Vertex'.
+'sgraph::Transition' is a specialization of 'ExpressionElement'.
+'sgraph::Pseudostate' is a specialization of 'Vertex'.
+'sgraph::Statechart' is a specialization of 'NamedElement'.
+'sgraph::Junction' is a specialization of 'Pseudostate'.
+'sgraph::Declaration' is a specialization of 'NamedElement'.
+'sgraph::Transition' is a specialization of 'Reaction'.
+'sgraph::Statechart' is a specialization of 'ScopedElement'.
+'sgraph::Exit' is a specialization of 'Pseudostate'.
+'sgraph::Statechart' (role 'sgraph_Statechart29', cardinality 0..*) is associated with 'sgraph::State' (role 'sgraph_State28', cardinality 0..*).
+'sgraph::State' (role 'sgraph_State', cardinality 0..*) is associated with 'sgraph::Region' (role 'sgraph_Region26', cardinality 0..*).
+'sgraph::Vertex' (role 'Vertex', cardinality 0..*) is associated with 'sgraph::Region' (role 'parentRegion', cardinality 0..*).
+'sgraph::Event' (role 'sgraph_Event', cardinality 0..*) is associated with 'sgraph::Scope' (role 'sgraph_Scope20', cardinality 0..*).
+'sgraph::Trigger' (role 'sgraph_Trigger', cardinality 0..*) is associated with 'sgraph::Reaction' (role 'sgraph_Reaction', cardinality 0..*).
+'sgraph::Effect' (role 'sgraph_Effect', cardinality 0..*) is associated with 'sgraph::Reaction' (role 'sgraph_Reaction12', cardinality 0..*).
+'sgraph::ReactiveElement' (role 'sgraph_ReactiveElement', cardinality 0..*) is associated with 'sgraph::Reaction' (role 'sgraph_Reaction14', cardinality 0..*).
+'sgraph::Declaration' (role 'sgraph_Declaration', cardinality 0..*) is associated with 'sgraph::Scope' (role 'sgraph_Scope', cardinality 0..*).
+'sgraph::Transition' (role 'Transition', cardinality 0..*) is associated with 'sgraph::Vertex' (role 'target', cardinality 0..*).
+'sgraph::Vertex' (role 'source', cardinality 0..*) is associated with 'sgraph::Transition' (role 'Transition3', cardinality 0..*).
+'sgraph::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'sgraph::Vertex' (role 'Vertex6', cardinality 0..*).
+'sgraph::Scope' (role 'sgraph_Scope22', cardinality 0..*) is associated with 'sgraph::Variable' (role 'sgraph_Variable', cardinality 0..*).
+'sgraph::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'sgraph::Vertex' (role 'Vertex8', cardinality 0..*).
+'sgraph::Reaction' (role 'sgraph_Reaction17', cardinality 0..*) is associated with 'sgraph::ReactiveElement' (role 'sgraph_ReactiveElement16', cardinality 0..*).
+'sgraph::Vertex' (role 'vertices', cardinality 0..*) is associated with 'sgraph::Region' (role 'Region', cardinality 0..*).
+'sgraph::ScopedElement' (role 'sgraph_ScopedElement', cardinality 0..*) is associated with 'sgraph::Scope' (role 'sgraph_Scope24', cardinality 0..*).
+'sgraph::Region' (role 'sgraph_Region', cardinality 0..*) is associated with 'sgraph::Statechart' (role 'sgraph_Statechart', cardinality 0..*).

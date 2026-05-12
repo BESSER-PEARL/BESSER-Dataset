@@ -1,0 +1,28 @@
+The model has 12 class(es).
+The class 'statemachine::Statemachine' has no attributes.
+The class 'statemachine::Command' has no attributes.
+The class 'statemachine::StatePropertyExpression' has the following attributes: 'property' of type str.
+The class 'Expression' has no attributes.
+The class 'statemachine::State' has the following attributes: 'id' of type str; 'name' of type str; 'final' of type bool; 'initial' of type bool.
+The class 'statemachine::VerbatimExpression' has the following attributes: 'code' of type str.
+The class 'statemachine::Expression' has no attributes.
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::ExecuteCommand' has the following attributes: 'operation' of type str.
+The class 'statemachine::SetCommand' has the following attributes: 'signal' of type str.
+The class 'statemachine::PrintCommand' has no attributes.
+The class 'Command' has no attributes.
+'statemachine::StatePropertyExpression' is a specialization of 'Expression'.
+'statemachine::ExecuteCommand' is a specialization of 'Command'.
+'statemachine::SetCommand' is a specialization of 'Command'.
+'statemachine::VerbatimExpression' is a specialization of 'Expression'.
+'statemachine::PrintCommand' is a specialization of 'Command'.
+'statemachine::SetCommand' (role 'statemachine_SetCommand', cardinality 0..*) is associated with 'statemachine::Expression' (role 'statemachine_Expression14', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State', cardinality 0..*) is associated with 'statemachine::Statemachine' (role 'statemachine_Statemachine', cardinality 0..*).
+'statemachine::ExecuteCommand' (role 'statemachine_ExecuteCommand', cardinality 0..*) is associated with 'statemachine::Expression' (role 'statemachine_Expression16', cardinality 0..*).
+'statemachine::Command' (role 'statemachine_Command', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State4', cardinality 0..*).
+'statemachine::PrintCommand' (role 'statemachine_PrintCommand', cardinality 0..*) is associated with 'statemachine::Expression' (role 'statemachine_Expression18', cardinality 0..*).
+'statemachine::StatePropertyExpression' (role 'statemachine_StatePropertyExpression', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State20', cardinality 0..*).
+'statemachine::Expression' (role 'statemachine_Expression', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition12', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition6', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State7', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*) is associated with 'statemachine::Statemachine' (role 'statemachine_Statemachine2', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State10', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition9', cardinality 0..*).

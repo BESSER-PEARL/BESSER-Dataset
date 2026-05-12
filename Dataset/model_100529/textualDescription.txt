@@ -1,0 +1,24 @@
+The model has 13 class(es).
+The class 'UseCase::Association' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'UseCase::UseCase' has no attributes.
+The class 'UseCase::Extend' has no attributes.
+The class 'UseCase::BehavioredClassifier' has no attributes.
+The class 'Include' has no attributes.
+The class 'UseCase::UseCaseContainer' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'UseCase::Include' has no attributes.
+The class 'Actor' has no attributes.
+The class 'Extend' has no attributes.
+The class 'UseCase::Actor' has no attributes.
+The class 'UseCase::NamedElement' has the following attributes: 'name' of type str.
+'UseCase::Association' is a specialization of 'NamedElement'.
+'UseCase::UseCase' is a specialization of 'NamedElement'.
+'UseCase::Actor' is a specialization of 'NamedElement'.
+'UseCase' (role 'UseCase10', cardinality 0..*) is associated with 'UseCase::Association' (role 'UseCase_Association9', cardinality 0..*).
+'Include' (role 'Include', cardinality 0..*) is associated with 'UseCase::UseCase' (role 'UseCase_UseCase', cardinality 0..*).
+'Extend' (role 'Extend', cardinality 0..*) is associated with 'UseCase::UseCase' (role 'UseCase_UseCase2', cardinality 0..*).
+'UseCase' (role 'UseCase5', cardinality 0..*) is associated with 'UseCase::Include' (role 'UseCase_Include', cardinality 0..*).
+'UseCase::Association' (role 'UseCase_Association', cardinality 0..*) is associated with 'Actor' (role 'Actor', cardinality 0..*).
+'UseCase::UseCaseContainer' (role 'UseCase_UseCaseContainer', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement', cardinality 0..*).
+'UseCase' (role 'UseCase', cardinality 0..*) is associated with 'UseCase::Extend' (role 'UseCase_Extend', cardinality 0..*).

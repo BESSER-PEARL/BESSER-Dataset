@@ -1,0 +1,123 @@
+The model has 46 class(es).
+The class 'urml::UrmlModelElement' has no attributes.
+The class 'urml::danger::Mitigation' has no attributes.
+The class 'Product' has no attributes.
+The class 'urml::requirement::FunctionalRequirement' has no attributes.
+The class 'UrmlModelElement' has no attributes.
+The class 'AssociationClassElement' has no attributes.
+The class 'Asset' has no attributes.
+The class 'urml::Stakeholder' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'urml::usecase::ApplicationDomainUseCase' has no attributes.
+The class 'urml::URMLDiagram' has no attributes.
+The class 'urml::danger::ProceduralMitigation' has the following attributes: 'mitigationProcedure' of type str.
+The class 'urml::service::Service' has no attributes.
+The class 'SolutionDomainUseCase' has no attributes.
+The class 'urml::feature::VariationPoint' has the following attributes: 'multiplicity' of type int.
+The class 'goal::urml::Stakeholder' has no attributes.
+The class 'Service' has no attributes.
+The class 'urml::feature::Feature' has no attributes.
+The class 'urml::danger::Asset' has no attributes.
+The class 'Requirement' has no attributes.
+The class 'urml::requirement::NonFunctionalRequirement' has no attributes.
+The class 'urml::usecase::Actor' has no attributes.
+The class 'AbstractFeature' has no attributes.
+The class 'Danger' has no attributes.
+The class 'VariationPointInstance' has no attributes.
+The class 'Feature' has no attributes.
+The class 'ApplicationDomainUseCase' has no attributes.
+The class 'VariationPoint' has no attributes.
+The class 'Actor' has no attributes.
+The class 'MEDiagram' has no attributes.
+The class 'NonFunctionalRequirement' has no attributes.
+The class 'urml::feature::AbstractFeature' has no attributes.
+The class 'UnicaseModelElement' has no attributes.
+The class 'urml::requirement::Requirement' has the following attributes: 'terminal' of type bool.
+The class 'urml::feature::Product' has no attributes.
+The class 'urml::goal::Goal' has the following attributes: 'type' of type str; 'soft' of type bool.
+The class 'Step' has no attributes.
+The class 'Mitigation' has no attributes.
+The class 'FunctionalRequirement' has no attributes.
+The class 'urml::goal::GoalReference' has the following attributes: 'weight' of type str.
+The class 'urml::feature::VariationPointInstance' has no attributes.
+The class 'urml::usecase::UseCase' has no attributes.
+The class 'urml::usecase::SolutionDomainUseCase' has no attributes.
+The class 'Goal' has no attributes.
+The class 'urml::danger::Danger' has no attributes.
+The class 'GoalReference' has no attributes.
+The enumeration 'GoalReferenceType' has the following literals: 'MINUS', 'PLUS_PLUS', 'PLUS', 'MINUS_MINUS'.
+The enumeration 'GoalType' has the following literals: 'CUSTOMER_GOAL', 'BUSINESS_GOAL', 'END_USER_GOAL', 'PRODUCT_GOAL'.
+'urml::feature::VariationPointInstance' is a specialization of 'UrmlModelElement'.
+'urml::requirement::FunctionalRequirement' is a specialization of 'Requirement'.
+'urml::goal::GoalReference' is a specialization of 'UrmlModelElement'.
+'urml::feature::Feature' is a specialization of 'AbstractFeature'.
+'urml::goal::GoalReference' is a specialization of 'AssociationClassElement'.
+'urml::requirement::Requirement' is a specialization of 'Mitigation'.
+'urml::usecase::ApplicationDomainUseCase' is a specialization of 'UseCase'.
+'urml::danger::ProceduralMitigation' is a specialization of 'Mitigation'.
+'urml::feature::Product' is a specialization of 'UrmlModelElement'.
+'urml::requirement::NonFunctionalRequirement' is a specialization of 'Requirement'.
+'urml::Stakeholder' is a specialization of 'UrmlModelElement'.
+'urml::feature::VariationPoint' is a specialization of 'AbstractFeature'.
+'urml::goal::Goal' is a specialization of 'UrmlModelElement'.
+'urml::feature::AbstractFeature' is a specialization of 'UrmlModelElement'.
+'urml::danger::Mitigation' is a specialization of 'UrmlModelElement'.
+'urml::usecase::Actor' is a specialization of 'Asset'.
+'urml::danger::Asset' is a specialization of 'UrmlModelElement'.
+'urml::usecase::UseCase' is a specialization of 'UrmlModelElement'.
+'urml::URMLDiagram' is a specialization of 'MEDiagram'.
+'urml::UrmlModelElement' is a specialization of 'UnicaseModelElement'.
+'urml::service::Service' is a specialization of 'Asset'.
+'urml::usecase::SolutionDomainUseCase' is a specialization of 'UseCase'.
+'urml::danger::Danger' is a specialization of 'UrmlModelElement'.
+'Requirement' (role 'Requirement', cardinality 0..*) is associated with 'urml::service::Service' (role 'implementingServices', cardinality 0..*).
+'VariationPointInstance' (role 'VariationPointInstance74', cardinality 0..*) is associated with 'urml::feature::VariationPoint' (role 'variationPoint', cardinality 0..*).
+'urml::feature::AbstractFeature' (role 'subFeatures', cardinality 0..*) is associated with 'AbstractFeature' (role 'AbstractFeature57', cardinality 0..*).
+'urml::service::Service' (role 'subServices', cardinality 0..*) is associated with 'Service' (role 'Service37', cardinality 0..*).
+'urml::feature::AbstractFeature' (role 'parentFeature', cardinality 0..*) is associated with 'AbstractFeature' (role 'AbstractFeature59', cardinality 0..*).
+'urml::danger::Asset' (role 'harmedAssets', cardinality 0..*) is associated with 'Danger' (role 'Danger42', cardinality 0..*).
+'UseCase' (role 'UseCase', cardinality 0..*) is associated with 'urml::usecase::Actor' (role 'actors', cardinality 0..*).
+'VariationPointInstance' (role 'VariationPointInstance83', cardinality 0..*) is associated with 'urml::feature::Product' (role 'products', cardinality 0..*).
+'urml::requirement::NonFunctionalRequirement' (role 'parentNonFunctionalRequirement', cardinality 0..*) is associated with 'NonFunctionalRequirement' (role 'NonFunctionalRequirement', cardinality 0..*).
+'urml::danger::Danger' (role 'harmingDangers', cardinality 0..*) is associated with 'Asset' (role 'Asset45', cardinality 0..*).
+'Goal' (role 'Goal8', cardinality 0..*) is associated with 'urml::goal::Goal' (role 'subGoals', cardinality 0..*).
+'urml::danger::Danger' (role 'triggeredDangers', cardinality 0..*) is associated with 'Asset' (role 'Asset', cardinality 0..*).
+'AbstractFeature' (role 'AbstractFeature33', cardinality 0..*) is associated with 'urml::usecase::SolutionDomainUseCase' (role 'detailingUseCases32', cardinality 0..*).
+'urml::danger::Mitigation' (role 'mitigations', cardinality 0..*) is associated with 'Danger' (role 'Danger48', cardinality 0..*).
+'urml::feature::AbstractFeature' (role 'realizedFeatures', cardinality 0..*) is associated with 'Goal' (role 'Goal50', cardinality 0..*).
+'AbstractFeature' (role 'AbstractFeature72', cardinality 0..*) is associated with 'urml::feature::VariationPoint' (role 'optionalParentVariationPoint', cardinality 0..*).
+'urml::usecase::UseCase' (role 'urml_usecase_UseCase', cardinality 0..*) is associated with 'Step' (role 'Step', cardinality 0..*).
+'urml::goal::GoalReference' (role 'influencedGoals', cardinality 0..*) is associated with 'Goal' (role 'Goal13', cardinality 0..*).
+'urml::feature::AbstractFeature' (role 'selectedFeatures', cardinality 0..*) is associated with 'VariationPointInstance' (role 'VariationPointInstance', cardinality 0..*).
+'urml::feature::AbstractFeature' (role 'requiringFeatures', cardinality 0..*) is associated with 'AbstractFeature' (role 'AbstractFeature67', cardinality 0..*).
+'AbstractFeature' (role 'AbstractFeature81', cardinality 0..*) is associated with 'urml::feature::VariationPointInstance' (role 'variationPointInstances80', cardinality 0..*).
+'urml::requirement::FunctionalRequirement' (role 'parentFunctionalRequirement', cardinality 0..*) is associated with 'FunctionalRequirement' (role 'FunctionalRequirement', cardinality 0..*).
+'ApplicationDomainUseCase' (role 'ApplicationDomainUseCase', cardinality 0..*) is associated with 'urml::goal::Goal' (role 'detailedGoal', cardinality 0..*).
+'Service' (role 'Service39', cardinality 0..*) is associated with 'urml::service::Service' (role 'parentService', cardinality 0..*).
+'GoalReference' (role 'GoalReference11', cardinality 0..*) is associated with 'urml::goal::Goal' (role 'source', cardinality 0..*).
+'Actor' (role 'Actor', cardinality 0..*) is associated with 'urml::usecase::UseCase' (role 'useCases', cardinality 0..*).
+'urml::feature::AbstractFeature' (role 'constrainedFeatures', cardinality 0..*) is associated with 'NonFunctionalRequirement' (role 'NonFunctionalRequirement54', cardinality 0..*).
+'SolutionDomainUseCase' (role 'SolutionDomainUseCase', cardinality 0..*) is associated with 'urml::feature::AbstractFeature' (role 'detailedFeature', cardinality 0..*).
+'urml::feature::Feature' (role 'features', cardinality 0..*) is associated with 'Product' (role 'Product', cardinality 0..*).
+'AbstractFeature' (role 'AbstractFeature23', cardinality 0..*) is associated with 'urml::requirement::NonFunctionalRequirement' (role 'constrainingNonFunctionalRequirements', cardinality 0..*).
+'urml::danger::Danger' (role 'mitigatedDangers', cardinality 0..*) is associated with 'Mitigation' (role 'Mitigation', cardinality 0..*).
+'urml::goal::Goal' (role 'goals', cardinality 0..*) is associated with 'goal::urml::Stakeholder' (role 'Stakeholder', cardinality 0..*).
+'urml::requirement::FunctionalRequirement' (role 'detailingFunctionalRequirements', cardinality 0..*) is associated with 'AbstractFeature' (role 'AbstractFeature18', cardinality 0..*).
+'urml::requirement::NonFunctionalRequirement' (role 'subNonFunctionalRequirements', cardinality 0..*) is associated with 'NonFunctionalRequirement' (role 'NonFunctionalRequirement26', cardinality 0..*).
+'urml::feature::VariationPointInstance' (role 'variationPointInstances', cardinality 0..*) is associated with 'Product' (role 'Product78', cardinality 0..*).
+'urml::goal::Goal' (role 'goals3', cardinality 0..*) is associated with 'AbstractFeature' (role 'AbstractFeature', cardinality 0..*).
+'urml::danger::Asset' (role 'triggeringAssets', cardinality 0..*) is associated with 'Danger' (role 'Danger', cardinality 0..*).
+'VariationPoint' (role 'VariationPoint76', cardinality 0..*) is associated with 'urml::feature::VariationPointInstance' (role 'instances', cardinality 0..*).
+'urml::goal::Goal' (role 'target', cardinality 0..*) is associated with 'GoalReference' (role 'GoalReference', cardinality 0..*).
+'urml::feature::AbstractFeature' (role 'detailedFeatures', cardinality 0..*) is associated with 'FunctionalRequirement' (role 'FunctionalRequirement52', cardinality 0..*).
+'urml::goal::GoalReference' (role 'influencingGoals', cardinality 0..*) is associated with 'Goal' (role 'Goal15', cardinality 0..*).
+'AbstractFeature' (role 'AbstractFeature61', cardinality 0..*) is associated with 'urml::feature::AbstractFeature' (role 'excludedFeatures', cardinality 0..*).
+'Goal' (role 'Goal6', cardinality 0..*) is associated with 'urml::goal::Goal' (role 'parentGoal', cardinality 0..*).
+'Goal' (role 'Goal30', cardinality 0..*) is associated with 'urml::usecase::ApplicationDomainUseCase' (role 'detailingUseCases', cardinality 0..*).
+'urml::feature::AbstractFeature' (role 'optionalSubFeatures', cardinality 0..*) is associated with 'VariationPoint' (role 'VariationPoint', cardinality 0..*).
+'Goal' (role 'Goal', cardinality 0..*) is associated with 'urml::Stakeholder' (role 'stakeholders', cardinality 0..*).
+'AbstractFeature' (role 'AbstractFeature63', cardinality 0..*) is associated with 'urml::feature::AbstractFeature' (role 'excludingFeatures', cardinality 0..*).
+'urml::feature::Product' (role 'products85', cardinality 0..*) is associated with 'Feature' (role 'Feature', cardinality 0..*).
+'Service' (role 'Service', cardinality 0..*) is associated with 'urml::requirement::Requirement' (role 'satisfiedRequirements', cardinality 0..*).
+'urml::requirement::FunctionalRequirement' (role 'subFunctionalRequirements', cardinality 0..*) is associated with 'FunctionalRequirement' (role 'FunctionalRequirement21', cardinality 0..*).
+'AbstractFeature' (role 'AbstractFeature65', cardinality 0..*) is associated with 'urml::feature::AbstractFeature' (role 'requiredFeatures', cardinality 0..*).

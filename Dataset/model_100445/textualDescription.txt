@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'Element' has no attributes.
+The class 'statemodel::TransitionBlock' has the following attributes: 'event' of type str.
+The class 'statemodel::Annotation' has no attributes.
+The class 'statemodel::State' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'statemodel::Import' has the following attributes: 'importURI' of type str.
+The class 'statemodel::Transition' has the following attributes: 'action' of type str; 'guard' of type str.
+The class 'Activity' has no attributes.
+The class 'statemodel::Model' has no attributes.
+The class 'statemodel::Statemachine' has no attributes.
+The class 'statemodel::Entity' has no attributes.
+The class 'statemodel::Activity' has no attributes.
+The class 'statemodel::Element' has no attributes.
+The enumeration 'StateType' has the following literals: 'INITIAL', 'FINAL', 'NONE'.
+'statemodel::State' is a specialization of 'Element'.
+'statemodel::TransitionBlock' is a specialization of 'Activity'.
+'statemodel::State' is a specialization of 'Activity'.
+'statemodel::Statemachine' is a specialization of 'Element'.
+'statemodel::Statemachine' (role 'statemodel_Statemachine', cardinality 0..*) is associated with 'statemodel::Entity' (role 'statemodel_Entity', cardinality 0..*).
+'statemodel::State' (role 'statemodel_State13', cardinality 0..*) is associated with 'statemodel::Transition' (role 'statemodel_Transition12', cardinality 0..*).
+'statemodel::TransitionBlock' (role 'statemodel_TransitionBlock', cardinality 0..*) is associated with 'statemodel::Transition' (role 'statemodel_Transition', cardinality 0..*).
+'statemodel::Activity' (role 'statemodel_Activity', cardinality 0..*) is associated with 'statemodel::State' (role 'statemodel_State9', cardinality 0..*).
+'statemodel::Element' (role 'statemodel_Element4', cardinality 0..*) is associated with 'statemodel::Annotation' (role 'statemodel_Annotation', cardinality 0..*).
+'statemodel::Statemachine' (role 'statemodel_Statemachine7', cardinality 0..*) is associated with 'statemodel::State' (role 'statemodel_State', cardinality 0..*).
+'statemodel::Model' (role 'statemodel_Model2', cardinality 0..*) is associated with 'statemodel::Element' (role 'statemodel_Element', cardinality 0..*).
+'statemodel::Import' (role 'statemodel_Import', cardinality 0..*) is associated with 'statemodel::Model' (role 'statemodel_Model', cardinality 0..*).

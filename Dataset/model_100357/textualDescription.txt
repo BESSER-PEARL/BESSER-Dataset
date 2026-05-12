@@ -1,0 +1,29 @@
+The model has 12 class(es).
+The class 'FSM::MgaObject' has the following attributes: 'position' of type str; 'name' of type str.
+The class 'State' has no attributes.
+The class 'FSM::Transition' has no attributes.
+The class 'FSM::RootFolder' has the following attributes: 'name' of type str.
+The class 'FSM::AssociationStateState' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'FSM::StateMachine' has no attributes.
+The class 'MgaObject' has no attributes.
+The class 'AssociationStateState' has no attributes.
+The class 'FSM::State' has no attributes.
+The class 'Transition' has no attributes.
+The class 'RootFolder' has no attributes.
+'FSM::State' is a specialization of 'MgaObject'.
+'FSM::Transition' is a specialization of 'MgaObject'.
+'FSM::StateMachine' is a specialization of 'MgaObject'.
+'FSM::AssociationStateState' (role 'associationStateStatesrc', cardinality 0..*) is associated with 'State' (role 'State23', cardinality 0..*).
+'FSM::State' (role 'dstTransition', cardinality 0..*) is associated with 'AssociationStateState' (role 'AssociationStateState6', cardinality 0..*).
+'Transition' (role 'Transition19', cardinality 0..*) is associated with 'FSM::AssociationStateState' (role 'associationStateState', cardinality 0..*).
+'FSM::State' (role 'srcTransition', cardinality 0..*) is associated with 'AssociationStateState' (role 'AssociationStateState8', cardinality 0..*).
+'RootFolder' (role 'RootFolder15', cardinality 0..*) is associated with 'FSM::RootFolder' (role 'FSM_RootFolder', cardinality 0..*).
+'FSM::StateMachine' (role 'stateMachine13', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'FSM::StateMachine' (role 'stateMachine11', cardinality 0..*).
+'RootFolder' (role 'RootFolder', cardinality 0..*) is associated with 'FSM::StateMachine' (role 'stateMachine', cardinality 0..*).
+'StateMachine' (role 'StateMachine17', cardinality 0..*) is associated with 'FSM::RootFolder' (role 'rootFolder', cardinality 0..*).
+'FSM::Transition' (role 'transition2', cardinality 0..*) is associated with 'AssociationStateState' (role 'AssociationStateState', cardinality 0..*).
+'FSM::Transition' (role 'transition', cardinality 0..*) is associated with 'StateMachine' (role 'StateMachine', cardinality 0..*).
+'FSM::AssociationStateState' (role 'associationStateStatedst', cardinality 0..*) is associated with 'State' (role 'State21', cardinality 0..*).
+'FSM::State' (role 'state', cardinality 0..*) is associated with 'StateMachine' (role 'StateMachine4', cardinality 0..*).

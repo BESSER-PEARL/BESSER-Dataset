@@ -1,0 +1,22 @@
+The model has 11 class(es).
+The class 'dbmap::AbstractDBDataMapTable' has the following attributes: 'tableName' of type str; 'minimized' of type bool; 'name' of type str; 'readonly' of type bool.
+The class 'dbmap::DBMapperTableEntry' has the following attributes: 'operator' of type str; 'expression' of type str; 'join' of type bool; 'nullable' of type bool; 'type' of type str; 'name' of type str.
+The class 'dbmap::DBMapData' has no attributes.
+The class 'dbmap::OutputTable' has no attributes.
+The class 'dbmap::FilterEntry' has the following attributes: 'name' of type str; 'expression' of type str.
+The class 'dbmap::InputTable' has the following attributes: 'joinType' of type str; 'alias' of type str.
+The class 'AbstractDBDataMapTable' has no attributes.
+The class 'dbmap::VarTable' has no attributes.
+The class 'dbmap::AbstaceDBInOutTable' has no attributes.
+The class 'AbstractExternalData' has no attributes.
+The class 'AbstaceDBInOutTable' has no attributes.
+'dbmap::AbstaceDBInOutTable' is a specialization of 'AbstractDBDataMapTable'.
+'dbmap::DBMapData' is a specialization of 'AbstractExternalData'.
+'dbmap::InputTable' is a specialization of 'AbstaceDBInOutTable'.
+'dbmap::VarTable' is a specialization of 'AbstractDBDataMapTable'.
+'dbmap::OutputTable' is a specialization of 'AbstaceDBInOutTable'.
+'dbmap::AbstractDBDataMapTable' (role 'dbmap_AbstractDBDataMapTable', cardinality 0..*) is associated with 'dbmap::DBMapperTableEntry' (role 'dbmap_DBMapperTableEntry', cardinality 0..*).
+'dbmap::InputTable' (role 'dbmap_InputTable', cardinality 0..*) is associated with 'dbmap::DBMapData' (role 'dbmap_DBMapData2', cardinality 0..*).
+'dbmap::DBMapData' (role 'dbmap_DBMapData4', cardinality 0..*) is associated with 'dbmap::OutputTable' (role 'dbmap_OutputTable', cardinality 0..*).
+'dbmap::FilterEntry' (role 'dbmap_FilterEntry', cardinality 0..*) is associated with 'dbmap::OutputTable' (role 'dbmap_OutputTable7', cardinality 0..*).
+'dbmap::DBMapData' (role 'dbmap_DBMapData', cardinality 0..*) is associated with 'dbmap::VarTable' (role 'dbmap_VarTable', cardinality 0..*).

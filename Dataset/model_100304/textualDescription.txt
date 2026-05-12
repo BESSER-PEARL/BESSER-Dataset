@@ -1,0 +1,41 @@
+The model has 18 class(es).
+The class 'PetriNetMM2::TPArc' has no attributes.
+The class 'GenericPT' has no attributes.
+The class 'PetriNetMM2::GenericPT' has the following attributes: 'label' of type str.
+The class 'Transition' has no attributes.
+The class 'PetriNetMM2::PTArc' has no attributes.
+The class 'PetriNetMM2::Arc' has the following attributes: 'weight' of type int.
+The class 'PetriNetMM2::PetriNetModel' has no attributes.
+The class 'PetriNet' has no attributes.
+The class 'PetriNetMM2::PetriNet' has the following attributes: 'name' of type str.
+The class 'Place' has no attributes.
+The class 'PetriNetMM2::Transition' has the following attributes: 'name' of type str; 'relevance' of type int.
+The class 'TPArc' has no attributes.
+The class 'PetriNetMM2::Place' has the following attributes: 'name' of type str; 'relevance' of type int.
+The class 'Arc' has no attributes.
+The class 'PetriNetModel' has no attributes.
+The class 'PetriNetMM2::PetriNetModelElement' has no attributes.
+The class 'PetriNetModelElement' has no attributes.
+The class 'PTArc' has no attributes.
+'PetriNetMM2::Transition' is a specialization of 'GenericPT'.
+'PetriNetMM2::Arc' is a specialization of 'PetriNetModelElement'.
+'PetriNetMM2::Place' is a specialization of 'GenericPT'.
+'PetriNetMM2::PTArc' is a specialization of 'Arc'.
+'PetriNetMM2::GenericPT' is a specialization of 'PetriNetModelElement'.
+'PetriNetMM2::PetriNet' is a specialization of 'PetriNetModelElement'.
+'PetriNetMM2::TPArc' is a specialization of 'Arc'.
+'PetriNetMM2::PTArc' (role 'out', cardinality 0..*) is associated with 'Place' (role 'Place18', cardinality 0..*).
+'PetriNetMM2::Transition' (role 'transitions', cardinality 0..*) is associated with 'PetriNet' (role 'PetriNet10', cardinality 0..*).
+'TPArc' (role 'TPArc', cardinality 0..*) is associated with 'PetriNetMM2::Place' (role 'dst', cardinality 0..*).
+'PetriNetMM2::PetriNetModelElement' (role 'elements', cardinality 0..*) is associated with 'PetriNetModel' (role 'PetriNetModel', cardinality 0..*).
+'PetriNetMM2::PetriNet' (role 'net', cardinality 0..*) is associated with 'Place' (role 'Place', cardinality 0..*).
+'Arc' (role 'Arc', cardinality 0..*) is associated with 'PetriNetMM2::PetriNet' (role 'PetriNetMM2_PetriNet', cardinality 0..*).
+'PetriNetModelElement' (role 'PetriNetModelElement', cardinality 0..*) is associated with 'PetriNetMM2::PetriNetModel' (role 'modelContainer', cardinality 0..*).
+'Transition' (role 'Transition23', cardinality 0..*) is associated with 'PetriNetMM2::TPArc' (role 'out22', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'PetriNetMM2::PetriNet' (role 'net4', cardinality 0..*).
+'PetriNetMM2::Place' (role 'src', cardinality 0..*) is associated with 'PTArc' (role 'PTArc', cardinality 0..*).
+'PTArc' (role 'PTArc13', cardinality 0..*) is associated with 'PetriNetMM2::Transition' (role 'dst12', cardinality 0..*).
+'PetriNetMM2::Place' (role 'places', cardinality 0..*) is associated with 'PetriNet' (role 'PetriNet', cardinality 0..*).
+'Place' (role 'Place26', cardinality 0..*) is associated with 'PetriNetMM2::TPArc' (role 'in_25', cardinality 0..*).
+'PetriNetMM2::PTArc' (role 'in_', cardinality 0..*) is associated with 'Transition' (role 'Transition20', cardinality 0..*).
+'PetriNetMM2::Transition' (role 'src15', cardinality 0..*) is associated with 'TPArc' (role 'TPArc16', cardinality 0..*).

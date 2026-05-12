@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'database::Table' has the following attributes: 'storageEngine' of type str; 'collation' of type str.
+The class 'Index' has no attributes.
+The class 'database::DataBase' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'database::Column' has the following attributes: 'type' of type str; 'nullable' of type bool; 'length' of type int; 'collation' of type str; 'default' of type str.
+The class 'database::NamedElement' has the following attributes: 'name' of type str.
+The class 'database::Unique' has no attributes.
+The class 'database::PrimaryKey' has no attributes.
+The class 'database::Index' has no attributes.
+'database::PrimaryKey' is a specialization of 'Index'.
+'database::Index' is a specialization of 'NamedElement'.
+'database::Column' is a specialization of 'NamedElement'.
+'database::Unique' is a specialization of 'Index'.
+'database::Table' is a specialization of 'NamedElement'.
+'database::DataBase' (role 'database_DataBase', cardinality 0..*) is associated with 'database::Table' (role 'database_Table', cardinality 0..*).
+'database::DataBase' (role 'database_DataBase3', cardinality 0..*) is associated with 'database::Table' (role 'database_Table2', cardinality 0..*).
+'database::Table' (role 'database_Table9', cardinality 0..*) is associated with 'database::PrimaryKey' (role 'database_PrimaryKey', cardinality 0..*).
+'database::Index' (role 'database_Index13', cardinality 0..*) is associated with 'database::Column' (role 'database_Column14', cardinality 0..*).
+'database::Table' (role 'database_Table11', cardinality 0..*) is associated with 'database::Unique' (role 'database_Unique', cardinality 0..*).
+'database::Table' (role 'database_Table7', cardinality 0..*) is associated with 'database::Index' (role 'database_Index', cardinality 0..*).
+'database::Column' (role 'database_Column', cardinality 0..*) is associated with 'database::Table' (role 'database_Table5', cardinality 0..*).

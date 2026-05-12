@@ -1,0 +1,28 @@
+The model has 13 class(es).
+The class 'schema::StorySchemaCatalog' has the following attributes: 'ecoreUrl' of type str; 'xmiUrl' of type str; 'generatedPackageName' of type str.
+The class 'schema::StoryType' has no attributes.
+The class 'schema::EFactory' has no attributes.
+The class 'schema::TargetType' has no attributes.
+The class 'schema::ActionType' has the following attributes: 'status' of type str.
+The class 'schema::EPackage' has no attributes.
+The class 'NsPrefixable' has no attributes.
+The class 'NameContainer' has no attributes.
+The class 'BundleAware' has no attributes.
+The class 'ResourceAware' has no attributes.
+The class 'schema::AggregationType' has no attributes.
+The class 'schema::ActionLike' has the following attributes: 'pluralPastTense' of type str; 'presentTense' of type str; 'pluralPresentTense' of type str; 'imperativeTense' of type str; 'tenses' of type str; 'pastTense' of type str.
+The class 'schema::TargetTypeRef' has no attributes.
+The enumeration 'ActionTypeStatus' has the following literals: 'resolved', 'unresolved'.
+The enumeration 'Tenses' has the following literals: 'present', 'both'.
+'schema::StorySchemaCatalog' is a specialization of 'ResourceAware'.
+'schema::TargetTypeRef' is a specialization of 'NsPrefixable'.
+'schema::TargetTypeRef' is a specialization of 'NameContainer'.
+'schema::StorySchemaCatalog' is a specialization of 'NsPrefixable'.
+'schema::StorySchemaCatalog' is a specialization of 'BundleAware'.
+'schema::TargetType' (role 'schema_TargetType', cardinality 0..*) is associated with 'schema::ActionType' (role 'schema_ActionType10', cardinality 0..*).
+'schema::StorySchemaCatalog' (role 'schema_StorySchemaCatalog6', cardinality 0..*) is associated with 'schema::EPackage' (role 'schema_EPackage', cardinality 0..*).
+'schema::ActionType' (role 'schema_ActionType', cardinality 0..*) is associated with 'schema::StorySchemaCatalog' (role 'schema_StorySchemaCatalog2', cardinality 0..*).
+'schema::StorySchemaCatalog' (role 'schema_StorySchemaCatalog', cardinality 0..*) is associated with 'schema::StoryType' (role 'schema_StoryType', cardinality 0..*).
+'schema::StorySchemaCatalog' (role 'schema_StorySchemaCatalog8', cardinality 0..*) is associated with 'schema::EFactory' (role 'schema_EFactory', cardinality 0..*).
+'schema::StorySchemaCatalog' (role 'schema_StorySchemaCatalog4', cardinality 0..*) is associated with 'schema::AggregationType' (role 'schema_AggregationType', cardinality 0..*).
+'schema::TargetTypeRef' (role 'schema_TargetTypeRef', cardinality 0..*) is associated with 'schema::ActionType' (role 'schema_ActionType12', cardinality 0..*).

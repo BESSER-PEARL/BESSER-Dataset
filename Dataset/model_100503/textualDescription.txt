@@ -1,0 +1,221 @@
+The model has 74 class(es).
+The class 'rdal::Sensitivity' has no attributes.
+The class 'IdentifiedElement' has no attributes.
+The class 'RdalOrgPackage' has no attributes.
+The class 'rdal::SatisfiableElement' has the following attributes: 'satisfactionLevel' of type str.
+The class 'VerifiableElement' has no attributes.
+The class 'rdal::SystemOverview' has the following attributes: 'purpose' of type str.
+The class 'rdal::SubElementReference' has the following attributes: 'referencedElementEntries' of type str; 'weight' of type str.
+The class 'rdal::GoalRefinement' has no attributes.
+The class 'rdal::InteractionVariable' has the following attributes: 'neglected' of type bool; 'type' of type str.
+The class 'rdal::UserProperty' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'rdal::ContactInformation' has the following attributes: 'address' of type str; 'email' of type str; 'country' of type str; 'phoneNumber' of type str.
+The class 'rdal::Assumption' has no attributes.
+The class 'rdal::TraceDesignElementRef' has the following attributes: 'container' of type bool.
+The class 'rdal::Trace' has no attributes.
+The class 'rdal::ActorReference' has no attributes.
+The class 'rdal::IdentifiedElement' has the following attributes: 'id' of type str; 'name' of type str; 'description' of type str.
+The class 'rdal::NonFunctionalProperty' has no attributes.
+The class 'SatisfiableElement' has no attributes.
+The class 'rdal::EObject' has no attributes.
+The class 'rdal::SystOverviewDesignElemRef' has no attributes.
+The class 'rdal::FormalLanguageExpression' has no attributes.
+The class 'rdal::SystContextDesignElemRef' has no attributes.
+The class 'rdal::Requirement' has no attributes.
+The class 'AbstractRequirement' has no attributes.
+The class 'rdal::Expression' has no attributes.
+The class 'rdal::VerifiableDesignElementRef' has no attributes.
+The class 'rdal::DesignElementReference' has the following attributes: 'evaluationResult' of type str.
+The class 'rdal::Stakeholder' has no attributes.
+The class 'rdal::ReferencedDesignElements' has the following attributes: 'agregationType' of type str.
+The class 'RefineableElement' has no attributes.
+The class 'rdal::Conflict' has the following attributes: 'degree' of type str.
+The class 'AbstractGoal' has no attributes.
+The class 'rdal::AbstractRequirement' has the following attributes: 'risk' of type str.
+The class 'Variable' has no attributes.
+The class 'rdal::AbstractGoal' has no attributes.
+The class 'rdal::AbstractContractualElement' has the following attributes: 'dropped' of type bool; 'scheduleDate' of type str; 'sources' of type str; 'originDate' of type str.
+The class 'rdal::PrioritizedSatDesignElementRef' has the following attributes: 'priority' of type str; 'weight' of type str.
+The class 'rdal::RdalOrgPackage' has the following attributes: 'contractualElementEntries' of type str; 'refinementEntries' of type str.
+The class 'DesignElementReference' has no attributes.
+The class 'rdal::Uncertainty' has the following attributes: 'timeCriticality' of type str; 'propRiskIndex' of type str; 'riskIndex' of type str; 'volatility' of type str; 'maturityIndex' of type str; 'costsImpact' of type str; 'familiarity' of type str; 'scheduleImpact' of type str.
+The class 'rdal::TraceableToDesignElementsElement' has no attributes.
+The class 'rdal::RefManuallySelectedDesignElements' has no attributes.
+The class 'ReferencedDesignElements' has no attributes.
+The class 'rdal::Rationale' has no attributes.
+The class 'rdal::Capability' has no attributes.
+The class 'rdal::GoalsPackage' has no attributes.
+The class 'rdal::RequirementRefinement' has no attributes.
+The class 'SatisfiableDesignElementRef' has no attributes.
+The class 'rdal::RefineableElement' has no attributes.
+The class 'rdal::RequirementsCoverageData' has the following attributes: 'verificationLevel' of type str; 'nbRequirements' of type int.
+The class 'rdal::QualityObjective' has the following attributes: 'bound' of type float; 'modality' of type str.
+The class 'rdal::TextualContractualElement' has the following attributes: 'priority' of type str.
+The class 'rdal::Specification' has the following attributes: 'version' of type str.
+The class 'rdal::ElementRefinement' has the following attributes: 'refinedElementEntries' of type str; 'subElementRefEntries' of type str.
+The class 'rdal::SatisfiableDesignElementRef' has no attributes.
+The class 'rdal::RequirementsPackage' has no attributes.
+The class 'rdal::NonFunctionalGoal' has no attributes.
+The class 'AbstractContractualElement' has no attributes.
+The class 'rdal::VerifiableElement' has the following attributes: 'verified' of type str.
+The class 'SubElementReference' has no attributes.
+The class 'rdal::VerificationActivity' has the following attributes: 'passed' of type bool.
+The class 'rdal::SubRequirementReference' has no attributes.
+The class 'rdal::Variable' has no attributes.
+The class 'rdal::ConstraintLanguagesSpec' has no attributes.
+The class 'TraceableToDesignElementsElement' has no attributes.
+The class 'rdal::Category' has no attributes.
+The class 'ElementRefinement' has no attributes.
+The class 'RequirementsCoverageData' has no attributes.
+The class 'NonFunctionalGoal' has no attributes.
+The class 'TextualContractualElement' has no attributes.
+The class 'rdal::SystemFunctionGoal' has no attributes.
+The class 'rdal::SystemContext' has no attributes.
+The class 'rdal::RefQueryCollectedDesignElements' has no attributes.
+The class 'rdal::SubGoalReference' has no attributes.
+The enumeration 'AggregationType' has the following literals: 'Alternative', 'Composition'.
+The enumeration 'InteractionVariableType' has the following literals: 'Monitorable', 'Controllable'.
+The enumeration 'Modality' has the following literals: 'Maximum', 'Minimum'.
+'rdal::Assumption' is a specialization of 'AbstractRequirement'.
+'rdal::Uncertainty' is a specialization of 'IdentifiedElement'.
+'rdal::SystOverviewDesignElemRef' is a specialization of 'DesignElementReference'.
+'rdal::AbstractContractualElement' is a specialization of 'TraceableToDesignElementsElement'.
+'rdal::Capability' is a specialization of 'IdentifiedElement'.
+'rdal::VerificationActivity' is a specialization of 'IdentifiedElement'.
+'rdal::RequirementRefinement' is a specialization of 'ElementRefinement'.
+'rdal::GoalsPackage' is a specialization of 'SatisfiableElement'.
+'rdal::RequirementRefinement' is a specialization of 'SatisfiableElement'.
+'rdal::AbstractGoal' is a specialization of 'RefineableElement'.
+'rdal::Sensitivity' is a specialization of 'TraceableToDesignElementsElement'.
+'rdal::SystemFunctionGoal' is a specialization of 'AbstractGoal'.
+'rdal::AbstractRequirement' is a specialization of 'VerifiableElement'.
+'rdal::AbstractRequirement' is a specialization of 'TextualContractualElement'.
+'rdal::AbstractGoal' is a specialization of 'SatisfiableElement'.
+'rdal::SatisfiableDesignElementRef' is a specialization of 'SatisfiableElement'.
+'rdal::Rationale' is a specialization of 'IdentifiedElement'.
+'rdal::SubGoalReference' is a specialization of 'SubElementReference'.
+'rdal::ElementRefinement' is a specialization of 'IdentifiedElement'.
+'rdal::GoalRefinement' is a specialization of 'ElementRefinement'.
+'rdal::TraceDesignElementRef' is a specialization of 'RequirementsCoverageData'.
+'rdal::SatisfiableDesignElementRef' is a specialization of 'DesignElementReference'.
+'rdal::RdalOrgPackage' is a specialization of 'IdentifiedElement'.
+'rdal::SystemOverview' is a specialization of 'AbstractContractualElement'.
+'rdal::PrioritizedSatDesignElementRef' is a specialization of 'SatisfiableDesignElementRef'.
+'rdal::Specification' is a specialization of 'AbstractContractualElement'.
+'rdal::RequirementsPackage' is a specialization of 'RdalOrgPackage'.
+'rdal::Stakeholder' is a specialization of 'IdentifiedElement'.
+'rdal::NonFunctionalGoal' is a specialization of 'AbstractGoal'.
+'rdal::SystemContext' is a specialization of 'AbstractContractualElement'.
+'rdal::Variable' is a specialization of 'IdentifiedElement'.
+'rdal::RefManuallySelectedDesignElements' is a specialization of 'ReferencedDesignElements'.
+'rdal::TextualContractualElement' is a specialization of 'AbstractContractualElement'.
+'rdal::GoalsPackage' is a specialization of 'RdalOrgPackage'.
+'rdal::AbstractGoal' is a specialization of 'TextualContractualElement'.
+'rdal::Specification' is a specialization of 'SatisfiableElement'.
+'rdal::TraceableToDesignElementsElement' is a specialization of 'IdentifiedElement'.
+'rdal::SystContextDesignElemRef' is a specialization of 'DesignElementReference'.
+'rdal::GoalRefinement' is a specialization of 'SatisfiableElement'.
+'rdal::TraceDesignElementRef' is a specialization of 'DesignElementReference'.
+'rdal::ReferencedDesignElements' is a specialization of 'IdentifiedElement'.
+'rdal::RequirementsPackage' is a specialization of 'SatisfiableElement'.
+'rdal::InteractionVariable' is a specialization of 'Variable'.
+'rdal::Trace' is a specialization of 'ReferencedDesignElements'.
+'rdal::SubRequirementReference' is a specialization of 'SubElementReference'.
+'rdal::Conflict' is a specialization of 'IdentifiedElement'.
+'rdal::QualityObjective' is a specialization of 'NonFunctionalGoal'.
+'rdal::Requirement' is a specialization of 'AbstractRequirement'.
+'rdal::Specification' is a specialization of 'VerifiableElement'.
+'rdal::RequirementsPackage' is a specialization of 'VerifiableElement'.
+'rdal::RequirementRefinement' is a specialization of 'VerifiableElement'.
+'rdal::DesignElementReference' is a specialization of 'IdentifiedElement'.
+'rdal::RefQueryCollectedDesignElements' is a specialization of 'ReferencedDesignElements'.
+'rdal::SubElementReference' is a specialization of 'IdentifiedElement'.
+'rdal::ContactInformation' is a specialization of 'IdentifiedElement'.
+'rdal::RequirementsCoverageData' is a specialization of 'IdentifiedElement'.
+'rdal::VerifiableDesignElementRef' is a specialization of 'DesignElementReference'.
+'rdal::Requirement' is a specialization of 'RefineableElement'.
+'rdal::ActorReference' is a specialization of 'IdentifiedElement'.
+'rdal::AbstractRequirement' is a specialization of 'SatisfiableElement'.
+'rdal::TraceDesignElementRef' is a specialization of 'VerifiableElement'.
+'rdal::NonFunctionalProperty' is a specialization of 'IdentifiedElement'.
+'rdal::VerifiableDesignElementRef' is a specialization of 'VerifiableElement'.
+'rdal::ElementRefinement' (role 'rdal_ElementRefinement5', cardinality 0..*) is associated with 'rdal::RefineableElement' (role 'rdal_RefineableElement6', cardinality 0..*).
+'rdal::AbstractContractualElement' (role 'rdal_AbstractContractualElement143', cardinality 0..*) is associated with 'rdal::Conflict' (role 'rdal_Conflict142', cardinality 0..*).
+'rdal::VerificationActivity' (role 'rdal_VerificationActivity123', cardinality 0..*) is associated with 'rdal::Category' (role 'rdal_Category124', cardinality 0..*).
+'rdal::InteractionVariable' (role 'rdal_InteractionVariable', cardinality 0..*) is associated with 'rdal::SystemOverview' (role 'rdal_SystemOverview101', cardinality 0..*).
+'rdal::RdalOrgPackage' (role 'rdal_RdalOrgPackage', cardinality 0..*) is associated with 'rdal::ElementRefinement' (role 'rdal_ElementRefinement77', cardinality 0..*).
+'rdal::Specification' (role 'rdal_Specification63', cardinality 0..*) is associated with 'rdal::EObject' (role 'rdal_EObject', cardinality 0..*).
+'rdal::NonFunctionalProperty' (role 'rdal_NonFunctionalProperty', cardinality 0..*) is associated with 'rdal::Specification' (role 'rdal_Specification65', cardinality 0..*).
+'rdal::SubRequirementReference' (role 'rdal_SubRequirementReference', cardinality 0..*) is associated with 'rdal::RequirementRefinement' (role 'rdal_RequirementRefinement', cardinality 0..*).
+'rdal::EObject' (role 'rdal_EObject157', cardinality 0..*) is associated with 'rdal::NonFunctionalProperty' (role 'rdal_NonFunctionalProperty156', cardinality 0..*).
+'rdal::Rationale' (role 'rdal_Rationale', cardinality 0..*) is associated with 'rdal::AbstractContractualElement' (role 'rdal_AbstractContractualElement24', cardinality 0..*).
+'rdal::AbstractRequirement' (role 'AbstractRequirement121', cardinality 0..*) is associated with 'rdal::VerificationActivity' (role 'ownedVerifiedBy', cardinality 0..*).
+'rdal::VerificationActivity' (role 'VerificationActivity', cardinality 0..*) is associated with 'rdal::AbstractRequirement' (role 'requirements', cardinality 0..*).
+'rdal::RequirementRefinement' (role 'rdal_RequirementRefinement9', cardinality 0..*) is associated with 'rdal::AbstractRequirement' (role 'rdal_AbstractRequirement', cardinality 0..*).
+'rdal::AbstractGoal' (role 'goal', cardinality 0..*) is associated with 'rdal::Conflict' (role 'Conflict', cardinality 0..*).
+'rdal::Assumption' (role 'Assumption', cardinality 0..*) is associated with 'rdal::Requirement' (role 'imageRequirement', cardinality 0..*).
+'rdal::GoalRefinement' (role 'rdal_GoalRefinement', cardinality 0..*) is associated with 'rdal::SubGoalReference' (role 'rdal_SubGoalReference', cardinality 0..*).
+'rdal::AbstractGoal' (role 'ownedGoals', cardinality 0..*) is associated with 'rdal::GoalsPackage' (role 'GoalsPackage', cardinality 0..*).
+'rdal::Stakeholder' (role 'rdal_Stakeholder68', cardinality 0..*) is associated with 'rdal::Specification' (role 'rdal_Specification67', cardinality 0..*).
+'rdal::RdalOrgPackage' (role 'rdal_RdalOrgPackage79', cardinality 0..*) is associated with 'rdal::TextualContractualElement' (role 'rdal_TextualContractualElement80', cardinality 0..*).
+'rdal::ActorReference' (role 'rdal_ActorReference114', cardinality 0..*) is associated with 'rdal::EObject' (role 'rdal_EObject115', cardinality 0..*).
+'rdal::RefineableElement' (role 'rdal_RefineableElement', cardinality 0..*) is associated with 'rdal::ElementRefinement' (role 'rdal_ElementRefinement', cardinality 0..*).
+'rdal::GoalsPackage' (role 'rdal_GoalsPackage', cardinality 0..*) is associated with 'rdal::GoalRefinement' (role 'rdal_GoalRefinement90', cardinality 0..*).
+'rdal::RdalOrgPackage' (role 'parent', cardinality 0..*) is associated with 'rdal::RdalOrgPackage' (role 'RdalOrgPackage72', cardinality 0..*).
+'rdal::Rationale' (role 'rdal_Rationale39', cardinality 0..*) is associated with 'rdal::Stakeholder' (role 'rdal_Stakeholder40', cardinality 0..*).
+'rdal::ActorReference' (role 'rdal_ActorReference109', cardinality 0..*) is associated with 'rdal::SystemContext' (role 'rdal_SystemContext108', cardinality 0..*).
+'rdal::AbstractContractualElement' (role 'rdal_AbstractContractualElement26', cardinality 0..*) is associated with 'rdal::ContactInformation' (role 'rdal_ContactInformation', cardinality 0..*).
+'rdal::Capability' (role 'rdal_Capability', cardinality 0..*) is associated with 'rdal::SystemOverview' (role 'rdal_SystemOverview92', cardinality 0..*).
+'rdal::RefineableElement' (role 'rdal_RefineableElement160', cardinality 0..*) is associated with 'rdal::SubElementReference' (role 'rdal_SubElementReference159', cardinality 0..*).
+'rdal::AbstractGoal' (role 'AbstractGoal140', cardinality 0..*) is associated with 'rdal::Conflict' (role 'conflicts', cardinality 0..*).
+'rdal::AbstractContractualElement' (role 'rdal_AbstractContractualElement29', cardinality 0..*) is associated with 'rdal::AbstractContractualElement' (role 'rdal_AbstractContractualElement27', cardinality 0..*).
+'rdal::IdentifiedElement' (role 'rdal_IdentifiedElement', cardinality 0..*) is associated with 'rdal::UserProperty' (role 'rdal_UserProperty', cardinality 0..*).
+'rdal::AbstractGoal' (role 'rdal_AbstractGoal', cardinality 0..*) is associated with 'rdal::GoalRefinement' (role 'rdal_GoalRefinement15', cardinality 0..*).
+'rdal::EObject' (role 'rdal_EObject95', cardinality 0..*) is associated with 'rdal::SystemOverview' (role 'rdal_SystemOverview94', cardinality 0..*).
+'rdal::TextualContractualElement' (role 'rdal_TextualContractualElement45', cardinality 0..*) is associated with 'rdal::TextualContractualElement' (role 'rdal_TextualContractualElement47', cardinality 0..*).
+'rdal::InteractionVariable' (role 'rdal_InteractionVariable106', cardinality 0..*) is associated with 'rdal::SystemContext' (role 'rdal_SystemContext105', cardinality 0..*).
+'rdal::Specification' (role 'rdal_Specification59', cardinality 0..*) is associated with 'rdal::ConstraintLanguagesSpec' (role 'rdal_ConstraintLanguagesSpec', cardinality 0..*).
+'rdal::FormalLanguageExpression' (role 'rdal_FormalLanguageExpression', cardinality 0..*) is associated with 'rdal::RefQueryCollectedDesignElements' (role 'rdal_RefQueryCollectedDesignElements', cardinality 0..*).
+'rdal::Variable' (role 'rdal_Variable', cardinality 0..*) is associated with 'rdal::EObject' (role 'rdal_EObject112', cardinality 0..*).
+'rdal::SystemOverview' (role 'rdal_SystemOverview97', cardinality 0..*) is associated with 'rdal::EObject' (role 'rdal_EObject98', cardinality 0..*).
+'rdal::NonFunctionalProperty' (role 'rdal_NonFunctionalProperty136', cardinality 0..*) is associated with 'rdal::QualityObjective' (role 'rdal_QualityObjective', cardinality 0..*).
+'rdal::RequirementRefinement' (role 'rdal_RequirementRefinement11', cardinality 0..*) is associated with 'rdal::AbstractRequirement' (role 'rdal_AbstractRequirement12', cardinality 0..*).
+'rdal::TraceableToDesignElementsElement' (role 'rdal_TraceableToDesignElementsElement21', cardinality 0..*) is associated with 'rdal::Specification' (role 'rdal_Specification', cardinality 0..*).
+'rdal::RequirementsPackage' (role 'rdal_RequirementsPackage85', cardinality 0..*) is associated with 'rdal::RequirementRefinement' (role 'rdal_RequirementRefinement86', cardinality 0..*).
+'rdal::RequirementsPackage' (role 'RequirementsPackage', cardinality 0..*) is associated with 'rdal::AbstractRequirement' (role 'ownedRequirements', cardinality 0..*).
+'rdal::AbstractRequirement' (role 'rdal_AbstractRequirement163', cardinality 0..*) is associated with 'rdal::SubRequirementReference' (role 'rdal_SubRequirementReference162', cardinality 0..*).
+'rdal::SystemContext' (role 'SystemContext', cardinality 0..*) is associated with 'rdal::SystemOverview' (role 'systemOverview', cardinality 0..*).
+'rdal::RdalOrgPackage' (role 'RdalOrgPackage75', cardinality 0..*) is associated with 'rdal::RdalOrgPackage' (role 'subPackages', cardinality 0..*).
+'rdal::GoalRefinement' (role 'rdal_GoalRefinement17', cardinality 0..*) is associated with 'rdal::AbstractGoal' (role 'rdal_AbstractGoal18', cardinality 0..*).
+'rdal::ReferencedDesignElements' (role 'rdal_ReferencedDesignElements', cardinality 0..*) is associated with 'rdal::TraceableToDesignElementsElement' (role 'rdal_TraceableToDesignElementsElement', cardinality 0..*).
+'rdal::DesignElementReference' (role 'rdal_DesignElementReference', cardinality 0..*) is associated with 'rdal::EObject' (role 'rdal_EObject147', cardinality 0..*).
+'rdal::SystemOverview' (role 'SystemOverview', cardinality 0..*) is associated with 'rdal::SystemContext' (role 'ownedContexts', cardinality 0..*).
+'rdal::AbstractContractualElement' (role 'rdal_AbstractContractualElement', cardinality 0..*) is associated with 'rdal::Stakeholder' (role 'rdal_Stakeholder', cardinality 0..*).
+'rdal::Specification' (role 'rdal_Specification154', cardinality 0..*) is associated with 'rdal::Trace' (role 'rdal_Trace', cardinality 0..*).
+'rdal::Sensitivity' (role 'rdal_Sensitivity', cardinality 0..*) is associated with 'rdal::QualityObjective' (role 'rdal_QualityObjective138', cardinality 0..*).
+'rdal::ReferencedDesignElements' (role 'ReferencedDesignElements', cardinality 0..*) is associated with 'rdal::DesignElementReference' (role 'ownedDesignElementRefs', cardinality 0..*).
+'rdal::EObject' (role 'rdal_EObject83', cardinality 0..*) is associated with 'rdal::RequirementsPackage' (role 'rdal_RequirementsPackage', cardinality 0..*).
+'rdal::Specification' (role 'rdal_Specification55', cardinality 0..*) is associated with 'rdal::Conflict' (role 'rdal_Conflict', cardinality 0..*).
+'rdal::SystemContext' (role 'rdal_SystemContext', cardinality 0..*) is associated with 'rdal::EObject' (role 'rdal_EObject103', cardinality 0..*).
+'rdal::Specification' (role 'rdal_Specification61', cardinality 0..*) is associated with 'rdal::ActorReference' (role 'rdal_ActorReference', cardinality 0..*).
+'rdal::Requirement' (role 'Requirement', cardinality 0..*) is associated with 'rdal::Assumption' (role 'imageAssumptions', cardinality 0..*).
+'rdal::ElementRefinement' (role 'rdal_ElementRefinement3', cardinality 0..*) is associated with 'rdal::SubElementReference' (role 'rdal_SubElementReference', cardinality 0..*).
+'rdal::EObject' (role 'rdal_EObject119', cardinality 0..*) is associated with 'rdal::VerificationActivity' (role 'rdal_VerificationActivity', cardinality 0..*).
+'rdal::DesignElementReference' (role 'rdal_DesignElementReference150', cardinality 0..*) is associated with 'rdal::TraceableToDesignElementsElement' (role 'rdal_TraceableToDesignElementsElement151', cardinality 0..*).
+'rdal::Stakeholder' (role 'rdal_Stakeholder36', cardinality 0..*) is associated with 'rdal::ContactInformation' (role 'rdal_ContactInformation37', cardinality 0..*).
+'rdal::EObject' (role 'rdal_EObject134', cardinality 0..*) is associated with 'rdal::SystemFunctionGoal' (role 'rdal_SystemFunctionGoal', cardinality 0..*).
+'rdal::Specification' (role 'Specification', cardinality 0..*) is associated with 'rdal::RdalOrgPackage' (role 'ownedPackages', cardinality 0..*).
+'rdal::Expression' (role 'rdal_Expression', cardinality 0..*) is associated with 'rdal::TextualContractualElement' (role 'rdal_TextualContractualElement', cardinality 0..*).
+'rdal::TextualContractualElement' (role 'rdal_TextualContractualElement43', cardinality 0..*) is associated with 'rdal::Expression' (role 'rdal_Expression44', cardinality 0..*).
+'rdal::Assumption' (role 'rdal_Assumption129', cardinality 0..*) is associated with 'rdal::Assumption' (role 'rdal_Assumption', cardinality 0..*).
+'rdal::SystemOverview' (role 'rdal_SystemOverview', cardinality 0..*) is associated with 'rdal::Specification' (role 'rdal_Specification57', cardinality 0..*).
+'rdal::GoalsPackage' (role 'package88', cardinality 0..*) is associated with 'rdal::AbstractGoal' (role 'AbstractGoal', cardinality 0..*).
+'rdal::SubGoalReference' (role 'rdal_SubGoalReference165', cardinality 0..*) is associated with 'rdal::AbstractGoal' (role 'rdal_AbstractGoal166', cardinality 0..*).
+'rdal::AbstractRequirement' (role 'AbstractRequirement', cardinality 0..*) is associated with 'rdal::RequirementsPackage' (role 'package', cardinality 0..*).
+'rdal::Category' (role 'rdal_Category', cardinality 0..*) is associated with 'rdal::TextualContractualElement' (role 'rdal_TextualContractualElement49', cardinality 0..*).
+'rdal::Specification' (role 'specification', cardinality 0..*) is associated with 'rdal::RdalOrgPackage' (role 'RdalOrgPackage', cardinality 0..*).
+'rdal::EObject' (role 'rdal_EObject127', cardinality 0..*) is associated with 'rdal::Requirement' (role 'rdal_Requirement', cardinality 0..*).
+'rdal::Specification' (role 'rdal_Specification52', cardinality 0..*) is associated with 'rdal::ContactInformation' (role 'rdal_ContactInformation53', cardinality 0..*).
+'rdal::ReferencedDesignElements' (role 'parent145', cardinality 0..*) is associated with 'rdal::DesignElementReference' (role 'DesignElementReference', cardinality 0..*).
+'rdal::AbstractContractualElement' (role 'rdal_AbstractContractualElement34', cardinality 0..*) is associated with 'rdal::Uncertainty' (role 'rdal_Uncertainty', cardinality 0..*).
+'rdal::Rationale' (role 'rdal_Rationale32', cardinality 0..*) is associated with 'rdal::AbstractContractualElement' (role 'rdal_AbstractContractualElement31', cardinality 0..*).

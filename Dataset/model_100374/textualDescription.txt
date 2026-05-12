@@ -1,0 +1,39 @@
+The model has 15 class(es).
+The class 'internalsm::EventToken' has no attributes.
+The class 'internalsm::Guard' has no attributes.
+The class 'internalsm::TrapState' has no attributes.
+The class 'internalsm::TimeConstraint' has the following attributes: 'type' of type str.
+The class 'internalsm::TimeConstraintSpecification' has the following attributes: 'stopTimestamp' of type str; 'id' of type str; 'expectedLength' of type str; 'startTimestamp' of type str.
+The class 'internalsm::AtomicEventPattern' has no attributes.
+The class 'internalsm::EventPattern' has no attributes.
+The class 'internalsm::State' has the following attributes: 'label' of type str.
+The class 'internalsm::InternalExecutionModel' has the following attributes: 'context' of type str.
+The class 'internalsm::StateMachine' has the following attributes: 'context' of type str; 'priority' of type int.
+The class 'internalsm::FinalState' has no attributes.
+The class 'State' has no attributes.
+The class 'internalsm::Event' has no attributes.
+The class 'internalsm::Transition' has no attributes.
+The class 'internalsm::InitState' has no attributes.
+The enumeration 'TimeConstraintType' has the following literals: 'CHECK', 'START', 'STOP'.
+The enumeration 'EventProcessingContext' has the following literals: 'IMMEDIATE', 'RECENT', 'CHRONICLE', 'UNRESTRICTED', 'STRICT_IMMEDIATE'.
+The enumeration 'NumericCompareOperator' has the following literals: 'EQUALS', 'LESS_OR_EQUALS', 'LESS_THAN', 'MORE_OR_EQUALS', 'MORE_THAN'.
+'internalsm::InitState' is a specialization of 'State'.
+'internalsm::FinalState' is a specialization of 'State'.
+'internalsm::TrapState' is a specialization of 'State'.
+'internalsm::State' (role 'currentState', cardinality 0..*) is associated with 'internalsm::EventToken' (role 'EventToken', cardinality 0..*).
+'internalsm::State' (role 'State24', cardinality 0..*) is associated with 'internalsm::EventToken' (role 'eventTokens', cardinality 0..*).
+'internalsm::State' (role 'State10', cardinality 0..*) is associated with 'internalsm::Transition' (role 'inTransitions', cardinality 0..*).
+'internalsm::TimeConstraint' (role 'internalsm_TimeConstraint29', cardinality 0..*) is associated with 'internalsm::TimeConstraintSpecification' (role 'internalsm_TimeConstraintSpecification', cardinality 0..*).
+'internalsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'internalsm::State' (role 'preState', cardinality 0..*).
+'internalsm::Transition' (role 'internalsm_Transition', cardinality 0..*) is associated with 'internalsm::Guard' (role 'internalsm_Guard', cardinality 0..*).
+'internalsm::EventPattern' (role 'CEPMeta.ecoreEventPattern', cardinality 0..*) is associated with 'internalsm::StateMachine' (role 'stateMachine', cardinality 0..*).
+'internalsm::State' (role 'postState', cardinality 0..*) is associated with 'internalsm::Transition' (role 'Transition2', cardinality 0..*).
+'internalsm::TimeConstraint' (role 'internalsm_TimeConstraint', cardinality 0..*) is associated with 'internalsm::State' (role 'internalsm_State', cardinality 0..*).
+'internalsm::StateMachine' (role 'internalsm_StateMachine17', cardinality 0..*) is associated with 'internalsm::InternalExecutionModel' (role 'internalsm_InternalExecutionModel', cardinality 0..*).
+'internalsm::StateMachine' (role 'internalsm_StateMachine', cardinality 0..*) is associated with 'internalsm::State' (role 'internalsm_State14', cardinality 0..*).
+'internalsm::InternalExecutionModel' (role 'internalsm_InternalExecutionModel19', cardinality 0..*) is associated with 'internalsm::Event' (role 'internalsm_Event20', cardinality 0..*).
+'internalsm::AtomicEventPattern' (role 'internalsm_AtomicEventPattern', cardinality 0..*) is associated with 'internalsm::Guard' (role 'internalsm_Guard12', cardinality 0..*).
+'internalsm::EventToken' (role 'internalsm_EventToken', cardinality 0..*) is associated with 'internalsm::InternalExecutionModel' (role 'internalsm_InternalExecutionModel22', cardinality 0..*).
+'internalsm::Transition' (role 'outTransitions', cardinality 0..*) is associated with 'internalsm::State' (role 'State', cardinality 0..*).
+'internalsm::State' (role 'internalsm_State6', cardinality 0..*) is associated with 'internalsm::Event' (role 'internalsm_Event', cardinality 0..*).
+'internalsm::Event' (role 'internalsm_Event27', cardinality 0..*) is associated with 'internalsm::EventToken' (role 'internalsm_EventToken26', cardinality 0..*).

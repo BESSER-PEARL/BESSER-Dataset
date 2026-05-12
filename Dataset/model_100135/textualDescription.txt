@@ -1,0 +1,101 @@
+The model has 45 class(es).
+The class 'dbca::Attribute' has the following attributes: 'maxLength' of type int; 'type' of type str.
+The class 'dbca::Parameter' has no attributes.
+The class 'dbca::ClientElement' has no attributes.
+The class 'dbca::Client' has no attributes.
+The class 'dbca::DataParameter' has the following attributes: 'type' of type str.
+The class 'dbca::Function' has the following attributes: 'returnType' of type str.
+The class 'dbca::CustomForm' has no attributes.
+The class 'CommentedElement' has no attributes.
+The class 'dbca::Operation' has no attributes.
+The class 'dbca::Element' has no attributes.
+The class 'dbca::Entity' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'dbca::CommentedElement' has the following attributes: 'comment' of type str.
+The class 'dbca::Event' has no attributes.
+The class 'Service' has no attributes.
+The class 'dbca::CustomService' has no attributes.
+The class 'dbca::NamedElement' has the following attributes: 'name' of type str.
+The class 'dbca::Query' has no attributes.
+The class 'dbca::QueryService' has no attributes.
+The class 'dbca::ComputedEntity' has no attributes.
+The class 'dbca::EntityParameter' has no attributes.
+The class 'dbca::Form' has no attributes.
+The class 'Element' has no attributes.
+The class 'dbca::Service' has no attributes.
+The class 'dbca::ServerElement' has no attributes.
+The class 'dbca::Relationship' has the following attributes: 'isNullable' of type bool; 'isContainment' of type str; 'type' of type str.
+The class 'dbca::OperationService' has no attributes.
+The class 'Form' has no attributes.
+The class 'dbca::EntityContainmentForm' has no attributes.
+The class 'dbca::AbstractEntity' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'dbca::PrimaryProperty' has no attributes.
+The class 'dbca::Property' has the following attributes: 'isNullable' of type bool; 'defaultValue' of type str.
+The class 'dbca::Server' has no attributes.
+The class 'ClientElement' has no attributes.
+The class 'Entity' has no attributes.
+The class 'dbca::PersistentEntity' has no attributes.
+The class 'dbca::EntityForm' has the following attributes: 'type' of type str.
+The class 'dbca::Database' has no attributes.
+The class 'DatabaseElement' has no attributes.
+The class 'ServerElement' has no attributes.
+The class 'dbca::EntityService' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'dbca::DatabaseElement' has no attributes.
+The class 'dbca::Application' has no attributes.
+The enumeration 'EntityFormType' has the following literals: 'Insert', 'Delete', 'Select', 'Update'.
+The enumeration 'RelationshipType' has the following literals: 'ManyToMany', 'OneToOne', 'ManyToOne', 'OneToMany'.
+The enumeration 'DataType' has the following literals: 'Date', 'Blob', 'GUID', 'Bool', 'String', 'Real', 'Char', 'DateTime', 'Time', 'Integer'.
+'dbca::AbstractEntity' is a specialization of 'Entity'.
+'dbca::Server' is a specialization of 'NamedElement'.
+'dbca::Relationship' is a specialization of 'NamedElement'.
+'dbca::ServerElement' is a specialization of 'NamedElement'.
+'dbca::PersistentEntity' is a specialization of 'Entity'.
+'dbca::Client' is a specialization of 'NamedElement'.
+'dbca::Function' is a specialization of 'DatabaseElement'.
+'dbca::CustomForm' is a specialization of 'Form'.
+'dbca::Operation' is a specialization of 'DatabaseElement'.
+'dbca::Form' is a specialization of 'ClientElement'.
+'dbca::DatabaseElement' is a specialization of 'NamedElement'.
+'dbca::Application' is a specialization of 'NamedElement'.
+'dbca::Property' is a specialization of 'Attribute'.
+'dbca::CommentedElement' is a specialization of 'Element'.
+'dbca::EntityForm' is a specialization of 'Form'.
+'dbca::OperationService' is a specialization of 'Service'.
+'dbca::EntityParameter' is a specialization of 'Parameter'.
+'dbca::EntityService' is a specialization of 'Service'.
+'dbca::EntityContainmentForm' is a specialization of 'Form'.
+'dbca::ComputedEntity' is a specialization of 'Entity'.
+'dbca::CustomService' is a specialization of 'Service'.
+'dbca::DataParameter' is a specialization of 'Parameter'.
+'dbca::PrimaryProperty' is a specialization of 'Attribute'.
+'dbca::Database' is a specialization of 'NamedElement'.
+'dbca::Parameter' is a specialization of 'NamedElement'.
+'dbca::ClientElement' is a specialization of 'NamedElement'.
+'dbca::Service' is a specialization of 'ServerElement'.
+'dbca::Attribute' is a specialization of 'NamedElement'.
+'dbca::Event' is a specialization of 'DatabaseElement'.
+'dbca::Query' is a specialization of 'DatabaseElement'.
+'dbca::NamedElement' is a specialization of 'CommentedElement'.
+'dbca::QueryService' is a specialization of 'Service'.
+'dbca::Entity' is a specialization of 'DatabaseElement'.
+'dbca::Relationship' (role 'dbca_Relationship16', cardinality 0..*) is associated with 'dbca::Entity' (role 'dbca_Entity17', cardinality 0..*).
+'dbca::EntityService' (role 'dbca_EntityService', cardinality 0..*) is associated with 'dbca::Entity' (role 'dbca_Entity28', cardinality 0..*).
+'dbca::Entity' (role 'dbca_Entity12', cardinality 0..*) is associated with 'dbca::Entity' (role 'dbca_Entity14', cardinality 0..*).
+'dbca::QueryService' (role 'dbca_QueryService', cardinality 0..*) is associated with 'dbca::Query' (role 'dbca_Query', cardinality 0..*).
+'dbca::Parameter' (role 'dbca_Parameter', cardinality 0..*) is associated with 'dbca::Operation' (role 'dbca_Operation', cardinality 0..*).
+'dbca::Function' (role 'dbca_Function', cardinality 0..*) is associated with 'dbca::DataParameter' (role 'dbca_DataParameter', cardinality 0..*).
+'dbca::Property' (role 'dbca_Property', cardinality 0..*) is associated with 'dbca::Entity' (role 'dbca_Entity9', cardinality 0..*).
+'dbca::ClientElement' (role 'dbca_ClientElement', cardinality 0..*) is associated with 'dbca::Client' (role 'dbca_Client33', cardinality 0..*).
+'dbca::EntityForm' (role 'dbca_EntityForm', cardinality 0..*) is associated with 'dbca::Entity' (role 'dbca_Entity35', cardinality 0..*).
+'dbca::Entity' (role 'dbca_Entity11', cardinality 0..*) is associated with 'dbca::Relationship' (role 'dbca_Relationship', cardinality 0..*).
+'dbca::Server' (role 'dbca_Server', cardinality 0..*) is associated with 'dbca::Application' (role 'dbca_Application2', cardinality 0..*).
+'dbca::Entity' (role 'dbca_Entity', cardinality 0..*) is associated with 'dbca::PrimaryProperty' (role 'dbca_PrimaryProperty', cardinality 0..*).
+'dbca::OperationService' (role 'dbca_OperationService', cardinality 0..*) is associated with 'dbca::Operation' (role 'dbca_Operation31', cardinality 0..*).
+'dbca::Entity' (role 'dbca_Entity22', cardinality 0..*) is associated with 'dbca::EntityParameter' (role 'dbca_EntityParameter', cardinality 0..*).
+'dbca::ServerElement' (role 'dbca_ServerElement', cardinality 0..*) is associated with 'dbca::Server' (role 'dbca_Server26', cardinality 0..*).
+'dbca::Property' (role 'dbca_Property20', cardinality 0..*) is associated with 'dbca::Relationship' (role 'dbca_Relationship19', cardinality 0..*).
+'dbca::Application' (role 'dbca_Application', cardinality 0..*) is associated with 'dbca::Database' (role 'dbca_Database', cardinality 0..*).
+'dbca::DatabaseElement' (role 'dbca_DatabaseElement', cardinality 0..*) is associated with 'dbca::Database' (role 'dbca_Database6', cardinality 0..*).
+'dbca::Client' (role 'dbca_Client', cardinality 0..*) is associated with 'dbca::Application' (role 'dbca_Application4', cardinality 0..*).

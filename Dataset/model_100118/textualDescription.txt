@@ -1,0 +1,31 @@
+The model has 13 class(es).
+The class 'database::TableKey' has the following attributes: 'type' of type str; 'name' of type str; 'mark' of type str.
+The class 'database::TableIndex' has the following attributes: 'unique' of type bool; 'name' of type str; 'mark' of type str; 'cluster' of type bool.
+The class 'JRESResourceInfo' has no attributes.
+The class 'ExtensibleModel' has no attributes.
+The class 'database::DBModuleCommonProperty' has the following attributes: 'database' of type str; 'supportDatabases' of type str.
+The class 'database::ViewResourceData' has the following attributes: 'isHistory' of type bool; 'sql' of type str.
+The class 'DatabaseResourceData' has no attributes.
+The class 'database::TableColumn' has the following attributes: 'fieldName' of type str; 'description' of type str; 'defaultValue' of type str; 'mark' of type str; 'unique' of type bool; 'dataType' of type str; 'name' of type str; 'primaryKey' of type bool; 'nullable' of type bool; 'columnName' of type str; 'chineseName' of type str; 'comments' of type str; 'columnType' of type str.
+The class 'database::ForeignKey' has the following attributes: 'tableName' of type str; 'fieldName' of type str.
+The class 'database::TableResourceData' has no attributes.
+The class 'database::DatabaseResourceData' has no attributes.
+The class 'database::TableIndexColumn' has the following attributes: 'columnType' of type str; 'ascending' of type bool; 'columnName' of type str.
+The class 'database::DBGenContext' has no attributes.
+The enumeration 'key_type' has the following literals: 'Unique', 'Foreign', 'Primary'.
+The enumeration 'ColumnType' has the following literals: 'STD_FIELD', 'NON_STD_FIELD'.
+'database::ViewResourceData' is a specialization of 'DatabaseResourceData'.
+'database::TableResourceData' is a specialization of 'DatabaseResourceData'.
+'database::TableIndex' is a specialization of 'ExtensibleModel'.
+'database::TableKey' is a specialization of 'ExtensibleModel'.
+'database::TableIndexColumn' is a specialization of 'ExtensibleModel'.
+'database::DBGenContext' is a specialization of 'ExtensibleModel'.
+'database::DatabaseResourceData' is a specialization of 'JRESResourceInfo'.
+'database::TableColumn' is a specialization of 'ExtensibleModel'.
+'database::TableIndexColumn' (role 'database_TableIndexColumn', cardinality 0..*) is associated with 'database::TableIndex' (role 'database_TableIndex8', cardinality 0..*).
+'database::TableIndex' (role 'database_TableIndex', cardinality 0..*) is associated with 'database::TableResourceData' (role 'database_TableResourceData2', cardinality 0..*).
+'database::TableColumn' (role 'database_TableColumn14', cardinality 0..*) is associated with 'database::TableKey' (role 'database_TableKey13', cardinality 0..*).
+'database::TableKey' (role 'database_TableKey10', cardinality 0..*) is associated with 'database::ForeignKey' (role 'database_ForeignKey11', cardinality 0..*).
+'database::TableResourceData' (role 'database_TableResourceData4', cardinality 0..*) is associated with 'database::TableKey' (role 'database_TableKey', cardinality 0..*).
+'database::TableResourceData' (role 'database_TableResourceData', cardinality 0..*) is associated with 'database::TableColumn' (role 'database_TableColumn', cardinality 0..*).
+'database::ForeignKey' (role 'database_ForeignKey', cardinality 0..*) is associated with 'database::TableColumn' (role 'database_TableColumn6', cardinality 0..*).

@@ -1,0 +1,52 @@
+The model has 20 class(es).
+The class 'automaton::TypedTransition' has no attributes.
+The class 'State' has no attributes.
+The class 'automaton::InitState' has no attributes.
+The class 'Transition' has no attributes.
+The class 'automaton::Automaton' has no attributes.
+The class 'automaton::Transition' has no attributes.
+The class 'automaton::Event' has no attributes.
+The class 'automaton::TimedZone' has the following attributes: 'time' of type str.
+The class 'automaton::EventToken' has no attributes.
+The class 'automaton::TrapState' has no attributes.
+The class 'TimedZone' has no attributes.
+The class 'automaton::EpsilonTransition' has no attributes.
+The class 'automaton::AtomicEventPattern' has no attributes.
+The class 'automaton::State' has the following attributes: 'label' of type str.
+The class 'automaton::HoldsFor' has no attributes.
+The class 'automaton::FinalState' has no attributes.
+The class 'automaton::InternalModel' has the following attributes: 'context' of type str.
+The class 'automaton::Within' has no attributes.
+The class 'automaton::Guard' has no attributes.
+The class 'automaton::EventPattern' has no attributes.
+The enumeration 'EventContext' has the following literals: 'IMMEDIATE', 'STRICT_IMMEDIATE', 'RECENT', 'CHRONICLE', 'UNRESTRICTED'.
+'automaton::TrapState' is a specialization of 'State'.
+'automaton::Within' is a specialization of 'TimedZone'.
+'automaton::FinalState' is a specialization of 'State'.
+'automaton::InitState' is a specialization of 'State'.
+'automaton::HoldsFor' is a specialization of 'TimedZone'.
+'automaton::TypedTransition' is a specialization of 'Transition'.
+'automaton::EpsilonTransition' is a specialization of 'Transition'.
+'automaton::EventToken' (role 'EventToken', cardinality 0..*) is associated with 'automaton::State' (role 'currentState', cardinality 0..*).
+'automaton::Event' (role 'automaton_Event', cardinality 0..*) is associated with 'automaton::InternalModel' (role 'automaton_InternalModel2', cardinality 0..*).
+'automaton::State' (role 'State40', cardinality 0..*) is associated with 'automaton::TimedZone' (role 'outStateOf', cardinality 0..*).
+'automaton::Automaton' (role 'automaton_Automaton4', cardinality 0..*) is associated with 'automaton::State' (role 'automaton_State', cardinality 0..*).
+'automaton::TimedZone' (role 'TimedZone', cardinality 0..*) is associated with 'automaton::State' (role 'inState', cardinality 0..*).
+'automaton::EventToken' (role 'automaton_EventToken15', cardinality 0..*) is associated with 'automaton::Event' (role 'automaton_Event16', cardinality 0..*).
+'automaton::Automaton' (role 'automaton', cardinality 0..*) is associated with 'automaton::EventPattern' (role 'Cep.ecoreEventPattern', cardinality 0..*).
+'automaton::EventToken' (role 'eventTokens', cardinality 0..*) is associated with 'automaton::State' (role 'State', cardinality 0..*).
+'automaton::Transition' (role 'outTransitions', cardinality 0..*) is associated with 'automaton::State' (role 'State31', cardinality 0..*).
+'automaton::State' (role 'postState', cardinality 0..*) is associated with 'automaton::Transition' (role 'Transition', cardinality 0..*).
+'automaton::Automaton' (role 'automaton_Automaton', cardinality 0..*) is associated with 'automaton::InternalModel' (role 'automaton_InternalModel', cardinality 0..*).
+'automaton::EventToken' (role 'automaton_EventToken', cardinality 0..*) is associated with 'automaton::Automaton' (role 'automaton_Automaton7', cardinality 0..*).
+'automaton::Event' (role 'automaton_Event13', cardinality 0..*) is associated with 'automaton::EventToken' (role 'automaton_EventToken12', cardinality 0..*).
+'automaton::Transition' (role 'inTransitions', cardinality 0..*) is associated with 'automaton::State' (role 'State33', cardinality 0..*).
+'automaton::AtomicEventPattern' (role 'automaton_AtomicEventPattern', cardinality 0..*) is associated with 'automaton::Guard' (role 'automaton_Guard', cardinality 0..*).
+'automaton::TypedTransition' (role 'transition', cardinality 0..*) is associated with 'automaton::Guard' (role 'Guard', cardinality 0..*).
+'automaton::EventToken' (role 'automaton_EventToken18', cardinality 0..*) is associated with 'automaton::TimedZone' (role 'automaton_TimedZone19', cardinality 0..*).
+'automaton::Event' (role 'automaton_Event26', cardinality 0..*) is associated with 'automaton::State' (role 'automaton_State25', cardinality 0..*).
+'automaton::TimedZone' (role 'automaton_TimedZone', cardinality 0..*) is associated with 'automaton::Automaton' (role 'automaton_Automaton9', cardinality 0..*).
+'automaton::TimedZone' (role 'TimedZone29', cardinality 0..*) is associated with 'automaton::State' (role 'outState', cardinality 0..*).
+'automaton::State' (role 'State38', cardinality 0..*) is associated with 'automaton::TimedZone' (role 'inStateOf', cardinality 0..*).
+'automaton::TypedTransition' (role 'TypedTransition', cardinality 0..*) is associated with 'automaton::Guard' (role 'guard', cardinality 0..*).
+'automaton::State' (role 'preState', cardinality 0..*) is associated with 'automaton::Transition' (role 'Transition22', cardinality 0..*).

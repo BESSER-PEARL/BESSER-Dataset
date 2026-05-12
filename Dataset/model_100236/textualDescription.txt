@@ -1,0 +1,228 @@
+The model has 110 class(es).
+The class 'WordprocessingMLTableElts::BooleanValue' has the following attributes: 'value' of type StringType.
+The class 'WordprocessingMLTableElts::SectPrElt' has no attributes.
+The class 'RunPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::Symbol' has no attributes.
+The class 'FldCharElt' has no attributes.
+The class 'WordprocessingMLTableElts::WordDocument' has no attributes.
+The class 'WordprocessingMLTableElts::CustomDocumentProperty' has the following attributes: 'name' of type StringType.
+The class 'TableRowPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::DateTimeType' has the following attributes: 'hour' of type StringType; 'month' of type StringType; 'second' of type StringType; 'day' of type StringType; 'year' of type StringType; 'minute' of type StringType.
+The class 'BodyElt' has no attributes.
+The class 'SymElt' has no attributes.
+The class 'WordprocessingMLTableElts::DelText' has no attributes.
+The class 'WordprocessingMLTableElts::EndnoteRef' has no attributes.
+The class 'WordprocessingMLTableElts::RunContentElt' has no attributes.
+The class 'WordprocessingMLTableElts::BlockLevelChunkElt' has no attributes.
+The class 'WordprocessingMLTableElts::RunPrElt' has no attributes.
+The class 'RowElt' has no attributes.
+The class 'WordprocessingMLTableElts::CustomDocumentPropertiesCollection' has no attributes.
+The class 'ParaContentElt' has no attributes.
+The class 'WordprocessingMLTableElts::TablePrElt' has no attributes.
+The class 'TableCellElt' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'WordprocessingMLTableElts::BlockLevelElt' has no attributes.
+The class 'TableGridElt' has no attributes.
+The class 'TablePrExElt' has no attributes.
+The class 'WordprocessingMLTableElts::RowElt' has no attributes.
+The class 'WordprocessingMLTableElts::SubDocElt' has no attributes.
+The class 'WordprocessingMLTableElts::ListsElt' has no attributes.
+The class 'VersionType' has no attributes.
+The class 'WordprocessingMLTableElts::CfChunk' has no attributes.
+The class 'WordprocessingMLTableElts::BodyElt' has no attributes.
+The class 'WordprocessingMLTableElts::Separator' has no attributes.
+The class 'WordprocessingMLTableElts::VersionType' has the following attributes: 'nn' of type StringType; 'n' of type StringType.
+The class 'WordprocessingMLTableElts::FldCharElt' has the following attributes: 'fldCharType' of type StringType; 'fldLock' of type StringType.
+The class 'WordprocessingMLTableElts::ContinuationSeparator' has no attributes.
+The class 'WordprocessingMLTableElts::StylesElt' has no attributes.
+The class 'RunElt' has no attributes.
+The class 'SmartTagsCollection' has no attributes.
+The class 'WordprocessingMLTableElts::ParaPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::TableContentElt' has no attributes.
+The class 'WordprocessingMLTableElts::TableRowPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::DocPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::StringType' has the following attributes: 'val' of type StringType.
+The class 'CustomDocumentProperty' has no attributes.
+The class 'DateTimeType' has no attributes.
+The class 'WordprocessingMLTableElts::ParaContentElt' has no attributes.
+The class 'ListsElt' has no attributes.
+The class 'WordprocessingMLTableElts::TableElt' has no attributes.
+The class 'WordprocessingMLTableElts::FontsListElt' has no attributes.
+The class 'WordDocument' has no attributes.
+The class 'CustomDocumentPropertiesCollection' has no attributes.
+The class 'RowContentElt' has no attributes.
+The class 'WordprocessingMLTableElts::RunLevelElt' has no attributes.
+The class 'WordprocessingMLTableElts::Cr' has no attributes.
+The class 'WordprocessingMLTableElts::RunElt' has no attributes.
+The class 'WordprocessingMLTableElts::InstrText' has no attributes.
+The class 'WordprocessingMLTableElts::TableCellElt' has no attributes.
+The class 'WordprocessingMLTableElts::ValueType' has no attributes.
+The class 'TableContentElt' has no attributes.
+The class 'WordprocessingMLTableElts::TablePrExElt' has no attributes.
+The class 'TableCellPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::SoftHyphen' has no attributes.
+The class 'WordprocessingMLTableElts::Footnote' has no attributes.
+The class 'WordprocessingMLTableElts::StringValue' has the following attributes: 'value' of type StringType.
+The class 'ParaPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::DocumentPropertiesCollection' has the following attributes: 'lastAuthor' of type StringType; 'hyperlinkBase' of type StringType; 'description' of type StringType; 'characters' of type StringType; 'category' of type StringType; 'appName' of type StringType; 'pages' of type StringType; 'words' of type StringType; 'charactersWithSpaces' of type StringType; 'author' of type StringType; 'company' of type StringType; 'bytes' of type StringType; 'manager' of type StringType; 'lines' of type StringType; 'presentationFormat' of type StringType; 'paragraphs' of type StringType; 'guid' of type StringType; 'subject' of type StringType; 'keywords' of type StringType; 'title' of type StringType; 'revision' of type StringType; 'totalTime' of type StringType.
+The class 'WordprocessingMLTableElts::TableCellPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::SmartTagsCollection' has no attributes.
+The class 'WordprocessingMLTableElts::PictureType' has no attributes.
+The class 'StylesElt' has no attributes.
+The class 'StringType' has no attributes.
+The class 'FontsListElt' has no attributes.
+The class 'WordprocessingMLTableElts::Endnote' has no attributes.
+The class 'SmartTagType' has no attributes.
+The class 'BlockLevelElt' has no attributes.
+The class 'PictureType' has no attributes.
+The class 'ParaElt' has no attributes.
+The class 'DocPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::ParaElt' has no attributes.
+The class 'WordprocessingMLTableElts::SimpleFieldElt' has no attributes.
+The class 'WordprocessingMLTableElts::Tab' has no attributes.
+The class 'WordprocessingMLTableElts::TableGridElt' has no attributes.
+The class 'WordprocessingMLTableElts::Text' has no attributes.
+The class 'WordprocessingMLTableElts::RowContentElt' has no attributes.
+The class 'WordprocessingMLTableElts::Picture' has no attributes.
+The class 'WordprocessingMLTableElts::NoBreakHyphen' has no attributes.
+The class 'WordprocessingMLTableElts::FldChar' has no attributes.
+The class 'RunLevelElt' has no attributes.
+The class 'SectPrElt' has no attributes.
+The class 'WordprocessingMLTableElts::SmartTagType' has the following attributes: 'namespaceuri' of type StringType; 'name' of type StringType; 'url' of type StringType.
+The class 'WordprocessingMLTableElts::PgNum' has no attributes.
+The class 'WordprocessingMLTableElts::DateTimeTypeValue' has no attributes.
+The class 'TablePrElt' has no attributes.
+The class 'WordprocessingMLTableElts::FootnoteRef' has no attributes.
+The class 'WordprocessingMLTableElts::TabElt' has no attributes.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'TabElt' has no attributes.
+The class 'WordprocessingMLTableElts::DelInstrText' has no attributes.
+The class 'WordprocessingMLTableElts::NoteElt' has the following attributes: 'suppressRef' of type StringType; 'type' of type StringType.
+The class 'WordprocessingMLTableElts::FloatValue' has the following attributes: 'value' of type StringType.
+The class 'TableElt' has no attributes.
+The class 'BlockLevelChunkElt' has no attributes.
+The class 'WordprocessingMLTableElts::BreakElt' has the following attributes: 'type' of type StringType.
+The class 'WordprocessingMLTableElts::HLinkElt' has no attributes.
+The class 'WordprocessingMLTableElts::AnnotationRef' has no attributes.
+The class 'WordprocessingMLTableElts::SymElt' has no attributes.
+The class 'NoteElt' has no attributes.
+The class 'RunContentElt' has no attributes.
+The class 'StringProperty' has no attributes.
+The class 'WordprocessingMLTableElts::StringProperty' has no attributes.
+The enumeration 'BreakType' has the following literals: 'bt_page', 'bt_text_wrapping', 'bt_column'.
+The enumeration 'NoteValue' has the following literals: 'ftn_normal', 'ftn_separator', 'ftn_continuation_separator', 'ftn_continuation_notice'.
+The enumeration 'FldCharTypeProperty' has the following literals: 'fctp_begin', 'fctp_separate', 'fctp_end'.
+The enumeration 'OnOffType' has the following literals: 'oot_on', 'oot_off'.
+'WordprocessingMLTableElts::RunElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLTableElts::ContinuationSeparator' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::Text' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::Endnote' is a specialization of 'NoteElt'.
+'WordprocessingMLTableElts::SubDocElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLTableElts::Picture' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::InstrText' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::CfChunk' is a specialization of 'BlockLevelElt'.
+'WordprocessingMLTableElts::Symbol' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::DateTimeTypeValue' is a specialization of 'ValueType'.
+'WordprocessingMLTableElts::Picture' is a specialization of 'PictureType'.
+'WordprocessingMLTableElts::PgNum' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::AnnotationRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::FloatValue' is a specialization of 'ValueType'.
+'WordprocessingMLTableElts::BreakElt' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::InstrText' is a specialization of 'StringType'.
+'WordprocessingMLTableElts::Tab' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::StringProperty' is a specialization of 'StringType'.
+'WordprocessingMLTableElts::Cr' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::HLinkElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLTableElts::EndnoteRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::Endnote' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::RunLevelElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLTableElts::Text' is a specialization of 'StringType'.
+'WordprocessingMLTableElts::BooleanValue' is a specialization of 'ValueType'.
+'WordprocessingMLTableElts::Footnote' is a specialization of 'NoteElt'.
+'WordprocessingMLTableElts::FldChar' is a specialization of 'FldCharElt'.
+'WordprocessingMLTableElts::DelText' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::StringValue' is a specialization of 'ValueType'.
+'WordprocessingMLTableElts::ParaElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLTableElts::DelInstrText' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::DelInstrText' is a specialization of 'StringType'.
+'WordprocessingMLTableElts::FootnoteRef' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::FldChar' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::SimpleFieldElt' is a specialization of 'ParaContentElt'.
+'WordprocessingMLTableElts::Symbol' is a specialization of 'SymElt'.
+'WordprocessingMLTableElts::DelText' is a specialization of 'StringType'.
+'WordprocessingMLTableElts::Tab' is a specialization of 'TabElt'.
+'WordprocessingMLTableElts::NoBreakHyphen' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::Separator' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::SoftHyphen' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::TableElt' is a specialization of 'BlockLevelChunkElt'.
+'WordprocessingMLTableElts::Footnote' is a specialization of 'RunContentElt'.
+'WordprocessingMLTableElts::BlockLevelChunkElt' is a specialization of 'BlockLevelElt'.
+'WordprocessingMLTableElts::WordDocument' (role 'WordprocessingMLTableElts_WordDocument28', cardinality 0..*) is associated with 'StringProperty' (role 'StringProperty29', cardinality 0..*).
+'WordprocessingMLTableElts::BlockLevelElt' (role 'n_blockLevelElts', cardinality 0..*) is associated with 'NoteElt' (role 'NoteElt', cardinality 0..*).
+'WordprocessingMLTableElts::RunLevelElt' (role 'tce_runLevelElts', cardinality 0..*) is associated with 'TableContentElt' (role 'TableContentElt104', cardinality 0..*).
+'WordprocessingMLTableElts::DocumentPropertiesCollection' (role 'wd_docProperties', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument', cardinality 0..*).
+'WordprocessingMLTableElts::WordDocument' (role 'se_wordDocument', cardinality 0..*) is associated with 'StylesElt' (role 'StylesElt', cardinality 0..*).
+'SectPrElt' (role 'SectPrElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::BodyElt' (role 'spe_bodyElt', cardinality 0..*).
+'WordprocessingMLTableElts::BodyElt' (role 'ble_bodyElt', cardinality 0..*) is associated with 'BlockLevelElt' (role 'BlockLevelElt', cardinality 0..*).
+'WordprocessingMLTableElts::TableElt' (role 'tpe_tblElt', cardinality 0..*) is associated with 'TablePrElt' (role 'TablePrElt', cardinality 0..*).
+'WordprocessingMLTableElts::ListsElt' (role 'lists', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument98', cardinality 0..*).
+'WordprocessingMLTableElts::ParaPrElt' (role 'pPr', cardinality 0..*) is associated with 'ParaElt' (role 'ParaElt', cardinality 0..*).
+'RowElt' (role 'RowElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::TableContentElt' (role 're_tblContentElt', cardinality 0..*).
+'SmartTagsCollection' (role 'SmartTagsCollection', cardinality 0..*) is associated with 'WordprocessingMLTableElts::SmartTagType' (role 'smartTagTypes', cardinality 0..*).
+'WordprocessingMLTableElts::WordDocument' (role 'dp_wordDocument', cardinality 0..*) is associated with 'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*).
+'WordprocessingMLTableElts::TableElt' (role 'tge_tblElt', cardinality 0..*) is associated with 'TableGridElt' (role 'TableGridElt', cardinality 0..*).
+'WordDocument' (role 'WordDocument100', cardinality 0..*) is associated with 'WordprocessingMLTableElts::StylesElt' (role 'styles', cardinality 0..*).
+'WordprocessingMLTableElts::DocPrElt' (role 'docPr', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument36', cardinality 0..*).
+'WordprocessingMLTableElts::BlockLevelElt' (role 'blockLevelElts', cardinality 0..*) is associated with 'BodyElt' (role 'BodyElt42', cardinality 0..*).
+'WordprocessingMLTableElts::TablePrElt' (role 'tblPr', cardinality 0..*) is associated with 'TableElt' (role 'TableElt', cardinality 0..*).
+'WordprocessingMLTableElts::DateTimeTypeValue' (role 'WordprocessingMLTableElts_DateTimeTypeValue', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType', cardinality 0..*).
+'WordprocessingMLTableElts::TableRowPrElt' (role 'trPr', cardinality 0..*) is associated with 'RowElt' (role 'RowElt81', cardinality 0..*).
+'WordprocessingMLTableElts::WordDocument' (role 'le_wordDocument', cardinality 0..*) is associated with 'ListsElt' (role 'ListsElt', cardinality 0..*).
+'RunElt' (role 'RunElt54', cardinality 0..*) is associated with 'WordprocessingMLTableElts::RunContentElt' (role 'rContentElts', cardinality 0..*).
+'TableContentElt' (role 'TableContentElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::TableElt' (role 'tce_tblElt', cardinality 0..*).
+'TableCellElt' (role 'TableCellElt85', cardinality 0..*) is associated with 'WordprocessingMLTableElts::RowContentElt' (role 'tce_rowContentElt', cardinality 0..*).
+'SmartTagsCollection' (role 'SmartTagsCollection22', cardinality 0..*) is associated with 'WordprocessingMLTableElts::WordDocument' (role 'st_wordDocument', cardinality 0..*).
+'WordprocessingMLTableElts::CustomDocumentProperty' (role 'customDocumentProperties', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection', cardinality 0..*).
+'WordprocessingMLTableElts::RowElt' (role 'tpee_rowElt', cardinality 0..*) is associated with 'TablePrExElt' (role 'TablePrExElt', cardinality 0..*).
+'TableCellElt' (role 'TableCellElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::BlockLevelElt' (role 'tce_content', cardinality 0..*).
+'WordprocessingMLTableElts::ParaContentElt' (role 'pContentElts', cardinality 0..*) is associated with 'ParaElt' (role 'ParaElt49', cardinality 0..*).
+'WordprocessingMLTableElts::CustomDocumentPropertiesCollection' (role 'wd_customDocProperties', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument13', cardinality 0..*).
+'RunPrElt' (role 'RunPrElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::RunElt' (role 'rpe_rElt', cardinality 0..*).
+'WordprocessingMLTableElts::RowElt' (role 'rce_rowElt', cardinality 0..*) is associated with 'RowContentElt' (role 'RowContentElt', cardinality 0..*).
+'WordprocessingMLTableElts::DocumentPropertiesCollection' (role 'WordprocessingMLTableElts_DocumentPropertiesCollection4', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType5', cardinality 0..*).
+'WordprocessingMLTableElts::TableCellElt' (role 'ble_tableCellElt', cardinality 0..*) is associated with 'BlockLevelElt' (role 'BlockLevelElt92', cardinality 0..*).
+'RunLevelElt' (role 'RunLevelElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::TableContentElt' (role 'rle_tblContentElt', cardinality 0..*).
+'WordprocessingMLTableElts::TableCellElt' (role 'tc', cardinality 0..*) is associated with 'RowContentElt' (role 'RowContentElt89', cardinality 0..*).
+'WordprocessingMLTableElts::RowContentElt' (role 'rowContent', cardinality 0..*) is associated with 'RowElt' (role 'RowElt83', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType8', cardinality 0..*) is associated with 'WordprocessingMLTableElts::DocumentPropertiesCollection' (role 'WordprocessingMLTableElts_DocumentPropertiesCollection7', cardinality 0..*).
+'WordprocessingMLTableElts::FontsListElt' (role 'fonts', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument96', cardinality 0..*).
+'WordprocessingMLTableElts::ParaElt' (role 'pce_pElt', cardinality 0..*) is associated with 'ParaContentElt' (role 'ParaContentElt', cardinality 0..*).
+'RowContentElt' (role 'RowContentElt106', cardinality 0..*) is associated with 'WordprocessingMLTableElts::RunLevelElt' (role 'rce_runLevelElts', cardinality 0..*).
+'TableCellElt' (role 'TableCellElt94', cardinality 0..*) is associated with 'WordprocessingMLTableElts::TableCellPrElt' (role 'tcPr', cardinality 0..*).
+'WordprocessingMLTableElts::RunElt' (role 'rce_rElt', cardinality 0..*) is associated with 'RunContentElt' (role 'RunContentElt', cardinality 0..*).
+'WordprocessingMLTableElts::CustomDocumentPropertiesCollection' (role 'customDocumentProperty_cdpe', cardinality 0..*) is associated with 'CustomDocumentProperty' (role 'CustomDocumentProperty', cardinality 0..*).
+'SmartTagType' (role 'SmartTagType', cardinality 0..*) is associated with 'WordprocessingMLTableElts::SmartTagsCollection' (role 'smartTagType_ste', cardinality 0..*).
+'StringProperty' (role 'StringProperty', cardinality 0..*) is associated with 'WordprocessingMLTableElts::WordDocument' (role 'WordprocessingMLTableElts_WordDocument', cardinality 0..*).
+'RowElt' (role 'RowElt79', cardinality 0..*) is associated with 'WordprocessingMLTableElts::TablePrExElt' (role 'tblPrEx', cardinality 0..*).
+'RunLevelElt' (role 'RunLevelElt87', cardinality 0..*) is associated with 'WordprocessingMLTableElts::RowContentElt' (role 'rle_rowContentElt', cardinality 0..*).
+'WordprocessingMLTableElts::CustomDocumentProperty' (role 'WordprocessingMLTableElts_CustomDocumentProperty', cardinality 0..*) is associated with 'ValueType' (role 'ValueType', cardinality 0..*).
+'WordprocessingMLTableElts::WordDocument' (role 'dpe_wordDocument', cardinality 0..*) is associated with 'DocPrElt' (role 'DocPrElt', cardinality 0..*).
+'RunElt' (role 'RunElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::RunPrElt' (role 'rPr', cardinality 0..*).
+'WordprocessingMLTableElts::SectPrElt' (role 'sectPr', cardinality 0..*) is associated with 'BodyElt' (role 'BodyElt102', cardinality 0..*).
+'WordprocessingMLTableElts::SmartTagsCollection' (role 'wd_smartTags', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument19', cardinality 0..*).
+'WordprocessingMLTableElts::SymElt' (role 'WordprocessingMLTableElts_SymElt59', cardinality 0..*) is associated with 'StringType' (role 'StringType60', cardinality 0..*).
+'ParaPrElt' (role 'ParaPrElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::ParaElt' (role 'ppe_pElt', cardinality 0..*).
+'WordprocessingMLTableElts::DocumentPropertiesCollection' (role 'WordprocessingMLTableElts_DocumentPropertiesCollection', cardinality 0..*) is associated with 'VersionType' (role 'VersionType', cardinality 0..*).
+'StringType' (role 'StringType62', cardinality 0..*) is associated with 'WordprocessingMLTableElts::FldCharElt' (role 'WordprocessingMLTableElts_FldCharElt', cardinality 0..*).
+'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection25', cardinality 0..*) is associated with 'WordprocessingMLTableElts::WordDocument' (role 'cdp_wordDocument', cardinality 0..*).
+'WordprocessingMLTableElts::TableGridElt' (role 'tblGrid', cardinality 0..*) is associated with 'TableElt' (role 'TableElt68', cardinality 0..*).
+'TableContentElt' (role 'TableContentElt74', cardinality 0..*) is associated with 'WordprocessingMLTableElts::RowElt' (role 'tr', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType11', cardinality 0..*) is associated with 'WordprocessingMLTableElts::DocumentPropertiesCollection' (role 'WordprocessingMLTableElts_DocumentPropertiesCollection10', cardinality 0..*).
+'FontsListElt' (role 'FontsListElt', cardinality 0..*) is associated with 'WordprocessingMLTableElts::WordDocument' (role 'fle_wordDocument', cardinality 0..*).
+'WordprocessingMLTableElts::BodyElt' (role 'body', cardinality 0..*) is associated with 'WordDocument' (role 'WordDocument38', cardinality 0..*).
+'WordprocessingMLTableElts::WordDocument' (role 'be_wordDocument', cardinality 0..*) is associated with 'BodyElt' (role 'BodyElt', cardinality 0..*).
+'StringType' (role 'StringType', cardinality 0..*) is associated with 'WordprocessingMLTableElts::SymElt' (role 'WordprocessingMLTableElts_SymElt', cardinality 0..*).
+'WordprocessingMLTableElts::RowElt' (role 'tpe_rowElt', cardinality 0..*) is associated with 'TableRowPrElt' (role 'TableRowPrElt', cardinality 0..*).
+'BlockLevelElt' (role 'BlockLevelElt56', cardinality 0..*) is associated with 'WordprocessingMLTableElts::NoteElt' (role 'ble_note', cardinality 0..*).
+'TableElt' (role 'TableElt70', cardinality 0..*) is associated with 'WordprocessingMLTableElts::TableContentElt' (role 'tblContent', cardinality 0..*).
+'WordprocessingMLTableElts::TableCellElt' (role 'tcpe_tableCellElt', cardinality 0..*) is associated with 'TableCellPrElt' (role 'TableCellPrElt', cardinality 0..*).

@@ -1,0 +1,52 @@
+The model has 27 class(es).
+The class 'Excel::Cell' has the following attributes: 'mergeDown' of type str; 'hRef' of type str; 'mergeAcross' of type str; 'arrayRange' of type str; 'formula' of type str.
+The class 'Worksheet' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'Excel::TableElement' has the following attributes: 'index' of type str.
+The class 'Excel::Row' has the following attributes: 'autoFitHeight' of type str; 'height' of type str.
+The class 'Excel::DateTimeType' has the following attributes: 'hour' of type str; 'minute' of type str; 'year' of type str; 'second' of type str; 'month' of type str; 'day' of type str.
+The class 'Workbook' has no attributes.
+The class 'TableElement' has no attributes.
+The class 'Row' has no attributes.
+The class 'Cell' has no attributes.
+The class 'Excel::NumberValue' has the following attributes: 'value' of type str.
+The class 'Excel::StringValue' has the following attributes: 'value' of type str.
+The class 'Excel::ErrorValue' has no attributes.
+The class 'Excel::Workbook' has no attributes.
+The class 'Excel::ColOrRowElement' has the following attributes: 'span' of type str; 'hidden' of type str.
+The class 'Excel::Column' has the following attributes: 'width' of type str; 'autoFitWidth' of type str.
+The class 'DateTimeType' has no attributes.
+The class 'Excel::DateTimeTypeValue' has no attributes.
+The class 'Table' has no attributes.
+The class 'ColOrRowElement' has no attributes.
+The class 'Excel::Worksheet' has the following attributes: 'name' of type str.
+The class 'Column' has no attributes.
+The class 'Data' has no attributes.
+The class 'Excel::Data' has no attributes.
+The class 'Excel::Table' has no attributes.
+The class 'Excel::BooleanValue' has the following attributes: 'value' of type str.
+The class 'Excel::ValueType' has no attributes.
+'Excel::BooleanValue' is a specialization of 'ValueType'.
+'Excel::Row' is a specialization of 'ColOrRowElement'.
+'Excel::ErrorValue' is a specialization of 'ValueType'.
+'Excel::StringValue' is a specialization of 'ValueType'.
+'Excel::Cell' is a specialization of 'TableElement'.
+'Excel::NumberValue' is a specialization of 'ValueType'.
+'Excel::ColOrRowElement' is a specialization of 'TableElement'.
+'Excel::DateTimeTypeValue' is a specialization of 'ValueType'.
+'Excel::Column' is a specialization of 'ColOrRowElement'.
+'Cell' (role 'Cell19', cardinality 0..*) is associated with 'Excel::Data' (role 'c_data', cardinality 0..*).
+'Row' (role 'Row', cardinality 0..*) is associated with 'Excel::Table' (role 'r_table', cardinality 0..*).
+'Excel::Workbook' (role 'ws_workbook', cardinality 0..*) is associated with 'Worksheet' (role 'Worksheet', cardinality 0..*).
+'Excel::ValueType' (role 'value', cardinality 0..*) is associated with 'Data' (role 'Data', cardinality 0..*).
+'Worksheet' (role 'Worksheet6', cardinality 0..*) is associated with 'Excel::Table' (role 'ws_table', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType', cardinality 0..*) is associated with 'Excel::DateTimeTypeValue' (role 'Excel_DateTimeTypeValue', cardinality 0..*).
+'ValueType' (role 'ValueType', cardinality 0..*) is associated with 'Excel::Data' (role 'vt_data', cardinality 0..*).
+'Excel::Cell' (role 'r_cells', cardinality 0..*) is associated with 'Row' (role 'Row15', cardinality 0..*).
+'Excel::Row' (role 'c_row', cardinality 0..*) is associated with 'Cell' (role 'Cell', cardinality 0..*).
+'Workbook' (role 'Workbook', cardinality 0..*) is associated with 'Excel::Worksheet' (role 'wb_worksheets', cardinality 0..*).
+'Excel::Column' (role 't_cols', cardinality 0..*) is associated with 'Table' (role 'Table10', cardinality 0..*).
+'Excel::Row' (role 't_rows', cardinality 0..*) is associated with 'Table' (role 'Table12', cardinality 0..*).
+'Excel::Table' (role 'c_table', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).
+'Excel::Cell' (role 'd_cell', cardinality 0..*) is associated with 'Data' (role 'Data17', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'Excel::Worksheet' (role 't_worksheet', cardinality 0..*).

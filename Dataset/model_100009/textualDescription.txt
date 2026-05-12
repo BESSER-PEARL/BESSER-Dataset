@@ -1,0 +1,129 @@
+The model has 41 class(es).
+The class 'BibType' has no attributes.
+The class 'bibtex::Number' has the following attributes: 'number' of type str.
+The class 'bibtex::Note' has the following attributes: 'note' of type str.
+The class 'bibtex::Month' has the following attributes: 'month' of type str.
+The class 'bibtex::Inbook' has the following attributes: 'author' of type bool; 'editor' of type bool.
+The class 'bibtex::Pages' has the following attributes: 'pages' of type str.
+The class 'bibtex::Type' has the following attributes: 'type' of type str.
+The class 'bibtex::Series' has the following attributes: 'series' of type str.
+The class 'bibtex::Title' has the following attributes: 'title' of type str.
+The class 'bibtex::Crossref' has the following attributes: 'crossref' of type str.
+The class 'bibtex::Booktitle' has the following attributes: 'booktitle' of type str.
+The class 'bibtex::Manual' has no attributes.
+The class 'bibtex::Misc' has no attributes.
+The class 'bibtex::Techreport' has no attributes.
+The class 'bibtex::Unpublished' has no attributes.
+The class 'bibtex::Edition' has the following attributes: 'edition' of type str.
+The class 'bibtex::Organization' has the following attributes: 'organization' of type str.
+The class 'bibtex::CiteKey' has the following attributes: 'citeKey' of type str.
+The class 'bibtex::Booklet' has no attributes.
+The class 'bibtex::Book' has no attributes.
+The class 'bibtex::School' has the following attributes: 'school' of type str.
+The class 'bibtex::Key' has the following attributes: 'key' of type str.
+The class 'bibtex::Mastersthesis' has no attributes.
+The class 'bibtex::Address' has the following attributes: 'address' of type str.
+The class 'bibtex::Volume' has the following attributes: 'volume' of type str.
+The class 'bibtex::Inproceedings' has no attributes.
+The class 'bibtex::Publisher' has the following attributes: 'publisher' of type str.
+The class 'bibtex::Journal' has the following attributes: 'journal' of type str.
+The class 'bibtex::Conference' has no attributes.
+The class 'bibtex::Editor' has the following attributes: 'editor' of type str.
+The class 'bibtex::Model' has no attributes.
+The class 'bibtex::Howpublished' has the following attributes: 'howpublished' of type str.
+The class 'bibtex::Institution' has the following attributes: 'institution' of type str.
+The class 'bibtex::Incollection' has no attributes.
+The class 'bibtex::Phdthesis' has no attributes.
+The class 'bibtex::Chapter' has the following attributes: 'chapter' of type str.
+The class 'bibtex::BibType' has no attributes.
+The class 'bibtex::Article' has no attributes.
+The class 'bibtex::Proceedings' has no attributes.
+The class 'bibtex::Author' has the following attributes: 'author' of type str.
+The class 'bibtex::Year' has the following attributes: 'year' of type str.
+'bibtex::Misc' is a specialization of 'BibType'.
+'bibtex::Book' is a specialization of 'BibType'.
+'bibtex::Techreport' is a specialization of 'BibType'.
+'bibtex::Unpublished' is a specialization of 'BibType'.
+'bibtex::Conference' is a specialization of 'BibType'.
+'bibtex::Proceedings' is a specialization of 'BibType'.
+'bibtex::Incollection' is a specialization of 'BibType'.
+'bibtex::Manual' is a specialization of 'BibType'.
+'bibtex::Inproceedings' is a specialization of 'BibType'.
+'bibtex::Article' is a specialization of 'BibType'.
+'bibtex::Inbook' is a specialization of 'BibType'.
+'bibtex::Mastersthesis' is a specialization of 'BibType'.
+'bibtex::Phdthesis' is a specialization of 'BibType'.
+'bibtex::Booklet' is a specialization of 'BibType'.
+'bibtex::Address' (role 'bibtex_Address131', cardinality 0..*) is associated with 'bibtex::Manual' (role 'bibtex_Manual130', cardinality 0..*).
+'bibtex::Book' (role 'bibtex_Book', cardinality 0..*) is associated with 'bibtex::Publisher' (role 'bibtex_Publisher', cardinality 0..*).
+'bibtex::Publisher' (role 'bibtex_Publisher120', cardinality 0..*) is associated with 'bibtex::Inproceedings' (role 'bibtex_Inproceedings119', cardinality 0..*).
+'bibtex::Address' (role 'bibtex_Address177', cardinality 0..*) is associated with 'bibtex::Techreport' (role 'bibtex_Techreport176', cardinality 0..*).
+'bibtex::Key' (role 'bibtex_Key', cardinality 0..*) is associated with 'bibtex::BibType' (role 'bibtex_BibType12', cardinality 0..*).
+'bibtex::Howpublished' (role 'bibtex_Howpublished146', cardinality 0..*) is associated with 'bibtex::Misc' (role 'bibtex_Misc145', cardinality 0..*).
+'bibtex::Book' (role 'bibtex_Book34', cardinality 0..*) is associated with 'bibtex::Address' (role 'bibtex_Address', cardinality 0..*).
+'bibtex::Misc' (role 'bibtex_Misc', cardinality 0..*) is associated with 'bibtex::Author' (role 'bibtex_Author143', cardinality 0..*).
+'bibtex::Editor' (role 'bibtex_Editor50', cardinality 0..*) is associated with 'bibtex::Conference' (role 'bibtex_Conference49', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author179', cardinality 0..*) is associated with 'bibtex::Unpublished' (role 'bibtex_Unpublished', cardinality 0..*).
+'bibtex::Editor' (role 'bibtex_Editor156', cardinality 0..*) is associated with 'bibtex::Proceedings' (role 'bibtex_Proceedings', cardinality 0..*).
+'bibtex::BibType' (role 'bibtex_BibType10', cardinality 0..*) is associated with 'bibtex::Note' (role 'bibtex_Note', cardinality 0..*).
+'bibtex::Booktitle' (role 'bibtex_Booktitle105', cardinality 0..*) is associated with 'bibtex::Inproceedings' (role 'bibtex_Inproceedings104', cardinality 0..*).
+'bibtex::Manual' (role 'bibtex_Manual133', cardinality 0..*) is associated with 'bibtex::Edition' (role 'bibtex_Edition134', cardinality 0..*).
+'bibtex::Inbook' (role 'bibtex_Inbook70', cardinality 0..*) is associated with 'bibtex::Volume' (role 'bibtex_Volume71', cardinality 0..*).
+'bibtex::Address' (role 'bibtex_Address141', cardinality 0..*) is associated with 'bibtex::Mastersthesis' (role 'bibtex_Mastersthesis140', cardinality 0..*).
+'bibtex::Model' (role 'bibtex_Model', cardinality 0..*) is associated with 'bibtex::BibType' (role 'bibtex_BibType', cardinality 0..*).
+'bibtex::Inbook' (role 'bibtex_Inbook', cardinality 0..*) is associated with 'bibtex::Publisher' (role 'bibtex_Publisher63', cardinality 0..*).
+'bibtex::Booktitle' (role 'bibtex_Booktitle', cardinality 0..*) is associated with 'bibtex::Conference' (role 'bibtex_Conference47', cardinality 0..*).
+'bibtex::Edition' (role 'bibtex_Edition', cardinality 0..*) is associated with 'bibtex::Book' (role 'bibtex_Book36', cardinality 0..*).
+'bibtex::Incollection' (role 'bibtex_Incollection84', cardinality 0..*) is associated with 'bibtex::Booktitle' (role 'bibtex_Booktitle85', cardinality 0..*).
+'bibtex::Address' (role 'bibtex_Address165', cardinality 0..*) is associated with 'bibtex::Proceedings' (role 'bibtex_Proceedings164', cardinality 0..*).
+'bibtex::CiteKey' (role 'bibtex_CiteKey', cardinality 0..*) is associated with 'bibtex::BibType' (role 'bibtex_BibType2', cardinality 0..*).
+'bibtex::BibType' (role 'bibtex_BibType8', cardinality 0..*) is associated with 'bibtex::Month' (role 'bibtex_Month', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author', cardinality 0..*) is associated with 'bibtex::Article' (role 'bibtex_Article', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author38', cardinality 0..*) is associated with 'bibtex::Booklet' (role 'bibtex_Booklet', cardinality 0..*).
+'bibtex::Address' (role 'bibtex_Address61', cardinality 0..*) is associated with 'bibtex::Conference' (role 'bibtex_Conference60', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author125', cardinality 0..*) is associated with 'bibtex::Manual' (role 'bibtex_Manual', cardinality 0..*).
+'bibtex::School' (role 'bibtex_School151', cardinality 0..*) is associated with 'bibtex::Phdthesis' (role 'bibtex_Phdthesis150', cardinality 0..*).
+'bibtex::Article' (role 'bibtex_Article19', cardinality 0..*) is associated with 'bibtex::Number' (role 'bibtex_Number', cardinality 0..*).
+'bibtex::Incollection' (role 'bibtex_Incollection99', cardinality 0..*) is associated with 'bibtex::Address' (role 'bibtex_Address100', cardinality 0..*).
+'bibtex::Inproceedings' (role 'bibtex_Inproceedings116', cardinality 0..*) is associated with 'bibtex::Organization' (role 'bibtex_Organization117', cardinality 0..*).
+'bibtex::Pages' (role 'bibtex_Pages', cardinality 0..*) is associated with 'bibtex::Article' (role 'bibtex_Article21', cardinality 0..*).
+'bibtex::BibType' (role 'bibtex_BibType4', cardinality 0..*) is associated with 'bibtex::Title' (role 'bibtex_Title', cardinality 0..*).
+'bibtex::Pages' (role 'bibtex_Pages53', cardinality 0..*) is associated with 'bibtex::Conference' (role 'bibtex_Conference52', cardinality 0..*).
+'bibtex::School' (role 'bibtex_School', cardinality 0..*) is associated with 'bibtex::Mastersthesis' (role 'bibtex_Mastersthesis138', cardinality 0..*).
+'bibtex::Inbook' (role 'bibtex_Inbook79', cardinality 0..*) is associated with 'bibtex::Edition' (role 'bibtex_Edition80', cardinality 0..*).
+'bibtex::Organization' (role 'bibtex_Organization162', cardinality 0..*) is associated with 'bibtex::Proceedings' (role 'bibtex_Proceedings161', cardinality 0..*).
+'bibtex::Number' (role 'bibtex_Number174', cardinality 0..*) is associated with 'bibtex::Techreport' (role 'bibtex_Techreport173', cardinality 0..*).
+'bibtex::Publisher' (role 'bibtex_Publisher58', cardinality 0..*) is associated with 'bibtex::Conference' (role 'bibtex_Conference57', cardinality 0..*).
+'bibtex::Editor' (role 'bibtex_Editor', cardinality 0..*) is associated with 'bibtex::Book' (role 'bibtex_Book27', cardinality 0..*).
+'bibtex::Inproceedings' (role 'bibtex_Inproceedings113', cardinality 0..*) is associated with 'bibtex::Pages' (role 'bibtex_Pages114', cardinality 0..*).
+'bibtex::Inbook' (role 'bibtex_Inbook65', cardinality 0..*) is associated with 'bibtex::Chapter' (role 'bibtex_Chapter', cardinality 0..*).
+'bibtex::Book' (role 'bibtex_Book29', cardinality 0..*) is associated with 'bibtex::Volume' (role 'bibtex_Volume30', cardinality 0..*).
+'bibtex::Organization' (role 'bibtex_Organization128', cardinality 0..*) is associated with 'bibtex::Manual' (role 'bibtex_Manual127', cardinality 0..*).
+'bibtex::Inproceedings' (role 'bibtex_Inproceedings110', cardinality 0..*) is associated with 'bibtex::Series' (role 'bibtex_Series111', cardinality 0..*).
+'bibtex::Incollection' (role 'bibtex_Incollection93', cardinality 0..*) is associated with 'bibtex::Organization' (role 'bibtex_Organization94', cardinality 0..*).
+'bibtex::Book' (role 'bibtex_Book24', cardinality 0..*) is associated with 'bibtex::Author' (role 'bibtex_Author25', cardinality 0..*).
+'bibtex::BibType' (role 'bibtex_BibType6', cardinality 0..*) is associated with 'bibtex::Year' (role 'bibtex_Year', cardinality 0..*).
+'bibtex::Incollection' (role 'bibtex_Incollection', cardinality 0..*) is associated with 'bibtex::Author' (role 'bibtex_Author82', cardinality 0..*).
+'bibtex::Address' (role 'bibtex_Address154', cardinality 0..*) is associated with 'bibtex::Phdthesis' (role 'bibtex_Phdthesis153', cardinality 0..*).
+'bibtex::Address' (role 'bibtex_Address77', cardinality 0..*) is associated with 'bibtex::Inbook' (role 'bibtex_Inbook76', cardinality 0..*).
+'bibtex::Journal' (role 'bibtex_Journal', cardinality 0..*) is associated with 'bibtex::Article' (role 'bibtex_Article15', cardinality 0..*).
+'bibtex::Type' (role 'bibtex_Type', cardinality 0..*) is associated with 'bibtex::Techreport' (role 'bibtex_Techreport171', cardinality 0..*).
+'bibtex::Techreport' (role 'bibtex_Techreport', cardinality 0..*) is associated with 'bibtex::Author' (role 'bibtex_Author167', cardinality 0..*).
+'bibtex::Book' (role 'bibtex_Book32', cardinality 0..*) is associated with 'bibtex::Series' (role 'bibtex_Series', cardinality 0..*).
+'bibtex::Organization' (role 'bibtex_Organization', cardinality 0..*) is associated with 'bibtex::Conference' (role 'bibtex_Conference55', cardinality 0..*).
+'bibtex::Howpublished' (role 'bibtex_Howpublished', cardinality 0..*) is associated with 'bibtex::Booklet' (role 'bibtex_Booklet40', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author102', cardinality 0..*) is associated with 'bibtex::Inproceedings' (role 'bibtex_Inproceedings', cardinality 0..*).
+'bibtex::Inbook' (role 'bibtex_Inbook67', cardinality 0..*) is associated with 'bibtex::Pages' (role 'bibtex_Pages68', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author45', cardinality 0..*) is associated with 'bibtex::Conference' (role 'bibtex_Conference', cardinality 0..*).
+'bibtex::Inbook' (role 'bibtex_Inbook73', cardinality 0..*) is associated with 'bibtex::Series' (role 'bibtex_Series74', cardinality 0..*).
+'bibtex::Incollection' (role 'bibtex_Incollection87', cardinality 0..*) is associated with 'bibtex::Editor' (role 'bibtex_Editor88', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author136', cardinality 0..*) is associated with 'bibtex::Mastersthesis' (role 'bibtex_Mastersthesis', cardinality 0..*).
+'bibtex::Pages' (role 'bibtex_Pages91', cardinality 0..*) is associated with 'bibtex::Incollection' (role 'bibtex_Incollection90', cardinality 0..*).
+'bibtex::Author' (role 'bibtex_Author148', cardinality 0..*) is associated with 'bibtex::Phdthesis' (role 'bibtex_Phdthesis', cardinality 0..*).
+'bibtex::Article' (role 'bibtex_Article17', cardinality 0..*) is associated with 'bibtex::Volume' (role 'bibtex_Volume', cardinality 0..*).
+'bibtex::Address' (role 'bibtex_Address123', cardinality 0..*) is associated with 'bibtex::Inproceedings' (role 'bibtex_Inproceedings122', cardinality 0..*).
+'bibtex::Proceedings' (role 'bibtex_Proceedings158', cardinality 0..*) is associated with 'bibtex::Publisher' (role 'bibtex_Publisher159', cardinality 0..*).
+'bibtex::Booklet' (role 'bibtex_Booklet42', cardinality 0..*) is associated with 'bibtex::Address' (role 'bibtex_Address43', cardinality 0..*).
+'bibtex::Incollection' (role 'bibtex_Incollection96', cardinality 0..*) is associated with 'bibtex::Publisher' (role 'bibtex_Publisher97', cardinality 0..*).
+'bibtex::Institution' (role 'bibtex_Institution', cardinality 0..*) is associated with 'bibtex::Techreport' (role 'bibtex_Techreport169', cardinality 0..*).
+'bibtex::Inproceedings' (role 'bibtex_Inproceedings107', cardinality 0..*) is associated with 'bibtex::Editor' (role 'bibtex_Editor108', cardinality 0..*).

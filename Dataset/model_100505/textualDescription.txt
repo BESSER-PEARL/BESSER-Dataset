@@ -1,0 +1,97 @@
+The model has 37 class(es).
+The class 'ReqRoot' has no attributes.
+The class 'reqSpec::IncludeGlobalRequirement' has the following attributes: 'componentCategory' of type str; 'self' of type bool.
+The class 'reqSpec::RequirementSet' has no attributes.
+The class 'reqSpec::DesiredValue' has the following attributes: 'upto' of type bool.
+The class 'reqSpec::GlobalRequirementSet' has no attributes.
+The class 'reqSpec::Mode' has no attributes.
+The class 'reqSpec::ReqPredicate' has no attributes.
+The class 'reqSpec::AVariableDeclaration' has no attributes.
+The class 'reqSpec::NamedElement' has no attributes.
+The class 'reqSpec::ContractualElement' has the following attributes: 'targetDescription' of type str; 'name' of type str; 'issues' of type str; 'dropRationale' of type str; 'title' of type str; 'dropped' of type bool.
+The class 'reqSpec::ValuePredicate' has no attributes.
+The class 'reqSpec::ReqSpec' has no attributes.
+The class 'reqSpec::InformalPredicate' has the following attributes: 'description' of type str.
+The class 'reqSpec::ComponentClassifier' has no attributes.
+The class 'reqSpec::WhenCondition' has no attributes.
+The class 'ReqPredicate' has no attributes.
+The class 'reqSpec::Requirement' has the following attributes: 'connections' of type bool; 'exceptionText' of type str; 'componentCategory' of type str.
+The class 'reqSpec::Description' has no attributes.
+The class 'reqSpec::ReqRoot' has the following attributes: 'name' of type str; 'issues' of type str; 'title' of type str.
+The class 'reqSpec::ExternalDocument' has the following attributes: 'docReference' of type str; 'docFragment' of type str.
+The class 'reqSpec::Rationale' has no attributes.
+The class 'reqSpec::EObject' has no attributes.
+The class 'reqSpec::StakeholderGoals' has the following attributes: 'componentCategory' of type str.
+The class 'reqSpec::PropertyExpression' has no attributes.
+The class 'RequirementSet' has no attributes.
+The class 'ContractualElement' has no attributes.
+The class 'reqSpec::Stakeholder' has no attributes.
+The class 'reqSpec::DocumentSection' has the following attributes: 'label' of type str; 'title' of type str.
+The class 'reqSpec::ErrorBehaviorState' has no attributes.
+The class 'reqSpec::Predicate' has no attributes.
+The class 'reqSpec::ReqDocument' has no attributes.
+The class 'reqSpec::AVariableReference' has no attributes.
+The class 'reqSpec::Goal' has no attributes.
+The class 'reqSpec::Category' has no attributes.
+The class 'reqSpec::Uncertainty' has no attributes.
+The class 'reqSpec::SystemRequirementSet' has no attributes.
+The class 'reqSpec::GlobalConstants' has the following attributes: 'name' of type str.
+'reqSpec::Goal' is a specialization of 'ContractualElement'.
+'reqSpec::ReqDocument' is a specialization of 'ReqRoot'.
+'reqSpec::StakeholderGoals' is a specialization of 'ReqRoot'.
+'reqSpec::InformalPredicate' is a specialization of 'ReqPredicate'.
+'reqSpec::Requirement' is a specialization of 'ContractualElement'.
+'reqSpec::RequirementSet' is a specialization of 'ReqRoot'.
+'reqSpec::Predicate' is a specialization of 'ReqPredicate'.
+'reqSpec::SystemRequirementSet' is a specialization of 'RequirementSet'.
+'reqSpec::GlobalRequirementSet' is a specialization of 'RequirementSet'.
+'reqSpec::ValuePredicate' is a specialization of 'ReqPredicate'.
+'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement15', cardinality 0..*) is associated with 'reqSpec::Rationale' (role 'reqSpec_Rationale', cardinality 0..*).
+'reqSpec::SystemRequirementSet' (role 'reqSpec_SystemRequirementSet114', cardinality 0..*) is associated with 'reqSpec::IncludeGlobalRequirement' (role 'reqSpec_IncludeGlobalRequirement115', cardinality 0..*).
+'reqSpec::StakeholderGoals' (role 'reqSpec_StakeholderGoals', cardinality 0..*) is associated with 'reqSpec::ComponentClassifier' (role 'reqSpec_ComponentClassifier30', cardinality 0..*).
+'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement4', cardinality 0..*) is associated with 'reqSpec::NamedElement' (role 'reqSpec_NamedElement', cardinality 0..*).
+'reqSpec::Category' (role 'reqSpec_Category', cardinality 0..*) is associated with 'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement6', cardinality 0..*).
+'reqSpec::Requirement' (role 'reqSpec_Requirement73', cardinality 0..*) is associated with 'reqSpec::ReqPredicate' (role 'reqSpec_ReqPredicate', cardinality 0..*).
+'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement21', cardinality 0..*) is associated with 'reqSpec::ExternalDocument' (role 'reqSpec_ExternalDocument', cardinality 0..*).
+'reqSpec::DesiredValue' (role 'reqSpec_DesiredValue', cardinality 0..*) is associated with 'reqSpec::ValuePredicate' (role 'reqSpec_ValuePredicate105', cardinality 0..*).
+'reqSpec::EObject' (role 'reqSpec_EObject46', cardinality 0..*) is associated with 'reqSpec::DocumentSection' (role 'reqSpec_DocumentSection45', cardinality 0..*).
+'reqSpec::Goal' (role 'reqSpec_Goal39', cardinality 0..*) is associated with 'reqSpec::StakeholderGoals' (role 'reqSpec_StakeholderGoals38', cardinality 0..*).
+'reqSpec::Requirement' (role 'reqSpec_Requirement', cardinality 0..*) is associated with 'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement19', cardinality 0..*).
+'reqSpec::AVariableReference' (role 'reqSpec_AVariableReference', cardinality 0..*) is associated with 'reqSpec::DesiredValue' (role 'reqSpec_DesiredValue107', cardinality 0..*).
+'reqSpec::GlobalConstants' (role 'reqSpec_GlobalConstants33', cardinality 0..*) is associated with 'reqSpec::StakeholderGoals' (role 'reqSpec_StakeholderGoals32', cardinality 0..*).
+'reqSpec::Requirement' (role 'reqSpec_Requirement80', cardinality 0..*) is associated with 'reqSpec::Requirement' (role 'reqSpec_Requirement82', cardinality 0..*).
+'reqSpec::WhenCondition' (role 'reqSpec_WhenCondition97', cardinality 0..*) is associated with 'reqSpec::ErrorBehaviorState' (role 'reqSpec_ErrorBehaviorState', cardinality 0..*).
+'reqSpec::Goal' (role 'reqSpec_Goal63', cardinality 0..*) is associated with 'reqSpec::Goal' (role 'reqSpec_Goal61', cardinality 0..*).
+'reqSpec::ReqRoot' (role 'reqSpec_ReqRoot27', cardinality 0..*) is associated with 'reqSpec::ExternalDocument' (role 'reqSpec_ExternalDocument28', cardinality 0..*).
+'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement10', cardinality 0..*) is associated with 'reqSpec::AVariableDeclaration' (role 'reqSpec_AVariableDeclaration11', cardinality 0..*).
+'reqSpec::PropertyExpression' (role 'reqSpec_PropertyExpression', cardinality 0..*) is associated with 'reqSpec::WhenCondition' (role 'reqSpec_WhenCondition99', cardinality 0..*).
+'reqSpec::AVariableDeclaration' (role 'reqSpec_AVariableDeclaration51', cardinality 0..*) is associated with 'reqSpec::RequirementSet' (role 'reqSpec_RequirementSet50', cardinality 0..*).
+'reqSpec::Goal' (role 'reqSpec_Goal64', cardinality 0..*) is associated with 'reqSpec::Goal' (role 'reqSpec_Goal66', cardinality 0..*).
+'reqSpec::AVariableDeclaration' (role 'reqSpec_AVariableDeclaration71', cardinality 0..*) is associated with 'reqSpec::Requirement' (role 'reqSpec_Requirement70', cardinality 0..*).
+'reqSpec::AVariableDeclaration' (role 'reqSpec_AVariableDeclaration54', cardinality 0..*) is associated with 'reqSpec::RequirementSet' (role 'reqSpec_RequirementSet53', cardinality 0..*).
+'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement17', cardinality 0..*) is associated with 'reqSpec::Uncertainty' (role 'reqSpec_Uncertainty', cardinality 0..*).
+'reqSpec::Description' (role 'reqSpec_Description43', cardinality 0..*) is associated with 'reqSpec::DocumentSection' (role 'reqSpec_DocumentSection', cardinality 0..*).
+'reqSpec::Mode' (role 'reqSpec_Mode', cardinality 0..*) is associated with 'reqSpec::WhenCondition' (role 'reqSpec_WhenCondition95', cardinality 0..*).
+'reqSpec::Stakeholder' (role 'reqSpec_Stakeholder', cardinality 0..*) is associated with 'reqSpec::Goal' (role 'reqSpec_Goal68', cardinality 0..*).
+'reqSpec::Requirement' (role 'reqSpec_Requirement75', cardinality 0..*) is associated with 'reqSpec::EObject' (role 'reqSpec_EObject76', cardinality 0..*).
+'reqSpec::ComponentClassifier' (role 'reqSpec_ComponentClassifier112', cardinality 0..*) is associated with 'reqSpec::SystemRequirementSet' (role 'reqSpec_SystemRequirementSet', cardinality 0..*).
+'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement8', cardinality 0..*) is associated with 'reqSpec::Description' (role 'reqSpec_Description', cardinality 0..*).
+'reqSpec::Requirement' (role 'reqSpec_Requirement85', cardinality 0..*) is associated with 'reqSpec::Requirement' (role 'reqSpec_Requirement83', cardinality 0..*).
+'reqSpec::ReqSpec' (role 'reqSpec_ReqSpec', cardinality 0..*) is associated with 'reqSpec::EObject' (role 'reqSpec_EObject', cardinality 0..*).
+'reqSpec::Predicate' (role 'reqSpec_Predicate', cardinality 0..*) is associated with 'reqSpec::PropertyExpression' (role 'reqSpec_PropertyExpression101', cardinality 0..*).
+'reqSpec::DesiredValue' (role 'reqSpec_DesiredValue109', cardinality 0..*) is associated with 'reqSpec::PropertyExpression' (role 'reqSpec_PropertyExpression110', cardinality 0..*).
+'reqSpec::Requirement' (role 'reqSpec_Requirement87', cardinality 0..*) is associated with 'reqSpec::Stakeholder' (role 'reqSpec_Stakeholder88', cardinality 0..*).
+'reqSpec::ComponentClassifier' (role 'reqSpec_ComponentClassifier', cardinality 0..*) is associated with 'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement', cardinality 0..*).
+'reqSpec::GlobalConstants' (role 'reqSpec_GlobalConstants48', cardinality 0..*) is associated with 'reqSpec::RequirementSet' (role 'reqSpec_RequirementSet', cardinality 0..*).
+'reqSpec::ValuePredicate' (role 'reqSpec_ValuePredicate', cardinality 0..*) is associated with 'reqSpec::PropertyExpression' (role 'reqSpec_PropertyExpression103', cardinality 0..*).
+'reqSpec::StakeholderGoals' (role 'reqSpec_StakeholderGoals35', cardinality 0..*) is associated with 'reqSpec::AVariableDeclaration' (role 'reqSpec_AVariableDeclaration36', cardinality 0..*).
+'reqSpec::ReqDocument' (role 'reqSpec_ReqDocument', cardinality 0..*) is associated with 'reqSpec::EObject' (role 'reqSpec_EObject41', cardinality 0..*).
+'reqSpec::Requirement' (role 'reqSpec_Requirement77', cardinality 0..*) is associated with 'reqSpec::Requirement' (role 'reqSpec_Requirement79', cardinality 0..*).
+'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement13', cardinality 0..*) is associated with 'reqSpec::WhenCondition' (role 'reqSpec_WhenCondition', cardinality 0..*).
+'reqSpec::Requirement' (role 'reqSpec_Requirement91', cardinality 0..*) is associated with 'reqSpec::Requirement' (role 'reqSpec_Requirement89', cardinality 0..*).
+'reqSpec::RequirementSet' (role 'reqSpec_RequirementSet56', cardinality 0..*) is associated with 'reqSpec::Requirement' (role 'reqSpec_Requirement57', cardinality 0..*).
+'reqSpec::GlobalConstants' (role 'reqSpec_GlobalConstants', cardinality 0..*) is associated with 'reqSpec::AVariableDeclaration' (role 'reqSpec_AVariableDeclaration', cardinality 0..*).
+'reqSpec::RequirementSet' (role 'reqSpec_RequirementSet59', cardinality 0..*) is associated with 'reqSpec::ReqRoot' (role 'reqSpec_ReqRoot60', cardinality 0..*).
+'reqSpec::Goal' (role 'reqSpec_Goal', cardinality 0..*) is associated with 'reqSpec::ContractualElement' (role 'reqSpec_ContractualElement23', cardinality 0..*).
+'reqSpec::IncludeGlobalRequirement' (role 'reqSpec_IncludeGlobalRequirement', cardinality 0..*) is associated with 'reqSpec::EObject' (role 'reqSpec_EObject93', cardinality 0..*).
+'reqSpec::Description' (role 'reqSpec_Description25', cardinality 0..*) is associated with 'reqSpec::ReqRoot' (role 'reqSpec_ReqRoot', cardinality 0..*).

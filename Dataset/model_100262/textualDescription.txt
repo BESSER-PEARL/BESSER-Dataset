@@ -1,0 +1,112 @@
+The model has 36 class(es).
+The class 'xwiki::Link' has the following attributes: 'rel' of type str; 'hrefLang' of type str; 'href' of type str; 'type' of type str.
+The class 'xwiki::PageSummary' has the following attributes: 'syntax' of type str; 'wiki' of type str; 'author' of type str; 'xwikiRelativeUrl' of type str; 'title' of type str; 'parentId' of type str; 'space' of type str; 'fullName' of type str; 'id' of type str; 'parent' of type str; 'version' of type str; 'authorName' of type str; 'xwikiAbsoluteUrl' of type str; 'name' of type str.
+The class 'xwiki::Attachment' has the following attributes: 'pageId' of type str; 'name' of type str; 'date' of type str; 'authorName' of type str; 'pageVersion' of type str; 'version' of type str; 'mimeType' of type str; 'xwikiRelativeUrl' of type str; 'xwikiAbsoluteUrl' of type str; 'author' of type str; 'size' of type str; 'id' of type str.
+The class 'xwiki::Property' has the following attributes: 'value' of type str; 'type' of type str; 'name' of type str.
+The class 'xwiki::Attribute' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'PageSummary' has no attributes.
+The class 'xwiki::WikisType' has no attributes.
+The class 'xwiki::PagesType' has no attributes.
+The class 'xwiki::ObjectsType' has no attributes.
+The class 'xwiki::Comment' has the following attributes: 'highlight' of type str; 'date' of type str; 'author' of type str; 'text' of type str; 'replyTo' of type str; 'pageId' of type str; 'authorName' of type str; 'id' of type str.
+The class 'xwiki::ObjectSummary' has the following attributes: 'pageAuthor' of type str; 'number' of type str; 'pageId' of type str; 'id' of type str; 'pageVersion' of type str; 'className' of type str; 'space' of type str; 'pageName' of type str; 'pageAuthorName' of type str; 'headline' of type str; 'wiki' of type str; 'guid' of type str.
+The class 'xwiki::Page' has the following attributes: 'language' of type str; 'comment' of type str; 'minorVersion' of type str; 'modifierName' of type str; 'created' of type str; 'content' of type str; 'majorVersion' of type str; 'creatorName' of type str; 'modified' of type str; 'modifier' of type str; 'creator' of type str.
+The class 'xwiki::SpacesType' has no attributes.
+The class 'xwiki::SearchResult' has the following attributes: 'className' of type str; 'modified' of type str; 'objectNumber' of type str; 'pageFullName' of type str; 'language' of type str; 'version' of type str; 'wiki' of type str; 'score' of type str; 'space' of type str; 'pageName' of type str; 'filename' of type str; 'type' of type str; 'author' of type str; 'id' of type str; 'authorName' of type str; 'title' of type str.
+The class 'xwiki::Object' has no attributes.
+The class 'xwiki::EStringToStringMapEntry' has no attributes.
+The class 'xwiki::ClassesType' has no attributes.
+The class 'xwiki::Translations' has the following attributes: 'default' of type str.
+The class 'xwiki::PropertiesType' has no attributes.
+The class 'xwiki::CommentsType' has no attributes.
+The class 'xwiki::HistorySummary' has the following attributes: 'modifierName' of type str; 'modified' of type str; 'language' of type str; 'space' of type str; 'comment' of type str; 'wiki' of type str; 'pageId' of type str; 'version' of type str; 'minorVersion' of type str; 'majorVersion' of type str; 'modifier' of type str; 'name' of type str.
+The class 'LinkCollection' has no attributes.
+The class 'xwiki::Wiki' has the following attributes: 'owner' of type str; 'name' of type str; 'id' of type str; 'description' of type str.
+The class 'xwiki::Syntaxes' has the following attributes: 'syntax' of type str.
+The class 'xwiki::LinkCollection' has no attributes.
+The class 'xwiki::SearchResultsType' has the following attributes: 'template' of type str.
+The class 'ObjectSummary' has no attributes.
+The class 'xwiki::TagsType' has no attributes.
+The class 'xwiki::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'xwiki::Tag' has the following attributes: 'name' of type str.
+The class 'xwiki::HistoryType' has no attributes.
+The class 'xwiki::Class' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'xwiki::AttachmentsType' has no attributes.
+The class 'xwiki::Translation' has the following attributes: 'language' of type str.
+The class 'xwiki::XWiki' has the following attributes: 'version' of type str.
+The class 'xwiki::Space' has the following attributes: 'xwikiAbsoluteUrl' of type str; 'id' of type str; 'name' of type str; 'xwikiRelativeUrl' of type str; 'wiki' of type str; 'home' of type str.
+'xwiki::SearchResult' is a specialization of 'LinkCollection'.
+'xwiki::Wiki' is a specialization of 'LinkCollection'.
+'xwiki::TagsType' is a specialization of 'LinkCollection'.
+'xwiki::Attribute' is a specialization of 'LinkCollection'.
+'xwiki::SearchResultsType' is a specialization of 'LinkCollection'.
+'xwiki::Translations' is a specialization of 'LinkCollection'.
+'xwiki::CommentsType' is a specialization of 'LinkCollection'.
+'xwiki::Space' is a specialization of 'LinkCollection'.
+'xwiki::ObjectsType' is a specialization of 'LinkCollection'.
+'xwiki::WikisType' is a specialization of 'LinkCollection'.
+'xwiki::Object' is a specialization of 'ObjectSummary'.
+'xwiki::PagesType' is a specialization of 'LinkCollection'.
+'xwiki::Page' is a specialization of 'PageSummary'.
+'xwiki::PageSummary' is a specialization of 'LinkCollection'.
+'xwiki::ObjectSummary' is a specialization of 'LinkCollection'.
+'xwiki::Syntaxes' is a specialization of 'LinkCollection'.
+'xwiki::HistorySummary' is a specialization of 'LinkCollection'.
+'xwiki::Attachment' is a specialization of 'LinkCollection'.
+'xwiki::Class' is a specialization of 'LinkCollection'.
+'xwiki::Property' is a specialization of 'LinkCollection'.
+'xwiki::Translation' is a specialization of 'LinkCollection'.
+'xwiki::XWiki' is a specialization of 'LinkCollection'.
+'xwiki::HistoryType' is a specialization of 'LinkCollection'.
+'xwiki::PropertiesType' is a specialization of 'LinkCollection'.
+'xwiki::Comment' is a specialization of 'LinkCollection'.
+'xwiki::ClassesType' is a specialization of 'LinkCollection'.
+'xwiki::Tag' is a specialization of 'LinkCollection'.
+'xwiki::AttachmentsType' is a specialization of 'LinkCollection'.
+'xwiki::SpacesType' is a specialization of 'LinkCollection'.
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot42', cardinality 0..*) is associated with 'xwiki::Property' (role 'xwiki_Property43', cardinality 0..*).
+'xwiki::Wiki' (role 'xwiki_Wiki101', cardinality 0..*) is associated with 'xwiki::WikisType' (role 'xwiki_WikisType100', cardinality 0..*).
+'xwiki::Property' (role 'xwiki_Property', cardinality 0..*) is associated with 'xwiki::Class' (role 'xwiki_Class', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot32', cardinality 0..*) is associated with 'xwiki::ObjectsType' (role 'xwiki_ObjectsType', cardinality 0..*).
+'xwiki::PropertiesType' (role 'xwiki_PropertiesType81', cardinality 0..*) is associated with 'xwiki::Property' (role 'xwiki_Property82', cardinality 0..*).
+'xwiki::Object' (role 'xwiki_Object', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot30', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot61', cardinality 0..*) is associated with 'xwiki::Wiki' (role 'xwiki_Wiki', cardinality 0..*).
+'xwiki::ClassesType' (role 'xwiki_ClassesType', cardinality 0..*) is associated with 'xwiki::Class' (role 'xwiki_Class3', cardinality 0..*).
+'xwiki::HistorySummary' (role 'xwiki_HistorySummary', cardinality 0..*) is associated with 'xwiki::HistoryType' (role 'xwiki_HistoryType67', cardinality 0..*).
+'xwiki::Tag' (role 'xwiki_Tag', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot55', cardinality 0..*).
+'xwiki::Object' (role 'xwiki_Object87', cardinality 0..*) is associated with 'xwiki::SearchResult' (role 'xwiki_SearchResult86', cardinality 0..*).
+'xwiki::TagsType' (role 'xwiki_TagsType', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot57', cardinality 0..*).
+'xwiki::Class' (role 'xwiki_Class17', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot16', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot59', cardinality 0..*) is associated with 'xwiki::Translations' (role 'xwiki_Translations', cardinality 0..*).
+'xwiki::ObjectsType' (role 'xwiki_ObjectsType73', cardinality 0..*) is associated with 'xwiki::ObjectSummary' (role 'xwiki_ObjectSummary74', cardinality 0..*).
+'xwiki::XWiki' (role 'xwiki_XWiki', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot65', cardinality 0..*).
+'xwiki::Translation' (role 'xwiki_Translation', cardinality 0..*) is associated with 'xwiki::Translations' (role 'xwiki_Translations98', cardinality 0..*).
+'xwiki::Page' (role 'xwiki_Page', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot36', cardinality 0..*).
+'xwiki::Comment' (role 'xwiki_Comment', cardinality 0..*) is associated with 'xwiki::CommentsType' (role 'xwiki_CommentsType', cardinality 0..*).
+'xwiki::SearchResult' (role 'xwiki_SearchResult', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot45', cardinality 0..*).
+'xwiki::HistoryType' (role 'xwiki_HistoryType', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot28', cardinality 0..*).
+'xwiki::SpacesType' (role 'xwiki_SpacesType', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot51', cardinality 0..*).
+'xwiki::PropertiesType' (role 'xwiki_PropertiesType', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot40', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot19', cardinality 0..*) is associated with 'xwiki::ClassesType' (role 'xwiki_ClassesType20', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot25', cardinality 0..*) is associated with 'xwiki::CommentsType' (role 'xwiki_CommentsType26', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot63', cardinality 0..*) is associated with 'xwiki::WikisType' (role 'xwiki_WikisType', cardinality 0..*).
+'xwiki::AttachmentsType' (role 'xwiki_AttachmentsType14', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot13', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot47', cardinality 0..*) is associated with 'xwiki::SearchResultsType' (role 'xwiki_SearchResultsType', cardinality 0..*).
+'xwiki::Syntaxes' (role 'xwiki_Syntaxes', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot53', cardinality 0..*).
+'xwiki::PageSummary' (role 'xwiki_PageSummary', cardinality 0..*) is associated with 'xwiki::PagesType' (role 'xwiki_PagesType76', cardinality 0..*).
+'xwiki::Syntaxes' (role 'xwiki_Syntaxes104', cardinality 0..*) is associated with 'xwiki::XWiki' (role 'xwiki_XWiki103', cardinality 0..*).
+'xwiki::AttachmentsType' (role 'xwiki_AttachmentsType', cardinality 0..*) is associated with 'xwiki::Attachment' (role 'xwiki_Attachment', cardinality 0..*).
+'xwiki::ObjectSummary' (role 'xwiki_ObjectSummary', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot34', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot22', cardinality 0..*) is associated with 'xwiki::Comment' (role 'xwiki_Comment23', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot49', cardinality 0..*) is associated with 'xwiki::Space' (role 'xwiki_Space', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot38', cardinality 0..*) is associated with 'xwiki::PagesType' (role 'xwiki_PagesType', cardinality 0..*).
+'xwiki::SearchResult' (role 'xwiki_SearchResult90', cardinality 0..*) is associated with 'xwiki::SearchResultsType' (role 'xwiki_SearchResultsType89', cardinality 0..*).
+'xwiki::Link' (role 'xwiki_Link', cardinality 0..*) is associated with 'xwiki::LinkCollection' (role 'xwiki_LinkCollection', cardinality 0..*).
+'xwiki::Property' (role 'xwiki_Property84', cardinality 0..*) is associated with 'xwiki::Attribute' (role 'xwiki_Attribute', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot', cardinality 0..*) is associated with 'xwiki::EStringToStringMapEntry' (role 'xwiki_EStringToStringMapEntry', cardinality 0..*).
+'xwiki::Property' (role 'xwiki_Property71', cardinality 0..*) is associated with 'xwiki::Object' (role 'xwiki_Object70', cardinality 0..*).
+'xwiki::Attachment' (role 'xwiki_Attachment11', cardinality 0..*) is associated with 'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot10', cardinality 0..*).
+'xwiki::SpacesType' (role 'xwiki_SpacesType92', cardinality 0..*) is associated with 'xwiki::Space' (role 'xwiki_Space93', cardinality 0..*).
+'xwiki::Tag' (role 'xwiki_Tag96', cardinality 0..*) is associated with 'xwiki::TagsType' (role 'xwiki_TagsType95', cardinality 0..*).
+'xwiki::PageSummary' (role 'xwiki_PageSummary78', cardinality 0..*) is associated with 'xwiki::Translations' (role 'xwiki_Translations79', cardinality 0..*).
+'xwiki::DocumentRoot' (role 'xwiki_DocumentRoot7', cardinality 0..*) is associated with 'xwiki::EStringToStringMapEntry' (role 'xwiki_EStringToStringMapEntry8', cardinality 0..*).

@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'rqsDsl::Model' has no attributes.
+The class 'rqsDsl::Requirement' has the following attributes: 'text' of type str.
+The class 'rqsDsl::EObject' has no attributes.
+The class 'rqsDsl::RAnnotation' has the following attributes: 'ba' of type int; 'id' of type int; 'ab' of type int; 'bb' of type int; 'num' of type int; 'type' of type str; 'aa' of type int.
+The class 'rqsDsl::TAnnotation' has the following attributes: 'id' of type int; 'num' of type int; 'b' of type int; 'a' of type int; 'type' of type str; 'text' of type str.
+'rqsDsl::EObject' (role 'rqsDsl_EObject', cardinality 0..*) is associated with 'rqsDsl::Model' (role 'rqsDsl_Model2', cardinality 0..*).
+'rqsDsl::Model' (role 'rqsDsl_Model', cardinality 0..*) is associated with 'rqsDsl::Requirement' (role 'rqsDsl_Requirement', cardinality 0..*).

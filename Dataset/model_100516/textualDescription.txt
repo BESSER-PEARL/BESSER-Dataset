@@ -1,0 +1,181 @@
+The model has 75 class(es).
+The class 'sml::VariableAssignment' has no attributes.
+The class 'sml::StringRanges' has the following attributes: 'values' of type str.
+The class 'sml::NullValue' has no attributes.
+The class 'sml::IntegerRanges' has the following attributes: 'values' of type int; 'min' of type int; 'max' of type int.
+The class 'sml::SmlEEnumLiteral' has the following attributes: 'name' of type str.
+The class 'sml::EnumValue' has no attributes.
+The class 'sml::EventParameterRanges' has no attributes.
+The class 'sml::Collaboration' has the following attributes: 'name' of type str.
+The class 'sml::CollectionAccess' has the following attributes: 'collectionOperation' of type str.
+The class 'AbstractRanges' has no attributes.
+The class 'sml::SmlEClass' has the following attributes: 'name' of type str.
+The class 'sml::FeatureAccess' has no attributes.
+The class 'sml::Variable' has the following attributes: 'name' of type str.
+The class 'sml::IntegerValue' has the following attributes: 'value' of type int.
+The class 'VariableExpression' has no attributes.
+The class 'sml::ExpressionAndVariables' has no attributes.
+The class 'sml::Role' has the following attributes: 'name' of type str; 'static' of type bool.
+The class 'sml::ViolationCondition' has no attributes.
+The class 'sml::SmlEStructuralFeature' has the following attributes: 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'sml::Document' has no attributes.
+The class 'sml::ExpressionOrRegion' has no attributes.
+The class 'sml::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'sml::RoleBindingConstraint' has no attributes.
+The class 'sml::InteractionFragment' has no attributes.
+The class 'sml::ModalMessage' has the following attributes: 'requested' of type bool; 'strict' of type bool.
+The class 'sml::VariableFragment' has no attributes.
+The class 'sml::Interaction' has no attributes.
+The class 'sml::AbstractRanges' has no attributes.
+The class 'sml::VariableValue' has no attributes.
+The class 'BindingExpression' has no attributes.
+The class 'sml::ParameterBinding' has no attributes.
+The class 'sml::SmlETypedElement' has the following attributes: 'name' of type str.
+The class 'sml::Import' has the following attributes: 'importURI' of type str.
+The class 'sml::UnaryOperationExpression' has the following attributes: 'operator' of type str.
+The class 'ExpressionAndVariables' has no attributes.
+The class 'sml::BindingExpression' has no attributes.
+The class 'sml::LoopCondition' has no attributes.
+The class 'sml::Scenario' has the following attributes: 'kind' of type str; 'name' of type str; 'singular' of type bool.
+The class 'sml::Alternative' has no attributes.
+The class 'sml::BinaryOperationExpression' has the following attributes: 'operator' of type str.
+The class 'sml::ParameterExpression' has no attributes.
+The class 'sml::ConditionExpression' has no attributes.
+The class 'sml::RangesForParameter' has no attributes.
+The class 'sml::CaseCondition' has no attributes.
+The class 'sml::VariableExpression' has no attributes.
+The class 'sml::Expression' has no attributes.
+The class 'sml::TypedVariableDeclaration' has the following attributes: 'name' of type str.
+The class 'ParameterExpression' has no attributes.
+The class 'sml::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'ExpressionOrRegion' has no attributes.
+The class 'sml::WaitCondition' has the following attributes: 'requested' of type bool; 'strict' of type bool.
+The class 'Value' has no attributes.
+The class 'sml::Specification' has the following attributes: 'name' of type str.
+The class 'sml::SmlEPackage' has the following attributes: 'name' of type str.
+The class 'sml::Parallel' has no attributes.
+The class 'sml::InterruptCondition' has no attributes.
+The class 'sml::Condition' has no attributes.
+The class 'sml::ExpressionParameter' has no attributes.
+The class 'sml::ConstraintBlock' has no attributes.
+The class 'sml::RandomParameter' has no attributes.
+The class 'sml::Case' has no attributes.
+The class 'sml::ExpressionRegion' has no attributes.
+The class 'sml::StructuralFeatureValue' has no attributes.
+The class 'sml::StringValue' has the following attributes: 'value' of type str.
+The class 'sml::FeatureAccessBindingExpression' has no attributes.
+The class 'sml::VariableBindingParameter' has no attributes.
+The class 'sml::Message' has no attributes.
+The class 'sml::Value' has no attributes.
+The class 'Condition' has no attributes.
+The class 'sml::Loop' has no attributes.
+The class 'sml::SmlEClassifier' has the following attributes: 'name' of type str.
+The class 'InteractionFragment' has no attributes.
+The class 'sml::SmlEEnum' has the following attributes: 'name' of type str.
+The class 'sml::EnumRanges' has no attributes.
+The enumeration 'ScenarioKind' has the following literals: 'specification', 'requirement', 'existential', 'assumption'.
+The enumeration 'CollectionOperation' has the following literals: 'first', 'containsAll', 'get', 'contains', 'any', 'isEmpty', 'size', 'last'.
+'sml::Alternative' is a specialization of 'InteractionFragment'.
+'sml::ExpressionRegion' is a specialization of 'ExpressionOrRegion'.
+'sml::ExpressionParameter' is a specialization of 'ParameterExpression'.
+'sml::ViolationCondition' is a specialization of 'Condition'.
+'sml::NullValue' is a specialization of 'Value'.
+'sml::VariableAssignment' is a specialization of 'VariableExpression'.
+'sml::InterruptCondition' is a specialization of 'Condition'.
+'sml::Loop' is a specialization of 'InteractionFragment'.
+'sml::VariableExpression' is a specialization of 'ExpressionAndVariables'.
+'sml::BinaryOperationExpression' is a specialization of 'Expression'.
+'sml::StringRanges' is a specialization of 'AbstractRanges'.
+'sml::Interaction' is a specialization of 'InteractionFragment'.
+'sml::FeatureAccessBindingExpression' is a specialization of 'BindingExpression'.
+'sml::UnaryOperationExpression' is a specialization of 'Expression'.
+'sml::RandomParameter' is a specialization of 'ParameterExpression'.
+'sml::WaitCondition' is a specialization of 'Condition'.
+'sml::ModalMessage' is a specialization of 'InteractionFragment'.
+'sml::EnumRanges' is a specialization of 'AbstractRanges'.
+'sml::VariableValue' is a specialization of 'Value'.
+'sml::Parallel' is a specialization of 'InteractionFragment'.
+'sml::IntegerRanges' is a specialization of 'AbstractRanges'.
+'sml::ExpressionAndVariables' is a specialization of 'ExpressionOrRegion'.
+'sml::BooleanValue' is a specialization of 'Value'.
+'sml::IntegerValue' is a specialization of 'Value'.
+'sml::VariableFragment' is a specialization of 'InteractionFragment'.
+'sml::Expression' is a specialization of 'ExpressionAndVariables'.
+'sml::EnumValue' is a specialization of 'Value'.
+'sml::Condition' is a specialization of 'InteractionFragment'.
+'sml::TypedVariableDeclaration' is a specialization of 'VariableExpression'.
+'sml::FeatureAccess' is a specialization of 'Value'.
+'sml::Value' is a specialization of 'Expression'.
+'sml::VariableBindingParameter' is a specialization of 'ParameterExpression'.
+'sml::StringValue' is a specialization of 'Value'.
+'sml::CollectionAccess' (role 'sml_CollectionAccess', cardinality 0..*) is associated with 'sml::Expression' (role 'sml_Expression139', cardinality 0..*).
+'sml::Interaction' (role 'sml_Interaction79', cardinality 0..*) is associated with 'sml::Loop' (role 'sml_Loop78', cardinality 0..*).
+'sml::Role' (role 'sml_Role108', cardinality 0..*) is associated with 'sml::Message' (role 'sml_Message107', cardinality 0..*).
+'sml::Role' (role 'sml_Role60', cardinality 0..*) is associated with 'sml::ModalMessage' (role 'sml_ModalMessage59', cardinality 0..*).
+'sml::ParameterExpression' (role 'sml_ParameterExpression', cardinality 0..*) is associated with 'sml::ParameterBinding' (role 'sml_ParameterBinding67', cardinality 0..*).
+'sml::Expression' (role 'sml_Expression91', cardinality 0..*) is associated with 'sml::ConditionExpression' (role 'sml_ConditionExpression90', cardinality 0..*).
+'sml::FeatureAccess' (role 'sml_FeatureAccess141', cardinality 0..*) is associated with 'sml::Variable' (role 'sml_Variable142', cardinality 0..*).
+'sml::LoopCondition' (role 'sml_LoopCondition84', cardinality 0..*) is associated with 'sml::ConditionExpression' (role 'sml_ConditionExpression85', cardinality 0..*).
+'sml::Role' (role 'sml_Role57', cardinality 0..*) is associated with 'sml::ModalMessage' (role 'sml_ModalMessage', cardinality 0..*).
+'sml::Expression' (role 'sml_Expression154', cardinality 0..*) is associated with 'sml::BinaryOperationExpression' (role 'sml_BinaryOperationExpression153', cardinality 0..*).
+'sml::SmlEClass' (role 'sml_SmlEClass40', cardinality 0..*) is associated with 'sml::Role' (role 'sml_Role39', cardinality 0..*).
+'sml::ConstraintBlock' (role 'sml_ConstraintBlock', cardinality 0..*) is associated with 'sml::Interaction' (role 'sml_Interaction55', cardinality 0..*).
+'sml::BindingExpression' (role 'sml_BindingExpression', cardinality 0..*) is associated with 'sml::RoleBindingConstraint' (role 'sml_RoleBindingConstraint49', cardinality 0..*).
+'sml::RangesForParameter' (role 'sml_RangesForParameter36', cardinality 0..*) is associated with 'sml::AbstractRanges' (role 'sml_AbstractRanges', cardinality 0..*).
+'sml::SmlEClass' (role 'sml_SmlEClass', cardinality 0..*) is associated with 'sml::Specification' (role 'sml_Specification4', cardinality 0..*).
+'sml::ExpressionRegion' (role 'sml_ExpressionRegion123', cardinality 0..*) is associated with 'sml::ExpressionOrRegion' (role 'sml_ExpressionOrRegion', cardinality 0..*).
+'sml::RangesForParameter' (role 'sml_RangesForParameter', cardinality 0..*) is associated with 'sml::EventParameterRanges' (role 'sml_EventParameterRanges31', cardinality 0..*).
+'sml::EventParameterRanges' (role 'sml_EventParameterRanges28', cardinality 0..*) is associated with 'sml::SmlETypedElement' (role 'sml_SmlETypedElement29', cardinality 0..*).
+'sml::Message' (role 'sml_Message104', cardinality 0..*) is associated with 'sml::Role' (role 'sml_Role105', cardinality 0..*).
+'sml::VariableExpression' (role 'sml_VariableExpression125', cardinality 0..*) is associated with 'sml::Expression' (role 'sml_Expression126', cardinality 0..*).
+'sml::VariableValue' (role 'sml_VariableValue137', cardinality 0..*) is associated with 'sml::Variable' (role 'sml_Variable', cardinality 0..*).
+'sml::FeatureAccess' (role 'sml_FeatureAccess146', cardinality 0..*) is associated with 'sml::CollectionAccess' (role 'sml_CollectionAccess147', cardinality 0..*).
+'sml::Expression' (role 'sml_Expression151', cardinality 0..*) is associated with 'sml::BinaryOperationExpression' (role 'sml_BinaryOperationExpression', cardinality 0..*).
+'sml::EventParameterRanges' (role 'sml_EventParameterRanges', cardinality 0..*) is associated with 'sml::Specification' (role 'sml_Specification11', cardinality 0..*).
+'sml::Message' (role 'sml_Message96', cardinality 0..*) is associated with 'sml::ConstraintBlock' (role 'sml_ConstraintBlock95', cardinality 0..*).
+'sml::Document' (role 'sml_Document', cardinality 0..*) is associated with 'sml::Import' (role 'sml_Import116', cardinality 0..*).
+'sml::SmlETypedElement' (role 'sml_SmlETypedElement', cardinality 0..*) is associated with 'sml::Specification' (role 'sml_Specification9', cardinality 0..*).
+'sml::Import' (role 'sml_Import23', cardinality 0..*) is associated with 'sml::Collaboration' (role 'sml_Collaboration22', cardinality 0..*).
+'sml::CaseCondition' (role 'sml_CaseCondition87', cardinality 0..*) is associated with 'sml::ConditionExpression' (role 'sml_ConditionExpression88', cardinality 0..*).
+'sml::EnumRanges' (role 'sml_EnumRanges', cardinality 0..*) is associated with 'sml::SmlEEnumLiteral' (role 'sml_SmlEEnumLiteral', cardinality 0..*).
+'sml::Specification' (role 'sml_Specification2', cardinality 0..*) is associated with 'sml::SmlEPackage' (role 'sml_SmlEPackage', cardinality 0..*).
+'sml::VariableValue' (role 'sml_VariableValue', cardinality 0..*) is associated with 'sml::VariableBindingParameter' (role 'sml_VariableBindingParameter', cardinality 0..*).
+'sml::Case' (role 'sml_Case', cardinality 0..*) is associated with 'sml::Alternative' (role 'sml_Alternative', cardinality 0..*).
+'sml::StructuralFeatureValue' (role 'sml_StructuralFeatureValue149', cardinality 0..*) is associated with 'sml::SmlEStructuralFeature' (role 'sml_SmlEStructuralFeature', cardinality 0..*).
+'sml::SmlEClass' (role 'sml_SmlEClass7', cardinality 0..*) is associated with 'sml::Specification' (role 'sml_Specification6', cardinality 0..*).
+'sml::ModalMessage' (role 'sml_ModalMessage65', cardinality 0..*) is associated with 'sml::ParameterBinding' (role 'sml_ParameterBinding', cardinality 0..*).
+'sml::SmlEClassifier' (role 'sml_SmlEClassifier', cardinality 0..*) is associated with 'sml::TypedVariableDeclaration' (role 'sml_TypedVariableDeclaration', cardinality 0..*).
+'sml::Specification' (role 'sml_Specification', cardinality 0..*) is associated with 'sml::Import' (role 'sml_Import', cardinality 0..*).
+'sml::Message' (role 'sml_Message110', cardinality 0..*) is associated with 'sml::SmlETypedElement' (role 'sml_SmlETypedElement111', cardinality 0..*).
+'sml::SmlEEnum' (role 'sml_SmlEEnum', cardinality 0..*) is associated with 'sml::EnumValue' (role 'sml_EnumValue', cardinality 0..*).
+'sml::ConstraintBlock' (role 'sml_ConstraintBlock98', cardinality 0..*) is associated with 'sml::Message' (role 'sml_Message99', cardinality 0..*).
+'sml::Message' (role 'sml_Message113', cardinality 0..*) is associated with 'sml::ParameterBinding' (role 'sml_ParameterBinding114', cardinality 0..*).
+'sml::ConstraintBlock' (role 'sml_ConstraintBlock101', cardinality 0..*) is associated with 'sml::Message' (role 'sml_Message102', cardinality 0..*).
+'sml::Interaction' (role 'sml_Interaction81', cardinality 0..*) is associated with 'sml::Parallel' (role 'sml_Parallel', cardinality 0..*).
+'sml::RoleBindingConstraint' (role 'sml_RoleBindingConstraint46', cardinality 0..*) is associated with 'sml::Role' (role 'sml_Role47', cardinality 0..*).
+'sml::VariableDeclaration' (role 'sml_VariableDeclaration', cardinality 0..*) is associated with 'sml::Expression' (role 'sml_Expression128', cardinality 0..*).
+'sml::Document' (role 'sml_Document121', cardinality 0..*) is associated with 'sml::ExpressionRegion' (role 'sml_ExpressionRegion', cardinality 0..*).
+'sml::Scenario' (role 'sml_Scenario44', cardinality 0..*) is associated with 'sml::Interaction' (role 'sml_Interaction', cardinality 0..*).
+'sml::VariableDeclaration' (role 'sml_VariableDeclaration131', cardinality 0..*) is associated with 'sml::VariableAssignment' (role 'sml_VariableAssignment', cardinality 0..*).
+'sml::Collaboration' (role 'sml_Collaboration16', cardinality 0..*) is associated with 'sml::Specification' (role 'sml_Specification15', cardinality 0..*).
+'sml::Interaction' (role 'sml_Interaction53', cardinality 0..*) is associated with 'sml::InteractionFragment' (role 'sml_InteractionFragment', cardinality 0..*).
+'sml::Scenario' (role 'sml_Scenario', cardinality 0..*) is associated with 'sml::Collaboration' (role 'sml_Collaboration20', cardinality 0..*).
+'sml::Scenario' (role 'sml_Scenario42', cardinality 0..*) is associated with 'sml::RoleBindingConstraint' (role 'sml_RoleBindingConstraint', cardinality 0..*).
+'sml::Collaboration' (role 'sml_Collaboration25', cardinality 0..*) is associated with 'sml::SmlEPackage' (role 'sml_SmlEPackage26', cardinality 0..*).
+'sml::UnaryOperationExpression' (role 'sml_UnaryOperationExpression', cardinality 0..*) is associated with 'sml::Expression' (role 'sml_Expression156', cardinality 0..*).
+'sml::SmlEEnumLiteral' (role 'sml_SmlEEnumLiteral135', cardinality 0..*) is associated with 'sml::EnumValue' (role 'sml_EnumValue134', cardinality 0..*).
+'sml::FeatureAccess' (role 'sml_FeatureAccess', cardinality 0..*) is associated with 'sml::FeatureAccessBindingExpression' (role 'sml_FeatureAccessBindingExpression', cardinality 0..*).
+'sml::SmlETypedElement' (role 'sml_SmlETypedElement34', cardinality 0..*) is associated with 'sml::RangesForParameter' (role 'sml_RangesForParameter33', cardinality 0..*).
+'sml::Case' (role 'sml_Case74', cardinality 0..*) is associated with 'sml::Interaction' (role 'sml_Interaction75', cardinality 0..*).
+'sml::ModalMessage' (role 'sml_ModalMessage62', cardinality 0..*) is associated with 'sml::SmlETypedElement' (role 'sml_SmlETypedElement63', cardinality 0..*).
+'sml::SmlEPackage' (role 'sml_SmlEPackage119', cardinality 0..*) is associated with 'sml::Document' (role 'sml_Document118', cardinality 0..*).
+'sml::StructuralFeatureValue' (role 'sml_StructuralFeatureValue', cardinality 0..*) is associated with 'sml::FeatureAccess' (role 'sml_FeatureAccess144', cardinality 0..*).
+'sml::Loop' (role 'sml_Loop', cardinality 0..*) is associated with 'sml::LoopCondition' (role 'sml_LoopCondition', cardinality 0..*).
+'sml::CaseCondition' (role 'sml_CaseCondition', cardinality 0..*) is associated with 'sml::Case' (role 'sml_Case72', cardinality 0..*).
+'sml::Expression' (role 'sml_Expression', cardinality 0..*) is associated with 'sml::ExpressionParameter' (role 'sml_ExpressionParameter', cardinality 0..*).
+'sml::Collaboration' (role 'sml_Collaboration18', cardinality 0..*) is associated with 'sml::Role' (role 'sml_Role', cardinality 0..*).
+'sml::ConstraintBlock' (role 'sml_ConstraintBlock93', cardinality 0..*) is associated with 'sml::Message' (role 'sml_Message', cardinality 0..*).
+'sml::VariableFragment' (role 'sml_VariableFragment', cardinality 0..*) is associated with 'sml::VariableExpression' (role 'sml_VariableExpression', cardinality 0..*).
+'sml::Collaboration' (role 'sml_Collaboration', cardinality 0..*) is associated with 'sml::Specification' (role 'sml_Specification13', cardinality 0..*).
+'sml::Condition' (role 'sml_Condition', cardinality 0..*) is associated with 'sml::ConditionExpression' (role 'sml_ConditionExpression', cardinality 0..*).

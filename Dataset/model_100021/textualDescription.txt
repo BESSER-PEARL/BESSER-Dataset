@@ -1,0 +1,97 @@
+The model has 44 class(es).
+The class 'AuthoredEntry' has no attributes.
+The class 'BIBTEXML::PhdThesis' has no attributes.
+The class 'BIBTEXML::NotedEntry' has the following attributes: 'note' of type str.
+The class 'BIBTEXML::PublisheredEntry' has the following attributes: 'publisher' of type str.
+The class 'TitledEntry' has no attributes.
+The class 'InProceedings' has no attributes.
+The class 'Entry' has no attributes.
+The class 'BIBTEXML::Author' has the following attributes: 'name' of type str.
+The class 'BIBTEXML::AuthoredEntry' has no attributes.
+The class 'Proceedings' has no attributes.
+The class 'BIBTEXML::InBook' has the following attributes: 'type' of type str; 'chapter' of type str.
+The class 'BIBTEXML::MastersThesis' has no attributes.
+The class 'BookTitledEntry' has no attributes.
+The class 'BIBTEXML::DatedEntry' has the following attributes: 'year' of type str; 'month' of type str.
+The class 'EditoredEntry' has no attributes.
+The class 'BIBTEXML::JournalEntry' has the following attributes: 'journal' of type str.
+The class 'PublisheredEntry' has no attributes.
+The class 'BIBTEXML::TechReport' has the following attributes: 'address' of type str; 'type' of type str; 'note' of type str; 'number' of type str.
+The class 'BIBTEXML::ThesisEntry' has the following attributes: 'note' of type str; 'address' of type str; 'type' of type str.
+The class 'BIBTEXML::InstitutionEntry' has the following attributes: 'institution' of type str.
+The class 'BIBTEXML::Proceedings' has the following attributes: 'note' of type str; 'publisher' of type str; 'volume' of type str; 'series' of type str; 'address' of type str; 'editor' of type str; 'number' of type str; 'organization' of type str.
+The class 'BIBTEXML::InProceedings' has the following attributes: 'pages' of type str.
+The class 'BIBTEXML::Unpublished' has no attributes.
+The class 'InstitutionEntry' has no attributes.
+The class 'BIBTEXML::BookTitledEntry' has the following attributes: 'booktitle' of type str.
+The class 'Book' has no attributes.
+The class 'Author' has no attributes.
+The class 'BIBTEXML::Conference' has no attributes.
+The class 'BIBTEXML::Manual' has the following attributes: 'organization' of type str; 'edition' of type str; 'address' of type str; 'note' of type str.
+The class 'ThesisEntry' has no attributes.
+The class 'BIBTEXML::Misc' has the following attributes: 'howpublished' of type str; 'month' of type str; 'year' of type str; 'note' of type str; 'title' of type str.
+The class 'BIBTEXML::Article' has the following attributes: 'volume' of type str; 'number' of type str; 'note' of type str; 'pages' of type str.
+The class 'SchoolEntry' has no attributes.
+The class 'BIBTEXML::TitledEntry' has the following attributes: 'title' of type str.
+The class 'BIBTEXML::InCollection' has the following attributes: 'chapter' of type str; 'type' of type str.
+The class 'NotedEntry' has no attributes.
+The class 'JournalEntry' has no attributes.
+The class 'BIBTEXML::BibtexFile' has no attributes.
+The class 'BIBTEXML::Entry' has the following attributes: 'id' of type str; 'abstract' of type str.
+The class 'DatedEntry' has no attributes.
+The class 'BIBTEXML::Booklet' has the following attributes: 'address' of type str; 'howpublished' of type str; 'note' of type str.
+The class 'BIBTEXML::Book' has the following attributes: 'note' of type str; 'volume' of type str; 'address' of type str; 'series' of type str; 'edition' of type str; 'number' of type str.
+The class 'BIBTEXML::EditoredEntry' has the following attributes: 'editor' of type str.
+The class 'BIBTEXML::SchoolEntry' has the following attributes: 'school' of type str.
+'BIBTEXML::Unpublished' is a specialization of 'TitledEntry'.
+'BIBTEXML::InProceedings' is a specialization of 'BookTitledEntry'.
+'BIBTEXML::MastersThesis' is a specialization of 'ThesisEntry'.
+'BIBTEXML::Unpublished' is a specialization of 'AuthoredEntry'.
+'BIBTEXML::InCollection' is a specialization of 'BookTitledEntry'.
+'BIBTEXML::Article' is a specialization of 'JournalEntry'.
+'BIBTEXML::ThesisEntry' is a specialization of 'SchoolEntry'.
+'BIBTEXML::Misc' is a specialization of 'Entry'.
+'BIBTEXML::ThesisEntry' is a specialization of 'TitledEntry'.
+'BIBTEXML::Book' is a specialization of 'AuthoredEntry'.
+'BIBTEXML::TechReport' is a specialization of 'DatedEntry'.
+'BIBTEXML::ThesisEntry' is a specialization of 'DatedEntry'.
+'BIBTEXML::Article' is a specialization of 'AuthoredEntry'.
+'BIBTEXML::Article' is a specialization of 'DatedEntry'.
+'BIBTEXML::JournalEntry' is a specialization of 'Entry'.
+'BIBTEXML::TechReport' is a specialization of 'InstitutionEntry'.
+'BIBTEXML::Booklet' is a specialization of 'TitledEntry'.
+'BIBTEXML::InProceedings' is a specialization of 'Proceedings'.
+'BIBTEXML::Conference' is a specialization of 'InProceedings'.
+'BIBTEXML::Book' is a specialization of 'EditoredEntry'.
+'BIBTEXML::TechReport' is a specialization of 'TitledEntry'.
+'BIBTEXML::PhdThesis' is a specialization of 'ThesisEntry'.
+'BIBTEXML::InProceedings' is a specialization of 'AuthoredEntry'.
+'BIBTEXML::Unpublished' is a specialization of 'DatedEntry'.
+'BIBTEXML::PublisheredEntry' is a specialization of 'Entry'.
+'BIBTEXML::ThesisEntry' is a specialization of 'AuthoredEntry'.
+'BIBTEXML::BookTitledEntry' is a specialization of 'Entry'.
+'BIBTEXML::DatedEntry' is a specialization of 'Entry'.
+'BIBTEXML::TechReport' is a specialization of 'AuthoredEntry'.
+'BIBTEXML::Proceedings' is a specialization of 'TitledEntry'.
+'BIBTEXML::Article' is a specialization of 'TitledEntry'.
+'BIBTEXML::EditoredEntry' is a specialization of 'Entry'.
+'BIBTEXML::Book' is a specialization of 'PublisheredEntry'.
+'BIBTEXML::Proceedings' is a specialization of 'DatedEntry'.
+'BIBTEXML::Unpublished' is a specialization of 'NotedEntry'.
+'BIBTEXML::InstitutionEntry' is a specialization of 'Entry'.
+'BIBTEXML::NotedEntry' is a specialization of 'Entry'.
+'BIBTEXML::Book' is a specialization of 'DatedEntry'.
+'BIBTEXML::Booklet' is a specialization of 'DatedEntry'.
+'BIBTEXML::InCollection' is a specialization of 'Book'.
+'BIBTEXML::Manual' is a specialization of 'TitledEntry'.
+'BIBTEXML::TitledEntry' is a specialization of 'Entry'.
+'BIBTEXML::SchoolEntry' is a specialization of 'Entry'.
+'BIBTEXML::InBook' is a specialization of 'Book'.
+'BIBTEXML::Manual' is a specialization of 'AuthoredEntry'.
+'BIBTEXML::Manual' is a specialization of 'DatedEntry'.
+'BIBTEXML::Book' is a specialization of 'TitledEntry'.
+'BIBTEXML::AuthoredEntry' is a specialization of 'Entry'.
+'BIBTEXML::Misc' (role 'BIBTEXML_Misc', cardinality 0..*) is associated with 'Author' (role 'Author5', cardinality 0..*).
+'BIBTEXML::AuthoredEntry' (role 'BIBTEXML_AuthoredEntry', cardinality 0..*) is associated with 'Author' (role 'Author', cardinality 0..*).
+'Entry' (role 'Entry', cardinality 0..*) is associated with 'BIBTEXML::BibtexFile' (role 'BIBTEXML_BibtexFile', cardinality 0..*).
+'BIBTEXML::Booklet' (role 'BIBTEXML_Booklet', cardinality 0..*) is associated with 'Author' (role 'Author3', cardinality 0..*).

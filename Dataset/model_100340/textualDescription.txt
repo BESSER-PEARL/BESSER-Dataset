@@ -1,0 +1,138 @@
+The model has 56 class(es).
+The class 'ASM::OperatorTerm' has the following attributes: 'opName' of type str.
+The class 'ASM::FunctionOrVariableTerm' has no attributes.
+The class 'ASM::BooleanConstant' has the following attributes: 'value' of type str.
+The class 'ASM::Body' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'ASM::Constant' has no attributes.
+The class 'Term' has no attributes.
+The class 'ASM::LocatedElement' has the following attributes: 'location' of type str.
+The class 'ASM::Signature' has the following attributes: 'name' of type str; 'isMain' of type str.
+The class 'ASM::Asm' has the following attributes: 'returnType' of type str.
+The class 'AccessUpdateFunction' has no attributes.
+The class 'Constant' has no attributes.
+The class 'ASM::ExtendRule' has no attributes.
+The class 'ASM::Rule' has the following attributes: 'inSequence' of type str.
+The class 'ASM::Argument' has the following attributes: 'type' of type str.
+The class 'ASM::Initialization' has no attributes.
+The class 'ASM::ElseIf' has no attributes.
+The class 'Initialization' has no attributes.
+The class 'ASM::Declaration' has no attributes.
+The class 'Body' has no attributes.
+The class 'ASM::StringConstant' has the following attributes: 'value' of type str.
+The class 'ASM::ConditionalRule' has no attributes.
+The class 'Extension' has no attributes.
+The class 'Asm' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'ASM::SkipRule' has no attributes.
+The class 'ASM::ChooseRule' has no attributes.
+The class 'ASM::Extension' has no attributes.
+The class 'Universe' has no attributes.
+The class 'FunctionOrVariableTerm' has no attributes.
+The class 'ASM::AsmInvocation' has the following attributes: 'asmName' of type str.
+The class 'XAsmFile' has no attributes.
+The class 'ASM::UpdateRule' has no attributes.
+The class 'ASM::VariableDecl' has no attributes.
+The class 'Rule' has no attributes.
+The class 'ASM::Parameter' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'ASM::ReturnRule' has no attributes.
+The class 'ElementDecl' has no attributes.
+The class 'ElseIf' has no attributes.
+The class 'ASM::AccessUpdateFunction' has the following attributes: 'type' of type str.
+The class 'ASM::XAsmFile' has no attributes.
+The class 'ASM::XAsmSpec' has no attributes.
+The class 'Signature' has no attributes.
+The class 'ASM::UndefConstant' has no attributes.
+The class 'MetaInformation' has no attributes.
+The class 'VariableDecl' has no attributes.
+The class 'Function' has no attributes.
+The class 'ASM::Term' has no attributes.
+The class 'Argument' has no attributes.
+The class 'ASM::Function' has the following attributes: 'isExternal' of type str; 'returnType' of type str.
+The class 'ASM::ElementDecl' has the following attributes: 'name' of type str.
+The class 'ASM::Universe' has the following attributes: 'name' of type str; 'contents' of type str.
+The class 'Parameter' has no attributes.
+The class 'ASM::DoForallRule' has no attributes.
+The class 'ASM::MetaInformation' has the following attributes: 'usedAs' of type str.
+The class 'ASM::IntegerConstant' has the following attributes: 'value' of type str.
+The enumeration 'AsmType' has the following literals: 'subasm', 'function'.
+The enumeration 'AccessUpdateType' has the following literals: 'update', 'access'.
+'ASM::Rule' is a specialization of 'LocatedElement'.
+'ASM::ElementDecl' is a specialization of 'LocatedElement'.
+'ASM::StringConstant' is a specialization of 'Constant'.
+'ASM::SkipRule' is a specialization of 'Rule'.
+'ASM::Constant' is a specialization of 'Term'.
+'ASM::Term' is a specialization of 'LocatedElement'.
+'ASM::ExtendRule' is a specialization of 'Rule'.
+'ASM::VariableDecl' is a specialization of 'ElementDecl'.
+'ASM::IntegerConstant' is a specialization of 'Constant'.
+'ASM::Declaration' is a specialization of 'LocatedElement'.
+'ASM::AccessUpdateFunction' is a specialization of 'LocatedElement'.
+'ASM::Universe' is a specialization of 'Declaration'.
+'ASM::UndefConstant' is a specialization of 'Constant'.
+'ASM::Function' is a specialization of 'ElementDecl'.
+'ASM::ReturnRule' is a specialization of 'Rule'.
+'ASM::ChooseRule' is a specialization of 'Rule'.
+'ASM::Body' is a specialization of 'XAsmFile'.
+'ASM::ElseIf' is a specialization of 'LocatedElement'.
+'ASM::Argument' is a specialization of 'VariableDecl'.
+'ASM::MetaInformation' is a specialization of 'LocatedElement'.
+'ASM::OperatorTerm' is a specialization of 'Term'.
+'ASM::XAsmFile' is a specialization of 'LocatedElement'.
+'ASM::Parameter' is a specialization of 'LocatedElement'.
+'ASM::UpdateRule' is a specialization of 'Rule'.
+'ASM::AsmInvocation' is a specialization of 'Rule'.
+'ASM::Signature' is a specialization of 'LocatedElement'.
+'ASM::Asm' is a specialization of 'LocatedElement'.
+'ASM::Initialization' is a specialization of 'LocatedElement'.
+'ASM::ConditionalRule' is a specialization of 'Rule'.
+'ASM::XAsmSpec' is a specialization of 'XAsmFile'.
+'ASM::DoForallRule' is a specialization of 'Rule'.
+'ASM::BooleanConstant' is a specialization of 'Constant'.
+'ASM::FunctionOrVariableTerm' is a specialization of 'Term'.
+'ASM::Function' is a specialization of 'Declaration'.
+'ASM::Extension' is a specialization of 'LocatedElement'.
+'VariableDecl' (role 'VariableDecl52', cardinality 0..*) is associated with 'ASM::DoForallRule' (role 'ASM_DoForallRule', cardinality 0..*).
+'Initialization' (role 'Initialization', cardinality 0..*) is associated with 'ASM::Body' (role 'ASM_Body9', cardinality 0..*).
+'Rule' (role 'Rule', cardinality 0..*) is associated with 'ASM::Body' (role 'ASM_Body11', cardinality 0..*).
+'ElseIf' (role 'ElseIf82', cardinality 0..*) is associated with 'ASM::ElseIf' (role 'ASM_ElseIf81', cardinality 0..*).
+'ASM::ReturnRule' (role 'ASM_ReturnRule', cardinality 0..*) is associated with 'Term' (role 'Term93', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'ASM::Function' (role 'ASM_Function', cardinality 0..*).
+'ASM::Function' (role 'ASM_Function19', cardinality 0..*) is associated with 'Term' (role 'Term', cardinality 0..*).
+'ASM::OperatorTerm' (role 'ASM_OperatorTerm30', cardinality 0..*) is associated with 'Term' (role 'Term31', cardinality 0..*).
+'ASM::Body' (role 'ASM_Body', cardinality 0..*) is associated with 'Declaration' (role 'Declaration', cardinality 0..*).
+'Asm' (role 'Asm', cardinality 0..*) is associated with 'ASM::XAsmSpec' (role 'ASM_XAsmSpec', cardinality 0..*).
+'ASM::ChooseRule' (role 'ASM_ChooseRule40', cardinality 0..*) is associated with 'Universe' (role 'Universe41', cardinality 0..*).
+'Term' (role 'Term28', cardinality 0..*) is associated with 'ASM::OperatorTerm' (role 'ASM_OperatorTerm', cardinality 0..*).
+'Rule' (role 'Rule61', cardinality 0..*) is associated with 'ASM::DoForallRule' (role 'ASM_DoForallRule60', cardinality 0..*).
+'ASM::Universe' (role 'ASM_Universe', cardinality 0..*) is associated with 'Universe' (role 'Universe', cardinality 0..*).
+'Signature' (role 'Signature', cardinality 0..*) is associated with 'ASM::Asm' (role 'ASM_Asm', cardinality 0..*).
+'ASM::DoForallRule' (role 'ASM_DoForallRule54', cardinality 0..*) is associated with 'Universe' (role 'Universe55', cardinality 0..*).
+'Body' (role 'Body', cardinality 0..*) is associated with 'ASM::Asm' (role 'ASM_Asm5', cardinality 0..*).
+'ASM::ConditionalRule' (role 'ASM_ConditionalRule68', cardinality 0..*) is associated with 'Rule' (role 'Rule69', cardinality 0..*).
+'ASM::ChooseRule' (role 'ASM_ChooseRule46', cardinality 0..*) is associated with 'Rule' (role 'Rule47', cardinality 0..*).
+'ASM::ExtendRule' (role 'ASM_ExtendRule85', cardinality 0..*) is associated with 'Rule' (role 'Rule86', cardinality 0..*).
+'VariableDecl' (role 'VariableDecl88', cardinality 0..*) is associated with 'ASM::Extension' (role 'ASM_Extension', cardinality 0..*).
+'ASM::AccessUpdateFunction' (role 'ASM_AccessUpdateFunction', cardinality 0..*) is associated with 'Function' (role 'Function', cardinality 0..*).
+'ASM::ChooseRule' (role 'ASM_ChooseRule49', cardinality 0..*) is associated with 'Rule' (role 'Rule50', cardinality 0..*).
+'Argument' (role 'Argument', cardinality 0..*) is associated with 'ASM::Signature' (role 'ASM_Signature', cardinality 0..*).
+'Term' (role 'Term26', cardinality 0..*) is associated with 'ASM::FunctionOrVariableTerm' (role 'ASM_FunctionOrVariableTerm25', cardinality 0..*).
+'ASM::Initialization' (role 'ASM_Initialization', cardinality 0..*) is associated with 'Rule' (role 'Rule22', cardinality 0..*).
+'Term' (role 'Term73', cardinality 0..*) is associated with 'ASM::ElseIf' (role 'ASM_ElseIf', cardinality 0..*).
+'ASM::ExtendRule' (role 'ASM_ExtendRule', cardinality 0..*) is associated with 'Extension' (role 'Extension', cardinality 0..*).
+'Term' (role 'Term44', cardinality 0..*) is associated with 'ASM::ChooseRule' (role 'ASM_ChooseRule43', cardinality 0..*).
+'ASM::ConditionalRule' (role 'ASM_ConditionalRule', cardinality 0..*) is associated with 'Term' (role 'Term63', cardinality 0..*).
+'ASM::ConditionalRule' (role 'ASM_ConditionalRule65', cardinality 0..*) is associated with 'Rule' (role 'Rule66', cardinality 0..*).
+'Rule' (role 'Rule79', cardinality 0..*) is associated with 'ASM::ElseIf' (role 'ASM_ElseIf78', cardinality 0..*).
+'Signature' (role 'Signature13', cardinality 0..*) is associated with 'ASM::MetaInformation' (role 'ASM_MetaInformation', cardinality 0..*).
+'ASM::UpdateRule' (role 'ASM_UpdateRule36', cardinality 0..*) is associated with 'Term' (role 'Term37', cardinality 0..*).
+'ASM::DoForallRule' (role 'ASM_DoForallRule57', cardinality 0..*) is associated with 'Term' (role 'Term58', cardinality 0..*).
+'FunctionOrVariableTerm' (role 'FunctionOrVariableTerm', cardinality 0..*) is associated with 'ASM::UpdateRule' (role 'ASM_UpdateRule', cardinality 0..*).
+'ElseIf' (role 'ElseIf', cardinality 0..*) is associated with 'ASM::ConditionalRule' (role 'ASM_ConditionalRule71', cardinality 0..*).
+'ASM::AsmInvocation' (role 'ASM_AsmInvocation', cardinality 0..*) is associated with 'Term' (role 'Term33', cardinality 0..*).
+'ElementDecl' (role 'ElementDecl', cardinality 0..*) is associated with 'ASM::FunctionOrVariableTerm' (role 'ASM_FunctionOrVariableTerm', cardinality 0..*).
+'ASM::ChooseRule' (role 'ASM_ChooseRule', cardinality 0..*) is associated with 'VariableDecl' (role 'VariableDecl', cardinality 0..*).
+'ASM::ElseIf' (role 'ASM_ElseIf75', cardinality 0..*) is associated with 'Rule' (role 'Rule76', cardinality 0..*).
+'Universe' (role 'Universe91', cardinality 0..*) is associated with 'ASM::Extension' (role 'ASM_Extension90', cardinality 0..*).
+'ASM::Asm' (role 'ASM_Asm3', cardinality 0..*) is associated with 'MetaInformation' (role 'MetaInformation', cardinality 0..*).
+'AccessUpdateFunction' (role 'AccessUpdateFunction', cardinality 0..*) is associated with 'ASM::MetaInformation' (role 'ASM_MetaInformation15', cardinality 0..*).

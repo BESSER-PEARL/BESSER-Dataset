@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'petrinet::Place' has the following attributes: 'token' of type int.
+The class 'petrinet::Transition' has no attributes.
+The class 'petrinet::OutArc' has no attributes.
+The class 'petrinet::PetriNet' has no attributes.
+The class 'Arc' has no attributes.
+The class 'petrinet::Arc' has the following attributes: 'weight' of type int.
+The class 'petrinet::InArc' has no attributes.
+The class 'petrinet::Named' has the following attributes: 'name' of type str.
+The class 'Named' has no attributes.
+'petrinet::Place' is a specialization of 'Named'.
+'petrinet::Transition' is a specialization of 'Named'.
+'petrinet::InArc' is a specialization of 'Arc'.
+'petrinet::OutArc' is a specialization of 'Arc'.
+'petrinet::Place' (role 'petrinet_Place9', cardinality 0..*) is associated with 'petrinet::InArc' (role 'petrinet_InArc8', cardinality 0..*).
+'petrinet::OutArc' (role 'petrinet_OutArc', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition6', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet', cardinality 0..*).
+'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet2', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place12', cardinality 0..*) is associated with 'petrinet::OutArc' (role 'petrinet_OutArc11', cardinality 0..*).
+'petrinet::Transition' (role 'petrinet_Transition4', cardinality 0..*) is associated with 'petrinet::InArc' (role 'petrinet_InArc', cardinality 0..*).

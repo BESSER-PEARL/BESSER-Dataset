@@ -1,0 +1,171 @@
+The model has 78 class(es).
+The class 'DatadiagramMLSimplified::IXElt' has the following attributes: 'iX' of type str.
+The class 'DatadiagramMLSimplified::LineTo' has no attributes.
+The class 'Master' has no attributes.
+The class 'DatadiagramMLSimplified::ConnectsCollection' has no attributes.
+The class 'IXElt' has no attributes.
+The class 'DatadiagramMLSimplified::MastersCollection' has no attributes.
+The class 'IdentifiedElt' has no attributes.
+The class 'DatadiagramMLSimplified::CellType' has the following attributes: 'value' of type str; 'formula' of type str; 'unit' of type str; 'err' of type str.
+The class 'XYABElt' has no attributes.
+The class 'UniqueIdElt' has no attributes.
+The class 'DatadiagramMLSimplified::Shape' has the following attributes: 'lineStyle' of type str; 'textStyle' of type str; 'fillStyle' of type str.
+The class 'LineTo' has no attributes.
+The class 'Page' has no attributes.
+The class 'DatadiagramMLSimplified::ArcTo' has no attributes.
+The class 'DatadiagramMLSimplified::PagesCollection' has no attributes.
+The class 'DatadiagramMLSimplified::PolylineTo' has no attributes.
+The class 'Ellipse' has no attributes.
+The class 'DelElt' has no attributes.
+The class 'DatadiagramMLSimplified::ShapeElt' has no attributes.
+The class 'SplineKnot' has no attributes.
+The class 'CellType' has no attributes.
+The class 'MasterShortCut' has no attributes.
+The class 'DatadiagramMLSimplified::XYABElt' has no attributes.
+The class 'XYAElt' has no attributes.
+The class 'DatadiagramMLSimplified::StringElt' has the following attributes: 'value' of type str.
+The class 'DatadiagramMLSimplified::PageElt' has no attributes.
+The class 'DatadiagramMLSimplified::Icon' has the following attributes: 'value' of type str.
+The class 'XYABCDElt' has no attributes.
+The class 'Geom' has no attributes.
+The class 'DatadiagramMLSimplified::PageSheet' has no attributes.
+The class 'DatadiagramMLSimplified::XYABCDElt' has no attributes.
+The class 'MastersCollection' has no attributes.
+The class 'DatadiagramMLSimplified::IdentifiedElt' has the following attributes: 'ID' of type str.
+The class 'DatadiagramMLSimplified::XYABCDEElt' has no attributes.
+The class 'DatadiagramMLSimplified::XYAElt' has no attributes.
+The class 'DatadiagramMLSimplified::Ellipse' has no attributes.
+The class 'DatadiagramMLSimplified::VisioDocument' has no attributes.
+The class 'XYElt' has no attributes.
+The class 'DatadiagramMLSimplified::MoveTo' has no attributes.
+The class 'ShapesCollection' has no attributes.
+The class 'SplineStart' has no attributes.
+The class 'NURBSTo' has no attributes.
+The class 'DatadiagramMLSimplified::NamedElt' has the following attributes: 'name' of type str; 'nameU' of type str.
+The class 'DatadiagramMLSimplified::ShapesCollection' has no attributes.
+The class 'EllipticalArcTo' has no attributes.
+The class 'DatadiagramMLSimplified::DelElt' has the following attributes: 'del_' of type str.
+The class 'DatadiagramMLSimplified::InfiniteLine' has no attributes.
+The class 'DatadiagramMLSimplified::Master' has the following attributes: 'iconSize' of type str; 'matchByName' of type str; 'iconUpdate' of type str; 'hidden' of type str; 'alignName' of type str; 'patternFlags' of type str; 'baseID' of type str; 'prompt' of type str.
+The class 'DatadiagramMLSimplified::Text' has no attributes.
+The class 'DatadiagramMLSimplified::MasterElt' has no attributes.
+The class 'DatadiagramMLSimplified::Connect' has the following attributes: 'fromSheet' of type str; 'toPart' of type str; 'toSheet' of type str; 'fromCell' of type str; 'fromPart' of type str; 'toCell' of type str.
+The class 'DatadiagramMLSimplified::Geom' has no attributes.
+The class 'Icon' has no attributes.
+The class 'DatadiagramMLSimplified::UniqueIdElt' has the following attributes: 'UniqueID' of type str.
+The class 'DatadiagramMLSimplified::TextElt' has no attributes.
+The class 'TextElt' has no attributes.
+The class 'PolylineTo' has no attributes.
+The class 'Shape' has no attributes.
+The class 'ArcTo' has no attributes.
+The class 'PageElt' has no attributes.
+The class 'XYABCDEElt' has no attributes.
+The class 'MasterElt' has no attributes.
+The class 'ConnectsCollection' has no attributes.
+The class 'MoveTo' has no attributes.
+The class 'DatadiagramMLSimplified::Page' has the following attributes: 'reviewerID' of type str; 'associatedPage' of type str; 'viewCenterX' of type str; 'backPage' of type str; 'background' of type str; 'viewScale' of type str; 'ViewCenterY' of type str.
+The class 'DatadiagramMLSimplified::NURBSTo' has no attributes.
+The class 'InfiniteLine' has no attributes.
+The class 'PagesCollection' has no attributes.
+The class 'DatadiagramMLSimplified::XYElt' has no attributes.
+The class 'DatadiagramMLSimplified::SplineKnot' has no attributes.
+The class 'VisioDocument' has no attributes.
+The class 'DatadiagramMLSimplified::SplineStart' has no attributes.
+The class 'Text' has no attributes.
+The class 'DatadiagramMLSimplified::MasterShortCut' has the following attributes: 'prompt' of type str; 'iconSize' of type str; 'shortcutURL' of type str; 'alignName' of type str; 'patternFlags' of type str; 'shortcutHelp' of type str.
+The class 'ShapeElt' has no attributes.
+The class 'DatadiagramMLSimplified::EllipticalArcTo' has no attributes.
+The class 'NamedElt' has no attributes.
+The class 'Connect' has no attributes.
+'DatadiagramMLSimplified::XYABCDEElt' is a specialization of 'XYABCDElt'.
+'DatadiagramMLSimplified::MasterShortCut' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLSimplified::MoveTo' is a specialization of 'XYElt'.
+'DatadiagramMLSimplified::Master' is a specialization of 'UniqueIdElt'.
+'DatadiagramMLSimplified::StringElt' is a specialization of 'TextElt'.
+'DatadiagramMLSimplified::Geom' is a specialization of 'ShapeElt'.
+'DatadiagramMLSimplified::Page' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLSimplified::NURBSTo' is a specialization of 'XYABCDEElt'.
+'DatadiagramMLSimplified::PageSheet' is a specialization of 'PageElt'.
+'DatadiagramMLSimplified::ArcTo' is a specialization of 'XYAElt'.
+'DatadiagramMLSimplified::Geom' is a specialization of 'DelElt'.
+'DatadiagramMLSimplified::ShapesCollection' is a specialization of 'MasterElt'.
+'DatadiagramMLSimplified::LineTo' is a specialization of 'XYElt'.
+'DatadiagramMLSimplified::Text' is a specialization of 'ShapeElt'.
+'DatadiagramMLSimplified::SplineStart' is a specialization of 'XYABCDElt'.
+'DatadiagramMLSimplified::XYABCDElt' is a specialization of 'XYABElt'.
+'DatadiagramMLSimplified::ConnectsCollection' is a specialization of 'PageElt'.
+'DatadiagramMLSimplified::ConnectsCollection' is a specialization of 'MasterElt'.
+'DatadiagramMLSimplified::XYElt' is a specialization of 'IXElt'.
+'DatadiagramMLSimplified::Master' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLSimplified::ShapesCollection' is a specialization of 'PageElt'.
+'DatadiagramMLSimplified::Ellipse' is a specialization of 'XYABCDElt'.
+'DatadiagramMLSimplified::XYABElt' is a specialization of 'XYAElt'.
+'DatadiagramMLSimplified::Master' is a specialization of 'NamedElt'.
+'DatadiagramMLSimplified::PolylineTo' is a specialization of 'XYAElt'.
+'DatadiagramMLSimplified::Page' is a specialization of 'NamedElt'.
+'DatadiagramMLSimplified::Geom' is a specialization of 'IXElt'.
+'DatadiagramMLSimplified::PageSheet' is a specialization of 'Shape'.
+'DatadiagramMLSimplified::InfiniteLine' is a specialization of 'XYABElt'.
+'DatadiagramMLSimplified::XYAElt' is a specialization of 'XYElt'.
+'DatadiagramMLSimplified::EllipticalArcTo' is a specialization of 'XYABCDElt'.
+'DatadiagramMLSimplified::PageSheet' is a specialization of 'UniqueIdElt'.
+'DatadiagramMLSimplified::PageSheet' is a specialization of 'MasterElt'.
+'DatadiagramMLSimplified::SplineKnot' is a specialization of 'XYAElt'.
+'DatadiagramMLSimplified::MasterShortCut' is a specialization of 'NamedElt'.
+'DatadiagramMLSimplified::XYElt' is a specialization of 'DelElt'.
+'DatadiagramMLSimplified::Icon' is a specialization of 'MasterElt'.
+'LineTo' (role 'LineTo', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Geom' (role 'lt_geom', cardinality 0..*).
+'EllipticalArcTo' (role 'EllipticalArcTo', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Geom' (role 'eat_geom', cardinality 0..*).
+'DatadiagramMLSimplified::ArcTo' (role 'arcsTo', cardinality 0..*) is associated with 'Geom' (role 'Geom36', cardinality 0..*).
+'PagesCollection' (role 'PagesCollection83', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Page' (role 'pages', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection71', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Master' (role 'masters', cardinality 0..*).
+'DatadiagramMLSimplified::NURBSTo' (role 'nurbsTo', cardinality 0..*) is associated with 'Geom' (role 'Geom59', cardinality 0..*).
+'NURBSTo' (role 'NURBSTo', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Geom' (role 'nt_geom', cardinality 0..*).
+'Geom' (role 'Geom40', cardinality 0..*) is associated with 'DatadiagramMLSimplified::PolylineTo' (role 'polylinesTo', cardinality 0..*).
+'Connect' (role 'Connect', cardinality 0..*) is associated with 'DatadiagramMLSimplified::ConnectsCollection' (role 'c_connects', cardinality 0..*).
+'PageElt' (role 'PageElt', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Page' (role 'pe_page', cardinality 0..*).
+'CellType' (role 'CellType11', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Geom' (role 'DatadiagramMLSimplified_Geom10', cardinality 0..*).
+'Text' (role 'Text', cardinality 0..*) is associated with 'DatadiagramMLSimplified::TextElt' (role 'textElts', cardinality 0..*).
+'DatadiagramMLSimplified::Geom' (role 'sk_geom', cardinality 0..*) is associated with 'SplineKnot' (role 'SplineKnot', cardinality 0..*).
+'DatadiagramMLSimplified::MasterElt' (role 'masterElts', cardinality 0..*) is associated with 'Master' (role 'Master78', cardinality 0..*).
+'DatadiagramMLSimplified::MastersCollection' (role 'docMasters', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument', cardinality 0..*).
+'CellType' (role 'CellType34', cardinality 0..*) is associated with 'DatadiagramMLSimplified::XYAElt' (role 'DatadiagramMLSimplified_XYAElt', cardinality 0..*).
+'DatadiagramMLSimplified::XYElt' (role 'DatadiagramMLSimplified_XYElt28', cardinality 0..*) is associated with 'CellType' (role 'CellType29', cardinality 0..*).
+'DatadiagramMLSimplified::MasterShortCut' (role 'i_masterShortCut', cardinality 0..*) is associated with 'Icon' (role 'Icon', cardinality 0..*).
+'CellType' (role 'CellType8', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Geom' (role 'DatadiagramMLSimplified_Geom7', cardinality 0..*).
+'DatadiagramMLSimplified::SplineKnot' (role 'splineKnots', cardinality 0..*) is associated with 'Geom' (role 'Geom38', cardinality 0..*).
+'ConnectsCollection' (role 'ConnectsCollection', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Connect' (role 'connections', cardinality 0..*).
+'CellType' (role 'CellType49', cardinality 0..*) is associated with 'DatadiagramMLSimplified::XYABCDElt' (role 'DatadiagramMLSimplified_XYABCDElt48', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection66', cardinality 0..*) is associated with 'DatadiagramMLSimplified::MasterShortCut' (role 'masterShortCuts', cardinality 0..*).
+'DatadiagramMLSimplified::PagesCollection' (role 'p_pages', cardinality 0..*) is associated with 'Page' (role 'Page', cardinality 0..*).
+'DatadiagramMLSimplified::XYABCDEElt' (role 'DatadiagramMLSimplified_XYABCDEElt', cardinality 0..*) is associated with 'CellType' (role 'CellType57', cardinality 0..*).
+'DatadiagramMLSimplified::ShapeElt' (role 'shapeElts', cardinality 0..*) is associated with 'Shape' (role 'Shape', cardinality 0..*).
+'DatadiagramMLSimplified::Geom' (role 'pt_geom', cardinality 0..*) is associated with 'PolylineTo' (role 'PolylineTo', cardinality 0..*).
+'PagesCollection' (role 'PagesCollection', cardinality 0..*) is associated with 'DatadiagramMLSimplified::VisioDocument' (role 'ps_visioDocument', cardinality 0..*).
+'DatadiagramMLSimplified::Ellipse' (role 'ellipses', cardinality 0..*) is associated with 'Geom' (role 'Geom51', cardinality 0..*).
+'DatadiagramMLSimplified::XYABElt' (role 'DatadiagramMLSimplified_XYABElt', cardinality 0..*) is associated with 'CellType' (role 'CellType42', cardinality 0..*).
+'DatadiagramMLSimplified::XYABCDElt' (role 'DatadiagramMLSimplified_XYABCDElt', cardinality 0..*) is associated with 'CellType' (role 'CellType46', cardinality 0..*).
+'DatadiagramMLSimplified::PageElt' (role 'pageElts', cardinality 0..*) is associated with 'Page' (role 'Page86', cardinality 0..*).
+'DatadiagramMLSimplified::Geom' (role 'DatadiagramMLSimplified_Geom13', cardinality 0..*) is associated with 'CellType' (role 'CellType14', cardinality 0..*).
+'MoveTo' (role 'MoveTo', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Geom' (role 'mt_geom', cardinality 0..*).
+'DatadiagramMLSimplified::SplineStart' (role 'splineStarts', cardinality 0..*) is associated with 'Geom' (role 'Geom55', cardinality 0..*).
+'DatadiagramMLSimplified::Icon' (role 'icons', cardinality 0..*) is associated with 'MasterShortCut' (role 'MasterShortCut69', cardinality 0..*).
+'DatadiagramMLSimplified::Text' (role 'te_text', cardinality 0..*) is associated with 'TextElt' (role 'TextElt', cardinality 0..*).
+'Geom' (role 'Geom44', cardinality 0..*) is associated with 'DatadiagramMLSimplified::InfiniteLine' (role 'infiniteLines', cardinality 0..*).
+'MasterShortCut' (role 'MasterShortCut', cardinality 0..*) is associated with 'DatadiagramMLSimplified::MastersCollection' (role 'm_masterShortCuts', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection', cardinality 0..*) is associated with 'DatadiagramMLSimplified::VisioDocument' (role 'ms_visioDocument', cardinality 0..*).
+'DatadiagramMLSimplified::PagesCollection' (role 'docPages', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument80', cardinality 0..*).
+'DatadiagramMLSimplified::Shape' (role 'shapes', cardinality 0..*) is associated with 'ShapesCollection' (role 'ShapesCollection', cardinality 0..*).
+'Geom' (role 'Geom32', cardinality 0..*) is associated with 'DatadiagramMLSimplified::MoveTo' (role 'movesTo', cardinality 0..*).
+'CellType' (role 'CellType26', cardinality 0..*) is associated with 'DatadiagramMLSimplified::XYElt' (role 'DatadiagramMLSimplified_XYElt', cardinality 0..*).
+'Ellipse' (role 'Ellipse', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Geom' (role 'e_geom', cardinality 0..*).
+'CellType' (role 'CellType', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Geom' (role 'DatadiagramMLSimplified_Geom', cardinality 0..*).
+'DatadiagramMLSimplified::Geom' (role 'il_geom', cardinality 0..*) is associated with 'InfiniteLine' (role 'InfiniteLine', cardinality 0..*).
+'DatadiagramMLSimplified::ShapesCollection' (role 'ss_shapes', cardinality 0..*) is associated with 'Shape' (role 'Shape74', cardinality 0..*).
+'DatadiagramMLSimplified::Geom' (role 'ac_geom', cardinality 0..*) is associated with 'ArcTo' (role 'ArcTo', cardinality 0..*).
+'DatadiagramMLSimplified::Master' (role 'me_master', cardinality 0..*) is associated with 'MasterElt' (role 'MasterElt', cardinality 0..*).
+'Master' (role 'Master', cardinality 0..*) is associated with 'DatadiagramMLSimplified::MastersCollection' (role 'm_masters', cardinality 0..*).
+'Geom' (role 'Geom53', cardinality 0..*) is associated with 'DatadiagramMLSimplified::EllipticalArcTo' (role 'ellipticalArcsTo', cardinality 0..*).
+'DatadiagramMLSimplified::Geom' (role 'ss_geom', cardinality 0..*) is associated with 'SplineStart' (role 'SplineStart', cardinality 0..*).
+'Geom' (role 'Geom', cardinality 0..*) is associated with 'DatadiagramMLSimplified::LineTo' (role 'linesTo', cardinality 0..*).
+'ShapeElt' (role 'ShapeElt', cardinality 0..*) is associated with 'DatadiagramMLSimplified::Shape' (role 'sse_shapeSheet', cardinality 0..*).

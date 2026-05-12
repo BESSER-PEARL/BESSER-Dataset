@@ -1,0 +1,206 @@
+The model has 67 class(es).
+The class 'DataType' has no attributes.
+The class 'ValueExpressionFunction' has no attributes.
+The class 'XMLTableColumnDefinitionItem' has no attributes.
+The class 'query::XMLValueFunctionPIContent' has no attributes.
+The class 'XMLNamespaceDeclarationItem' has no attributes.
+The class 'query::QueryValueExpression' has no attributes.
+The class 'query::XMLValueFunction' has no attributes.
+The class 'query::XMLValueFunctionValidateContent' has no attributes.
+The class 'query::XMLValueFunctionElement' has the following attributes: 'elementName' of type str; 'returningOption' of type str.
+The class 'query::XMLNamespaceDeclarationDefault' has the following attributes: 'noDefault' of type bool.
+The class 'query::XMLValueFunctionValidateAccordingTo' has no attributes.
+The class 'XMLValueFunction' has no attributes.
+The class 'query::XMLValueFunctionValidate' has the following attributes: 'contentOption' of type str.
+The class 'query::XMLAttributesDeclaration' has no attributes.
+The class 'query::XMLValueFunctionComment' has the following attributes: 'returningOption' of type str.
+The class 'query::XMLValueFunctionParse' has the following attributes: 'contentOption' of type str; 'whitespaceHandlingOption' of type str.
+The class 'query::XMLValueFunctionQuery' has the following attributes: 'emptyHandlingOption' of type str.
+The class 'query::XMLValueFunctionConcatContentItem' has no attributes.
+The class 'query::XMLValueFunctionValidateElementName' has no attributes.
+The class 'QueryValueExpression' has no attributes.
+The class 'query::XMLValueFunctionDocument' has the following attributes: 'returningOption' of type str.
+The class 'query::XMLAttributeDeclarationItem' has no attributes.
+The class 'query::XMLSerializeFunctionTarget' has no attributes.
+The class 'query::XMLValueFunctionValidateElementNamespace' has the following attributes: 'noNamespace' of type bool; 'namespaceURI' of type str.
+The class 'query::XMLValueFunctionConcat' has the following attributes: 'returningOption' of type str.
+The class 'query::XMLValueExpressionCast' has the following attributes: 'passingMechanism' of type str.
+The class 'query::XMLValueFunctionValidateAccordingToIdentifier' has the following attributes: 'registeredXMLSchemaName' of type str; 'schemaName' of type str.
+The class 'query::XMLQueryArgumentList' has the following attributes: 'passingMechanism' of type str.
+The class 'query::XMLPredicateContent' has no attributes.
+The class 'query::XMLValueFunctionText' has the following attributes: 'returningOption' of type str.
+The class 'query::XMLValueFunctionDocumentContent' has no attributes.
+The class 'query::XMLAggregateFunction' has the following attributes: 'returningOption' of type str.
+The class 'Predicate' has no attributes.
+The class 'query::XMLValueFunctionTextContent' has no attributes.
+The class 'query::XMLPredicate' has no attributes.
+The class 'ValueExpressionCast' has no attributes.
+The class 'query::XMLNamespaceDeclarationPrefix' has the following attributes: 'prefix' of type str.
+The class 'XMLPredicate' has no attributes.
+The class 'query::XMLValueFunctionForest' has the following attributes: 'returningOption' of type str; 'nullHandlingOption' of type str.
+The class 'query::XMLNamespacesDeclaration' has no attributes.
+The class 'query::XMLAggregateSortSpecification' has no attributes.
+The class 'query::XMLPredicateExists' has no attributes.
+The class 'query::XMLNamespaceDeclarationItem' has the following attributes: 'uri' of type str.
+The class 'query::XMLPredicateValid' has no attributes.
+The class 'query::XMLValueFunctionCommentContent' has no attributes.
+The class 'query::XMLTableFunction' has the following attributes: 'tableRowPattern' of type str.
+The class 'SQLQueryObject' has no attributes.
+The class 'query::XMLValueFunctionForestContentItem' has no attributes.
+The class 'query::XMLQueryArgumentItem' has the following attributes: 'passingMechanism' of type str.
+The class 'query::XMLPredicateDocument' has no attributes.
+The class 'query::XMLValueFunctionElementContentItem' has no attributes.
+The class 'query::XMLQueryExpression' has the following attributes: 'xqueryExprContent' of type str.
+The class 'query::OrderBySpecification' has no attributes.
+The class 'query::XMLValueFunctionElementContentList' has the following attributes: 'nullHandlingOption' of type str.
+The class 'query::XMLSerializeFunction' has the following attributes: 'contentOption' of type str; 'declarationOption' of type str; 'serializeVersion' of type str.
+The class 'TableFunction' has no attributes.
+The class 'query::XMLTableColumnDefinitionItem' has no attributes.
+The class 'query::XMLValueFunctionParseContent' has no attributes.
+The class 'query::XMLValueFunctionQueryReturning' has the following attributes: 'returningOption' of type str; 'passingOption' of type str.
+The class 'query::XMLTableColumnDefinitionRegular' has the following attributes: 'passingOption' of type str; 'tableColumnPattern' of type str.
+The class 'query::XMLValueFunctionValidateElement' has no attributes.
+The class 'query::XMLSerializeFunctionEncoding' has the following attributes: 'encodingName' of type str.
+The class 'query::XMLTableColumnDefinitionOrdinality' has no attributes.
+The class 'query::XMLTableColumnDefinitionDefault' has no attributes.
+The class 'XMLValueFunctionValidateAccordingTo' has no attributes.
+The class 'query::XMLValueFunctionPI' has the following attributes: 'targetName' of type str; 'returningOption' of type str.
+The class 'query::XMLValueFunctionValidateAccordingToURI' has the following attributes: 'noNamespace' of type bool; 'schemaLocationURI' of type str; 'targetNamespaceURI' of type str.
+The enumeration 'XMLPassingType' has the following literals: 'BY_VALUE', 'NONE', 'BY_REF'.
+The enumeration 'XMLContentType2' has the following literals: 'CONTENT', 'SEQUENCE', 'NONE', 'DOCUMENT'.
+The enumeration 'XMLNullHandlingType' has the following literals: 'NONE', 'EMPTY_ON_NULL', 'NULL_ON_NULL', 'NIL_ON_NULL', 'ABSENT_ON_NULL', 'NIL_ON_NO_CONTENT'.
+The enumeration 'XMLWhitespaceHandlingType' has the following literals: 'PRESERE_WHITESPACE', 'NONE', 'STRIP_WHITESPACE'.
+The enumeration 'XMLEmptyHandlingType' has the following literals: 'NULL_ON_EMPTY', 'NONE', 'EMPTY_ON_EMPTY'.
+The enumeration 'XMLDeclarationType' has the following literals: 'EXCLUDING_XMLDECLARATION', 'INCLUDING_XMLDECLARATION', 'NONE'.
+The enumeration 'XMLContentType' has the following literals: 'DOCUMENT', 'CONTENT', 'NONE'.
+The enumeration 'XMLReturningType' has the following literals: 'RETURNING_SEQUENCE', 'NONE', 'RETURNING_CONTENT'.
+'query::XMLPredicateDocument' is a specialization of 'XMLPredicate'.
+'query::XMLTableColumnDefinitionRegular' is a specialization of 'XMLTableColumnDefinitionItem'.
+'query::XMLValueFunctionDocument' is a specialization of 'XMLValueFunction'.
+'query::XMLValueFunctionDocumentContent' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunctionParse' is a specialization of 'XMLValueFunction'.
+'query::XMLAggregateSortSpecification' is a specialization of 'SQLQueryObject'.
+'query::XMLValueFunctionPI' is a specialization of 'XMLValueFunction'.
+'query::XMLTableColumnDefinitionDefault' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunctionForestContentItem' is a specialization of 'QueryValueExpression'.
+'query::XMLSerializeFunctionEncoding' is a specialization of 'SQLQueryObject'.
+'query::XMLValueFunctionQuery' is a specialization of 'XMLValueFunction'.
+'query::XMLValueFunctionParseContent' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunctionText' is a specialization of 'XMLValueFunction'.
+'query::XMLValueFunctionElement' is a specialization of 'XMLValueFunction'.
+'query::XMLValueFunctionPIContent' is a specialization of 'QueryValueExpression'.
+'query::XMLNamespaceDeclarationItem' is a specialization of 'SQLQueryObject'.
+'query::XMLSerializeFunctionTarget' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunctionElementContentItem' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunctionElementContentList' is a specialization of 'SQLQueryObject'.
+'query::XMLSerializeFunction' is a specialization of 'ValueExpressionFunction'.
+'query::XMLValueFunctionQueryReturning' is a specialization of 'SQLQueryObject'.
+'query::XMLAggregateFunction' is a specialization of 'ValueExpressionFunction'.
+'query::XMLValueFunctionValidateElementNamespace' is a specialization of 'SQLQueryObject'.
+'query::XMLValueFunctionForest' is a specialization of 'XMLValueFunction'.
+'query::XMLValueFunctionConcatContentItem' is a specialization of 'QueryValueExpression'.
+'query::XMLNamespacesDeclaration' is a specialization of 'SQLQueryObject'.
+'query::XMLValueFunctionComment' is a specialization of 'XMLValueFunction'.
+'query::XMLAttributeDeclarationItem' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunctionCommentContent' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunction' is a specialization of 'ValueExpressionFunction'.
+'query::XMLValueFunctionValidateElement' is a specialization of 'SQLQueryObject'.
+'query::XMLPredicateValid' is a specialization of 'XMLPredicate'.
+'query::XMLTableColumnDefinitionOrdinality' is a specialization of 'XMLTableColumnDefinitionItem'.
+'query::XMLQueryExpression' is a specialization of 'SQLQueryObject'.
+'query::XMLValueFunctionValidateAccordingTo' is a specialization of 'SQLQueryObject'.
+'query::XMLQueryArgumentList' is a specialization of 'SQLQueryObject'.
+'query::XMLValueFunctionValidateAccordingToURI' is a specialization of 'XMLValueFunctionValidateAccordingTo'.
+'query::XMLValueFunctionConcat' is a specialization of 'XMLValueFunction'.
+'query::XMLValueFunctionValidateAccordingToIdentifier' is a specialization of 'XMLValueFunctionValidateAccordingTo'.
+'query::XMLPredicateExists' is a specialization of 'XMLPredicate'.
+'query::XMLNamespaceDeclarationPrefix' is a specialization of 'XMLNamespaceDeclarationItem'.
+'query::XMLQueryArgumentItem' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunctionValidateElementName' is a specialization of 'SQLQueryObject'.
+'query::XMLValueFunctionValidate' is a specialization of 'XMLValueFunction'.
+'query::XMLValueFunctionValidateContent' is a specialization of 'QueryValueExpression'.
+'query::XMLValueExpressionCast' is a specialization of 'ValueExpressionCast'.
+'query::XMLTableColumnDefinitionItem' is a specialization of 'SQLQueryObject'.
+'query::XMLPredicate' is a specialization of 'Predicate'.
+'query::XMLTableFunction' is a specialization of 'TableFunction'.
+'query::XMLPredicateContent' is a specialization of 'XMLPredicate'.
+'query::XMLNamespaceDeclarationDefault' is a specialization of 'XMLNamespaceDeclarationItem'.
+'query::XMLValueFunctionTextContent' is a specialization of 'QueryValueExpression'.
+'query::XMLValueFunctionCommentContent' (role 'query_XMLValueFunctionCommentContent', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'query_QueryValueExpression64', cardinality 0..*).
+'query::XMLValueFunctionValidateElement' (role 'XMLValueFunctionValidateElement', cardinality 0..*) is associated with 'query::XMLValueFunctionValidateAccordingTo' (role 'validateAccordingTo99', cardinality 0..*).
+'query::XMLTableFunction' (role 'tableFunction', cardinality 0..*) is associated with 'query::XMLQueryArgumentList' (role 'XMLQueryArgumentList80', cardinality 0..*).
+'query::XMLValueFunctionValidateElementName' (role 'validateElementName', cardinality 0..*) is associated with 'query::XMLValueFunctionValidateElement' (role 'XMLValueFunctionValidateElement101', cardinality 0..*).
+'query::XMLValueFunctionElement' (role 'XMLValueFunctionElement114', cardinality 0..*) is associated with 'query::XMLAttributesDeclaration' (role 'attributesDecl', cardinality 0..*).
+'query::XMLValueFunctionPI' (role 'valueFunctionPI', cardinality 0..*) is associated with 'query::XMLValueFunctionPIContent' (role 'XMLValueFunctionPIContent', cardinality 0..*).
+'query::XMLValueFunctionValidateElementNamespace' (role 'validateElementNamespace', cardinality 0..*) is associated with 'query::XMLValueFunctionValidateElement' (role 'XMLValueFunctionValidateElement103', cardinality 0..*).
+'query::XMLValueFunctionDocumentContent' (role 'documentContent', cardinality 0..*) is associated with 'query::XMLValueFunctionDocument' (role 'XMLValueFunctionDocument', cardinality 0..*).
+'query::XMLValueFunctionValidateElement' (role 'validateElement125', cardinality 0..*) is associated with 'query::XMLValueFunctionValidateElementName' (role 'XMLValueFunctionValidateElementName', cardinality 0..*).
+'query::XMLValueFunctionPIContent' (role 'query_XMLValueFunctionPIContent', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'query_QueryValueExpression78', cardinality 0..*).
+'query::XMLValueFunctionValidate' (role 'XMLValueFunctionValidate97', cardinality 0..*) is associated with 'query::XMLValueFunctionValidateAccordingTo' (role 'validateAccordingTo', cardinality 0..*).
+'query::XMLValueFunctionValidateContent' (role 'XMLValueFunctionValidateContent', cardinality 0..*) is associated with 'query::XMLValueFunctionValidate' (role 'valueFunctionValidate', cardinality 0..*).
+'query::XMLValueFunctionValidateElement' (role 'validateElement', cardinality 0..*) is associated with 'query::XMLValueFunctionValidateElementNamespace' (role 'XMLValueFunctionValidateElementNamespace', cardinality 0..*).
+'query::XMLValueFunctionForest' (role 'valueFunctionForest17', cardinality 0..*) is associated with 'query::XMLNamespacesDeclaration' (role 'XMLNamespacesDeclaration18', cardinality 0..*).
+'query::XMLValueFunctionPIContent' (role 'PIContent', cardinality 0..*) is associated with 'query::XMLValueFunctionPI' (role 'XMLValueFunctionPI', cardinality 0..*).
+'query::XMLValueFunctionValidate' (role 'XMLValueFunctionValidate', cardinality 0..*) is associated with 'query::XMLValueFunctionValidateContent' (role 'validateContent', cardinality 0..*).
+'query::XMLValueFunctionForest' (role 'valueFunctionForest', cardinality 0..*) is associated with 'query::XMLValueFunctionForestContentItem' (role 'XMLValueFunctionForestContentItem', cardinality 0..*).
+'query::XMLValueFunctionDocumentContent' (role 'XMLValueFunctionDocumentContent', cardinality 0..*) is associated with 'query::XMLValueFunctionDocument' (role 'valueFunctionDocument', cardinality 0..*).
+'query::XMLValueFunctionQueryReturning' (role 'queryReturning', cardinality 0..*) is associated with 'query::XMLValueFunctionQuery' (role 'XMLValueFunctionQuery122', cardinality 0..*).
+'query::XMLValueFunctionElementContentList' (role 'elementContentList', cardinality 0..*) is associated with 'query::XMLValueFunctionElement' (role 'XMLValueFunctionElement118', cardinality 0..*).
+'query::XMLValueFunctionParseContent' (role 'query_XMLValueFunctionParseContent', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'query_QueryValueExpression75', cardinality 0..*).
+'query::QueryValueExpression' (role 'query_QueryValueExpression57', cardinality 0..*) is associated with 'query::XMLSerializeFunctionTarget' (role 'query_XMLSerializeFunctionTarget', cardinality 0..*).
+'DataType' (role 'DataType', cardinality 0..*) is associated with 'query::XMLTableColumnDefinitionRegular' (role 'query_XMLTableColumnDefinitionRegular', cardinality 0..*).
+'query::XMLValueFunctionParseContent' (role 'parseContent', cardinality 0..*) is associated with 'query::XMLValueFunctionParse' (role 'XMLValueFunctionParse', cardinality 0..*).
+'query::XMLValueFunctionElementContentList' (role 'elementContentList120', cardinality 0..*) is associated with 'query::XMLValueFunctionElementContentItem' (role 'XMLValueFunctionElementContentItem', cardinality 0..*).
+'query::XMLTableFunction' (role 'tableFunction82', cardinality 0..*) is associated with 'query::XMLTableColumnDefinitionItem' (role 'XMLTableColumnDefinitionItem', cardinality 0..*).
+'query::XMLValueFunctionComment' (role 'valueFunctionComment', cardinality 0..*) is associated with 'query::XMLValueFunctionCommentContent' (role 'XMLValueFunctionCommentContent', cardinality 0..*).
+'query::XMLTableColumnDefinitionRegular' (role 'columnDefinitionRegular', cardinality 0..*) is associated with 'query::XMLTableColumnDefinitionDefault' (role 'XMLTableColumnDefinitionDefault', cardinality 0..*).
+'query::XMLSerializeFunction' (role 'XMLSerializeFunction', cardinality 0..*) is associated with 'query::XMLSerializeFunctionTarget' (role 'serializeTarget', cardinality 0..*).
+'query::XMLNamespacesDeclaration' (role 'XMLNamespacesDeclaration10', cardinality 0..*) is associated with 'query::XMLNamespaceDeclarationItem' (role 'namespaceDecltemList', cardinality 0..*).
+'query::XMLAggregateFunction' (role 'aggregateFunction', cardinality 0..*) is associated with 'query::XMLAggregateSortSpecification' (role 'XMLAggregateSortSpecification', cardinality 0..*).
+'query::XMLSerializeFunction' (role 'query_XMLSerializeFunction', cardinality 0..*) is associated with 'query::XMLSerializeFunctionEncoding' (role 'query_XMLSerializeFunctionEncoding', cardinality 0..*).
+'query::XMLAttributeDeclarationItem' (role 'XMLAttributeDeclarationItem', cardinality 0..*) is associated with 'query::XMLAttributesDeclaration' (role 'attributesDecl116', cardinality 0..*).
+'query::XMLValueFunctionText' (role 'XMLValueFunctionText', cardinality 0..*) is associated with 'query::XMLValueFunctionTextContent' (role 'textContent', cardinality 0..*).
+'query::XMLSerializeFunction' (role 'serializeFunction', cardinality 0..*) is associated with 'query::XMLSerializeFunctionTarget' (role 'XMLSerializeFunctionTarget', cardinality 0..*).
+'query::QueryValueExpression' (role 'query_QueryValueExpression61', cardinality 0..*) is associated with 'query::XMLValueFunctionConcatContentItem' (role 'query_XMLValueFunctionConcatContentItem', cardinality 0..*).
+'query::XMLValueFunctionConcatContentItem' (role 'concatContentList', cardinality 0..*) is associated with 'query::XMLValueFunctionConcat' (role 'XMLValueFunctionConcat', cardinality 0..*).
+'query::XMLNamespacesDeclaration' (role 'XMLNamespacesDeclaration', cardinality 0..*) is associated with 'query::XMLValueFunctionElement' (role 'valueFunctionElement', cardinality 0..*).
+'query::XMLPredicateExists' (role 'XMLPredicateExists', cardinality 0..*) is associated with 'query::XMLQueryExpression' (role 'xqueryExpr', cardinality 0..*).
+'query::QueryValueExpression' (role 'query_QueryValueExpression72', cardinality 0..*) is associated with 'query::XMLValueFunctionForestContentItem' (role 'query_XMLValueFunctionForestContentItem', cardinality 0..*).
+'query::XMLNamespacesDeclaration' (role 'namespacesDecl108', cardinality 0..*) is associated with 'query::XMLValueFunctionForest' (role 'XMLValueFunctionForest109', cardinality 0..*).
+'query::XMLTableFunction' (role 'XMLTableFunction112', cardinality 0..*) is associated with 'query::XMLNamespacesDeclaration' (role 'namespacesDecl111', cardinality 0..*).
+'query::XMLValueFunctionValidateContent' (role 'query_XMLValueFunctionValidateContent', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'query_QueryValueExpression91', cardinality 0..*).
+'query::XMLValueFunctionForestContentItem' (role 'forestContentList', cardinality 0..*) is associated with 'query::XMLValueFunctionForest' (role 'XMLValueFunctionForest', cardinality 0..*).
+'query::XMLPredicateExists' (role 'predicateExists35', cardinality 0..*) is associated with 'query::XMLQueryArgumentList' (role 'XMLQueryArgumentList36', cardinality 0..*).
+'query::XMLValueFunctionQuery' (role 'XMLValueFunctionQuery', cardinality 0..*) is associated with 'query::XMLQueryExpression' (role 'xqueryExpr39', cardinality 0..*).
+'query::XMLValueFunctionTextContent' (role 'query_XMLValueFunctionTextContent', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'query_QueryValueExpression88', cardinality 0..*).
+'query::QueryValueExpression' (role 'query_QueryValueExpression', cardinality 0..*) is associated with 'query::XMLAttributeDeclarationItem' (role 'query_XMLAttributeDeclarationItem', cardinality 0..*).
+'query::XMLValueFunctionQuery' (role 'valueFunctionQuery', cardinality 0..*) is associated with 'query::XMLQueryExpression' (role 'XMLQueryExpression', cardinality 0..*).
+'query::XMLTableFunction' (role 'XMLTableFunction93', cardinality 0..*) is associated with 'query::XMLTableColumnDefinitionItem' (role 'columnDefList', cardinality 0..*).
+'query::XMLQueryArgumentList' (role 'xqueryArgList', cardinality 0..*) is associated with 'query::XMLPredicateExists' (role 'XMLPredicateExists41', cardinality 0..*).
+'query::XMLValueFunctionElementContentItem' (role 'query_XMLValueFunctionElementContentItem', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'query_QueryValueExpression12', cardinality 0..*).
+'query::XMLValueFunctionCommentContent' (role 'commentContent', cardinality 0..*) is associated with 'query::XMLValueFunctionComment' (role 'XMLValueFunctionComment', cardinality 0..*).
+'query::XMLValueFunctionElement' (role 'valueFunctionElement8', cardinality 0..*) is associated with 'query::XMLValueFunctionElementContentList' (role 'XMLValueFunctionElementContentList', cardinality 0..*).
+'query::XMLValueFunctionQueryReturning' (role 'XMLValueFunctionQueryReturning', cardinality 0..*) is associated with 'query::XMLValueFunctionQuery' (role 'valueFunctionQuery27', cardinality 0..*).
+'query::XMLNamespacesDeclaration' (role 'namespacesDecl106', cardinality 0..*) is associated with 'query::XMLValueFunctionElement' (role 'XMLValueFunctionElement', cardinality 0..*).
+'query::XMLQueryArgumentItem' (role 'xqueryArgListChildren', cardinality 0..*) is associated with 'query::XMLQueryArgumentList' (role 'XMLQueryArgumentList50', cardinality 0..*).
+'query::QueryValueExpression' (role 'query_QueryValueExpression52', cardinality 0..*) is associated with 'query::XMLQueryArgumentItem' (role 'query_XMLQueryArgumentItem', cardinality 0..*).
+'query::XMLPredicateExists' (role 'predicateExists', cardinality 0..*) is associated with 'query::XMLQueryExpression' (role 'XMLQueryExpression33', cardinality 0..*).
+'query::XMLValueFunctionValidateAccordingTo' (role 'XMLValueFunctionValidateAccordingTo128', cardinality 0..*) is associated with 'query::XMLValueFunctionValidateElement' (role 'validateElement127', cardinality 0..*).
+'query::XMLQueryArgumentList' (role 'XMLQueryArgumentList', cardinality 0..*) is associated with 'query::XMLValueFunctionQuery' (role 'valueFunctionQuery25', cardinality 0..*).
+'query::XMLTableFunction' (role 'tableFunction84', cardinality 0..*) is associated with 'query::XMLNamespacesDeclaration' (role 'XMLNamespacesDeclaration85', cardinality 0..*).
+'query::XMLValueFunctionQuery' (role 'XMLValueFunctionQuery46', cardinality 0..*) is associated with 'query::XMLQueryArgumentList' (role 'xqueryArgList45', cardinality 0..*).
+'query::XMLAttributeDeclarationItem' (role 'attributeDeclItem', cardinality 0..*) is associated with 'query::XMLAttributesDeclaration' (role 'XMLAttributesDeclaration', cardinality 0..*).
+'query::XMLTableColumnDefinitionDefault' (role 'query_XMLTableColumnDefinitionDefault', cardinality 0..*) is associated with 'query::QueryValueExpression' (role 'query_QueryValueExpression130', cardinality 0..*).
+'query::XMLValueFunctionValidateAccordingTo' (role 'XMLValueFunctionValidateAccordingTo', cardinality 0..*) is associated with 'query::XMLValueFunctionValidate' (role 'valueFunctionValidate31', cardinality 0..*).
+'query::XMLValueFunctionText' (role 'valueFunctionText', cardinality 0..*) is associated with 'query::XMLValueFunctionTextContent' (role 'XMLValueFunctionTextContent', cardinality 0..*).
+'query::XMLAggregateFunction' (role 'XMLAggregateFunction', cardinality 0..*) is associated with 'query::XMLAggregateSortSpecification' (role 'sortSpecList', cardinality 0..*).
+'query::XMLNamespacesDeclaration' (role 'namespacesDecl', cardinality 0..*) is associated with 'query::XMLNamespaceDeclarationItem' (role 'XMLNamespaceDeclarationItem', cardinality 0..*).
+'query::XMLValueFunctionElementContentList' (role 'XMLValueFunctionElementContentList14', cardinality 0..*) is associated with 'query::XMLValueFunctionElementContentItem' (role 'elementContentListChildren', cardinality 0..*).
+'query::XMLQueryArgumentList' (role 'xqueryArgList48', cardinality 0..*) is associated with 'query::XMLTableFunction' (role 'XMLTableFunction', cardinality 0..*).
+'query::XMLValueFunctionParse' (role 'valueFunctionParse', cardinality 0..*) is associated with 'query::XMLValueFunctionParseContent' (role 'XMLValueFunctionParseContent', cardinality 0..*).
+'query::XMLValueFunctionElement' (role 'valueFunctionElement5', cardinality 0..*) is associated with 'query::XMLAttributesDeclaration' (role 'XMLAttributesDeclaration6', cardinality 0..*).
+'query::QueryValueExpression' (role 'query_QueryValueExpression67', cardinality 0..*) is associated with 'query::XMLValueFunctionDocumentContent' (role 'query_XMLValueFunctionDocumentContent', cardinality 0..*).
+'query::XMLTableColumnDefinitionDefault' (role 'columnDefinitionDefault', cardinality 0..*) is associated with 'query::XMLTableColumnDefinitionRegular' (role 'XMLTableColumnDefinitionRegular', cardinality 0..*).
+'query::XMLQueryArgumentItem' (role 'XMLQueryArgumentItem', cardinality 0..*) is associated with 'query::XMLQueryArgumentList' (role 'xqueryArgList43', cardinality 0..*).
+'query::XMLAggregateSortSpecification' (role 'query_XMLAggregateSortSpecification', cardinality 0..*) is associated with 'query::OrderBySpecification' (role 'query_OrderBySpecification', cardinality 0..*).
+'query::XMLValueFunctionConcat' (role 'valueFunctionConcat', cardinality 0..*) is associated with 'query::XMLValueFunctionConcatContentItem' (role 'XMLValueFunctionConcatContentItem', cardinality 0..*).

@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'FSmachine::AbstractConection' has the following attributes: 'name' of type str.
+The class 'AbstractObject' has no attributes.
+The class 'FSmachine::Root' has the following attributes: 'FSmachineName' of type str.
+The class 'FSmachine::State' has the following attributes: 'data' of type str; 'description' of type str.
+The class 'FSmachine::TimeConnection' has the following attributes: 'when' of type str.
+The class 'FSmachine::AbstractObject' has the following attributes: 'name' of type str; 'active' of type bool.
+The class 'FSmachine::ReasonConnection' has the following attributes: 'reason' of type str.
+The class 'AbstractConection' has no attributes.
+'FSmachine::TimeConnection' is a specialization of 'AbstractConection'.
+'FSmachine::State' is a specialization of 'AbstractObject'.
+'FSmachine::ReasonConnection' is a specialization of 'AbstractConection'.
+'FSmachine::AbstractObject' (role 'next', cardinality 0..*) is associated with 'FSmachine::AbstractConection' (role 'AbstractConection4', cardinality 0..*).
+'FSmachine::AbstractObject' (role 'AbstractObject10', cardinality 0..*) is associated with 'FSmachine::AbstractConection' (role 'conChild', cardinality 0..*).
+'FSmachine::Root' (role 'Root', cardinality 0..*) is associated with 'FSmachine::AbstractObject' (role 'objects', cardinality 0..*).
+'FSmachine::AbstractObject' (role 'AbstractObject12', cardinality 0..*) is associated with 'FSmachine::AbstractConection' (role 'conParent', cardinality 0..*).
+'FSmachine::Root' (role 'parent', cardinality 0..*) is associated with 'FSmachine::AbstractObject' (role 'AbstractObject', cardinality 0..*).
+'FSmachine::AbstractObject' (role 'prev', cardinality 0..*) is associated with 'FSmachine::AbstractConection' (role 'AbstractConection6', cardinality 0..*).
+'FSmachine::Root' (role 'Root8', cardinality 0..*) is associated with 'FSmachine::AbstractConection' (role 'connections', cardinality 0..*).
+'FSmachine::AbstractConection' (role 'AbstractConection', cardinality 0..*) is associated with 'FSmachine::Root' (role 'par', cardinality 0..*).

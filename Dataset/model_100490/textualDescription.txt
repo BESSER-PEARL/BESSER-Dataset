@@ -1,0 +1,16 @@
+The model has 10 class(es).
+The class 'UMLRealTimeStateMach::State' has no attributes.
+The class 'UMLRealTimeStateMach::RTRegion' has no attributes.
+The class 'UMLRealTimeStateMach::RTTrigger' has no attributes.
+The class 'UMLRealTimeStateMach::Pseudostate' has no attributes.
+The class 'UMLRealTimeStateMach::Region' has no attributes.
+The class 'UMLRealTimeStateMach::RTState' has no attributes.
+The class 'UMLRealTimeStateMach::Operation' has no attributes.
+The class 'UMLRealTimeStateMach::RTPseudostate' has no attributes.
+The class 'UMLRealTimeStateMach::RTStateMachine' has the following attributes: 'isPassive' of type str.
+The class 'UMLRealTimeStateMach::StateMachine' has no attributes.
+'UMLRealTimeStateMach::Pseudostate' (role 'UMLRealTimeStateMach_Pseudostate', cardinality 0..*) is associated with 'UMLRealTimeStateMach::RTPseudostate' (role 'UMLRealTimeStateMach_RTPseudostate', cardinality 0..*).
+'UMLRealTimeStateMach::State' (role 'UMLRealTimeStateMach_State', cardinality 0..*) is associated with 'UMLRealTimeStateMach::RTState' (role 'UMLRealTimeStateMach_RTState', cardinality 0..*).
+'UMLRealTimeStateMach::StateMachine' (role 'UMLRealTimeStateMach_StateMachine', cardinality 0..*) is associated with 'UMLRealTimeStateMach::RTStateMachine' (role 'UMLRealTimeStateMach_RTStateMachine', cardinality 0..*).
+'UMLRealTimeStateMach::RTTrigger' (role 'UMLRealTimeStateMach_RTTrigger', cardinality 0..*) is associated with 'UMLRealTimeStateMach::Operation' (role 'UMLRealTimeStateMach_Operation', cardinality 0..*).
+'UMLRealTimeStateMach::RTRegion' (role 'UMLRealTimeStateMach_RTRegion', cardinality 0..*) is associated with 'UMLRealTimeStateMach::Region' (role 'UMLRealTimeStateMach_Region', cardinality 0..*).

@@ -1,0 +1,93 @@
+The model has 30 class(es).
+The class 'Namespace' has no attributes.
+The class 'Element' has no attributes.
+The class 'umluseCases::Relationship' has no attributes.
+The class 'umluseCases::Type' has no attributes.
+The class 'umluseCases::BehavioredClassifier' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'umluseCases::NamedElement' has the following attributes: 'qualifiedName' of type str; 'visibility' of type str; 'name' of type str.
+The class 'umluseCases::PackageableElement' has no attributes.
+The class 'umluseCases::UseCase' has no attributes.
+The class 'umluseCases::TemplateableElement' has no attributes.
+The class 'umluseCases::Element' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'umluseCases::Extend' has no attributes.
+The class 'umluseCases::Classifier' has the following attributes: 'isAbstract' of type str.
+The class 'umluseCases::ParameterableElement' has no attributes.
+The class 'umluseCases::ExtensionPoint' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'umluseCases::Include' has no attributes.
+The class 'umluseCases::DirectedRelationship' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'ParameterableElement' has no attributes.
+The class 'umluseCases::Actor' has no attributes.
+The class 'umluseCases::Namespace' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'Type' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'TemplateableElement' has no attributes.
+The class 'umluseCases::RedefinableElement' has the following attributes: 'isLeaf' of type str.
+The enumeration 'CallConcurrencyKind' has the following literals: 'sequential', 'guarded', 'concurrent'.
+The enumeration 'ParameterEffectKind' has the following literals: 'read', 'update', 'create', 'delete'.
+The enumeration 'ExpansionKind' has the following literals: 'iterative', 'stream', 'parallel'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'out', 'inout', 'in_', 'return_'.
+The enumeration 'InteractionOperatorKind' has the following literals: 'ignore', 'seq', 'neg', 'critical', 'assert_', 'loop', 'break_', 'alt', 'consider', 'par', 'strict', 'opt'.
+The enumeration 'VisibilityKind' has the following literals: 'package', 'private', 'public', 'protected'.
+The enumeration 'ConnectorKind' has the following literals: 'assembly', 'delegation'.
+The enumeration 'TransitionKind' has the following literals: 'external', 'local', 'internal'.
+The enumeration 'MessageSort' has the following literals: 'createMessage', 'synchCall', 'asynchSignal', 'asynchCall', 'deleteMessage', 'reply'.
+The enumeration 'MessageKind' has the following literals: 'unknown', 'found', 'complete', 'lost'.
+The enumeration 'ObjectNodeOrderingKind' has the following literals: 'FIFO', 'LIFO', 'ordered', 'unordered'.
+The enumeration 'PseudostateKind' has the following literals: 'choice', 'join', 'shallowHistory', 'terminate', 'deepHistory', 'fork', 'entryPoint', 'junction', 'exitPoint', 'initial'.
+The enumeration 'AggregationKind' has the following literals: 'shared', 'none', 'composite'.
+'umluseCases::RedefinableElement' is a specialization of 'NamedElement'.
+'umluseCases::PackageableElement' is a specialization of 'ParameterableElement'.
+'umluseCases::Include' is a specialization of 'NamedElement'.
+'umluseCases::ExtensionPoint' is a specialization of 'RedefinableElement'.
+'umluseCases::ParameterableElement' is a specialization of 'Element'.
+'umluseCases::Type' is a specialization of 'PackageableElement'.
+'umluseCases::Include' is a specialization of 'DirectedRelationship'.
+'umluseCases::Classifier' is a specialization of 'RedefinableElement'.
+'umluseCases::NamedElement' is a specialization of 'Element'.
+'umluseCases::Actor' is a specialization of 'BehavioredClassifier'.
+'umluseCases::Element' is a specialization of 'EModelElement'.
+'umluseCases::UseCase' is a specialization of 'BehavioredClassifier'.
+'umluseCases::Classifier' is a specialization of 'TemplateableElement'.
+'umluseCases::Classifier' is a specialization of 'Namespace'.
+'umluseCases::Extend' is a specialization of 'NamedElement'.
+'umluseCases::BehavioredClassifier' is a specialization of 'Classifier'.
+'umluseCases::Classifier' is a specialization of 'Type'.
+'umluseCases::Relationship' is a specialization of 'Element'.
+'umluseCases::Namespace' is a specialization of 'NamedElement'.
+'umluseCases::PackageableElement' is a specialization of 'NamedElement'.
+'umluseCases::DirectedRelationship' is a specialization of 'Relationship'.
+'umluseCases::Extend' is a specialization of 'DirectedRelationship'.
+'umluseCases::TemplateableElement' is a specialization of 'Element'.
+'umluseCases::Include' (role 'include', cardinality 0..*) is associated with 'umluseCases::UseCase' (role 'UseCase40', cardinality 0..*).
+'umluseCases::Namespace' (role 'namespace', cardinality 0..*) is associated with 'umluseCases::NamedElement' (role 'NamedElement', cardinality 0..*).
+'umluseCases::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'umluseCases::UseCase' (role 'useCase36', cardinality 0..*).
+'umluseCases::RedefinableElement' (role 'umluseCases_RedefinableElement27', cardinality 0..*) is associated with 'umluseCases::RedefinableElement' (role 'umluseCases_RedefinableElement', cardinality 0..*).
+'umluseCases::Element' (role 'umluseCases_Element11', cardinality 0..*) is associated with 'umluseCases::Relationship' (role 'umluseCases_Relationship', cardinality 0..*).
+'umluseCases::Extend' (role 'umluseCases_Extend44', cardinality 0..*) is associated with 'umluseCases::ExtensionPoint' (role 'umluseCases_ExtensionPoint', cardinality 0..*).
+'umluseCases::UseCase' (role 'umluseCases_UseCase42', cardinality 0..*) is associated with 'umluseCases::Extend' (role 'umluseCases_Extend', cardinality 0..*).
+'umluseCases::Classifier' (role 'umluseCases_Classifier21', cardinality 0..*) is associated with 'umluseCases::Classifier' (role 'umluseCases_Classifier23', cardinality 0..*).
+'umluseCases::Element' (role 'Element4', cardinality 0..*) is associated with 'umluseCases::Element' (role 'ownedElement', cardinality 0..*).
+'umluseCases::DirectedRelationship' (role 'umluseCases_DirectedRelationship8', cardinality 0..*) is associated with 'umluseCases::Element' (role 'umluseCases_Element9', cardinality 0..*).
+'umluseCases::Classifier' (role 'umluseCases_Classifier20', cardinality 0..*) is associated with 'umluseCases::Classifier' (role 'umluseCases_Classifier18', cardinality 0..*).
+'umluseCases::Classifier' (role 'umluseCases_Classifier31', cardinality 0..*) is associated with 'umluseCases::RedefinableElement' (role 'umluseCases_RedefinableElement30', cardinality 0..*).
+'umluseCases::Extend' (role 'extend', cardinality 0..*) is associated with 'umluseCases::UseCase' (role 'UseCase46', cardinality 0..*).
+'umluseCases::UseCase' (role 'umluseCases_UseCase38', cardinality 0..*) is associated with 'umluseCases::Include' (role 'umluseCases_Include', cardinality 0..*).
+'umluseCases::UseCase' (role 'useCase', cardinality 0..*) is associated with 'umluseCases::ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*).
+'umluseCases::Classifier' (role 'subject', cardinality 0..*) is associated with 'umluseCases::UseCase' (role 'UseCase', cardinality 0..*).
+'umluseCases::NamedElement' (role 'umluseCases_NamedElement17', cardinality 0..*) is associated with 'umluseCases::Classifier' (role 'umluseCases_Classifier', cardinality 0..*).
+'umluseCases::UseCase' (role 'extension', cardinality 0..*) is associated with 'umluseCases::Extend' (role 'Extend', cardinality 0..*).
+'umluseCases::UseCase' (role 'umluseCases_UseCase', cardinality 0..*) is associated with 'umluseCases::Classifier' (role 'umluseCases_Classifier25', cardinality 0..*).
+'umluseCases::Element' (role 'owner', cardinality 0..*) is associated with 'umluseCases::Element' (role 'Element', cardinality 0..*).
+'umluseCases::ExtensionPoint' (role 'extensionPoint', cardinality 0..*) is associated with 'umluseCases::UseCase' (role 'UseCase48', cardinality 0..*).
+'umluseCases::Namespace' (role 'umluseCases_Namespace', cardinality 0..*) is associated with 'umluseCases::NamedElement' (role 'umluseCases_NamedElement', cardinality 0..*).
+'umluseCases::NamedElement' (role 'ownedMember', cardinality 0..*) is associated with 'umluseCases::Namespace' (role 'Namespace', cardinality 0..*).
+'umluseCases::Element' (role 'umluseCases_Element', cardinality 0..*) is associated with 'umluseCases::DirectedRelationship' (role 'umluseCases_DirectedRelationship', cardinality 0..*).
+'umluseCases::PackageableElement' (role 'umluseCases_PackageableElement', cardinality 0..*) is associated with 'umluseCases::Namespace' (role 'umluseCases_Namespace14', cardinality 0..*).
+'umluseCases::UseCase' (role 'includingCase', cardinality 0..*) is associated with 'umluseCases::Include' (role 'Include', cardinality 0..*).

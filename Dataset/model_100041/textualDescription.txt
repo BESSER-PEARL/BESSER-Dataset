@@ -1,0 +1,65 @@
+The model has 23 class(es).
+The class 'research::PublicationProcess' has the following attributes: 'maxTime' of type int; 'minTime' of type int.
+The class 'research::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'Named' has no attributes.
+The class 'research::Named' has the following attributes: 'name' of type str.
+The class 'research::Labelled' has the following attributes: 'lname' of type str.
+The class 'research::Skill' has the following attributes: 'description' of type str.
+The class 'Counted' has no attributes.
+The class 'research::Paper' has no attributes.
+The class 'research::Review' has the following attributes: 'date' of type date.
+The class 'research::PublicationStructure' has no attributes.
+The class 'research::Phase' has the following attributes: 'name' of type str.
+The class 'research::Paragraph' has the following attributes: 'content' of type str.
+The class 'research::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'research::KnowledgeManager' has no attributes.
+The class 'research::Counted' has the following attributes: 'id' of type int.
+The class 'research::PublicationSystem' has no attributes.
+The class 'research::Progress' has the following attributes: 'percent' of type int.
+The class 'research::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research::Keyword' has the following attributes: 'description' of type str.
+The class 'research::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'research::Position' has the following attributes: 'description' of type str.
+The class 'Labelled' has no attributes.
+'research::Review' is a specialization of 'Labelled'.
+'research::Paragraph' is a specialization of 'Named'.
+'research::PublicationProcess' is a specialization of 'Named'.
+'research::Write' is a specialization of 'Labelled'.
+'research::Progress' is a specialization of 'Labelled'.
+'research::Paragraph' is a specialization of 'Counted'.
+'research::PublicationSystem' is a specialization of 'Named'.
+'research::KnowledgeManager' is a specialization of 'Named'.
+'research::ReviewNote' is a specialization of 'Named'.
+'research::PublicationStructure' is a specialization of 'Named'.
+'research::Paper' is a specialization of 'Named'.
+'research::Position' is a specialization of 'Named'.
+'research::Keyword' is a specialization of 'Named'.
+'research::PublicationProcess' (role 'research_PublicationProcess', cardinality 0..*) is associated with 'research::Phase' (role 'research_Phase', cardinality 0..*).
+'research::Researcher' (role 'research_Researcher8', cardinality 0..*) is associated with 'research::Position' (role 'research_Position', cardinality 0..*).
+'research::Researcher' (role 'authors', cardinality 0..*) is associated with 'research::Paper' (role 'Paper', cardinality 0..*).
+'research::Researcher' (role 'research_Researcher3', cardinality 0..*) is associated with 'research::Review' (role 'research_Review', cardinality 0..*).
+'research::Position' (role 'research_Position48', cardinality 0..*) is associated with 'research::Position' (role 'research_Position46', cardinality 0..*).
+'research::PublicationStructure' (role 'research_PublicationStructure42', cardinality 0..*) is associated with 'research::PublicationSystem' (role 'research_PublicationSystem41', cardinality 0..*).
+'research::Researcher' (role 'research_Researcher', cardinality 0..*) is associated with 'research::Write' (role 'research_Write', cardinality 0..*).
+'research::Progress' (role 'progress', cardinality 0..*) is associated with 'research::Paper' (role 'Paper24', cardinality 0..*).
+'research::Paper' (role 'research_Paper', cardinality 0..*) is associated with 'research::Paragraph' (role 'research_Paragraph', cardinality 0..*).
+'research::Paper' (role 'research_Paper59', cardinality 0..*) is associated with 'research::Collaboration' (role 'research_Collaboration58', cardinality 0..*).
+'research::Progress' (role 'research_Progress', cardinality 0..*) is associated with 'research::PublicationProcess' (role 'research_PublicationProcess22', cardinality 0..*).
+'research::ReviewNote' (role 'research_ReviewNote', cardinality 0..*) is associated with 'research::Paragraph' (role 'research_Paragraph20', cardinality 0..*).
+'research::ReviewNote' (role 'research_ReviewNote30', cardinality 0..*) is associated with 'research::Review' (role 'research_Review29', cardinality 0..*).
+'research::Researcher' (role 'research_Researcher10', cardinality 0..*) is associated with 'research::Collaboration' (role 'research_Collaboration', cardinality 0..*).
+'research::Paper' (role 'research_Paper50', cardinality 0..*) is associated with 'research::Keyword' (role 'research_Keyword', cardinality 0..*).
+'research::Paragraph' (role 'research_Paragraph27', cardinality 0..*) is associated with 'research::Write' (role 'research_Write26', cardinality 0..*).
+'research::PublicationStructure' (role 'research_PublicationStructure', cardinality 0..*) is associated with 'research::Researcher' (role 'research_Researcher32', cardinality 0..*).
+'research::Position' (role 'research_Position45', cardinality 0..*) is associated with 'research::PublicationSystem' (role 'research_PublicationSystem44', cardinality 0..*).
+'research::Keyword' (role 'research_Keyword53', cardinality 0..*) is associated with 'research::KnowledgeManager' (role 'research_KnowledgeManager52', cardinality 0..*).
+'research::Researcher' (role 'research_Researcher6', cardinality 0..*) is associated with 'research::Skill' (role 'research_Skill', cardinality 0..*).
+'research::PaperKeyword' (role 'research_PaperKeyword', cardinality 0..*) is associated with 'research::Paper' (role 'research_Paper15', cardinality 0..*).
+'research::PublicationStructure' (role 'research_PublicationStructure34', cardinality 0..*) is associated with 'research::Paper' (role 'research_Paper35', cardinality 0..*).
+'research::PublicationProcess' (role 'research_PublicationProcess39', cardinality 0..*) is associated with 'research::PublicationSystem' (role 'research_PublicationSystem', cardinality 0..*).
+'research::Paper' (role 'research_Paper18', cardinality 0..*) is associated with 'research::Paper' (role 'research_Paper16', cardinality 0..*).
+'research::Progress' (role 'Progress', cardinality 0..*) is associated with 'research::Paper' (role 'paper', cardinality 0..*).
+'research::PublicationStructure' (role 'research_PublicationStructure37', cardinality 0..*) is associated with 'research::KnowledgeManager' (role 'research_KnowledgeManager', cardinality 0..*).
+'research::Keyword' (role 'research_Keyword56', cardinality 0..*) is associated with 'research::PaperKeyword' (role 'research_PaperKeyword55', cardinality 0..*).
+'research::Paper' (role 'res_papers', cardinality 0..*) is associated with 'research::Researcher' (role 'Researcher', cardinality 0..*).

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'bibtex::Model' has no attributes.
+The class 'bibtex::Document' has the following attributes: 'type' of type str; 'unparsedAuthors' of type str; 'title' of type str; 'year' of type str; 'doi' of type str; 'month' of type str; 'url' of type str; 'abstract' of type str; 'authors' of type str; 'key' of type str; 'file' of type str; 'cites' of type int.
+'bibtex::Model' (role 'bibtex_Model', cardinality 0..*) is associated with 'bibtex::Document' (role 'bibtex_Document', cardinality 0..*).

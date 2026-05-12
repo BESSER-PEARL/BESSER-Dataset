@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'Publication::Publication' has the following attributes: 'authors' of type str; 'title' of type str; 'nbPages' of type str.

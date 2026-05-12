@@ -1,0 +1,55 @@
+The model has 25 class(es).
+The class 'model::expression::Operation' has the following attributes: 'operator' of type str.
+The class 'State' has no attributes.
+The class 'Action' has no attributes.
+The class 'IExpressionTerm' has no attributes.
+The class 'Var' has no attributes.
+The class 'INamedElement' has no attributes.
+The class 'model::expression::Var' has the following attributes: 'identifier' of type str.
+The class 'model::expression::IExpressionTerm' has no attributes.
+The class 'model::state::State' has the following attributes: 'isInitial' of type bool.
+The class 'model::state::TransitionSegment' has no attributes.
+The class 'model::INamedElement' has the following attributes: 'name' of type str.
+The class 'model::expression::BoolConst' has the following attributes: 'value' of type bool.
+The class 'model::component::InputPort' has no attributes.
+The class 'model::expression::IntConst' has the following attributes: 'value' of type int.
+The class 'model::component::OutputPort' has no attributes.
+The class 'TransitionSegment' has no attributes.
+The class 'model::state::StateAutomaton' has no attributes.
+The class 'StateAutomaton' has no attributes.
+The class 'model::state::Action' has no attributes.
+The class 'model::component::Component' has no attributes.
+The class 'model::component::Port' has the following attributes: 'type' of type str.
+The class 'model::state::TransitionSegmentSpecification' has no attributes.
+The class 'model::state::DataStateVariable' has the following attributes: 'type' of type str.
+The class 'TransitionSegmentSpecification' has no attributes.
+The class 'Port' has no attributes.
+The enumeration 'EOperator' has the following literals: 'And', 'Divide', 'Negate', 'Or', 'LowerThan', 'LowerEqual', 'GreaterThan', 'GreaterEqual', 'Add', 'Equal', 'NotEqual', 'Multiply', 'Not', 'Subtract'.
+The enumeration 'EType' has the following literals: 'TBool', 'TInt'.
+'model::expression::IntConst' is a specialization of 'IExpressionTerm'.
+'model::component::InputPort' is a specialization of 'Port'.
+'model::state::TransitionSegment' is a specialization of 'INamedElement'.
+'model::component::Port' is a specialization of 'INamedElement'.
+'model::expression::BoolConst' is a specialization of 'IExpressionTerm'.
+'model::component::OutputPort' is a specialization of 'Port'.
+'model::component::Component' is a specialization of 'INamedElement'.
+'model::state::DataStateVariable' is a specialization of 'INamedElement'.
+'model::state::State' is a specialization of 'INamedElement'.
+'model::expression::Operation' is a specialization of 'IExpressionTerm'.
+'model::expression::Var' is a specialization of 'IExpressionTerm'.
+'TransitionSegmentSpecification' (role 'TransitionSegmentSpecification20', cardinality 0..*) is associated with 'model::state::TransitionSegment' (role 'model_state_TransitionSegment19', cardinality 0..*).
+'model::component::Component' (role 'model_component_Component3', cardinality 0..*) is associated with 'Port' (role 'Port4', cardinality 0..*).
+'model::state::TransitionSegment' (role 'model_state_TransitionSegment', cardinality 0..*) is associated with 'State' (role 'State14', cardinality 0..*).
+'model::state::StateAutomaton' (role 'model_state_StateAutomaton', cardinality 0..*) is associated with 'State' (role 'State', cardinality 0..*).
+'State' (role 'State17', cardinality 0..*) is associated with 'model::state::TransitionSegment' (role 'model_state_TransitionSegment16', cardinality 0..*).
+'Var' (role 'Var', cardinality 0..*) is associated with 'model::state::Action' (role 'model_state_Action', cardinality 0..*).
+'model::state::TransitionSegmentSpecification' (role 'model_state_TransitionSegmentSpecification24', cardinality 0..*) is associated with 'Action' (role 'Action', cardinality 0..*).
+'model::state::DataStateVariable' (role 'model_state_DataStateVariable', cardinality 0..*) is associated with 'IExpressionTerm' (role 'IExpressionTerm26', cardinality 0..*).
+'model::component::Component' (role 'model_component_Component6', cardinality 0..*) is associated with 'StateAutomaton' (role 'StateAutomaton', cardinality 0..*).
+'Port' (role 'Port', cardinality 0..*) is associated with 'model::component::Component' (role 'model_component_Component', cardinality 0..*).
+'model::component::Port' (role 'model_component_Port', cardinality 0..*) is associated with 'IExpressionTerm' (role 'IExpressionTerm8', cardinality 0..*).
+'TransitionSegmentSpecification' (role 'TransitionSegmentSpecification', cardinality 0..*) is associated with 'model::state::State' (role 'model_state_State', cardinality 0..*).
+'model::expression::Operation' (role 'model_expression_Operation', cardinality 0..*) is associated with 'IExpressionTerm' (role 'IExpressionTerm', cardinality 0..*).
+'model::state::TransitionSegmentSpecification' (role 'model_state_TransitionSegmentSpecification', cardinality 0..*) is associated with 'IExpressionTerm' (role 'IExpressionTerm22', cardinality 0..*).
+'model::state::Action' (role 'model_state_Action29', cardinality 0..*) is associated with 'IExpressionTerm' (role 'IExpressionTerm30', cardinality 0..*).
+'model::state::StateAutomaton' (role 'model_state_StateAutomaton11', cardinality 0..*) is associated with 'TransitionSegment' (role 'TransitionSegment', cardinality 0..*).

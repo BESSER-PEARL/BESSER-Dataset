@@ -1,0 +1,251 @@
+The model has 115 class(es).
+The class 'HeaderFooter' has no attributes.
+The class 'DatadiagramMLBasicDef::ShapesCollection' has no attributes.
+The class 'DatadiagramMLBasicDef::FaceNamesTable' has no attributes.
+The class 'DatadiagramMLBasicDef::MastersCollection' has no attributes.
+The class 'Geom' has no attributes.
+The class 'EllipticalArcTo' has no attributes.
+The class 'PrintSetup' has no attributes.
+The class 'DatadiagramMLBasicDef::Text' has no attributes.
+The class 'VBProjectData' has no attributes.
+The class 'DatadiagramMLBasicDef::CustomProperty' has the following attributes: 'name' of type str; 'dataType' of type str.
+The class 'DatadiagramMLBasicDef::XYABCDElt' has no attributes.
+The class 'DatadiagramMLBasicDef::Shape' has the following attributes: 'lineStyle' of type str; 'textStyle' of type str; 'fillStyle' of type str.
+The class 'DatadiagramMLBasicDef::NamedElt' has the following attributes: 'nameU' of type str; 'name' of type str.
+The class 'CustomPropertiesCollection' has no attributes.
+The class 'XYABCDElt' has no attributes.
+The class 'DatadiagramMLBasicDef::VisioDocument' has the following attributes: 'metric' of type str; 'buildnum' of type str; 'key' of type str; 'start' of type str; 'version' of type str; 'docLangId' of type str.
+The class 'DatadiagramMLBasicDef::TextElt' has no attributes.
+The class 'DatadiagramMLBasicDef::DocumentPropertiesCollection' has the following attributes: 'category' of type str; 'creator' of type str; 'template' of type str; 'company' of type str; 'title' of type str; 'manager' of type str; 'description' of type str; 'keywords' of type str; 'subject' of type str; 'alternateNames' of type str; 'buildNumberCreated' of type str; 'buildNumberEdited' of type str; 'hyperlinkBase_href' of type str.
+The class 'ShapesCollection' has no attributes.
+The class 'Connect' has no attributes.
+The class 'CustomProperty' has no attributes.
+The class 'DatadiagramMLBasicDef::InfiniteLine' has no attributes.
+The class 'UniqueIdElt' has no attributes.
+The class 'DatadiagramMLBasicDef::EllipticalArcTo' has no attributes.
+The class 'DatadiagramMLBasicDef::IXElt' has the following attributes: 'iX' of type str.
+The class 'DatadiagramMLBasicDef::PolylineTo' has no attributes.
+The class 'PolylineTo' has no attributes.
+The class 'Shape' has no attributes.
+The class 'DatadiagramMLBasicDef::HeaderFooter' has no attributes.
+The class 'MasterElt' has no attributes.
+The class 'DatadiagramMLBasicDef::StyleSheet' has no attributes.
+The class 'DocumentSheet' has no attributes.
+The class 'DocumentSettingsElt' has no attributes.
+The class 'DatadiagramMLBasicDef::NURBSTo' has no attributes.
+The class 'FaceNamesTable' has no attributes.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'DatadiagramMLBasicDef::Ellipse' has no attributes.
+The class 'DatadiagramMLBasicDef::Connect' has the following attributes: 'fromCell' of type str; 'fromSheet' of type str; 'fromPart' of type str; 'toPart' of type str; 'toSheet' of type str; 'toCell' of type str.
+The class 'DatadiagramMLBasicDef::LineTo' has no attributes.
+The class 'DatadiagramMLBasicDef::Page' has the following attributes: 'associatedPage' of type str; 'backPage' of type str; 'background' of type str; 'ViewCenterY' of type str; 'viewScale' of type str; 'reviewerID' of type str; 'viewCenterX' of type str.
+The class 'DatadiagramMLBasicDef::CustomPropertiesCollection' has no attributes.
+The class 'SplineKnot' has no attributes.
+The class 'DatadiagramMLBasicDef::Geom' has no attributes.
+The class 'ConnectsCollection' has no attributes.
+The class 'MastersCollection' has no attributes.
+The class 'InfiniteLine' has no attributes.
+The class 'EventList' has no attributes.
+The class 'SolutionXML' has no attributes.
+The class 'NURBSTo' has no attributes.
+The class 'XYABElt' has no attributes.
+The class 'IXElt' has no attributes.
+The class 'PagesCollection' has no attributes.
+The class 'Ellipse' has no attributes.
+The class 'DatadiagramMLBasicDef::ColorsTable' has no attributes.
+The class 'SplineStart' has no attributes.
+The class 'DatadiagramMLBasicDef::PageSheet' has no attributes.
+The class 'DatadiagramMLBasicDef::VBProjectData' has the following attributes: 'data' of type str.
+The class 'DatadiagramMLBasicDef::Icon' has the following attributes: 'value' of type str.
+The class 'DatadiagramMLBasicDef::XYABCDEElt' has no attributes.
+The class 'Page' has no attributes.
+The class 'DatadiagramMLBasicDef::EventList' has no attributes.
+The class 'DelElt' has no attributes.
+The class 'DatadiagramMLBasicDef::ConnectsCollection' has no attributes.
+The class 'DatadiagramMLBasicDef::XYABElt' has no attributes.
+The class 'VisioDocument' has no attributes.
+The class 'DatadiagramMLBasicDef::Master' has the following attributes: 'iconUpdate' of type str; 'baseID' of type str; 'hidden' of type str; 'alignName' of type str; 'prompt' of type str; 'patternFlags' of type str; 'iconSize' of type str; 'matchByName' of type str.
+The class 'ShapeElt' has no attributes.
+The class 'DatadiagramMLBasicDef::WindowsInfo' has no attributes.
+The class 'DatadiagramMLBasicDef::EmailRoutingData' has the following attributes: 'size' of type str; 'data' of type str.
+The class 'CellType' has no attributes.
+The class 'Icon' has no attributes.
+The class 'DatadiagramMLBasicDef::StringElt' has the following attributes: 'value' of type str.
+The class 'WindowsInfo' has no attributes.
+The class 'DatadiagramMLBasicDef::MoveTo' has no attributes.
+The class 'XYElt' has no attributes.
+The class 'DatadiagramMLBasicDef::XYElt' has no attributes.
+The class 'DatadiagramMLBasicDef::SplineKnot' has no attributes.
+The class 'XYABCDEElt' has no attributes.
+The class 'StyleSheetsCollection' has no attributes.
+The class 'StyleSheet' has no attributes.
+The class 'DatadiagramMLBasicDef::FontsTable' has no attributes.
+The class 'DatadiagramMLBasicDef::CellType' has the following attributes: 'unit' of type str; 'formula' of type str; 'err' of type str; 'value' of type str.
+The class 'DatadiagramMLBasicDef::SolutionXML' has no attributes.
+The class 'EmailRoutingData' has no attributes.
+The class 'DatadiagramMLBasicDef::UniqueIdElt' has the following attributes: 'UniqueID' of type str.
+The class 'ArcTo' has no attributes.
+The class 'DatadiagramMLBasicDef::XYAElt' has no attributes.
+The class 'DatadiagramMLBasicDef::PagesCollection' has no attributes.
+The class 'MoveTo' has no attributes.
+The class 'IdentifiedElt' has no attributes.
+The class 'DatadiagramMLBasicDef::DelElt' has the following attributes: 'del_' of type str.
+The class 'DatadiagramMLBasicDef::DocumentSheet' has no attributes.
+The class 'DatadiagramMLBasicDef::SplineStart' has no attributes.
+The class 'FontsTable' has no attributes.
+The class 'Master' has no attributes.
+The class 'DatadiagramMLBasicDef::DateTimeType' has the following attributes: 'year' of type str; 'second' of type str; 'hour' of type str; 'day' of type str; 'month' of type str; 'minute' of type str.
+The class 'XYAElt' has no attributes.
+The class 'Text' has no attributes.
+The class 'TextElt' has no attributes.
+The class 'DateTimeType' has no attributes.
+The class 'PageSheet' has no attributes.
+The class 'DatadiagramMLBasicDef::ArcTo' has no attributes.
+The class 'ColorsTable' has no attributes.
+The class 'LineTo' has no attributes.
+The class 'PageElt' has no attributes.
+The class 'DatadiagramMLBasicDef::IdentifiedElt' has the following attributes: 'ID' of type str.
+The class 'DatadiagramMLBasicDef::PageElt' has no attributes.
+The class 'DatadiagramMLBasicDef::StyleSheetsCollection' has no attributes.
+The class 'NamedElt' has no attributes.
+The class 'DatadiagramMLBasicDef::PrintSetup' has no attributes.
+The class 'DatadiagramMLBasicDef::MasterElt' has no attributes.
+The class 'MasterShortCut' has no attributes.
+The class 'DatadiagramMLBasicDef::DocumentSettingsElt' has no attributes.
+The class 'DatadiagramMLBasicDef::ShapeElt' has no attributes.
+The class 'DatadiagramMLBasicDef::MasterShortCut' has the following attributes: 'iconSize' of type str; 'prompt' of type str; 'alignName' of type str; 'patternFlags' of type str; 'shortcutURL' of type str; 'shortcutHelp' of type str.
+'DatadiagramMLBasicDef::MasterShortCut' is a specialization of 'NamedElt'.
+'DatadiagramMLBasicDef::EllipticalArcTo' is a specialization of 'XYABCDElt'.
+'DatadiagramMLBasicDef::StyleSheet' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLBasicDef::InfiniteLine' is a specialization of 'XYABElt'.
+'DatadiagramMLBasicDef::PageSheet' is a specialization of 'PageElt'.
+'DatadiagramMLBasicDef::MoveTo' is a specialization of 'XYElt'.
+'DatadiagramMLBasicDef::Geom' is a specialization of 'DelElt'.
+'DatadiagramMLBasicDef::XYAElt' is a specialization of 'XYElt'.
+'DatadiagramMLBasicDef::Master' is a specialization of 'UniqueIdElt'.
+'DatadiagramMLBasicDef::Icon' is a specialization of 'MasterElt'.
+'DatadiagramMLBasicDef::Geom' is a specialization of 'ShapeElt'.
+'DatadiagramMLBasicDef::ArcTo' is a specialization of 'XYAElt'.
+'DatadiagramMLBasicDef::ShapesCollection' is a specialization of 'PageElt'.
+'DatadiagramMLBasicDef::XYElt' is a specialization of 'IXElt'.
+'DatadiagramMLBasicDef::Text' is a specialization of 'ShapeElt'.
+'DatadiagramMLBasicDef::ConnectsCollection' is a specialization of 'MasterElt'.
+'DatadiagramMLBasicDef::XYABCDElt' is a specialization of 'XYABElt'.
+'DatadiagramMLBasicDef::PageSheet' is a specialization of 'UniqueIdElt'.
+'DatadiagramMLBasicDef::MasterShortCut' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLBasicDef::StyleSheet' is a specialization of 'Shape'.
+'DatadiagramMLBasicDef::PolylineTo' is a specialization of 'XYAElt'.
+'DatadiagramMLBasicDef::DocumentSheet' is a specialization of 'PageSheet'.
+'DatadiagramMLBasicDef::Page' is a specialization of 'NamedElt'.
+'DatadiagramMLBasicDef::StringElt' is a specialization of 'TextElt'.
+'DatadiagramMLBasicDef::XYABElt' is a specialization of 'XYAElt'.
+'DatadiagramMLBasicDef::LineTo' is a specialization of 'XYElt'.
+'DatadiagramMLBasicDef::ConnectsCollection' is a specialization of 'PageElt'.
+'DatadiagramMLBasicDef::SplineKnot' is a specialization of 'XYAElt'.
+'DatadiagramMLBasicDef::Geom' is a specialization of 'IXElt'.
+'DatadiagramMLBasicDef::PageSheet' is a specialization of 'Shape'.
+'DatadiagramMLBasicDef::SplineStart' is a specialization of 'XYABCDElt'.
+'DatadiagramMLBasicDef::ShapesCollection' is a specialization of 'MasterElt'.
+'DatadiagramMLBasicDef::StyleSheet' is a specialization of 'NamedElt'.
+'DatadiagramMLBasicDef::XYABCDEElt' is a specialization of 'XYABCDElt'.
+'DatadiagramMLBasicDef::NURBSTo' is a specialization of 'XYABCDEElt'.
+'DatadiagramMLBasicDef::Ellipse' is a specialization of 'XYABCDElt'.
+'DatadiagramMLBasicDef::Page' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLBasicDef::Master' is a specialization of 'NamedElt'.
+'DatadiagramMLBasicDef::Master' is a specialization of 'IdentifiedElt'.
+'DatadiagramMLBasicDef::XYElt' is a specialization of 'DelElt'.
+'DatadiagramMLBasicDef::PageSheet' is a specialization of 'MasterElt'.
+'DatadiagramMLBasicDef::DocumentSheet' is a specialization of 'NamedElt'.
+'DateTimeType' (role 'DateTimeType28', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::DocumentPropertiesCollection' (role 'DatadiagramMLBasicDef_DocumentPropertiesCollection27', cardinality 0..*).
+'CellType' (role 'CellType100', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::XYABCDEElt' (role 'DatadiagramMLBasicDef_XYABCDEElt', cardinality 0..*).
+'Page' (role 'Page', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::PagesCollection' (role 'p_pages', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'il_geom', cardinality 0..*) is associated with 'InfiniteLine' (role 'InfiniteLine', cardinality 0..*).
+'Geom' (role 'Geom87', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::InfiniteLine' (role 'infiniteLines', cardinality 0..*).
+'DatadiagramMLBasicDef::DocumentSettingsElt' (role 'docSettings', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument132', cardinality 0..*).
+'DatadiagramMLBasicDef::LineTo' (role 'linesTo', cardinality 0..*) is associated with 'Geom' (role 'Geom', cardinality 0..*).
+'CellType' (role 'CellType77', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::XYAElt' (role 'DatadiagramMLBasicDef_XYAElt', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'dss_visioDocument', cardinality 0..*) is associated with 'DocumentSettingsElt' (role 'DocumentSettingsElt', cardinality 0..*).
+'DatadiagramMLBasicDef::Ellipse' (role 'ellipses', cardinality 0..*) is associated with 'Geom' (role 'Geom94', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument39', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::StyleSheetsCollection' (role 'docStyleSheets', cardinality 0..*).
+'DatadiagramMLBasicDef::Text' (role 'te_text', cardinality 0..*) is associated with 'TextElt' (role 'TextElt', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument44', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::DocumentSheet' (role 'docDocumentSheet', cardinality 0..*).
+'LineTo' (role 'LineTo', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::Geom' (role 'lt_geom', cardinality 0..*).
+'DatadiagramMLBasicDef::TextElt' (role 'textElts', cardinality 0..*) is associated with 'Text' (role 'Text', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument134', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::ColorsTable' (role 'docColors', cardinality 0..*).
+'DatadiagramMLBasicDef::Master' (role 'me_master', cardinality 0..*) is associated with 'MasterElt' (role 'MasterElt', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'DatadiagramMLBasicDef_Geom50', cardinality 0..*) is associated with 'CellType' (role 'CellType51', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'mt_geom', cardinality 0..*) is associated with 'MoveTo' (role 'MoveTo', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'nt_geom', cardinality 0..*) is associated with 'NURBSTo' (role 'NURBSTo', cardinality 0..*).
+'DatadiagramMLBasicDef::VBProjectData' (role 'docVBProjectData', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument35', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType22', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::DocumentPropertiesCollection' (role 'DatadiagramMLBasicDef_DocumentPropertiesCollection21', cardinality 0..*).
+'Master' (role 'Master', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::MastersCollection' (role 'm_masters', cardinality 0..*).
+'DatadiagramMLBasicDef::EmailRoutingData' (role 'docEmailRoutingData', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument37', cardinality 0..*).
+'Geom' (role 'Geom83', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::PolylineTo' (role 'polylinesTo', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'eat_geom', cardinality 0..*) is associated with 'EllipticalArcTo' (role 'EllipticalArcTo', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument136', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::PrintSetup' (role 'docPrintSetup', cardinality 0..*).
+'DatadiagramMLBasicDef::FaceNamesTable' (role 'docFaceNames', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument140', cardinality 0..*).
+'CellType' (role 'CellType69', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::XYElt' (role 'DatadiagramMLBasicDef_XYElt', cardinality 0..*).
+'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::VisioDocument' (role 'dps_visioDocument', cardinality 0..*).
+'VBProjectData' (role 'VBProjectData', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::VisioDocument' (role 'vpd_visioDocument', cardinality 0..*).
+'DatadiagramMLBasicDef::XYABCDElt' (role 'DatadiagramMLBasicDef_XYABCDElt', cardinality 0..*) is associated with 'CellType' (role 'CellType89', cardinality 0..*).
+'DatadiagramMLBasicDef::MoveTo' (role 'movesTo', cardinality 0..*) is associated with 'Geom' (role 'Geom75', cardinality 0..*).
+'ArcTo' (role 'ArcTo', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::Geom' (role 'ac_geom', cardinality 0..*).
+'Connect' (role 'Connect', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::ConnectsCollection' (role 'c_connects', cardinality 0..*).
+'DatadiagramMLBasicDef::Page' (role 'pe_page', cardinality 0..*) is associated with 'PageElt' (role 'PageElt', cardinality 0..*).
+'CustomProperty' (role 'CustomProperty', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::CustomPropertiesCollection' (role 'cp_customProps', cardinality 0..*).
+'DatadiagramMLBasicDef::Connect' (role 'connections', cardinality 0..*) is associated with 'ConnectsCollection' (role 'ConnectsCollection', cardinality 0..*).
+'Geom' (role 'Geom96', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::EllipticalArcTo' (role 'ellipticalArcsTo', cardinality 0..*).
+'CustomPropertiesCollection' (role 'CustomPropertiesCollection', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::DocumentPropertiesCollection' (role 'cps_docProp', cardinality 0..*).
+'DatadiagramMLBasicDef::ShapesCollection' (role 'ss_shapes', cardinality 0..*) is associated with 'Shape' (role 'Shape118', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'pt_geom', cardinality 0..*) is associated with 'PolylineTo' (role 'PolylineTo', cardinality 0..*).
+'DocumentSheet' (role 'DocumentSheet', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::VisioDocument' (role 'ds_visioDocument', cardinality 0..*).
+'StyleSheetsCollection' (role 'StyleSheetsCollection42', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::StyleSheet' (role 'stylesSheets', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'DatadiagramMLBasicDef_Geom56', cardinality 0..*) is associated with 'CellType' (role 'CellType57', cardinality 0..*).
+'DatadiagramMLBasicDef::StyleSheetsCollection' (role 'ss_stylesSheets', cardinality 0..*) is associated with 'StyleSheet' (role 'StyleSheet', cardinality 0..*).
+'CellType' (role 'CellType54', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::Geom' (role 'DatadiagramMLBasicDef_Geom53', cardinality 0..*).
+'CustomPropertiesCollection' (role 'CustomPropertiesCollection33', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::CustomProperty' (role 'cps_customProps', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument146', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::HeaderFooter' (role 'docHeaderFooter', cardinality 0..*).
+'DatadiagramMLBasicDef::DocumentPropertiesCollection' (role 'docProps', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument142', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::WindowsInfo' (role 'docWindows', cardinality 0..*).
+'ShapesCollection' (role 'ShapesCollection', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::Shape' (role 'shapes', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'ef_visioDocument', cardinality 0..*) is associated with 'HeaderFooter' (role 'HeaderFooter', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'ps_visioDocument', cardinality 0..*) is associated with 'PrintSetup' (role 'PrintSetup', cardinality 0..*).
+'CellType' (role 'CellType85', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::XYABElt' (role 'DatadiagramMLBasicDef_XYABElt', cardinality 0..*).
+'Master' (role 'Master122', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::MasterElt' (role 'masterElts', cardinality 0..*).
+'DatadiagramMLBasicDef::PageElt' (role 'pageElts', cardinality 0..*) is associated with 'Page' (role 'Page130', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument106', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::MastersCollection' (role 'docMasters', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument148', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::SolutionXML' (role 'docSolutionXML', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'fs_visioDocument', cardinality 0..*) is associated with 'FontsTable' (role 'FontsTable', cardinality 0..*).
+'MasterShortCut' (role 'MasterShortCut', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::MastersCollection' (role 'm_masterShortCuts', cardinality 0..*).
+'MasterShortCut' (role 'MasterShortCut113', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::Icon' (role 'icons', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'ms_visioDocument', cardinality 0..*) is associated with 'MastersCollection' (role 'MastersCollection', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'DatadiagramMLBasicDef_Geom', cardinality 0..*) is associated with 'CellType' (role 'CellType', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'ss_geom', cardinality 0..*) is associated with 'SplineStart' (role 'SplineStart', cardinality 0..*).
+'CellType' (role 'CellType72', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::XYElt' (role 'DatadiagramMLBasicDef_XYElt71', cardinality 0..*).
+'DatadiagramMLBasicDef::FontsTable' (role 'docFonts', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument138', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'ws_visioDocument', cardinality 0..*) is associated with 'WindowsInfo' (role 'WindowsInfo', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection115', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::Master' (role 'masters', cardinality 0..*).
+'Geom' (role 'Geom102', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::NURBSTo' (role 'nurbsTo', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'sx_visioDocument', cardinality 0..*) is associated with 'SolutionXML' (role 'SolutionXML', cardinality 0..*).
+'FaceNamesTable' (role 'FaceNamesTable', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::VisioDocument' (role 'fns_visioDocument', cardinality 0..*).
+'CellType' (role 'CellType92', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::XYABCDElt' (role 'DatadiagramMLBasicDef_XYABCDElt91', cardinality 0..*).
+'DatadiagramMLBasicDef::PagesCollection' (role 'docPages', cardinality 0..*) is associated with 'VisioDocument' (role 'VisioDocument124', cardinality 0..*).
+'DatadiagramMLBasicDef::MasterShortCut' (role 'i_masterShortCut', cardinality 0..*) is associated with 'Icon' (role 'Icon', cardinality 0..*).
+'DatadiagramMLBasicDef::CustomPropertiesCollection' (role 'customProps', cardinality 0..*) is associated with 'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection30', cardinality 0..*).
+'Shape' (role 'Shape', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::ShapeElt' (role 'shapeElts', cardinality 0..*).
+'DatadiagramMLBasicDef::DocumentPropertiesCollection' (role 'DatadiagramMLBasicDef_DocumentPropertiesCollection24', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType25', cardinality 0..*).
+'Geom' (role 'Geom79', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::ArcTo' (role 'arcsTo', cardinality 0..*).
+'MastersCollection' (role 'MastersCollection110', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::MasterShortCut' (role 'masterShortCuts', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'cs_visioDocument', cardinality 0..*) is associated with 'ColorsTable' (role 'ColorsTable', cardinality 0..*).
+'PagesCollection' (role 'PagesCollection127', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::Page' (role 'pages', cardinality 0..*).
+'VisioDocument' (role 'VisioDocument144', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::EventList' (role 'docEventList', cardinality 0..*).
+'DatadiagramMLBasicDef::Geom' (role 'e_geom', cardinality 0..*) is associated with 'Ellipse' (role 'Ellipse', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'el_visioDocument', cardinality 0..*) is associated with 'EventList' (role 'EventList', cardinality 0..*).
+'StyleSheetsCollection' (role 'StyleSheetsCollection', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::VisioDocument' (role 'sss_visioDocument', cardinality 0..*).
+'PagesCollection' (role 'PagesCollection', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::VisioDocument' (role 'ps_visioDocument10', cardinality 0..*).
+'Geom' (role 'Geom98', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::SplineStart' (role 'splineStarts', cardinality 0..*).
+'DatadiagramMLBasicDef::Shape' (role 'sse_shapeSheet', cardinality 0..*) is associated with 'ShapeElt' (role 'ShapeElt', cardinality 0..*).
+'Geom' (role 'Geom81', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::SplineKnot' (role 'splineKnots', cardinality 0..*).
+'SplineKnot' (role 'SplineKnot', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::Geom' (role 'sk_geom', cardinality 0..*).
+'DatadiagramMLBasicDef::VisioDocument' (role 'erd_visioDocument', cardinality 0..*) is associated with 'EmailRoutingData' (role 'EmailRoutingData', cardinality 0..*).
+'DateTimeType' (role 'DateTimeType', cardinality 0..*) is associated with 'DatadiagramMLBasicDef::DocumentPropertiesCollection' (role 'DatadiagramMLBasicDef_DocumentPropertiesCollection', cardinality 0..*).

@@ -1,0 +1,133 @@
+The model has 49 class(es).
+The class 'sqls::Trigger' has the following attributes: 'time' of type str; 'name' of type str.
+The class 'sqls::SqlPlaceholder' has no attributes.
+The class 'sqls::Tag' has the following attributes: 'name' of type str.
+The class 'sqls::ResultColumn' has the following attributes: 'name' of type str.
+The class 'sqls::SqlNested' has no attributes.
+The class 'sqls::EnumElement' has the following attributes: 'name' of type str; 'text' of type str.
+The class 'sqls::TypeDef' has no attributes.
+The class 'sqls::Import' has no attributes.
+The class 'sqls::SqlStringLiteral' has the following attributes: 'value' of type str.
+The class 'sqls::SqlLibrary' has the following attributes: 'database' of type str; 'version' of type int.
+The class 'sqls::SqlExpr' has no attributes.
+The class 'sqls::SqlMethod' has the following attributes: 'name' of type str; 'array' of type bool.
+The class 'sqls::SqlParam' has the following attributes: 'name' of type str.
+The class 'sqls::ColumnRef' has no attributes.
+The class 'sqls::Column' has the following attributes: 'primaryKey' of type bool; 'null' of type bool; 'name' of type str.
+The class 'sqls::Table' has the following attributes: 'name' of type str.
+The class 'sqls::OldColumn' has no attributes.
+The class 'sqls::Get' has no attributes.
+The class 'sqls::Update' has no attributes.
+The class 'sqls::DeleteTable' has no attributes.
+The class 'sqls::SqlFunction' has no attributes.
+The class 'sqls::UpdateColumnExpression' has no attributes.
+The class 'sqls::SqlMethodRef' has no attributes.
+The class 'sqls::SqlSentence' has no attributes.
+The class 'TriggerAction' has no attributes.
+The class 'sqls::SqlNumberLiteral' has the following attributes: 'value' of type int.
+The class 'sqls::SelectList' has no attributes.
+The class 'sqls::Function' has no attributes.
+The class 'sqls::Delete' has no attributes.
+The class 'sqls::OrderingTerm' has the following attributes: 'asc' of type bool; 'desc' of type bool.
+The class 'sqls::TriggerUpdate' has no attributes.
+The class 'SqlSentence' has no attributes.
+The class 'sqls::InsertStatement' has no attributes.
+The class 'sqls::TriggerDelete' has no attributes.
+The class 'sqls::Insert' has no attributes.
+The class 'sqls::TableRef' has the following attributes: 'alias' of type str.
+The class 'SqlExpr' has no attributes.
+The class 'sqls::Select' has the following attributes: 'all' of type bool.
+The class 'TableConstraint' has no attributes.
+The class 'Type' has no attributes.
+The class 'sqls::SqlBinaryExpr' has the following attributes: 'op' of type str.
+The class 'sqls::TriggerInsert' has no attributes.
+The class 'sqls::Enum' has no attributes.
+The class 'sqls::UniqueTableConstraint' has the following attributes: 'name' of type str.
+The class 'sqls::TableConstraint' has no attributes.
+The class 'sqls::TriggerAction' has no attributes.
+The class 'sqls::SqlType' has no attributes.
+The class 'sqls::NewColumn' has no attributes.
+The class 'sqls::Type' has no attributes.
+The enumeration 'TriggerTime' has the following literals: 'BEFORE', 'AFTER'.
+'sqls::TriggerUpdate' is a specialization of 'TriggerAction'.
+'sqls::TriggerDelete' is a specialization of 'TriggerAction'.
+'sqls::Delete' is a specialization of 'SqlSentence'.
+'sqls::InsertStatement' is a specialization of 'SqlSentence'.
+'sqls::Insert' is a specialization of 'SqlSentence'.
+'sqls::SqlFunction' is a specialization of 'SqlExpr'.
+'sqls::SqlStringLiteral' is a specialization of 'SqlExpr'.
+'sqls::Select' is a specialization of 'SqlSentence'.
+'sqls::SqlParam' is a specialization of 'SqlExpr'.
+'sqls::SqlNested' is a specialization of 'SqlExpr'.
+'sqls::UniqueTableConstraint' is a specialization of 'TableConstraint'.
+'sqls::ColumnRef' is a specialization of 'SqlExpr'.
+'sqls::OldColumn' is a specialization of 'SqlExpr'.
+'sqls::Update' is a specialization of 'SqlSentence'.
+'sqls::NewColumn' is a specialization of 'SqlExpr'.
+'sqls::SqlPlaceholder' is a specialization of 'SqlExpr'.
+'sqls::TypeDef' is a specialization of 'Type'.
+'sqls::SqlNumberLiteral' is a specialization of 'SqlExpr'.
+'sqls::TriggerInsert' is a specialization of 'TriggerAction'.
+'sqls::Enum' is a specialization of 'Type'.
+'sqls::SqlBinaryExpr' is a specialization of 'SqlExpr'.
+'sqls::DeleteTable' is a specialization of 'SqlSentence'.
+'sqls::SqlMethodRef' is a specialization of 'SqlSentence'.
+'sqls::Get' is a specialization of 'SqlSentence'.
+'sqls::Table' (role 'sqls_Table65', cardinality 0..*) is associated with 'sqls::TableRef' (role 'sqls_TableRef64', cardinality 0..*).
+'sqls::Trigger' (role 'sqls_Trigger106', cardinality 0..*) is associated with 'sqls::Table' (role 'sqls_Table107', cardinality 0..*).
+'sqls::SqlNested' (role 'sqls_SqlNested', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr124', cardinality 0..*).
+'sqls::Table' (role 'sqls_Table22', cardinality 0..*) is associated with 'sqls::Column' (role 'sqls_Column', cardinality 0..*).
+'sqls::SqlExpr' (role 'sqls_SqlExpr42', cardinality 0..*) is associated with 'sqls::OrderingTerm' (role 'sqls_OrderingTerm', cardinality 0..*).
+'sqls::InsertStatement' (role 'sqls_InsertStatement75', cardinality 0..*) is associated with 'sqls::Column' (role 'sqls_Column76', cardinality 0..*).
+'sqls::Type' (role 'sqls_Type15', cardinality 0..*) is associated with 'sqls::SqlType' (role 'sqls_SqlType', cardinality 0..*).
+'sqls::Table' (role 'sqls_Table', cardinality 0..*) is associated with 'sqls::SqlLibrary' (role 'sqls_SqlLibrary9', cardinality 0..*).
+'sqls::SqlType' (role 'sqls_SqlType113', cardinality 0..*) is associated with 'sqls::TypeDef' (role 'sqls_TypeDef', cardinality 0..*).
+'sqls::TableConstraint' (role 'sqls_TableConstraint', cardinality 0..*) is associated with 'sqls::Table' (role 'sqls_Table24', cardinality 0..*).
+'sqls::ColumnRef' (role 'sqls_ColumnRef', cardinality 0..*) is associated with 'sqls::TableRef' (role 'sqls_TableRef126', cardinality 0..*).
+'sqls::SqlMethodRef' (role 'sqls_SqlMethodRef', cardinality 0..*) is associated with 'sqls::SqlMethod' (role 'sqls_SqlMethod131', cardinality 0..*).
+'sqls::SqlFunction' (role 'sqls_SqlFunction', cardinality 0..*) is associated with 'sqls::Function' (role 'sqls_Function', cardinality 0..*).
+'sqls::SqlType' (role 'sqls_SqlType27', cardinality 0..*) is associated with 'sqls::Column' (role 'sqls_Column26', cardinality 0..*).
+'sqls::Select' (role 'sqls_Select', cardinality 0..*) is associated with 'sqls::SelectList' (role 'sqls_SelectList48', cardinality 0..*).
+'sqls::SqlExpr' (role 'sqls_SqlExpr79', cardinality 0..*) is associated with 'sqls::InsertStatement' (role 'sqls_InsertStatement78', cardinality 0..*).
+'sqls::Select' (role 'sqls_Select55', cardinality 0..*) is associated with 'sqls::OrderingTerm' (role 'sqls_OrderingTerm56', cardinality 0..*).
+'sqls::SqlMethod' (role 'sqls_SqlMethod40', cardinality 0..*) is associated with 'sqls::SqlSentence' (role 'sqls_SqlSentence', cardinality 0..*).
+'sqls::UpdateColumnExpression' (role 'sqls_UpdateColumnExpression96', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr97', cardinality 0..*).
+'sqls::Trigger' (role 'sqls_Trigger104', cardinality 0..*) is associated with 'sqls::TriggerAction' (role 'sqls_TriggerAction', cardinality 0..*).
+'sqls::SqlType' (role 'sqls_SqlType17', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr', cardinality 0..*).
+'sqls::Select' (role 'sqls_Select52', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr53', cardinality 0..*).
+'sqls::EnumElement' (role 'sqls_EnumElement', cardinality 0..*) is associated with 'sqls::Enum' (role 'sqls_Enum', cardinality 0..*).
+'sqls::Select' (role 'sqls_Select50', cardinality 0..*) is associated with 'sqls::TableRef' (role 'sqls_TableRef', cardinality 0..*).
+'sqls::InsertStatement' (role 'sqls_InsertStatement', cardinality 0..*) is associated with 'sqls::Table' (role 'sqls_Table73', cardinality 0..*).
+'sqls::Import' (role 'sqls_Import', cardinality 0..*) is associated with 'sqls::SqlLibrary' (role 'sqls_SqlLibrary', cardinality 0..*).
+'sqls::Column' (role 'sqls_Column122', cardinality 0..*) is associated with 'sqls::OldColumn' (role 'sqls_OldColumn', cardinality 0..*).
+'sqls::SqlExpr' (role 'sqls_SqlExpr59', cardinality 0..*) is associated with 'sqls::Select' (role 'sqls_Select58', cardinality 0..*).
+'sqls::Get' (role 'sqls_Get', cardinality 0..*) is associated with 'sqls::Table' (role 'sqls_Table99', cardinality 0..*).
+'sqls::Trigger' (role 'sqls_Trigger109', cardinality 0..*) is associated with 'sqls::SqlSentence' (role 'sqls_SqlSentence110', cardinality 0..*).
+'sqls::Column' (role 'sqls_Column129', cardinality 0..*) is associated with 'sqls::ColumnRef' (role 'sqls_ColumnRef128', cardinality 0..*).
+'sqls::SqlLibrary' (role 'sqls_SqlLibrary6', cardinality 0..*) is associated with 'sqls::Type' (role 'sqls_Type7', cardinality 0..*).
+'sqls::SqlMethod' (role 'sqls_SqlMethod34', cardinality 0..*) is associated with 'sqls::Tag' (role 'sqls_Tag35', cardinality 0..*).
+'sqls::Table' (role 'sqls_Table81', cardinality 0..*) is associated with 'sqls::Delete' (role 'sqls_Delete', cardinality 0..*).
+'sqls::Tag' (role 'sqls_Tag20', cardinality 0..*) is associated with 'sqls::Table' (role 'sqls_Table19', cardinality 0..*).
+'sqls::Delete' (role 'sqls_Delete83', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr84', cardinality 0..*).
+'sqls::Insert' (role 'sqls_Insert', cardinality 0..*) is associated with 'sqls::Table' (role 'sqls_Table71', cardinality 0..*).
+'sqls::Update' (role 'sqls_Update', cardinality 0..*) is associated with 'sqls::Table' (role 'sqls_Table86', cardinality 0..*).
+'sqls::Update' (role 'sqls_Update90', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr91', cardinality 0..*).
+'sqls::NewColumn' (role 'sqls_NewColumn', cardinality 0..*) is associated with 'sqls::Column' (role 'sqls_Column120', cardinality 0..*).
+'sqls::UpdateColumnExpression' (role 'sqls_UpdateColumnExpression93', cardinality 0..*) is associated with 'sqls::Column' (role 'sqls_Column94', cardinality 0..*).
+'sqls::Column' (role 'sqls_Column29', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr30', cardinality 0..*).
+'sqls::Table' (role 'sqls_Table133', cardinality 0..*) is associated with 'sqls::DeleteTable' (role 'sqls_DeleteTable', cardinality 0..*).
+'sqls::UpdateColumnExpression' (role 'sqls_UpdateColumnExpression', cardinality 0..*) is associated with 'sqls::Update' (role 'sqls_Update88', cardinality 0..*).
+'sqls::SqlMethod' (role 'sqls_SqlMethod37', cardinality 0..*) is associated with 'sqls::Table' (role 'sqls_Table38', cardinality 0..*).
+'sqls::Select' (role 'sqls_Select61', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr62', cardinality 0..*).
+'sqls::ResultColumn' (role 'sqls_ResultColumn', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr44', cardinality 0..*).
+'sqls::Trigger' (role 'sqls_Trigger101', cardinality 0..*) is associated with 'sqls::Tag' (role 'sqls_Tag102', cardinality 0..*).
+'sqls::SqlExpr' (role 'sqls_SqlExpr118', cardinality 0..*) is associated with 'sqls::SqlBinaryExpr' (role 'sqls_SqlBinaryExpr117', cardinality 0..*).
+'sqls::SqlExpr' (role 'sqls_SqlExpr69', cardinality 0..*) is associated with 'sqls::SqlFunction' (role 'sqls_SqlFunction68', cardinality 0..*).
+'sqls::SqlBinaryExpr' (role 'sqls_SqlBinaryExpr', cardinality 0..*) is associated with 'sqls::SqlExpr' (role 'sqls_SqlExpr115', cardinality 0..*).
+'sqls::UniqueTableConstraint' (role 'sqls_UniqueTableConstraint', cardinality 0..*) is associated with 'sqls::Column' (role 'sqls_Column32', cardinality 0..*).
+'sqls::SelectList' (role 'sqls_SelectList', cardinality 0..*) is associated with 'sqls::ResultColumn' (role 'sqls_ResultColumn46', cardinality 0..*).
+'sqls::Trigger' (role 'sqls_Trigger', cardinality 0..*) is associated with 'sqls::SqlLibrary' (role 'sqls_SqlLibrary11', cardinality 0..*).
+'sqls::Type' (role 'sqls_Type', cardinality 0..*) is associated with 'sqls::SqlLibrary' (role 'sqls_SqlLibrary4', cardinality 0..*).
+'sqls::SqlMethod' (role 'sqls_SqlMethod', cardinality 0..*) is associated with 'sqls::SqlLibrary' (role 'sqls_SqlLibrary13', cardinality 0..*).
+'sqls::SqlLibrary' (role 'sqls_SqlLibrary2', cardinality 0..*) is associated with 'sqls::Tag' (role 'sqls_Tag', cardinality 0..*).
+'sqls::Column' (role 'sqls_Column135', cardinality 0..*) is associated with 'sqls::TriggerUpdate' (role 'sqls_TriggerUpdate', cardinality 0..*).

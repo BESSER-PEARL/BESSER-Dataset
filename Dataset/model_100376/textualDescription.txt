@@ -1,0 +1,25 @@
+The model has 9 class(es).
+The class 'IOAutomaton::Automaton' has the following attributes: 'name' of type str.
+The class 'IOAutomaton::Output' has the following attributes: 'name' of type str.
+The class 'IOAutomaton::ReturnValue' has the following attributes: 'isVoid' of type bool; 'name' of type str.
+The class 'IOAutomaton::Operation' has the following attributes: 'name' of type str.
+The class 'IOAutomaton::Transition' has the following attributes: 'name' of type str.
+The class 'IOAutomaton::Input' has the following attributes: 'name' of type str.
+The class 'IOAutomaton::State' has the following attributes: 'name' of type str.
+The class 'IOAutomaton::Object' has the following attributes: 'name' of type str.
+The class 'IOAutomaton::Activation' has the following attributes: 'name' of type str.
+'IOAutomaton::Output' (role 'IOAutomaton_Output32', cardinality 0..*) is associated with 'IOAutomaton::Object' (role 'IOAutomaton_Object', cardinality 0..*).
+'IOAutomaton::State' (role 'IOAutomaton_State12', cardinality 0..*) is associated with 'IOAutomaton::Transition' (role 'IOAutomaton_Transition11', cardinality 0..*).
+'IOAutomaton::Activation' (role 'IOAutomaton_Activation25', cardinality 0..*) is associated with 'IOAutomaton::ReturnValue' (role 'IOAutomaton_ReturnValue', cardinality 0..*).
+'IOAutomaton::Automaton' (role 'IOAutomaton_Automaton8', cardinality 0..*) is associated with 'IOAutomaton::State' (role 'IOAutomaton_State9', cardinality 0..*).
+'IOAutomaton::Transition' (role 'IOAutomaton_Transition20', cardinality 0..*) is associated with 'IOAutomaton::Activation' (role 'IOAutomaton_Activation21', cardinality 0..*).
+'IOAutomaton::Input' (role 'IOAutomaton_Input27', cardinality 0..*) is associated with 'IOAutomaton::Operation' (role 'IOAutomaton_Operation', cardinality 0..*).
+'IOAutomaton::Activation' (role 'IOAutomaton_Activation', cardinality 0..*) is associated with 'IOAutomaton::Automaton' (role 'IOAutomaton_Automaton4', cardinality 0..*).
+'IOAutomaton::Operation' (role 'IOAutomaton_Operation30', cardinality 0..*) is associated with 'IOAutomaton::Output' (role 'IOAutomaton_Output29', cardinality 0..*).
+'IOAutomaton::Activation' (role 'IOAutomaton_Activation23', cardinality 0..*) is associated with 'IOAutomaton::Output' (role 'IOAutomaton_Output', cardinality 0..*).
+'IOAutomaton::State' (role 'IOAutomaton_State15', cardinality 0..*) is associated with 'IOAutomaton::Transition' (role 'IOAutomaton_Transition14', cardinality 0..*).
+'IOAutomaton::Transition' (role 'IOAutomaton_Transition', cardinality 0..*) is associated with 'IOAutomaton::Automaton' (role 'IOAutomaton_Automaton6', cardinality 0..*).
+'IOAutomaton::Input' (role 'IOAutomaton_Input18', cardinality 0..*) is associated with 'IOAutomaton::Transition' (role 'IOAutomaton_Transition17', cardinality 0..*).
+'IOAutomaton::ReturnValue' (role 'IOAutomaton_ReturnValue35', cardinality 0..*) is associated with 'IOAutomaton::Output' (role 'IOAutomaton_Output34', cardinality 0..*).
+'IOAutomaton::State' (role 'IOAutomaton_State', cardinality 0..*) is associated with 'IOAutomaton::Automaton' (role 'IOAutomaton_Automaton', cardinality 0..*).
+'IOAutomaton::Input' (role 'IOAutomaton_Input', cardinality 0..*) is associated with 'IOAutomaton::Automaton' (role 'IOAutomaton_Automaton2', cardinality 0..*).

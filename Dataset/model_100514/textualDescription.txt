@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'RequirementSourceConf::RequirementsContainer' has no attributes.
+The class 'RequirementSourceConf::EStringToStringMapEntry' has no attributes.
+The class 'RequirementSourceConf::RequirementSources' has no attributes.
+The class 'RequirementSourceConf::Scope' has no attributes.
+The class 'RequirementSourceConf::RequirementSource' has the following attributes: 'destinationURI' of type str; 'repositoryURI' of type str; 'dataModelURI' of type str; 'name' of type str; 'connectorId' of type str.
+The class 'RequirementSourceConf::MappingElement' has no attributes.
+'RequirementSourceConf::RequirementsContainer' (role 'RequirementSourceConf_RequirementsContainer', cardinality 0..*) is associated with 'RequirementSourceConf::RequirementSource' (role 'RequirementSourceConf_RequirementSource2', cardinality 0..*).
+'RequirementSourceConf::Scope' (role 'RequirementSourceConf_Scope', cardinality 0..*) is associated with 'RequirementSourceConf::RequirementSource' (role 'RequirementSourceConf_RequirementSource8', cardinality 0..*).
+'RequirementSourceConf::EStringToStringMapEntry' (role 'RequirementSourceConf_EStringToStringMapEntry', cardinality 0..*) is associated with 'RequirementSourceConf::RequirementSource' (role 'RequirementSourceConf_RequirementSource4', cardinality 0..*).
+'RequirementSourceConf::RequirementSources' (role 'RequirementSourceConf_RequirementSources', cardinality 0..*) is associated with 'RequirementSourceConf::RequirementSource' (role 'RequirementSourceConf_RequirementSource', cardinality 0..*).
+'RequirementSourceConf::RequirementSource' (role 'RequirementSourceConf_RequirementSource6', cardinality 0..*) is associated with 'RequirementSourceConf::MappingElement' (role 'RequirementSourceConf_MappingElement', cardinality 0..*).

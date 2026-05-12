@@ -1,0 +1,25 @@
+The model has 13 class(es).
+The class 'umlTransition::AbsoluteTimeEventRule' has no attributes.
+The class 'umlTransition::TransitionRule' has no attributes.
+The class 'umlTransition::ChangeEventRule' has the following attributes: 'exp' of type str.
+The class 'umlTransition::EventRule' has no attributes.
+The class 'umlTransition::AnyReceiveEventRule' has the following attributes: 'isAReceiveEvent' of type str.
+The class 'umlTransition::TimeEventRule' has the following attributes: 'expr' of type str.
+The class 'umlTransition::EffectRule' has the following attributes: 'kind' of type str; 'behaviorName' of type str.
+The class 'umlTransition::GuardRule' has the following attributes: 'constraint' of type str.
+The class 'umlTransition::NamedElement' has no attributes.
+The class 'umlTransition::CallOrSignalEventRule' has no attributes.
+The class 'umlTransition::RelativeTimeEventRule' has no attributes.
+The class 'TimeEventRule' has no attributes.
+The class 'EventRule' has no attributes.
+The enumeration 'BehaviorKind' has the following literals: 'ACTIVITY', 'OPAQUE_BEHAVIOR', 'STATE_MACHINE'.
+'umlTransition::TimeEventRule' is a specialization of 'EventRule'.
+'umlTransition::AnyReceiveEventRule' is a specialization of 'EventRule'.
+'umlTransition::ChangeEventRule' is a specialization of 'EventRule'.
+'umlTransition::RelativeTimeEventRule' is a specialization of 'TimeEventRule'.
+'umlTransition::AbsoluteTimeEventRule' is a specialization of 'TimeEventRule'.
+'umlTransition::CallOrSignalEventRule' is a specialization of 'EventRule'.
+'umlTransition::EventRule' (role 'umlTransition_EventRule', cardinality 0..*) is associated with 'umlTransition::TransitionRule' (role 'umlTransition_TransitionRule', cardinality 0..*).
+'umlTransition::TransitionRule' (role 'umlTransition_TransitionRule2', cardinality 0..*) is associated with 'umlTransition::GuardRule' (role 'umlTransition_GuardRule', cardinality 0..*).
+'umlTransition::EffectRule' (role 'umlTransition_EffectRule', cardinality 0..*) is associated with 'umlTransition::TransitionRule' (role 'umlTransition_TransitionRule4', cardinality 0..*).
+'umlTransition::NamedElement' (role 'umlTransition_NamedElement', cardinality 0..*) is associated with 'umlTransition::CallOrSignalEventRule' (role 'umlTransition_CallOrSignalEventRule', cardinality 0..*).

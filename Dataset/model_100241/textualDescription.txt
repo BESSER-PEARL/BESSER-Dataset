@@ -1,0 +1,101 @@
+The model has 41 class(es).
+The class 'presentation::HeaderType' has no attributes.
+The class 'presentation::AnimationGroupType' has the following attributes: 'presentationAnimationElementsGroup' of type str.
+The class 'presentation::FormsType' has no attributes.
+The class 'presentation::PlayType' has the following attributes: 'shapeId' of type str; 'speed' of type str.
+The class 'presentation::FooterType' has no attributes.
+The class 'presentation::EObject' has no attributes.
+The class 'presentation::MeasureType' has no attributes.
+The class 'presentation::RegularPolygonType' has no attributes.
+The class 'presentation::PolylineType' has no attributes.
+The class 'presentation::FrameType' has no attributes.
+The class 'presentation::RectType' has no attributes.
+The class 'presentation::GType' has no attributes.
+The class 'presentation::ShowType' has the following attributes: 'name' of type str; 'pages' of type str.
+The class 'presentation::DimType' has the following attributes: 'color' of type str; 'shapeId' of type str.
+The class 'presentation::SoundType' has the following attributes: 'href' of type str; 'type' of type str; 'playFull' of type str; 'actuate' of type str; 'show' of type str.
+The class 'presentation::HideShapeType' has the following attributes: 'speed' of type str; 'direction' of type str; 'pathId' of type str; 'delay' of type str; 'shapeId' of type str; 'effect' of type str; 'startScale' of type str.
+The class 'presentation::CaptionType' has no attributes.
+The class 'presentation::AnimationsType1' has the following attributes: 'presentationAnimationElementsGroup' of type str; 'group' of type str.
+The class 'presentation::PlaceholderType' has the following attributes: 'height' of type str; 'width' of type str; 'y' of type str; 'x' of type str; 'object' of type str.
+The class 'presentation::ShowShapeType' has the following attributes: 'effect' of type str; 'direction' of type str; 'startScale' of type str; 'pathId' of type str; 'delay' of type str; 'speed' of type str; 'shapeId' of type str.
+The class 'presentation::PathType' has no attributes.
+The class 'presentation::NotesType' has the following attributes: 'useFooterName' of type str; 'shape' of type str; 'useDateTimeName' of type str; 'styleName' of type str; 'pageLayoutName' of type str; 'useHeaderName' of type str.
+The class 'presentation::SettingsType' has the following attributes: 'show1' of type str; 'endless' of type str; 'animations' of type str; 'mouseAsPen' of type str; 'fullScreen' of type str; 'transitionOnClick' of type str; 'mouseVisible' of type str; 'startWithNavigator' of type str; 'showLogo' of type str; 'showEndOfPresentationSlide' of type str; 'forceManual' of type str; 'pause' of type str; 'startPage' of type str; 'stayOnTop' of type str.
+The class 'presentation::CircleType' has no attributes.
+The class 'presentation::EventListenerType' has the following attributes: 'verb' of type str; 'eventName' of type str; 'actuate' of type str; 'direction' of type str; 'speed' of type str; 'show' of type str; 'type' of type str; 'effect' of type str; 'startScale' of type str; 'href' of type str; 'action' of type str.
+The class 'presentation::FooterDeclType' has the following attributes: 'mixed' of type str; 'name' of type str.
+The class 'presentation::ControlType' has no attributes.
+The class 'presentation::EllipseType' has no attributes.
+The class 'presentation::LineType' has no attributes.
+The class 'presentation::PageThumbnailType' has no attributes.
+The class 'presentation::ConnectorType' has no attributes.
+The class 'presentation::SceneType' has no attributes.
+The class 'presentation::CustomShapeType' has no attributes.
+The class 'presentation::HideTextType' has the following attributes: 'shapeId' of type str; 'pathId' of type str; 'speed' of type str; 'startScale' of type str; 'direction' of type str; 'delay' of type str; 'effect' of type str.
+The class 'presentation::EStringToStringMapEntry' has no attributes.
+The class 'presentation::HeaderDeclType' has the following attributes: 'name' of type str; 'mixed' of type str.
+The class 'presentation::ShowTextType' has the following attributes: 'speed' of type str; 'effect' of type str; 'startScale' of type str; 'pathId' of type str; 'shapeId' of type str; 'direction' of type str; 'delay' of type str.
+The class 'presentation::DocumentRoot' has the following attributes: 'pause' of type str; 'displayHeader' of type str; 'pathId' of type str; 'displayDateTime' of type str; 'source' of type str; 'action' of type str; 'animations1' of type str; 'transitionSpeed' of type str; 'name' of type str; 'delay' of type str; 'presetClass' of type str; 'transitionType' of type str; 'visibility' of type str; 'placeholder1' of type str; 'endless' of type str; 'startPage' of type str; 'class_' of type str; 'displayPageNumber' of type str; 'displayFooter' of type str; 'playFull' of type str; 'presetSubType' of type str; 'userTransformed' of type str; 'transitionStyle' of type str; 'pages' of type str; 'stayOnTop' of type str; 'effect' of type str; 'showLogo' of type str; 'mouseAsPen' of type str; 'styleName' of type str; 'presetId' of type str; 'startWithNavigator' of type str; 'masterElement' of type str; 'presentationPageLayoutName' of type str; 'forceManual' of type str; 'groupId' of type str; 'useDateTimeName' of type str; 'showEndOfPresentationSlide' of type str; 'show1' of type str; 'duration' of type str; 'useFooterName' of type str; 'backgroundVisible' of type str; 'fullScreen' of type str; 'direction' of type str; 'mixed' of type str; 'startScale' of type str; 'useHeaderName' of type str; 'mouseVisible' of type str; 'verb' of type str; 'classNames' of type str; 'backgroundObjectsVisible' of type str; 'nodeType' of type str; 'transitionOnClick' of type str; 'speed' of type str.
+The class 'presentation::PolygonType' has no attributes.
+The class 'presentation::DateTimeType' has no attributes.
+The class 'presentation::DateTimeDeclType' has the following attributes: 'dataStyleName' of type str; 'source' of type str; 'name' of type str; 'mixed' of type str.
+The enumeration 'AnimationsType' has the following literals: 'disabled', 'enabled'.
+The enumeration 'TransitionStyleType' has the following literals: 'moveFromLowerleft', 'fadeFromLeft', 'melt', 'uncoverToLowerright', 'fadeFromRight', 'moveFromUpperleft', 'closeHorizontal', 'none', 'fadeFromUpperleft', 'rollFromLeft', 'spiraloutRight', 'closeVertical', 'stretchFromLeft', 'open', 'stretchFromBottom', 'verticalStripes', 'random', 'fadeToCenter', 'clockwise', 'fadeFromBottom', 'wavylineFromTop', 'moveFromRight', 'openHorizontal', 'close', 'moveFromBottom', 'moveFromLeft', 'horizontalCheckerboard', 'counterclockwise', 'moveFromUpperright', 'uncoverToRight', 'fadeFromTop', 'fadeFromLowerright', 'moveFromLowerright', 'rollFromTop', 'dissolve', 'interlockingVerticalTop', 'stretchFromTop', 'uncoverToLeft', 'moveFromTop', 'horizontalStripes', 'fadeFromCenter', 'verticalLines', 'interlockingVerticalBottom', 'fadeFromUpperright', 'uncoverToBottom', 'wavylineFromBottom', 'horizontalLines', 'fadeFromLowerleft', 'rollFromBottom', 'interlockingHorizontalLeft', 'uncoverToLowerleft', 'uncoverToTop', 'spiralinRight', 'rollFromRight', 'interlockingHorizontalRight', 'openVertical', 'wavylineFromRight', 'uncoverToUpperleft', 'flyAway', 'wavylineFromLeft', 'spiralinLeft', 'spiraloutLeft', 'uncoverToUpperright', 'stretchFromRight', 'verticalCheckerboard'.
+The enumeration 'ActionType' has the following literals: 'fadeOut', 'nextPage', 'execute', 'sound', 'hide', 'verb', 'show', 'lastPage', 'stop', 'none', 'previousPage', 'firstPage'.
+The enumeration 'VisibilityType' has the following literals: 'hidden', 'visible'.
+The enumeration 'NodeTypeType' has the following literals: 'timingRoot', 'interactiveSequence', 'default', 'afterPrevious', 'mainSequence', 'withPrevious', 'onClick'.
+The enumeration 'TransitionOnClickType' has the following literals: 'disabled', 'enabled'.
+The enumeration 'SourceType' has the following literals: 'currentDate', 'fixed'.
+The enumeration 'PresetClassType' has the following literals: 'mediaCall', 'exit', 'oleAction', 'emphasis', 'custom', 'entrance', 'motionPath'.
+The enumeration 'TransitionTypeType' has the following literals: 'semiAutomatic', 'automatic', 'manual'.
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot68', cardinality 0..*) is associated with 'presentation::DimType' (role 'presentation_DimType69', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType27', cardinality 0..*) is associated with 'presentation::CircleType' (role 'presentation_CircleType', cardinality 0..*).
+'presentation::AnimationGroupType' (role 'presentation_AnimationGroupType5', cardinality 0..*) is associated with 'presentation::AnimationsType1' (role 'presentation_AnimationsType14', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot98', cardinality 0..*) is associated with 'presentation::ShowType' (role 'presentation_ShowType99', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot82', cardinality 0..*) is associated with 'presentation::HideShapeType' (role 'presentation_HideShapeType83', cardinality 0..*).
+'presentation::PlayType' (role 'presentation_PlayType', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot93', cardinality 0..*).
+'presentation::HideTextType' (role 'presentation_HideTextType', cardinality 0..*) is associated with 'presentation::SoundType' (role 'presentation_SoundType12', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType41', cardinality 0..*) is associated with 'presentation::ConnectorType' (role 'presentation_ConnectorType', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType19', cardinality 0..*) is associated with 'presentation::PolylineType' (role 'presentation_PolylineType', cardinality 0..*).
+'presentation::SoundType' (role 'presentation_SoundType', cardinality 0..*) is associated with 'presentation::DimType' (role 'presentation_DimType', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot76', cardinality 0..*) is associated with 'presentation::FooterDeclType' (role 'presentation_FooterDeclType', cardinality 0..*).
+'presentation::RegularPolygonType' (role 'presentation_RegularPolygonType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType23', cardinality 0..*).
+'presentation::ShowType' (role 'presentation_ShowType', cardinality 0..*) is associated with 'presentation::SettingsType' (role 'presentation_SettingsType', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot88', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType89', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot64', cardinality 0..*) is associated with 'presentation::DateTimeType' (role 'presentation_DateTimeType', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot104', cardinality 0..*) is associated with 'presentation::ShowTextType' (role 'presentation_ShowTextType105', cardinality 0..*).
+'presentation::SoundType' (role 'presentation_SoundType50', cardinality 0..*) is associated with 'presentation::ShowShapeType' (role 'presentation_ShowShapeType', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot91', cardinality 0..*) is associated with 'presentation::PlaceholderType' (role 'presentation_PlaceholderType', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType37', cardinality 0..*) is associated with 'presentation::MeasureType' (role 'presentation_MeasureType', cardinality 0..*).
+'presentation::SoundType' (role 'presentation_SoundType108', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot107', cardinality 0..*).
+'presentation::AnimationsType1' (role 'presentation_AnimationsType1', cardinality 0..*) is associated with 'presentation::EObject' (role 'presentation_EObject2', cardinality 0..*).
+'presentation::HeaderDeclType' (role 'presentation_HeaderDeclType', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot80', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot58', cardinality 0..*) is associated with 'presentation::AnimationGroupType' (role 'presentation_AnimationGroupType59', cardinality 0..*).
+'presentation::FrameType' (role 'presentation_FrameType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType35', cardinality 0..*).
+'presentation::EllipseType' (role 'presentation_EllipseType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType29', cardinality 0..*).
+'presentation::CaptionType' (role 'presentation_CaptionType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType39', cardinality 0..*).
+'presentation::CustomShapeType' (role 'presentation_CustomShapeType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType47', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType43', cardinality 0..*) is associated with 'presentation::ControlType' (role 'presentation_ControlType', cardinality 0..*).
+'presentation::DateTimeDeclType' (role 'presentation_DateTimeDeclType', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot66', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType25', cardinality 0..*) is associated with 'presentation::PathType' (role 'presentation_PathType', cardinality 0..*).
+'presentation::GType' (role 'presentation_GType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType31', cardinality 0..*).
+'presentation::FormsType' (role 'presentation_FormsType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType', cardinality 0..*).
+'presentation::SoundType' (role 'presentation_SoundType8', cardinality 0..*) is associated with 'presentation::EventListenerType' (role 'presentation_EventListenerType', cardinality 0..*).
+'presentation::EventListenerType' (role 'presentation_EventListenerType72', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot71', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot55', cardinality 0..*) is associated with 'presentation::EStringToStringMapEntry' (role 'presentation_EStringToStringMapEntry56', cardinality 0..*).
+'presentation::HideShapeType' (role 'presentation_HideShapeType', cardinality 0..*) is associated with 'presentation::SoundType' (role 'presentation_SoundType10', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot', cardinality 0..*) is associated with 'presentation::EStringToStringMapEntry' (role 'presentation_EStringToStringMapEntry', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot61', cardinality 0..*) is associated with 'presentation::AnimationsType1' (role 'presentation_AnimationsType162', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot78', cardinality 0..*) is associated with 'presentation::HeaderType' (role 'presentation_HeaderType', cardinality 0..*).
+'presentation::SettingsType' (role 'presentation_SettingsType96', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot95', cardinality 0..*).
+'presentation::ShowTextType' (role 'presentation_ShowTextType', cardinality 0..*) is associated with 'presentation::SoundType' (role 'presentation_SoundType52', cardinality 0..*).
+'presentation::ShowShapeType' (role 'presentation_ShowShapeType102', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot101', cardinality 0..*).
+'presentation::PolygonType' (role 'presentation_PolygonType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType21', cardinality 0..*).
+'presentation::RectType' (role 'presentation_RectType', cardinality 0..*) is associated with 'presentation::NotesType' (role 'presentation_NotesType15', cardinality 0..*).
+'presentation::AnimationGroupType' (role 'presentation_AnimationGroupType', cardinality 0..*) is associated with 'presentation::EObject' (role 'presentation_EObject', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType33', cardinality 0..*) is associated with 'presentation::PageThumbnailType' (role 'presentation_PageThumbnailType', cardinality 0..*).
+'presentation::HideTextType' (role 'presentation_HideTextType86', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot85', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType17', cardinality 0..*) is associated with 'presentation::LineType' (role 'presentation_LineType', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot74', cardinality 0..*) is associated with 'presentation::FooterType' (role 'presentation_FooterType', cardinality 0..*).
+'presentation::NotesType' (role 'presentation_NotesType45', cardinality 0..*) is associated with 'presentation::SceneType' (role 'presentation_SceneType', cardinality 0..*).

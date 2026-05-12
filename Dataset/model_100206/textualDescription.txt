@@ -1,0 +1,47 @@
+The model has 19 class(es).
+The class 'sqlview::Condition' has no attributes.
+The class 'sqlview::Right' has the following attributes: 'value' of type str.
+The class 'sqlview::JoinLeft' has no attributes.
+The class 'sqlview::From' has no attributes.
+The class 'sqlview::EclExpression' has the following attributes: 'value' of type str.
+The class 'sqlview::Expression' has no attributes.
+The class 'sqlview::Comparison' has no attributes.
+The class 'sqlview::Metamodel' has the following attributes: 'metamodelURL' of type str.
+The class 'sqlview::Relation' has the following attributes: 'name' of type str.
+The class 'sqlview::Join' has no attributes.
+The class 'sqlview::JoinRight' has no attributes.
+The class 'sqlview::Model' has the following attributes: 'viewName' of type str.
+The class 'sqlview::Left' has no attributes.
+The class 'sqlview::SelectAttribute' has no attributes.
+The class 'sqlview::Attribute' has the following attributes: 'name' of type str.
+The class 'sqlview::EObject' has no attributes.
+The class 'sqlview::MetamodelName' has the following attributes: 'name' of type str.
+The class 'sqlview::Class' has the following attributes: 'name' of type str.
+The class 'sqlview::Select' has the following attributes: 'select' of type str.
+'sqlview::Attribute' (role 'sqlview_Attribute53', cardinality 0..*) is associated with 'sqlview::Left' (role 'sqlview_Left52', cardinality 0..*).
+'sqlview::MetamodelName' (role 'sqlview_MetamodelName36', cardinality 0..*) is associated with 'sqlview::JoinRight' (role 'sqlview_JoinRight35', cardinality 0..*).
+'sqlview::SelectAttribute' (role 'sqlview_SelectAttribute14', cardinality 0..*) is associated with 'sqlview::MetamodelName' (role 'sqlview_MetamodelName15', cardinality 0..*).
+'sqlview::Condition' (role 'sqlview_Condition41', cardinality 0..*) is associated with 'sqlview::EObject' (role 'sqlview_EObject', cardinality 0..*).
+'sqlview::Attribute' (role 'sqlview_Attribute', cardinality 0..*) is associated with 'sqlview::SelectAttribute' (role 'sqlview_SelectAttribute19', cardinality 0..*).
+'sqlview::Comparison' (role 'sqlview_Comparison', cardinality 0..*) is associated with 'sqlview::Left' (role 'sqlview_Left', cardinality 0..*).
+'sqlview::Condition' (role 'sqlview_Condition', cardinality 0..*) is associated with 'sqlview::Expression' (role 'sqlview_Expression10', cardinality 0..*).
+'sqlview::Right' (role 'sqlview_Right', cardinality 0..*) is associated with 'sqlview::Comparison' (role 'sqlview_Comparison44', cardinality 0..*).
+'sqlview::JoinRight' (role 'sqlview_JoinRight38', cardinality 0..*) is associated with 'sqlview::Class' (role 'sqlview_Class39', cardinality 0..*).
+'sqlview::Left' (role 'sqlview_Left46', cardinality 0..*) is associated with 'sqlview::MetamodelName' (role 'sqlview_MetamodelName47', cardinality 0..*).
+'sqlview::MetamodelName' (role 'sqlview_MetamodelName', cardinality 0..*) is associated with 'sqlview::Metamodel' (role 'sqlview_Metamodel4', cardinality 0..*).
+'sqlview::Expression' (role 'sqlview_Expression8', cardinality 0..*) is associated with 'sqlview::From' (role 'sqlview_From', cardinality 0..*).
+'sqlview::Join' (role 'sqlview_Join', cardinality 0..*) is associated with 'sqlview::From' (role 'sqlview_From21', cardinality 0..*).
+'sqlview::Right' (role 'sqlview_Right55', cardinality 0..*) is associated with 'sqlview::MetamodelName' (role 'sqlview_MetamodelName56', cardinality 0..*).
+'sqlview::Class' (role 'sqlview_Class50', cardinality 0..*) is associated with 'sqlview::Left' (role 'sqlview_Left49', cardinality 0..*).
+'sqlview::Expression' (role 'sqlview_Expression', cardinality 0..*) is associated with 'sqlview::Model' (role 'sqlview_Model2', cardinality 0..*).
+'sqlview::Metamodel' (role 'sqlview_Metamodel', cardinality 0..*) is associated with 'sqlview::Model' (role 'sqlview_Model', cardinality 0..*).
+'sqlview::JoinRight' (role 'sqlview_JoinRight', cardinality 0..*) is associated with 'sqlview::Join' (role 'sqlview_Join25', cardinality 0..*).
+'sqlview::Relation' (role 'sqlview_Relation', cardinality 0..*) is associated with 'sqlview::Join' (role 'sqlview_Join27', cardinality 0..*).
+'sqlview::Attribute' (role 'sqlview_Attribute62', cardinality 0..*) is associated with 'sqlview::Right' (role 'sqlview_Right61', cardinality 0..*).
+'sqlview::Class' (role 'sqlview_Class59', cardinality 0..*) is associated with 'sqlview::Right' (role 'sqlview_Right58', cardinality 0..*).
+'sqlview::JoinLeft' (role 'sqlview_JoinLeft29', cardinality 0..*) is associated with 'sqlview::MetamodelName' (role 'sqlview_MetamodelName30', cardinality 0..*).
+'sqlview::Class' (role 'sqlview_Class', cardinality 0..*) is associated with 'sqlview::SelectAttribute' (role 'sqlview_SelectAttribute17', cardinality 0..*).
+'sqlview::Class' (role 'sqlview_Class33', cardinality 0..*) is associated with 'sqlview::JoinLeft' (role 'sqlview_JoinLeft32', cardinality 0..*).
+'sqlview::Select' (role 'sqlview_Select12', cardinality 0..*) is associated with 'sqlview::SelectAttribute' (role 'sqlview_SelectAttribute', cardinality 0..*).
+'sqlview::Expression' (role 'sqlview_Expression6', cardinality 0..*) is associated with 'sqlview::Select' (role 'sqlview_Select', cardinality 0..*).
+'sqlview::JoinLeft' (role 'sqlview_JoinLeft', cardinality 0..*) is associated with 'sqlview::Join' (role 'sqlview_Join23', cardinality 0..*).

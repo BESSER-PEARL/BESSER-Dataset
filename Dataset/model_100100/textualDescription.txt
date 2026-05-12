@@ -1,0 +1,39 @@
+The model has 16 class(es).
+The class 'conference::Talk' has the following attributes: 'duration' of type int; 'name' of type str; 'time' of type str; 'abstract' of type str.
+The class 'conference::Location' has the following attributes: 'name' of type str.
+The class 'makingOf::conference::Person' has no attributes.
+The class 'conference::makingOf::Participant' has the following attributes: 'age' of type int; 'attitude' of type str.
+The class 'conference::makingOf::Day' has the following attributes: 'name' of type str.
+The class 'conference::Conference' has the following attributes: 'name' of type str.
+The class 'conference::Subject' has the following attributes: 'description' of type str; 'isDone' of type bool.
+The class 'Task' has no attributes.
+The class 'conference::makingOf::Task' has the following attributes: 'name' of type str.
+The class 'Day' has no attributes.
+The class 'conference::Track' has the following attributes: 'name' of type str.
+The class 'conference::makingOf::Story' has the following attributes: 'name' of type str.
+The class 'conference::Day' has the following attributes: 'name' of type str.
+The class 'conference::Person' has the following attributes: 'organisation' of type str; 'name' of type str.
+The class 'Participant' has no attributes.
+The class 'Story' has no attributes.
+The enumeration 'Attitude' has the following literals: 'cool', 'serious', 'disgraceful'.
+'conference::Day' (role 'day', cardinality 0..*) is associated with 'conference::Talk' (role 'Talk23', cardinality 0..*).
+'conference::Talk' (role 'talks14', cardinality 0..*) is associated with 'conference::Location' (role 'Location', cardinality 0..*).
+'conference::Track' (role 'conference_Track18', cardinality 0..*) is associated with 'conference::Talk' (role 'conference_Talk19', cardinality 0..*).
+'conference::Talk' (role 'Talk25', cardinality 0..*) is associated with 'conference::Location' (role 'location', cardinality 0..*).
+'Task' (role 'Task29', cardinality 0..*) is associated with 'conference::makingOf::Day' (role 'conference_makingOf_Day28', cardinality 0..*).
+'conference::makingOf::Task' (role 'conference_makingOf_Task', cardinality 0..*) is associated with 'Participant' (role 'Participant35', cardinality 0..*).
+'conference::Conference' (role 'conference_Conference4', cardinality 0..*) is associated with 'conference::Day' (role 'conference_Day', cardinality 0..*).
+'conference::makingOf::Day' (role 'conference_makingOf_Day', cardinality 0..*) is associated with 'Task' (role 'Task', cardinality 0..*).
+'conference::Subject' (role 'conference_Subject', cardinality 0..*) is associated with 'conference::Talk' (role 'conference_Talk', cardinality 0..*).
+'conference::Track' (role 'tracks', cardinality 0..*) is associated with 'conference::Person' (role 'Person21', cardinality 0..*).
+'conference::Talk' (role 'talks12', cardinality 0..*) is associated with 'conference::Day' (role 'Day', cardinality 0..*).
+'conference::Person' (role 'animators', cardinality 0..*) is associated with 'conference::Track' (role 'Track', cardinality 0..*).
+'conference::Location' (role 'conference_Location', cardinality 0..*) is associated with 'conference::Conference' (role 'conference_Conference6', cardinality 0..*).
+'Day' (role 'Day33', cardinality 0..*) is associated with 'conference::makingOf::Story' (role 'conference_makingOf_Story', cardinality 0..*).
+'conference::Person' (role 'Person', cardinality 0..*) is associated with 'conference::Talk' (role 'talks', cardinality 0..*).
+'conference::Conference' (role 'conference_Conference2', cardinality 0..*) is associated with 'conference::Person' (role 'conference_Person', cardinality 0..*).
+'Participant' (role 'Participant', cardinality 0..*) is associated with 'conference::makingOf::Day' (role 'conference_makingOf_Day31', cardinality 0..*).
+'conference::Track' (role 'conference_Track', cardinality 0..*) is associated with 'conference::Conference' (role 'conference_Conference', cardinality 0..*).
+'conference::Talk' (role 'Talk', cardinality 0..*) is associated with 'conference::Person' (role 'speakers', cardinality 0..*).
+'conference::makingOf::Participant' (role 'conference_makingOf_Participant', cardinality 0..*) is associated with 'makingOf::conference::Person' (role 'makingOf_conference_Person', cardinality 0..*).
+'conference::Talk' (role 'conference_Talk10', cardinality 0..*) is associated with 'Story' (role 'Story', cardinality 0..*).

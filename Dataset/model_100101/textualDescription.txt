@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'conference::Site' has the following attributes: 'documentation' of type str; 'name' of type str.
+The class 'conference::Topic' has the following attributes: 'references' of type str; 'documentation' of type str; 'description' of type str.
+The class 'conference::Talk' has the following attributes: 'title' of type str; 'documentation' of type str; 'type' of type str.
+The class 'conference::Room' has the following attributes: 'name' of type str; 'capacity' of type int.
+The class 'conference::Conference' has the following attributes: 'overview' of type str; 'place' of type str; 'name' of type str.
+The class 'conference::Person' has the following attributes: 'firstname' of type str; 'lastname' of type str; 'gender' of type str; 'age' of type int; 'eclipseCommiter' of type bool; 'isRegistered' of type bool.
+The enumeration 'TALK_TYPE' has the following literals: 'CONFERENCE', 'WORKSHOP', 'DEMONSTRATION'.
+The enumeration 'GENDER' has the following literals: 'MALE', 'FEMALE', 'UNKNOWN'.
+'conference::Topic' (role 'conference_Topic12', cardinality 0..*) is associated with 'conference::Talk' (role 'conference_Talk11', cardinality 0..*).
+'conference::Talk' (role 'conference_Talk14', cardinality 0..*) is associated with 'conference::Person' (role 'conference_Person15', cardinality 0..*).
+'conference::Conference' (role 'conference_Conference4', cardinality 0..*) is associated with 'conference::Topic' (role 'conference_Topic', cardinality 0..*).
+'conference::Conference' (role 'conference_Conference2', cardinality 0..*) is associated with 'conference::Talk' (role 'conference_Talk', cardinality 0..*).
+'conference::Conference' (role 'conference_Conference6', cardinality 0..*) is associated with 'conference::Site' (role 'conference_Site', cardinality 0..*).
+'conference::Person' (role 'conference_Person18', cardinality 0..*) is associated with 'conference::Talk' (role 'conference_Talk17', cardinality 0..*).
+'conference::Person' (role 'conference_Person8', cardinality 0..*) is associated with 'conference::Talk' (role 'conference_Talk9', cardinality 0..*).
+'conference::Person' (role 'conference_Person', cardinality 0..*) is associated with 'conference::Conference' (role 'conference_Conference', cardinality 0..*).
+'conference::Site' (role 'conference_Site20', cardinality 0..*) is associated with 'conference::Room' (role 'conference_Room', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'relational::Field' has the following attributes: 'name' of type str.
+The class 'relational::Schema' has the following attributes: 'name' of type str.
+The class 'relational::ForeignKey' has no attributes.
+The class 'relational::PrimaryKey' has the following attributes: 'id' of type str.
+The class 'relational::Table' has the following attributes: 'name' of type str.
+The class 'relational::DataBase' has the following attributes: 'port' of type int; 'uri' of type str.
+The class 'relational::Column' has the following attributes: 'type' of type str.
+The class 'Field' has no attributes.
+The enumeration 'Type' has the following literals: 'BOOLEAN', 'FLOAT', 'TIME', 'CHAR', 'VARCHAR', 'NUMERIC', 'DATE'.
+'relational::ForeignKey' is a specialization of 'Field'.
+'relational::PrimaryKey' is a specialization of 'Field'.
+'relational::Column' is a specialization of 'Field'.
+'relational::Table' (role 'relational_Table6', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'relational_ForeignKey', cardinality 0..*).
+'relational::Schema' (role 'relational_Schema', cardinality 0..*) is associated with 'relational::DataBase' (role 'relational_DataBase', cardinality 0..*).
+'relational::Schema' (role 'relational_Schema2', cardinality 0..*) is associated with 'relational::Table' (role 'relational_Table', cardinality 0..*).
+'relational::Field' (role 'relational_Field', cardinality 0..*) is associated with 'relational::Table' (role 'relational_Table4', cardinality 0..*).

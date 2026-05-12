@@ -1,0 +1,104 @@
+The model has 47 class(es).
+The class 'SmartTagsCollection' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::DocumentPropertiesCollection' has the following attributes: 'company' of type str; 'keywords' of type str; 'manager' of type str; 'totalTime' of type str; 'charactersWithSpaces' of type str; 'revision' of type str; 'presentationFormat' of type str; 'title' of type str; 'characters' of type str; 'guid' of type str; 'hyperlinkBase' of type str; 'bytes' of type str; 'subject' of type str; 'description' of type str; 'paragraphs' of type str; 'words' of type str; 'appName' of type str; 'pages' of type str; 'author' of type str; 'lines' of type str; 'lastAuthor' of type str; 'category' of type str.
+The class 'Table' has no attributes.
+The class 'CustomDocumentPropertiesCollection' has no attributes.
+The class 'Worksheet' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::Worksheet' has the following attributes: 'protected' of type str; 'rightToLeft' of type str; 'name' of type str.
+The class 'SpreadsheetMLWorksheetOpt::SmartTagType' has the following attributes: 'name' of type str; 'namespaceuri' of type str; 'url' of type str.
+The class 'StyledElement' has no attributes.
+The class 'ExcelWorkbook' has no attributes.
+The class 'TableElement' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::StyledElement' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::CustomDocumentProperty' has the following attributes: 'name' of type str.
+The class 'DocumentPropertiesCollection' has no attributes.
+The class 'VersionType' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::SmartTagsCollection' has no attributes.
+The class 'SmartTagType' has no attributes.
+The class 'Row' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::VersionType' has the following attributes: 'n' of type str; 'nn' of type str.
+The class 'Data' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::Data' has no attributes.
+The class 'DateTimeType' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::Workbook' has no attributes.
+The class 'Column' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::ColOrRowElement' has the following attributes: 'span' of type str; 'hidden' of type str.
+The class 'SpreadsheetMLWorksheetOpt::ValueType' has no attributes.
+The class 'Workbook' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::ErrorValue' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::Row' has the following attributes: 'autoFitHeight' of type str; 'height' of type str.
+The class 'SpreadsheetMLWorksheetOpt::Table' has the following attributes: 'leftCell' of type str; 'expandedRowCount' of type str; 'defaultColumnWidth' of type str; 'fullRows' of type str; 'expandedColumnCount' of type str; 'topCell' of type str; 'defaultRowHeight' of type str; 'fullColumns' of type str.
+The class 'SpreadsheetMLWorksheetOpt::DateTimeType' has the following attributes: 'year' of type str; 'month' of type str; 'day' of type str; 'second' of type str; 'minute' of type str; 'hour' of type str.
+The class 'WorksheetOptionsElt' has no attributes.
+The class 'CustomDocumentProperty' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::NumberValue' has the following attributes: 'value' of type str.
+The class 'ColOrRowElement' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::TableElement' has the following attributes: 'index' of type str.
+The class 'SpreadsheetMLWorksheetOpt::WorksheetOptionsElt' has the following attributes: 'leftColumnRightPane' of type str; 'activePane' of type str; 'intlMacro' of type str; 'allowDeleteCols' of type str; 'displayFormulas' of type str; 'allowSort' of type str; 'gridlineColor' of type str; 'allowInsertCols' of type str; 'showPageBreakZoom' of type str; 'visible' of type str; 'excelWorksheetType' of type str; 'rangeSelection' of type str; 'zoom' of type str; 'selected' of type str; 'doNotDisplayOutline' of type str; 'name' of type str; 'noSummaryColumnsRightDetail' of type str; 'unsynced' of type str; 'transitionFormulaEntry' of type str; 'allowInsertRows' of type str; 'doNotDisplayColHeaders' of type str; 'tabColorIndex' of type str; 'pageBreakZoom' of type str; 'codeName' of type str; 'protectContentst' of type str; 'protectObjects' of type str; 'allowSizeCols' of type str; 'topRowBottomPane' of type str; 'allowFilter' of type str; 'doNotDisplayZeros' of type str; 'frozenNoSplit' of type str; 'displayRightToLeft' of type str; 'allowDeleteRows' of type str; 'standardWidth' of type str; 'activeColumn' of type str; 'doNotDisplayHeadings' of type str; 'activeRow' of type str; 'noSummaryRowsBelowDetail' of type str; 'transitionExpressionEvaluation' of type str; 'displayPageBreak' of type str; 'allowUsePivotTables' of type str; 'leftColumnVisible' of type str; 'doNotDisplayRowHeaders' of type str; 'allowInsertHyperlinks' of type str; 'splitVertical' of type str; 'fitToPage' of type str; 'gridlineColorIndex' of type str; 'applyAutomaticOutlineStyles' of type str; 'defaultColumnWidth' of type str; 'topRowVisible' of type str; 'freezePanes' of type str; 'filterOn' of type str; 'protectScenarios' of type str; 'defaultRowHeight' of type str; 'doNotDisplayGridlines' of type str; 'enableSelection' of type str; 'splitHorizontal' of type str; 'allowFormatCells' of type str; 'allowSizeRows' of type str.
+The class 'SpreadsheetMLWorksheetOpt::DateTimeTypeValue' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::Cell' has the following attributes: 'hRef' of type str; 'formula' of type str; 'arrayRange' of type str; 'mergeAcross' of type str; 'mergeDown' of type str.
+The class 'SpreadsheetMLWorksheetOpt::BooleanValue' has the following attributes: 'value' of type str.
+The class 'SpreadsheetMLWorksheetOpt::CustomDocumentPropertiesCollection' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::StringValue' has the following attributes: 'value' of type str.
+The class 'Comment' has no attributes.
+The class 'Cell' has no attributes.
+The class 'SpreadsheetMLWorksheetOpt::Comment' has the following attributes: 'showAlways' of type str; 'author' of type str.
+The class 'SpreadsheetMLWorksheetOpt::Column' has the following attributes: 'autoFitWidth' of type str; 'width' of type str.
+The class 'SpreadsheetMLWorksheetOpt::ExcelWorkbook' has the following attributes: 'windowHeight' of type str; 'createBackup' of type str; 'hidePivotTableFieldList' of type str; 'windowTopX' of type str; 'doNotCalculateBeforeSave' of type str; 'doNotSaveLinkValues' of type str; 'firstVisibleSheet' of type str; 'maxIterations' of type str; 'protectWindows' of type str; 'activeChart' of type str; 'refModeR1C1' of type str; 'date1904' of type str; 'futureVer' of type str; 'hideHorizontalScrollBar' of type str; 'displayInkNotes' of type str; 'windowTopY' of type str; 'displayDrawingObjects' of type str; 'hideWorkbookTabs' of type str; 'windowHidden' of type str; 'precisionAsDisplayed' of type str; 'calculation' of type str; 'tabRatio' of type str; 'uncalced' of type str; 'embedSaveSmartTags' of type str; 'protectStructure' of type str; 'maxChange' of type str; 'noAutoRecover' of type str; 'activeSheet' of type str; 'windowWidth' of type str; 'iteration' of type str; 'acceptLabelsInFormulas' of type str; 'selectedSheets' of type str; 'windowIconic' of type str; 'hideVerticalScrollBar' of type str.
+The enumeration 'ExcelWorksheetTypeType' has the following literals: 'ewt_Macro', 'ewt_Dialog', 'ewt_Worksheet', 'ewt_Chart'.
+The enumeration 'DisplayDrawingObjectsType' has the following literals: 'ddot_placeHolders', 'ddot_displayShapes', 'ddot_hideAll'.
+The enumeration 'CalculationWorkbookType' has the following literals: 'cwt_manualCalculation', 'cwt_semiAutomaticCalculation', 'cwt_automaticCalculation'.
+The enumeration 'VisibleType' has the following literals: 'vt_SheetHidden', 'vt_SheetVisible', 'vt_SheetVeryHidden'.
+The enumeration 'EnableSelectionType' has the following literals: 'est_UnlockedCells', 'est_NoSelection'.
+'SpreadsheetMLWorksheetOpt::StringValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorksheetOpt::TableElement' is a specialization of 'StyledElement'.
+'SpreadsheetMLWorksheetOpt::Row' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLWorksheetOpt::DateTimeTypeValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorksheetOpt::Column' is a specialization of 'ColOrRowElement'.
+'SpreadsheetMLWorksheetOpt::ColOrRowElement' is a specialization of 'TableElement'.
+'SpreadsheetMLWorksheetOpt::BooleanValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorksheetOpt::NumberValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorksheetOpt::ErrorValue' is a specialization of 'ValueType'.
+'SpreadsheetMLWorksheetOpt::Table' is a specialization of 'StyledElement'.
+'SpreadsheetMLWorksheetOpt::Cell' is a specialization of 'TableElement'.
+'SpreadsheetMLWorksheetOpt::SmartTagsCollection' (role 'smartTagType_ste', cardinality 0..*) is associated with 'SmartTagType' (role 'SmartTagType', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Cell' (role 'd_cell', cardinality 0..*) is associated with 'Data' (role 'Data49', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Workbook' (role 'cdp_workbook', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection27', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::SmartTagsCollection' (role 'wb_smartTags', cardinality 0..*) is associated with 'Workbook' (role 'Workbook20', cardinality 0..*).
+'ValueType' (role 'ValueType', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::CustomDocumentProperty' (role 'SpreadsheetMLWorksheetOpt_CustomDocumentProperty', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Worksheet' (role 'wb_worksheets', cardinality 0..*) is associated with 'Workbook' (role 'Workbook31', cardinality 0..*).
+'VersionType' (role 'VersionType', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::DocumentPropertiesCollection' (role 'SpreadsheetMLWorksheetOpt_DocumentPropertiesCollection', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Worksheet' (role 't_worksheet', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Workbook' (role 'ws_workbook', cardinality 0..*) is associated with 'Worksheet' (role 'Worksheet', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Table' (role 'r_table', cardinality 0..*) is associated with 'Row' (role 'Row', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::CustomDocumentPropertiesCollection' (role 'wb_customDocProperties', cardinality 0..*) is associated with 'Workbook' (role 'Workbook14', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::DateTimeTypeValue' (role 'SpreadsheetMLWorksheetOpt_DateTimeTypeValue', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Workbook' (role 'st_workbook', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection24', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::DocumentPropertiesCollection' (role 'SpreadsheetMLWorksheetOpt_DocumentPropertiesCollection11', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType12', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Cell' (role 'r_cells', cardinality 0..*) is associated with 'Row' (role 'Row47', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Row' (role 't_rows', cardinality 0..*) is associated with 'Table' (role 'Table41', cardinality 0..*).
+'DocumentPropertiesCollection' (role 'DocumentPropertiesCollection', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Workbook' (role 'dp_workbook', cardinality 0..*).
+'CustomDocumentProperty' (role 'CustomDocumentProperty', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::CustomDocumentPropertiesCollection' (role 'customDocumentProperty_cdpe', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::ValueType' (role 'value', cardinality 0..*) is associated with 'Data' (role 'Data', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Comment' (role 'd_comment', cardinality 0..*) is associated with 'Data' (role 'Data54', cardinality 0..*).
+'Cell' (role 'Cell56', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Data' (role 'c_data', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Table' (role 'c_table', cardinality 0..*).
+'SmartTagsCollection' (role 'SmartTagsCollection45', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Cell' (role 'st_cell', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Row' (role 'c_row', cardinality 0..*) is associated with 'Cell' (role 'Cell43', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::CustomDocumentProperty' (role 'customDocumentProperties', cardinality 0..*) is associated with 'CustomDocumentPropertiesCollection' (role 'CustomDocumentPropertiesCollection', cardinality 0..*).
+'Comment' (role 'Comment', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Cell' (role 'c_cell', cardinality 0..*).
+'Cell' (role 'Cell', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::SmartTagsCollection' (role 'c_smartTags', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::SmartTagType' (role 'smartTagTypes', cardinality 0..*) is associated with 'SmartTagsCollection' (role 'SmartTagsCollection', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Comment' (role 'c_comment', cardinality 0..*) is associated with 'Cell' (role 'Cell52', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::DocumentPropertiesCollection' (role 'wb_docProperties', cardinality 0..*) is associated with 'Workbook' (role 'Workbook', cardinality 0..*).
+'ValueType' (role 'ValueType60', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Data' (role 'vt_data', cardinality 0..*).
+'WorksheetOptionsElt' (role 'WorksheetOptionsElt', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Worksheet' (role 'wo_worksheet', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::DocumentPropertiesCollection' (role 'SpreadsheetMLWorksheetOpt_DocumentPropertiesCollection5', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType6', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Workbook' (role 'ew_workbook', cardinality 0..*) is associated with 'ExcelWorkbook' (role 'ExcelWorkbook', cardinality 0..*).
+'Table' (role 'Table39', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::Column' (role 't_cols', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Data' (role 'com_data', cardinality 0..*) is associated with 'Comment' (role 'Comment58', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::Table' (role 'ws_table', cardinality 0..*) is associated with 'Worksheet' (role 'Worksheet35', cardinality 0..*).
+'Workbook' (role 'Workbook62', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::ExcelWorkbook' (role 'wb_excelWorkbook', cardinality 0..*).
+'SpreadsheetMLWorksheetOpt::DocumentPropertiesCollection' (role 'SpreadsheetMLWorksheetOpt_DocumentPropertiesCollection8', cardinality 0..*) is associated with 'DateTimeType' (role 'DateTimeType9', cardinality 0..*).
+'Worksheet' (role 'Worksheet64', cardinality 0..*) is associated with 'SpreadsheetMLWorksheetOpt::WorksheetOptionsElt' (role 'w_worksheetOptions', cardinality 0..*).

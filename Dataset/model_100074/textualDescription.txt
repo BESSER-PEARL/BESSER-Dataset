@@ -1,0 +1,37 @@
+The model has 18 class(es).
+The class 'AntScripts::NamedElement' has the following attributes: 'name' of type str.
+The class 'CommentableElement' has no attributes.
+The class 'AntScripts::TaskParameter' has no attributes.
+The class 'AntScripts::Attribute' has the following attributes: 'value' of type str.
+The class 'DescribableElement' has no attributes.
+The class 'TaskElement' has no attributes.
+The class 'Target' has no attributes.
+The class 'AntScripts::DescribableElement' has the following attributes: 'description' of type str.
+The class 'Property' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'AntScripts::TaskElement' has no attributes.
+The class 'AntScripts::Task' has no attributes.
+The class 'AntScripts::Property' has the following attributes: 'name' of type str; 'refid' of type str; 'value' of type str; 'resource' of type str; 'classpathref' of type str; 'prefix' of type str; 'file' of type str; 'url' of type str; 'environment' of type str; 'classpath' of type str; 'location' of type str.
+The class 'AntScripts::Target' has the following attributes: 'if_' of type str; 'unless' of type str.
+The class 'Task' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'AntScripts::Project' has no attributes.
+The class 'AntScripts::CommentableElement' has the following attributes: 'comment' of type str.
+'AntScripts::Project' is a specialization of 'DescribableElement'.
+'AntScripts::Task' is a specialization of 'TaskElement'.
+'AntScripts::Target' is a specialization of 'CommentableElement'.
+'AntScripts::Attribute' is a specialization of 'NamedElement'.
+'AntScripts::TaskElement' is a specialization of 'NamedElement'.
+'AntScripts::Target' is a specialization of 'NamedElement'.
+'AntScripts::Project' is a specialization of 'CommentableElement'.
+'AntScripts::Project' is a specialization of 'NamedElement'.
+'AntScripts::TaskElement' is a specialization of 'CommentableElement'.
+'AntScripts::Target' is a specialization of 'DescribableElement'.
+'AntScripts::TaskParameter' is a specialization of 'TaskElement'.
+'AntScripts::Project' (role 'AntScripts_Project', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'Target' (role 'Target9', cardinality 0..*) is associated with 'AntScripts::Target' (role 'AntScripts_Target8', cardinality 0..*).
+'Task' (role 'Task', cardinality 0..*) is associated with 'AntScripts::Target' (role 'AntScripts_Target', cardinality 0..*).
+'AntScripts::TaskElement' (role 'AntScripts_TaskElement12', cardinality 0..*) is associated with 'TaskElement' (role 'TaskElement', cardinality 0..*).
+'AntScripts::Project' (role 'AntScripts_Project4', cardinality 0..*) is associated with 'Target' (role 'Target5', cardinality 0..*).
+'AntScripts::TaskElement' (role 'AntScripts_TaskElement', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'AntScripts::Project' (role 'AntScripts_Project2', cardinality 0..*) is associated with 'Target' (role 'Target', cardinality 0..*).

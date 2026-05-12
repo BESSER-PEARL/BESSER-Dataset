@@ -1,0 +1,38 @@
+The model has 18 class(es).
+The class 'sqlDSL::SEnum' has no attributes.
+The class 'SExtDeclaredSQLType' has no attributes.
+The class 'STableMember' has no attributes.
+The class 'sqlDSL::SModel' has the following attributes: 'generatedFile' of type str.
+The class 'sqlDSL::SExtDeclaredSQLType' has no attributes.
+The class 'sqlDSL::SEnumLiteral' has the following attributes: 'name' of type str; 'value' of type int.
+The class 'sqlDSL::SDecimal' has no attributes.
+The class 'sqlDSL::STable' has the following attributes: 'cached' of type bool; 'entityname' of type str; 'prefix' of type str.
+The class 'sqlDSL::SJoinColumn' has no attributes.
+The class 'sqlDSL::STableMember' has the following attributes: 'name' of type str.
+The class 'sqlDSL::SSettings' has the following attributes: 'javapackage' of type str; 'schema' of type str; 'engine' of type str.
+The class 'sqlDSL::SColumnProps' has the following attributes: 'aes' of type bool; 'index' of type str; 'javacolumn' of type str; 'nullable' of type bool.
+The class 'sqlDSL::SInlinedSQLType' has the following attributes: 'value' of type int.
+The class 'sqlDSL::SArtifact' has the following attributes: 'name' of type str.
+The class 'sqlDSL::SString' has no attributes.
+The class 'SArtifact' has no attributes.
+The class 'sqlDSL::SColumn' has the following attributes: 'simpleType' of type str.
+The class 'SInlinedSQLType' has no attributes.
+The enumeration 'SDBEngine' has the following literals: 'INNODB', 'MYISAM'.
+The enumeration 'SIndex' has the following literals: 'YES', 'SPATIAL', 'UNIQUE', 'NO'.
+The enumeration 'SSimpleTypes' has the following literals: 'Coordinate', 'SMALL_INT', 'MEDIUM_INT', 'Currency', 'BLOB', 'FOTO', 'POLYGON', 'POINT', 'TIME', 'TINY_INT', 'BOOLEAN', 'DATETIME', 'DATE', 'INT'.
+'sqlDSL::STable' is a specialization of 'SArtifact'.
+'sqlDSL::SJoinColumn' is a specialization of 'STableMember'.
+'sqlDSL::SString' is a specialization of 'SInlinedSQLType'.
+'sqlDSL::SEnum' is a specialization of 'SExtDeclaredSQLType'.
+'sqlDSL::SDecimal' is a specialization of 'SInlinedSQLType'.
+'sqlDSL::SColumn' is a specialization of 'STableMember'.
+'sqlDSL::SEnum' is a specialization of 'SArtifact'.
+'sqlDSL::SInlinedSQLType' (role 'sqlDSL_SInlinedSQLType', cardinality 0..*) is associated with 'sqlDSL::SColumn' (role 'sqlDSL_SColumn11', cardinality 0..*).
+'sqlDSL::STable' (role 'sqlDSL_STable6', cardinality 0..*) is associated with 'sqlDSL::STableMember' (role 'sqlDSL_STableMember', cardinality 0..*).
+'sqlDSL::SModel' (role 'sqlDSL_SModel2', cardinality 0..*) is associated with 'sqlDSL::SArtifact' (role 'sqlDSL_SArtifact', cardinality 0..*).
+'sqlDSL::STable' (role 'sqlDSL_STable', cardinality 0..*) is associated with 'sqlDSL::SSettings' (role 'sqlDSL_SSettings4', cardinality 0..*).
+'sqlDSL::SEnumLiteral' (role 'sqlDSL_SEnumLiteral', cardinality 0..*) is associated with 'sqlDSL::SEnum' (role 'sqlDSL_SEnum', cardinality 0..*).
+'sqlDSL::STable' (role 'sqlDSL_STable13', cardinality 0..*) is associated with 'sqlDSL::SJoinColumn' (role 'sqlDSL_SJoinColumn', cardinality 0..*).
+'sqlDSL::SColumn' (role 'sqlDSL_SColumn', cardinality 0..*) is associated with 'sqlDSL::SExtDeclaredSQLType' (role 'sqlDSL_SExtDeclaredSQLType', cardinality 0..*).
+'sqlDSL::STableMember' (role 'sqlDSL_STableMember8', cardinality 0..*) is associated with 'sqlDSL::SColumnProps' (role 'sqlDSL_SColumnProps', cardinality 0..*).
+'sqlDSL::SModel' (role 'sqlDSL_SModel', cardinality 0..*) is associated with 'sqlDSL::SSettings' (role 'sqlDSL_SSettings', cardinality 0..*).

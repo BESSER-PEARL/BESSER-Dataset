@@ -1,0 +1,49 @@
+The model has 21 class(es).
+The class 'statemachines::Fork' has no attributes.
+The class 'AbstractExtension' has no attributes.
+The class 'EventBElement' has no attributes.
+The class 'statemachines::Final' has no attributes.
+The class 'EventBCommentedLabeledEventGroupElement' has no attributes.
+The class 'statemachines::Statemachine' has the following attributes: 'selfName' of type str; 'translation' of type str.
+The class 'Diagram' has no attributes.
+The class 'statemachines::Initial' has no attributes.
+The class 'statemachines::EventBNamedCommentedElement' has no attributes.
+The class 'statemachines::EventBElement' has no attributes.
+The class 'StatemachineOwner' has no attributes.
+The class 'statemachines::StatemachineOwner' has no attributes.
+The class 'statemachines::State' has the following attributes: 'active' of type bool.
+The class 'EventBNamedCommentedDataElaborationElement' has no attributes.
+The class 'Invariant' has no attributes.
+The class 'AbstractNode' has no attributes.
+The class 'statemachines::AbstractNode' has no attributes.
+The class 'statemachines::Any' has no attributes.
+The class 'statemachines::Transition' has the following attributes: 'operations' of type str.
+The class 'statemachines::Junction' has no attributes.
+The class 'EventBNamed' has no attributes.
+The enumeration 'TranslationKind' has the following literals: 'MULTIVAR', 'SINGLEVAR', 'REFINEDVAR'.
+'statemachines::Statemachine' is a specialization of 'AbstractExtension'.
+'statemachines::State' is a specialization of 'StatemachineOwner'.
+'statemachines::State' is a specialization of 'EventBNamed'.
+'statemachines::Fork' is a specialization of 'AbstractNode'.
+'statemachines::AbstractNode' is a specialization of 'EventBElement'.
+'statemachines::Any' is a specialization of 'AbstractNode'.
+'statemachines::Statemachine' is a specialization of 'EventBNamedCommentedDataElaborationElement'.
+'statemachines::Initial' is a specialization of 'AbstractNode'.
+'statemachines::Junction' is a specialization of 'AbstractNode'.
+'statemachines::Final' is a specialization of 'AbstractNode'.
+'statemachines::Statemachine' is a specialization of 'Diagram'.
+'statemachines::Transition' is a specialization of 'EventBCommentedLabeledEventGroupElement'.
+'statemachines::State' is a specialization of 'AbstractNode'.
+'statemachines::Statemachine' (role 'statemachines_Statemachine5', cardinality 0..*) is associated with 'statemachines::Transition' (role 'statemachines_Transition', cardinality 0..*).
+'statemachines::Statemachine' (role 'statemachines_Statemachine0', cardinality 0..*) is associated with 'statemachines::Statemachine' (role 'statemachines_Statemachine', cardinality 0..*).
+'statemachines::Transition' (role 'Transition20', cardinality 0..*) is associated with 'statemachines::AbstractNode' (role 'source', cardinality 0..*).
+'statemachines::AbstractNode' (role 'AbstractNode', cardinality 0..*) is associated with 'statemachines::Transition' (role 'incoming', cardinality 0..*).
+'statemachines::Statemachine' (role 'statemachines_Statemachine7', cardinality 0..*) is associated with 'statemachines::EventBNamedCommentedElement' (role 'statemachines_EventBNamedCommentedElement', cardinality 0..*).
+'statemachines::AbstractNode' (role 'statemachines_AbstractNode', cardinality 0..*) is associated with 'statemachines::Statemachine' (role 'statemachines_Statemachine3', cardinality 0..*).
+'statemachines::AbstractNode' (role 'AbstractNode12', cardinality 0..*) is associated with 'statemachines::Transition' (role 'outgoing', cardinality 0..*).
+'statemachines::Statemachine' (role 'statemachines_Statemachine9', cardinality 0..*) is associated with 'statemachines::StatemachineOwner' (role 'statemachines_StatemachineOwner', cardinality 0..*).
+'statemachines::AbstractNode' (role 'target', cardinality 0..*) is associated with 'statemachines::Transition' (role 'Transition', cardinality 0..*).
+'statemachines::State' (role 'statemachines_State21', cardinality 0..*) is associated with 'statemachines::State' (role 'statemachines_State', cardinality 0..*).
+'statemachines::Transition' (role 'statemachines_Transition16', cardinality 0..*) is associated with 'statemachines::EventBElement' (role 'statemachines_EventBElement17', cardinality 0..*).
+'Invariant' (role 'Invariant', cardinality 0..*) is associated with 'statemachines::State' (role 'statemachines_State24', cardinality 0..*).
+'statemachines::EventBElement' (role 'statemachines_EventBElement', cardinality 0..*) is associated with 'statemachines::Transition' (role 'statemachines_Transition14', cardinality 0..*).

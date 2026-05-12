@@ -1,0 +1,25 @@
+The model has 8 class(es).
+The class 'rfsm::Connector' has the following attributes: 'public' of type bool.
+The class 'rfsm::History' has the following attributes: 'depth' of type int; 'hot' of type bool.
+The class 'rfsm::Event' has the following attributes: 'eventliteral' of type str.
+The class 'rfsm::State' has no attributes.
+The class 'rfsm::Node' has the following attributes: 'name' of type str.
+The class 'rfsm::Function' has the following attributes: 'sourcecode' of type str.
+The class 'Node' has no attributes.
+The class 'rfsm::Transition' has the following attributes: 'priority_number' of type int.
+'rfsm::State' is a specialization of 'Node'.
+'rfsm::Connector' is a specialization of 'Node'.
+'rfsm::Transition' (role 'Transition26', cardinality 0..*) is associated with 'rfsm::Event' (role 'events', cardinality 0..*).
+'rfsm::Function' (role 'rfsm_Function21', cardinality 0..*) is associated with 'rfsm::Transition' (role 'rfsm_Transition20', cardinality 0..*).
+'rfsm::Transition' (role 'rfsm_Transition23', cardinality 0..*) is associated with 'rfsm::Function' (role 'rfsm_Function24', cardinality 0..*).
+'rfsm::Function' (role 'rfsm_Function', cardinality 0..*) is associated with 'rfsm::State' (role 'rfsm_State', cardinality 0..*).
+'rfsm::Transition' (role 'rfsm_Transition15', cardinality 0..*) is associated with 'rfsm::Node' (role 'rfsm_Node16', cardinality 0..*).
+'rfsm::Connector' (role 'rfsm_Connector', cardinality 0..*) is associated with 'rfsm::History' (role 'rfsm_History', cardinality 0..*).
+'rfsm::Function' (role 'rfsm_Function6', cardinality 0..*) is associated with 'rfsm::State' (role 'rfsm_State5', cardinality 0..*).
+'rfsm::Event' (role 'Event', cardinality 0..*) is associated with 'rfsm::Transition' (role 'owner18', cardinality 0..*).
+'rfsm::State' (role 'owner', cardinality 0..*) is associated with 'rfsm::Transition' (role 'Transition', cardinality 0..*).
+'rfsm::Node' (role 'subnodes', cardinality 0..*) is associated with 'rfsm::State' (role 'State', cardinality 0..*).
+'rfsm::State' (role 'parent', cardinality 0..*) is associated with 'rfsm::Node' (role 'Node', cardinality 0..*).
+'rfsm::Function' (role 'rfsm_Function9', cardinality 0..*) is associated with 'rfsm::State' (role 'rfsm_State8', cardinality 0..*).
+'rfsm::Transition' (role 'transitions', cardinality 0..*) is associated with 'rfsm::State' (role 'State12', cardinality 0..*).
+'rfsm::Transition' (role 'rfsm_Transition', cardinality 0..*) is associated with 'rfsm::Node' (role 'rfsm_Node', cardinality 0..*).

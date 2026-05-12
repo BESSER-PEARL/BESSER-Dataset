@@ -1,0 +1,58 @@
+The model has 21 class(es).
+The class 'UsecaseDSL::Actor' has no attributes.
+The class 'MultiplicityElement::c' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'UsecaseDSL::Generalization' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'UsecaseDSL::Namespace' has no attributes.
+The class 'UsecaseDSL::UseCaseDiagram::c' has no attributes.
+The class 'UsecaseDSL::Extend::c' has the following attributes: 'Expression' of type str.
+The class 'UsecaseDSL::DirectedRelationship' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'UsecaseDSL::UseCase' has no attributes.
+The class 'UsecaseDSL::Include' has no attributes.
+The class 'UsecaseDSL::ExtensionPoint' has no attributes.
+The class 'UsecaseDSL::Classifier' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'UsecaseDSL::MultiplicityElement::c' has the following attributes: 'sourceLower' of type str; 'targetLower' of type str; 'sourceUpper' of type str; 'targetUpper' of type str.
+The class 'UsecaseDSL::Relationship' has no attributes.
+The class 'UsecaseDSL::System::c' has no attributes.
+The class 'UsecaseDSL::NamedElement' has the following attributes: 'name' of type str.
+The class 'UsecaseDSL::Association::c' has no attributes.
+'UsecaseDSL::Include' is a specialization of 'DirectedRelationship'.
+'UsecaseDSL::Association::c' is a specialization of 'MultiplicityElement::c'.
+'UsecaseDSL::Classifier' is a specialization of 'Namespace'.
+'UsecaseDSL::Extend::c' is a specialization of 'DirectedRelationship'.
+'UsecaseDSL::System::c' is a specialization of 'Classifier'.
+'UsecaseDSL::Extend::c' is a specialization of 'NamedElement'.
+'UsecaseDSL::Namespace' is a specialization of 'NamedElement'.
+'UsecaseDSL::UseCaseDiagram::c' is a specialization of 'Classifier'.
+'UsecaseDSL::Association::c' is a specialization of 'Classifier'.
+'UsecaseDSL::UseCase' is a specialization of 'Classifier'.
+'UsecaseDSL::Generalization' is a specialization of 'DirectedRelationship'.
+'UsecaseDSL::Association::c' is a specialization of 'Relationship'.
+'UsecaseDSL::ExtensionPoint' is a specialization of 'NamedElement'.
+'UsecaseDSL::Include' is a specialization of 'NamedElement'.
+'UsecaseDSL::DirectedRelationship' is a specialization of 'Relationship'.
+'UsecaseDSL::Actor' is a specialization of 'Classifier'.
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase30', cardinality 0..*) is associated with 'UsecaseDSL::Include' (role 'UsecaseDSL_Include', cardinality 0..*).
+'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier14', cardinality 0..*) is associated with 'UsecaseDSL::Generalization' (role 'UsecaseDSL_Generalization13', cardinality 0..*).
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase27', cardinality 0..*) is associated with 'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier28', cardinality 0..*).
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase22', cardinality 0..*) is associated with 'UsecaseDSL::System::c' (role 'UsecaseDSL_System_c21', cardinality 0..*).
+'UsecaseDSL::ExtensionPoint' (role 'UsecaseDSL_ExtensionPoint48', cardinality 0..*) is associated with 'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase49', cardinality 0..*).
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase34', cardinality 0..*) is associated with 'UsecaseDSL::ExtensionPoint' (role 'UsecaseDSL_ExtensionPoint', cardinality 0..*).
+'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier25', cardinality 0..*) is associated with 'UsecaseDSL::System::c' (role 'UsecaseDSL_System_c24', cardinality 0..*).
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase32', cardinality 0..*) is associated with 'UsecaseDSL::Extend::c' (role 'UsecaseDSL_Extend_c', cardinality 0..*).
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase46', cardinality 0..*) is associated with 'UsecaseDSL::Include' (role 'UsecaseDSL_Include45', cardinality 0..*).
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase', cardinality 0..*) is associated with 'UsecaseDSL::System::c' (role 'UsecaseDSL_System_c', cardinality 0..*).
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase40', cardinality 0..*) is associated with 'UsecaseDSL::Extend::c' (role 'UsecaseDSL_Extend_c39', cardinality 0..*).
+'UsecaseDSL::Generalization' (role 'UsecaseDSL_Generalization10', cardinality 0..*) is associated with 'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier11', cardinality 0..*).
+'UsecaseDSL::UseCaseDiagram::c' (role 'UsecaseDSL_UseCaseDiagram_c', cardinality 0..*) is associated with 'UsecaseDSL::Relationship' (role 'UsecaseDSL_Relationship', cardinality 0..*).
+'UsecaseDSL::Association::c' (role 'UsecaseDSL_Association_c', cardinality 0..*) is associated with 'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier5', cardinality 0..*).
+'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier', cardinality 0..*) is associated with 'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier0', cardinality 0..*).
+'UsecaseDSL::UseCaseDiagram::c' (role 'UsecaseDSL_UseCaseDiagram_c17', cardinality 0..*) is associated with 'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier18', cardinality 0..*).
+'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase37', cardinality 0..*) is associated with 'UsecaseDSL::Extend::c' (role 'UsecaseDSL_Extend_c36', cardinality 0..*).
+'UsecaseDSL::Include' (role 'UsecaseDSL_Include42', cardinality 0..*) is associated with 'UsecaseDSL::UseCase' (role 'UsecaseDSL_UseCase43', cardinality 0..*).
+'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier3', cardinality 0..*) is associated with 'UsecaseDSL::Generalization' (role 'UsecaseDSL_Generalization', cardinality 0..*).
+'UsecaseDSL::Classifier' (role 'UsecaseDSL_Classifier8', cardinality 0..*) is associated with 'UsecaseDSL::Association::c' (role 'UsecaseDSL_Association_c7', cardinality 0..*).

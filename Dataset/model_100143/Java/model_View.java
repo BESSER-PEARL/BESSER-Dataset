@@ -1,0 +1,45 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class model_View extends NamedElement, FQNamedElement, DescribedElement {
+
+    private String sql;
+
+
+
+
+
+    private model_Schema model_schema;
+
+
+    public model_View(
+        String sql    ) {
+        super(
+        );
+        this.sql = sql;
+    }
+
+
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
+
+    public model_Schema getModel_schema() {
+        return model_schema;
+    }
+
+    public void setModel_schema(model_Schema model_schema) {
+        this.model_schema = model_schema;
+    }
+
+}

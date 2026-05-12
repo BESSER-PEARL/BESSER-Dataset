@@ -1,0 +1,73 @@
+The model has 32 class(es).
+The class 'documentation::Width' has the following attributes: 'width' of type str; 'unit' of type str.
+The class 'NamedElement' has no attributes.
+The class 'documentation::ListItem' has the following attributes: 'text' of type str.
+The class 'documentation::PageBreak' has no attributes.
+The class 'documentation::Subsubsection' has no attributes.
+The class 'documentation::TableCell' has the following attributes: 'span' of type int; 'content' of type str.
+The class 'documentation::NamedElement' has the following attributes: 'id' of type str; 'name' of type str; 'label' of type str.
+The class 'documentation::TableRow' has no attributes.
+The class 'documentation::Line' has no attributes.
+The class 'documentation::Text' has the following attributes: 'text' of type str.
+The class 'TextContainer' has no attributes.
+The class 'documentation::Image' has the following attributes: 'contextClassName' of type str; 'resource' of type str; 'originalSource' of type str.
+The class 'documentation::TextContainer' has no attributes.
+The class 'documentation::Reference' has the following attributes: 'referredLabel' of type str.
+The class 'documentation::XML' has the following attributes: 'content' of type str; 'contextClassName' of type str; 'resource' of type str.
+The class 'documentation::Fragment' has no attributes.
+The class 'documentation::Documentation' has the following attributes: 'title' of type str.
+The class 'Text' has no attributes.
+The class 'documentation::TableHeader' has no attributes.
+The class 'documentation::Subsection' has no attributes.
+The class 'documentation::Paragraph' has no attributes.
+The class 'documentation::Section' has no attributes.
+The class 'documentation::FragmentContainer' has no attributes.
+The class 'documentation::Code' has no attributes.
+The class 'documentation::Listing' has no attributes.
+The class 'FragmentContainer' has no attributes.
+The class 'documentation::HtmlCode' has no attributes.
+The class 'documentation::List' has no attributes.
+The class 'documentation::Table' has no attributes.
+The class 'documentation::TermEntry' has the following attributes: 'description' of type str.
+The class 'Fragment' has no attributes.
+The class 'documentation::Link' has the following attributes: 'uri' of type str.
+The enumeration 'Unit' has the following literals: 'PERCENT', 'PIXELS'.
+'documentation::Subsubsection' is a specialization of 'Fragment'.
+'documentation::Image' is a specialization of 'Fragment'.
+'documentation::Paragraph' is a specialization of 'TextContainer'.
+'documentation::Table' is a specialization of 'Fragment'.
+'documentation::Subsubsection' is a specialization of 'FragmentContainer'.
+'documentation::Paragraph' is a specialization of 'Fragment'.
+'documentation::XML' is a specialization of 'NamedElement'.
+'documentation::Listing' is a specialization of 'Fragment'.
+'documentation::TermEntry' is a specialization of 'NamedElement'.
+'documentation::Reference' is a specialization of 'NamedElement'.
+'documentation::Subsubsection' is a specialization of 'NamedElement'.
+'documentation::Line' is a specialization of 'Text'.
+'documentation::List' is a specialization of 'Fragment'.
+'documentation::Subsection' is a specialization of 'FragmentContainer'.
+'documentation::PageBreak' is a specialization of 'Fragment'.
+'documentation::Section' is a specialization of 'NamedElement'.
+'documentation::Subsection' is a specialization of 'NamedElement'.
+'documentation::Code' is a specialization of 'Text'.
+'documentation::FragmentContainer' is a specialization of 'TextContainer'.
+'documentation::Link' is a specialization of 'Fragment'.
+'documentation::Section' is a specialization of 'FragmentContainer'.
+'documentation::Listing' is a specialization of 'TextContainer'.
+'documentation::Link' is a specialization of 'NamedElement'.
+'documentation::Subsection' is a specialization of 'Fragment'.
+'documentation::Image' is a specialization of 'NamedElement'.
+'documentation::Reference' is a specialization of 'Text'.
+'documentation::Text' is a specialization of 'Fragment'.
+'documentation::HtmlCode' is a specialization of 'Text'.
+'documentation::XML' is a specialization of 'Fragment'.
+'documentation::TextContainer' (role 'documentation_TextContainer', cardinality 0..*) is associated with 'documentation::Text' (role 'documentation_Text', cardinality 0..*).
+'documentation::TableHeader' (role 'documentation_TableHeader8', cardinality 0..*) is associated with 'documentation::TableCell' (role 'documentation_TableCell', cardinality 0..*).
+'documentation::List' (role 'documentation_List', cardinality 0..*) is associated with 'documentation::ListItem' (role 'documentation_ListItem', cardinality 0..*).
+'documentation::TableRow' (role 'documentation_TableRow', cardinality 0..*) is associated with 'documentation::Table' (role 'documentation_Table6', cardinality 0..*).
+'documentation::FragmentContainer' (role 'documentation_FragmentContainer', cardinality 0..*) is associated with 'documentation::Fragment' (role 'documentation_Fragment', cardinality 0..*).
+'documentation::Image' (role 'documentation_Image', cardinality 0..*) is associated with 'documentation::Width' (role 'documentation_Width', cardinality 0..*).
+'documentation::Table' (role 'documentation_Table', cardinality 0..*) is associated with 'documentation::TableHeader' (role 'documentation_TableHeader', cardinality 0..*).
+'documentation::Section' (role 'documentation_Section', cardinality 0..*) is associated with 'documentation::Documentation' (role 'documentation_Documentation', cardinality 0..*).
+'documentation::Documentation' (role 'documentation_Documentation2', cardinality 0..*) is associated with 'documentation::TermEntry' (role 'documentation_TermEntry', cardinality 0..*).
+'documentation::TableCell' (role 'documentation_TableCell11', cardinality 0..*) is associated with 'documentation::TableRow' (role 'documentation_TableRow10', cardinality 0..*).

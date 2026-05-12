@@ -1,0 +1,180 @@
+The model has 94 class(es).
+The class 'MavenMaven::NewTask' has no attributes.
+The class 'MavenMaven::FileList' has the following attributes: 'dir' of type str; 'files' of type str.
+The class 'MavenMaven::Tstamp' has no attributes.
+The class 'MavenMaven::ExcludesFile' has no attributes.
+The class 'MiscellaneousTask' has no attributes.
+The class 'MavenMaven::IncludesFile' has no attributes.
+The class 'MavenMaven::Exec' has the following attributes: 'dir' of type str; 'executable' of type str.
+The class 'PatternSet' has no attributes.
+The class 'MavenMaven::Echo' has the following attributes: 'append' of type str; 'file' of type str; 'message' of type str.
+The class 'MavenMaven::Excludes' has no attributes.
+The class 'MavenMaven::Javac' has the following attributes: 'srcdir' of type str; 'deprecation' of type str; 'debug' of type str; 'destdir' of type str; 'optimize' of type str; 'fork' of type str.
+The class 'Includes' has no attributes.
+The class 'DocumentationTask' has no attributes.
+The class 'MavenMaven::Java' has the following attributes: 'jar' of type str; 'classname' of type str; 'fork' of type str.
+The class 'MavenMaven::FileSet' has the following attributes: 'dir' of type str.
+The class 'MavenMaven::Includes' has no attributes.
+The class 'ExecutionTask' has no attributes.
+The class 'MavenMaven::Pattern' has no attributes.
+The class 'MavenMaven::JellySet' has the following attributes: 'value' of type str; 'var' of type str.
+The class 'ContentsGoal' has no attributes.
+The class 'PostGoal' has no attributes.
+The class 'AntTaskDef' has no attributes.
+The class 'PreGoal' has no attributes.
+The class 'FileSet' has no attributes.
+The class 'MavenMaven::Goal' has the following attributes: 'name' of type str.
+The class 'MavenMaven::AntPropertyName' has the following attributes: 'name' of type str.
+The class 'PathElement' has no attributes.
+The class 'MavenMaven::AntTaskDef' has the following attributes: 'name' of type str; 'classname' of type str.
+The class 'MavenMaven::PostGoal' has no attributes.
+The class 'Set' has no attributes.
+The class 'MavenMaven::FormatTstamp' has the following attributes: 'property' of type str; 'pattern' of type str; 'locale' of type str; 'unit' of type str; 'offset' of type str.
+The class 'MavenMaven::Jar' has the following attributes: 'basedir' of type str; 'jarfile' of type str; 'compress' of type str; 'encoding' of type str; 'manifest' of type str.
+The class 'MavenMaven::PatternSet' has no attributes.
+The class 'Xmlns' has no attributes.
+The class 'MavenMaven::DocumentationTask' has no attributes.
+The class 'MavenMaven::Set' has no attributes.
+The class 'CompileTask' has no attributes.
+The class 'MavenMaven::ArchiveTask' has no attributes.
+The class 'MavenMaven::PathElement' has the following attributes: 'path' of type str; 'location' of type str.
+The class 'MavenMaven::ExecutionTask' has no attributes.
+The class 'MavenMaven::CompileTask' has no attributes.
+The class 'MavenMaven::PreDefinedTask' has the following attributes: 'description' of type str; 'taskname' of type str; 'id' of type str.
+The class 'MavenMaven::FiltersFile' has the following attributes: 'file' of type str.
+The class 'MavenMaven::Javadoc' has the following attributes: 'version' of type str; 'author' of type str; 'defaultexcludes' of type str; 'use' of type str; 'destdir' of type str; 'sourcepath' of type str; 'packagenames' of type str; 'windowtitle' of type str.
+The class 'MavenMaven::Attribut' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'MavenMaven::FileTask' has no attributes.
+The class 'MavenMaven::Filter' has the following attributes: 'value' of type str; 'token' of type str.
+The class 'MavenMaven::Project' has no attributes.
+The class 'AntPropertyName' has no attributes.
+The class 'FilterSet' has no attributes.
+The class 'MavenMaven::FilterSet' has the following attributes: 'starttoken' of type str; 'endtoken' of type str.
+The class 'Pattern' has no attributes.
+The class 'ArchiveTask' has no attributes.
+The class 'MavenMaven::AntPropertyLocation' has the following attributes: 'location' of type str.
+The class 'MavenMaven::Mkdir' has the following attributes: 'dir' of type str.
+The class 'MavenMaven::Basic' has no attributes.
+The class 'Excludes' has no attributes.
+The class 'MavenMaven::PreGoal' has no attributes.
+The class 'MavenMaven::Delete' has the following attributes: 'file' of type str; 'defaultexcludes' of type str; 'includesfile' of type str; 'quiet' of type str; 'verbose' of type str; 'includes' of type str; 'dir' of type str; 'excludesfile' of type str; 'failonerror' of type str; 'includeEmptyDirs' of type str; 'excludes' of type str.
+The class 'Mapper' has no attributes.
+The class 'MavenMaven::Xmlns' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'Attribut' has no attributes.
+The class 'MavenMaven::AntPropertyEnv' has the following attributes: 'environment' of type str.
+The class 'PreDefinedTask' has no attributes.
+The class 'MavenMaven::Copy' has the following attributes: 'flatten' of type str; 'tofile' of type str; 'includeEmptyDirs' of type str; 'todir' of type str; 'filtering' of type str; 'file' of type str; 'overwrite' of type str; 'presservelastmodified' of type str.
+The class 'Task' has no attributes.
+The class 'MavenMaven::Path' has the following attributes: 'refid' of type str; 'id' of type str.
+The class 'FileTask' has no attributes.
+The class 'Path' has no attributes.
+The class 'MavenMaven::JellyForEach' has the following attributes: 'var' of type str; 'items' of type str; 'indexVar' of type str.
+The class 'Basic' has no attributes.
+The class 'FiltersFile' has no attributes.
+The class 'Filter' has no attributes.
+The class 'InExcludes' has no attributes.
+The class 'AbstractGoal' has no attributes.
+The class 'MavenMaven::ClassPath' has the following attributes: 'refid' of type str.
+The class 'MavenMaven::AntProperty' has no attributes.
+The class 'MavenMaven::PrePostGoal' has no attributes.
+The class 'FormatTstamp' has no attributes.
+The class 'MavenMaven::ContentsGoal' has no attributes.
+The class 'MavenMaven::Task' has no attributes.
+The class 'MavenMaven::Mapper' has the following attributes: 'to' of type str; 'classname' of type str; 'from_' of type str; 'classpath' of type str; 'type' of type str; 'classpathref' of type str.
+The class 'AntProperty' has no attributes.
+The class 'MavenMaven::InExcludes' has the following attributes: 'ifCondition' of type str; 'name' of type str; 'unless' of type str.
+The class 'MavenMaven::AttainGoal' has no attributes.
+The class 'PrePostGoal' has no attributes.
+The class 'MavenMaven::JellyCommand' has no attributes.
+The class 'JellyCommand' has no attributes.
+The class 'Goal' has no attributes.
+The class 'MavenMaven::AntPropertyFile' has the following attributes: 'file' of type str.
+The class 'MavenMaven::AbstractGoal' has no attributes.
+The class 'MavenMaven::MiscellaneousTask' has no attributes.
+The class 'MavenMaven::AntPropertyValue' has the following attributes: 'value' of type str.
+The class 'ClassPath' has no attributes.
+'MavenMaven::PostGoal' is a specialization of 'PrePostGoal'.
+'MavenMaven::InExcludes' is a specialization of 'Basic'.
+'MavenMaven::Set' is a specialization of 'Pattern'.
+'MavenMaven::PathElement' is a specialization of 'Basic'.
+'MavenMaven::Mapper' is a specialization of 'Basic'.
+'MavenMaven::AntPropertyName' is a specialization of 'AntProperty'.
+'MavenMaven::FiltersFile' is a specialization of 'Basic'.
+'MavenMaven::Filter' is a specialization of 'Basic'.
+'MavenMaven::PatternSet' is a specialization of 'Set'.
+'MavenMaven::PreDefinedTask' is a specialization of 'Task'.
+'MavenMaven::PreGoal' is a specialization of 'PrePostGoal'.
+'MavenMaven::Includes' is a specialization of 'InExcludes'.
+'MavenMaven::JellyCommand' is a specialization of 'ContentsGoal'.
+'MavenMaven::FilterSet' is a specialization of 'Set'.
+'MavenMaven::Task' is a specialization of 'ContentsGoal'.
+'MavenMaven::NewTask' is a specialization of 'Task'.
+'MavenMaven::AntProperty' is a specialization of 'ContentsGoal'.
+'MavenMaven::AntPropertyLocation' is a specialization of 'AntPropertyName'.
+'MavenMaven::MiscellaneousTask' is a specialization of 'PreDefinedTask'.
+'MavenMaven::PrePostGoal' is a specialization of 'AbstractGoal'.
+'MavenMaven::Copy' is a specialization of 'FileTask'.
+'MavenMaven::AttainGoal' is a specialization of 'ContentsGoal'.
+'MavenMaven::Mkdir' is a specialization of 'FileTask'.
+'MavenMaven::Tstamp' is a specialization of 'MiscellaneousTask'.
+'MavenMaven::Echo' is a specialization of 'MiscellaneousTask'.
+'MavenMaven::FileTask' is a specialization of 'PreDefinedTask'.
+'MavenMaven::AntPropertyFile' is a specialization of 'AntProperty'.
+'MavenMaven::ExecutionTask' is a specialization of 'PreDefinedTask'.
+'MavenMaven::Excludes' is a specialization of 'InExcludes'.
+'MavenMaven::JellyForEach' is a specialization of 'JellyCommand'.
+'MavenMaven::AntPropertyValue' is a specialization of 'AntPropertyName'.
+'MavenMaven::FileList' is a specialization of 'Basic'.
+'MavenMaven::AntTaskDef' is a specialization of 'ContentsGoal'.
+'MavenMaven::Delete' is a specialization of 'FileTask'.
+'MavenMaven::ClassPath' is a specialization of 'Set'.
+'MavenMaven::ExcludesFile' is a specialization of 'InExcludes'.
+'MavenMaven::JellySet' is a specialization of 'JellyCommand'.
+'MavenMaven::Jar' is a specialization of 'ArchiveTask'.
+'MavenMaven::ArchiveTask' is a specialization of 'PreDefinedTask'.
+'MavenMaven::IncludesFile' is a specialization of 'InExcludes'.
+'MavenMaven::Javac' is a specialization of 'CompileTask'.
+'MavenMaven::Javadoc' is a specialization of 'DocumentationTask'.
+'MavenMaven::Basic' is a specialization of 'Pattern'.
+'MavenMaven::CompileTask' is a specialization of 'PreDefinedTask'.
+'MavenMaven::DocumentationTask' is a specialization of 'PreDefinedTask'.
+'MavenMaven::FileSet' is a specialization of 'Set'.
+'MavenMaven::Java' is a specialization of 'ExecutionTask'.
+'MavenMaven::Path' is a specialization of 'Set'.
+'MavenMaven::Goal' is a specialization of 'AbstractGoal'.
+'MavenMaven::Exec' is a specialization of 'ExecutionTask'.
+'MavenMaven::AntPropertyEnv' is a specialization of 'AntProperty'.
+'Attribut' (role 'Attribut', cardinality 0..*) is associated with 'MavenMaven::NewTask' (role 'MavenMaven_NewTask49', cardinality 0..*).
+'PatternSet' (role 'PatternSet', cardinality 0..*) is associated with 'MavenMaven::FileSet' (role 'MavenMaven_FileSet', cardinality 0..*).
+'MavenMaven::PreGoal' (role 'preGoal', cardinality 0..*) is associated with 'Goal' (role 'Goal20', cardinality 0..*).
+'Goal' (role 'Goal13', cardinality 0..*) is associated with 'MavenMaven::Project' (role 'MavenMaven_Project12', cardinality 0..*).
+'MavenMaven::Project' (role 'MavenMaven_Project10', cardinality 0..*) is associated with 'PrePostGoal' (role 'PrePostGoal', cardinality 0..*).
+'Path' (role 'Path', cardinality 0..*) is associated with 'MavenMaven::Project' (role 'MavenMaven_Project4', cardinality 0..*).
+'Goal' (role 'Goal18', cardinality 0..*) is associated with 'MavenMaven::AttainGoal' (role 'MavenMaven_AttainGoal', cardinality 0..*).
+'Filter' (role 'Filter', cardinality 0..*) is associated with 'MavenMaven::FilterSet' (role 'MavenMaven_FilterSet', cardinality 0..*).
+'FiltersFile' (role 'FiltersFile', cardinality 0..*) is associated with 'MavenMaven::FilterSet' (role 'MavenMaven_FilterSet34', cardinality 0..*).
+'ContentsGoal' (role 'ContentsGoal', cardinality 0..*) is associated with 'MavenMaven::JellyForEach' (role 'MavenMaven_JellyForEach', cardinality 0..*).
+'PathElement' (role 'PathElement', cardinality 0..*) is associated with 'MavenMaven::Path' (role 'MavenMaven_Path38', cardinality 0..*).
+'MavenMaven::PostGoal' (role 'postGoal', cardinality 0..*) is associated with 'Goal' (role 'Goal22', cardinality 0..*).
+'MavenMaven::Copy' (role 'MavenMaven_Copy62', cardinality 0..*) is associated with 'Mapper' (role 'Mapper', cardinality 0..*).
+'FileSet' (role 'FileSet', cardinality 0..*) is associated with 'MavenMaven::Path' (role 'MavenMaven_Path40', cardinality 0..*).
+'FileSet' (role 'FileSet45', cardinality 0..*) is associated with 'MavenMaven::ClassPath' (role 'MavenMaven_ClassPath44', cardinality 0..*).
+'Excludes' (role 'Excludes', cardinality 0..*) is associated with 'MavenMaven::FileSet' (role 'MavenMaven_FileSet31', cardinality 0..*).
+'MavenMaven::Javac' (role 'MavenMaven_Javac', cardinality 0..*) is associated with 'InExcludes' (role 'InExcludes53', cardinality 0..*).
+'ContentsGoal' (role 'ContentsGoal16', cardinality 0..*) is associated with 'MavenMaven::AbstractGoal' (role 'MavenMaven_AbstractGoal', cardinality 0..*).
+'Xmlns' (role 'Xmlns', cardinality 0..*) is associated with 'MavenMaven::Project' (role 'MavenMaven_Project', cardinality 0..*).
+'ClassPath' (role 'ClassPath', cardinality 0..*) is associated with 'MavenMaven::Java' (role 'MavenMaven_Java', cardinality 0..*).
+'MavenMaven::PatternSet' (role 'MavenMaven_PatternSet', cardinality 0..*) is associated with 'InExcludes' (role 'InExcludes', cardinality 0..*).
+'MavenMaven::Copy' (role 'MavenMaven_Copy', cardinality 0..*) is associated with 'FileSet' (role 'FileSet58', cardinality 0..*).
+'MavenMaven::Goal' (role 'centralGoal', cardinality 0..*) is associated with 'PreGoal' (role 'PreGoal', cardinality 0..*).
+'PostGoal' (role 'PostGoal', cardinality 0..*) is associated with 'MavenMaven::Goal' (role 'centralGoal25', cardinality 0..*).
+'FormatTstamp' (role 'FormatTstamp', cardinality 0..*) is associated with 'MavenMaven::Tstamp' (role 'MavenMaven_Tstamp', cardinality 0..*).
+'Includes' (role 'Includes', cardinality 0..*) is associated with 'MavenMaven::FileSet' (role 'MavenMaven_FileSet29', cardinality 0..*).
+'PathElement' (role 'PathElement42', cardinality 0..*) is associated with 'MavenMaven::ClassPath' (role 'MavenMaven_ClassPath', cardinality 0..*).
+'Goal' (role 'Goal', cardinality 0..*) is associated with 'MavenMaven::Project' (role 'MavenMaven_Project2', cardinality 0..*).
+'MavenMaven::Project' (role 'MavenMaven_Project6', cardinality 0..*) is associated with 'AntProperty' (role 'AntProperty', cardinality 0..*).
+'MavenMaven::Project' (role 'MavenMaven_Project8', cardinality 0..*) is associated with 'AntTaskDef' (role 'AntTaskDef', cardinality 0..*).
+'AntTaskDef' (role 'AntTaskDef47', cardinality 0..*) is associated with 'MavenMaven::NewTask' (role 'MavenMaven_NewTask', cardinality 0..*).
+'MavenMaven::Path' (role 'MavenMaven_Path', cardinality 0..*) is associated with 'Path' (role 'Path36', cardinality 0..*).
+'MavenMaven::Javac' (role 'MavenMaven_Javac55', cardinality 0..*) is associated with 'ClassPath' (role 'ClassPath56', cardinality 0..*).
+'FilterSet' (role 'FilterSet', cardinality 0..*) is associated with 'MavenMaven::Copy' (role 'MavenMaven_Copy60', cardinality 0..*).

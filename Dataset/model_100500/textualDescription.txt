@@ -1,0 +1,56 @@
+The model has 28 class(es).
+The class 'newP::Refines' has no attributes.
+The class 'newP::Requires' has the following attributes: 'name' of type str.
+The class 'Description' has no attributes.
+The class 'newP::NotOperator' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'newP::FunctionalRequirement' has no attributes.
+The class 'newP::Category' has the following attributes: 'name' of type str.
+The class 'newP::Specification' has the following attributes: 'name' of type str.
+The class 'newP::ICost' has no attributes.
+The class 'newP::Person' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'newP::TextDescription' has the following attributes: 'text' of type str.
+The class 'newP::OrOperator' has no attributes.
+The class 'BinaryOperator' has no attributes.
+The class 'newP::CValue' has no attributes.
+The class 'newP::AndOperartor' has no attributes.
+The class 'newP::Dependency' has no attributes.
+The class 'Requirement' has no attributes.
+The class 'newP::BinaryOperator' has no attributes.
+The class 'newP::Requirement' has the following attributes: 'mandatory' of type bool; 'name' of type str; 'priority' of type int; 'identifier' of type str.
+The class 'newP::Description' has no attributes.
+The class 'SimpleDependency' has no attributes.
+The class 'newP::QualityRequirement' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'newP::Term' has no attributes.
+The class 'newP::SimpleDependency' has the following attributes: 'name' of type str.
+The class 'newP::RequirementTerm' has no attributes.
+The class 'newP::UnaryOperator' has the following attributes: 'name' of type str.
+The class 'Term' has no attributes.
+'newP::BinaryOperator' is a specialization of 'UnaryOperator'.
+'newP::CValue' is a specialization of 'SimpleDependency'.
+'newP::AndOperartor' is a specialization of 'BinaryOperator'.
+'newP::UnaryOperator' is a specialization of 'Term'.
+'newP::OrOperator' is a specialization of 'BinaryOperator'.
+'newP::RequirementTerm' is a specialization of 'Term'.
+'newP::TextDescription' is a specialization of 'Description'.
+'newP::FunctionalRequirement' is a specialization of 'Requirement'.
+'newP::ICost' is a specialization of 'SimpleDependency'.
+'newP::NotOperator' is a specialization of 'UnaryOperator'.
+'newP::Refines' is a specialization of 'SimpleDependency'.
+'newP::SimpleDependency' is a specialization of 'Dependency'.
+'newP::QualityRequirement' is a specialization of 'Requirement'.
+'newP::Requires' is a specialization of 'Dependency'.
+'newP::Requirement' (role 'newP_Requirement4', cardinality 0..*) is associated with 'newP::Category' (role 'newP_Category', cardinality 0..*).
+'newP::Person' (role 'newP_Person13', cardinality 0..*) is associated with 'newP::Category' (role 'newP_Category14', cardinality 0..*).
+'newP::Specification' (role 'newP_Specification11', cardinality 0..*) is associated with 'newP::Person' (role 'newP_Person', cardinality 0..*).
+'newP::Requirement' (role 'newP_Requirement17', cardinality 0..*) is associated with 'newP::Person' (role 'newP_Person16', cardinality 0..*).
+'newP::Dependency' (role 'newP_Dependency', cardinality 0..*) is associated with 'newP::Requirement' (role 'newP_Requirement2', cardinality 0..*).
+'newP::Category' (role 'newP_Category5', cardinality 0..*) is associated with 'newP::Category' (role 'newP_Category7', cardinality 0..*).
+'newP::Category' (role 'newP_Category9', cardinality 0..*) is associated with 'newP::Specification' (role 'newP_Specification', cardinality 0..*).
+'newP::Term' (role 'newP_Term20', cardinality 0..*) is associated with 'newP::Requires' (role 'newP_Requires', cardinality 0..*).
+'newP::RequirementTerm' (role 'newP_RequirementTerm25', cardinality 0..*) is associated with 'newP::Requirement' (role 'newP_Requirement26', cardinality 0..*).
+'newP::Term' (role 'newP_Term', cardinality 0..*) is associated with 'newP::UnaryOperator' (role 'newP_UnaryOperator', cardinality 0..*).
+'newP::Term' (role 'newP_Term23', cardinality 0..*) is associated with 'newP::BinaryOperator' (role 'newP_BinaryOperator', cardinality 0..*).
+'newP::RequirementTerm' (role 'newP_RequirementTerm', cardinality 0..*) is associated with 'newP::SimpleDependency' (role 'newP_SimpleDependency', cardinality 0..*).
+'newP::Requirement' (role 'newP_Requirement', cardinality 0..*) is associated with 'newP::Description' (role 'newP_Description', cardinality 0..*).

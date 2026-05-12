@@ -1,0 +1,58 @@
+The model has 27 class(es).
+The class 'SQLDDL::TableElement' has no attributes.
+The class 'SQLDDL::Parameter' has no attributes.
+The class 'SQLDDL::NamedElement' has the following attributes: 'name' of type str.
+The class 'LocatedElement' has no attributes.
+The class 'SQLDDL::IntegerVal' has the following attributes: 'value' of type str.
+The class 'SQLDDL::StringVal' has the following attributes: 'value' of type str.
+The class 'Table' has no attributes.
+The class 'SQLDDL::Type' has the following attributes: 'length' of type str; 'isUnsigned' of type str.
+The class 'Column' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'SQLDDL::PrimaryKey' has no attributes.
+The class 'Value' has no attributes.
+The class 'Database' has no attributes.
+The class 'SQLDDL::NullVal' has no attributes.
+The class 'SQLDDL::SimpleKey' has no attributes.
+The class 'ForeignKey' has no attributes.
+The class 'SQLDDL::Key' has the following attributes: 'name' of type str; 'isUnique' of type str.
+The class 'TableElement' has no attributes.
+The class 'Key' has no attributes.
+The class 'Type' has no attributes.
+The class 'SQLDDL::LocatedElement' has the following attributes: 'commentsAfter' of type str; 'location' of type str; 'commentsBefore' of type str.
+The class 'SQLDDL::Database' has no attributes.
+The class 'SQLDDL::ForeignKey' has no attributes.
+The class 'SQLDDL::Table' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'SQLDDL::Column' has the following attributes: 'canBeNull' of type str; 'name' of type str.
+The class 'SQLDDL::Value' has no attributes.
+'SQLDDL::Key' is a specialization of 'TableElement'.
+'SQLDDL::TableElement' is a specialization of 'LocatedElement'.
+'SQLDDL::Type' is a specialization of 'NamedElement'.
+'SQLDDL::Table' is a specialization of 'NamedElement'.
+'SQLDDL::Parameter' is a specialization of 'NamedElement'.
+'SQLDDL::Column' is a specialization of 'TableElement'.
+'SQLDDL::NullVal' is a specialization of 'Value'.
+'SQLDDL::Value' is a specialization of 'LocatedElement'.
+'SQLDDL::NamedElement' is a specialization of 'LocatedElement'.
+'SQLDDL::ForeignKey' is a specialization of 'Key'.
+'SQLDDL::IntegerVal' is a specialization of 'Value'.
+'SQLDDL::PrimaryKey' is a specialization of 'Key'.
+'SQLDDL::Database' is a specialization of 'NamedElement'.
+'SQLDDL::SimpleKey' is a specialization of 'Key'.
+'SQLDDL::StringVal' is a specialization of 'Value'.
+'Column' (role 'Column19', cardinality 0..*) is associated with 'SQLDDL::ForeignKey' (role 'referencedBy18', cardinality 0..*).
+'SQLDDL::ForeignKey' (role 'referencedBy', cardinality 0..*) is associated with 'Table' (role 'Table16', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'SQLDDL::Table' (role 'table5', cardinality 0..*).
+'Table' (role 'Table21', cardinality 0..*) is associated with 'SQLDDL::Parameter' (role 'parameters', cardinality 0..*).
+'Value' (role 'Value23', cardinality 0..*) is associated with 'SQLDDL::Parameter' (role 'SQLDDL_Parameter', cardinality 0..*).
+'Key' (role 'Key', cardinality 0..*) is associated with 'SQLDDL::Column' (role 'columns', cardinality 0..*).
+'ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'SQLDDL::Table' (role 'referencedTable', cardinality 0..*).
+'Database' (role 'Database', cardinality 0..*) is associated with 'SQLDDL::Table' (role 'tables', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'SQLDDL::Database' (role 'database', cardinality 0..*).
+'SQLDDL::Key' (role 'keys', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).
+'SQLDDL::Table' (role 'table', cardinality 0..*) is associated with 'TableElement' (role 'TableElement', cardinality 0..*).
+'SQLDDL::Column' (role 'SQLDDL_Column12', cardinality 0..*) is associated with 'Value' (role 'Value', cardinality 0..*).
+'Table' (role 'Table7', cardinality 0..*) is associated with 'SQLDDL::TableElement' (role 'elements', cardinality 0..*).
+'SQLDDL::Column' (role 'referencedColumns', cardinality 0..*) is associated with 'ForeignKey' (role 'ForeignKey9', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'SQLDDL::Column' (role 'SQLDDL_Column', cardinality 0..*).

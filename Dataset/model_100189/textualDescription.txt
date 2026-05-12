@@ -1,0 +1,168 @@
+The model has 69 class(es).
+The class 'SelectQuery' has no attributes.
+The class 'sql::SqlCaseWhen' has no attributes.
+The class 'sql::JRParameter' has the following attributes: 'jrprm' of type str.
+The class 'sql::OpList' has no attributes.
+The class 'sql::OperandList' has no attributes.
+The class 'SQLCaseWhens' has no attributes.
+The class 'sql::SubQueryOperand' has no attributes.
+The class 'sql::FullExpression' has the following attributes: 'c' of type str; 'isnull' of type str; 'notPrm' of type str.
+The class 'sql::OpFunctionArgOperand' has no attributes.
+The class 'sql::TableFull' has no attributes.
+The class 'OrExpr' has no attributes.
+The class 'sql::Between' has the following attributes: 'opBetween' of type str.
+The class 'sql::Star' has no attributes.
+The class 'sql::OpFunctionCast' has the following attributes: 'type' of type str; 'p2' of type int; 'p' of type int.
+The class 'sql::OrderByColumnFull' has the following attributes: 'direction' of type str; 'colOrderInt' of type int.
+The class 'sql::TableOrAlias' has the following attributes: 'alias' of type str.
+The class 'sql::Model' has no attributes.
+The class 'sql::SelectSubSet' has the following attributes: 'op' of type str; 'all' of type str.
+The class 'sql::DbObjectNameAll' has the following attributes: 'dbname' of type str.
+The class 'Operands' has no attributes.
+The class 'sql::Minus' has no attributes.
+The class 'sql::Concat' has no attributes.
+The class 'sql::tbls' has no attributes.
+The class 'sql::ColumnOperand' has no attributes.
+The class 'sql::Div' has no attributes.
+The class 'sql::WhenList' has no attributes.
+The class 'TableFull' has no attributes.
+The class 'sql::Operands' has no attributes.
+The class 'Prms' has no attributes.
+The class 'sql::Operand' has no attributes.
+The class 'sql::Plus' has no attributes.
+The class 'sql::OpFunction' has the following attributes: 'fname' of type str.
+The class 'sql::POperand' has the following attributes: 'prm' of type str.
+The class 'sql::SQLCaseWhens' has no attributes.
+The class 'sql::OrTable' has no attributes.
+The class 'OrGroupByColumn' has no attributes.
+The class 'sql::OpFunctionArgAgregate' has no attributes.
+The class 'sql::SQLCaseOperand' has no attributes.
+The class 'sql::ScalarOperand' has the following attributes: 'sotime' of type date; 'sodt' of type date; 'sostr' of type str; 'sodate' of type date; 'sodbl' of type str; 'soint' of type int.
+The class 'sql::SelectQuery' has no attributes.
+The class 'OrTable' has no attributes.
+The class 'sql::GroupByColumnFull' has no attributes.
+The class 'OrColumn' has no attributes.
+The class 'sql::Comparison' has the following attributes: 'subOperator' of type str; 'operator' of type str.
+The class 'sql::LikeOperand' has the following attributes: 'op2' of type str.
+The class 'sql::OpFunctionArg' has no attributes.
+The class 'sql::DbObjectName' has the following attributes: 'dbname' of type str.
+The class 'sql::ExprGroup' has no attributes.
+The class 'sql::InOper' has the following attributes: 'op' of type str.
+The class 'sql::OrGroupByColumn' has no attributes.
+The class 'sql::OrColumn' has no attributes.
+The class 'sql::ExpOperand' has the following attributes: 'prm' of type str.
+The class 'sql::ColumnFull' has no attributes.
+The class 'OrOrderByColumn' has no attributes.
+The class 'OperandList' has no attributes.
+The class 'sql::OpFList' has no attributes.
+The class 'sql::OrOrderByColumn' has no attributes.
+The class 'sql::FromTable' has no attributes.
+The class 'sql::OrExpr' has no attributes.
+The class 'ColumnFull' has no attributes.
+The class 'sql::ColumnOrAlias' has the following attributes: 'alias' of type str; 'allCols' of type str.
+The class 'sql::XExpr' has the following attributes: 'xf' of type str.
+The class 'sql::Select' has the following attributes: 'select' of type str.
+The class 'sql::Prms' has no attributes.
+The class 'OpFunctionArg' has no attributes.
+The class 'OpFunctionArgAgregate' has no attributes.
+The class 'sql::FromTableJoin' has the following attributes: 'join' of type str.
+The class 'sql::Col' has no attributes.
+The class 'sql::Like' has the following attributes: 'opLike' of type str.
+The enumeration 'XFunction' has the following literals: 'xgtl', 'xnoteq', 'xbwnl', 'xbwn', 'xgt', 'xls', 'xbwnc', 'xnotin', 'xeq', 'xin', 'xbwnr', 'xlsr'.
+'sql::Star' is a specialization of 'Operands'.
+'sql::WhenList' is a specialization of 'SQLCaseWhens'.
+'sql::Plus' is a specialization of 'Operands'.
+'sql::Minus' is a specialization of 'Operands'.
+'sql::FromTable' is a specialization of 'OrTable'.
+'sql::Div' is a specialization of 'Operands'.
+'sql::SqlCaseWhen' is a specialization of 'SQLCaseWhens'.
+'sql::ScalarOperand' is a specialization of 'OperandList'.
+'sql::Concat' is a specialization of 'Operands'.
+'sql::DbObjectName' is a specialization of 'ColumnFull'.
+'sql::Operands' is a specialization of 'OpFunctionArgAgregate'.
+'sql::OpFunctionArgOperand' is a specialization of 'OpFunctionArg'.
+'sql::JRParameter' is a specialization of 'Prms'.
+'sql::tbls' is a specialization of 'TableFull'.
+'sql::OpFList' is a specialization of 'OpFunctionArg'.
+'sql::Col' is a specialization of 'ColumnFull'.
+'sql::OrderByColumnFull' is a specialization of 'OrOrderByColumn'.
+'sql::OpList' is a specialization of 'OperandList'.
+'sql::FullExpression' is a specialization of 'OrExpr'.
+'sql::ColumnOrAlias' is a specialization of 'OrColumn'.
+'sql::Select' is a specialization of 'SelectQuery'.
+'sql::GroupByColumnFull' is a specialization of 'OrGroupByColumn'.
+'sql::DbObjectName' is a specialization of 'TableFull'.
+'sql::Operand' (role 'sql_Operand114', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands113', cardinality 0..*).
+'sql::FullExpression' (role 'sql_FullExpression', cardinality 0..*) is associated with 'sql::OrExpr' (role 'sql_OrExpr55', cardinality 0..*).
+'sql::DbObjectName' (role 'sql_DbObjectName165', cardinality 0..*) is associated with 'sql::tbls' (role 'sql_tbls', cardinality 0..*).
+'sql::OrGroupByColumn' (role 'sql_OrGroupByColumn50', cardinality 0..*) is associated with 'sql::GroupByColumnFull' (role 'sql_GroupByColumnFull', cardinality 0..*).
+'sql::XExpr' (role 'sql_XExpr', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression65', cardinality 0..*).
+'sql::TableOrAlias' (role 'sql_TableOrAlias39', cardinality 0..*) is associated with 'sql::TableFull' (role 'sql_TableFull', cardinality 0..*).
+'sql::DbObjectName' (role 'sql_DbObjectName163', cardinality 0..*) is associated with 'sql::Col' (role 'sql_Col', cardinality 0..*).
+'sql::OrColumn' (role 'sql_OrColumn19', cardinality 0..*) is associated with 'sql::ColumnOrAlias' (role 'sql_ColumnOrAlias', cardinality 0..*).
+'sql::OrTable' (role 'sql_OrTable', cardinality 0..*) is associated with 'sql::Select' (role 'sql_Select10', cardinality 0..*).
+'sql::Select' (role 'sql_Select5', cardinality 0..*) is associated with 'sql::SelectSubSet' (role 'sql_SelectSubSet6', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand124', cardinality 0..*) is associated with 'sql::OpFunctionCast' (role 'sql_OpFunctionCast125', cardinality 0..*).
+'sql::OpFunctionCast' (role 'sql_OpFunctionCast', cardinality 0..*) is associated with 'sql::LikeOperand' (role 'sql_LikeOperand95', cardinality 0..*).
+'sql::XExpr' (role 'sql_XExpr84', cardinality 0..*) is associated with 'sql::Prms' (role 'sql_Prms', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand136', cardinality 0..*) is associated with 'sql::ScalarOperand' (role 'sql_ScalarOperand', cardinality 0..*).
+'sql::OrOrderByColumn' (role 'sql_OrOrderByColumn46', cardinality 0..*) is associated with 'sql::OrderByColumnFull' (role 'sql_OrderByColumnFull', cardinality 0..*).
+'sql::WhenList' (role 'sql_WhenList', cardinality 0..*) is associated with 'sql::SqlCaseWhen' (role 'sql_SqlCaseWhen171', cardinality 0..*).
+'sql::Between' (role 'sql_Between100', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands101', cardinality 0..*).
+'sql::JRParameter' (role 'sql_JRParameter', cardinality 0..*) is associated with 'sql::Prms' (role 'sql_Prms86', cardinality 0..*).
+'sql::LikeOperand' (role 'sql_LikeOperand93', cardinality 0..*) is associated with 'sql::OpFunction' (role 'sql_OpFunction', cardinality 0..*).
+'sql::SubQueryOperand' (role 'sql_SubQueryOperand', cardinality 0..*) is associated with 'sql::TableOrAlias' (role 'sql_TableOrAlias41', cardinality 0..*).
+'sql::ColumnFull' (role 'sql_ColumnFull145', cardinality 0..*) is associated with 'sql::ColumnOperand' (role 'sql_ColumnOperand144', cardinality 0..*).
+'sql::OrExpr' (role 'sql_OrExpr37', cardinality 0..*) is associated with 'sql::FromTableJoin' (role 'sql_FromTableJoin36', cardinality 0..*).
+'sql::SubQueryOperand' (role 'sql_SubQueryOperand104', cardinality 0..*) is associated with 'sql::InOper' (role 'sql_InOper103', cardinality 0..*).
+'sql::OpFunctionArgOperand' (role 'sql_OpFunctionArgOperand169', cardinality 0..*) is associated with 'sql::OpFList' (role 'sql_OpFList', cardinality 0..*).
+'sql::SelectQuery' (role 'sql_SelectQuery148', cardinality 0..*) is associated with 'sql::SubQueryOperand' (role 'sql_SubQueryOperand147', cardinality 0..*).
+'sql::DbObjectNameAll' (role 'sql_DbObjectNameAll', cardinality 0..*) is associated with 'sql::ColumnOrAlias' (role 'sql_ColumnOrAlias25', cardinality 0..*).
+'sql::FullExpression' (role 'sql_FullExpression63', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression61', cardinality 0..*).
+'sql::POperand' (role 'sql_POperand', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand132', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand127', cardinality 0..*) is associated with 'sql::OpFunction' (role 'sql_OpFunction128', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands109', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands111', cardinality 0..*).
+'sql::SqlCaseWhen' (role 'sql_SqlCaseWhen', cardinality 0..*) is associated with 'sql::OrExpr' (role 'sql_OrExpr155', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands', cardinality 0..*) is associated with 'sql::ColumnOrAlias' (role 'sql_ColumnOrAlias21', cardinality 0..*).
+'sql::Model' (role 'sql_Model2', cardinality 0..*) is associated with 'sql::OrOrderByColumn' (role 'sql_OrOrderByColumn', cardinality 0..*).
+'sql::OpFunctionArgOperand' (role 'sql_OpFunctionArgOperand', cardinality 0..*) is associated with 'sql::OpFunctionArgAgregate' (role 'sql_OpFunctionArgAgregate', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands161', cardinality 0..*) is associated with 'sql::SqlCaseWhen' (role 'sql_SqlCaseWhen160', cardinality 0..*).
+'sql::Comparison' (role 'sql_Comparison', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression76', cardinality 0..*).
+'sql::TableOrAlias' (role 'sql_TableOrAlias43', cardinality 0..*) is associated with 'sql::DbObjectName' (role 'sql_DbObjectName44', cardinality 0..*).
+'sql::OrExpr' (role 'sql_OrExpr', cardinality 0..*) is associated with 'sql::Select' (role 'sql_Select12', cardinality 0..*).
+'sql::OrExpr' (role 'sql_OrExpr79', cardinality 0..*) is associated with 'sql::ExprGroup' (role 'sql_ExprGroup78', cardinality 0..*).
+'sql::ColumnOperand' (role 'sql_ColumnOperand', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand116', cardinality 0..*).
+'sql::FullExpression' (role 'sql_FullExpression60', cardinality 0..*) is associated with 'sql::ExprGroup' (role 'sql_ExprGroup', cardinality 0..*).
+'sql::DbObjectName' (role 'sql_DbObjectName', cardinality 0..*) is associated with 'sql::ColumnOrAlias' (role 'sql_ColumnOrAlias23', cardinality 0..*).
+'sql::OpFunctionArg' (role 'sql_OpFunctionArg', cardinality 0..*) is associated with 'sql::OpFunction' (role 'sql_OpFunction138', cardinality 0..*).
+'sql::SelectQuery' (role 'sql_SelectQuery', cardinality 0..*) is associated with 'sql::Model' (role 'sql_Model', cardinality 0..*).
+'sql::SqlCaseWhen' (role 'sql_SqlCaseWhen157', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands158', cardinality 0..*).
+'sql::SQLCaseOperand' (role 'sql_SQLCaseOperand153', cardinality 0..*) is associated with 'sql::SQLCaseWhens' (role 'sql_SQLCaseWhens', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands98', cardinality 0..*) is associated with 'sql::Between' (role 'sql_Between97', cardinality 0..*).
+'sql::ScalarOperand' (role 'sql_ScalarOperand167', cardinality 0..*) is associated with 'sql::OpList' (role 'sql_OpList', cardinality 0..*).
+'sql::XExpr' (role 'sql_XExpr81', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands82', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand117', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand119', cardinality 0..*).
+'sql::Select' (role 'sql_Select', cardinality 0..*) is associated with 'sql::SelectSubSet' (role 'sql_SelectSubSet', cardinality 0..*).
+'sql::FromTable' (role 'sql_FromTable31', cardinality 0..*) is associated with 'sql::FromTableJoin' (role 'sql_FromTableJoin', cardinality 0..*).
+'sql::FromTableJoin' (role 'sql_FromTableJoin33', cardinality 0..*) is associated with 'sql::TableOrAlias' (role 'sql_TableOrAlias34', cardinality 0..*).
+'sql::FullExpression' (role 'sql_FullExpression56', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression58', cardinality 0..*).
+'sql::InOper' (role 'sql_InOper106', cardinality 0..*) is associated with 'sql::OperandList' (role 'sql_OperandList', cardinality 0..*).
+'sql::FullExpression' (role 'sql_FullExpression67', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands68', cardinality 0..*).
+'sql::FromTable' (role 'sql_FromTable', cardinality 0..*) is associated with 'sql::OrTable' (role 'sql_OrTable27', cardinality 0..*).
+'sql::Like' (role 'sql_Like', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression74', cardinality 0..*).
+'sql::SQLCaseOperand' (role 'sql_SQLCaseOperand', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand130', cardinality 0..*).
+'sql::Select' (role 'sql_Select16', cardinality 0..*) is associated with 'sql::OrExpr' (role 'sql_OrExpr17', cardinality 0..*).
+'sql::Like' (role 'sql_Like91', cardinality 0..*) is associated with 'sql::LikeOperand' (role 'sql_LikeOperand', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand121', cardinality 0..*) is associated with 'sql::SubQueryOperand' (role 'sql_SubQueryOperand122', cardinality 0..*).
+'sql::OrderByColumnFull' (role 'sql_OrderByColumnFull48', cardinality 0..*) is associated with 'sql::ColumnFull' (role 'sql_ColumnFull', cardinality 0..*).
+'sql::OrGroupByColumn' (role 'sql_OrGroupByColumn', cardinality 0..*) is associated with 'sql::Select' (role 'sql_Select14', cardinality 0..*).
+'sql::InOper' (role 'sql_InOper', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression70', cardinality 0..*).
+'sql::OpFunctionCast' (role 'sql_OpFunctionCast141', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands142', cardinality 0..*).
+'sql::TableOrAlias' (role 'sql_TableOrAlias', cardinality 0..*) is associated with 'sql::FromTable' (role 'sql_FromTable29', cardinality 0..*).
+'sql::ColumnFull' (role 'sql_ColumnFull53', cardinality 0..*) is associated with 'sql::GroupByColumnFull' (role 'sql_GroupByColumnFull52', cardinality 0..*).
+'sql::SQLCaseOperand' (role 'sql_SQLCaseOperand150', cardinality 0..*) is associated with 'sql::OrExpr' (role 'sql_OrExpr151', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands108', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand134', cardinality 0..*) is associated with 'sql::ExpOperand' (role 'sql_ExpOperand', cardinality 0..*).
+'sql::OrColumn' (role 'sql_OrColumn', cardinality 0..*) is associated with 'sql::Select' (role 'sql_Select8', cardinality 0..*).
+'sql::FullExpression' (role 'sql_FullExpression72', cardinality 0..*) is associated with 'sql::Between' (role 'sql_Between', cardinality 0..*).
+'sql::Comparison' (role 'sql_Comparison88', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands89', cardinality 0..*).

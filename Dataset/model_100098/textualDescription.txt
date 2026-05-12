@@ -1,0 +1,261 @@
+The model has 109 class(es).
+The class 'Cocus::Chairman' has no attributes.
+The class 'Cocus::Activity' has no attributes.
+The class 'Cocus::URL' has no attributes.
+The class 'Cocus::ProgramCommitteeChair' has no attributes.
+The class 'Cocus::Notification::Email' has no attributes.
+The class 'Cocus::Acceptance' has no attributes.
+The class 'Email' has no attributes.
+The class 'Decision' has no attributes.
+The class 'Cocus::Email' has no attributes.
+The class 'Cocus::Rejection' has no attributes.
+The class 'Cocus::Short::Paper' has no attributes.
+The class 'Cocus::Review' has no attributes.
+The class 'Cocus::Author::Role' has no attributes.
+The class 'Cocus::Thing' has no attributes.
+The class 'Document' has no attributes.
+The class 'Cocus::Preview' has no attributes.
+The class 'Cocus::Paper' has the following attributes: 'paperID' of type str; 'title' of type str.
+The class 'Review::Form' has no attributes.
+The class 'Co_author' has no attributes.
+The class 'Cocus::Review::Form' has no attributes.
+The class 'Cocus::AssociatedChair' has no attributes.
+The class 'ExternalReviewer' has no attributes.
+The class 'Cocus::Committe::Role' has no attributes.
+The class 'Cocus::ProgramCommitteeMember' has the following attributes: 'maxPapers' of type str.
+The class 'Cocus::Group::Email' has no attributes.
+The class 'Review' has no attributes.
+The class 'ProgramCommittee' has no attributes.
+The class 'Cocus::Submission::Template' has no attributes.
+The class 'Cocus::AuthorNotReviewer' has no attributes.
+The class 'Cocus::Review::Form::Setup' has no attributes.
+The class 'Author' has no attributes.
+The class 'Cocus::Misc' has no attributes.
+The class 'Cocus::SubjectArea' has no attributes.
+The class 'Cocus::Meta_Reviewer' has no attributes.
+The class 'Help::Request' has no attributes.
+The class 'Cocus::ExternalReviewer' has no attributes.
+The class 'Cocus::Event::Creation' has no attributes.
+The class 'Cocus::Bid' has no attributes.
+The class 'Cocus::Author' has no attributes.
+The class 'Cocus::Approval::Email' has no attributes.
+The class 'Cocus::Co_author' has no attributes.
+The class 'Cocus::Invited::Paper' has no attributes.
+The class 'Cocus::PaperAbstract' has no attributes.
+The class 'Cocus::Admin::Role' has no attributes.
+The class 'Cocus::PaperFullVersion' has no attributes.
+The class 'Cocus::Paper::Typologies' has no attributes.
+The class 'Cocus::ProgramCommittee' has no attributes.
+The class 'Cocus::Administrator' has no attributes.
+The class 'Cocus::Decision' has no attributes.
+The class 'Cocus::Event::Setup' has no attributes.
+The class 'Paper' has no attributes.
+The class 'SubjectArea' has no attributes.
+The class 'Cocus::Event::URL' has no attributes.
+The class 'Meta_Reviewer' has no attributes.
+The class 'Cocus::Preference' has no attributes.
+The class 'URL' has no attributes.
+The class 'Cocus::Meta-Review' has no attributes.
+The class 'Cocus::Head::Role' has no attributes.
+The class 'Cocus::Workshop' has no attributes.
+The class 'Cocus::Detail' has no attributes.
+The class 'Cocus::Event' has no attributes.
+The class 'Cocus::Corresponding::Author' has no attributes.
+The class 'Event::Tracks' has no attributes.
+The class 'Cocus::Reviewer::Role' has no attributes.
+The class 'Role' has no attributes.
+The class 'Cocus::Event::Approval' has no attributes.
+The class 'Cocus::Role' has no attributes.
+The class 'Cocus::Registration' has no attributes.
+The class 'Cocus::Help::Request' has no attributes.
+The class 'Request' has no attributes.
+The class 'Cocus::Full::Paper' has no attributes.
+The class 'Cocus::Person' has the following attributes: 'email' of type str.
+The class 'Cocus::Research::Topic' has no attributes.
+The class 'Inforamtion' has no attributes.
+The class 'User' has no attributes.
+The class 'Cocus::Description' has no attributes.
+The class 'Approval::Email' has no attributes.
+The class 'Administrator' has no attributes.
+The class 'Cocus::Assistance' has no attributes.
+The class 'Event::Setup' has no attributes.
+The class 'Cocus::Reviewer' has no attributes.
+The class 'Reviewer' has no attributes.
+The class 'Cocus::ConferenceChair' has no attributes.
+The class 'Cocus::Email::Template' has no attributes.
+The class 'Cocus::Account' has no attributes.
+The class 'ConferenceMember' has no attributes.
+The class 'Chairman' has no attributes.
+The class 'Cocus::Rejection::Email' has no attributes.
+The class 'Cocus::Inforamtion' has no attributes.
+The class 'Cocus::ConferenceMember' has no attributes.
+The class 'Cocus::Submission' has no attributes.
+The class 'Cocus::User' has no attributes.
+The class 'Person' has no attributes.
+The class 'Cocus::Template' has no attributes.
+The class 'ProgramCommitteeMember' has no attributes.
+The class 'Activity' has no attributes.
+The class 'Conference' has no attributes.
+The class 'Cocus::Feature::Request' has no attributes.
+The class 'Cocus::Symposium' has no attributes.
+The class 'Bid' has no attributes.
+The class 'Cocus::Conference' has the following attributes: 'siteURL' of type str; 'date' of type str; 'reviewsPerPaper' of type str; 'logoURL' of type str; 'acceptsHardcopySubmissions' of type str.
+The class 'Cocus::Committee' has no attributes.
+The class 'Cocus::Abstract' has no attributes.
+The class 'Thing' has no attributes.
+The class 'Cocus::Event::Tracks' has no attributes.
+The class 'Cocus::Document' has no attributes.
+The class 'Event' has no attributes.
+The class 'Cocus::Request' has no attributes.
+The class 'Account' has no attributes.
+'Cocus::Paper::Typologies' is a specialization of 'Event::Setup'.
+'Cocus::Help::Request' is a specialization of 'Request'.
+'Cocus::Acceptance' is a specialization of 'Decision'.
+'Cocus::Person' is a specialization of 'Thing'.
+'Cocus::Event::URL' is a specialization of 'URL'.
+'Cocus::Rejection' is a specialization of 'Decision'.
+'Cocus::User' is a specialization of 'Person'.
+'Cocus::Head::Role' is a specialization of 'Role'.
+'Cocus::Review' is a specialization of 'Document'.
+'Cocus::Symposium' is a specialization of 'Event'.
+'Cocus::Detail' is a specialization of 'Thing'.
+'Cocus::Paper' is a specialization of 'Document'.
+'Cocus::Abstract' is a specialization of 'Paper'.
+'Cocus::Corresponding::Author' is a specialization of 'Author'.
+'Cocus::AssociatedChair' is a specialization of 'ConferenceMember'.
+'Cocus::Document' is a specialization of 'Thing'.
+'Cocus::Reviewer::Role' is a specialization of 'Role'.
+'Cocus::AssociatedChair' is a specialization of 'Chairman'.
+'Cocus::Notification::Email' is a specialization of 'Email'.
+'Cocus::Event::Approval' is a specialization of 'Activity'.
+'Cocus::ProgramCommitteeMember' is a specialization of 'Person'.
+'Cocus::Email' is a specialization of 'Document'.
+'Cocus::Registration' is a specialization of 'Activity'.
+'Cocus::ProgramCommitteeMember' is a specialization of 'ConferenceMember'.
+'Cocus::Meta_Reviewer' is a specialization of 'Reviewer'.
+'Cocus::Short::Paper' is a specialization of 'Paper'.
+'Cocus::Full::Paper' is a specialization of 'Paper'.
+'Cocus::AuthorNotReviewer' is a specialization of 'Author'.
+'Cocus::Author::Role' is a specialization of 'Role'.
+'Cocus::Research::Topic' is a specialization of 'Event::Setup'.
+'Cocus::ExternalReviewer' is a specialization of 'Person'.
+'Cocus::Reviewer' is a specialization of 'ConferenceMember'.
+'Cocus::Preview' is a specialization of 'Review::Form'.
+'Cocus::Assistance' is a specialization of 'Help::Request'.
+'Cocus::Author' is a specialization of 'ConferenceMember'.
+'Cocus::Reviewer' is a specialization of 'User'.
+'Cocus::Review::Form' is a specialization of 'Event::Setup'.
+'Cocus::Email::Template' is a specialization of 'Event::Setup'.
+'Cocus::Author' is a specialization of 'User'.
+'Cocus::ConferenceChair' is a specialization of 'ConferenceMember'.
+'Cocus::Committe::Role' is a specialization of 'Role'.
+'Cocus::Rejection::Email' is a specialization of 'Email'.
+'Cocus::Co_author' is a specialization of 'Author'.
+'Cocus::ConferenceChair' is a specialization of 'Chairman'.
+'Cocus::Group::Email' is a specialization of 'Email'.
+'Cocus::Submission' is a specialization of 'Document'.
+'Cocus::PaperAbstract' is a specialization of 'Paper'.
+'Cocus::ConferenceMember' is a specialization of 'Person'.
+'Cocus::Submission::Template' is a specialization of 'Event::Setup'.
+'Cocus::Conference' is a specialization of 'Thing'.
+'Cocus::PaperFullVersion' is a specialization of 'Paper'.
+'Cocus::Template' is a specialization of 'Document'.
+'Cocus::Review::Form::Setup' is a specialization of 'Review::Form'.
+'Cocus::Feature::Request' is a specialization of 'Help::Request'.
+'Cocus::Administrator' is a specialization of 'User'.
+'Cocus::Conference' is a specialization of 'Event'.
+'Cocus::Misc' is a specialization of 'Help::Request'.
+'Cocus::Committee' is a specialization of 'User'.
+'Cocus::Administrator' is a specialization of 'Person'.
+'Cocus::Event::Creation' is a specialization of 'Activity'.
+'Cocus::Event::Tracks' is a specialization of 'Event::Setup'.
+'Cocus::Meta-Review' is a specialization of 'Review'.
+'Cocus::Chairman' is a specialization of 'Person'.
+'Cocus::Approval::Email' is a specialization of 'Email'.
+'Cocus::Request' is a specialization of 'Activity'.
+'Cocus::Workshop' is a specialization of 'Event'.
+'Cocus::Chairman' is a specialization of 'ConferenceMember'.
+'Cocus::Invited::Paper' is a specialization of 'Paper'.
+'Cocus::Event' is a specialization of 'Thing'.
+'Cocus::ProgramCommitteeChair' is a specialization of 'ProgramCommitteeMember'.
+'Cocus::Admin::Role' is a specialization of 'Role'.
+'Cocus::Role' is a specialization of 'Thing'.
+'Cocus::ProgramCommitteeChair' is a specialization of 'Chairman'.
+'Event' (role 'Event155', cardinality 0..*) is associated with 'Cocus::Event::URL' (role 'Cocus_Event_URL', cardinality 0..*).
+'Review' (role 'Review', cardinality 0..*) is associated with 'Cocus::Reviewer' (role 'Cocus_Reviewer8', cardinality 0..*).
+'Cocus::Author' (role 'Cocus_Author', cardinality 0..*) is associated with 'Paper' (role 'Paper65', cardinality 0..*).
+'Cocus::Paper' (role 'Cocus_Paper63', cardinality 0..*) is associated with 'Meta_Reviewer' (role 'Meta_Reviewer', cardinality 0..*).
+'Cocus::Administrator' (role 'Cocus_Administrator', cardinality 0..*) is associated with 'Conference' (role 'Conference74', cardinality 0..*).
+'Activity' (role 'Activity', cardinality 0..*) is associated with 'Cocus::Person' (role 'sent_by', cardinality 0..*).
+'Reviewer' (role 'Reviewer38', cardinality 0..*) is associated with 'Cocus::ExternalReviewer' (role 'assignExternalReviewer', cardinality 0..*).
+'Administrator' (role 'Administrator110', cardinality 0..*) is associated with 'Cocus::Event' (role 'approve', cardinality 0..*).
+'Cocus::Document' (role 'submit', cardinality 0..*) is associated with 'User' (role 'User151', cardinality 0..*).
+'Person' (role 'Person143', cardinality 0..*) is associated with 'Cocus::Person' (role 'Cocus_Person142', cardinality 0..*).
+'Event::Setup' (role 'Event_Setup', cardinality 0..*) is associated with 'Cocus::Event' (role 'define', cardinality 0..*).
+'Event' (role 'Event153', cardinality 0..*) is associated with 'Cocus::Event::Setup' (role 'defined_by', cardinality 0..*).
+'ProgramCommittee' (role 'ProgramCommittee', cardinality 0..*) is associated with 'Cocus::ProgramCommitteeMember' (role 'hasProgramCommitteeMember', cardinality 0..*).
+'Conference' (role 'Conference80', cardinality 0..*) is associated with 'Cocus::Administrator' (role 'Cocus_Administrator79', cardinality 0..*).
+'Person' (role 'Person161', cardinality 0..*) is associated with 'Cocus::Activity' (role 'send', cardinality 0..*).
+'Cocus::Paper' (role 'Cocus_Paper47', cardinality 0..*) is associated with 'Decision' (role 'Decision', cardinality 0..*).
+'Administrator' (role 'Administrator36', cardinality 0..*) is associated with 'Cocus::ProgramCommitteeMember' (role 'Cocus_ProgramCommitteeMember', cardinality 0..*).
+'Co_author' (role 'Co_author', cardinality 0..*) is associated with 'Cocus::Paper' (role 'co-writePaper', cardinality 0..*).
+'Cocus::Approval::Email' (role 'confirmed_by', cardinality 0..*) is associated with 'Event' (role 'Event157', cardinality 0..*).
+'Conference' (role 'Conference77', cardinality 0..*) is associated with 'Cocus::Administrator' (role 'Cocus_Administrator76', cardinality 0..*).
+'Approval::Email' (role 'Approval_Email', cardinality 0..*) is associated with 'Cocus::Event' (role 'confirm', cardinality 0..*).
+'Thing' (role 'Thing159', cardinality 0..*) is associated with 'Cocus::Activity' (role 'Cocus_Activity', cardinality 0..*).
+'Cocus::Reviewer' (role 'Cocus_Reviewer3', cardinality 0..*) is associated with 'Paper' (role 'Paper', cardinality 0..*).
+'Cocus::Event' (role 'Cocus_Event', cardinality 0..*) is associated with 'Event::Tracks' (role 'Event_Tracks', cardinality 0..*).
+'Cocus::Conference' (role 'Cocus_Conference31', cardinality 0..*) is associated with 'Administrator' (role 'Administrator32', cardinality 0..*).
+'Person' (role 'Person149', cardinality 0..*) is associated with 'Cocus::Document' (role 'use', cardinality 0..*).
+'Cocus::Paper' (role 'Cocus_Paper57', cardinality 0..*) is associated with 'Administrator' (role 'Administrator58', cardinality 0..*).
+'Cocus::Paper' (role 'Cocus_Paper55', cardinality 0..*) is associated with 'Author' (role 'Author', cardinality 0..*).
+'ProgramCommitteeMember' (role 'ProgramCommitteeMember105', cardinality 0..*) is associated with 'Cocus::Administrator' (role 'addedBy', cardinality 0..*).
+'Administrator' (role 'Administrator61', cardinality 0..*) is associated with 'Cocus::Paper' (role 'Cocus_Paper60', cardinality 0..*).
+'Cocus::Conference' (role 'Cocus_Conference28', cardinality 0..*) is associated with 'Administrator' (role 'Administrator29', cardinality 0..*).
+'ExternalReviewer' (role 'ExternalReviewer', cardinality 0..*) is associated with 'Cocus::Reviewer' (role 'assignedByReviewer', cardinality 0..*).
+'Cocus::Person' (role 'Cocus_Person145', cardinality 0..*) is associated with 'Document' (role 'Document146', cardinality 0..*).
+'Reviewer' (role 'Reviewer42', cardinality 0..*) is associated with 'Cocus::Review' (role 'writeReview', cardinality 0..*).
+'Conference' (role 'Conference', cardinality 0..*) is associated with 'Cocus::ConferenceMember' (role 'Cocus_ConferenceMember', cardinality 0..*).
+'Cocus::Administrator' (role 'Cocus_Administrator82', cardinality 0..*) is associated with 'Conference' (role 'Conference83', cardinality 0..*).
+'Reviewer' (role 'Reviewer53', cardinality 0..*) is associated with 'Cocus::Paper' (role 'readPaper', cardinality 0..*).
+'SubjectArea' (role 'SubjectArea', cardinality 0..*) is associated with 'Cocus::Paper' (role 'Cocus_Paper51', cardinality 0..*).
+'Cocus::Person' (role 'used_by', cardinality 0..*) is associated with 'Document' (role 'Document126', cardinality 0..*).
+'Cocus::Bid' (role 'adjustBid', cardinality 0..*) is associated with 'Reviewer' (role 'Reviewer', cardinality 0..*).
+'Cocus::Role' (role 'assign', cardinality 0..*) is associated with 'Administrator' (role 'Administrator117', cardinality 0..*).
+'Cocus::Administrator' (role 'Cocus_Administrator102', cardinality 0..*) is associated with 'Paper' (role 'Paper103', cardinality 0..*).
+'Cocus::Conference' (role 'memberOfConference', cardinality 0..*) is associated with 'ConferenceMember' (role 'ConferenceMember', cardinality 0..*).
+'Cocus::Person' (role 'Cocus_Person121', cardinality 0..*) is associated with 'Thing' (role 'Thing122', cardinality 0..*).
+'Cocus::Author' (role 'Cocus_Author67', cardinality 0..*) is associated with 'Paper' (role 'Paper68', cardinality 0..*).
+'Cocus::Administrator' (role 'Cocus_Administrator93', cardinality 0..*) is associated with 'Conference' (role 'Conference94', cardinality 0..*).
+'Cocus::Person' (role 'Cocus_Person', cardinality 0..*) is associated with 'Thing' (role 'Thing119', cardinality 0..*).
+'Bid' (role 'Bid', cardinality 0..*) is associated with 'Cocus::Reviewer' (role 'adjustedBy', cardinality 0..*).
+'Cocus::ProgramCommitteeChair' (role 'Cocus_ProgramCommitteeChair', cardinality 0..*) is associated with 'Review' (role 'Review40', cardinality 0..*).
+'Cocus::Paper' (role 'Cocus_Paper', cardinality 0..*) is associated with 'Bid' (role 'Bid45', cardinality 0..*).
+'Cocus::Document' (role 'recieve', cardinality 0..*) is associated with 'User' (role 'User', cardinality 0..*).
+'Document' (role 'Document115', cardinality 0..*) is associated with 'Cocus::User' (role 'submited__by', cardinality 0..*).
+'Account' (role 'Account', cardinality 0..*) is associated with 'Cocus::Person' (role 'registred_by', cardinality 0..*).
+'Cocus::Administrator' (role 'Cocus_Administrator99', cardinality 0..*) is associated with 'Conference' (role 'Conference100', cardinality 0..*).
+'Role' (role 'Role', cardinality 0..*) is associated with 'Cocus::Administrator' (role 'assigned_by', cardinality 0..*).
+'Cocus::Conference' (role 'Cocus_Conference16', cardinality 0..*) is associated with 'Administrator' (role 'Administrator17', cardinality 0..*).
+'Administrator' (role 'Administrator26', cardinality 0..*) is associated with 'Cocus::Conference' (role 'Cocus_Conference25', cardinality 0..*).
+'Thing' (role 'Thing', cardinality 0..*) is associated with 'Cocus::User' (role 'Cocus_User', cardinality 0..*).
+'Thing' (role 'Thing130', cardinality 0..*) is associated with 'Cocus::Person' (role 'Cocus_Person129', cardinality 0..*).
+'Cocus::Administrator' (role 'Cocus_Administrator96', cardinality 0..*) is associated with 'ProgramCommitteeMember' (role 'ProgramCommitteeMember97', cardinality 0..*).
+'Cocus::Paper' (role 'hasBeenAssigned', cardinality 0..*) is associated with 'Reviewer' (role 'Reviewer49', cardinality 0..*).
+'Paper' (role 'Paper6', cardinality 0..*) is associated with 'Cocus::Reviewer' (role 'Cocus_Reviewer5', cardinality 0..*).
+'Cocus::User' (role 'recieved_by', cardinality 0..*) is associated with 'Document' (role 'Document', cardinality 0..*).
+'Event' (role 'Event133', cardinality 0..*) is associated with 'Cocus::Person' (role 'Cocus_Person132', cardinality 0..*).
+'Cocus::Administrator' (role 'Cocus_Administrator90', cardinality 0..*) is associated with 'Conference' (role 'Conference91', cardinality 0..*).
+'Administrator' (role 'Administrator23', cardinality 0..*) is associated with 'Cocus::Conference' (role 'Cocus_Conference22', cardinality 0..*).
+'Cocus::Account' (role 'register', cardinality 0..*) is associated with 'Person' (role 'Person', cardinality 0..*).
+'Cocus::Person' (role 'Cocus_Person135', cardinality 0..*) is associated with 'Thing' (role 'Thing136', cardinality 0..*).
+'Event' (role 'Event', cardinality 0..*) is associated with 'Cocus::Administrator' (role 'approved_by', cardinality 0..*).
+'Cocus::Person' (role 'Cocus_Person124', cardinality 0..*) is associated with 'Inforamtion' (role 'Inforamtion', cardinality 0..*).
+'Paper' (role 'Paper88', cardinality 0..*) is associated with 'Cocus::Administrator' (role 'Cocus_Administrator87', cardinality 0..*).
+'ProgramCommitteeMember' (role 'ProgramCommitteeMember', cardinality 0..*) is associated with 'Cocus::ProgramCommittee' (role 'memberOfProgramCommittee', cardinality 0..*).
+'Administrator' (role 'Administrator20', cardinality 0..*) is associated with 'Cocus::Conference' (role 'Cocus_Conference19', cardinality 0..*).
+'Paper' (role 'Paper70', cardinality 0..*) is associated with 'Cocus::Co_author' (role 'Cocus_Co_author', cardinality 0..*).
+'Administrator' (role 'Administrator14', cardinality 0..*) is associated with 'Cocus::Conference' (role 'Cocus_Conference', cardinality 0..*).
+'Cocus::Administrator' (role 'assignedByAdministrator', cardinality 0..*) is associated with 'Reviewer' (role 'Reviewer85', cardinality 0..*).
+'Person' (role 'Person139', cardinality 0..*) is associated with 'Cocus::Person' (role 'Cocus_Person138', cardinality 0..*).
+'Administrator' (role 'Administrator', cardinality 0..*) is associated with 'Cocus::Reviewer' (role 'Cocus_Reviewer', cardinality 0..*).

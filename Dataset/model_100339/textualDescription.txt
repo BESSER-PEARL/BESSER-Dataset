@@ -1,0 +1,91 @@
+The model has 37 class(es).
+The class 'ardurobotml::EmergencyStopAction' has no attributes.
+The class 'ardurobotml::AcceleratetAction' has the following attributes: 'startTick' of type int; 'ratio' of type int.
+The class 'ardurobotml::NamedElement' has the following attributes: 'name' of type str.
+The class 'ardurobotml::MoveForwardAndTurningRightAction' has the following attributes: 'duration' of type int; 'startTick' of type int; 'speed' of type int; 'diff' of type int.
+The class 'ardurobotml::Condition' has no attributes.
+The class 'ardurobotml::TFSM' has no attributes.
+The class 'ardurobotml::MoveBackardAndTurningLeftAction' has the following attributes: 'duration' of type int; 'diff' of type int; 'speed' of type int; 'startTick' of type int.
+The class 'NamedElement' has no attributes.
+The class 'ardurobotml::Region' has the following attributes: 'name' of type str.
+The class 'ardurobotml::FSMEvent' has no attributes.
+The class 'ardurobotml::CollisionSensorCondition' has no attributes.
+The class 'RegionContainer' has no attributes.
+The class 'ardurobotml::AllActionFinishedCondition' has no attributes.
+The class 'ardurobotml::StopAction' has no attributes.
+The class 'ardurobotml::EventGuard' has no attributes.
+The class 'ardurobotml::TemporalGuard' has the following attributes: 'afterDuration' of type int.
+The class 'ardurobotml::EvaluateGuard' has no attributes.
+The class 'ardurobotml::DeceleratetAction' has the following attributes: 'ratio' of type int; 'startTick' of type int.
+The class 'ardurobotml::FSMClock' has the following attributes: 'value' of type int.
+The class 'ardurobotml::SCANCollisionAction' has no attributes.
+The class 'ardurobotml::Action' has no attributes.
+The class 'ardurobotml::Guard' has no attributes.
+The class 'ardurobotml::MoveBackardAction' has the following attributes: 'speed' of type int; 'duration' of type int; 'startTick' of type int.
+The class 'Guard' has no attributes.
+The class 'ardurobotml::MoveForwardAction' has the following attributes: 'duration' of type int; 'startTick' of type int; 'speed' of type int.
+The class 'ardurobotml::SystemPropertyCondition' has the following attributes: 'expectedAttributeValue' of type bool.
+The class 'ardurobotml::State' has no attributes.
+The class 'ardurobotml::MoveForwardAndTurningLeftAction' has the following attributes: 'speed' of type int; 'startTick' of type int; 'duration' of type int; 'diff' of type int.
+The class 'ardurobotml::RegionContainer' has no attributes.
+The class 'Action' has no attributes.
+The class 'ardurobotml::TurningRightAction' has the following attributes: 'speed' of type int; 'duration' of type int; 'startTick' of type int.
+The class 'Condition' has no attributes.
+The class 'ardurobotml::TimedSystem' has no attributes.
+The class 'ardurobotml::Transition' has no attributes.
+The class 'ardurobotml::TurningLeftAction' has the following attributes: 'duration' of type int; 'speed' of type int; 'startTick' of type int.
+The class 'ardurobotml::ActionSequence' has no attributes.
+The class 'ardurobotml::MoveBackardAndTurningRightAction' has the following attributes: 'diff' of type int; 'duration' of type int; 'speed' of type int; 'startTick' of type int.
+'ardurobotml::EmergencyStopAction' is a specialization of 'Action'.
+'ardurobotml::DeceleratetAction' is a specialization of 'Action'.
+'ardurobotml::MoveForwardAndTurningRightAction' is a specialization of 'Action'.
+'ardurobotml::CollisionSensorCondition' is a specialization of 'Condition'.
+'ardurobotml::ActionSequence' is a specialization of 'Action'.
+'ardurobotml::TurningLeftAction' is a specialization of 'Action'.
+'ardurobotml::AllActionFinishedCondition' is a specialization of 'Condition'.
+'ardurobotml::TemporalGuard' is a specialization of 'Guard'.
+'ardurobotml::EvaluateGuard' is a specialization of 'Guard'.
+'ardurobotml::Transition' is a specialization of 'NamedElement'.
+'ardurobotml::EventGuard' is a specialization of 'Guard'.
+'ardurobotml::MoveBackardAndTurningRightAction' is a specialization of 'Action'.
+'ardurobotml::MoveBackardAction' is a specialization of 'Action'.
+'ardurobotml::MoveForwardAction' is a specialization of 'Action'.
+'ardurobotml::AcceleratetAction' is a specialization of 'Action'.
+'ardurobotml::Guard' is a specialization of 'NamedElement'.
+'ardurobotml::TFSM' is a specialization of 'RegionContainer'.
+'ardurobotml::State' is a specialization of 'RegionContainer'.
+'ardurobotml::FSMEvent' is a specialization of 'NamedElement'.
+'ardurobotml::StopAction' is a specialization of 'Action'.
+'ardurobotml::SystemPropertyCondition' is a specialization of 'Condition'.
+'ardurobotml::FSMClock' is a specialization of 'NamedElement'.
+'ardurobotml::MoveBackardAndTurningLeftAction' is a specialization of 'Action'.
+'ardurobotml::TurningRightAction' is a specialization of 'Action'.
+'ardurobotml::SCANCollisionAction' is a specialization of 'Action'.
+'ardurobotml::RegionContainer' is a specialization of 'NamedElement'.
+'ardurobotml::MoveForwardAndTurningLeftAction' is a specialization of 'Action'.
+'ardurobotml::Action' is a specialization of 'NamedElement'.
+'ardurobotml::TimedSystem' is a specialization of 'NamedElement'.
+'ardurobotml::State' (role 'ardurobotml_State17', cardinality 0..*) is associated with 'ardurobotml::TFSM' (role 'ardurobotml_TFSM16', cardinality 0..*).
+'ardurobotml::RegionContainer' (role 'ardurobotml_RegionContainer', cardinality 0..*) is associated with 'ardurobotml::Region' (role 'ardurobotml_Region45', cardinality 0..*).
+'ardurobotml::Transition' (role 'ardurobotml_Transition30', cardinality 0..*) is associated with 'ardurobotml::Guard' (role 'ardurobotml_Guard', cardinality 0..*).
+'ardurobotml::State' (role 'target', cardinality 0..*) is associated with 'ardurobotml::Transition' (role 'Transition21', cardinality 0..*).
+'ardurobotml::TFSM' (role 'ardurobotml_TFSM14', cardinality 0..*) is associated with 'ardurobotml::Transition' (role 'ardurobotml_Transition', cardinality 0..*).
+'ardurobotml::FSMEvent' (role 'ardurobotml_FSMEvent9', cardinality 0..*) is associated with 'ardurobotml::TFSM' (role 'ardurobotml_TFSM8', cardinality 0..*).
+'ardurobotml::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'ardurobotml::State' (role 'State28', cardinality 0..*).
+'ardurobotml::Transition' (role 'Transition', cardinality 0..*) is associated with 'ardurobotml::State' (role 'source', cardinality 0..*).
+'ardurobotml::State' (role 'ardurobotml_State', cardinality 0..*) is associated with 'ardurobotml::TFSM' (role 'ardurobotml_TFSM6', cardinality 0..*).
+'ardurobotml::TimedSystem' (role 'ardurobotml_TimedSystem4', cardinality 0..*) is associated with 'ardurobotml::FSMEvent' (role 'ardurobotml_FSMEvent', cardinality 0..*).
+'ardurobotml::Region' (role 'ardurobotml_Region', cardinality 0..*) is associated with 'ardurobotml::State' (role 'ardurobotml_State43', cardinality 0..*).
+'ardurobotml::FSMEvent' (role 'ardurobotml_FSMEvent39', cardinality 0..*) is associated with 'ardurobotml::Transition' (role 'ardurobotml_Transition40', cardinality 0..*).
+'ardurobotml::FSMEvent' (role 'ardurobotml_FSMEvent37', cardinality 0..*) is associated with 'ardurobotml::EventGuard' (role 'ardurobotml_EventGuard', cardinality 0..*).
+'ardurobotml::Action' (role 'ardurobotml_Action', cardinality 0..*) is associated with 'ardurobotml::State' (role 'ardurobotml_State23', cardinality 0..*).
+'ardurobotml::FSMClock' (role 'ardurobotml_FSMClock35', cardinality 0..*) is associated with 'ardurobotml::TemporalGuard' (role 'ardurobotml_TemporalGuard', cardinality 0..*).
+'ardurobotml::Transition' (role 'ardurobotml_Transition32', cardinality 0..*) is associated with 'ardurobotml::FSMEvent' (role 'ardurobotml_FSMEvent33', cardinality 0..*).
+'ardurobotml::EvaluateGuard' (role 'ardurobotml_EvaluateGuard', cardinality 0..*) is associated with 'ardurobotml::Condition' (role 'ardurobotml_Condition', cardinality 0..*).
+'ardurobotml::FSMClock' (role 'ardurobotml_FSMClock', cardinality 0..*) is associated with 'ardurobotml::TimedSystem' (role 'ardurobotml_TimedSystem2', cardinality 0..*).
+'ardurobotml::Action' (role 'ardurobotml_Action47', cardinality 0..*) is associated with 'ardurobotml::ActionSequence' (role 'ardurobotml_ActionSequence', cardinality 0..*).
+'ardurobotml::TFSM' (role 'TFSM', cardinality 0..*) is associated with 'ardurobotml::State' (role 'ownedStates', cardinality 0..*).
+'ardurobotml::TFSM' (role 'ardurobotml_TFSM', cardinality 0..*) is associated with 'ardurobotml::TimedSystem' (role 'ardurobotml_TimedSystem', cardinality 0..*).
+'ardurobotml::State' (role 'State', cardinality 0..*) is associated with 'ardurobotml::TFSM' (role 'owningFSM', cardinality 0..*).
+'ardurobotml::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'ardurobotml::State' (role 'State26', cardinality 0..*).
+'ardurobotml::FSMClock' (role 'ardurobotml_FSMClock12', cardinality 0..*) is associated with 'ardurobotml::TFSM' (role 'ardurobotml_TFSM11', cardinality 0..*).

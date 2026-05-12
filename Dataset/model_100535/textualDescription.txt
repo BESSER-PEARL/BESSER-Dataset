@@ -1,0 +1,79 @@
+The model has 31 class(es).
+The class 'StepAlternative' has no attributes.
+The class 'useCases::ViewInstance' has no attributes.
+The class 'useCases::LocalAlternative' has the following attributes: 'description' of type str.
+The class 'useCases::Step' has the following attributes: 'name' of type str; 'label' of type str; 'description' of type str.
+The class 'useCases::PackageDeclaration' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'useCases::NamespaceImport' has no attributes.
+The class 'useCases::EntityRef' has no attributes.
+The class 'useCases::RequirementRef' has no attributes.
+The class 'useCases::BasicFlow' has no attributes.
+The class 'useCases::Identifiable' has no attributes.
+The class 'useCases::Actor' has the following attributes: 'name' of type str; 'description' of type str; 'type' of type str.
+The class 'useCases::Entity' has no attributes.
+The class 'useCases::CustomAttributes' has no attributes.
+The class 'useCases::Label' has no attributes.
+The class 'useCases::AlternativeFlowAlternative' has no attributes.
+The class 'Flow' has no attributes.
+The class 'useCases::Condition' has the following attributes: 'condition' of type str.
+The class 'useCases::Feature' has no attributes.
+The class 'useCases::ApplicationInstance' has no attributes.
+The class 'useCases::PageRef' has no attributes.
+The class 'useCases::Precondition' has the following attributes: 'name' of type str.
+The class 'useCases::NamedFlow' has the following attributes: 'name' of type str.
+The class 'NamedFlow' has no attributes.
+The class 'useCases::UseCasesModel' has no attributes.
+The class 'useCases::ExceptionFlow' has the following attributes: 'condition' of type str.
+The class 'useCases::AlternativeFlow' has no attributes.
+The class 'useCases::StepAlternative' has the following attributes: 'finalizeFlow' of type bool; 'finalState' of type str.
+The class 'useCases::CustomStepType' has no attributes.
+The class 'useCases::Screen' has no attributes.
+The class 'useCases::UseCase' has the following attributes: 'ucName' of type str; 'name' of type str; 'goals' of type str.
+The class 'useCases::Flow' has the following attributes: 'finalState' of type str.
+The enumeration 'ActorType' has the following literals: 'PERSON', 'SYSTEM', 'ORGANIZATION'.
+'useCases::AlternativeFlow' is a specialization of 'NamedFlow'.
+'useCases::Condition' is a specialization of 'StepAlternative'.
+'useCases::AlternativeFlowAlternative' is a specialization of 'StepAlternative'.
+'useCases::BasicFlow' is a specialization of 'Flow'.
+'useCases::ExceptionFlow' is a specialization of 'NamedFlow'.
+'useCases::LocalAlternative' is a specialization of 'StepAlternative'.
+'useCases::NamedFlow' is a specialization of 'Flow'.
+'useCases::CustomAttributes' (role 'useCases_CustomAttributes', cardinality 0..*) is associated with 'useCases::UseCase' (role 'useCases_UseCase46', cardinality 0..*).
+'useCases::NamespaceImport' (role 'useCases_NamespaceImport7', cardinality 0..*) is associated with 'useCases::ApplicationInstance' (role 'useCases_ApplicationInstance', cardinality 0..*).
+'useCases::PackageDeclaration' (role 'useCases_PackageDeclaration22', cardinality 0..*) is associated with 'useCases::UseCase' (role 'useCases_UseCase', cardinality 0..*).
+'useCases::AlternativeFlowAlternative' (role 'useCases_AlternativeFlowAlternative', cardinality 0..*) is associated with 'useCases::Condition' (role 'useCases_Condition81', cardinality 0..*).
+'useCases::StepAlternative' (role 'useCases_StepAlternative74', cardinality 0..*) is associated with 'useCases::CustomStepType' (role 'useCases_CustomStepType75', cardinality 0..*).
+'useCases::PackageDeclaration' (role 'useCases_PackageDeclaration15', cardinality 0..*) is associated with 'useCases::NamespaceImport' (role 'useCases_NamespaceImport14', cardinality 0..*).
+'useCases::UseCase' (role 'useCases_UseCase40', cardinality 0..*) is associated with 'useCases::BasicFlow' (role 'useCases_BasicFlow', cardinality 0..*).
+'useCases::UseCase' (role 'useCases_UseCase44', cardinality 0..*) is associated with 'useCases::ExceptionFlow' (role 'useCases_ExceptionFlow', cardinality 0..*).
+'useCases::Actor' (role 'useCases_Actor', cardinality 0..*) is associated with 'useCases::PackageDeclaration' (role 'useCases_PackageDeclaration20', cardinality 0..*).
+'useCases::NamespaceImport' (role 'useCases_NamespaceImport11', cardinality 0..*) is associated with 'useCases::PackageDeclaration' (role 'useCases_PackageDeclaration12', cardinality 0..*).
+'useCases::StepAlternative' (role 'useCases_StepAlternative71', cardinality 0..*) is associated with 'useCases::Step' (role 'useCases_Step72', cardinality 0..*).
+'useCases::AlternativeFlowAlternative' (role 'useCases_AlternativeFlowAlternative83', cardinality 0..*) is associated with 'useCases::NamedFlow' (role 'useCases_NamedFlow', cardinality 0..*).
+'useCases::EntityRef' (role 'useCases_EntityRef85', cardinality 0..*) is associated with 'useCases::Entity' (role 'useCases_Entity86', cardinality 0..*).
+'useCases::Step' (role 'useCases_Step56', cardinality 0..*) is associated with 'useCases::Actor' (role 'useCases_Actor57', cardinality 0..*).
+'useCases::Feature' (role 'useCases_Feature', cardinality 0..*) is associated with 'useCases::EntityRef' (role 'useCases_EntityRef88', cardinality 0..*).
+'useCases::Actor' (role 'useCases_Actor30', cardinality 0..*) is associated with 'useCases::UseCase' (role 'useCases_UseCase29', cardinality 0..*).
+'useCases::NamespaceImport' (role 'useCases_NamespaceImport18', cardinality 0..*) is associated with 'useCases::PackageDeclaration' (role 'useCases_PackageDeclaration17', cardinality 0..*).
+'useCases::Step' (role 'useCases_Step69', cardinality 0..*) is associated with 'useCases::CustomStepType' (role 'useCases_CustomStepType', cardinality 0..*).
+'useCases::PageRef' (role 'useCases_PageRef50', cardinality 0..*) is associated with 'useCases::Screen' (role 'useCases_Screen', cardinality 0..*).
+'useCases::Screen' (role 'useCases_Screen62', cardinality 0..*) is associated with 'useCases::Step' (role 'useCases_Step61', cardinality 0..*).
+'useCases::RequirementRef' (role 'useCases_RequirementRef', cardinality 0..*) is associated with 'useCases::UseCase' (role 'useCases_UseCase27', cardinality 0..*).
+'useCases::ViewInstance' (role 'useCases_ViewInstance', cardinality 0..*) is associated with 'useCases::PageRef' (role 'useCases_PageRef48', cardinality 0..*).
+'useCases::Step' (role 'useCases_Step59', cardinality 0..*) is associated with 'useCases::EntityRef' (role 'useCases_EntityRef', cardinality 0..*).
+'useCases::PackageDeclaration' (role 'useCases_PackageDeclaration', cardinality 0..*) is associated with 'useCases::UseCasesModel' (role 'useCases_UseCasesModel2', cardinality 0..*).
+'useCases::Step' (role 'useCases_Step67', cardinality 0..*) is associated with 'useCases::StepAlternative' (role 'useCases_StepAlternative', cardinality 0..*).
+'useCases::LocalAlternative' (role 'useCases_LocalAlternative', cardinality 0..*) is associated with 'useCases::Condition' (role 'useCases_Condition', cardinality 0..*).
+'useCases::Precondition' (role 'useCases_Precondition52', cardinality 0..*) is associated with 'useCases::UseCase' (role 'useCases_UseCase53', cardinality 0..*).
+'useCases::Entity' (role 'useCases_Entity', cardinality 0..*) is associated with 'useCases::UseCase' (role 'useCases_UseCase32', cardinality 0..*).
+'useCases::PackageDeclaration' (role 'useCases_PackageDeclaration5', cardinality 0..*) is associated with 'useCases::NamespaceImport' (role 'useCases_NamespaceImport4', cardinality 0..*).
+'useCases::Flow' (role 'useCases_Flow', cardinality 0..*) is associated with 'useCases::Step' (role 'useCases_Step', cardinality 0..*).
+'useCases::UseCase' (role 'useCases_UseCase65', cardinality 0..*) is associated with 'useCases::Step' (role 'useCases_Step64', cardinality 0..*).
+'useCases::NamespaceImport' (role 'useCases_NamespaceImport', cardinality 0..*) is associated with 'useCases::UseCasesModel' (role 'useCases_UseCasesModel', cardinality 0..*).
+'useCases::LocalAlternative' (role 'useCases_LocalAlternative78', cardinality 0..*) is associated with 'useCases::UseCase' (role 'useCases_UseCase79', cardinality 0..*).
+'useCases::UseCase' (role 'useCases_UseCase34', cardinality 0..*) is associated with 'useCases::PageRef' (role 'useCases_PageRef', cardinality 0..*).
+'useCases::UseCase' (role 'useCases_UseCase42', cardinality 0..*) is associated with 'useCases::AlternativeFlow' (role 'useCases_AlternativeFlow', cardinality 0..*).
+'useCases::UseCase' (role 'useCases_UseCase36', cardinality 0..*) is associated with 'useCases::Precondition' (role 'useCases_Precondition', cardinality 0..*).
+'useCases::NamespaceImport' (role 'useCases_NamespaceImport9', cardinality 0..*) is associated with 'useCases::Identifiable' (role 'useCases_Identifiable', cardinality 0..*).
+'useCases::Actor' (role 'useCases_Actor23', cardinality 0..*) is associated with 'useCases::Actor' (role 'useCases_Actor25', cardinality 0..*).
+'useCases::UseCase' (role 'useCases_UseCase38', cardinality 0..*) is associated with 'useCases::Label' (role 'useCases_Label', cardinality 0..*).

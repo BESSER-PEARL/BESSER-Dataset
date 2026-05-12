@@ -1,0 +1,22 @@
+The model has 12 class(es).
+The class 'SoftwareQualityControl::BugTracking' has no attributes.
+The class 'ControlsSequence' has no attributes.
+The class 'SoftwareQualityControl::Bug' has the following attributes: 'number' of type str; 'openDate' of type str; 'closeDate' of type str; 'responsible' of type str; 'commentsAnswers' of type str; 'description' of type str; 'componentVersion' of type str; 'originator' of type str; 'status' of type str.
+The class 'SoftwareQualityControl::DateType' has the following attributes: 'day' of type str; 'month' of type str; 'year' of type str.
+The class 'SoftwareQualityControl::ControlType' has no attributes.
+The class 'SoftwareQualityControl::ControlsSequence' has no attributes.
+The class 'Bug' has no attributes.
+The class 'Control' has no attributes.
+The class 'DateType' has no attributes.
+The class 'SoftwareQualityControl::Control' has the following attributes: 'controlledElt' of type str; 'eltAuthor' of type str; 'responsible' of type str; 'developmentPhase' of type str; 'scope' of type str; 'eltRef' of type str; 'component' of type str; 'formRef' of type str.
+The class 'ControlType' has no attributes.
+The class 'BugTracking' has no attributes.
+The enumeration 'BugStatusType' has the following literals: 'bst_open', 'bst_skipped', 'bst_closed'.
+'SoftwareQualityControl::BugTracking' is a specialization of 'ControlType'.
+'SoftwareQualityControl::ControlsSequence' (role 'c_controlsSequence', cardinality 0..*) is associated with 'Control' (role 'Control', cardinality 0..*).
+'DateType' (role 'DateType', cardinality 0..*) is associated with 'SoftwareQualityControl::Control' (role 'SoftwareQualityControl_Control', cardinality 0..*).
+'ControlsSequence' (role 'ControlsSequence', cardinality 0..*) is associated with 'SoftwareQualityControl::Control' (role 'controls', cardinality 0..*).
+'SoftwareQualityControl::Bug' (role 'bugs', cardinality 0..*) is associated with 'BugTracking' (role 'BugTracking', cardinality 0..*).
+'SoftwareQualityControl::Control' (role 'ct_control', cardinality 0..*) is associated with 'ControlType' (role 'ControlType', cardinality 0..*).
+'Control' (role 'Control5', cardinality 0..*) is associated with 'SoftwareQualityControl::ControlType' (role 'type', cardinality 0..*).
+'SoftwareQualityControl::BugTracking' (role 'b_bugTracking', cardinality 0..*) is associated with 'Bug' (role 'Bug', cardinality 0..*).

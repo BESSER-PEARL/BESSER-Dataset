@@ -1,0 +1,154 @@
+The model has 47 class(es).
+The class 'hlcorestructure::NodeGraphics' has no attributes.
+The class 'Label' has no attributes.
+The class 'HLCoreAnnotation' has no attributes.
+The class 'hlcorestructure::Dimension' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'hlcorestructure::PetriNet' has the following attributes: 'type' of type str; 'id' of type str.
+The class 'TransitionNode' has no attributes.
+The class 'hlcorestructure::PnObject' has the following attributes: 'id' of type str.
+The class 'hlcorestructure::PetriNetDoc' has the following attributes: 'xmlns' of type str.
+The class 'hlcorestructure::Declarations' has no attributes.
+The class 'hlcorestructure::Attribute' has no attributes.
+The class 'hlcorestructure::Position' has no attributes.
+The class 'hlcorestructure::Coordinate' has the following attributes: 'y' of type str; 'x' of type str.
+The class 'hlcorestructure::Font' has the following attributes: 'weight' of type str; 'size' of type str; 'decoration' of type str; 'align' of type str; 'rotation' of type str; 'family' of type str; 'style' of type str.
+The class 'hlcorestructure::ToolInfo' has the following attributes: 'formattedXMLBuffer' of type str; 'tool' of type str; 'version' of type str; 'toolInfoGrammarURI' of type str.
+The class 'hlcorestructure::Declaration' has no attributes.
+The class 'PnObject' has no attributes.
+The class 'hlcorestructure::Transition' has no attributes.
+The class 'hlcorestructure::Arc' has no attributes.
+The class 'hlcorestructure::AnnotationGraphics' has no attributes.
+The class 'hlcorestructure::HLCoreAnnotation' has the following attributes: 'text' of type str.
+The class 'Node' has no attributes.
+The class 'hlcorestructure::Condition' has no attributes.
+The class 'hlcorestructure::RefTransition' has no attributes.
+The class 'Coordinate' has no attributes.
+The class 'hlcorestructure::Page' has no attributes.
+The class 'hlcorestructure::Type' has no attributes.
+The class 'hlcorestructure::Sort' has no attributes.
+The class 'hlcorestructure::Offset' has no attributes.
+The class 'hlcorestructure::Label' has no attributes.
+The class 'hlcorestructure::PlaceNode' has no attributes.
+The class 'PlaceNode' has no attributes.
+The class 'Graphics' has no attributes.
+The class 'hlcorestructure::Graphics' has no attributes.
+The class 'hlcorestructure::Fill' has the following attributes: 'gradientrotation' of type str; 'gradientcolor' of type str; 'image' of type str; 'color' of type str.
+The class 'hlcorestructure::Place' has no attributes.
+The class 'hlcorestructure::RefPlace' has no attributes.
+The class 'hlcorestructure::AnyObject' has no attributes.
+The class 'hlcorestructure::Term' has no attributes.
+The class 'hlcorestructure::Name' has the following attributes: 'text' of type str.
+The class 'hlcorestructure::ArcGraphics' has no attributes.
+The class 'hlcorestructure::TransitionNode' has no attributes.
+The class 'hlcorestructure::Annotation' has no attributes.
+The class 'hlcorestructure::Line' has the following attributes: 'width' of type str; 'style' of type str; 'color' of type str; 'shape' of type str.
+The class 'hlcorestructure::HLAnnotation' has no attributes.
+The class 'hlcorestructure::HLMarking' has no attributes.
+The class 'hlcorestructure::Node' has no attributes.
+The enumeration 'LineStyle' has the following literals: 'DOT', 'SOLID', 'DASH'.
+The enumeration 'CSS2Color' has the following literals: 'PURPLE', 'RED', 'LIME', 'NAVY', 'GRAY', 'GREEN', 'BLUE', 'SILVER', 'YELLOW', 'OLIVE', 'WHITE', 'ORANGE', 'BLACK', 'MAROON', 'TEAL', 'AQUA', 'FUCHSIA'.
+The enumeration 'FontDecoration' has the following literals: 'LINETHROUGH', 'UNDERLINE', 'OVERLINE'.
+The enumeration 'CSS2FontWeight' has the following literals: 'BOLD', 'NORMAL', 'LIGHTER', 'BOLDER'.
+The enumeration 'LineShape' has the following literals: 'LINE', 'CURVE'.
+The enumeration 'CSS2FontSize' has the following literals: 'XSMALL', 'LARGE', 'XLARGE', 'SMALL', 'MEDIUM', 'XXSMALL', 'XXLARGE'.
+The enumeration 'FontAlign' has the following literals: 'RIGHT', 'LEFT', 'CENTER'.
+The enumeration 'PNType' has the following literals: 'PTNET', 'COREMODEL', 'HLPN', 'SYMNET'.
+The enumeration 'Gradient' has the following literals: 'DIAGONAL', 'HORIZONTAL', 'VERTICAL'.
+The enumeration 'CSS2FontFamily' has the following literals: 'VERDANA', 'TREBUCHET', 'ARIAL', 'TIMES', 'GEORGIA'.
+The enumeration 'CSS2FontStyle' has the following literals: 'NORMAL', 'OBLIQUE', 'ITALIC'.
+'hlcorestructure::RefPlace' is a specialization of 'PlaceNode'.
+'hlcorestructure::HLMarking' is a specialization of 'HLCoreAnnotation'.
+'hlcorestructure::Position' is a specialization of 'Coordinate'.
+'hlcorestructure::Dimension' is a specialization of 'Coordinate'.
+'hlcorestructure::Offset' is a specialization of 'Coordinate'.
+'hlcorestructure::Condition' is a specialization of 'HLCoreAnnotation'.
+'hlcorestructure::Page' is a specialization of 'PnObject'.
+'hlcorestructure::Annotation' is a specialization of 'Label'.
+'hlcorestructure::NodeGraphics' is a specialization of 'Graphics'.
+'hlcorestructure::HLAnnotation' is a specialization of 'HLCoreAnnotation'.
+'hlcorestructure::Node' is a specialization of 'PnObject'.
+'hlcorestructure::HLCoreAnnotation' is a specialization of 'Annotation'.
+'hlcorestructure::Transition' is a specialization of 'TransitionNode'.
+'hlcorestructure::PlaceNode' is a specialization of 'Node'.
+'hlcorestructure::Attribute' is a specialization of 'Label'.
+'hlcorestructure::AnnotationGraphics' is a specialization of 'Graphics'.
+'hlcorestructure::ArcGraphics' is a specialization of 'Graphics'.
+'hlcorestructure::Type' is a specialization of 'HLCoreAnnotation'.
+'hlcorestructure::Place' is a specialization of 'PlaceNode'.
+'hlcorestructure::Declaration' is a specialization of 'HLCoreAnnotation'.
+'hlcorestructure::RefTransition' is a specialization of 'TransitionNode'.
+'hlcorestructure::Arc' is a specialization of 'PnObject'.
+'hlcorestructure::Name' is a specialization of 'Annotation'.
+'hlcorestructure::TransitionNode' is a specialization of 'Node'.
+'hlcorestructure::Transition' (role 'Transition', cardinality 0..*) is associated with 'hlcorestructure::Condition' (role 'condition', cardinality 0..*).
+'hlcorestructure::Label' (role 'containerLabel', cardinality 0..*) is associated with 'hlcorestructure::ToolInfo' (role 'ToolInfo34', cardinality 0..*).
+'hlcorestructure::Declaration' (role 'Declaration13', cardinality 0..*) is associated with 'hlcorestructure::Page' (role 'containerDeclarationPage', cardinality 0..*).
+'hlcorestructure::PetriNet' (role 'PetriNet26', cardinality 0..*) is associated with 'hlcorestructure::ToolInfo' (role 'toolspecifics', cardinality 0..*).
+'hlcorestructure::RefPlace' (role 'referencingPlaces', cardinality 0..*) is associated with 'hlcorestructure::PlaceNode' (role 'PlaceNode', cardinality 0..*).
+'hlcorestructure::ToolInfo' (role 'ToolInfo17', cardinality 0..*) is associated with 'hlcorestructure::PnObject' (role 'containerPnObject', cardinality 0..*).
+'hlcorestructure::AnnotationGraphics' (role 'containerAnnotationGraphics58', cardinality 0..*) is associated with 'hlcorestructure::Font' (role 'Font', cardinality 0..*).
+'hlcorestructure::ArcGraphics' (role 'ArcGraphics69', cardinality 0..*) is associated with 'hlcorestructure::Line' (role 'line68', cardinality 0..*).
+'hlcorestructure::Page' (role 'containerPage11', cardinality 0..*) is associated with 'hlcorestructure::NodeGraphics' (role 'NodeGraphics', cardinality 0..*).
+'hlcorestructure::HLAnnotation' (role 'hlinscription', cardinality 0..*) is associated with 'hlcorestructure::Arc' (role 'Arc119', cardinality 0..*).
+'hlcorestructure::Page' (role 'Page125', cardinality 0..*) is associated with 'hlcorestructure::Declaration' (role 'declaration124', cardinality 0..*).
+'hlcorestructure::Name' (role 'Name', cardinality 0..*) is associated with 'hlcorestructure::PetriNet' (role 'containerNamePetriNet', cardinality 0..*).
+'hlcorestructure::PlaceNode' (role 'ref', cardinality 0..*) is associated with 'hlcorestructure::RefPlace' (role 'RefPlace', cardinality 0..*).
+'hlcorestructure::Node' (role 'Node80', cardinality 0..*) is associated with 'hlcorestructure::Arc' (role 'OutArcs', cardinality 0..*).
+'hlcorestructure::Arc' (role 'Arc', cardinality 0..*) is associated with 'hlcorestructure::ArcGraphics' (role 'arcgraphics', cardinality 0..*).
+'hlcorestructure::ToolInfo' (role 'containerToolInfo', cardinality 0..*) is associated with 'hlcorestructure::AnyObject' (role 'AnyObject', cardinality 0..*).
+'hlcorestructure::Fill' (role 'fill63', cardinality 0..*) is associated with 'hlcorestructure::AnnotationGraphics' (role 'AnnotationGraphics64', cardinality 0..*).
+'hlcorestructure::TransitionNode' (role 'TransitionNode', cardinality 0..*) is associated with 'hlcorestructure::RefTransition' (role 'referencingTransitions', cardinality 0..*).
+'hlcorestructure::Arc' (role 'Arc88', cardinality 0..*) is associated with 'hlcorestructure::Node' (role 'target', cardinality 0..*).
+'hlcorestructure::Place' (role 'Place', cardinality 0..*) is associated with 'hlcorestructure::Type' (role 'type', cardinality 0..*).
+'hlcorestructure::AnnotationGraphics' (role 'annotationgraphics', cardinality 0..*) is associated with 'hlcorestructure::Annotation' (role 'Annotation', cardinality 0..*).
+'hlcorestructure::HLAnnotation' (role 'HLAnnotation', cardinality 0..*) is associated with 'hlcorestructure::Arc' (role 'containerArc86', cardinality 0..*).
+'hlcorestructure::ToolInfo' (role 'ToolInfo107', cardinality 0..*) is associated with 'hlcorestructure::AnyObject' (role 'toolInfoModel', cardinality 0..*).
+'hlcorestructure::Line' (role 'Line56', cardinality 0..*) is associated with 'hlcorestructure::AnnotationGraphics' (role 'containerAnnotationGraphics55', cardinality 0..*).
+'hlcorestructure::Page' (role 'containerPage', cardinality 0..*) is associated with 'hlcorestructure::PnObject' (role 'PnObject', cardinality 0..*).
+'hlcorestructure::Page' (role 'pages', cardinality 0..*) is associated with 'hlcorestructure::PetriNet' (role 'PetriNet9', cardinality 0..*).
+'hlcorestructure::HLMarking' (role 'containerHLMarking', cardinality 0..*) is associated with 'hlcorestructure::Term' (role 'terms.ecoreTerm', cardinality 0..*).
+'hlcorestructure::Place' (role 'containerPlace100', cardinality 0..*) is associated with 'hlcorestructure::HLMarking' (role 'HLMarking', cardinality 0..*).
+'hlcorestructure::Page' (role 'Page43', cardinality 0..*) is associated with 'hlcorestructure::NodeGraphics' (role 'nodegraphics42', cardinality 0..*).
+'hlcorestructure::Transition' (role 'containerTransition', cardinality 0..*) is associated with 'hlcorestructure::Condition' (role 'Condition', cardinality 0..*).
+'hlcorestructure::AnnotationGraphics' (role 'containerAnnotationGraphics', cardinality 0..*) is associated with 'hlcorestructure::Offset' (role 'Offset', cardinality 0..*).
+'hlcorestructure::NodeGraphics' (role 'containerPNodeGraphics', cardinality 0..*) is associated with 'hlcorestructure::Position' (role 'Position', cardinality 0..*).
+'hlcorestructure::NodeGraphics' (role 'NodeGraphics46', cardinality 0..*) is associated with 'hlcorestructure::Position' (role 'position', cardinality 0..*).
+'hlcorestructure::AnnotationGraphics' (role 'containerAnnotationGraphics52', cardinality 0..*) is associated with 'hlcorestructure::Fill' (role 'Fill53', cardinality 0..*).
+'hlcorestructure::Node' (role 'containerNode', cardinality 0..*) is associated with 'hlcorestructure::NodeGraphics' (role 'NodeGraphics92', cardinality 0..*).
+'hlcorestructure::Page' (role 'Page19', cardinality 0..*) is associated with 'hlcorestructure::PnObject' (role 'objects', cardinality 0..*).
+'hlcorestructure::TransitionNode' (role 'ref97', cardinality 0..*) is associated with 'hlcorestructure::RefTransition' (role 'RefTransition', cardinality 0..*).
+'hlcorestructure::HLAnnotation' (role 'containerHLAnnotation', cardinality 0..*) is associated with 'hlcorestructure::Term' (role 'terms.ecoreTerm117', cardinality 0..*).
+'hlcorestructure::Node' (role 'Node', cardinality 0..*) is associated with 'hlcorestructure::NodeGraphics' (role 'nodegraphics', cardinality 0..*).
+'hlcorestructure::Label' (role 'Label', cardinality 0..*) is associated with 'hlcorestructure::ToolInfo' (role 'toolspecifics31', cardinality 0..*).
+'hlcorestructure::AnnotationGraphics' (role 'AnnotationGraphics105', cardinality 0..*) is associated with 'hlcorestructure::Annotation' (role 'containerAnnotation', cardinality 0..*).
+'hlcorestructure::ToolInfo' (role 'ToolInfo', cardinality 0..*) is associated with 'hlcorestructure::PetriNet' (role 'containerPetriNet4', cardinality 0..*).
+'hlcorestructure::Name' (role 'name23', cardinality 0..*) is associated with 'hlcorestructure::PnObject' (role 'PnObject24', cardinality 0..*).
+'hlcorestructure::NodeGraphics' (role 'containerDNodeGraphics', cardinality 0..*) is associated with 'hlcorestructure::Dimension' (role 'Dimension', cardinality 0..*).
+'hlcorestructure::ToolInfo' (role 'toolspecifics28', cardinality 0..*) is associated with 'hlcorestructure::PnObject' (role 'PnObject29', cardinality 0..*).
+'hlcorestructure::PetriNetDoc' (role 'containerPetriNetDoc', cardinality 0..*) is associated with 'hlcorestructure::PetriNet' (role 'PetriNet', cardinality 0..*).
+'hlcorestructure::Node' (role 'source', cardinality 0..*) is associated with 'hlcorestructure::Arc' (role 'Arc90', cardinality 0..*).
+'hlcorestructure::PnObject' (role 'containerNamePnObject', cardinality 0..*) is associated with 'hlcorestructure::Name' (role 'Name15', cardinality 0..*).
+'hlcorestructure::PetriNet' (role 'nets', cardinality 0..*) is associated with 'hlcorestructure::PetriNetDoc' (role 'PetriNetDoc', cardinality 0..*).
+'hlcorestructure::Fill' (role 'fill', cardinality 0..*) is associated with 'hlcorestructure::NodeGraphics' (role 'NodeGraphics61', cardinality 0..*).
+'hlcorestructure::ArcGraphics' (role 'containerArcGraphics', cardinality 0..*) is associated with 'hlcorestructure::Position' (role 'Position74', cardinality 0..*).
+'hlcorestructure::Position' (role 'positions', cardinality 0..*) is associated with 'hlcorestructure::ArcGraphics' (role 'ArcGraphics', cardinality 0..*).
+'hlcorestructure::Type' (role 'containerType', cardinality 0..*) is associated with 'hlcorestructure::Sort' (role 'terms.ecoreSort', cardinality 0..*).
+'hlcorestructure::Declaration' (role 'Declaration', cardinality 0..*) is associated with 'hlcorestructure::PetriNet' (role 'containerDeclarationPetriNet', cardinality 0..*).
+'hlcorestructure::Declaration' (role 'containerDeclaration', cardinality 0..*) is associated with 'hlcorestructure::Declarations' (role 'terms.ecoreDeclarations', cardinality 0..*).
+'hlcorestructure::Line' (role 'line71', cardinality 0..*) is associated with 'hlcorestructure::AnnotationGraphics' (role 'AnnotationGraphics72', cardinality 0..*).
+'hlcorestructure::Arc' (role 'InArcs', cardinality 0..*) is associated with 'hlcorestructure::Node' (role 'Node82', cardinality 0..*).
+'hlcorestructure::PetriNet' (role 'PetriNet122', cardinality 0..*) is associated with 'hlcorestructure::Declaration' (role 'declaration', cardinality 0..*).
+'hlcorestructure::NodeGraphics' (role 'containerNodeGraphics', cardinality 0..*) is associated with 'hlcorestructure::Fill' (role 'Fill', cardinality 0..*).
+'hlcorestructure::AnnotationGraphics' (role 'AnnotationGraphics', cardinality 0..*) is associated with 'hlcorestructure::Offset' (role 'offset', cardinality 0..*).
+'hlcorestructure::Page' (role 'Page', cardinality 0..*) is associated with 'hlcorestructure::PetriNet' (role 'containerPetriNet', cardinality 0..*).
+'hlcorestructure::Arc' (role 'containerArc', cardinality 0..*) is associated with 'hlcorestructure::ArcGraphics' (role 'ArcGraphics84', cardinality 0..*).
+'hlcorestructure::Place' (role 'containerPlace', cardinality 0..*) is associated with 'hlcorestructure::Type' (role 'Type', cardinality 0..*).
+'hlcorestructure::Place' (role 'Place112', cardinality 0..*) is associated with 'hlcorestructure::HLMarking' (role 'hlinitialMarking', cardinality 0..*).
+'hlcorestructure::NodeGraphics' (role 'NodeGraphics49', cardinality 0..*) is associated with 'hlcorestructure::Dimension' (role 'dimension', cardinality 0..*).
+'hlcorestructure::Term' (role 'terms.ecoreTerm114', cardinality 0..*) is associated with 'hlcorestructure::Condition' (role 'containerCondition', cardinality 0..*).
+'hlcorestructure::AnnotationGraphics' (role 'AnnotationGraphics94', cardinality 0..*) is associated with 'hlcorestructure::Font' (role 'font', cardinality 0..*).
+'hlcorestructure::ArcGraphics' (role 'containerArcGraphics76', cardinality 0..*) is associated with 'hlcorestructure::Line' (role 'Line77', cardinality 0..*).
+'hlcorestructure::Name' (role 'name', cardinality 0..*) is associated with 'hlcorestructure::PetriNet' (role 'PetriNet21', cardinality 0..*).
+'hlcorestructure::NodeGraphics' (role 'NodeGraphics66', cardinality 0..*) is associated with 'hlcorestructure::Line' (role 'line', cardinality 0..*).
+'hlcorestructure::NodeGraphics' (role 'containerNodeGraphics39', cardinality 0..*) is associated with 'hlcorestructure::Line' (role 'Line', cardinality 0..*).
