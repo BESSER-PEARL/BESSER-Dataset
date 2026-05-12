@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'OclTest::Stem' has no attributes.
+The class 'OclTest::Apple' has the following attributes: 'label' of type str.
+The class 'OclTest::Fruit' has the following attributes: 'color' of type str; 'name' of type str.
+The class 'OclTest::Tree' has the following attributes: 'name' of type str.
+The class 'Fruit' has no attributes.
+The class 'OclTest::FruitUtil' has no attributes.
+The enumeration 'Color' has the following literals: 'red', 'pink', 'orange', 'brown', 'yellow', 'black', 'green'.
+'OclTest::Apple' is a specialization of 'Fruit'.
+'OclTest::FruitUtil' (role 'OclTest_FruitUtil9', cardinality 0..*) is associated with 'OclTest::Fruit' (role 'OclTest_Fruit10', cardinality 0..*).
+'OclTest::Fruit' (role 'OclTest_Fruit7', cardinality 0..*) is associated with 'OclTest::FruitUtil' (role 'OclTest_FruitUtil6', cardinality 0..*).
+'OclTest::Fruit' (role 'OclTest_Fruit4', cardinality 0..*) is associated with 'OclTest::FruitUtil' (role 'OclTest_FruitUtil', cardinality 0..*).
+'OclTest::Apple' (role 'OclTest_Apple', cardinality 0..*) is associated with 'OclTest::Stem' (role 'OclTest_Stem', cardinality 0..*).
+'OclTest::Fruit' (role 'OclTest_Fruit', cardinality 0..*) is associated with 'OclTest::Fruit' (role 'OclTest_Fruit0', cardinality 0..*).
+'OclTest::Fruit' (role 'OclTest_Fruit18', cardinality 0..*) is associated with 'OclTest::Tree' (role 'OclTest_Tree17', cardinality 0..*).
+'OclTest::Fruit' (role 'OclTest_Fruit15', cardinality 0..*) is associated with 'OclTest::Tree' (role 'OclTest_Tree', cardinality 0..*).
+'OclTest::Fruit' (role 'OclTest_Fruit13', cardinality 0..*) is associated with 'OclTest::FruitUtil' (role 'OclTest_FruitUtil12', cardinality 0..*).

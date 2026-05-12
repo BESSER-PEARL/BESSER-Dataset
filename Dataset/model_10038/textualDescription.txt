@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 't2::Dad' has no attributes.
+The class 'Person' has no attributes.
+The class 't2::Person' has the following attributes: 'age' of type int.
+The class 't2::Son' has no attributes.
+'t2::Dad' is a specialization of 'Person'.
+'t2::Son' is a specialization of 'Person'.

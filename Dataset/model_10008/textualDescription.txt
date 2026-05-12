@@ -1,0 +1,71 @@
+The model has 22 class(es).
+The class 'game::EntiteLieu' has no attributes.
+The class 'game::Interaction' has no attributes.
+The class 'game::Objet' has the following attributes: 'taille' of type int.
+The class 'game::Choix' has the following attributes: 'name' of type str.
+The class 'game::Conjonction' has no attributes.
+The class 'game::Lieu' has no attributes.
+The class 'GameElement' has no attributes.
+The class 'game::Game' has the following attributes: 'name' of type str.
+The class 'game::ConnaissanceLieu' has no attributes.
+The class 'game::Personne' has the following attributes: 'name' of type str.
+The class 'game::Description' has no attributes.
+The class 'game::Recompense' has no attributes.
+The class 'game::Texte' has the following attributes: 'contenu' of type str.
+The class 'game::Explorateur' has the following attributes: 'name' of type str; 'tailleInventaire' of type int.
+The class 'game::GameElement' has the following attributes: 'name' of type str.
+The class 'EntiteLieu' has no attributes.
+The class 'game::Connaissance' has no attributes.
+The class 'game::PackObjets' has the following attributes: 'quantite' of type int.
+The class 'game::Litteral' has the following attributes: 'operateur' of type str; 'quantite' of type int.
+The class 'game::Condition' has no attributes.
+The class 'game::Chemin' has no attributes.
+The class 'game::Action' has no attributes.
+'game::Objet' is a specialization of 'GameElement'.
+'game::Lieu' is a specialization of 'GameElement'.
+'game::Connaissance' is a specialization of 'GameElement'.
+'game::Chemin' is a specialization of 'GameElement'.
+'game::ConnaissanceLieu' is a specialization of 'EntiteLieu'.
+'game::PackObjets' is a specialization of 'EntiteLieu'.
+'game::Connaissance' (role 'game_Connaissance', cardinality 0..*) is associated with 'game::ConnaissanceLieu' (role 'game_ConnaissanceLieu', cardinality 0..*).
+'game::Interaction' (role 'game_Interaction89', cardinality 0..*) is associated with 'game::Condition' (role 'game_Condition90', cardinality 0..*).
+'game::Condition' (role 'game_Condition', cardinality 0..*) is associated with 'game::EntiteLieu' (role 'game_EntiteLieu10', cardinality 0..*).
+'game::Action' (role 'game_Action75', cardinality 0..*) is associated with 'game::Recompense' (role 'game_Recompense76', cardinality 0..*).
+'game::Chemin' (role 'game_Chemin41', cardinality 0..*) is associated with 'game::Recompense' (role 'game_Recompense', cardinality 0..*).
+'game::Chemin' (role 'game_Chemin43', cardinality 0..*) is associated with 'game::PackObjets' (role 'game_PackObjets44', cardinality 0..*).
+'game::Description' (role 'game_Description', cardinality 0..*) is associated with 'game::GameElement' (role 'game_GameElement13', cardinality 0..*).
+'game::Choix' (role 'game_Choix101', cardinality 0..*) is associated with 'game::Condition' (role 'game_Condition102', cardinality 0..*).
+'game::Lieu' (role 'game_Lieu22', cardinality 0..*) is associated with 'game::Chemin' (role 'game_Chemin', cardinality 0..*).
+'game::Objet' (role 'game_Objet', cardinality 0..*) is associated with 'game::PackObjets' (role 'game_PackObjets27', cardinality 0..*).
+'game::Conjonction' (role 'game_Conjonction', cardinality 0..*) is associated with 'game::Condition' (role 'game_Condition46', cardinality 0..*).
+'game::Choix' (role 'game_Choix93', cardinality 0..*) is associated with 'game::Interaction' (role 'game_Interaction92', cardinality 0..*).
+'game::Choix' (role 'game_Choix98', cardinality 0..*) is associated with 'game::Description' (role 'game_Description99', cardinality 0..*).
+'game::Lieu' (role 'game_Lieu', cardinality 0..*) is associated with 'game::Game' (role 'game_Game2', cardinality 0..*).
+'game::Lieu' (role 'game_Lieu36', cardinality 0..*) is associated with 'game::Chemin' (role 'game_Chemin35', cardinality 0..*).
+'game::Condition' (role 'game_Condition73', cardinality 0..*) is associated with 'game::Action' (role 'game_Action72', cardinality 0..*).
+'game::Recompense' (role 'game_Recompense61', cardinality 0..*) is associated with 'game::Connaissance' (role 'game_Connaissance62', cardinality 0..*).
+'game::Litteral' (role 'game_Litteral', cardinality 0..*) is associated with 'game::Conjonction' (role 'game_Conjonction48', cardinality 0..*).
+'game::EntiteLieu' (role 'game_EntiteLieu25', cardinality 0..*) is associated with 'game::Lieu' (role 'game_Lieu24', cardinality 0..*).
+'game::Action' (role 'game_Action78', cardinality 0..*) is associated with 'game::PackObjets' (role 'game_PackObjets79', cardinality 0..*).
+'game::Recompense' (role 'game_Recompense64', cardinality 0..*) is associated with 'game::PackObjets' (role 'game_PackObjets65', cardinality 0..*).
+'game::Action' (role 'game_Action105', cardinality 0..*) is associated with 'game::Choix' (role 'game_Choix104', cardinality 0..*).
+'game::Game' (role 'game_Game', cardinality 0..*) is associated with 'game::Explorateur' (role 'game_Explorateur', cardinality 0..*).
+'game::Explorateur' (role 'game_Explorateur15', cardinality 0..*) is associated with 'game::Connaissance' (role 'game_Connaissance16', cardinality 0..*).
+'game::Interaction' (role 'game_Interaction86', cardinality 0..*) is associated with 'game::Choix' (role 'game_Choix87', cardinality 0..*).
+'game::Chemin' (role 'game_Chemin29', cardinality 0..*) is associated with 'game::Condition' (role 'game_Condition30', cardinality 0..*).
+'game::Connaissance' (role 'game_Connaissance54', cardinality 0..*) is associated with 'game::Litteral' (role 'game_Litteral53', cardinality 0..*).
+'game::GameElement' (role 'game_GameElement', cardinality 0..*) is associated with 'game::Game' (role 'game_Game7', cardinality 0..*).
+'game::Action' (role 'game_Action81', cardinality 0..*) is associated with 'game::Choix' (role 'game_Choix', cardinality 0..*).
+'game::Action' (role 'game_Action', cardinality 0..*) is associated with 'game::Description' (role 'game_Description70', cardinality 0..*).
+'game::Litteral' (role 'game_Litteral50', cardinality 0..*) is associated with 'game::Objet' (role 'game_Objet51', cardinality 0..*).
+'game::Personne' (role 'game_Personne20', cardinality 0..*) is associated with 'game::Interaction' (role 'game_Interaction', cardinality 0..*).
+'game::Lieu' (role 'game_Lieu33', cardinality 0..*) is associated with 'game::Chemin' (role 'game_Chemin32', cardinality 0..*).
+'game::EntiteLieu' (role 'game_EntiteLieu', cardinality 0..*) is associated with 'game::Personne' (role 'game_Personne', cardinality 0..*).
+'game::Choix' (role 'game_Choix96', cardinality 0..*) is associated with 'game::Interaction' (role 'game_Interaction95', cardinality 0..*).
+'game::Game' (role 'game_Game4', cardinality 0..*) is associated with 'game::Lieu' (role 'game_Lieu5', cardinality 0..*).
+'game::Chemin' (role 'game_Chemin38', cardinality 0..*) is associated with 'game::Condition' (role 'game_Condition39', cardinality 0..*).
+'game::Texte' (role 'game_Texte', cardinality 0..*) is associated with 'game::Description' (role 'game_Description56', cardinality 0..*).
+'game::Condition' (role 'game_Condition59', cardinality 0..*) is associated with 'game::Texte' (role 'game_Texte58', cardinality 0..*).
+'game::Condition' (role 'game_Condition68', cardinality 0..*) is associated with 'game::Recompense' (role 'game_Recompense67', cardinality 0..*).
+'game::Recompense' (role 'game_Recompense84', cardinality 0..*) is associated with 'game::Interaction' (role 'game_Interaction83', cardinality 0..*).
+'game::Explorateur' (role 'game_Explorateur18', cardinality 0..*) is associated with 'game::PackObjets' (role 'game_PackObjets', cardinality 0..*).

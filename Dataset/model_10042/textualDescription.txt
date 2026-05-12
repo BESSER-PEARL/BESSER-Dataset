@@ -1,0 +1,345 @@
+The model has 131 class(es).
+The class 'xtend::XIfExpression' has no attributes.
+The class 'xtend::JvmDelegateTypeReference' has no attributes.
+The class 'xtend::JvmAnnotationTarget' has no attributes.
+The class 'XStringLiteral' has no attributes.
+The class 'xtend::RichStringForLoop' has no attributes.
+The class 'xtend::XForLoopExpression' has no attributes.
+The class 'xtend::XMemberFeatureCall' has the following attributes: 'nullSafe' of type bool; 'spreading' of type bool; 'explicitOperationCall' of type bool.
+The class 'XBlockExpression' has no attributes.
+The class 'xtend::JvmSynonymTypeReference' has no attributes.
+The class 'xtend::XAbstractFeatureCall' has the following attributes: 'invalidFeatureIssueCode' of type str; 'validFeature' of type bool.
+The class 'XForLoopExpression' has no attributes.
+The class 'JvmTypeParameterDeclarator' has no attributes.
+The class 'xtend::JvmUpperBound' has no attributes.
+The class 'xtend::JvmParameterizedTypeReference' has no attributes.
+The class 'xtend::XtendEnum' has no attributes.
+The class 'xtend::XFeatureCall' has the following attributes: 'explicitOperationCall' of type bool.
+The class 'xtend::RichStringLiteral' has no attributes.
+The class 'JvmIdentifiableElement' has no attributes.
+The class 'xtend::JvmMultiTypeReference' has no attributes.
+The class 'xtend::JvmPrimitiveType' has the following attributes: 'simpleName' of type str.
+The class 'xtend::JvmDeclaredType' has the following attributes: 'final' of type bool; 'abstract' of type bool; 'static' of type bool; 'packageName' of type str.
+The class 'xtend::XCastedExpression' has no attributes.
+The class 'xtend::JvmDoubleAnnotationValue' has the following attributes: 'values' of type float.
+The class 'xtend::XConstructorCall' has the following attributes: 'validFeature' of type bool; 'invalidFeatureIssueCode' of type str.
+The class 'xtend::JvmIntAnnotationValue' has the following attributes: 'values' of type int.
+The class 'XAbstractWhileExpression' has no attributes.
+The class 'xtend::XWhileExpression' has no attributes.
+The class 'xtend::XTypeLiteral' has no attributes.
+The class 'xtend::JvmConstructor' has no attributes.
+The class 'JvmType' has no attributes.
+The class 'xtend::JvmGenericType' has the following attributes: 'interface' of type bool.
+The class 'xtend::JvmStringAnnotationValue' has the following attributes: 'values' of type str.
+The class 'xtend::XtendField' has the following attributes: 'name' of type str.
+The class 'xtend::JvmAnnotationAnnotationValue' has no attributes.
+The class 'xtend::XUnaryOperation' has no attributes.
+The class 'xtend::XBooleanLiteral' has the following attributes: 'isTrue' of type bool.
+The class 'xtend::XNullLiteral' has no attributes.
+The class 'xtend::JvmCustomAnnotationValue' has the following attributes: 'values' of type str.
+The class 'xtend::XBinaryOperation' has no attributes.
+The class 'xtend::XtendAnnotationType' has no attributes.
+The class 'xtend::JvmFloatAnnotationValue' has the following attributes: 'values' of type float.
+The class 'xtend::JvmAnnotationReference' has no attributes.
+The class 'xtend::XtendConstructor' has no attributes.
+The class 'JvmField' has no attributes.
+The class 'xtend::JvmUnknownTypeReference' has the following attributes: 'exception' of type str.
+The class 'xtend::JvmTypeParameter' has the following attributes: 'name' of type str.
+The class 'xtend::AnonymousClass' has no attributes.
+The class 'xtend::XtendFile' has the following attributes: 'package' of type str.
+The class 'xtend::JvmTypeReference' has no attributes.
+The class 'xtend::XtendEnumLiteral' has the following attributes: 'name' of type str.
+The class 'XtendMember' has no attributes.
+The class 'XVariableDeclaration' has no attributes.
+The class 'xtend::XtendTypeDeclaration' has the following attributes: 'name' of type str.
+The class 'xtend::XStringLiteral' has the following attributes: 'value' of type str.
+The class 'xtend::XtendAnnotationTarget' has no attributes.
+The class 'XExpression' has no attributes.
+The class 'xtend::XExpression' has no attributes.
+The class 'xtend::RichString' has no attributes.
+The class 'xtend::XtendMember' has the following attributes: 'modifiers' of type str.
+The class 'xtend::JvmFeature' has no attributes.
+The class 'xtend::XtendParameter' has the following attributes: 'varArg' of type bool; 'name' of type str; 'extension' of type bool.
+The class 'xtend::JvmComponentType' has no attributes.
+The class 'XtendAnnotationTarget' has no attributes.
+The class 'xtend::XCatchClause' has no attributes.
+The class 'xtend::XReturnExpression' has no attributes.
+The class 'xtend::XtendExecutable' has no attributes.
+The class 'xtend::JvmCompoundTypeReference' has no attributes.
+The class 'xtend::JvmTypeAnnotationValue' has no attributes.
+The class 'xtend::JvmCharAnnotationValue' has the following attributes: 'values' of type str.
+The class 'xtend::XAnnotation' has no attributes.
+The class 'JvmTypeReference' has no attributes.
+The class 'xtend::JvmSpecializedTypeReference' has no attributes.
+The class 'JvmTypeConstraint' has no attributes.
+The class 'JvmAnnotationTarget' has no attributes.
+The class 'xtend::JvmType' has no attributes.
+The class 'xtend::JvmWildcardTypeReference' has no attributes.
+The class 'xtend::JvmEnumerationType' has no attributes.
+The class 'xtend::JvmTypeConstraint' has no attributes.
+The class 'JvmMember' has no attributes.
+The class 'JvmExecutable' has no attributes.
+The class 'xtend::XCasePart' has no attributes.
+The class 'xtend::JvmGenericArrayTypeReference' has no attributes.
+The class 'xtend::XAssignment' has no attributes.
+The class 'xtend::JvmLowerBound' has no attributes.
+The class 'xtend::JvmShortAnnotationValue' has the following attributes: 'values' of type str.
+The class 'JvmCompoundTypeReference' has no attributes.
+The class 'xtend::JvmBooleanAnnotationValue' has the following attributes: 'values' of type bool.
+The class 'xtend::XThrowExpression' has no attributes.
+The class 'XAbstractFeatureCall' has no attributes.
+The class 'xtend::XAbstractWhileExpression' has no attributes.
+The class 'xtend::XClosure' has the following attributes: 'explicitSyntax' of type bool.
+The class 'xtend::JvmEnumerationLiteral' has no attributes.
+The class 'JvmAnnotationValue' has no attributes.
+The class 'xtend::JvmByteAnnotationValue' has the following attributes: 'values' of type str.
+The class 'xtend::JvmAnnotationValue' has no attributes.
+The class 'xtend::JvmAnnotationType' has no attributes.
+The class 'xtend::XtendVariableDeclaration' has the following attributes: 'extension' of type bool.
+The class 'xtend::JvmArrayType' has no attributes.
+The class 'JvmComponentType' has no attributes.
+The class 'JvmConstraintOwner' has no attributes.
+The class 'xtend::JvmVoid' has no attributes.
+The class 'xtend::JvmConstraintOwner' has no attributes.
+The class 'xtend::RichStringElseIf' has no attributes.
+The class 'xtend::XTryCatchFinallyExpression' has no attributes.
+The class 'xtend::XBlockExpression' has no attributes.
+The class 'xtend::JvmExecutable' has the following attributes: 'varArgs' of type bool.
+The class 'xtend::JvmIdentifiableElement' has no attributes.
+The class 'xtend::JvmLongAnnotationValue' has the following attributes: 'values' of type str.
+The class 'xtend::RichStringIf' has no attributes.
+The class 'xtend::JvmMember' has the following attributes: 'identifier' of type str; 'simpleName' of type str; 'visibility' of type str.
+The class 'xtend::JvmTypeParameterDeclarator' has no attributes.
+The class 'JvmDeclaredType' has no attributes.
+The class 'xtend::XVariableDeclaration' has the following attributes: 'writeable' of type bool; 'name' of type str.
+The class 'xtend::XDoWhileExpression' has no attributes.
+The class 'xtend::XtendFormalParameter' has the following attributes: 'extension' of type bool.
+The class 'xtend::JvmField' has the following attributes: 'final' of type bool; 'static' of type bool.
+The class 'xtend::XInstanceOfExpression' has no attributes.
+The class 'xtend::JvmOperation' has the following attributes: 'static' of type bool; 'final' of type bool; 'abstract' of type bool.
+The class 'xtend::XtendClass' has no attributes.
+The class 'JvmFeature' has no attributes.
+The class 'xtend::JvmAnyTypeReference' has no attributes.
+The class 'JvmFormalParameter' has no attributes.
+The class 'xtend::XNumberLiteral' has the following attributes: 'value' of type str.
+The class 'xtend::XtendFunction' has the following attributes: 'name' of type str.
+The class 'XtendTypeDeclaration' has no attributes.
+The class 'xtend::JvmFormalParameter' has the following attributes: 'name' of type str.
+The class 'XtendExecutable' has no attributes.
+The class 'xtend::JvmEnumAnnotationValue' has no attributes.
+The class 'xtend::XtendInterface' has no attributes.
+The class 'xtend::XSwitchExpression' has the following attributes: 'localVarName' of type str.
+The class 'xtend::CreateExtensionInfo' has the following attributes: 'name' of type str.
+The enumeration 'JvmVisibility' has the following literals: 'DEFAULT', 'PRIVATE', 'PUBLIC', 'PROTECTED'.
+'xtend::XtendFunction' is a specialization of 'XtendExecutable'.
+'xtend::JvmIntAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::XtendClass' is a specialization of 'XtendTypeDeclaration'.
+'xtend::XtendEnum' is a specialization of 'XtendTypeDeclaration'.
+'xtend::XIfExpression' is a specialization of 'XExpression'.
+'xtend::JvmShortAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::JvmByteAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::XtendTypeDeclaration' is a specialization of 'XtendMember'.
+'xtend::JvmTypeAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::XtendParameter' is a specialization of 'XtendAnnotationTarget'.
+'xtend::JvmField' is a specialization of 'JvmFeature'.
+'xtend::XtendVariableDeclaration' is a specialization of 'XVariableDeclaration'.
+'xtend::JvmFeature' is a specialization of 'JvmMember'.
+'xtend::JvmWildcardTypeReference' is a specialization of 'JvmTypeReference'.
+'xtend::RichString' is a specialization of 'XBlockExpression'.
+'xtend::JvmOperation' is a specialization of 'JvmExecutable'.
+'xtend::XtendConstructor' is a specialization of 'XtendExecutable'.
+'xtend::JvmExecutable' is a specialization of 'JvmFeature'.
+'xtend::JvmMultiTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+'xtend::JvmMember' is a specialization of 'JvmAnnotationTarget'.
+'xtend::JvmAnyTypeReference' is a specialization of 'JvmTypeReference'.
+'xtend::JvmMember' is a specialization of 'JvmIdentifiableElement'.
+'xtend::JvmExecutable' is a specialization of 'JvmTypeParameterDeclarator'.
+'xtend::XtendField' is a specialization of 'XtendMember'.
+'xtend::JvmDeclaredType' is a specialization of 'JvmComponentType'.
+'xtend::JvmGenericArrayTypeReference' is a specialization of 'JvmTypeReference'.
+'xtend::JvmParameterizedTypeReference' is a specialization of 'JvmTypeReference'.
+'xtend::JvmGenericType' is a specialization of 'JvmTypeParameterDeclarator'.
+'xtend::JvmEnumerationType' is a specialization of 'JvmDeclaredType'.
+'xtend::XtendAnnotationType' is a specialization of 'XtendTypeDeclaration'.
+'xtend::JvmWildcardTypeReference' is a specialization of 'JvmConstraintOwner'.
+'xtend::JvmLongAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::JvmEnumerationLiteral' is a specialization of 'JvmField'.
+'xtend::JvmUnknownTypeReference' is a specialization of 'JvmTypeReference'.
+'xtend::JvmConstructor' is a specialization of 'JvmExecutable'.
+'xtend::JvmFormalParameter' is a specialization of 'JvmIdentifiableElement'.
+'xtend::RichStringForLoop' is a specialization of 'XForLoopExpression'.
+'xtend::JvmBooleanAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::XVariableDeclaration' is a specialization of 'XExpression'.
+'xtend::AnonymousClass' is a specialization of 'XtendTypeDeclaration'.
+'xtend::XSwitchExpression' is a specialization of 'XExpression'.
+'xtend::JvmAnnotationType' is a specialization of 'JvmDeclaredType'.
+'xtend::RichStringLiteral' is a specialization of 'XStringLiteral'.
+'xtend::JvmTypeParameter' is a specialization of 'JvmComponentType'.
+'xtend::JvmFormalParameter' is a specialization of 'JvmAnnotationTarget'.
+'xtend::AnonymousClass' is a specialization of 'XExpression'.
+'xtend::JvmGenericType' is a specialization of 'JvmDeclaredType'.
+'xtend::JvmStringAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::JvmDeclaredType' is a specialization of 'JvmMember'.
+'xtend::JvmDoubleAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::JvmCharAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::JvmSpecializedTypeReference' is a specialization of 'JvmTypeReference'.
+'xtend::JvmUpperBound' is a specialization of 'JvmTypeConstraint'.
+'xtend::JvmVoid' is a specialization of 'JvmType'.
+'xtend::JvmPrimitiveType' is a specialization of 'JvmComponentType'.
+'xtend::JvmTypeParameter' is a specialization of 'JvmConstraintOwner'.
+'xtend::JvmAnnotationAnnotationValue' is a specialization of 'JvmAnnotationTarget'.
+'xtend::JvmComponentType' is a specialization of 'JvmType'.
+'xtend::JvmAnnotationAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::XReturnExpression' is a specialization of 'XExpression'.
+'xtend::JvmEnumAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::JvmArrayType' is a specialization of 'JvmComponentType'.
+'xtend::XtendInterface' is a specialization of 'XtendTypeDeclaration'.
+'xtend::JvmDelegateTypeReference' is a specialization of 'JvmTypeReference'.
+'xtend::JvmType' is a specialization of 'JvmIdentifiableElement'.
+'xtend::JvmCustomAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::XThrowExpression' is a specialization of 'XExpression'.
+'xtend::XAssignment' is a specialization of 'XAbstractFeatureCall'.
+'xtend::XInstanceOfExpression' is a specialization of 'XExpression'.
+'xtend::XtendMember' is a specialization of 'XtendAnnotationTarget'.
+'xtend::XForLoopExpression' is a specialization of 'XExpression'.
+'xtend::XUnaryOperation' is a specialization of 'XAbstractFeatureCall'.
+'xtend::XTryCatchFinallyExpression' is a specialization of 'XExpression'.
+'xtend::XtendExecutable' is a specialization of 'XtendMember'.
+'xtend::XDoWhileExpression' is a specialization of 'XAbstractWhileExpression'.
+'xtend::XWhileExpression' is a specialization of 'XAbstractWhileExpression'.
+'xtend::XAbstractWhileExpression' is a specialization of 'XExpression'.
+'xtend::RichStringIf' is a specialization of 'XExpression'.
+'xtend::XBooleanLiteral' is a specialization of 'XExpression'.
+'xtend::XTypeLiteral' is a specialization of 'XExpression'.
+'xtend::XNullLiteral' is a specialization of 'XExpression'.
+'xtend::XClosure' is a specialization of 'XExpression'.
+'xtend::XStringLiteral' is a specialization of 'XExpression'.
+'xtend::XFeatureCall' is a specialization of 'XAbstractFeatureCall'.
+'xtend::XtendFormalParameter' is a specialization of 'JvmFormalParameter'.
+'xtend::XNumberLiteral' is a specialization of 'XExpression'.
+'xtend::XConstructorCall' is a specialization of 'XExpression'.
+'xtend::XBinaryOperation' is a specialization of 'XAbstractFeatureCall'.
+'xtend::XCastedExpression' is a specialization of 'XExpression'.
+'xtend::XBlockExpression' is a specialization of 'XExpression'.
+'xtend::XAbstractFeatureCall' is a specialization of 'XExpression'.
+'xtend::XVariableDeclaration' is a specialization of 'JvmIdentifiableElement'.
+'xtend::JvmFloatAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'xtend::XMemberFeatureCall' is a specialization of 'XAbstractFeatureCall'.
+'xtend::XSwitchExpression' is a specialization of 'JvmIdentifiableElement'.
+'xtend::XtendEnumLiteral' is a specialization of 'XtendMember'.
+'xtend::XCasePart' is a specialization of 'JvmIdentifiableElement'.
+'xtend::JvmCompoundTypeReference' is a specialization of 'JvmTypeReference'.
+'xtend::JvmLowerBound' is a specialization of 'JvmTypeConstraint'.
+'xtend::JvmSynonymTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference113', cardinality 0..*) is associated with 'xtend::XConstructorCall' (role 'xtend_XConstructorCall112', cardinality 0..*).
+'xtend::RichStringForLoop' (role 'xtend_RichStringForLoop24', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression25', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression110', cardinality 0..*) is associated with 'xtend::XConstructorCall' (role 'xtend_XConstructorCall109', cardinality 0..*).
+'xtend::JvmAnnotationValue' (role 'xtend_JvmAnnotationValue231', cardinality 0..*) is associated with 'xtend::JvmAnnotationReference' (role 'xtend_JvmAnnotationReference230', cardinality 0..*).
+'xtend::JvmIdentifiableElement' (role 'xtend_JvmIdentifiableElement', cardinality 0..*) is associated with 'xtend::XAbstractFeatureCall' (role 'xtend_XAbstractFeatureCall', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference213', cardinality 0..*) is associated with 'xtend::JvmField' (role 'xtend_JvmField', cardinality 0..*).
+'xtend::JvmCompoundTypeReference' (role 'xtend_JvmCompoundTypeReference248', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference249', cardinality 0..*).
+'xtend::XAbstractFeatureCall' (role 'xtend_XAbstractFeatureCall96', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference97', cardinality 0..*).
+'xtend::XInstanceOfExpression' (role 'xtend_XInstanceOfExpression', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference148', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression130', cardinality 0..*) is associated with 'xtend::XBinaryOperation' (role 'xtend_XBinaryOperation129', cardinality 0..*).
+'xtend::XAssignment' (role 'xtend_XAssignment170', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression171', cardinality 0..*).
+'xtend::CreateExtensionInfo' (role 'xtend_CreateExtensionInfo46', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression47', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference88', cardinality 0..*) is associated with 'xtend::XAbstractFeatureCall' (role 'xtend_XAbstractFeatureCall87', cardinality 0..*).
+'xtend::JvmDelegateTypeReference' (role 'xtend_JvmDelegateTypeReference', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference242', cardinality 0..*).
+'xtend::JvmTypeParameter' (role 'xtend_JvmTypeParameter178', cardinality 0..*) is associated with 'xtend::XtendExecutable' (role 'xtend_XtendExecutable177', cardinality 0..*).
+'xtend::XtendMember' (role 'xtend_XtendMember', cardinality 0..*) is associated with 'xtend::XtendAnnotationTarget' (role 'xtend_XtendAnnotationTarget9', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression155', cardinality 0..*) is associated with 'xtend::XTryCatchFinallyExpression' (role 'xtend_XTryCatchFinallyExpression', cardinality 0..*).
+'xtend::JvmDeclaredType' (role 'JvmDeclaredType', cardinality 0..*) is associated with 'xtend::JvmMember' (role 'members211', cardinality 0..*).
+'xtend::RichStringElseIf' (role 'xtend_RichStringElseIf40', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression41', cardinality 0..*).
+'xtend::JvmEnumerationLiteral' (role 'xtend_JvmEnumerationLiteral240', cardinality 0..*) is associated with 'xtend::JvmEnumAnnotationValue' (role 'xtend_JvmEnumAnnotationValue', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression61', cardinality 0..*) is associated with 'xtend::XIfExpression' (role 'xtend_XIfExpression60', cardinality 0..*).
+'xtend::JvmComponentType' (role 'componentType', cardinality 0..*) is associated with 'xtend::JvmArrayType' (role 'JvmArrayType', cardinality 0..*).
+'xtend::XCatchClause' (role 'xtend_XCatchClause162', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression163', cardinality 0..*).
+'xtend::JvmParameterizedTypeReference' (role 'xtend_JvmParameterizedTypeReference', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference202', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression94', cardinality 0..*) is associated with 'xtend::XAbstractFeatureCall' (role 'xtend_XAbstractFeatureCall93', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference77', cardinality 0..*) is associated with 'xtend::XCasePart' (role 'xtend_XCasePart76', cardinality 0..*).
+'xtend::XtendParameter' (role 'xtend_XtendParameter', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference20', cardinality 0..*).
+'xtend::JvmTypeParameter' (role 'xtend_JvmTypeParameter53', cardinality 0..*) is associated with 'xtend::XtendInterface' (role 'xtend_XtendInterface52', cardinality 0..*).
+'xtend::JvmGenericArrayTypeReference' (role 'xtend_JvmGenericArrayTypeReference', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference207', cardinality 0..*).
+'xtend::JvmFormalParameter' (role 'xtend_JvmFormalParameter166', cardinality 0..*) is associated with 'xtend::XCatchClause' (role 'xtend_XCatchClause165', cardinality 0..*).
+'xtend::JvmParameterizedTypeReference' (role 'xtend_JvmParameterizedTypeReference204', cardinality 0..*) is associated with 'xtend::JvmType' (role 'xtend_JvmType205', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference175', cardinality 0..*) is associated with 'xtend::XtendExecutable' (role 'xtend_XtendExecutable', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference236', cardinality 0..*) is associated with 'xtend::JvmTypeAnnotationValue' (role 'xtend_JvmTypeAnnotationValue', cardinality 0..*).
+'xtend::JvmEnumerationLiteral' (role 'xtend_JvmEnumerationLiteral', cardinality 0..*) is associated with 'xtend::JvmEnumerationType' (role 'xtend_JvmEnumerationType', cardinality 0..*).
+'xtend::AnonymousClass' (role 'xtend_AnonymousClass', cardinality 0..*) is associated with 'xtend::XConstructorCall' (role 'xtend_XConstructorCall186', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression74', cardinality 0..*) is associated with 'xtend::XCasePart' (role 'xtend_XCasePart73', cardinality 0..*).
+'xtend::XForLoopExpression' (role 'xtend_XForLoopExpression136', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression137', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression68', cardinality 0..*) is associated with 'xtend::XSwitchExpression' (role 'xtend_XSwitchExpression67', cardinality 0..*).
+'xtend::JvmAnnotationValue' (role 'xtend_JvmAnnotationValue233', cardinality 0..*) is associated with 'xtend::JvmOperation' (role 'xtend_JvmOperation234', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference4', cardinality 0..*) is associated with 'xtend::XtendClass' (role 'xtend_XtendClass3', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression173', cardinality 0..*) is associated with 'xtend::XReturnExpression' (role 'xtend_XReturnExpression', cardinality 0..*).
+'xtend::XFeatureCall' (role 'xtend_XFeatureCall', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression104', cardinality 0..*).
+'xtend::XInstanceOfExpression' (role 'xtend_XInstanceOfExpression150', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression151', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression44', cardinality 0..*) is associated with 'xtend::RichStringElseIf' (role 'xtend_RichStringElseIf43', cardinality 0..*).
+'xtend::XThrowExpression' (role 'xtend_XThrowExpression', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression153', cardinality 0..*).
+'xtend::XCatchClause' (role 'xtend_XCatchClause', cardinality 0..*) is associated with 'xtend::XTryCatchFinallyExpression' (role 'xtend_XTryCatchFinallyExpression160', cardinality 0..*).
+'xtend::XtendAnnotationTarget' (role 'xtend_XtendAnnotationTarget', cardinality 0..*) is associated with 'xtend::XAnnotation' (role 'xtend_XAnnotation', cardinality 0..*).
+'xtend::JvmSpecializedTypeReference' (role 'xtend_JvmSpecializedTypeReference', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference244', cardinality 0..*).
+'xtend::XIfExpression' (role 'xtend_XIfExpression57', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression58', cardinality 0..*).
+'xtend::JvmAnnotationReference' (role 'xtend_JvmAnnotationReference', cardinality 0..*) is associated with 'xtend::JvmAnnotationType' (role 'xtend_JvmAnnotationType', cardinality 0..*).
+'xtend::XCasePart' (role 'xtend_XCasePart', cardinality 0..*) is associated with 'xtend::XSwitchExpression' (role 'xtend_XSwitchExpression65', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression132', cardinality 0..*) is associated with 'xtend::XUnaryOperation' (role 'xtend_XUnaryOperation', cardinality 0..*).
+'xtend::JvmAnnotationReference' (role 'annotations', cardinality 0..*) is associated with 'xtend::JvmAnnotationTarget' (role 'JvmAnnotationTarget', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression79', cardinality 0..*) is associated with 'xtend::XBlockExpression' (role 'xtend_XBlockExpression', cardinality 0..*).
+'xtend::XtendExecutable' (role 'xtend_XtendExecutable183', cardinality 0..*) is associated with 'xtend::XtendParameter' (role 'xtend_XtendParameter184', cardinality 0..*).
+'xtend::XConstructorCall' (role 'xtend_XConstructorCall', cardinality 0..*) is associated with 'xtend::JvmConstructor' (role 'xtend_JvmConstructor', cardinality 0..*).
+'xtend::XtendInterface' (role 'xtend_XtendInterface', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference50', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression102', cardinality 0..*) is associated with 'xtend::XMemberFeatureCall' (role 'xtend_XMemberFeatureCall101', cardinality 0..*).
+'xtend::XIfExpression' (role 'xtend_XIfExpression', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression55', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression145', cardinality 0..*) is associated with 'xtend::XAbstractWhileExpression' (role 'xtend_XAbstractWhileExpression144', cardinality 0..*).
+'xtend::JvmCompoundTypeReference' (role 'xtend_JvmCompoundTypeReference', cardinality 0..*) is associated with 'xtend::JvmType' (role 'xtend_JvmType246', cardinality 0..*).
+'xtend::XtendTypeDeclaration' (role 'XtendTypeDeclaration', cardinality 0..*) is associated with 'xtend::XtendMember' (role 'members', cardinality 0..*).
+'xtend::JvmTypeConstraint' (role 'constraints', cardinality 0..*) is associated with 'xtend::JvmConstraintOwner' (role 'JvmConstraintOwner', cardinality 0..*).
+'xtend::JvmAnnotationTarget' (role 'target', cardinality 0..*) is associated with 'xtend::JvmAnnotationReference' (role 'JvmAnnotationReference', cardinality 0..*).
+'xtend::JvmType' (role 'xtend_JvmType', cardinality 0..*) is associated with 'xtend::XTypeLiteral' (role 'xtend_XTypeLiteral', cardinality 0..*).
+'xtend::XtendClass' (role 'xtend_XtendClass', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference', cardinality 0..*).
+'xtend::JvmTypeParameterDeclarator' (role 'declarator', cardinality 0..*) is associated with 'xtend::JvmTypeParameter' (role 'JvmTypeParameter', cardinality 0..*).
+'xtend::XBinaryOperation' (role 'xtend_XBinaryOperation', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression127', cardinality 0..*).
+'xtend::XtendFile' (role 'xtend_XtendFile', cardinality 0..*) is associated with 'xtend::XtendTypeDeclaration' (role 'xtend_XtendTypeDeclaration', cardinality 0..*).
+'xtend::RichStringIf' (role 'xtend_RichStringIf37', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression38', cardinality 0..*).
+'xtend::JvmFormalParameter' (role 'xtend_JvmFormalParameter224', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference225', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression142', cardinality 0..*) is associated with 'xtend::XAbstractWhileExpression' (role 'xtend_XAbstractWhileExpression', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression99', cardinality 0..*) is associated with 'xtend::XMemberFeatureCall' (role 'xtend_XMemberFeatureCall', cardinality 0..*).
+'xtend::XVariableDeclaration' (role 'xtend_XVariableDeclaration83', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression84', cardinality 0..*).
+'xtend::JvmAnnotationAnnotationValue' (role 'xtend_JvmAnnotationAnnotationValue', cardinality 0..*) is associated with 'xtend::JvmAnnotationReference' (role 'xtend_JvmAnnotationReference238', cardinality 0..*).
+'xtend::XFeatureCall' (role 'xtend_XFeatureCall106', cardinality 0..*) is associated with 'xtend::JvmDeclaredType' (role 'xtend_JvmDeclaredType', cardinality 0..*).
+'xtend::JvmComponentType' (role 'JvmComponentType', cardinality 0..*) is associated with 'xtend::JvmArrayType' (role 'arrayType', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression158', cardinality 0..*) is associated with 'xtend::XTryCatchFinallyExpression' (role 'xtend_XTryCatchFinallyExpression157', cardinality 0..*).
+'xtend::CreateExtensionInfo' (role 'xtend_CreateExtensionInfo', cardinality 0..*) is associated with 'xtend::XtendFunction' (role 'xtend_XtendFunction14', cardinality 0..*).
+'xtend::JvmFormalParameter' (role 'xtend_JvmFormalParameter140', cardinality 0..*) is associated with 'xtend::XForLoopExpression' (role 'xtend_XForLoopExpression139', cardinality 0..*).
+'xtend::JvmDeclaredType' (role 'declaringType193', cardinality 0..*) is associated with 'xtend::JvmMember' (role 'JvmMember', cardinality 0..*).
+'xtend::JvmAnnotationValue' (role 'xtend_JvmAnnotationValue', cardinality 0..*) is associated with 'xtend::JvmOperation' (role 'xtend_JvmOperation222', cardinality 0..*).
+'xtend::XtendExecutable' (role 'xtend_XtendExecutable180', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression181', cardinality 0..*).
+'xtend::JvmTypeConstraint' (role 'JvmTypeConstraint', cardinality 0..*) is associated with 'xtend::JvmConstraintOwner' (role 'owner', cardinality 0..*).
+'xtend::RichStringForLoop' (role 'xtend_RichStringForLoop', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression22', cardinality 0..*).
+'xtend::XClosure' (role 'xtend_XClosure116', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression117', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression125', cardinality 0..*) is associated with 'xtend::XCastedExpression' (role 'xtend_XCastedExpression124', cardinality 0..*).
+'xtend::RichStringElseIf' (role 'xtend_RichStringElseIf', cardinality 0..*) is associated with 'xtend::RichStringIf' (role 'xtend_RichStringIf35', cardinality 0..*).
+'xtend::JvmTypeConstraint' (role 'xtend_JvmTypeConstraint', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference198', cardinality 0..*).
+'xtend::JvmOperation' (role 'xtend_JvmOperation', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference220', cardinality 0..*).
+'xtend::XSwitchExpression' (role 'xtend_XSwitchExpression', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression63', cardinality 0..*).
+'xtend::XAssignment' (role 'xtend_XAssignment', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression168', cardinality 0..*).
+'xtend::XtendField' (role 'xtend_XtendField', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference16', cardinality 0..*).
+'xtend::JvmFormalParameter' (role 'xtend_JvmFormalParameter', cardinality 0..*) is associated with 'xtend::XClosure' (role 'xtend_XClosure', cardinality 0..*).
+'xtend::XVariableDeclaration' (role 'xtend_XVariableDeclaration', cardinality 0..*) is associated with 'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference81', cardinality 0..*).
+'xtend::XClosure' (role 'xtend_XClosure119', cardinality 0..*) is associated with 'xtend::JvmFormalParameter' (role 'xtend_JvmFormalParameter120', cardinality 0..*).
+'xtend::XtendField' (role 'xtend_XtendField18', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression', cardinality 0..*).
+'xtend::JvmAnyTypeReference' (role 'xtend_JvmAnyTypeReference', cardinality 0..*) is associated with 'xtend::JvmType' (role 'xtend_JvmType209', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference218', cardinality 0..*) is associated with 'xtend::JvmExecutable' (role 'xtend_JvmExecutable217', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression33', cardinality 0..*) is associated with 'xtend::RichStringIf' (role 'xtend_RichStringIf32', cardinality 0..*).
+'xtend::JvmTypeParameter' (role 'typeParameters', cardinality 0..*) is associated with 'xtend::JvmTypeParameterDeclarator' (role 'JvmTypeParameterDeclarator', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression91', cardinality 0..*) is associated with 'xtend::XAbstractFeatureCall' (role 'xtend_XAbstractFeatureCall90', cardinality 0..*).
+'xtend::XtendTypeDeclaration' (role 'declaringType', cardinality 0..*) is associated with 'xtend::XtendMember' (role 'XtendMember', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression71', cardinality 0..*) is associated with 'xtend::XCasePart' (role 'xtend_XCasePart70', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference191', cardinality 0..*) is associated with 'xtend::JvmDeclaredType' (role 'xtend_JvmDeclaredType190', cardinality 0..*).
+'xtend::JvmExecutable' (role 'xtend_JvmExecutable', cardinality 0..*) is associated with 'xtend::JvmFormalParameter' (role 'xtend_JvmFormalParameter215', cardinality 0..*).
+'xtend::JvmTypeParameter' (role 'xtend_JvmTypeParameter', cardinality 0..*) is associated with 'xtend::XtendClass' (role 'xtend_XtendClass6', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference12', cardinality 0..*) is associated with 'xtend::XtendFunction' (role 'xtend_XtendFunction', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression28', cardinality 0..*) is associated with 'xtend::RichStringForLoop' (role 'xtend_RichStringForLoop27', cardinality 0..*).
+'xtend::JvmTypeReference' (role 'xtend_JvmTypeReference122', cardinality 0..*) is associated with 'xtend::XCastedExpression' (role 'xtend_XCastedExpression', cardinality 0..*).
+'xtend::XExpression' (role 'xtend_XExpression30', cardinality 0..*) is associated with 'xtend::RichStringIf' (role 'xtend_RichStringIf', cardinality 0..*).
+'xtend::XForLoopExpression' (role 'xtend_XForLoopExpression', cardinality 0..*) is associated with 'xtend::XExpression' (role 'xtend_XExpression134', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'fruit::Tree' has the following attributes: 'name' of type str.
+The class 'fruit::FruitUtil' has no attributes.
+The class 'fruit::apple::CookingApple' has no attributes.
+The class 'fruit::apple::EatingApple' has no attributes.
+The class 'Apple' has no attributes.
+The class 'fruit::Stem' has no attributes.
+The class 'fruit::Fruit' has the following attributes: 'color' of type str; 'name' of type str.
+The class 'fruit::Apple' has the following attributes: 'label' of type str.
+The class 'Fruit' has no attributes.
+The enumeration 'Color' has the following literals: 'yellow', 'pink', 'brown', 'red', 'black', 'green', 'orange'.
+'fruit::apple::CookingApple' is a specialization of 'Apple'.
+'fruit::apple::EatingApple' is a specialization of 'Apple'.
+'fruit::Apple' is a specialization of 'Fruit'.
+'fruit::Fruit' (role 'fruit_Fruit13', cardinality 0..*) is associated with 'fruit::FruitUtil' (role 'fruit_FruitUtil12', cardinality 0..*).
+'fruit::Fruit' (role 'fruit_Fruit4', cardinality 0..*) is associated with 'fruit::FruitUtil' (role 'fruit_FruitUtil', cardinality 0..*).
+'fruit::Fruit' (role 'fruit_Fruit0', cardinality 0..*) is associated with 'fruit::Fruit' (role 'fruit_Fruit', cardinality 0..*).
+'fruit::FruitUtil' (role 'fruit_FruitUtil9', cardinality 0..*) is associated with 'fruit::Fruit' (role 'fruit_Fruit10', cardinality 0..*).
+'fruit::Tree' (role 'fruit_Tree', cardinality 0..*) is associated with 'fruit::Fruit' (role 'fruit_Fruit15', cardinality 0..*).
+'fruit::Stem' (role 'fruit_Stem', cardinality 0..*) is associated with 'fruit::Apple' (role 'fruit_Apple', cardinality 0..*).
+'fruit::Fruit' (role 'fruit_Fruit7', cardinality 0..*) is associated with 'fruit::FruitUtil' (role 'fruit_FruitUtil6', cardinality 0..*).

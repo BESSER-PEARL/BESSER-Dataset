@@ -1,0 +1,39 @@
+The model has 16 class(es).
+The class 'CoachBus::RegularTrip' has no attributes.
+The class 'CoachBus::BookingOffice' has the following attributes: 'name' of type str; 'officeID' of type int; 'location' of type str.
+The class 'CoachBus::SecurityGuard' has the following attributes: 'shift' of type str.
+The class 'CoachBus::PrivateTrip' has the following attributes: 'extras' of type str.
+The class 'CoachBus::Trip' has the following attributes: 'name' of type str; 'origin' of type str; 'number' of type int; 'type' of type str; 'destination' of type str.
+The class 'CoachBus::AdultTicket' has the following attributes: 'isElderlyDiscount' of type bool.
+The class 'Trip' has no attributes.
+The class 'CoachBus::Manager' has the following attributes: 'hasMBA' of type bool.
+The class 'CoachBus::ChildTicket' has the following attributes: 'isSchoolTrip' of type bool.
+The class 'CoachBus::VendingMachine' has the following attributes: 'number' of type int.
+The class 'Employee' has no attributes.
+The class 'CoachBus::Employee' has the following attributes: 'id' of type int; 'baseSalary' of type float.
+The class 'CoachBus::Passenger' has the following attributes: 'name' of type str; 'idCard' of type str; 'age' of type int.
+The class 'Ticket' has no attributes.
+The class 'CoachBus::Coach' has the following attributes: 'model' of type str; 'name' of type str; 'noOfSeats' of type int; 'id' of type int.
+The class 'CoachBus::Ticket' has the following attributes: 'isRoundTrip' of type bool; 'price' of type float; 'number' of type int.
+'CoachBus::Manager' is a specialization of 'Employee'.
+'CoachBus::SecurityGuard' is a specialization of 'Employee'.
+'CoachBus::PrivateTrip' is a specialization of 'Trip'.
+'CoachBus::ChildTicket' is a specialization of 'Ticket'.
+'CoachBus::AdultTicket' is a specialization of 'Ticket'.
+'CoachBus::RegularTrip' is a specialization of 'Trip'.
+'CoachBus::VendingMachine' (role 'vms', cardinality 0..*) is associated with 'CoachBus::BookingOffice' (role 'BookingOffice27', cardinality 0..*).
+'CoachBus::VendingMachine' (role 'VendingMachine', cardinality 0..*) is associated with 'CoachBus::BookingOffice' (role 'office18', cardinality 0..*).
+'CoachBus::VendingMachine' (role 'VendingMachine23', cardinality 0..*) is associated with 'CoachBus::Ticket' (role 'tickets22', cardinality 0..*).
+'CoachBus::Ticket' (role 'Ticket', cardinality 0..*) is associated with 'CoachBus::Passenger' (role 'psg', cardinality 0..*).
+'CoachBus::SecurityGuard' (role 'guards', cardinality 0..*) is associated with 'CoachBus::Coach' (role 'Coach11', cardinality 0..*).
+'CoachBus::Manager' (role 'Manager', cardinality 0..*) is associated with 'CoachBus::BookingOffice' (role 'office', cardinality 0..*).
+'CoachBus::Coach' (role 'coach', cardinality 0..*) is associated with 'CoachBus::SecurityGuard' (role 'SecurityGuard', cardinality 0..*).
+'CoachBus::Manager' (role 'manager', cardinality 0..*) is associated with 'CoachBus::BookingOffice' (role 'BookingOffice13', cardinality 0..*).
+'CoachBus::VendingMachine' (role 'vm', cardinality 0..*) is associated with 'CoachBus::Ticket' (role 'Ticket25', cardinality 0..*).
+'CoachBus::Coach' (role 'coaches', cardinality 0..*) is associated with 'CoachBus::Trip' (role 'Trip', cardinality 0..*).
+'CoachBus::Passenger' (role 'passengers', cardinality 0..*) is associated with 'CoachBus::Trip' (role 'Trip8', cardinality 0..*).
+'CoachBus::Trip' (role 'trips2', cardinality 0..*) is associated with 'CoachBus::Passenger' (role 'Passenger', cardinality 0..*).
+'CoachBus::Coach' (role 'Coach', cardinality 0..*) is associated with 'CoachBus::Trip' (role 'trips', cardinality 0..*).
+'CoachBus::BookingOffice' (role 'offices', cardinality 0..*) is associated with 'CoachBus::Coach' (role 'Coach15', cardinality 0..*).
+'CoachBus::Passenger' (role 'Passenger20', cardinality 0..*) is associated with 'CoachBus::Ticket' (role 'tickets', cardinality 0..*).
+'CoachBus::BookingOffice' (role 'BookingOffice', cardinality 0..*) is associated with 'CoachBus::Coach' (role 'coaches6', cardinality 0..*).

@@ -1,0 +1,44 @@
+The model has 21 class(es).
+The class 'Roadway' has no attributes.
+The class 'EA::Model::DeceasedPerson' has no attributes.
+The class 'Person' has no attributes.
+The class 'EA::Model::Passenger' has no attributes.
+The class 'EA::Model::Traveler' has no attributes.
+The class 'EA::Model::TravelingVehicle' has no attributes.
+The class 'EA::Model::Person' has no attributes.
+The class 'EA::Model::Victim' has no attributes.
+The class 'EA::Model::Vehicle' has no attributes.
+The class 'RoadTrafficAccident' has no attributes.
+The class 'EA::Model::RearEndCollision' has no attributes.
+The class 'EA::Model::Travel' has no attributes.
+The class 'EA::Model::Roadway' has no attributes.
+The class 'Traveler' has no attributes.
+The class 'EA::Model::RoadTrafficAccident' has the following attributes: 'fatalvictims' of type int.
+The class 'TravelingVehicle' has no attributes.
+The class 'EA::Model::Driver' has no attributes.
+The class 'EA::Model::CrashedVehicle' has no attributes.
+The class 'Vehicle' has no attributes.
+The class 'EA::Model::LivingPerson' has no attributes.
+The class 'EA::Model::RoadwayWithAccident' has no attributes.
+'EA::Model::Victim' is a specialization of 'Traveler'.
+'EA::Model::Traveler' is a specialization of 'Person'.
+'EA::Model::LivingPerson' is a specialization of 'Person'.
+'EA::Model::CrashedVehicle' is a specialization of 'TravelingVehicle'.
+'EA::Model::DeceasedPerson' is a specialization of 'Person'.
+'EA::Model::TravelingVehicle' is a specialization of 'Vehicle'.
+'EA::Model::Driver' is a specialization of 'Traveler'.
+'EA::Model::RoadwayWithAccident' is a specialization of 'Roadway'.
+'EA::Model::Passenger' is a specialization of 'Traveler'.
+'EA::Model::RearEndCollision' is a specialization of 'RoadTrafficAccident'.
+'EA::Model::RoadwayWithAccident' (role 'roadwaywithaccident10', cardinality 0..*) is associated with 'EA::Model::CrashedVehicle' (role 'CrashedVehicle11', cardinality 0..*).
+'EA::Model::CrashedVehicle' (role 'crashedvehicle', cardinality 0..*) is associated with 'EA::Model::RoadwayWithAccident' (role 'RoadwayWithAccident', cardinality 0..*).
+'EA::Model::Traveler' (role 'Traveler', cardinality 0..*) is associated with 'EA::Model::Travel' (role 'travel', cardinality 0..*).
+'EA::Model::RoadTrafficAccident' (role 'accident4', cardinality 0..*) is associated with 'EA::Model::Victim' (role 'Victim', cardinality 0..*).
+'EA::Model::RoadTrafficAccident' (role 'accident', cardinality 0..*) is associated with 'EA::Model::CrashedVehicle' (role 'CrashedVehicle', cardinality 0..*).
+'EA::Model::TravelingVehicle' (role 'vehicle', cardinality 0..*) is associated with 'EA::Model::Travel' (role 'Travel17', cardinality 0..*).
+'EA::Model::RoadTrafficAccident' (role 'RoadTrafficAccident19', cardinality 0..*) is associated with 'EA::Model::Victim' (role 'victims', cardinality 0..*).
+'EA::Model::RoadTrafficAccident' (role 'RoadTrafficAccident', cardinality 0..*) is associated with 'EA::Model::CrashedVehicle' (role 'vehicles', cardinality 0..*).
+'EA::Model::RoadwayWithAccident' (role 'roadwaywithaccident', cardinality 0..*) is associated with 'EA::Model::RoadTrafficAccident' (role 'RoadTrafficAccident8', cardinality 0..*).
+'EA::Model::TravelingVehicle' (role 'TravelingVehicle', cardinality 0..*) is associated with 'EA::Model::Travel' (role 'travel14', cardinality 0..*).
+'EA::Model::RoadwayWithAccident' (role 'RoadwayWithAccident6', cardinality 0..*) is associated with 'EA::Model::RoadTrafficAccident' (role 'roadtrafficaccident', cardinality 0..*).
+'EA::Model::Travel' (role 'Travel', cardinality 0..*) is associated with 'EA::Model::Traveler' (role 'travelers', cardinality 0..*).

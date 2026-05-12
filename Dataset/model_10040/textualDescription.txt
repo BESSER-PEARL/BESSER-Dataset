@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'Graph::ID1006' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'Graph::Graph' has the following attributes: 'id' of type str.
+The class 'Graph::TChar' has the following attributes: 'value' of type str.
+The class 'Graph::TByte' has the following attributes: 'value' of type str.
+The class 'Graph::TDouble' has the following attributes: 'value' of type float.
+The class 'Graph::TLong' has the following attributes: 'value' of type str.
+The class 'Graph::TShort' has the following attributes: 'value' of type str.
+The class 'Graph::TString' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'Graph::TBoolean' has the following attributes: 'value' of type bool.
+The class 'Graph::TInt' has the following attributes: 'value' of type int.
+The class 'Graph::TFloat' has the following attributes: 'value' of type float.
+'Graph::ID1006' (role 'Graph_ID100620', cardinality 0..*) is associated with 'Graph::TString' (role 'Graph_TString21', cardinality 0..*).
+'Graph::Graph' (role 'Graph_Graph2', cardinality 0..*) is associated with 'Graph::TBoolean' (role 'Graph_TBoolean', cardinality 0..*).
+'Graph::Graph' (role 'Graph_Graph8', cardinality 0..*) is associated with 'Graph::TShort' (role 'Graph_TShort', cardinality 0..*).
+'Graph::Graph' (role 'Graph_Graph14', cardinality 0..*) is associated with 'Graph::TFloat' (role 'Graph_TFloat', cardinality 0..*).
+'Graph::Graph' (role 'Graph_Graph18', cardinality 0..*) is associated with 'Graph::TString' (role 'Graph_TString', cardinality 0..*).
+'Graph::Graph' (role 'Graph_Graph16', cardinality 0..*) is associated with 'Graph::TDouble' (role 'Graph_TDouble', cardinality 0..*).
+'Graph::ID1006' (role 'Graph_ID1006', cardinality 0..*) is associated with 'Graph::Graph' (role 'Graph_Graph', cardinality 0..*).
+'Graph::TInt' (role 'Graph_TInt', cardinality 0..*) is associated with 'Graph::Graph' (role 'Graph_Graph10', cardinality 0..*).
+'Graph::TByte' (role 'Graph_TByte', cardinality 0..*) is associated with 'Graph::Graph' (role 'Graph_Graph6', cardinality 0..*).
+'Graph::Graph' (role 'Graph_Graph12', cardinality 0..*) is associated with 'Graph::TLong' (role 'Graph_TLong', cardinality 0..*).
+'Graph::Graph' (role 'Graph_Graph4', cardinality 0..*) is associated with 'Graph::TChar' (role 'Graph_TChar', cardinality 0..*).

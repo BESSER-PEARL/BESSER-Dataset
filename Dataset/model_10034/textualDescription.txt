@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'CoachBusWithEDataType::Manager' has no attributes.
+The class 'CoachBusWithEDataType::Employee' has the following attributes: 'baseSalary' of type float.
+The class 'Employee' has no attributes.
+The class 'CoachBusWithEDataType::SecurityGuard' has no attributes.
+'CoachBusWithEDataType::SecurityGuard' is a specialization of 'Employee'.
+'CoachBusWithEDataType::Manager' is a specialization of 'Employee'.

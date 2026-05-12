@@ -1,0 +1,33 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class pivot_Comment extends Element {
+
+    private String body;
+
+
+
+    public pivot_Comment(
+        String body    ) {
+        super(
+        );
+        this.body = body;
+    }
+
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+
+}

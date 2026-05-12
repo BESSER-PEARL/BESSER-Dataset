@@ -1,0 +1,15 @@
+The model has 4 class(es).
+The class 'Projects::Project' has the following attributes: 'status' of type str; 'size' of type str.
+The class 'Projects::Worker' has no attributes.
+The class 'Projects::Qualification' has no attributes.
+The class 'Projects::Company' has no attributes.
+The enumeration 'ProjectStatus' has the following literals: 'suspended', 'finished', 'active', 'planned'.
+The enumeration 'ProjectSize' has the following literals: 'big', 'medium', 'small'.
+'Projects::Project' (role 'Projects_Project', cardinality 0..*) is associated with 'Projects::Company' (role 'Projects_Company', cardinality 0..*).
+'Projects::Project' (role 'Projects_Project19', cardinality 0..*) is associated with 'Projects::Project' (role 'Projects_Project17', cardinality 0..*).
+'Projects::Project' (role 'Projects_Project9', cardinality 0..*) is associated with 'Projects::Company' (role 'Projects_Company10', cardinality 0..*).
+'Projects::Company' (role 'Projects_Company2', cardinality 0..*) is associated with 'Projects::Worker' (role 'Projects_Worker', cardinality 0..*).
+'Projects::Project' (role 'Projects_Project7', cardinality 0..*) is associated with 'Projects::Worker' (role 'Projects_Worker6', cardinality 0..*).
+'Projects::Worker' (role 'Projects_Worker13', cardinality 0..*) is associated with 'Projects::Project' (role 'Projects_Project12', cardinality 0..*).
+'Projects::Worker' (role 'Projects_Worker4', cardinality 0..*) is associated with 'Projects::Qualification' (role 'Projects_Qualification', cardinality 0..*).
+'Projects::Project' (role 'Projects_Project15', cardinality 0..*) is associated with 'Projects::Qualification' (role 'Projects_Qualification16', cardinality 0..*).

@@ -1,0 +1,40 @@
+The model has 16 class(es).
+The class 'CoachBusWithEDataType::RegularTrip' has no attributes.
+The class 'CoachBusWithEDataType::VendingMachine' has the following attributes: 'number' of type int.
+The class 'Employee' has no attributes.
+The class 'CoachBusWithEDataType::Passenger' has the following attributes: 'age' of type int; 'idCard' of type str; 'sex' of type str; 'name' of type str.
+The class 'Ticket' has no attributes.
+The class 'CoachBusWithEDataType::Employee' has the following attributes: 'baseSalary' of type float; 'id' of type int.
+The class 'CoachBusWithEDataType::Trip' has the following attributes: 'number' of type int; 'destination' of type str; 'name' of type str; 'origin' of type str; 'type' of type str.
+The class 'CoachBusWithEDataType::AdultTicket' has the following attributes: 'isElderlyDiscount' of type bool.
+The class 'CoachBusWithEDataType::Manager' has the following attributes: 'hasMBA' of type bool.
+The class 'CoachBusWithEDataType::ChildTicket' has the following attributes: 'isSchoolTrip' of type bool.
+The class 'CoachBusWithEDataType::SecurityGuard' has the following attributes: 'shift' of type str.
+The class 'CoachBusWithEDataType::Coach' has the following attributes: 'model' of type str; 'id' of type int; 'name' of type str; 'noOfSeats' of type int.
+The class 'CoachBusWithEDataType::PrivateTrip' has the following attributes: 'extras' of type str.
+The class 'Trip' has no attributes.
+The class 'CoachBusWithEDataType::Ticket' has the following attributes: 'isRoundTrip' of type bool; 'number' of type int; 'price' of type float.
+The class 'CoachBusWithEDataType::BookingOffice' has the following attributes: 'location' of type str; 'name' of type str; 'officeID' of type int.
+The enumeration 'Sex' has the following literals: 'female', 'male'.
+'CoachBusWithEDataType::SecurityGuard' is a specialization of 'Employee'.
+'CoachBusWithEDataType::PrivateTrip' is a specialization of 'Trip'.
+'CoachBusWithEDataType::Manager' is a specialization of 'Employee'.
+'CoachBusWithEDataType::AdultTicket' is a specialization of 'Ticket'.
+'CoachBusWithEDataType::ChildTicket' is a specialization of 'Ticket'.
+'CoachBusWithEDataType::RegularTrip' is a specialization of 'Trip'.
+'CoachBusWithEDataType::Trip' (role 'trips', cardinality 0..*) is associated with 'CoachBusWithEDataType::Coach' (role 'Coach', cardinality 0..*).
+'CoachBusWithEDataType::Coach' (role 'coaches6', cardinality 0..*) is associated with 'CoachBusWithEDataType::BookingOffice' (role 'BookingOffice', cardinality 0..*).
+'CoachBusWithEDataType::Passenger' (role 'psg', cardinality 0..*) is associated with 'CoachBusWithEDataType::Ticket' (role 'Ticket', cardinality 0..*).
+'CoachBusWithEDataType::Coach' (role 'coaches', cardinality 0..*) is associated with 'CoachBusWithEDataType::Trip' (role 'Trip', cardinality 0..*).
+'CoachBusWithEDataType::VendingMachine' (role 'VendingMachine', cardinality 0..*) is associated with 'CoachBusWithEDataType::BookingOffice' (role 'office18', cardinality 0..*).
+'CoachBusWithEDataType::Ticket' (role 'Ticket25', cardinality 0..*) is associated with 'CoachBusWithEDataType::VendingMachine' (role 'vm', cardinality 0..*).
+'CoachBusWithEDataType::VendingMachine' (role 'vms', cardinality 0..*) is associated with 'CoachBusWithEDataType::BookingOffice' (role 'BookingOffice27', cardinality 0..*).
+'CoachBusWithEDataType::Trip' (role 'trips2', cardinality 0..*) is associated with 'CoachBusWithEDataType::Passenger' (role 'Passenger', cardinality 0..*).
+'CoachBusWithEDataType::Passenger' (role 'passengers', cardinality 0..*) is associated with 'CoachBusWithEDataType::Trip' (role 'Trip8', cardinality 0..*).
+'CoachBusWithEDataType::Manager' (role 'Manager', cardinality 0..*) is associated with 'CoachBusWithEDataType::BookingOffice' (role 'office', cardinality 0..*).
+'CoachBusWithEDataType::SecurityGuard' (role 'guards', cardinality 0..*) is associated with 'CoachBusWithEDataType::Coach' (role 'Coach11', cardinality 0..*).
+'CoachBusWithEDataType::Ticket' (role 'tickets22', cardinality 0..*) is associated with 'CoachBusWithEDataType::VendingMachine' (role 'VendingMachine23', cardinality 0..*).
+'CoachBusWithEDataType::Passenger' (role 'Passenger20', cardinality 0..*) is associated with 'CoachBusWithEDataType::Ticket' (role 'tickets', cardinality 0..*).
+'CoachBusWithEDataType::SecurityGuard' (role 'SecurityGuard', cardinality 0..*) is associated with 'CoachBusWithEDataType::Coach' (role 'coach', cardinality 0..*).
+'CoachBusWithEDataType::Coach' (role 'Coach15', cardinality 0..*) is associated with 'CoachBusWithEDataType::BookingOffice' (role 'offices', cardinality 0..*).
+'CoachBusWithEDataType::BookingOffice' (role 'BookingOffice13', cardinality 0..*) is associated with 'CoachBusWithEDataType::Manager' (role 'manager', cardinality 0..*).

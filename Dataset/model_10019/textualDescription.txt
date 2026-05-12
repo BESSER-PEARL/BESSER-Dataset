@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'Organization' has no attributes.
+The class 'project::Teenager' has no attributes.
+The class 'project::University' has no attributes.
+The class 'project::Integer' has no attributes.
+The class 'project::Organization' has no attributes.
+The class 'Person' has no attributes.
+The class 'project::Child' has no attributes.
+The class 'project::Adult' has no attributes.
+The class 'project::Person' has no attributes.
+The class 'project::Student' has no attributes.
+The class 'project::Enrollment' has no attributes.
+'project::Adult' is a specialization of 'Person'.
+'project::Teenager' is a specialization of 'Person'.
+'project::University' is a specialization of 'Organization'.
+'project::Child' is a specialization of 'Person'.
+'project::Student' is a specialization of 'Person'.
+'project::Enrollment' (role 'Enrollment', cardinality 0..*) is associated with 'project::Integer' (role 'id', cardinality 0..*).
+'project::Enrollment' (role 'Enrollment3', cardinality 0..*) is associated with 'project::Student' (role 'student', cardinality 0..*).
+'project::Enrollment' (role 'enrollments', cardinality 0..*) is associated with 'project::University' (role 'University8', cardinality 0..*).
+'project::Student' (role 'students', cardinality 0..*) is associated with 'project::University' (role 'University', cardinality 0..*).
+'project::Student' (role 'Student11', cardinality 0..*) is associated with 'project::Enrollment' (role 'enrollments10', cardinality 0..*).
+'project::University' (role 'universities', cardinality 0..*) is associated with 'project::Student' (role 'Student', cardinality 0..*).
+'project::Enrollment' (role 'enrollments13', cardinality 0..*) is associated with 'project::Integer' (role 'Integer', cardinality 0..*).
+'project::Enrollment' (role 'Enrollment6', cardinality 0..*) is associated with 'project::University' (role 'university', cardinality 0..*).

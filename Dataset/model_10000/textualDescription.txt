@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'bank::Card' has the following attributes: 'number' of type str; 'type' of type str.
+The class 'bank::Bank' has no attributes.
+The class 'bank::Client' has the following attributes: 'capacity' of type int; 'name' of type str.
+The class 'bank::Manager' has the following attributes: 'name' of type str.
+The class 'bank::Account' has the following attributes: 'credit' of type float; 'overdraft' of type float.
+The enumeration 'CardType' does not specify any literals.
+'bank::Manager' (role 'manager', cardinality 0..*) is associated with 'bank::Client' (role 'Client', cardinality 0..*).
+'bank::Manager' (role 'Manager', cardinality 0..*) is associated with 'bank::Client' (role 'clients', cardinality 0..*).
+'bank::Client' (role 'bank_Client9', cardinality 0..*) is associated with 'bank::Client' (role 'bank_Client7', cardinality 0..*).
+'bank::Client' (role 'owners', cardinality 0..*) is associated with 'bank::Account' (role 'Account', cardinality 0..*).
+'bank::Client' (role 'bank_Client', cardinality 0..*) is associated with 'bank::Bank' (role 'bank_Bank4', cardinality 0..*).
+'bank::Account' (role 'bank_Account', cardinality 0..*) is associated with 'bank::Bank' (role 'bank_Bank2', cardinality 0..*).
+'bank::Bank' (role 'bank_Bank', cardinality 0..*) is associated with 'bank::Manager' (role 'bank_Manager', cardinality 0..*).
+'bank::Card' (role 'bank_Card', cardinality 0..*) is associated with 'bank::Account' (role 'bank_Account14', cardinality 0..*).
+'bank::Client' (role 'Client12', cardinality 0..*) is associated with 'bank::Account' (role 'accounts', cardinality 0..*).

@@ -1,0 +1,36 @@
+The model has 13 class(es).
+The class 'SBCS::SteamBoiler::OpenValve' has no attributes.
+The class 'SBCS::PumpControler' has no attributes.
+The class 'SBCS::WaterLevelMeasurementDevice' has the following attributes: 'waterLevel' of type float.
+The class 'SBCS::Transition' has no attributes.
+The class 'SBCS::PumpController::OpenPump' has no attributes.
+The class 'SBCS::Pump' has the following attributes: 'mode' of type str.
+The class 'SBCS::Snapshot' has no attributes.
+The class 'Transition' has no attributes.
+The class 'SBCS::ControlProgram::Start' has no attributes.
+The class 'SBCS::WaterLevelMeaurementDevice::getLevel' has the following attributes: 'ret' of type float.
+The class 'SBCS::ControlProgram' has the following attributes: 'mode' of type str; 'wlmdFailure' of type bool.
+The class 'SBCS::SteamBoiler' has the following attributes: 'valveOpen' of type str.
+The class 'SBCS::PumpController::ClosePump' has no attributes.
+The enumeration 'Mode' has the following literals: 'Rescue', 'Dameged', 'Initialization', 'EmergencyStop', 'Normal', 'Degraded'.
+The enumeration 'State' has the following literals: 'On', 'Off'.
+The enumeration 'ValveState' has the following literals: 'Open', 'Closed'.
+'SBCS::PumpController::OpenPump' is a specialization of 'Transition'.
+'SBCS::SteamBoiler::OpenValve' is a specialization of 'Transition'.
+'SBCS::WaterLevelMeaurementDevice::getLevel' is a specialization of 'Transition'.
+'SBCS::PumpController::ClosePump' is a specialization of 'Transition'.
+'SBCS::ControlProgram::Start' is a specialization of 'Transition'.
+'SBCS::ControlProgram::Start' (role 'SBCS_ControlProgram_Start', cardinality 0..*) is associated with 'SBCS::ControlProgram' (role 'SBCS_ControlProgram', cardinality 0..*).
+'SBCS::Snapshot' (role 'SBCS_Snapshot13', cardinality 0..*) is associated with 'SBCS::Transition' (role 'SBCS_Transition14', cardinality 0..*).
+'SBCS::SteamBoiler::OpenValve' (role 'SBCS_SteamBoiler_OpenValve18', cardinality 0..*) is associated with 'SBCS::SteamBoiler' (role 'SBCS_SteamBoiler19', cardinality 0..*).
+'SBCS::Snapshot' (role 'SBCS_Snapshot27', cardinality 0..*) is associated with 'SBCS::ControlProgram' (role 'SBCS_ControlProgram26', cardinality 0..*).
+'SBCS::SteamBoiler::OpenValve' (role 'SBCS_SteamBoiler_OpenValve', cardinality 0..*) is associated with 'SBCS::SteamBoiler' (role 'SBCS_SteamBoiler16', cardinality 0..*).
+'SBCS::PumpControler' (role 'SBCS_PumpControler21', cardinality 0..*) is associated with 'SBCS::PumpController::OpenPump' (role 'SBCS_PumpController_OpenPump', cardinality 0..*).
+'SBCS::ControlProgram' (role 'SBCS_ControlProgram11', cardinality 0..*) is associated with 'SBCS::Snapshot' (role 'SBCS_Snapshot10', cardinality 0..*).
+'SBCS::WaterLevelMeasurementDevice' (role 'SBCS_WaterLevelMeasurementDevice', cardinality 0..*) is associated with 'SBCS::WaterLevelMeaurementDevice::getLevel' (role 'SBCS_WaterLevelMeaurementDevice_getLevel', cardinality 0..*).
+'SBCS::PumpControler' (role 'SBCS_PumpControler', cardinality 0..*) is associated with 'SBCS::PumpController::ClosePump' (role 'SBCS_PumpController_ClosePump', cardinality 0..*).
+'SBCS::Pump' (role 'SBCS_Pump', cardinality 0..*) is associated with 'SBCS::PumpControler' (role 'SBCS_PumpControler29', cardinality 0..*).
+'SBCS::PumpControler' (role 'SBCS_PumpControler24', cardinality 0..*) is associated with 'SBCS::PumpController::OpenPump' (role 'SBCS_PumpController_OpenPump23', cardinality 0..*).
+'SBCS::PumpControler' (role 'SBCS_PumpControler4', cardinality 0..*) is associated with 'SBCS::PumpController::ClosePump' (role 'SBCS_PumpController_ClosePump3', cardinality 0..*).
+'SBCS::SteamBoiler' (role 'SBCS_SteamBoiler', cardinality 0..*) is associated with 'SBCS::ControlProgram' (role 'SBCS_ControlProgram8', cardinality 0..*).
+'SBCS::Snapshot' (role 'SBCS_Snapshot', cardinality 0..*) is associated with 'SBCS::Transition' (role 'SBCS_Transition', cardinality 0..*).

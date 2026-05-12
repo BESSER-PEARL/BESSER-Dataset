@@ -1,0 +1,77 @@
+The model has 32 class(es).
+The class 'Referrable' has no attributes.
+The class 'operators::VAR' has no attributes.
+The class 'operators::Referrable' has no attributes.
+The class 'operators::CREATE' has no attributes.
+The class 'operators::EObject' has no attributes.
+The class 'operators::Result' has no attributes.
+The class 'operators::QueryVariableQualifier' has no attributes.
+The class 'operators::VariableReference' has no attributes.
+The class 'operators::DELETE' has no attributes.
+The class 'operators::MERGE' has no attributes.
+The class 'operators::EOperation' has no attributes.
+The class 'operators::EObjectReference' has no attributes.
+The class 'QueryVariableQualifier' has no attributes.
+The class 'operators::StructuralFeatureSet' has no attributes.
+The class 'operators::EOperationQualifier' has no attributes.
+The class 'operators::ASSIGN' has the following attributes: 'value' of type str.
+The class 'operators::Operator' has the following attributes: 'executed' of type bool.
+The class 'operators::EStructuralFeature' has no attributes.
+The class 'Result' has no attributes.
+The class 'operators::SET' has no attributes.
+The class 'operators::QueryVariable' has no attributes.
+The class 'operators::SPLIT' has no attributes.
+The class 'Variable' has no attributes.
+The class 'operators::Variable' has the following attributes: 'name' of type str.
+The class 'operators::PrimitiveReference' has the following attributes: 'value' of type str.
+The class 'Operator' has no attributes.
+The class 'operators::EClass' has no attributes.
+The class 'operators::EReferenceQualifier' has no attributes.
+The class 'operators::MOVE' has no attributes.
+The class 'operators::EAttribute' has no attributes.
+The class 'operators::EReference' has no attributes.
+The class 'operators::TypeVariable' has no attributes.
+'operators::VariableReference' is a specialization of 'Referrable'.
+'operators::TypeVariable' is a specialization of 'Variable'.
+'operators::EObjectReference' is a specialization of 'Referrable'.
+'operators::MOVE' is a specialization of 'Operator'.
+'operators::SPLIT' is a specialization of 'Operator'.
+'operators::MERGE' is a specialization of 'Operator'.
+'operators::CREATE' is a specialization of 'Operator'.
+'operators::VAR' is a specialization of 'Operator'.
+'operators::PrimitiveReference' is a specialization of 'Result'.
+'operators::EObjectReference' is a specialization of 'Result'.
+'operators::EReferenceQualifier' is a specialization of 'QueryVariableQualifier'.
+'operators::SET' is a specialization of 'Operator'.
+'operators::QueryVariable' is a specialization of 'Variable'.
+'operators::DELETE' is a specialization of 'Operator'.
+'operators::EOperationQualifier' is a specialization of 'QueryVariableQualifier'.
+'operators::ASSIGN' is a specialization of 'Operator'.
+'operators::Result' (role 'operators_Result49', cardinality 0..*) is associated with 'operators::QueryVariable' (role 'operators_QueryVariable48', cardinality 0..*).
+'operators::EClass' (role 'operators_EClass', cardinality 0..*) is associated with 'operators::TypeVariable' (role 'operators_TypeVariable7', cardinality 0..*).
+'operators::SET' (role 'operators_SET24', cardinality 0..*) is associated with 'operators::Referrable' (role 'operators_Referrable25', cardinality 0..*).
+'operators::EReference' (role 'operators_EReference19', cardinality 0..*) is associated with 'operators::SET' (role 'operators_SET', cardinality 0..*).
+'operators::QueryVariableQualifier' (role 'QueryVariableQualifier', cardinality 0..*) is associated with 'operators::QueryVariable' (role 'variable', cardinality 0..*).
+'operators::ASSIGN' (role 'operators_ASSIGN14', cardinality 0..*) is associated with 'operators::Referrable' (role 'operators_Referrable15', cardinality 0..*).
+'operators::MOVE' (role 'operators_MOVE30', cardinality 0..*) is associated with 'operators::EReference' (role 'operators_EReference31', cardinality 0..*).
+'operators::Referrable' (role 'operators_Referrable38', cardinality 0..*) is associated with 'operators::SPLIT' (role 'operators_SPLIT37', cardinality 0..*).
+'operators::DELETE' (role 'operators_DELETE', cardinality 0..*) is associated with 'operators::Referrable' (role 'operators_Referrable11', cardinality 0..*).
+'operators::Referrable' (role 'operators_Referrable', cardinality 0..*) is associated with 'operators::CREATE' (role 'operators_CREATE3', cardinality 0..*).
+'operators::TypeVariable' (role 'operators_TypeVariable9', cardinality 0..*) is associated with 'operators::EObject' (role 'operators_EObject', cardinality 0..*).
+'operators::EReference' (role 'operators_EReference54', cardinality 0..*) is associated with 'operators::EReferenceQualifier' (role 'operators_EReferenceQualifier', cardinality 0..*).
+'operators::Referrable' (role 'operators_Referrable42', cardinality 0..*) is associated with 'operators::MERGE' (role 'operators_MERGE', cardinality 0..*).
+'operators::CREATE' (role 'operators_CREATE', cardinality 0..*) is associated with 'operators::TypeVariable' (role 'operators_TypeVariable', cardinality 0..*).
+'operators::Referrable' (role 'operators_Referrable46', cardinality 0..*) is associated with 'operators::QueryVariable' (role 'operators_QueryVariable45', cardinality 0..*).
+'operators::Referrable' (role 'operators_Referrable22', cardinality 0..*) is associated with 'operators::SET' (role 'operators_SET21', cardinality 0..*).
+'operators::MOVE' (role 'operators_MOVE', cardinality 0..*) is associated with 'operators::Referrable' (role 'operators_Referrable28', cardinality 0..*).
+'operators::StructuralFeatureSet' (role 'operators_StructuralFeatureSet40', cardinality 0..*) is associated with 'operators::EStructuralFeature' (role 'operators_EStructuralFeature', cardinality 0..*).
+'operators::StructuralFeatureSet' (role 'operators_StructuralFeatureSet', cardinality 0..*) is associated with 'operators::SPLIT' (role 'operators_SPLIT', cardinality 0..*).
+'operators::EObject' (role 'operators_EObject17', cardinality 0..*) is associated with 'operators::EObjectReference' (role 'operators_EObjectReference', cardinality 0..*).
+'operators::EOperation' (role 'operators_EOperation', cardinality 0..*) is associated with 'operators::EOperationQualifier' (role 'operators_EOperationQualifier', cardinality 0..*).
+'operators::VariableReference' (role 'operators_VariableReference', cardinality 0..*) is associated with 'operators::Variable' (role 'operators_Variable', cardinality 0..*).
+'operators::EAttribute' (role 'operators_EAttribute', cardinality 0..*) is associated with 'operators::ASSIGN' (role 'operators_ASSIGN', cardinality 0..*).
+'operators::Operator' (role 'operators_Operator', cardinality 0..*) is associated with 'operators::Result' (role 'operators_Result', cardinality 0..*).
+'operators::QueryVariableQualifier' (role 'qualifier', cardinality 0..*) is associated with 'operators::QueryVariable' (role 'QueryVariable', cardinality 0..*).
+'operators::MOVE' (role 'operators_MOVE33', cardinality 0..*) is associated with 'operators::Referrable' (role 'operators_Referrable34', cardinality 0..*).
+'operators::CREATE' (role 'operators_CREATE5', cardinality 0..*) is associated with 'operators::EReference' (role 'operators_EReference', cardinality 0..*).
+'operators::VAR' (role 'operators_VAR', cardinality 0..*) is associated with 'operators::QueryVariable' (role 'operators_QueryVariable', cardinality 0..*).

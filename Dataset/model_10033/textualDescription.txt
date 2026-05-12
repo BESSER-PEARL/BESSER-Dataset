@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'Ticket' has no attributes.
+The class 'CoachBusWithEDataType::Passenger' has the following attributes: 'age' of type int; 'sex' of type str.
+The class 'CoachBusWithEDataType::RegularTrip' has no attributes.
+The class 'CoachBusWithEDataType::Trip' has the following attributes: 'type' of type str.
+The class 'CoachBusWithEDataType::Ticket' has the following attributes: 'number' of type int.
+The class 'Trip' has no attributes.
+The class 'CoachBusWithEDataType::Coach' has the following attributes: 'noOfSeats' of type int.
+The class 'CoachBusWithEDataType::AdultTicket' has no attributes.
+The class 'CoachBusWithEDataType::ChildTicket' has no attributes.
+The class 'CoachBusWithEDataType::PrivateTrip' has no attributes.
+The enumeration 'Sex' has the following literals: 'male', 'female'.
+'CoachBusWithEDataType::ChildTicket' is a specialization of 'Ticket'.
+'CoachBusWithEDataType::PrivateTrip' is a specialization of 'Trip'.
+'CoachBusWithEDataType::AdultTicket' is a specialization of 'Ticket'.
+'CoachBusWithEDataType::RegularTrip' is a specialization of 'Trip'.
+'CoachBusWithEDataType::Trip' (role 'CoachBusWithEDataType_Trip', cardinality 0..*) is associated with 'CoachBusWithEDataType::Coach' (role 'CoachBusWithEDataType_Coach', cardinality 0..*).
+'CoachBusWithEDataType::Trip' (role 'CoachBusWithEDataType_Trip2', cardinality 0..*) is associated with 'CoachBusWithEDataType::Passenger' (role 'CoachBusWithEDataType_Passenger', cardinality 0..*).

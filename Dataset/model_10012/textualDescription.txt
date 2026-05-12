@@ -1,0 +1,46 @@
+The model has 16 class(es).
+The class 'LRBAC::Permission' has the following attributes: 'PermName' of type str.
+The class 'LRBAC::Location' has the following attributes: 'LocName' of type str.
+The class 'LRBAC::EClass1' has no attributes.
+The class 'LRBAC::Object' has the following attributes: 'ObjID' of type int.
+The class 'LRBAC::Coder' has no attributes.
+The class 'LRBAC::Read' has no attributes.
+The class 'LRBAC::Execute' has no attributes.
+The class 'User' has no attributes.
+The class 'LRBAC::Banker' has no attributes.
+The class 'LRBAC::EClass0' has no attributes.
+The class 'LRBAC::Role' has the following attributes: 'RoleName' of type str.
+The class 'Operation' has no attributes.
+The class 'LRBAC::Session' has the following attributes: 'MaxRoles' of type int.
+The class 'LRBAC::Operation' has no attributes.
+The class 'LRBAC::Write' has no attributes.
+The class 'LRBAC::User' has the following attributes: 'UserID' of type int; 'UserName' of type str; 'Gender' of type str; 'Age' of type int.
+'LRBAC::Banker' is a specialization of 'User'.
+'LRBAC::Read' is a specialization of 'Operation'.
+'LRBAC::Coder' is a specialization of 'User'.
+'LRBAC::Execute' is a specialization of 'Operation'.
+'LRBAC::Write' is a specialization of 'Operation'.
+'LRBAC::Role' (role 'Role16', cardinality 0..*) is associated with 'LRBAC::Location' (role 'AssignLoc', cardinality 0..*).
+'LRBAC::User' (role 'LocUser', cardinality 0..*) is associated with 'LRBAC::Location' (role 'Location', cardinality 0..*).
+'LRBAC::Role' (role 'Role', cardinality 0..*) is associated with 'LRBAC::User' (role 'AssignUser', cardinality 0..*).
+'LRBAC::Location' (role 'Location9', cardinality 0..*) is associated with 'LRBAC::Role' (role 'LocAssign', cardinality 0..*).
+'LRBAC::Permission' (role 'Permission36', cardinality 0..*) is associated with 'LRBAC::Operation' (role 'PermOper', cardinality 0..*).
+'LRBAC::Session' (role 'RoleSess', cardinality 0..*) is associated with 'LRBAC::Role' (role 'Role4', cardinality 0..*).
+'LRBAC::Session' (role 'Session11', cardinality 0..*) is associated with 'LRBAC::Role' (role 'SessRole', cardinality 0..*).
+'LRBAC::Location' (role 'ObjLoc', cardinality 0..*) is associated with 'LRBAC::Object' (role 'Object', cardinality 0..*).
+'LRBAC::Permission' (role 'Permission', cardinality 0..*) is associated with 'LRBAC::Role' (role 'PermRole', cardinality 0..*).
+'LRBAC::Object' (role 'PermObj', cardinality 0..*) is associated with 'LRBAC::Permission' (role 'Permission34', cardinality 0..*).
+'LRBAC::Location' (role 'UserLoc', cardinality 0..*) is associated with 'LRBAC::User' (role 'User14', cardinality 0..*).
+'LRBAC::Read' (role 'LRBAC_Read39', cardinality 0..*) is associated with 'LRBAC::EClass1' (role 'LRBAC_EClass1', cardinality 0..*).
+'LRBAC::Read' (role 'LRBAC_Read', cardinality 0..*) is associated with 'LRBAC::EClass0' (role 'LRBAC_EClass0', cardinality 0..*).
+'LRBAC::Role' (role 'Role26', cardinality 0..*) is associated with 'LRBAC::Permission' (role 'RolePerm', cardinality 0..*).
+'LRBAC::Location' (role 'RoleLocPerm', cardinality 0..*) is associated with 'LRBAC::Permission' (role 'Permission19', cardinality 0..*).
+'LRBAC::Permission' (role 'PermObjLoc', cardinality 0..*) is associated with 'LRBAC::Location' (role 'Location30', cardinality 0..*).
+'LRBAC::Permission' (role 'PermRoleLoc', cardinality 0..*) is associated with 'LRBAC::Location' (role 'Location28', cardinality 0..*).
+'LRBAC::Location' (role 'ObjLocPerm', cardinality 0..*) is associated with 'LRBAC::Permission' (role 'Permission21', cardinality 0..*).
+'LRBAC::Operation' (role 'Operation', cardinality 0..*) is associated with 'LRBAC::Permission' (role 'OperPerm', cardinality 0..*).
+'LRBAC::Object' (role 'LocObj', cardinality 0..*) is associated with 'LRBAC::Location' (role 'Location32', cardinality 0..*).
+'LRBAC::User' (role 'User', cardinality 0..*) is associated with 'LRBAC::Session' (role 'UserSess', cardinality 0..*).
+'LRBAC::Object' (role 'Object24', cardinality 0..*) is associated with 'LRBAC::Permission' (role 'ObjPerm', cardinality 0..*).
+'LRBAC::User' (role 'SessUser', cardinality 0..*) is associated with 'LRBAC::Session' (role 'Session', cardinality 0..*).
+'LRBAC::Role' (role 'AssignedRoles', cardinality 0..*) is associated with 'LRBAC::User' (role 'User7', cardinality 0..*).

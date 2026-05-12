@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'RoyalAndLoyal::Customer' has the following attributes: 'name' of type str.
+The class 'RoyalAndLoyal::Container::RandL' has no attributes.
+'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'RoyalAndLoyal_Customer', cardinality 0..*).

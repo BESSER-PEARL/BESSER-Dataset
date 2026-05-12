@@ -1,0 +1,25 @@
+The model has 7 class(es).
+The class 'RoyalAndLoyal::CustomerCard' has the following attributes: 'valid' of type bool.
+The class 'RoyalAndLoyal::ProgramPartner' has the following attributes: 'numberOfCustomers' of type int.
+The class 'RoyalAndLoyal::Customer' has no attributes.
+The class 'RoyalAndLoyal::Service' has no attributes.
+The class 'RoyalAndLoyal::LoyaltyProgram' has no attributes.
+The class 'RoyalAndLoyal::ServiceLevel' has no attributes.
+The class 'RoyalAndLoyal::Container::RandL' has no attributes.
+'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL10', cardinality 0..*) is associated with 'RoyalAndLoyal::Service' (role 'RoyalAndLoyal_Service11', cardinality 0..*).
+'RoyalAndLoyal::Customer' (role 'Customer', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyProgram' (role 'programs3', cardinality 0..*).
+'RoyalAndLoyal::CustomerCard' (role 'RoyalAndLoyal_CustomerCard', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL8', cardinality 0..*).
+'RoyalAndLoyal::CustomerCard' (role 'CustomerCard', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'owner', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyProgram' (role 'RoyalAndLoyal_LoyaltyProgram', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL13', cardinality 0..*).
+'RoyalAndLoyal::Service' (role 'RoyalAndLoyal_Service29', cardinality 0..*) is associated with 'RoyalAndLoyal::ProgramPartner' (role 'RoyalAndLoyal_ProgramPartner28', cardinality 0..*).
+'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'RoyalAndLoyal_Customer', cardinality 0..*).
+'RoyalAndLoyal::ProgramPartner' (role 'RoyalAndLoyal_ProgramPartner', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL18', cardinality 0..*).
+'RoyalAndLoyal::Customer' (role 'Customer26', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'cards', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'RoyalAndLoyal_ServiceLevel24', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'RoyalAndLoyal_CustomerCard23', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyProgram' (role 'LoyaltyProgram31', cardinality 0..*) is associated with 'RoyalAndLoyal::ProgramPartner' (role 'partners', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'ServiceLevel', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyProgram' (role 'program', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'RoyalAndLoyal_ServiceLevel16', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL15', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyProgram' (role 'LoyaltyProgram', cardinality 0..*) is associated with 'RoyalAndLoyal::ServiceLevel' (role 'levels', cardinality 0..*).
+'RoyalAndLoyal::Customer' (role 'participants', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyProgram' (role 'LoyaltyProgram20', cardinality 0..*).
+'RoyalAndLoyal::Service' (role 'RoyalAndLoyal_Service', cardinality 0..*) is associated with 'RoyalAndLoyal::ServiceLevel' (role 'RoyalAndLoyal_ServiceLevel', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyProgram' (role 'programs', cardinality 0..*) is associated with 'RoyalAndLoyal::ProgramPartner' (role 'ProgramPartner', cardinality 0..*).

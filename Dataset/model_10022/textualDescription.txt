@@ -1,0 +1,53 @@
+The model has 23 class(es).
+The class 'qvtcorebase::OperationCallExp' has no attributes.
+The class 'Variable' has no attributes.
+The class 'qvtcorebase::Property' has no attributes.
+The class 'Area' has no attributes.
+The class 'qvtcorebase::CoreDomain' has no attributes.
+The class 'CorePattern' has no attributes.
+The class 'Domain' has no attributes.
+The class 'qvtcorebase::RealizedVariable' has no attributes.
+The class 'qvtcorebase::BottomPattern' has no attributes.
+The class 'qvtcorebase::Area' has no attributes.
+The class 'qvtcorebase::Assignment' has the following attributes: 'isDefault' of type str.
+The class 'qvtcorebase::GuardPattern' has no attributes.
+The class 'Rule' has no attributes.
+The class 'qvtcorebase::VariableAssignment' has no attributes.
+The class 'Element' has no attributes.
+The class 'qvtcorebase::AbstractMapping' has no attributes.
+The class 'qvtcorebase::EnforcementOperation' has the following attributes: 'enforcementMode' of type str.
+The class 'Assignment' has no attributes.
+The class 'qvtcorebase::PropertyAssignment' has no attributes.
+The class 'qvtcorebase::Variable' has no attributes.
+The class 'qvtcorebase::OCLExpression' has no attributes.
+The class 'qvtcorebase::CorePattern' has no attributes.
+The class 'Pattern' has no attributes.
+The enumeration 'EnforcementMode' has the following literals: 'Creation', 'Deletion'.
+'qvtcorebase::RealizedVariable' is a specialization of 'Variable'.
+'qvtcorebase::VariableAssignment' is a specialization of 'Assignment'.
+'qvtcorebase::Area' is a specialization of 'Element'.
+'qvtcorebase::BottomPattern' is a specialization of 'CorePattern'.
+'qvtcorebase::GuardPattern' is a specialization of 'CorePattern'.
+'qvtcorebase::PropertyAssignment' is a specialization of 'Assignment'.
+'qvtcorebase::CorePattern' is a specialization of 'Pattern'.
+'qvtcorebase::CoreDomain' is a specialization of 'Domain'.
+'qvtcorebase::CoreDomain' is a specialization of 'Area'.
+'qvtcorebase::Assignment' is a specialization of 'Element'.
+'qvtcorebase::AbstractMapping' is a specialization of 'Area'.
+'qvtcorebase::AbstractMapping' is a specialization of 'Rule'.
+'qvtcorebase::EnforcementOperation' is a specialization of 'Element'.
+'qvtcorebase::Area' (role 'area', cardinality 0..*) is associated with 'qvtcorebase::GuardPattern' (role 'GuardPattern', cardinality 0..*).
+'qvtcorebase::BottomPattern' (role 'bottomPattern8', cardinality 0..*) is associated with 'qvtcorebase::Assignment' (role 'Assignment', cardinality 0..*).
+'qvtcorebase::BottomPattern' (role 'BottomPattern14', cardinality 0..*) is associated with 'qvtcorebase::EnforcementOperation' (role 'enforcementOperation', cardinality 0..*).
+'qvtcorebase::PropertyAssignment' (role 'qvtcorebase_PropertyAssignment', cardinality 0..*) is associated with 'qvtcorebase::OCLExpression' (role 'qvtcorebase_OCLExpression19', cardinality 0..*).
+'qvtcorebase::BottomPattern' (role 'qvtcorebase_BottomPattern', cardinality 0..*) is associated with 'qvtcorebase::RealizedVariable' (role 'qvtcorebase_RealizedVariable', cardinality 0..*).
+'qvtcorebase::Area' (role 'Area17', cardinality 0..*) is associated with 'qvtcorebase::GuardPattern' (role 'guardPattern', cardinality 0..*).
+'qvtcorebase::PropertyAssignment' (role 'qvtcorebase_PropertyAssignment21', cardinality 0..*) is associated with 'qvtcorebase::Property' (role 'qvtcorebase_Property', cardinality 0..*).
+'qvtcorebase::Variable' (role 'qvtcorebase_Variable', cardinality 0..*) is associated with 'qvtcorebase::CorePattern' (role 'qvtcorebase_CorePattern', cardinality 0..*).
+'qvtcorebase::Variable' (role 'qvtcorebase_Variable23', cardinality 0..*) is associated with 'qvtcorebase::VariableAssignment' (role 'qvtcorebase_VariableAssignment', cardinality 0..*).
+'qvtcorebase::Assignment' (role 'qvtcorebase_Assignment', cardinality 0..*) is associated with 'qvtcorebase::OCLExpression' (role 'qvtcorebase_OCLExpression', cardinality 0..*).
+'qvtcorebase::OperationCallExp' (role 'qvtcorebase_OperationCallExp', cardinality 0..*) is associated with 'qvtcorebase::EnforcementOperation' (role 'qvtcorebase_EnforcementOperation', cardinality 0..*).
+'qvtcorebase::BottomPattern' (role 'bottomPattern', cardinality 0..*) is associated with 'qvtcorebase::Area' (role 'Area', cardinality 0..*).
+'qvtcorebase::BottomPattern' (role 'bottomPattern10', cardinality 0..*) is associated with 'qvtcorebase::EnforcementOperation' (role 'EnforcementOperation', cardinality 0..*).
+'qvtcorebase::Assignment' (role 'assignment', cardinality 0..*) is associated with 'qvtcorebase::BottomPattern' (role 'BottomPattern4', cardinality 0..*).
+'qvtcorebase::BottomPattern' (role 'BottomPattern', cardinality 0..*) is associated with 'qvtcorebase::Area' (role 'area2', cardinality 0..*).

@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'ecoreTest::EClass3' has no attributes.
+The class 'ecoreTest::Eclass1' has the following attributes: 'eAttribute1' of type str; 'eAttribute2' of type str.
+The class 'Eclass5' has no attributes.
+The class 'ecoreTest::EClass2' has the following attributes: 'eAttribute4' of type str; 'eAttribute3' of type str.
+'ecoreTest::EClass3' is a specialization of 'Eclass5'.
+'ecoreTest::Eclass1' (role 'ecoreTest_Eclass1', cardinality 0..*) is associated with 'ecoreTest::EClass2' (role 'ecoreTest_EClass2', cardinality 0..*).
+'ecoreTest::EClass3' (role 'ecoreTest_EClass3', cardinality 0..*) is associated with 'ecoreTest::EClass2' (role 'ecoreTest_EClass22', cardinality 0..*).

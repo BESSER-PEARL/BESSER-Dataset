@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'Biblioteca::Prestamo' has the following attributes: 'fechaDeFin' of type date; 'fechaDeDevolucion' of type date; 'fechaDeInicio' of type date.
+The class 'Biblioteca::Ejemplar' has the following attributes: 'estado' of type str; 'numeroDeEjemplar' of type int.
+The class 'Biblioteca::Autor' has the following attributes: 'nombreCompleto' of type str; 'fechaDeNacimiento' of type date; 'nacionalidad' of type str.
+The class 'Biblioteca::Socio' has the following attributes: 'numeroDeSocio' of type int; 'fechaDeNacimiento' of type date; 'telefono' of type str; 'edad' of type int; 'direccion' of type str; 'nombreCompleto' of type str.
+The class 'Biblioteca::Libro' has the following attributes: 'genero' of type str; 'editorial' of type str; 'titulo' of type str; 'ISBN' of type str; 'activo' of type bool; 'anioDeEdicion' of type int.
+The class 'Biblioteca::Biblioteca' has the following attributes: 'direccion' of type str.
+The class 'Biblioteca::Multa' has the following attributes: 'fecha' of type date; 'monto' of type int; 'fechaDePago' of type date; 'diasExcedidos' of type int.
+The enumeration 'Genero' has the following literals: 'Epico', 'Narrativo', 'Dramatico', 'Didactico', 'Terror', 'Lirico'.
+The enumeration 'Estado' has the following literals: 'Bueno', 'Malo'.
+'Biblioteca::Autor' (role 'Biblioteca_Autor7', cardinality 0..*) is associated with 'Biblioteca::Libro' (role 'Biblioteca_Libro6', cardinality 0..*).
+'Biblioteca::Biblioteca' (role 'Biblioteca_Biblioteca4', cardinality 0..*) is associated with 'Biblioteca::Socio' (role 'Biblioteca_Socio', cardinality 0..*).
+'Biblioteca::Ejemplar' (role 'Biblioteca_Ejemplar', cardinality 0..*) is associated with 'Biblioteca::Prestamo' (role 'Biblioteca_Prestamo', cardinality 0..*).
+'Biblioteca::Prestamo' (role 'Biblioteca_Prestamo22', cardinality 0..*) is associated with 'Biblioteca::Multa' (role 'Biblioteca_Multa21', cardinality 0..*).
+'Biblioteca::Autor' (role 'Biblioteca_Autor13', cardinality 0..*) is associated with 'Biblioteca::Libro' (role 'Biblioteca_Libro14', cardinality 0..*).
+'Biblioteca::Multa' (role 'Biblioteca_Multa', cardinality 0..*) is associated with 'Biblioteca::Socio' (role 'Biblioteca_Socio16', cardinality 0..*).
+'Biblioteca::Biblioteca' (role 'Biblioteca_Biblioteca2', cardinality 0..*) is associated with 'Biblioteca::Autor' (role 'Biblioteca_Autor', cardinality 0..*).
+'Biblioteca::Prestamo' (role 'Biblioteca_Prestamo10', cardinality 0..*) is associated with 'Biblioteca::Socio' (role 'Biblioteca_Socio11', cardinality 0..*).
+'Biblioteca::Libro' (role 'Biblioteca_Libro', cardinality 0..*) is associated with 'Biblioteca::Biblioteca' (role 'Biblioteca_Biblioteca', cardinality 0..*).
+'Biblioteca::Socio' (role 'Biblioteca_Socio18', cardinality 0..*) is associated with 'Biblioteca::Prestamo' (role 'Biblioteca_Prestamo19', cardinality 0..*).

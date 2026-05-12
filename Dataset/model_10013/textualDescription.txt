@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'maps::map' has the following attributes: 'isCity' of type bool; 'country' of type str; 'size' of type str; 'name' of type str.
+The class 'maps::PublicSpace' has the following attributes: 'name' of type str.
+The class 'maps::Garden' has no attributes.
+The class 'maps::Pedestrian' has no attributes.
+The class 'maps::Street' has no attributes.
+The class 'Road' has no attributes.
+The class 'PublicSpace' has no attributes.
+The class 'maps::Road' has the following attributes: 'length' of type int; 'name' of type str; 'district' of type str.
+The class 'maps::Boulevard' has no attributes.
+The class 'maps::Square' has no attributes.
+The enumeration 'cards' has the following literals: 'big', 'medium', 'small'.
+'maps::Square' is a specialization of 'PublicSpace'.
+'maps::Garden' is a specialization of 'PublicSpace'.
+'maps::Boulevard' is a specialization of 'Road'.
+'maps::Street' is a specialization of 'Road'.
+'maps::Pedestrian' is a specialization of 'Road'.
+'maps::PublicSpace' (role 'maps_PublicSpace', cardinality 0..*) is associated with 'maps::map' (role 'maps_map2', cardinality 0..*).
+'maps::PublicSpace' (role 'PublicSpace', cardinality 0..*) is associated with 'maps::Road' (role 'borderedBy', cardinality 0..*).
+'maps::Road' (role 'maps_Road4', cardinality 0..*) is associated with 'maps::Road' (role 'maps_Road6', cardinality 0..*).
+'maps::Road' (role 'Road', cardinality 0..*) is associated with 'maps::PublicSpace' (role 'border', cardinality 0..*).
+'maps::Road' (role 'maps_Road', cardinality 0..*) is associated with 'maps::map' (role 'maps_map', cardinality 0..*).

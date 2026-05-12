@@ -1,0 +1,31 @@
+The model has 8 class(es).
+The class 'itculiacan::Alumno' has the following attributes: 'nombre' of type str; 'numeroControl' of type int.
+The class 'itculiacan::Materia' has the following attributes: 'nombre' of type str; 'clave' of type int.
+The class 'itculiacan::Grupo' has the following attributes: 'clave' of type int.
+The class 'itculiacan::PlanEstudio' has the following attributes: 'clave' of type int; 'nombre' of type str.
+The class 'itculiacan::Universidad' has no attributes.
+The class 'itculiacan::Generacion' has the following attributes: 'fechaInicio' of type date; 'fechaFin' of type date.
+The class 'itculiacan::Profesor' has the following attributes: 'nombre' of type str; 'nombramiento' of type str; 'clave' of type int; 'numeroMaterias' of type int.
+The class 'itculiacan::Aula' has the following attributes: 'capacidad' of type int; 'clave' of type int.
+The enumeration 'Nombramiento' has the following literals: 'tiempoCompleto', 'medioTiempo'.
+'itculiacan::Grupo' (role 'Grupo21', cardinality 0..*) is associated with 'itculiacan::Profesor' (role 'profesor', cardinality 0..*).
+'itculiacan::Aula' (role 'itculiacan_Aula', cardinality 0..*) is associated with 'itculiacan::Universidad' (role 'itculiacan_Universidad28', cardinality 0..*).
+'itculiacan::Grupo' (role 'Grupo15', cardinality 0..*) is associated with 'itculiacan::Aula' (role 'aula', cardinality 0..*).
+'itculiacan::Materia' (role 'itculiacan_Materia', cardinality 0..*) is associated with 'itculiacan::Universidad' (role 'itculiacan_Universidad36', cardinality 0..*).
+'itculiacan::Generacion' (role 'generacion', cardinality 0..*) is associated with 'itculiacan::Alumno' (role 'Alumno', cardinality 0..*).
+'itculiacan::Materia' (role 'materias', cardinality 0..*) is associated with 'itculiacan::PlanEstudio' (role 'PlanEstudio19', cardinality 0..*).
+'itculiacan::PlanEstudio' (role 'cursa', cardinality 0..*) is associated with 'itculiacan::Alumno' (role 'Alumno23', cardinality 0..*).
+'itculiacan::Grupo' (role 'Grupo', cardinality 0..*) is associated with 'itculiacan::Alumno' (role 'alumnos4', cardinality 0..*).
+'itculiacan::PlanEstudio' (role 'itculiacan_PlanEstudio', cardinality 0..*) is associated with 'itculiacan::Universidad' (role 'itculiacan_Universidad30', cardinality 0..*).
+'itculiacan::Materia' (role 'materia', cardinality 0..*) is associated with 'itculiacan::Grupo' (role 'Grupo17', cardinality 0..*).
+'itculiacan::Grupo' (role 'grupos', cardinality 0..*) is associated with 'itculiacan::Aula' (role 'Aula', cardinality 0..*).
+'itculiacan::Materia' (role 'Materia25', cardinality 0..*) is associated with 'itculiacan::PlanEstudio' (role 'planesEstudio', cardinality 0..*).
+'itculiacan::PlanEstudio' (role 'PlanEstudio', cardinality 0..*) is associated with 'itculiacan::Alumno' (role 'alumnos2', cardinality 0..*).
+'itculiacan::Grupo' (role 'grupos8', cardinality 0..*) is associated with 'itculiacan::Materia' (role 'Materia', cardinality 0..*).
+'itculiacan::Alumno' (role 'itculiacan_Alumno', cardinality 0..*) is associated with 'itculiacan::Universidad' (role 'itculiacan_Universidad32', cardinality 0..*).
+'itculiacan::Universidad' (role 'itculiacan_Universidad38', cardinality 0..*) is associated with 'itculiacan::Grupo' (role 'itculiacan_Grupo', cardinality 0..*).
+'itculiacan::Grupo' (role 'grupos10', cardinality 0..*) is associated with 'itculiacan::Profesor' (role 'Profesor', cardinality 0..*).
+'itculiacan::Universidad' (role 'itculiacan_Universidad34', cardinality 0..*) is associated with 'itculiacan::Generacion' (role 'itculiacan_Generacion', cardinality 0..*).
+'itculiacan::Profesor' (role 'itculiacan_Profesor', cardinality 0..*) is associated with 'itculiacan::Universidad' (role 'itculiacan_Universidad', cardinality 0..*).
+'itculiacan::Alumno' (role 'Alumno13', cardinality 0..*) is associated with 'itculiacan::Grupo' (role 'grupos12', cardinality 0..*).
+'itculiacan::Generacion' (role 'Generacion', cardinality 0..*) is associated with 'itculiacan::Alumno' (role 'alumnos', cardinality 0..*).

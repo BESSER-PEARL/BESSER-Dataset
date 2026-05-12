@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'ProductionSystem::Conveyor' has the following attributes: 'id' of type str; 'capacity' of type int.
+The class 'ProductionSystem::Piece' has the following attributes: 'id' of type str.
+The class 'ProductionSystem::Raw' has no attributes.
+The class 'ProductionSystem::Machine' has the following attributes: 'id' of type str.
+The class 'Piece' has no attributes.
+The class 'ProductionSystem::Processed' has no attributes.
+'ProductionSystem::Raw' is a specialization of 'Piece'.
+'ProductionSystem::Processed' is a specialization of 'Piece'.
+'ProductionSystem::Machine' (role 'Machine12', cardinality 0..*) is associated with 'ProductionSystem::Conveyor' (role 'ic', cardinality 0..*).
+'ProductionSystem::Conveyor' (role 'Conveyor6', cardinality 0..*) is associated with 'ProductionSystem::Conveyor' (role 'prev', cardinality 0..*).
+'ProductionSystem::Conveyor' (role 'oc', cardinality 0..*) is associated with 'ProductionSystem::Machine' (role 'Machine', cardinality 0..*).
+'ProductionSystem::Machine' (role 'om', cardinality 0..*) is associated with 'ProductionSystem::Conveyor' (role 'Conveyor', cardinality 0..*).
+'ProductionSystem::Conveyor' (role 'next', cardinality 0..*) is associated with 'ProductionSystem::Conveyor' (role 'Conveyor9', cardinality 0..*).
+'ProductionSystem::Conveyor' (role 'Conveyor2', cardinality 0..*) is associated with 'ProductionSystem::Machine' (role 'im', cardinality 0..*).
+'ProductionSystem::Conveyor' (role 'Conveyor14', cardinality 0..*) is associated with 'ProductionSystem::Piece' (role 'piece', cardinality 0..*).
+'ProductionSystem::Piece' (role 'Piece', cardinality 0..*) is associated with 'ProductionSystem::Conveyor' (role 'conveyor', cardinality 0..*).

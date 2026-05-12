@@ -1,0 +1,38 @@
+The model has 11 class(es).
+The class 'Paper::Object' has the following attributes: 'ObjID' of type int.
+The class 'Paper::Write' has no attributes.
+The class 'Paper::Role' has the following attributes: 'RoleName' of type str.
+The class 'Paper::Permission' has the following attributes: 'PermName' of type str.
+The class 'Paper::Location' has the following attributes: 'LocName' of type str.
+The class 'Paper::Read' has no attributes.
+The class 'Paper::Session' has the following attributes: 'MaxRoles' of type int.
+The class 'Paper::Execute' has no attributes.
+The class 'Paper::User' has the following attributes: 'Age' of type int; 'UserID' of type int; 'Gender' of type str; 'UserName' of type str.
+The class 'Operation' has no attributes.
+The class 'Paper::Operation' has no attributes.
+The enumeration 'Sex' has the following literals: 'male', 'female'.
+'Paper::Write' is a specialization of 'Operation'.
+'Paper::Read' is a specialization of 'Operation'.
+'Paper::Execute' is a specialization of 'Operation'.
+'Paper::Location' (role 'AssignLoc', cardinality 0..*) is associated with 'Paper::Role' (role 'Role16', cardinality 0..*).
+'Paper::Permission' (role 'Permission36', cardinality 0..*) is associated with 'Paper::Operation' (role 'PermOper', cardinality 0..*).
+'Paper::Session' (role 'Session11', cardinality 0..*) is associated with 'Paper::Role' (role 'SessRole', cardinality 0..*).
+'Paper::Location' (role 'ObjLocPerm', cardinality 0..*) is associated with 'Paper::Permission' (role 'Permission21', cardinality 0..*).
+'Paper::Object' (role 'Object24', cardinality 0..*) is associated with 'Paper::Permission' (role 'ObjPerm', cardinality 0..*).
+'Paper::User' (role 'AssignUser', cardinality 0..*) is associated with 'Paper::Role' (role 'Role', cardinality 0..*).
+'Paper::Location' (role 'ObjLoc', cardinality 0..*) is associated with 'Paper::Object' (role 'Object', cardinality 0..*).
+'Paper::Location' (role 'UserLoc', cardinality 0..*) is associated with 'Paper::User' (role 'User14', cardinality 0..*).
+'Paper::Permission' (role 'RolePerm', cardinality 0..*) is associated with 'Paper::Role' (role 'Role26', cardinality 0..*).
+'Paper::Session' (role 'UserSess', cardinality 0..*) is associated with 'Paper::User' (role 'User', cardinality 0..*).
+'Paper::Location' (role 'Location30', cardinality 0..*) is associated with 'Paper::Permission' (role 'PermObjLoc', cardinality 0..*).
+'Paper::Permission' (role 'PermRoleLoc', cardinality 0..*) is associated with 'Paper::Location' (role 'Location28', cardinality 0..*).
+'Paper::User' (role 'LocUser', cardinality 0..*) is associated with 'Paper::Location' (role 'Location', cardinality 0..*).
+'Paper::Location' (role 'Location32', cardinality 0..*) is associated with 'Paper::Object' (role 'LocObj', cardinality 0..*).
+'Paper::Permission' (role 'Permission', cardinality 0..*) is associated with 'Paper::Role' (role 'PermRole', cardinality 0..*).
+'Paper::User' (role 'SessUser', cardinality 0..*) is associated with 'Paper::Session' (role 'Session', cardinality 0..*).
+'Paper::Role' (role 'LocAssign', cardinality 0..*) is associated with 'Paper::Location' (role 'Location9', cardinality 0..*).
+'Paper::Location' (role 'RoleLocPerm', cardinality 0..*) is associated with 'Paper::Permission' (role 'Permission19', cardinality 0..*).
+'Paper::Session' (role 'RoleSess', cardinality 0..*) is associated with 'Paper::Role' (role 'Role4', cardinality 0..*).
+'Paper::Operation' (role 'Operation', cardinality 0..*) is associated with 'Paper::Permission' (role 'OperPerm', cardinality 0..*).
+'Paper::Permission' (role 'Permission34', cardinality 0..*) is associated with 'Paper::Object' (role 'PermObj', cardinality 0..*).
+'Paper::User' (role 'User7', cardinality 0..*) is associated with 'Paper::Role' (role 'AssignedRoles', cardinality 0..*).
