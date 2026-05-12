@@ -1,8 +1,8 @@
 # Model 0000000002 Buml Model
 **Model Number**: 0000000002
 ## Quick Actions
-[![Open in Editor](https://img.shields.io/badge/🚀_Open_in_Editor-blue?style=for-the-badge)](http://editor.besser-pearl.org/?buml=https://github.com/BESSER-PEARL/BESSER-Dataset/blob/main/Dataset/Model_0000000002/Model_0000000002_buml.py)
-[![View Source](https://img.shields.io/badge/📄_View_Source-gray?style=for-the-badge)](https://github.com/BESSER-PEARL/BESSER-Dataset/blob/main/Dataset/Model_0000000002/Model_0000000002_buml.py)
+[![Open in Editor](https://img.shields.io/badge/🚀_Open_in_Editor-blue?style=for-the-badge)](http://editor.besser-pearl.org/?buml=https://github.com/BESSER-PEARL/BESSER-Dataset/blob/main/Dataset/Model_1000000002/Model_1000000002_buml.py)
+[![View Source](https://img.shields.io/badge/📄_View_Source-gray?style=for-the-badge)](https://github.com/BESSER-PEARL/BESSER-Dataset/blob/main/Dataset/Model_1000000002/Model_1000000002_buml.py)
 ## Description
 This folder contains the BUML model for **Model 0000000002 Buml**.
 ### Files
