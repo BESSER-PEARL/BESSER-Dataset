@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'ShoppingCartExample_LineItem' has the following attributes: 'price' of type int; 'quantity' of type int.
+The class 'ShoppingCartExample_ShoppingCart' has the following attributes: 'creationDate' of type date.
+The class 'ShoppingCartExample_Account' has the following attributes: 'id' of type int.
+The class 'ShoppingCartExample_Order' has the following attributes: 'id' of type int.
+The class 'ShoppingCartExample_Customer' has no attributes.
+'ShoppingCartExample_ShoppingCart' (role 'order2', cardinality 0..*) is associated with 'ShoppingCartExample_Order' (role 'c3', cardinality 0..*).
+'ShoppingCartExample_LineItem' (role 'order1', cardinality 0..*) is associated with 'ShoppingCartExample_Order' (role 'items0', cardinality 0..*).
+'ShoppingCartExample_Customer' (role 'account7', cardinality 0..*) is associated with 'ShoppingCartExample_Account' (role 'customer6', cardinality 0..*).
+'ShoppingCartExample_Account' (role 'cart4', cardinality 0..*) is associated with 'ShoppingCartExample_ShoppingCart' (role 'account5', cardinality 0..*).

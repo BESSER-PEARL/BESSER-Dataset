@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Menghapus_Mahasiswa_external  {
+
+
+
+
+
+
+    private Dosen_Actor dosen_actor;
+
+
+    public Menghapus_Mahasiswa_external(
+    ) {
+    }
+
+
+
+    public Dosen_Actor getDosen_actor() {
+        return dosen_actor;
+    }
+
+    public void setDosen_actor(Dosen_Actor dosen_actor) {
+        this.dosen_actor = dosen_actor;
+    }
+
+}

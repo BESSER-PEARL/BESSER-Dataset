@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Start_Of_Day' has the following attributes: 'SOT' of type int.
+The class 'MicroPhone' has the following attributes: 'MicID' of type str.
+The class 'Relay' has the following attributes: 'SensorType' of type int; 'SensorID' of type int.
+The class 'System' has the following attributes: 'Status' of type bool; 'Update' of type float.
+The class 'HouseHolds' has the following attributes: 'TimeID' of type str; 'LampLight' of type str.
+The class 'Home_Security_System' has the following attributes: 'UserID' of type int.
+The class 'Lamp' has the following attributes: 'LampID' of type int.
+The class 'End_Of_Day' has the following attributes: 'EOT' of type int.
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+'HouseHolds' (role 'system13', cardinality 0..*) is associated with 'System' (role 'houseHolds12', cardinality 0..*).
+'HouseHolds' (role 'start_Of_Day2', cardinality 0..*) is associated with 'Start_Of_Day' (role 'houseHolds3', cardinality 0..*).
+'End_Of_Day' (role 'houseHolds5', cardinality 0..*) is associated with 'HouseHolds' (role 'end_Of_Day4', cardinality 0..*).
+'System' (role 'sensor11', cardinality 0..*) is associated with 'Relay' (role 'system10', cardinality 0..*).
+'Home_Security_System' (role 'system14', cardinality 0..*) is associated with 'System' (role 'home_Security_System15', cardinality 0..*).
+'Alert' (role 'home_Security_System9', cardinality 0..*) is associated with 'Home_Security_System' (role 'alert8', cardinality 0..*).
+'Relay' (role 'door0', cardinality 0..*) is associated with 'Lamp' (role 'sensor1', cardinality 0..*).
+'System' (role 'microPhone7', cardinality 0..*) is associated with 'MicroPhone' (role 'system6', cardinality 0..*).

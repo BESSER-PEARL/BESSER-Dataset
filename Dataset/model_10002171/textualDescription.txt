@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'BlackjackGameSimulator' has no attributes.
+The class 'Deck' has the following attributes: 'ArrayList' of type str.
+The class 'Card' has the following attributes: 'toString' of type str; '_CardSuit' of type int; 'Value' of type int.
+The enumeration 'CardSuit' does not specify any literals.
+The enumeration 'Value' does not specify any literals.
+The enumeration 'Suit' does not specify any literals.

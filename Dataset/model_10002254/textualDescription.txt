@@ -1,0 +1,10 @@
+The model has 7 class(es).
+The class 'Bishop' has no attributes.
+The class 'Queen' has no attributes.
+The class 'King' has no attributes.
+The class 'Knight' has no attributes.
+The class 'Rook' has no attributes.
+The class 'Pawn' has no attributes.
+The class 'Piece' has the following attributes: 'Name' of type str.
+The enumeration 'STATE' does not specify any literals.
+The enumeration 'Player' does not specify any literals.

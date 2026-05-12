@@ -1,0 +1,28 @@
+The model has 17 class(es).
+The class 'Identity_Provider_Actor' has no attributes.
+The class 'Supplier' has the following attributes: 'suppID' of type str; 'suppName' of type str; 'address' of type str.
+The class 'Make_Purchase_external' has no attributes.
+The class 'Payment' has the following attributes: 'productID' of type str; 'customerId' of type str; 'amount' of type int.
+The class 'web_customer_Actor' has no attributes.
+The class 'Client_Register_external' has no attributes.
+The class 'Authentication_Actor' has no attributes.
+The class 'View_Items_external' has no attributes.
+The class 'administrator' has the following attributes: 'adminName' of type str; 'email' of type str.
+The class 'Registered_customer__Actor' has no attributes.
+The class 'New_Customer_Actor' has no attributes.
+The class 'Shopping_Cart' has the following attributes: 'dateAdded' of type str; 'quantity' of type int; 'cartId' of type str.
+The class 'Online_grocery_shopping_Component' has no attributes.
+The class 'user' has the following attributes: 'userID' of type str; 'loginStatus' of type str; 'password' of type str.
+The class 'Customer' has the following attributes: 'address' of type str; 'loginName' of type str; 'mobileNo' of type int.
+The class 'Cancellation' has the following attributes: 'productID' of type str; 'amount' of type str; 'customerID' of type str.
+The class 'Product' has the following attributes: 'quantity' of type int; 'price' of type int; 'name' of type str; 'productID' of type str.
+'Cancellation' (role 'product9', cardinality 0..*) is associated with 'Product' (role 'cancellation8', cardinality 0..*).
+'Client_Register_external' (role 'new_Customer19', cardinality 0..*) is associated with 'New_Customer_Actor' (role 'client_Register18', cardinality 0..*).
+'user' (role 'user0', cardinality 0..*) is associated with 'user' (role 'user1', cardinality 0..*).
+'New_Customer_Actor' (role 'view_Items16', cardinality 0..*) is associated with 'View_Items_external' (role 'new_Customer17', cardinality 0..*).
+'Make_Purchase_external' (role 'registered_customer15', cardinality 0..*) is associated with 'Registered_customer__Actor' (role 'make_Purchase14', cardinality 0..*).
+'Product' (role 'shopping_Cart5', cardinality 0..*) is associated with 'Shopping_Cart' (role 'product4', cardinality 0..*).
+'View_Items_external' (role 'registered_customer13', cardinality 0..*) is associated with 'Registered_customer__Actor' (role 'view_Items12', cardinality 0..*).
+'Payment' (role 'shopping_Cart7', cardinality 0..*) is associated with 'Shopping_Cart' (role 'payment6', cardinality 0..*).
+'Supplier' (role 'product11', cardinality 0..*) is associated with 'Product' (role 'supplier10', cardinality 0..*).
+'Shopping_Cart' (role 'customer3', cardinality 0..*) is associated with 'Customer' (role 'shopping_Cart2', cardinality 0..*).

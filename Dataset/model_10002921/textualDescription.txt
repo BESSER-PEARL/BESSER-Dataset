@@ -1,0 +1,13 @@
+The model has 12 class(es).
+The class 'LOGIN' has the following attributes: 'user_Name' of type str; 'l_Name' of type str; 'f_Name' of type str; 'password' of type str.
+The class 'Catering_book' has the following attributes: 'get_menu' of type str; 'get_cost' of type str.
+The class 'View_and_update' has the following attributes: 'order_view' of type Admin; 'update_order' of type Admin.
+The class 'Hall' has the following attributes: 'get_hall_no' of type str; 'get_room_type' of type str; 'cost_per_day' of type str.
+The class 'View_and_place_order' has the following attributes: 'place_order' of type User; 'order_view' of type User.
+The class 'Catering' has the following attributes: 'get_cost' of type str; 'get_menu' of type str.
+The class 'Decoration_book' has the following attributes: 'Square_feet' of type str; 'cost' of type str; 'Decor_type' of type Decoration_book.
+The class 'Hall_book' has the following attributes: 'get_room_type' of type str; 'get_hall_no' of type str; 'cost_per_day' of type str.
+The class 'Decoration' has the following attributes: 'Decor_type' of type Decoration; 'Square_feet' of type str; 'cost' of type str.
+The class 'void' has no attributes.
+The class 'Admin' has the following attributes: 'userID' of type int; 'password' of type str; 'userName' of type str.
+The class 'User' has the following attributes: 'userID' of type int; 'password' of type str; 'userName' of type str.

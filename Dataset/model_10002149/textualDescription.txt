@@ -1,0 +1,14 @@
+The model has 8 class(es).
+The class 'Paciente' has the following attributes: 'id' of type str; 'numeroSus' of type str; 'responsavel' of type Pessoa.
+The class 'Enfermeira' has the following attributes: 'cofen' of type str; 'setor' of type str.
+The class 'Atestado' has the following attributes: 'consulta' of type Consulta; 'dataFimDoAtestado' of type str; 'quantidadeDias' of type str; 'dataInicioDoAtestado' of type str.
+The class 'Medico' has the following attributes: 'crm' of type str; 'setor' of type str; 'especialidade' of type str.
+The class 'String_Interface' has no attributes.
+The class 'Pessoa' has the following attributes: 'telefone' of type str; 'rg' of type str; 'estadoCivil' of type str; 'nome' of type str; 'sexo' of type str; 'cpf' of type str; 'endereco' of type str; 'dataNascimento' of type str.
+The class 'Triagem' has the following attributes: 'paciente' of type Paciente; 'altura' of type str; 'pressao' of type String_Interface; 'IMC' of type str; 'peso' of type str; 'alergias' of type str; 'febre' of type bool; 'enfermeira' of type Enfermeira; 'sintoma' of type str; 'temperatura' of type str.
+The class 'Consulta' has the following attributes: 'diagnostico' of type str; 'medicamentos' of type str; 'codigoDiagnostico' of type str; 'atestado' of type bool; 'triagem' of type Triagem; 'medico' of type Medico.
+'Consulta' (role 'medico24', cardinality 0..*) is associated with 'Medico' (role 'consulta5', cardinality 0..*).
+'Triagem' (role 'paciente20', cardinality 0..*) is associated with 'Paciente' (role 'triagem1', cardinality 0..*).
+'Enfermeira' (role 'triagem3', cardinality 0..*) is associated with 'Triagem' (role 'enfermeira22', cardinality 0..*).
+'Triagem' (role 'consulta7', cardinality 0..*) is associated with 'Consulta' (role 'triagem26', cardinality 0..*).
+'Consulta' (role 'atestado29', cardinality 0..*) is associated with 'Atestado' (role 'consulta28', cardinality 0..*).

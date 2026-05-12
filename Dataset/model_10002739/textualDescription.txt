@@ -1,0 +1,20 @@
+The model has 15 class(es).
+The class 'datatypes_Array' has the following attributes: 'data' of type datatypes_Value.
+The class 'datatypes_Documents' has the following attributes: 'file' of type str; 'tab_counter' of type int; 'file_name' of type str; 'data' of type datatypes_Json.
+The class 'marketing_Review' has the following attributes: 'id' of type str; 'product' of type marketing_Product; 'user' of type user_User; 'description' of type str; 'rating' of type datatypes_Number.
+The class 'datatypes_String' has the following attributes: 'data' of type datatypes_String.
+The class 'datatypes_Json' has the following attributes: 'values' of type datatypes_Value.
+The class 'system_Category' has the following attributes: 'name' of type str; 'parent' of type system_Category; 'icon' of type str; 'id' of type str; 'section' of type str.
+The class 'user_User' has the following attributes: 'interests' of type system_Category; 'address' of type user_Address; 'reviews' of type marketing_Review; 'business' of type user_Business; 'wishlist' of type marketing_Product; 'id' of type datatypes_String; 'displayName' of type str; 'email' of type str; 'lastName' of type datatypes_String; 'fiirstName' of type datatypes_String; 'phone' of type datatypes_String; 'provider' of type user_Provider; 'purchaseHistory' of type marketing_Product; 'photoURL' of type str.
+The class 'datatypes_Value' has the following attributes: 'attribute' of type str.
+The class 'user_Tags' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'datatypes_Bool' has the following attributes: 'data' of type bool.
+The class 'marketing_Product' has the following attributes: 'name' of type str; 'reviews' of type marketing_Review; 'active' of type bool; 'created' of type date; 'ccategory' of type system_Category; 'expires' of type date; 'id' of type str; 'price' of type float; 'busId' of type user_Business.
+The class 'datatypes_Number' has the following attributes: 'data' of type int.
+The class 'user_Address' has the following attributes: 'state' of type str; 'suburb' of type str; 'postcode' of type str; 'street' of type str; 'country' of type datatypes_String.
+The class 'user_Business' has the following attributes: 'products' of type marketing_Product; 'website' of type str; 'description' of type str; 'name' of type datatypes_String; 'staffUsers' of type user_User; 'email' of type str; 'gallery' of type datatypes_Array; 'address' of type user_Address; 'avgRatings' of type datatypes_Number; 'logo' of type str; 'adminUser' of type user_User; 'providers' of type user_Provider; 'subCategories' of type datatypes_Array; 'category' of type str; 'id' of type datatypes_String; 'tags' of type user_Tags; 'mapRef' of type datatypes_String; 'phone' of type str.
+The class 'user_Provider' has the following attributes: 'email' of type str; 'uid' of type str; 'displayName' of type str; 'providerId' of type str; 'photoURL' of type str.
+'user_Business' (role 'provider5', cardinality 0..*) is associated with 'user_Provider' (role 'business4', cardinality 0..*).
+'user_Business' (role 'tags26', cardinality 0..*) is associated with 'user_Tags' (role 'business7', cardinality 0..*).
+'user_Address' (role 'user1', cardinality 0..*) is associated with 'user_User' (role 'address20', cardinality 0..*).
+'user_Provider' (role 'user2', cardinality 0..*) is associated with 'user_User' (role 'provider3', cardinality 0..*).

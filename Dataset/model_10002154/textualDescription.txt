@@ -1,0 +1,12 @@
+The model has 10 class(es).
+The class 'genmymodelreverse_javax_swing_JFrame' has no attributes.
+The class 'genmymodelreverse_java_awt_event_MouseAdapter' has no attributes.
+The class 'genmymodelreverse_javax_swing_JLabel' has no attributes.
+The class 'genmymodelreverse_java_awt_Graphics' has no attributes.
+The class 'genmymodelreverse_javax_swing_JPanel' has no attributes.
+The class 'Board' has the following attributes: 'NUM_IMAGES' of type int; 'all_cells' of type int; 'MARKED_MINE_CELL' of type int; 'DRAW_MARK' of type int; 'mines_left' of type int; 'field' of type str; 'MINE_CELL' of type int; 'CELL_SIZE' of type int; 'COVERED_MINE_CELL' of type int; 'DRAW_WRONG_MARK' of type int; 'N_MINES' of type int; 'statusbar' of type genmymodelreverse_javax_swing_JLabel; 'DRAW_MINE' of type int; 'EMPTY_CELL' of type int; 'DRAW_COVER' of type int; 'N_COLS' of type int; 'timeBar' of type genmymodelreverse_javax_swing_JLabel; 'img' of type str; 'COVER_FOR_CELL' of type int; 'MARK_FOR_CELL' of type int; 'N_ROWS' of type int; 'inGame' of type bool.
+The class 'MinesAdapter' has no attributes.
+The class 'Mines' has the following attributes: 'hexCell' of type genmymodelreverse_javax_swing_JMenuItem; 'FRAME_WIDTH' of type int; 'timeBar' of type genmymodelreverse_javax_swing_JLabel; 'statusbar' of type genmymodelreverse_javax_swing_JLabel; 'FRAME_HEIGHT' of type int.
+The class 'genmymodelreverse_javax_swing_JMenuItem' has no attributes.
+The class 'genmymodelreverse_java_awt_event_MouseEvent' has no attributes.
+'Board' (role 'mines0', cardinality 0..*) is associated with 'Mines' (role 'game1', cardinality 0..*).

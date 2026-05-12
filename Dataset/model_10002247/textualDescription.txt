@@ -1,0 +1,28 @@
+The model has 14 class(es).
+The class 'Endereco' has the following attributes: 'cidade' of type str; 'cep' of type str; 'bairro' of type str; 'numero' of type int; 'logradouro' of type str.
+The class 'Exame' has the following attributes: 'data' of type str; 'descricao' of type str; 'nome' of type str.
+The class 'TipoMedicamento' has the following attributes: 'nome' of type str.
+The class 'Medicamento' has the following attributes: 'horaInicial' of type str; 'intervaloTempo' of type int; 'nome' of type str; 'descricao' of type str; 'dataInicio' of type str; 'ativo' of type bool; 'dataFim' of type str.
+The class 'TipoSanguineo' has the following attributes: 'nome' of type str.
+The class 'ProfissionalSaude' has no attributes.
+The class 'Paciente' has no attributes.
+The class 'Naturalidade' has the following attributes: 'naturalidade' of type str.
+The class 'Telefone' has the following attributes: 'numero' of type str; 'ddd' of type int; 'tipo' of type str.
+The class 'LocalExame' has the following attributes: 'nome' of type str.
+The class 'Pessoa' has the following attributes: 'cpf' of type str; 'dataInclusao' of type str; 'sexo' of type str; 'ultimoAcesso' of type str; 'dataNascimento' of type str; 'senha' of type str; 'email' of type str.
+The class 'LinhaCuidado' has the following attributes: 'nome' of type str; 'descricao' of type int.
+The class 'Mensagem' has the following attributes: 'mensagem' of type str; 'assunto' of type str; 'dataEnvio' of type str; 'geral' of type bool.
+The class 'Interacao' has no attributes.
+The enumeration 'enu' does not specify any literals.
+'Telefone' (role 'pessoa7', cardinality 0..*) is associated with 'Pessoa' (role 'telefone6', cardinality 0..*).
+'LinhaCuidado' (role 'mensagem15', cardinality 0..*) is associated with 'Mensagem' (role 'linhaCuidado14', cardinality 0..*).
+'Exame' (role 'localExame1', cardinality 0..*) is associated with 'LocalExame' (role 'exame0', cardinality 0..*).
+'Paciente' (role 'mensagem20', cardinality 0..*) is associated with 'Mensagem' (role 'paciente21', cardinality 0..*).
+'Medicamento' (role 'paciente9', cardinality 0..*) is associated with 'Paciente' (role 'medicamento8', cardinality 0..*).
+'Naturalidade' (role 'pessoa11', cardinality 0..*) is associated with 'Pessoa' (role 'naturalidade10', cardinality 0..*).
+'Endereco' (role 'localExame3', cardinality 0..*) is associated with 'LocalExame' (role 'endereco2', cardinality 0..*).
+'Endereco' (role 'pessoa4', cardinality 0..*) is associated with 'Pessoa' (role 'endereco5', cardinality 0..*).
+'TipoSanguineo' (role 'paciente22', cardinality 0..*) is associated with 'Paciente' (role 'tipoSanguineo23', cardinality 0..*).
+'Interacao' (role 'paciente19', cardinality 0..*) is associated with 'Paciente' (role 'interacao18', cardinality 0..*).
+'Interacao' (role 'mensagem16', cardinality 0..*) is associated with 'Mensagem' (role 'interacao17', cardinality 0..*).
+'ProfissionalSaude' (role 'mensagem12', cardinality 0..*) is associated with 'Mensagem' (role 'profissionalSaude13', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'ShoppingCart' has the following attributes: 'creationDate' of type date.
+The class 'LineItem' has the following attributes: 'price' of type float; 'quantity' of type int.
+The class 'Account' has the following attributes: 'billingAddress' of type str; 'closed' of type date; 'isClosed' of type bool; 'open' of type date.
+The class 'Order' has the following attributes: 'ordered' of type date; 'total' of type float; 'status' of type OrderStatus; 'shipped' of type bool; 'shipTo' of type str; 'number' of type int.
+The class 'Payment' has the following attributes: 'total' of type float; 'paidDate' of type date; 'details' of type str.
+The class 'Recollector' has the following attributes: 'telephone' of type str; 'id' of type str; 'latitude' of type str; 'longitude' of type str; 'full_name' of type str.
+The class 'Product' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'User_Account' has the following attributes: 'password' of type str; 'telephone' of type str; 'email' of type str; 'full_name' of type str.
+The enumeration 'OrderStatus' does not specify any literals.
+The enumeration 'UserState' does not specify any literals.
+'Order' (role 'items8', cardinality 0..*) is associated with 'LineItem' (role 'order9', cardinality 0..*).
+'Account' (role 'p0', cardinality 0..*) is associated with 'Payment' (role 'acc1', cardinality 0..*).
+'Order' (role 'account11', cardinality 0..*) is associated with 'Account' (role 'order10', cardinality 0..*).
+'LineItem' (role 'sc5', cardinality 0..*) is associated with 'ShoppingCart' (role 'items4', cardinality 0..*).
+'Payment' (role 'order12', cardinality 0..*) is associated with 'Order' (role 'payment13', cardinality 0..*).
+'Account' (role 'cart2', cardinality 0..*) is associated with 'ShoppingCart' (role 'account3', cardinality 0..*).
+'Product' (role 'lineItems6', cardinality 0..*) is associated with 'LineItem' (role 'product7', cardinality 0..*).

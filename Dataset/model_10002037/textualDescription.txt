@@ -1,0 +1,9 @@
+The model has 7 class(es).
+The class 'Player' has the following attributes: 'totalAmount' of type int.
+The class 'Blackjack' has the following attributes: 'playerName' of type str; 'players' of type int; 'count' of type int; 'hand__' of type Card.
+The class 'Card' has the following attributes: 'suit' of type str; 'value' of type int; 'rank' of type int.
+The class 'BlackjackGUI' has no attributes.
+The class 'Dealer' has no attributes.
+The class 'BlackjackDriver' has no attributes.
+The class 'JFrame' has no attributes.
+'Card' (role 'blackjack1', cardinality 0..*) is associated with 'Blackjack' (role 'card0', cardinality 0..*).

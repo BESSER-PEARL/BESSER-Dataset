@@ -1,0 +1,65 @@
+The model has 44 class(es).
+The class 'educational_qualification_UseCase1' has no attributes.
+The class 'employer_Actor1' has no attributes.
+The class 'Actor4_Actor' has no attributes.
+The class 'job_offer_UseCase' has no attributes.
+The class 'login_UseCase2' has no attributes.
+The class 'job_offers_UseCase' has no attributes.
+The class 'Employer_Actor' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'Manage_database_UseCase' has no attributes.
+The class 'list_of_jobs_available_UseCase' has no attributes.
+The class 'job_vacancies_UseCase' has no attributes.
+The class 'logout_UseCase' has no attributes.
+The class 'educational_qualification_UseCase' has no attributes.
+The class 'job_seeker_Actor' has no attributes.
+The class 'job_seeker_Actor2' has no attributes.
+The class 'search_jobs_UseCase' has no attributes.
+The class 'Actor3_Actor' has no attributes.
+The class 'job_seeker_Actor1' has no attributes.
+The class 'Response_to_users_employee_to_job_seekers__UseCase' has no attributes.
+The class 'Actor2_Actor' has no attributes.
+The class 'list_of_jobs_related_to_graduation_UseCase' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'employer_Actor' has no attributes.
+The class 'add_update_and_delete_job_UseCase' has no attributes.
+The class 'Administrator_Actor1' has no attributes.
+The class 'post_job_UseCase' has no attributes.
+The class 'User' has the following attributes: 'Name' of type str; 'Address' of type str.
+The class 'admin_Actor' has no attributes.
+The class 'admin_Actor1' has no attributes.
+The class 'Job_Seeker_Actor' has no attributes.
+The class 'seeking_for_job_UseCase' has no attributes.
+The class 'log_in_UseCase' has no attributes.
+The class 'login_UseCase' has no attributes.
+The class 'JobSeeker' has the following attributes: 'Qualification' of type str; 'Name' of type str; 'Experience' of type str.
+The class 'login_UseCase1' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'search_job_UseCase' has no attributes.
+The class 'post_resume_UseCase' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'Update_categories_UseCase' has no attributes.
+The class 'Employer' has the following attributes: 'Address' of type str; 'Name' of type str.
+The class 'Administrator' has the following attributes: 'Name' of type str; 'Address' of type str; 'Company' of type str.
+The class 'admin_Actor2' has no attributes.
+The class 'apply_for_job_UseCase' has no attributes.
+'add_update_and_delete_job_UseCase' (role 'employer35', cardinality 0..*) is associated with 'Employer_Actor' (role 'add_update_and_delete_job34', cardinality 0..*).
+'login_UseCase2' (role 'employer15', cardinality 0..*) is associated with 'Employer_Actor' (role 'login14', cardinality 0..*).
+'logout_UseCase' (role 'job_seeker11', cardinality 0..*) is associated with 'job_seeker_Actor2' (role 'logout10', cardinality 0..*).
+'employer_Actor1' (role 'login6', cardinality 0..*) is associated with 'login_UseCase1' (role 'actor57', cardinality 0..*).
+'Administrator' (role 'jobseeker38', cardinality 0..*) is associated with 'JobSeeker' (role 'administrator39', cardinality 0..*).
+'Administrator' (role 'employer37', cardinality 0..*) is associated with 'Employer' (role 'administrator36', cardinality 0..*).
+'Employer_Actor' (role 'post_job32', cardinality 0..*) is associated with 'post_job_UseCase' (role 'employer33', cardinality 0..*).
+'Job_Seeker_Actor' (role 'post_resume22', cardinality 0..*) is associated with 'post_resume_UseCase' (role 'job_Seeker23', cardinality 0..*).
+'employer_Actor1' (role 'logout4', cardinality 0..*) is associated with 'logout_UseCase' (role 'actor55', cardinality 0..*).
+'Administrator_Actor1' (role 'manage_database24', cardinality 0..*) is associated with 'Manage_database_UseCase' (role 'administrator25', cardinality 0..*).
+'Update_categories_UseCase' (role 'administrator27', cardinality 0..*) is associated with 'Administrator_Actor1' (role 'update_categories26', cardinality 0..*).
+'Administrator_Actor1' (role 'login16', cardinality 0..*) is associated with 'login_UseCase2' (role 'administrator17', cardinality 0..*).
+'Employer_Actor' (role 'search_job30', cardinality 0..*) is associated with 'search_job_UseCase' (role 'employer31', cardinality 0..*).
+'logout_UseCase' (role 'admin9', cardinality 0..*) is associated with 'admin_Actor2' (role 'logout8', cardinality 0..*).
+'job_seeker_Actor2' (role 'login0', cardinality 0..*) is associated with 'login_UseCase1' (role 'job_seeker1', cardinality 0..*).
+'Job_Seeker_Actor' (role 'apply_for_job20', cardinality 0..*) is associated with 'apply_for_job_UseCase' (role 'job_Seeker21', cardinality 0..*).
+'Job_Seeker_Actor' (role 'login12', cardinality 0..*) is associated with 'login_UseCase2' (role 'job_Seeker13', cardinality 0..*).
+'login_UseCase1' (role 'admin3', cardinality 0..*) is associated with 'admin_Actor2' (role 'login2', cardinality 0..*).
+'Job_Seeker_Actor' (role 'search_jobs18', cardinality 0..*) is associated with 'search_jobs_UseCase' (role 'job_Seeker19', cardinality 0..*).
+'Administrator_Actor1' (role 'response_to_users28', cardinality 0..*) is associated with 'Response_to_users_employee_to_job_seekers__UseCase' (role 'administrator29', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'Driver' has the following attributes: 'Score' of type int; 'removedCard' of type int.
+The class 'T' has no attributes.
+The class 'Players' has the following attributes: 'Player2' of type Card_Interface; 'Planet' of type Card_Interface; 'Player1' of type Card_Interface.
+The class 'Card_Interface' has no attributes.
+The class 'Deck' has the following attributes: 'shuffle__' of type str; 'isEmpty__' of type bool; 'deck__' of type Deck.
+The class 'Strategy1___Strategy2' has no attributes.
+'Deck' (role 'Strategy1_20', cardinality 0..*) is associated with 'Strategy1___Strategy2' (role 'Strategy1_21', cardinality 0..*).
+'Players' (role 'Strategy1_26', cardinality 0..*) is associated with 'Strategy1___Strategy2' (role 'players7', cardinality 0..*).
+'Deck' (role 'card2', cardinality 0..*) is associated with 'Card_Interface' (role 'deck3', cardinality 0..*).
+'Players' (role 'driver9', cardinality 0..*) is associated with 'Driver' (role 'Players8', cardinality 0..*).
+'Driver' (role 'card10', cardinality 0..*) is associated with 'Card_Interface' (role 'function11', cardinality 0..*).
+'Driver' (role 'deck13', cardinality 0..*) is associated with 'Deck' (role 'function12', cardinality 0..*).
+'Strategy1___Strategy2' (role 'players4', cardinality 0..*) is associated with 'Players' (role 'Strategy1___25', cardinality 0..*).

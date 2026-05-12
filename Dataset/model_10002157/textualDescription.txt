@@ -1,0 +1,53 @@
+The model has 33 class(es).
+The class 'Search_store_locations_UseCase' has no attributes.
+The class 'Cook_Pizza_UseCase' has no attributes.
+The class 'Manage_accounts_UseCase' has no attributes.
+The class 'Online_pizza_ordering' has the following attributes: 'Price' of type float; 'Ingredients' of type str; 'pizza_type' of type str.
+The class 'Pre_order_UseCase' has no attributes.
+The class 'Edit_menu_UseCase' has no attributes.
+The class 'Save_favourite_order_UseCase' has no attributes.
+The class 'View_Pizza_types_UseCase' has no attributes.
+The class 'View_Meal_Deal_UseCase' has no attributes.
+The class 'Checkout_UseCase' has no attributes.
+The class 'Make_Payment_UseCase' has no attributes.
+The class 'Admin' has no attributes.
+The class 'Menu' has the following attributes: 'toppings' of type str; 'Quantity' of type str.
+The class 'Registered_User_Actor' has no attributes.
+The class 'Customer' has the following attributes: 'Name' of type str; 'Password' of type str.
+The class 'Pizza_Chef_Actor' has no attributes.
+The class 'Add_item_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Change_toppings_UseCase' has no attributes.
+The class 'PayAt_Delivery_UseCase' has no attributes.
+The class 'Payment' has no attributes.
+The class 'Create_your_own_pizza_UseCase' has no attributes.
+The class 'View_side_orders_UseCase' has no attributes.
+The class 'Pay_online_UseCase' has no attributes.
+The class 'Order_tracking_UseCase' has no attributes.
+The class 'Receive_order_UseCase' has no attributes.
+The class 'Create_Account_UseCase' has no attributes.
+The class 'Deliver_pizza_UseCase' has no attributes.
+The class 'Delivery_person_Actor' has no attributes.
+The class 'Pay_cash_on_deliver' has no attributes.
+The class 'Sign_In_UseCase' has no attributes.
+The class 'Online_payment_methods' has no attributes.
+The class 'Add_new_address_UseCase' has no attributes.
+'Registered_User_Actor' (role 'select_Meal_Deal8', cardinality 0..*) is associated with 'View_Meal_Deal_UseCase' (role 'registered_User9', cardinality 0..*).
+'Create_Account_UseCase' (role 'registered_User27', cardinality 0..*) is associated with 'Registered_User_Actor' (role 'create_Account26', cardinality 0..*).
+'Pizza_Chef_Actor' (role 'receive_order17', cardinality 0..*) is associated with 'Receive_order_UseCase' (role 'pizza_Chef16', cardinality 0..*).
+'Sign_In_UseCase' (role 'registered_User29', cardinality 0..*) is associated with 'Registered_User_Actor' (role 'sign_In28', cardinality 0..*).
+'Search_store_locations_UseCase' (role 'registered_User3', cardinality 0..*) is associated with 'Registered_User_Actor' (role 'search_store_locations2', cardinality 0..*).
+'Registered_User_Actor' (role 'pre_order24', cardinality 0..*) is associated with 'Pre_order_UseCase' (role 'registered_User25', cardinality 0..*).
+'Customer' (role 'Customer_Online_pizza_ordering_030', cardinality 0..*) is associated with 'Online_pizza_ordering' (role 'Customer_Online_pizza_ordering_131', cardinality 0..*).
+'Admin' (role 'assoc_133', cardinality 0..*) is associated with 'Online_pizza_ordering' (role 'assoc_032', cardinality 0..*).
+'Online_pizza_ordering' (role 'assoc_036', cardinality 0..*) is associated with 'Menu' (role 'assoc_137', cardinality 0..*).
+'Create_your_own_pizza_UseCase' (role 'registered_User13', cardinality 0..*) is associated with 'Registered_User_Actor' (role 'create_your_own_pizza12', cardinality 0..*).
+'Registered_User_Actor' (role 'view_Pizza_types6', cardinality 0..*) is associated with 'View_Pizza_types_UseCase' (role 'registered_User7', cardinality 0..*).
+'Customer' (role 'assoc_034', cardinality 0..*) is associated with 'Payment' (role 'assoc_135', cardinality 0..*).
+'Order_tracking_UseCase' (role 'registered_User15', cardinality 0..*) is associated with 'Registered_User_Actor' (role 'order_tracking14', cardinality 0..*).
+'Receive_order_UseCase' (role 'delivery_person19', cardinality 0..*) is associated with 'Delivery_person_Actor' (role 'receive_order18', cardinality 0..*).
+'Save_favourite_order_UseCase' (role 'registered_User1', cardinality 0..*) is associated with 'Registered_User_Actor' (role 'save_favourite_order0', cardinality 0..*).
+'Edit_menu_UseCase' (role 'admin20', cardinality 0..*) is associated with 'Admin_Actor' (role 'edit_menu21', cardinality 0..*).
+'Manage_accounts_UseCase' (role 'admin22', cardinality 0..*) is associated with 'Admin_Actor' (role 'manage_accounts23', cardinality 0..*).
+'Registered_User_Actor' (role 'view_side_orders4', cardinality 0..*) is associated with 'View_side_orders_UseCase' (role 'registered_User5', cardinality 0..*).
+'Registered_User_Actor' (role 'checkout10', cardinality 0..*) is associated with 'Checkout_UseCase' (role 'registered_User11', cardinality 0..*).

@@ -1,0 +1,15 @@
+The model has 10 class(es).
+The class 'Employee' has the following attributes: 'EmpLName' of type str; 'State' of type str; 'City' of type str; 'Gender' of type str; 'EmpFName' of type str; 'EmpType' of type str; 'Department' of type str; 'DOB' of type str; 'EmpId' of type int; 'Zipcode' of type str; 'Address' of type str.
+The class 'Contractor' has no attributes.
+The class 'Customer' has the following attributes: 'Gender' of type str; 'Mobile' of type int; 'Zipcode' of type int; 'State' of type str; 'Address' of type str; 'CustId' of type int; 'Lname' of type str; 'FName' of type str; 'attribute' of type str; 'DOB' of type str.
+The class 'Temporary' has no attributes.
+The class 'Business' has no attributes.
+The class 'CheckingAccount' has the following attributes: 'Diposit' of type str; 'CustomerId' of type int; 'Withdraw' of type str; 'Cust_Name' of type str; 'AccountType' of type str; 'Cust_DOB' of type str; 'MobileNo' of type int; 'Amount' of type str; 'AccountNo' of type int.
+The class 'Permanent' has no attributes.
+The class 'BMS' has no attributes.
+The class 'Indevidual' has no attributes.
+The class 'SavingsAccount' has the following attributes: 'Cust_Name' of type str; 'CustomerId' of type int; 'Diposit' of type str; 'Cust_DOB' of type str; 'Amount' of type str; 'AccountNo' of type int; 'AccountType' of type str; 'Mobile' of type int; 'Withdraw' of type str.
+'Customer' (role 'savings_Account4', cardinality 0..*) is associated with 'SavingsAccount' (role 'customer5', cardinality 0..*).
+'Customer' (role 'checking_Account6', cardinality 0..*) is associated with 'CheckingAccount' (role 'customer7', cardinality 0..*).
+'Customer' (role 'BMS3', cardinality 0..*) is associated with 'BMS' (role 'customer2', cardinality 0..*).
+'Employee' (role 'BMS1', cardinality 0..*) is associated with 'BMS' (role 'employee0', cardinality 0..*).

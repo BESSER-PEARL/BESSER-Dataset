@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'MotorCycle' has no attributes.
+The class 'VehicleInterface_Interface' has no attributes.
+The class 'Bus' has no attributes.
+The class 'ParkingLot' has the following attributes: 'maxSize' of type int; 'hourlyPrice' of type int.
+The class 'Parking_Record' has the following attributes: 'ownerName' of type str; 'releaseTime' of type str; 'vehicleLicensePlate' of type str; 'vehicleModel' of type str; 'spot' of type Spot; 'hourlyRate' of type int; 'ownerPhone' of type str; 'parkTime' of type str; 'totalCost' of type int; 'vehicleColor' of type str.
+The class 'Car' has no attributes.
+The class 'Spot' has the following attributes: 'status' of type spotStatus; 'level' of type int; 'section' of type str; 'spotType' of type spotType; 'covered' of type bool; 'isValet' of type bool; 'spotNumber' of type int; 'isDisabledSpot' of type bool.
+The class 'AbstractVehicle' has the following attributes: 'restrictions' of type spotRestriction; 'type' of type str; 'licensePlate' of type str.
+The class 'spotRestriction' has the following attributes: 'size' of type int; 'spotType' of type spotType.
+The enumeration 'vehicleStatus' does not specify any literals.
+The enumeration 'spotStatus' does not specify any literals.
+The enumeration 'spotType' does not specify any literals.
+'Parking_Record' (role 'spot25', cardinality 0..*) is associated with 'Spot' (role 'parking_Record4', cardinality 0..*).
+'ParkingLot' (role 'spot1', cardinality 0..*) is associated with 'Spot' (role 'parkingLot0', cardinality 0..*).
+'ParkingLot' (role 'parking_Record2', cardinality 0..*) is associated with 'Parking_Record' (role 'parkingLot3', cardinality 0..*).

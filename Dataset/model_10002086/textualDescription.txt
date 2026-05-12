@@ -1,0 +1,63 @@
+The model has 30 class(es).
+The class 'bookmark' has the following attributes: 'id_user' of type int; 'id_event' of type int; 'id_bookmark' of type int.
+The class 'kota' has the following attributes: 'id_kota' of type int; 'gambar' of type str; 'nama_kota' of type str.
+The class 'user' has the following attributes: 'nama_lengkap' of type str; 'id_user' of type int; 'asal_sekolah' of type str; 'instagram' of type str; 'no_telp' of type str; 'password' of type str; 'asal_kota' of type str; 'email' of type str; 'gambar' of type str; 'jenis_kelamin' of type str.
+The class 'Registrasi_external' has no attributes.
+The class 'event' has the following attributes: 'id_kota' of type int; 'tanggal' of type str; 'nama_event' of type str; 'gambar' of type str; 'harga_reguler' of type int; 'detail' of type str; 'longitude' of type str; 'id_admin' of type int; 'id_event' of type int; 'harga_premium' of type int; 'deskripsi' of type str; 'latitude' of type str; 'lokasi' of type str.
+The class 'Lihat_Peserta_Sudah_Bayar_external' has no attributes.
+The class 'Tambah_Link_Grup_Whatsapp_external' has no attributes.
+The class '_Component' has no attributes.
+The class 'Update_Profil_external' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Lihat_Hasil_Jawaban__make_it_better__external' has no attributes.
+The class 'Update__isi__pertanyaan__make_it_better__external' has no attributes.
+The class 'Beli_Tiket_external' has no attributes.
+The class 'transaksi' has the following attributes: 'nama_event' of type str; 'id_event' of type int; 'id_kota' of type int; 'harga' of type int; 'tipe_tiket' of type str; 'id_orders' of type int.
+The class 'Lihat_Peserta_Belum_Bayar_external' has no attributes.
+The class 'Lihat_Seluruh_Peserta_external' has no attributes.
+The class 'Unduh_E_Ticket_external' has no attributes.
+The class 'testimoni' has the following attributes: 'info_instagram' of type str; 'sarana' of type str; 'ptn' of type str; 'akses_instagram' of type str; 'kepuasan_instagram' of type str; 'waktu_instagram' of type str; 'buka_instagram' of type str; 'mudah_info' of type str; 'kritik' of type str; 'pts_favorit' of type str; 'id' of type int.
+The class 'Tambah_Event_external' has no attributes.
+The class 'Lihat_Ringkasan_Transaksi_external' has no attributes.
+The class 'Melihat_pertanyaan__make_it_better__external' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Peserta_Actor' has no attributes.
+The class 'Bayar_Tiket_external' has no attributes.
+The class 'admin' has the following attributes: 'password' of type str; 'id_admin' of type int; 'username' of type str.
+The class 'Lihat_Detail_Event_external' has no attributes.
+The class 'e_ticket' has the following attributes: 'status' of type str; 'id_user' of type int; 'id_ticket' of type int; 'due_date' of type str; 'id_event' of type int; 'date' of type str; 'bukti_trf' of type str.
+The class 'Tambah_Kota_external' has no attributes.
+The class 'Lihat_Event_external' has no attributes.
+The class 'Masuk_Link_Grup_Whatsapp_external' has no attributes.
+'Lihat_Detail_Event_external' (role 'admin29', cardinality 0..*) is associated with 'Admin_Actor' (role 'lihat_Detail_Event28', cardinality 0..*).
+'Peserta_Actor' (role 'registrasi2', cardinality 0..*) is associated with 'Registrasi_external' (role 'peserta3', cardinality 0..*).
+'Peserta_Actor' (role 'logout4', cardinality 0..*) is associated with 'Logout_external' (role 'peserta5', cardinality 0..*).
+'user' (role 'transaksi50', cardinality 0..*) is associated with 'transaksi' (role 'user51', cardinality 0..*).
+'kota' (role 'event53', cardinality 0..*) is associated with 'event' (role 'kota52', cardinality 0..*).
+'testimoni' (role 'admin57', cardinality 0..*) is associated with 'admin' (role 'testimoni56', cardinality 0..*).
+'e_ticket' (role 'user47', cardinality 0..*) is associated with 'user' (role 'e_ticket46', cardinality 0..*).
+'Bayar_Tiket_external' (role 'peserta13', cardinality 0..*) is associated with 'Peserta_Actor' (role 'bayar_Tiket12', cardinality 0..*).
+'Melihat_pertanyaan__make_it_better__external' (role 'admin31', cardinality 0..*) is associated with 'Admin_Actor' (role 'melihat_pertanyaan__make_it_better_30', cardinality 0..*).
+'Lihat_Ringkasan_Transaksi_external' (role 'admin0', cardinality 0..*) is associated with 'Admin_Actor' (role 'lihat_Ringkasan_Transaksi1', cardinality 0..*).
+'Peserta_Actor' (role 'beli_Tiket14', cardinality 0..*) is associated with 'Beli_Tiket_external' (role 'peserta15', cardinality 0..*).
+'Admin_Actor' (role 'lihat_Hasil_Jawaban__make_it_better_44', cardinality 0..*) is associated with 'Lihat_Hasil_Jawaban__make_it_better__external' (role 'admin45', cardinality 0..*).
+'Masuk_Link_Grup_Whatsapp_external' (role 'peserta17', cardinality 0..*) is associated with 'Peserta_Actor' (role 'masuk_Link_Grup_Whatsapp16', cardinality 0..*).
+'Peserta_Actor' (role 'lihat_Ringkasan_Transaksi62', cardinality 0..*) is associated with 'Lihat_Ringkasan_Transaksi_external' (role 'peserta63', cardinality 0..*).
+'Admin_Actor' (role 'lihat_Peserta_Sudah_Bayar36', cardinality 0..*) is associated with 'Lihat_Peserta_Sudah_Bayar_external' (role 'admin37', cardinality 0..*).
+'Admin_Actor' (role 'tambah_Event32', cardinality 0..*) is associated with 'Tambah_Event_external' (role 'admin33', cardinality 0..*).
+'Melihat_pertanyaan__make_it_better__external' (role 'peserta21', cardinality 0..*) is associated with 'Peserta_Actor' (role 'melihat_pertanyaan__make_it_better_20', cardinality 0..*).
+'Peserta_Actor' (role 'unduh_E_Ticket18', cardinality 0..*) is associated with 'Unduh_E_Ticket_external' (role 'peserta19', cardinality 0..*).
+'Lihat_Peserta_Belum_Bayar_external' (role 'admin39', cardinality 0..*) is associated with 'Admin_Actor' (role 'lihat_Peserta_Belum_Bayar38', cardinality 0..*).
+'Lihat_Event_external' (role 'admin27', cardinality 0..*) is associated with 'Admin_Actor' (role 'lihat_Event26', cardinality 0..*).
+'Peserta_Actor' (role 'update_Profil6', cardinality 0..*) is associated with 'Update_Profil_external' (role 'peserta7', cardinality 0..*).
+'user' (role 'bookmark55', cardinality 0..*) is associated with 'bookmark' (role 'user54', cardinality 0..*).
+'Lihat_Event_external' (role 'peserta9', cardinality 0..*) is associated with 'Peserta_Actor' (role 'lihat_Event8', cardinality 0..*).
+'Logout_external' (role 'admin25', cardinality 0..*) is associated with 'Admin_Actor' (role 'logout24', cardinality 0..*).
+'Peserta_Actor' (role 'lihat_Detail_Event10', cardinality 0..*) is associated with 'Lihat_Detail_Event_external' (role 'peserta11', cardinality 0..*).
+'event' (role 'admin59', cardinality 0..*) is associated with 'admin' (role 'event58', cardinality 0..*).
+'Peserta_Actor' (role 'update__isi__pertanyaan__make_it_better_22', cardinality 0..*) is associated with 'Update__isi__pertanyaan__make_it_better__external' (role 'peserta23', cardinality 0..*).
+'Admin_Actor' (role 'tambah_Link_Grup_Whatsapp42', cardinality 0..*) is associated with 'Tambah_Link_Grup_Whatsapp_external' (role 'admin43', cardinality 0..*).
+'Tambah_Kota_external' (role 'admin41', cardinality 0..*) is associated with 'Admin_Actor' (role 'tambah_Kota40', cardinality 0..*).
+'Lihat_Seluruh_Peserta_external' (role 'admin35', cardinality 0..*) is associated with 'Admin_Actor' (role 'lihat_Seluruh_Peserta34', cardinality 0..*).
+'event' (role 'transaksi49', cardinality 0..*) is associated with 'transaksi' (role 'event48', cardinality 0..*).
+'event' (role 'e_ticket60', cardinality 0..*) is associated with 'e_ticket' (role 'event61', cardinality 0..*).

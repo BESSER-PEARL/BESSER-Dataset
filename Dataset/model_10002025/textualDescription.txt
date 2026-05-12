@@ -1,0 +1,14 @@
+The model has 9 class(es).
+The class 'CustomException_DeckOrHandEmptyException' has no attributes.
+The class 'Deck' has the following attributes: 'CardsList' of type str.
+The class 'CustomException_InvalidCardException' has no attributes.
+The class 'CardGame' has no attributes.
+The class 'CardPlayer__' has no attributes.
+The class 'CustomException_CardException' has no attributes.
+The class 'Card' has the following attributes: 'Suit' of type Enumeration; 'Rank' of type int.
+The class 'Hand' has the following attributes: 'HandOfCards' of type str.
+The class 'CardPlayer' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.
+'Deck' (role 'Deck_Card_00', cardinality 0..*) is associated with 'Card' (role 'Deck_Card_11', cardinality 0..*).
+'CardPlayer' (role 'CardPlayer_Hand_04', cardinality 0..*) is associated with 'Hand' (role 'CardPlayer_Hand_15', cardinality 0..*).
+'Card' (role 'Hand_Card_13', cardinality 0..*) is associated with 'Hand' (role 'Hand_Card_02', cardinality 0..*).

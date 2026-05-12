@@ -1,0 +1,29 @@
+The model has 17 class(es).
+The class 'Medien_ausleihen_external' has no attributes.
+The class 'Verwaltung_Actor' has no attributes.
+The class 'Selbstbedienungsterminal_Actor' has no attributes.
+The class 'Kunde_Actor1' has no attributes.
+The class 'Bibliothekar_Actor' has no attributes.
+The class 'Leser_Actor' has no attributes.
+The class 'Banksystem_Component' has no attributes.
+The class 'ausstehende_Mahnung_versenden_external' has no attributes.
+The class 'Buch_suchen_external' has no attributes.
+The class 'Bibliothek_Component' has no attributes.
+The class 'Adresse' has no attributes.
+The class 'Geld_abheben_external' has no attributes.
+The class 'Lieferant_Actor' has no attributes.
+The class 'Kunde_Actor' has no attributes.
+The class 'Terminal_Actor' has no attributes.
+The class 'Medienr_ckgabe_external' has no attributes.
+The class 'Adresse__ndern_external' has no attributes.
+'Terminal_Actor' (role 'geld_abheben2', cardinality 0..*) is associated with 'Geld_abheben_external' (role 'terminal3', cardinality 0..*).
+'Geld_abheben_external' (role 'kunde1', cardinality 0..*) is associated with 'Kunde_Actor' (role 'geld_abheben0', cardinality 0..*).
+'Medien_ausleihen_external' (role 'bibliothekar9', cardinality 0..*) is associated with 'Bibliothekar_Actor' (role 'medien_ausleihen8', cardinality 0..*).
+'Selbstbedienungsterminal_Actor' (role 'buch_suchen20', cardinality 0..*) is associated with 'Buch_suchen_external' (role 'selbstbedienungsterminal21', cardinality 0..*).
+'Leser_Actor' (role 'medienr_ckgabe10', cardinality 0..*) is associated with 'Medienr_ckgabe_external' (role 'leser11', cardinality 0..*).
+'Adresse__ndern_external' (role 'leser17', cardinality 0..*) is associated with 'Leser_Actor' (role 'adresse__ndern16', cardinality 0..*).
+'Medien_ausleihen_external' (role 'leser13', cardinality 0..*) is associated with 'Leser_Actor' (role 'medien_ausleihen12', cardinality 0..*).
+'Verwaltung_Actor' (role 'ausstehende_Mahnung_versenden4', cardinality 0..*) is associated with 'ausstehende_Mahnung_versenden_external' (role 'verwaltung5', cardinality 0..*).
+'Adresse__ndern_external' (role 'selbstbedienungsterminal19', cardinality 0..*) is associated with 'Selbstbedienungsterminal_Actor' (role 'adresse__ndern18', cardinality 0..*).
+'Bibliothekar_Actor' (role 'medienr_ckgabe6', cardinality 0..*) is associated with 'Medienr_ckgabe_external' (role 'bibliothekar7', cardinality 0..*).
+'Leser_Actor' (role 'buch_suchen14', cardinality 0..*) is associated with 'Buch_suchen_external' (role 'leser15', cardinality 0..*).

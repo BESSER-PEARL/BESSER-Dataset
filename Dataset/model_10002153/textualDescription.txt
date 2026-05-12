@@ -1,0 +1,13 @@
+The model has 8 class(es).
+The class 'Savings_Account' has the following attributes: 'AccNo' of type int; 'Holder_Name' of type str; 'PIn' of type Savings_Account.
+The class 'Accounts' has the following attributes: 'AccountNo' of type int; 'branchCode' of type str.
+The class 'ATM_s' has the following attributes: 'PIN' of type int; 'OperatorName' of type str; 'Withdrawn' of type int.
+The class 'AccountHolder' has the following attributes: 'AccNo' of type int; 'Name' of type str; 'Address' of type str.
+The class 'Bank' has the following attributes: 'Name' of type str; 'locality' of type str; 'Name_string' of type str; 'ID' of type int.
+The class 'CurrentAccount' has the following attributes: 'HolderName' of type str; 'AccNo' of type int; 'PIn' of type int.
+The class 'Loan_Account' has the following attributes: 'Type' of type str; 'Acc_No' of type int; 'HolderName' of type str; 'Loan_No' of type int.
+The class 'BankEmployee' has the following attributes: 'EmployeeID' of type int; 'Name' of type str; 'Salary' of type int; 'EmpAdd' of type str.
+'AccountHolder' (role 'accounts7', cardinality 0..*) is associated with 'Accounts' (role 'accountHolder6', cardinality 0..*).
+'Bank' (role 'bankEmployee2', cardinality 0..*) is associated with 'BankEmployee' (role 'bank3', cardinality 0..*).
+'ATM_s' (role 'bank1', cardinality 0..*) is associated with 'Bank' (role 'aTM_s0', cardinality 0..*).
+'Accounts' (role 'bank4', cardinality 0..*) is associated with 'Bank' (role 'accounts5', cardinality 0..*).

@@ -1,0 +1,28 @@
+The model has 17 class(es).
+The class 'Contacto' has the following attributes: 'email' of type str; 'nombre' of type str.
+The class 'Libro_de_Direcciones' has the following attributes: 'Introduccion' of type str.
+The class 'Lista_de_COntacto' has no attributes.
+The class 'Eliminar_Contacto_UseCase' has no attributes.
+The class 'Guardar_UseCase' has no attributes.
+The class 'Buscar_Contactos_UseCase' has no attributes.
+The class 'Buscar' has no attributes.
+The class 'Actualizar_COntacto_UseCase' has no attributes.
+The class 'Direccion' has the following attributes: 'CodigoPostal' of type int; 'nombre' of type str; 'departamento' of type str; 'Ciudad' of type str.
+The class 'Crear_Contacto' has no attributes.
+The class 'Menu_Principal' has no attributes.
+The class 'Crear_Contacto_UseCase' has no attributes.
+The class 'Foto' has the following attributes: 'ancho' of type int; 'largo' of type int.
+The class 'Usuario_Actor' has no attributes.
+The class 'Tel_fono' has the following attributes: 'numero' of type int; 'prefijo' of type int; 'Codigo_area' of type int.
+The class 'Libro_de_Direcciones1' has no attributes.
+The class 'Cancelar_UseCase' has no attributes.
+'Contacto' (role 'direccion8', cardinality 0..*) is associated with 'Direccion' (role 'contacto9', cardinality 0..*).
+'Contacto' (role 'libro_de_Direcciones15', cardinality 0..*) is associated with 'Libro_de_Direcciones' (role 'contacto14', cardinality 0..*).
+'Usuario_Actor' (role 'actualizar_COntacto4', cardinality 0..*) is associated with 'Actualizar_COntacto_UseCase' (role 'usuario5', cardinality 0..*).
+'Lista_de_COntacto' (role 'menu_Principal19', cardinality 0..*) is associated with 'Menu_Principal' (role 'lista_de_COntacto18', cardinality 0..*).
+'Crear_Contacto_UseCase' (role 'usuario3', cardinality 0..*) is associated with 'Usuario_Actor' (role 'crear_Contacto2', cardinality 0..*).
+'Foto' (role 'contacto13', cardinality 0..*) is associated with 'Contacto' (role 'foto12', cardinality 0..*).
+'Contacto' (role 'tel_fono10', cardinality 0..*) is associated with 'Tel_fono' (role 'contacto11', cardinality 0..*).
+'Eliminar_Contacto_UseCase' (role 'usuario7', cardinality 0..*) is associated with 'Usuario_Actor' (role 'eliminar_Contacto6', cardinality 0..*).
+'Libro_de_Direcciones1' (role 'menu_Principal16', cardinality 0..*) is associated with 'Menu_Principal' (role 'libro_de_Direcciones17', cardinality 0..*).
+'Buscar_Contactos_UseCase' (role 'usuario1', cardinality 0..*) is associated with 'Usuario_Actor' (role 'buscar_Contactos0', cardinality 0..*).

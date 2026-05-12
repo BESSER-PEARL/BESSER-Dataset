@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Room' has the following attributes: 'roomno' of type int; 'roomname' of type str.
+The class 'Doctor' has the following attributes: 'normal_doctor' of type Doctor; 'women_doctor' of type Doctor; 'dentist' of type Doctor.
+The class 'Bill' has the following attributes: 'billno' of type str; 'amount' of type float.
+The class 'medicine' has the following attributes: 'id' of type int; 'price' of type int; 'medicine' of type str.
+The class 'Bursar' has the following attributes: 'firstname' of type str; 'lastname' of type str.
+The class 'pharmacy' has the following attributes: 'medicine' of type str; 'price' of type int.
+The class 'Receptionist' has the following attributes: 'lastname' of type str; 'firstname' of type str.
+The class 'lab' has the following attributes: 'price' of type int; 'results' of type str.
+The class 'Patient' has the following attributes: 'phonenumber' of type int; 'sex' of type str; 'firstname' of type str; 'blood_group' of type int; 'email' of type str; 'birthyear' of type int; 'addr' of type str; 'lastname' of type str; 'id' of type int.
+'Bill' (role 'pat1', cardinality 0..*) is associated with 'Patient' (role 'bill0', cardinality 0..*).
+'Patient' (role 'receptionist2', cardinality 0..*) is associated with 'Receptionist' (role 'p3', cardinality 0..*).
+'Patient' (role 'doctor12', cardinality 0..*) is associated with 'Doctor' (role 'patient13', cardinality 0..*).
+'pharmacy' (role 'gives_medicine10', cardinality 0..*) is associated with 'Patient' (role 'pharmacy11', cardinality 0..*).
+'Doctor' (role 'lab7', cardinality 0..*) is associated with 'lab' (role 'assign6', cardinality 0..*).
+'lab' (role 'assign4', cardinality 0..*) is associated with 'Patient' (role 'lab5', cardinality 0..*).
+'Bursar' (role 'pharmacy9', cardinality 0..*) is associated with 'pharmacy' (role 'medicine_cost8', cardinality 0..*).

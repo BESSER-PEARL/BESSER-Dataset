@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'SinhVien' has the following attributes: 'state' of type UserState; 'password' of type str; 'login' of type str.
+The class 'Payment' has the following attributes: 'total' of type float; 'details' of type str; 'paidDate' of type date.
+The class 'Product' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'ConNguoi' has the following attributes: 'attribute4' of type str; 'attribute6' of type str; 'attribute' of type str; 'attribute5' of type str; 'attribute2' of type str; 'CMND' of type str; 'attribute3' of type str.
+The class 'Order' has the following attributes: 'total' of type float; 'shipTo' of type str; 'ordered' of type date; 'shipped' of type bool; 'status' of type OrderStatus; 'number' of type int.
+The class 'Customer' has the following attributes: 'address' of type str; 'email' of type str; 'phone' of type str.
+The class 'Account' has the following attributes: 'isClosed' of type bool; 'closed' of type date; 'billingAddress' of type str; 'open' of type date.
+The class 'LineItem' has the following attributes: 'price' of type float; 'quantity' of type int.
+The enumeration 'UserState' does not specify any literals.
+The enumeration 'OrderStatus' does not specify any literals.
+'LineItem' (role 'sc9', cardinality 0..*) is associated with 'ConNguoi' (role 'items8', cardinality 0..*).
+'ConNguoi' (role 'account7', cardinality 0..*) is associated with 'Account' (role 'cart6', cardinality 0..*).
+'SinhVien' (role 'customer2', cardinality 0..*) is associated with 'Customer' (role 'webUser3', cardinality 0..*).
+'Order' (role 'payment17', cardinality 0..*) is associated with 'Payment' (role 'order16', cardinality 0..*).
+'LineItem' (role 'product11', cardinality 0..*) is associated with 'Product' (role 'lineItems10', cardinality 0..*).
+'LineItem' (role 'order13', cardinality 0..*) is associated with 'Order' (role 'items12', cardinality 0..*).
+'Account' (role 'p0', cardinality 0..*) is associated with 'Payment' (role 'acc1', cardinality 0..*).
+'Account' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'account4', cardinality 0..*).
+'Order' (role 'account15', cardinality 0..*) is associated with 'Account' (role 'order14', cardinality 0..*).

@@ -1,0 +1,22 @@
+The model has 12 class(es).
+The class 'ClothesWasher' has the following attributes: 'repairPlan' of type str.
+The class 'Order' has the following attributes: 'customer' of type Customer; 'appliance' of type Appliance.
+The class 'Customer' has the following attributes: 'name' of type str; 'customerID' of type int; 'phoneNumber' of type int.
+The class 'OrderList' has the following attributes: 'orderList' of type Order.
+The class 'Dishwasher' has no attributes.
+The class 'Appliance' has the following attributes: 'Price' of type str; 'Brand' of type str; 'Model' of type str; 'Stock' of type int.
+The class 'Store' has the following attributes: 'orders' of type str; 'inventory' of type str; 'customers' of type str; 'sales' of type str.
+The class 'Fridge' has the following attributes: 'capacity' of type str.
+The class 'Furnace' has the following attributes: 'maximumHeatOutput' of type str.
+The class 'KitchenRange' has no attributes.
+The class 'BackOrder' has the following attributes: 'backOrderList' of type Order.
+The class 'ClothesDryer' has the following attributes: 'repairPlan' of type str.
+'Order' (role 'appliance212', cardinality 0..*) is associated with 'Appliance' (role 'order13', cardinality 0..*).
+'Store' (role 'backOrder0', cardinality 0..*) is associated with 'BackOrder' (role 'store1', cardinality 0..*).
+'Order' (role 'store11', cardinality 0..*) is associated with 'Store' (role 'order10', cardinality 0..*).
+'Order' (role 'backOrder16', cardinality 0..*) is associated with 'BackOrder' (role 'order17', cardinality 0..*).
+'OrderList' (role 'order15', cardinality 0..*) is associated with 'Order' (role 'orderList14', cardinality 0..*).
+'Order' (role 'customer27', cardinality 0..*) is associated with 'Customer' (role 'order6', cardinality 0..*).
+'Appliance' (role 'store9', cardinality 0..*) is associated with 'Store' (role 'appliance8', cardinality 0..*).
+'Store' (role 'customer5', cardinality 0..*) is associated with 'Customer' (role 'store4', cardinality 0..*).
+'Store' (role 'orderList2', cardinality 0..*) is associated with 'OrderList' (role 'store3', cardinality 0..*).

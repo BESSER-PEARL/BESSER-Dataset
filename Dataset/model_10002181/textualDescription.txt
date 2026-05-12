@@ -1,0 +1,178 @@
+The model has 83 class(es).
+The class 'PrintRecipts1' has the following attributes: 'time' of type str; 'CustomerID' of type int; 'Quantity' of type int; 'Dishname' of type str; 'PaymentID' of type str; 'date' of type str; 'Amount' of type str.
+The class 'order_catering_service_UseCase' has no attributes.
+The class 'Owner' has no attributes.
+The class 'select_from_menu_UseCase' has no attributes.
+The class 'events' has the following attributes: 'attribute' of type str; 'catering_location' of type str; 'duration' of type str; 'get_employee_name' of type str.
+The class 'Generate_payment_cheque_employes_UseCase' has no attributes.
+The class 'payment' has the following attributes: 'amount' of type str; '_attr' of type str; 'total_amount' of type str.
+The class 'order_missing_components_UseCase' has no attributes.
+The class 'chef_Actor' has no attributes.
+The class 'food_dish' has the following attributes: 'attribute2' of type str; 'type' of type str; 'attribute' of type str.
+The class 'contact' has the following attributes: 'Name' of type str; 'Email' of type str; 'attribute' of type str; 'Tel' of type int; 'Adress' of type str.
+The class 'Waiter' has no attributes.
+The class 'daily_weekly_monthly_plan_UseCase' has no attributes.
+The class 'solid' has the following attributes: 'must_be_unit_in_kg' of type str.
+The class 'kitchen_worker' has no attributes.
+The class 'Dish' has the following attributes: '_attr' of type str.
+The class 'account_registration' has no attributes.
+The class 'owner__system' has the following attributes: 'attribute' of type str.
+The class 'Accounnt' has the following attributes: 'Accounttype' of type str; 'password' of type str; 'Email' of type str; 'Employee_ID' of type str.
+The class 'Component' has the following attributes: 'Name' of type str; 'Storage_or_sehlf' of type str; 'ID' of type str; 'Type' of type str; 'attribute' of type str; 'Expiry_date' of type str.
+The class 'Payment1' has the following attributes: 'CustomerID' of type int; 'PaymentID' of type int; 'date' of type str; 'Amount' of type str; 'OrderID' of type int; 'time' of type str.
+The class 'chef2' has no attributes.
+The class 'create_invoice_UseCase' has no attributes.
+The class 'owner_System_Actor' has no attributes.
+The class 'Owner2' has no attributes.
+The class 'sign_up_login_logout_UseCase' has no attributes.
+The class 'Kitchen_worker' has the following attributes: 'attribute' of type str; 'ID' of type int; 'Email' of type str; 'password' of type str; 'Name' of type str.
+The class 'customer_account' has no attributes.
+The class 'prepration_plan_dishes_UseCase' has no attributes.
+The class 'Employee' has the following attributes: 'password' of type str; 'ID' of type int; 'Name' of type str; 'Email' of type str; 'attribute' of type str.
+The class 'Employee_Actor' has no attributes.
+The class 'list_of_outdated_components_UseCase' has no attributes.
+The class 'solid1' has the following attributes: 'pieces' of type int; 'weight__kg_' of type str; 'state' of type str; 'name' of type str.
+The class 'Shopping_cart' has the following attributes: 'Dishname' of type str; 'time' of type str; 'price' of type int; 'attribute' of type str; 'Quantity' of type int.
+The class 'shopping_cart' has no attributes.
+The class 'Catering' has the following attributes: 'attribute' of type str; 'Menu' of type str.
+The class 'dayplan' has the following attributes: 'sunday' of type str; 'thursday' of type str; 'Monday' of type str; 'plan_per_date' of type str; 'tuesday' of type str; 'wenesday' of type str; 'saturday' of type str; 'friday' of type str.
+The class 'Csutomer' has the following attributes: 'register' of type str; 'id' of type str; 'attribute' of type str; 'Adress' of type str; 'password' of type str; 'tel_no' of type str; 'email' of type str; 'name' of type str.
+The class 'Order' has the following attributes: 'OrderID' of type int; 'date' of type str; 'attribute' of type str; 'Customerid' of type int; 'Dishname' of type str.
+The class 'UseCase_UseCase' has no attributes.
+The class 'date2' has no attributes.
+The class 'help' has no attributes.
+The class 'Plan1' has the following attributes: 'day_plan' of type str; 'Monthly_plan' of type str; 'weekly_plan' of type str.
+The class 'payorder_UseCase' has no attributes.
+The class 'liquid' has the following attributes: 'must_be_unit_in_ml' of type str; 'quantiy' of type str; 'name' of type str.
+The class 'Order1' has the following attributes: 'Customerid' of type int; 'attribute' of type str; 'OrderID' of type int; 'date' of type str; 'Dishname' of type str.
+The class 'Catering1' has the following attributes: 'Menu' of type str; 'attribute' of type str.
+The class 'Account' has the following attributes: 'Name' of type str; 'attribute' of type str; 'password' of type str; 'email' of type str; '_attr' of type str; 'id' of type str.
+The class 'Accounnt1' has the following attributes: 'Email' of type str; 'Accounttype' of type str; 'password' of type str.
+The class 'Account1' has the following attributes: 'password' of type str; 'attribute' of type str; 'Name' of type str; 'email' of type str; 'id' of type str; '_attr' of type str.
+The class 'Plan' has the following attributes: 'Monthly_plan' of type str; 'day_plan' of type str; 'weekly_plan' of type str.
+The class 'account_type' has the following attributes: 'password' of type str; 'id' of type str; 'name' of type str; 'email' of type str; '_attr' of type str.
+The class 'weekly_plan_dishes_UseCase' has no attributes.
+The class 'System' has no attributes.
+The class 'Storage' has the following attributes: 'Component_id' of type int; 'Component_Name' of type str.
+The class 'Customer_Balance1' has the following attributes: 'CustomerName' of type str; 'Date' of type str; 'CustomerID' of type int; 'Account_balance' of type str; 'Adress' of type str.
+The class 'Chef' has no attributes.
+The class 'Customer1' has the following attributes: '_attr' of type str; 'Adress' of type str; 'Phone' of type int; 'Password' of type str; 'attribute' of type str; 'ID' of type int; 'Address' of type str; 'Accontbalance' of type str; 'Name' of type str; 'Email' of type str.
+The class 'Shopping_cart1' has the following attributes: 'Dishname' of type str; 'attribute' of type str; 'Quantity' of type int; 'price' of type int; 'time' of type str.
+The class 'PrintRecipts' has the following attributes: 'Amount' of type str; 'date' of type str; 'time' of type str; 'Dishname' of type str; 'PaymentID' of type str; 'CustomerID' of type int; 'Quantity' of type int.
+The class 'System1' has the following attributes: 'Password' of type str; 'Email' of type str; 'WebAdmin_or_owner' of type str.
+The class 'Menu1' has the following attributes: 'Components' of type str; 'Price' of type str; 'Quantity' of type str; 'DishName' of type str.
+The class 'chef' has the following attributes: 'Employee_ID' of type int; 'passowrd' of type str; 'Name' of type str; 'Room_no' of type int; 'Email' of type str.
+The class 'Menu' has the following attributes: 'Components' of type str; 'DishName' of type str; 'Quantity' of type str; 'Price' of type str.
+The class 'drink' has the following attributes: 'type' of type str.
+The class 'check_bank_account_for_payments_UseCase' has no attributes.
+The class 'Employee1' has the following attributes: 'ID' of type str; 'Password' of type str; 'Email' of type str; 'Name' of type str; 'attribute' of type str.
+The class 'customer_Actor' has no attributes.
+The class 'Storage1' has the following attributes: 'Component_id' of type int; 'Component_Name' of type str.
+The class 'catering' has no attributes.
+The class 'Owner1' has no attributes.
+The class 'Customer_Balance' has the following attributes: 'Date' of type str; 'CustomerID' of type int; 'Account_balance' of type str; 'CustomerName' of type str; 'Adress' of type str.
+The class 'add_constraints_UseCase' has no attributes.
+The class 'bank_account' has no attributes.
+The class 'Payment' has the following attributes: 'PaymentID' of type int; 'time' of type str; 'OrderID' of type int; 'Amount' of type str; 'CustomerID' of type int; 'date' of type str.
+The class 'menu' has the following attributes: 'drinkname' of type str; 'dish_quantity' of type str; 'price' of type str; 'dishname' of type str; 'attribute' of type str.
+The class 'order' has the following attributes: 'date' of type str; 'order_id' of type str; '_attr' of type str; 'ordered_item' of type str; 'status' of type str.
+The class 'Account_for_employee' has the following attributes: 'getaccount' of type str; 'attribute' of type str; 'name' of type str; 'email' of type str; 'id' of type str; 'password' of type str.
+The class 'chef1' has the following attributes: 'Email' of type str; 'Name' of type str; 'passowrd' of type str; 'Employee_ID' of type int; 'Room_no' of type int.
+The class 'add_and_get_from_storage_check_storage_UseCase' has no attributes.
+The class 'Web_master' has no attributes.
+The class 'weekly_plan_of_each_cutomer_UseCase' has no attributes.
+The class 'Customer' has the following attributes: 'Password' of type str; 'Email' of type str; 'Address' of type str; 'Name' of type str; 'Phone' of type int; 'Accontbalance' of type str; 'ID' of type int.
+The enumeration 'Enumeration1' does not specify any literals.
+The enumeration 'Enumeration' does not specify any literals.
+'sign_up_login_logout_UseCase' (role 'chef15', cardinality 0..*) is associated with 'chef_Actor' (role 'login14', cardinality 0..*).
+'Web_master' (role 'help60', cardinality 0..*) is associated with 'help' (role 'web_master61', cardinality 0..*).
+'Storage1' (role 'system87', cardinality 0..*) is associated with 'System1' (role 'storage86', cardinality 0..*).
+'events' (role 'food_dish164', cardinality 0..*) is associated with 'food_dish' (role 'weekly_planning_of_dishes__for__waiter165', cardinality 0..*).
+'food_dish' (role 'food_dish157', cardinality 0..*) is associated with 'menu' (role 'menu156', cardinality 0..*).
+'Accounnt1' (role 'customer103', cardinality 0..*) is associated with 'Customer1' (role 'accounnt102', cardinality 0..*).
+'Web_master' (role 'contact62', cardinality 0..*) is associated with 'contact' (role 'web_master63', cardinality 0..*).
+'Accounnt1' (role 'chef100', cardinality 0..*) is associated with 'chef1' (role 'accounnt101', cardinality 0..*).
+'list_of_outdated_components_UseCase' (role 'employee83', cardinality 0..*) is associated with 'Employee_Actor' (role 'list_of_outdated_components82', cardinality 0..*).
+'order' (role 'menu169', cardinality 0..*) is associated with 'menu' (role 'order168', cardinality 0..*).
+'Generate_payment_cheque_employes_UseCase' (role 'chef32', cardinality 0..*) is associated with 'chef_Actor' (role 'generate_payment_cheque_employes33', cardinality 0..*).
+'Component' (role 'component179', cardinality 0..*) is associated with 'events' (role 'weekly_planning_of_dishes__for__waiter178', cardinality 0..*).
+'Component' (role 'weekly_planning_of_dishes__by_waiter141', cardinality 0..*) is associated with 'events' (role 'component140', cardinality 0..*).
+'Customer1' (role 'customer_Balance42', cardinality 0..*) is associated with 'Customer_Balance1' (role 'customer43', cardinality 0..*).
+'bank_account' (role 'payment67', cardinality 0..*) is associated with 'Payment1' (role 'bank_account66', cardinality 0..*).
+'food_dish' (role 'food_dish181', cardinality 0..*) is associated with 'events' (role 'weekly_planning_of_dishes__for__waiter180', cardinality 0..*).
+'Customer1' (role 'order53', cardinality 0..*) is associated with 'Order1' (role 'customer52', cardinality 0..*).
+'System1' (role 'bank_account68', cardinality 0..*) is associated with 'bank_account' (role 'system69', cardinality 0..*).
+'food_dish' (role 'component112', cardinality 0..*) is associated with 'Component' (role 'food_dish113', cardinality 0..*).
+'Catering1' (role 'customer51', cardinality 0..*) is associated with 'Customer1' (role 'catering50', cardinality 0..*).
+'order' (role 'shopping_cart158', cardinality 0..*) is associated with 'shopping_cart' (role 'order159', cardinality 0..*).
+'Menu1' (role 'shopping_cart94', cardinality 0..*) is associated with 'Shopping_cart1' (role 'menu95', cardinality 0..*).
+'Accounnt1' (role 'customer98', cardinality 0..*) is associated with 'Customer1' (role 'accounnt99', cardinality 0..*).
+'owner_System_Actor' (role 'order_missing_components80', cardinality 0..*) is associated with 'order_missing_components_UseCase' (role 'owner_webmaster81', cardinality 0..*).
+'owner_System_Actor' (role 'add_and_get_from_storage84', cardinality 0..*) is associated with 'add_and_get_from_storage_check_storage_UseCase' (role 'owner_System85', cardinality 0..*).
+'events' (role 'waiter144', cardinality 0..*) is associated with 'kitchen_worker' (role 'weekly_planning_of_dishes__by_waiter145', cardinality 0..*).
+'daily_weekly_monthly_plan_UseCase' (role 'worker25', cardinality 0..*) is associated with 'Employee_Actor' (role 'weekly_monthly_plan24', cardinality 0..*).
+'create_invoice_UseCase' (role 'chef30', cardinality 0..*) is associated with 'chef_Actor' (role 'create_invoice31', cardinality 0..*).
+'order' (role 'menu125', cardinality 0..*) is associated with 'menu' (role 'order124', cardinality 0..*).
+'customer_Actor' (role 'payorder10', cardinality 0..*) is associated with 'payorder_UseCase' (role 'customer11', cardinality 0..*).
+'events' (role 'waiter146', cardinality 0..*) is associated with 'kitchen_worker' (role 'weekly_planning_of_dishes__by_waiter147', cardinality 0..*).
+'add_and_get_from_storage_check_storage_UseCase' (role 'owner_webmaster79', cardinality 0..*) is associated with 'owner_System_Actor' (role 'add_and_get_from_storage78', cardinality 0..*).
+'customer_Actor' (role 'login12', cardinality 0..*) is associated with 'sign_up_login_logout_UseCase' (role 'customer13', cardinality 0..*).
+'add_constraints_UseCase' (role 'worker22', cardinality 0..*) is associated with 'Employee_Actor' (role 'add_constraints23', cardinality 0..*).
+'Component' (role 'owner__system148', cardinality 0..*) is associated with 'owner__system' (role 'component149', cardinality 0..*).
+'Component' (role 'owner__system172', cardinality 0..*) is associated with 'owner__system' (role 'component173', cardinality 0..*).
+'menu' (role 'food_dish118', cardinality 0..*) is associated with 'food_dish' (role 'menu119', cardinality 0..*).
+'Customer1' (role 'accounnt36', cardinality 0..*) is associated with 'Accounnt1' (role 'customer37', cardinality 0..*).
+'Plan1' (role 'customer88', cardinality 0..*) is associated with 'Customer1' (role 'plan89', cardinality 0..*).
+'Customer1' (role 'order92', cardinality 0..*) is associated with 'Order1' (role 'customer93', cardinality 0..*).
+'drink' (role 'menu121', cardinality 0..*) is associated with 'menu' (role 'drink120', cardinality 0..*).
+'catering' (role 'menu177', cardinality 0..*) is associated with 'menu' (role 'catering176', cardinality 0..*).
+'Catering1' (role 'menu49', cardinality 0..*) is associated with 'Menu1' (role 'catering48', cardinality 0..*).
+'order_missing_components_UseCase' (role 'worker21', cardinality 0..*) is associated with 'Employee_Actor' (role 'order_missing_components20', cardinality 0..*).
+'chef1' (role 'accounnt38', cardinality 0..*) is associated with 'Accounnt1' (role 'chef39', cardinality 0..*).
+'shopping_cart' (role 'order131', cardinality 0..*) is associated with 'order' (role 'shopping_cart130', cardinality 0..*).
+'events' (role 'order182', cardinality 0..*) is associated with 'order' (role 'events183', cardinality 0..*).
+'Csutomer' (role 'order127', cardinality 0..*) is associated with 'order' (role 'csutomer126', cardinality 0..*).
+'dayplan' (role 'chef136', cardinality 0..*) is associated with 'chef2' (role 'planning137', cardinality 0..*).
+'check_bank_account_for_payments_UseCase' (role 'owner_webmaster77', cardinality 0..*) is associated with 'owner_System_Actor' (role 'check_bank_account_for_payments76', cardinality 0..*).
+'Accounnt1' (role 'employee40', cardinality 0..*) is associated with 'Kitchen_worker' (role 'accounnt41', cardinality 0..*).
+'Shopping_cart1' (role 'menu54', cardinality 0..*) is associated with 'Menu1' (role 'shopping_cart55', cardinality 0..*).
+'help' (role 'system75', cardinality 0..*) is associated with 'System1' (role 'help74', cardinality 0..*).
+'Kitchen_worker' (role 'storage97', cardinality 0..*) is associated with 'Storage1' (role 'kitchen_worker96', cardinality 0..*).
+'customer_Actor' (role 'select_from_menu4', cardinality 0..*) is associated with 'select_from_menu_UseCase' (role 'customer5', cardinality 0..*).
+'Menu1' (role 'dish105', cardinality 0..*) is associated with 'Dish' (role 'menu104', cardinality 0..*).
+'chef' (role 'accounnt34', cardinality 0..*) is associated with 'Accounnt' (role 'chef35', cardinality 0..*).
+'Storage1' (role 'Employee45', cardinality 0..*) is associated with 'Kitchen_worker' (role 'storage44', cardinality 0..*).
+'Order1' (role 'payment56', cardinality 0..*) is associated with 'Payment1' (role 'order57', cardinality 0..*).
+'payment' (role 'shopping_cart171', cardinality 0..*) is associated with 'shopping_cart' (role 'payment170', cardinality 0..*).
+'events' (role 'planning135', cardinality 0..*) is associated with 'dayplan' (role 'weekly_planning_of_dishes__by_waiter134', cardinality 0..*).
+'shopping_cart' (role 'csutomer129', cardinality 0..*) is associated with 'Csutomer' (role 'shopping_cart128', cardinality 0..*).
+'Employee' (role 'storage0', cardinality 0..*) is associated with 'Storage' (role 'employee1', cardinality 0..*).
+'Employee_Actor' (role 'prepration_plan_dishes26', cardinality 0..*) is associated with 'prepration_plan_dishes_UseCase' (role 'worker27', cardinality 0..*).
+'customer_Actor' (role 'weekly_plan_of_each_cutomer8', cardinality 0..*) is associated with 'weekly_plan_of_each_cutomer_UseCase' (role 'customer9', cardinality 0..*).
+'food_dish' (role 'food_dish152', cardinality 0..*) is associated with 'Component' (role 'component153', cardinality 0..*).
+'order_catering_service_UseCase' (role 'customer7', cardinality 0..*) is associated with 'customer_Actor' (role 'order_catering_service6', cardinality 0..*).
+'chef_Actor' (role 'weekly_plan_dishes29', cardinality 0..*) is associated with 'weekly_plan_dishes_UseCase' (role 'chef28', cardinality 0..*).
+'bank_account' (role 'system71', cardinality 0..*) is associated with 'System1' (role 'bank_account70', cardinality 0..*).
+'Payment1' (role 'printRecipts58', cardinality 0..*) is associated with 'PrintRecipts1' (role 'payment59', cardinality 0..*).
+'events' (role 'weekly_planning_of_dishes__by_waiter143', cardinality 0..*) is associated with 'events' (role 'weekly_planning_of_dishes__by_waiter142', cardinality 0..*).
+'chef1' (role 'storage65', cardinality 0..*) is associated with 'Storage1' (role 'chef64', cardinality 0..*).
+'Component' (role 'drink117', cardinality 0..*) is associated with 'drink' (role 'component116', cardinality 0..*).
+'contact' (role 'system73', cardinality 0..*) is associated with 'System1' (role 'contact72', cardinality 0..*).
+'owner__system' (role 'component163', cardinality 0..*) is associated with 'Component' (role 'owner__system162', cardinality 0..*).
+'solid' (role 'component109', cardinality 0..*) is associated with 'Component' (role 'solid108', cardinality 0..*).
+'Component' (role 'waiter138', cardinality 0..*) is associated with 'kitchen_worker' (role 'component139', cardinality 0..*).
+'Employee_Actor' (role 'add_and_get_from_storage19', cardinality 0..*) is associated with 'add_and_get_from_storage_check_storage_UseCase' (role 'worker18', cardinality 0..*).
+'menu' (role 'drink154', cardinality 0..*) is associated with 'Component' (role 'component155', cardinality 0..*).
+'liquid' (role 'component111', cardinality 0..*) is associated with 'Component' (role 'liquid110', cardinality 0..*).
+'chef1' (role 'plan47', cardinality 0..*) is associated with 'Plan1' (role 'chef46', cardinality 0..*).
+'menu' (role 'csutomer122', cardinality 0..*) is associated with 'Csutomer' (role 'menu123', cardinality 0..*).
+'chef2' (role 'planning150', cardinality 0..*) is associated with 'dayplan' (role 'chef151', cardinality 0..*).
+'chef2' (role 'kitchen_worker166', cardinality 0..*) is associated with 'kitchen_worker' (role 'chef167', cardinality 0..*).
+'Component' (role 'food_dish115', cardinality 0..*) is associated with 'food_dish' (role 'component114', cardinality 0..*).
+'shopping_cart' (role 'payment132', cardinality 0..*) is associated with 'payment' (role 'shopping_cart133', cardinality 0..*).
+'Menu1' (role 'dish106', cardinality 0..*) is associated with 'Dish' (role 'menu107', cardinality 0..*).
+'Employee' (role 'plan2', cardinality 0..*) is associated with 'Plan' (role 'employee3', cardinality 0..*).
+'Kitchen_worker' (role 'plan91', cardinality 0..*) is associated with 'Plan1' (role 'kitchen_worker90', cardinality 0..*).
+'food_dish' (role 'weekly_planning_of_dishes__by_waiter161', cardinality 0..*) is associated with 'events' (role 'food_dish160', cardinality 0..*).
+'sign_up_login_logout_UseCase' (role 'worker17', cardinality 0..*) is associated with 'Employee_Actor' (role 'login16', cardinality 0..*).
+'Csutomer' (role 'catering174', cardinality 0..*) is associated with 'catering' (role 'csutomer175', cardinality 0..*).

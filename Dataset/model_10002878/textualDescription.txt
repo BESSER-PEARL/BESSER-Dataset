@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Customer' has the following attributes: 'surname' of type str; 'ident' of type str; 'email' of type str; 'phoneNumber' of type int; 'name' of type str.
+The class 'Hotel' has the following attributes: 'city' of type str; 'zip' of type int; 'coordinates' of type int; 'phoneNumber' of type int; 'street' of type str; 'name' of type str; 'website' of type str.
+The class 'Service' has the following attributes: 'basePrice' of type str; 'description' of type str; 'name' of type str.
+The class 'Room' has the following attributes: 'price' of type float; 'floor' of type int; 'door' of type int; 'capacity' of type str.
+'Customer' (role 'room4', cardinality 0..*) is associated with 'Room' (role 'customer5', cardinality 0..*).
+'Room' (role 'hotel1', cardinality 0..*) is associated with 'Hotel' (role 'room0', cardinality 0..*).
+'Service' (role 'hotel2', cardinality 0..*) is associated with 'Hotel' (role 'service3', cardinality 0..*).

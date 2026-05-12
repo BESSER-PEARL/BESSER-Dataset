@@ -1,0 +1,26 @@
+The model has 15 class(es).
+The class 'generate_report_UseCase' has no attributes.
+The class 'Logout_UseCase' has no attributes.
+The class 'Password_UseCase' has no attributes.
+The class 'Login_UseCase1' has no attributes.
+The class 'registered_UseCase' has no attributes.
+The class 'Admin' has the following attributes: 'password' of type Admin_Actor; 'username' of type Admin.
+The class 'update_record_UseCase' has no attributes.
+The class 'insert_record_UseCase' has no attributes.
+The class 'Student_Actor' has no attributes.
+The class 'Name_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'check_details_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'delete_record_UseCase' has no attributes.
+The class 'Employee' has the following attributes: 'attribute3' of type str; 'attribute2' of type str; 'attribute' of type str; 'attribute31' of type str.
+'Name_UseCase' (role 'student13', cardinality 0..*) is associated with 'Student_Actor' (role 'name12', cardinality 0..*).
+'Admin_Actor' (role 'update_Std2', cardinality 0..*) is associated with 'insert_record_UseCase' (role 'admin3', cardinality 0..*).
+'Logout_UseCase' (role 'admin9', cardinality 0..*) is associated with 'Admin_Actor' (role 'useCase8', cardinality 0..*).
+'generate_report_UseCase' (role 'admin7', cardinality 0..*) is associated with 'Admin_Actor' (role 'generate_invoice6', cardinality 0..*).
+'Login_UseCase1' (role 'student15', cardinality 0..*) is associated with 'Student_Actor' (role 'login14', cardinality 0..*).
+'Student_Actor' (role 'check_details16', cardinality 0..*) is associated with 'check_details_UseCase' (role 'student17', cardinality 0..*).
+'Admin_Actor' (role 'delete_record18', cardinality 0..*) is associated with 'delete_record_UseCase' (role 'admin19', cardinality 0..*).
+'update_record_UseCase' (role 'admin5', cardinality 0..*) is associated with 'Admin_Actor' (role 'update_Rooms4', cardinality 0..*).
+'Student_Actor' (role 'registered10', cardinality 0..*) is associated with 'registered_UseCase' (role 'student11', cardinality 0..*).
+'Admin_Actor' (role 'login0', cardinality 0..*) is associated with 'Login_UseCase' (role 'admin1', cardinality 0..*).

@@ -1,0 +1,29 @@
+The model has 14 class(es).
+The class 'Card' has the following attributes: 'rank' of type Rank; 'suit' of type Suit.
+The class 'Deck' has no attributes.
+The class 'Dealer' has the following attributes: 'firstName' of type str.
+The class 'Hand' has the following attributes: 'startHand' of type int.
+The class 'Strategy_Interface' has no attributes.
+The class 'T' has no attributes.
+The class 'Stay' has no attributes.
+The class 'BlackJack' has the following attributes: 'scan' of type genmymodelreverse_java_util_Scanner.
+The class 'Context' has no attributes.
+The class 'genmymodelreverse_java_util_Scanner' has no attributes.
+The class 'Hit' has no attributes.
+The class 'T2' has no attributes.
+The class 'Person_Interface' has no attributes.
+The class 'Player' has the following attributes: 'firstName' of type str.
+The enumeration 'Rank' does not specify any literals.
+The enumeration 'Suit' does not specify any literals.
+'Hand' (role 'blackjack0', cardinality 0..*) is associated with 'BlackJack' (role 'dHand1', cardinality 0..*).
+'Hand' (role 'blackjack2', cardinality 0..*) is associated with 'BlackJack' (role 'hand3', cardinality 0..*).
+'Card' (role 'hand4', cardinality 0..*) is associated with 'Hand' (role 'hand5', cardinality 0..*).
+'Deck' (role 'd15', cardinality 0..*) is associated with 'Deck' (role 'deck14', cardinality 0..*).
+'BlackJack' (role 'd7', cardinality 0..*) is associated with 'Deck' (role 'blackjack6', cardinality 0..*).
+'Dealer' (role 'hand23', cardinality 0..*) is associated with 'Hand' (role 'dealer22', cardinality 0..*).
+'Card' (role 'deck20', cardinality 0..*) is associated with 'Deck' (role 'deck21', cardinality 0..*).
+'Context' (role 'strat19', cardinality 0..*) is associated with 'Strategy_Interface' (role 'context18', cardinality 0..*).
+'Player' (role 'blackjack16', cardinality 0..*) is associated with 'BlackJack' (role 'p17', cardinality 0..*).
+'Deck' (role 'dealer8', cardinality 0..*) is associated with 'Dealer' (role 'd9', cardinality 0..*).
+'Hand' (role 'player10', cardinality 0..*) is associated with 'Player' (role 'h11', cardinality 0..*).
+'BlackJack' (role 'dealer13', cardinality 0..*) is associated with 'Dealer' (role 'blackjack12', cardinality 0..*).

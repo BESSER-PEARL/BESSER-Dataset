@@ -1,0 +1,33 @@
+The model has 21 class(es).
+The class 'Conducteur1' has no attributes.
+The class 'Personne' has no attributes.
+The class 'Lieu1' has no attributes.
+The class 'Class' has no attributes.
+The class 'V_hicule1' has the following attributes: 'nbPlaces' of type int; 'propri_taire' of type Conducteur1; 'imatriculation' of type str; 'modele' of type str; 'marque' of type str.
+The class 'V_hicule' has the following attributes: 'imatriculation' of type str; 'propri_taire' of type Conducteur; 'modele' of type str; 'marque' of type str.
+The class 'Trajet' has the following attributes: 'placesRestantes' of type int; 'description' of type str; 'prix' of type int; 'date' of type str; 'destination' of type Lieu; 'depart' of type Lieu.
+The class 'Utilisateur2' has the following attributes: 'adresse' of type str; 'age' of type int; 'nbAvis' of type int; 'nom' of type str; 'photoDeProfil' of type str.
+The class 'Trajet1' has the following attributes: 'dateFin' of type str; 'lieuFin' of type Lieu; 'lieudebut' of type Lieu; 'datedebut' of type str.
+The class 'Lieu' has no attributes.
+The class 'Passager1' has no attributes.
+The class 'Trajet2' has the following attributes: 'placesRestantes' of type int; 'description' of type str; 'dateFin' of type str; 'lieuFin' of type Lieu; 'prix' of type int; 'datedebut' of type str; 'lieudebut' of type Lieu.
+The class 'Avis' has no attributes.
+The class 'Avis2' has the following attributes: 'description' of type str; 'note' of type int.
+The class 'Avis1' has the following attributes: 'description' of type str; 'note' of type int.
+The class 'Voiture' has the following attributes: 'places' of type int.
+The class 'Chemin_Interface' has no attributes.
+The class 'Utilisateur' has the following attributes: 'nbAvis' of type int; 'photoDeProfil' of type str; 'score' of type str; 'nom' of type str.
+The class 'Conducteur' has no attributes.
+The class 'Utilisateur1' has the following attributes: 'nom' of type str; 'adresse' of type str; 'age' of type int.
+The class 'Passager' has no attributes.
+The enumeration 'Personne2' does not specify any literals.
+'Avis2' (role 'utilisateur13', cardinality 0..*) is associated with 'Utilisateur2' (role 'avis12', cardinality 0..*).
+'Trajet' (role 'Utilisateur9', cardinality 0..*) is associated with 'Utilisateur' (role 'trajet8', cardinality 0..*).
+'Passager1' (role 'trajet18', cardinality 0..*) is associated with 'Trajet2' (role 'passager19', cardinality 0..*).
+'Conducteur1' (role 'trajet16', cardinality 0..*) is associated with 'Trajet2' (role 'conducteur17', cardinality 0..*).
+'V_hicule' (role 'conducteur4', cardinality 0..*) is associated with 'Conducteur' (role 'v_hicule5', cardinality 0..*).
+'Passager' (role 'trajet3', cardinality 0..*) is associated with 'Trajet1' (role 'passager2', cardinality 0..*).
+'Trajet1' (role 'conducteur6', cardinality 0..*) is associated with 'Conducteur' (role 'trajet7', cardinality 0..*).
+'Utilisateur' (role 'avis0', cardinality 0..*) is associated with 'Avis1' (role 'Utilisateur1', cardinality 0..*).
+'Utilisateur' (role 'voiture10', cardinality 0..*) is associated with 'Voiture' (role 'Utilisateur11', cardinality 0..*).
+'Conducteur1' (role 'v_hicule14', cardinality 0..*) is associated with 'V_hicule1' (role 'conducteur15', cardinality 0..*).

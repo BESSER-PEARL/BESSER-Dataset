@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'User_Entity' has the following attributes: 'password' of type str; 'Email' of type str; 'login' of type str; 'City' of type str.
+The class 'Payment' has the following attributes: 'total' of type float; 'details' of type str; 'paidDate' of type date.
+The class 'FeedBack' has the following attributes: 'Rating' of type str; 'FeedBackMessage' of type str.
+The class 'CheckOut_Entity' has the following attributes: 'price' of type float; 'ItemisedBillDetails' of type Bill_Details.
+The class 'PostStay_Entity' has the following attributes: 'DiscountPoints' of type str; 'PromotionPoints' of type str; 'ThanksMessage' of type str.
+The class 'Booking_Entity' has the following attributes: 'CheckInDate' of type date; 'phone' of type str; 'NoOfDays' of type int; 'address' of type str; 'email' of type str.
+The class 'CheckIn_Entity' has the following attributes: 'QRCode' of type str; 'CheckInStatus' of type str; 'MobileKey' of type str; 'paymentMode' of type str; 'PickUpAddress' of type str.
+The class 'StayIn_Entity' has the following attributes: 'status' of type Booking_Status; 'InPremisesList' of type str; 'placeOfInterest' of type float; 'promotionsList' of type str; 'oodList' of type str; 'EntertainMentList' of type str.
+The enumeration 'Booking_Status' does not specify any literals.
+The enumeration 'Bill_Details' does not specify any literals.
+'StayIn_Entity' (role 'payment17', cardinality 0..*) is associated with 'Payment' (role 'order16', cardinality 0..*).
+'CheckIn_Entity' (role 'order14', cardinality 0..*) is associated with 'StayIn_Entity' (role 'undefined15', cardinality 0..*).
+'Payment' (role 'acc1', cardinality 0..*) is associated with 'CheckOut_Entity' (role 'p0', cardinality 0..*).
+'Booking_Entity' (role 'webUser5', cardinality 0..*) is associated with 'User_Entity' (role 'Booking4', cardinality 0..*).
+'PostStay_Entity' (role 'undefined8', cardinality 0..*) is associated with 'CheckOut_Entity' (role 'sc9', cardinality 0..*).
+'StayIn_Entity' (role 'items12', cardinality 0..*) is associated with 'CheckOut_Entity' (role 'order13', cardinality 0..*).
+'PostStay_Entity' (role 'webUser3', cardinality 0..*) is associated with 'User_Entity' (role 'Start_Resedentz2', cardinality 0..*).
+'CheckIn_Entity' (role 'undefined6', cardinality 0..*) is associated with 'PostStay_Entity' (role 'undefined7', cardinality 0..*).
+'CheckOut_Entity' (role 'Feed_Back11', cardinality 0..*) is associated with 'FeedBack' (role 'Items10', cardinality 0..*).

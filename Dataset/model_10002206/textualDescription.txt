@@ -1,0 +1,55 @@
+The model has 36 class(es).
+The class 'services_ScoreService_Interface' has no attributes.
+The class 'Main' has no attributes.
+The class 'CommentServiceJDBCTest' has the following attributes: 'PASS' of type str; 'URL' of type str; 'USER' of type str; 'DELETE' of type str.
+The class 'genmymodelreverse_C1' has no attributes.
+The class 'services_CommentService_Interface' has no attributes.
+The class 'features_History' has the following attributes: 'revertList' of type int.
+The class 'card_Card' has the following attributes: 'flipped' of type bool; 'rank' of type int.
+The class 'genmymodelreverse_java_io_Serializable_Interface' has no attributes.
+The class 'genmymodelreverse_java_lang_RuntimeException' has no attributes.
+The class 'services_CommentException' has no attributes.
+The class 'CommentServiceTest' has the following attributes: 'PLAYER_NAME' of type str; 'GAME_NAME' of type str.
+The class 'genmymodelreverse_java_util_Date' has no attributes.
+The class 'genmymodelreverse_java_lang_Comparable_Interface' has no attributes.
+The class 'genmymodelreverse_java_lang_Throwable' has no attributes.
+The class 'services_CommentServiceJDBC' has the following attributes: 'INSERT_COMMENT' of type str; 'URL' of type str; 'PASSWORD' of type str; 'USER' of type str; 'SELECT_COMMENTS' of type str.
+The class 'deck_Deck' has the following attributes: 'score' of type int; 'stepCounter' of type int; 'inputDestinationRow' of type int; 'removeItemFromArrayIndex' of type int; 'foundationIndex' of type int.
+The class 'Comparable_Score__Interface' has no attributes.
+The class 'genmymodelreverse_C11' has no attributes.
+The class 'services_RatingException' has no attributes.
+The class 'card_Pack' has the following attributes: 'cardPack' of type str.
+The class 'entities_Score' has the following attributes: 'playedOn' of type genmymodelreverse_java_util_Date; 'player' of type str; 'game' of type str; 'points' of type int.
+The class 'services_RatingServiceJDBC' has the following attributes: 'INSERT_RATING' of type str; 'USER' of type str; 'SELECT_RATING' of type str; 'URL' of type str; 'PASSWORD' of type str; 'SELECT_AVERAGE_RATING' of type str.
+The class 'services_RatingService_Interface' has no attributes.
+The class 'ScoreServiceJDBCTest' has the following attributes: 'DELETE' of type str; 'URL' of type str; 'USER' of type str; 'PASS' of type str.
+The class 'SpiderSolitaireTestSuite' has no attributes.
+The class 'genmymodelreverse_java_util_List_Interface' has no attributes.
+The class 'entities_Rating' has the following attributes: 'game' of type str; 'rating' of type int; 'ratedon' of type genmymodelreverse_java_util_Date; 'player' of type str.
+The class 'deck_Tableau' has the following attributes: 'columns' of type str.
+The class 'entities_Comment' has the following attributes: 'comment' of type str; 'game' of type str; 'commentedOn' of type genmymodelreverse_java_util_Date; 'player' of type str.
+The class 'services_ScoreServiceJDBC' has the following attributes: 'SELECT_SCORE' of type str; 'URL' of type str; 'PASSWORD' of type str; 'USER' of type str; 'INSERT_SCORE' of type str.
+The class 'deck_Stock' has the following attributes: 'stock' of type str; 'STARTING_INDEX' of type int.
+The class 'ScoreServiceTest' has the following attributes: 'GAME_NAME' of type str.
+The class 'RatingServiceTest' has the following attributes: 'TEST_PLAYER' of type str; 'TEST_PLAYER_2' of type str; 'TEST_PLAYER_3' of type str; 'GAME_NAME' of type str.
+The class 'deck_Foundations' has the following attributes: 'foundationList' of type str.
+The class 'genmymodelreverse_java_lang_Exception' has no attributes.
+The class 'services_ScoreException' has no attributes.
+'card_Card' (role 'tableau32', cardinality 0..*) is associated with 'deck_Tableau' (role 'tableau933', cardinality 0..*).
+'deck_Foundations' (role 'deck12', cardinality 0..*) is associated with 'deck_Deck' (role 'foundations13', cardinality 0..*).
+'deck_Tableau' (role 'tableau25', cardinality 0..*) is associated with 'card_Card' (role 'tableau4', cardinality 0..*).
+'card_Card' (role 'tableau18', cardinality 0..*) is associated with 'deck_Tableau' (role 'tableau719', cardinality 0..*).
+'deck_Tableau' (role 'tableau623', cardinality 0..*) is associated with 'card_Card' (role 'tableau22', cardinality 0..*).
+'services_RatingService_Interface' (role 'ratingservicetest14', cardinality 0..*) is associated with 'RatingServiceTest' (role 'ratingService15', cardinality 0..*).
+'deck_Tableau' (role 'tableau429', cardinality 0..*) is associated with 'card_Card' (role 'tableau28', cardinality 0..*).
+'card_Card' (role 'tableau34', cardinality 0..*) is associated with 'deck_Tableau' (role 'tableau1035', cardinality 0..*).
+'deck_Deck' (role 'history3', cardinality 0..*) is associated with 'features_History' (role 'deck2', cardinality 0..*).
+'deck_Tableau' (role 'tableau125', cardinality 0..*) is associated with 'card_Card' (role 'tableau24', cardinality 0..*).
+'deck_Tableau' (role 'tableau817', cardinality 0..*) is associated with 'card_Card' (role 'tableau16', cardinality 0..*).
+'card_Card' (role 'tableau20', cardinality 0..*) is associated with 'deck_Tableau' (role 'tableau321', cardinality 0..*).
+'card_Card' (role 'tableau30', cardinality 0..*) is associated with 'deck_Tableau' (role 'tableau531', cardinality 0..*).
+'card_Pack' (role 'deck6', cardinality 0..*) is associated with 'deck_Deck' (role 'pack7', cardinality 0..*).
+'deck_Deck' (role 'tableau9', cardinality 0..*) is associated with 'deck_Tableau' (role 'deck8', cardinality 0..*).
+'ScoreServiceTest' (role 'scoreService1', cardinality 0..*) is associated with 'services_ScoreService_Interface' (role 'scoreservicetest0', cardinality 0..*).
+'services_CommentService_Interface' (role 'commentservicetest10', cardinality 0..*) is associated with 'CommentServiceTest' (role 'commentService11', cardinality 0..*).
+'deck_Stock' (role 'deck26', cardinality 0..*) is associated with 'deck_Deck' (role 'stock27', cardinality 0..*).

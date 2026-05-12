@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'Card' has the following attributes: 'value' of type int; 'suit' of type int.
+The class 'Deck' has the following attributes: 'Card__' of type Card; 'numOfCards' of type int.
+The class 'Stack' has the following attributes: 'numOfCards' of type int; 'cards__' of type Card.
+'Card' (role 'Conatins2', cardinality 0..*) is associated with 'Stack' (role 'card3', cardinality 0..*).
+'Card' (role 'Contains0', cardinality 0..*) is associated with 'Deck' (role 'card1', cardinality 0..*).
+'Deck' (role 'stack4', cardinality 0..*) is associated with 'Stack' (role 'deals5', cardinality 0..*).
+'Stack' (role 'moves7', cardinality 0..*) is associated with 'Stack' (role 'stack6', cardinality 0..*).

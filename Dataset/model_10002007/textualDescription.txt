@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Account' has the following attributes: 'number' of type int; 'balance' of type int.
+The class 'ATM' has the following attributes: 'location' of type str; 'managedby' of type str.
+The class 'Bank' has the following attributes: 'code' of type int; 'address' of type str.
+The class 'Customer' has the following attributes: 'dob' of type str; 'name' of type str; 'pin' of type int; 'cardnumber' of type int; 'address' of type str.
+'Bank' (role 'aTM0', cardinality 0..*) is associated with 'ATM' (role 'bank1', cardinality 0..*).
+'Bank' (role 'account2', cardinality 0..*) is associated with 'Account' (role 'bank3', cardinality 0..*).
+'Customer' (role 'account4', cardinality 0..*) is associated with 'Account' (role 'customer5', cardinality 0..*).

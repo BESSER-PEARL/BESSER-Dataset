@@ -1,0 +1,29 @@
+The model has 14 class(es).
+The class 'GUI_Screen' has the following attributes: 'Exit__' of type str; 'id' of type int; 'Error__' of type str; 'Message' of type str; 'DisplayList__' of type int.
+The class 'Customer_User' has the following attributes: 'userid__' of type str; 'Addresschange__' of type str.
+The class 'Customer_Customer' has the following attributes: 'lastname' of type str; 'emailAddress' of type str; 'id' of type int; 'login' of type str; 'password' of type str; 'firstname' of type str; 'Message' of type str.
+The class 'Customer_Account' has the following attributes: 'Login__' of type str; 'account__' of type str.
+The class 'Product_Item_Specification' has the following attributes: 'quantity' of type int; 'price' of type float; 'ItemSpecs__' of type str; 'id' of type int; 'Brand__' of type str.
+The class 'Customer_Payment' has the following attributes: 'PayPal' of type int; 'ApplPay' of type int; 'CustomerId' of type str; 'Paymentid' of type int; 'Payment__' of type float; 'login' of type str.
+The class 'Shopping_Cart_ShoppingCart' has the following attributes: 'id' of type int; 'creationDate' of type date; 'UpdateOrder' of type int; 'CheckoutID' of type int; 'AddOrder' of type int; 'GetTotal__' of type float; 'RemoveOrder' of type int.
+The class 'Cart_Checkout' has the following attributes: 'Paymentid' of type int; 'PayBill__' of type Customer_Account; 'billingMethod' of type str; 'CustomerID' of type str; 'CheckoutID' of type int.
+The class 'Cart_ShoppingCart' has the following attributes: 'id' of type int; 'GetTotal__' of type float; 'AddCart' of type int; 'UpdateOrder' of type int; 'RemoveOrder' of type int; 'creationDate' of type date; 'CheckoutID' of type int.
+The class 'Product_Item_Type' has the following attributes: 'quantity' of type int; 'ItemType__' of type str; 'Avail__' of type str; 'price' of type float; 'id' of type int.
+The class 'Product_Item' has the following attributes: 'OutofStock__' of type str; 'totalcost__' of type str; 'id' of type int; 'list__' of type float; 'quantity' of type int.
+The class 'Customer_Customer1' has the following attributes: 'PaymentMet__' of type float; 'select__' of type str; 'Account__' of type str; 'userId' of type str.
+The class 'Shopping_Cart_Checkout' has the following attributes: 'CheckoutID' of type int; 'billingMethod' of type str; 'Paymentid' of type int; 'Checkout__' of type float; 'CustomerID' of type str.
+The class 'Customer_Payment1' has the following attributes: 'ID' of type Customer_Account; 'Auth__' of type bool; 'PayBill__' of type str.
+'Cart_ShoppingCart' (role 'Item_ShoppingCart_121', cardinality 0..*) is associated with 'Product_Item' (role 'Item_ShoppingCart_020', cardinality 0..*).
+'Product_Item' (role 'Item_Type_Item_119', cardinality 0..*) is associated with 'Product_Item_Type' (role 'Item_Type_Item_018', cardinality 0..*).
+'Customer_Payment1' (role 'Checkout_Payment_115', cardinality 0..*) is associated with 'Cart_Checkout' (role 'Checkout_Payment_014', cardinality 0..*).
+'Cart_ShoppingCart' (role 'GUI_Screen_ShoppingCart_125', cardinality 0..*) is associated with 'GUI_Screen' (role 'GUI_Screen_ShoppingCart_024', cardinality 0..*).
+'Customer_Customer' (role 'Customer_ShoppingCart_02', cardinality 0..*) is associated with 'Shopping_Cart_ShoppingCart' (role 'Customer_ShoppingCart_13', cardinality 0..*).
+'Shopping_Cart_ShoppingCart' (role 'ShoppingCart_Checkout_06', cardinality 0..*) is associated with 'Shopping_Cart_Checkout' (role 'ShoppingCart_Checkout_17', cardinality 0..*).
+'Customer_Payment' (role 'Payment_Customer_00', cardinality 0..*) is associated with 'Customer_Customer' (role 'Payment_Customer_11', cardinality 0..*).
+'Customer_Payment1' (role 'Payment_Customer_08', cardinality 0..*) is associated with 'Customer_Customer1' (role 'Payment_Customer_19', cardinality 0..*).
+'Cart_ShoppingCart' (role 'ShoppingCart_Checkout_010', cardinality 0..*) is associated with 'Cart_Checkout' (role 'ShoppingCart_Checkout_111', cardinality 0..*).
+'Customer_Customer1' (role 'ShoppingCart_Customer_113', cardinality 0..*) is associated with 'Cart_ShoppingCart' (role 'ShoppingCart_Customer_012', cardinality 0..*).
+'GUI_Screen' (role 'GUI_Screen_Item_026', cardinality 0..*) is associated with 'Product_Item' (role 'GUI_Screen_Item_127', cardinality 0..*).
+'Product_Item' (role 'Item_Specification_Item_117', cardinality 0..*) is associated with 'Product_Item_Specification' (role 'Item_Specification_Item_016', cardinality 0..*).
+'Shopping_Cart_Checkout' (role 'Payment_Checkout_15', cardinality 0..*) is associated with 'Customer_Payment' (role 'Payment_Checkout_04', cardinality 0..*).
+'GUI_Screen' (role 'GUI_Screen_Account_022', cardinality 0..*) is associated with 'Customer_Account' (role 'GUI_Screen_Account_123', cardinality 0..*).

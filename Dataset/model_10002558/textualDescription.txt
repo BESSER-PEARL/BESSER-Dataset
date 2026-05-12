@@ -1,0 +1,21 @@
+The model has 11 class(es).
+The class 'Registration' has the following attributes: 'password' of type str; 'lname' of type str; 'userName' of type str; 'fname' of type str.
+The class 'Message' has the following attributes: 'maxChars' of type str.
+The class 'Group' has the following attributes: 'discription' of type str; 'name' of type str.
+The class 'Friend' has no attributes.
+The class 'Profile' has the following attributes: 'username' of type str; 'password' of type str; 'about' of type str.
+The class 'User' has the following attributes: 'name' of type str.
+The class 'Hashtag' has the following attributes: 'numOfRepeat' of type int; 'name' of type str.
+The class 'Interface_Interface' has no attributes.
+The class 'Page' has the following attributes: 'name' of type str.
+The class 'Post' has the following attributes: 'info' of type str; 'privacy' of type str.
+The class 'Login' has the following attributes: 'username' of type str; 'password' of type str.
+The enumeration 'Enumeration' does not specify any literals.
+'Message' (role 'user11', cardinality 0..*) is associated with 'User' (role 'message10', cardinality 0..*).
+'User' (role 'post2', cardinality 0..*) is associated with 'Post' (role 'user3', cardinality 0..*).
+'Profile' (role 'user1', cardinality 0..*) is associated with 'User' (role 'myprofile0', cardinality 0..*).
+'Group' (role 'user7', cardinality 0..*) is associated with 'User' (role 'group6', cardinality 0..*).
+'User' (role 'hashtag12', cardinality 0..*) is associated with 'Hashtag' (role 'user13', cardinality 0..*).
+'Login' (role 'user5', cardinality 0..*) is associated with 'User' (role 'login4', cardinality 0..*).
+'User' (role 'registeration8', cardinality 0..*) is associated with 'Registration' (role 'user9', cardinality 0..*).
+'User' (role 'pages14', cardinality 0..*) is associated with 'Page' (role 'user15', cardinality 0..*).

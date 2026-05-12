@@ -1,0 +1,12 @@
+The model has 9 class(es).
+The class 'Cards_Deck' has the following attributes: 'cardsInDeck' of type str.
+The class 'Poker_Hand' has the following attributes: 'numCards' of type int; 'Fold' of type bool; 'handIterator' of type Poker_HandIterator; 'cardsInHand' of type str.
+The class 'Poker_Player' has the following attributes: 'currentBet' of type int; 'hand' of type Poker_Hand; 'currentMoney' of type int.
+The class 'Poker_Iterator_Interface' has no attributes.
+The class 'Poker_HandIterator' has no attributes.
+The class 'Poker_Human' has no attributes.
+The class 'Poker_Computer' has no attributes.
+The class 'Cards_Card' has the following attributes: 'rank' of type int.
+The class 'Poker_PokerGame' has the following attributes: 'Round' of type int; 'numPlayers' of type int.
+The enumeration 'Poker_PokerRank' does not specify any literals.
+'Poker_Hand' (role 'Hand_HandIterator_00', cardinality 0..*) is associated with 'Poker_HandIterator' (role 'handIterator1', cardinality 0..*).

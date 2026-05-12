@@ -1,0 +1,54 @@
+The model has 26 class(es).
+The class 'SUBSCRIPTION_BENEFITS' has the following attributes: 'key_name' of type str; '_id' of type str; 'description' of type str.
+The class 'SHIPPING_METHODS' has the following attributes: 'arrival' of type str; 'address' of type str; 'price' of type int; 'createdAt' of type str; '_id' of type str; 'name' of type str.
+The class 'STATUS2' has the following attributes: '_id' of type str; 'name' of type str.
+The class 'EVENTS_HISTORY' has the following attributes: 'createdAt' of type str; 'newValue' of type str; '_id' of type str; 'eventId' of type str; 'userId' of type str; 'oldValue' of type str.
+The class 'FEEDBACK_COMMENT' has the following attributes: 'userId' of type str; 'score' of type int; 'createdAt' of type str; 'comment' of type str; '_id' of type str; 'feedbackId' of type str.
+The class 'SHOPPING_MESSENGER' has the following attributes: 'userId' of type str; '_id' of type str; 'created_at' of type str; 'photos' of type str; 'message' of type str; 'storeId' of type str.
+The class 'ROLES' has the following attributes: '_id' of type str; 'name' of type str; 'createdAt' of type str.
+The class 'FEEDBACK' has the following attributes: 'like' of type str; 'createdAt' of type str; 'updateAt' of type str; 'linkInstagram' of type str; 'productId' of type str; 'photos' of type str; 'linkYoutube' of type str; '_id' of type str; 'userId' of type str; 'wysiwyg' of type str.
+The class 'STATUS' has the following attributes: 'createdAt' of type str; '_id' of type str; 'name' of type str.
+The class 'USER' has the following attributes: 'verified' of type bool; 'createdAt' of type str; '_id' of type str; 'email' of type str; 'surname' of type str; 'telephone' of type str; 'address' of type str; 'password' of type str; 'updateAt' of type str; 'lastAccess' of type str; 'name' of type str; 'status' of type str.
+The class 'QUESTIONS' has the following attributes: 'statusId' of type str; 'score' of type int; 'question' of type str; 'createdAt' of type str; '_id' of type str; 'userId' of type str; 'productId' of type str; 'answer' of type str.
+The class 'REFUND' has the following attributes: 'productId' of type str; '_id' of type str; 'title' of type str; 'storeId' of type str; 'created_at' of type str; 'message' of type str; 'shoppingHistoryId' of type str; 'userId' of type str.
+The class 'REFUND_MESSAGES' has the following attributes: 'message' of type str; 'created_at' of type str; '_id' of type str; 'userId' of type str; 'attach' of type str.
+The class 'SHOPPING_HISTORY' has the following attributes: 'score' of type int; 'isNew' of type bool; 'storeId' of type str; 'description' of type str; '_id' of type str; 'userId' of type str; 'note' of type str; 'name' of type str; 'shipArrival' of type str; 'productId' of type str; 'photos' of type str; 'price' of type int; 'sold' of type int; 'isSold' of type bool; 'comment' of type str; 'shipName' of type str; 'shipAddress' of type str; 'created_at' of type str; 'shipPrice' of type int; 'quantity' of type int; 'attribute' of type str; 'status' of type str; 'STATUS_SHOPPING_HIST_ID' of type str.
+The class 'NOTIFICATION' has the following attributes: 'createdAt' of type str; '_id' of type str; 'userId' of type str; 'message' of type str; 'code' of type str.
+The class 'STORE' has the following attributes: 'createdAt' of type str; 'email' of type str; 'telephone' of type str; 'updateAt' of type str; '_id' of type str; 'name' of type str; 'address' of type str; 'statusId' of type str; 'schedule' of type str.
+The class 'FOLLOW' has the following attributes: 'followers' of type str; 'following' of type str; 'followingGroup' of type str; 'userId' of type str; 'createdAt' of type str; '_id' of type str.
+The class 'CATEGORIAS' has the following attributes: 'createdAt' of type str; 'name' of type str; '_id' of type str.
+The class 'FOLLOW_MESSENGER' has the following attributes: 'userId' of type str; 'createdAt' of type str; '_id' of type str.
+The class 'STATUS_SHOPPING_HISTORY' has the following attributes: '_id' of type str; 'name' of type str.
+The class 'Class' has no attributes.
+The class 'SOCIAL_NETWORKS' has the following attributes: '_id' of type str; 'instagram' of type str; 'twitter' of type str; 'facebook' of type str; 'updateAt' of type str.
+The class 'EVENTS_LIST' has the following attributes: 'key' of type str; 'createdAt' of type str; '_id' of type str; 'description' of type str.
+The class 'FAVORITES' has the following attributes: 'statusId' of type str; 'createdAt' of type str; '_id' of type str; 'userId' of type str; 'storeId' of type str.
+The class 'WHISES' has the following attributes: '_id' of type str; 'statusId' of type str; 'productId' of type str; 'userId' of type str; 'createdAt' of type str.
+The class 'PRODUCT' has the following attributes: 'statusId' of type str; 'isNew' of type bool; 'name' of type str; 'quantity' of type int; 'model' of type str; '_id' of type str; 'description' of type str; 'relatedProducts' of type str; 'attribute' of type str; 'sold' of type int; 'storeId' of type str; 'photos' of type str; 'color' of type str; 'price' of type int; 'ShippingMethods' of type str; 'dimensions' of type str; 'createdAt' of type str.
+'PRODUCT' (role 'cATEGORIAS5', cardinality 0..*) is associated with 'CATEGORIAS' (role 'pRODUCTO4', cardinality 0..*).
+'SHOPPING_HISTORY' (role 'pRODUCT16', cardinality 0..*) is associated with 'PRODUCT' (role 'sHOPPING_CART17', cardinality 0..*).
+'USER' (role 'fAVORITES35', cardinality 0..*) is associated with 'FAVORITES' (role 'uSER34', cardinality 0..*).
+'USER' (role 'fEEDBACKS51', cardinality 0..*) is associated with 'FEEDBACK' (role 'uSER50', cardinality 0..*).
+'SHOPPING_HISTORY' (role 'sTATUS_SHOPPING_HISTORY25', cardinality 0..*) is associated with 'STATUS_SHOPPING_HISTORY' (role 'sHOPPING_HISTORY24', cardinality 0..*).
+'REFUND' (role 'sHOPPING_HISTORY40', cardinality 0..*) is associated with 'SHOPPING_HISTORY' (role 'rEFUND41', cardinality 0..*).
+'REFUND_MESSAGES' (role 'rEFUND42', cardinality 0..*) is associated with 'REFUND' (role 'rEFUND_MESSAGES43', cardinality 0..*).
+'SHOPPING_MESSENGER' (role 'sHOPPING_HISTORY48', cardinality 0..*) is associated with 'SHOPPING_HISTORY' (role 'mESSENGER49', cardinality 0..*).
+'USER' (role 'roles1', cardinality 0..*) is associated with 'ROLES' (role 'usuario0', cardinality 0..*).
+'SHIPPING_METHODS' (role 'sHOPPING_CART20', cardinality 0..*) is associated with 'SHOPPING_HISTORY' (role 'sHIPPING21', cardinality 0..*).
+'STORE' (role 'fAVORITES33', cardinality 0..*) is associated with 'FAVORITES' (role 'sTORE32', cardinality 0..*).
+'STORE' (role 'pRODUCT26', cardinality 0..*) is associated with 'PRODUCT' (role 'sTORE27', cardinality 0..*).
+'WHISES' (role 'pRODUCTO6', cardinality 0..*) is associated with 'PRODUCT' (role 'fAVORITES7', cardinality 0..*).
+'USER' (role 'pRODUCTO3', cardinality 0..*) is associated with 'PRODUCT' (role 'uSUARIO2', cardinality 0..*).
+'USER' (role 'sOCIAL_NETWORKS45', cardinality 0..*) is associated with 'SOCIAL_NETWORKS' (role 'uSER44', cardinality 0..*).
+'PRODUCT' (role 'sTATUS19', cardinality 0..*) is associated with 'STATUS' (role 'pRODUCT18', cardinality 0..*).
+'QUESTIONS' (role 'uSUARIO12', cardinality 0..*) is associated with 'USER' (role 'cOMMENTS13', cardinality 0..*).
+'FOLLOW' (role 'uSER46', cardinality 0..*) is associated with 'USER' (role 'fRIEND_LIST47', cardinality 0..*).
+'USER' (role 'sHOPPING_CART15', cardinality 0..*) is associated with 'SHOPPING_HISTORY' (role 'uSUARIO14', cardinality 0..*).
+'SHOPPING_HISTORY' (role 'sTORE30', cardinality 0..*) is associated with 'STORE' (role 'sHOPPING_HISTORY31', cardinality 0..*).
+'EVENTS_LIST' (role 'eVENTS_HISTORY36', cardinality 0..*) is associated with 'EVENTS_HISTORY' (role 'eVENTS_LIST37', cardinality 0..*).
+'PRODUCT' (role 'cOMMENTS11', cardinality 0..*) is associated with 'QUESTIONS' (role 'pRODUCT10', cardinality 0..*).
+'FEEDBACK_COMMENT' (role 'fEEDBACK52', cardinality 0..*) is associated with 'FEEDBACK' (role 'fEEDBACK_COMMENT53', cardinality 0..*).
+'SHIPPING_METHODS' (role 'pRODUCT22', cardinality 0..*) is associated with 'PRODUCT' (role 'sHIPPING23', cardinality 0..*).
+'NOTIFICATION' (role 'uSER38', cardinality 0..*) is associated with 'USER' (role 'nOTIFICATION39', cardinality 0..*).
+'STORE' (role 'uSER28', cardinality 0..*) is associated with 'USER' (role 'sTORE29', cardinality 0..*).
+'USER' (role 'fAVORITES9', cardinality 0..*) is associated with 'WHISES' (role 'uSUARIO8', cardinality 0..*).

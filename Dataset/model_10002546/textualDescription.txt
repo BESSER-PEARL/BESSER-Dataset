@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'barcode' has no attributes.
+The class 'Interface_Interface' has no attributes.
+The class 'Person' has the following attributes: 'username' of type str; 'id' of type int; 'date_of_birth' of type str; 'department' of type str; 'password' of type int; 'name' of type str; 'address' of type str; 'email' of type str.
+The class 'course' has the following attributes: 'course_id' of type int; 'credit_hours' of type int; 'course_preq' of type str; 'course_name' of type str.
+The class 'Class' has no attributes.
+The class 'staff_member' has no attributes.
+The class 'Admin' has no attributes.
+The class 'controller' has no attributes.
+The class 'Department' has the following attributes: 'dept_name' of type str; 'dept_id' of type int.
+The class 'student' has the following attributes: 'minor_dept' of type str; 'major_dept' of type str.
+The enumeration 'Enumeration' does not specify any literals.
+'staff_member' (role 'admin15', cardinality 0..*) is associated with 'Admin' (role 'staff_member14', cardinality 0..*).
+'course' (role 'department17', cardinality 0..*) is associated with 'Department' (role 'course16', cardinality 0..*).
+'student' (role 'barcode6', cardinality 0..*) is associated with 'barcode' (role 'student7', cardinality 0..*).
+'course' (role 'admin4', cardinality 0..*) is associated with 'Admin' (role 'course5', cardinality 0..*).
+'course' (role 'person8', cardinality 0..*) is associated with 'Person' (role 'course9', cardinality 0..*).
+'controller' (role 'staff_member10', cardinality 0..*) is associated with 'staff_member' (role 'controller11', cardinality 0..*).
+'Department' (role 'student0', cardinality 0..*) is associated with 'student' (role 'department1', cardinality 0..*).
+'Admin' (role 'controller12', cardinality 0..*) is associated with 'controller' (role 'admin13', cardinality 0..*).
+'course' (role 'student3', cardinality 0..*) is associated with 'student' (role 'course2', cardinality 0..*).

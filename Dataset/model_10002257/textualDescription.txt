@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Button' has the following attributes: 'pressed' of type bool; 'floor' of type int.
+The class 'Elevator' has the following attributes: 'currentFloor' of type int; 'number' of type int; 'destinationFloor' of type int.
+The class 'ElevatorControl' has no attributes.
+The class 'ElevatorComponent' has the following attributes: 'direction' of type Direction.
+The enumeration 'Direction' does not specify any literals.
+'Button' (role 'elevatorControl2', cardinality 0..*) is associated with 'ElevatorControl' (role 'button3', cardinality 0..*).
+'ElevatorControl' (role 'elevator1', cardinality 0..*) is associated with 'Elevator' (role 'elevatorControl0', cardinality 0..*).

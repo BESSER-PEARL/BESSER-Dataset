@@ -1,0 +1,22 @@
+The model has 18 class(es).
+The class 'Lights' has the following attributes: 'brightness' of type int.
+The class 'ActivationCode' has the following attributes: 'code' of type int.
+The class 'SAFE_HOME_SYSTEM' has the following attributes: 'masterPwd' of type str; 'userId' of type str; 'streetAddress' of type str; 'activationState' of type str.
+The class 'Home_Entertainment_Devices' has no attributes.
+The class 'Device_Configuration' has the following attributes: 'zone' of type int; 'activeOnAway' of type bool; 'alarmIfoff' of type bool; 'activeOnStay' of type bool.
+The class 'Segment' has no attributes.
+The class 'Automation_System' has no attributes.
+The class 'Alarm_Signaler' has the following attributes: 'frequency' of type int.
+The class 'Home_Theatre' has the following attributes: 'companyName' of type str.
+The class 'config' has the following attributes: 'configurationName' of type str.
+The class 'HeatAirConditioning' has the following attributes: 'voltage' of type int.
+The class 'Television' has the following attributes: 'companyName' of type str.
+The class 'Sensor' has the following attributes: 'detectingAnomaly' of type bool.
+The class 'Telephone_Answering_machine' has the following attributes: 'number' of type int.
+The class 'Camera' has the following attributes: 'panAngle' of type int; 'zoomSetting' of type int.
+The class 'securitySystem' has no attributes.
+The class 'FloorCoordinates' has the following attributes: 'YcoordinatePosition' of type int; 'XcoordinatePosition' of type int.
+The class 'FloorPlan' has the following attributes: 'floorName' of type str.
+'config' (role 'floorPlan2', cardinality 0..*) is associated with 'FloorPlan' (role 'config3', cardinality 0..*).
+'config' (role 'activationCode0', cardinality 0..*) is associated with 'ActivationCode' (role 'config1', cardinality 0..*).
+'FloorPlan' (role 'segment4', cardinality 0..*) is associated with 'Segment' (role 'floorPlan5', cardinality 0..*).

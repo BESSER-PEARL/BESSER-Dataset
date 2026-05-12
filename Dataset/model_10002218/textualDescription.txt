@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'void' has no attributes.
+The class 'Calender_Event' has the following attributes: 'admin' of type Admin; 'nomarlUser' of type Normal_user; 'eventType' of type str; 'description' of type str; 'category' of type str; 'participantAmount' of type str; 'date' of type str; 'time' of type str; 'volunteer' of type Volunteer.
+The class 'SuperAdmin' has the following attributes: 'userName' of type str; 'password' of type str; 'userID' of type int.
+The class 'Payment' has the following attributes: 'cardType' of type str; 'cardNumber' of type int; 'expiryDate' of type str; 'amount' of type int; 'issuerName' of type str.
+The class 'Profile' has the following attributes: 'f_Name' of type str; 'password' of type str; 'user_Name' of type str; 'l_Name' of type str.
+The class 'Volunteer' has the following attributes: 'userID' of type int; 'password' of type str; 'userName' of type str.
+The class 'Attendance' has the following attributes: 'checkOutTime' of type str; 'checkInTime' of type str; 'attendanceID' of type int.
+The class 'Normal_user' has the following attributes: 'userID' of type int; 'password' of type str; 'userName' of type str.
+The class 'Admin' has the following attributes: 'userName' of type str; 'password' of type str; 'userID' of type int.
+The class 'Logout' has no attributes.
+The class 'Mail' has the following attributes: 'subject' of type str; 'sendBy' of type str; 'sendTo' of type str; 'emailID' of type str.
+The class 'Login' has the following attributes: 'loggedoutTime' of type str; 'userID' of type Profile; 'loggedinTime' of type str.
+'Volunteer' (role 'payment12', cardinality 0..*) is associated with 'Payment' (role 'volunteer13', cardinality 0..*).
+'SuperAdmin' (role 'payment10', cardinality 0..*) is associated with 'Payment' (role 'superAdmin11', cardinality 0..*).
+'Payment' (role 'admin15', cardinality 0..*) is associated with 'Admin' (role 'payment14', cardinality 0..*).
+'SuperAdmin' (role 'calender_Event6', cardinality 0..*) is associated with 'Calender_Event' (role 'Add_Edit_Vew7', cardinality 0..*).
+'Mail' (role 'superAdmin19', cardinality 0..*) is associated with 'SuperAdmin' (role 'mail18', cardinality 0..*).
+'Mail' (role 'admin21', cardinality 0..*) is associated with 'Admin' (role 'mail20', cardinality 0..*).
+'Admin' (role 'calender_Event2', cardinality 0..*) is associated with 'Calender_Event' (role 'Add_Edit_View3', cardinality 0..*).
+'Normal_user' (role 'payment216', cardinality 0..*) is associated with 'Payment' (role 'normal_user17', cardinality 0..*).
+'Calender_Event' (role 'Add_Edit_View5', cardinality 0..*) is associated with 'Normal_user' (role 'calender_Event4', cardinality 0..*).
+'Volunteer' (role 'calender_Event0', cardinality 0..*) is associated with 'Calender_Event' (role 'Add_Edit_View1', cardinality 0..*).
+'Attendance' (role 'profile9', cardinality 0..*) is associated with 'Profile' (role 'Track_Attendance8', cardinality 0..*).

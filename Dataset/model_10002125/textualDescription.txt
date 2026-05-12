@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'T_rsensor' has the following attributes: 't_rsensorID' of type int.
+The class 'Sensoren' has the following attributes: 'sensorID' of type int.
+The class 'Bewegungssensor' has the following attributes: 'bewegungssensorID' of type int.
+The class 'Fenstersensor' has the following attributes: 'fenstersensorID' of type int.

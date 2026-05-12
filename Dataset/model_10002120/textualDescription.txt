@@ -1,0 +1,11 @@
+The model has 8 class(es).
+The class 'System' has the following attributes: 'status' of type bool.
+The class 'Fire_Alarm' has the following attributes: 'systemOn' of type bool; 'systemOff' of type bool.
+The class 'Security_System' has the following attributes: 'systemOff' of type bool; 'systemOn' of type bool.
+The class 'Light' has no attributes.
+The class 'TV' has no attributes.
+The class 'Fan' has no attributes.
+The class 'User' has the following attributes: 'Name' of type str.
+The class 'Login' has the following attributes: 'Name' of type str; 'Password' of type str.
+'Login' (role '_handle0', cardinality 0..*) is associated with 'System' (role '_user1', cardinality 0..*).
+'User' (role '_access3', cardinality 0..*) is associated with 'Login' (role '_user2', cardinality 0..*).

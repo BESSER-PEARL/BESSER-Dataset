@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Booking' has the following attributes: 'Time' of type str; 'Destination' of type str; 'Luggage' of type str; 'Id' of type str; 'Origin' of type str; 'Tickets' of type Ticket.
+The class 'Client' has the following attributes: 'Id' of type str; 'Name' of type str; 'Loyalty_card' of type str; 'Bookings' of type Booking.
+The class 'Ticket' has the following attributes: 'Id' of type str; 'Clients' of type Client; 'Booking_Class' of type str; 'Seat' of type str.
+The class 'Answer' has no attributes.
+The class 'Flight' has the following attributes: 'Company' of type str; 'Destination' of type str; 'Max_Passangers' of type int; 'Time' of type str; 'Origin' of type str; 'Id' of type str.
+The class 'Problem' has the following attributes: 'Content' of type str; 'Type' of type str; 'Id' of type str.
+'Booking' (role 'One_clinet_makes_the_booking_9', cardinality 0..*) is associated with 'Client' (role 'Client_Booking_08', cardinality 0..*).
+'Ticket' (role 'Ticket_Flight_010', cardinality 0..*) is associated with 'Flight' (role 'Ticket_Flight_111', cardinality 0..*).
+'Problem' (role 'Answer_Problem_11', cardinality 0..*) is associated with 'Answer' (role 'Answer_Problem_00', cardinality 0..*).
+'Ticket' (role 'Client_Ticket_15', cardinality 0..*) is associated with 'Client' (role 'Client_Ticket_04', cardinality 0..*).
+'Client' (role 'Client_Problem_02', cardinality 0..*) is associated with 'Problem' (role 'Client_Problem_13', cardinality 0..*).
+'Booking' (role 'Booking_Ticket_06', cardinality 0..*) is associated with 'Ticket' (role 'Booking_Ticket_17', cardinality 0..*).

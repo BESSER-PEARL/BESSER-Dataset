@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'CUENTA' has the following attributes: 'Nombre' of type str; 'Tipo_de_Cuenta' of type str; 'Balance' of type int.
+The class 'USUARIO' has the following attributes: 'Contrase_a' of type str; 'ID' of type str; 'Nombre' of type str.
+'CUENTA' (role 'uSUARIO1', cardinality 0..*) is associated with 'USUARIO' (role 'cUENTA0', cardinality 0..*).

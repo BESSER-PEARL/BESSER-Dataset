@@ -1,0 +1,24 @@
+The model has 21 class(es).
+The class 'dutycalls_view_User' has no attributes.
+The class 'dutycalls_model_PokerHand' has no attributes.
+The class 'dutycalls_view_JoinGame' has no attributes.
+The class 'dutycalls_model_GameType' has no attributes.
+The class 'dutycalls_view_PokerTable' has no attributes.
+The class 'dutycalls_model_Dealer_SINGLEPLAYER' has the following attributes: 'deck' of type dutycalls_model_Deck; 'openBet' of type int; 'allIn' of type bool; 'tableValue' of type int; 'main_userList' of type List_User_S_; 'userList' of type List_User_S_; 'bet' of type int.
+The class 'dutycalls_model_Deck' has no attributes.
+The class 'dutycalls_model_PlayerHand' has no attributes.
+The class 'dutycalls_model_WildHand' has no attributes.
+The class 'dutycalls_model_Suit' has no attributes.
+The class 'dutycalls_contoller_Dealer_Control' has the following attributes: 'cardCount' of type int; 'userid' of type int.
+The class 'dutycalls_model_User_S' has the following attributes: 'id' of type int.
+The class 'dutycalls_contoller_HomeControl' has no attributes.
+The class 'dutycalls_model_Card' has no attributes.
+The class 'dutycalls_view_WaitingForPlayer' has no attributes.
+The class 'dutycalls_view_About' has no attributes.
+The class 'dutycalls_model_BestHand' has the following attributes: 'handValue' of type int.
+The class 'dutycalls_view_Instructions' has no attributes.
+The class 'dutycalls_model_Value' has no attributes.
+The class 'dutycalls_model_AIUser' has no attributes.
+The class 'dutycalls_view_Home' has no attributes.
+The enumeration 'List_Card_' does not specify any literals.
+The enumeration 'List_User_S_' does not specify any literals.

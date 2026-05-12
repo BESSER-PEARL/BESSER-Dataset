@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'Payment' has the following attributes: 'Paytment_type' of type str.
+The class 'User' has the following attributes: 'password' of type str; 'login' of type str.
+The class 'Product' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'ShoppingCart' has the following attributes: 'Update_cart' of type date.
+The class 'Order' has the following attributes: 'Items' of type str; 'number' of type str.
+The class 'Account' has the following attributes: 'open' of type date; 'Valid_invalid' of type str.
+The class 'Classes' has the following attributes: 'Name' of type str; 'quantity' of type str.
+'User' (role 'shoppingCart0', cardinality 0..*) is associated with 'ShoppingCart' (role 'webUser1', cardinality 0..*).
+'Payment' (role 'order12', cardinality 0..*) is associated with 'Order' (role 'payment13', cardinality 0..*).
+'Account' (role 'order10', cardinality 0..*) is associated with 'Order' (role 'account11', cardinality 0..*).
+'ShoppingCart' (role 'account3', cardinality 0..*) is associated with 'Account' (role 'cart2', cardinality 0..*).
+'Order' (role 'items8', cardinality 0..*) is associated with 'Classes' (role 'order9', cardinality 0..*).
+'Classes' (role 'sc5', cardinality 0..*) is associated with 'ShoppingCart' (role 'items4', cardinality 0..*).
+'Product' (role 'lineItems6', cardinality 0..*) is associated with 'Classes' (role 'product7', cardinality 0..*).

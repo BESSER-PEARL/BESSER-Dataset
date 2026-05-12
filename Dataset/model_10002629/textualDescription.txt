@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'Product' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'Product_View' has the following attributes: 'price' of type float; 'quantity' of type int.
+The class 'ShoppingCart' has the following attributes: 'creationDate' of type date.
+The class 'Order' has the following attributes: 'ordered' of type date; 'status' of type str; 'Address' of type str; 'total' of type float; 'number' of type int.
+The class 'WebUser' has the following attributes: 'login' of type str; 'password' of type str.
+'ShoppingCart' (role 'items2', cardinality 0..*) is associated with 'Product_View' (role 'sc3', cardinality 0..*).
+'Product_View' (role 'product5', cardinality 0..*) is associated with 'Product' (role 'lineItems4', cardinality 0..*).
+'WebUser' (role 'shoppingCart0', cardinality 0..*) is associated with 'ShoppingCart' (role 'webUser1', cardinality 0..*).
+'Product_View' (role 'order7', cardinality 0..*) is associated with 'Order' (role 'items6', cardinality 0..*).

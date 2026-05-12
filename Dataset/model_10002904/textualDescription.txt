@@ -1,0 +1,28 @@
+The model has 13 class(es).
+The class 'Player' has the following attributes: 'color' of type Color; 'type' of type PlayerType.
+The class 'Window' has no attributes.
+The class 'GraphicsGenerator' has no attributes.
+The class 'Menu' has no attributes.
+The class 'Field' has the following attributes: 'x' of type int; 'color' of type Color; 'y' of type int.
+The class 'IOFilesManagement' has no attributes.
+The class 'GameEngine' has no attributes.
+The class 'Pawn' has no attributes.
+The class 'EventHandler' has no attributes.
+The class 'GameState' has no attributes.
+The class 'Dice' has no attributes.
+The class 'Board' has the following attributes: 'board' of type str.
+The class 'AI' has no attributes.
+The enumeration 'PlayerType' does not specify any literals.
+The enumeration 'Color' does not specify any literals.
+'GameEngine' (role 'board10', cardinality 0..*) is associated with 'Board' (role 'gameEngine11', cardinality 0..*).
+'GameState' (role 'iOFilesManagement1', cardinality 0..*) is associated with 'IOFilesManagement' (role 'IOFilesManagement_GameState_00', cardinality 0..*).
+'Window' (role 'graphicsGenerator4', cardinality 0..*) is associated with 'GraphicsGenerator' (role 'window5', cardinality 0..*).
+'EventHandler' (role 'gameEngine21', cardinality 0..*) is associated with 'GameEngine' (role 'eventHandler20', cardinality 0..*).
+'Menu' (role 'gameState23', cardinality 0..*) is associated with 'GameState' (role 'menu22', cardinality 0..*).
+'GraphicsGenerator' (role 'field9', cardinality 0..*) is associated with 'Field' (role 'graphicsGenerator8', cardinality 0..*).
+'GameState' (role 'gameEngine13', cardinality 0..*) is associated with 'GameEngine' (role 'gameState12', cardinality 0..*).
+'Window' (role 'board17', cardinality 0..*) is associated with 'Board' (role 'window16', cardinality 0..*).
+'Player' (role 'aI18', cardinality 0..*) is associated with 'AI' (role 'player19', cardinality 0..*).
+'GraphicsGenerator' (role 'board7', cardinality 0..*) is associated with 'Board' (role 'graphicsGenerator6', cardinality 0..*).
+'Dice' (role 'player3', cardinality 0..*) is associated with 'Player' (role 'dice2', cardinality 0..*).
+'Player' (role 'gameState15', cardinality 0..*) is associated with 'GameState' (role 'player14', cardinality 0..*).

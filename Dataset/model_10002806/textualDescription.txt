@@ -1,0 +1,22 @@
+The model has 11 class(es).
+The class 'Subject' has the following attributes: 'name' of type str.
+The class 'Course' has the following attributes: 'subjects__' of type Subject; 'duration' of type str.
+The class 'Student' has the following attributes: 'ID' of type str; 'Name' of type str.
+The class 'Attendance' has no attributes.
+The class 'HOD' has no attributes.
+The class 'Access_Information' has no attributes.
+The class 'Employee_Interface' has no attributes.
+The class 'Teacher' has no attributes.
+The class 'Department' has the following attributes: 'students__' of type Student; 'course' of type Course; 'hod' of type HOD; 'teachers__' of type Teacher.
+The class 'Admin' has no attributes.
+The class 'Authentication' has no attributes.
+'Student' (role 'admin13', cardinality 0..*) is associated with 'Admin' (role 'student12', cardinality 0..*).
+'Student' (role 'department5', cardinality 0..*) is associated with 'Department' (role 'student4', cardinality 0..*).
+'Access_Information' (role 'attendance16', cardinality 0..*) is associated with 'Attendance' (role 'access_Information17', cardinality 0..*).
+'Admin' (role 'employee14', cardinality 0..*) is associated with 'Employee_Interface' (role 'admin15', cardinality 0..*).
+'Subject' (role 'course3', cardinality 0..*) is associated with 'Course' (role 'subject2', cardinality 0..*).
+'Student' (role 'Having_Attendance8', cardinality 0..*) is associated with 'Access_Information' (role 'student9', cardinality 0..*).
+'Employee_Interface' (role 'department7', cardinality 0..*) is associated with 'Department' (role 'employee6', cardinality 0..*).
+'Department' (role 'course0', cardinality 0..*) is associated with 'Course' (role 'department1', cardinality 0..*).
+'Employee_Interface' (role 'access_Information10', cardinality 0..*) is associated with 'Access_Information' (role 'employee11', cardinality 0..*).
+'Access_Information' (role 'department18', cardinality 0..*) is associated with 'Department' (role 'access_Information19', cardinality 0..*).

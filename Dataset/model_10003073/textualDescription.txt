@@ -1,0 +1,18 @@
+The model has 11 class(es).
+The class 'Invoice' has the following attributes: 'orders' of type str; 'invoice_id' of type str.
+The class 'Chef' has no attributes.
+The class 'Registration' has the following attributes: 'UserName' of type str; 'Email' of type str; 'Last_Name' of type str; 'Password' of type str; 'Gender' of type str; 'attribute5' of type str; 'First_Name' of type str; 'attribute' of type str.
+The class 'Booking' has the following attributes: 'endTime' of type str; 'date' of type date; 'reservedTables' of type str; 'customer_name' of type str; 'startTime' of type str; 'booking_id' of type int.
+The class 'Cart' has the following attributes: 'Product' of type Product.
+The class 'User' has the following attributes: 'Passowrd' of type str; 'User_Name' of type str.
+The class 'Product' has the following attributes: 'name' of type str; 'Note' of type str; 'price' of type float; 'food_id' of type str.
+The class 'Table' has the following attributes: 'avaliable' of type bool; 'table_id' of type str; 'numSeats' of type int.
+The class 'StaffUI' has no attributes.
+The class 'Order' has the following attributes: 'order_id' of type str; 'foodList' of type str.
+The class 'ReservationManagementSystem' has the following attributes: 'bookings' of type str.
+'ReservationManagementSystem' (role 'booking0', cardinality 0..*) is associated with 'Booking' (role 'ReservationManagementSystem_Booking_11', cardinality 0..*).
+'Product' (role 'has9', cardinality 0..*) is associated with 'Order' (role 'orde8', cardinality 0..*).
+'Cart' (role 'product11', cardinality 0..*) is associated with 'Product' (role 'cart10', cardinality 0..*).
+'Invoice' (role 'reservationManagementSystem3', cardinality 0..*) is associated with 'ReservationManagementSystem' (role 'generates2', cardinality 0..*).
+'Table' (role 'Table_Booking_06', cardinality 0..*) is associated with 'Booking' (role 'reservedBy7', cardinality 0..*).
+'Table' (role 'has4', cardinality 0..*) is associated with 'Order' (role 'table5', cardinality 0..*).

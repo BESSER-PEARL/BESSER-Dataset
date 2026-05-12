@@ -1,0 +1,13 @@
+The model has 8 class(es).
+The class 'Orden' has the following attributes: 'pagada' of type bool; 'mesa' of type int; 'preparada' of type bool; 'fecha' of type str; 'orden_Id' of type str; 'numComensales' of type int; 'servida' of type bool.
+The class 'Booking' has the following attributes: 'contact' of type str; 'date' of type str; 'reservedTables' of type str; 'type' of type int; 'booking_Id' of type str; 'name' of type str.
+The class 'Alimento' has the following attributes: 'alimento_Id' of type str; 'refrigeraci_n' of type bool; 'nombre' of type str; 'precio' of type str.
+The class 'Report' has the following attributes: 'orders' of type str; 'totalSales' of type str; 'profit' of type str.
+The class 'RMS' has the following attributes: 'bookings' of type str.
+The class 'Class2' has no attributes.
+The class 'Class' has no attributes.
+The class 'Vegetariano' has the following attributes: 'tipoDieta' of type str.
+The enumeration 'int' does not specify any literals.
+'RMS' (role 'is_generated_by5', cardinality 0..*) is associated with 'Report' (role 'generates4', cardinality 0..*).
+'Booking' (role 'is_in3', cardinality 0..*) is associated with 'RMS' (role 'has2', cardinality 0..*).
+'Orden' (role 'incluido_en0', cardinality 0..*) is associated with 'Alimento' (role 'compuesta_por1', cardinality 0..*).

@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'Full_day' has the following attributes: 'end_date' of type int; 'start_date' of type int.
+The class 'location' has the following attributes: 'Latitude' of type int; 'Longitude' of type int.
+The class 'Attendance' has the following attributes: 'atten_date' of type str; 'atten_type' of type str; 'atten_emp_id' of type int; 'atten_time' of type int; 'atten_id' of type int.
+The class 'Haff_day' has the following attributes: 'start_date' of type int.
+The class 'Employee' has the following attributes: 'email_id' of type str; 'paasword' of type str; 'office_address' of type str; 'name' of type str; 'e_id' of type int; 'phone_no' of type int; 'address' of type str.
+The class 'Admin' has the following attributes: 'username' of type str; 'password' of type str.
+The class 'login' has the following attributes: 'loginUsername' of type str; 'loginStatus' of type str; 'login_id' of type int; 'loginpassword' of type str.
+The class 'Leave' has the following attributes: 'l_emp_id' of type int; 'l_type' of type str; 'l_description' of type str; 'l_id' of type int.
+'Employee' (role 'Admin0', cardinality 0..*) is associated with 'Admin' (role 'employee1', cardinality 0..*).
+'Employee' (role 'Admin9', cardinality 0..*) is associated with 'Admin' (role 'employee8', cardinality 0..*).
+'Attendance' (role 'Admin13', cardinality 0..*) is associated with 'Admin' (role 'attendance12', cardinality 0..*).
+'Employee' (role 'attendance14', cardinality 0..*) is associated with 'Attendance' (role 'employee15', cardinality 0..*).
+'Employee' (role 'attendance4', cardinality 0..*) is associated with 'Attendance' (role 'employee5', cardinality 0..*).
+'login' (role 'Admin21', cardinality 0..*) is associated with 'Admin' (role 'login20', cardinality 0..*).
+'Employee' (role 'login218', cardinality 0..*) is associated with 'login' (role 'employee19', cardinality 0..*).
+'Admin' (role 'leave2', cardinality 0..*) is associated with 'Leave' (role 'Admin3', cardinality 0..*).
+'Attendance' (role 'location17', cardinality 0..*) is associated with 'location' (role 'attendance16', cardinality 0..*).
+'Attendance' (role 'location6', cardinality 0..*) is associated with 'location' (role 'attendance7', cardinality 0..*).
+'Leave' (role 'employee10', cardinality 0..*) is associated with 'Employee' (role 'leave11', cardinality 0..*).

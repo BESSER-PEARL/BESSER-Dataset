@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'Connect4_CirclePanel' has the following attributes: 'color' of type str; 'colorIndex' of type int.
+The class 'Connect4_connect' has the following attributes: 'x' of type int; 'columnSize' of type int; 'y' of type int; 'FRAME_HEIGHT' of type int; 'label3' of type str; 'FRAME_WIDTH' of type int; 'label1' of type str; 'panel' of type str; 'label5' of type str; 'label4' of type str; 'rowSize' of type int; 'label2' of type str.
+The class 'Connect4_Player' has the following attributes: 'currentPlayer' of type bool; 'name' of type str; 'wins' of type int; 'roundWon' of type bool; 'tokenColor' of type str.
+The class 'Connect4_Board' has the following attributes: 'maxColumns' of type int; 'maxRows' of type int; 'gameBoard' of type str.
+The class 'Connect4_Token' has the following attributes: 'isEmpty' of type bool; 'color' of type str; 'xValue' of type int; 'yValue' of type int.
+'Connect4_Board' (role 'token0', cardinality 0..*) is associated with 'Connect4_Token' (role 'board1', cardinality 0..*).
+'Connect4_Player' (role 'board3', cardinality 0..*) is associated with 'Connect4_Board' (role 'player2', cardinality 0..*).

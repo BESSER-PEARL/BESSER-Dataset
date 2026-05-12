@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'Card' has the following attributes: 'value' of type int; 'display' of type str; 'suit' of type int; 'faceUp' of type bool.
+The class 'Deck' has the following attributes: 'deck' of type str; 'usedCards' of type str.
+The class 'Player' has the following attributes: 'cards' of type str; 'type' of type str; 'value' of type str.
+'Deck' (role 'card1', cardinality 0..*) is associated with 'Card' (role 'deck0', cardinality 0..*).
+'Card' (role 'player3', cardinality 0..*) is associated with 'Player' (role 'card2', cardinality 0..*).

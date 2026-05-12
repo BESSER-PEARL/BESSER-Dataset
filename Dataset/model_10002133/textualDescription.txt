@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'Organization' has the following attributes: 'Name' of type str; 'Description' of type str; 'Events' of type Event; 'Owners' of type User; 'Url' of type str; 'Groups' of type Group; 'Id' of type int.
+The class 'Permission' has the following attributes: 'Crud' of type CrudType; 'Allow' of type AllowType; 'Id' of type int; 'Name' of type str; 'Scope' of type ScopeType.
+The class 'Group' has the following attributes: 'ScopeId' of type int; 'Id' of type int; 'Name' of type str; 'Users' of type User; 'Permissions' of type Permission; 'Scope' of type ScopeType.
+The class 'Panel' has the following attributes: 'Approval' of type ApprovalType; 'Id' of type int; 'PreBufferTime' of type int; 'Length' of type int; 'Scheduled' of type str; 'Private' of type bool; 'Description' of type str; 'Submitter' of type User; 'Resources' of type Resource; 'Panelists' of type User; 'PostBufferTime' of type int; 'Name' of type str.
+The class 'Resource' has the following attributes: 'NumberAvailable' of type int; 'Private' of type bool; 'Type' of type ResourceType; 'Description' of type str; 'Name' of type str; 'Id' of type int.
+The class 'Event' has the following attributes: 'Groups' of type Group; 'Panels' of type Panel; 'Description' of type str; 'Resources' of type Resource; 'Id' of type int; 'Date' of type str; 'Name' of type str.
+The class 'User' has the following attributes: 'UserHash' of type int; 'UserName' of type str; 'UserNameFull' of type str; 'EmailAddress' of type str; 'FirstName' of type str; 'Password' of type str; 'LastName' of type str; 'Id' of type int.
+The enumeration 'CrudType' does not specify any literals.
+The enumeration 'ApprovalType' does not specify any literals.
+The enumeration 'Enumeration' does not specify any literals.
+The enumeration 'AllowType' does not specify any literals.
+The enumeration 'ScopeType' does not specify any literals.
+The enumeration 'ResourceType' does not specify any literals.

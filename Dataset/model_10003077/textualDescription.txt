@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'Current_Account' has no attributes.
+The class 'Manager' has no attributes.
+The class 'Saving_Account' has the following attributes: 'interest_Rate' of type int.
+The class 'Bank' has the following attributes: 'Name' of type str; 'Code' of type str.
+The class 'Account' has the following attributes: 'min_Balance' of type int; 'date_Of_Opening' of type str; 'Balance' of type int; 'Acc_no' of type int.
+The class 'Employee' has the following attributes: 'Mid' of type int; 'Eid' of type int.
+The class 'Branch' has the following attributes: 'City' of type str; 'Branch_code' of type str.
+The class 'Customer' has the following attributes: 'name' of type str; 'address' of type str; 'phone' of type str; 'Cust_id' of type str.
+The class 'User' has the following attributes: 'name' of type str; 'password' of type str; 'family' of type str; 'uid' of type int; 'userName' of type str.
+The class 'Transaction' has the following attributes: 'status' of type str; 'TranId' of type int; 'date' of type str; 'type' of type TransactionType; 'Acc_num' of type int; 'amount' of type int; 'prevBalance' of type int; 'currentBalance' of type int.
+The class 'Setting' has no attributes.
+The enumeration 'TransactionType' does not specify any literals.
+'Account' (role 'branch3', cardinality 0..*) is associated with 'Branch' (role 'account2', cardinality 0..*).
+'Saving_Account' (role 'customer4', cardinality 0..*) is associated with 'Customer' (role 'saving_Account5', cardinality 0..*).
+'Bank' (role 'branch0', cardinality 0..*) is associated with 'Branch' (role 'bank1', cardinality 0..*).
+'Transaction' (role 'account11', cardinality 0..*) is associated with 'Account' (role 'transaction10', cardinality 0..*).
+'Manager' (role 'employee9', cardinality 0..*) is associated with 'Employee' (role 'manager8', cardinality 0..*).
+'Current_Account' (role 'customer6', cardinality 0..*) is associated with 'Customer' (role 'current_Account7', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'Administrator' has the following attributes: 'Account' of type str; 'Fullname' of type str.
+The class 'Ticket' has the following attributes: 'Customer_Name' of type str; 'Price' of type bool; 'Id' of type int; 'Type' of type str.
+The class 'Customer' has the following attributes: 'Location' of type str; 'Fullname' of type str; 'Card_details' of type int; 'Gender' of type str.
+The class 'Flight' has the following attributes: 'Source' of type str; 'Name' of type str; 'Time' of type int; 'Id' of type Flight; 'Destination' of type str; 'Number_of_seats' of type int.
+The class 'Bank' has the following attributes: 'Account' of type int; 'Name' of type str.
+'Administrator' (role 'Manage1', cardinality 0..*) is associated with 'Customer' (role 'Request0', cardinality 0..*).
+'Customer' (role 'Owns5', cardinality 0..*) is associated with 'Ticket' (role 'Owner4', cardinality 0..*).
+'Bank' (role 'customer2', cardinality 0..*) is associated with 'Customer' (role 'bank3', cardinality 0..*).
+'Flight' (role 'ticket7', cardinality 0..*) is associated with 'Ticket' (role 'flight6', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 11 class(es).
+The class 'User' has the following attributes: 'phone' of type String; 'lastName' of type String; 'id' of type str; 'address' of type Documents; 'firstName' of type String; 'email' of type String; 'photoURL' of type String.
+The class 'String' has the following attributes: 'data' of type String.
+The class 'Documents' has the following attributes: 'tab_counter' of type int; 'data' of type Provider; 'file' of type str; 'file_name' of type str.
+The class 'Number' has the following attributes: 'data' of type int.
+The class 'ArrPrint' has no attributes.
+The class 'Null' has no attributes.
+The class 'Print' has no attributes.
+The class 'Array' has the following attributes: 'data' of type User.
+The class 'Visitor' has no attributes.
+The class 'Provider' has the following attributes: 'displayName' of type String; 'providerId' of type String; 'email' of type String; 'photoURL' of type String; 'uid' of type str.
+The class 'Category' has the following attributes: 'id' of type str; 'parent' of type String; 'section' of type String; 'name' of type String.

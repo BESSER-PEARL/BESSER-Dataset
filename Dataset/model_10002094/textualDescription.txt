@@ -1,0 +1,56 @@
+The model has 30 class(es).
+The class 'Software' has no attributes.
+The class 'Reshelve_books_UseCase' has no attributes.
+The class 'Return_book_UseCase' has no attributes.
+The class 'Video' has no attributes.
+The class 'Library_Patron' has the following attributes: 'books' of type str; 'maxBookCheckOut' of type int.
+The class 'Fine_patron_for_overdue_book_UseCase' has no attributes.
+The class 'Library_staff' has no attributes.
+The class 'Item' has the following attributes: 'maxCheckOut' of type int; 'age' of type int.
+The class 'Manage_Interlibrary_loan_requests_UseCase' has no attributes.
+The class 'Bound_magazines_into_volumes_or_record_as_microfiche_UseCase' has no attributes.
+The class 'CD' has no attributes.
+The class 'Assist_with_research_using_computer_based_tools_UseCase' has no attributes.
+The class 'Book' has no attributes.
+The class 'Order_new_library_resources_UseCase' has no attributes.
+The class 'Check_in_book_UseCase' has no attributes.
+The class 'Magazine' has no attributes.
+The class 'Put_book_on_reserve_UseCase' has no attributes.
+The class 'Library_patron_Actor' has no attributes.
+The class 'Assist_with_research_using_hard_copy_indexes_UseCase' has no attributes.
+The class 'Renew_magazine_subscriptions_UseCase' has no attributes.
+The class 'Library' has the following attributes: 'software' of type str; 'finePerDar' of type Double; 'maxFine' of type Double; 'computers' of type str; 'videos' of type str; 'book' of type str; 'CDs' of type str; 'Magazine' of type str.
+The class 'Library_Actor' has no attributes.
+The class 'Pay_overdue_fine_UseCase' has no attributes.
+The class 'Faculty' has no attributes.
+The class 'Library_staff_Actor' has no attributes.
+The class 'Send_book_return_due_reminder_UseCase' has no attributes.
+The class 'Class' has no attributes.
+The class 'Check_out_book_UseCase' has no attributes.
+The class 'Double' has no attributes.
+The class 'Retire_books_UseCase' has no attributes.
+'Pay_overdue_fine_UseCase' (role 'library_patron20', cardinality 0..*) is associated with 'Library_patron_Actor' (role 'pay_overdue_fine21', cardinality 0..*).
+'Check_out_book_UseCase' (role 'library15', cardinality 0..*) is associated with 'Library_Actor' (role 'check_out_book14', cardinality 0..*).
+'Library_Actor' (role 'renew_magazine_subscriptions5', cardinality 0..*) is associated with 'Renew_magazine_subscriptions_UseCase' (role 'library4', cardinality 0..*).
+'Library_staff_Actor' (role 'bound_magazines_into_volumes_or_record_as_microfiche41', cardinality 0..*) is associated with 'Bound_magazines_into_volumes_or_record_as_microfiche_UseCase' (role 'library_staff40', cardinality 0..*).
+'Library_Actor' (role 'send_book_return_due_reminder1', cardinality 0..*) is associated with 'Send_book_return_due_reminder_UseCase' (role 'library0', cardinality 0..*).
+'Library_staff_Actor' (role 'assist_with_research_using_hard_copy_indexes33', cardinality 0..*) is associated with 'Assist_with_research_using_hard_copy_indexes_UseCase' (role 'library_staff32', cardinality 0..*).
+'Library_Patron' (role 'library49', cardinality 0..*) is associated with 'Library' (role 'library_Patron48', cardinality 0..*).
+'Pay_overdue_fine_UseCase' (role 'fine_patron_for_overdue_book11', cardinality 0..*) is associated with 'Fine_patron_for_overdue_book_UseCase' (role 'pay_overdue_fine10', cardinality 0..*).
+'Library_Actor' (role 'fine_patron_for_overdue_book8', cardinality 0..*) is associated with 'Fine_patron_for_overdue_book_UseCase' (role 'library9', cardinality 0..*).
+'Check_in_book_UseCase' (role 'library27', cardinality 0..*) is associated with 'Library_Actor' (role 'check_in_book26', cardinality 0..*).
+'Assist_with_research_using_hard_copy_indexes_UseCase' (role 'library_patron29', cardinality 0..*) is associated with 'Library_patron_Actor' (role 'assist_with_research_using_hard_copy_indexes28', cardinality 0..*).
+'Library_staff_Actor' (role 'check_in_book36', cardinality 0..*) is associated with 'Check_in_book_UseCase' (role 'library_staff37', cardinality 0..*).
+'Retire_books_UseCase' (role 'library6', cardinality 0..*) is associated with 'Library_Actor' (role 'retire_books7', cardinality 0..*).
+'Library' (role 'item46', cardinality 0..*) is associated with 'Item' (role 'library47', cardinality 0..*).
+'Assist_with_research_using_computer_based_tools_UseCase' (role 'library_staff34', cardinality 0..*) is associated with 'Library_staff_Actor' (role 'assist_with_research_using_computer_based_tools35', cardinality 0..*).
+'Put_book_on_reserve_UseCase' (role 'library13', cardinality 0..*) is associated with 'Library_Actor' (role 'put_book_on_reserve12', cardinality 0..*).
+'Library_staff_Actor' (role 'order_new_library_resources43', cardinality 0..*) is associated with 'Order_new_library_resources_UseCase' (role 'library_staff42', cardinality 0..*).
+'Library_patron_Actor' (role 'put_book_on_reserve19', cardinality 0..*) is associated with 'Put_book_on_reserve_UseCase' (role 'library_patron18', cardinality 0..*).
+'Order_new_library_resources_UseCase' (role 'library44', cardinality 0..*) is associated with 'Library_Actor' (role 'order_new_library_resources45', cardinality 0..*).
+'Check_in_book_UseCase' (role 'return_book25', cardinality 0..*) is associated with 'Return_book_UseCase' (role 'check_in_book24', cardinality 0..*).
+'Assist_with_research_using_computer_based_tools_UseCase' (role 'library_patron31', cardinality 0..*) is associated with 'Library_patron_Actor' (role 'assist_with_research_using_computer_based_tools30', cardinality 0..*).
+'Library_Actor' (role 'manage_Interlibrary_loan_requests3', cardinality 0..*) is associated with 'Manage_Interlibrary_loan_requests_UseCase' (role 'library2', cardinality 0..*).
+'Library_patron_Actor' (role 'check_out_book17', cardinality 0..*) is associated with 'Check_out_book_UseCase' (role 'library_patron16', cardinality 0..*).
+'Reshelve_books_UseCase' (role 'library_staff38', cardinality 0..*) is associated with 'Library_staff_Actor' (role 'reshelve_books39', cardinality 0..*).
+'Library_patron_Actor' (role 'return_book23', cardinality 0..*) is associated with 'Return_book_UseCase' (role 'library_patron22', cardinality 0..*).

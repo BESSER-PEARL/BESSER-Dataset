@@ -1,0 +1,29 @@
+The model has 15 class(es).
+The class 'Current_onto_Previous_UseCase' has no attributes.
+The class 'Make_Move_UseCase' has no attributes.
+The class 'Deal_a_Card_UseCase' has no attributes.
+The class 'Play_Multiple_Times_UseCase' has no attributes.
+The class 'Show_Deck_UseCase' has no attributes.
+The class 'Play_for_Me_UseCase' has no attributes.
+The class 'Card' has the following attributes: 'cardValue' of type CardValue; 'suit' of type Suit.
+The class 'Deck' has the following attributes: 'scan' of type str; '_cards__' of type Card.
+The class 'Play_Once_UseCase' has no attributes.
+The class 'Current_over_two_UseCase' has no attributes.
+The class 'Amalgamate_UseCase' has no attributes.
+The class 'Show_Top_Results_UseCase' has no attributes.
+The class 'Application' has the following attributes: 'deck' of type Deck; 'scan' of type str.
+The class 'User_Actor' has no attributes.
+The class 'Shuffle_Deck_UseCase' has no attributes.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'CardValue' does not specify any literals.
+'User_Actor' (role 'make_MOve6', cardinality 0..*) is associated with 'Make_Move_UseCase' (role 'user7', cardinality 0..*).
+'Show_Top_Results_UseCase' (role 'user21', cardinality 0..*) is associated with 'User_Actor' (role 'show_Top_Results20', cardinality 0..*).
+'Current_over_two_UseCase' (role 'make_MOve3', cardinality 0..*) is associated with 'Make_Move_UseCase' (role 'current_over_two2', cardinality 0..*).
+'Amalgamate_UseCase' (role 'make_MOve5', cardinality 0..*) is associated with 'Make_Move_UseCase' (role 'amalgamate4', cardinality 0..*).
+'Make_Move_UseCase' (role 'current_onto_Previous0', cardinality 0..*) is associated with 'Current_onto_Previous_UseCase' (role 'make_MOve1', cardinality 0..*).
+'User_Actor' (role 'shuffle_Deck12', cardinality 0..*) is associated with 'Shuffle_Deck_UseCase' (role 'user13', cardinality 0..*).
+'Show_Deck_UseCase' (role 'user11', cardinality 0..*) is associated with 'User_Actor' (role 'show_Deck10', cardinality 0..*).
+'Play_for_Me_UseCase' (role 'user15', cardinality 0..*) is associated with 'User_Actor' (role 'play_for_Me14', cardinality 0..*).
+'Play_for_Me_UseCase' (role 'play_Multiple_Times18', cardinality 0..*) is associated with 'Play_Multiple_Times_UseCase' (role 'play_for_Me19', cardinality 0..*).
+'Deal_a_Card_UseCase' (role 'user9', cardinality 0..*) is associated with 'User_Actor' (role 'deal_a_Card8', cardinality 0..*).
+'Play_Once_UseCase' (role 'play_for_Me17', cardinality 0..*) is associated with 'Play_for_Me_UseCase' (role 'play_Once16', cardinality 0..*).

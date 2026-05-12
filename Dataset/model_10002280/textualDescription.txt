@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Course' has the following attributes: 'CourseName' of type str; 'Course_Teacher' of type Teacher; 'CourseNumber' of type str.
+The class 'Login' has no attributes.
+The class 'Database' has the following attributes: 'Schedules' of type Database; 'Grades' of type Database; 'Accounts' of type Database; 'Materials' of type Database.
+The class 'Admin' has no attributes.
+The class 'Student' has the following attributes: 'Year' of type str.
+The class 'User' has the following attributes: 'First_Name' of type str; 'ID_Number' of type int; 'Password' of type str; 'Last_Name' of type str.
+The class 'Teacher' has the following attributes: 'Assigned_Courses' of type str.
+'User' (role 'has_user2', cardinality 0..*) is associated with 'Database' (role 'User_Database_13', cardinality 0..*).
+'Course' (role 'teacher11', cardinality 0..*) is associated with 'Teacher' (role 'Teaches10', cardinality 0..*).
+'Database' (role 'admin6', cardinality 0..*) is associated with 'Admin' (role 'Database_Admin_17', cardinality 0..*).
+'Student' (role 'database8', cardinality 0..*) is associated with 'Database' (role 'Student_Database_19', cardinality 0..*).
+'Login' (role 'verify_account4', cardinality 0..*) is associated with 'Database' (role 'login5', cardinality 0..*).
+'Course' (role 'takes_course0', cardinality 0..*) is associated with 'Student' (role 'course1', cardinality 0..*).
+'Teacher' (role 'upload_to_database14', cardinality 0..*) is associated with 'Database' (role 'teacher15', cardinality 0..*).
+'Login' (role 'user13', cardinality 0..*) is associated with 'User' (role 'login12', cardinality 0..*).

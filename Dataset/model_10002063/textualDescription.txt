@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'Cidade' has the following attributes: 'nome' of type str; 'ddd' of type int; 'codigo' of type int.
+The class 'Medico' has the following attributes: 'nome' of type str; 'crm' of type int.
+The class 'Paciente' has the following attributes: 'rg' of type str; 'cep' of type str; 'telefone' of type str; 'endereco' of type str; 'nome' of type str; 'codigo' of type int; 'cpf' of type str; 'dataNascimento' of type str.
+The class 'Pedido_Exame' has the following attributes: 'codigo' of type int.
+The class 'Exame' has the following attributes: 'valor' of type float; 'descricao' of type str; 'procedimentos' of type str; 'codigo' of type int.
+The class 'UF' has the following attributes: 'nome' of type str; 'sigla' of type str.
+The class 'float' has no attributes.
+'Paciente' (role 'cidade1', cardinality 0..*) is associated with 'Cidade' (role 'paciente0', cardinality 0..*).
+'UF' (role 'cidade2', cardinality 0..*) is associated with 'Cidade' (role 'UF3', cardinality 0..*).
+'Pedido_Exame' (role 'medico7', cardinality 0..*) is associated with 'Medico' (role 'pedido_Exame6', cardinality 0..*).
+'Pedido_Exame' (role 'paciente4', cardinality 0..*) is associated with 'Paciente' (role 'pedido_Exame5', cardinality 0..*).

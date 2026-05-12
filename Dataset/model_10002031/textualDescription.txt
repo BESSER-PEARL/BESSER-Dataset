@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'abs' has the following attributes: 'nbrjr' of type int; 'idab' of type int; 'motif' of type str.
+The class 'retard' has the following attributes: 'idretad' of type int; 'nbrminute' of type int; 'motif' of type str.
+The class 'reduire' has no attributes.
+The class 'salari_' has the following attributes: 'departement' of type str.
+The class 'Conge' has the following attributes: 'datedebut' of type str; 'adresse' of type str; 'id' of type int; 'datefin' of type str.
+The class 'typeEmploy_' has the following attributes: 'id' of type str.
+The class 'administrateur' has the following attributes: 'secteur' of type str.
+The class 'Employ_' has the following attributes: 'prenom' of type str; 'poste' of type str; 'adresse' of type str; 'nom' of type str; 'ID' of type int.
+The class 'EtatConge' has the following attributes: 'idEtat' of type int; 'nom' of type str.
+The class 'typecong_' has the following attributes: 'idconge' of type int.
+'typeEmploy_' (role 'employ_1', cardinality 0..*) is associated with 'Employ_' (role 'typeEmploy_0', cardinality 0..*).
+'abs' (role 'employ_10', cardinality 0..*) is associated with 'Employ_' (role 'abs11', cardinality 0..*).
+'Conge' (role 'salari_5', cardinality 0..*) is associated with 'salari_' (role 'conge4', cardinality 0..*).
+'Conge' (role 'etatConge8', cardinality 0..*) is associated with 'EtatConge' (role 'conge9', cardinality 0..*).
+'Employ_' (role 'retard13', cardinality 0..*) is associated with 'retard' (role 'employ_12', cardinality 0..*).
+'typecong_' (role 'conge7', cardinality 0..*) is associated with 'Conge' (role 'typecong_6', cardinality 0..*).
+'Conge' (role 'employ_3', cardinality 0..*) is associated with 'Employ_' (role 'conge2', cardinality 0..*).

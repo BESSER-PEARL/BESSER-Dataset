@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'EventsProductGroup' has the following attributes: 'id' of type int; 'Event' of type Events; 'ProductGroup' of type ProductGroup.
+The class 'Product' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'Events' has the following attributes: 'id' of type int; 'user' of type str; 'datetime' of type int; 'name' of type str.
+The class 'ProductGroup' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'ProductGroupProduct' has the following attributes: 'Product' of type Product; 'ProductGroup' of type ProductGroup; 'id' of type int; 'weight' of type int.
+'EventsProductGroup' (role 'productGroup4', cardinality 0..*) is associated with 'ProductGroup' (role 'eventsProductGroup5', cardinality 0..*).
+'Events' (role 'eventsProductGroup7', cardinality 0..*) is associated with 'EventsProductGroup' (role 'events6', cardinality 0..*).
+'Product' (role 'productGroupProduct1', cardinality 0..*) is associated with 'ProductGroupProduct' (role 'product0', cardinality 0..*).
+'ProductGroup' (role 'productGroupProduct3', cardinality 0..*) is associated with 'ProductGroupProduct' (role 'productGroup2', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 11 class(es).
+The class 'Bool' has the following attributes: 'data' of type bool.
+The class 'Array' has the following attributes: 'data' of type Value.
+The class 'Print' has no attributes.
+The class 'Visitor' has no attributes.
+The class 'String' has the following attributes: 'data' of type String.
+The class 'Json' has the following attributes: 'values' of type Value.
+The class 'ArrPrint' has no attributes.
+The class 'Documents' has the following attributes: 'file_name' of type str; 'data' of type Json; 'file' of type str; 'tab_counter' of type int.
+The class 'Number' has the following attributes: 'data' of type int.
+The class 'Null' has no attributes.
+The class 'Value' has the following attributes: 'attribute' of type str.

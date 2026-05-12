@@ -1,0 +1,17 @@
+The model has 10 class(es).
+The class 'Food' has the following attributes: 'type' of type int; 'name' of type str; 'served' of type bool; 'description' of type str; 'price' of type str; 'prepared' of type bool; 'food_Id' of type str.
+The class 'Table' has the following attributes: 'occupied' of type bool; 'numSeats' of type int; 'table_Id' of type str; 'order' of type str; 'specialRequest' of type str.
+The class 'Booking' has the following attributes: 'type' of type int; 'booking_Id' of type str; 'contact' of type str; 'date' of type str; 'reservedTables' of type str; 'name' of type str.
+The class 'RMS' has the following attributes: 'bookings' of type str.
+The class 'Manager' has no attributes.
+The class 'Chef' has no attributes.
+The class 'Report' has the following attributes: 'totalSales' of type str; 'orders' of type str; 'profit' of type str.
+The class 'Waiter' has no attributes.
+The class 'Staff' has the following attributes: 'jobType' of type int; 'staff_Id' of type str; 'name' of type str; 'contact' of type str.
+The class 'Order' has the following attributes: 'order_Id' of type str; 'foodOrdered' of type Food.
+'RMS' (role 'has6', cardinality 0..*) is associated with 'Booking' (role 'is_in7', cardinality 0..*).
+'Order' (role 'is_ordered_by2', cardinality 0..*) is associated with 'Table' (role 'has3', cardinality 0..*).
+'RMS' (role 'is_generated_by11', cardinality 0..*) is associated with 'Report' (role 'generates10', cardinality 0..*).
+'Order' (role 'has0', cardinality 0..*) is associated with 'Food' (role 'is_ordered_by1', cardinality 0..*).
+'Table' (role 'reserved4', cardinality 0..*) is associated with 'Booking' (role 'is_reserved_by5', cardinality 0..*).
+'RMS' (role 'accesses9', cardinality 0..*) is associated with 'Staff' (role 'Staff_RMS_08', cardinality 0..*).

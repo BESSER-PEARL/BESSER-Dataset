@@ -1,0 +1,57 @@
+The model has 37 class(es).
+The class 'State_UseCase' has no attributes.
+The class 'Seller_UseCase' has no attributes.
+The class 'Buyer_Actor' has no attributes.
+The class 'Owener_Agent_Component' has no attributes.
+The class 'Registartion_external' has no attributes.
+The class 'Login_external' has no attributes.
+The class 'Buyer' has the following attributes: 'buyer_id' of type str.
+The class 'Registration_UseCase' has no attributes.
+The class 'View_All_Posted_Properties_external' has no attributes.
+The class 'Manage_Property_external' has no attributes.
+The class 'Meeting_With_the_Clent_UseCase' has no attributes.
+The class 'Administrator' has the following attributes: 'admin_name' of type str; 'password' of type str.
+The class 'Add_property_to_whishlist_UseCase' has no attributes.
+The class 'Advertiser' has the following attributes: 'advertiser_id' of type str; 'advertiesment_id' of type str.
+The class 'Sales_Team_Actor' has no attributes.
+The class 'Advertiesment' has the following attributes: 'start_date' of type str; 'end_date' of type str; 'advertiesment_id' of type int; 'advertiser_id' of type str.
+The class 'Seller' has the following attributes: 'seller_id' of type str; 'property_id' of type str.
+The class 'Login_UseCase' has no attributes.
+The class 'Search_Property_UseCase' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Reg_User' has the following attributes: 'Address' of type str; 'username' of type str; 'password' of type str.
+The class 'Property' has the following attributes: 'property_id' of type str; 'location' of type str; 'address' of type str; 'property_type' of type str.
+The class 'Request' has the following attributes: 'requser_id' of type str; 'request_details' of type str; 'request_type' of type str; 'request_id' of type int.
+The class 'Price_UseCase' has no attributes.
+The class 'City_UseCase' has no attributes.
+The class 'Unreg_User' has no attributes.
+The class 'Buyer_Component' has no attributes.
+The class 'Username__Password_UseCase' has no attributes.
+The class 'Owner_Agent_Other_Actor' has no attributes.
+The class 'Liked_Property_UseCase' has no attributes.
+The class 'User' has the following attributes: 'location' of type str; 'email' of type str.
+The class 'Requirement' has the following attributes: 'requirement_type' of type str; 'req_description' of type str; 'user_id' of type str; 'requirement_location' of type str.
+The class 'View_the_Buyers_List_UseCase' has no attributes.
+The class 'Forgot_Password_UseCase' has no attributes.
+The class 'Seller_Component' has no attributes.
+The class 'Payment' has the following attributes: 'pay_id' of type int; 'pay_amount' of type str; 'ex_date' of type str; 'pay_mode' of type str; 'card_no' of type str.
+The class 'Management' has the following attributes: 'specialoffers' of type str; 'suggetions' of type str.
+'Seller' (role 'property5', cardinality 0..*) is associated with 'Property' (role 'owner4', cardinality 0..*).
+'Payment' (role 'property16', cardinality 0..*) is associated with 'Property' (role 'payment17', cardinality 0..*).
+'Registartion_external' (role 'owner_Agent29', cardinality 0..*) is associated with 'Owner_Agent_Other_Actor' (role 'registartion28', cardinality 0..*).
+'Logout_external' (role 'owner_Agent37', cardinality 0..*) is associated with 'Owner_Agent_Other_Actor' (role 'logout36', cardinality 0..*).
+'View_the_Buyers_List_UseCase' (role 'sales_Team25', cardinality 0..*) is associated with 'Sales_Team_Actor' (role 'view_the_Buyers_List24', cardinality 0..*).
+'Manage_Property_external' (role 'owner_Agent31', cardinality 0..*) is associated with 'Owner_Agent_Other_Actor' (role 'manage_Property30', cardinality 0..*).
+'Login_UseCase' (role 'sales_Team23', cardinality 0..*) is associated with 'Sales_Team_Actor' (role 'login22', cardinality 0..*).
+'Owner_Agent_Other_Actor' (role 'view_All_Posted_Properties34', cardinality 0..*) is associated with 'View_All_Posted_Properties_external' (role 'owner_Agent35', cardinality 0..*).
+'Reg_User' (role 'payment15', cardinality 0..*) is associated with 'Payment' (role 'reg_User14', cardinality 0..*).
+'Login_external' (role 'owner_Agent33', cardinality 0..*) is associated with 'Owner_Agent_Other_Actor' (role 'login32', cardinality 0..*).
+'Sales_Team_Actor' (role 'meeting_With_the_Clent26', cardinality 0..*) is associated with 'Meeting_With_the_Clent_UseCase' (role 'sales_Team27', cardinality 0..*).
+'Request' (role 'user7', cardinality 0..*) is associated with 'User' (role 'request6', cardinality 0..*).
+'Reg_User' (role 'requirement10', cardinality 0..*) is associated with 'Requirement' (role 'user11', cardinality 0..*).
+'Search_Property_UseCase' (role 'buyer21', cardinality 0..*) is associated with 'Buyer_Actor' (role 'search_Property20', cardinality 0..*).
+'Buyer_Actor' (role 'login18', cardinality 0..*) is associated with 'Login_UseCase' (role 'buyer19', cardinality 0..*).
+'Management' (role 'property13', cardinality 0..*) is associated with 'Property' (role 'management12', cardinality 0..*).
+'Buyer' (role 'property9', cardinality 0..*) is associated with 'Property' (role 'user8', cardinality 0..*).
+'Advertiesment' (role 'owner3', cardinality 0..*) is associated with 'Advertiser' (role 'adds2', cardinality 0..*).
+'User' (role 'administrator0', cardinality 0..*) is associated with 'Administrator' (role 'employee1', cardinality 0..*).

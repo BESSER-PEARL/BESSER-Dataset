@@ -1,0 +1,30 @@
+The model has 20 class(es).
+The class 'Renew_Patron_UseCase' has no attributes.
+The class 'Checkout_book_UseCase' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'Remove_Books_UseCase' has no attributes.
+The class 'Add_books_UseCase' has no attributes.
+The class 'Maintain_Patron_profile_UseCase' has no attributes.
+The class 'Cancel_UseCase' has no attributes.
+The class 'Create_library_account_UseCase' has no attributes.
+The class 'Late_fees_UseCase' has no attributes.
+The class 'Issue_Book_UseCase' has no attributes.
+The class 'Patron_Actor' has no attributes.
+The class 'Request_Book_UseCase' has no attributes.
+The class 'Library' has the following attributes: 'books' of type str.
+The class 'Librarian_Actor' has no attributes.
+The class 'Update_Books_UseCase' has no attributes.
+The class 'Return_book_UseCase' has no attributes.
+The class 'Library_Management_Component' has no attributes.
+The class 'create_UseCase' has no attributes.
+The class 'Issue_card_UseCase' has no attributes.
+The class 'Manage_Books_UseCase' has no attributes.
+'Checkout_book_UseCase' (role 'patron14', cardinality 0..*) is associated with 'Patron_Actor' (role 'checkout_book15', cardinality 0..*).
+'Librarian_Actor' (role 'maintain_Patron_profile9', cardinality 0..*) is associated with 'Maintain_Patron_profile_UseCase' (role 'librarian8', cardinality 0..*).
+'Return_book_UseCase' (role 'patron17', cardinality 0..*) is associated with 'Patron_Actor' (role 'return_book16', cardinality 0..*).
+'Issue_Book_UseCase' (role 'librarian4', cardinality 0..*) is associated with 'Librarian_Actor' (role 'issue_Book5', cardinality 0..*).
+'Librarian_Actor' (role 'issue_card1', cardinality 0..*) is associated with 'Issue_card_UseCase' (role 'librarian0', cardinality 0..*).
+'Return_book_UseCase' (role 'librarian6', cardinality 0..*) is associated with 'Librarian_Actor' (role 'return_book7', cardinality 0..*).
+'Create_library_account_UseCase' (role 'patron10', cardinality 0..*) is associated with 'Patron_Actor' (role 'create_library_account11', cardinality 0..*).
+'Request_Book_UseCase' (role 'patron12', cardinality 0..*) is associated with 'Patron_Actor' (role 'request_Book13', cardinality 0..*).
+'Librarian_Actor' (role 'manage_Books3', cardinality 0..*) is associated with 'Manage_Books_UseCase' (role 'librarian2', cardinality 0..*).

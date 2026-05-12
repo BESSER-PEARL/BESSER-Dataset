@@ -1,0 +1,30 @@
+The model has 21 class(es).
+The class 'Employee_Management_System_Component' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Customer1' has the following attributes: 'Customer_Name' of type str; 'S' of type str.
+The class 'Authentication_UseCase' has no attributes.
+The class 'Manager2' has the following attributes: 'password' of type str; 'name' of type str; 'id' of type int.
+The class 'Salary' has the following attributes: 'Sly_Decrement' of type float; 'OverTime' of type str; 'Sly_Netgross' of type float; 'Emp_Id' of type int; 'Sly_Basic' of type float; 'Sly_Increment' of type float.
+The class 'Login_external' has no attributes.
+The class 'Customer' has the following attributes: 'postal_code' of type int; 'address' of type str; 'UserName' of type str; 'country' of type str; 'password' of type str.
+The class 'Employee' has the following attributes: 'Emp_Address' of type str; 'Emp_Name' of type str; 'Emp_Salary' of type float; 'Emp_ContactNo' of type str; 'Emp_Id' of type int; 'Emp_Department' of type str; 'Password' of type str; 'Emp_Email' of type str.
+The class 'Users' has the following attributes: 'Password' of type str; 'UserName' of type str.
+The class 'Salary_Management_UseCase' has no attributes.
+The class 'Admin1' has the following attributes: 'UserName' of type str; 'password' of type str.
+The class 'Administrator_Actor' has no attributes.
+The class 'Order' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'Users1' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'Employee1' has the following attributes: 'contact_no' of type int; 'UserName' of type str; 'Salary' of type int; 'name' of type str; 'Emp_Address' of type str; 'attribute' of type str; 'password' of type str; 'Emp_Dep' of type str; 'Email' of type str.
+The class 'Manager' has the following attributes: 'UserName' of type str; 'password' of type str.
+The class 'Leave' has the following attributes: 'Leave_Title' of type str; 'Leave_Status' of type str; 'Leave_EndDate' of type date; 'Leave_detail' of type str; 'leave_id' of type int; 'Emp_Id' of type int.
+The class 'Manager1' has the following attributes: 'Password' of type str; 'Name' of type str; 'Manager_id' of type int.
+The class 'Admin' has the following attributes: 'Password' of type str; 'UserName' of type str.
+'Login_external' (role 'employee5', cardinality 0..*) is associated with 'Employee_Actor' (role 'login4', cardinality 0..*).
+'Manager2' (role 'employee15', cardinality 0..*) is associated with 'Employee1' (role 'manager14', cardinality 0..*).
+'Admin1' (role 'order12', cardinality 0..*) is associated with 'Order' (role 'admin13', cardinality 0..*).
+'Salary' (role 'employee3', cardinality 0..*) is associated with 'Employee' (role 'salary2', cardinality 0..*).
+'Leave' (role 'employee1', cardinality 0..*) is associated with 'Employee' (role 'leave0', cardinality 0..*).
+'Employee1' (role 'admin11', cardinality 0..*) is associated with 'Admin1' (role 'employee10', cardinality 0..*).
+'Logout_external' (role 'employee7', cardinality 0..*) is associated with 'Employee_Actor' (role 'logout6', cardinality 0..*).
+'Order' (role 'customer9', cardinality 0..*) is associated with 'Customer' (role 'order8', cardinality 0..*).

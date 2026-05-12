@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'Foods' has the following attributes: 'Foodname' of type Class; 'Catogory' of type Class; 'price' of type Class; 'Ready' of type bool.
+The class 'Class' has no attributes.
+The class 'Reservation' has the following attributes: 'seats' of type Class; 'table' of type Class.
+The class 'Order_management_System' has the following attributes: 'Orderlist' of type Class.
+The class 'Order' has the following attributes: 'Orderlist' of type Class; 'customer_address' of type Class; 'customername' of type Class; 'Amount' of type Class; 'customerphone' of type Class; 'customer_email' of type Class.
+The class 'Staff' has the following attributes: 'staffid' of type Class; 'name' of type Class.
+'Order' (role 'Order_management_System_Order_13', cardinality 0..*) is associated with 'Order_management_System' (role 'Order_management_System_Order_02', cardinality 0..*).
+'Staff' (role 'Staff_Order_management_System_00', cardinality 0..*) is associated with 'Order_management_System' (role 'staff1', cardinality 0..*).
+'Order' (role 'foods6', cardinality 0..*) is associated with 'Foods' (role 'order7', cardinality 0..*).
+'Reservation' (role 'order5', cardinality 0..*) is associated with 'Order' (role 'reservation4', cardinality 0..*).

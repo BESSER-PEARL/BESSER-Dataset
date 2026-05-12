@@ -1,0 +1,47 @@
+The model has 37 class(es).
+The class 'InstrumentAccess' has no attributes.
+The class 'Task_IEnumerable_User__' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'ClassS' has no attributes.
+The class 'StatisticsAccess' has no attributes.
+The class 'CoordinateAccess' has no attributes.
+The class 'ClassC' has the following attributes: 'protectedAttribute' of type str; 'packageAttribute' of type str; 'privateAttribute' of type int; 'publicAttribute' of type float.
+The class 'ClassV' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'BaseAccess' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'StatisticsController' has no attributes.
+The class 'ClassH' has no attributes.
+The class 'InstrumentController' has no attributes.
+The class 'ClassN' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'ClassK' has no attributes.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ClassD' has no attributes.
+The class 'TeamController' has no attributes.
+The class 'Task_InstrumentUser_' has no attributes.
+The class 'MeasurementAccess' has no attributes.
+The class 'ClassE' has no attributes.
+The class 'IAccess_T__Interface' has no attributes.
+The class 'ClassQ' has no attributes.
+The class 'ClassM' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'ClassG' has no attributes.
+The class 'TeamAccess' has no attributes.
+The class 'MeasurementController' has no attributes.
+The class 'Task_IEnumerable_Team__' has no attributes.
+The class 'ClassF' has no attributes.
+The class 'ClassL' has no attributes.
+The class 'UserAcces' has no attributes.
+The class 'CoordinateController' has no attributes.
+The class 'UserController' has no attributes.
+The class 'ClassJ' has no attributes.
+'StatisticsController' (role 'statisticsAccess10', cardinality 0..*) is associated with 'StatisticsAccess' (role 'statisticsController11', cardinality 0..*).
+'MeasurementAccess' (role 'measurementController17', cardinality 0..*) is associated with 'MeasurementController' (role 'measurementAccess16', cardinality 0..*).
+'ClassF' (role 'classG2', cardinality 0..*) is associated with 'ClassG' (role 'classF3', cardinality 0..*).
+'UserAcces' (role 'userController7', cardinality 0..*) is associated with 'UserController' (role 'userAcces6', cardinality 0..*).
+'ClassE' (role 'classD1', cardinality 0..*) is associated with 'ClassD' (role 'classE0', cardinality 0..*).
+'ClassH' (role 'classG4', cardinality 0..*) is associated with 'ClassJ' (role 'classF5', cardinality 0..*).
+'InstrumentController' (role 'instrumentAccess12', cardinality 0..*) is associated with 'InstrumentAccess' (role 'instrumentController13', cardinality 0..*).
+'CoordinateController' (role 'coordinateAccess14', cardinality 0..*) is associated with 'CoordinateAccess' (role 'coordinateController15', cardinality 0..*).
+'TeamController' (role 'teamAccess8', cardinality 0..*) is associated with 'TeamAccess' (role 'teamController9', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 7 class(es).
+The class 'MyClass3' has no attributes.
+The class 'T2' has no attributes.
+The class 'MyClass5' has no attributes.
+The class 'MyClass2' has the following attributes: 'attribute3' of type str; 'attribute2' of type str; 'attribute' of type int.
+The class 'T' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'MyClass4' has no attributes.
+'MyClass3' (role 'myClass53', cardinality 0..*) is associated with 'MyClass5' (role 'myClass32', cardinality 0..*).
+'MyClass2' (role 'myClass41', cardinality 0..*) is associated with 'MyClass4' (role 'myClass20', cardinality 0..*).

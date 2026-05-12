@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'masuk' has the following attributes: 'penyuplai' of type supplier.
+The class 'supplier' has the following attributes: 'attribute' of type str; 'no_telp_supp' of type str; 'id_supplier' of type int; 'nama_supplier' of type supplier; 'alamat' of type str.
+The class 'pelanggan' has the following attributes: 'id_pelanggan' of type int; 'nama_pelanggan' of type pelanggan; 'no_telp_pelanggan' of type str; 'alamat' of type str.
+The class 'user' has the following attributes: 'id_user' of type int; 'password' of type str; 'username' of type str; 'nama_user' of type str.
+The class 'keluar' has the following attributes: 'pembeli' of type pelanggan.
+The class 'sistem' has the following attributes: 'supplier' of type supplier; 'user' of type str; 'barang' of type barang.
+The class 'transaksi' has the following attributes: 'total' of type int; 'tanggal' of type str; 'nama_barang' of type barang; 'id_transaksi' of type int.
+The class 'barang' has the following attributes: 'id_barang' of type str; 'satuan' of type str; 'nama_barang' of type barang; 'kategori' of type str; 'harga' of type int; 'stok' of type int.
+'transaksi' (role 'supplier5', cardinality 0..*) is associated with 'supplier' (role 'transaksi4', cardinality 0..*).
+'sistem' (role 'supplier29', cardinality 0..*) is associated with 'supplier' (role 'sistem8', cardinality 0..*).
+'transaksi' (role 'sistem11', cardinality 0..*) is associated with 'sistem' (role 'transaksi10', cardinality 0..*).
+'barang' (role 'sistem6', cardinality 0..*) is associated with 'sistem' (role 'barang27', cardinality 0..*).
+'pelanggan' (role 'transaksi2', cardinality 0..*) is associated with 'transaksi' (role 'pelanggan3', cardinality 0..*).
+'sistem' (role 'user1', cardinality 0..*) is associated with 'user' (role 'sistem0', cardinality 0..*).

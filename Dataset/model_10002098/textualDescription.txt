@@ -1,0 +1,74 @@
+The model has 54 class(es).
+The class 'Forum_diskusi_UseCase' has no attributes.
+The class 'Fitur_Pemilihan_Informasi_Berdasarkan_Jenisnya_UseCase' has no attributes.
+The class 'Fitur_Website_Yang_Dapat_Diakses_Oleh_Pengunjung_UseCase' has no attributes.
+The class 'Gambar_Tumbuhan_Herbalnya_UseCase' has no attributes.
+The class 'Login_Website' has the following attributes: 'attribute' of type Admin_Actor.
+The class 'Fitur_Website_Yang_Dapat_Diakses_Dan_Edit_Oleh_admin_UseCase' has no attributes.
+The class 'Nama_latinnya_UseCase' has no attributes.
+The class 'Fitur_Pencarian_berdsarkan_penyakit_UseCase' has no attributes.
+The class 'Jenis_Pemeriksaan_UseCase' has no attributes.
+The class 'Fitur_Pencarian_Tumbuhan_Herbal_UseCase' has no attributes.
+The class 'Dosisnya_UseCase' has no attributes.
+The class 'Kelola_data_website_UseCase' has no attributes.
+The class 'Manfaat_Pemeriksaan_UseCase' has no attributes.
+The class 'Obat__Produk_jadi__UseCase' has no attributes.
+The class 'Browsing_Website' has the following attributes: 'attribute' of type User__Pengunjung__Actor.
+The class 'Website_Informasi_Kesehatan_Pra_Nikah_UseCase' has no attributes.
+The class 'Mengedit_Profil_Dan_Data_Website_UseCase' has no attributes.
+The class 'Mengedit_Data_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' has no attributes.
+The class 'User__Pengunjung__Actor1' has no attributes.
+The class 'Asal_daerah_tumbuhan_herbal_UseCase' has no attributes.
+The class 'Jenis_Tumbuhan_Herbalnya_UseCase' has no attributes.
+The class 'Menambah_membuat_data_website_UseCase' has no attributes.
+The class 'Kapan_Harus_Melakukan_UseCase' has no attributes.
+The class 'Nama_Tumbuh_Tumbuhan_Herbal' has the following attributes: 'attribute9' of type Obat__Produk_jadi__UseCase; 'attribute3' of type Asal_daerah_tumbuhan_herbal_UseCase; 'attribute5' of type Khasiatnya_apa_UseCase; 'attribute6' of type Dosisnya_UseCase; 'attribute2' of type Jenis_tumbuhan_herbal_UseCase; 'attribute7' of type Cara_pengolahannya_UseCase; 'attribute8' of type Gambar_tumbuhan_herbalnya_UseCase; 'attribute4' of type Kelas_Ordo_tumbuhan_herbal_UseCase; 'attribute' of type Nama_latinnya_UseCase.
+The class 'Menu_Halaman_Utama_WebsiteTumbuhan_Herbal_UseCase' has no attributes.
+The class 'Gambar_tumbuhan_herbalnya_UseCase' has no attributes.
+The class 'Fitur_Menghubungi_admin_melalui_media_sosial_yang_ditentukan_UseCase' has no attributes.
+The class 'Menghapus_data_website_UseCase' has no attributes.
+The class 'Browsing_Situs_UseCase' has no attributes.
+The class 'Mengedit_data_website_UseCase' has no attributes.
+The class 'Admin_Website_Actor' has no attributes.
+The class 'Dimana_Melakukannya_UseCase' has no attributes.
+The class 'Dampak_Jika_Tidak_Dilakukan_UseCase' has no attributes.
+The class 'Nama_Tumbuh_Tumbuhan_Herbal_UseCase' has no attributes.
+The class 'Siapa_Yang_Melakukan_UseCase' has no attributes.
+The class 'Kelas_Ordo_Tumbuhan_Herbal_UseCase' has no attributes.
+The class 'Pengelola_Website' has the following attributes: 'attribute4' of type Mengedit_data_website_UseCase; 'attribute3' of type Menghapus_data_website_UseCase; 'attribute' of type Kelola_data_website_UseCase; 'attribute2' of type Menambah_membuat_data_website_UseCase.
+The class 'Khasiatnya_apa_UseCase' has no attributes.
+The class 'Menu_Halaman_Website' has the following attributes: 'attribute2' of type Fitur_Pencarian_berdsarkan_penyakit_UseCase; 'attribute' of type Forum_diskusi_UseCase.
+The class 'User__Pengunjung__Actor' has no attributes.
+The class 'Menghapus_Data_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' has no attributes.
+The class 'Fitur_Fitur_Pada_Website_UseCase' has no attributes.
+The class 'Kelas_Ordo_tumbuhan_herbal_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Fitur_Galeri_Foto_Tumbuhan_Herbal_UseCase' has no attributes.
+The class 'Situs_Browsing_UseCase' has no attributes.
+The class 'Menambah_Data_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' has no attributes.
+The class 'Fitur_Kolom_Diskusi_UseCase' has no attributes.
+The class 'Fitur_Sosial_Media_Sharing_UseCase' has no attributes.
+The class 'Fitur_Data_Informasi_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' has no attributes.
+The class 'Dosisnya_UseCase1' has no attributes.
+The class 'Cara_pengolahannya_UseCase' has no attributes.
+The class 'Jenis_tumbuhan_herbal_UseCase' has no attributes.
+The class 'Halaman_Utama_Website_UseCase' has no attributes.
+'Situs_Browsing_UseCase' (role 'website_Informasi_Kesehatan_Pra_Nikah37', cardinality 0..*) is associated with 'Website_Informasi_Kesehatan_Pra_Nikah_UseCase' (role 'situs_Browsing36', cardinality 0..*).
+'Fitur_Website_Yang_Dapat_Diakses_Dan_Edit_Oleh_admin_UseCase' (role 'admin_Website14', cardinality 0..*) is associated with 'Admin_Website_Actor' (role 'fitur_Website_Yang_Dapat_Diakses_Dan_Edit_Oleh_admin15', cardinality 0..*).
+'Admin_Actor' (role 'menambah_membuat_data_website3', cardinality 0..*) is associated with 'Menambah_membuat_data_website_UseCase' (role 'admin2', cardinality 0..*).
+'Admin_Actor' (role 'forum_diskusi11', cardinality 0..*) is associated with 'Forum_diskusi_UseCase' (role 'admin10', cardinality 0..*).
+'Admin_Actor' (role 'mengedit_data_website5', cardinality 0..*) is associated with 'Mengedit_data_website_UseCase' (role 'admin4', cardinality 0..*).
+'Fitur_Data_Informasi_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' (role 'menghapus_Data_Tumbuh_Tumbuhan_Herbal28', cardinality 0..*) is associated with 'Menghapus_Data_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' (role 'fitur_Data_Informasi_Tumbuh_Tumbuhan_Herbal29', cardinality 0..*).
+'Kelola_data_website_UseCase' (role 'admin0', cardinality 0..*) is associated with 'Admin_Actor' (role 'kelola_data_website1', cardinality 0..*).
+'Fitur_Fitur_Pada_Website_UseCase' (role 'fitur_Website_Yang_Dapat_Diakses_Oleh_Pengunjung30', cardinality 0..*) is associated with 'Fitur_Website_Yang_Dapat_Diakses_Oleh_Pengunjung_UseCase' (role 'fitur_Fitur_Pada_Website31', cardinality 0..*).
+'Fitur_Data_Informasi_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' (role 'mengedit_Data_Tumbuh_Tumbuhan_Herbal26', cardinality 0..*) is associated with 'Mengedit_Data_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' (role 'fitur_Data_Informasi_Tumbuh_Tumbuhan_Herbal27', cardinality 0..*).
+'User__Pengunjung__Actor1' (role 'situs_Browsing33', cardinality 0..*) is associated with 'Situs_Browsing_UseCase' (role 'user__Pengunjung_32', cardinality 0..*).
+'Menambah_Data_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' (role 'fitur_Data_Informasi_Tumbuh_Tumbuhan_Herbal25', cardinality 0..*) is associated with 'Fitur_Data_Informasi_Pemeriksaan_Kesehatan_Pra_Nikah_UseCase' (role 'menambah_Data_Tumbuh_Tumbuhan_Herbal24', cardinality 0..*).
+'Website_Informasi_Kesehatan_Pra_Nikah_UseCase' (role 'mengedit_Profil_Dan_Data_Website18', cardinality 0..*) is associated with 'Mengedit_Profil_Dan_Data_Website_UseCase' (role 'website_Informasi_Tumbuhan_Herbal19', cardinality 0..*).
+'Website_Informasi_Kesehatan_Pra_Nikah_UseCase' (role 'halaman_Utama_Website21', cardinality 0..*) is associated with 'Halaman_Utama_Website_UseCase' (role 'website_Informasi_Tumbuhan_Herbal20', cardinality 0..*).
+'Fitur_Fitur_Pada_Website_UseCase' (role 'halaman_Utama_Website22', cardinality 0..*) is associated with 'Halaman_Utama_Website_UseCase' (role 'fitur_Fitur_Pada_Website23', cardinality 0..*).
+'Fitur_Fitur_Pada_Website_UseCase' (role 'fitur_Website_Yang_Dapat_Diakses_Dan_Edit_Oleh_admin16', cardinality 0..*) is associated with 'Fitur_Website_Yang_Dapat_Diakses_Dan_Edit_Oleh_admin_UseCase' (role 'fitur_Fitur_Pada_Website17', cardinality 0..*).
+'Menghapus_data_website_UseCase' (role 'admin6', cardinality 0..*) is associated with 'Admin_Actor' (role 'menghapus_data_website7', cardinality 0..*).
+'Admin_Website_Actor' (role 'situs_Browsing35', cardinality 0..*) is associated with 'Situs_Browsing_UseCase' (role 'admin_Website34', cardinality 0..*).
+'User__Pengunjung__Actor' (role 'browsing_Situs9', cardinality 0..*) is associated with 'Browsing_Situs_UseCase' (role 'user__Pengunjung_8', cardinality 0..*).
+'Mengedit_Profil_Dan_Data_Website_UseCase' (role 'admin_Website12', cardinality 0..*) is associated with 'Admin_Website_Actor' (role 'mengedit_Profil_Dan_Data_Website13', cardinality 0..*).

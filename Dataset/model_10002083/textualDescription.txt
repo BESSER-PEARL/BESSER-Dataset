@@ -1,0 +1,23 @@
+The model has 13 class(es).
+The class 'mypackage_Tutor' has the following attributes: 'TutorFileName' of type str; 'WorkingHours' of type str.
+The class 'mypackage_Student' has the following attributes: 'grade' of type str; 'level' of type int; 'studentFileName' of type str.
+The class 'mypackage_FileManager' has no attributes.
+The class 'mypackage_Staff' has the following attributes: 'salary' of type str.
+The class 'mypackage_studentAffairsEmp' has the following attributes: 'EmpFileName' of type str.
+The class 'mypackage_Perosn' has the following attributes: 'age' of type int; 'lname' of type str; 'id' of type int; 'Pass' of type str; 'UserName' of type str; 'fName' of type str.
+The class 'mypackage_Exam' has the following attributes: 'EName' of type str; 'EId' of type str; 'ExamsFileName' of type str; 'MaxGrade' of type str.
+The class 'Class' has no attributes.
+The class 'mypackage_Admin' has no attributes.
+The class 'mypackage_Assignment' has the following attributes: 'number' of type int; 'Deadline' of type str; 'StrartDate' of type str.
+The class 'mypackage_Book' has the following attributes: 'BId' of type str; 'BName' of type str; 'Price' of type str.
+The class 'mypackage_Exceptions' has no attributes.
+The class 'mypackage_Course' has the following attributes: 'CourseFileName' of type str; 'CName' of type str; 'CId' of type str; 'CreditHours' of type int.
+'mypackage_Assignment' (role 'student13', cardinality 0..*) is associated with 'mypackage_Student' (role 'assignment12', cardinality 0..*).
+'mypackage_Assignment' (role 'course9', cardinality 0..*) is associated with 'mypackage_Course' (role 'assignment8', cardinality 0..*).
+'mypackage_Course' (role 'exam0', cardinality 0..*) is associated with 'mypackage_Exam' (role 'course1', cardinality 0..*).
+'mypackage_Exam' (role 'fileManager7', cardinality 0..*) is associated with 'mypackage_FileManager' (role 'exam6', cardinality 0..*).
+'mypackage_Tutor' (role 'assignment10', cardinality 0..*) is associated with 'mypackage_Assignment' (role 'tutor11', cardinality 0..*).
+'mypackage_FileManager' (role 'course4', cardinality 0..*) is associated with 'mypackage_Course' (role 'fileManager5', cardinality 0..*).
+'mypackage_Perosn' (role 'fileManager3', cardinality 0..*) is associated with 'mypackage_FileManager' (role 'perosn2', cardinality 0..*).
+'mypackage_FileManager' (role 'book17', cardinality 0..*) is associated with 'mypackage_Book' (role 'fileManager16', cardinality 0..*).
+'mypackage_Book' (role 'course15', cardinality 0..*) is associated with 'mypackage_Course' (role 'book14', cardinality 0..*).

@@ -1,0 +1,43 @@
+The model has 27 class(es).
+The class 'Withdraw_Cash__Block_the_card_UseCase' has no attributes.
+The class 'Withdraw_Cash_Display_error_else_UseCase' has no attributes.
+The class 'Withdraw_Cash___If_more_than_3_attempts_for_wrong_PIN_UseCase' has no attributes.
+The class 'Withdraw_Cash__Display_MENU_ATM___UseCase' has no attributes.
+The class 'Withdraw_Cash_Dispense_the_cash_UseCase' has no attributes.
+The class 'Withdraw_Cash_Customer_Actor' has no attributes.
+The class 'Withdraw_Cash_Display_error_if_the_PIN_is_invalid_UseCase' has no attributes.
+The class 'Withdraw_Cash_Insert_the_Card____UseCase' has no attributes.
+The class 'Withdraw_Cash_Withdraw_Cash_UseCase' has no attributes.
+The class 'Withdraw_Cash_Collect_Cash_UseCase' has no attributes.
+The class 'Withdraw_Cash__Enter_the_PIN_UseCase' has no attributes.
+The class 'Withdraw_Cash_Select_Account_UseCase' has no attributes.
+The class 'Withdraw_Cash__Verify_the_card___UseCase' has no attributes.
+The class 'Withdraw_Cash_Display_MENU_ATM__UseCase' has no attributes.
+The class 'Withdraw_Cash_Display_amount_UseCase' has no attributes.
+The class 'Withdraw_Cash_Verify_the_PIN_UseCase' has no attributes.
+The class 'Withdraw_Cash_Enter_Amount_UseCase' has no attributes.
+The class 'Withdraw_Cash__Verify_check_the_available_balance_UseCase' has no attributes.
+The class 'Withdraw_Cash_Display_the_PIN_screen_UseCase' has no attributes.
+The class 'Withdraw_Cash_Display_the_account_Type__Saving_checking__UseCase' has no attributes.
+The class 'Withdraw_Cash_Interface_Interface' has no attributes.
+The class 'Withdraw_Cash__15____Take_print_out_UseCase' has no attributes.
+The class 'Withdraw_Cash_Go_to_ATM_UseCase' has no attributes.
+The class 'Withdraw_Cash__If_the_balance_is_insufficient_then_UseCase' has no attributes.
+The class 'Withdraw_Cash_Display_error_if_the_card_is_invalid_UseCase' has no attributes.
+The class 'ATM_transactions' has no attributes.
+The class 'Withdraw_Cash_Bank_Server_Actor' has no attributes.
+'Withdraw_Cash_Customer_Actor' (role 'Enter_the_PIN5', cardinality 0..*) is associated with 'Withdraw_Cash__Enter_the_PIN_UseCase' (role 'customer4', cardinality 0..*).
+'Withdraw_Cash_Collect_Cash_UseCase' (role 'customer15', cardinality 0..*) is associated with 'Withdraw_Cash_Customer_Actor' (role 'collect_Cash14', cardinality 0..*).
+'Withdraw_Cash_Display_the_PIN_screen_UseCase' (role 'bank_Server17', cardinality 0..*) is associated with 'Withdraw_Cash_Bank_Server_Actor' (role 'display_the_PIN_screen16', cardinality 0..*).
+'Withdraw_Cash__Verify_the_card___UseCase' (role 'display_the_PIN_screen24', cardinality 0..*) is associated with 'Withdraw_Cash_Display_the_PIN_screen_UseCase' (role 'Verify_the_card25', cardinality 0..*).
+'Withdraw_Cash_Display_the_PIN_screen_UseCase' (role 'Enter_the_PIN26', cardinality 0..*) is associated with 'Withdraw_Cash__Enter_the_PIN_UseCase' (role 'display_the_PIN_screen27', cardinality 0..*).
+'ATM_transactions' (role 'aTM_transactions29', cardinality 0..*) is associated with 'ATM_transactions' (role 'aTM_transactions28', cardinality 0..*).
+'Withdraw_Cash_Bank_Server_Actor' (role 'display_the_account_Type__Saving_checking_20', cardinality 0..*) is associated with 'Withdraw_Cash_Display_the_account_Type__Saving_checking__UseCase' (role 'bank_Server21', cardinality 0..*).
+'Withdraw_Cash_Display_amount_UseCase' (role 'bank_Server23', cardinality 0..*) is associated with 'Withdraw_Cash_Bank_Server_Actor' (role 'display_amount22', cardinality 0..*).
+'Withdraw_Cash_Withdraw_Cash_UseCase' (role 'customer9', cardinality 0..*) is associated with 'Withdraw_Cash_Customer_Actor' (role 'withdraw_Cash8', cardinality 0..*).
+'Withdraw_Cash_Insert_the_Card____UseCase' (role 'customer3', cardinality 0..*) is associated with 'Withdraw_Cash_Customer_Actor' (role 'insert_the_Card2', cardinality 0..*).
+'Withdraw_Cash_Enter_Amount_UseCase' (role 'customer13', cardinality 0..*) is associated with 'Withdraw_Cash_Customer_Actor' (role 'enter_Amount12', cardinality 0..*).
+'Withdraw_Cash_Display_MENU_ATM__UseCase' (role 'bank_Server18', cardinality 0..*) is associated with 'Withdraw_Cash_Bank_Server_Actor' (role 'display_MENU_ATM_19', cardinality 0..*).
+'Withdraw_Cash_Go_to_ATM_UseCase' (role 'customer1', cardinality 0..*) is associated with 'Withdraw_Cash_Customer_Actor' (role 'go_to_ATM0', cardinality 0..*).
+'Withdraw_Cash_Customer_Actor' (role 'Display_MENU_ATM_6', cardinality 0..*) is associated with 'Withdraw_Cash__Display_MENU_ATM___UseCase' (role 'customer7', cardinality 0..*).
+'Withdraw_Cash_Select_Account_UseCase' (role 'customer11', cardinality 0..*) is associated with 'Withdraw_Cash_Customer_Actor' (role 'select_Account10', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 12 class(es).
+The class 'MyClass12' has no attributes.
+The class 'MyClass8' has no attributes.
+The class 'MyClass7' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'MyClass11' has no attributes.
+The class 'MyClass4' has no attributes.
+The class 'MyClass9' has no attributes.
+The class 'MyClass10' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MyClass5' has no attributes.
+The class 'MyClass6' has no attributes.
+'MyClass2' (role 'end10', cardinality 0..*) is associated with 'MyClass' (role 'end21', cardinality 0..*).
+'MyClass10' (role 'end98', cardinality 0..*) is associated with 'MyClass9' (role 'end109', cardinality 0..*).
+'MyClass5' (role 'end65', cardinality 0..*) is associated with 'MyClass6' (role 'end54', cardinality 0..*).
+'MyClass11' (role 'end1211', cardinality 0..*) is associated with 'MyClass12' (role 'end1110', cardinality 0..*).
+'MyClass3' (role 'end43', cardinality 0..*) is associated with 'MyClass4' (role 'end32', cardinality 0..*).
+'MyClass8' (role 'end76', cardinality 0..*) is associated with 'MyClass7' (role 'end87', cardinality 0..*).

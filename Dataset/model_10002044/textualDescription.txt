@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'nurse' has the following attributes: 'availability' of type bool; 'name' of type str; 'contact' of type int; 'id' of type int.
+The class 'Room' has the following attributes: 'roomtype' of type str; 'roomno' of type int.
+The class 'appointment' has the following attributes: 'p_name' of type str; 'A_no' of type int; 'time' of type date; 'd_name' of type str; 'p_id' of type int.
+The class 'Patient' has the following attributes: 'sex' of type str; 'telno' of type int; 'name' of type str; 'address' of type str; 'age' of type int; 'id' of type int; 'roomno' of type int.
+The class 'Receptionist' has the following attributes: 'email' of type str; 'username' of type str; 'id' of type int; 'password' of type str.
+The class 'Bill' has the following attributes: 'patientname' of type str; 'amount' of type float; 'billno' of type str.
+The class 'Doctor' has the following attributes: 'address' of type str; 'phno' of type int; 'department' of type str; 'specialization' of type str; 'docid' of type int; 'name' of type str.
+The class 'medicine' has the following attributes: 'm_name' of type str; 'quantity' of type int; 'price' of type float; 'm_code' of type int.
+'Room' (role 'patient13', cardinality 0..*) is associated with 'Patient' (role 'room12', cardinality 0..*).
+'Receptionist' (role 'bill6', cardinality 0..*) is associated with 'Bill' (role 'receptionist7', cardinality 0..*).
+'Bill' (role 'pat3', cardinality 0..*) is associated with 'Patient' (role 'bill2', cardinality 0..*).
+'Receptionist' (role 'p5', cardinality 0..*) is associated with 'Patient' (role 'receptionist4', cardinality 0..*).
+'Room' (role 'nurse19', cardinality 0..*) is associated with 'nurse' (role 'room18', cardinality 0..*).
+'Doctor' (role 'patients0', cardinality 0..*) is associated with 'Patient' (role 'doctors1', cardinality 0..*).
+'medicine' (role 'bill15', cardinality 0..*) is associated with 'Bill' (role 'medicine14', cardinality 0..*).
+'appointment' (role 'doctor9', cardinality 0..*) is associated with 'Doctor' (role 'appointment8', cardinality 0..*).
+'Doctor' (role 'medicine16', cardinality 0..*) is associated with 'medicine' (role 'doctor17', cardinality 0..*).
+'appointment' (role 'patient11', cardinality 0..*) is associated with 'Patient' (role 'appointment10', cardinality 0..*).

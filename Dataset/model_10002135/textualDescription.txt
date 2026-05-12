@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Card' has the following attributes: 'value_dict' of type str.
+The class 'Cards' has the following attributes: 'number' of type str; 'color' of type str.
+The class 'Player' has the following attributes: 'hand' of type str; 'name' of type str.
+The class 'Blackjack' has the following attributes: 'cards' of type Cards; 'players' of type str; 'dealer' of type Player.
+'Player' (role 'card3', cardinality 0..*) is associated with 'Card' (role 'player2', cardinality 0..*).
+'Blackjack' (role 'player5', cardinality 0..*) is associated with 'Player' (role 'blackjack4', cardinality 0..*).
+'Cards' (role 'card1', cardinality 0..*) is associated with 'Card' (role 'cards0', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'Course' has the following attributes: 'material' of type str; 'name' of type str; 'description' of type str.
+The class 'Question' has the following attributes: 'definition' of type str; 'explanation' of type str.
+The class 'Comment' has the following attributes: 'text' of type str; 'subject' of type str.
+The class 'User' has the following attributes: 'nickname' of type str; 'bio' of type str; 'level' of type int; 'avatar' of type str; 'links' of type str; 'email' of type str.
+The class 'SoundQuestion' has the following attributes: 'sound' of type str.
+The class 'TextQuestion' has the following attributes: 'text' of type str; 'caseSensitive' of type bool.
+The class 'Section' has the following attributes: 'material' of type str.
+The class 'Rating' has the following attributes: 'type' of type Enum; 'value' of type int.
+The class 'ImageQuestion' has the following attributes: 'image' of type str.
+The enumeration 'Enum' does not specify any literals.
+'Section' (role 'has_section0', cardinality 0..*) is associated with 'Question' (role 'has_question1', cardinality 0..*).
+'Course' (role 'has_course4', cardinality 0..*) is associated with 'Section' (role 'has_sections5', cardinality 0..*).
+'Comment' (role 'rates_comment17', cardinality 0..*) is associated with 'Rating' (role 'has_ratings16', cardinality 0..*).
+'Course' (role 'has_courses11', cardinality 0..*) is associated with 'User' (role 'has_users10', cardinality 0..*).
+'Comment' (role 'has_comments9', cardinality 0..*) is associated with 'User' (role 'has_owner8', cardinality 0..*).
+'Course' (role 'rates_course15', cardinality 0..*) is associated with 'Rating' (role 'has_ratings14', cardinality 0..*).
+'Course' (role 'comments_course6', cardinality 0..*) is associated with 'Comment' (role 'has_comments7', cardinality 0..*).
+'Course' (role 'owns18', cardinality 0..*) is associated with 'User' (role 'has_owner19', cardinality 0..*).
+'User' (role 'has_owner13', cardinality 0..*) is associated with 'Rating' (role 'has_ratings12', cardinality 0..*).
+'Section' (role 'comments_section2', cardinality 0..*) is associated with 'Comment' (role 'has_comments3', cardinality 0..*).

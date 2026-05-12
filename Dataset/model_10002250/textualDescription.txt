@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'Pregled' has the following attributes: 'DatumP' of type str; 'BrPregled' of type int.
+The class 'Zdravstveni_karton' has the following attributes: 'BrKart' of type int.
+The class 'Lekar' has the following attributes: 'ImeZap' of type str; 'BrTelZap' of type str; 'AdrZap' of type str; 'PrzZap' of type str; 'Fakultet' of type str; 'DatZavSk' of type str; 'Zaposleni_ID' of type str; 'RadStaz' of type int.
+'Pregled' (role 'zdravstveni_karton3', cardinality 0..*) is associated with 'Zdravstveni_karton' (role 'pregled2', cardinality 0..*).
+'Lekar' (role 'pregled0', cardinality 0..*) is associated with 'Pregled' (role 'lekar1', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'ElevatorController' has no attributes.
+The class 'People' has no attributes.
+The class 'Door' has no attributes.
+The class 'Floor_Button' has no attributes.
+The class 'Elevator' has no attributes.
+The class 'Data' has no attributes.
+The class 'BankAccount' has the following attributes: 'balance' of type float; 'ownerName' of type str.
+The class 'Building' has no attributes.
+The class 'Button' has no attributes.
+The class 'ClassC' has the following attributes: 'protectedAttribute' of type str; 'publicAttribute' of type float; 'privateAttribute' of type int; 'packageAttribute' of type str.
+The class 'Elevator_Button' has no attributes.
+'ElevatorController' (role 'elevator11', cardinality 0..*) is associated with 'Elevator' (role 'elevatorController10', cardinality 0..*).
+'Door' (role 'elevatorController8', cardinality 0..*) is associated with 'ElevatorController' (role 'door9', cardinality 0..*).
+'Data' (role 'elevatorController6', cardinality 0..*) is associated with 'ElevatorController' (role 'data7', cardinality 0..*).
+'ElevatorController' (role 'button5', cardinality 0..*) is associated with 'Button' (role 'elevatorController4', cardinality 0..*).
+'Floor_Button' (role 'button2', cardinality 0..*) is associated with 'Button' (role 'floor_Button3', cardinality 0..*).
+'People' (role 'elevatorController12', cardinality 0..*) is associated with 'ElevatorController' (role 'people13', cardinality 0..*).
+'Button' (role 'elevator_Button1', cardinality 0..*) is associated with 'Elevator_Button' (role 'Elevator_Button_Button_00', cardinality 0..*).

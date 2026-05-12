@@ -1,0 +1,55 @@
+The model has 36 class(es).
+The class 'Table' has the following attributes: 'tableID' of type int.
+The class 'Drinks' has the following attributes: 'spirits' of type str; 'beer' of type str; 'cocktail' of type str; 'wine' of type str; 'softDrink' of type str.
+The class 'Print_bill_UseCase' has no attributes.
+The class 'Pay_for_food_UseCase1' has no attributes.
+The class 'Print_bill_external' has no attributes.
+The class 'View_statistics_external' has no attributes.
+The class 'Payment' has the following attributes: 'paymentType' of type str.
+The class 'Alerted_to_Prepare_drinks_external' has no attributes.
+The class 'Alerted_to_Serve_Food_UseCase' has no attributes.
+The class 'Alerted_to_Prepare_food_UseCase' has no attributes.
+The class 'Order_food_UseCase' has no attributes.
+The class '_Component' has no attributes.
+The class 'Menu' has the following attributes: 'starter' of type str; 'mainCourse' of type str; 'desert' of type str; 'specialCourse' of type str.
+The class 'Input_Order_external' has no attributes.
+The class 'Alerted_to_Prepare_drinks_UseCase' has no attributes.
+The class 'View_statistics_UseCase' has no attributes.
+The class 'Bill' has no attributes.
+The class 'Grant_discount_external' has no attributes.
+The class 'Waiter_Actor' has no attributes.
+The class 'Kitchen_Staff_Actor' has no attributes.
+The class 'Change_Order_UseCase' has no attributes.
+The class 'Alerted_to_Serve_drinks_external' has no attributes.
+The class 'Bar_Staff_Actor' has no attributes.
+The class 'Management_Actor' has no attributes.
+The class 'Input_payment_details_UseCase' has no attributes.
+The class 'Input_Order_UseCase' has no attributes.
+The class 'Alerted_to_Prepare_food_external' has no attributes.
+The class 'Alerted_to_Serve_drinks_UseCase' has no attributes.
+The class 'Order' has no attributes.
+The class 'Alerted_to_Serve_Food_external' has no attributes.
+The class 'Input_payment_details_external' has no attributes.
+The class 'Order_food_UseCase1' has no attributes.
+The class 'Grant_discount_UseCase' has no attributes.
+The class 'Discount' has the following attributes: 'discountAmount' of type int.
+The class 'Diner_Actor' has no attributes.
+The class 'Pay_for_food_UseCase' has no attributes.
+'Alerted_to_Serve_drinks_external' (role 'waiter19', cardinality 0..*) is associated with 'Waiter_Actor' (role 'alerted_to_Serve_drinks18', cardinality 0..*).
+'Alerted_to_Prepare_drinks_external' (role 'bar_Staff29', cardinality 0..*) is associated with 'Bar_Staff_Actor' (role 'alerted_to_Prepare_drinks28', cardinality 0..*).
+'Management_Actor' (role 'view_statistics32', cardinality 0..*) is associated with 'View_statistics_external' (role 'management33', cardinality 0..*).
+'Input_Order_external' (role 'waiter17', cardinality 0..*) is associated with 'Waiter_Actor' (role 'input_Order16', cardinality 0..*).
+'Bill' (role 'Bill_Order_04', cardinality 0..*) is associated with 'Order' (role 'Bill_Order_15', cardinality 0..*).
+'Diner_Actor' (role 'pay_for_food14', cardinality 0..*) is associated with 'Pay_for_food_UseCase1' (role 'diner15', cardinality 0..*).
+'Grant_discount_external' (role 'management31', cardinality 0..*) is associated with 'Management_Actor' (role 'grant_discount30', cardinality 0..*).
+'Waiter_Actor' (role 'input_Order34', cardinality 0..*) is associated with 'Input_Order_external' (role 'waiter35', cardinality 0..*).
+'Drinks' (role 'Order_Drinks_19', cardinality 0..*) is associated with 'Order' (role 'Order_Drinks_08', cardinality 0..*).
+'Discount' (role 'bill11', cardinality 0..*) is associated with 'Bill' (role 'discount10', cardinality 0..*).
+'Waiter_Actor' (role 'alerted_to_Serve_Food20', cardinality 0..*) is associated with 'Alerted_to_Serve_Food_external' (role 'waiter21', cardinality 0..*).
+'Print_bill_external' (role 'waiter23', cardinality 0..*) is associated with 'Waiter_Actor' (role 'print_bill22', cardinality 0..*).
+'Kitchen_Staff_Actor' (role 'alerted_to_Prepare_food26', cardinality 0..*) is associated with 'Alerted_to_Prepare_food_external' (role 'kitchen_Staff27', cardinality 0..*).
+'Waiter_Actor' (role 'input_payment_details24', cardinality 0..*) is associated with 'Input_payment_details_external' (role 'waiter25', cardinality 0..*).
+'Diner_Actor' (role 'order_food12', cardinality 0..*) is associated with 'Order_food_UseCase1' (role 'diner13', cardinality 0..*).
+'Bill' (role 'Bill_Table_02', cardinality 0..*) is associated with 'Table' (role 'Bill_Table_13', cardinality 0..*).
+'Menu' (role 'Order_Menu_17', cardinality 0..*) is associated with 'Order' (role 'Order_Menu_06', cardinality 0..*).
+'Bill' (role 'payment0', cardinality 0..*) is associated with 'Payment' (role 'bill1', cardinality 0..*).

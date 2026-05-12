@@ -1,0 +1,29 @@
+The model has 18 class(es).
+The class 'Verification_external' has no attributes.
+The class 'Update_member_profile_external' has no attributes.
+The class 'Tourist_management_system2_Component' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'T1' has no attributes.
+The class 'System_maintenance_external' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Book_package_external' has no attributes.
+The class 'Tourist_management_system_Component' has no attributes.
+The class 'Tourist_Actor' has no attributes.
+The class 'View_package_external' has no attributes.
+The class 'T' has no attributes.
+The class 'Request_package_external' has no attributes.
+The class 'Log_in__Sign_up_external' has no attributes.
+The class 'Actor2_Actor' has no attributes.
+The class 'Give_description_external' has no attributes.
+The class 'Log_in__log_out_external' has no attributes.
+The class 'Manage_questions_external' has no attributes.
+'Verification_external' (role 'librarian11', cardinality 0..*) is associated with 'Admin_Actor' (role 'issue_book10', cardinality 0..*).
+'System_maintenance_external' (role 'librarian15', cardinality 0..*) is associated with 'Admin_Actor' (role 'update_member_profile14', cardinality 0..*).
+'Update_member_profile_external' (role 'librarian17', cardinality 0..*) is associated with 'Admin_Actor' (role 'maintain_book_in_records16', cardinality 0..*).
+'Admin_Actor' (role 'issue_member_card8', cardinality 0..*) is associated with 'Log_in__log_out_external' (role 'librarian9', cardinality 0..*).
+'Request_package_external' (role 'member3', cardinality 0..*) is associated with 'Tourist_Actor' (role 'request_book2', cardinality 0..*).
+'Give_description_external' (role 'member5', cardinality 0..*) is associated with 'Tourist_Actor' (role 'request_book_return4', cardinality 0..*).
+'Log_in__Sign_up_external' (role 'member1', cardinality 0..*) is associated with 'Tourist_Actor' (role 'inquiry_for_membership0', cardinality 0..*).
+'Book_package_external' (role 'member19', cardinality 0..*) is associated with 'Tourist_Actor' (role 'cancel_membership18', cardinality 0..*).
+'Admin_Actor' (role 'return_book12', cardinality 0..*) is associated with 'Manage_questions_external' (role 'librarian13', cardinality 0..*).
+'Tourist_Actor' (role 'search_books6', cardinality 0..*) is associated with 'View_package_external' (role 'member7', cardinality 0..*).

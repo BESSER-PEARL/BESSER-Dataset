@@ -1,0 +1,24 @@
+The model has 13 class(es).
+The class 'Post' has the following attributes: 'PostContent' of type str.
+The class 'Secret' has the following attributes: 'Name' of type str.
+The class 'Friend' has no attributes.
+The class 'Team_Timeline' has the following attributes: 'Name' of type str.
+The class 'Media' has the following attributes: 'MediaPath' of type str.
+The class 'Group' has the following attributes: 'Description' of type str; 'Name' of type str.
+The class 'Profile' has the following attributes: 'Password' of type str; 'Username' of type str; 'About' of type str.
+The class 'Login' has the following attributes: 'Password' of type str; 'Username' of type str.
+The class 'User' has the following attributes: 'Name' of type str.
+The class 'Review' has the following attributes: 'PostContent' of type str.
+The class 'Chat' has no attributes.
+The class 'Registration' has the following attributes: 'Username' of type str; 'Password' of type Secret.
+The class 'Public' has the following attributes: 'Name' of type str.
+'User' (role 'User_Post_06', cardinality 0..*) is associated with 'Post' (role 'User_Post_17', cardinality 0..*).
+'Post' (role 'Post_ImagePost_016', cardinality 0..*) is associated with 'Media' (role 'Post_ImagePost_117', cardinality 0..*).
+'Review' (role 'Review_User_018', cardinality 0..*) is associated with 'User' (role 'Review_User_119', cardinality 0..*).
+'User' (role 'Registration_User_13', cardinality 0..*) is associated with 'Registration' (role 'Registration_User_02', cardinality 0..*).
+'User' (role 'User_Chat_012', cardinality 0..*) is associated with 'Chat' (role 'User_Chat_113', cardinality 0..*).
+'Team_Timeline' (role 'User_Timeline_115', cardinality 0..*) is associated with 'User' (role 'timeline14', cardinality 0..*).
+'Friend' (role 'User_Friend_111', cardinality 0..*) is associated with 'User' (role 'friend10', cardinality 0..*).
+'User' (role 'User_Group_00', cardinality 0..*) is associated with 'Group' (role 'User_Group_11', cardinality 0..*).
+'User' (role 'Login_User_15', cardinality 0..*) is associated with 'Login' (role 'Login_User_04', cardinality 0..*).
+'User' (role 'User_Profile_08', cardinality 0..*) is associated with 'Profile' (role 'User_Profile_19', cardinality 0..*).

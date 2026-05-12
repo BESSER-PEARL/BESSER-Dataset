@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'Participant' has the following attributes: 'date_naissance' of type str; 'id_session' of type int; 'nom' of type str; 'prenom' of type str.
+The class 'Formation' has the following attributes: 'objectif' of type str; 'libelle' of type str; 'cout_unitaire' of type int.
+The class 'Client' has the following attributes: 'contact' of type str; 'ville' of type str; 'nom' of type str; 'codePostal' of type str; 'tel' of type str; 'adresse' of type str.
+The class 'Formateur' has the following attributes: 'Nom' of type str; 'Prenom' of type str.
+The class 'DevisEntete' has the following attributes: 'numero' of type str; 'id_session' of type int.
+The class 'Prestation' has the following attributes: 'id_client' of type int; 'date_debut' of type str; 'lieu' of type bool; 'horaires' of type str; 'nb_stagiaires' of type int; 'id_formation' of type int; 'duree' of type str; 'id_formateur' of type int; 'date_fin' of type str; 'id_type' of type int.
+The class 'Facture' has the following attributes: 'paye' of type bool; 'numero' of type str; 'id_devis' of type int.
+The class 'Type' has the following attributes: 'type' of type str.
+The class 'Convention' has the following attributes: 'id_convention' of type int; 'numero' of type str.
+'Prestation' (role 'participants0', cardinality 0..*) is associated with 'Participant' (role 'sessions1', cardinality 0..*).
+'Prestation' (role 'formateurs3', cardinality 0..*) is associated with 'Formateur' (role 'sessions2', cardinality 0..*).
+'Prestation' (role 'type11', cardinality 0..*) is associated with 'Type' (role 'prestation10', cardinality 0..*).
+'Formation' (role 'session8', cardinality 0..*) is associated with 'Prestation' (role 'formation9', cardinality 0..*).
+'DevisEntete' (role 'session4', cardinality 0..*) is associated with 'Prestation' (role 'devisEntete5', cardinality 0..*).
+'Client' (role 'session6', cardinality 0..*) is associated with 'Prestation' (role 'client7', cardinality 0..*).

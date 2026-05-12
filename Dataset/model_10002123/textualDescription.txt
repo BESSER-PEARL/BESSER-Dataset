@@ -1,0 +1,24 @@
+The model has 15 class(es).
+The class 'Personne' has the following attributes: 'nom' of type str; 'numeroMedecin' of type int; 'prenom' of type str; 'attribute' of type str; 'id' of type int; 'numero' of type str.
+The class 'Rendez_vous' has the following attributes: 'id' of type int; 'numero' of type str; 'date' of type str.
+The class 'Patient' has the following attributes: 'nomPatient' of type str; 'agePatient' of type int; 'lieuResidence' of type str; 'prenomPatien' of type str; 'profession' of type str; 'numeroPatien' of type int.
+The class 'CentreHospitalier' has the following attributes: 'nomCentre' of type str; 'numeroCentre' of type int; 'descriptionCentre' of type str.
+The class 'Contact' has the following attributes: 'telephone' of type int; 'mail' of type str; 'id' of type int.
+The class 'Service' has the following attributes: 'numeroService' of type int; 'nomService' of type str; 'descriptionService' of type str.
+The class 'Programme' has the following attributes: 'numeroProgramme' of type str; 'date' of type str; 'heure' of type str.
+The class 'ResultatExamen' has the following attributes: 'infoResultat' of type str; 'numeroResultat' of type int.
+The class 'Examen' has the following attributes: 'dateProvisoir' of type str; 'numeroExamen' of type int; 'heure' of type str; 'motif' of type str.
+The class 'Medecin' has the following attributes: 'specialite' of type str; 'nomMedecin' of type str; 'dateNaissance' of type str; 'prenomMedecin' of type str.
+The class 'Laboratoire' has the following attributes: 'numero' of type str; 'nom' of type str; 'id' of type int.
+The class 'Rendez_vous_Medecin_Patient_external' has no attributes.
+The class 'Rendez_vous_Laboratoire_Patient_external' has no attributes.
+The class 'Ordonance' has the following attributes: 'date' of type str; 'id' of type int.
+The class 'Produit' has the following attributes: 'posologie' of type str; 'id' of type int; 'nom' of type str; 'dose' of type str.
+'Examen' (role 'programme12', cardinality 0..*) is associated with 'Programme' (role 'examen13', cardinality 0..*).
+'Service' (role 'centreHospitalier2', cardinality 0..*) is associated with 'CentreHospitalier' (role 'service3', cardinality 0..*).
+'Rendez_vous_Medecin_Patient_external' (role 'ordonance11', cardinality 0..*) is associated with 'Ordonance' (role 'rendez_vous_Medecin_Patient10', cardinality 0..*).
+'Examen' (role 'resultatExamen9', cardinality 0..*) is associated with 'ResultatExamen' (role 'examen8', cardinality 0..*).
+'Produit' (role 'ordonance14', cardinality 0..*) is associated with 'Ordonance' (role 'produit15', cardinality 0..*).
+'Medecin' (role 'service0', cardinality 0..*) is associated with 'Service' (role 'medecin1', cardinality 0..*).
+'Contact' (role 'personne4', cardinality 0..*) is associated with 'Personne' (role 'contact5', cardinality 0..*).
+'Rendez_vous_Laboratoire_Patient_external' (role 'examen7', cardinality 0..*) is associated with 'Examen' (role 'rendez_vous_Laboratoire_Patient6', cardinality 0..*).

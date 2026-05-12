@@ -1,0 +1,11 @@
+The model has 7 class(es).
+The class 'Student' has the following attributes: 'scholarNo' of type int; 'name' of type str; 'semester' of type int; 'branch' of type Department.
+The class 'Portal' has no attributes.
+The class 'Administrator' has the following attributes: 'administratorID' of type int; 'name' of type str.
+The class 'Department' has the following attributes: 'course' of type Course; 'name' of type str.
+The class 'FacultyInfo' has the following attributes: 'facultyID' of type str; 'department' of type Department; 'facultyName' of type str.
+The class 'AcademicResult' has the following attributes: 'semester' of type int.
+The class 'Course' has the following attributes: 'subjectCode' of type str; 'courseName' of type str.
+'FacultyInfo' (role 'department20', cardinality 0..*) is associated with 'Department' (role 'facultyInfo1', cardinality 0..*).
+'Department' (role 'course2', cardinality 0..*) is associated with 'Course' (role 'department3', cardinality 0..*).
+'Student' (role 'department5', cardinality 0..*) is associated with 'Department' (role 'student4', cardinality 0..*).

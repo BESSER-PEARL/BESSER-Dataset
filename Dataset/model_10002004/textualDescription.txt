@@ -1,0 +1,19 @@
+The model has 13 class(es).
+The class 'W' has the following attributes: 'attW' of type str.
+The class 'V' has the following attributes: 'attV1' of type str; 'attV2' of type bool.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'R' has no attributes.
+The class 'Y' has the following attributes: 'attY' of type str.
+The class 'Class1' has no attributes.
+The class 'Class2' has no attributes.
+The class 'X' has the following attributes: 'attX' of type str.
+The class 'V2' has no attributes.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'C' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'V1' has no attributes.
+The class 'Z' has no attributes.
+'B' (role 'c2', cardinality 0..*) is associated with 'C' (role 'b3', cardinality 0..*).
+'V' (role 'b9', cardinality 0..*) is associated with 'W' (role 'v8', cardinality 0..*).
+'A' (role 'b0', cardinality 0..*) is associated with 'B' (role 'a1', cardinality 0..*).
+'W' (role 'x7', cardinality 0..*) is associated with 'X' (role 'w6', cardinality 0..*).
+'R' (role 'x4', cardinality 0..*) is associated with 'X' (role 'r5', cardinality 0..*).

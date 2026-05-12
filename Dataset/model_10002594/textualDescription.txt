@@ -1,0 +1,33 @@
+The model has 17 class(es).
+The class 'Categorize_apps_as_productive___Social_UseCase' has no attributes.
+The class 'View_time_spent_on_each_app_UseCase' has no attributes.
+The class 'Manage_Notifications_UseCase' has no attributes.
+The class 'View_points_scored_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Home_Page_UseCase' has no attributes.
+The class 'view_the_count_each_app_has_been_opened_UseCase' has no attributes.
+The class 'LibraryController' has the following attributes: 'libraryDataAcces' of type str.
+The class 'Login' has the following attributes: 'username' of type str; '_attr' of type str.
+The class 'Book' has the following attributes: 'publisher' of type str; 'publisherCity' of type str; 'yearPublished' of type int; 'title' of type str; 'Author' of type str.
+The class 'LibraryGui' has the following attributes: 'libraryController' of type LibraryController; 'library' of type Library.
+The class 'Library' has the following attributes: 'count' of type int; 'changeSinceLastSave' of type bool; 'file' of type str; 'collection' of type str.
+The class 'Manage_Tracking_UseCase' has no attributes.
+The class 'Change_Password_UseCase' has no attributes.
+The class 'Sign_up_UseCase' has no attributes.
+The class 'Settings_UseCase' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.
+'Book' (role 'Book_Library_04', cardinality 0..*) is associated with 'Library' (role 'Book_Library_15', cardinality 0..*).
+'Home_Page_UseCase' (role 'view_time_spent_on_each_app16', cardinality 0..*) is associated with 'View_time_spent_on_each_app_UseCase' (role 'home_Page17', cardinality 0..*).
+'Settings_UseCase' (role 'manage_Notifications24', cardinality 0..*) is associated with 'Manage_Notifications_UseCase' (role 'settings25', cardinality 0..*).
+'User_Actor' (role 'home_Page10', cardinality 0..*) is associated with 'Home_Page_UseCase' (role 'user11', cardinality 0..*).
+'view_the_count_each_app_has_been_opened_UseCase' (role 'home_Page19', cardinality 0..*) is associated with 'Home_Page_UseCase' (role 'view_the_count_each_app_has_been_opened18', cardinality 0..*).
+'Settings_UseCase' (role 'change_Password26', cardinality 0..*) is associated with 'Change_Password_UseCase' (role 'settings27', cardinality 0..*).
+'Home_Page_UseCase' (role 'settings20', cardinality 0..*) is associated with 'Settings_UseCase' (role 'home_Page21', cardinality 0..*).
+'Categorize_apps_as_productive___Social_UseCase' (role 'home_Page13', cardinality 0..*) is associated with 'Home_Page_UseCase' (role 'categorize_apps_as_productive___Social12', cardinality 0..*).
+'Sign_up_UseCase' (role 'user9', cardinality 0..*) is associated with 'User_Actor' (role 'sign_up8', cardinality 0..*).
+'User_Actor' (role 'login6', cardinality 0..*) is associated with 'Login_UseCase' (role 'user7', cardinality 0..*).
+'LibraryGui' (role 'LibraryGui_LibraryController_00', cardinality 0..*) is associated with 'LibraryController' (role 'LibraryGui_LibraryController_11', cardinality 0..*).
+'Home_Page_UseCase' (role 'view_points_scored14', cardinality 0..*) is associated with 'View_points_scored_UseCase' (role 'home_Page15', cardinality 0..*).
+'Manage_Tracking_UseCase' (role 'settings23', cardinality 0..*) is associated with 'Settings_UseCase' (role 'manage_Tracking22', cardinality 0..*).
+'Library' (role 'libraryGui2', cardinality 0..*) is associated with 'LibraryGui' (role 'library3', cardinality 0..*).

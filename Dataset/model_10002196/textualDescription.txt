@@ -1,0 +1,20 @@
+The model has 14 class(es).
+The class 'search_UseCase' has no attributes.
+The class 'online_shopping_chart_system_Component' has no attributes.
+The class 'admin_portal_Component' has no attributes.
+The class 'Customer' has the following attributes: 'adress' of type str; 'cardId' of type int; 'Name' of type str; 'phone' of type str; 'email' of type str.
+The class 'online_client_Actor' has no attributes.
+The class 'Product' has the following attributes: 'cardId' of type int; 'fileName' of type str; 'ProductID' of type int; 'description' of type str; 'Price' of type str; 'Name' of type str.
+The class 'online_shopping_portal_Component' has no attributes.
+The class 'Product_catalog_Component' has no attributes.
+The class 'Order' has the following attributes: 'OrderID' of type int; 'dateShipped' of type str; 'dateCreated' of type str; 'customerID' of type str; 'status' of type str; 'shippingID' of type str.
+The class 'registered_client_Actor' has no attributes.
+The class 'ShoppingCart' has the following attributes: 'dateAdded' of type str; 'quantity' of type int; 'cartID' of type int; 'productID' of type int.
+The class 'admin_Actor' has no attributes.
+The class 'CartItem' has the following attributes: 'ProductID' of type int; 'fileName' of type str; 'Name' of type str; 'quantity' of type int; 'Price' of type str; 'cartID' of type int; 'subtotal' of type str.
+The class 'keyWord' has the following attributes: 'keyword' of type str.
+'Order' (role 'customer9', cardinality 0..*) is associated with 'Customer' (role 'order8', cardinality 0..*).
+'CartItem' (role 'shoppingCart3', cardinality 0..*) is associated with 'ShoppingCart' (role 'cartItem2', cardinality 0..*).
+'Product' (role 'keyWord7', cardinality 0..*) is associated with 'keyWord' (role 'product6', cardinality 0..*).
+'Customer' (role 'ShoppingCart_Customer_11', cardinality 0..*) is associated with 'ShoppingCart' (role 'customer0', cardinality 0..*).
+'CartItem' (role 'product5', cardinality 0..*) is associated with 'Product' (role 'cartItem4', cardinality 0..*).

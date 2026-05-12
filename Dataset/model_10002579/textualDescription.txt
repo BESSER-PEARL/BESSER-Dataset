@@ -1,0 +1,19 @@
+The model has 13 class(es).
+The class 'Authenticate_staff' has the following attributes: 'UserName' of type str; 'Authendication_Mood' of type str; 'Password' of type str.
+The class 'Authentication_UseCase' has no attributes.
+The class 'Login' has the following attributes: 'UserName' of type str; 'Password' of type str.
+The class 'Employee_Management_System_Component' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Salary_Management_UseCase' has no attributes.
+The class 'Mission' has the following attributes: 'mission_NoOfDays' of type int; 'mission_StartDate' of type date; 'mission_Title' of type str; 'mission_Status' of type str; 'staff_Id' of type int; 'mission_EndDate' of type date; 'mission_id' of type int; 'mission_detail' of type str.
+The class 'Attendance' has the following attributes: 'Attend_date' of type date; 'Emp_id' of type str; 'Leaving_Time' of type str; 'AttendTime' of type str.
+The class 'Salary' has the following attributes: 'Sly_Increment' of type float; 'Sly_Decrement' of type float; 'OverTime' of type str; 'Sly_Basic' of type float; 'Emp_Id' of type int; 'Sly_Netgross' of type float.
+The class 'Login_external' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'staff_member' has the following attributes: 'staff_DOB' of type date; 'staff_NIC' of type str; 'staff_Department' of type str; 'staff_ContactNo' of type str; 'staff_Position' of type str; 'staff_Name' of type str; 'staff_Id' of type int; 'staff_Date_Of_Joint' of type date; 'staff_Email' of type str; 'staff_Address' of type str; 'staff_Salary' of type float.
+'staff_member' (role 'salary4', cardinality 0..*) is associated with 'Salary' (role 'staff5', cardinality 0..*).
+'staff_member' (role 'staff0', cardinality 0..*) is associated with 'Mission' (role 'staff1', cardinality 0..*).
+'Attendance' (role 'staff3', cardinality 0..*) is associated with 'staff_member' (role 'attendance2', cardinality 0..*).
+'Employee_Actor' (role 'login6', cardinality 0..*) is associated with 'Login_external' (role 'employee7', cardinality 0..*).
+'Employee_Actor' (role 'logout8', cardinality 0..*) is associated with 'Logout_external' (role 'employee9', cardinality 0..*).

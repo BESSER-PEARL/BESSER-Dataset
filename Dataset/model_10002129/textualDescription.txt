@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'Deck' has no attributes.
+The class 'Card' has the following attributes: 'ACE' of type int; 'KING' of type int; 'QUEEN' of type int; 'CLUBS' of type int; 'JACK' of type int; 'JOKER' of type int; 'DIAMONDS' of type int; 'HEARTS' of type int; 'suit' of type int; 'SPADES' of type int; 'value' of type int.

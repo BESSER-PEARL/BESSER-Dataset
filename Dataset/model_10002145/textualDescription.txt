@@ -1,0 +1,24 @@
+The model has 14 class(es).
+The class 'Pay_Fine_external' has no attributes.
+The class 'Register_Member_external' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Requests_for_Book_Borrow_external' has no attributes.
+The class 'Librarian_Actor' has no attributes.
+The class 'Validation_external' has no attributes.
+The class 'Issue_Book_external' has no attributes.
+The class 'Search_for_Books_external' has no attributes.
+The class 'User_Database_Actor' has no attributes.
+The class 'Organise_Book_details_external' has no attributes.
+The class 'Return_Book_external' has no attributes.
+The class 'Books_Database_Actor' has no attributes.
+The class 'T' has no attributes.
+The class 'Library_Management_System_Component' has no attributes.
+'Search_for_Books_external' (role 'books_Database2', cardinality 0..*) is associated with 'Books_Database_Actor' (role 'search_for_Books3', cardinality 0..*).
+'Requests_for_Book_Borrow_external' (role 'user11', cardinality 0..*) is associated with 'User_Actor' (role 'requests_for_Book_Borrow10', cardinality 0..*).
+'Register_Member_external' (role 'user_Database15', cardinality 0..*) is associated with 'User_Database_Actor' (role 'register_Member14', cardinality 0..*).
+'Books_Database_Actor' (role 'organise_Book_details1', cardinality 0..*) is associated with 'Organise_Book_details_external' (role 'books_Database0', cardinality 0..*).
+'User_Database_Actor' (role 'validation16', cardinality 0..*) is associated with 'Validation_external' (role 'user_Database17', cardinality 0..*).
+'Return_Book_external' (role 'user13', cardinality 0..*) is associated with 'User_Actor' (role 'return_Book12', cardinality 0..*).
+'Librarian_Actor' (role 'issue_Book5', cardinality 0..*) is associated with 'Issue_Book_external' (role 'librarian4', cardinality 0..*).
+'Librarian_Actor' (role 'pay_Fine7', cardinality 0..*) is associated with 'Pay_Fine_external' (role 'librarian6', cardinality 0..*).
+'Search_for_Books_external' (role 'user9', cardinality 0..*) is associated with 'User_Actor' (role 'search_for_Books8', cardinality 0..*).

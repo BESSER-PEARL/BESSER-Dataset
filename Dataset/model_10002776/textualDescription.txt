@@ -1,0 +1,67 @@
+The model has 40 class(es).
+The class 'Librarian_Actor' has no attributes.
+The class 'Library_Managment_System_Reserve_UseCase' has no attributes.
+The class 'Library_Managment_System_Status_UseCase' has no attributes.
+The class 'Library_Managment_System_Renew_subscriptions_UseCase' has no attributes.
+The class 'Library_Managment_System_Connect_to_holding_of_other_libraries_UseCase' has no attributes.
+The class 'Library_Managment_System_Renew_Checkout_if_not_requested_UseCase' has no attributes.
+The class 'Library_Managment_System_1_year_check_out_UseCase' has no attributes.
+The class 'Library_Managment_System_CD_s_software_videos_UseCase' has no attributes.
+The class 'Library_Managment_System_Late_Notice_UseCase' has no attributes.
+The class 'Library_Managment_System_Adding_UseCase' has no attributes.
+The class 'Library_Managment_System_Manage_Magazines_UseCase' has no attributes.
+The class 'Library_Managment_System_Other_resources_UseCase' has no attributes.
+The class 'Student_Actor' has no attributes.
+The class 'Library_Managment_System_3_month_check_out_UseCase' has no attributes.
+The class 'Library_Managment_System_Reshelving_books_UseCase' has no attributes.
+The class 'Library_Managment_System_Reserve_book__1_semester__UseCase' has no attributes.
+The class 'Library_Managment_System_Ordering_new_resources_UseCase' has no attributes.
+The class 'Faculty_Actor' has no attributes.
+The class 'Library_Managment_System_Meet_requests_of_patrons_UseCase' has no attributes.
+The class 'Library_Managment_System_Reserve_foreign_resources_UseCase' has no attributes.
+The class 'Library_Managment_System_Magazines_UseCase' has no attributes.
+The class 'Library_Managment_System_Check_out_UseCase' has no attributes.
+The class 'Library_Management_System_Faculty' has the following attributes: 'FacultyId' of type int; 'FacultyName' of type str.
+The class 'Library_Management_System_Librarian' has the following attributes: 'LibrarianName' of type str.
+The class 'Library_Managment_System_4_week_check_out_UseCase' has no attributes.
+The class 'Library_Managment_System_Requested_UseCase' has no attributes.
+The class 'Library_Managment_System_Check_in___Return_UseCase' has no attributes.
+The class 'Library_Managment_System_Books_UseCase' has no attributes.
+The class 'Library_Managment_System_Assist_patrons_in_research_UseCase' has no attributes.
+The class 'Library_Managment_System_Faculty_UseCase' has no attributes.
+The class 'Library_Managment_System_Retiring_UseCase' has no attributes.
+The class 'Library_Managment_System_Special_Status_UseCase' has no attributes.
+The class 'Library_Managment_System_Librarian_UseCase' has no attributes.
+The class 'Library_Management_System_Patron' has the following attributes: 'Magazines' of type str; 'SpecialStatus' of type str; 'Status' of type Library_Management_System_Patron; 'Books' of type str; 'OtherResources' of type str.
+The class 'Library_Managment_System_Contents_out_of_date_UseCase' has no attributes.
+The class 'Library_Managment_System_Issue_fines_UseCase' has no attributes.
+The class 'Library_Managment_System_Student_UseCase' has no attributes.
+The class 'Library_Managment_System_1_week_check_out_UseCase' has no attributes.
+The class 'Library_Management_System_Student' has the following attributes: 'StudentName' of type str; 'StudentId' of type int.
+The class 'Library_Managment_System_Reference_UseCase' has no attributes.
+'Faculty_Actor' (role 'requested26', cardinality 0..*) is associated with 'Library_Managment_System_Requested_UseCase' (role 'faculty27', cardinality 0..*).
+'Librarian_Actor' (role 'assist_patrons_in_research40', cardinality 0..*) is associated with 'Library_Managment_System_Assist_patrons_in_research_UseCase' (role 'librarian41', cardinality 0..*).
+'Library_Managment_System_Check_out_UseCase' (role 'librarian5', cardinality 0..*) is associated with 'Librarian_Actor' (role 'check_out4', cardinality 0..*).
+'Student_Actor' (role 'check_in___Return12', cardinality 0..*) is associated with 'Library_Managment_System_Check_in___Return_UseCase' (role 'student13', cardinality 0..*).
+'Faculty_Actor' (role 'reference30', cardinality 0..*) is associated with 'Library_Managment_System_Reference_UseCase' (role 'faculty31', cardinality 0..*).
+'Library_Managment_System_Reserve_UseCase' (role 'student19', cardinality 0..*) is associated with 'Student_Actor' (role 'reserve18', cardinality 0..*).
+'Librarian_Actor' (role 'reshelving_books36', cardinality 0..*) is associated with 'Library_Managment_System_Reshelving_books_UseCase' (role 'librarian37', cardinality 0..*).
+'Library_Managment_System_Connect_to_holding_of_other_libraries_UseCase' (role 'librarian43', cardinality 0..*) is associated with 'Librarian_Actor' (role 'connect_to_holding_of_other_libraries42', cardinality 0..*).
+'Library_Management_System_Patron' (role 'faculty48', cardinality 0..*) is associated with 'Library_Management_System_Faculty' (role 'patron49', cardinality 0..*).
+'Library_Managment_System_Requested_UseCase' (role 'student17', cardinality 0..*) is associated with 'Student_Actor' (role 'requested16', cardinality 0..*).
+'Library_Management_System_Patron' (role 'student46', cardinality 0..*) is associated with 'Library_Management_System_Student' (role 'patron47', cardinality 0..*).
+'Library_Management_System_Patron' (role 'librarian50', cardinality 0..*) is associated with 'Library_Management_System_Librarian' (role 'patron51', cardinality 0..*).
+'Library_Managment_System_Books_UseCase' (role 'librarian45', cardinality 0..*) is associated with 'Librarian_Actor' (role 'books44', cardinality 0..*).
+'Library_Managment_System_Manage_Magazines_UseCase' (role 'librarian35', cardinality 0..*) is associated with 'Librarian_Actor' (role 'manage_Magazines34', cardinality 0..*).
+'Library_Managment_System_Librarian_UseCase' (role '_1_year_check_out0', cardinality 0..*) is associated with 'Library_Managment_System_1_year_check_out_UseCase' (role 'librarian1', cardinality 0..*).
+'Librarian_Actor' (role 'reserve8', cardinality 0..*) is associated with 'Library_Managment_System_Reserve_UseCase' (role 'librarian9', cardinality 0..*).
+'Librarian_Actor' (role 'check_in___Return2', cardinality 0..*) is associated with 'Library_Managment_System_Check_in___Return_UseCase' (role 'librarian3', cardinality 0..*).
+'Library_Managment_System_Reference_UseCase' (role 'student21', cardinality 0..*) is associated with 'Student_Actor' (role 'reference20', cardinality 0..*).
+'Faculty_Actor' (role 'check_out24', cardinality 0..*) is associated with 'Library_Managment_System_Check_out_UseCase' (role 'faculty25', cardinality 0..*).
+'Faculty_Actor' (role 'check_in___Return22', cardinality 0..*) is associated with 'Library_Managment_System_Check_in___Return_UseCase' (role 'faculty23', cardinality 0..*).
+'Librarian_Actor' (role 'reference10', cardinality 0..*) is associated with 'Library_Managment_System_Reference_UseCase' (role 'librarian11', cardinality 0..*).
+'Librarian_Actor' (role 'requested6', cardinality 0..*) is associated with 'Library_Managment_System_Requested_UseCase' (role 'librarian7', cardinality 0..*).
+'Faculty_Actor' (role 'reserve28', cardinality 0..*) is associated with 'Library_Managment_System_Reserve_UseCase' (role 'faculty29', cardinality 0..*).
+'Librarian_Actor' (role 'issue_fines32', cardinality 0..*) is associated with 'Library_Managment_System_Issue_fines_UseCase' (role 'librarian33', cardinality 0..*).
+'Librarian_Actor' (role 'ordering_new_resources38', cardinality 0..*) is associated with 'Library_Managment_System_Ordering_new_resources_UseCase' (role 'librarian39', cardinality 0..*).
+'Student_Actor' (role 'check_out14', cardinality 0..*) is associated with 'Library_Managment_System_Check_out_UseCase' (role 'student15', cardinality 0..*).

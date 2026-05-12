@@ -1,0 +1,38 @@
+The model has 22 class(es).
+The class 'Add_new_alarm_external' has no attributes.
+The class 'Arduino' has no attributes.
+The class 'Sense_and_Update_Data_external' has no attributes.
+The class 'WebPage' has no attributes.
+The class 'Close_Alarm_external' has no attributes.
+The class 'Notify_User_of_fire_external' has no attributes.
+The class 'Gas_Smoke_Sensor' has no attributes.
+The class 'TurnDownAlarm' has no attributes.
+The class 'Firebase' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'View_sensors_data_external' has no attributes.
+The class 'Fire_Alarm_System__Component' has no attributes.
+The class 'MobileApp' has no attributes.
+The class 'Building_Owner__Actor' has no attributes.
+The class 'AddAlarm' has no attributes.
+The class 'ViewTemp_Smoke' has no attributes.
+The class 'Notification' has no attributes.
+The class 'Count_Sensor' has no attributes.
+The class 'Alarm' has no attributes.
+The class 'Temperature_Sensor' has no attributes.
+The class 'Fire_Department__Actor' has no attributes.
+The class 'Sensors_Actor' has no attributes.
+'Sensors_Actor' (role 'sense_and_Update_Data16', cardinality 0..*) is associated with 'Sense_and_Update_Data_external' (role 'sensors17', cardinality 0..*).
+'WebPage' (role 'Firebase_Web_17', cardinality 0..*) is associated with 'Firebase' (role 'Firebase_Web_06', cardinality 0..*).
+'ViewTemp_Smoke' (role 'ViewTemp_Smoke_Alarm_022', cardinality 0..*) is associated with 'Alarm' (role 'ViewTemp_Smoke_Alarm_123', cardinality 0..*).
+'TurnDownAlarm' (role 'TurnDownAlarm_Alarm_026', cardinality 0..*) is associated with 'Alarm' (role 'TurnDownAlarm_Alarm_127', cardinality 0..*).
+'Firebase' (role 'Home_Security_System_System_13', cardinality 0..*) is associated with 'MobileApp' (role 'Home_Security_System_System_02', cardinality 0..*).
+'Notify_User_of_fire_external' (role 'fire_Department11', cardinality 0..*) is associated with 'Fire_Department__Actor' (role 'notify_User10', cardinality 0..*).
+'Alarm' (role 'Alarm_Mobile_App_028', cardinality 0..*) is associated with 'MobileApp' (role 'Alarm_Mobile_App_129', cardinality 0..*).
+'Building_Owner__Actor' (role 'view_Data18', cardinality 0..*) is associated with 'View_sensors_data_external' (role 'building_Owner19', cardinality 0..*).
+'AddAlarm' (role 'AddAlarm_Alarm_024', cardinality 0..*) is associated with 'Alarm' (role 'AddAlarm_Alarm_125', cardinality 0..*).
+'Alarm' (role 'Notification_Alarm_121', cardinality 0..*) is associated with 'Notification' (role 'Notification_Alarm_020', cardinality 0..*).
+'Notify_User_of_fire_external' (role 'building_Owner9', cardinality 0..*) is associated with 'Building_Owner__Actor' (role 'sense_and_Update_Data8', cardinality 0..*).
+'Firebase' (role 'Arduino__Firebase_15', cardinality 0..*) is associated with 'Arduino' (role 'Arduino__Firebase_04', cardinality 0..*).
+'Sensor' (role 'system0', cardinality 0..*) is associated with 'Arduino' (role 'sensor1', cardinality 0..*).
+'Building_Owner__Actor' (role 'close_Alarm14', cardinality 0..*) is associated with 'Close_Alarm_external' (role 'building_Owner15', cardinality 0..*).
+'Building_Owner__Actor' (role 'add_Alarm12', cardinality 0..*) is associated with 'Add_new_alarm_external' (role 'building_Owner13', cardinality 0..*).

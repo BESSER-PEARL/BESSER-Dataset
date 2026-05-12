@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'User' has the following attributes: 'Password' of type str; 'UserId' of type int; 'Email' of type str; 'DateOfBirth' of type str; 'PhoneNumber' of type str; 'Login' of type str.
+The class 'Registration' has no attributes.
+The class 'EventType' has the following attributes: 'EventTypeId' of type int; 'Type' of type str.
+The class 'Event' has the following attributes: 'attribute' of type str; 'Address' of type str; 'CurrentNumberOfPlayers' of type int; 'EventId' of type int; 'DateTime' of type str; 'Description' of type str; 'MaxNumberOfPlayers' of type int.
+'Event' (role 'registrations4', cardinality 0..*) is associated with 'Registration' (role 'event5', cardinality 0..*).
+'Event' (role 'event_type3', cardinality 0..*) is associated with 'EventType' (role 'events2', cardinality 0..*).
+'User' (role 'registrations0', cardinality 0..*) is associated with 'Registration' (role 'user1', cardinality 0..*).
+'Event' (role 'user7', cardinality 0..*) is associated with 'User' (role 'events6', cardinality 0..*).

@@ -1,0 +1,57 @@
+The model has 44 class(es).
+The class 'Create_new_administrators_UseCase' has no attributes.
+The class 'Register_as_a_cradle_home_UseCase' has no attributes.
+The class 'Register_pet_types_UseCase' has no attributes.
+The class 'System_Actor' has no attributes.
+The class 'Report_a_pet_situation_UseCase' has no attributes.
+The class 'Search_for_total_cash_donated_per_association_UseCase' has no attributes.
+The class 'Register_a_pet_UseCase' has no attributes.
+The class 'Donate_to_an_association_UseCase' has no attributes.
+The class 'Report_a_person_to_the_blacklist_UseCase' has no attributes.
+The class 'Search_for_lost_pets_UseCase' has no attributes.
+The class 'Logging_into_program_UseCase1' has no attributes.
+The class 'Search_for_registered_associations_UseCase' has no attributes.
+The class 'Register_as_an_adopter_UseCase' has no attributes.
+The class 'Create_reports_UseCase' has no attributes.
+The class 'Check_black_list_requests_UseCase' has no attributes.
+The class 'Report_a_lost_pet_UseCase' has no attributes.
+The class 'Logging_into_program_UseCase' has no attributes.
+The class 'Register_pet_races_UseCase' has no attributes.
+The class 'Medeina' has the following attributes: 'blackList_User_' of type User; 'attribute' of type str.
+The class 'Report_a_found_pet_UseCase' has no attributes.
+The class 'Make_requests_to_administrator_UseCase' has no attributes.
+The class 'Registering_into_program_UseCase' has no attributes.
+The class 'Donate_UseCase' has no attributes.
+The class 'User' has the following attributes: 'lastName' of type str; 'name' of type str.
+The class 'Organization' has the following attributes: 'name' of type str.
+The class 'Pet' has the following attributes: 'stray' of type bool; 'breed' of type str; 'phone' of type str; 'color' of type str; 'notes' of type str; 'picture' of type str; 'email' of type str; 'state' of type str; 'reward' of type int; 'date' of type date; 'chipID' of type str; 'name' of type str; 'place' of type str; 'type' of type str.
+The class 'Administrator_Actor' has no attributes.
+The class 'Search_UseCase' has no attributes.
+The class 'Edit_user_information_UseCase' has no attributes.
+The class 'Register_as_a_pro_care_association_UseCase' has no attributes.
+The class 'Register_pets__physical_characteristics_UseCase' has no attributes.
+The class 'Edit_information_UseCase' has no attributes.
+The class 'Edit_pet_information_UseCase' has no attributes.
+The class 'Report_an_adopted_pet_UseCase' has no attributes.
+The class 'Donate_to_an_user_UseCase' has no attributes.
+The class 'Search_for_registered_cradle_homes_UseCase' has no attributes.
+The class 'Publish_on_social_networks_UseCase' has no attributes.
+The class 'Qualify_an_pet_owner_UseCase' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Registering_UseCase' has no attributes.
+The class 'Search_for_donations_per_user_UseCase' has no attributes.
+The class 'Send_mail_to_lost_pet_owners_UseCase' has no attributes.
+The class 'Donate_to_a_cradle_home_UseCase' has no attributes.
+The class 'Match_lost_pet_cases_UseCase' has no attributes.
+'System_Actor' (role 'create_reports6', cardinality 0..*) is associated with 'Create_reports_UseCase' (role 'medeina7', cardinality 0..*).
+'Administrator_Actor' (role 'logging_into_program16', cardinality 0..*) is associated with 'Logging_into_program_UseCase1' (role 'administrator17', cardinality 0..*).
+'User_Actor' (role 'registering_into_program0', cardinality 0..*) is associated with 'Registering_into_program_UseCase' (role 'user1', cardinality 0..*).
+'System_Actor' (role 'match_lost_pet_cases8', cardinality 0..*) is associated with 'Match_lost_pet_cases_UseCase' (role 'medeina9', cardinality 0..*).
+'Logging_into_program_UseCase1' (role 'register_pets__physical_characteristics18', cardinality 0..*) is associated with 'Register_pets__physical_characteristics_UseCase' (role 'logging_into_program19', cardinality 0..*).
+'Send_mail_to_lost_pet_owners_UseCase' (role 'user15', cardinality 0..*) is associated with 'User_Actor' (role 'send_mail_to_lost_pet_owners14', cardinality 0..*).
+'Administrator_Actor' (role 'make_requests_to_administrator13', cardinality 0..*) is associated with 'Make_requests_to_administrator_UseCase' (role 'administrator12', cardinality 0..*).
+'Logging_into_program_UseCase1' (role 'create_new_administrators22', cardinality 0..*) is associated with 'Create_new_administrators_UseCase' (role 'logging_into_program23', cardinality 0..*).
+'Publish_on_social_networks_UseCase' (role 'medeina5', cardinality 0..*) is associated with 'System_Actor' (role 'publish_on_social_networks4', cardinality 0..*).
+'Logging_into_program_UseCase1' (role 'check_black_list_requests20', cardinality 0..*) is associated with 'Check_black_list_requests_UseCase' (role 'logging_into_program21', cardinality 0..*).
+'System_Actor' (role 'send_mail_to_lost_pet_owners10', cardinality 0..*) is associated with 'Send_mail_to_lost_pet_owners_UseCase' (role 'medeina11', cardinality 0..*).
+'User_Actor' (role 'logging_into_program2', cardinality 0..*) is associated with 'Logging_into_program_UseCase' (role 'user3', cardinality 0..*).

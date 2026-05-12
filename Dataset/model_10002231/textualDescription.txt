@@ -1,0 +1,23 @@
+The model has 9 class(es).
+The class 'Order' has the following attributes: 'status' of type OrderStatus; 'ordered' of type date; 'total' of type float; 'shipTo' of type str; 'number' of type int; 'shipped' of type bool.
+The class 'ShoppingCart' has the following attributes: 'creationDate' of type date.
+The class 'RedisStateStore' has the following attributes: 'log' of type str; 'cluster' of type Cluster; 'RadixClient' of type RadixClient.
+The class 'Redis' has no attributes.
+The class 'LineItem' has the following attributes: 'quantity' of type int; 'price' of type float.
+The class 'RadixClient' has the following attributes: 'redisUrl' of type str; 'state' of type UserState; 'password' of type str.
+The class 'Payment' has the following attributes: 'details' of type str; 'total' of type float; 'paidDate' of type date.
+The class 'Cluster' has the following attributes: 'populate' of type str.
+The class 'Product' has the following attributes: 'description' of type str; 'name' of type str.
+The enumeration 'OrderStatus' does not specify any literals.
+The enumeration 'UserState' does not specify any literals.
+'Order' (role 'items12', cardinality 0..*) is associated with 'LineItem' (role 'order13', cardinality 0..*).
+'RedisStateStore' (role 'account4', cardinality 0..*) is associated with 'Redis' (role 'customer5', cardinality 0..*).
+'ShoppingCart' (role 'items8', cardinality 0..*) is associated with 'LineItem' (role 'sc9', cardinality 0..*).
+'ShoppingCart' (role 'account7', cardinality 0..*) is associated with 'Redis' (role 'cart6', cardinality 0..*).
+'Redis' (role 'order14', cardinality 0..*) is associated with 'Order' (role 'account15', cardinality 0..*).
+'RadixClient' (role 'redisClient19', cardinality 0..*) is associated with 'RedisStateStore' (role 'radixClient18', cardinality 0..*).
+'RadixClient' (role 'shoppingCart2', cardinality 0..*) is associated with 'ShoppingCart' (role 'webUser3', cardinality 0..*).
+'Cluster' (role 'redis21', cardinality 0..*) is associated with 'Redis' (role 'cluster20', cardinality 0..*).
+'Redis' (role 'p0', cardinality 0..*) is associated with 'Payment' (role 'acc1', cardinality 0..*).
+'Product' (role 'lineItems10', cardinality 0..*) is associated with 'LineItem' (role 'product11', cardinality 0..*).
+'Payment' (role 'order16', cardinality 0..*) is associated with 'Order' (role 'payment17', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'Property' has the following attributes: 'property_type' of type str; 'address' of type str; 'property_id' of type str; 'location' of type str.
+The class 'Seller' has the following attributes: 'seller_id' of type str; 'property_id' of type str.
+The class 'Unreg_User' has no attributes.
+The class 'Reg_User' has the following attributes: 'username' of type str; 'password' of type str; 'Address' of type str.
+The class 'Request' has the following attributes: 'request_details' of type str; 'request_type' of type str; 'requser_id' of type str; 'request_id' of type int.
+The class 'Buyer' has the following attributes: 'buyer_id' of type str.
+The class 'Payment' has the following attributes: 'ex_date' of type str; 'card_no' of type str; 'pay_amount' of type str; 'pay_mode' of type str; 'pay_id' of type int.
+The class 'Requirement' has the following attributes: 'user_id' of type str; 'requirement_type' of type str; 'requirement_location' of type str; 'req_description' of type str.
+The class 'User' has the following attributes: 'email' of type str; 'location' of type str.
+The class 'Management' has the following attributes: 'specialoffers' of type str; 'suggetions' of type str.
+The class 'Administrator' has the following attributes: 'password' of type str; 'admin_name' of type str.
+The class 'Advertiser' has the following attributes: 'advertiesment_id' of type str; 'advertiser_id' of type str.
+'Seller' (role 'property3', cardinality 0..*) is associated with 'Property' (role 'owner2', cardinality 0..*).
+'Payment' (role 'reg_User12', cardinality 0..*) is associated with 'Reg_User' (role 'payment13', cardinality 0..*).
+'Buyer' (role 'property7', cardinality 0..*) is associated with 'Property' (role 'user6', cardinality 0..*).
+'Requirement' (role 'user9', cardinality 0..*) is associated with 'Reg_User' (role 'requirement8', cardinality 0..*).
+'Administrator' (role 'employee1', cardinality 0..*) is associated with 'User' (role 'administrator0', cardinality 0..*).
+'User' (role 'request4', cardinality 0..*) is associated with 'Request' (role 'user5', cardinality 0..*).
+'Payment' (role 'property14', cardinality 0..*) is associated with 'Property' (role 'payment15', cardinality 0..*).
+'Property' (role 'management10', cardinality 0..*) is associated with 'Management' (role 'property11', cardinality 0..*).

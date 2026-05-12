@@ -1,0 +1,38 @@
+The model has 21 class(es).
+The class 'WEB_DEVELOPER_Actor' has no attributes.
+The class 'Transaction' has the following attributes: 'cashondelivery' of type int; 'creditcard' of type int; 'debitcard' of type int.
+The class 'Cancelorder' has the following attributes: 'item' of type str; 'quantity' of type int.
+The class 'Product' has the following attributes: 'id' of type int; 'name' of type str; 'type' of type str.
+The class 'DELIVERS_THE_PRODUCT_UseCase' has no attributes.
+The class 'CUSTOMER_Actor' has no attributes.
+The class 'ADMINISTRATOR_Actor' has no attributes.
+The class 'SELECTS_THE_MODE_OF_PAYMENT_UseCase' has no attributes.
+The class 'SELECTS_THE_ITEMS_SERVICE_UseCase' has no attributes.
+The class 'Warehouse' has the following attributes: 'database' of type str; 'location' of type str.
+The class 'PAYS_THE_BILL_UseCase' has no attributes.
+The class 'ADDS_ITEMS_SERVICE_TO_CART_UseCase' has no attributes.
+The class 'Feedback' has the following attributes: 'customername' of type str; 'id' of type int; 'phoneno' of type int.
+The class 'Shipment' has the following attributes: 'packing' of type str.
+The class 'MAINTAINS_THE_PRODUCTS_SERVICES_UseCase' has no attributes.
+The class 'Customer' has the following attributes: 'mailid' of type str; 'phoneno' of type int; 'name' of type str; 'address' of type str; 'id' of type int.
+The class 'CREATES_THE_WEBSITE_UseCase' has no attributes.
+The class 'VISITS_THE_WEBSITE_UseCase' has no attributes.
+The class 'Order' has the following attributes: 'quantity' of type int; 'item' of type str; 'list' of type str.
+The class 'SUPPORT_AND_FEEDBACK_UseCase' has no attributes.
+The class 'Customercare' has the following attributes: 'no' of type int; 'address' of type str.
+'Warehouse' (role 'product31', cardinality 0..*) is associated with 'Product' (role 'warehouse30', cardinality 0..*).
+'PAYS_THE_BILL_UseCase' (role 'cUSTOMER11', cardinality 0..*) is associated with 'CUSTOMER_Actor' (role 'pAYS_THE_BILL10', cardinality 0..*).
+'ADMINISTRATOR_Actor' (role 'sELECTS_THE_MODE_OF_PAYMENT15', cardinality 0..*) is associated with 'SELECTS_THE_MODE_OF_PAYMENT_UseCase' (role 'aDMINISTRATOR14', cardinality 0..*).
+'ADMINISTRATOR_Actor' (role 'sUPPORT_AND_FEEDBACK23', cardinality 0..*) is associated with 'SUPPORT_AND_FEEDBACK_UseCase' (role 'aDMINISTRATOR22', cardinality 0..*).
+'SELECTS_THE_ITEMS_SERVICE_UseCase' (role 'cUSTOMER5', cardinality 0..*) is associated with 'CUSTOMER_Actor' (role 'sELECTS_THE_ITEMS_SERVICE4', cardinality 0..*).
+'Customercare' (role 'customer27', cardinality 0..*) is associated with 'Customer' (role 'customercare26', cardinality 0..*).
+'WEB_DEVELOPER_Actor' (role 'cREATES_THE_WEBSITE1', cardinality 0..*) is associated with 'CREATES_THE_WEBSITE_UseCase' (role 'wEB_DEVELOPER0', cardinality 0..*).
+'ADMINISTRATOR_Actor' (role 'dELIVERS_THE_PRODUCT19', cardinality 0..*) is associated with 'DELIVERS_THE_PRODUCT_UseCase' (role 'aDMINISTRATOR18', cardinality 0..*).
+'SELECTS_THE_MODE_OF_PAYMENT_UseCase' (role 'cUSTOMER9', cardinality 0..*) is associated with 'CUSTOMER_Actor' (role 'sELECTS_THE_MODE_OF_PAYMENT8', cardinality 0..*).
+'CUSTOMER_Actor' (role 'sUPPORT_AND_FEEDBACK12', cardinality 0..*) is associated with 'SUPPORT_AND_FEEDBACK_UseCase' (role 'cUSTOMER13', cardinality 0..*).
+'Shipment' (role 'warehouse29', cardinality 0..*) is associated with 'Warehouse' (role 'shipment28', cardinality 0..*).
+'VISITS_THE_WEBSITE_UseCase' (role 'cUSTOMER3', cardinality 0..*) is associated with 'CUSTOMER_Actor' (role 'vISITS_THE_WEBSITE2', cardinality 0..*).
+'ADDS_ITEMS_SERVICE_TO_CART_UseCase' (role 'cUSTOMER7', cardinality 0..*) is associated with 'CUSTOMER_Actor' (role 'aDDS_ITEMS_SERVICE_TO_CART6', cardinality 0..*).
+'ADMINISTRATOR_Actor' (role 'mAINTAINS_THE_PRODUCTS_SERVICES21', cardinality 0..*) is associated with 'MAINTAINS_THE_PRODUCTS_SERVICES_UseCase' (role 'aDMINISTRATOR20', cardinality 0..*).
+'ADMINISTRATOR_Actor' (role 'pAYS_THE_BILL17', cardinality 0..*) is associated with 'PAYS_THE_BILL_UseCase' (role 'aDMINISTRATOR16', cardinality 0..*).
+'Order' (role 'pRODUCT24', cardinality 0..*) is associated with 'Product' (role 'oRDER25', cardinality 0..*).

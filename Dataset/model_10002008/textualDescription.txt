@@ -1,0 +1,16 @@
+The model has 15 class(es).
+The class 'genmymodelreverse_java_awt_event_KeyEvent' has no attributes.
+The class 'snake_GameScene' has the following attributes: 'bg' of type genmymodelreverse_java_awt_Image; 'B_HEIGHT' of type int; 'ALL_DOTS' of type int; 'level' of type int; 'B_WIDTH' of type int; 'DOT_SIZE' of type int; 'leftDirection' of type bool; 'serialVersionUID' of type int; 'apple_y' of type int; 'myScore' of type int; 'downDirection' of type bool; 'RAND_POS' of type int; 'DELAY' of type int; 'timer' of type genmymodelreverse_javax_swing_Timer; 'y' of type str; 'bodySegment' of type genmymodelreverse_java_awt_Image; 'head' of type genmymodelreverse_java_awt_Image; 'bodyLength' of type int; 'rightDirection' of type bool; 'apple_x' of type int; 'apple' of type genmymodelreverse_java_awt_Image; 'x' of type str; 'upDirection' of type bool; 'inGame' of type bool.
+The class 'genmymodelreverse_javax_swing_JFrame' has no attributes.
+The class 'genmymodelreverse_java_awt_event_ActionListener_Interface' has no attributes.
+The class 'genmymodelreverse_java_awt_event_KeyAdapter' has no attributes.
+The class 'snake_TAdapter' has no attributes.
+The class 'genmymodelreverse_javax_swing_Timer' has no attributes.
+The class 'genmymodelreverse_java_awt_event_ActionEvent' has no attributes.
+The class 'genmymodelreverse_java_io_IOException' has no attributes.
+The class 'genmymodelreverse_java_awt_Image' has no attributes.
+The class 'genmymodelreverse_java_nio_charset_Charset' has no attributes.
+The class 'snake_Main' has the following attributes: 'serialVersionUID' of type int.
+The class 'genmymodelreverse_java_awt_Graphics' has no attributes.
+The class 'genmymodelreverse_javax_swing_JPanel' has no attributes.
+The class 'snake_Backgrounds' has the following attributes: 'backgrounds' of type genmymodelreverse_java_awt_Image.

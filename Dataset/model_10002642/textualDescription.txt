@@ -1,0 +1,30 @@
+The model has 17 class(es).
+The class 'View_monthly_rental_reports_external' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'Register_external' has no attributes.
+The class 'Book_external' has no attributes.
+The class 'Manager_Actor' has no attributes.
+The class 'Generate_bill_external' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'Maintain_car_information_external' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Car_Rental_Component' has no attributes.
+The class 'Insurance_company_Actor' has no attributes.
+The class 'Select_car_external' has no attributes.
+The class 'Pay_bill_external' has no attributes.
+The class 'View_daily_rental_reports_external' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'Search_car_external' has no attributes.
+The class 'Login_external' has no attributes.
+'Customer_Actor' (role 'book12', cardinality 0..*) is associated with 'Book_external' (role 'customer13', cardinality 0..*).
+'Search_car_external' (role 'customer9', cardinality 0..*) is associated with 'Customer_Actor' (role 'search_car8', cardinality 0..*).
+'Customer_Actor' (role 'register6', cardinality 0..*) is associated with 'Register_external' (role 'customer7', cardinality 0..*).
+'Maintain_car_information_external' (role 'employee18', cardinality 0..*) is associated with 'Employee_Actor' (role 'maintain_car_information19', cardinality 0..*).
+'Pay_bill_external' (role 'insurance_company1', cardinality 0..*) is associated with 'Insurance_company_Actor' (role 'pay_bill0', cardinality 0..*).
+'Customer_Actor' (role 'pay_bill2', cardinality 0..*) is associated with 'Pay_bill_external' (role 'customer3', cardinality 0..*).
+'Select_car_external' (role 'customer11', cardinality 0..*) is associated with 'Customer_Actor' (role 'select_car10', cardinality 0..*).
+'Manager_Actor' (role 'view_monthly_rental_reports15', cardinality 0..*) is associated with 'View_monthly_rental_reports_external' (role 'manager14', cardinality 0..*).
+'Employee_Actor' (role 'generate_bill22', cardinality 0..*) is associated with 'Generate_bill_external' (role 'employee23', cardinality 0..*).
+'View_daily_rental_reports_external' (role 'employee16', cardinality 0..*) is associated with 'Employee_Actor' (role 'view_daily_rental_reports17', cardinality 0..*).
+'Login_external' (role 'employee20', cardinality 0..*) is associated with 'Employee_Actor' (role 'login21', cardinality 0..*).
+'Login_external' (role 'customer5', cardinality 0..*) is associated with 'Customer_Actor' (role 'login4', cardinality 0..*).

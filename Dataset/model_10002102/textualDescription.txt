@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'Profile' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'Message' has the following attributes: 'maxChars' of type str.
+The class 'Registration' has the following attributes: 'userName' of type str; 'password' of type str; 'fullname' of type str.
+The class 'Hashtag' has the following attributes: 'name' of type str; 'numOfRepeat' of type int.
+The class 'Post' has the following attributes: 'privacy' of type str; 'info' of type str.
+The class 'User' has the following attributes: 'name' of type str.
+The class 'Login' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'Page' has the following attributes: 'name' of type str.
+'User' (role 'myprofile0', cardinality 0..*) is associated with 'Profile' (role 'user1', cardinality 0..*).
+'Registration' (role 'user7', cardinality 0..*) is associated with 'User' (role 'registeration6', cardinality 0..*).
+'Login' (role 'user5', cardinality 0..*) is associated with 'User' (role 'login4', cardinality 0..*).
+'Page' (role 'user13', cardinality 0..*) is associated with 'User' (role 'pages12', cardinality 0..*).
+'Message' (role 'user9', cardinality 0..*) is associated with 'User' (role 'message8', cardinality 0..*).
+'User' (role 'hashtag10', cardinality 0..*) is associated with 'Hashtag' (role 'user11', cardinality 0..*).
+'Post' (role 'user3', cardinality 0..*) is associated with 'User' (role 'post2', cardinality 0..*).

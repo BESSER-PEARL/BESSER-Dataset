@@ -1,0 +1,20 @@
+The model has 19 class(es).
+The class 'SupplierItemDTO' has no attributes.
+The class 'StockLevelDataService' has no attributes.
+The class 'StockLevelHeaderValidator' has no attributes.
+The class 'UserSupplierRepository' has no attributes.
+The class 'StockLevelImportResource' has no attributes.
+The class 'StockLevelReporterDTO' has no attributes.
+The class 'ImportDataValidator_Interface' has no attributes.
+The class 'StockLevelStatusHandler' has no attributes.
+The class 'StockLevelValidator' has no attributes.
+The class 'StockLevelHeaderType' has no attributes.
+The class 'AbstractCSVService_T__Interface' has no attributes.
+The class 'AbstractCSVResource' has no attributes.
+The class 'StockLevelDTO' has no attributes.
+The class 'IterableCSVToBean_T__Interface' has no attributes.
+The class 'RowError' has no attributes.
+The class 'ImportResultDTO' has no attributes.
+The class 'StockLevelImportService' has no attributes.
+The class 'StockLevelColumnMapper' has no attributes.
+The class 'HeaderValidator_Interface' has no attributes.

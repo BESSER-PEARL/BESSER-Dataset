@@ -1,0 +1,15 @@
+The model has 10 class(es).
+The class 'account_Account' has the following attributes: 'accountNum' of type str; 'userID' of type str; 'balance' of type float; 'type' of type account_AccountType; 'pin' of type str.
+The class 'transaction_DepositTransaction' has no attributes.
+The class 'transaction_Transaction' has the following attributes: 'transactionID' of type str; 'comment' of type str; 'type' of type transaction_TransactionType; 'destinationAccountNum' of type str; 'sourceAccountNum' of type str; 'description' of type str; 'amount' of type float; 'time' of type str.
+The class 'account_SavingsAccount' has the following attributes: 'interestRate' of type float.
+The class 'User' has the following attributes: 'username' of type str; 'lastLoginTime' of type str; 'password' of type str; 'userID' of type str; 'userRole' of type str.
+The class 'transaction_PaybillsTransaction' has no attributes.
+The class 'transaction_ExternalAccount' has the following attributes: 'associatedAccount' of type str; 'routingNum' of type str; 'accountNum' of type str.
+The class 'Profile' has the following attributes: 'firstname' of type str; 'phoneNumber' of type str; 'IDNum' of type str; 'country' of type str; 'state' of type str; 'zipcode' of type str; 'lastname' of type str; 'userID' of type str; 'email' of type str; 'city' of type str; 'dateOfBirth' of type date; 'IDType' of type int; 'address2' of type str; 'address1' of type str.
+The class 'transaction_TransferTransaction' has no attributes.
+The class 'transaction_Payee' has the following attributes: 'name' of type str; 'accountNum' of type str; 'address1' of type str; 'address2' of type str; 'phoneNum' of type str; 'state' of type str; 'city' of type str; 'email' of type str; 'zipcode' of type str; 'country' of type str.
+The enumeration 'account_AccountType' does not specify any literals.
+The enumeration 'transaction_TransactionType' does not specify any literals.
+The enumeration 'UserGroup' does not specify any literals.
+'transaction_Transaction' (role 'account1', cardinality 0..*) is associated with 'account_Account' (role 'transactions0', cardinality 0..*).

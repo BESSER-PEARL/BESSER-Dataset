@@ -1,0 +1,24 @@
+The model has 15 class(es).
+The class 'HomeOwner_Actor' has no attributes.
+The class 'Window_Sensor_Actor' has no attributes.
+The class 'Change_Password_external' has no attributes.
+The class 'Heat_Sensor_Actor' has no attributes.
+The class 'T' has no attributes.
+The class 'Set_time_on_burglar_sensors_external' has no attributes.
+The class 'Detected_external' has no attributes.
+The class 'Door_Sensor_Actor' has no attributes.
+The class 'Smoke_Sensor_Actor' has no attributes.
+The class 'Enable_Disable_Sensor_external' has no attributes.
+The class 'Home_safety_and_security_system_Component' has no attributes.
+The class 'Water_Sensor_Actor' has no attributes.
+The class 'Change_Settings_external' has no attributes.
+The class 'Movement_Sensor_Actor' has no attributes.
+The class 'Reset_Alarm_external' has no attributes.
+'HomeOwner_Actor' (role 'enable_Disable_Sensor8', cardinality 0..*) is associated with 'Enable_Disable_Sensor_external' (role 'homeOwner9', cardinality 0..*).
+'Detected_external' (role 'heat_Sensor4', cardinality 0..*) is associated with 'Heat_Sensor_Actor' (role 'detected5', cardinality 0..*).
+'Change_Settings_external' (role 'homeOwner11', cardinality 0..*) is associated with 'HomeOwner_Actor' (role 'change_Settings10', cardinality 0..*).
+'Detected_external' (role 'movement_Sensor0', cardinality 0..*) is associated with 'Movement_Sensor_Actor' (role 'detected1', cardinality 0..*).
+'HomeOwner_Actor' (role 'set_time_on_burglar_sensors12', cardinality 0..*) is associated with 'Set_time_on_burglar_sensors_external' (role 'homeOwner13', cardinality 0..*).
+'Water_Sensor_Actor' (role 'detected3', cardinality 0..*) is associated with 'Detected_external' (role 'water_Sensor2', cardinality 0..*).
+'HomeOwner_Actor' (role 'reset_Alarm14', cardinality 0..*) is associated with 'Reset_Alarm_external' (role 'homeOwner15', cardinality 0..*).
+'Change_Password_external' (role 'homeOwner7', cardinality 0..*) is associated with 'HomeOwner_Actor' (role 'change_Password6', cardinality 0..*).

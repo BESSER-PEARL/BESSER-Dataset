@@ -1,0 +1,107 @@
+The model has 85 class(es).
+The class 'genmymodelreverse_javax_servlet_http_Part_Interface' has no attributes.
+The class 'bean_CommentBean' has the following attributes: 'time' of type genmymodelreverse_java_sql_Time; 'emailFId' of type str; 'id' of type int; 'status' of type str; 'comment' of type str; 'imageFId' of type int; 'date' of type genmymodelreverse_java_sql_Date.
+The class 'bean_TableBean' has the following attributes: 'displayed' of type str; 'postId' of type int; 'friendEmail' of type str.
+The class 'genmymodelreverse_javax_servlet_ServletRequest_Interface' has no attributes.
+The class 'utility_GetTime' has no attributes.
+The class 'genmymodelreverse_java_sql_ResultSet_Interface' has no attributes.
+The class 'bean_FriendRequest' has the following attributes: 'date' of type genmymodelreverse_java_sql_Timestamp; 'email1' of type str; 'id' of type int; 'email2' of type str.
+The class 'genmymodelreverse_java_io_Reader' has no attributes.
+The class 'network_AcceptRequest' has the following attributes: 'serialVersionUID' of type int.
+The class 'network_UtilityPhone' has no attributes.
+The class 'bean_UserInfo' has the following attributes: 'dob' of type str; 'gender' of type str; 'password' of type str; 'email' of type str; 'last' of type str; 'first' of type str; 'local' of type str; 'phone' of type str; 'permanent' of type str.
+The class 'network_DateTest' has no attributes.
+The class 'genmymodelreverse_javax_servlet_http_HttpServletRequest_Interface' has no attributes.
+The class 'network_LoginProcess' has the following attributes: 'serialVersionUID' of type int.
+The class 'genmymodelreverse_javax_servlet_http_HttpServletResponse_Interface' has no attributes.
+The class 'genmymodelreverse_javax_servlet_ServletException' has no attributes.
+The class 'bean_LikeBean' has the following attributes: 'imageFId' of type int; 'id' of type int; 'date' of type genmymodelreverse_java_sql_Date; 'emailFId' of type str; 'time' of type genmymodelreverse_java_sql_Time.
+The class 'network_Like' has the following attributes: 'serialVersionUID' of type int.
+The class 'genmymodelreverse_java_sql_Timestamp' has no attributes.
+The class 'network_InsertComment' has the following attributes: 'serialVersionUID' of type int.
+The class 'bean_Friends' has the following attributes: 'email2' of type str; 'email1' of type str.
+The class 'utility_PostLikes' has no attributes.
+The class 'dao_FriendsDAO' has no attributes.
+The class 'network_Unfriend' has the following attributes: 'serialVersionUID' of type int.
+The class 'network_SendRequest' has the following attributes: 'serialVersionUID' of type int.
+The class 'genmymodelreverse_java_sql_Date' has no attributes.
+The class 'bean_ProfileInfo' has the following attributes: 'first' of type str; 'email' of type str; 'path' of type str; 'last' of type str.
+The class 'network_Unlike' has the following attributes: 'serialVersionUID' of type int.
+The class 'dao_ImagesDAO' has no attributes.
+The class 'bean_MessageLikeBean' has the following attributes: 'date' of type genmymodelreverse_java_sql_Date; 'time' of type genmymodelreverse_java_sql_Time; 'emailFId' of type str; 'id' of type int; 'messageFId' of type int.
+The class 'network_RejectRequest' has the following attributes: 'serialVersionUID' of type int.
+The class 'network_MessageLike' has the following attributes: 'serialVersionUID' of type int.
+The class 'dao_FriendRequestsDAO' has no attributes.
+The class 'file_ProfilePicture' has the following attributes: 'SAVE_DIR' of type str.
+The class 'utility_Category' has no attributes.
+The class 'network_RemoveMessage' has the following attributes: 'serialVersionUID' of type int.
+The class 'utility_IdDAO' has no attributes.
+The class 'utility_LikedOrNot' has no attributes.
+The class 'network_TransactionManager' has the following attributes: 'con' of type genmymodelreverse_java_sql_Connection_Interface.
+The class 'bean_ProfessionBean' has the following attributes: 'profession' of type str; 'email' of type str; 'workIn' of type str; 'qualification' of type str.
+The class 'genmymodelreverse_java_text_ParseException' has no attributes.
+The class 'network_UsersRegistered' has the following attributes: 'serialVersionUID' of type int.
+The class 'network_InsertCommentMess' has the following attributes: 'serialVersionUID' of type int.
+The class 'bean_Warning' has the following attributes: 'message' of type str; 'emailFId' of type str; 'date' of type genmymodelreverse_java_sql_Date; 'time' of type genmymodelreverse_java_sql_Time; 'id' of type int; 'category' of type str.
+The class 'genmymodelreverse_java_lang_StringBuilder' has no attributes.
+The class 'network_RemovePost' has the following attributes: 'serialVersionUID' of type int.
+The class 'file_FileUploadHandler' has the following attributes: 'SAVE_DIR' of type str; 'fileName1' of type str.
+The class 'dao_ProfileDAO' has no attributes.
+The class 'data_ClassifySentiment' has no attributes.
+The class 'network_UpdateProfession' has the following attributes: 'serialVersionUID' of type int.
+The class 'dao_WarningDAO' has no attributes.
+The class 'genmymodelreverse_java_io_IOException' has no attributes.
+The class 'genmymodelreverse_javax_servlet_Filter_Interface' has no attributes.
+The class 'dao_AdultDetectionDAO' has no attributes.
+The class 'utility_CheckSentiment' has no attributes.
+The class 'network_DeleteMessComment' has the following attributes: 'serialVersionUID' of type int.
+The class 'utility_FolderOperations' has no attributes.
+The class 'data_PostClass' has no attributes.
+The class 'dao_AccountBanDAO2' has no attributes.
+The class 'dao_UserDAO' has no attributes.
+The class 'dao_LikesDAO' has no attributes.
+The class 'dao_AccountBanDAO' has no attributes.
+The class 'network_NoCacheFilter' has no attributes.
+The class 'network_InsertMessage' has the following attributes: 'serialVersionUID' of type int.
+The class 'bean_CategoryCounts' has the following attributes: 'politicsCount' of type int; 'sportsCount' of type int; 'educationCount' of type int; 'entertainmentCount' of type int; 'historyCount' of type int.
+The class 'data_Sentiment' has no attributes.
+The class 'genmymodelreverse_java_sql_Time' has no attributes.
+The class 'genmymodelreverse_javax_servlet_ServletResponse_Interface' has no attributes.
+The class 'network_Delete' has the following attributes: 'serialVersionUID' of type int.
+The class 'utility_CategoriesAPI' has no attributes.
+The class 'network_UtilityEmail' has no attributes.
+The class 'genmymodelreverse_javax_servlet_FilterConfig_Interface' has no attributes.
+The class 'dao_ProfessionDAO' has no attributes.
+The class 'bean_MessageBean' has the following attributes: 'date' of type genmymodelreverse_java_sql_Date; 'emailFId' of type str; 'status' of type str; 'imageFId' of type int; 'id' of type int; 'time' of type genmymodelreverse_java_sql_Time; 'message' of type str; 'recFId' of type str; 'category' of type str.
+The class 'bean_MessageCommentBean' has the following attributes: 'id' of type int; 'date' of type genmymodelreverse_java_sql_Date; 'time' of type genmymodelreverse_java_sql_Time; 'status' of type str; 'emailFId' of type str; 'comment' of type str; 'messageFId' of type int.
+The class 'dao_MessageDAO' has no attributes.
+The class 'network_UserRegistration' has the following attributes: 'serialVersionUID' of type int; 'SAVE_DIR' of type str.
+The class 'network_MessageUnlike' has the following attributes: 'serialVersionUID' of type int.
+The class 'network_LogoutServlet' has no attributes.
+The class 'genmymodelreverse_javax_servlet_http_HttpServlet' has no attributes.
+The class 'dao_CommentDAO' has no attributes.
+The class 'genmymodelreverse_javax_servlet_FilterChain_Interface' has no attributes.
+The class 'dao_TableDAO' has no attributes.
+The class 'genmymodelreverse_java_sql_Connection_Interface' has no attributes.
+The class 'bean_ImageBean' has the following attributes: 'id' of type int; 'emailFId' of type str; 'imageName' of type str; 'messageFId' of type int; 'time' of type genmymodelreverse_java_sql_Time; 'date' of type genmymodelreverse_java_sql_Date.
+'network_TransactionManager' (role 'accountbandao236', cardinality 0..*) is associated with 'dao_AccountBanDAO2' (role 'tm37', cardinality 0..*).
+'network_InsertCommentMess' (role 'tm11', cardinality 0..*) is associated with 'network_TransactionManager' (role 'insertcommentmess10', cardinality 0..*).
+'network_TransactionManager' (role 'profiledao2', cardinality 0..*) is associated with 'dao_ProfileDAO' (role 'tm3', cardinality 0..*).
+'dao_ProfessionDAO' (role 'tm21', cardinality 0..*) is associated with 'network_TransactionManager' (role 'professiondao20', cardinality 0..*).
+'dao_ImagesDAO' (role 'tm13', cardinality 0..*) is associated with 'network_TransactionManager' (role 'imagesdao12', cardinality 0..*).
+'dao_FriendsDAO' (role 'tm31', cardinality 0..*) is associated with 'network_TransactionManager' (role 'friendsdao30', cardinality 0..*).
+'network_TransactionManager' (role 'insertcomment26', cardinality 0..*) is associated with 'network_InsertComment' (role 'tm27', cardinality 0..*).
+'dao_LikesDAO' (role 'tm35', cardinality 0..*) is associated with 'network_TransactionManager' (role 'likesdao34', cardinality 0..*).
+'network_LoginProcess' (role 'tm17', cardinality 0..*) is associated with 'network_TransactionManager' (role 'loginprocess16', cardinality 0..*).
+'file_ProfilePicture' (role 'tm15', cardinality 0..*) is associated with 'network_TransactionManager' (role 'profilepicture14', cardinality 0..*).
+'dao_AccountBanDAO' (role 'tm7', cardinality 0..*) is associated with 'network_TransactionManager' (role 'accountbandao6', cardinality 0..*).
+'dao_MessageDAO' (role 'tm33', cardinality 0..*) is associated with 'network_TransactionManager' (role 'messagedao32', cardinality 0..*).
+'dao_CommentDAO' (role 'tm19', cardinality 0..*) is associated with 'network_TransactionManager' (role 'commentdao18', cardinality 0..*).
+'dao_TableDAO' (role 'tm29', cardinality 0..*) is associated with 'network_TransactionManager' (role 'tabledao28', cardinality 0..*).
+'dao_AdultDetectionDAO' (role 'tm9', cardinality 0..*) is associated with 'network_TransactionManager' (role 'adultdetectiondao8', cardinality 0..*).
+'dao_FriendRequestsDAO' (role 'tm23', cardinality 0..*) is associated with 'network_TransactionManager' (role 'friendrequestsdao22', cardinality 0..*).
+'network_TransactionManager' (role 'warningdao0', cardinality 0..*) is associated with 'dao_WarningDAO' (role 'tm1', cardinality 0..*).
+'network_TransactionManager' (role 'insertmessage24', cardinality 0..*) is associated with 'network_InsertMessage' (role 'tm25', cardinality 0..*).
+'network_UsersRegistered' (role 'tm39', cardinality 0..*) is associated with 'network_TransactionManager' (role 'usersregistered38', cardinality 0..*).
+'dao_UserDAO' (role 'tm41', cardinality 0..*) is associated with 'network_TransactionManager' (role 'userdao40', cardinality 0..*).
+'network_TransactionManager' (role 'iddao4', cardinality 0..*) is associated with 'utility_IdDAO' (role 'tm5', cardinality 0..*).

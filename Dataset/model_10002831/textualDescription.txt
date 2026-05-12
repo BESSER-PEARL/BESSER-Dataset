@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'Company' has no attributes.
+The class 'Captain' has no attributes.
+The class 'CoPilot' has no attributes.
+The class 'Pilot' has no attributes.
+The class 'Airline' has the following attributes: 'id' of type str.
+The class 'Navigator' has no attributes.
+The class 'Flight' has the following attributes: 'arrivalTime' of type date; 'departureTime' of type date; 'id' of type int.
+The class 'Airport' has the following attributes: 'id' of type str.
+The class 'Aircraft' has the following attributes: 'flightState' of type FlightState; 'state' of type MaintenanceState.
+The enumeration 'FlightState' does not specify any literals.
+The enumeration 'MaintenanceState' does not specify any literals.
+'Airport' (role 'arrives_at5', cardinality 0..*) is associated with 'Flight' (role 'airport4', cardinality 0..*).
+'Flight' (role 'operates9', cardinality 0..*) is associated with 'Airline' (role 'flight8', cardinality 0..*).
+'Aircraft' (role 'requires14', cardinality 0..*) is associated with 'CoPilot' (role 'copilots15', cardinality 0..*).
+'Captain' (role 'captains17', cardinality 0..*) is associated with 'Aircraft' (role 'requires16', cardinality 0..*).
+'Flight' (role 'aircraft10', cardinality 0..*) is associated with 'Aircraft' (role 'uses11', cardinality 0..*).
+'Pilot' (role 'pilots13', cardinality 0..*) is associated with 'Aircraft' (role 'employs12', cardinality 0..*).
+'Airline' (role 'aircraft0', cardinality 0..*) is associated with 'Aircraft' (role 'owns1', cardinality 0..*).
+'Flight' (role 'airport6', cardinality 0..*) is associated with 'Airport' (role 'departs_from7', cardinality 0..*).
+'Company' (role 'pilot2', cardinality 0..*) is associated with 'Pilot' (role 'company3', cardinality 0..*).

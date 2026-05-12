@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'MessageQueue' has no attributes.
+The class 'JobReport' has no attributes.
+The class 'Report' has no attributes.
+The class 'ReportResult' has no attributes.

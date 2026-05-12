@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Elevator_Button' has the following attributes: 'floorID' of type int.
+The class 'ElevatorController' has the following attributes: 'elevators' of type Elevator; 'floors' of type Floor.
+The class 'OutOfServiceMechanism' has no attributes.
+The class 'Button_Interface' has no attributes.
+The class 'Floor' has the following attributes: 'floorID' of type int; 'floorButtons' of type FloorButton.
+The class 'Queue' has the following attributes: 'floorQueue' of type int; 'currentDirection' of type Enumeration.
+The class 'EmergencyButton' has no attributes.
+The class 'FloorButton' has the following attributes: 'direction' of type Enumeration.
+The class 'Elevator' has the following attributes: 'buttons' of type Elevator_Button; 'outOfServiceMech' of type OutOfServiceMechanism; 'isOutOfService' of type bool; 'queue' of type Queue; 'emergencyButton' of type EmergencyButton.
+The enumeration 'Enumeration' does not specify any literals.
+'Floor' (role 'elevatorController3', cardinality 0..*) is associated with 'ElevatorController' (role 'floor2', cardinality 0..*).
+'Elevator' (role 'outOfServiceMechanism12', cardinality 0..*) is associated with 'OutOfServiceMechanism' (role 'elevator13', cardinality 0..*).
+'Elevator' (role 'elevatorController1', cardinality 0..*) is associated with 'ElevatorController' (role 'elevator0', cardinality 0..*).
+'Queue' (role 'elevator7', cardinality 0..*) is associated with 'Elevator' (role 'queue6', cardinality 0..*).
+'Floor' (role 'floorButton4', cardinality 0..*) is associated with 'FloorButton' (role 'floor5', cardinality 0..*).
+'EmergencyButton' (role 'elevator11', cardinality 0..*) is associated with 'Elevator' (role 'emergencyButton10', cardinality 0..*).
+'Elevator' (role 'elevator_Button8', cardinality 0..*) is associated with 'Elevator_Button' (role 'elevator9', cardinality 0..*).

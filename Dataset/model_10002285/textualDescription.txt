@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Putovanje' has the following attributes: 'Grad' of type str; 'Dr_ava' of type str; 'PutovID' of type int.
+The class 'Kupac' has the following attributes: 'Adresa' of type str; 'Grad' of type str; 'OsigID' of type int; 'ImeKup' of type str; 'KupacID' of type int; 'PrezimeKup' of type str; 'eMail' of type str; 'JMBG' of type str; 'Mobilni' of type int.
+The class 'Aran_man' has the following attributes: 'DatumDolaska' of type str; 'KorisnikID' of type int; 'Cena' of type str; 'PutovID' of type int; 'SlobMesto' of type bool; 'KupacID' of type int; 'Aran_manID' of type int; 'DatumPolaska' of type str.
+The class 'Sme_taj' has the following attributes: 'LokacijaSme_taja' of type str; 'CenaSmestaja' of type str; 'ImeSme_taja' of type str; 'UslugaSme_taja' of type str; 'PutovID' of type int; 'Sme_tajID' of type int; 'DuzinaBoravka' of type int.
+The class 'Osiguranje' has the following attributes: 'PaketPokri_a' of type str; 'OsigID' of type int; 'KucaOsiguranje' of type str.
+The class 'Korisnik_IS' has the following attributes: 'PrezimeKorisnika' of type str; 'UserName' of type str; 'KorisnikID' of type int; 'Password' of type str; 'ImeKorisnika' of type str.
+'Korisnik_IS' (role 'aran_man9', cardinality 0..*) is associated with 'Aran_man' (role 'korisnik_IS8', cardinality 0..*).
+'Aran_man' (role 'putovanje2', cardinality 0..*) is associated with 'Putovanje' (role 'aran_man3', cardinality 0..*).
+'Osiguranje' (role 'kupac4', cardinality 0..*) is associated with 'Kupac' (role 'osiguranje5', cardinality 0..*).
+'Putovanje' (role 'sme_taj0', cardinality 0..*) is associated with 'Sme_taj' (role 'putovanje1', cardinality 0..*).
+'Kupac' (role 'aran_man6', cardinality 0..*) is associated with 'Aran_man' (role 'kupac7', cardinality 0..*).

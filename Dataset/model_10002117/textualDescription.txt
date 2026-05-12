@@ -1,0 +1,17 @@
+The model has 11 class(es).
+The class 'Add_notes' has the following attributes: 'Notes_taken' of type str; 'Student_ID' of type int; 'Course_Name' of type str.
+The class 'Interface2_Interface' has no attributes.
+The class 'Interface1_Interface' has no attributes.
+The class 'Show_all_grades' has the following attributes: 'Course_name' of type str; 'Student_ID' of type int; 'First_Name' of type str; 'Last_Name' of type str; 'Teacher' of type str; 'Grade_earned' of type str.
+The class 'Class' has no attributes.
+The class 'Login' has the following attributes: 'Password' of type str; 'Email' of type str; 'Student_ID' of type int.
+The class 'names' has no attributes.
+The class 'Home_page' has no attributes.
+The class 'Course' has the following attributes: 'Time' of type str; 'Day' of type str; 'Room' of type int; 'Course_name' of type str; 'Teacher' of type str; 'Course_Index' of type int; 'Student_ID' of type int; 'Status' of type str; 'Grade_earned' of type str.
+The class 'Interface_Interface' has no attributes.
+The class 'New_user' has the following attributes: 'Student_ID' of type int; 'Major' of type str; 'Contact_No' of type int; 'Last_Name' of type str; 'Student_ID1' of type int; 'First_name' of type str.
+'Home_page' (role 'login3', cardinality 0..*) is associated with 'Login' (role 'home_page2', cardinality 0..*).
+'New_user' (role 'login1', cardinality 0..*) is associated with 'Login' (role 'new_user0', cardinality 0..*).
+'Home_page' (role 'course6', cardinality 0..*) is associated with 'Course' (role 'home_page7', cardinality 0..*).
+'Show_all_grades' (role 'home_page5', cardinality 0..*) is associated with 'Home_page' (role 'show_all_grades4', cardinality 0..*).
+'Home_page' (role 'add_notes8', cardinality 0..*) is associated with 'Add_notes' (role 'home_page9', cardinality 0..*).

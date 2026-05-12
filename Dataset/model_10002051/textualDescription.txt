@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'BlackJack_House' has no attributes.
+The class 'BlackJack_Game' has the following attributes: 'win_loose' of type bool.
+The class 'BlackJack_Hand' has the following attributes: 'ArrayList' of type BlackJack_Card.
+The class 'BlackJack_Generic_Player' has the following attributes: 'valueOfHand' of type int.
+The class 'BlackJack_Deck' has the following attributes: 'nextItem' of type int.
+The class 'BlackJack_Player' has the following attributes: 'limit' of type int.
+The class 'BlackJack_Card' has the following attributes: 'value' of type int; 'color' of type str; 'rank' of type int.
+'BlackJack_Hand' (role 'card7', cardinality 0..*) is associated with 'BlackJack_Card' (role 'hand6', cardinality 0..*).
+'BlackJack_Game' (role 'player2', cardinality 0..*) is associated with 'BlackJack_Player' (role 'Game_Player_13', cardinality 0..*).
+'BlackJack_Deck' (role 'game4', cardinality 0..*) is associated with 'BlackJack_House' (role 'deck5', cardinality 0..*).
+'BlackJack_House' (role 'game1', cardinality 0..*) is associated with 'BlackJack_Game' (role 'house0', cardinality 0..*).

@@ -1,0 +1,37 @@
+The model has 19 class(es).
+The class 'Map' has no attributes.
+The class 'Start_new_game_UseCase' has no attributes.
+The class 'FoodCell' has no attributes.
+The class 'WallCell' has no attributes.
+The class 'SnakeBody' has no attributes.
+The class 'Play_game_UseCase' has no attributes.
+The class 'EmptyCell' has no attributes.
+The class 'View_high_score_UseCase' has no attributes.
+The class 'GameSession' has no attributes.
+The class 'Food1' has no attributes.
+The class 'Player' has no attributes.
+The class 'Wall' has no attributes.
+The class 'Square' has no attributes.
+The class 'Game' has no attributes.
+The class 'User_Actor' has no attributes.
+The class 'Snake1' has no attributes.
+The class 'Snake' has no attributes.
+The class 'MapCell' has no attributes.
+The class 'Food' has no attributes.
+The enumeration 'Enumeration' does not specify any literals.
+'SnakeBody' (role 'snake21', cardinality 0..*) is associated with 'Snake' (role 'snakeBody20', cardinality 0..*).
+'User_Actor' (role 'start_new_game0', cardinality 0..*) is associated with 'Start_new_game_UseCase' (role 'user1', cardinality 0..*).
+'User_Actor' (role 'view_high_score4', cardinality 0..*) is associated with 'View_high_score_UseCase' (role 'user5', cardinality 0..*).
+'GameSession' (role 'map8', cardinality 0..*) is associated with 'Map' (role 'gameSession9', cardinality 0..*).
+'Food' (role 'foodCell16', cardinality 0..*) is associated with 'FoodCell' (role 'food17', cardinality 0..*).
+'MapCell' (role 'map7', cardinality 0..*) is associated with 'Map' (role 'items6', cardinality 0..*).
+'Player' (role 'snake18', cardinality 0..*) is associated with 'Snake' (role 'player19', cardinality 0..*).
+'Square' (role 'food28', cardinality 0..*) is associated with 'Food1' (role 'square29', cardinality 0..*).
+'User_Actor' (role 'play_game2', cardinality 0..*) is associated with 'Play_game_UseCase' (role 'user3', cardinality 0..*).
+'GameSession' (role 'player12', cardinality 0..*) is associated with 'Player' (role 'gameSession13', cardinality 0..*).
+'Snake1' (role 'square26', cardinality 0..*) is associated with 'Square' (role 'game27', cardinality 0..*).
+'Wall' (role 'wallCell14', cardinality 0..*) is associated with 'WallCell' (role 'wall15', cardinality 0..*).
+'SnakeBody' (role 'mapCell23', cardinality 0..*) is associated with 'MapCell' (role 'snakeBody22', cardinality 0..*).
+'Snake' (role 'gameSession11', cardinality 0..*) is associated with 'GameSession' (role 'snake10', cardinality 0..*).
+'Food1' (role 'game31', cardinality 0..*) is associated with 'Game' (role 'food30', cardinality 0..*).
+'Snake1' (role 'game25', cardinality 0..*) is associated with 'Game' (role 'snake24', cardinality 0..*).

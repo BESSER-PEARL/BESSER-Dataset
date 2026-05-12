@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Payment' has the following attributes: 'comments' of type str; 'id' of type int; 'total' of type int.
+The class 'Customer' has the following attributes: 'id' of type int; 'isBan' of type bool; 'login' of type str; 'lastname' of type str; 'password' of type str; 'firstname' of type str; 'emailAddress' of type str.
+The class 'ShoppingCart' has the following attributes: 'creationDate' of type date; 'id' of type int.
+The class 'Item' has the following attributes: 'price' of type float; 'quantity' of type int; 'id' of type int.
+The class 'Order' has the following attributes: 'shippingAddress' of type str; 'finalTotal' of type float; 'id' of type int; 'status' of type OrderStatus.
+The class 'Product' has the following attributes: 'description' of type str; 'name' of type str; 'id' of type int.
+The class 'Account' has the following attributes: 'openDate' of type date; 'id' of type int; 'billingAddress' of type str.
+The enumeration 'OrderStatus' does not specify any literals.
+'Payment' (role 'acc6', cardinality 0..*) is associated with 'Account' (role 'payment7', cardinality 0..*).
+'Account' (role 'shoppingcart5', cardinality 0..*) is associated with 'ShoppingCart' (role 'accnt4', cardinality 0..*).
+'Order' (role 'payment8', cardinality 0..*) is associated with 'Payment' (role 'order9', cardinality 0..*).
+'Customer' (role 'account3', cardinality 0..*) is associated with 'Account' (role 'customer2', cardinality 0..*).
+'Item' (role 'product13', cardinality 0..*) is associated with 'Product' (role 'item12', cardinality 0..*).
+'Item' (role 'shoppingcart10', cardinality 0..*) is associated with 'ShoppingCart' (role 'item11', cardinality 0..*).
+'Customer' (role 'cart1', cardinality 0..*) is associated with 'ShoppingCart' (role 'c0', cardinality 0..*).

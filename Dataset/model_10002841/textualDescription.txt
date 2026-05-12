@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'Patient_Check_In_aPatient' has the following attributes: 'MRN_Number' of type int; 'Patient_s_Name' of type str; 'Symptoms' of type str; 'Phone_Number' of type int.
+The class 'Patient_Check_In_aNurse' has the following attributes: 'ID' of type int; 'Ranking' of type str; 'Name' of type str.
+The class 'Patient_Check_In_aDoctor' has the following attributes: 'Rank' of type str; 'ID' of type int; 'Specialization' of type str; 'Name' of type str.
+The class 'Patient_Check_In__aReceptionist' has the following attributes: 'Employee_ID' of type int; 'Name' of type str.
+'Patient_Check_In_aDoctor' (role 'patient0', cardinality 0..*) is associated with 'Patient_Check_In_aPatient' (role 'doctor1', cardinality 0..*).
+'Patient_Check_In__aReceptionist' (role 'patients3', cardinality 0..*) is associated with 'Patient_Check_In_aPatient' (role 'Receptionist2', cardinality 0..*).

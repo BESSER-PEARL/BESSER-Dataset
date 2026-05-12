@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'USER_TYPE' has no attributes.
+The class 'Admin' has no attributes.
+The class 'CATEGORY' has no attributes.
+The class 'User' has no attributes.
+The class 'POST' has the following attributes: 'name' of type str.
+'User' (role 'User3', cardinality 0..*) is associated with 'USER_TYPE' (role 'user2', cardinality 0..*).
+'Admin' (role 'admin1', cardinality 0..*) is associated with 'USER_TYPE' (role 'admin0', cardinality 0..*).

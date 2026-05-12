@@ -1,0 +1,18 @@
+The model has 11 class(es).
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'Sport' has the following attributes: 'id' of type int; 'nom' of type str.
+The class 'Lieu' has no attributes.
+The class 'C3' has no attributes.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'Personne' has the following attributes: 'prenom' of type str; 'id' of type int; 'nom' of type str.
+The class 'C2' has no attributes.
+The class 'R' has no attributes.
+The class 'C' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'Z' has no attributes.
+The class 'Y' has the following attributes: 'attY' of type str.
+'A' (role 'b4', cardinality 0..*) is associated with 'B' (role 'a5', cardinality 0..*).
+'C' (role 'b1', cardinality 0..*) is associated with 'B' (role 'c0', cardinality 0..*).
+'Lieu' (role 'personne8', cardinality 0..*) is associated with 'Personne' (role 'lieu9', cardinality 0..*).
+'R' (role 'a2', cardinality 0..*) is associated with 'A' (role 'r3', cardinality 0..*).
+'Sport' (role 'personne7', cardinality 0..*) is associated with 'Personne' (role 'sport6', cardinality 0..*).
+'Lieu' (role 'sport11', cardinality 0..*) is associated with 'Sport' (role 'lieu10', cardinality 0..*).

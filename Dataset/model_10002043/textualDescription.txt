@@ -1,0 +1,19 @@
+The model has 18 class(es).
+The class 'mypackage2_MyInterface_Interface' has no attributes.
+The class 'MyClass9' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'PolicyImage' has the following attributes: 'serialVersionID' of type str.
+The class 'MyClass7' has no attributes.
+The class 'MyClass5' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'mypackage2_MyClass2' has no attributes.
+The class 'BaseBO' has the following attributes: 'newInt' of type int; 'newBool' of type bool; 'testString' of type str.
+The class 'mypackage2_MyClass' has no attributes.
+The class 'Class' has no attributes.
+The class 'Location' has the following attributes: 'location' of type str.
+The class 'Location2' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'MyClass6' has no attributes.
+The class 'MyClass8' has no attributes.
+The class 'MyClass4' has no attributes.
+The class 'MyInterface_Interface' has no attributes.

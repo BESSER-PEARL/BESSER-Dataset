@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Players_Player' has the following attributes: 'hand' of type MainGame_Hand; 'name' of type str; 'bet' of type int.
+The class 'MainGame_Deck' has the following attributes: 'Cards' of type str.
+The class 'MainGame_GUI' has no attributes.
+The class 'MainGame_Hand' has the following attributes: 'straight' of type bool; 'fourKind' of type bool; 'straightFlush' of type bool; 'highCard' of type bool; 'fullHouse' of type bool; 'threeKing' of type bool; 'twoPair' of type bool; 'Hand' of type str; 'flush' of type bool; 'onePair' of type bool.
+The class 'MainGame_Main' has the following attributes: 'dealNumber' of type int; 'deck' of type MainGame_Deck.
+The class 'Cards_Card' has the following attributes: 'suit' of type str; 'value' of type int.
+'Cards_Card' (role 'deck0', cardinality 0..*) is associated with 'MainGame_Deck' (role 'card1', cardinality 0..*).
+'MainGame_Hand' (role 'player6', cardinality 0..*) is associated with 'Players_Player' (role 'hand7', cardinality 0..*).
+'MainGame_Deck' (role 'main2', cardinality 0..*) is associated with 'MainGame_Main' (role 'deck3', cardinality 0..*).
+'MainGame_Main' (role 'gUI9', cardinality 0..*) is associated with 'MainGame_GUI' (role 'main8', cardinality 0..*).
+'MainGame_Hand' (role 'card4', cardinality 0..*) is associated with 'Cards_Card' (role 'hand5', cardinality 0..*).

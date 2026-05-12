@@ -1,0 +1,28 @@
+The model has 13 class(es).
+The class 'Applicant' has the following attributes: 'Applied_Position' of type str; 'Password' of type str; 'Date_of_Birth' of type str; 'Address' of type str; 'Phone' of type str; 'Email' of type str; 'First_Name' of type str; 'Last_Name' of type str.
+The class 'Task' has the following attributes: 'Deadline' of type str; 'Task_Name' of type str; 'Name' of type str; 'Task_Detail' of type str.
+The class 'Registration' has the following attributes: 'Date' of type str; 'Skills___Requirement' of type str; 'Phone' of type str; 'Position_Type' of type str; 'Email' of type str; 'Applied_Position' of type str; 'Address' of type str; 'Name' of type str.
+The class 'Survey' has the following attributes: 'Score' of type str; 'Question' of type str; 'Name' of type str.
+The class 'Performance' has the following attributes: 'Coordination' of type str; 'Name' of type str; 'Punctuality' of type str; 'Target' of type str.
+The class 'Assessment' has the following attributes: 'Total_Score' of type str; 'Name' of type str; 'Type_of_Assessment' of type str.
+The class 'Admin' has the following attributes: 'qualification' of type str; 'name' of type str; 'address' of type str.
+The class 'Assessment__Self_Assessment' has the following attributes: 'Question' of type str; 'Name' of type str; 'Score' of type str.
+The class 'Position' has the following attributes: 'jobID' of type str; 'divisionName' of type str; 'positionName' of type str; 'positionID' of type int.
+The class 'New_Employee' has the following attributes: 'Place_of_Birth' of type str; 'Date_of_Birth' of type str; 'Position' of type str; 'Division' of type str; 'Name' of type str; 'Working_Since' of type str.
+The class 'Attendance' has the following attributes: 'Position' of type str; 'Date___Time' of type str; 'Details' of type str; 'Name' of type str.
+The class 'Login' has the following attributes: 'userid' of type str; 'password' of type str.
+The class 'Requirement' has the following attributes: 'Transcript' of type str; 'ID_Card' of type str; 'Diploma' of type str; 'Photo' of type str; 'Curriculum_Vitae' of type str.
+'New_Employee' (role 'applicant13', cardinality 0..*) is associated with 'Applicant' (role 'new_Employee12', cardinality 0..*).
+'Task' (role 'new_Employee14', cardinality 0..*) is associated with 'New_Employee' (role 'task15', cardinality 0..*).
+'Requirement' (role 'registration18', cardinality 0..*) is associated with 'Registration' (role 'requirement19', cardinality 0..*).
+'Admin' (role 'login0', cardinality 0..*) is associated with 'Login' (role 'admin1', cardinality 0..*).
+'Admin' (role 'registration6', cardinality 0..*) is associated with 'Registration' (role 'admin7', cardinality 0..*).
+'Assessment' (role 'attendance21', cardinality 0..*) is associated with 'Attendance' (role 'assessment20', cardinality 0..*).
+'Assessment' (role 'survey25', cardinality 0..*) is associated with 'Survey' (role 'assessment24', cardinality 0..*).
+'Registration' (role 'applicant5', cardinality 0..*) is associated with 'Applicant' (role 'registration4', cardinality 0..*).
+'Assessment' (role 'assessment__Self_Assessment23', cardinality 0..*) is associated with 'Assessment__Self_Assessment' (role 'assessment22', cardinality 0..*).
+'Assessment' (role 'performance27', cardinality 0..*) is associated with 'Performance' (role 'assessment26', cardinality 0..*).
+'New_Employee' (role 'registration11', cardinality 0..*) is associated with 'Registration' (role 'new_Employee10', cardinality 0..*).
+'Applicant' (role 'login2', cardinality 0..*) is associated with 'Login' (role 'applicant3', cardinality 0..*).
+'Position' (role 'applicant9', cardinality 0..*) is associated with 'Applicant' (role 'position8', cardinality 0..*).
+'Attendance' (role 'new_Employee17', cardinality 0..*) is associated with 'New_Employee' (role 'attendance16', cardinality 0..*).

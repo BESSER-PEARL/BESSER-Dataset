@@ -1,0 +1,14 @@
+The model has 8 class(es).
+The class 'Post' has no attributes.
+The class 'Login' has no attributes.
+The class 'Friend' has no attributes.
+The class 'Locatable_Interface' has no attributes.
+The class 'Home' has no attributes.
+The class 'Message' has no attributes.
+The class 'Locatable' has no attributes.
+The class 'Group' has no attributes.
+'Home' (role 'message8', cardinality 0..*) is associated with 'Message' (role 'user9', cardinality 0..*).
+'Login' (role 'user5', cardinality 0..*) is associated with 'Home' (role 'login4', cardinality 0..*).
+'Home' (role 'post2', cardinality 0..*) is associated with 'Post' (role 'user3', cardinality 0..*).
+'Home' (role 'group6', cardinality 0..*) is associated with 'Group' (role 'user7', cardinality 0..*).
+'Home' (role 'myprofile0', cardinality 0..*) is associated with 'Locatable' (role 'user1', cardinality 0..*).

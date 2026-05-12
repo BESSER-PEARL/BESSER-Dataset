@@ -1,0 +1,21 @@
+The model has 15 class(es).
+The class 'Trick' has the following attributes: 'Card_5_' of type str; 'trickWinner' of type Player_Interface.
+The class 'Table' has the following attributes: 'scoreSheet' of type ScoreSheet_Interface; 'Games_6___' of type Game; 'players_5_' of type Player_Interface; 'numOfGames' of type int; 'dealer' of type Player_Interface.
+The class 'ScoreSheet_Interface' has no attributes.
+The class 'Human' has the following attributes: 'hand' of type Hand; 'name' of type str.
+The class 'Hand' has the following attributes: 'cards_6_' of type str.
+The class 'IBlind_Interface' has no attributes.
+The class 'Deck_Interface' has no attributes.
+The class 'Piquet' has the following attributes: 'cards_32_' of type Card_Interface.
+The class 'Round' has the following attributes: 'trick' of type Trick; 'RoundStarter' of type Player_Interface; 'roundNum' of type int; 'turnToPlay' of type Player_Interface.
+The class 'Game' has the following attributes: 'partnerCard' of type Card_Interface; 'blind' of type IBlind_Interface; 'picker' of type Player_Interface; 'partner' of type Player_Interface; 'deck' of type Deck_Interface; 'rounds_6_' of type Round; 'isCracked' of type bool.
+The class 'Cards' has the following attributes: 'num' of type int; 'suit' of type Suits; 'power' of type int; 'value' of type int.
+The class 'Bot' has the following attributes: 'name' of type str; 'hand' of type Hand.
+The class 'Scores' has no attributes.
+The class 'Card_Interface' has no attributes.
+The class 'Player_Interface' has no attributes.
+The enumeration 'Suits' does not specify any literals.
+'Round' (role 'game3', cardinality 0..*) is associated with 'Game' (role 'round2', cardinality 0..*).
+'Hand' (role 'card4', cardinality 0..*) is associated with 'Card_Interface' (role 'hand5', cardinality 0..*).
+'Table' (role 'game1', cardinality 0..*) is associated with 'Game' (role 'table0', cardinality 0..*).
+'Round' (role 'trick27', cardinality 0..*) is associated with 'Trick' (role 'round6', cardinality 0..*).

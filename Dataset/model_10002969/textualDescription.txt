@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'test' has the following attributes: 'disease_name' of type str.
+The class 'billing' has the following attributes: 'amount' of type str; 'patient_name' of type str; 'bill_no' of type str.
+The class 'loan' has the following attributes: 'patient_name' of type str; 'amount' of type str.
+The class 'receptionist' has the following attributes: 'name' of type str; 'rid' of type str.
+The class 'doctor' has the following attributes: 'phone_no' of type str; 'dept' of type str; 'specilization' of type str; 'name' of type str; 'did' of type str.
+The class 'login' has the following attributes: 'name' of type str; 'id' of type str; 'pass' of type str.
+The class 'private' has no attributes.
+The class 'patient' has the following attributes: 'age' of type str; 'address' of type str; 'name' of type str; 'room_no' of type str; 'phone_no' of type str; 'pid' of type str.
+The class 'general' has no attributes.
+The class 'staff' has the following attributes: 'name' of type str.
+The class 'room' has the following attributes: 'room_no' of type str.
+The class 'department' has the following attributes: 'depart_id' of type str; 'loacation' of type str.
+'patient' (role 'room4', cardinality 0..*) is associated with 'room' (role 'patient5', cardinality 0..*).
+'receptionist' (role 'login10', cardinality 0..*) is associated with 'login' (role 'receptionist11', cardinality 0..*).
+'billing' (role 'patient9', cardinality 0..*) is associated with 'patient' (role 'billing8', cardinality 0..*).
+'department' (role 'staff0', cardinality 0..*) is associated with 'staff' (role 'department1', cardinality 0..*).
+'doctor' (role 'patient7', cardinality 0..*) is associated with 'patient' (role 'doctor6', cardinality 0..*).
+'doctor' (role 'test2', cardinality 0..*) is associated with 'test' (role 'doctor3', cardinality 0..*).
+'receptionist' (role 'billing12', cardinality 0..*) is associated with 'billing' (role 'receptionist13', cardinality 0..*).
+'loan' (role 'billing15', cardinality 0..*) is associated with 'billing' (role 'loan14', cardinality 0..*).

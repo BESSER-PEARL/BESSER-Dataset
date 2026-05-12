@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'ShoppingCart' has the following attributes: 'customerID' of type int; 'price' of type str; 'orderID' of type int.
+The class 'SessionManager' has the following attributes: 'userID' of type int; 'categoryName' of type str.
+The class 'User' has the following attributes: 'password' of type str; 'userID' of type int; 'loginStatus' of type str.
+The class 'Category' has the following attributes: 'categoryID' of type int; 'categoryName' of type str.
+The class 'AdvSearch' has the following attributes: 'bookHighCost' of type str; 'categoryID' of type str; 'bookTitle' of type str; 'bookAuthor' of type str; 'bookLowCost' of type str.
+The class 'Book' has the following attributes: 'categoryID' of type int; 'rating' of type int; 'productURL' of type str; 'authorName' of type str; 'price' of type str; 'notes' of type str; 'bookName' of type str; 'imageURL' of type str; 'bookID' of type int.
+The class 'BookSet' has the following attributes: 'bookID' of type int; 'bookName' of type str.
+The class 'BooksOrder' has the following attributes: 'orderID' of type int; 'customerID' of type int; 'price' of type str; 'quantity' of type int.
+The class 'Search' has the following attributes: 'categoryID' of type str; 'bookTitle' of type str.
+The class 'Customer' has the following attributes: 'password' of type str; 'address' of type str; 'CCinfo' of type str; 'email' of type str; 'customerID' of type str; 'name' of type str; 'phoneNo' of type int.
+The class 'Administrator' has the following attributes: 'adminID' of type int; 'name' of type str; 'email' of type str; 'password' of type str; 'phoneNo' of type str.
+'BookSet' (role 'advSearch12', cardinality 0..*) is associated with 'AdvSearch' (role 'bookSet13', cardinality 0..*).
+'BooksOrder' (role 'shoppingCart19', cardinality 0..*) is associated with 'ShoppingCart' (role 'booksOrder18', cardinality 0..*).
+'ShoppingCart' (role 'customer21', cardinality 0..*) is associated with 'Customer' (role 'shoppingCart20', cardinality 0..*).
+'Customer' (role 'booksOrder4', cardinality 0..*) is associated with 'BooksOrder' (role 'customer5', cardinality 0..*).
+'Category' (role 'sessionManager15', cardinality 0..*) is associated with 'SessionManager' (role 'category14', cardinality 0..*).
+'User' (role 'user0', cardinality 0..*) is associated with 'User' (role 'user1', cardinality 0..*).
+'BooksOrder' (role 'administrator8', cardinality 0..*) is associated with 'Administrator' (role 'booksOrder9', cardinality 0..*).
+'User' (role 'sessionManager3', cardinality 0..*) is associated with 'SessionManager' (role 'user2', cardinality 0..*).
+'Book' (role 'category17', cardinality 0..*) is associated with 'Category' (role 'book16', cardinality 0..*).
+'BooksOrder' (role 'book6', cardinality 0..*) is associated with 'Book' (role 'booksOrder7', cardinality 0..*).
+'BookSet' (role 'search10', cardinality 0..*) is associated with 'Search' (role 'bookSet11', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'Interface_Interface' has no attributes.
+The class 'ComputerPlayer' has the following attributes: 'difficulty' of type int.
+The class 'Human_Player_external' has no attributes.
+The class 'Cards_external' has no attributes.
+The class 'Business_Owner' has the following attributes: '_Card_cards_5_' of type int.
+The class 'Creator' has the following attributes: 'name' of type str; 'folded' of type bool; 'currentBet' of type float; 'money' of type float.
+The class 'Banker' has the following attributes: '_Card_cards_52_' of type int.
+The enumeration 'Enumeration' does not specify any literals.
+'ComputerPlayer' (role 'player1', cardinality 0..*) is associated with 'Creator' (role 'computerPlayer0', cardinality 0..*).
+'Business_Owner' (role 'cards5', cardinality 0..*) is associated with 'Cards_external' (role 'make_up_possible_hand4', cardinality 0..*).
+'Human_Player_external' (role 'player3', cardinality 0..*) is associated with 'Creator' (role 'human_Player2', cardinality 0..*).

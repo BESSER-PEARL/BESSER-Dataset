@@ -1,0 +1,21 @@
+The model has 14 class(es).
+The class 'Window_Sensor_Actor' has no attributes.
+The class 'Emergency_Services_Actor' has no attributes.
+The class 'Detect_Movement_external' has no attributes.
+The class 'Call_Fire_Brigade_external' has no attributes.
+The class 'Heat_Sensor_Actor' has no attributes.
+The class 'Door_Sensor_Actor' has no attributes.
+The class 'Alarm_System_Component' has no attributes.
+The class 'T' has no attributes.
+The class 'Detect_Smoke_external' has no attributes.
+The class 'Fire_Brigade_Actor' has no attributes.
+The class 'Police_Actor' has no attributes.
+The class 'Movement_Sensor_Actor' has no attributes.
+The class 'Smoke_Sensor_Actor' has no attributes.
+The class 'Detect_Heat_external' has no attributes.
+'Emergency_Services_Actor' (role 'call_Fire_Brigade1', cardinality 0..*) is associated with 'Call_Fire_Brigade_external' (role 'emergency_Services0', cardinality 0..*).
+'Smoke_Sensor_Actor' (role 'detect_Smoke8', cardinality 0..*) is associated with 'Detect_Smoke_external' (role 'smoke_Sensor9', cardinality 0..*).
+'Detect_Movement_external' (role 'movement_Sensor7', cardinality 0..*) is associated with 'Movement_Sensor_Actor' (role 'detect_Movement6', cardinality 0..*).
+'Detect_Movement_external' (role 'window_Sensor3', cardinality 0..*) is associated with 'Window_Sensor_Actor' (role 'detect_Movement2', cardinality 0..*).
+'Door_Sensor_Actor' (role 'detect_Movement4', cardinality 0..*) is associated with 'Detect_Movement_external' (role 'door_Sensor5', cardinality 0..*).
+'Detect_Heat_external' (role 'heat_Sensor11', cardinality 0..*) is associated with 'Heat_Sensor_Actor' (role 'detect_Heat10', cardinality 0..*).

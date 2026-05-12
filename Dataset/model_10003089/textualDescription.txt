@@ -1,0 +1,28 @@
+The model has 15 class(es).
+The class 'Hotel_Guest_Actor' has no attributes.
+The class 'Chef_Actor' has no attributes.
+The class 'Food_Serving_UseCase' has no attributes.
+The class 'Check_Out_UseCase' has no attributes.
+The class 'Book_Room_UseCase' has no attributes.
+The class 'Check_In_UseCase' has no attributes.
+The class 'Receptionist_Actor' has no attributes.
+The class 'Search_Avalibility_UseCase' has no attributes.
+The class 'HouseKeeping_Actor' has no attributes.
+The class 'Inventory' has the following attributes: 'Type' of type str; 'Status' of type str.
+The class 'Manager' has the following attributes: 'Name' of type str; 'Id' of type int; 'Phone_No' of type int.
+The class 'Cancel_Reservation_UseCase' has no attributes.
+The class 'Menu_Preparation_UseCase' has no attributes.
+The class 'Room_Cleaning_UseCase' has no attributes.
+The class 'Customer' has no attributes.
+'Hotel_Guest_Actor' (role 'search_Avalibility1', cardinality 0..*) is associated with 'Search_Avalibility_UseCase' (role 'hotel_Guest0', cardinality 0..*).
+'Hotel_Guest_Actor' (role 'check_In5', cardinality 0..*) is associated with 'Check_In_UseCase' (role 'hotel_Guest4', cardinality 0..*).
+'Hotel_Guest_Actor' (role 'room_Cleaning11', cardinality 0..*) is associated with 'Room_Cleaning_UseCase' (role 'hotel_Guest10', cardinality 0..*).
+'Receptionist_Actor' (role 'book_Room12', cardinality 0..*) is associated with 'Book_Room_UseCase' (role 'receptionist13', cardinality 0..*).
+'Receptionist_Actor' (role 'check_In15', cardinality 0..*) is associated with 'Check_In_UseCase' (role 'receptionist14', cardinality 0..*).
+'Room_Cleaning_UseCase' (role 'houseKeeping20', cardinality 0..*) is associated with 'HouseKeeping_Actor' (role 'room_Cleaning21', cardinality 0..*).
+'Chef_Actor' (role 'menu_Preparation19', cardinality 0..*) is associated with 'Menu_Preparation_UseCase' (role 'chef18', cardinality 0..*).
+'Check_Out_UseCase' (role 'receptionist22', cardinality 0..*) is associated with 'Receptionist_Actor' (role 'check_Out23', cardinality 0..*).
+'Food_Serving_UseCase' (role 'chef16', cardinality 0..*) is associated with 'Chef_Actor' (role 'food_Serving17', cardinality 0..*).
+'Hotel_Guest_Actor' (role 'food_Serving9', cardinality 0..*) is associated with 'Food_Serving_UseCase' (role 'hotel_Guest8', cardinality 0..*).
+'Book_Room_UseCase' (role 'hotel_Guest2', cardinality 0..*) is associated with 'Hotel_Guest_Actor' (role 'book_Room3', cardinality 0..*).
+'Hotel_Guest_Actor' (role 'check_Out7', cardinality 0..*) is associated with 'Check_Out_UseCase' (role 'hotel_Guest6', cardinality 0..*).

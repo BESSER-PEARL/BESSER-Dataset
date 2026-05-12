@@ -1,0 +1,48 @@
+The model has 30 class(es).
+The class 'Personne' has no attributes.
+The class 'C2' has the following attributes: 'attC2' of type bool; 'attC1' of type int.
+The class 'B' has the following attributes: 'attB' of type int.
+The class 'C1' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'Mariage1' has no attributes.
+The class 'Y' has the following attributes: 'attY' of type str.
+The class 'Z' has no attributes.
+The class 'C21' has no attributes.
+The class 'A31' has no attributes.
+The class 'A5' has the following attributes: 'attA' of type str.
+The class 'C5' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'B3' has no attributes.
+The class 'Mariage' has no attributes.
+The class 'A' has the following attributes: 'attA' of type str.
+The class 'B5' has the following attributes: 'attB' of type int.
+The class 'Union1' has the following attributes: 'dateUnion' of type str.
+The class 'B21' has no attributes.
+The class 'Interface_Interface' has no attributes.
+The class 'B2' has the following attributes: 'attB' of type int.
+The class 'PACS' has no attributes.
+The class 'A21' has no attributes.
+The class 'Union' has no attributes.
+The class 'R' has no attributes.
+The class 'A3' has the following attributes: 'c' of type B; 'd' of type int; 'b' of type bool.
+The class 'C3' has no attributes.
+The class 'A2' has the following attributes: 'attA' of type str.
+The class 'C' has the following attributes: 'attC1' of type int; 'attC2' of type bool.
+The class 'B1' has the following attributes: 'attB' of type int.
+The class 'C4' has no attributes.
+The class 'A1' has the following attributes: 'attA' of type str.
+'R' (role 'aR12', cardinality 0..*) is associated with 'A1' (role 'r13', cardinality 0..*).
+'A1' (role 'b14', cardinality 0..*) is associated with 'B1' (role 'a15', cardinality 0..*).
+'Personne' (role 'unionActuelle30', cardinality 0..*) is associated with 'Union1' (role 'personne31', cardinality 0..*).
+'A21' (role 'a18', cardinality 0..*) is associated with 'A3' (role 'a219', cardinality 0..*).
+'A' (role 'b0', cardinality 0..*) is associated with 'B' (role 'a1', cardinality 0..*).
+'B5' (role 'a25', cardinality 0..*) is associated with 'A5' (role 'b24', cardinality 0..*).
+'Personne' (role 'parents32', cardinality 0..*) is associated with 'Personne' (role 'enfants33', cardinality 0..*).
+'B' (role 'c2', cardinality 0..*) is associated with 'C' (role 'b3', cardinality 0..*).
+'A1' (role 'b8', cardinality 0..*) is associated with 'B1' (role 'a9', cardinality 0..*).
+'A3' (role 'c16', cardinality 0..*) is associated with 'B3' (role 'a17', cardinality 0..*).
+'A2' (role 'b4', cardinality 0..*) is associated with 'B2' (role 'a5', cardinality 0..*).
+'B1' (role 'c10', cardinality 0..*) is associated with 'C1' (role 'b11', cardinality 0..*).
+'Union1' (role 'pers29', cardinality 0..*) is associated with 'Personne' (role 'unions28', cardinality 0..*).
+'B5' (role 'c26', cardinality 0..*) is associated with 'C5' (role 'b27', cardinality 0..*).
+'Mariage' (role 'union20', cardinality 0..*) is associated with 'Union' (role 'mariage21', cardinality 0..*).
+'Union' (role 'personne23', cardinality 0..*) is associated with 'Personne' (role 'union22', cardinality 0..*).
+'C2' (role 'b7', cardinality 0..*) is associated with 'B2' (role 'c6', cardinality 0..*).

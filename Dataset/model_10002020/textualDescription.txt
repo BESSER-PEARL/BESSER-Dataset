@@ -1,0 +1,24 @@
+The model has 14 class(es).
+The class 'clinicasaudeperfeita_Paciente' has the following attributes: 'nome' of type str; 'cpf' of type str; 'cSus' of type str; 'idade' of type int.
+The class 'clinicasaudeperfeita_Medico' has the following attributes: 'agenda' of type clinicasaudeperfeita_Compromisso; 'idade' of type int; 'nome' of type str; 'cpf' of type str.
+The class 'clinicasaudeperfeita_Medico_Actor' has no attributes.
+The class 'clinicasaudeperfeita_Consulta' has the following attributes: 'problemasPaciente' of type str; 'data' of type str; 'exame' of type Exame; 'medico' of type clinicasaudeperfeita_Medico; 'orientacoesMedicas' of type str; 'hora' of type str; 'paciente' of type clinicasaudeperfeita_Paciente; 'medicamentos' of type clinicasaudeperfeita_Medicamento; 'realizada' of type bool; 'marcada' of type bool.
+The class 'clinicasaudeperfeita_Exame' has the following attributes: 'nome' of type str.
+The class 'clinicasaudeperfeita_Analisa_consulta_UseCase' has no attributes.
+The class 'clinicasaudeperfeita_Consulta_UseCase' has no attributes.
+The class 'clinicasaudeperfeita_Compromisso' has the following attributes: 'data' of type str; 'descricao' of type str; 'hora' of type str.
+The class 'Exame' has no attributes.
+The class 'clinicasaudeperfeita_Recepcionista' has the following attributes: 'idade' of type int; 'nome' of type str; 'cpf' of type str.
+The class 'clinicasaudeperfeita_Paciente_Actor' has no attributes.
+The class 'clinicasaudeperfeita_Medicamento' has the following attributes: 'nome' of type str.
+The class 'clinicasaudeperfeita_Recepcionista_Actor' has no attributes.
+The class 'clinicasaudeperfeita_Marca_consulta_UseCase' has no attributes.
+'clinicasaudeperfeita_Medico' (role 'prescrita2', cardinality 0..*) is associated with 'clinicasaudeperfeita_Consulta' (role 'prescreve3', cardinality 0..*).
+'clinicasaudeperfeita_Marca_consulta_UseCase' (role 'recepcionista17', cardinality 0..*) is associated with 'clinicasaudeperfeita_Recepcionista_Actor' (role 'marca_consulta16', cardinality 0..*).
+'clinicasaudeperfeita_Medico' (role 'tem5', cardinality 0..*) is associated with 'clinicasaudeperfeita_Compromisso' (role 'medico4', cardinality 0..*).
+'clinicasaudeperfeita_Medicamento' (role 'consulta6', cardinality 0..*) is associated with 'clinicasaudeperfeita_Consulta' (role 'prescreve7', cardinality 0..*).
+'clinicasaudeperfeita_Consulta' (role 'consultado1', cardinality 0..*) is associated with 'clinicasaudeperfeita_Paciente' (role '__consultado0', cardinality 0..*).
+'clinicasaudeperfeita_Exame' (role 'consulta8', cardinality 0..*) is associated with 'clinicasaudeperfeita_Consulta' (role 'solicita9', cardinality 0..*).
+'clinicasaudeperfeita_Analisa_consulta_UseCase' (role 'paciente13', cardinality 0..*) is associated with 'clinicasaudeperfeita_Paciente_Actor' (role 'analizaConsulta12', cardinality 0..*).
+'clinicasaudeperfeita_Medico_Actor' (role 'consulta15', cardinality 0..*) is associated with 'clinicasaudeperfeita_Consulta_UseCase' (role 'medico14', cardinality 0..*).
+'clinicasaudeperfeita_Consulta' (role 'recepcionista11', cardinality 0..*) is associated with 'clinicasaudeperfeita_Recepcionista' (role 'consulta10', cardinality 0..*).

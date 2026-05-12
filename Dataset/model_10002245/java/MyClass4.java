@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class MyClass4  {
+
+
+
+
+
+
+    private MyClass2 myclass2;
+
+
+    public MyClass4(
+    ) {
+    }
+
+
+
+    public MyClass2 getMyclass2() {
+        return myclass2;
+    }
+
+    public void setMyclass2(MyClass2 myclass2) {
+        this.myclass2 = myclass2;
+    }
+
+}

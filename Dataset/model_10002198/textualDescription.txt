@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Main' has the following attributes: 'cartes' of type str; 'bet' of type str; 'value' of type int.
+The class 'Joueur' has the following attributes: 'nom' of type str; 'main' of type str; 'playerbank' of type int.
+The class 'Croupier' has the following attributes: 'main' of type str.
+The class 'Carte' has the following attributes: 'ordre' of type str; 'suit' of type int.
+The class 'Blackjack' has the following attributes: 'croupier' of type Croupier; 'joueurs' of type str.
+'Joueur' (role 'hand6', cardinality 0..*) is associated with 'Main' (role 'player7', cardinality 0..*).
+'Main' (role 'dealer5', cardinality 0..*) is associated with 'Croupier' (role 'hand4', cardinality 0..*).
+'Blackjack' (role 'player8', cardinality 0..*) is associated with 'Joueur' (role 'blackjack9', cardinality 0..*).
+'Main' (role 'card1', cardinality 0..*) is associated with 'Carte' (role 'hand0', cardinality 0..*).
+'Croupier' (role 'blackjack3', cardinality 0..*) is associated with 'Blackjack' (role 'dealer2', cardinality 0..*).

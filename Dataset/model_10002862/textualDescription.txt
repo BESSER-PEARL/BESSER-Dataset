@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'Home_Security' has no attributes.
+The class 'Event_Log' has the following attributes: 'attribute' of type str.
+The class 'Light_Sensor' has the following attributes: 'attribute' of type str.
+The class 'Server' has the following attributes: 'attribute' of type str.
+The class 'Temperature_sensor' has the following attributes: 'attribute' of type str.
+The class 'Lock_doors_sensors' has the following attributes: 'attribute' of type str.
+The class 'Camera_sensor' has the following attributes: 'Image_ID' of type int; 'Video_ID' of type int.
+'Server' (role 'home_Security1', cardinality 0..*) is associated with 'Home_Security' (role 'server0', cardinality 0..*).
+'Camera_sensor' (role 'home_Security3', cardinality 0..*) is associated with 'Home_Security' (role 'camera2', cardinality 0..*).
+'Home_Security' (role 'doors8', cardinality 0..*) is associated with 'Lock_doors_sensors' (role 'home_Security9', cardinality 0..*).
+'Home_Security' (role 'temperature_sensor10', cardinality 0..*) is associated with 'Temperature_sensor' (role 'home_Security11', cardinality 0..*).
+'Event_Log' (role 'home_Security5', cardinality 0..*) is associated with 'Home_Security' (role 'event_Log4', cardinality 0..*).
+'Home_Security' (role 'light_Sensor6', cardinality 0..*) is associated with 'Light_Sensor' (role 'home_Security7', cardinality 0..*).

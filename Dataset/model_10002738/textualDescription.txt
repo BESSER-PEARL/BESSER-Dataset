@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'DataBase_Component' has no attributes.
+The class 'Patient' has the following attributes: 'id' of type int; 'roomno' of type int; 'name' of type str; 'telno' of type int; 'age' of type int; 'address' of type str; 'sex' of type str.
+The class 'Login_Component' has no attributes.
+The class 'Availability_Component' has no attributes.
+The class 'Admin' has the following attributes: 'name' of type str; 'id' of type int; 'doctorid' of type int.
+The class 'Doctor' has the following attributes: 'address' of type str; 'name' of type str; 'specialization' of type str; 'department' of type str; 'docid' of type int; 'phno' of type int.
+'Doctor' (role 'depmt2', cardinality 0..*) is associated with 'Admin' (role 'doctor3', cardinality 0..*).
+'Admin' (role 'patient4', cardinality 0..*) is associated with 'Patient' (role 'department5', cardinality 0..*).
+'Doctor' (role 'patients0', cardinality 0..*) is associated with 'Patient' (role 'doctors1', cardinality 0..*).

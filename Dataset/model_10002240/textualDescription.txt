@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'Car1' has the following attributes: 'helmSide' of type str; 'doors' of type int.
+The class 'Boat' has the following attributes: 'maxCarryingWeight' of type int.
+The class 'Airplane' has the following attributes: 'maxAttitude' of type int; 'maxCarryingWeight' of type int.
+The class 'Car' has the following attributes: 'height' of type int; 'length' of type int; 'wheels' of type str; 'model' of type str; 'width' of type int; 'engine' of type str; 'doors' of type int.
+The class 'Train' has the following attributes: 'type' of type str; 'trucks' of type int.
+The class 'Vehicle' has the following attributes: 'price' of type str; 'brand' of type str; 'engine' of type str.

@@ -1,0 +1,41 @@
+The model has 17 class(es).
+The class 'Student' has the following attributes: 'SGender' of type str; 'SAge' of type int.
+The class 'User' has the following attributes: 'Password' of type str; 'Fname' of type str; 'email' of type str; 'Lname' of type str.
+The class 'Exam' has the following attributes: 'ETime' of type str; 'EName' of type str; 'MaxGrade' of type str.
+The class 'Binary_File' has no attributes.
+The class 'Finance' has no attributes.
+The class 'Report' has no attributes.
+The class 'Admin' has no attributes.
+The class 'Instructor' has no attributes.
+The class 'Person' has the following attributes: 'PhoneNum' of type str; 'Id' of type str.
+The class 'Course' has the following attributes: 'CPrice' of type str; 'CInstructor' of type str; 'CCode' of type str; 'CName' of type str.
+The class 'Exceptions' has no attributes.
+The class 'Stuff' has the following attributes: 'WorkHours' of type str; 'Salary' of type str.
+The class 'T' has no attributes.
+The class 'Email' has no attributes.
+The class 'str' has no attributes.
+The class 'Department' has the following attributes: 'deptId' of type str; 'deptName' of type str.
+The class 'ILogin_Interface' has no attributes.
+'Report' (role 'student15', cardinality 0..*) is associated with 'Student' (role 'report14', cardinality 0..*).
+'Course' (role 'report19', cardinality 0..*) is associated with 'Report' (role 'course18', cardinality 0..*).
+'Course' (role 'student35', cardinality 0..*) is associated with 'Student' (role 'course34', cardinality 0..*).
+'Binary_File' (role 'report42', cardinality 0..*) is associated with 'Report' (role 'binary_File43', cardinality 0..*).
+'Admin' (role 'student26', cardinality 0..*) is associated with 'Student' (role 'admin27', cardinality 0..*).
+'Admin' (role 'email20', cardinality 0..*) is associated with 'Email' (role 'admin21', cardinality 0..*).
+'Department' (role 'binary_File12', cardinality 0..*) is associated with 'Binary_File' (role 'department13', cardinality 0..*).
+'Course' (role 'exam9', cardinality 0..*) is associated with 'Exam' (role 'course8', cardinality 0..*).
+'Admin' (role 'report16', cardinality 0..*) is associated with 'Report' (role 'admin17', cardinality 0..*).
+'ILogin_Interface' (role 'email36', cardinality 0..*) is associated with 'Email' (role 'iLogin37', cardinality 0..*).
+'Binary_File' (role 'user5', cardinality 0..*) is associated with 'User' (role 'binary_File4', cardinality 0..*).
+'Binary_File' (role 'exam45', cardinality 0..*) is associated with 'Exam' (role 'binary_File44', cardinality 0..*).
+'Student' (role 'email23', cardinality 0..*) is associated with 'Email' (role 'student22', cardinality 0..*).
+'ILogin_Interface' (role 'user3', cardinality 0..*) is associated with 'User' (role 'User_ILogin_02', cardinality 0..*).
+'Course' (role 'report38', cardinality 0..*) is associated with 'Report' (role 'course39', cardinality 0..*).
+'Instructor' (role 'admin29', cardinality 0..*) is associated with 'Admin' (role 'instructor28', cardinality 0..*).
+'Instructor' (role 'department0', cardinality 0..*) is associated with 'Department' (role 'instructor1', cardinality 0..*).
+'Course' (role 'binary_File6', cardinality 0..*) is associated with 'Binary_File' (role 'course7', cardinality 0..*).
+'User' (role 'exceptions10', cardinality 0..*) is associated with 'Exceptions' (role 'user11', cardinality 0..*).
+'Finance' (role 'report40', cardinality 0..*) is associated with 'Report' (role 'finance41', cardinality 0..*).
+'Department' (role 'course32', cardinality 0..*) is associated with 'Course' (role 'department33', cardinality 0..*).
+'Course' (role 'admin31', cardinality 0..*) is associated with 'Admin' (role 'course30', cardinality 0..*).
+'Finance' (role 'student24', cardinality 0..*) is associated with 'Student' (role 'finance25', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 13 class(es).
+The class 'Authenticate_staff' has the following attributes: 'Password' of type str; 'Authendication_Mood' of type str; 'UserName' of type str.
+The class 'Employee_Management_System_Component' has no attributes.
+The class 'Salary_Management_UseCase' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Login_external' has no attributes.
+The class 'Authentication_UseCase' has no attributes.
+The class 'Salary' has the following attributes: 'Sly_Decrement' of type float; 'Sly_Increment' of type float; 'OverTime' of type str; 'Emp_Id' of type int; 'Sly_Basic' of type float; 'Sly_Netgross' of type float.
+The class 'Login' has the following attributes: 'UserName' of type str; 'Password' of type str.
+The class 'Employee' has the following attributes: 'Emp_Address' of type str; 'Emp_DOB' of type date; 'Emp_NIC' of type str; 'Emp_Position' of type str; 'Emp_Department' of type str; 'Emp_Salary' of type float; 'Emp_Date_Of_Joint' of type date; 'Emp_Name' of type str; 'Emp_ContactNo' of type str; 'Emp_Email' of type str; 'Emp_Id' of type int.
+The class 'Employee_Actor' has no attributes.
+The class 'Leave' has the following attributes: 'leave_id' of type int; 'Leave_ApplyDate' of type date; 'Leave_StartDate' of type date; 'Leave_Title' of type str; 'Leave_NoOfDays' of type int; 'Leave_Status' of type str; 'Emp_Id' of type int; 'Leave_EndDate' of type date; 'Leave_detail' of type str.
+The class 'Administrator_Actor' has no attributes.
+The class 'Attendance' has the following attributes: 'Leaving_Time' of type str; 'Attend_date' of type date; 'AttendTime' of type str; 'Emp_id' of type str.
+'Login_external' (role 'employee7', cardinality 0..*) is associated with 'Employee_Actor' (role 'login6', cardinality 0..*).
+'Employee_Actor' (role 'logout8', cardinality 0..*) is associated with 'Logout_external' (role 'employee9', cardinality 0..*).
+'Leave' (role 'employee1', cardinality 0..*) is associated with 'Employee' (role 'leave0', cardinality 0..*).
+'Employee' (role 'salary4', cardinality 0..*) is associated with 'Salary' (role 'employee5', cardinality 0..*).
+'Employee' (role 'attendance2', cardinality 0..*) is associated with 'Attendance' (role 'employee3', cardinality 0..*).

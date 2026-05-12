@@ -1,0 +1,13 @@
+The model has 10 class(es).
+The class 'LocationManager' has no attributes.
+The class 'LocationConnector_Interface' has no attributes.
+The class 'MyClass3' has no attributes.
+The class 'PlaceDetail' has the following attributes: 'Category' of type Category; 'DistanceInfo' of type DistanceInfo.
+The class 'Location' has the following attributes: 'Latitude' of type str; 'Longitude' of type str.
+The class 'DistanceInfo' has the following attributes: 'Distaince' of type str; 'ShortestPath' of type str; 'TraficInfo' of type str.
+The class 'MyClass' has no attributes.
+The class 'MyClass2' has no attributes.
+The class 'Category' has the following attributes: 'Name' of type str; 'Type' of type str; 'Id' of type int.
+The class 'Place' has the following attributes: 'Details' of type str; 'Name' of type str.
+The enumeration 'Enumeration2' does not specify any literals.
+The enumeration 'Enumeration' does not specify any literals.

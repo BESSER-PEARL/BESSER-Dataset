@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     int___1,
@@ -178,16 +178,16 @@ def test_actioncard_constructor_exists():
 def test_actioncard_constructor_args():
     sig = inspect.signature(ActionCard.__init__)
     params = list(sig.parameters.keys())
-    assert "ActionCard_Color_String_" in params, "Missing parameter 'ActionCard_Color_String_'"
-    assert "_attr" in params, "Missing parameter '_attr'"
     assert "ActionCard__" in params, "Missing parameter 'ActionCard__'"
+    assert "_attr" in params, "Missing parameter '_attr'"
+    assert "ActionCard_Color_String_" in params, "Missing parameter 'ActionCard_Color_String_'"
 
-def test_actioncard_has_ActionCard_Color_String_():
-    assert hasattr(ActionCard, "ActionCard_Color_String_")
+def test_actioncard_has_ActionCard__():
+    assert hasattr(ActionCard, "ActionCard__")
     descriptor = None
     for klass in ActionCard.__mro__:
-        if "ActionCard_Color_String_" in klass.__dict__:
-            descriptor = klass.__dict__["ActionCard_Color_String_"]
+        if "ActionCard__" in klass.__dict__:
+            descriptor = klass.__dict__["ActionCard__"]
             break
     assert isinstance(descriptor, property)
 
@@ -200,12 +200,12 @@ def test_actioncard_has__attr():
             break
     assert isinstance(descriptor, property)
 
-def test_actioncard_has_ActionCard__():
-    assert hasattr(ActionCard, "ActionCard__")
+def test_actioncard_has_ActionCard_Color_String_():
+    assert hasattr(ActionCard, "ActionCard_Color_String_")
     descriptor = None
     for klass in ActionCard.__mro__:
-        if "ActionCard__" in klass.__dict__:
-            descriptor = klass.__dict__["ActionCard__"]
+        if "ActionCard_Color_String_" in klass.__dict__:
+            descriptor = klass.__dict__["ActionCard_Color_String_"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,10 +222,28 @@ def test_numbercard_constructor_exists():
 def test_numbercard_constructor_args():
     sig = inspect.signature(NumberCard.__init__)
     params = list(sig.parameters.keys())
+    assert "NumberCard__" in params, "Missing parameter 'NumberCard__'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "NumberCard_Color__String_" in params, "Missing parameter 'NumberCard_Color__String_'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "NumberCard__" in params, "Missing parameter 'NumberCard__'"
+
+def test_numbercard_has_NumberCard__():
+    assert hasattr(NumberCard, "NumberCard__")
+    descriptor = None
+    for klass in NumberCard.__mro__:
+        if "NumberCard__" in klass.__dict__:
+            descriptor = klass.__dict__["NumberCard__"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_numbercard_has_attribute():
+    assert hasattr(NumberCard, "attribute")
+    descriptor = None
+    for klass in NumberCard.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_numbercard_has_NumberCard_Color__String_():
     assert hasattr(NumberCard, "NumberCard_Color__String_")
@@ -245,24 +263,6 @@ def test_numbercard_has_attribute2():
             break
     assert isinstance(descriptor, property)
 
-def test_numbercard_has_attribute():
-    assert hasattr(NumberCard, "attribute")
-    descriptor = None
-    for klass in NumberCard.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_numbercard_has_NumberCard__():
-    assert hasattr(NumberCard, "NumberCard__")
-    descriptor = None
-    for klass in NumberCard.__mro__:
-        if "NumberCard__" in klass.__dict__:
-            descriptor = klass.__dict__["NumberCard__"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_card_is_not_abstract():
@@ -276,48 +276,12 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
-    assert "Card_Color__int__String_" in params, "Missing parameter 'Card_Color__int__String_'"
-    assert "setColor_Color_" in params, "Missing parameter 'setColor_Color_'"
-    assert "getColor__" in params, "Missing parameter 'getColor__'"
-    assert "Card__1" in params, "Missing parameter 'Card__1'"
     assert "setValue" in params, "Missing parameter 'setValue'"
     assert "Card__" in params, "Missing parameter 'Card__'"
-
-def test_card_has_Card_Color__int__String_():
-    assert hasattr(Card, "Card_Color__int__String_")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "Card_Color__int__String_" in klass.__dict__:
-            descriptor = klass.__dict__["Card_Color__int__String_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_card_has_setColor_Color_():
-    assert hasattr(Card, "setColor_Color_")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "setColor_Color_" in klass.__dict__:
-            descriptor = klass.__dict__["setColor_Color_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_card_has_getColor__():
-    assert hasattr(Card, "getColor__")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "getColor__" in klass.__dict__:
-            descriptor = klass.__dict__["getColor__"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_card_has_Card__1():
-    assert hasattr(Card, "Card__1")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "Card__1" in klass.__dict__:
-            descriptor = klass.__dict__["Card__1"]
-            break
-    assert isinstance(descriptor, property)
+    assert "getColor__" in params, "Missing parameter 'getColor__'"
+    assert "setColor_Color_" in params, "Missing parameter 'setColor_Color_'"
+    assert "Card__1" in params, "Missing parameter 'Card__1'"
+    assert "Card_Color__int__String_" in params, "Missing parameter 'Card_Color__int__String_'"
 
 def test_card_has_setValue():
     assert hasattr(Card, "setValue")
@@ -334,6 +298,42 @@ def test_card_has_Card__():
     for klass in Card.__mro__:
         if "Card__" in klass.__dict__:
             descriptor = klass.__dict__["Card__"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_getColor__():
+    assert hasattr(Card, "getColor__")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "getColor__" in klass.__dict__:
+            descriptor = klass.__dict__["getColor__"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_setColor_Color_():
+    assert hasattr(Card, "setColor_Color_")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "setColor_Color_" in klass.__dict__:
+            descriptor = klass.__dict__["setColor_Color_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_Card__1():
+    assert hasattr(Card, "Card__1")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "Card__1" in klass.__dict__:
+            descriptor = klass.__dict__["Card__1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_Card_Color__int__String_():
+    assert hasattr(Card, "Card_Color__int__String_")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "Card_Color__int__String_" in klass.__dict__:
+            descriptor = klass.__dict__["Card_Color__int__String_"]
             break
     assert isinstance(descriptor, property)
 
@@ -364,52 +364,16 @@ def test_gameelements_constructor_exists():
 def test_gameelements_constructor_args():
     sig = inspect.signature(GameElements.__init__)
     params = list(sig.parameters.keys())
-    assert "WildActions" in params, "Missing parameter 'WildActions'"
-    assert "CardNumber" in params, "Missing parameter 'CardNumber'"
-    assert "Actions" in params, "Missing parameter 'Actions'"
-    assert "CardColors" in params, "Missing parameter 'CardColors'"
     assert "CardsTotal" in params, "Missing parameter 'CardsTotal'"
     assert "Action" in params, "Missing parameter 'Action'"
-    assert "Numbers" in params, "Missing parameter 'Numbers'"
     assert "WildCardCol" in params, "Missing parameter 'WildCardCol'"
-    assert "OpeningHand" in params, "Missing parameter 'OpeningHand'"
+    assert "CardNumber" in params, "Missing parameter 'CardNumber'"
+    assert "CardColors" in params, "Missing parameter 'CardColors'"
     assert "Wild" in params, "Missing parameter 'Wild'"
-
-def test_gameelements_has_WildActions():
-    assert hasattr(GameElements, "WildActions")
-    descriptor = None
-    for klass in GameElements.__mro__:
-        if "WildActions" in klass.__dict__:
-            descriptor = klass.__dict__["WildActions"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gameelements_has_CardNumber():
-    assert hasattr(GameElements, "CardNumber")
-    descriptor = None
-    for klass in GameElements.__mro__:
-        if "CardNumber" in klass.__dict__:
-            descriptor = klass.__dict__["CardNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gameelements_has_Actions():
-    assert hasattr(GameElements, "Actions")
-    descriptor = None
-    for klass in GameElements.__mro__:
-        if "Actions" in klass.__dict__:
-            descriptor = klass.__dict__["Actions"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gameelements_has_CardColors():
-    assert hasattr(GameElements, "CardColors")
-    descriptor = None
-    for klass in GameElements.__mro__:
-        if "CardColors" in klass.__dict__:
-            descriptor = klass.__dict__["CardColors"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Numbers" in params, "Missing parameter 'Numbers'"
+    assert "Actions" in params, "Missing parameter 'Actions'"
+    assert "OpeningHand" in params, "Missing parameter 'OpeningHand'"
+    assert "WildActions" in params, "Missing parameter 'WildActions'"
 
 def test_gameelements_has_CardsTotal():
     assert hasattr(GameElements, "CardsTotal")
@@ -429,6 +393,42 @@ def test_gameelements_has_Action():
             break
     assert isinstance(descriptor, property)
 
+def test_gameelements_has_WildCardCol():
+    assert hasattr(GameElements, "WildCardCol")
+    descriptor = None
+    for klass in GameElements.__mro__:
+        if "WildCardCol" in klass.__dict__:
+            descriptor = klass.__dict__["WildCardCol"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gameelements_has_CardNumber():
+    assert hasattr(GameElements, "CardNumber")
+    descriptor = None
+    for klass in GameElements.__mro__:
+        if "CardNumber" in klass.__dict__:
+            descriptor = klass.__dict__["CardNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gameelements_has_CardColors():
+    assert hasattr(GameElements, "CardColors")
+    descriptor = None
+    for klass in GameElements.__mro__:
+        if "CardColors" in klass.__dict__:
+            descriptor = klass.__dict__["CardColors"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gameelements_has_Wild():
+    assert hasattr(GameElements, "Wild")
+    descriptor = None
+    for klass in GameElements.__mro__:
+        if "Wild" in klass.__dict__:
+            descriptor = klass.__dict__["Wild"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_gameelements_has_Numbers():
     assert hasattr(GameElements, "Numbers")
     descriptor = None
@@ -438,12 +438,12 @@ def test_gameelements_has_Numbers():
             break
     assert isinstance(descriptor, property)
 
-def test_gameelements_has_WildCardCol():
-    assert hasattr(GameElements, "WildCardCol")
+def test_gameelements_has_Actions():
+    assert hasattr(GameElements, "Actions")
     descriptor = None
     for klass in GameElements.__mro__:
-        if "WildCardCol" in klass.__dict__:
-            descriptor = klass.__dict__["WildCardCol"]
+        if "Actions" in klass.__dict__:
+            descriptor = klass.__dict__["Actions"]
             break
     assert isinstance(descriptor, property)
 
@@ -456,12 +456,12 @@ def test_gameelements_has_OpeningHand():
             break
     assert isinstance(descriptor, property)
 
-def test_gameelements_has_Wild():
-    assert hasattr(GameElements, "Wild")
+def test_gameelements_has_WildActions():
+    assert hasattr(GameElements, "WildActions")
     descriptor = None
     for klass in GameElements.__mro__:
-        if "Wild" in klass.__dict__:
-            descriptor = klass.__dict__["Wild"]
+        if "WildActions" in klass.__dict__:
+            descriptor = klass.__dict__["WildActions"]
             break
     assert isinstance(descriptor, property)
 
@@ -492,18 +492,9 @@ def test_discardpile_constructor_exists():
 def test_discardpile_constructor_args():
     sig = inspect.signature(DiscardPile.__init__)
     params = list(sig.parameters.keys())
-    assert "showTop__" in params, "Missing parameter 'showTop__'"
     assert "DiscardPile__" in params, "Missing parameter 'DiscardPile__'"
     assert "DiscardPile__1" in params, "Missing parameter 'DiscardPile__1'"
-
-def test_discardpile_has_showTop__():
-    assert hasattr(DiscardPile, "showTop__")
-    descriptor = None
-    for klass in DiscardPile.__mro__:
-        if "showTop__" in klass.__dict__:
-            descriptor = klass.__dict__["showTop__"]
-            break
-    assert isinstance(descriptor, property)
+    assert "showTop__" in params, "Missing parameter 'showTop__'"
 
 def test_discardpile_has_DiscardPile__():
     assert hasattr(DiscardPile, "DiscardPile__")
@@ -523,6 +514,15 @@ def test_discardpile_has_DiscardPile__1():
             break
     assert isinstance(descriptor, property)
 
+def test_discardpile_has_showTop__():
+    assert hasattr(DiscardPile, "showTop__")
+    descriptor = None
+    for klass in DiscardPile.__mro__:
+        if "showTop__" in klass.__dict__:
+            descriptor = klass.__dict__["showTop__"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_drawpile_is_not_abstract():
@@ -536,9 +536,18 @@ def test_drawpile_constructor_exists():
 def test_drawpile_constructor_args():
     sig = inspect.signature(DrawPile.__init__)
     params = list(sig.parameters.keys())
+    assert "removeCard_Card_" in params, "Missing parameter 'removeCard_Card_'"
     assert "DrawPile__1" in params, "Missing parameter 'DrawPile__1'"
     assert "DrawPile__" in params, "Missing parameter 'DrawPile__'"
-    assert "removeCard_Card_" in params, "Missing parameter 'removeCard_Card_'"
+
+def test_drawpile_has_removeCard_Card_():
+    assert hasattr(DrawPile, "removeCard_Card_")
+    descriptor = None
+    for klass in DrawPile.__mro__:
+        if "removeCard_Card_" in klass.__dict__:
+            descriptor = klass.__dict__["removeCard_Card_"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_drawpile_has_DrawPile__1():
     assert hasattr(DrawPile, "DrawPile__1")
@@ -558,15 +567,6 @@ def test_drawpile_has_DrawPile__():
             break
     assert isinstance(descriptor, property)
 
-def test_drawpile_has_removeCard_Card_():
-    assert hasattr(DrawPile, "removeCard_Card_")
-    descriptor = None
-    for klass in DrawPile.__mro__:
-        if "removeCard_Card_" in klass.__dict__:
-            descriptor = klass.__dict__["removeCard_Card_"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_dealer_is_not_abstract():
@@ -580,10 +580,28 @@ def test_dealer_constructor_exists():
 def test_dealer_constructor_args():
     sig = inspect.signature(Dealer.__init__)
     params = list(sig.parameters.keys())
+    assert "distribute_Player___" in params, "Missing parameter 'distribute_Player___'"
+    assert "Dealer__1" in params, "Missing parameter 'Dealer__1'"
     assert "shuffle__" in params, "Missing parameter 'shuffle__'"
     assert "Dealer__" in params, "Missing parameter 'Dealer__'"
-    assert "Dealer__1" in params, "Missing parameter 'Dealer__1'"
-    assert "distribute_Player___" in params, "Missing parameter 'distribute_Player___'"
+
+def test_dealer_has_distribute_Player___():
+    assert hasattr(Dealer, "distribute_Player___")
+    descriptor = None
+    for klass in Dealer.__mro__:
+        if "distribute_Player___" in klass.__dict__:
+            descriptor = klass.__dict__["distribute_Player___"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dealer_has_Dealer__1():
+    assert hasattr(Dealer, "Dealer__1")
+    descriptor = None
+    for klass in Dealer.__mro__:
+        if "Dealer__1" in klass.__dict__:
+            descriptor = klass.__dict__["Dealer__1"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_dealer_has_shuffle__():
     assert hasattr(Dealer, "shuffle__")
@@ -603,24 +621,6 @@ def test_dealer_has_Dealer__():
             break
     assert isinstance(descriptor, property)
 
-def test_dealer_has_Dealer__1():
-    assert hasattr(Dealer, "Dealer__1")
-    descriptor = None
-    for klass in Dealer.__mro__:
-        if "Dealer__1" in klass.__dict__:
-            descriptor = klass.__dict__["Dealer__1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dealer_has_distribute_Player___():
-    assert hasattr(Dealer, "distribute_Player___")
-    descriptor = None
-    for klass in Dealer.__mro__:
-        if "distribute_Player___" in klass.__dict__:
-            descriptor = klass.__dict__["distribute_Player___"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_players_is_not_abstract():
@@ -635,12 +635,12 @@ def test_players_constructor_args():
     sig = inspect.signature(Players.__init__)
     params = list(sig.parameters.keys())
     assert "hasCard_Card_" in params, "Missing parameter 'hasCard_Card_'"
-    assert "Players__" in params, "Missing parameter 'Players__'"
+    assert "playCard_Card_" in params, "Missing parameter 'playCard_Card_'"
+    assert "getName" in params, "Missing parameter 'getName'"
     assert "Player__" in params, "Missing parameter 'Player__'"
     assert "drawCard_Card_" in params, "Missing parameter 'drawCard_Card_'"
+    assert "Players__" in params, "Missing parameter 'Players__'"
     assert "Player_String_" in params, "Missing parameter 'Player_String_'"
-    assert "getName" in params, "Missing parameter 'getName'"
-    assert "playCard_Card_" in params, "Missing parameter 'playCard_Card_'"
 
 def test_players_has_hasCard_Card_():
     assert hasattr(Players, "hasCard_Card_")
@@ -651,12 +651,21 @@ def test_players_has_hasCard_Card_():
             break
     assert isinstance(descriptor, property)
 
-def test_players_has_Players__():
-    assert hasattr(Players, "Players__")
+def test_players_has_playCard_Card_():
+    assert hasattr(Players, "playCard_Card_")
     descriptor = None
     for klass in Players.__mro__:
-        if "Players__" in klass.__dict__:
-            descriptor = klass.__dict__["Players__"]
+        if "playCard_Card_" in klass.__dict__:
+            descriptor = klass.__dict__["playCard_Card_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_players_has_getName():
+    assert hasattr(Players, "getName")
+    descriptor = None
+    for klass in Players.__mro__:
+        if "getName" in klass.__dict__:
+            descriptor = klass.__dict__["getName"]
             break
     assert isinstance(descriptor, property)
 
@@ -678,30 +687,21 @@ def test_players_has_drawCard_Card_():
             break
     assert isinstance(descriptor, property)
 
+def test_players_has_Players__():
+    assert hasattr(Players, "Players__")
+    descriptor = None
+    for klass in Players.__mro__:
+        if "Players__" in klass.__dict__:
+            descriptor = klass.__dict__["Players__"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_players_has_Player_String_():
     assert hasattr(Players, "Player_String_")
     descriptor = None
     for klass in Players.__mro__:
         if "Player_String_" in klass.__dict__:
             descriptor = klass.__dict__["Player_String_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_players_has_getName():
-    assert hasattr(Players, "getName")
-    descriptor = None
-    for klass in Players.__mro__:
-        if "getName" in klass.__dict__:
-            descriptor = klass.__dict__["getName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_players_has_playCard_Card_():
-    assert hasattr(Players, "playCard_Card_")
-    descriptor = None
-    for klass in Players.__mro__:
-        if "playCard_Card_" in klass.__dict__:
-            descriptor = klass.__dict__["playCard_Card_"]
             break
     assert isinstance(descriptor, property)
 
@@ -718,10 +718,19 @@ def test_game_constructor_exists():
 def test_game_constructor_args():
     sig = inspect.signature(Game.__init__)
     params = list(sig.parameters.keys())
+    assert "Game__" in params, "Missing parameter 'Game__'"
     assert "Game__1" in params, "Missing parameter 'Game__1'"
     assert "PlayGame__" in params, "Missing parameter 'PlayGame__'"
     assert "getPlayers__" in params, "Missing parameter 'getPlayers__'"
-    assert "Game__" in params, "Missing parameter 'Game__'"
+
+def test_game_has_Game__():
+    assert hasattr(Game, "Game__")
+    descriptor = None
+    for klass in Game.__mro__:
+        if "Game__" in klass.__dict__:
+            descriptor = klass.__dict__["Game__"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_game_has_Game__1():
     assert hasattr(Game, "Game__1")
@@ -747,15 +756,6 @@ def test_game_has_getPlayers__():
     for klass in Game.__mro__:
         if "getPlayers__" in klass.__dict__:
             descriptor = klass.__dict__["getPlayers__"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_game_has_Game__():
-    assert hasattr(Game, "Game__")
-    descriptor = None
-    for klass in Game.__mro__:
-        if "Game__" in klass.__dict__:
-            descriptor = klass.__dict__["Game__"]
             break
     assert isinstance(descriptor, property)
 
@@ -816,17 +816,8 @@ def test_main_constructor_exists():
 def test_main_constructor_args():
     sig = inspect.signature(Main.__init__)
     params = list(sig.parameters.keys())
-    assert "Main__" in params, "Missing parameter 'Main__'"
     assert "main_String____" in params, "Missing parameter 'main_String____'"
-
-def test_main_has_Main__():
-    assert hasattr(Main, "Main__")
-    descriptor = None
-    for klass in Main.__mro__:
-        if "Main__" in klass.__dict__:
-            descriptor = klass.__dict__["Main__"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Main__" in params, "Missing parameter 'Main__'"
 
 def test_main_has_main_String____():
     assert hasattr(Main, "main_String____")
@@ -834,6 +825,15 @@ def test_main_has_main_String____():
     for klass in Main.__mro__:
         if "main_String____" in klass.__dict__:
             descriptor = klass.__dict__["main_String____"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_main_has_Main__():
+    assert hasattr(Main, "Main__")
+    descriptor = None
+    for klass in Main.__mro__:
+        if "Main__" in klass.__dict__:
+            descriptor = klass.__dict__["Main__"]
             break
     assert isinstance(descriptor, property)
 
@@ -879,37 +879,37 @@ Reverse_strategy = st.builds(
 )
 ActionCard_strategy = st.builds(
     ActionCard,
-    ActionCard_Color_String_=
+    ActionCard__=
         safe_text,
     _attr=
         safe_text,
-    ActionCard__=
+    ActionCard_Color_String_=
         safe_text
 )
 NumberCard_strategy = st.builds(
     NumberCard,
-    NumberCard_Color__String_=
-        safe_text,
-    attribute2=
+    NumberCard__=
         safe_text,
     attribute=
         safe_text,
-    NumberCard__=
+    NumberCard_Color__String_=
+        safe_text,
+    attribute2=
         safe_text
 )
 Card_strategy = st.builds(
     Card,
-    Card_Color__int__String_=
-        safe_text,
-    setColor_Color_=
-        safe_text,
-    getColor__=
-        st.none(),
-    Card__1=
-        safe_text,
     setValue=
         safe_text,
     Card__=
+        safe_text,
+    getColor__=
+        st.none(),
+    setColor_Color_=
+        safe_text,
+    Card__1=
+        safe_text,
+    Card_Color__int__String_=
         safe_text
 )
 CardElements_Interface_strategy = st.builds(
@@ -917,25 +917,25 @@ CardElements_Interface_strategy = st.builds(
 )
 GameElements_strategy = st.builds(
     GameElements,
-    WildActions=
-        safe_text,
-    CardNumber=
-        safe_text,
-    Actions=
-        safe_text,
-    CardColors=
-        safe_text,
     CardsTotal=
         safe_text,
     Action=
         safe_text,
+    WildCardCol=
+        safe_text,
+    CardNumber=
+        safe_text,
+    CardColors=
+        safe_text,
+    Wild=
+        safe_text,
     Numbers=
         st.none(),
-    WildCardCol=
+    Actions=
         safe_text,
     OpeningHand=
         safe_text,
-    Wild=
+    WildActions=
         safe_text
 )
 GameElements_Interface_strategy = st.builds(
@@ -943,59 +943,59 @@ GameElements_Interface_strategy = st.builds(
 )
 DiscardPile_strategy = st.builds(
     DiscardPile,
-    showTop__=
-        safe_text,
     DiscardPile__=
         safe_text,
     DiscardPile__1=
+        safe_text,
+    showTop__=
         safe_text
 )
 DrawPile_strategy = st.builds(
     DrawPile,
+    removeCard_Card_=
+        safe_text,
     DrawPile__1=
         safe_text,
     DrawPile__=
-        safe_text,
-    removeCard_Card_=
         safe_text
 )
 Dealer_strategy = st.builds(
     Dealer,
-    shuffle__=
-        safe_text,
-    Dealer__=
+    distribute_Player___=
         safe_text,
     Dealer__1=
         safe_text,
-    distribute_Player___=
+    shuffle__=
+        safe_text,
+    Dealer__=
         safe_text
 )
 Players_strategy = st.builds(
     Players,
     hasCard_Card_=
         safe_text,
-    Players__=
+    playCard_Card_=
+        safe_text,
+    getName=
         safe_text,
     Player__=
         safe_text,
     drawCard_Card_=
         safe_text,
+    Players__=
+        safe_text,
     Player_String_=
-        safe_text,
-    getName=
-        safe_text,
-    playCard_Card_=
         safe_text
 )
 Game_strategy = st.builds(
     Game,
+    Game__=
+        safe_text,
     Game__1=
         safe_text,
     PlayGame__=
         safe_text,
     getPlayers__=
-        safe_text,
-    Game__=
         safe_text
 )
 GameSession_strategy = st.builds(
@@ -1009,9 +1009,9 @@ GameSession_strategy = st.builds(
 )
 Main_strategy = st.builds(
     Main,
-    Main__=
-        safe_text,
     main_String____=
+        safe_text,
+    Main__=
         safe_text
 )
 
@@ -1030,9 +1030,6 @@ def test_color_instantiation(instance):
 def test_wildcard_instantiation(instance):
     assert isinstance(instance, WildCard)
 
-@given(instance=WildCard_strategy)
-def test_wildcard_WildCard_String__type(instance):
-    assert isinstance(instance.WildCard_String_, str)
 
 
 @given(instance=WildCard_strategy)
@@ -1041,9 +1038,6 @@ def test_wildcard_WildCard_String__setter(instance):
     instance.WildCard_String_ = original
     assert instance.WildCard_String_ == original
 
-@given(instance=WildCard_strategy)
-def test_wildcard_WildCard___type(instance):
-    assert isinstance(instance.WildCard__, str)
 
 
 @given(instance=WildCard_strategy)
@@ -1082,31 +1076,6 @@ def test_reverse_instantiation(instance):
 def test_actioncard_instantiation(instance):
     assert isinstance(instance, ActionCard)
 
-@given(instance=ActionCard_strategy)
-def test_actioncard_ActionCard_Color_String__type(instance):
-    assert isinstance(instance.ActionCard_Color_String_, str)
-
-
-@given(instance=ActionCard_strategy)
-def test_actioncard_ActionCard_Color_String__setter(instance):
-    original = instance.ActionCard_Color_String_
-    instance.ActionCard_Color_String_ = original
-    assert instance.ActionCard_Color_String_ == original
-
-@given(instance=ActionCard_strategy)
-def test_actioncard__attr_type(instance):
-    assert isinstance(instance._attr, str)
-
-
-@given(instance=ActionCard_strategy)
-def test_actioncard__attr_setter(instance):
-    original = instance._attr
-    instance._attr = original
-    assert instance._attr == original
-
-@given(instance=ActionCard_strategy)
-def test_actioncard_ActionCard___type(instance):
-    assert isinstance(instance.ActionCard__, str)
 
 
 @given(instance=ActionCard_strategy)
@@ -1115,47 +1084,27 @@ def test_actioncard_ActionCard___setter(instance):
     instance.ActionCard__ = original
     assert instance.ActionCard__ == original
 
+
+
+@given(instance=ActionCard_strategy)
+def test_actioncard__attr_setter(instance):
+    original = instance._attr
+    instance._attr = original
+    assert instance._attr == original
+
+
+
+@given(instance=ActionCard_strategy)
+def test_actioncard_ActionCard_Color_String__setter(instance):
+    original = instance.ActionCard_Color_String_
+    instance.ActionCard_Color_String_ = original
+    assert instance.ActionCard_Color_String_ == original
+
 @given(instance=NumberCard_strategy)
 @settings(max_examples=50)
 def test_numbercard_instantiation(instance):
     assert isinstance(instance, NumberCard)
 
-@given(instance=NumberCard_strategy)
-def test_numbercard_NumberCard_Color__String__type(instance):
-    assert isinstance(instance.NumberCard_Color__String_, str)
-
-
-@given(instance=NumberCard_strategy)
-def test_numbercard_NumberCard_Color__String__setter(instance):
-    original = instance.NumberCard_Color__String_
-    instance.NumberCard_Color__String_ = original
-    assert instance.NumberCard_Color__String_ == original
-
-@given(instance=NumberCard_strategy)
-def test_numbercard_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=NumberCard_strategy)
-def test_numbercard_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=NumberCard_strategy)
-def test_numbercard_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=NumberCard_strategy)
-def test_numbercard_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=NumberCard_strategy)
-def test_numbercard_NumberCard___type(instance):
-    assert isinstance(instance.NumberCard__, str)
 
 
 @given(instance=NumberCard_strategy)
@@ -1164,58 +1113,35 @@ def test_numbercard_NumberCard___setter(instance):
     instance.NumberCard__ = original
     assert instance.NumberCard__ == original
 
+
+
+@given(instance=NumberCard_strategy)
+def test_numbercard_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
+
+
+@given(instance=NumberCard_strategy)
+def test_numbercard_NumberCard_Color__String__setter(instance):
+    original = instance.NumberCard_Color__String_
+    instance.NumberCard_Color__String_ = original
+    assert instance.NumberCard_Color__String_ == original
+
+
+
+@given(instance=NumberCard_strategy)
+def test_numbercard_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
 @given(instance=Card_strategy)
 @settings(max_examples=50)
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_Card_Color__int__String__type(instance):
-    assert isinstance(instance.Card_Color__int__String_, str)
-
-
-@given(instance=Card_strategy)
-def test_card_Card_Color__int__String__setter(instance):
-    original = instance.Card_Color__int__String_
-    instance.Card_Color__int__String_ = original
-    assert instance.Card_Color__int__String_ == original
-
-@given(instance=Card_strategy)
-def test_card_setColor_Color__type(instance):
-    assert isinstance(instance.setColor_Color_, str)
-
-
-@given(instance=Card_strategy)
-def test_card_setColor_Color__setter(instance):
-    original = instance.setColor_Color_
-    instance.setColor_Color_ = original
-    assert instance.setColor_Color_ == original
-
-@given(instance=Card_strategy)
-def test_card_getColor___type(instance):
-    assert isinstance(instance.getColor__, color)
-
-
-@given(instance=Card_strategy)
-def test_card_getColor___setter(instance):
-    original = instance.getColor__
-    instance.getColor__ = original
-    assert instance.getColor__ == original
-
-@given(instance=Card_strategy)
-def test_card_Card__1_type(instance):
-    assert isinstance(instance.Card__1, str)
-
-
-@given(instance=Card_strategy)
-def test_card_Card__1_setter(instance):
-    original = instance.Card__1
-    instance.Card__1 = original
-    assert instance.Card__1 == original
-
-@given(instance=Card_strategy)
-def test_card_setValue_type(instance):
-    assert isinstance(instance.setValue, str)
 
 
 @given(instance=Card_strategy)
@@ -1224,9 +1150,6 @@ def test_card_setValue_setter(instance):
     instance.setValue = original
     assert instance.setValue == original
 
-@given(instance=Card_strategy)
-def test_card_Card___type(instance):
-    assert isinstance(instance.Card__, str)
 
 
 @given(instance=Card_strategy)
@@ -1234,6 +1157,38 @@ def test_card_Card___setter(instance):
     original = instance.Card__
     instance.Card__ = original
     assert instance.Card__ == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_getColor___setter(instance):
+    original = instance.getColor__
+    instance.getColor__ = original
+    assert instance.getColor__ == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_setColor_Color__setter(instance):
+    original = instance.setColor_Color_
+    instance.setColor_Color_ = original
+    assert instance.setColor_Color_ == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_Card__1_setter(instance):
+    original = instance.Card__1
+    instance.Card__1 = original
+    assert instance.Card__1 == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_Card_Color__int__String__setter(instance):
+    original = instance.Card_Color__int__String_
+    instance.Card_Color__int__String_ = original
+    assert instance.Card_Color__int__String_ == original
 
 @given(instance=CardElements_Interface_strategy)
 @settings(max_examples=50)
@@ -1245,53 +1200,6 @@ def test_cardelements_interface_instantiation(instance):
 def test_gameelements_instantiation(instance):
     assert isinstance(instance, GameElements)
 
-@given(instance=GameElements_strategy)
-def test_gameelements_WildActions_type(instance):
-    assert isinstance(instance.WildActions, str)
-
-
-@given(instance=GameElements_strategy)
-def test_gameelements_WildActions_setter(instance):
-    original = instance.WildActions
-    instance.WildActions = original
-    assert instance.WildActions == original
-
-@given(instance=GameElements_strategy)
-def test_gameelements_CardNumber_type(instance):
-    assert isinstance(instance.CardNumber, str)
-
-
-@given(instance=GameElements_strategy)
-def test_gameelements_CardNumber_setter(instance):
-    original = instance.CardNumber
-    instance.CardNumber = original
-    assert instance.CardNumber == original
-
-@given(instance=GameElements_strategy)
-def test_gameelements_Actions_type(instance):
-    assert isinstance(instance.Actions, str)
-
-
-@given(instance=GameElements_strategy)
-def test_gameelements_Actions_setter(instance):
-    original = instance.Actions
-    instance.Actions = original
-    assert instance.Actions == original
-
-@given(instance=GameElements_strategy)
-def test_gameelements_CardColors_type(instance):
-    assert isinstance(instance.CardColors, str)
-
-
-@given(instance=GameElements_strategy)
-def test_gameelements_CardColors_setter(instance):
-    original = instance.CardColors
-    instance.CardColors = original
-    assert instance.CardColors == original
-
-@given(instance=GameElements_strategy)
-def test_gameelements_CardsTotal_type(instance):
-    assert isinstance(instance.CardsTotal, str)
 
 
 @given(instance=GameElements_strategy)
@@ -1300,9 +1208,6 @@ def test_gameelements_CardsTotal_setter(instance):
     instance.CardsTotal = original
     assert instance.CardsTotal == original
 
-@given(instance=GameElements_strategy)
-def test_gameelements_Action_type(instance):
-    assert isinstance(instance.Action, str)
 
 
 @given(instance=GameElements_strategy)
@@ -1311,20 +1216,6 @@ def test_gameelements_Action_setter(instance):
     instance.Action = original
     assert instance.Action == original
 
-@given(instance=GameElements_strategy)
-def test_gameelements_Numbers_type(instance):
-    assert isinstance(instance.Numbers, int___1)
-
-
-@given(instance=GameElements_strategy)
-def test_gameelements_Numbers_setter(instance):
-    original = instance.Numbers
-    instance.Numbers = original
-    assert instance.Numbers == original
-
-@given(instance=GameElements_strategy)
-def test_gameelements_WildCardCol_type(instance):
-    assert isinstance(instance.WildCardCol, str)
 
 
 @given(instance=GameElements_strategy)
@@ -1333,9 +1224,46 @@ def test_gameelements_WildCardCol_setter(instance):
     instance.WildCardCol = original
     assert instance.WildCardCol == original
 
+
+
 @given(instance=GameElements_strategy)
-def test_gameelements_OpeningHand_type(instance):
-    assert isinstance(instance.OpeningHand, str)
+def test_gameelements_CardNumber_setter(instance):
+    original = instance.CardNumber
+    instance.CardNumber = original
+    assert instance.CardNumber == original
+
+
+
+@given(instance=GameElements_strategy)
+def test_gameelements_CardColors_setter(instance):
+    original = instance.CardColors
+    instance.CardColors = original
+    assert instance.CardColors == original
+
+
+
+@given(instance=GameElements_strategy)
+def test_gameelements_Wild_setter(instance):
+    original = instance.Wild
+    instance.Wild = original
+    assert instance.Wild == original
+
+
+
+@given(instance=GameElements_strategy)
+def test_gameelements_Numbers_setter(instance):
+    original = instance.Numbers
+    instance.Numbers = original
+    assert instance.Numbers == original
+
+
+
+@given(instance=GameElements_strategy)
+def test_gameelements_Actions_setter(instance):
+    original = instance.Actions
+    instance.Actions = original
+    assert instance.Actions == original
+
 
 
 @given(instance=GameElements_strategy)
@@ -1344,16 +1272,13 @@ def test_gameelements_OpeningHand_setter(instance):
     instance.OpeningHand = original
     assert instance.OpeningHand == original
 
-@given(instance=GameElements_strategy)
-def test_gameelements_Wild_type(instance):
-    assert isinstance(instance.Wild, str)
 
 
 @given(instance=GameElements_strategy)
-def test_gameelements_Wild_setter(instance):
-    original = instance.Wild
-    instance.Wild = original
-    assert instance.Wild == original
+def test_gameelements_WildActions_setter(instance):
+    original = instance.WildActions
+    instance.WildActions = original
+    assert instance.WildActions == original
 
 @given(instance=GameElements_Interface_strategy)
 @settings(max_examples=50)
@@ -1365,20 +1290,6 @@ def test_gameelements_interface_instantiation(instance):
 def test_discardpile_instantiation(instance):
     assert isinstance(instance, DiscardPile)
 
-@given(instance=DiscardPile_strategy)
-def test_discardpile_showTop___type(instance):
-    assert isinstance(instance.showTop__, str)
-
-
-@given(instance=DiscardPile_strategy)
-def test_discardpile_showTop___setter(instance):
-    original = instance.showTop__
-    instance.showTop__ = original
-    assert instance.showTop__ == original
-
-@given(instance=DiscardPile_strategy)
-def test_discardpile_DiscardPile___type(instance):
-    assert isinstance(instance.DiscardPile__, str)
 
 
 @given(instance=DiscardPile_strategy)
@@ -1387,9 +1298,6 @@ def test_discardpile_DiscardPile___setter(instance):
     instance.DiscardPile__ = original
     assert instance.DiscardPile__ == original
 
-@given(instance=DiscardPile_strategy)
-def test_discardpile_DiscardPile__1_type(instance):
-    assert isinstance(instance.DiscardPile__1, str)
 
 
 @given(instance=DiscardPile_strategy)
@@ -1398,36 +1306,19 @@ def test_discardpile_DiscardPile__1_setter(instance):
     instance.DiscardPile__1 = original
     assert instance.DiscardPile__1 == original
 
+
+
+@given(instance=DiscardPile_strategy)
+def test_discardpile_showTop___setter(instance):
+    original = instance.showTop__
+    instance.showTop__ = original
+    assert instance.showTop__ == original
+
 @given(instance=DrawPile_strategy)
 @settings(max_examples=50)
 def test_drawpile_instantiation(instance):
     assert isinstance(instance, DrawPile)
 
-@given(instance=DrawPile_strategy)
-def test_drawpile_DrawPile__1_type(instance):
-    assert isinstance(instance.DrawPile__1, str)
-
-
-@given(instance=DrawPile_strategy)
-def test_drawpile_DrawPile__1_setter(instance):
-    original = instance.DrawPile__1
-    instance.DrawPile__1 = original
-    assert instance.DrawPile__1 == original
-
-@given(instance=DrawPile_strategy)
-def test_drawpile_DrawPile___type(instance):
-    assert isinstance(instance.DrawPile__, str)
-
-
-@given(instance=DrawPile_strategy)
-def test_drawpile_DrawPile___setter(instance):
-    original = instance.DrawPile__
-    instance.DrawPile__ = original
-    assert instance.DrawPile__ == original
-
-@given(instance=DrawPile_strategy)
-def test_drawpile_removeCard_Card__type(instance):
-    assert isinstance(instance.removeCard_Card_, str)
 
 
 @given(instance=DrawPile_strategy)
@@ -1436,47 +1327,27 @@ def test_drawpile_removeCard_Card__setter(instance):
     instance.removeCard_Card_ = original
     assert instance.removeCard_Card_ == original
 
+
+
+@given(instance=DrawPile_strategy)
+def test_drawpile_DrawPile__1_setter(instance):
+    original = instance.DrawPile__1
+    instance.DrawPile__1 = original
+    assert instance.DrawPile__1 == original
+
+
+
+@given(instance=DrawPile_strategy)
+def test_drawpile_DrawPile___setter(instance):
+    original = instance.DrawPile__
+    instance.DrawPile__ = original
+    assert instance.DrawPile__ == original
+
 @given(instance=Dealer_strategy)
 @settings(max_examples=50)
 def test_dealer_instantiation(instance):
     assert isinstance(instance, Dealer)
 
-@given(instance=Dealer_strategy)
-def test_dealer_shuffle___type(instance):
-    assert isinstance(instance.shuffle__, str)
-
-
-@given(instance=Dealer_strategy)
-def test_dealer_shuffle___setter(instance):
-    original = instance.shuffle__
-    instance.shuffle__ = original
-    assert instance.shuffle__ == original
-
-@given(instance=Dealer_strategy)
-def test_dealer_Dealer___type(instance):
-    assert isinstance(instance.Dealer__, str)
-
-
-@given(instance=Dealer_strategy)
-def test_dealer_Dealer___setter(instance):
-    original = instance.Dealer__
-    instance.Dealer__ = original
-    assert instance.Dealer__ == original
-
-@given(instance=Dealer_strategy)
-def test_dealer_Dealer__1_type(instance):
-    assert isinstance(instance.Dealer__1, str)
-
-
-@given(instance=Dealer_strategy)
-def test_dealer_Dealer__1_setter(instance):
-    original = instance.Dealer__1
-    instance.Dealer__1 = original
-    assert instance.Dealer__1 == original
-
-@given(instance=Dealer_strategy)
-def test_dealer_distribute_Player____type(instance):
-    assert isinstance(instance.distribute_Player___, str)
 
 
 @given(instance=Dealer_strategy)
@@ -1485,14 +1356,35 @@ def test_dealer_distribute_Player____setter(instance):
     instance.distribute_Player___ = original
     assert instance.distribute_Player___ == original
 
+
+
+@given(instance=Dealer_strategy)
+def test_dealer_Dealer__1_setter(instance):
+    original = instance.Dealer__1
+    instance.Dealer__1 = original
+    assert instance.Dealer__1 == original
+
+
+
+@given(instance=Dealer_strategy)
+def test_dealer_shuffle___setter(instance):
+    original = instance.shuffle__
+    instance.shuffle__ = original
+    assert instance.shuffle__ == original
+
+
+
+@given(instance=Dealer_strategy)
+def test_dealer_Dealer___setter(instance):
+    original = instance.Dealer__
+    instance.Dealer__ = original
+    assert instance.Dealer__ == original
+
 @given(instance=Players_strategy)
 @settings(max_examples=50)
 def test_players_instantiation(instance):
     assert isinstance(instance, Players)
 
-@given(instance=Players_strategy)
-def test_players_hasCard_Card__type(instance):
-    assert isinstance(instance.hasCard_Card_, str)
 
 
 @given(instance=Players_strategy)
@@ -1501,64 +1393,6 @@ def test_players_hasCard_Card__setter(instance):
     instance.hasCard_Card_ = original
     assert instance.hasCard_Card_ == original
 
-@given(instance=Players_strategy)
-def test_players_Players___type(instance):
-    assert isinstance(instance.Players__, str)
-
-
-@given(instance=Players_strategy)
-def test_players_Players___setter(instance):
-    original = instance.Players__
-    instance.Players__ = original
-    assert instance.Players__ == original
-
-@given(instance=Players_strategy)
-def test_players_Player___type(instance):
-    assert isinstance(instance.Player__, str)
-
-
-@given(instance=Players_strategy)
-def test_players_Player___setter(instance):
-    original = instance.Player__
-    instance.Player__ = original
-    assert instance.Player__ == original
-
-@given(instance=Players_strategy)
-def test_players_drawCard_Card__type(instance):
-    assert isinstance(instance.drawCard_Card_, str)
-
-
-@given(instance=Players_strategy)
-def test_players_drawCard_Card__setter(instance):
-    original = instance.drawCard_Card_
-    instance.drawCard_Card_ = original
-    assert instance.drawCard_Card_ == original
-
-@given(instance=Players_strategy)
-def test_players_Player_String__type(instance):
-    assert isinstance(instance.Player_String_, str)
-
-
-@given(instance=Players_strategy)
-def test_players_Player_String__setter(instance):
-    original = instance.Player_String_
-    instance.Player_String_ = original
-    assert instance.Player_String_ == original
-
-@given(instance=Players_strategy)
-def test_players_getName_type(instance):
-    assert isinstance(instance.getName, str)
-
-
-@given(instance=Players_strategy)
-def test_players_getName_setter(instance):
-    original = instance.getName
-    instance.getName = original
-    assert instance.getName == original
-
-@given(instance=Players_strategy)
-def test_players_playCard_Card__type(instance):
-    assert isinstance(instance.playCard_Card_, str)
 
 
 @given(instance=Players_strategy)
@@ -1567,47 +1401,51 @@ def test_players_playCard_Card__setter(instance):
     instance.playCard_Card_ = original
     assert instance.playCard_Card_ == original
 
+
+
+@given(instance=Players_strategy)
+def test_players_getName_setter(instance):
+    original = instance.getName
+    instance.getName = original
+    assert instance.getName == original
+
+
+
+@given(instance=Players_strategy)
+def test_players_Player___setter(instance):
+    original = instance.Player__
+    instance.Player__ = original
+    assert instance.Player__ == original
+
+
+
+@given(instance=Players_strategy)
+def test_players_drawCard_Card__setter(instance):
+    original = instance.drawCard_Card_
+    instance.drawCard_Card_ = original
+    assert instance.drawCard_Card_ == original
+
+
+
+@given(instance=Players_strategy)
+def test_players_Players___setter(instance):
+    original = instance.Players__
+    instance.Players__ = original
+    assert instance.Players__ == original
+
+
+
+@given(instance=Players_strategy)
+def test_players_Player_String__setter(instance):
+    original = instance.Player_String_
+    instance.Player_String_ = original
+    assert instance.Player_String_ == original
+
 @given(instance=Game_strategy)
 @settings(max_examples=50)
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_Game__1_type(instance):
-    assert isinstance(instance.Game__1, str)
-
-
-@given(instance=Game_strategy)
-def test_game_Game__1_setter(instance):
-    original = instance.Game__1
-    instance.Game__1 = original
-    assert instance.Game__1 == original
-
-@given(instance=Game_strategy)
-def test_game_PlayGame___type(instance):
-    assert isinstance(instance.PlayGame__, str)
-
-
-@given(instance=Game_strategy)
-def test_game_PlayGame___setter(instance):
-    original = instance.PlayGame__
-    instance.PlayGame__ = original
-    assert instance.PlayGame__ == original
-
-@given(instance=Game_strategy)
-def test_game_getPlayers___type(instance):
-    assert isinstance(instance.getPlayers__, str)
-
-
-@given(instance=Game_strategy)
-def test_game_getPlayers___setter(instance):
-    original = instance.getPlayers__
-    instance.getPlayers__ = original
-    assert instance.getPlayers__ == original
-
-@given(instance=Game_strategy)
-def test_game_Game___type(instance):
-    assert isinstance(instance.Game__, str)
 
 
 @given(instance=Game_strategy)
@@ -1616,14 +1454,35 @@ def test_game_Game___setter(instance):
     instance.Game__ = original
     assert instance.Game__ == original
 
+
+
+@given(instance=Game_strategy)
+def test_game_Game__1_setter(instance):
+    original = instance.Game__1
+    instance.Game__1 = original
+    assert instance.Game__1 == original
+
+
+
+@given(instance=Game_strategy)
+def test_game_PlayGame___setter(instance):
+    original = instance.PlayGame__
+    instance.PlayGame__ = original
+    assert instance.PlayGame__ == original
+
+
+
+@given(instance=Game_strategy)
+def test_game_getPlayers___setter(instance):
+    original = instance.getPlayers__
+    instance.getPlayers__ = original
+    assert instance.getPlayers__ == original
+
 @given(instance=GameSession_strategy)
 @settings(max_examples=50)
 def test_gamesession_instantiation(instance):
     assert isinstance(instance, GameSession)
 
-@given(instance=GameSession_strategy)
-def test_gamesession_GameSession_Game__type(instance):
-    assert isinstance(instance.GameSession_Game_, str)
 
 
 @given(instance=GameSession_strategy)
@@ -1632,9 +1491,6 @@ def test_gamesession_GameSession_Game__setter(instance):
     instance.GameSession_Game_ = original
     assert instance.GameSession_Game_ == original
 
-@given(instance=GameSession_strategy)
-def test_gamesession_setPlayers___type(instance):
-    assert isinstance(instance.setPlayers__, str)
 
 
 @given(instance=GameSession_strategy)
@@ -1643,9 +1499,6 @@ def test_gamesession_setPlayers___setter(instance):
     instance.setPlayers__ = original
     assert instance.setPlayers__ == original
 
-@given(instance=GameSession_strategy)
-def test_gamesession_GameSession_Game__Card__type(instance):
-    assert isinstance(instance.GameSession_Game__Card_, str)
 
 
 @given(instance=GameSession_strategy)
@@ -1659,20 +1512,6 @@ def test_gamesession_GameSession_Game__Card__setter(instance):
 def test_main_instantiation(instance):
     assert isinstance(instance, Main)
 
-@given(instance=Main_strategy)
-def test_main_Main___type(instance):
-    assert isinstance(instance.Main__, str)
-
-
-@given(instance=Main_strategy)
-def test_main_Main___setter(instance):
-    original = instance.Main__
-    instance.Main__ = original
-    assert instance.Main__ == original
-
-@given(instance=Main_strategy)
-def test_main_main_String_____type(instance):
-    assert isinstance(instance.main_String____, str)
 
 
 @given(instance=Main_strategy)
@@ -1680,3 +1519,11 @@ def test_main_main_String_____setter(instance):
     original = instance.main_String____
     instance.main_String____ = original
     assert instance.main_String____ == original
+
+
+
+@given(instance=Main_strategy)
+def test_main_Main___setter(instance):
+    original = instance.Main__
+    instance.Main__ = original
+    assert instance.Main__ == original

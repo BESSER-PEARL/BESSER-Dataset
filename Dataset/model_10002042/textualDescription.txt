@@ -1,0 +1,68 @@
+The model has 43 class(es).
+The class 'PayPal' has no attributes.
+The class 'User_Interactions_Search' has no attributes.
+The class 'GUI_GUI' has no attributes.
+The class 'System_Control' has no attributes.
+The class 'Group1' has the following attributes: 'name' of type str; 'nMembers' of type int; 'members' of type User__; 'admins' of type User__; 'description' of type str; 'posts' of type str.
+The class 'Normal_User1' has no attributes.
+The class 'CreditCard' has no attributes.
+The class 'List_User__Interface' has no attributes.
+The class 'GUI' has no attributes.
+The class 'User' has the following attributes: 'gender' of type str; 'email' of type str; 'password' of type str; 'name' of type str; 'pages' of type str; 'groups' of type str; 'username' of type str.
+The class 'User_Interactions_Message' has the following attributes: 'Deliverd' of type bool; 'MessageContent' of type str; 'Seen' of type bool; 'SenderID' of type int; 'ReceiverID' of type int; 'Time' of type int.
+The class 'User__' has no attributes.
+The class 'HashTags1' has the following attributes: 'allHashTags' of type str.
+The class 'Premium_User' has no attributes.
+The class 'User_Interactions_Post' has the following attributes: 'owner' of type User; 'nComments' of type int; 'nLikes' of type int; 'nShares' of type int; 'privateMode' of type bool.
+The class 'Users_User' has the following attributes: 'username' of type str; 'groups' of type str; 'UserID' of type int; 'password' of type str; 'email' of type str; 'Privacy' of type str; 'FriendRequests' of type str; 'Full_Name' of type str; 'Friends' of type List_User__Interface; 'Age' of type int; 'Gender' of type str; 'pages' of type str; 'Messages' of type str.
+The class 'Premuim_User' has no attributes.
+The class 'HashTags' has the following attributes: 'allHashTags' of type str.
+The class 'Normal_User' has no attributes.
+The class 'Page1' has the following attributes: 'fans' of type User__; 'admin' of type User; 'name' of type str; 'description' of type str; 'nFans' of type int; 'posts' of type str.
+The class 'Users_Normal_User' has no attributes.
+The class 'Post2' has no attributes.
+The class 'System_Controller_User_Controller' has no attributes.
+The class 'User2_Interface' has no attributes.
+The class 'Message' has the following attributes: 'SenderID' of type int; 'MessageContent' of type str; 'Seen' of type bool; 'ReceiverID' of type int; 'Deliverd' of type bool; 'Time' of type int.
+The class 'Listeener' has no attributes.
+The class 'Users_Premium_User' has no attributes.
+The class 'User_Interactions_Page' has the following attributes: 'description' of type str; 'fans' of type User__; 'name' of type str; 'admin' of type User; 'posts' of type str; 'nFans' of type int.
+The class 'Page' has the following attributes: 'admin' of type User; 'description' of type str; 'posts' of type str; 'name' of type str; 'fans' of type User__; 'nFans' of type int.
+The class 'User_Interactions_Group' has the following attributes: 'name' of type str; 'members' of type User__; 'description' of type str; 'admins' of type User__; 'posts' of type str; 'nMembers' of type int.
+The class 'Post1' has the following attributes: 'owner' of type User; 'LikeContainer_int_' of type str; 'nShares' of type int; 'privateMode' of type bool; 'CommentContainer' of type str; 'nLikes' of type int; 'nComments' of type int.
+The class 'Back_End_API_PaymentMethod' has no attributes.
+The class 'Post' has the following attributes: 'owner' of type User; 'nLikes' of type int; 'nComments' of type int; 'privateMode' of type bool; 'nShares' of type int.
+The class 'User_Interactions_HashTags' has the following attributes: 'allHashTags' of type str.
+The class 'User_Controller' has no attributes.
+The class 'PaymentMethod' has no attributes.
+The class 'System_Controller' has the following attributes: 'Database_Connection' of type bool; 'GiveResponse' of type bool.
+The class 'Group' has the following attributes: 'posts' of type str; 'nMembers' of type int; 'admins' of type User__; 'members' of type User__; 'name' of type str; 'description' of type str.
+The class 'System_Controller_System_Controller' has the following attributes: 'GiveResponse' of type bool; 'Database_Connection' of type bool.
+The class 'Back_End_API_CreditCard' has no attributes.
+The class 'User1' has the following attributes: 'Gender' of type str; 'password' of type str; 'UserID' of type int; 'Age' of type int; 'Messages' of type str; 'Friends' of type List_User__Interface; 'FriendRequests' of type str; 'Full_Name' of type str; 'pages' of type str; 'Privacy' of type str; 'email' of type str; 'groups' of type str; 'username' of type str.
+The class 'Back_End_API_PayPal' has no attributes.
+The class 'Search' has no attributes.
+'Users_Premium_User' (role 'paymentMethod29', cardinality 0..*) is associated with 'Back_End_API_PaymentMethod' (role 'premium_User28', cardinality 0..*).
+'System_Controller' (role 'search39', cardinality 0..*) is associated with 'Search' (role 'system_Controller38', cardinality 0..*).
+'Post' (role 'page10', cardinality 0..*) is associated with 'Page' (role 'post11', cardinality 0..*).
+'PaymentMethod' (role 'user32', cardinality 0..*) is associated with 'User1' (role 'paymentMethod33', cardinality 0..*).
+'Post' (role 'user5', cardinality 0..*) is associated with 'User' (role 'post4', cardinality 0..*).
+'System_Controller' (role 'user_Controller47', cardinality 0..*) is associated with 'User_Controller' (role 'system_Controller46', cardinality 0..*).
+'User' (role 'group0', cardinality 0..*) is associated with 'Group' (role 'user1', cardinality 0..*).
+'User_Interactions_Post' (role 'group23', cardinality 0..*) is associated with 'User_Interactions_Group' (role 'post22', cardinality 0..*).
+'Post1' (role 'hashTags45', cardinality 0..*) is associated with 'HashTags1' (role 'post44', cardinality 0..*).
+'System_Controller' (role 'post35', cardinality 0..*) is associated with 'Post1' (role 'system_Controller34', cardinality 0..*).
+'User_Controller' (role 'user30', cardinality 0..*) is associated with 'User1' (role 'user_Controller31', cardinality 0..*).
+'Users_User' (role 'page16', cardinality 0..*) is associated with 'User_Interactions_Page' (role 'user17', cardinality 0..*).
+'Users_User' (role 'search27', cardinality 0..*) is associated with 'User_Interactions_Search' (role 'user26', cardinality 0..*).
+'User_Interactions_Post' (role 'page25', cardinality 0..*) is associated with 'User_Interactions_Page' (role 'post24', cardinality 0..*).
+'User_Interactions_Group' (role 'user13', cardinality 0..*) is associated with 'Users_User' (role 'group12', cardinality 0..*).
+'Page' (role 'user3', cardinality 0..*) is associated with 'User' (role 'page2', cardinality 0..*).
+'Post' (role 'group6', cardinality 0..*) is associated with 'Group' (role 'post7', cardinality 0..*).
+'User_Interactions_Message' (role 'user19', cardinality 0..*) is associated with 'Users_User' (role 'message18', cardinality 0..*).
+'System_Controller' (role 'message41', cardinality 0..*) is associated with 'Message' (role 'system_Controller40', cardinality 0..*).
+'System_Controller' (role 'page43', cardinality 0..*) is associated with 'Page1' (role 'system_Controller42', cardinality 0..*).
+'HashTags' (role 'post9', cardinality 0..*) is associated with 'Post' (role 'hashTags8', cardinality 0..*).
+'User_Interactions_Post' (role 'user15', cardinality 0..*) is associated with 'Users_User' (role 'post14', cardinality 0..*).
+'User_Interactions_Post' (role 'hashTags20', cardinality 0..*) is associated with 'User_Interactions_HashTags' (role 'post21', cardinality 0..*).
+'System_Controller' (role 'group37', cardinality 0..*) is associated with 'Group1' (role 'system_Controller36', cardinality 0..*).

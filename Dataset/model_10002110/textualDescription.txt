@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'conflictCheck' has the following attributes: 'subjects' of type str; 'conflict' of type bool.
+The class 'subjects' has the following attributes: 'classroom' of type int; 'teacher' of type str; 'name' of type str; 'Section' of type str.
+The class 'teachers' has the following attributes: 'classroom' of type int; 'section' of type str; 'name' of type str; 'subject' of type str.
+The class 'constraints' has the following attributes: 'doubletons' of type subjects; 'singletons' of type subjects.
+The class 'leftOuts' has the following attributes: 'students' of type str; 'subject' of type subjects; 'classroom' of type classrooms; 'teachers' of type teachers.
+The class 'classrooms' has the following attributes: 'subject' of type str; 'teacher' of type str; 'number' of type int.

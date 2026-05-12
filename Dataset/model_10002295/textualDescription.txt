@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'Product' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'Customer' has the following attributes: 'phone' of type str; 'email' of type str; 'address' of type str.
+The class 'WebUser' has the following attributes: 'login' of type str; 'password' of type str; 'state' of type str.
+'Customer' (role 'webUser1', cardinality 0..*) is associated with 'WebUser' (role 'customer0', cardinality 0..*).

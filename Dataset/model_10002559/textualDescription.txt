@@ -1,0 +1,31 @@
+The model has 19 class(es).
+The class 'ConnectionInterface_Interface' has no attributes.
+The class 'Repair' has the following attributes: 'car' of type Car; 'date' of type date; 'part' of type RepairPart; 'customer' of type Customer.
+The class 'Purchase_Car_UseCase' has no attributes.
+The class 'Order_Cars_UseCase' has no attributes.
+The class 'Compute_Billables_UseCase' has no attributes.
+The class 'Maintenance_Team_Actor' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'Dealer_Actor' has no attributes.
+The class 'RepairPart' has the following attributes: 'cost' of type str; 'stock' of type int; 'name' of type str.
+The class 'Check_Car_Stock_UseCase' has no attributes.
+The class 'ActiveRecord' has the following attributes: 'connection' of type ConnectionInterface_Interface; 'id' of type int.
+The class 'Check_for_Parts_UseCase' has no attributes.
+The class 'Car' has the following attributes: 'cost' of type str; 'name' of type str; 'stock' of type int; 'manufacturer' of type str.
+The class 'Sale' has the following attributes: 'customer' of type Customer; 'billable' of type str; 'date' of type date; 'car' of type Car.
+The class 'Send_for_Repair_UseCase' has no attributes.
+The class 'Manufacturer_Actor' has no attributes.
+The class 'Customer' has the following attributes: 'name' of type str; 'address' of type str; 'type' of type CustomerType.
+The class 'Enquire_for_Cars_UseCase' has no attributes.
+The class 'Repair_Part_Purchase_UseCase' has no attributes.
+The enumeration 'CustomerType' does not specify any literals.
+'Purchase_Car_UseCase' (role 'dealer9', cardinality 0..*) is associated with 'Dealer_Actor' (role 'purchase_Car8', cardinality 0..*).
+'Purchase_Car_UseCase' (role 'customer3', cardinality 0..*) is associated with 'Customer_Actor' (role 'purchase_Car2', cardinality 0..*).
+'Dealer_Actor' (role 'enquire_for_Cars6', cardinality 0..*) is associated with 'Enquire_for_Cars_UseCase' (role 'dealer7', cardinality 0..*).
+'Send_for_Repair_UseCase' (role 'maintenance_Team13', cardinality 0..*) is associated with 'Maintenance_Team_Actor' (role 'send_for_Repair12', cardinality 0..*).
+'Enquire_for_Cars_UseCase' (role 'customer1', cardinality 0..*) is associated with 'Customer_Actor' (role 'enquire_for_Cars0', cardinality 0..*).
+'Maintenance_Team_Actor' (role 'repair_Part_Purchase14', cardinality 0..*) is associated with 'Repair_Part_Purchase_UseCase' (role 'maintenance_Team15', cardinality 0..*).
+'Dealer_Actor' (role 'order_Cars16', cardinality 0..*) is associated with 'Order_Cars_UseCase' (role 'dealer17', cardinality 0..*).
+'Manufacturer_Actor' (role 'order_Cars18', cardinality 0..*) is associated with 'Order_Cars_UseCase' (role 'manufacturer19', cardinality 0..*).
+'Send_for_Repair_UseCase' (role 'dealer11', cardinality 0..*) is associated with 'Dealer_Actor' (role 'send_for_Repair10', cardinality 0..*).
+'Send_for_Repair_UseCase' (role 'customer5', cardinality 0..*) is associated with 'Customer_Actor' (role 'send_for_Repair4', cardinality 0..*).

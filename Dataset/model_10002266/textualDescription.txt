@@ -1,0 +1,36 @@
+The model has 17 class(es).
+The class 'Employee_Actor' has no attributes.
+The class 'FACULTY' has the following attributes: 'password' of type str; 'id' of type str.
+The class 'ADMIN' has the following attributes: 'password' of type str; 'id' of type str.
+The class 'send_attendance_sms_external' has no attributes.
+The class 'generate_attendance_report_external' has no attributes.
+The class '_Component' has no attributes.
+The class 'Supervisor_Actor' has no attributes.
+The class 'answer_attendance_call_external' has no attributes.
+The class 'logout_external' has no attributes.
+The class 'login_external' has no attributes.
+The class 'modify_list_of_students_external' has no attributes.
+The class 'PARENT' has the following attributes: 'phoneNumber' of type int; 'id' of type str; 'password' of type str.
+The class 'view_cumiliative_attendance_external' has no attributes.
+The class 'post_attendance_external' has no attributes.
+The class 'STUDENT' has the following attributes: 'password' of type str; 'id' of type str.
+The class 'admin_Actor' has no attributes.
+The class 'take_attendance_call_external' has no attributes.
+'post_attendance_external' (role 'faculty5', cardinality 0..*) is associated with 'Supervisor_Actor' (role 'post_attendance4', cardinality 0..*).
+'Employee_Actor' (role 'answer_attendance_call6', cardinality 0..*) is associated with 'answer_attendance_call_external' (role 'student7', cardinality 0..*).
+'Employee_Actor' (role 'logout12', cardinality 0..*) is associated with 'logout_external' (role 'student13', cardinality 0..*).
+'Supervisor_Actor' (role 'login14', cardinality 0..*) is associated with 'login_external' (role 'faculty15', cardinality 0..*).
+'Supervisor_Actor' (role 'send_attendance_sms22', cardinality 0..*) is associated with 'send_attendance_sms_external' (role 'faculty23', cardinality 0..*).
+'view_cumiliative_attendance_external' (role 'faculty25', cardinality 0..*) is associated with 'Supervisor_Actor' (role 'view_cumiliative_attendance24', cardinality 0..*).
+'FACULTY' (role 'sTUDENT28', cardinality 0..*) is associated with 'STUDENT' (role 'fACULTY29', cardinality 0..*).
+'generate_attendance_report_external' (role 'faculty3', cardinality 0..*) is associated with 'Supervisor_Actor' (role 'generate_class_wise_attendance_report2', cardinality 0..*).
+'take_attendance_call_external' (role 'faculty1', cardinality 0..*) is associated with 'Supervisor_Actor' (role 'give_attendance0', cardinality 0..*).
+'Employee_Actor' (role 'view_cumiliative_attendance8', cardinality 0..*) is associated with 'view_cumiliative_attendance_external' (role 'student9', cardinality 0..*).
+'modify_list_of_students_external' (role 'admin27', cardinality 0..*) is associated with 'admin_Actor' (role 'modify_list_of_students26', cardinality 0..*).
+'admin_Actor' (role 'logout20', cardinality 0..*) is associated with 'logout_external' (role 'admin21', cardinality 0..*).
+'ADMIN' (role 'pARENT35', cardinality 0..*) is associated with 'PARENT' (role 'aDMIN34', cardinality 0..*).
+'login_external' (role 'student11', cardinality 0..*) is associated with 'Employee_Actor' (role 'login10', cardinality 0..*).
+'FACULTY' (role 'aDMIN30', cardinality 0..*) is associated with 'ADMIN' (role 'fACULTY31', cardinality 0..*).
+'admin_Actor' (role 'login18', cardinality 0..*) is associated with 'login_external' (role 'admin19', cardinality 0..*).
+'Supervisor_Actor' (role 'logout16', cardinality 0..*) is associated with 'logout_external' (role 'faculty17', cardinality 0..*).
+'ADMIN' (role 'sTUDENT33', cardinality 0..*) is associated with 'STUDENT' (role 'aDMIN32', cardinality 0..*).

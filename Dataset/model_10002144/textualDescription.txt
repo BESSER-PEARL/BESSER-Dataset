@@ -1,0 +1,17 @@
+The model has 12 class(es).
+The class 'Bishop' has the following attributes: 'pieceColor' of type str.
+The class 'Queen' has the following attributes: 'pieceColor' of type str.
+The class 'Knight' has the following attributes: 'pieceColor' of type str.
+The class 'Pawn' has the following attributes: 'pieceColor' of type str.
+The class 'Piece' has the following attributes: 'pieceColor' of type PieceColor.
+The class 'King' has the following attributes: 'pieceColor' of type str.
+The class 'Chess' has the following attributes: 'board' of type str.
+The class 'ParkingSpot' has the following attributes: 'spotType' of type ParkingSpotType; 'occupied' of type bool; 'parkingSpotId' of type int.
+The class 'Slot' has the following attributes: 'piece' of type Piece; 'Occupied' of type bool.
+The class 'ParkingLot' has the following attributes: 'numOfLevels' of type int; 'hours' of type str; 'spotsOccupied' of type int; 'capacity' of type int; 'levels' of type str.
+The class 'Rook' has the following attributes: 'pieceColor' of type str.
+The class 'Level' has the following attributes: 'numofSpots' of type int; 'levelId' of type int; 'parkingSpots' of type str.
+The enumeration 'PieceColor' does not specify any literals.
+The enumeration 'ParkingSpotType' does not specify any literals.
+'ParkingLot' (role 'level0', cardinality 0..*) is associated with 'Level' (role 'parkingLot1', cardinality 0..*).
+'ParkingSpot' (role 'level3', cardinality 0..*) is associated with 'Level' (role 'parkingSpot2', cardinality 0..*).

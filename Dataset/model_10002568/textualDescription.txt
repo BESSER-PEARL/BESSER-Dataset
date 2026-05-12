@@ -1,0 +1,7 @@
+The model has 5 class(es).
+The class 'Hand' has no attributes.
+The class 'EndCardPile' has no attributes.
+The class 'CardCollection' has the following attributes: 'collection' of type str.
+The class 'Card' has the following attributes: 'Number' of type int; 'Suit' of type str.
+The class 'Deck' has no attributes.
+'CardCollection' (role 'card0', cardinality 0..*) is associated with 'Card' (role 'cardCollection1', cardinality 0..*).

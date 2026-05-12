@@ -1,0 +1,10 @@
+The model has 9 class(es).
+The class 'Case_Create_Component' has no attributes.
+The class 'User' has the following attributes: '_scope_user___PA_SA' of type str.
+The class 'Case_index_Component' has no attributes.
+The class 'Home__Component' has no attributes.
+The class 'Data_Basse' has no attributes.
+The class 'Case_Edit_Component' has no attributes.
+The class 'RestServices' has the following attributes: 'base_url' of type str.
+The class 'Case_Details_Component' has no attributes.
+The class 'Case_Index' has the following attributes: '_scope_cases' of type str.

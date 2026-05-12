@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'View_Patient_Mental_Info_UseCase' has no attributes.
+The class 'To_Author' has no attributes.
+The class 'Sent' has no attributes.
+The class 'message' has no attributes.
+The class 'Update_Patient_Mental_Info_UseCase' has no attributes.
+The class 'From_Author' has no attributes.
+The class 'Deleted' has no attributes.
+The class 'Inbox' has no attributes.
+The class 'View_Patient_Clinical_info_UseCase' has no attributes.
+The class 'Doctor_Actor' has no attributes.
+'Doctor_Actor' (role 'view_Patient_Mental_Info4', cardinality 0..*) is associated with 'View_Patient_Mental_Info_UseCase' (role 'doctor5', cardinality 0..*).
+'message' (role 'Sent_to12', cardinality 0..*) is associated with 'To_Author' (role 'message13', cardinality 0..*).
+'Doctor_Actor' (role 'view_Patient_Clinical_info0', cardinality 0..*) is associated with 'View_Patient_Clinical_info_UseCase' (role 'doctor1', cardinality 0..*).
+'message' (role 'sent9', cardinality 0..*) is associated with 'Sent' (role 'message8', cardinality 0..*).
+'message' (role 'Came_from15', cardinality 0..*) is associated with 'From_Author' (role 'From_message_014', cardinality 0..*).
+'message' (role 'Inbox_message_17', cardinality 0..*) is associated with 'Inbox' (role 'is_in6', cardinality 0..*).
+'Doctor_Actor' (role 'update_Patient_Mental_Info2', cardinality 0..*) is associated with 'Update_Patient_Mental_Info_UseCase' (role 'doctor3', cardinality 0..*).
+'Deleted' (role 'message11', cardinality 0..*) is associated with 'message' (role 'deleted10', cardinality 0..*).

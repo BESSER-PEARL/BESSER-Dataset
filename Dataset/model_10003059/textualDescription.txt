@@ -1,0 +1,35 @@
+The model has 19 class(es).
+The class 'Add_user_and_Assign_role_UseCase' has no attributes.
+The class 'Add_Edit_Delete_menus_UseCase' has no attributes.
+The class 'Log_in_logout_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Login_Logout_UseCase' has no attributes.
+The class 'View_Food_products_UseCase' has no attributes.
+The class 'See_order_Status_UseCase' has no attributes.
+The class 'View_order_transation_UseCase1' has no attributes.
+The class 'Add_Edit_Delete_menus_menu_items__UseCase' has no attributes.
+The class 'Write_Review_UseCase' has no attributes.
+The class 'Food' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'View_order_transation_UseCase' has no attributes.
+The class 'Update_status_of_orders_UseCase' has no attributes.
+The class 'Edit_personal_Information_UseCase' has no attributes.
+The class 'Operator_Actor' has no attributes.
+The class 'Access_the_system_UseCase' has no attributes.
+The class 'order_food_UseCase' has no attributes.
+The class 'Customer_Actor' has no attributes.
+The class 'View_open_bill_and_ordered_items_UseCase' has no attributes.
+'Admin_Actor' (role 'access_the_system14', cardinality 0..*) is associated with 'Access_the_system_UseCase' (role 'admin15', cardinality 0..*).
+'Customer_Actor' (role 'view_open_bill_and_ordered_items6', cardinality 0..*) is associated with 'View_open_bill_and_ordered_items_UseCase' (role 'customer7', cardinality 0..*).
+'Add_Edit_Delete_menus_menu_items__UseCase' (role 'admin17', cardinality 0..*) is associated with 'Admin_Actor' (role 'add_Edit_Delete_menus_menu_items_16', cardinality 0..*).
+'Customer_Actor' (role 'log_in_logout0', cardinality 0..*) is associated with 'Log_in_logout_UseCase' (role 'customer1', cardinality 0..*).
+'Admin_Actor' (role 'view_order_transation20', cardinality 0..*) is associated with 'View_order_transation_UseCase' (role 'admin21', cardinality 0..*).
+'Operator_Actor' (role 'add_Edit_Delete_menus28', cardinality 0..*) is associated with 'Add_Edit_Delete_menus_UseCase' (role 'operator29', cardinality 0..*).
+'Customer_Actor' (role 'edit_personal_Information8', cardinality 0..*) is associated with 'Edit_personal_Information_UseCase' (role 'customer9', cardinality 0..*).
+'Operator_Actor' (role 'view_order_transation26', cardinality 0..*) is associated with 'View_order_transation_UseCase1' (role 'operator27', cardinality 0..*).
+'See_order_Status_UseCase' (role 'customer11', cardinality 0..*) is associated with 'Customer_Actor' (role 'see_order_Status10', cardinality 0..*).
+'Write_Review_UseCase' (role 'customer13', cardinality 0..*) is associated with 'Customer_Actor' (role 'write_Review12', cardinality 0..*).
+'Add_user_and_Assign_role_UseCase' (role 'admin19', cardinality 0..*) is associated with 'Admin_Actor' (role 'add_user_and_Assign_role18', cardinality 0..*).
+'Login_Logout_UseCase' (role 'operator25', cardinality 0..*) is associated with 'Operator_Actor' (role 'login_Logout24', cardinality 0..*).
+'Customer_Actor' (role 'order_food4', cardinality 0..*) is associated with 'order_food_UseCase' (role 'customer5', cardinality 0..*).
+'Update_status_of_orders_UseCase' (role 'admin23', cardinality 0..*) is associated with 'Admin_Actor' (role 'update_status_of_orders22', cardinality 0..*).
+'Customer_Actor' (role 'view_Food_products2', cardinality 0..*) is associated with 'View_Food_products_UseCase' (role 'customer3', cardinality 0..*).

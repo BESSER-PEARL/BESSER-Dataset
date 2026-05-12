@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'Quota' has the following attributes: 'comment' of type str; 'id' of type str; 'current' of type int; 'max' of type int; 'quotaName' of type str.
+The class 'QuotaItem' has the following attributes: 'id' of type str; 'sueprClassId' of type str; 'amount' of type int; 'quotaItemName' of type str; 'type' of type QuotaType; 'createdOn' of type str; 'comment' of type str.
+The enumeration 'QuotaType' does not specify any literals.
+'Quota' (role 'quotaItem0', cardinality 0..*) is associated with 'QuotaItem' (role 'quota1', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 10 class(es).
+The class 'History' has the following attributes: 'Code_id' of type str; 'Code_amount' of type str.
+The class 'Administrator_Actor' has no attributes.
+The class 'Salary_Management_UseCase' has no attributes.
+The class 'Logout_external' has no attributes.
+The class 'Employee_Actor' has no attributes.
+The class 'Login_external' has no attributes.
+The class 'Error_code' has the following attributes: 'Code_Id' of type str; 'Code_Exp' of type str; 'Code_serial' of type str.
+The class 'Scanner' has the following attributes: 'code_Id' of type int; 'code_MOB' of type date; 'Code_EOD' of type date; 'Code_amount' of type float; 'code_serial' of type str; 'code_serial1' of type str.
+The class 'Employee_Management_System_Component' has no attributes.
+The class 'Authentication_UseCase' has no attributes.
+'Login_external' (role 'employee1', cardinality 0..*) is associated with 'Employee_Actor' (role 'login0', cardinality 0..*).
+'Logout_external' (role 'employee3', cardinality 0..*) is associated with 'Employee_Actor' (role 'logout2', cardinality 0..*).

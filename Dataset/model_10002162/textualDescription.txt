@@ -1,0 +1,8 @@
+The model has 7 class(es).
+The class 'AdminHomePage' has no attributes.
+The class 'LoginPage' has no attributes.
+The class 'UserHomePage' has no attributes.
+The class 'AbstractWebpage' has no attributes.
+The class 'AbstractHomePage' has no attributes.
+The class 'RegisterPage' has no attributes.
+The class 'ManagerHomePage' has no attributes.

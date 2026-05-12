@@ -1,0 +1,38 @@
+The model has 15 class(es).
+The class 'Appointment' has the following attributes: 'room' of type int; 'date' of type str; 'time' of type str; 'attribute' of type str; 'doctoradi' of type int; 'no' of type str.
+The class 'Disease' has the following attributes: 'name' of type str; 'code' of type int; 'type' of type str.
+The class 'Receptionist' has the following attributes: 'checkroom' of type str; 'no' of type int.
+The class 'Patient' has the following attributes: 'telno1' of type str; 'birth' of type str; 'gender' of type str; 'attribute' of type str; 'address' of type str; 'gender1' of type str; 'tcno' of type str; 'name' of type str; 'birth1' of type str; 'tcno1' of type str; 'address1' of type str; 'name1' of type str; 'telno' of type str.
+The class 'Hospitals' has the following attributes: 'name' of type str; 'no' of type int; 'address' of type str; 'type' of type str.
+The class 'Examination' has the following attributes: 'no' of type int; 'attribute' of type str; 'Appointmentid' of type int; 'diagnosisid' of type int.
+The class 'Doctor' has the following attributes: 'corporation' of type str; 'registorno' of type str; 'specialization' of type str.
+The class 'Corporation' has the following attributes: 'address' of type str; 'no' of type int; 'name' of type str.
+The class 'Patient_Medicines' has the following attributes: 'patientno' of type str; 'no' of type int; 'medicines' of type str; 'quantities' of type int.
+The class 'Patient_Prescription' has the following attributes: 'code' of type int; 'code1' of type int; 'diseaseid' of type int; 'patientid' of type int; 'date' of type str; 'medicineid' of type int.
+The class 'Personel' has the following attributes: 'registerno' of type str; 'attribute7' of type str; 'gender' of type str; 'tcno' of type str; 'attribute' of type str; 'corporation' of type str; 'name1' of type str; 'position' of type str; 'name' of type str; 'tcno1' of type str.
+The class 'Bill' has the following attributes: 'no' of type int; 'patientno' of type int; 'amount' of type str.
+The class 'Room' has the following attributes: 'buildingname' of type str; 'no' of type int; 'floor' of type int.
+The class 'Medicine' has the following attributes: 'price' of type str; 'type' of type str; 'name' of type str; 'code' of type int.
+The class 'diagnosis' has the following attributes: 'diagnoses' of type str; 'id' of type int.
+'Appointment' (role 'examination21', cardinality 0..*) is associated with 'Examination' (role 'appointment20', cardinality 0..*).
+'Receptionist' (role 'personel38', cardinality 0..*) is associated with 'Personel' (role 'receptionist39', cardinality 0..*).
+'Doctor' (role 'personel11', cardinality 0..*) is associated with 'Personel' (role 'doctor10', cardinality 0..*).
+'Personel' (role 'receptionist42', cardinality 0..*) is associated with 'Receptionist' (role 'personel43', cardinality 0..*).
+'Patient' (role 'receptionist41', cardinality 0..*) is associated with 'Receptionist' (role 'patient40', cardinality 0..*).
+'Patient' (role 'appointment16', cardinality 0..*) is associated with 'Appointment' (role 'patient17', cardinality 0..*).
+'Personel' (role 'hospitals15', cardinality 0..*) is associated with 'Hospitals' (role 'personel14', cardinality 0..*).
+'Patient_Prescription' (role 'patient29', cardinality 0..*) is associated with 'Patient' (role 'patient_Prescription28', cardinality 0..*).
+'diagnosis' (role 'disease36', cardinality 0..*) is associated with 'Disease' (role 'diagnosis37', cardinality 0..*).
+'Patient_Medicines' (role 'patient_Prescription33', cardinality 0..*) is associated with 'Patient_Prescription' (role 'patient_Medicines32', cardinality 0..*).
+'Room' (role 'appointment22', cardinality 0..*) is associated with 'Appointment' (role 'room23', cardinality 0..*).
+'Patient' (role 'doctor0', cardinality 0..*) is associated with 'Personel' (role 'patient1', cardinality 0..*).
+'Personel' (role 'corporation26', cardinality 0..*) is associated with 'Corporation' (role 'personel7', cardinality 0..*).
+'Patient' (role 'patient_Medicines26', cardinality 0..*) is associated with 'Patient_Medicines' (role 'patient27', cardinality 0..*).
+'Appointment' (role 'doctor19', cardinality 0..*) is associated with 'Doctor' (role 'appointment18', cardinality 0..*).
+'diagnosis' (role 'examination25', cardinality 0..*) is associated with 'Examination' (role 'diagnosis24', cardinality 0..*).
+'Personel' (role 'doctor5', cardinality 0..*) is associated with 'Doctor' (role 'personel4', cardinality 0..*).
+'Corporation' (role 'personel12', cardinality 0..*) is associated with 'Personel' (role 'corporation13', cardinality 0..*).
+'Medicine' (role 'patient_Medicines35', cardinality 0..*) is associated with 'Patient_Medicines' (role 'medicine34', cardinality 0..*).
+'Personel' (role 'hospitals8', cardinality 0..*) is associated with 'Hospitals' (role 'personel9', cardinality 0..*).
+'Disease' (role 'patient_Prescription31', cardinality 0..*) is associated with 'Patient_Prescription' (role 'disease30', cardinality 0..*).
+'Patient' (role 'doctor2', cardinality 0..*) is associated with 'Personel' (role 'patient3', cardinality 0..*).

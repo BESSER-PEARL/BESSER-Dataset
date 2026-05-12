@@ -1,0 +1,24 @@
+The model has 14 class(es).
+The class 'Make_Payment_UseCase' has no attributes.
+The class 'Rating_UseCase' has no attributes.
+The class 'Payment' has the following attributes: 'Amount' of type int.
+The class 'Customer_Actor' has no attributes.
+The class 'Sign_Up_UseCase' has no attributes.
+The class 'Place_Order_UseCase' has no attributes.
+The class 'Wallet' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Cash_On_Delivery' has no attributes.
+The class 'Cutomer' has no attributes.
+The class 'Add_To_Cart_UseCase' has no attributes.
+The class 'View_Order_Details_UseCase' has no attributes.
+The class 'System_Order' has no attributes.
+The class 'Track_Order_UseCase' has no attributes.
+'View_Order_Details_UseCase' (role 'customer7', cardinality 0..*) is associated with 'Customer_Actor' (role 'view_Order_Details6', cardinality 0..*).
+'Add_To_Cart_UseCase' (role 'customer1', cardinality 0..*) is associated with 'Customer_Actor' (role 'add_To_Cart0', cardinality 0..*).
+'Cutomer' (role 'Cutomer_System_Order_014', cardinality 0..*) is associated with 'System_Order' (role 'Cutomer_System_Order_115', cardinality 0..*).
+'Sign_Up_UseCase' (role 'customer13', cardinality 0..*) is associated with 'Customer_Actor' (role 'sign_Up12', cardinality 0..*).
+'Place_Order_UseCase' (role 'customer3', cardinality 0..*) is associated with 'Customer_Actor' (role 'place_Order2', cardinality 0..*).
+'Customer_Actor' (role 'track_Order8', cardinality 0..*) is associated with 'Track_Order_UseCase' (role 'customer9', cardinality 0..*).
+'Make_Payment_UseCase' (role 'customer11', cardinality 0..*) is associated with 'Customer_Actor' (role 'make_Payment10', cardinality 0..*).
+'Customer_Actor' (role 'rating4', cardinality 0..*) is associated with 'Rating_UseCase' (role 'customer5', cardinality 0..*).
+'System_Order' (role 'System_Order_Payment_016', cardinality 0..*) is associated with 'Payment' (role 'System_Order_Payment_117', cardinality 0..*).

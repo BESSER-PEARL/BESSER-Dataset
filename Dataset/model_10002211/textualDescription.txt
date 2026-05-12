@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'Product' has the following attributes: 'OnlineShopID' of type int; 'Image' of type str; 'ProductID' of type int; 'ProductName' of type str; 'Price' of type str; 'CategoryID' of type int; 'isActive' of type bool; 'Description' of type str.
+The class 'Category' has the following attributes: 'Description' of type str; 'CategoryName' of type str; 'CategoryID' of type int; 'isActive' of type bool.
+The class 'Role' has the following attributes: 'Description' of type str; 'RoleName' of type str; 'RoleID' of type int; 'isActive' of type bool.
+The class 'FlashSale' has the following attributes: 'DiscountAmount' of type int; 'FlashSaleName' of type str; 'Description' of type str; 'FlashSaleID' of type int; 'OnlineShopID' of type int; 'DiscountPercent' of type int.
+The class 'User' has the following attributes: 'RegisterDate' of type str; 'Username' of type str; 'UserID' of type str; 'isActive' of type bool; 'RoleID' of type int; 'Password' of type str.
+The class 'BaseDateInformation' has the following attributes: 'CreateDate' of type str; 'CreatedBy' of type str; 'LastModifedBy' of type str; 'LastModifedDate' of type str.
+The class 'Customer' has the following attributes: 'Gender' of type int; 'CustomerName' of type str; 'CustomerID' of type int; 'Address' of type str; 'Email' of type str; 'Phone' of type str.
+The class 'Order' has the following attributes: 'Status' of type bool; 'UserID' of type int; 'OrderCustomerID' of type int; 'ShopOnlineID' of type int; 'TotalDiscount' of type str; 'OrderID' of type int; 'OrderDate' of type str; 'ReceiveCustomerID' of type int; 'TotalPrice' of type str.
+The class 'OnlineShop' has the following attributes: 'OnlineShopID' of type int; 'isActive' of type bool; 'ShopCategoryID' of type int; 'OnlineShopName' of type str.
+'Category' (role 'baseDateInformation7', cardinality 0..*) is associated with 'BaseDateInformation' (role 'category6', cardinality 0..*).
+'OnlineShop' (role 'user14', cardinality 0..*) is associated with 'User' (role 'onlineShop15', cardinality 0..*).
+'OnlineShop' (role 'product9', cardinality 0..*) is associated with 'Product' (role 'onlineShop8', cardinality 0..*).
+'OnlineShop' (role 'flashSale18', cardinality 0..*) is associated with 'FlashSale' (role 'onlineShop19', cardinality 0..*).
+'OnlineShop' (role 'baseDateInformation23', cardinality 0..*) is associated with 'BaseDateInformation' (role 'onlineShop22', cardinality 0..*).
+'OnlineShop' (role 'category5', cardinality 0..*) is associated with 'Category' (role 'onlineShop4', cardinality 0..*).
+'Product' (role 'baseDateInformation11', cardinality 0..*) is associated with 'BaseDateInformation' (role 'product10', cardinality 0..*).
+'Order' (role 'onlineShop21', cardinality 0..*) is associated with 'OnlineShop' (role 'order20', cardinality 0..*).
+'FlashSale' (role 'baseDateInformation17', cardinality 0..*) is associated with 'BaseDateInformation' (role 'flashSale16', cardinality 0..*).
+'Order' (role 'customer3', cardinality 0..*) is associated with 'Customer' (role 'order2', cardinality 0..*).
+'Role' (role 'user13', cardinality 0..*) is associated with 'User' (role 'role12', cardinality 0..*).
+'Category' (role 'product0', cardinality 0..*) is associated with 'Product' (role 'category1', cardinality 0..*).

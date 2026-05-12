@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'Card' has the following attributes: 'value' of type int; 'name' of type str.
+The enumeration 'CardValue' does not specify any literals.

@@ -1,0 +1,78 @@
+The model has 54 class(es).
+The class 'Selecionar_treino_UseCase' has no attributes.
+The class 'Estabelecer_comunica__o_com_wearable_UseCase' has no attributes.
+The class 'Aplicativo_Actor' has no attributes.
+The class 'Student_Interface' has no attributes.
+The class 'StudentSubject' has the following attributes: 'level' of type int; 'subject' of type Subject; 'student' of type Student_Interface.
+The class 'Exercise' has the following attributes: 'user_exercise' of type bool; 'difficulty' of type int.
+The class 'Autenticar_se_UseCase' has no attributes.
+The class 'Subject' has the following attributes: 'name' of type str.
+The class 'Alternative' has the following attributes: 'step' of type Step; 'answer' of type str; 'content' of type str; 'category' of type AlternativeCategory; 'answer_text' of type str.
+The class 'student_module_views_update_evidence_student__evidence_dict__UseCase' has no attributes.
+The class 'Analisar_dados_UseCase' has no attributes.
+The class 'Acessar_atividade_UseCase' has no attributes.
+The class 'update_history_request__UseCase' has no attributes.
+The class 'Fornecer_feedback_UseCase' has no attributes.
+The class 'Sequenciar_atividades_UseCase' has no attributes.
+The class 'Iniciar_parar_monitoramento_card_aco_UseCase' has no attributes.
+The class 'DispositivoBluetooth' has the following attributes: 'macAddress' of type str; 'nome' of type str.
+The class 'Servi_o_Web_Actor' has no attributes.
+The class 'Activity' has the following attributes: 'subject' of type Subject; 'content' of type str.
+The class 'TreinoMonitoramento' has the following attributes: 'fim' of type str; 'inicio' of type str.
+The class 'select_activity_request__UseCase' has no attributes.
+The class 'Instruction' has the following attributes: 'title' of type str; 'level' of type int.
+The class 'Curriculum' has the following attributes: 'activity' of type Activity; 'sequence' of type int.
+The class 'M_dulo_Pedag_gico_Actor' has no attributes.
+The class 'select_exercise_student__subject__UseCase' has no attributes.
+The class 'correct_alternative_alternative_id__alternative_answer__student__user_exercise__UseCase' has no attributes.
+The class 'Usuario' has the following attributes: 'nome' of type str; 'senha' of type str; 'cpf' of type str; 'dataNascimento' of type str; 'peso' of type str.
+The class 'Step' has the following attributes: 'exercise' of type Exercise; 'content' of type str.
+The class 'is_user_step_step_id__UseCase' has no attributes.
+The class 'Identificar_erros_comuns_UseCase' has no attributes.
+The class 'Usu_rio_Actor' has no attributes.
+The class 'Avaliar_plano_de_ensino_UseCase' has no attributes.
+The class 'Fornecer_lista_de_atividades_superadas_UseCase' has no attributes.
+The class 'UserStep' has no attributes.
+The class 'Fornecer_dica_UseCase' has no attributes.
+The class 'StudentStepHistory' has the following attributes: 'status' of type bool; 'student' of type Student_Interface; 'tries' of type int; 'step' of type Step.
+The class 'Receber_responder_requisi__es_UseCase' has no attributes.
+The class 'Sincronizar_dados_do_usu_rio_UseCase' has no attributes.
+The class 'MedicaoBatimento' has the following attributes: 'usuario' of type Usu_rio_Actor; 'treino' of type Treino; 'valor' of type int; 'instante' of type str; 'enviado' of type bool.
+The class 'TutorStep' has the following attributes: 'evidence' of type str; 'difficulty' of type int.
+The class 'Propor_desafio_UseCase' has no attributes.
+The class 'Feedback' has the following attributes: 'feedback' of type str; 'alternative' of type Alternative; 'level' of type int; 'state' of type bool.
+The class 'update_student_subject_student__student_knowledge__UseCase' has no attributes.
+The class 'Aluno_Actor' has no attributes.
+The class 'Adequar_sequ_ncia_UseCase' has no attributes.
+The class 'AlternativeCategory' has the following attributes: 'name' of type str.
+The class 'handle_user_answer_request__UseCase' has no attributes.
+The class 'StudentHistory' has the following attributes: 'student' of type Student_Interface; 'activity' of type Activity; 'sequence' of type int.
+The class 'Solicitar_dica_UseCase' has no attributes.
+The class 'is_exercise_activity_id__UseCase' has no attributes.
+The class 'sequence_student__UseCase' has no attributes.
+The class 'ServicoWeb' has no attributes.
+The class 'student_module_views_get_student_domains_student__UseCase' has no attributes.
+The class 'Treino' has the following attributes: 'nome' of type str.
+'Sincronizar_dados_do_usu_rio_UseCase' (role 'aplicativo10', cardinality 0..*) is associated with 'Aplicativo_Actor' (role 'sincronizar_dados11', cardinality 0..*).
+'Acessar_atividade_UseCase' (role 'aluno26', cardinality 0..*) is associated with 'Aluno_Actor' (role 'acessar_atividade27', cardinality 0..*).
+'Fornecer_lista_de_atividades_superadas_UseCase' (role 'm_dulo_Pedag_gico22', cardinality 0..*) is associated with 'M_dulo_Pedag_gico_Actor' (role 'fornecer_lista_de_atividades_superadas23', cardinality 0..*).
+'Propor_desafio_UseCase' (role 'm_dulo_Pedag_gico24', cardinality 0..*) is associated with 'M_dulo_Pedag_gico_Actor' (role 'propor_desafio25', cardinality 0..*).
+'Alternative' (role 'alternativeCategory38', cardinality 0..*) is associated with 'AlternativeCategory' (role 'alternative39', cardinality 0..*).
+'Usu_rio_Actor' (role 'iniciar_parar_monitoramento_card_aco5', cardinality 0..*) is associated with 'Iniciar_parar_monitoramento_card_aco_UseCase' (role 'usu_rio4', cardinality 0..*).
+'StudentSubject' (role 'subject229', cardinality 0..*) is associated with 'Subject' (role 'studentSubject28', cardinality 0..*).
+'Activity' (role 'curriculum32', cardinality 0..*) is associated with 'Curriculum' (role 'activity233', cardinality 0..*).
+'Servi_o_Web_Actor' (role 'analisar_dados9', cardinality 0..*) is associated with 'Analisar_dados_UseCase' (role 'servi_o_Web8', cardinality 0..*).
+'M_dulo_Pedag_gico_Actor' (role 'sequenciar_atividades15', cardinality 0..*) is associated with 'Sequenciar_atividades_UseCase' (role 'm_dulo_Pedag_gico14', cardinality 0..*).
+'Feedback' (role 'alternative243', cardinality 0..*) is associated with 'Alternative' (role 'feedback42', cardinality 0..*).
+'Fornecer_dica_UseCase' (role 'm_dulo_Pedag_gico21', cardinality 0..*) is associated with 'M_dulo_Pedag_gico_Actor' (role 'fornecer_dica20', cardinality 0..*).
+'StudentStepHistory' (role 'step245', cardinality 0..*) is associated with 'Step' (role 'studentStepHistory44', cardinality 0..*).
+'Step' (role 'alternative41', cardinality 0..*) is associated with 'Alternative' (role 'step240', cardinality 0..*).
+'M_dulo_Pedag_gico_Actor' (role 'fornecer_feedback17', cardinality 0..*) is associated with 'Fornecer_feedback_UseCase' (role 'm_dulo_Pedag_gico16', cardinality 0..*).
+'Subject' (role 'activity30', cardinality 0..*) is associated with 'Activity' (role 'subject231', cardinality 0..*).
+'StudentHistory' (role 'activity235', cardinality 0..*) is associated with 'Activity' (role 'studentHistory34', cardinality 0..*).
+'Servi_o_Web_Actor' (role 'receber_responder_requisi__es6', cardinality 0..*) is associated with 'Receber_responder_requisi__es_UseCase' (role 'servi_o_Web7', cardinality 0..*).
+'Aplicativo_Actor' (role 'estabelecer_comunica__o_com_wearable12', cardinality 0..*) is associated with 'Estabelecer_comunica__o_com_wearable_UseCase' (role 'aplicativo13', cardinality 0..*).
+'Step' (role 'exercise237', cardinality 0..*) is associated with 'Exercise' (role 'step36', cardinality 0..*).
+'Usu_rio_Actor' (role 'autenticar_se1', cardinality 0..*) is associated with 'Autenticar_se_UseCase' (role 'usu_rio0', cardinality 0..*).
+'Solicitar_dica_UseCase' (role 'aluno19', cardinality 0..*) is associated with 'Aluno_Actor' (role 'solicitar_dica18', cardinality 0..*).
+'Usu_rio_Actor' (role 'selecionar_treino3', cardinality 0..*) is associated with 'Selecionar_treino_UseCase' (role 'usu_rio2', cardinality 0..*).

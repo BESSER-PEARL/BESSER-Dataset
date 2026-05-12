@@ -1,0 +1,61 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Account  {
+
+    private String accountNo;
+    private float balance;
+    private None type;
+
+
+
+
+
+    private Customer customer;
+
+
+    public Account(
+        String accountNo,        float balance,        None type    ) {
+        this.accountNo = accountNo;
+        this.balance = balance;
+        this.type = type;
+    }
+
+
+    public String getAccountno() {
+        return accountNo;
+    }
+
+    public void setAccountno(String accountNo) {
+        this.accountNo = accountNo;
+    }
+    public float getBalance() {
+        return balance;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
+    }
+    public None getType() {
+        return type;
+    }
+
+    public void setType(None type) {
+        this.type = type;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+}

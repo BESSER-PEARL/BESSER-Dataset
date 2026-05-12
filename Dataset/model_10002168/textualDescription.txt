@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Ticket' has the following attributes: 'class' of type str; 'date' of type int; 'age' of type User; 'arrival' of type Flight; 'Flightnumber' of type Flight; 'destination' of type Flight; 'Ticketnumber' of type int; 'price' of type int; 'username' of type User.
+The class 'Airport' has the following attributes: 'location' of type str; 'code' of type int; 'name' of type str.
+The class 'Flight' has the following attributes: 'price' of type int; 'arrival' of type str; 'time' of type int; 'Flightnumber' of type int; 'date' of type int; 'destination' of type str; 'Flightname' of type str.
+The class 'Payment' has the following attributes: 'price' of type Ticket; 'date' of type Ticket; 'username' of type Ticket; 'Ticketnumber' of type Ticket; 'Method' of type str.
+The class 'User' has the following attributes: 'age' of type int; 'email' of type str; 'username' of type str; 'phone' of type int; 'name' of type str; 'gender' of type str; 'password' of type str.
+'Ticket' (role 'payment6', cardinality 0..*) is associated with 'Payment' (role 'ticket7', cardinality 0..*).
+'Flight' (role 'user1', cardinality 0..*) is associated with 'User' (role 'flight0', cardinality 0..*).
+'Flight' (role 'airport4', cardinality 0..*) is associated with 'Airport' (role 'flight5', cardinality 0..*).
+'Flight' (role 'ticket8', cardinality 0..*) is associated with 'Ticket' (role 'flight9', cardinality 0..*).
+'Ticket' (role 'user3', cardinality 0..*) is associated with 'User' (role 'ticket2', cardinality 0..*).

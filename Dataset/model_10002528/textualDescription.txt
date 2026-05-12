@@ -1,0 +1,8 @@
+The model has 7 class(es).
+The class 'player_Player' has no attributes.
+The class 'poker_Game' has the following attributes: 'tryagain' of type int; 'hand_size' of type int.
+The class 'player_Deck' has the following attributes: 'numberofShuffles' of type int; 'hand_size' of type int; 'remainofDeck' of type int; 'deck_size' of type int.
+The class 'poker_GameRun' has no attributes.
+The class 'card_Card' has the following attributes: 'rank' of type int; 'suit' of type int.
+The class 'Card' has no attributes.
+The class 'Comparable_Interface' has no attributes.

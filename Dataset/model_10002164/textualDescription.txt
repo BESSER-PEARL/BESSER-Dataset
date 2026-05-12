@@ -1,0 +1,16 @@
+The model has 12 class(es).
+The class 'Report' has the following attributes: 'profit' of type str; 'totalSales' of type str; 'orders' of type str.
+The class 'Manager_Owner' has no attributes.
+The class 'Kasir' has the following attributes: 'order_id' of type str; 'cust_id' of type str.
+The class 'MenuItem' has the following attributes: 'item_price' of type int; 'quantity' of type int; 'available' of type bool; 'item_description' of type str; 'item_Id' of type int.
+The class 'Customer' has the following attributes: 'cust_Id' of type str; 'cust_name' of type str.
+The class 'FoodItem' has the following attributes: 'drinkType' of type str.
+The class 'Bartender' has the following attributes: 'staff_Id' of type str; 'name' of type str.
+The class 'Menu' has the following attributes: 'drinksItem' of type DrinksItem; 'category' of type str; 'foodItem' of type FoodItem.
+The class 'Karyawan' has the following attributes: 'contact' of type str; 'name' of type str; 'staff_Id' of type str.
+The class 'Order' has the following attributes: 'cust_name' of type str; 'cust_id' of type str; 'numTable' of type int; 'foodItem' of type FoodItem; 'order_Id' of type str; 'drinksItem' of type DrinksItem.
+The class 'Chef' has the following attributes: 'name' of type str; 'staff_Id' of type str.
+The class 'DrinksItem' has the following attributes: 'drinkType' of type str.
+'Order' (role 'drinksItem21', cardinality 0..*) is associated with 'DrinksItem' (role 'order0', cardinality 0..*).
+'MenuItem' (role 'menu5', cardinality 0..*) is associated with 'Menu' (role 'menuItem4', cardinality 0..*).
+'Order' (role 'foodItem23', cardinality 0..*) is associated with 'FoodItem' (role 'order2', cardinality 0..*).

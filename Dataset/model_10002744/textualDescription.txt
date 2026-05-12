@@ -1,0 +1,26 @@
+The model has 22 class(es).
+The class 'ClassL' has no attributes.
+The class 'ClassV' has no attributes.
+The class 'ClassS' has no attributes.
+The class 'ClassC' has the following attributes: 'publicAttribute' of type float; 'privateAttribute' of type int; 'protectedAttribute' of type str; 'packageAttribute' of type str.
+The class 'ClassE' has no attributes.
+The class 'ClassG' has no attributes.
+The class 'ClassA' has the following attributes: 'publicAttribute' of type float; 'packageAttribute' of type str; 'privateAttribute' of type int; 'protectedAttribute' of type str.
+The class 'ClassT' has no attributes.
+The class 'ClassH' has no attributes.
+The class 'ClassN' has no attributes.
+The class 'ClassD' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'ClassK' has no attributes.
+The class 'ClassM' has no attributes.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'ClassQ' has no attributes.
+The class 'ClassJ' has no attributes.
+The class 'ClassF' has no attributes.
+The class 'BankAccount' has the following attributes: 'balance' of type float; 'ownerName' of type str.
+The class 'ClassB' has no attributes.
+'ClassD' (role 'classE0', cardinality 0..*) is associated with 'ClassE' (role 'classD1', cardinality 0..*).
+'ClassJ' (role 'classF5', cardinality 0..*) is associated with 'ClassH' (role 'classG4', cardinality 0..*).
+'ClassF' (role 'classG2', cardinality 0..*) is associated with 'ClassG' (role 'classF3', cardinality 0..*).

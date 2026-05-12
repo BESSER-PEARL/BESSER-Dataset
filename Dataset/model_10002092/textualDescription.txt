@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'hw3_Building' has the following attributes: 'floors' of type str; 'FLOORS' of type int.
+The class 'hw3_Passenger' has the following attributes: 'currentFloor' of type int; 'id' of type int; 'destinationFloor' of type int; 'UNDEFINED_FLOOR' of type int.
+The class 'hw3_Floor' has the following attributes: 'myFloorNumber' of type int; 'passengersWaiting' of type int.
+The class 'hw3_Elevator' has the following attributes: 'CAPACITY' of type int; 'NUMBER_OF_FLOORS' of type int; 'passengersToFloor' of type str; 'isGoingUp' of type bool; 'numOfPassengers' of type int; 'currentFloorIndex' of type int.
+The class 'Building' has no attributes.
+The class 'hw3_ElevatorFullException' has no attributes.
+The class 'genmymodelreverse_java_lang_Exception' has no attributes.
+'hw3_Passenger' (role 'floor10', cardinality 0..*) is associated with 'hw3_Floor' (role 'downward_Bound11', cardinality 0..*).
+'hw3_Passenger' (role 'floor8', cardinality 0..*) is associated with 'hw3_Floor' (role 'residents9', cardinality 0..*).
+'hw3_Passenger' (role 'floor0', cardinality 0..*) is associated with 'hw3_Floor' (role 'upwardBound1', cardinality 0..*).
+'hw3_Elevator' (role 'building7', cardinality 0..*) is associated with 'hw3_Building' (role 'elevator6', cardinality 0..*).
+'hw3_Elevator' (role 'boardedPassengers3', cardinality 0..*) is associated with 'hw3_Passenger' (role 'elevator2', cardinality 0..*).
+'hw3_Elevator' (role 'building4', cardinality 0..*) is associated with 'hw3_Building' (role 'elevator5', cardinality 0..*).

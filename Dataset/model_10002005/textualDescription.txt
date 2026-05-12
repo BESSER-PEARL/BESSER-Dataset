@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'MyClass3' has the following attributes: 'attribute' of type str.
+The class 'MyClass' has the following attributes: 'asdf' of type str.
+The class 'MyClass4' has no attributes.
+The class 'MyClass2' has no attributes.
+'MyClass' (role 'myClass30', cardinality 0..*) is associated with 'MyClass3' (role 'myClass1', cardinality 0..*).
+'MyClass' (role 'myClass46', cardinality 0..*) is associated with 'MyClass4' (role 'myClass7', cardinality 0..*).
+'MyClass3' (role 'dfgd5', cardinality 0..*) is associated with 'MyClass2' (role 'myClass34', cardinality 0..*).
+'MyClass2' (role 'myClass43', cardinality 0..*) is associated with 'MyClass4' (role 'myClass22', cardinality 0..*).

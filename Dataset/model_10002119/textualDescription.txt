@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'Customer' has the following attributes: 'Name' of type str; 'Reservation' of type bool; 'date' of type str; 'reservedTables' of type str; 'Contact_Number' of type int; 'Dishes_Ordered' of type str.
+The class 'Waiter' has the following attributes: 'Personal_Information' of type str; 'Name' of type str; 'Contact' of type int; 'ID' of type str; 'Address' of type str.
+The class 'Chef' has the following attributes: 'PersonalInformation' of type str; 'Contact' of type int; 'Address' of type str; 'Domain' of type str; 'ID' of type int; 'Name' of type str.
+The class 'Actor_Actor' has no attributes.
+The class 'Actor2_Actor' has no attributes.
+The class 'Class' has no attributes.
+The class 'Manager' has the following attributes: 'Personalnformation' of type str; 'ID' of type int; 'Name' of type str; 'Contact' of type int; 'Address' of type str.
+'Waiter' (role 'manager0', cardinality 0..*) is associated with 'Manager' (role 'waiter1', cardinality 0..*).
+'Chef' (role 'waiter3', cardinality 0..*) is associated with 'Waiter' (role 'chef2', cardinality 0..*).
+'Customer' (role 'waiter5', cardinality 0..*) is associated with 'Waiter' (role 'customer4', cardinality 0..*).
+'Customer' (role 'manager6', cardinality 0..*) is associated with 'Manager' (role 'customer7', cardinality 0..*).

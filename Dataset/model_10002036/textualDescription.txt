@@ -1,0 +1,29 @@
+The model has 16 class(es).
+The class 'Refund_money_UseCase' has no attributes.
+The class 'SuperFast1' has the following attributes: 'Handicamp' of type str; 'AC_1' of type str; 'Sleeper' of type str; 'Ladies' of type str; 'AC_3' of type str; 'AC_2' of type str.
+The class 'Express' has the following attributes: 'SecondSitting' of type str; 'General' of type str.
+The class 'Class' has no attributes.
+The class 'Traveler_Actor' has no attributes.
+The class 'Check_ticket_availability_UseCase' has no attributes.
+The class 'Pessanger' has the following attributes: 'Children' of type int; 'AadharNo' of type int.
+The class 'Fill_the_details_UseCase' has no attributes.
+The class 'Pay_fare_amount_UseCase' has no attributes.
+The class 'Express1' has the following attributes: 'SecondSitting' of type str.
+The class 'SuperFast' has the following attributes: 'Sleeper' of type str; 'AC_3' of type str; 'AC_2' of type str; 'AC_1' of type str.
+The class 'Book_ticket_UseCase' has no attributes.
+The class 'Cancel_ticket_UseCase' has no attributes.
+The class 'Clerk_Actor' has no attributes.
+The class 'Information_Interface' has no attributes.
+The class 'Railway_website_Actor' has no attributes.
+'Traveler_Actor' (role 'book_ticket6', cardinality 0..*) is associated with 'Book_ticket_UseCase' (role 'traveler7', cardinality 0..*).
+'Fill_the_details_UseCase' (role 'railway_website18', cardinality 0..*) is associated with 'Railway_website_Actor' (role 'fill_the_details19', cardinality 0..*).
+'Cancel_ticket_UseCase' (role 'clerk1', cardinality 0..*) is associated with 'Clerk_Actor' (role 'cancel_ticket0', cardinality 0..*).
+'Check_ticket_availability_UseCase' (role 'railway_website12', cardinality 0..*) is associated with 'Railway_website_Actor' (role 'check_ticket_availability13', cardinality 0..*).
+'Railway_website_Actor' (role 'pay_fare_amount15', cardinality 0..*) is associated with 'Pay_fare_amount_UseCase' (role 'railway_website14', cardinality 0..*).
+'Check_ticket_availability_UseCase' (role 'traveler3', cardinality 0..*) is associated with 'Traveler_Actor' (role 'check_ticket_availability2', cardinality 0..*).
+'Fill_the_details_UseCase' (role 'traveler9', cardinality 0..*) is associated with 'Traveler_Actor' (role 'fill_the_details8', cardinality 0..*).
+'Traveler_Actor' (role 'cancel_ticket10', cardinality 0..*) is associated with 'Cancel_ticket_UseCase' (role 'traveler11', cardinality 0..*).
+'Pay_fare_amount_UseCase' (role 'traveler5', cardinality 0..*) is associated with 'Traveler_Actor' (role 'pay_fare_amount4', cardinality 0..*).
+'Railway_website_Actor' (role 'book_ticket17', cardinality 0..*) is associated with 'Book_ticket_UseCase' (role 'railway_website16', cardinality 0..*).
+'Railway_website_Actor' (role 'refund_money23', cardinality 0..*) is associated with 'Refund_money_UseCase' (role 'railway_website22', cardinality 0..*).
+'Cancel_ticket_UseCase' (role 'railway_website20', cardinality 0..*) is associated with 'Railway_website_Actor' (role 'cancel_ticket21', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 18 class(es).
+The class 'DepositTransaction' has no attributes.
+The class 'WithdrawTransaction' has no attributes.
+The class 'Savings_Account2' has the following attributes: 'accountNumber' of type str; 'balance' of type int.
+The class 'Account_Interface' has no attributes.
+The class 'Transaction2' has the following attributes: 'type' of type TransactionType; 'amount' of type float; 'id' of type int; 'transactionTime' of type date.
+The class 'Bank2' has the following attributes: 'code' of type str; 'address' of type str.
+The class 'Customer2' has the following attributes: 'phoneNumber' of type str; 'dateOfBirth' of type date; 'address' of type str; 'emailAddress' of type str; 'name' of type str.
+The class 'Customer' has the following attributes: 'address' of type str; 'dateOfBirth' of type date; 'emailAddress' of type str; 'name' of type str; 'phoneNumber' of type str.
+The class 'TransferTransaction2' has the following attributes: 'targetAccount' of type str; 'sourceAccount' of type str.
+The class 'ATM_Card2' has the following attributes: 'pin' of type str; 'cardNumber' of type str.
+The class 'WithdrawTransaction2' has no attributes.
+The class 'Bank' has the following attributes: 'address' of type str; 'code' of type str.
+The class 'ATM_Card' has the following attributes: 'pin' of type str; 'cardNumber' of type str.
+The class 'Transaction' has the following attributes: 'transactionTime' of type date; 'amount' of type float; 'id' of type int; 'type' of type TransactionType.
+The class 'Account2_Interface' has no attributes.
+The class 'Savings_Account' has the following attributes: 'balance' of type int; 'accountNumber' of type str.
+The class 'DepositTransaction2' has no attributes.
+The class 'TransferTransaction' has the following attributes: 'sourceAccount' of type str; 'targetAccount' of type str.
+The enumeration 'TransactionType2' does not specify any literals.
+The enumeration 'TransactionType' does not specify any literals.

@@ -1,0 +1,27 @@
+The model has 14 class(es).
+The class 'Banner' has the following attributes: 'IsShow' of type int; 'DateStart' of type str; 'BannerID' of type int; 'BannerInfo' of type str; 'DateEnd' of type str; 'Image' of type str.
+The class 'DetailCart' has the following attributes: 'DetailCartInfo' of type str; 'ProductID' of type int; 'DetailCartID' of type int; 'CartID' of type int.
+The class 'Color' has the following attributes: 'ColorName' of type str; 'ColorID' of type str.
+The class 'Cart' has the following attributes: 'CartID' of type int; 'CartInfo' of type str.
+The class 'Collection' has the following attributes: 'CollectionName' of type str; 'CollectionID' of type int.
+The class 'DetailOrder' has the following attributes: 'DetailOrderID' of type int; 'ProductID' of type int; 'DetailOrderInfo' of type str; 'OrderID' of type int.
+The class 'Admin' has the following attributes: 'ID' of type int; 'AdminInfo' of type str; 'Password' of type str; 'UserName' of type str.
+The class 'User' has the following attributes: 'UserName' of type str; 'Phone' of type int; 'Password' of type str; 'Point' of type int; 'ID' of type int; 'UserInfo' of type str; 'Email' of type str.
+The class 'Inventory' has the following attributes: 'ProductID' of type int; 'ColorID' of type int; 'InStock' of type int; 'SizeID' of type int.
+The class 'Products' has the following attributes: 'TypeID1' of type int; 'Index' of type int; 'DateCreate' of type str; 'TypeID' of type int; 'ProductID' of type int; 'InStock' of type int; 'ProductInfo' of type str; 'CollectionID' of type int.
+The class 'Type' has the following attributes: 'TypeName' of type str; 'TypeID' of type int.
+The class 'Size' has the following attributes: 'SizeID' of type int; 'SizeName' of type str.
+The class 'Orders' has the following attributes: 'OrderInfo' of type str; 'OrderID' of type int; 'DeliInfo' of type str; 'UserID' of type int.
+The class 'Gallery' has the following attributes: 'DateCreate' of type str; 'ProductID' of type int; 'Image' of type str; 'GalleryID' of type int; 'GalleryName' of type str.
+'Cart' (role 'user22', cardinality 0..*) is associated with 'User' (role 'cart23', cardinality 0..*).
+'Products' (role 'detailOrder13', cardinality 0..*) is associated with 'DetailOrder' (role 'products12', cardinality 0..*).
+'DetailOrder' (role 'orders16', cardinality 0..*) is associated with 'Orders' (role 'detailOrder17', cardinality 0..*).
+'User' (role 'orders21', cardinality 0..*) is associated with 'Orders' (role 'user20', cardinality 0..*).
+'Type' (role 'products8', cardinality 0..*) is associated with 'Products' (role 'type9', cardinality 0..*).
+'Products' (role 'inventory4', cardinality 0..*) is associated with 'Inventory' (role 'products5', cardinality 0..*).
+'Inventory' (role 'size1', cardinality 0..*) is associated with 'Size' (role 'inventory0', cardinality 0..*).
+'Cart' (role 'detailCart19', cardinality 0..*) is associated with 'DetailCart' (role 'cart18', cardinality 0..*).
+'Products' (role 'gallery11', cardinality 0..*) is associated with 'Gallery' (role 'products10', cardinality 0..*).
+'Products' (role 'detailCart14', cardinality 0..*) is associated with 'DetailCart' (role 'products15', cardinality 0..*).
+'Collection' (role 'products6', cardinality 0..*) is associated with 'Products' (role 'collection7', cardinality 0..*).
+'Color' (role 'inventory2', cardinality 0..*) is associated with 'Inventory' (role 'color3', cardinality 0..*).

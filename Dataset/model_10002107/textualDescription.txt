@@ -1,0 +1,22 @@
+The model has 12 class(es).
+The class 'Message' has the following attributes: 'maxChars' of type str.
+The class 'Registration' has the following attributes: 'userName' of type str; 'password' of type secret; 'lname' of type str; 'fname' of type str.
+The class 'public' has the following attributes: 'name' of type str.
+The class 'Group' has the following attributes: 'discription' of type str; 'name' of type str.
+The class 'Hashtag' has the following attributes: 'numOfRepeat' of type int; 'name' of type str.
+The class 'Page' has the following attributes: 'name' of type str.
+The class 'Login' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'secret' has the following attributes: 'name' of type str.
+The class 'Friend' has no attributes.
+The class 'Profile' has the following attributes: 'about' of type str; 'password' of type str; 'username' of type str.
+The class 'Post' has the following attributes: 'privacy' of type str; 'info' of type str.
+The class 'User' has the following attributes: 'name' of type str.
+'Registration' (role 'user9', cardinality 0..*) is associated with 'User' (role 'registeration8', cardinality 0..*).
+'User' (role 'post2', cardinality 0..*) is associated with 'Post' (role 'user3', cardinality 0..*).
+'User' (role 'myprofile0', cardinality 0..*) is associated with 'Profile' (role 'user1', cardinality 0..*).
+'User' (role 'message10', cardinality 0..*) is associated with 'Message' (role 'user11', cardinality 0..*).
+'User' (role 'pages16', cardinality 0..*) is associated with 'Page' (role 'user17', cardinality 0..*).
+'Login' (role 'user5', cardinality 0..*) is associated with 'User' (role 'login4', cardinality 0..*).
+'User' (role 'group6', cardinality 0..*) is associated with 'Group' (role 'user7', cardinality 0..*).
+'Hashtag' (role 'user15', cardinality 0..*) is associated with 'User' (role 'hashtag14', cardinality 0..*).
+'Friend' (role 'user13', cardinality 0..*) is associated with 'User' (role 'friends12', cardinality 0..*).

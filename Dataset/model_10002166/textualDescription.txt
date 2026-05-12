@@ -1,0 +1,26 @@
+The model has 13 class(es).
+The class 'online_shopping_Shopping_Card' has the following attributes: 'Date_Added' of type str; 'Cart_ID' of type str; 'Produced_Id' of type str; 'Quantity' of type str.
+The class 'online_shopping_Person' has the following attributes: 'Person_ID' of type Estring_Interface; 'Login_Status' of type Estring_Interface; 'Person_Password' of type Estring_Interface.
+The class 'online_shopping_Delivertiony_Informa' has the following attributes: 'Receiver_Name' of type Estring_Interface; 'Other_Delivery_Address' of type Estring_Interface; 'Delivery_Address' of type Estring_Interface; 'Delivery_Phone' of type str.
+The class 'online_shopping_Customer' has the following attributes: 'E_mail' of type Estring_Interface; 'Name' of type Estring_Interface; 'Shippinginfo' of type Estring_Interface; 'Address' of type Estring_Interface; 'Phone' of type str.
+The class 'online_shopping_Administrator' has the following attributes: 'Name' of type Estring_Interface; 'Email' of type Estring_Interface.
+The class 'online_shopping_Product' has the following attributes: 'Product_ID' of type str; 'Description' of type Estring_Interface; 'Name' of type Estring_Interface; 'Image_File_Name' of type Estring_Interface; 'Price' of type str.
+The class 'online_shopping_Category' has the following attributes: 'Catemegory_Name' of type Estring_Interface; 'Category_ID' of type str; 'Description' of type Estring_Interface; 'Department_ID' of type str.
+The class 'online_shopping_Orders' has the following attributes: 'Datw_Shipping' of type Estring_Interface; 'Customer_Name' of type Estring_Interface; 'Order_ID' of type int; 'Customer_ID' of type Estring_Interface; 'Date_Created' of type Estring_Interface.
+The class 'online_shopping_Payment' has the following attributes: 'Online_Pay' of type str; 'Catch_Pay' of type str.
+The class 'online_shopping_Deoartment' has the following attributes: 'Department_ID' of type str; 'Name' of type str; 'Description' of type str.
+The class 'online_shopping_Session_manager' has the following attributes: 'Department_Name' of type Estring_Interface; 'Person_ID' of type Estring_Interface.
+The class 'Estring_Interface' has no attributes.
+The class 'online_shopping_Order_Detail' has the following attributes: 'Product_ID' of type str; 'Product_Name' of type Estring_Interface; 'unit_Cost' of type str; 'Quantity' of type str; 'Subtotal' of type str; 'Order_ID' of type str.
+'online_shopping_Shopping_Card' (role 'Shopping_Card_Customer_00', cardinality 0..*) is associated with 'online_shopping_Customer' (role 'shopping_Card1', cardinality 0..*).
+'online_shopping_Customer' (role 'Customer_Shopping_Card_02', cardinality 0..*) is associated with 'online_shopping_Shopping_Card' (role 'Customer_Shopping_Card_13', cardinality 0..*).
+'online_shopping_Shopping_Card' (role 'Shopping_Card_Payment_020', cardinality 0..*) is associated with 'online_shopping_Payment' (role 'Shopping_Card_Payment_121', cardinality 0..*).
+'online_shopping_Orders' (role 'Orders_Order_Detail_016', cardinality 0..*) is associated with 'online_shopping_Order_Detail' (role 'Orders_Order_Detail_117', cardinality 0..*).
+'online_shopping_Session_manager' (role 'Session_manager_Person_010', cardinality 0..*) is associated with 'online_shopping_Person' (role 'Session_manager_Person_111', cardinality 0..*).
+'online_shopping_Order_Detail' (role 'product15', cardinality 0..*) is associated with 'online_shopping_Product' (role 'order_Detail14', cardinality 0..*).
+'online_shopping_Shopping_Card' (role 'Shopping_Card_Product_012', cardinality 0..*) is associated with 'online_shopping_Product' (role 'Shopping_Card_Product_113', cardinality 0..*).
+'online_shopping_Delivertiony_Informa' (role 'Orders_Delivertiony_Informa_119', cardinality 0..*) is associated with 'online_shopping_Orders' (role 'Orders_Delivertiony_Informa_018', cardinality 0..*).
+'online_shopping_Session_manager' (role 'Session_manager_Deoartment_04', cardinality 0..*) is associated with 'online_shopping_Deoartment' (role 'Session_manager_Deoartment_15', cardinality 0..*).
+'online_shopping_Customer' (role 'Customer_Orders_022', cardinality 0..*) is associated with 'online_shopping_Orders' (role 'Customer_Orders_123', cardinality 0..*).
+'online_shopping_Category' (role 'Category_Product_08', cardinality 0..*) is associated with 'online_shopping_Product' (role 'Category_Product_19', cardinality 0..*).
+'online_shopping_Deoartment' (role 'Deoartment_Category_06', cardinality 0..*) is associated with 'online_shopping_Category' (role 'Deoartment_Category_17', cardinality 0..*).

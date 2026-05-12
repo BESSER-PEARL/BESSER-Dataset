@@ -1,0 +1,33 @@
+The model has 17 class(es).
+The class 'Blackjack_Stay_UseCase' has no attributes.
+The class 'Blackjack_Deal_UseCase' has no attributes.
+The class 'BlackJackPlayer' has the following attributes: 'MaxNumCards' of type int; 'cards__' of type Card; 'cardCount' of type int.
+The class 'BlackJackDriver' has no attributes.
+The class 'Dealer_Actor' has no attributes.
+The class 'Blackjack_Check_Win_Condition_UseCase' has no attributes.
+The class 'Blackjack_Double_Down_UseCase' has no attributes.
+The class 'Blackjack_Exit_UseCase' has no attributes.
+The class 'BlackJack' has the following attributes: 'playersHand' of type BlackJackPlayer; 'money' of type int; 'dealersHand' of type BlackJackPlayer; 'handCount' of type int; 'bet' of type int; 'deck' of type Deck.
+The class 'Blackjack_Bet_UseCase' has no attributes.
+The class 'Player_Actor' has no attributes.
+The class 'Card' has the following attributes: 'faceValue' of type str; 'value' of type int; 'suit' of type str.
+The class 'Blackjack_Split_UseCase' has no attributes.
+The class 'Deck' has the following attributes: 'deck' of type Card; 'cardsUsed' of type int.
+The class 'Blackjack_Start_Game_UseCase' has no attributes.
+The class 'Blackjack_Hit_UseCase' has no attributes.
+The class 'Blackjack_Play_Again_UseCase' has no attributes.
+'Blackjack_Deal_UseCase' (role 'dealer9', cardinality 0..*) is associated with 'Dealer_Actor' (role 'deal8', cardinality 0..*).
+'Blackjack_Stay_UseCase' (role 'player1', cardinality 0..*) is associated with 'Player_Actor' (role 'stay0', cardinality 0..*).
+'Dealer_Actor' (role 'check_Win_Condition12', cardinality 0..*) is associated with 'Blackjack_Check_Win_Condition_UseCase' (role 'dealer13', cardinality 0..*).
+'Blackjack_Exit_UseCase' (role 'player19', cardinality 0..*) is associated with 'Player_Actor' (role 'exit18', cardinality 0..*).
+'Blackjack_Bet_UseCase' (role 'player7', cardinality 0..*) is associated with 'Player_Actor' (role 'bet6', cardinality 0..*).
+'Player_Actor' (role 'start_Game4', cardinality 0..*) is associated with 'Blackjack_Start_Game_UseCase' (role 'player5', cardinality 0..*).
+'Deck' (role 'card26', cardinality 0..*) is associated with 'Card' (role 'deck27', cardinality 0..*).
+'Blackjack_Hit_UseCase' (role 'dealer20', cardinality 0..*) is associated with 'Dealer_Actor' (role 'hit21', cardinality 0..*).
+'BlackJackPlayer' (role 'blackJack29', cardinality 0..*) is associated with 'BlackJack' (role 'blackJackPlayer28', cardinality 0..*).
+'Blackjack_Stay_UseCase' (role 'dealer2', cardinality 0..*) is associated with 'Dealer_Actor' (role 'stay3', cardinality 0..*).
+'Player_Actor' (role 'double_Down14', cardinality 0..*) is associated with 'Blackjack_Double_Down_UseCase' (role 'player15', cardinality 0..*).
+'Player_Actor' (role 'hit22', cardinality 0..*) is associated with 'Blackjack_Hit_UseCase' (role 'player23', cardinality 0..*).
+'Player_Actor' (role 'play_Again10', cardinality 0..*) is associated with 'Blackjack_Play_Again_UseCase' (role 'player11', cardinality 0..*).
+'Player_Actor' (role 'split16', cardinality 0..*) is associated with 'Blackjack_Split_UseCase' (role 'player17', cardinality 0..*).
+'Deck' (role 'blackJack25', cardinality 0..*) is associated with 'BlackJack' (role 'deck224', cardinality 0..*).

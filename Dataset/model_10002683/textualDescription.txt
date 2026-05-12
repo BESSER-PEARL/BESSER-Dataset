@@ -1,0 +1,11 @@
+The model has 8 class(es).
+The class 'mypackage3_MyClass3' has the following attributes: 'attribute3_1' of type str.
+The class 'Actor2_Actor' has no attributes.
+The class 'mypackage_UseCase3_UseCase' has no attributes.
+The class 'mypackage_UseCase_UseCase' has no attributes.
+The class 'mypackage2_MyClass2' has the following attributes: 'attribute2_2' of type float; 'attribute2_1' of type str.
+The class 'mypackage3_MyClass5' has the following attributes: 'attribute' of type str.
+The class 'mypackage_UseCase2_UseCase' has no attributes.
+The class 'Actor_Actor' has no attributes.
+'mypackage2_MyClass2' (role 'This_is_a0', cardinality 0..*) is associated with 'mypackage3_MyClass3' (role 'This_is_a1', cardinality 0..*).
+'mypackage_UseCase_UseCase' (role 'actor3', cardinality 0..*) is associated with 'Actor_Actor' (role 'useCase2', cardinality 0..*).

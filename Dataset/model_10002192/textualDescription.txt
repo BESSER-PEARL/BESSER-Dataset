@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class '_TransactionType' has the following attributes: '_type' of type str.
+The class 'Card' has the following attributes: '_usertypeid' of type int; '_username' of type str; '_phone' of type int; '_logincredentialsid' of type int; '_email' of type str; '_address' of type str.
+The class '_OrderDetail' has the following attributes: '_productid' of type int; '_totalamount' of type int; '_quantity' of type int; '_userid' of type int; 'OrderId' of type int; 'paymentInfoId' of type int; '_orderdate' of type date.
+The class '_Fee' has the following attributes: '_description' of type str; '_price' of type int; '_producttypeid' of type int; '_stock' of type int; '_name' of type str.
+The class '_LoginCredential' has the following attributes: '_password' of type str; '_loginid' of type str.
+The class 'Transaction' has the following attributes: 'shipmentNumber' of type int; 'orderId' of type int.
+The class '_PaymentInfo' has the following attributes: '_expirydate' of type date; '_cardno' of type int; '_cardname' of type str; '_cvv' of type int; 'paymentId' of type int; '_userid' of type int.
+'_TransactionType' (role '_has_products4', cardinality 0..*) is associated with '_Fee' (role '_type_of5', cardinality 0..*).
+'Transaction' (role '_Delivers2', cardinality 0..*) is associated with 'Card' (role '_ships3', cardinality 0..*).
+'_OrderDetail' (role 'receives9', cardinality 0..*) is associated with 'Card' (role '_orders8', cardinality 0..*).
+'_LoginCredential' (role '_for0', cardinality 0..*) is associated with 'Card' (role '_logs_in_with1', cardinality 0..*).
+'Card' (role '_Add_Product_Type12', cardinality 0..*) is associated with '_TransactionType' (role 'farmer13', cardinality 0..*).
+'_OrderDetail' (role '_PaymentInfo11', cardinality 0..*) is associated with '_PaymentInfo' (role '_OrderDetail10', cardinality 0..*).
+'_Fee' (role '_is_in6', cardinality 0..*) is associated with '_OrderDetail' (role '_contains7', cardinality 0..*).

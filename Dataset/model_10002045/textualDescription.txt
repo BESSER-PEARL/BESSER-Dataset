@@ -1,0 +1,35 @@
+The model has 18 class(es).
+The class 'Guest_Actor' has no attributes.
+The class 'Guest' has no attributes.
+The class 'Receptionist_Actor' has no attributes.
+The class 'Contact' has the following attributes: 'name' of type str; 'email' of type str; 'address' of type str; 'phone' of type str.
+The class 'Make_Booking_UseCase' has no attributes.
+The class 'Room' has the following attributes: 'name' of type str.
+The class 'Booking' has the following attributes: 'checkOutDate' of type str; '_numberOfNights' of type int; 'bookingDate' of type str; 'checkInDate' of type str.
+The class 'Manage_Hotels_UseCase' has no attributes.
+The class 'Manage_Rooms_UseCase' has no attributes.
+The class 'Manager_Actor' has no attributes.
+The class 'Administrator_Actor' has no attributes.
+The class 'RoomType' has the following attributes: 'pricePerNight' of type str; 'name' of type str.
+The class 'HotelBusiness' has no attributes.
+The class 'Cancel_Booking_UseCase' has no attributes.
+The class 'Guest_Check_out_UseCase' has no attributes.
+The class 'Hotel' has the following attributes: 'name' of type str.
+The class 'Guest_Check_in_UseCase' has no attributes.
+The class 'Manage_Room_Types_UseCase' has no attributes.
+The enumeration 'BookingStatus' does not specify any literals.
+'Guest_Actor' (role 'make_Booking16', cardinality 0..*) is associated with 'Make_Booking_UseCase' (role 'guest17', cardinality 0..*).
+'HotelBusiness' (role 'hotel0', cardinality 0..*) is associated with 'Hotel' (role 'hotelBusiness1', cardinality 0..*).
+'Manage_Room_Types_UseCase' (role 'manager13', cardinality 0..*) is associated with 'Manager_Actor' (role 'add_delete_Room_Types12', cardinality 0..*).
+'RoomType' (role 'room4', cardinality 0..*) is associated with 'Room' (role 'roomType5', cardinality 0..*).
+'Receptionist_Actor' (role 'cancel_Booking22', cardinality 0..*) is associated with 'Cancel_Booking_UseCase' (role 'receptionist23', cardinality 0..*).
+'Receptionist_Actor' (role 'make_Booking20', cardinality 0..*) is associated with 'Make_Booking_UseCase' (role 'receptionist21', cardinality 0..*).
+'Administrator_Actor' (role 'add_delete_Hotels11', cardinality 0..*) is associated with 'Manage_Hotels_UseCase' (role 'administrator10', cardinality 0..*).
+'Guest_Actor' (role 'cancel_Booking18', cardinality 0..*) is associated with 'Cancel_Booking_UseCase' (role 'guest19', cardinality 0..*).
+'Guest_Check_in_UseCase' (role 'receptionist25', cardinality 0..*) is associated with 'Receptionist_Actor' (role 'guest_Check_in24', cardinality 0..*).
+'Booking' (role 'bookedBy28', cardinality 0..*) is associated with 'Contact' (role 'booking29', cardinality 0..*).
+'Guest_Check_out_UseCase' (role 'receptionist27', cardinality 0..*) is associated with 'Receptionist_Actor' (role 'guest_Check_out26', cardinality 0..*).
+'Manage_Rooms_UseCase' (role 'manager15', cardinality 0..*) is associated with 'Manager_Actor' (role 'add_delete_Rooms14', cardinality 0..*).
+'Room' (role 'occupant7', cardinality 0..*) is associated with 'Guest' (role 'occupied6', cardinality 0..*).
+'RoomType' (role 'hotel3', cardinality 0..*) is associated with 'Hotel' (role 'roomType2', cardinality 0..*).
+'Booking' (role 'hotel8', cardinality 0..*) is associated with 'Hotel' (role 'booking9', cardinality 0..*).

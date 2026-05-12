@@ -1,0 +1,7 @@
+The model has 5 class(es).
+The class 'Hand' has the following attributes: 'blackjack' of type bool; 'hand' of type str; 'under' of type str; 'must_hit' of type bool; 'num_card' of type int; 'busted' of type str; 'max_cards' of type int; 'bestscore' of type str; 'addcard' of type str.
+The class 'BlackJack_Hra' has the following attributes: 'dealer_wins' of type str; 'placebet' of type str; 'deal' of type str; 'player_asks_for_card' of type str; 'deck' of type str; 'dealers_hand' of type str; 'play' of type str; 'tie' of type str; 'players_hand' of type str; 'bet' of type str; 'player_wins' of type str; 'show_result' of type str; 'money' of type str.
+The class 'BlackJackApp' has no attributes.
+The class 'Deck' has the following attributes: 'shuffle' of type str; 'cards' of type str; 'random' of type str; 'random_cards' of type str; 'deck' of type str; 'deal_card' of type str; 'top_card' of type str.
+The class 'Card' has the following attributes: 'cards' of type str; 'value' of type int; 'suit' of type str.
+'BlackJack_Hra' (role 'blackJackApp1', cardinality 0..*) is associated with 'BlackJackApp' (role 'blackJack_Hra0', cardinality 0..*).

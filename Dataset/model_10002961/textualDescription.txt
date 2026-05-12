@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'MaglevCar' has the following attributes: 'NUMSEATS' of type int; 'numSeatsOccupied' of type int.
+The class 'PassengerCar' has the following attributes: 'numSeatsOccupied' of type int; 'NUMSEATS' of type int.
+The class 'Maglev' has the following attributes: 'MAXSPEED' of type float.
+The class 'FreightTrain' has the following attributes: 'containerTrain' of type bool.
+The class 'ElectricTrain' has the following attributes: 'MAXSPEED' of type float.
+The class 'Train' has the following attributes: 'totalCars' of type int; 'milesPerHour' of type float.
+The class 'ContainerCar' has the following attributes: 'climateControlled' of type bool; 'cubicFeet' of type float; 'temp' of type float.
+The class 'T' has no attributes.
+The class 'EngineCar' has the following attributes: 'MAXSPEED' of type float.
+The class 'PassengerTrain' has no attributes.
+'FreightTrain' (role 'containerCar5', cardinality 0..*) is associated with 'ContainerCar' (role 'freightTrain4', cardinality 0..*).
+'EngineCar' (role 'electricTrain11', cardinality 0..*) is associated with 'ElectricTrain' (role 'engineCar10', cardinality 0..*).
+'Maglev' (role 'passengerTrain7', cardinality 0..*) is associated with 'PassengerTrain' (role 'maglev6', cardinality 0..*).
+'ElectricTrain' (role 'passengerTrain9', cardinality 0..*) is associated with 'PassengerTrain' (role 'electricTrain8', cardinality 0..*).
+'PassengerTrain' (role 'train3', cardinality 0..*) is associated with 'Train' (role 'passengerTrain2', cardinality 0..*).
+'Train' (role 'freightTrain0', cardinality 0..*) is associated with 'FreightTrain' (role 'train1', cardinality 0..*).
+'PassengerCar' (role 'electricTrain13', cardinality 0..*) is associated with 'ElectricTrain' (role 'passengerCar12', cardinality 0..*).
+'Maglev' (role 'maglevCar14', cardinality 0..*) is associated with 'MaglevCar' (role 'maglev15', cardinality 0..*).

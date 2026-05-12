@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Manager' has the following attributes: 'Phn_no_' of type Manager; 'ID' of type int; 'Name' of type str; 'Address' of type str.
+The class 'Hotels' has the following attributes: 'id' of type int; 'location' of type int; 'name' of type int.
+The class 'Payment' has the following attributes: 'card_type' of type str; 'amount' of type int; 'password' of type int; 'cvv' of type int; 'card_no' of type int.
+The class 'Guest' has the following attributes: 'id' of type int; 'Phone_no_' of type int; 'address' of type str; 'Nmae' of type str.
+The class 'Rooms' has the following attributes: 'name' of type str; 'room_description' of type str; 'price' of type int; 'id' of type int.
+The class 'City' has the following attributes: 'city' of type str; 'id' of type int.
+The class 'User' has the following attributes: 'password' of type int; 'Name' of type str; 'address' of type str; 'mail_id' of type str; 'phn_no' of type int; 'id' of type int.
+'Guest' (role 'user11', cardinality 0..*) is associated with 'User' (role 'guest10', cardinality 0..*).
+'Hotels' (role 'guest8', cardinality 0..*) is associated with 'Guest' (role 'hotels9', cardinality 0..*).
+'Hotels' (role 'rooms2', cardinality 0..*) is associated with 'Rooms' (role 'hotels3', cardinality 0..*).
+'Guest' (role 'manager15', cardinality 0..*) is associated with 'Manager' (role 'guest14', cardinality 0..*).
+'Hotels' (role 'city1', cardinality 0..*) is associated with 'City' (role 'hotels0', cardinality 0..*).
+'Guest' (role 'payment6', cardinality 0..*) is associated with 'Payment' (role 'guest7', cardinality 0..*).
+'Guest' (role 'rooms5', cardinality 0..*) is associated with 'Rooms' (role 'guest4', cardinality 0..*).
+'Payment' (role 'manager13', cardinality 0..*) is associated with 'Manager' (role 'payment12', cardinality 0..*).

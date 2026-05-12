@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Entleihungsgegenstand' has the following attributes: 'kurzbeschreibung' of type str; 'titel' of type str; 'einkaufspreis' of type str.
+The class 'Exemplar' has the following attributes: 'exemplarNummer' of type str.
+The class 'Reservierung' has the following attributes: 'reservierungsEnde' of type str; 'reservierungsDatum' of type str.
+The class 'Buch' has the following attributes: 'ISBN' of type str; 'Autor' of type str.
+The class 'Entlehnausweis' has the following attributes: 'g_ltigKeitsDatum' of type str; 'id' of type int.
+The class 'Zeitschrift' has the following attributes: 'Ausgabe' of type str; 'Jahrgang' of type int.
+The class 'Videos_DVDS' has the following attributes: 'Laufzeit' of type int; 'entLeihungsGeb_hr' of type str; 'AnzahlEntlehnungen' of type int; 'Regisseur' of type str.
+The class 'Kunde' has the following attributes: 'Anschrift' of type str; 'Name' of type str.
+The class 'Entlehnung' has the following attributes: 'rueckGDatum' of type str; 'maxAnzahlFristTage' of type int; 'ausLeihFrist' of type str; 'ausLeihDatun' of type str.
+The enumeration 'ExemplarStatus' does not specify any literals.
+'Reservierung' (role 'geh_rt_zu7', cardinality 0..*) is associated with 'Kunde' (role 'anzahl6', cardinality 0..*).
+'Entleihungsgegenstand' (role 'geh_rt_zu10', cardinality 0..*) is associated with 'Exemplar' (role 'hat11', cardinality 0..*).
+'Entlehnausweis' (role 'geh_rt_zu5', cardinality 0..*) is associated with 'Kunde' (role 'hat_einen4', cardinality 0..*).
+'Exemplar' (role 'wird_Entlehnt0', cardinality 0..*) is associated with 'Entlehnung' (role 'anzahl_Exem_1', cardinality 0..*).
+'Entlehnung' (role 'geh_rt_zu3', cardinality 0..*) is associated with 'Kunde' (role 'anzahl2', cardinality 0..*).
+'Reservierung' (role 'anzahl_Exem_8', cardinality 0..*) is associated with 'Exemplar' (role 'wir_reserviert9', cardinality 0..*).

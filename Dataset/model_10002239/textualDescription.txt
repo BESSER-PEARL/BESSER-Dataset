@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'Player' has the following attributes: 'money' of type int; 'name' of type str.
+The class 'Deck' has the following attributes: 'deck' of type str; 'cardsDealt' of type str.
+The class 'Card' has the following attributes: 'suit' of type Suit; 'rank' of type Rank.
+The class 'BlackJackMain' has no attributes.
+The class 'Game' has the following attributes: 'playerCards' of type str; 'dealerCards' of type str.
+The class 'List_Card__external' has no attributes.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'Rank' does not specify any literals.
+'Deck' (role 'list_Card_5', cardinality 0..*) is associated with 'List_Card__external' (role 'deck4', cardinality 0..*).
+'Deck' (role 'game6', cardinality 0..*) is associated with 'Game' (role 'deck7', cardinality 0..*).
+'Deck' (role 'player3', cardinality 0..*) is associated with 'Player' (role 'deck2', cardinality 0..*).
+'BlackJackMain' (role 'game9', cardinality 0..*) is associated with 'Game' (role 'blackJackMain8', cardinality 0..*).
+'Deck' (role 'card1', cardinality 0..*) is associated with 'Card' (role 'deck0', cardinality 0..*).
+'Player' (role 'blackJackMain10', cardinality 0..*) is associated with 'BlackJackMain' (role 'player11', cardinality 0..*).

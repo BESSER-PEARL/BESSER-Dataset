@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Player' has the following attributes: 'won' of type bool; 'name' of type str; 'turn' of type bool.
+The class 'Game' has the following attributes: 'p1' of type Player; 'done' of type bool; 'p2' of type Player.
+The class 'Coordinate' has the following attributes: 'x' of type int; 'y' of type int; 'state' of type CoordState.
+The class 'Boat' has the following attributes: 'direction' of type Direction; 'length' of type int; 'startCoord' of type Coordinate; 'MAX_LENGTH' of type int.
+The class 'Board' has the following attributes: 'battleship' of type bool; 'patrolBoat' of type bool; 'destroyer' of type bool; 'aircraftCarrier' of type bool; 'submarine' of type bool.
+The enumeration 'CoordState' does not specify any literals.
+The enumeration 'Direction' does not specify any literals.
+'Coordinate' (role 'board1', cardinality 0..*) is associated with 'Board' (role 'coordinates0', cardinality 0..*).
+'Game' (role 'player4', cardinality 0..*) is associated with 'Player' (role 'game5', cardinality 0..*).
+'Board' (role 'player2', cardinality 0..*) is associated with 'Player' (role 'board3', cardinality 0..*).

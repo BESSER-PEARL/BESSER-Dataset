@@ -1,0 +1,49 @@
+The model has 36 class(es).
+The class 'remove_user_UseCase' has no attributes.
+The class 'Pay' has the following attributes: 'id_' of type str.
+The class 'Submit_information' has the following attributes: 'name_' of type str; 'username' of type str; 'phone_' of type str; 'password_' of type str.
+The class 'ticket_printing_UseCase' has no attributes.
+The class 'cancle_UseCase' has no attributes.
+The class 'logout_UseCase' has no attributes.
+The class 'enter_user_name_UseCase' has no attributes.
+The class 'changing_seats_by_admin_UseCase' has no attributes.
+The class 'browse_item_UseCase' has no attributes.
+The class 'cancle_with_driver_UseCase' has no attributes.
+The class 'payment_UseCase' has no attributes.
+The class 'Admin' has no attributes.
+The class 'search_item__UseCase' has no attributes.
+The class 'User' has no attributes.
+The class 'view_item' has the following attributes: 'ticket_id_' of type str.
+The class 'Cancle' has the following attributes: 'user_id_' of type str; 'ticket_id_' of type str.
+The class 'enter_password_UseCase' has no attributes.
+The class 'view_seat_UseCase' has no attributes.
+The class 'send_message_to_number_registered_UseCase' has no attributes.
+The class 'Book_a_ticek' has the following attributes: 'time_' of type str; 'date_' of type str; 'ticket_id_' of type str; 'starting_city_' of type str; 'destination_city' of type str.
+The class 'return_the_money_to_the_customer_UseCase' has no attributes.
+The class 'guest_user_Actor' has no attributes.
+The class 'view_item_UseCase' has no attributes.
+The class 'Driver' has no attributes.
+The class 'login_UseCase' has no attributes.
+The class 'Userguest' has no attributes.
+The class 'Person' has the following attributes: 'name_' of type str; 'phone_' of type str; 'password_' of type str; 'id_' of type str.
+The class 'driver_Actor' has no attributes.
+The class 'admin_Actor' has no attributes.
+The class 'book_a_ticket_UseCase' has no attributes.
+The class 'captcha_UseCase' has no attributes.
+The class 'user_Actor' has no attributes.
+The class 'driver_planing_UseCase' has no attributes.
+The class 'exciting_package_UseCase' has no attributes.
+The class 'submit_information_UseCase' has no attributes.
+The class 'Login' has the following attributes: 'password_' of type str; 'username_' of type str.
+'driver_Actor' (role 'login8', cardinality 0..*) is associated with 'login_UseCase' (role 'driver9', cardinality 0..*).
+'Login' (role 'view_item220', cardinality 0..*) is associated with 'view_item' (role 'login21', cardinality 0..*).
+'login_UseCase' (role 'admin7', cardinality 0..*) is associated with 'admin_Actor' (role 'login6', cardinality 0..*).
+'login_UseCase' (role 'user1', cardinality 0..*) is associated with 'user_Actor' (role 'login0', cardinality 0..*).
+'Book_a_ticek' (role 'cancle14', cardinality 0..*) is associated with 'Cancle' (role 'book_a_ticek15', cardinality 0..*).
+'view_item_UseCase' (role 'guest_user3', cardinality 0..*) is associated with 'guest_user_Actor' (role 'view_item2', cardinality 0..*).
+'Person' (role 'login10', cardinality 0..*) is associated with 'Login' (role 'person11', cardinality 0..*).
+'Userguest' (role 'submit_information17', cardinality 0..*) is associated with 'Submit_information' (role 'userguest16', cardinality 0..*).
+'Book_a_ticek' (role 'pay12', cardinality 0..*) is associated with 'Pay' (role 'book_a_ticek13', cardinality 0..*).
+'submit_information_UseCase' (role 'guest_user5', cardinality 0..*) is associated with 'guest_user_Actor' (role 'submit_information4', cardinality 0..*).
+'Userguest' (role 'view_item18', cardinality 0..*) is associated with 'view_item' (role 'userguest19', cardinality 0..*).
+'User' (role 'driver23', cardinality 0..*) is associated with 'Driver' (role 'user22', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'Work_days' has the following attributes: 'Days_Attended' of type int; '_No__of_working_days_' of type int.
+The class 'Salary' has the following attributes: 'Emp_Id' of type str; 'Bonus__' of type str; 'Days_attended' of type int; 'Net_Salary' of type str.
+The class 'Employee' has the following attributes: 'Emp_FName' of type str; 'Emp_Id' of type str; 'Emp_Name' of type str.
+The class 'Login' has the following attributes: 'Password' of type str; 'User_Name' of type str.
+The class 'DaysAttended' has the following attributes: 'Emp_Id' of type str; 'Emp_BasicSalary' of type str; 'Additional_hours__' of type str.
+'Work_days' (role 'salary6', cardinality 0..*) is associated with 'Salary' (role 'work_days7', cardinality 0..*).
+'Employee' (role 'daysAttended2', cardinality 0..*) is associated with 'DaysAttended' (role 'employee3', cardinality 0..*).
+'Employee' (role 'login1', cardinality 0..*) is associated with 'Login' (role 'employee0', cardinality 0..*).
+'Employee' (role 'salary8', cardinality 0..*) is associated with 'Salary' (role 'employee9', cardinality 0..*).
+'Employee' (role 'salary10', cardinality 0..*) is associated with 'Salary' (role 'employee11', cardinality 0..*).
+'DaysAttended' (role 'salary12', cardinality 0..*) is associated with 'Salary' (role 'daysAttended13', cardinality 0..*).
+'Work_days' (role 'daysAttended5', cardinality 0..*) is associated with 'DaysAttended' (role 'work_days4', cardinality 0..*).

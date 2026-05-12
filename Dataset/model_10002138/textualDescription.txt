@@ -1,0 +1,38 @@
+The model has 29 class(es).
+The class 'connect_four_gui_stage' has no attributes.
+The class 'connect_four_gui_GameOverPanel' has the following attributes: 'labelGameOVer' of type str; 'butPlayAgain' of type javax_swing_JButton; 'butMainMenu' of type javax_swing_JButton; 'winnerDisplay' of type str; 'gui' of type connect_four_gui_Connect4GUI; 'winner' of type str.
+The class 'HBox' has no attributes.
+The class 'connect_four_gui_GUIPlayer' has the following attributes: 'board' of type str; 'm_name' of type str; 'gpGUI' of type connect_four_gui_GamePanel.
+The class 'Compute_Column_external' has no attributes.
+The class 'Select_Column_external' has no attributes.
+The class 'connect_four_gui_Token' has the following attributes: 'Y' of type str; 'X' of type str; 'red' of type bool.
+The class 'connect_four_gui_Connect4GUI' has the following attributes: 'cpList' of type List_Token_; 'startUp' of type str; 'comp' of type bool; 'redToken' of type bool; 'tokenRoot' of type str; 'gridBoard' of type str; 'window' of type str.
+The class 'javax_swing_JTextField' has no attributes.
+The class 'Player_2_Actor' has no attributes.
+The class 'connect_four_gui_Connect4Constant_Interface' has no attributes.
+The class 'Listener_Interface' has no attributes.
+The class 'connect_four_gui_StartMenu' has the following attributes: 'bp' of type BorderPane; 'startLabel' of type Label; 'label' of type HBox; 'window' of type str; 'bStart' of type VBox; 'bPlay' of type Button.
+The class 'Connect_Four_Component' has no attributes.
+The class 'javax_swing_JButton' has no attributes.
+The class 'List_Token_' has no attributes.
+The class 'VBox' has no attributes.
+The class 'Label' has no attributes.
+The class 'BorderPane' has no attributes.
+The class 'connect_four_gui_Circle' has no attributes.
+The class 'ImageIcon' has no attributes.
+The class 'Choose_how_many_Players_external' has no attributes.
+The class 'Player_1_Actor' has no attributes.
+The class 'connect_four_gui_GamePanel' has the following attributes: 'pieces' of type str; 'whoPlayed' of type int; 'Connect4_GUI' of type connect_four_gui_Connect4GUI; 'columnNum' of type int; 'game' of type str; 'startUp' of type str; 'isComputerEnabled' of type bool; 'board' of type str; 'players' of type str; 'windows' of type str; 'turnNum' of type int; 'newDrawPos' of type int; 'justWon' of type bool; 'newColumnNum' of type int.
+The class 'connect_four_gui_red' has no attributes.
+The class 'Computer_AI_Actor' has no attributes.
+The class 'Button' has no attributes.
+The class 'Enter_Name_external' has no attributes.
+The class 'Player' has no attributes.
+'connect_four_gui_GameOverPanel' (role 'gUI2', cardinality 0..*) is associated with 'connect_four_gui_Connect4GUI' (role 'gameOverPanel23', cardinality 0..*).
+'Choose_how_many_Players_external' (role 'player_15', cardinality 0..*) is associated with 'Player_1_Actor' (role 'choose_how_many_Players4', cardinality 0..*).
+'Select_Column_external' (role 'player_19', cardinality 0..*) is associated with 'Player_1_Actor' (role 'select_Column8', cardinality 0..*).
+'Enter_Name_external' (role 'player_16', cardinality 0..*) is associated with 'Player_1_Actor' (role 'enter_Name7', cardinality 0..*).
+'Player_2_Actor' (role 'select_Column11', cardinality 0..*) is associated with 'Select_Column_external' (role 'player_210', cardinality 0..*).
+'connect_four_gui_GamePanel' (role 'gUI1', cardinality 0..*) is associated with 'connect_four_gui_Connect4GUI' (role 'gamePanel20', cardinality 0..*).
+'Computer_AI_Actor' (role 'compute_Column14', cardinality 0..*) is associated with 'Compute_Column_external' (role 'computer_AI15', cardinality 0..*).
+'Player_2_Actor' (role 'enter_Name12', cardinality 0..*) is associated with 'Enter_Name_external' (role 'player_213', cardinality 0..*).

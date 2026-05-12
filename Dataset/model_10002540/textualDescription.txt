@@ -1,0 +1,16 @@
+The model has 11 class(es).
+The class 'Obsever_Interface' has no attributes.
+The class 'Wagon' has the following attributes: 'ListedesButin__' of type str; 'modele' of type ModelTraint; 'listeDesBandit' of type Joueur; 'numeroWagon' of type int.
+The class 'Toit' has the following attributes: 'IntNumereoWagon' of type int.
+The class 'Cellule' has the following attributes: 'model' of type ModelTraint.
+The class 'ModelTraint' has the following attributes: 'joueurs__' of type Joueur; 'listeWagon__' of type Wagon; 'indiceWagonCourant' of type int; 'nombreJoueur' of type int; 'cellule____' of type Cellule; 'indiceJoueurCourant' of type int; 'nombreWagon' of type int.
+The class 'Vue' has the following attributes: 'modeltrain' of type ModelTraint.
+The class 'Observable' has the following attributes: 'listObservers__' of type str.
+The class 'Controleur' has the following attributes: 'vue' of type Vue; 'modeletrain' of type ModelTraint.
+The class 'Position' has the following attributes: 'numeroWagon' of type int.
+The class 'Joueur' has the following attributes: 'model' of type ModelTraint; 'a_b' of type int; 'x_y' of type int; 'positionBandit' of type Position; 'nomJoueur' of type str; 'attribute' of type str.
+The class 'Interieur' has the following attributes: 'InnumeroWagon' of type int.
+'ModelTraint' (role 'joueurs2', cardinality 0..*) is associated with 'Joueur' (role 'modelTrant3', cardinality 0..*).
+'ModelTraint' (role 'cellule1', cardinality 0..*) is associated with 'Cellule' (role 'modelTraint0', cardinality 0..*).
+'Controleur' (role 'vue6', cardinality 0..*) is associated with 'Vue' (role 'controleur7', cardinality 0..*).
+'Wagon' (role 'modelTrant5', cardinality 0..*) is associated with 'ModelTraint' (role 'wagons4', cardinality 0..*).

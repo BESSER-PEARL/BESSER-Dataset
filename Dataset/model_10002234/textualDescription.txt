@@ -1,0 +1,20 @@
+The model has 11 class(es).
+The class 'ExaminationDate' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'Pr_fungsplaner_Component' has no attributes.
+The class 'Kalendarische_Ansicht_ver_ndern_external' has no attributes.
+The class 'Pr_fungsplaner_einsehen_external' has no attributes.
+The class 'Benutzer_Actor' has no attributes.
+The class 'PDF_Datei_erstellen_external' has no attributes.
+The class 'Pr_fungen_sehen_external' has no attributes.
+The class 'Supervisor_Actor' has no attributes.
+The class 'Pr_fungstermine_verschieben_external' has no attributes.
+The class 'Pr_funungen_einsehen_external' has no attributes.
+The class 'Im_LTS_anmelden_external' has no attributes.
+'Pr_fungsplaner_einsehen_external' (role 'pDF_Datei_erstellen8', cardinality 0..*) is associated with 'PDF_Datei_erstellen_external' (role 'pr_fungsplaner_einsehen9', cardinality 0..*).
+'Supervisor_Actor' (role 'im_LTS_anmelden14', cardinality 0..*) is associated with 'Im_LTS_anmelden_external' (role 'supervisor15', cardinality 0..*).
+'Im_LTS_anmelden_external' (role 'pr_funungen_einsehen0', cardinality 0..*) is associated with 'Pr_funungen_einsehen_external' (role 'im_LTS_anmelden1', cardinality 0..*).
+'Pr_fungsplaner_einsehen_external' (role 'pr_fungstermine_verschieben4', cardinality 0..*) is associated with 'Pr_fungstermine_verschieben_external' (role 'pr_fungsplaner_einsehen5', cardinality 0..*).
+'Im_LTS_anmelden_external' (role 'pr_fungsplaner_einsehen2', cardinality 0..*) is associated with 'Pr_fungsplaner_einsehen_external' (role 'im_LTS_anmelden3', cardinality 0..*).
+'Pr_fungsplaner_einsehen_external' (role 'pr_fungen_sehen6', cardinality 0..*) is associated with 'Pr_fungen_sehen_external' (role 'pr_fungsplaner_einsehen7', cardinality 0..*).
+'Pr_fungsplaner_einsehen_external' (role 'kalendarische_Ansicht_ver_ndern10', cardinality 0..*) is associated with 'Kalendarische_Ansicht_ver_ndern_external' (role 'pr_fungsplaner_einsehen11', cardinality 0..*).
+'Benutzer_Actor' (role 'im_LTS_anmelden12', cardinality 0..*) is associated with 'Im_LTS_anmelden_external' (role 'benutzer13', cardinality 0..*).

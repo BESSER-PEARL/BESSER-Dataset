@@ -1,0 +1,57 @@
+The model has 27 class(es).
+The class 'halaman_admin_produk_UseCase1' has no attributes.
+The class 'halaman_admin_produk_UseCase2' has no attributes.
+The class 'Pengunjung_Website_Actor' has no attributes.
+The class 'pengunjung_website' has no attributes.
+The class 'halaman_admin_register_UseCase1' has no attributes.
+The class 'halaman_admin_news_UseCase' has no attributes.
+The class 'admin' has no attributes.
+The class 'our_costumer_Interface' has no attributes.
+The class 'halaman_admin_news_UseCase2' has no attributes.
+The class 'halaman_admin_major_sales_record_UseCase1' has no attributes.
+The class 'halaman_admin_register_UseCase2' has no attributes.
+The class 'news_Interface' has no attributes.
+The class 'login_admin' has the following attributes: 'password' of type str; 'email' of type str.
+The class 'register_admin' has the following attributes: 'nik' of type str; 'nama_lengkap' of type str; 'id_user' of type int; 'email' of type str; 'password' of type str.
+The class 'halaman_admin_register_UseCase' has no attributes.
+The class 'produk' has the following attributes: 'id_produk' of type int; 'foto_produk' of type str; 'website' of type str.
+The class 'news' has the following attributes: 'foto_news' of type str; 'isi_news' of type str; 'id_news' of type int; 'judul_news' of type str.
+The class 'Halaman_Publikasi__produk_UseCase' has no attributes.
+The class 'admin_Actor' has no attributes.
+The class 'halaman_admin_news_UseCase1' has no attributes.
+The class 'halaman_admin_login_UseCase' has no attributes.
+The class 'Halaman_Publikasi__major_sales_record_UseCase' has no attributes.
+The class 'halaman_admin_major_sales_record_UseCase' has no attributes.
+The class 'our_costumer___major' has the following attributes: 'logo_major' of type str; 'id_major' of type int.
+The class 'Halaman_Publikasi__news_UseCase' has no attributes.
+The class 'halaman_admin_produk_UseCase' has no attributes.
+The class 'produk_Interface' has no attributes.
+'admin' (role 'news8', cardinality 0..*) is associated with 'news_Interface' (role 'admin9', cardinality 0..*).
+'admin_Actor' (role 'news40', cardinality 0..*) is associated with 'halaman_admin_news_UseCase1' (role 'admin41', cardinality 0..*).
+'register_admin' (role 'admin19', cardinality 0..*) is associated with 'admin' (role 'register_admin18', cardinality 0..*).
+'admin_Actor' (role 'login30', cardinality 0..*) is associated with 'halaman_admin_login_UseCase' (role 'admin31', cardinality 0..*).
+'Pengunjung_Website_Actor' (role 'news54', cardinality 0..*) is associated with 'Halaman_Publikasi__news_UseCase' (role 'pengunjung_Website55', cardinality 0..*).
+'admin' (role 'interface10', cardinality 0..*) is associated with 'produk_Interface' (role 'admin11', cardinality 0..*).
+'news_Interface' (role 'pengunjung_website15', cardinality 0..*) is associated with 'pengunjung_website' (role 'news14', cardinality 0..*).
+'admin_Actor' (role 'produk34', cardinality 0..*) is associated with 'halaman_admin_produk_UseCase2' (role 'admin35', cardinality 0..*).
+'Halaman_Publikasi__major_sales_record_UseCase' (role 'admin51', cardinality 0..*) is associated with 'admin_Actor' (role 'major_sales_record50', cardinality 0..*).
+'admin_Actor' (role 'register28', cardinality 0..*) is associated with 'halaman_admin_register_UseCase' (role 'admin29', cardinality 0..*).
+'admin_Actor' (role 'news38', cardinality 0..*) is associated with 'halaman_admin_news_UseCase2' (role 'admin39', cardinality 0..*).
+'news' (role 'admin5', cardinality 0..*) is associated with 'admin' (role 'news4', cardinality 0..*).
+'produk' (role 'admin3', cardinality 0..*) is associated with 'admin' (role 'produk2', cardinality 0..*).
+'halaman_admin_major_sales_record_UseCase1' (role 'admin33', cardinality 0..*) is associated with 'admin_Actor' (role 'major_sales_record32', cardinality 0..*).
+'admin_Actor' (role 'produk46', cardinality 0..*) is associated with 'Halaman_Publikasi__produk_UseCase' (role 'admin47', cardinality 0..*).
+'Halaman_Publikasi__news_UseCase' (role 'admin49', cardinality 0..*) is associated with 'admin_Actor' (role 'news48', cardinality 0..*).
+'admin' (role 'our_costumer6', cardinality 0..*) is associated with 'our_costumer_Interface' (role 'admin7', cardinality 0..*).
+'our_costumer___major' (role 'admin1', cardinality 0..*) is associated with 'admin' (role 'our_costumer___major0', cardinality 0..*).
+'admin_Actor' (role 'major_sales_record44', cardinality 0..*) is associated with 'halaman_admin_major_sales_record_UseCase' (role 'admin45', cardinality 0..*).
+'halaman_admin_produk_UseCase' (role 'admin25', cardinality 0..*) is associated with 'admin_Actor' (role 'produk24', cardinality 0..*).
+'admin_Actor' (role 'news42', cardinality 0..*) is associated with 'halaman_admin_news_UseCase' (role 'admin43', cardinality 0..*).
+'halaman_admin_register_UseCase1' (role 'admin27', cardinality 0..*) is associated with 'admin_Actor' (role 'register26', cardinality 0..*).
+'admin_Actor' (role 'produk36', cardinality 0..*) is associated with 'halaman_admin_produk_UseCase1' (role 'admin37', cardinality 0..*).
+'our_costumer_Interface' (role 'pengunjung_website13', cardinality 0..*) is associated with 'pengunjung_website' (role 'our_costumer12', cardinality 0..*).
+'produk_Interface' (role 'pengunjung_website17', cardinality 0..*) is associated with 'pengunjung_website' (role 'produk16', cardinality 0..*).
+'Halaman_Publikasi__major_sales_record_UseCase' (role 'pengunjung_Website57', cardinality 0..*) is associated with 'Pengunjung_Website_Actor' (role 'major_sales_record56', cardinality 0..*).
+'Pengunjung_Website_Actor' (role 'produk52', cardinality 0..*) is associated with 'Halaman_Publikasi__produk_UseCase' (role 'pengunjung_Website53', cardinality 0..*).
+'admin_Actor' (role 'register22', cardinality 0..*) is associated with 'halaman_admin_register_UseCase2' (role 'admin23', cardinality 0..*).
+'login_admin' (role 'admin21', cardinality 0..*) is associated with 'admin' (role 'login_admin20', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'ResultatExamen' has the following attributes: 'numeroResultat' of type int; 'infoResultat' of type str.
+The class 'Programme' has the following attributes: 'numeroProgramme' of type str; 'date' of type str; 'heure' of type str.
+The class 'Secretaire_external' has no attributes.
+The class 'CentreHospitalier' has the following attributes: 'numeroCentre' of type int; 'nomCentre' of type str; 'descriptionCentre' of type str.
+The class 'Medecin' has the following attributes: 'specialite' of type str; 'numeroMedecin' of type int; 'prenomMedecin' of type str; 'dateNaissance' of type str; 'nomMedecin' of type str.
+The class 'Consultion' has the following attributes: 'description' of type str; 'numeroConsultation' of type int; 'dateConsultation' of type str; 'heure' of type str.
+The class 'Rendez_Vous' has the following attributes: 'numeroRdV' of type int; 'lieuRDV' of type str; 'heure' of type str; 'dateRDV' of type str.
+The class 'Examen' has the following attributes: 'heure' of type str; 'motif' of type str; 'dateProvisoir' of type str; 'numeroExamen' of type int.
+The class 'Patient' has the following attributes: 'agePatient' of type int; 'lieuResidence' of type str; 'profession' of type str; 'prenomPatien' of type str; 'nomPatient' of type str; 'numeroPatien' of type int.
+The class 'Service' has the following attributes: 'nomService' of type str; 'descriptionService' of type str; 'numeroService' of type int.
+The class 'DossierPatient' has the following attributes: 'heure' of type int; 'numeroPatient' of type int; 'nomDossier' of type str; 'dateCreation' of type int; 'infoAntecedant' of type str.
+'Rendez_Vous' (role 'examen6', cardinality 0..*) is associated with 'Examen' (role 'rendez_Vous7', cardinality 0..*).
+'Patient' (role 'resultatExamen20', cardinality 0..*) is associated with 'ResultatExamen' (role 'patient21', cardinality 0..*).
+'Medecin' (role 'service12', cardinality 0..*) is associated with 'Service' (role 'medecin13', cardinality 0..*).
+'Patient' (role 'rendez_Vous2', cardinality 0..*) is associated with 'Rendez_Vous' (role 'patient3', cardinality 0..*).
+'CentreHospitalier' (role 'service15', cardinality 0..*) is associated with 'Service' (role 'centreHospitalier14', cardinality 0..*).
+'ResultatExamen' (role 'medecin18', cardinality 0..*) is associated with 'Medecin' (role 'resultatExamen19', cardinality 0..*).
+'Rendez_Vous' (role 'consultion4', cardinality 0..*) is associated with 'Consultion' (role 'rendez_Vous5', cardinality 0..*).
+'Programme' (role 'medecin10', cardinality 0..*) is associated with 'Medecin' (role 'programme11', cardinality 0..*).
+'DossierPatient' (role 'patient0', cardinality 0..*) is associated with 'Patient' (role 'dossierPatient1', cardinality 0..*).
+'ResultatExamen' (role 'secretaire17', cardinality 0..*) is associated with 'Secretaire_external' (role 'resultatExamen16', cardinality 0..*).
+'Rendez_Vous' (role 'medecin8', cardinality 0..*) is associated with 'Medecin' (role 'rendez_Vous9', cardinality 0..*).

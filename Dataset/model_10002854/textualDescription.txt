@@ -1,0 +1,8 @@
+The model has 7 class(es).
+The class 'UserService' has no attributes.
+The class 'PrescriberController' has no attributes.
+The class 'Actor_Actor' has no attributes.
+The class 'ApplicationController' has no attributes.
+The class 'CredentialsProvider' has no attributes.
+The class 'Environment_User__CookieAuthenticator_' has no attributes.
+The class 'CredentialsAuthController' has no attributes.

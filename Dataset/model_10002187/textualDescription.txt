@@ -1,0 +1,54 @@
+The model has 27 class(es).
+The class 'War_ClassicTwoPlayer' has no attributes.
+The class 'War_WarGameVariation1' has the following attributes: 'numOfPlayers' of type int; 'numOfPlayers1' of type int.
+The class 'War_Deck' has no attributes.
+The class 'War_Card' has no attributes.
+The class 'War_DeckIterator1' has the following attributes: 'current1' of type int; 'current' of type int.
+The class 'War_Player1' has the following attributes: 'name1' of type str; 'score' of type int; 'name' of type str; 'score1' of type int.
+The class 'War_ClassicTwoPlayer1' has no attributes.
+The class 'War_TwoPlayerPointPile1' has the following attributes: 'inWar1' of type bool; 'logger' of type str; 'inWar' of type bool; 'logger1' of type str.
+The class 'War_PlayGame1' has no attributes.
+The class 'War_DeckIterator' has no attributes.
+The class 'War_GameLogger1' has the following attributes: 'gameLogWriter' of type str; 'gameLogWriter1' of type str.
+The class 'War_WarVariationWithPoints' has no attributes.
+The class 'War_GameLogger' has no attributes.
+The class 'War_WarVariationClassic1' has the following attributes: 'numOfRounds' of type int; 'numOfRounds1' of type int.
+The class 'War_WarVariationWithPoints1' has the following attributes: 'inWar1' of type bool; 'inWar' of type bool; 'logger' of type str; 'logger1' of type str.
+The class 'War_ThreePlayerPointPile1' has the following attributes: 'inWar1' of type bool; 'logger' of type str; 'logger1' of type str; 'inWar' of type bool.
+The class 'War_WarVariationClassic' has no attributes.
+The class 'Comparable_Card__Interface' has no attributes.
+The class 'War_Player' has no attributes.
+The class 'War_TwoPlayerPointPile' has no attributes.
+The class 'War_Card1' has the following attributes: 'suit' of type War_Suit1; 'rank1' of type War_Rank1; 'value1' of type int; 'value' of type int; 'suit1' of type War_Suit1; 'rank' of type War_Rank1.
+The class 'Iterator_Card__Interface' has no attributes.
+The class 'War_ThreePlayerPointPile' has no attributes.
+The class 'War_WarGameVariation' has no attributes.
+The class 'War_PlayGame' has no attributes.
+The class 'Iterable_Card__Interface' has no attributes.
+The class 'War_Deck1' has the following attributes: 'LOWEST_NUMERIC_VALUE1' of type int; 'NUMERIC_CARDS_IN_SUIT' of type int; 'NUMERIC_CARDS_IN_SUIT1' of type int; 'TOP_CARD' of type int; 'TOP_CARD1' of type int; 'LOWEST_NUMERIC_VALUE' of type int.
+The enumeration 'War_Suit' does not specify any literals.
+The enumeration 'War_Rank1' does not specify any literals.
+The enumeration 'War_Rank' does not specify any literals.
+The enumeration 'War_Suit1' does not specify any literals.
+'War_Deck1' (role 'deckiterator6', cardinality 0..*) is associated with 'War_DeckIterator1' (role 'deck7', cardinality 0..*).
+'War_Deck1' (role 'wargamevariation30', cardinality 0..*) is associated with 'War_WarGameVariation1' (role 'winPile31', cardinality 0..*).
+'War_Player1' (role 'warvariationclassic26', cardinality 0..*) is associated with 'War_WarVariationClassic1' (role 'player127', cardinality 0..*).
+'War_WarGameVariation1' (role 'players35', cardinality 0..*) is associated with 'War_Player1' (role 'wargamevariation34', cardinality 0..*).
+'War_Player1' (role 'warvariationclassic14', cardinality 0..*) is associated with 'War_WarVariationClassic1' (role 'player215', cardinality 0..*).
+'War_GameLogger1' (role 'wargamevariation12', cardinality 0..*) is associated with 'War_WarGameVariation1' (role 'warLogger13', cardinality 0..*).
+'War_Deck1' (role 'wargamevariation16', cardinality 0..*) is associated with 'War_WarGameVariation1' (role 'winPile17', cardinality 0..*).
+'War_Deck1' (role 'player4', cardinality 0..*) is associated with 'War_Player1' (role 'hand5', cardinality 0..*).
+'War_Deck1' (role 'card19', cardinality 0..*) is associated with 'War_Card1' (role 'deck18', cardinality 0..*).
+'War_WarVariationClassic1' (role 'player229', cardinality 0..*) is associated with 'War_Player1' (role 'warvariationclassic28', cardinality 0..*).
+'War_Player1' (role 'cardsWon37', cardinality 0..*) is associated with 'War_Deck1' (role 'player36', cardinality 0..*).
+'War_Player1' (role 'hand11', cardinality 0..*) is associated with 'War_Deck1' (role 'player10', cardinality 0..*).
+'War_Deck1' (role 'deckiterator22', cardinality 0..*) is associated with 'War_DeckIterator1' (role 'deck23', cardinality 0..*).
+'War_Deck1' (role 'player38', cardinality 0..*) is associated with 'War_Player1' (role 'cardsWon39', cardinality 0..*).
+'War_Card1' (role 'deck8', cardinality 0..*) is associated with 'War_Deck1' (role 'deck9', cardinality 0..*).
+'War_WarGameVariation1' (role 'deck41', cardinality 0..*) is associated with 'War_Deck1' (role 'wargamevariation40', cardinality 0..*).
+'War_GameLogger1' (role 'wargamevariation24', cardinality 0..*) is associated with 'War_WarGameVariation1' (role 'warLogger25', cardinality 0..*).
+'War_WarGameVariation1' (role 'players1', cardinality 0..*) is associated with 'War_Player1' (role 'wargamevariation0', cardinality 0..*).
+'War_Deck1' (role 'wargamevariation42', cardinality 0..*) is associated with 'War_WarGameVariation1' (role 'deck43', cardinality 0..*).
+'War_Deck1' (role 'card21', cardinality 0..*) is associated with 'War_Card1' (role 'deck20', cardinality 0..*).
+'War_Player1' (role 'warvariationclassic32', cardinality 0..*) is associated with 'War_WarVariationClassic1' (role 'player133', cardinality 0..*).
+'War_Card1' (role 'deck2', cardinality 0..*) is associated with 'War_Deck1' (role 'deck3', cardinality 0..*).

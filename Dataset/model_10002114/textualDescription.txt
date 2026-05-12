@@ -1,0 +1,21 @@
+The model has 19 class(es).
+The class 'Game_PlayerBoard' has the following attributes: 'PlayerID' of type int; 'ColonistZone' of type Game_ColonistZone.
+The class 'Role' has no attributes.
+The class 'Game_PlantationSupply' has no attributes.
+The class 'Game_TradingHouse' has no attributes.
+The class 'VictoryPoint' has no attributes.
+The class 'Game_ShippingShip' has the following attributes: 'Size' of type int.
+The class 'Game_ColonistShip' has the following attributes: 'Num_Colonists' of type int; 'ColonistZone' of type Game_ColonistZone.
+The class 'Game_Building' has the following attributes: 'ColonistZones' of type Game_ColonistZone; 'Cost' of type int; 'Type' of type str; 'MaxColonists' of type int; 'HasProduced' of type bool; 'Size' of type int; 'VictoryPoints' of type int.
+The class 'Game_ColonistZone' has the following attributes: 'MaxColonists' of type int; 'Stackable' of type bool; 'Pieces' of type Colonist.
+The class 'Governor' has no attributes.
+The class 'Good' has no attributes.
+The class 'Game_IBoard_Interface' has no attributes.
+The class 'Piece' has no attributes.
+The class 'Game_GoodZone' has the following attributes: 'Pieces' of type Good; 'Stackable' of type bool.
+The class 'Colonist' has no attributes.
+The class 'Game_SupplyBoard' has no attributes.
+The class 'Doubloon' has no attributes.
+The class 'Game_Plantation' has the following attributes: 'HasProduced' of type bool; 'ColonistZone' of type Game_ColonistZone; 'Type' of type Game_PlantationType.
+The class 'Game_IColonistBoard_Interface' has no attributes.
+The enumeration 'Game_PlantationType' does not specify any literals.

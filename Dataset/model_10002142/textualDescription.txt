@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'PASSENGER' has the following attributes: 'Pass_ID' of type int; 'Pass_Name' of type str; 'Pass_Address' of type str.
+The class 'RESERVATION_SYSTEM' has the following attributes: 'Reservation_ID' of type int; 'Reservation_Date' of type int.
+The class 'FLIGHT' has the following attributes: 'Flight_No_' of type int; 'Flight_Name' of type str.
+'FLIGHT' (role 'FLIGHT_RESERVATION_SYSTEM_00', cardinality 0..*) is associated with 'RESERVATION_SYSTEM' (role 'RESERVATION_SYSTEM1', cardinality 0..*).

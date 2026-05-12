@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'vendor' has the following attributes: 'bookdetails' of type str; 'supplybooks' of type str; 'paymentdetails' of type str; 'search' of type str.
+The class 'library' has the following attributes: '_location' of type str; '_librarion_id' of type str.
+The class 'LIBRARIAN' has the following attributes: 'LIBRARIAN_ID' of type str; 'issue_status' of type str; 'searchbook__' of type str; 'issue_book' of type str; 'verify_member__' of type str; 'NAME' of type str.
+The class 'patron' has the following attributes: 'search' of type str; 'request' of type str; 'details' of type str; 'patronid' of type str; 'payfine' of type str.
+The class 'book_mdatabase' has the following attributes: 'update' of type str; 'bookid' of type str; 'author' of type str; 'booktitle' of type str.
+The class 'patronrecord' has the following attributes: 'dateofmembership' of type str; 'address' of type str; 'patronid' of type str; 'name' of type str; 'phone_no' of type str; 'filesowned' of type str; 'noofbooks_alooted' of type str; 'type' of type str.
+'patron' (role 'patronrecord6', cardinality 0..*) is associated with 'patronrecord' (role 'patron7', cardinality 0..*).
+'book_mdatabase' (role 'library3', cardinality 0..*) is associated with 'library' (role 'book_mdatabase2', cardinality 0..*).
+'book_mdatabase' (role 'patron4', cardinality 0..*) is associated with 'patron' (role 'book_mdatabase5', cardinality 0..*).
+'LIBRARIAN' (role 'library1', cardinality 0..*) is associated with 'library' (role 'lIBRARIAN0', cardinality 0..*).

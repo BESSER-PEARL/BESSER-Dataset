@@ -1,0 +1,28 @@
+The model has 14 class(es).
+The class 'Administrative_staff' has no attributes.
+The class 'Department' has no attributes.
+The class 'Nurse' has the following attributes: 'doctorid' of type int; 'name' of type str; 'id' of type int.
+The class 'Person' has the following attributes: 'address' of type str; 'Gender' of type str; 'Title' of type str; 'birthDate' of type date; 'phone' of type int; 'Name' of type str.
+The class 'Bill' has the following attributes: 'patientname' of type str; 'amount' of type float; 'billno' of type str.
+The class 'Room' has the following attributes: 'roomno' of type int; 'location' of type str.
+The class 'Operations_staff' has no attributes.
+The class 'Patient' has the following attributes: 'sex' of type str; 'accepted' of type date; 'sickness' of type str; 'telno' of type int; 'address' of type str; 'roomno' of type int; 'age' of type int.
+The class 'Technical_staff' has no attributes.
+The class 'Hospital' has the following attributes: 'phone' of type int; 'name' of type str; 'address' of type str.
+The class 'Staff' has the following attributes: 'education' of type str; 'joined' of type date.
+The class 'Doctor' has the following attributes: 'docid' of type int; 'phno' of type int; 'address' of type str; 'specialization' of type str; 'department' of type str; 'name' of type str.
+The class 'Staff1' has no attributes.
+The class 'Nurse1' has no attributes.
+'Room' (role 'patient5', cardinality 0..*) is associated with 'Patient' (role 'room4', cardinality 0..*).
+'Operations_staff' (role 'patient22', cardinality 0..*) is associated with 'Patient' (role 'operations_staff23', cardinality 0..*).
+'Person' (role 'hospital25', cardinality 0..*) is associated with 'Hospital' (role 'person24', cardinality 0..*).
+'Person' (role 'hospital15', cardinality 0..*) is associated with 'Hospital' (role 'person14', cardinality 0..*).
+'Department' (role 'staff21', cardinality 0..*) is associated with 'Staff' (role 'department20', cardinality 0..*).
+'Doctor' (role 'depmt2', cardinality 0..*) is associated with 'Nurse' (role 'doctor3', cardinality 0..*).
+'Room' (role 'staff6', cardinality 0..*) is associated with 'Staff1' (role 'room7', cardinality 0..*).
+'Hospital' (role 'department19', cardinality 0..*) is associated with 'Department' (role 'hospital18', cardinality 0..*).
+'Hospital' (role 'person16', cardinality 0..*) is associated with 'Person' (role 'Person_Hospital2_117', cardinality 0..*).
+'Doctor' (role 'patients0', cardinality 0..*) is associated with 'Patient' (role 'doctors1', cardinality 0..*).
+'Staff' (role 'sbill12', cardinality 0..*) is associated with 'Bill' (role 'receptionist13', cardinality 0..*).
+'Staff' (role 'p11', cardinality 0..*) is associated with 'Patient' (role 'receptionist10', cardinality 0..*).
+'Patient' (role 'bill8', cardinality 0..*) is associated with 'Bill' (role 'pat9', cardinality 0..*).

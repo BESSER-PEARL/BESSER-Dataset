@@ -1,0 +1,26 @@
+The model has 18 class(es).
+The class 'Customer' has the following attributes: 'Password' of type str; 'Full_Name' of type str; 'CustomerId' of type int; 'Email_Address' of type str; 'Delivery_address' of type str.
+The class 'Product_search_UseCase' has no attributes.
+The class 'Order' has the following attributes: 'ShipDate' of type str; 'OrderDate' of type str; 'OrderId' of type int; 'CustomerId' of type int.
+The class 'New_Customer_Actor' has no attributes.
+The class 'Verify_Password_UseCase' has no attributes.
+The class 'UseCase2_UseCase' has no attributes.
+The class 'Display_Login_Error_UseCase' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Browse_Categories_UseCase' has no attributes.
+The class 'User' has the following attributes: 'Password' of type str; 'UserId' of type int.
+The class 'Existing_Customer_Actor' has no attributes.
+The class 'UseCase_UseCase' has no attributes.
+The class 'Place_Order_UseCase' has no attributes.
+The class 'Product_Recommendation_UseCase' has no attributes.
+The class 'Shopping_Cart' has the following attributes: 'DateCreated' of type int; 'CartId' of type int; 'RecordId' of type int; 'ProductId' of type int; 'Quantity' of type int.
+The class 'Product' has the following attributes: 'Description' of type str; 'CategoryId' of type int; 'UnitCost' of type int; 'ProductId' of type int; 'ModelName' of type str; 'ModelNumber' of type int.
+The class 'Registration_UseCase' has no attributes.
+The class 'OrderDetails' has the following attributes: 'Quantity' of type int; 'ProductId' of type int; 'OrderId' of type int; 'UnitCost' of type int.
+'Existing_Customer_Actor' (role 'login8', cardinality 0..*) is associated with 'Login_UseCase' (role 'existing_Customer9', cardinality 0..*).
+'Place_Order_UseCase' (role 'existing_Customer13', cardinality 0..*) is associated with 'Existing_Customer_Actor' (role 'place_Order12', cardinality 0..*).
+'Product' (role 'Product_Order_04', cardinality 0..*) is associated with 'Order' (role 'Product_Order_15', cardinality 0..*).
+'Shopping_Cart' (role 'Shopping_Cart_Product_06', cardinality 0..*) is associated with 'Product' (role 'Shopping_Cart_Product_17', cardinality 0..*).
+'Customer' (role 'Customer_Shopping_Cart_00', cardinality 0..*) is associated with 'Shopping_Cart' (role 'Customer_Shopping_Cart_11', cardinality 0..*).
+'Existing_Customer_Actor' (role 'browse_Products10', cardinality 0..*) is associated with 'Browse_Categories_UseCase' (role 'existing_Customer11', cardinality 0..*).
+'Order' (role 'Order_OrderDetails_02', cardinality 0..*) is associated with 'OrderDetails' (role 'Order_OrderDetails_13', cardinality 0..*).

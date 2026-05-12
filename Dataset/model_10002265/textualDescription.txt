@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'Customer' has the following attributes: 'phone' of type str; 'address' of type str; 'email' of type str.
+The class 'Account' has the following attributes: 'open' of type date; 'billingAddress' of type str; 'closed' of type date; 'isClosed' of type bool.
+The class 'ConNguoi' has the following attributes: 'CMND' of type str; 'hoten' of type str; 'diachi' of type str; 'ngaysinh' of type date; 'gioitinh' of type bool.
+The class 'Khoa' has the following attributes: 'tenkhoa' of type str; 'makhoa' of type str.
+The class 'BoMon' has the following attributes: 'mabomon' of type str; 'tenbomon' of type str.
+The class 'Payment' has the following attributes: 'details' of type str; 'total' of type float; 'paidDate' of type date.
+The class 'Order' has the following attributes: 'number' of type int; 'shipTo' of type str; 'total' of type float; 'status' of type str; 'shipped' of type bool; 'ordered' of type date.
+The class 'SinhVien' has the following attributes: 'nganhhoc' of type str; 'lop' of type str; 'MSSV' of type str; 'bomon' of type str.
+'Customer' (role 'webUser3', cardinality 0..*) is associated with 'SinhVien' (role 'customer2', cardinality 0..*).
+'Account' (role 'p0', cardinality 0..*) is associated with 'Payment' (role 'acc1', cardinality 0..*).
+'Account' (role 'cart6', cardinality 0..*) is associated with 'ConNguoi' (role 'account7', cardinality 0..*).
+'Order' (role 'account11', cardinality 0..*) is associated with 'Account' (role 'order10', cardinality 0..*).
+'BoMon' (role 'thus9', cardinality 0..*) is associated with 'Khoa' (role 'co8', cardinality 0..*).
+'Order' (role 'payment13', cardinality 0..*) is associated with 'Payment' (role 'order12', cardinality 0..*).
+'Customer' (role 'account4', cardinality 0..*) is associated with 'Account' (role 'customer5', cardinality 0..*).

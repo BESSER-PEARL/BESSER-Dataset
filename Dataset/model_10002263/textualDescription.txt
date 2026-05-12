@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'NO_Queue_mobile_application__Product' has the following attributes: 'Supplier' of type str; 'Name' of type str; 'ID' of type str.
+The class 'NO_Queue_mobile_application__NOQueue' has the following attributes: 'APP_Details' of type str.
+The class 'NO_Queue_mobile_application__Payment' has the following attributes: 'Paid' of type str; 'Details' of type str; 'Total' of type str; 'ID' of type str.
+The class 'NO_Queue_mobile_application__Customer' has the following attributes: 'Phone' of type str; 'ID' of type str; 'Email' of type str; 'Address' of type str.
+The class 'NO_Queue_mobile_application__Account' has the following attributes: 'Open' of type str; 'ID' of type str; 'billing_address' of type str; 'Closed' of type str; 'is_closed' of type bool.
+The class 'NO_Queue_mobile_application__App_User' has the following attributes: 'passwd' of type str; 'login_id' of type str.
+The class 'NO_Queue_mobile_application__Order' has the following attributes: 'status' of type str; 'Number' of type str; 'shipped' of type str; 'ordered' of type str; 'Ship_to' of type str; 'total' of type str.
+The class 'NO_Queue_mobile_application__Line_item' has the following attributes: 'price' of type str; 'quantity' of type int.
+The class 'NO_Queue_mobile_application__Shopping_Cart' has the following attributes: 'created' of type str.
+'NO_Queue_mobile_application__Customer' (role 'web_User1', cardinality 0..*) is associated with 'NO_Queue_mobile_application__App_User' (role 'customer0', cardinality 0..*).
+'NO_Queue_mobile_application__Account' (role 'payment5', cardinality 0..*) is associated with 'NO_Queue_mobile_application__Payment' (role 'account4', cardinality 0..*).
+'NO_Queue_mobile_application__Account' (role 'customer3', cardinality 0..*) is associated with 'NO_Queue_mobile_application__Customer' (role 'account2', cardinality 0..*).
+'NO_Queue_mobile_application__Order' (role 'account9', cardinality 0..*) is associated with 'NO_Queue_mobile_application__Account' (role 'order8', cardinality 0..*).
+'NO_Queue_mobile_application__Shopping_Cart' (role 'ordered__unique10', cardinality 0..*) is associated with 'NO_Queue_mobile_application__Line_item' (role 'shopping_Cart11', cardinality 0..*).
+'NO_Queue_mobile_application__Line_item' (role 'product14', cardinality 0..*) is associated with 'NO_Queue_mobile_application__Product' (role 'line_item15', cardinality 0..*).
+'NO_Queue_mobile_application__Line_item' (role '_order__unique_13', cardinality 0..*) is associated with 'NO_Queue_mobile_application__Order' (role 'line_item12', cardinality 0..*).
+'NO_Queue_mobile_application__Shopping_Cart' (role 'web_User7', cardinality 0..*) is associated with 'NO_Queue_mobile_application__App_User' (role 'shopping_Cart6', cardinality 0..*).

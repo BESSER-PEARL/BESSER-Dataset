@@ -1,0 +1,27 @@
+The model has 15 class(es).
+The class 'gives_feedback_UseCase' has no attributes.
+The class 'shoppingcart' has the following attributes: 'total' of type int; 'subtotal' of type int; 'salestax' of type int.
+The class 'placeorder_UseCase' has no attributes.
+The class 'checks_availability_of_item_UseCase' has no attributes.
+The class 'selectsitem_UseCase' has no attributes.
+The class 'itemtopurchase' has the following attributes: 'quantity' of type int; 'itemtopurchase' of type int.
+The class 'purchase_UseCase' has no attributes.
+The class 'shoppingcart_Actor' has no attributes.
+The class 'preferredcustomer' has the following attributes: 'discount' of type int.
+The class 'cancelorder_UseCase' has no attributes.
+The class 'requests_to_rate_the_website_UseCase' has no attributes.
+The class 'creditcard' has the following attributes: 'issuer' of type str; 'number' of type int; 'expirationdate' of type date.
+The class 'customer' has the following attributes: 'name' of type str; 'addresstobill' of type int; 'addresstoship' of type int.
+The class 'asks_feedback_UseCase' has no attributes.
+The class 'customer_Actor' has no attributes.
+'selectsitem_UseCase' (role 'customer12', cardinality 0..*) is associated with 'customer_Actor' (role 'selectsitem13', cardinality 0..*).
+'customer' (role 'creditcard3', cardinality 0..*) is associated with 'creditcard' (role 'customer2', cardinality 0..*).
+'checks_availability_of_item_UseCase' (role 'customer11', cardinality 0..*) is associated with 'customer_Actor' (role 'checks_availability_of_item10', cardinality 0..*).
+'asks_feedback_UseCase' (role 'shoppingcart15', cardinality 0..*) is associated with 'shoppingcart_Actor' (role 'asks_feedback14', cardinality 0..*).
+'customer_Actor' (role 'gives_feedback21', cardinality 0..*) is associated with 'gives_feedback_UseCase' (role 'customer20', cardinality 0..*).
+'shoppingcart_Actor' (role 'gives_feedback18', cardinality 0..*) is associated with 'gives_feedback_UseCase' (role 'shoppingcart19', cardinality 0..*).
+'requests_to_rate_the_website_UseCase' (role 'shoppingcart17', cardinality 0..*) is associated with 'shoppingcart_Actor' (role 'requests_to_rate_the_website16', cardinality 0..*).
+'placeorder_UseCase' (role 'shoppingcart7', cardinality 0..*) is associated with 'shoppingcart_Actor' (role 'placeorder6', cardinality 0..*).
+'shoppingcart_Actor' (role 'cancelorder8', cardinality 0..*) is associated with 'cancelorder_UseCase' (role 'shoppingcart9', cardinality 0..*).
+'purchase_UseCase' (role 'customer5', cardinality 0..*) is associated with 'customer_Actor' (role 'purchase4', cardinality 0..*).
+'shoppingcart' (role 'itemtopurchase0', cardinality 0..*) is associated with 'itemtopurchase' (role 'shoppingcart1', cardinality 0..*).

@@ -1,0 +1,118 @@
+The model has 58 class(es).
+The class 'PersonnelOfficer' has no attributes.
+The class 'OutPatient' has the following attributes: 'date' of type date; 'location' of type str; 'patient' of type Patient_Actor.
+The class 'of_Ward_s_Staff_external' has no attributes.
+The class 'Qualification' has the following attributes: 'type' of type str; 'date' of type date; 'institution_name' of type str.
+The class 'Accountant_Actor' has no attributes.
+The class 'Maintain_next_of_kind_details_external' has no attributes.
+The class 'Person_Actor' has no attributes.
+The class '_Component' has no attributes.
+The class 'Search_Staff_external' has no attributes.
+The class 'Maintain_Staff_external' has no attributes.
+The class 'Maintain_Patients_referred_to_the_out_patients_clinic_external' has no attributes.
+The class 'Set_staff_weekly_Rota_external' has no attributes.
+The class 'of_ward_s_supplies_external' has no attributes.
+The class 'Pharmaceutical' has the following attributes: 'method_of_administration' of type str; 'dosage' of type str.
+The class 'Maintian_Patients__medication_external' has no attributes.
+The class 'Supplier' has the following attributes: 'fax' of type str; 'num' of type str.
+The class 'RegularDoctor' has no attributes.
+The class 'WorkExperience' has the following attributes: 'organization_name' of type str; 'finish_date' of type date; 'position' of type str; 'start_date' of type date.
+The class 'of_Patients_referred_to_the_out_patient_clinic_external' has no attributes.
+The class 'Ward' has the following attributes: 'location' of type str; 'name' of type str; 'staff' of type RegularDoctor; 'num' of type int; 'responsable' of type ChargeNurse; 'telephone_extension' of type int.
+The class 'of_Patients_on_waiting_list_external' has no attributes.
+The class 'Generate_Staff_s_Payroll_external' has no attributes.
+The class 'EmploymentContract' has the following attributes: 'salary_payment' of type SalaryPayment; 'number_hours_per_week' of type int; 'type_contract' of type TypeContract.
+The class 'Charge_Nurse_Actor' has no attributes.
+The class 'ChargeNurse' has no attributes.
+The class 'Maintain_suppliers_external' has no attributes.
+The class 'Supply' has the following attributes: 'cost_per_unit' of type float; 'reorder_level' of type int; 'description' of type str; 'num' of type int; 'stock' of type int; 'name' of type str.
+The class 'Staff' has the following attributes: 'salary_scale' of type float; 'position' of type Position; 'num' of type int; 'employment_contract' of type EmploymentContract; 'qualification' of type Qualification; 'nin' of type int; 'work_experience' of type WorkExperience; 'current_salary' of type float.
+The class 'Personnel_Officer_Actor' has no attributes.
+The class 'Maintain_ward_s_supplies_external' has no attributes.
+The class 'Search_Patient_external' has no attributes.
+The class 'of_Patients_in_wards_external' has no attributes.
+The class 'WaitingList' has the following attributes: 'ward_required' of type Ward; 'patient' of type Patient_Actor; 'date' of type date.
+The class 'Maintain_ward_s_Patients_external' has no attributes.
+The class '_Component1' has no attributes.
+The class 'NextOfKind' has the following attributes: 'relationship' of type Relationship.
+The class 'Register_Patient_payment_external' has no attributes.
+The class 'Patient_Actor' has no attributes.
+The class 'Bed' has the following attributes: 'num' of type int.
+The class 'LocalDoctor' has the following attributes: 'clinic_number' of type int.
+The class 'Person' has the following attributes: 'last_name' of type str; 'date_of_birth' of type date; 'first_name' of type str; 'address' of type str; 'telephone' of type str; 'sex' of type Sex.
+The class 'Maintain_Patients_referred_to_the_hospital_external' has no attributes.
+The class 'Medication' has the following attributes: 'finish_date' of type date; 'drug' of type Pharmaceutical; 'patient' of type Patient_Actor; 'administration' of type Administration; 'units_per_day' of type int; 'start_date' of type date.
+The class 'Maintain_resources_external' has no attributes.
+The class 'Medical_Director_Actor' has no attributes.
+The class 'Authorise_Service_Improvement_Budget_external' has no attributes.
+The class 'Staff_Actor' has no attributes.
+The class 'Surgical_NonSurgical' has the following attributes: 'supply_type' of type SupplyType.
+The class 'Requisition' has the following attributes: 'date_delivered' of type date; 'date_ordered' of type date; 'num' of type int; 'supply' of type Supply; 'quantity_required' of type int; 'responsable' of type ChargeNurse; 'ward' of type Ward.
+The class 'of_Patients__medication_external' has no attributes.
+The class 'InPatient' has the following attributes: 'duration' of type int; 'ward_required' of type Ward; 'patient' of type Patient_Actor; 'date_place' of type date; 'date_actual_leave' of type date; 'bed' of type Bed; 'date_expected_leave' of type date.
+The class 'Patient' has the following attributes: 'next_of_kind' of type NextOfKind; 'marital_status' of type MaritalStatus; 'num' of type int; 'local_doctor' of type LocalDoctor.
+The class 'MedicalDirector' has no attributes.
+The class 'of_Monthly_profit_external' has no attributes.
+The class 'Create_Patient_appointment_external' has no attributes.
+The class 'Payee_Actor' has no attributes.
+The class 'of_Services_Improvement_external' has no attributes.
+The class 'Appointment' has the following attributes: 'num' of type int; 'doctor' of type RegularDoctor; 'date' of type date; 'patient' of type Patient_Actor; 'room' of type str.
+The enumeration 'Relationship' does not specify any literals.
+The enumeration 'MaritalStatus' does not specify any literals.
+The enumeration 'Position' does not specify any literals.
+The enumeration 'Administration' does not specify any literals.
+The enumeration 'SupplyType' does not specify any literals.
+The enumeration 'TypeContract' does not specify any literals.
+The enumeration 'SalaryPayment' does not specify any literals.
+The enumeration 'Sex' does not specify any literals.
+'Patient' (role 'outPatient73', cardinality 0..*) is associated with 'OutPatient' (role 'patient272', cardinality 0..*).
+'Requisition' (role 'Requisition_Ward_054', cardinality 0..*) is associated with 'Ward' (role 'Requisition_Ward_155', cardinality 0..*).
+'Maintain_Staff_external' (role 'personnel_Officer3', cardinality 0..*) is associated with 'Personnel_Officer_Actor' (role 'maintain_staff2', cardinality 0..*).
+'Payee_Actor' (role 'register_patient_payment78', cardinality 0..*) is associated with 'Register_Patient_payment_external' (role 'payee79', cardinality 0..*).
+'Maintain_Patients_referred_to_the_hospital_external' (role 'staff11', cardinality 0..*) is associated with 'Staff_Actor' (role 'maintain_Patients10', cardinality 0..*).
+'Supply' (role 'Supplier_Supply_153', cardinality 0..*) is associated with 'Supplier' (role 'Supplier_Supply_052', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'of_ward_s_Patients24', cardinality 0..*) is associated with 'of_Patients_in_wards_external' (role 'charge_Nurse25', cardinality 0..*).
+'Maintain_Patients_referred_to_the_out_patients_clinic_external' (role 'charge_Nurse13', cardinality 0..*) is associated with 'Charge_Nurse_Actor' (role 'maintain_Patients_referred_to_the_out_patients_clinic12', cardinality 0..*).
+'of_Services_Improvement_external' (role 'medical_Director83', cardinality 0..*) is associated with 'Medical_Director_Actor' (role 'of_Services_Improvement82', cardinality 0..*).
+'of_ward_s_supplies_external' (role 'medical_Director37', cardinality 0..*) is associated with 'Medical_Director_Actor' (role 'of_ward_s_supplies36', cardinality 0..*).
+'Maintain_suppliers_external' (role 'medical_Director39', cardinality 0..*) is associated with 'Medical_Director_Actor' (role 'maintain_suppliers38', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'produce_Reports_of_Patients__medication22', cardinality 0..*) is associated with 'of_Patients__medication_external' (role 'charge_Nurse23', cardinality 0..*).
+'RegularDoctor' (role 'Ward_RegularDoctor_151', cardinality 0..*) is associated with 'Ward' (role 'Ward_RegularDoctor_050', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'of_ward_s_supplies34', cardinality 0..*) is associated with 'of_ward_s_supplies_external' (role 'charge_Nurse35', cardinality 0..*).
+'of_Patients_in_wards_external' (role 'payee91', cardinality 0..*) is associated with 'Payee_Actor' (role 'of_Patients_in_wards90', cardinality 0..*).
+'Appointment' (role 'regularDoctor69', cardinality 0..*) is associated with 'RegularDoctor' (role 'appointment68', cardinality 0..*).
+'Medical_Director_Actor' (role 'maintain_resources1', cardinality 0..*) is associated with 'Maintain_resources_external' (role 'medical_Director0', cardinality 0..*).
+'Search_Staff_external' (role 'accountant97', cardinality 0..*) is associated with 'Accountant_Actor' (role 'Search_Staff96', cardinality 0..*).
+'Pharmaceutical' (role 'medication77', cardinality 0..*) is associated with 'Medication' (role 'pharmaceutical76', cardinality 0..*).
+'WaitingList' (role 'appointment70', cardinality 0..*) is associated with 'Appointment' (role 'waitingList71', cardinality 0..*).
+'Ward' (role 'Ward_WaitingList_062', cardinality 0..*) is associated with 'WaitingList' (role 'Ward_WaitingList_163', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'of_Patients_on_waiting_list28', cardinality 0..*) is associated with 'of_Patients_on_waiting_list_external' (role 'charge_Nurse29', cardinality 0..*).
+'Patient' (role 'WaitingList_Patient_161', cardinality 0..*) is associated with 'WaitingList' (role 'WaitingList_Patient_060', cardinality 0..*).
+'Payee_Actor' (role 'of_Patients__medication88', cardinality 0..*) is associated with 'of_Patients__medication_external' (role 'payee89', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'maintain_ward_s_Patients18', cardinality 0..*) is associated with 'Maintain_ward_s_Patients_external' (role 'charge_Nurse19', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'set_staff_weekly_Rota40', cardinality 0..*) is associated with 'Set_staff_weekly_Rota_external' (role 'charge_Nurse41', cardinality 0..*).
+'Supply' (role 'Supply_Requisition_058', cardinality 0..*) is associated with 'Requisition' (role 'Supply_Requisition_159', cardinality 0..*).
+'Ward' (role 'Ward_ChargeNurse_048', cardinality 0..*) is associated with 'ChargeNurse' (role 'Ward_ChargeNurse_149', cardinality 0..*).
+'Search_Patient_external' (role 'payee87', cardinality 0..*) is associated with 'Payee_Actor' (role 'search_Patient86', cardinality 0..*).
+'of_Monthly_profit_external' (role 'accountant101', cardinality 0..*) is associated with 'Accountant_Actor' (role 'of_Monthly_profit100', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'maintain_ward_s_supplies32', cardinality 0..*) is associated with 'Maintain_ward_s_supplies_external' (role 'charge_Nurse33', cardinality 0..*).
+'Requisition' (role 'Requisition_ChargeNurse_056', cardinality 0..*) is associated with 'ChargeNurse' (role 'Requisition_ChargeNurse_157', cardinality 0..*).
+'Bed' (role 'Ward_Bed_147', cardinality 0..*) is associated with 'Ward' (role 'Ward_Bed_046', cardinality 0..*).
+'Patient' (role 'medication75', cardinality 0..*) is associated with 'Medication' (role 'patient274', cardinality 0..*).
+'Maintain_ward_s_Patients_external' (role 'payee93', cardinality 0..*) is associated with 'Payee_Actor' (role 'maintain_ward_s_Patients92', cardinality 0..*).
+'Medical_Director_Actor' (role 'produce_Reports_of_Patients14', cardinality 0..*) is associated with 'of_Patients_referred_to_the_out_patient_clinic_external' (role 'medical_Director15', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'produce_Reports_of_Patients16', cardinality 0..*) is associated with 'of_Patients_referred_to_the_out_patient_clinic_external' (role 'charge_Nurse17', cardinality 0..*).
+'Create_Patient_appointment_external' (role 'staff45', cardinality 0..*) is associated with 'Staff_Actor' (role 'create_Patient_appointment44', cardinality 0..*).
+'Personnel_Officer_Actor' (role 'produce_a_report6', cardinality 0..*) is associated with 'of_Ward_s_Staff_external' (role 'personnel_Officer7', cardinality 0..*).
+'Search_Staff_external' (role 'personnel_Officer5', cardinality 0..*) is associated with 'Personnel_Officer_Actor' (role 'Search_staff4', cardinality 0..*).
+'Authorise_Service_Improvement_Budget_external' (role 'accountant95', cardinality 0..*) is associated with 'Accountant_Actor' (role 'authorise_Service_Improvement_Budget94', cardinality 0..*).
+'Search_Staff_external' (role 'payee85', cardinality 0..*) is associated with 'Payee_Actor' (role 'Search_Staff84', cardinality 0..*).
+'Maintian_Patients__medication_external' (role 'charge_Nurse21', cardinality 0..*) is associated with 'Charge_Nurse_Actor' (role 'maintian_Patients__medication20', cardinality 0..*).
+'Appointment' (role 'patient267', cardinality 0..*) is associated with 'Patient' (role 'appointment66', cardinality 0..*).
+'WaitingList' (role 'inPatient65', cardinality 0..*) is associated with 'InPatient' (role 'waitingList64', cardinality 0..*).
+'Staff_Actor' (role 'maintain_next_of_kind_details42', cardinality 0..*) is associated with 'Maintain_next_of_kind_details_external' (role 'staff43', cardinality 0..*).
+'Generate_Staff_s_Payroll_external' (role 'accountant99', cardinality 0..*) is associated with 'Accountant_Actor' (role 'generate_Payment_Payroll98', cardinality 0..*).
+'Charge_Nurse_Actor' (role 'produce_a_report8', cardinality 0..*) is associated with 'of_Ward_s_Staff_external' (role 'charge_Nurse9', cardinality 0..*).
+'of_Patients_on_waiting_list_external' (role 'medical_Director31', cardinality 0..*) is associated with 'Medical_Director_Actor' (role 'of_Patients_on_waiting_list30', cardinality 0..*).
+'of_Patients_in_wards_external' (role 'medical_Director27', cardinality 0..*) is associated with 'Medical_Director_Actor' (role 'of_ward_s_Patients26', cardinality 0..*).
+'of_Monthly_profit_external' (role 'payee81', cardinality 0..*) is associated with 'Payee_Actor' (role 'of_Monthly_profit80', cardinality 0..*).

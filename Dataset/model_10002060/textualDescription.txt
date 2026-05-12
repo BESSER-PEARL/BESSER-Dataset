@@ -1,0 +1,47 @@
+The model has 30 class(es).
+The class 'G_rer_l_avancement_des_ventes_Component' has no attributes.
+The class 'Suivre_l__tat_du_v_hicule_et_de_la_conduite_external' has no attributes.
+The class 'Concessionnaire_Actor' has no attributes.
+The class 'S_authentifier_external' has no attributes.
+The class 'Voir_les_informations_re_us_par_l_application_sous_leur_forme_brute_external' has no attributes.
+The class 'Concessionnaire_Actor1' has no attributes.
+The class 'Client_ordinaire_Actor' has no attributes.
+The class 'Administrateur_Actor1' has no attributes.
+The class 'serveur_de_l_application_Actor' has no attributes.
+The class 'Cr_er_un_compte_Component' has no attributes.
+The class 'Utilisateur' has no attributes.
+The class 'Administrateur_Actor' has no attributes.
+The class 'g_rer_l_avancement_des_ventes_external' has no attributes.
+The class 'Serveur_de_l_application_Actor1' has no attributes.
+The class 'Param_tres' has no attributes.
+The class 'Utilisateur_Actor' has no attributes.
+The class 'Suivre_l_avancement_des_ventes_external' has no attributes.
+The class 'Munic_connect_Actor' has no attributes.
+The class 'Munic_Connect_Actor' has no attributes.
+The class '_Component' has no attributes.
+The class 'V_hicule' has no attributes.
+The class 'Utilisateur_Actor1' has no attributes.
+The class 'Cr_er_un_compte_external' has no attributes.
+The class 'Enregistrer_un_v_hicule_sur_l_application_external' has no attributes.
+The class 'Enregistrer_un_v_hicule_Component' has no attributes.
+The class 'Serveur_de_l_application_Actor' has no attributes.
+The class 'Client_Actor' has no attributes.
+The class 'Voir_les_informations_re_us_par_l_application_sous_leur_forme_brute_Component' has no attributes.
+The class 'Serveur_de_l_application_Actor2' has no attributes.
+The class 'Munic_Connect_server_Actor' has no attributes.
+'Voir_les_informations_re_us_par_l_application_sous_leur_forme_brute_external' (role 'administrateur7', cardinality 0..*) is associated with 'Administrateur_Actor' (role 'voir_les_informations_sous_leur_forme_brute6', cardinality 0..*).
+'Client_ordinaire_Actor' (role 'cr_er_un_compte18', cardinality 0..*) is associated with 'Cr_er_un_compte_external' (role 'client_ordinaire19', cardinality 0..*).
+'Utilisateur_Actor1' (role 'cr_er_un_compte2', cardinality 0..*) is associated with 'Cr_er_un_compte_external' (role 'utilisateur3', cardinality 0..*).
+'Cr_er_un_compte_external' (role 'munic_Connect_server5', cardinality 0..*) is associated with 'Munic_Connect_server_Actor' (role 'cr_er_un_compte4', cardinality 0..*).
+'Munic_Connect_Actor' (role 's_authentifier13', cardinality 0..*) is associated with 'S_authentifier_external' (role 'munic_Connect12', cardinality 0..*).
+'Munic_connect_Actor' (role 's_authentifier29', cardinality 0..*) is associated with 'S_authentifier_external' (role 'munic_connect28', cardinality 0..*).
+'Client_ordinaire_Actor' (role 'suivre_l__tat_du_v_hicule_et_de_la_conduite8', cardinality 0..*) is associated with 'Suivre_l__tat_du_v_hicule_et_de_la_conduite_external' (role 'client_ordinaire9', cardinality 0..*).
+'Concessionnaire_Actor1' (role 'suivre_les_informations_du_v_hicule_et_de_la_conduite30', cardinality 0..*) is associated with 'g_rer_l_avancement_des_ventes_external' (role 'client_ordinaire31', cardinality 0..*).
+'Voir_les_informations_re_us_par_l_application_sous_leur_forme_brute_external' (role 'utilisateur15', cardinality 0..*) is associated with 'Administrateur_Actor1' (role 'enregistrer_un_v_hicule14', cardinality 0..*).
+'Client_ordinaire_Actor' (role 'enregistrer_un_v_hicule_sur_l_application22', cardinality 0..*) is associated with 'Enregistrer_un_v_hicule_sur_l_application_external' (role 'client_ordinaire23', cardinality 0..*).
+'Suivre_l_avancement_des_ventes_external' (role 'concessionnaire11', cardinality 0..*) is associated with 'Concessionnaire_Actor' (role 'suivre_l_avancement_des_ventes10', cardinality 0..*).
+'Cr_er_un_compte_external' (role 'application_server0', cardinality 0..*) is associated with 'Serveur_de_l_application_Actor1' (role 'cr_er_un_compte1', cardinality 0..*).
+'g_rer_l_avancement_des_ventes_external' (role 'serveur_de_l_application26', cardinality 0..*) is associated with 'serveur_de_l_application_Actor' (role 'suivre_les_informations_du_v_hicule_et_de_la_conduite27', cardinality 0..*).
+'Concessionnaire_Actor' (role 'cr_er_un_compte24', cardinality 0..*) is associated with 'Cr_er_un_compte_external' (role 'concessionnaire25', cardinality 0..*).
+'Serveur_de_l_application_Actor2' (role 'enregistrer_un_v_hicule16', cardinality 0..*) is associated with 'Voir_les_informations_re_us_par_l_application_sous_leur_forme_brute_external' (role 'serveur_de_l_application17', cardinality 0..*).
+'Enregistrer_un_v_hicule_sur_l_application_external' (role 'concessionnaire21', cardinality 0..*) is associated with 'Concessionnaire_Actor' (role 'enregistrer_un_v_hicule_sur_l_application20', cardinality 0..*).

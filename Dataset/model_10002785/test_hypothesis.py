@@ -1,0 +1,256 @@
+import inspect
+import pytest
+from hypothesis import given, assume, settings
+import hypothesis.strategies as st
+import copy
+from datetime import date, datetime
+
+from python_code import (
+    UseCase_UseCase,
+    student_Actor,
+    MyClass,
+    Login,
+    Friend,
+    Message,
+    Group,
+    Post,
+    Profile,
+    User,
+)
+
+# =============================================================================
+# SECTION 1 — STRUCTURAL TESTS
+# =============================================================================
+
+
+
+def test_usecase_usecase_is_not_abstract():
+    assert not inspect.isabstract(UseCase_UseCase)
+
+
+def test_usecase_usecase_constructor_exists():
+    assert callable(UseCase_UseCase.__init__)
+
+
+def test_usecase_usecase_constructor_args():
+    sig = inspect.signature(UseCase_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_student_actor_is_not_abstract():
+    assert not inspect.isabstract(student_Actor)
+
+
+def test_student_actor_constructor_exists():
+    assert callable(student_Actor.__init__)
+
+
+def test_student_actor_constructor_args():
+    sig = inspect.signature(student_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_myclass_is_not_abstract():
+    assert not inspect.isabstract(MyClass)
+
+
+def test_myclass_constructor_exists():
+    assert callable(MyClass.__init__)
+
+
+def test_myclass_constructor_args():
+    sig = inspect.signature(MyClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_login_is_not_abstract():
+    assert not inspect.isabstract(Login)
+
+
+def test_login_constructor_exists():
+    assert callable(Login.__init__)
+
+
+def test_login_constructor_args():
+    sig = inspect.signature(Login.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_friend_is_not_abstract():
+    assert not inspect.isabstract(Friend)
+
+
+def test_friend_constructor_exists():
+    assert callable(Friend.__init__)
+
+
+def test_friend_constructor_args():
+    sig = inspect.signature(Friend.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_message_is_not_abstract():
+    assert not inspect.isabstract(Message)
+
+
+def test_message_constructor_exists():
+    assert callable(Message.__init__)
+
+
+def test_message_constructor_args():
+    sig = inspect.signature(Message.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_group_is_not_abstract():
+    assert not inspect.isabstract(Group)
+
+
+def test_group_constructor_exists():
+    assert callable(Group.__init__)
+
+
+def test_group_constructor_args():
+    sig = inspect.signature(Group.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_post_is_not_abstract():
+    assert not inspect.isabstract(Post)
+
+
+def test_post_constructor_exists():
+    assert callable(Post.__init__)
+
+
+def test_post_constructor_args():
+    sig = inspect.signature(Post.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_profile_is_not_abstract():
+    assert not inspect.isabstract(Profile)
+
+
+def test_profile_constructor_exists():
+    assert callable(Profile.__init__)
+
+
+def test_profile_constructor_args():
+    sig = inspect.signature(Profile.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_user_is_not_abstract():
+    assert not inspect.isabstract(User)
+
+
+def test_user_constructor_exists():
+    assert callable(User.__init__)
+
+
+def test_user_constructor_args():
+    sig = inspect.signature(User.__init__)
+    params = list(sig.parameters.keys())
+
+
+# =============================================================================
+# HYPOTHESIS STRATEGIES
+# =============================================================================
+
+safe_text = st.text(
+    alphabet=st.characters(
+        whitelist_categories=("Ll", "Lu", "Nd"),
+        whitelist_characters="_",
+    ),
+    min_size=1,
+).filter(lambda s: s[0].isalpha())
+UseCase_UseCase_strategy = st.builds(
+    UseCase_UseCase,
+)
+student_Actor_strategy = st.builds(
+    student_Actor,
+)
+MyClass_strategy = st.builds(
+    MyClass,
+)
+Login_strategy = st.builds(
+    Login,
+)
+Friend_strategy = st.builds(
+    Friend,
+)
+Message_strategy = st.builds(
+    Message,
+)
+Group_strategy = st.builds(
+    Group,
+)
+Post_strategy = st.builds(
+    Post,
+)
+Profile_strategy = st.builds(
+    Profile,
+)
+User_strategy = st.builds(
+    User,
+)
+
+@given(instance=UseCase_UseCase_strategy)
+@settings(max_examples=50)
+def test_usecase_usecase_instantiation(instance):
+    assert isinstance(instance, UseCase_UseCase)
+
+@given(instance=student_Actor_strategy)
+@settings(max_examples=50)
+def test_student_actor_instantiation(instance):
+    assert isinstance(instance, student_Actor)
+
+@given(instance=MyClass_strategy)
+@settings(max_examples=50)
+def test_myclass_instantiation(instance):
+    assert isinstance(instance, MyClass)
+
+@given(instance=Login_strategy)
+@settings(max_examples=50)
+def test_login_instantiation(instance):
+    assert isinstance(instance, Login)
+
+@given(instance=Friend_strategy)
+@settings(max_examples=50)
+def test_friend_instantiation(instance):
+    assert isinstance(instance, Friend)
+
+@given(instance=Message_strategy)
+@settings(max_examples=50)
+def test_message_instantiation(instance):
+    assert isinstance(instance, Message)
+
+@given(instance=Group_strategy)
+@settings(max_examples=50)
+def test_group_instantiation(instance):
+    assert isinstance(instance, Group)
+
+@given(instance=Post_strategy)
+@settings(max_examples=50)
+def test_post_instantiation(instance):
+    assert isinstance(instance, Post)
+
+@given(instance=Profile_strategy)
+@settings(max_examples=50)
+def test_profile_instantiation(instance):
+    assert isinstance(instance, Profile)
+
+@given(instance=User_strategy)
+@settings(max_examples=50)
+def test_user_instantiation(instance):
+    assert isinstance(instance, User)

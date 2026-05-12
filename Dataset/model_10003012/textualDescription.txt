@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Payment' has the following attributes: 'paidDate' of type date; 'total' of type float; 'details' of type str.
+The class 'Account' has the following attributes: 'open' of type date; 'closed' of type date; 'isClosed' of type bool; 'billingAddress' of type str.
+The class 'Order' has the following attributes: 'ordered' of type date; 'status' of type str; 'number' of type int; 'shipTo' of type str; 'total' of type float; 'shipped' of type bool.
+The class 'Cliente' has the following attributes: 'Nombre' of type str; 'Direcci_n' of type str; 'email' of type str; 'Contacto' of type int.
+The class 'Carro_de_Compras' has the following attributes: 'Precio' of type int; 'Cantidad' of type int; 'IdCarro' of type int; 'Producto' of type str.
+The class 'Product' has the following attributes: 'description' of type str; 'name' of type str; 'id' of type int.
+'Payment' (role 'order8', cardinality 0..*) is associated with 'Order' (role 'payment9', cardinality 0..*).
+'Cliente' (role 'shoppingCart2', cardinality 0..*) is associated with 'Carro_de_Compras' (role 'webUser3', cardinality 0..*).
+'Account' (role 'order6', cardinality 0..*) is associated with 'Order' (role 'account7', cardinality 0..*).
+'Account' (role 'p0', cardinality 0..*) is associated with 'Payment' (role 'acc1', cardinality 0..*).
+'Carro_de_Compras' (role 'account5', cardinality 0..*) is associated with 'Account' (role 'cart4', cardinality 0..*).

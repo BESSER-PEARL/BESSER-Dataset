@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'Drzava' has the following attributes: 'DrzavaID' of type int; 'NazivDrzave' of type str.
+The class 'Grad' has the following attributes: 'NazivGrada' of type str; 'DrzavaID' of type int; 'GradID' of type int.
+The class 'Korisnik' has the following attributes: 'AdresaKorisnika' of type str; 'ImeKorisnika' of type str; 'JMBG' of type str; 'KorisnikID' of type int; 'KontaktKorisnika' of type str; 'Password' of type str; 'Username' of type str; 'GradKorisnika' of type str; 'PrezimeKorisnika' of type str.
+The class 'Uplata' has the following attributes: 'DatumUplate' of type str; 'NazivUplate' of type str; 'PutnikID' of type int; 'UplataID' of type int; 'Iznos' of type str.
+The class 'Aranzman' has the following attributes: 'CenaAranzmana' of type str; 'OpisAranzmana' of type str; 'KorisnikID' of type int; 'VodicID' of type int; 'NazivAranzmana' of type str; 'AranzmanID' of type int; 'DatumAranzmana' of type str; 'HotelID' of type int.
+The class 'Hotel' has the following attributes: 'AdresaHotela' of type str; 'GradID' of type int; 'KontaktHotela' of type str; 'HotelID' of type int; 'NazivHotela' of type str.
+The class 'Putnik' has the following attributes: 'AranzmanID' of type int; 'PrezimePutnika' of type str; 'AdresaPutnika' of type str; 'KontaktPutnika' of type str; 'GradPutnika' of type str; 'JMBG' of type str; 'PutnikID' of type int; 'BrojPasosa' of type int; 'ImePutnika' of type str.
+The class 'Vodic' has the following attributes: 'AdresaVodica' of type str; 'PrezimeVodica' of type str; 'VodicID' of type int; 'GradVodica' of type str; 'JMBG' of type str; 'ImeVodica' of type str; 'KontaktVodica' of type str.
+'Vodic' (role 'aranzman0', cardinality 0..*) is associated with 'Aranzman' (role 'vodic1', cardinality 0..*).
+'Hotel' (role 'grad5', cardinality 0..*) is associated with 'Grad' (role 'hotel4', cardinality 0..*).
+'Aranzman' (role 'hotel8', cardinality 0..*) is associated with 'Hotel' (role 'aranzman9', cardinality 0..*).
+'Korisnik' (role 'aranzman6', cardinality 0..*) is associated with 'Aranzman' (role 'korisnik7', cardinality 0..*).
+'Putnik' (role 'aranzman10', cardinality 0..*) is associated with 'Aranzman' (role 'putnik11', cardinality 0..*).
+'Drzava' (role 'grad2', cardinality 0..*) is associated with 'Grad' (role 'drzava3', cardinality 0..*).
+'Putnik' (role 'uplata13', cardinality 0..*) is associated with 'Uplata' (role 'putnik12', cardinality 0..*).

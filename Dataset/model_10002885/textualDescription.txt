@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'Inventory' has the following attributes: 'SuperMarket' of type str; 'list' of type str.
+The class 'Product' has the following attributes: 'attribute' of type str; 'ID' of type int; 'type' of type str; 'price' of type str; 'amount' of type str; 'qty' of type int; 'Name' of type str; 'blgl' of type bool.
+The class 'Payment' has the following attributes: 'discountamount' of type str; 'list' of type str; 'ID' of type int; 'amount__' of type str; 'quantity' of type int; 'Imtiaz' of type str; 'totalamount' of type str; 'finalamount' of type str.
+The class 'Customer' has the following attributes: 'royalty' of type bool; 'type' of type str.
+'Payment' (role 'customer1', cardinality 0..*) is associated with 'Customer' (role 'payment0', cardinality 0..*).
+'Customer' (role 'product5', cardinality 0..*) is associated with 'Product' (role 'customer4', cardinality 0..*).
+'Product' (role 'inventory3', cardinality 0..*) is associated with 'Inventory' (role 'product2', cardinality 0..*).
+'Product' (role 'payment6', cardinality 0..*) is associated with 'Payment' (role 'product7', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'aseguradora' has the following attributes: 'nombre' of type str; 'tipoSeguroID' of type int; 'aseguradoraID' of type int.
+The class 'alergia' has the following attributes: 'alergiaID' of type int; 'nombre' of type str.
+The class 'doctor' has the following attributes: 'fechaNacimiento' of type DateTime; 'doctorID' of type int; 'apPaterno' of type str; 'nombre' of type str; 'codigoDoctor' of type str; 'especialidadID' of type int; 'apMaterno' of type str; 'nroDocumento' of type int; 'loginID' of type int.
+The class 'empleado' has the following attributes: 'apMaterno' of type str; 'loginID' of type int; 'fechaNacimiento' of type DateTime; 'codigoEmpleado' of type str; 'nroDocumento' of type int; 'empleadoID' of type int; 'nombre' of type str; 'apPaterno' of type str.
+The class 'tipoSeguro' has the following attributes: 'tipoSeguraID' of type int; 'descripcion' of type str.
+The class 'historico' has the following attributes: 'sintoma' of type str; 'diagnostico' of type str; 'historicoID' of type int; 'observacion' of type str; 'tratamiento' of type str; 'consultaID' of type int.
+The class 'paciente' has the following attributes: 'codigoAsegurado' of type str; 'apPaterno' of type str; 'nombre' of type str; 'pacienteID' of type int; 'razonSocial' of type str; 'nroDocumento' of type int; 'aseguradoID' of type int; 'tipoSangre' of type str; 'apMaterno' of type str; 'fechaNacimiento' of type DateTime; 'fechaAfiliacion' of type DateTime.
+The class 'login' has the following attributes: 'role' of type str; 'contrasena' of type str; 'loginID' of type int; 'usuario' of type str.
+The class 'consulta' has the following attributes: 'consultaID' of type int; 'empleadoID' of type int; 'fechaConsulta' of type DateTime; 'doctorID' of type int; 'pacienteID' of type int.
+The class 'especialidad' has the following attributes: 'nombre' of type str; 'especialidadID' of type int.
+The enumeration 'DateTime' does not specify any literals.
+'paciente' (role 'aseguradora_paciente_17', cardinality 0..*) is associated with 'aseguradora' (role 'aseguradora_paciente_06', cardinality 0..*).
+'consulta' (role 'doctor_consulta_11', cardinality 0..*) is associated with 'doctor' (role 'doctor_consulta_00', cardinality 0..*).
+'doctor' (role 'especialidad_doctor_15', cardinality 0..*) is associated with 'especialidad' (role 'especialidad_doctor_04', cardinality 0..*).
+'login' (role 'login_doctor_012', cardinality 0..*) is associated with 'doctor' (role 'login_doctor_113', cardinality 0..*).
+'login' (role 'login_empleado_014', cardinality 0..*) is associated with 'empleado' (role 'login_empleado_115', cardinality 0..*).
+'aseguradora' (role 'tipoSeguro_aseguradora_19', cardinality 0..*) is associated with 'tipoSeguro' (role 'tipoSeguro_aseguradora_08', cardinality 0..*).
+'consulta' (role 'historico_consulta_117', cardinality 0..*) is associated with 'historico' (role 'historico_consulta_016', cardinality 0..*).
+'consulta' (role 'trabajador_consulta_13', cardinality 0..*) is associated with 'empleado' (role 'trabajador_consulta_02', cardinality 0..*).
+'paciente' (role 'paciente_consulta_010', cardinality 0..*) is associated with 'consulta' (role 'paciente_consulta_111', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'ATM__Transactions' has the following attributes: 'Transaction_id' of type str; 'Amount' of type str; 'Post_balance' of type str; 'Date' of type str; 'Type' of type str.
+The class 'BANK' has the following attributes: 'Address' of type str; 'Code' of type str.
+The class 'ATM' has the following attributes: 'location' of type str; 'ManagedBy' of type str.
+The class 'Account' has the following attributes: 'AccountNumber' of type str; 'Balance' of type str.
+The class 'Customer' has the following attributes: 'Card_num' of type int; 'Pin' of type int; 'Name' of type str; 'DOB' of type str.
+'Account' (role 'atm__Transactions6', cardinality 0..*) is associated with 'ATM__Transactions' (role 'account7', cardinality 0..*).
+'ATM' (role 'bANK1', cardinality 0..*) is associated with 'BANK' (role 'atm0', cardinality 0..*).
+'BANK' (role 'account2', cardinality 0..*) is associated with 'Account' (role 'bank3', cardinality 0..*).
+'Customer' (role 'account4', cardinality 0..*) is associated with 'Account' (role 'customer5', cardinality 0..*).

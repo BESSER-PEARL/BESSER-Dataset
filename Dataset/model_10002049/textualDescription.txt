@@ -1,0 +1,33 @@
+The model has 19 class(es).
+The class 'Menghapus_Mahasiswa_external' has no attributes.
+The class 'view_control_Nilai' has no attributes.
+The class 'Dosen_Actor' has no attributes.
+The class 'Mengubah_Data_Mahasiswa_external' has no attributes.
+The class 'Nilai' has the following attributes: 'tugas' of type int; 'uas' of type int; 'namaMK' of type str; 'uts' of type int.
+The class 'DAO_Mahasiswa' has the following attributes: 'tahun' of type str; 'nim' of type str; 'nama' of type str.
+The class 'Activity_Data_Mahasiswa' has no attributes.
+The class 'Melihat_Data_Nilai_external' has no attributes.
+The class 'Melihat_Data_Mahasiswa_external' has no attributes.
+The class 'Menambah_Data_Mahasiswa_external' has no attributes.
+The class 'Aplikasi_Input_Nilai_Matakuliah_Component' has no attributes.
+The class 'view_control_Mahasiswa' has no attributes.
+The class 'Mahasiswa' has the following attributes: 'nim' of type str; 'nama' of type str; 'tahun' of type str.
+The class 'Activity_Data_Nilai' has no attributes.
+The class 'Activity_Input_Mahasiswa' has no attributes.
+The class 'Menghapus_Nilai_external' has no attributes.
+The class 'DAO_Nilai' has the following attributes: 'tugas' of type str; 'uts' of type str; 'uas' of type str; 'namaMk' of type str.
+The class 'Mengubah_Data_Nilai_external' has no attributes.
+The class 'Menambah_Data_Nilai_external' has no attributes.
+'Dosen_Actor' (role 'menghapus_Mahasiswa14', cardinality 0..*) is associated with 'Menghapus_Mahasiswa_external' (role 'dosen15', cardinality 0..*).
+'Dosen_Actor' (role 'menambah_Data_Mahasiswa6', cardinality 0..*) is associated with 'Menambah_Data_Mahasiswa_external' (role 'dosen7', cardinality 0..*).
+'Dosen_Actor' (role 'menambah_Data_Nilai8', cardinality 0..*) is associated with 'Menambah_Data_Nilai_external' (role 'dosen9', cardinality 0..*).
+'Mahasiswa' (role 'mahasiswa22', cardinality 0..*) is associated with 'DAO_Mahasiswa' (role 'mahasiswa23', cardinality 0..*).
+'Nilai' (role 'mahasiswa1', cardinality 0..*) is associated with 'Mahasiswa' (role 'nilai0', cardinality 0..*).
+'Mengubah_Data_Nilai_external' (role 'dosen13', cardinality 0..*) is associated with 'Dosen_Actor' (role 'mengubah_Data_Nilai12', cardinality 0..*).
+'DAO_Mahasiswa' (role 'mahasiswa18', cardinality 0..*) is associated with 'view_control_Mahasiswa' (role 'mahasiswa19', cardinality 0..*).
+'DAO_Nilai' (role 'nilai20', cardinality 0..*) is associated with 'view_control_Nilai' (role 'nilai21', cardinality 0..*).
+'Dosen_Actor' (role 'mengubah_Data_Mahasiswa10', cardinality 0..*) is associated with 'Mengubah_Data_Mahasiswa_external' (role 'dosen11', cardinality 0..*).
+'Dosen_Actor' (role 'menghapus_Nilai16', cardinality 0..*) is associated with 'Menghapus_Nilai_external' (role 'dosen17', cardinality 0..*).
+'DAO_Nilai' (role 'nilai25', cardinality 0..*) is associated with 'Nilai' (role 'nilai24', cardinality 0..*).
+'Melihat_Data_Nilai_external' (role 'dosen5', cardinality 0..*) is associated with 'Dosen_Actor' (role 'melihat_Data_Nilai4', cardinality 0..*).
+'Melihat_Data_Mahasiswa_external' (role 'dosen3', cardinality 0..*) is associated with 'Dosen_Actor' (role 'melihat_Data_Mahasiswa2', cardinality 0..*).

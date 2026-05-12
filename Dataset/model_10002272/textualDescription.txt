@@ -1,0 +1,17 @@
+The model has 10 class(es).
+The class 'Person' has the following attributes: 'phoneNumber' of type str; 'gender' of type str; 'name' of type str; 'address' of type str; 'title' of type str.
+The class 'Patient' has the following attributes: 'patientID' of type str; 'treatment' of type str.
+The class 'Manager' has the following attributes: 'allowance' of type str; 'employeeList' of type str.
+The class 'Nurse' has the following attributes: 'department' of type Department.
+The class 'Department' has the following attributes: 'doctorList' of type str; 'departmentName' of type str; 'nurseList' of type str; 'departmentID' of type str.
+The class 'Hospital' has the following attributes: 'address' of type str; 'name' of type str.
+The class 'outPatient' has the following attributes: 'outDate' of type str; 'roomNumber' of type str; 'inDate' of type str.
+The class 'Doctor' has the following attributes: 'department' of type Department.
+The class 'Employee' has the following attributes: 'employeeID' of type str; 'salary' of type str.
+The class 'inPatient' has the following attributes: 'rooomNumber' of type str; 'outDate' of type str; 'inDate' of type str.
+'Department' (role 'hospital1', cardinality 0..*) is associated with 'Hospital' (role 'department0', cardinality 0..*).
+'Department' (role 'nurse10', cardinality 0..*) is associated with 'Nurse' (role 'department_211', cardinality 0..*).
+'Manager' (role 'doctor4', cardinality 0..*) is associated with 'Doctor' (role 'manager5', cardinality 0..*).
+'Manager' (role 'nurse6', cardinality 0..*) is associated with 'Nurse' (role 'manager7', cardinality 0..*).
+'Hospital' (role 'person2', cardinality 0..*) is associated with 'Person' (role 'hospital3', cardinality 0..*).
+'Department' (role 'doctor8', cardinality 0..*) is associated with 'Doctor' (role 'department_29', cardinality 0..*).

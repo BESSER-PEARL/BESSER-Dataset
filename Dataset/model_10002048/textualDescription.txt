@@ -1,0 +1,14 @@
+The model has 10 class(es).
+The class 'Pets' has the following attributes: 'PetType' of type str; 'Age' of type int; 'PetName' of type str; 'PetID' of type int.
+The class 'Manager' has the following attributes: 'Name' of type str; 'ContatctNo' of type str; 'ManagerID' of type int; 'Email' of type str.
+The class 'Payment' has the following attributes: 'OrderID' of type int; 'PaymentID' of type int; 'Method' of type str.
+The class 'Administrator' has the following attributes: 'Name' of type str; 'adminID' of type str.
+The class 'Order' has the following attributes: 'OrderID' of type int; 'CusID' of type int; 'DateCreated' of type str.
+The class 'Doctor' has the following attributes: 'ContactNo' of type str; 'Name' of type str; 'Email' of type str; 'DoctorID' of type int.
+The class 'Shopping_Cart' has the following attributes: 'OrderID' of type int; 'Quantity' of type int; 'CartID' of type int.
+The class 'Customer' has the following attributes: 'Name' of type str; 'Address' of type str; 'ContactNo' of type str; 'Email' of type str; 'CusID' of type int.
+The class 'User' has the following attributes: 'UserID' of type str; 'Password' of type str.
+The class 'Employee' has the following attributes: 'EmpID' of type int; 'Department' of type str; 'Name' of type str; 'ContactNo' of type str.
+'Order' (role 'customer1', cardinality 0..*) is associated with 'Customer' (role '_0__0', cardinality 0..*).
+'Order' (role '_0__4', cardinality 0..*) is associated with 'Shopping_Cart' (role 'order5', cardinality 0..*).
+'Payment' (role 'order3', cardinality 0..*) is associated with 'Order' (role 'payment2', cardinality 0..*).

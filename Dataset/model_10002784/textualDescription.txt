@@ -1,0 +1,38 @@
+The model has 17 class(es).
+The class 'Interfaz_veterinaria_UseCase' has no attributes.
+The class 'Avanzar_UseCase' has no attributes.
+The class 'Ir_al_ultimo_UseCase' has no attributes.
+The class 'Buscar_perro_por_nombre_UseCase' has no attributes.
+The class 'Empresa2' has no attributes.
+The class 'Caninos1' has the following attributes: 'edad' of type int; 'nombre' of type str; 'raza' of type str; 'peso' of type int; 'observaciones' of type str; 'altura' of type double.
+The class 'Empresa1' has no attributes.
+The class 'Caninos' has the following attributes: 'peso' of type double; 'nombre' of type str; 'attribute' of type str; 'raza' of type str; 'altura' of type int; 'observaciones' of type str; 'edad' of type int.
+The class 'Empresa' has the following attributes: 'Cantidad_razaCanina' of type str; 'getCaninos' of type str; 'getCaninos1' of type str; 'Empresa' of type str; 'getCaninos2' of type str; 'ArrayList' of type Caninos; 'getCaninos3' of type str; 'Promedio_canino' of type str; 'buscarCaninos' of type str.
+The class 'Caninos2' has no attributes.
+The class 'Anterior_UseCase' has no attributes.
+The class 'Calcular_promedio_edad_perros_UseCase' has no attributes.
+The class 'double' has no attributes.
+The class 'Calcular_cantidad_por_raza_UseCase' has no attributes.
+The class 'int' has no attributes.
+The class 'Ir_al_primero_UseCase' has no attributes.
+The class 'Usuario__Actor' has no attributes.
+'Buscar_perro_por_nombre_UseCase' (role 'usuario9', cardinality 0..*) is associated with 'Usuario__Actor' (role 'calcular_el_ejemplear_por_nombre8', cardinality 0..*).
+'Interfaz_veterinaria_UseCase' (role 'usuario13', cardinality 0..*) is associated with 'Usuario__Actor' (role 'visualizar_Hoja_de_vida_de_los_caninos12', cardinality 0..*).
+'Ir_al_primero_UseCase' (role 'usuario5', cardinality 0..*) is associated with 'Usuario__Actor' (role 'desplazarse_hasta_el_primer_ejemplar4', cardinality 0..*).
+'Usuario__Actor' (role 'calcular_el_numero_ejemplar_por_raza10', cardinality 0..*) is associated with 'Calcular_cantidad_por_raza_UseCase' (role 'usuario11', cardinality 0..*).
+'Caninos1' (role 'empresa29', cardinality 0..*) is associated with 'Empresa1' (role 'caninos28', cardinality 0..*).
+'Caninos1' (role 'empresa25', cardinality 0..*) is associated with 'Empresa1' (role 'caninos24', cardinality 0..*).
+'Empresa2' (role 'caninos36', cardinality 0..*) is associated with 'Caninos2' (role 'empresa37', cardinality 0..*).
+'Avanzar_UseCase' (role 'usuario1', cardinality 0..*) is associated with 'Usuario__Actor' (role 'avanzar_hasta_el_siguiente_ejemplar0', cardinality 0..*).
+'Empresa' (role 'ejemplares_caninos16', cardinality 0..*) is associated with 'Caninos' (role 'veterinaria17', cardinality 0..*).
+'Empresa' (role 'ejemplares_caninos18', cardinality 0..*) is associated with 'Caninos' (role 'veterinaria19', cardinality 0..*).
+'Caninos' (role 'veterinaria21', cardinality 0..*) is associated with 'Empresa' (role 'ejemplares_caninos20', cardinality 0..*).
+'Empresa' (role 'ejemplares_caninos22', cardinality 0..*) is associated with 'Caninos' (role 'veterinaria23', cardinality 0..*).
+'Usuario__Actor' (role 'desplazarse_hasta_el_primer_ejemplar6', cardinality 0..*) is associated with 'Ir_al_ultimo_UseCase' (role 'usuario7', cardinality 0..*).
+'Empresa2' (role 'caninos38', cardinality 0..*) is associated with 'Caninos2' (role 'empresa39', cardinality 0..*).
+'Caninos1' (role 'empresa31', cardinality 0..*) is associated with 'Empresa1' (role 'caninos30', cardinality 0..*).
+'Usuario__Actor' (role 'regresar_hacia_el_anterior_ejemplar2', cardinality 0..*) is associated with 'Anterior_UseCase' (role 'usuario3', cardinality 0..*).
+'Calcular_promedio_edad_perros_UseCase' (role 'usuario15', cardinality 0..*) is associated with 'Usuario__Actor' (role 'calcular_el_primedio_de_edad_de_los_ejemplares14', cardinality 0..*).
+'Caninos2' (role 'empresa35', cardinality 0..*) is associated with 'Empresa2' (role 'caninos34', cardinality 0..*).
+'Empresa1' (role 'caninos26', cardinality 0..*) is associated with 'Caninos1' (role 'empresa27', cardinality 0..*).
+'Empresa2' (role 'caninos32', cardinality 0..*) is associated with 'Caninos2' (role 'empresa33', cardinality 0..*).

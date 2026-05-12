@@ -1,0 +1,24 @@
+The model has 17 class(es).
+The class 'Start_Of_Day' has the following attributes: 'SOT' of type int.
+The class 'UPS_SNMP' has the following attributes: 'IP' of type str.
+The class 'Door_relay' has the following attributes: 'DoorID' of type int; 'DoorOpen' of type str.
+The class 'MQTT_Broker' has the following attributes: 'Subscribe' of type str; 'DeviceID' of type int; 'Publish' of type str.
+The class 'Gateway2_Interface' has no attributes.
+The class 'FactoryHolds' has the following attributes: 'Time' of type float; 'Conveyor1' of type str; 'Alarm' of type str; 'Control_panel' of type str; 'Conveyor2' of type str.
+The class 'Gateway' has the following attributes: 'Update' of type float; 'WebPLC_configure' of type Gateway_01_Interface; 'Status' of type Gateway_01_Interface.
+The class 'Alarm' has no attributes.
+The class 'OPC_UA' has the following attributes: 'PC_ID' of type int.
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+The class 'Gateway_01_Interface' has no attributes.
+The class 'Sensor' has the following attributes: 'SensorType' of type int; 'SensorID' of type int.
+The class 'End_Of_Day' has the following attributes: 'EOT' of type int.
+The class 'Datalog' has no attributes.
+The class 'Modbus_Meter' has the following attributes: 'MAC_ID' of type int.
+The class 'Factory_Security_System' has the following attributes: 'UserID' of type int.
+The class 'FireAlarm_Sensor' has the following attributes: 'SmokeAlarm' of type bool; 'DispenseSprinkler' of type bool.
+'Sensor' (role 'system2', cardinality 0..*) is associated with 'Gateway' (role 'sensor3', cardinality 0..*).
+'Gateway' (role 'Factory_Security_System7', cardinality 0..*) is associated with 'Factory_Security_System' (role 'system6', cardinality 0..*).
+'Alert' (role 'home_Security_System1', cardinality 0..*) is associated with 'Factory_Security_System' (role 'alert0', cardinality 0..*).
+'Start_Of_Day' (role 'gateway8', cardinality 0..*) is associated with 'Gateway' (role 'start_Of_Day9', cardinality 0..*).
+'Gateway' (role 'houseHolds4', cardinality 0..*) is associated with 'FactoryHolds' (role 'system5', cardinality 0..*).
+'Gateway' (role 'end_Of_Day11', cardinality 0..*) is associated with 'End_Of_Day' (role 'gateway10', cardinality 0..*).

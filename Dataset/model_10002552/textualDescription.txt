@@ -1,0 +1,27 @@
+The model has 17 class(es).
+The class 'User_Actor' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'Buku' has no attributes.
+The class 'Login1' has the following attributes: 'password' of type str; 'usernam' of type str.
+The class 'Melakukan_Penerjemahan_Buku_Bacaan_UseCase' has no attributes.
+The class 'Melihat_Tampilan_Awal_Aplikasi_UseCase' has no attributes.
+The class 'Memilih_Kategori_Buku_UseCase' has no attributes.
+The class 'Mulai_Membaca_UseCase' has no attributes.
+The class 'Buku_berbahasa_Asing_UseCase' has no attributes.
+The class 'Profil' has the following attributes: 'Biodata' of type str.
+The class 'Otomatis_Menginterupsi_Notifikasi_Akun_Media_Sosial_UseCase' has no attributes.
+The class 'Login' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'Melakukan_Login_UseCase' has no attributes.
+The class 'Menu_Utama' has no attributes.
+The class 'Keluar' has the following attributes: 'Keluar' of type str.
+The class 'Melakukan_Logout_UseCase' has no attributes.
+The class 'Class' has no attributes.
+'User_Actor' (role 'memilih_Kategori_Buku4', cardinality 0..*) is associated with 'Memilih_Kategori_Buku_UseCase' (role 'user5', cardinality 0..*).
+'Melakukan_Login_UseCase' (role 'melihat_Tampilan_Awal_Aplikasi8', cardinality 0..*) is associated with 'Melihat_Tampilan_Awal_Aplikasi_UseCase' (role 'melakukan_Login9', cardinality 0..*).
+'User_Actor' (role 'melakukan_Login0', cardinality 0..*) is associated with 'Melakukan_Login_UseCase' (role 'user1', cardinality 0..*).
+'Mulai_Membaca_UseCase' (role 'memilih_Kategori_Buku13', cardinality 0..*) is associated with 'Memilih_Kategori_Buku_UseCase' (role 'mulai_Membaca12', cardinality 0..*).
+'Otomatis_Menginterupsi_Notifikasi_Akun_Media_Sosial_UseCase' (role 'mulai_Membaca15', cardinality 0..*) is associated with 'Mulai_Membaca_UseCase' (role 'otomatis_Menginterupsi_Notifikasi_Akun_Media_Sosial14', cardinality 0..*).
+'User_Actor' (role 'melihat_Tampilan_Awal_Aplikasi2', cardinality 0..*) is associated with 'Melihat_Tampilan_Awal_Aplikasi_UseCase' (role 'user3', cardinality 0..*).
+'Melihat_Tampilan_Awal_Aplikasi_UseCase' (role 'memilih_Kategori_Buku10', cardinality 0..*) is associated with 'Memilih_Kategori_Buku_UseCase' (role 'melihat_Tampilan_Awal_Aplikasi11', cardinality 0..*).
+'Melakukan_Logout_UseCase' (role 'otomatis_Menginterupsi_Notifikasi_Akun_Media_Sosial17', cardinality 0..*) is associated with 'Otomatis_Menginterupsi_Notifikasi_Akun_Media_Sosial_UseCase' (role 'melakukan_Logout16', cardinality 0..*).
+'User_Actor' (role 'melakukan_Logout6', cardinality 0..*) is associated with 'Melakukan_Logout_UseCase' (role 'user7', cardinality 0..*).

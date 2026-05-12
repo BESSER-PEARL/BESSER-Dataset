@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'Alert' has the following attributes: 'AlertID' of type int.
+The class 'Firebase' has the following attributes: 'Update' of type float; 'Status' of type bool.
+The class 'Web' has no attributes.
+The class 'Sensor' has the following attributes: 'SensorID' of type int; 'SensorType' of type int.
+The class 'PressureSensor' has no attributes.
+The class 'Gas_Smoke_Sensor' has the following attributes: 'DispenseSprinkler' of type bool; 'SmokeAlarm' of type bool.
+The class 'Arduino' has the following attributes: 'MicID' of type str.
+The class 'Alert2' has the following attributes: 'AlertID' of type int.
+The class 'Count_people' has the following attributes: '_attr' of type int.
+The class 'Temperature_Sensor' has no attributes.
+The class 'Mobile_App' has the following attributes: 'UserID' of type int.
+'Alert' (role 'home_Security_System3', cardinality 0..*) is associated with 'Mobile_App' (role 'alert2', cardinality 0..*).
+'Firebase' (role 'Arduino__Firebase_19', cardinality 0..*) is associated with 'Arduino' (role 'Arduino__Firebase_08', cardinality 0..*).
+'Sensor' (role 'door0', cardinality 0..*) is associated with 'Count_people' (role 'sensor1', cardinality 0..*).
+'Mobile_App' (role 'system6', cardinality 0..*) is associated with 'Firebase' (role 'home_Security_System7', cardinality 0..*).
+'Arduino' (role 'sensor5', cardinality 0..*) is associated with 'Sensor' (role 'system4', cardinality 0..*).
+'Web' (role 'firebase11', cardinality 0..*) is associated with 'Firebase' (role 'web10', cardinality 0..*).
+'Alert2' (role 'web12', cardinality 0..*) is associated with 'Web' (role 'alert213', cardinality 0..*).

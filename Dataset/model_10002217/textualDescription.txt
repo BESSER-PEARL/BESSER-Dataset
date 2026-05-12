@@ -1,0 +1,12 @@
+The model has 11 class(es).
+The class 'MyClass5' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'ttt' has no attributes.
+The class 'MyClass' has the following attributes: 'attribute2' of type str; 'attribute' of type int.
+The class 'MyClass8' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'MyClass6' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'MyClass7' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'MyClass10' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'MyClass4' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'MyClass3' has the following attributes: 'attribute' of type str; 'attribute2' of type str.
+The class 'MyClass2' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'MyClass9' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
